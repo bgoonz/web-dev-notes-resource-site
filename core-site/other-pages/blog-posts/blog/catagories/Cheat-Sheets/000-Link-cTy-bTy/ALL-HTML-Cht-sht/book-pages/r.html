@@ -1,0 +1,156 @@
+
+
+
+<!--Cheat Sheetr Thu, 10 Dec 2020 00:18:42 GMT -->
+<!DOCTYPE html>
+<html lang="en"><meta http-equiv="content-type" content="text/html;charset=utf-8" /><
+<head>
+
+        <meta charset="utf-8" />
+        <title>R Cheat Sheet</title>
+        <meta name="author" content="OverAPI" />
+        <meta name="description" content="OverAPI.com is a site collecting all the cheatsheets,all!" />
+        <link rel="stylesheet" href="static/css/default.css" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="static/js/jquery.1.7.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.quicksearch.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154846433-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-154846433-1');
+        </script>
+<script data-ad-client="ca-pub-8625616776911349" async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+    </head>
+    <center><body class="cheat-detail">
+
+
+        <div class="content content-250">
+    <div class="board">
+        <h2 class="board-title">Resource</h2>
+        <div class="board-card">
+            <h3 class="board-card-title">Online</h3>
+            <ul>
+                <li><a href="http://www.r-project.org/">Official Website</a></li>
+                <li><a href="http://en.wikipedia.org/wiki/R_(programming_language)">Wikipedia R</a></li>
+            </ul>
+        </div>
+        <div class="board-card">
+            <h3 class="board-card-title">Download</h3>
+            <ul>
+                <li><a href="http://cran.r-project.org/doc/contrib/Short-refcard.pdf">R Reference Card [.pdf]</a></li>
+                <li><a href="static/cs/R-Short-refcard.pdf">R Reference Card [backup]</a></li>
+                <li><a href="http://cran.r-project.org/doc/contrib/refcard.pdf">R reference card [.pdf]</a></li>
+                <li><a href="static/cs/R-refcard.pdf">R reference card [backup]</a></li>
+            </ul>
+        </div>
+        <div class="board-card">
+            <h3 class="board-card-title">Related</h3>
+            <ul>
+                <li><a href="statistics.html" title="Statistics Cheat Sheet">Statistics</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="board">
+        <h2 class="board-title">Help</h2>
+        <div class="board-card">
+            <ul>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/help.html" title="documentation on topic">help(topic)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/zMachine.html" title="help about maximum values on your machine">?.Machine</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/help.search.html" title="search the help system">help.search("topic")</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/apropos.html" title="the names of all objects in the search list matching the regular expression 'topic'">apropos("topic")</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/help.start.html" title="start the HTML version of help">help.start()</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/str.html" title="display the internal structure of an R object">str(a)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/summary.html" title="gives a 'summary' of a, usually a statistical summary but it is generic meaning it has different operations for different classes of a">summary(a)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/ls.html" title="show objects in the search path; specify pat='pat' to search on a pattern">ls()</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/ls_str.html" title="str() for each variable in the search path">ls.str()</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/list.files.html" title="show files in the current directory">dir()</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/methods/html/Methods.html" title="shows S3 methods of a">methods(a)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/methods/html/Classes.html" title="lists all the methods to handle objects of class a">methods(class=class(a))</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="board">
+        <h2 class="board-title">Input / Output</h2>
+        <div class="board-card">
+            <ul>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/source.html" title="includes and executes my.R in this place">source("my.R")</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/data.html" title="loads specified data sets">data(f)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/library.html" title="load add-on packages">library(s)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/read.table.html" title="reads a file in table format and creates a data frame from it">read.table(f)</a></li>
+                <li class="tip">sep="" is any whitespace by default</li>
+                <li class="tip">header=TRUE to read the first line as a header of column names</li>
+                <li class="tip">as.is=TRUE to prevent character vectors from being converted to factors</li>
+                <li class="tip">comment.char="" to prevent "#" from being interpreted as a comment</li>
+                <li class="tip">skip=n to skip n lines before reading data</li>
+                <li class="tip">see the help for options on row naming, NA treatment, and others</li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/read.table.html" title="id. but with defaults set for reading comma-delimited files">read.csv(f,header=TRUE)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/read.table.html" title="id. but with defaults set for reading tab-delimited files">read.delim(f,header=TRUE)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/read.table.html" title="read a table of f ixed width f ormatted data into a 'data.frame'">read.fwf(f,widths,header=FALSE,sep="",as.is=FALSE)</a></li>
+                <li class="tip">widths is an integer vector, giving the widths of the fixed-width fields</li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/save.html" title="saves the specified objects (...) in the XDR platform-independent binary format">save(f,...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/save.html" title="saves all objects">save.image(f)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/load.html" title="load the datasets written with save">load(f)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/cat.html" title="prints the arguments after coercing to character; sep is the character separator between arguments">cat(..., file=f, sep="")</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/print.html" title="prints its arguments; generic, meaning it can have different methods for different objects">print(a, ...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/format.info.html" title="format an R object for pretty printing">format(x, ...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/write.table.html" title="prints x after converting to a data frame">write.table(x, file=f, row.names=TRUE, col.names=TRUE, sep="")</a></li>
+                <li class="tip">if quote is TRUE, character or factor columns are surrounded by quotes (")</li>
+                <li class="tip">sep is the field separator, eol is the end-of-line separator</li>
+                <li class="tip">na is the string for missing values</li>
+                <li class="tip">col.names=NA to add a blank column header to get the column headers aligned correctly for spreadsheet input</li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/sink.html" title="output to f, until sink()">sink(f)</a></li>
+                <li class="tip">Most of the I/O functions have a file argument and means the standard input or output. Connections can include files, pipes, zipped files, clipboard and R variables</li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/read.table.html" title="read tables with office applications on windows via clipboard">df &lt;- read.delim("clipboard")</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/utils/html/write.table.html" title="write tables with office applications on windows via clipboard">write.table(df,"clipboard",sep="\t",col.names=NA)</a></li>
+                <li class="tip">For database interaction, see packages RODBC, DBI, RMySQL, RPgSQL, ROracle, for other file formats see XML, hdf5, netCDF</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="board">
+        <h2 class="board-title">Data creation</h2>
+        <div class="board-card">
+            <ul>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/c.html" title="generic function to combine arguments with the default forming a vector; with recursive=TRUE descends through lists combining all elements into one vector">с(...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/seq.html" title="generates a sequence by= speciﬁes increment">seq(from, to, by = )</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/seq.html" title="generates a sequence length=speciﬁes desired length">seq(from, to, len = )</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/rep.html" title="replicate x times; use each= to repeat “each” element of x each times; rep(c(1,2,3),2) is 1 2 3 1 2 3; rep(c(1,2,3),each=2) is 1 1 2 2 3 3">rep(x, times)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/list.html" title="create a list of the named or unnamed arguments; list(a=c(1,2),b="hi",c=3i);">list(...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/data.frame.html" title="create a data frame of the named or unnamed arguments; data.frame(v=1:4,ch=c("a","B","c","d"),n=10); shorter vectors are recycled to the length of the longest">data.frame(...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/array.html" title="array with data x; specify dimensions like dim=c(3,4,2); elements of x recycle if x is not long enough">array(data, dims)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/matrix.html" title="matrix; elements of x recycle">matrix(data, nrow = , ncol = , byrow = )</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/factor.html" title="encodes a vector x as a factor">factor(x, levels = )</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/gl.html" title="generate levels (factors) by specifying the pattern of their levels; k is the number of levels, and n is the number of replications">gl(n, k, length = n*k, labels = 1:n)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/cbind.html" title="combine arguments by rows for matrices, data frames, and others">rbind(...)</a></li>
+                <li><a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/cbind.html" title="combine arguments by columns for matrices, data frames, and others">cbind(...)</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+        <!--<div class="board board-detail-ad hide">-->
+        <div class="board hide" id="detail-ad">
+
+        </div>
+
+        <script type="text/javascript">
+            $('.content').append($('#detail-ad'));
+            $('#detail-ad').removeClass('hide');
+        </script>
+
+        <script type="text/javascript" src="../s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4fddf49419e0facd"></script>
+<body></center>
+
+<!--Cheat Sheetr Thu, 10 Dec 2020 00:18:42 GMT -->
+</html>
