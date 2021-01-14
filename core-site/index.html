@@ -12,7 +12,7 @@
   <!-- Mobile Meta -->
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- Site Meta -->
-  <title>The Good AA Meeting</title>
+  <title>WEB-DEV-Resources</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -104,6 +104,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a class="btn" href="./index.html">HOME-hit-Refresh</a></li>
               <li><a class="btn" href="./blog.html">Blog</a></li>
+               <li><a class="btn" href="./resources.html">Resources-Directory</a></li>
               <li><a class="btn" href="./other-pages/sandbox.html">SandBox</a></li>
              
            
@@ -172,8 +173,8 @@
       <div class="overlay"></div>
       <div class="home-text-wrapper relative container">
         <div class="home-message">
-          <p>a/A Student Resources</p>
-          <p><small>this site is student run and has no official association with a/A </small></p>
+          <p>Web Dev Student Resources</p>
+          <p><small>This site is a constant work in progress... and my very well be pretty broken at any given point in time</small></p>
           <div class="btn-wrapper">
             <div class="text-center">
             </div>
@@ -195,8 +196,7 @@
           </div><!-- end col -->
           <div class="col-md-8">
             <div class="custom-module p40l">
-              <h2>My goal is to create an interactive library of resources and projects conducted by a/A
-                students</h2>
+              <h2>My goal is to create an interactive library of resources and projects </h2>
               <hr class="invis">
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 first">
@@ -475,6 +475,29 @@
   window.jQuery || document.write( '<script src="./js/jquery.js"><\/script>' );
 </script>
 <script async src="./../javascripts/sentry.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBhcjSuvnWTYL3lEEDQ54ioosjJqpibY5c",
+    authDomain: "striking-retina-295718.firebaseapp.com",
+    projectId: "striking-retina-295718",
+    storageBucket: "striking-retina-295718.appspot.com",
+    messagingSenderId: "583642607378",
+    appId: "1:583642607378:web:191982e5be5ebb84f0cdcb",
+    measurementId: "G-DHJLF3ZCMQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 
 </html>
