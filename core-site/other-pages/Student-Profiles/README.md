@@ -19,4 +19,3 @@ tree -d -L 4
 11 directories
 
 ```
-[![](https://data.jsdelivr.com/v1/package/npm/pdfjs-dist/badge)](https://www.jsdelivr.com/package/npm/pdfjs-dist)
