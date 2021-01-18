@@ -1,0 +1,53 @@
+// Copyright 2020 Google LLC
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+
+
+
+
+/*! THIS FILE IS AUTO-GENERATED */
+
+import {AuthPlus, getAPI, GoogleConfigurable} from 'googleapis-common';
+import {documentai_v1beta2} from './v1beta2';
+import {documentai_v1beta3} from './v1beta3';
+
+export const VERSIONS = {
+  v1beta2: documentai_v1beta2.Documentai,
+  v1beta3: documentai_v1beta3.Documentai,
+};
+
+export function documentai(version: 'v1beta2'): documentai_v1beta2.Documentai;
+export function documentai(
+  options: documentai_v1beta2.Options
+): documentai_v1beta2.Documentai;
+export function documentai(version: 'v1beta3'): documentai_v1beta3.Documentai;
+export function documentai(
+  options: documentai_v1beta3.Options
+): documentai_v1beta3.Documentai;
+export function documentai<
+  T = documentai_v1beta2.Documentai | documentai_v1beta3.Documentai
+>(
+  this: GoogleConfigurable,
+  versionOrOptions:
+    | 'v1beta2'
+    | documentai_v1beta2.Options
+    | 'v1beta3'
+    | documentai_v1beta3.Options
+) {
+  return getAPI<T>('documentai', versionOrOptions, VERSIONS, this);
+}
+
+const auth = new AuthPlus();
+export {auth};
+export {documentai_v1beta2};
+export {documentai_v1beta3};
+export {
+  AuthPlus,
+  GlobalOptions,
+  APIRequestContext,
+  GoogleConfigurable,
+  StreamMethodOptions,
+  GaxiosPromise,
+  MethodOptions,
+  BodyResponseCallback,
+} from 'googleapis-common';

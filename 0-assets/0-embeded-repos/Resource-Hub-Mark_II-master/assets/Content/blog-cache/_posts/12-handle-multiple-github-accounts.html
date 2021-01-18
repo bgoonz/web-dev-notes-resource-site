@@ -1,0 +1,156 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Have you ever came into a situation where you have to separate the work and personal github accounts and find it
+      difficult to switch between those on same machine in a busy working day? This post is for <strong>YOU!</strong>.
+    </p>
+    <p>Recently when I started with my new client, they had a demand that we can’t use our existing (personal)
+      <code>github.com</code> account for work. We have to create a new github account with the new clients email
+      address and use it. But github didn’t allow to add same ssh key in the new account. We have to generate new ssh
+      key.
+    </p>
+    <p>Considering we have generated new ssh key and added to new github account there are couple of challenges.</p>
+    <ul>
+      <li>We have to use the new ssh key for anything related to client projects</li>
+      <li>the committer and author email should be set to client email address</li>
+      <li>if you are using <a href="https://github.com/github/hub">hub</a>, hub should be able to use the token from the
+        new github account.</li>
+    </ul>
+    <h1 id="settings-per-repo"><a class="anchor" name="per-repo" href="#per-repo"><i
+          class="anchor-icon"></i></a>Settings per repo</h1>
+    <p>If the client has only one repo, the ssh key, committer email and author email can be set in git local config
+      using <code>git config --local</code> command.</p>
+    <p>we can use <a href="https://git-scm.com/docs/git-config#git-config-coresshCommand">core.sshCommand</a> config to
+      override the ssh command Eg:</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> config --local core.sshCommand <span class="st">&quot;ssh -i ~/.ssh/id_client&quot;</span></a></code></pre>
+    </div>
+    <p>Use <a href="https://git-scm.com/docs/git-config#git-config-useremail">user.email</a> and <a
+        href="https://git-scm.com/docs/git-config#git-config-username">user.name</a> configs to override the committer
+      email/name and author email/name.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> config --local user.email <span class="st">&quot;email@client.com&quot;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">git</span> config --local user.name <span class="st">&quot;Your name&quot;</span></a></code></pre>
+    </div>
+    <p>As of now <strong>hub</strong> won’t allow to override the config on <a
+        href="https://github.com/github/hub/issues/1300">per repo basis</a></p>
+    <h1 id="settings-for-multi-repo"><a class="anchor" name="multi-repo" href="#multi-repo"><i
+          class="anchor-icon"></i></a>Settings for multi repo</h1>
+    <p>Overriding the git settings per repo will be an issue if you have multiple client repos. When you clone a new
+      repo you have to remember to run these commands.</p>
+    <p>To fix this we can utilize the <strong>Environment variables</strong> to override the settings.</p>
+    <p><a href="https://git-scm.com/docs/git#git-codeGITSSHcode">GIT_SSH_COMMAND</a> instead of
+      <code>core.sshCommand</code><br />
+      <a href="https://git-scm.com/docs/git#git-codeGITAUTHORNAMEcode">GIT_AUTHOR_NAME</a> <strong>/</strong>
+      <code>GIT_COMMITTER_NAME</code> instead of <code>user.name</code><br />
+      <code>GIT_COMMITTER_EMAIL</code> <strong>/</strong> <code>GIT_AUTHOR_EMAIL</code> <strong>/</strong>
+      <code>EMAIL</code> instead of <code>user.email</code>
+    </p>
+    <p>But setting these <code>ENV</code> variables for every git command is not possible. <a
+        href="https://github.com/direnv/direnv">direnv</a> to save us from this issue.</p>
+    <p><strong>Direnv</strong> helps to load specific <code>ENV</code> variables while switching to directories and the
+      best part is <code>direnv</code> is smart enough to load the <code>ENV</code> in the parent folder if you directly
+      switching to a child directly. The [setup][direnv_setup] instruction is available in it’s README.</p>
+    <p>To work out this easily let’s move all the repos of this client to a parent folder.</p>
+    <pre><code>clientProjects
+    |
+    |-&gt; Project 1
+    |
+    |-&gt; Project 2</code></pre>
+    <p>and inside the <code>clientProjects</code> let’s have <code>.envrc</code> file with necessary <code>ENV</code>
+      variables.</p>
+    <pre class="env"><code>export GIT_SSH_COMMAND=&#39;ssh -i ~/.ssh/id_client&#39;
+export GIT_AUTHOR_NAME=&#39;Name&#39;
+export GIT_COMMITTER_NAME=&#39;Name&#39;
+export GIT_AUTHOR_EMAIL=&#39;email@client.com&#39;
+export GIT_COMMITTER_EMAIL=&#39;email@client.com&#39;
+export EMAIL=&#39;email@client.com&#39;</code></pre>
+    <p>Once the <code>.envrc</code> is created run the command <code>dotenv allow .</code> in the folder to load the
+      <code>ENV</code> variables. This is needed only once after you update the <code>.envrc</code> rest all when you
+      change directory the <code>clientProject</code> or to any child folder these <code>ENV</code> variables will get
+      loaded.
+    </p>
+    <p>Now if you run any <code>git</code> command inside this <code>clientProjects</code> folder at any level,
+      <code>git</code> will take up the values from these <code>ENV</code> variables.
+    </p>
+    <h1 id="configure-hub"><a class="anchor" name="configure-hub" href="#configure-hub"><i
+          class="anchor-icon"></i></a>Configure hub</h1>
+    <p>If you are a <a href="https://github.com/github/hub">hub</a> user and you already have the hub config (personal
+      account) on the machine, all the above config won’t help to use hub specific commands like
+      <code>pull-request</code> etc to work with new client specific github account.
+    </p>
+    <p>To do that, let’s move the existing <code>hub</code> config from <code>$HOME/.config/hub</code> to
+      <code>$HOME/.config/hub-personal</code> and add
+    </p>
+    <pre><code>export HUB_CONFIG=&quot;$HOME/.config/hub-personal&quot;</code></pre>
+    <p>into the <code>.bashrc</code> or <code>.zshrc</code>.</p>
+    <p>Later, add <code>export HUB_CONFIG="$HOME/.config/hub-client"</code> into the our <code>.envrc</code> in the
+      <code>clientProjects</code> folder try <code>hub login</code> from the <code>clientProjects</code> folder.
+    </p>
+    <p>That’s it. No more worry about switching accounts before starting the client work or getting access denied error.
+    </p>
+    <p>Special thanks to <span class="citation" data-cites="emilsoman">[@emilsoman]</span><a
+        href="https://twitter.com/emilsoman">emil_twitter</a> for introducing me to <code>$GIT_SSH_COMMAND</code> and
+      <span class="citation" data-cites="isaacaggrey">[@isaacaggrey]</span><a
+        href="https://github.com/isaacaggrey">isaacaggrey_github</a> for <a
+        href="https://github.com/github/hub/issues/1300#issuecomment-318872894">hub config workaround</a>
+    </p>
+    <p>If you are interested in getting github notification of specific organization into a specific email, check my
+      other post on <a
+        href="https://blog.revathskumar.com/2013/12/github-routing-organization-notifications.html">Github : Routing
+        organization notifications to official email</a>.</p>
+
+  </body>
+
+  
+</html>

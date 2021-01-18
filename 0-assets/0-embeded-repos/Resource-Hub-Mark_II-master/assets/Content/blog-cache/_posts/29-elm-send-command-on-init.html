@@ -1,0 +1,112 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In the last post <a href="/2018/11/elm-pick-random-item-from-list.html">ELM : pick random item from list</a> we
+      discussed about finding a random number on a button click. But that not that intuitive. we should have a
+      placeholder text until the user clicks on the button for the first time. To avoid this we need to send the
+      <code>FindRandom</code> Cmd on the init itself.
+    </p>
+    <p>This post will explain how we can achieve this.</p>
+    <h2 id="single-cmd"><a class="anchor" name="single-cmd" href="#single-cmd"><i class="anchor-icon"></i></a>Single Cmd
+    </h2>
+    <p>The <code>init</code> function returns a tuple of model and a Cmd. its signature will look like <code>init :
+        Flags -&gt; ( Model, Cmd Msg )</code> and since we don’t have any <code>Cmd</code> to perform there we usually
+      give <code>Cmd.none</code>.</p>
+    <pre class="elm"><code>init : Flags -&gt; ( Model, Cmd Msg )
+init flags =
+   ( initialModel, Cmd.none)</code></pre>
+    <p>Just replacing <code>Cmd.none</code> with <code>FindRandom</code> won’t work since <code>FindRandom</code> is a
+      <code>Msg</code> and as per init type signature it needs <code>Cmd Msg</code>. Thats where the <a
+        href="https://package.elm-lang.org/packages/elm/core/latest/Task">elm/Task</a> comes in. As per the elm doc a
+      Task can be described as
+    </p>
+    <p>asynchronous operations that may fail, like HTTP requests or writing to a database.</p>
+    <p>In our case we can use this to convert the <code>Msg</code> into <code>Cmd Msg</code> using <a
+        href="https://package.elm-lang.org/packages/elm/core/latest/Task#succeed">Task.succeed</a> &amp; <a
+        href="https://package.elm-lang.org/packages/elm/core/latest/Task#perform">Task.perform</a>.</p>
+    <p><code>Task.succeed</code> will convert the <code>Msg</code> into a Task which will <code>succeed</code>
+      immediately and the run the task using <code>Task.perform</code> and convert into <code>Cmd</code> using an
+      <code>identity</code> function.
+    </p>
+    <p>An <code>identity</code> function is a function which takes one argument and return the same.</p>
+    <pre class="elm"><code>identity : a -&gt; a
+identity a =
+   a</code></pre>
+    <p>If you are thinking why <code>identity</code> function, it means that what ever the result of the task will be
+      the result of the <code>Cmd</code>.</p>
+    <p>ie., <code>Task.perform identity</code> takes the task produced by <code>Task.succeed FindRandom</code> and
+      convert into <code>Cmd msg</code>.</p>
+    <p>Thus our <code>init</code> function becomes</p>
+    <pre class="elm"><code>init : Flags -&gt; ( Model, Cmd Msg )
+init flags =
+   ( initialModel, Task.succeed FindRandom |&gt; Task.perform identity  )</code></pre>
+    <p>The updated running sample is on <a href="https://ellie-app.com/42gtyJ7cnLha1">ellie-app</a></p>
+    <h2 id="multiple-cmd"><a class="anchor" name="multiple-cmd" href="#multiple-cmd"><i
+          class="anchor-icon"></i></a>Multiple Cmd</h2>
+    <p>Last section we saw how to perform a <code>Cmd msg</code> on <code>init</code>, but in some cases we might need
+      to perform more than one <code>Cmd msg</code> on <code>init</code>. For this we can use <code>Cmd.batch</code> to
+      do this.</p>
+    <pre class="elm"><code>init : Flags -&gt; ( Model, Cmd Msg )
+init flags =
+   ( initialModel, Cmd.batch
+                [ Random.generate NewId (Random.int 1000 10000)
+                , Task.succeed (AddItem &quot;Setup &amp; provision production server&quot;) |&gt; Task.perform identity
+                , Task.succeed (AddItem &quot;Setup CI&quot;) |&gt; Task.perform identity
+                , Task.succeed (AddItem &quot;Setup Project Skeleton&quot;) |&gt; Task.perform identity
+                  ])</code></pre>
+    <p>The above example is taken from <a
+        href="https://github.com/revathskumar/estimate-helper/blob/9a33c0a6cf2ec12d2b1b76600a148bfc60321195/src/Main.elm#L49-L54">revathskumar/estimate-helper</a>
+    </p>
+
+  </body>
+
+  
+</html>

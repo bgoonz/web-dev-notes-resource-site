@@ -1,0 +1,140 @@
+<!--
+
+---
+ Using Yeoman with PHP
+date: 2013-04-08 05:40:16 UTC
+updated: 2013-04-08 05:40:16 UTC
+2008/kind#post yeoman php
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">This is a simple workaround to use yeoman with PHP projects. For
+    this I assume that you have a basic knowledge of yeoman and already setup yeoman, grunt, node, bower and
+    php.<br /><br />For this tutorial I used<br /><br />
+    <ul style="text-align: left;">
+      <li>Yeoman&nbsp;1.0.0-beta.3</li>
+      <li>Ubuntu 11.04</li>
+      <li>php-cgi 5.3.5-1</li>
+    </ul><br />
+    <h3 style="text-align: left;">Initiate yeoman webapp</h3>
+    <div>For this tutorial I started with initialize a new project with yeoman webapp generator, which is shipped along
+      with yeoman.</div>
+    <div><br /></div>
+    <div>To start with a fresh project, create a directory named yeoman-php and cd into it. Now boilerplate the webapp
+      with yeoman. After that install the npm packages and bower components. You can check whether everything works fine
+      by running grunt.</div>
+    <div><br /></div>
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=webapp.sh"></script><noscript>
+=======
+    <script src="https://gist.github.com/revathskumar/5300664.js?file=webapp.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <blockquote class="tr_bq">mkdir yeoman-php &amp; cd yeoman-php<br />yo webapp<br />npm install<br />bower
+        install<br />grunt server<br /></blockquote>
+    </noscript>Ok! Now we need to customize the project in order to execute php file.<br /><br />
+    <h3>Installing PHP-CGI</h3>
+    <div>In order to work this, You need to install php-cgi in your machine. If you are using ubuntu you can use the
+      following command</div>
+    <div><br /></div>
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=cgi_install.sh"></script><noscript>
+=======
+    <script src="https://gist.github.com/revathskumar/5300664.js?file=cgi_install.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <blockquote class="tr_bq">sudo apt-get install php5-cgi</blockquote>
+    </noscript><br />
+    <h3 style="text-align: left;">Execute CGI scripts&nbsp;</h3>
+    <div>To execute the php scripts we use <a href="https://github.com/fgnass/gateway" rel="nofollow"
+        target="_blank">gateway</a>&nbsp;package as the connect middleware. Thanks to <a
+        href="https://github.com/fgnass" rel="nofollow" target="_blank">fgnass</a>&nbsp;for creating the package.&nbsp;
+    </div>
+    <div><br /></div>
+    <div>You need to install this node package and add the same to your package.json file.</div><br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=gateway_install.sh"></script><noscript>
+=======
+    <script src="https://gist.github.com/revathskumar/5300664.js?file=gateway_install.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <blockquote class="tr_bq">npm install gateway --save-dev</blockquote>
+    </noscript>&nbsp;The above command will install the package and add the same into package.json
+    (devDependencies).<br /><br />
+    <h3 style="text-align: left;">Using custom middleware</h3>
+    <div>In order to use the custom middleware we need to update the Gruntfile. Add the below code to top of your
+      Gruntfile.js.</div>
+    <div><br />
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=middleware.js"></script><noscript>
+=======
+      <script src="https://gist.github.com/revathskumar/5300664.js?file=middleware.js"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <pre
+          style="border: 0px; color: #333333; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; padding: 0px;"><blockquote class="tr_bq"><br />var gateway = require('gateway');<br />var phpGateway = function (dir){<br />    return gateway(require('path').resolve(dir), {<br />        '.php': 'php-cgi'<br />    });<br />};&nbsp;&nbsp;</blockquote><br /></pre>
+      </noscript>Now add the following to the livereload, middleware settings in connect. Make sure you add on top of
+      both mountFolder already exists.<br /><br />
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=phpgateway.js"></script><noscript>
+        <blockquote class="tr_bq">phpGateway('app')</blockquote>
+      </noscript>Now add the <b>.php </b>extenstion to livereload files, so that change in grunt will reload the php
+      files everytime you change anything.<br /><br />
+      <script async defer src="https://gist.github.com/revathskumar/5300664.js?file=files.js"></script><noscript>
+=======
+      <script src="https://gist.github.com/revathskumar/5300664.js?file=phpgateway.js"></script><noscript>
+        <blockquote class="tr_bq">phpGateway('app')</blockquote>
+      </noscript>Now add the <b>.php </b>extenstion to livereload files, so that change in grunt will reload the php
+      files everytime you change anything.<br /><br />
+      <script src="https://gist.github.com/revathskumar/5300664.js?file=files.js"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <blockquote class="tr_bq">'&lt;%= yeoman.app %&gt;/*.php'&nbsp;</blockquote>
+      </noscript>Now rename the index.html to index.php and try executing<b> grunt server</b>.<br /><br />You can look
+      into the github <a
+        href="https://github.com/revathskumar/yeoman-php/commit/7a9338d26e1cd722668ec9dcbe0bf5320cd103a3" rel="nofollow"
+        target="_blank">commit</a>&nbsp;for the whole set of changes required for this.<br />A demo project is available
+      on <a href="https://github.com/revathskumar/yeoman-php" rel="nofollow"
+        target="_blank">github</a>.<br /><br /><br />
+      <div style="text-align: left;"><b>Currently I updated only for connect/livereload tasks.<br />I am working on
+          updating it for build, usemin and other tasks.&nbsp;</b></div><br /><br />Looking forward for your
+      comments.<br />Thanks.
+    </div>
+  </div>
+</body>
+
+</html>
+$

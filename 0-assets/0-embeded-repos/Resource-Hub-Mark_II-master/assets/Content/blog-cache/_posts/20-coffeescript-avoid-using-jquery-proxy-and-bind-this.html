@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>There are many times I need to execute the methods, which are triggered by an event handler/callbacks to execute
+      without changing the context. It helps me to use instance variables or methods inside callback. I usually use <a
+        href="http://api.jquery.com/jQuery.proxy/">$.proxy</a> or <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">.bind()</a>
+      method to achieve this.</p>
+    <p>When I was learning <a href="http://coffeescript.org">CoffeeSctipt</a>, I continued using the same. But later I
+      came to know CoffeeScript have much handy way to do the same.</p>
+    <p>In CS, you can use Fat arrow functions for this.</p>
+    <p>{% highlight coffeescript %} class Form constructor: (root) -&gt; <span class="citation"
+        data-cites="root">@root</span> = root; <span class="citation" data-cites="root.on">@root.on</span> ‘submit’,
+      <span class="citation" data-cites="onSubmit">@onSubmit</span> <span class="citation"
+        data-cites="root.on">@root.on</span> ‘submit’, <span class="citation" data-cites="onSub">@onSub</span>
+    </p>
+    <p>onSub:(e) -&gt; console.log(this) return false;</p>
+    <p>onSubmit:(e) =&gt; console.log(this) return false; {% endhighlight %}</p>
+    <p>In the above code, I want to execute the <code>onSubmit</code> method in the context of <code>Form</code>. Since
+      the <code>onSubmit</code> is trigger by the submit event, by default its context will be element which the event
+      is binded.</p>
+    <p>I hope I am able to convince you the differece between thin arrow and fat arrow function. You can get the
+      detailed description on the <a href="http://coffeescript.org/#fat-arrow">CoffeeScript doc</a>.</p>
+    <p>Also you can look into the <a
+        href="http://coffeescript.org/#try:class%20Form%0A%20%20constructor%3A%20(root)%20-%3E%0A%20%20%20%20%40root%20%3D%20root%3B%0A%20%20%20%20%40root.on%20'submit'%2C%20%40onSubmit%0A%20%20%20%20%40root.on%20'submit'%2C%20%40onSub%0A%0A%20%20onSub%3A(e)%20-%3E%0A%20%20%20%20console.log(this)%0A%20%20%20%20return%20false%3B%0A%20%20%0A%20%20onSubmit%3A(e)%20%3D%3E%0A%20%20%20%20console.log(this)%0A%20%20%20%20return%20false%3B">code
+        generated</a> by CoffeeScript when you use fat arrow.</p>
+    <h2 id="in-ecmascript-5">In ECMAScript 5</h2>
+    <p>If you are using ECMAScript 5, As I saild before you can use <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">.bind()</a>
+      method.</p>
+    <p>{% highlight coffeescript %} var Form = (function(){ function Form(root){ this.root = root;
+      this.root.on(‘submit’, this.onSubmit.bind(this)); this.root.on(‘submit’, this.onSub); }</p>
+    <p>Form.prototype.onsubmit = function(e){ console.log(this) return false; }</p>
+    <p>Form.prototype.onSub = function(e){ console.log(this) return false; }</p>
+    <p>return Form; })() {% endhighlight %}</p>
+
+  </body>
+
+  
+</html>

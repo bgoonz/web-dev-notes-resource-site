@@ -1,0 +1,27 @@
+<h2 id="installation">Installation</h2>
+<p>{% highlight sh %} sudo apt-get install postgresql-9.2 postgresql-contrib-9.2 postgresql-server-9.2
+  postgresql-server-dev-9.2 {% endhighlight %}</p>
+<p>Unlike MySql, In postgres we can have users coupled with system users. So whenever you try <code>psql</code> command
+  the default user will be your current loggedin system user. While installation it creates a user with username
+  <strong>postgres</strong> in the system to access db.
+</p>
+<h2 id="login-into-default-user">login into default user</h2>
+<p>{% highlight sh %} sudo -u postgres psql {% endhighlight %}</p>
+<p>After login as default user you need to create a new user with username same as your system username.</p>
+<h2 id="create-a-role">create a role</h2>
+<p>{% highlight sql %} CREATE USER username WITH PASSWORD ‘password’ CREATEDB; {% endhighlight %}</p>
+<p>If you forgot to give <strong>CREATEDB</strong> permission while creating user you can alter it using the sql below,
+</p>
+<p>{% highlight sql %} ALTER USER revath CREATEDB; {% endhighlight %}</p>
+<p>After creating new role/user, logout from the postgres user by typing <code>\q</code> in the psql prompt.</p>
+<p>Now login into the psql by selecting the default database.</p>
+<p>{% highlight sh %} psql -d postgres {% endhighlight %}</p>
+<p>Now you login with the default user which have the same username as your system user.</p>
+<p>After login you can create a new DB.</p>
+<p>{% highlight sql %} CREATE DATABASE db_name {% endhighlight %}</p>
+<p>Using postgres is a bit different from using Mysql,</p>
+<pre><code>`SHOW DATABASES` : `\l`
+`SHOW TABLES`    : `\d`
+`DESC table`     : `\d table`
+`exit`           : `\q`
+`help`           : `\h` or `\?`</code></pre>

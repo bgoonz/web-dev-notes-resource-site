@@ -1,0 +1,164 @@
+<figure>
+  <embed src="%7B%7B%20page.image%20%7D%7D" />
+  <figcaption>browserify + gulp</figcaption>
+</figure>
+<p>In my <a href="/2016/01/browserify.html">last blog post</a> I explained how to use browserify command line to bundle
+  javascript modules. In this we will use browserify api to use it along with gulp. I will be writing gulpfile snippets
+  for this post in ES6. You can checkout my post on <a href="/2016/01/writing-gulpfile-in-es6.html">writing gulpfile in
+    ES6</a>.</p>
+<div class="sourceCode" id="cb1">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="im">import</span> fs <span class="im">from</span> <span class="st">&quot;fs&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;default&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&quot;src/utils.js&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-9" title="9">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10">    .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb1-11" title="11">    .<span class="at">pipe</span>(<span class="va">fs</span>.<span class="at">createWriteStream</span>(<span class="st">&quot;./dist/utils.js&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<p>A basic implementation can be done as above. But this won’t work when you need to pipe with other gulp plugins like
+  <code>uglify</code> or <code>gulp.dist</code>. This is because <code>browserify.bundle()</code> return a <a
+    href="https://github.com/substack/node-browserify#bbundlecb">text stream</a> where as gulp works using <a
+    href="https://github.com/gulpjs/vinyl">vinyl stream</a>. In order to browserify to work with other plugins you need
+  to use <a href="https://github.com/hughsk/vinyl-source-stream">vinyl-source-stream</a>.
+</p>
+<p><code>vinyl-source-stream</code> will convert text streams from <code>browserify.bundle()</code> to vinyl streams so
+  you can pipe with other gulp plugins which support streaming. Install the <code>vinyl-source-stream</code> using
+  <code>npm i --save-dev vinyl-source-stream</code>.
+</p>
+<div class="sourceCode" id="cb2">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;default&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&quot;src/utils.js&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb2-10" title="10">    .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb2-11" title="11">    .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&quot;utils.js&quot;</span>))</a>
+<a class="sourceLine" id="cb2-12" title="12">    .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;./dist&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<p>Now we can use <code>gulp.dest</code> to write the output file but if we try to pipe it to <code>gulp-uglify</code>
+  you will get error saying <strong>Streaming not supported</strong>. This is because some gulp plugins doesn’t support
+  streaming. The <code>vinyl-source-stream</code> returns a <strong>streaming</strong> vinyl object where as uglify
+  expects <strong>buffered</strong> vinyl file objects.</p>
+<p>Thats were <code>vinyl-buffer</code> comes in. <code>vinyl-buffer</code> will convert streaming vinyl files to use
+  buffer. you install <em>vinyl-buffer</em> using <code>npm i --save-dev vinyl-buffer</code></p>
+<div class="sourceCode" id="cb3">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="im">import</span> uglify <span class="im">from</span> <span class="st">&quot;gulp-uglify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="im">import</span> buffer <span class="im">from</span> <span class="st">&quot;vinyl-buffer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;default&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-8" title="8">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-9" title="9">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&quot;src/utils.js&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-11" title="11">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-12" title="12">    .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb3-13" title="13">    .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&quot;utils.min.js&quot;</span>))</a>
+<a class="sourceLine" id="cb3-14" title="14">    .<span class="at">pipe</span>(<span class="at">buffer</span>())</a>
+<a class="sourceLine" id="cb3-15" title="15">    .<span class="at">pipe</span>(<span class="at">uglify</span>())</a>
+<a class="sourceLine" id="cb3-16" title="16">    .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;./dist&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<p>Now in <code>dist/utils.min.js</code> you will get minified version of the build.</p>
+<h2 id="working-with-source-maps">Working with Source Maps</h2>
+<p>If you want to generate sourcemaps for your builds you can use <code>gulp-sourcemaps</code> plugin. Install
+  gulp-sourcemaps using <code>npm i --save-dev gulp-sourcemaps</code>.</p>
+<div class="sourceCode" id="cb4">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="im">import</span> uglify <span class="im">from</span> <span class="st">&quot;gulp-uglify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="im">import</span> buffer <span class="im">from</span> <span class="st">&quot;vinyl-buffer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="im">import</span> sourcemaps <span class="im">from</span> <span class="st">&quot;gulp-sourcemaps&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;default&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&quot;src/utils.js&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-11" title="11">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-12" title="12">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb4-13" title="13">    .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb4-14" title="14">    .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&quot;utils.min.js&quot;</span>))</a>
+<a class="sourceLine" id="cb4-15" title="15">    .<span class="at">pipe</span>(<span class="at">buffer</span>())</a>
+<a class="sourceLine" id="cb4-16" title="16">    .<span class="at">pipe</span>(<span class="at">uglify</span>())</a>
+<a class="sourceLine" id="cb4-17" title="17">    .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">init</span>(<span class="op">{</span> <span class="dt">loadMaps</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>))</a>
+<a class="sourceLine" id="cb4-18" title="18">    .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">write</span>(<span class="st">&quot;./maps&quot;</span>))</a>
+<a class="sourceLine" id="cb4-19" title="19">    .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;./dist&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-20" title="20"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<h2 id="handling-errors">Handling Errors</h2>
+<p>In order to handle errors you bind callback to ‘error’ event from browserify.</p>
+<div class="sourceCode" id="cb5">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="im">import</span> uglify <span class="im">from</span> <span class="st">&quot;gulp-uglify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="im">import</span> buffer <span class="im">from</span> <span class="st">&quot;vinyl-buffer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="im">import</span> sourcemaps <span class="im">from</span> <span class="st">&#39;gulp-sourcemaps&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="im">import</span> <span class="st">&#39;gutil&#39;</span> <span class="im">from</span> <span class="st">&#39;gulp-util&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&#39;default&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb5-11" title="11">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&#39;src/utils.js&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb5-12" title="12">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span></a>
+<a class="sourceLine" id="cb5-13" title="13">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb5-14" title="14">  .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb5-15" title="15">  .<span class="at">on</span>(<span class="st">&#39;error&#39;</span><span class="op">,</span> err <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-16" title="16">    <span class="va">gutil</span>.<span class="at">log</span>(<span class="st">&quot;Browserify Error&quot;</span><span class="op">,</span> <span class="va">gutil</span>.<span class="va">colors</span>.<span class="at">red</span>(<span class="va">err</span>.<span class="at">message</span>))</a>
+<a class="sourceLine" id="cb5-17" title="17">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb5-18" title="18">  .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&#39;utils.min.js&#39;</span>))</a>
+<a class="sourceLine" id="cb5-19" title="19">  .<span class="at">pipe</span>(<span class="at">buffer</span>())</a>
+<a class="sourceLine" id="cb5-20" title="20">  .<span class="at">pipe</span>(<span class="at">uglify</span>())</a>
+<a class="sourceLine" id="cb5-21" title="21">  .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">init</span>(<span class="op">{</span><span class="dt">loadMaps</span><span class="op">:</span> <span class="kw">true</span><span class="op">}</span>))</a>
+<a class="sourceLine" id="cb5-22" title="22">  .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">write</span>(<span class="st">&#39;./maps&#39;</span>))</a>
+<a class="sourceLine" id="cb5-23" title="23">  .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&#39;./dist&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<h2 id="using-with-react-and-babel">Using with react and babel</h2>
+<p>If you are planning to right react components in ES6 then I recommend <code>babelify</code> transform, otherwise
+  <code>reactify</code> transform will help to bundle the react modules.
+</p>
+<div class="sourceCode" id="cb6">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="im">import</span> uglify <span class="im">from</span> <span class="st">&quot;gulp-uglify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="im">import</span> buffer <span class="im">from</span> <span class="st">&quot;vinyl-buffer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="im">import</span> sourcemaps <span class="im">from</span> <span class="st">&#39;gulp-sourcemaps&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="im">import</span> <span class="st">&#39;gutil&#39;</span> <span class="im">from</span> <span class="st">&#39;gulp-util&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="im">import</span> babelify <span class="im">from</span> <span class="st">&#39;babelify&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-9" title="9"></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&#39;jsx&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&#39;src/index.jsx&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb6-13" title="13">    <span class="dt">extensions</span><span class="op">:</span> [<span class="st">&#39;.jsx&#39;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-14" title="14">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span></a>
+<a class="sourceLine" id="cb6-15" title="15">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb6-16" title="16">  .<span class="at">transform</span>(babelify)</a>
+<a class="sourceLine" id="cb6-17" title="17">  .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb6-18" title="18">  .<span class="at">on</span>(<span class="st">&#39;error&#39;</span><span class="op">,</span> err <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-19" title="19">    <span class="va">util</span>.<span class="at">log</span>(<span class="st">&quot;Browserify Error&quot;</span><span class="op">,</span> <span class="va">util</span>.<span class="va">colors</span>.<span class="at">red</span>(<span class="va">err</span>.<span class="at">message</span>))</a>
+<a class="sourceLine" id="cb6-20" title="20">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb6-21" title="21">  .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&#39;index.js&#39;</span>))</a>
+<a class="sourceLine" id="cb6-22" title="22">  .<span class="at">pipe</span>(<span class="at">buffer</span>())</a>
+<a class="sourceLine" id="cb6-23" title="23">  .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">init</span>(<span class="op">{</span><span class="dt">loadMaps</span><span class="op">:</span> <span class="kw">true</span><span class="op">}</span>))</a>
+<a class="sourceLine" id="cb6-24" title="24">  .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">write</span>(<span class="st">&#39;./maps&#39;</span>))</a>
+<a class="sourceLine" id="cb6-25" title="25">  .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&#39;./dist&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-26" title="26"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+</div>
+<p>Image courtesy <a href="https://keyholesoftware.com">keyholesoftware.com</a></p>
+
+</body>
+
+
+</html>

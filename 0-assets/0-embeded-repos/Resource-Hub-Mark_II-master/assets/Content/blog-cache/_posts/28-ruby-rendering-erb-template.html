@@ -1,0 +1,174 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>I never used <a href="http://www.ruby-doc.org/stdlib-2.1.4/libdoc/erb/rdoc/ERB.html">ERB</a> outside Rails or
+      without <a href="http://github.com/rtomayko/tilt">tilt</a>. So while I was working with a bare rack app, I though
+      I should try our ERB directly and checkout its api.</p>
+    <p>So I taken a look into ERB Class just enough to render a template, nothing much in detail. Here is the syntax for
+      ERB constructor,</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">ERB</span>.new(template_string, safe_eval=<span class="dv">nil</span>, trim_mode=<span class="dv">nil</span>, outvar=<span class="st">&#39;_erbout&#39;</span>)</a></code></pre>
+    </div>
+    <p>let see how we can render some template with this.</p>
+    <h1 id="using-sting-template">Using Sting template</h1>
+    <p>Here is the simple example, for rendering a string template. Since we didn’t specify the <code>outvar</code> the
+      <code>result</code> method will return the rendered html.
+    </p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1">name = <span class="st">&quot;Whatznear&quot;</span>;</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="dt">ERB</span>.new(<span class="st">&quot;&lt;h1&gt;Hello ERB World!! &lt;/h1&gt;&lt;h3&gt;&lt;%= name %&gt;&lt;/h3&gt;&quot;</span>).result(binding)</a></code></pre>
+    </div>
+    <p>Hope you noticed that we are passing <code>binding</code> to result method. binding gives the context in which
+      the template to be evaluated, so they can replace the correct variables with its values.</p>
+    <p>If you like looking into details of <code>binding</code>, you can check the <a
+        href="http://www.ruby-doc.org/core-2.1.4/Binding.html">ruby doc for Binding</a>. The above snippet will result
+      in</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;h1&gt;</span>Hello ERB World!!<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">&lt;h3&gt;</span>Whatznear<span class="kw">&lt;/h3&gt;</span></a></code></pre>
+    </div>
+    <h1 id="using-template-file">Using template file</h1>
+    <p>If you want to render a template from file, you just need to read the content of file and pass to ERB
+      constructor.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb4-1" title="1">require <span class="st">&quot;erb&quot;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">class</span> <span class="dt">Basicerb</span></a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="kw">def</span> initialize name</a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="ot">@name</span> = name</a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="ot">@template</span> = <span class="dt">File</span>.read(<span class="st">&#39;./index.erb&#39;</span>)</a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-9" title="9"></a>
+<a class="sourceLine" id="cb4-10" title="10">  <span class="kw">def</span> render</a>
+<a class="sourceLine" id="cb4-11" title="11">    <span class="dt">ERB</span>.new(<span class="ot">@template</span>).result( binding )</a>
+<a class="sourceLine" id="cb4-12" title="12">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="kw">end</span></a></code></pre>
+    </div>
+    <pre class="erb"><code>&lt;%# index.erb %&gt;
+&lt;h1&gt;Hello ERB World!! &lt;/h1&gt;&lt;h3&gt;&lt;%= @name %&gt;&lt;/h3&gt;</code></pre>
+    <p>Here, we used <code>@name</code>, an instance variable because we are passing the context of
+      <code>Basicerb</code> object to <code>result</code> method.
+    </p>
+    <p>If you want to store the rendered html into another instance variable you can the variable as
+      <code>outvar</code>.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb6-1" title="1">require <span class="st">&quot;erb&quot;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">class</span> <span class="dt">Basicerb</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="ot">attr_reader</span> <span class="st">:html</span></a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6">  <span class="kw">def</span> initialize name</a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="ot">@name</span> = name</a>
+<a class="sourceLine" id="cb6-8" title="8">    <span class="ot">@template</span> = <span class="dt">File</span>.read(<span class="st">&#39;./index.erb&#39;</span>)</a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb6-10" title="10"></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="kw">def</span> render</a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="dt">ERB</span>.new(<span class="ot">@template</span>, <span class="dv">0</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;@html&quot;</span>).result( binding )</a>
+<a class="sourceLine" id="cb6-13" title="13">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="kw">end</span></a></code></pre>
+    </div>
+    <h1 id="using-layout-and-view-template">Using layout and view template</h1>
+    <p>The most confusing things was rendering some erb inside an layout. Here is the <code>layout.rb</code></p>
+    <pre class="erb"><code>&lt;div class=&quot;jumbotron&quot;&gt;
+    &lt;%= yield %&gt;
+&lt;/div&gt;</code></pre>
+    <p>and we use the above <code>index.erb</code> as view.</p>
+    <div class="sourceCode" id="cb8">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb8-1" title="1">require <span class="st">&quot;erb&quot;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">class</span> <span class="dt">Basicerb</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="kw">def</span> initialize name</a>
+<a class="sourceLine" id="cb8-5" title="5">    <span class="ot">@name</span> = name</a>
+<a class="sourceLine" id="cb8-6" title="6">    <span class="ot">@layout</span> = <span class="dt">File</span>.read(<span class="st">&#39;./layout.erb&#39;</span>)</a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="ot">@template</span> = <span class="dt">File</span>.read(<span class="st">&#39;./index.erb&#39;</span>)</a>
+<a class="sourceLine" id="cb8-8" title="8">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10">  <span class="kw">def</span> render</a>
+<a class="sourceLine" id="cb8-11" title="11">    templates = [<span class="ot">@template</span>, <span class="ot">@layout</span>]</a>
+<a class="sourceLine" id="cb8-12" title="12">    templates.inject(<span class="dv">nil</span>) <span class="kw">do</span> | prev, temp |</a>
+<a class="sourceLine" id="cb8-13" title="13">      _render(temp) { prev }</a>
+<a class="sourceLine" id="cb8-14" title="14">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-15" title="15">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-16" title="16"></a>
+<a class="sourceLine" id="cb8-17" title="17">  <span class="kw">def</span> _render temp</a>
+<a class="sourceLine" id="cb8-18" title="18">    <span class="dt">ERB</span>.new(temp).result( binding )</a>
+<a class="sourceLine" id="cb8-19" title="19">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-20" title="20"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Lets break it down how it works, The <a
+        href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html#method-i-inject">Enumerable#inject</a> will accept a
+      value and a block. The block will be executed for every element and the value we passed will be taken as first
+      element. So in this case, in the first iteration, <code>prev</code> will be <code>nil</code> and <code>temp</code>
+      will be the <code>@template</code> (view) string and pass it to <code>_render</code> method. Since this
+      <code>@template</code> doesn’t have a <code>yield</code> it just render the string as before.
+    </p>
+    <p>In the second iteration, the <code>prev</code> will be rendered html of <code>@template</code> and
+      <code>temp</code> will be <code>@layout</code>. Then these values will be passed to <code>_render</code>. Now
+      while rendering layout it have a <code>yield</code> method which will be replaced by rendered html of
+      <code>@template</code>. And finaly the <code>render</code> method will return html as below.
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;jumbotron&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="kw">&lt;h1&gt;</span>Hello ERB World!!<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="kw">&lt;h3&gt;</span>Whatznear<span class="kw">&lt;/h3&gt;</span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>Hooray, the result seems what we expected.</p>
+
+  </body>
+
+  
+</html>

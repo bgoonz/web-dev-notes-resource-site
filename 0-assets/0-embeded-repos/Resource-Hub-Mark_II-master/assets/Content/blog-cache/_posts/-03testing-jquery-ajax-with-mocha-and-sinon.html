@@ -1,0 +1,121 @@
+<!--
+
+---
+ Testing jQuery ajax with mocha and sinon
+date: 2013-03-02 16:53:22 UTC
+updated: 2013-03-02 16:53:22 UTC
+2008/kind#post jquery sinon mocha
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">Recently I wrote a URL shortener in&nbsp;JavaScript&nbsp; Soon
+    after I finished I thought of writing tests for a ajax calls used in that. I wrote this as it should work with both
+    in browser and node.js. The tests are run with mocha command without using phantomJS. You will find some extra code
+    (commonJS pattern) to&nbsp;achieve&nbsp;this.<br /><br />
+    <h3 style="text-align: left;">What components I used</h3>
+    <ul style="text-align: left;">
+      <li>Mocha : as the testing framework&nbsp;</li>
+      <li>jQuery : for ajax and deferred callbacks &nbsp;(jQuery for node is used for tests)</li>
+      <li>Sinon &nbsp; : for stubing the ajax call.</li>
+    </ul>
+    <div><br /></div>
+    <div>
+      <h3 style="text-align: left;">What is sinon?</h3>
+    </div>
+    <div><a href="http://sinonjs.org/" rel="nofollow" target="_blank">Sinon</a> is standalone test spies, stubs and
+      mocks for JavaScript. It provides us the methods to stub and restore and spy on a method and also mock. So it help
+      us to write tests without depending actual network calls.<br /><br /></div>
+    <h3 style="text-align: left;">What is jQuery Deferred?</h3>
+    <div><a href="http://api.jquery.com/category/deferred-object/" rel="nofollow" target="_blank">Deferred</a> is method
+      is added to jQuery from v1.5. It helps us to register multiple callbacks as a queue and execute the queue one
+      after the another. It can help you to write non-blocking code.<br /><br />
+      <h3 style="text-align: left;">Url shortner</h3>
+      <div>As I said before we are using jQuery.ajax for api calls, for the browser we assume that the html page is
+        already contains the jQuery. But to run on nodeJS we need to require the jQuery.</div> <br />
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/revathskumar/5071581.js?file=require_jquery.js"></script><br /> Now the
+      shorten function, I created a Url module with shorten function which call the ajax with parameters reuired. <br />
+      <script async defer src="https://gist.github.com/revathskumar/5071581.js?file=url.js"></script><br />Now again to work with
+      nodejs, we need to export the method. This will ensure that we can require this module in the test wo run in with
+      nodejs. <br />
+      <script async defer src="https://gist.github.com/revathskumar/5071581.js?file=export.js"></script><br />The Final code code
+=======
+      <script src="https://gist.github.com/revathskumar/5071581.js?file=require_jquery.js"></script><br /> Now the
+      shorten function, I created a Url module with shorten function which call the ajax with parameters reuired. <br />
+      <script src="https://gist.github.com/revathskumar/5071581.js?file=url.js"></script><br />Now again to work with
+      nodejs, we need to export the method. This will ensure that we can require this module in the test wo run in with
+      nodejs. <br />
+      <script src="https://gist.github.com/revathskumar/5071581.js?file=export.js"></script><br />The Final code code
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      for the url module is available as <a
+        href="https://gist.github.com/revathskumar/5071581#file-url_shorter-js">gist</a>. <br /><br />
+      <h3 style="text-align: left;">Url shortner Test</h3>Now on to testing. First we will be require all the needed
+      modules to run the test. It includes assert, sinson, jQuery and our url module. <br />
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/revathskumar/5071581.js?file=require_for_test.js"></script><noscript>
+=======
+      <script src="https://gist.github.com/revathskumar/5071581.js?file=require_for_test.js"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <pre>var assert = require('assert'),<br />  sinon = require('sinon'),<br />  $ = require('jquery'),<br />  url = require('../js/backbone/lib/url');<br /></pre>
+      </noscript><br />Next in the beforeEach we need to spy the callback to check whether it is called and also need to
+      stub the ajax call. Here the sinon comes to action for stub and spy and jQuery Deferred for execute the success
+      and fail callback as we needed and also making the test non-blocking. <br />In AfterEach we need to restore the
+      original ajax function, else the sinon will trow error while the next test saying you can't stub the method
+      already stubbed. <br />
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/revathskumar/5071581.js?file=before_and_after_each.js"></script><noscript>
+=======
+      <script src="https://gist.github.com/revathskumar/5071581.js?file=before_and_after_each.js"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <pre><br />    beforeEach(function () {<br />      this.callback = sinon.spy();<br />      sinon.stub($, 'ajax', function (options) {<br />        var dfd = $.Deferred();<br />        if(options.success) dfd.done(options.success({status_code: 200, data: {url: "bit.ly/aaaa"}}));<br />        if(options.error) dfd.fail(options.error);<br />        dfd.success = dfd.done;<br />        dfd.error = dfd.fail;<br />        return dfd;<br />      });<br /> <br />    });<br /> <br />    afterEach(function () {<br />      $.ajax.restore();<br />    });<br /><br /></pre>
+      </noscript><br />Now the test cases. I have written 4 of it. In those we will use Deferred.resolve and
+      Deferred.reject to exectute the success and error callbacks. <script
+        src="https://gist.github.com/revathskumar/5071581.js?file=tests.js"></script><br />
+      <div>I hope the Inline comments will explain rest of the things. now we wrap the cases and beforeEach and
+        afterEach callbacks in a describe block. </div><br />
+      <div>Done!</div><br />
+      <div>Now we can execute it with mocha command. The whole test will be available as <a
+          href="https://gist.github.com/revathskumar/5071581#file-url_shorter_test-js">gist</a>.</div><br /><br />
+      <div>I hope you got a brief idea about how I tested the ajax call with help of sinon and $.Deferred</div><br />
+      <div>happy coding. ;)</div>
+    </div>
+  </div>
+</body>

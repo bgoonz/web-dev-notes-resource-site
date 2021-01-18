@@ -1,0 +1,69 @@
+<!--
+
+---
+ "Rails : require custom modules from lib"
+date: 2013-04-18 21:43:38 UTC
+updated: 2013-04-18 21:43:38 UTC
+2008/kind#post
+---
+-->
+
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on"><strong>Rails</strong> won't require all our custom classes and
+    modules from the <strong>lib</strong> folder by default. But manually requiring each files won't look neat. Here is
+    how you can ask Rails to require those files.<br />In you application.rb, find the line given below <br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/revathskumar/5416454.js?file=before.rb"></script>
+    <noscript><code>#config.autoload_paths += %W(#{config.root}/extras)</code><br /></noscript><br /> now uncomment and
+    change the path to lib.<br />
+    <script async defer src="https://gist.github.com/revathskumar/5416454.js?file=after.rb"></script>
+=======
+    <script src="https://gist.github.com/revathskumar/5416454.js?file=before.rb"></script>
+    <noscript><code>#config.autoload_paths += %W(#{config.root}/extras)</code><br /></noscript><br /> now uncomment and
+    change the path to lib.<br />
+    <script src="https://gist.github.com/revathskumar/5416454.js?file=after.rb"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <noscript><code>config.autoload_paths += %W(#{config.root}/lib)</code><br /></noscript>This makes rails to require
+    your custom classes and modules from lib or some other custom folder. <br /><br />Hope it helped you.<br />Happy
+    coding.
+  </div>
+</body>
+
+</html>
+$

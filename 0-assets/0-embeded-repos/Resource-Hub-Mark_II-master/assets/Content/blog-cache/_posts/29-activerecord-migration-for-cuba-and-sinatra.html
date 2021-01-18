@@ -1,0 +1,91 @@
+<!--
+
+---
+ ActiveRecord Migration for cuba and sinatra
+date: 2013-01-29 09:15:16 UTC
+updated: 2013-01-29 09:15:16 UTC
+2008/kind#post ruby cuba activerecord Sinatra
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://2.bp.blogspot.com/-FNAYC_NgaDc/UQeOcMTMbrI/AAAAAAAALOQ/bKCITp9Ye0E/s1600/sinatra.png"
+        imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+          src="http://2.bp.blogspot.com/-FNAYC_NgaDc/UQeOcMTMbrI/AAAAAAAALOQ/bKCITp9Ye0E/s1600/sinatra.png" /></a></div>
+    <div><br /></div>
+    <div>Rails like highly featured frameworks are already packed with the rake tasks for database migrations. But
+      recently when I was playing with <a href="http://cuba.is/" rel="nofollow" target="_blank">cuba</a>, a micro <a
+        href="https://github.com/soveran/cuba" rel="nofollow" target="_blank">framework</a> for ruby, I really wanted to
+      setup migrations so that I can handle database changes in production without hassle. The migration tasks are not
+      bundle with cuba, so I wrote two tasks to handle database creation and database migration. Here is my Rakefile
+<<<<<<< HEAD
+      looks like <script async defer src="https://gist.github.com/4662272.js?file=migration.rake"></script><noscript>
+=======
+      looks like <script src="https://gist.github.com/4662272.js?file=migration.rake"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <pre><br />require 'active_record'<br /> <br />task(:environment) do<br />  env = ENV["RACK_ENV"] ? ENV["RACK_ENV"] : "development"<br />  ActiveRecord::Base.establish_connection(YAML::load_file('config.yml')['database'][env])<br />end<br /> <br />namespace :db do<br />  task(:create =&gt; :environment) do<br />    env = ENV["RACK_ENV"] ? ENV["RACK_ENV"] : "development"<br />    config = YAML::load_file('config.yml')['database'][env]<br />    ActiveRecord::Base.establish_connection(config.merge('database' =&gt; nil))<br />    ActiveRecord::Base.connection.create_database config['database']<br />  end<br /> <br />  task(:migrate =&gt; :environment) do<br />    ActiveRecord::Migrator.migrate('db/migrate', ENV['VERSION'] ? ENV['VERSION'].to_i : nil)<br />  end<br />end<br /></pre>
+      </noscript>So now I can keep my ActiveRecord migration in the folder db/migrate and use the rake commands to
+      execute it. I can create the db using the command <script
+        src="https://gist.github.com/4662272.js?file=dbcreate.sh"></script><noscript>
+        <pre>rake db:create</pre>
+<<<<<<< HEAD
+      </noscript> Then migrate using the command <script async defer src="https://gist.github.com/4662272.js?file=dbmigrate.sh">
+=======
+      </noscript> Then migrate using the command <script src="https://gist.github.com/4662272.js?file=dbmigrate.sh">
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      </script><noscript>
+        <pre>rake db:migrate</pre>
+      </noscript> You can use <b id="internal-source-marker_0.6019464423879981" style="font-weight: normal;"><span
+          style="background-color: white; color: #dd1144; font-family: Consolas; font-size: 15px; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">RACK_ENV</span></b><span
+        style="font-family: Arial;"><span style="font-size: 15px; white-space: pre-wrap;"> to specify the environment
+          and </span></span><b id="internal-source-marker_0.6019464423879981" style="font-weight: normal;"><span
+          style="background-color: white; color: #dd1144; font-family: Consolas; font-size: 15px; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">VERSION</span></b>
+      to specify version to which you want to migrate Eg : <script
+        src="https://gist.github.com/4662272.js?file=example.sh"></script><noscript>
+        <pre><b>rake db:create RACK_ENV=production</b><br />       <b> rake db:migrate VERSION=10</b></pre>
+      </noscript><br />This can be used in both cuba and <a href="http://www.sinatrarb.com/" rel="nofollow"
+        target="_blank">sinatra</a>.</div>
+  </div>
+</body>
+
+</html>
+$

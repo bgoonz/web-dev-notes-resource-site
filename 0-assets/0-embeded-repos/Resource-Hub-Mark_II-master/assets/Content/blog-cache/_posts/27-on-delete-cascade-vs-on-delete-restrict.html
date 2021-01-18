@@ -1,0 +1,102 @@
+<!--
+
+---
+ on delete cascade v/s on delete restrict
+date: 2009-08-27 12:00:58 UTC
+updated: 2009-08-27 12:00:58 UTC
+2008/kind#post mysql on-delete-restrict on-delete-cascade
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <span style="font-size: large;">For setting Foreign key in MySql both the tables should be innoDB.</span><br /><span
+    style="font-size: large;"><br />1.Alter table <tablename _moz-userdefined=""> ENGINE="INNODB"</tablename>
+  </span><br /><span style="font-size: large;">&nbsp;&nbsp; &nbsp;&nbsp; this query will convert table into
+    innoDB</span><br /><span style="font-size: large;">&nbsp;2. Consider two tables</span><br /><span
+    style="font-size: large;">&nbsp;&nbsp; &nbsp;&nbsp; 1.parent</span><br /><br />
+  <table border="2">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>kites</td>
+      </tr>
+    </tbody>
+  </table>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <span style="font-size: large;">2.child</span><br />
+  <table border="2">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>address</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>cochin</td>
+      </tr>
+    </tbody>
+  </table><span style="font-size: large;">3.set the foreign key with on delete cascade<br /></span><br /><span
+    style="font-size: large;">&nbsp;&nbsp;&nbsp; <b>alter table&nbsp; child add foreign key (id) references parent(id)
+      on delete cascade.</b></span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; If you set a foreign key with&nbsp; on delete cascade&nbsp; then</span><br /><span
+    style="font-size: large;">&nbsp;&nbsp;&nbsp; 1.first tou want to insert data into parent then to
+    child.</span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; 2.You&nbsp; can delete record from child
+    independently but you can't insert into child without corresponing record in parent.</span><br /><span
+    style="font-size: large;">&nbsp;&nbsp;&nbsp; 3.If you delete a record from&nbsp; parent table it will delete from
+    both parent and child table without any warning.&nbsp;</span><br /><span style="font-size: large;">Eg: if you try to
+    delete a record from parent with id 1 it will also delete the&nbsp; record from child whose
+    id=1</span><br /><br /><br /><span style="font-size: large;">4.set the foreign key with on delete
+    restrict&nbsp;</span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; </span><span
+    style="font-size: large;"><b>alter table&nbsp; child add foreign key (id) references parent(id) on delete
+      restrict.</b></span><span style="font-size: large;">&nbsp;</span><br /><span
+    style="font-size: large;">&nbsp;&nbsp; If you set a foreign key with&nbsp; on delete restrict&nbsp; then</span><span
+    style="font-size: large;"> <br /></span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; 1.first you want to
+    insert data into parent then to child.</span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; 2.You&nbsp;
+    can delete record from child independently but you can't insert into child without corresponing record in
+    parent.</span><br /><span style="font-size: large;">&nbsp;&nbsp;&nbsp; 3.<i>It will restrict deletion from parent
+      tables if a corresponding child record is available. &nbsp;</i></span><br /><span
+    style="font-size: large;">&nbsp;&nbsp;&nbsp;&nbsp; 4.I f you want to delete from parent table then you want to
+    delete record from child table first<i><br /></i></span><br /><br /><span style="font-size: large;"><br /></span>

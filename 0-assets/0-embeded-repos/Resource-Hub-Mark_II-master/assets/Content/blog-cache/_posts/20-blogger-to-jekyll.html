@@ -1,0 +1,98 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>On Aug 15, I moved my whole blog from blogger to jekyll. I thought It will be easy to migrate but restoring the
+      whole urls was really painfull.</p>
+    <h2 id="getting-started"><em>Getting Started</em></h2>
+    <p>So I started with installing jekyll</p>
+    <p>{% highlight sh %} gem install jekyll {% endhighlight %}</p>
+    <p>and then initiliased my blog</p>
+    <p>{% highlight sh %} jekyll new blog.revathskumar.com {% endhighlight %}</p>
+    <h2 id="importing"><em>Importing</em></h2>
+    <p>Now I need to import all my existing blog posts from blogger to jekyll. I used a <a
+        href="https://gist.github.com/kennym/1115810">import script</a> by <span class="citation"
+        data-cites="kennym">[@kennym]</span>(https://github.com/kennym).</p>
+    <p>As per the script instructions I took my feed url from blogger and passed to the script, I thought <strong>oh! ya
+        I am done</strong>. But I was wrong, the feed contained only half of my blog posts.</p>
+    <p>I thought I am lost, Then I exported the whole blog from blogger and tried to pass into the import script, but
+      import script didn’t accept the exported blog.</p>
+    <p>So I need a way to convert this exported blog to feeds. Then I put the exported blog in my dropbox and provided
+      the public link to <a href="http://feedburner.google.com">feedburner</a> and tried to generated a new feed url
+      with all the posts.</p>
+    <p><strong>Hooray</strong>, It worked a new feed with all my posts and worked well with the import script.</p>
+    <h2 id="configuring"><em>Configuring</em></h2>
+    <p>Then I update premalink option the <strong>_config.yml</strong> for custom permalink setting as same I followed
+      on blogger.</p>
+    <p>{% highlight yaml %} name: Revath S Kumar markdown: redcarpet pygments: true</p>
+    <p>permalink: ‘/:year/:month/:title.html’ {% endhighlight %}</p>
+    <h2 id="pushing-to-github"><em>Pushing to Github</em></h2>
+    <p>I created a github repo for my blog with</p>
+    <p>{% highlight sh %} hub create blog.revathskumar.com {% endhighlight %}</p>
+    <p><a href="http://hub.github.com/">Hub</a> is a command line wrapper for Git. The above command will create a repo
+      in my github account and add the git url to my remote.</p>
+    <p>Then I created a new branch named <a href="http://pages.github.com/">gh-pages</a>. In order to publish blog with
+      github pages your branch name should be gh-pages.</p>
+    <p>Then I did my initial commit and push to the gh-pages branch. Now I can see my blog in <a
+        href="http://revathskumar.github.io/blog.revathskumar.com">revathskumar.github.io/blog.revathskumar.com</a>.</p>
+    <h2 id="custom-domain"><em>Custom domain</em></h2>
+    <p>Configuing custom domain is easy. Since I am using subdomain for my blog, I went to domain control panel and set
+      the CNAME for the subdomain <code>blog.revathskumar.com</code> as <code>revathskumar.github.io</code>.</p>
+    <p>Then I added a file named CNAME, with content <code>blog.revathskumar.com</code> in root directory and pushed.
+    </p>
+    <p>The more details of custom domain can be found in <a
+        href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">Official Github pages doc</a>.</p>
+    <p>After a bit of time <code>blog.revathskumar.com</code> started showing my latest blog on github pages. /</p>
+    <p>Then I verified all the exising urls and new urls and make sure no links are broken and went to bed.</p>
+
+  </body>
+
+  
+</html>

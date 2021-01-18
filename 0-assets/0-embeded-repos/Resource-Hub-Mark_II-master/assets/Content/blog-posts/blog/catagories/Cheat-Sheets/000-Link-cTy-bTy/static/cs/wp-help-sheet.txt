@@ -1,0 +1,121 @@
+****************************************
+
+This document was created by Michael Caputo found at www.diaryofarockstar.com.
+It's purpose is basically to help people build wordpress templates quickly an easily (www.wordpress.org).
+Please distribute, add, edit, correct, destroy, append, slice, snip, cut, break, and love this file as it has helped me, and i'm sure it will also be a help to you as well.
+If you use it, please put a link to my blog www.diaryofarockstar.com on your blog, and let me know, because i'd love to link your site to mine as well.
+Also, if you believe that you have something that should be added to this file, Email me at mike@diaryofarockstar.com and i'll add it.
+Thanks for looking!
+
+Michael Caputo - www.diaryofarockstar.com
+(last edited July 16th 2006 for wordpress 2.03)
+
+****************************************
+
+
+
+
+Blog Title
+<?php bloginfo('name'); ?>
+
+Title of the entry
+<?php the_title(); ?>
+
+Permalink to the Entry
+<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">PERMALINK</a>
+
+Numaric ID of the entry, useful when making entry-23 ID's for referencing anchors
+<?php the_ID(); ?>
+
+Date in June 6th, 2006 format
+<?php the_time('F jS, Y') ?>
+
+The author of the entry
+<?php the_author() ?>
+
+Category that the entry is listed in
+<?php the_category(', ') ?>
+
+The entry body
+<?php the_content('Read the rest of this entry &raquo;'); ?>
+
+Comment links with numbers of comments
+<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+
+Author can edit the entry (only if logged in)
+<?php edit_post_link('Edit', '', ' | '); ?>
+
+List pages (within ul tag) useful for navigation
+<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
+
+Path to current template folder
+<?php bloginfo('template_url'); ?>
+
+Path to the blog url
+<?php bloginfo('url'); ?>
+
+List Recent Entries
+<?php query_posts('showposts=10'); ?>
+<?php while (have_posts()) : the_post(); ?>
+<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+<?php endwhile; ?>
+
+List Monthly Archives
+<?php wp_get_archives('type=monthly'); ?>
+
+List All Categories
+<?php wp_list_cats('sort_column=name&hierarchical=0'); ?>
+
+List All Links
+<?php get_links(-1, '<li>', '</li>',
+' ', FALSE, 'rand', 
+FALSE,FALSE, 20, 
+FALSE, TRUE); ?>
+
+List ALL categories
+<?php wp_list_cats(); ?>
+
+
+
+
+
+
+Basic Loop
+<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
+posted by <?php the_author() ?> on <?php the_time('F jS, Y') ?>
+<?php the_content('Read the rest of this entry &raquo;'); ?>
+<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?> | <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">Permalink</a> | <?php the_category(', ') ?>
+
+
+Navigation
+<ul>
+	<li><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">Home</a></li>
+	<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
+</ul>
+
+
+Recent Comments
+<ul>
+	<?php mdv_recent_comments(4, 15, '<li>', '</li>', false, 0); ?>
+</ul>
+
+
+Categories
+<ul>
+	<?php wp_list_cats(); ?>
+</ul>
+
+
+Monthly Archives
+<ul>
+	<?php wp_get_archives('type=monthly'); ?>
+</ul>
+
+
+Blogroll
+<ul>
+	<?php get_links(-1, '<li>', '</li>',
+	' ', FALSE, 'rand', 
+	FALSE,FALSE, 20, 
+	FALSE, TRUE); ?>
+</ul>

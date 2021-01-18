@@ -1,0 +1,40 @@
+{
+  "name": "command-control-click-react",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "build": "parcel build index.html",
+    "lint": "xo .",
+    "format": "xo . --fix"
+  },
+  "author": "Hugo Di Francesco",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "main": "main.js",
+  "keywords": [
+    "react",
+    "react-boilerplate",
+    "parcel-bundler"
+  ],
+  "license": "MIT",
+  "description": "Simple React Command or Control + click detection",
+  "devDependencies": {
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prop-types": "^15.7.2",
+    "xo": "^0.34.2"
+  },
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "space": true,
+    "globals": [
+      "document"
+    ]
+  }
+}

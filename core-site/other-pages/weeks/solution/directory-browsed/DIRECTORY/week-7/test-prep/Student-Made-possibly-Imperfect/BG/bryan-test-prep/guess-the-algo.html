@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/lib/index.min.js">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath@0.6.5/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head>
+<body class="markdown-body">
+<p>// --------------------------------------------------------------------------------------------------------------------
+//<br>
+<span style="text-align:center; font-family:Papyrus;color:red; font-size:3em;">Guess What Algo</span></p>
+<p>// --------------------------------------------------------------------------------------------------------------------</p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<p>// HINTS:</p>
+<p>// divide and conquer
+// need a helper function that solves merging elements of two sorted arrays into a single sorted array</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">if</span> (array.length &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> array;
+    }
+
+    <span class="hljs-keyword">let</span> midIdx = <span class="hljs-built_in">Math</span>.floor(array.length / <span class="hljs-number">2</span>);
+
+    <span class="hljs-keyword">let</span> leftHalf = array.slice(<span class="hljs-number">0</span>, midIdx);
+    <span class="hljs-keyword">let</span> rightHalf = array.slice(midIdx);
+
+    <span class="hljs-keyword">let</span> sortedLeft = guessWhatAlgo(leftHalf);
+    <span class="hljs-keyword">let</span> sortedRight = guessWhatAlgo(rightHalf);
+
+    <span class="hljs-keyword">return</span> helperguessWhatAlgo(sortedLeft, sortedRight);
+}
+</div></code></pre>
+<p>// ANSWER: Merge sort</p>
+<p>// if there is only one element in the list, it is already sorted.return that array.
+// otherwise, divide the list recursively into two halves until it can no more be divided.
+// merge the smaller lists into new list in sorted order.</p>
+<p>// TIME COMPLEXITY: O(nlogn)</p>
+<p>// SPACE COMPLEXITY:O(n)
+<img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/merge_sort/images/MergeSort.gif" alt=""><img src="http://btholt.github.io/four-semesters-of-cs/img/merge.gif" alt=""><img src="https://i.imgur.com/HU2tfzo.gif" alt="">
+<img src="https://media1.giphy.com/media/Jl1q5AiIyO7AAdMOG8/giphy.gif" alt=""><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--pdU-IP47--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" alt=""></p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif" alt=""></p>
+<p><img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/bubble_sort/images/BubbleSort.gif" alt="">
+// HINT:</p>
+<p>// works by performing multiple passes to move elements closer to their final positions</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">let</span> swapped = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">while</span> (swapped) {
+        <span class="hljs-comment">// O(n)</span>
+        swapped = <span class="hljs-literal">false</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+            <span class="hljs-comment">//O(n)</span>
+
+            <span class="hljs-keyword">if</span> (array[i] &gt; array[i + <span class="hljs-number">1</span>]) {
+                swap(array, i, i + <span class="hljs-number">1</span>);
+
+                swapped = <span class="hljs-literal">true</span>;
+            }
+        }
+    }
+
+    <span class="hljs-keyword">return</span> array;
+}
+</div></code></pre>
+<p>// ANSWER: Bubble sort</p>
+<p>// TIME COMPLEXITY: O(n * n === n^2)</p>
+<p>// SPACE COMPLEXITY: O(1)
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif" alt=""></p>
+<p><img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/bubble_sort/images/BubbleSort.gif" alt=""></p>
+<p><img src="https://java2blog.com/wp-content/uploads/2017/12/BubbleSort_Avg_case.gif" alt=""></p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<p>// HINT:</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">if</span> (array.length &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> array;
+    }
+
+    <span class="hljs-keyword">let</span> pivot = array.shift();
+    <span class="hljs-keyword">let</span> left = array.filter(<span class="hljs-function">(<span class="hljs-params">el</span>) =&gt;</span> el &lt; pivot);
+    <span class="hljs-keyword">let</span> right = array.filter(<span class="hljs-function">(<span class="hljs-params">el</span>) =&gt;</span> el &gt;= pivot);
+
+    <span class="hljs-keyword">let</span> leftSorted = guessWhatAlgo(left);
+    <span class="hljs-keyword">let</span> rightSorted = guessWhatAlgo(right);
+
+    <span class="hljs-keyword">return</span> [...leftSorted, pivot, ...rightSorted];
+}
+</div></code></pre>
+<p>// ANSWER: Quick sort</p>
+<p>// TIME COMPLEXITY: worst case: O(n^2) best case: O(nlogn)</p>
+<p>// SPACE COMPLEXITY:O(n)
+<img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/quick_sort/images/QuickSort.gif" alt=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif" alt=""><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" alt=""><img src="http://btholt.github.io/four-semesters-of-cs/img/bubble.gif" alt=""></p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) {
+        <span class="hljs-keyword">let</span> currElement = arr[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span> &amp;&amp; currElement &lt; arr[j]; j--) {
+            arr[j + <span class="hljs-number">1</span>] = arr[j];
+        }
+        arr[j + <span class="hljs-number">1</span>] = currElement;
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+</div></code></pre>
+<p>// ANSWER: Insertion sort</p>
+<p>// TIME COMPLEXITY: O(n^2)</p>
+<p>// SPACE COMPLEXITY:O(1)</p>
+<p><img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/insertion_sort/images/InsertionSort.gif" alt=""><img src="https://thumbs.gfycat.com/CornyThickGordonsetter-small.gif" alt=""><img src="https://i.pinimg.com/originals/92/b0/34/92b034385c440e08bc8551c97df0a2e3.gif" alt=""></p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">array, target</span>) </span>{
+    <span class="hljs-keyword">if</span> (array.length === <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">let</span> midIdx = <span class="hljs-built_in">Math</span>.floor(array.length / <span class="hljs-number">2</span>);
+
+    <span class="hljs-keyword">if</span> (target &lt; array[midIdx]) {
+        <span class="hljs-keyword">let</span> leftHalf = array.slice(<span class="hljs-number">0</span>, midIdx);
+
+        <span class="hljs-keyword">return</span> guessWhatAlgo(leftHalf, target);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &gt; array[midIdx]) {
+        <span class="hljs-keyword">let</span> rightHalf = array.slice(midIdx + <span class="hljs-number">1</span>);
+
+        <span class="hljs-keyword">return</span> guessWhatAlgo(rightHalf, target);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+}
+</div></code></pre>
+<p>// ANSWER: Binary Search</p>
+<p>// TIME COMPLEXITY: O(logn)</p>
+<p>// SPACE COMPLEXITY:O(n)
+<img src="https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-sorted-array-animation.gif" alt=""><img src="https://i.pinimg.com/originals/e2/9a/31/e29a31c78bcc0d07c612adc77acc09a0.gif" alt="">]</p>
+<pre><code><code><div>&lt;===================~~==-----==()==-----==~~==========================&gt;
+
+</div></code></code></pre>
+<hr>
+<hr>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guessWhatAlgo</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+        <span class="hljs-keyword">let</span> minIndex = i;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; arr.length; j++) {
+            <span class="hljs-keyword">if</span> (arr[minIndex] &gt; arr[j]) {
+                minIndex = j;
+            }
+        }
+
+        swap(arr, i, minIndex);
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+</div></code></pre>
+<p>// ANSWER: Selection sort</p>
+<p>// TIME COMPLEXITY: O(n^2)</p>
+<p>// SPACE COMPLEXITY:O(1)</p>
+<pre><code><code><div></div></code></code></pre>
+<p>![selection](<img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/selection_sort/images/SelectionSort.gif" alt=""></p>
+<p>![selection](<img src="https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/selection_sort/images/SelectionSort.gif" alt="">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Selection_Sort_Animation.gif" alt=""><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--T7PUry2L--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://miro.medium.com/max/3840/1%2Ak0dHMa2l2bRr95VB4llOqw.gif" alt=""></p>
+<hr>
+<hr>
+<p>// Use this pseudocode to implement the bubble sort
+function bubbleSort(array) {
+// n := length(array)
+// repeat
+//  swapped = false
+//  for i := 1 to n - 1 inclusive do
+//
+//     /* if this pair is out of order <em>/
+//     if A[i - 1] &gt; A[i] then
+//
+//       /</em> swap them and remember something changed */
+//       swap(A[i - 1], A[i])
+//       swapped := true
+//
+//     end if
+//   end for
+// until not swapped
+}</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params">array, idx1, idx2</span>) </span>{
+    <span class="hljs-keyword">let</span> temp = array[idx1]; <span class="hljs-comment">// save a copy of the first value</span>
+    array[idx1] = array[idx2]; <span class="hljs-comment">// overwrite the first value with the second value</span>
+    array[idx2] = temp; <span class="hljs-comment">// overwrite the second value with the first value</span>
+}
+</div></code></pre>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bubbleSort</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-comment">// this variable will be used to track whether or not we</span>
+    <span class="hljs-comment">// made a swap on the previous pass. If we did not make</span>
+    <span class="hljs-comment">// any swap on the previous pass, then the array must</span>
+    <span class="hljs-comment">// already be sorted</span>
+    <span class="hljs-keyword">let</span> swapped = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-comment">// this while will keep doing passes if a swap was made</span>
+    <span class="hljs-comment">// on the previous pass</span>
+
+    <span class="hljs-keyword">while</span> (swapped) {
+        swapped = <span class="hljs-literal">false</span>; <span class="hljs-comment">// reset swap to false</span>
+
+        <span class="hljs-comment">// this for will perform a single pass</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+            <span class="hljs-comment">// if the two value are not ordered...</span>
+            <span class="hljs-keyword">if</span> (array[i] &gt; array[i + <span class="hljs-number">1</span>]) {
+                <span class="hljs-comment">// swap the two values</span>
+                swap(array, i, i + <span class="hljs-number">1</span>);
+
+                <span class="hljs-comment">// since you made a swap, remember that you did so</span>
+                <span class="hljs-comment">// b/c we should perform another pass after this one</span>
+                swapped = <span class="hljs-literal">true</span>;
+            }
+        }
+    }
+
+    <span class="hljs-keyword">return</span> array;
+}
+</div></code></pre>
+<pre><code class="language-js"><div><span class="hljs-comment">// Try to implement swap on your own, this time.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params">arr, index1, index2</span>) </span>{}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selectionSort</span>(<span class="hljs-params">list</span>) </span>{
+    <span class="hljs-comment">// list  : array of items</span>
+    <span class="hljs-comment">// n     : size of list</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// for i = 1 to n - 1</span>
+    <span class="hljs-comment">// /* set current element as minimum*/</span>
+    <span class="hljs-comment">//    min = i</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">//    /* check the element to be minimum */</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">//    for j = i+1 to n</span>
+    <span class="hljs-comment">//       if list[j] &lt; list[min] then</span>
+    <span class="hljs-comment">//          min = j;</span>
+    <span class="hljs-comment">//       end if</span>
+    <span class="hljs-comment">//    end for</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">//    /* swap the minimum element with the current element</span>
+    <span class="hljs-comment">//       using the above swap function*/</span>
+    <span class="hljs-comment">//    if indexMin != i  then</span>
+    <span class="hljs-comment">//       swap list[min] and list[i]</span>
+    <span class="hljs-comment">//    end if</span>
+    <span class="hljs-comment">// end for</span>
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selectionSort</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-comment">// the `i` loop will track the index that points to the first element of the unsorted region:</span>
+    <span class="hljs-comment">//    this means that the sorted region is everything left of index i</span>
+    <span class="hljs-comment">//    and the unsorted region is everything to the right of index i</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+        <span class="hljs-keyword">let</span> minIndex = i;
+
+        <span class="hljs-comment">// the `j` loop will iterate through the unsorted region and find the index of the smallest element</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; arr.length; j++) {
+            <span class="hljs-keyword">if</span> (arr[minIndex] &gt; arr[j]) {
+                minIndex = j;
+            }
+        }
+
+        <span class="hljs-comment">// after we find the minIndex in the unsorted region,</span>
+        <span class="hljs-comment">// swap that minIndex with the first index of the unsorted region</span>
+        swap(arr, i, minIndex);
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+
+
+
+</div></code></pre>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insertionSort</span>(<span class="hljs-params">list</span>) </span>{
+    <span class="hljs-comment">// for i from 1 to length(list) inclusive do:</span>
+    <span class="hljs-comment">//   /* select value to be inserted */</span>
+    <span class="hljs-comment">//   valueToInsert = list[i]</span>
+    <span class="hljs-comment">//   holePosition = i</span>
+    <span class="hljs-comment">//   /* locate hole position for the element to be inserted */</span>
+    <span class="hljs-comment">//   while holePosition &gt; 0 and list[holePosition-1] &gt; valueToInsert do:</span>
+    <span class="hljs-comment">//     list[holePosition] = list[holePosition-1]</span>
+    <span class="hljs-comment">//     holePosition = holePosition -1</span>
+    <span class="hljs-comment">//   end while</span>
+    <span class="hljs-comment">//   /* insert the number at hole position */</span>
+    <span class="hljs-comment">//   list[holePosition] = valueToInsert</span>
+    <span class="hljs-comment">// end for</span>
+}
+
+<span class="hljs-comment">// All 3 implementations work the same, just a reworking of syntax</span>
+
+<span class="hljs-comment">// Insertion sort keeps a sorted left region working from left to right examining </span>
+<span class="hljs-comment">// each item and comparing it to items on its left. It then inserts the item in </span>
+<span class="hljs-comment">// the correct oposition in the array.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insertionSortV2</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) {
+        <span class="hljs-keyword">let</span> j = i;
+        <span class="hljs-keyword">while</span> (j &gt; <span class="hljs-number">0</span> &amp;&amp; arr[j - <span class="hljs-number">1</span>] &gt; arr[j]) {
+            swap(arr, j - <span class="hljs-number">1</span>, j);
+            j--;
+        }
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params">arr, index1, index2</span>) </span>{
+    <span class="hljs-keyword">let</span> temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+}
+
+<span class="hljs-comment">// The version below swaps out the for loop for a while loop to avoid using var</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insertionSortV2</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-comment">// the `i` loop will iterate through every element of the array</span>
+    <span class="hljs-comment">// we begin at i = 1, because we can consider the first element of the array as a</span>
+    <span class="hljs-comment">// trivially sorted region of only one element</span>
+    <span class="hljs-comment">// insertion sort allows us to insert new elements anywhere within the sorted region</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) {
+        <span class="hljs-comment">// grab the first element of the unsorted region</span>
+        <span class="hljs-keyword">let</span> currElement = arr[i];
+
+        <span class="hljs-comment">// the `j` loop will iterate left through the sorted region,</span>
+        <span class="hljs-comment">// looking for a legal spot to insert currElement</span>
+        <span class="hljs-keyword">let</span> j = i - <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// keep moving left while currElement is less than the j-th element</span>
+        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; currElement &lt; arr[j]) {
+            arr[j + <span class="hljs-number">1</span>] = arr[j];
+            <span class="hljs-comment">// the line above will move the j-th element to the right,</span>
+            <span class="hljs-comment">// leaving a gap to potentially insert currElement</span>
+            <span class="hljs-comment">// we have to remember to decrement in our while loop!</span>
+            j--;
+        }
+        <span class="hljs-comment">// insert currElement into that gap</span>
+        arr[j + <span class="hljs-number">1</span>] = currElement;
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+
+
+<span class="hljs-comment">// This solution utilizes var in the inner for loop to be able to use the variable</span>
+<span class="hljs-comment">// after the loop exits. I generally try to avoid var because of the complications</span>
+<span class="hljs-comment">// it can present.</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insertionSortV3</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-comment">// the `i` loop will iterate through every element of the array</span>
+    <span class="hljs-comment">// we begin at i = 1, because we can consider the first element of the array as a</span>
+    <span class="hljs-comment">// trivially sorted region of only one element</span>
+    <span class="hljs-comment">// insertion sort allows us to insert new elements anywhere within the sorted region</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) {
+        <span class="hljs-comment">// grab the first element of the unsorted region</span>
+        <span class="hljs-keyword">let</span> currElement = arr[i];
+
+        <span class="hljs-comment">// the `j` loop will iterate left through the sorted region,</span>
+        <span class="hljs-comment">// looking for a legal spot to insert currElement</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span> &amp;&amp; currElement &lt; arr[j]; j--) {
+            <span class="hljs-comment">// keep moving left while currElement is less than the j-th element</span>
+
+            arr[j + <span class="hljs-number">1</span>] = arr[j];
+            <span class="hljs-comment">// the line above will move the j-th element to the right,</span>
+            <span class="hljs-comment">// leaving a gap to potentially insert currElement</span>
+        }
+        <span class="hljs-comment">// insert currElement into that gap</span>
+        arr[j + <span class="hljs-number">1</span>] = currElement;
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+</div></code></pre>
+<pre><code class="language-js"><div>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">merge</span>(<span class="hljs-params">array1, array2</span>) </span>{
+    <span class="hljs-comment">// var result as array</span>
+    <span class="hljs-comment">// while ( a and b have elements )</span>
+    <span class="hljs-comment">//   if ( a[0] &gt; b[0] )</span>
+    <span class="hljs-comment">//     add b[0] to the end of result</span>
+    <span class="hljs-comment">//     remove b[0] from b</span>
+    <span class="hljs-comment">//   else</span>
+    <span class="hljs-comment">//     add a[0] to the end of result</span>
+    <span class="hljs-comment">//     remove a[0] from a</span>
+    <span class="hljs-comment">//   end if</span>
+    <span class="hljs-comment">// end while</span>
+    <span class="hljs-comment">// while ( a has elements )</span>
+    <span class="hljs-comment">//   add a[0] to the end of result</span>
+    <span class="hljs-comment">//   remove a[0] from a</span>
+    <span class="hljs-comment">// end while</span>
+    <span class="hljs-comment">// while ( b has elements )</span>
+    <span class="hljs-comment">//   add b[0] to the end of result</span>
+    <span class="hljs-comment">//   remove b[0] from b</span>
+    <span class="hljs-comment">// end while</span>
+    <span class="hljs-comment">// return result</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mergeSort</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-comment">// if ( n == 1 ) return a</span>
+    <span class="hljs-comment">// /* Split the array into two */</span>
+    <span class="hljs-comment">// var l1 as array = a[0] ... a[n/2]</span>
+    <span class="hljs-comment">// var l2 as array = a[n/2+1] ... a[n]</span>
+    <span class="hljs-comment">// l1 = mergesort( l1 )</span>
+    <span class="hljs-comment">// l2 = mergesort( l2 )</span>
+    <span class="hljs-comment">// return merge( l1, l2 )</span>
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">merge</span>(<span class="hljs-params">array1, array2</span>) </span>{
+    <span class="hljs-keyword">let</span> merged = [];
+
+    <span class="hljs-keyword">while</span> (array1.length || array2.length) {
+        <span class="hljs-keyword">let</span> ele1 = array1.length ? array1[<span class="hljs-number">0</span>] : <span class="hljs-literal">Infinity</span>;
+        <span class="hljs-keyword">let</span> ele2 = array2.length ? array2[<span class="hljs-number">0</span>] : <span class="hljs-literal">Infinity</span>;
+
+        <span class="hljs-keyword">let</span> next;
+        <span class="hljs-keyword">if</span> (ele1 &lt; ele2) {
+            next = array1.shift();
+        } <span class="hljs-keyword">else</span> {
+            next = array2.shift();
+        }
+
+        merged.push(next);
+    }
+
+    <span class="hljs-keyword">return</span> merged;
+}
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mergeSort</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">if</span> (array.length &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> array;
+    }
+
+    <span class="hljs-keyword">let</span> midIdx = <span class="hljs-built_in">Math</span>.floor(array.length / <span class="hljs-number">2</span>);
+    <span class="hljs-keyword">let</span> leftHalf = array.slice(<span class="hljs-number">0</span>, midIdx);
+    <span class="hljs-keyword">let</span> rightHalf = array.slice(midIdx);
+
+    <span class="hljs-keyword">let</span> sortedLeft = mergeSort(leftHalf);
+    <span class="hljs-keyword">let</span> sortedRight = mergeSort(rightHalf);
+
+    <span class="hljs-keyword">return</span> merge(sortedLeft, sortedRight);
+}
+
+
+</div></code></pre>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">quickSort</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-comment">// if the length of the array is 0 or 1, return the array</span>
+    <span class="hljs-comment">// set the pivot to the first element of the array</span>
+    <span class="hljs-comment">// remove the first element of the array</span>
+    <span class="hljs-comment">// put all values less than the pivot value into an array called left</span>
+    <span class="hljs-comment">// put all values greater than the pivot value into an array called right</span>
+    <span class="hljs-comment">// call quick sort on left and assign the return value to leftSorted</span>
+    <span class="hljs-comment">// call quick sort on right and assign the return value to rightSorted</span>
+    <span class="hljs-comment">// return the concatenation of leftSorted, the pivot value, and rightSorted</span>
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">quickSort</span>(<span class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">if</span> (array.length &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> array;
+    }
+
+    <span class="hljs-keyword">let</span> pivot = array.shift();
+    <span class="hljs-keyword">let</span> left = array.filter(<span class="hljs-function">(<span class="hljs-params">el</span>) =&gt;</span> el &lt; pivot);
+    <span class="hljs-keyword">let</span> right = array.filter(<span class="hljs-function">(<span class="hljs-params">el</span>) =&gt;</span> el &gt;= pivot);
+
+    <span class="hljs-keyword">let</span> leftSorted = quickSort(left);
+    <span class="hljs-keyword">let</span> rightSorted = quickSort(right);
+
+    <span class="hljs-keyword">return</span> [ ...leftSorted, pivot, ...rightSorted ];
+}
+
+
+
+</div></code></pre>
+
+</body></html>

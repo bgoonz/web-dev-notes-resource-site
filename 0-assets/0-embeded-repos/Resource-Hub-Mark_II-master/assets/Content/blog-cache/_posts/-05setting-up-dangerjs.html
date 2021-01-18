@@ -1,0 +1,141 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Ever felt like you are repeating the same comment over and over in many PR’s during the code review? Then this
+      post is for you.</p>
+    <p>Even though this can’t be avoided 100%, you can automate some of these by offloading to <a
+        href="http://danger.systems/js/">dangerjs</a>.</p>
+    <p><img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-logo.png"
+        alt="danger logo" />{: width=“100%”}</p>
+    <h2 id="introduction"><a class="anchor" name="Introduction" href="#Introduction"><i
+          class="anchor-icon"></i></a>Introduction</h2>
+    <p>If you never heard about <code>dangerjs</code> before, it’s a small tool which can run tasks against the changed
+      files in a PR and add comment the problems. Comments can be of type <code>warning</code>, <code>failure</code> or
+      <code>message</code>.
+    </p>
+    <p>You can use this to automate the common code issues like</p>
+    <ul>
+      <li>new package added to <code>package.json</code> but changes for <code>package-lock.json</code> or
+        <code>yarn.lock</code> is missing
+      </li>
+      <li>missing <code>@flow</code> in the new files</li>
+      <li><code>console.log</code> which forgot to remove.</li>
+    </ul>
+    <p><code>dangerjs</code> can look for these kind of issues and alert the author of PR by a comment.</p>
+    <h2 id="installing"><a class="anchor" name="installing" href="#installing"><i class="anchor-icon"></i></a>Installing
+    </h2>
+    <p>You can get started by installing <code>dangerjs</code> from npm.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> install -D danger</a></code></pre>
+    </div>
+    <h2 id="setup"><a class="anchor" name="setup" href="#setup"><i class="anchor-icon"></i></a>setup</h2>
+    <p>Once we have <code>dangerjs</code> installed we can setup by adding <code>dangerfile.js</code> to the root
+      directory of the project.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// dangerfile.js</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="im">import</span> <span class="op">{</span>danger<span class="op">,</span> warn<span class="op">}</span> <span class="im">from</span> <span class="st">&quot;danger&quot;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw">const</span> changes <span class="op">=</span> <span class="va">danger</span>.<span class="va">git</span>.<span class="va">modified_files</span>.<span class="at">reduce</span>((prev<span class="op">,</span> filePath) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="cf">if</span>(<span class="op">!</span><span class="va">prev</span>.<span class="at">package</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="va">prev</span>.<span class="at">package</span> <span class="op">=</span> <span class="va">filePath</span>.<span class="at">includes</span>(<span class="st">&quot;package.json&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="cf">if</span>(<span class="op">!</span><span class="va">prev</span>.<span class="at">lock</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="va">prev</span>.<span class="at">lock</span> <span class="op">=</span> <span class="va">filePath</span>.<span class="at">includes</span>(<span class="st">&quot;package-lock.json&quot;</span>)</a>
+<a class="sourceLine" id="cb2-11" title="11">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="cf">return</span> prev<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="op">},</span> <span class="op">{}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-14" title="14"></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="cf">if</span> (<span class="va">changes</span>.<span class="at">package</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="va">changes</span>.<span class="at">lock</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-16" title="16">  <span class="kw">const</span> message <span class="op">=</span> <span class="st">&#39;Changes were made to package.json, but not to package-lock.json&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="kw">const</span> idea <span class="op">=</span> <span class="st">&#39;Perhaps you need to run `npm install`?&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">  <span class="at">warn</span>(<span class="vs">`</span><span class="sc">${</span>message<span class="sc">}</span><span class="vs"> - &lt;i&gt;</span><span class="sc">${</span>idea<span class="sc">}</span><span class="vs">&lt;/i&gt;`</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>The above <code>dangerfile</code> will look for the <code>lock</code> file changes when <code>package.json</code>
+      is changed. if it find the <code>lock</code> changes are missing. it will add the <code>warning</code>.</p>
+    <h2 id="locally-testing-the-setup"><a class="anchor" name="testing" href="#testing"><i
+          class="anchor-icon"></i></a>locally testing the setup</h2>
+    <p>To verify our danger setup is working you can run</p>
+    <pre><code>npx danger local</code></pre>
+    <p>{: style=“text-align: center”} <img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-local.png"
+        alt="danger local" /></p>
+    <p><code>danger local</code> command have limitations when working with <a
+        href="https://danger.systems/js/reference.html#GitHubDSL">danger.github</a> DSL. <code>danger.github</code> will
+      be <code>null</code> when running <code>danger local</code> hence you should add necessary condition.</p>
+    <h2 id="setup-ci"><a class="anchor" name="setup-ci" href="#setup-ci"><i class="anchor-icon"></i></a>Setup CI</h2>
+    <p>All these won’t benefit your team unless you add this into your <strong>CI</strong>. For that, first Goto <a
+        href="https://github.com/settings/tokens/new">Github Settings</a> and generate new <code>Github Access
+        Token</code>. Make sure you gave <code>repo</code> scope to while creating.</p>
+    <p><img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/github-repo-scope.png"
+        alt="github repo scope" />{: width=“100%”}</p>
+    <p>if your organization already have a <strong>bot</strong> account you can generate token for that account and use
+      it.</p>
+    <p>once the token is generated copy and add it to your CI you as environment varibable named
+      <code>DANGER_GITHUB_API_TOKEN</code>.
+    </p>
+    <p>then add <code>npx danger ci</code> to the steps to execute. You can optionally add <code>danger ci</code> to the
+      npm scripts as well.</p>
+    <p>Now when is PR is open and your CI is triggered danger js will verify the changes first and if there is any issue
+      it will leave a comment there.</p>
+    <p><img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/dangerjs/danger-comment.png"
+        alt="dangerjs comment is action" />{: width=“100%”}</p>
+    <h2 id="plugins"><a class="anchor" name="plugins" href="#plugins"><i class="anchor-icon"></i></a>Plugins</h2>
+    <p>To make it easier to configure, <code>dangerjs</code> support plugins and there are already some plugins
+      available for some common tasks. You can search for plugins on NPM using the <a
+        href="https://www.npmjs.com/search?q=keywords:danger-plugin">keyword: danger-plugin</a></p>
+
+  </body>
+
+  
+</html>

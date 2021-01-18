@@ -1,0 +1,180 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently I noticed that my view templates are becoming more complicated as there are so many complex conditions
+      in it. As per the design patterns the view should not contain any logic, So I needed some way to make my templates
+      clean. Thats how I came to know about <strong>Presenters</strong>.</p>
+    <p>Presenters is a abstraction layer between the template and the controller. It encapsulates the complex conditions
+      in the view template to the presenter class, which will make our view more clean, readable and testable.</p>
+    <p>Consider this as my view template before using presenters,</p>
+    <pre class="erb"><code>  &lt;!-- app/views/users/show.html.erb --&gt;
+  &lt;dt&gt;Website:&lt;/dt&gt;
+  &lt;dd&gt;
+  &lt;% if @user.website.present? %&gt;
+    &lt;%= link_to @user.website, @user.website %&gt;
+  &lt;% else %&gt;
+    &lt;span class=&quot;none&quot;&gt;None given&lt;/span&gt;
+  &lt;% end %&gt;
+  &lt;/dd&gt;
+  &lt;dt&gt;Twitter:&lt;/dt&gt;
+  &lt;dd&gt;
+  &lt;% if @user.twitter_handle.present? %&gt;
+    &lt;%= link_to @user.twitter_handle, &quot;http://twitter.com/#{@user.twitter_handle}&quot; %&gt;
+  &lt;% else %&gt;
+    &lt;span class=&quot;none&quot;&gt;None given&lt;/span&gt;
+  &lt;% end %&gt;
+  &lt;/dd&gt;</code></pre>
+    <p>This is a design smell. We are writing the conditionals in the template. How we can avoid this using presenters?
+    </p>
+    <h1 id="using-presenters">Using Presenters</h1>
+    <p>Create a new folder named <code>presenters</code> in the <code>app</code> directory. Then create a
+      <code>UserPresenter</code> class inside it.
+    </p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># app/presenters/user_presenter.rb</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">class</span> <span class="dt">UserPresenter</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">def</span> initialize</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Now to use this, the easiest but <strong>ugly way</strong> is to let the controller know about the presenter.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># app/controllers/user_controller.rb</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">class</span> <span class="dt">UserController</span> &lt; <span class="dt">ApplicationController</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">def</span> show</a>
+<a class="sourceLine" id="cb3-4" title="4">    user = <span class="dt">User</span>.find(params[<span class="st">:id</span>])</a>
+<a class="sourceLine" id="cb3-5" title="5">    <span class="ot">@user</span> = <span class="dt">UserPresenter</span>.new(user, view_context)</a>
+<a class="sourceLine" id="cb3-6" title="6">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Passing the <code>view_context</code> to presenter help us to use the helper methods inside the presenter.</p>
+    <p>Now the updated <code>UserPresenter</code> will look like,</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># app/presenters/user_presenter.rb</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">class</span> <span class="dt">UserPresenter</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">def</span> initialize user, template</a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="ot">@user</span> = user</a>
+<a class="sourceLine" id="cb4-5" title="5">    <span class="ot">@template</span> = template</a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Now move the logic for the twitter and website into the presenter.</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># app/presenters/user_presenter.rb</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">class</span> <span class="dt">UserPresenter</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="kw">def</span> initialize user, template</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="ot">@user</span> = user</a>
+<a class="sourceLine" id="cb5-5" title="5">    <span class="ot">@template</span> = template</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="kw">def</span> website</a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="kw">if</span> <span class="ot">@user</span>.website.present?</a>
+<a class="sourceLine" id="cb5-10" title="10">      <span class="ot">@template</span>.link_to <span class="ot">@user</span>.website, <span class="ot">@user</span>.website</a>
+<a class="sourceLine" id="cb5-11" title="11">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb5-12" title="12">      <span class="ot">@template</span>.content_tag <span class="st">:span</span>, <span class="st">&#39;None Given&#39;</span>, <span class="kw">class</span>:<span class="st">&#39;none&#39;</span></a>
+<a class="sourceLine" id="cb5-13" title="13">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-14" title="14">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-15" title="15"></a>
+<a class="sourceLine" id="cb5-16" title="16">  <span class="kw">def</span> twitter</a>
+<a class="sourceLine" id="cb5-17" title="17">    <span class="kw">if</span> <span class="ot">@user</span>.twitter_handle.present?</a>
+<a class="sourceLine" id="cb5-18" title="18">      <span class="ot">@template</span>.link_to <span class="ot">@user</span>.twitter_handle, <span class="st">&quot;http://twitter.com/</span><span class="ot">#{@user</span>.twitter_handle<span class="ot">}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb5-19" title="19">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb5-20" title="20">      <span class="ot">@template</span>.content_tag <span class="st">:span</span>, <span class="st">&#39;None Given&#39;</span>, <span class="kw">class</span>:<span class="st">&#39;none&#39;</span></a>
+<a class="sourceLine" id="cb5-21" title="21">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-22" title="22">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>So Now look into our view template</p>
+    <pre class="erb"><code>  &lt;!-- app/views/users/show.html.erb --&gt;
+  &lt;dt&gt;Website:&lt;/dt&gt;
+  &lt;dd&gt;&lt;% @user.website %&gt;&lt;/dd&gt;
+  &lt;dt&gt;Twitter:&lt;/dt&gt;
+  &lt;dd&gt;&lt;% @user.twitter %&gt;&lt;/dd&gt;</code></pre>
+    <p>Does it look much better than what we had before? I know, Yes!</p>
+    <p>But using <code>@template</code> to call all the helper method is not fine, so we need to refactor it by adding a
+      method missing.</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># app/presenters/user_presenter.rb</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">class</span> <span class="dt">UserPresenter</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">def</span> initialize user, template</a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="ot">@user</span> = user</a>
+<a class="sourceLine" id="cb7-5" title="5">    <span class="ot">@template</span> = template</a>
+<a class="sourceLine" id="cb7-6" title="6">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-7" title="7"></a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="kw">def</span> website</a>
+<a class="sourceLine" id="cb7-9" title="9">    <span class="kw">if</span> <span class="ot">@user</span>.website.present?</a>
+<a class="sourceLine" id="cb7-10" title="10">      link_to <span class="ot">@user</span>.website, <span class="ot">@user</span>.website</a>
+<a class="sourceLine" id="cb7-11" title="11">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb7-12" title="12">      content_tag <span class="st">:span</span>, <span class="st">&#39;None Given&#39;</span>, <span class="kw">class</span>:<span class="st">&#39;none&#39;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-14" title="14">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-15" title="15"></a>
+<a class="sourceLine" id="cb7-16" title="16">  <span class="kw">def</span> twitter</a>
+<a class="sourceLine" id="cb7-17" title="17">    <span class="kw">if</span> <span class="ot">@user</span>.twitter_handle.present?</a>
+<a class="sourceLine" id="cb7-18" title="18">      link_to <span class="ot">@user</span>.twitter_handle, <span class="st">&quot;http://twitter.com/</span><span class="ot">#{@user</span>.twitter_handle<span class="ot">}</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb7-19" title="19">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb7-20" title="20">      content_tag <span class="st">:span</span>, <span class="st">&#39;None Given&#39;</span>, <span class="kw">class</span>:<span class="st">&#39;none&#39;</span></a>
+<a class="sourceLine" id="cb7-21" title="21">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-22" title="22">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-23" title="23"></a>
+<a class="sourceLine" id="cb7-24" title="24">  <span class="kw">private</span></a>
+<a class="sourceLine" id="cb7-25" title="25">    <span class="kw">def</span> method_missing(*args, &amp;block)</a>
+<a class="sourceLine" id="cb7-26" title="26">      <span class="ot">@template</span>.send(*args, &amp;block);</a>
+<a class="sourceLine" id="cb7-27" title="27">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb7-28" title="28"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Even better Ah!!. Try out and lemme know how you felt about presenters.</p>
+
+  </body>
+
+  
+</html>

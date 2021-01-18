@@ -1,0 +1,22 @@
+extends layout.pug
+block content
+    table
+        h2 Existing Users
+            tr
+                th id
+                th First Name
+                th Last Name
+                th Email
+                th Age
+                th Favorite Beatle
+                th Likes Ice Cream
+        tbody
+            each user in users
+                tr
+                    td #{user.id}
+                    td #{user.firstName}
+                    td #{user.lastName}
+                    td #{user.email}
+                    td #{user.age}
+                    td #{user.favoriteBeatle}
+                    td #{user.iceCream}

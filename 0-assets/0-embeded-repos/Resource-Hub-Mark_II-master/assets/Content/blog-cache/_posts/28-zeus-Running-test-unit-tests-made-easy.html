@@ -1,0 +1,95 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In <strong>Rails 3.2</strong>, there are predefined tasks to run Test::Unit tests like <code>rake
+        test:units</code>, <code>rake test:functionals</code> etc. But when you are developing, you may need to run a
+      single test or tests from a file. None of the rake tasks provide this in Rails 3.2.</p>
+    <p>I like to show you how you can do this with <a href="https://github.com/burke/zeus">zeus</a>.</p>
+    <h1 id="whats-this-zeus">What’s this zeus?</h1>
+    <p>Zeus is rails application preloader. It preload your rails environment so that you run rake tasks, server and
+      console with in 1-2 seconds. It reloads itself when ever you make any changes to initializers or do a bundle. It
+      will saves you from rails booting.</p>
+    <p><code>zeus test</code> is coupled with some handy hacks which will let you run your tests easily. You can run all
+      tests in a file or a single test.</p>
+    <h1 id="run-tests-in-a-single-file">Run tests in a single file</h1>
+    <p>You can run tests from a single file by just passing the file path to <code>zeus test</code> {% highlight sh %}
+      zeus test test/functional/some_test.rb {% endhighlight %}</p>
+    <h1 id="run-a-single-test">Run a single test</h1>
+    <p>Consider this as your test case.</p>
+    <p>{% highlight ruby linenos %}</p>
+    <h1 id="testfunctionalsome_controller_test.rb">test/functional/some_controller_test.rb</h1>
+    <p>class SomeControllerTest &lt; ActionController::TestCase def setup</p>
+    <p>end</p>
+    <p>test ‘should create’ do # your test end end {% endhighlight %}</p>
+    <p>Think that in the above case you need to run only <strong>should create</strong>. With zeus there are multiple
+      ways to run single test.</p>
+    <h1 id="section">#1</h1>
+    <p>You can use pass the test case as underscored and prepend with <strong>test_</strong> which makes
+      <strong>test_should_create</strong> and pass to <code>-n</code> option.
+    </p>
+    <p>{% highlight sh %} zeus test test/functional/some_controller_test.rb -n test_should_create {% endhighlight %}</p>
+    <h1 id="section-1">#2</h1>
+    <p>Another similar method is passing the test case in double quotes to <code>-n</code> option. Don’t forget to
+      prepend <strong>test</strong> before test case. {% highlight sh %} zeus test
+      test/functional/some_controller_test.rb -n “test should create” {% endhighlight %}</p>
+    <h1 id="section-2">#3</h1>
+    <p>The third method felt more comfortable for me. Just append <strong>:&lt;line_no of test case&gt;</strong> to the
+      file path. {% highlight sh %} zeus test test/functional/some_controller_test.rb:7 {% endhighlight %}</p>
+    <p>Here <strong>7</strong> is the line number of <code>test "should create"</code>.</p>
+    <p>In <strong>Rails 4</strong>, you can pass the filename to the rake tasks and <strong>Rails 4.1</strong> will ship
+      with <a href="https://github.com/jonleighton/spring">spring</a> preloader. But still I believe zeus will be my
+      favorite to run tests.</p>
+    <p>Happy testing.</p>
+
+  </body>
+
+  
+</html>

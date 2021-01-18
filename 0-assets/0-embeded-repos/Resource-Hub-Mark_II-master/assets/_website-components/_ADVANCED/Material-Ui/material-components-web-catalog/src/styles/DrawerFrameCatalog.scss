@@ -1,0 +1,26 @@
+@import "@material/drawer/mdc-drawer";
+@import '@material/theme/mixins';
+
+.drawer-frame-root {
+  display: flex;
+  height: 100vh;
+}
+
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+
+.drawer-main-content {
+  overflow: auto;
+  height: 100%;
+  padding: 0 18px;
+}
+
+.drawer-top-app-bar {
+  position: absolute;
+}
+
+.drawer-frame-app-content {
+  position: relative;
+}

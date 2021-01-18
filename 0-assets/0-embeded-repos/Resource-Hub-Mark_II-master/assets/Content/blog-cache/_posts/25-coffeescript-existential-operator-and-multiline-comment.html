@@ -1,0 +1,99 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Eventhough I am using CoffeeScript for a couple of months now, many of the feature were still unknown to me. Two
+      days before I got hands into two such features which I wish I have known from the beginning.</p>
+    <h1 id="existential-operator">Existential Operator</h1>
+    <p>Existential operator will help you to check whether the variable exists or not. It is similar to ruby’s
+      <code>.nil?</code> method. consider we have a variable named <code>open</code>. we can check whether when open
+      exists using <code>open?</code> which returns <code>true</code> if the variable is already defined.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode coffeescript"><code class="sourceCode coffee"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">if</span> open<span class="kw">?</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="ot">console</span><span class="kw">.</span>log <span class="st">&quot;Hello&quot;</span></a></code></pre>
+    </div>
+    <p>This wil be compiled to</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="cf">if</span> (<span class="kw">typeof</span> open <span class="op">!==</span> <span class="st">&quot;undefined&quot;</span> <span class="op">&amp;&amp;</span> open <span class="op">!==</span> <span class="kw">null</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Hello&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="op">}</span></a></code></pre>
+    </div>
+    <p><a href="http://coffeescript.org/#try:if%20open%3F%0A%20%20console.log%20%22Hello%22">Try it yourself</a>.</p>
+    <p>This can be used to set the default values/ conditional assinments like</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode coffeescript"><code class="sourceCode coffee"><a class="sourceLine" id="cb3-1" title="1">data <span class="kw">=</span> <span class="kw">{}</span></a>
+<a class="sourceLine" id="cb3-2" title="2">data<span class="kw">.</span>open <span class="kw">?=</span> <span class="ot">true</span></a></code></pre>
+    </div>
+    <p>It says, if <code>data.open</code> is <code>null</code> then set it to <code>true</code>. This will be compiled
+      to</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="cf">if</span> (<span class="va">data</span>.<span class="at">open</span> <span class="op">==</span> <span class="kw">null</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="va">data</span>.<span class="at">open</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="op">}</span></a></code></pre>
+    </div>
+    <p><a href="http://coffeescript.org/#try:data%20%3D%20%7B%7D%0Aopen%20%3F%3D%20true">Try it yourself</a>.</p>
+    <p>You can read more about exisitential operator below the <a
+        href="http://coffeescript.org/#operators">operators</a> section.</p>
+    <h1 id="multiline-comments">Multiline comments</h1>
+    <p>Couple of days before only I came to know about the multiline comment with <code>###</code> in CoffeeScript. Till
+      that I were using <code>#</code>(single line comment).</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode coffeescript"><code class="sourceCode coffee"><a class="sourceLine" id="cb5-1" title="1"><span class="co">###</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co"> $-&gt;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">   console.log &quot;Hello&quot;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">###</span></a></code></pre>
+    </div>
+  </body>
+
+  </html>
+  $

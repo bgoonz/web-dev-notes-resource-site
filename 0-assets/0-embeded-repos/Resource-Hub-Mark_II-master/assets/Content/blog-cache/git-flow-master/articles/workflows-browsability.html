@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+
+<!-- Mirrored from happygitwithr.com/workflows-browsability.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Dec 2020 06:00:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 33 Make a GitHub repo browsable | Happy Git and GitHub for the useR</title>
+  <meta name="description" content="Using Git and GitHub with R, Rstudio, and R Markdown" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 33 Make a GitHub repo browsable | Happy Git and GitHub for the useR" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:image" content="img/watch-me-diff-watch-me-rebase-smaller.png" />
+  <meta property="og:description" content="Using Git and GitHub with R, Rstudio, and R Markdown" />
+  <meta name="github-repo" content="jennybc/happy-git-with-r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 33 Make a GitHub repo browsable | Happy Git and GitHub for the useR" />
+  <meta name="twitter:site" content="@jennybryan" />
+  <meta name="twitter:description" content="Using Git and GitHub with R, Rstudio, and R Markdown" />
+  <meta name="twitter:image" content="img/watch-me-diff-watch-me-rebase-smaller.png" />
+
+<meta name="author" content="Jenny Bryan, the STAT 545 TAs, Jim Hester" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pr-extend.html"/>
+<link rel="next" href="clone.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131856976-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-131856976-1');
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html">Happy Git and GitHub for the useR</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index-2.html"><i class="fa fa-check"></i>Let’s Git started</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index-2.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="big-picture.html"><a href="big-picture.html"><i class="fa fa-check"></i><b>1</b> Why Git? Why GitHub?</a><ul>
+<li class="chapter" data-level="1.1" data-path="big-picture.html"><a href="big-picture.html#why-git"><i class="fa fa-check"></i><b>1.1</b> Why Git?</a></li>
+<li class="chapter" data-level="1.2" data-path="big-picture.html"><a href="big-picture.html#why-github"><i class="fa fa-check"></i><b>1.2</b> Why GitHub?</a></li>
+<li class="chapter" data-level="1.3" data-path="big-picture.html"><a href="big-picture.html#is-it-going-to-hurt"><i class="fa fa-check"></i><b>1.3</b> Is it going to hurt?</a></li>
+<li class="chapter" data-level="1.4" data-path="big-picture.html"><a href="big-picture.html#what-is-the-payoff"><i class="fa fa-check"></i><b>1.4</b> What is the payoff?</a></li>
+<li class="chapter" data-level="1.5" data-path="big-picture.html"><a href="big-picture.html#who-can-do-what"><i class="fa fa-check"></i><b>1.5</b> Who can do what?</a></li>
+<li class="chapter" data-level="1.6" data-path="big-picture.html"><a href="big-picture.html#special-features-of-github"><i class="fa fa-check"></i><b>1.6</b> Special features of GitHub</a></li>
+<li class="chapter" data-level="1.7" data-path="big-picture.html"><a href="big-picture.html#whats-special-about-using-r-with-git-and-github"><i class="fa fa-check"></i><b>1.7</b> What’s special about using R with Git and GitHub?</a></li>
+<li class="chapter" data-level="1.8" data-path="big-picture.html"><a href="big-picture.html#audience-and-pre-reqs"><i class="fa fa-check"></i><b>1.8</b> Audience and pre-reqs</a></li>
+<li class="chapter" data-level="1.9" data-path="big-picture.html"><a href="big-picture.html#what-this-is-not"><i class="fa fa-check"></i><b>1.9</b> What this is NOT</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="contrib.html"><a href="contrib.html"><i class="fa fa-check"></i><b>2</b> Contributors</a></li>
+<li class="chapter" data-level="3" data-path="workshops.html"><a href="workshops.html"><i class="fa fa-check"></i><b>3</b> Workshops</a><ul>
+<li class="chapter" data-level="3.1" data-path="workshops.html"><a href="workshops.html#pre-workshop-set-up"><i class="fa fa-check"></i><b>3.1</b> Pre-workshop set-up</a></li>
+<li class="chapter" data-level="3.2" data-path="workshops.html"><a href="workshops.html#rstudioconf-2020"><i class="fa fa-check"></i><b>3.2</b> rstudio::conf 2020</a></li>
+<li class="chapter" data-level="3.3" data-path="workshops.html"><a href="workshops.html#previous-workshops"><i class="fa fa-check"></i><b>3.3</b> Previous workshops</a></li>
+</ul></li>
+<li class="part"><span><b>I Installation</b></span></li>
+<li class="chapter" data-level="" data-path="install-intro.html"><a href="install-intro.html"><i class="fa fa-check"></i>Half the battle</a><ul>
+<li class="chapter" data-level="" data-path="install-intro.html"><a href="install-intro.html#success-and-operating-systems"><i class="fa fa-check"></i>Success and operating systems</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="github-acct.html"><a href="github-acct.html"><i class="fa fa-check"></i><b>4</b> Register a GitHub account</a><ul>
+<li class="chapter" data-level="4.1" data-path="github-acct.html"><a href="github-acct.html#username-advice"><i class="fa fa-check"></i><b>4.1</b> Username advice</a></li>
+<li class="chapter" data-level="4.2" data-path="github-acct.html"><a href="github-acct.html#free-private-repos"><i class="fa fa-check"></i><b>4.2</b> Free private repos</a></li>
+<li class="chapter" data-level="4.3" data-path="github-acct.html"><a href="github-acct.html#pay-for-private-repos"><i class="fa fa-check"></i><b>4.3</b> Pay for private repos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="install-r-rstudio.html"><a href="install-r-rstudio.html"><i class="fa fa-check"></i><b>5</b> Install or upgrade R and RStudio</a><ul>
+<li class="chapter" data-level="5.1" data-path="install-r-rstudio.html"><a href="install-r-rstudio.html#how-to-think-about-upgrading-r-and-rstudio"><i class="fa fa-check"></i><b>5.1</b> How to think about upgrading R and RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="install-git.html"><a href="install-git.html"><i class="fa fa-check"></i><b>6</b> Install Git</a><ul>
+<li class="chapter" data-level="6.1" data-path="install-git.html"><a href="install-git.html#git-already-installed"><i class="fa fa-check"></i><b>6.1</b> Git already installed?</a></li>
+<li class="chapter" data-level="6.2" data-path="install-git.html"><a href="install-git.html#install-git-windows"><i class="fa fa-check"></i><b>6.2</b> Windows</a></li>
+<li class="chapter" data-level="6.3" data-path="install-git.html"><a href="install-git.html#macos"><i class="fa fa-check"></i><b>6.3</b> macOS</a></li>
+<li class="chapter" data-level="6.4" data-path="install-git.html"><a href="install-git.html#linux"><i class="fa fa-check"></i><b>6.4</b> Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hello-git.html"><a href="hello-git.html"><i class="fa fa-check"></i><b>7</b> Introduce yourself to Git</a><ul>
+<li class="chapter" data-level="7.1" data-path="hello-git.html"><a href="hello-git.html#more-about-git-config"><i class="fa fa-check"></i><b>7.1</b> More about <code>git config</code></a><ul>
+<li class="chapter" data-level="7.1.1" data-path="hello-git.html"><a href="hello-git.html#git-editor"><i class="fa fa-check"></i><b>7.1.1</b> Configure the Git editor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="git-client.html"><a href="git-client.html"><i class="fa fa-check"></i><b>8</b> Install a Git client</a><ul>
+<li class="chapter" data-level="8.1" data-path="git-client.html"><a href="git-client.html#what-is-a-git-client-why-would-you-want-one"><i class="fa fa-check"></i><b>8.1</b> What is a Git client? Why would you want one?</a></li>
+<li class="chapter" data-level="8.2" data-path="git-client.html"><a href="git-client.html#a-picture-is-worth-a-thousand-words"><i class="fa fa-check"></i><b>8.2</b> A picture is worth a thousand words</a></li>
+<li class="chapter" data-level="8.3" data-path="git-client.html"><a href="git-client.html#no-one-is-giving-out-git-nerd-merit-badges"><i class="fa fa-check"></i><b>8.3</b> No one is giving out Git Nerd merit badges</a></li>
+<li class="chapter" data-level="8.4" data-path="git-client.html"><a href="git-client.html#recommended-git-clients"><i class="fa fa-check"></i><b>8.4</b> Recommended Git clients</a></li>
+</ul></li>
+<li class="part"><span><b>II Connect Git, GitHub, RStudio</b></span></li>
+<li class="chapter" data-level="" data-path="connect-intro.html"><a href="connect-intro.html"><i class="fa fa-check"></i>Can you hear me now?</a></li>
+<li class="chapter" data-level="9" data-path="push-pull-github.html"><a href="push-pull-github.html"><i class="fa fa-check"></i><b>9</b> Connect to GitHub</a><ul>
+<li class="chapter" data-level="9.1" data-path="push-pull-github.html"><a href="push-pull-github.html#make-a-repo-on-github"><i class="fa fa-check"></i><b>9.1</b> Make a repo on GitHub</a></li>
+<li class="chapter" data-level="9.2" data-path="push-pull-github.html"><a href="push-pull-github.html#clone-the-repo-to-your-local-computer"><i class="fa fa-check"></i><b>9.2</b> Clone the repo to your local computer</a></li>
+<li class="chapter" data-level="9.3" data-path="push-pull-github.html"><a href="push-pull-github.html#make-a-local-change-commit-and-push"><i class="fa fa-check"></i><b>9.3</b> Make a local change, commit, and push</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="push-pull-github.html"><a href="push-pull-github.html#windows-and-line-endings"><i class="fa fa-check"></i><b>9.3.1</b> Windows and line endings</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="push-pull-github.html"><a href="push-pull-github.html#confirm-the-local-change-propagated-to-the-github-remote"><i class="fa fa-check"></i><b>9.4</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="9.5" data-path="push-pull-github.html"><a href="push-pull-github.html#am-i-really-going-to-type-github-username-and-password-on-each-push"><i class="fa fa-check"></i><b>9.5</b> Am I really going to type GitHub username and password on each push?</a></li>
+<li class="chapter" data-level="9.6" data-path="push-pull-github.html"><a href="push-pull-github.html#clean-up"><i class="fa fa-check"></i><b>9.6</b> Clean up</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="credential-caching.html"><a href="credential-caching.html"><i class="fa fa-check"></i><b>10</b> Cache credentials for HTTPS</a><ul>
+<li class="chapter" data-level="10.1" data-path="credential-caching.html"><a href="credential-caching.html#get-a-pat"><i class="fa fa-check"></i><b>10.1</b> You should get a personal access token (PAT)</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="credential-caching.html"><a href="credential-caching.html#why-a-pat"><i class="fa fa-check"></i><b>10.1.1</b> Why a PAT?</a></li>
+<li class="chapter" data-level="10.1.2" data-path="credential-caching.html"><a href="credential-caching.html#how-to-get-a-pat"><i class="fa fa-check"></i><b>10.1.2</b> How to get a PAT?</a></li>
+<li class="chapter" data-level="10.1.3" data-path="credential-caching.html"><a href="credential-caching.html#how-to-manage-a-pat"><i class="fa fa-check"></i><b>10.1.3</b> How to manage a PAT?</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="credential-caching.html"><a href="credential-caching.html#store-your-credential"><i class="fa fa-check"></i><b>10.2</b> Store your credential</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="credential-caching.html"><a href="credential-caching.html#call-an-r-function-to-store-your-credentials"><i class="fa fa-check"></i><b>10.2.1</b> Call an R function to store your credentials</a></li>
+<li class="chapter" data-level="10.2.2" data-path="credential-caching.html"><a href="credential-caching.html#store-credentials-through-organic-git-use"><i class="fa fa-check"></i><b>10.2.2</b> Store credentials through organic Git use</a></li>
+<li class="chapter" data-level="10.2.3" data-path="credential-caching.html"><a href="credential-caching.html#access-the-git-credential-manager-directly"><i class="fa fa-check"></i><b>10.2.3</b> Access the Git credential manager directly</a></li>
+<li class="chapter" data-level="10.2.4" data-path="credential-caching.html"><a href="credential-caching.html#access-the-os-level-keychain-or-wallet"><i class="fa fa-check"></i><b>10.2.4</b> Access the OS-level keychain or wallet</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="credential-caching.html"><a href="credential-caching.html#activating-a-git-credential-helper"><i class="fa fa-check"></i><b>10.3</b> Activating a Git credential helper</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="credential-caching.html"><a href="credential-caching.html#you-might-not-need-to-do-anything"><i class="fa fa-check"></i><b>10.3.1</b> You might not need to do anything!</a></li>
+<li class="chapter" data-level="10.3.2" data-path="credential-caching.html"><a href="credential-caching.html#windows"><i class="fa fa-check"></i><b>10.3.2</b> Windows</a></li>
+<li class="chapter" data-level="10.3.3" data-path="credential-caching.html"><a href="credential-caching.html#macos-1"><i class="fa fa-check"></i><b>10.3.3</b> macOS</a></li>
+<li class="chapter" data-level="10.3.4" data-path="credential-caching.html"><a href="credential-caching.html#linux-1"><i class="fa fa-check"></i><b>10.3.4</b> Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ssh-keys.html"><a href="ssh-keys.html"><i class="fa fa-check"></i><b>11</b> Set up keys for SSH</a><ul>
+<li class="chapter" data-level="11.1" data-path="ssh-keys.html"><a href="ssh-keys.html#ssh-keys-1"><i class="fa fa-check"></i><b>11.1</b> SSH keys</a></li>
+<li class="chapter" data-level="11.2" data-path="ssh-keys.html"><a href="ssh-keys.html#ssh-outline-and-advice"><i class="fa fa-check"></i><b>11.2</b> SSH outline and advice</a></li>
+<li class="chapter" data-level="11.3" data-path="ssh-keys.html"><a href="ssh-keys.html#do-you-already-have-keys"><i class="fa fa-check"></i><b>11.3</b> Do you already have keys?</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ssh-keys.html"><a href="ssh-keys.html#from-rstudio"><i class="fa fa-check"></i><b>11.3.1</b> From RStudio</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ssh-keys.html"><a href="ssh-keys.html#from-the-shell"><i class="fa fa-check"></i><b>11.3.2</b> From the shell</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ssh-keys.html"><a href="ssh-keys.html#create-an-ssh-key-pair"><i class="fa fa-check"></i><b>11.4</b> Create an SSH key pair</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="ssh-keys.html"><a href="ssh-keys.html#option-1-set-up-from-rstudio"><i class="fa fa-check"></i><b>11.4.1</b> Option 1: Set up from RStudio</a></li>
+<li class="chapter" data-level="11.4.2" data-path="ssh-keys.html"><a href="ssh-keys.html#option-2-set-up-from-the-shell"><i class="fa fa-check"></i><b>11.4.2</b> Option 2: Set up from the shell</a></li>
+<li class="chapter" data-level="11.4.3" data-path="ssh-keys.html"><a href="ssh-keys.html#add-key-to-ssh-agent"><i class="fa fa-check"></i><b>11.4.3</b> Add key to ssh-agent</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="ssh-keys.html"><a href="ssh-keys.html#provide-public-key-to-github"><i class="fa fa-check"></i><b>11.5</b> Provide public key to GitHub</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="ssh-keys.html"><a href="ssh-keys.html#rstudio-to-clipboard"><i class="fa fa-check"></i><b>11.5.1</b> RStudio to clipboard</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ssh-keys.html"><a href="ssh-keys.html#shell-to-clipboard"><i class="fa fa-check"></i><b>11.5.2</b> Shell to clipboard</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ssh-keys.html"><a href="ssh-keys.html#on-github"><i class="fa fa-check"></i><b>11.5.3</b> On GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ssh-keys.html"><a href="ssh-keys.html#ssh-troubleshooting"><i class="fa fa-check"></i><b>11.6</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="ssh-keys.html"><a href="ssh-keys.html#https-vs-ssh"><i class="fa fa-check"></i><b>11.6.1</b> HTTPS vs SSH</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ssh-keys.html"><a href="ssh-keys.html#git2r-or-some-other-tool-cant-find-ssh-keys-on-windows"><i class="fa fa-check"></i><b>11.6.2</b> git2r – or some other tool – can’t find SSH keys on Windows</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ssh-keys.html"><a href="ssh-keys.html#other"><i class="fa fa-check"></i><b>11.6.3</b> Other</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html"><i class="fa fa-check"></i><b>12</b> Connect RStudio to Git and GitHub</a><ul>
+<li class="chapter" data-level="12.1" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#prerequisites"><i class="fa fa-check"></i><b>12.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="12.2" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#make-a-repo-on-github-1"><i class="fa fa-check"></i><b>12.2</b> Make a repo on GitHub</a></li>
+<li class="chapter" data-level="12.3" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio"><i class="fa fa-check"></i><b>12.3</b> Clone the new GitHub repository to your computer via RStudio</a></li>
+<li class="chapter" data-level="12.4" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#make-local-changes-save-commit"><i class="fa fa-check"></i><b>12.4</b> Make local changes, save, commit</a></li>
+<li class="chapter" data-level="12.5" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#push-your-local-changes-online-to-github"><i class="fa fa-check"></i><b>12.5</b> Push your local changes online to GitHub</a></li>
+<li class="chapter" data-level="12.6" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#confirm-the-local-change-propagated-to-the-github-remote-1"><i class="fa fa-check"></i><b>12.6</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="12.7" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#were-you-challenged-for-github-username-and-password"><i class="fa fa-check"></i><b>12.7</b> Were you challenged for GitHub username and password?</a></li>
+<li class="chapter" data-level="12.8" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#clean-up-1"><i class="fa fa-check"></i><b>12.8</b> Clean up</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html"><i class="fa fa-check"></i><b>13</b> Detect Git from RStudio</a><ul>
+<li class="chapter" data-level="13.1" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#do-you-have-a-problem"><i class="fa fa-check"></i><b>13.1</b> Do you have a problem?</a></li>
+<li class="chapter" data-level="13.2" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#find-git-yourself"><i class="fa fa-check"></i><b>13.2</b> Find Git yourself</a></li>
+<li class="chapter" data-level="13.3" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#tell-rstudio-where-to-find-git"><i class="fa fa-check"></i><b>13.3</b> Tell RStudio where to find Git</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>14</b> RStudio, Git, GitHub Hell</a><ul>
+<li class="chapter" data-level="14.1" data-path="troubleshooting.html"><a href="troubleshooting.html#i-think-i-have-installed-git-but-damn-if-i-can-find-it"><i class="fa fa-check"></i><b>14.1</b> I think I have installed Git but damn if I can find it</a></li>
+<li class="chapter" data-level="14.2" data-path="troubleshooting.html"><a href="troubleshooting.html#rstudio-git-pane-disappears-on-mac-os"><i class="fa fa-check"></i><b>14.2</b> RStudio Git pane disappears on Mac OS</a></li>
+<li class="chapter" data-level="14.3" data-path="troubleshooting.html"><a href="troubleshooting.html#dysfunctional-path"><i class="fa fa-check"></i><b>14.3</b> Dysfunctional PATH</a></li>
+<li class="chapter" data-level="14.4" data-path="troubleshooting.html"><a href="troubleshooting.html#pushpull-buttons-greyed-out-in-rstudio"><i class="fa fa-check"></i><b>14.4</b> Push/Pull buttons greyed out in RStudio</a></li>
+<li class="chapter" data-level="14.5" data-path="troubleshooting.html"><a href="troubleshooting.html#i-have-no-idea-if-my-local-repo-and-my-remote-repo-are-connected."><i class="fa fa-check"></i><b>14.5</b> I have no idea if my local repo and my remote repo are connected.</a></li>
+<li class="chapter" data-level="14.6" data-path="troubleshooting.html"><a href="troubleshooting.html#push-fail-at-the-rstudio-level"><i class="fa fa-check"></i><b>14.6</b> Push fail at the RStudio level</a></li>
+<li class="chapter" data-level="14.7" data-path="troubleshooting.html"><a href="troubleshooting.html#push-rejected-i.e.-fail-at-the-gitgithub-level"><i class="fa fa-check"></i><b>14.7</b> Push rejected, i.e. fail at the Git/GitHub level</a></li>
+<li class="chapter" data-level="14.8" data-path="troubleshooting.html"><a href="troubleshooting.html#rstudio-is-not-making-certain-files-available-for-stagingcommitting"><i class="fa fa-check"></i><b>14.8</b> RStudio is not making certain files available for staging/committing</a></li>
+<li class="chapter" data-level="14.9" data-path="troubleshooting.html"><a href="troubleshooting.html#i-hear-you-have-some-git-repo-inside-your-git-repo"><i class="fa fa-check"></i><b>14.9</b> I hear you have some Git repo inside your Git repo</a></li>
+</ul></li>
+<li class="part"><span><b>III Early GitHub Wins</b></span></li>
+<li class="chapter" data-level="" data-path="usage-intro.html"><a href="usage-intro.html"><i class="fa fa-check"></i>Get started with GitHub</a></li>
+<li class="chapter" data-level="15" data-path="new-github-first.html"><a href="new-github-first.html"><i class="fa fa-check"></i><b>15</b> New project, GitHub first</a><ul>
+<li class="chapter" data-level="15.1" data-path="new-github-first.html"><a href="new-github-first.html#make-a-repo-on-github-2"><i class="fa fa-check"></i><b>15.1</b> Make a repo on GitHub</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="new-github-first.html"><a href="new-github-first.html#gitlab"><i class="fa fa-check"></i><b>15.1.1</b> GitLab</a></li>
+<li class="chapter" data-level="15.1.2" data-path="new-github-first.html"><a href="new-github-first.html#bitbucket"><i class="fa fa-check"></i><b>15.1.2</b> Bitbucket</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="new-github-first.html"><a href="new-github-first.html#new-rstudio-project-via-git"><i class="fa fa-check"></i><b>15.2</b> New RStudio Project via git clone</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="new-github-first.html"><a href="new-github-first.html#optional-peek-under-the-hood"><i class="fa fa-check"></i><b>15.2.1</b> Optional: peek under the hood</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="new-github-first.html"><a href="new-github-first.html#make-local-changes-save-commit-1"><i class="fa fa-check"></i><b>15.3</b> Make local changes, save, commit</a></li>
+<li class="chapter" data-level="15.4" data-path="new-github-first.html"><a href="new-github-first.html#push-your-local-changes-to-github"><i class="fa fa-check"></i><b>15.4</b> Push your local changes to GitHub</a></li>
+<li class="chapter" data-level="15.5" data-path="new-github-first.html"><a href="new-github-first.html#confirm-the-local-change-propagated-to-the-github-remote-2"><i class="fa fa-check"></i><b>15.5</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="15.6" data-path="new-github-first.html"><a href="new-github-first.html#make-a-change-on-github"><i class="fa fa-check"></i><b>15.6</b> Make a change on GitHub</a><ul>
+<li class="chapter" data-level="15.6.1" data-path="new-github-first.html"><a href="new-github-first.html#gitlab-1"><i class="fa fa-check"></i><b>15.6.1</b> GitLab</a></li>
+<li class="chapter" data-level="15.6.2" data-path="new-github-first.html"><a href="new-github-first.html#bitbucket-1"><i class="fa fa-check"></i><b>15.6.2</b> Bitbucket</a></li>
+</ul></li>
+<li class="chapter" data-level="15.7" data-path="new-github-first.html"><a href="new-github-first.html#pull-from-github"><i class="fa fa-check"></i><b>15.7</b> Pull from GitHub</a></li>
+<li class="chapter" data-level="15.8" data-path="new-github-first.html"><a href="new-github-first.html#the-end"><i class="fa fa-check"></i><b>15.8</b> The end</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="existing-github-first.html"><a href="existing-github-first.html"><i class="fa fa-check"></i><b>16</b> Existing project, GitHub first</a><ul>
+<li class="chapter" data-level="16.1" data-path="existing-github-first.html"><a href="existing-github-first.html#make-a-repo-on-github-3"><i class="fa fa-check"></i><b>16.1</b> Make a repo on GitHub</a></li>
+<li class="chapter" data-level="16.2" data-path="existing-github-first.html"><a href="existing-github-first.html#new-rstudio-project-via-git-clone"><i class="fa fa-check"></i><b>16.2</b> New RStudio Project via git clone</a></li>
+<li class="chapter" data-level="16.3" data-path="existing-github-first.html"><a href="existing-github-first.html#bring-your-existing-project-over"><i class="fa fa-check"></i><b>16.3</b> Bring your existing project over</a></li>
+<li class="chapter" data-level="16.4" data-path="existing-github-first.html"><a href="existing-github-first.html#stage-and-commit"><i class="fa fa-check"></i><b>16.4</b> Stage and commit</a></li>
+<li class="chapter" data-level="16.5" data-path="existing-github-first.html"><a href="existing-github-first.html#push-your-local-changes-to-github-1"><i class="fa fa-check"></i><b>16.5</b> Push your local changes to GitHub</a></li>
+<li class="chapter" data-level="16.6" data-path="existing-github-first.html"><a href="existing-github-first.html#confirm-the-local-change-propagated-to-the-github-remote-3"><i class="fa fa-check"></i><b>16.6</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="16.7" data-path="existing-github-first.html"><a href="existing-github-first.html#the-end-1"><i class="fa fa-check"></i><b>16.7</b> The end</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="existing-github-last.html"><a href="existing-github-last.html"><i class="fa fa-check"></i><b>17</b> Existing project, GitHub last</a><ul>
+<li class="chapter" data-level="17.1" data-path="existing-github-last.html"><a href="existing-github-last.html#make-or-verify-an-rstudio-project"><i class="fa fa-check"></i><b>17.1</b> Make or verify an RStudio Project</a></li>
+<li class="chapter" data-level="17.2" data-path="existing-github-last.html"><a href="existing-github-last.html#make-or-verify-a-git-repo"><i class="fa fa-check"></i><b>17.2</b> Make or verify a Git repo</a></li>
+<li class="chapter" data-level="17.3" data-path="existing-github-last.html"><a href="existing-github-last.html#stage-and-commit-1"><i class="fa fa-check"></i><b>17.3</b> Stage and commit</a></li>
+<li class="chapter" data-level="17.4" data-path="existing-github-last.html"><a href="existing-github-last.html#make-and-connect-a-github-repo-option-1"><i class="fa fa-check"></i><b>17.4</b> Make and connect a GitHub repo, option 1</a></li>
+<li class="chapter" data-level="17.5" data-path="existing-github-last.html"><a href="existing-github-last.html#make-and-connect-a-github-repo-option-2"><i class="fa fa-check"></i><b>17.5</b> Make and connect a GitHub repo, option 2</a><ul>
+<li class="chapter" data-level="17.5.1" data-path="existing-github-last.html"><a href="existing-github-last.html#make-a-new-repo-on-github"><i class="fa fa-check"></i><b>17.5.1</b> Make a new repo on GitHub</a></li>
+<li class="chapter" data-level="17.5.2" data-path="existing-github-last.html"><a href="existing-github-last.html#connect-local-repo-to-github-repo"><i class="fa fa-check"></i><b>17.5.2</b> Connect local repo to GitHub repo</a></li>
+<li class="chapter" data-level="17.5.3" data-path="existing-github-last.html"><a href="existing-github-last.html#in-rstudio"><i class="fa fa-check"></i><b>17.5.3</b> In RStudio</a></li>
+<li class="chapter" data-level="17.5.4" data-path="existing-github-last.html"><a href="existing-github-last.html#in-the-shell"><i class="fa fa-check"></i><b>17.5.4</b> In the shell</a></li>
+</ul></li>
+<li class="chapter" data-level="17.6" data-path="existing-github-last.html"><a href="existing-github-last.html#confirm-the-local-files-propagated-to-the-github-remote"><i class="fa fa-check"></i><b>17.6</b> Confirm the local files propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="17.7" data-path="existing-github-last.html"><a href="existing-github-last.html#the-end-2"><i class="fa fa-check"></i><b>17.7</b> The end</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html"><i class="fa fa-check"></i><b>18</b> Test drive R Markdown</a><ul>
+<li class="chapter" data-level="18.1" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#hello-world"><i class="fa fa-check"></i><b>18.1</b> Hello World</a></li>
+<li class="chapter" data-level="18.2" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#push-to-github"><i class="fa fa-check"></i><b>18.2</b> Push to GitHub</a></li>
+<li class="chapter" data-level="18.3" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#output-format"><i class="fa fa-check"></i><b>18.3</b> Output format</a></li>
+<li class="chapter" data-level="18.4" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#push-to-github-1"><i class="fa fa-check"></i><b>18.4</b> Push to GitHub</a></li>
+<li class="chapter" data-level="18.5" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#put-your-stamp-on-it"><i class="fa fa-check"></i><b>18.5</b> Put your stamp on it</a></li>
+<li class="chapter" data-level="18.6" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#develop-your-report"><i class="fa fa-check"></i><b>18.6</b> Develop your report</a></li>
+<li class="chapter" data-level="18.7" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#publish-your-report"><i class="fa fa-check"></i><b>18.7</b> Publish your report</a></li>
+<li class="chapter" data-level="18.8" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#html-on-github"><i class="fa fa-check"></i><b>18.8</b> HTML on GitHub</a></li>
+<li class="chapter" data-level="18.9" data-path="rmd-test-drive.html"><a href="rmd-test-drive.html#rmd-troubleshooting"><i class="fa fa-check"></i><b>18.9</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="r-test-drive.html"><a href="r-test-drive.html"><i class="fa fa-check"></i><b>19</b> Render an R script</a><ul>
+<li class="chapter" data-level="19.1" data-path="r-test-drive.html"><a href="r-test-drive.html#morph-r-markdown-into-a-renderable-r-script"><i class="fa fa-check"></i><b>19.1</b> Morph R Markdown into a renderable R script</a></li>
+<li class="chapter" data-level="19.2" data-path="r-test-drive.html"><a href="r-test-drive.html#write-a-render-ready-r-script"><i class="fa fa-check"></i><b>19.2</b> Write a render-ready R script</a></li>
+</ul></li>
+<li class="part"><span><b>IV Git fundamentals</b></span></li>
+<li class="chapter" data-level="" data-path="git-intro.html"><a href="git-intro.html"><i class="fa fa-check"></i>Some Git basics</a></li>
+<li class="chapter" data-level="20" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>20</b> Repo, commit, diff, tag</a><ul>
+<li class="chapter" data-level="20.1" data-path="git-basics.html"><a href="git-basics.html#repos-or-repositories"><i class="fa fa-check"></i><b>20.1</b> Repos or repositories</a></li>
+<li class="chapter" data-level="20.2" data-path="git-basics.html"><a href="git-basics.html#commits-diffs-and-tags"><i class="fa fa-check"></i><b>20.2</b> Commits, diffs, and tags</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="git-commands.html"><a href="git-commands.html"><i class="fa fa-check"></i><b>21</b> Git commands</a></li>
+<li class="chapter" data-level="22" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>22</b> Branches</a><ul>
+<li class="chapter" data-level="22.1" data-path="git-branches.html"><a href="git-branches.html#create-a-new-branch"><i class="fa fa-check"></i><b>22.1</b> Create a new branch</a></li>
+<li class="chapter" data-level="22.2" data-path="git-branches.html"><a href="git-branches.html#switching-branches"><i class="fa fa-check"></i><b>22.2</b> Switching branches</a></li>
+<li class="chapter" data-level="22.3" data-path="git-branches.html"><a href="git-branches.html#merging-a-branch"><i class="fa fa-check"></i><b>22.3</b> Merging a branch</a></li>
+<li class="chapter" data-level="22.4" data-path="git-branches.html"><a href="git-branches.html#dealing-with-conflicts"><i class="fa fa-check"></i><b>22.4</b> Dealing with conflicts</a><ul>
+<li class="chapter" data-level="22.4.1" data-path="git-branches.html"><a href="git-branches.html#bailing-out"><i class="fa fa-check"></i><b>22.4.1</b> Bailing out</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="git-remotes.html"><a href="git-remotes.html"><i class="fa fa-check"></i><b>23</b> Remotes</a><ul>
+<li class="chapter" data-level="23.1" data-path="git-remotes.html"><a href="git-remotes.html#listing-what-remotes-exist"><i class="fa fa-check"></i><b>23.1</b> Listing what remotes exist</a></li>
+<li class="chapter" data-level="23.2" data-path="git-remotes.html"><a href="git-remotes.html#adding-a-new-remote"><i class="fa fa-check"></i><b>23.2</b> Adding a new remote</a></li>
+<li class="chapter" data-level="23.3" data-path="git-remotes.html"><a href="git-remotes.html#fetching-data-from-remotes"><i class="fa fa-check"></i><b>23.3</b> Fetching data from remotes</a></li>
+<li class="chapter" data-level="23.4" data-path="git-remotes.html"><a href="git-remotes.html#pushing-to-remotes"><i class="fa fa-check"></i><b>23.4</b> Pushing to remotes</a></li>
+<li class="chapter" data-level="23.5" data-path="git-remotes.html"><a href="git-remotes.html#renaming-and-changing-remotes"><i class="fa fa-check"></i><b>23.5</b> Renaming and changing remotes</a></li>
+<li class="chapter" data-level="23.6" data-path="git-remotes.html"><a href="git-remotes.html#upstream-tracking-branches"><i class="fa fa-check"></i><b>23.6</b> Upstream tracking branches</a></li>
+</ul></li>
+<li class="part"><span><b>V Remote setups</b></span></li>
+<li class="chapter" data-level="" data-path="remote-scenarios-intro.html"><a href="remote-scenarios-intro.html"><i class="fa fa-check"></i>Git remote setups</a></li>
+<li class="chapter" data-level="24" data-path="common-remote-setups.html"><a href="common-remote-setups.html"><i class="fa fa-check"></i><b>24</b> Common remote setups</a><ul>
+<li class="chapter" data-level="24.1" data-path="common-remote-setups.html"><a href="common-remote-setups.html#no-github"><i class="fa fa-check"></i><b>24.1</b> No GitHub</a></li>
+<li class="chapter" data-level="24.2" data-path="common-remote-setups.html"><a href="common-remote-setups.html#ours-you"><i class="fa fa-check"></i><b>24.2</b> Ours (more specifically, yours)</a></li>
+<li class="chapter" data-level="24.3" data-path="common-remote-setups.html"><a href="common-remote-setups.html#ours-them"><i class="fa fa-check"></i><b>24.3</b> Ours</a></li>
+<li class="chapter" data-level="24.4" data-path="common-remote-setups.html"><a href="common-remote-setups.html#theirs"><i class="fa fa-check"></i><b>24.4</b> Theirs</a></li>
+<li class="chapter" data-level="24.5" data-path="common-remote-setups.html"><a href="common-remote-setups.html#fork-them"><i class="fa fa-check"></i><b>24.5</b> Fork (of theirs)</a></li>
+<li class="chapter" data-level="24.6" data-path="common-remote-setups.html"><a href="common-remote-setups.html#fork-of-ours"><i class="fa fa-check"></i><b>24.6</b> Fork (of ours)</a></li>
+<li class="chapter" data-level="24.7" data-path="common-remote-setups.html"><a href="common-remote-setups.html#fork_upstream_is_not_origin_parent"><i class="fa fa-check"></i><b>24.7</b> Fork (salvageable)</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="equivocal.html"><a href="equivocal.html"><i class="fa fa-check"></i><b>25</b> Equivocal remote setups</a><ul>
+<li class="chapter" data-level="25.1" data-path="equivocal.html"><a href="equivocal.html#maybe-ours-or-theirs"><i class="fa fa-check"></i><b>25.1</b> Maybe “ours” or “theirs”</a></li>
+<li class="chapter" data-level="25.2" data-path="equivocal.html"><a href="equivocal.html#maybe-fork"><i class="fa fa-check"></i><b>25.2</b> Maybe fork</a></li>
+<li class="chapter" data-level="25.3" data-path="equivocal.html"><a href="equivocal.html#how-to-fix"><i class="fa fa-check"></i><b>25.3</b> How to fix</a></li>
+</ul></li>
+<li class="part"><span><b>VI Daily Workflows</b></span></li>
+<li class="chapter" data-level="" data-path="workflows-intro.html"><a href="workflows-intro.html"><i class="fa fa-check"></i>Useful Git patterns for real life</a></li>
+<li class="chapter" data-level="26" data-path="repeated-amend.html"><a href="repeated-amend.html"><i class="fa fa-check"></i><b>26</b> The Repeated Amend</a><ul>
+<li class="chapter" data-level="26.1" data-path="repeated-amend.html"><a href="repeated-amend.html#rock-climbing-analogy"><i class="fa fa-check"></i><b>26.1</b> Rock climbing analogy</a></li>
+<li class="chapter" data-level="26.2" data-path="repeated-amend.html"><a href="repeated-amend.html#workflow-sketch"><i class="fa fa-check"></i><b>26.2</b> Workflow sketch</a><ul>
+<li class="chapter" data-level="26.2.1" data-path="repeated-amend.html"><a href="repeated-amend.html#initial-condition"><i class="fa fa-check"></i><b>26.2.1</b> Initial condition</a></li>
+<li class="chapter" data-level="26.2.2" data-path="repeated-amend.html"><a href="repeated-amend.html#get-to-work"><i class="fa fa-check"></i><b>26.2.2</b> Get to work</a></li>
+</ul></li>
+<li class="chapter" data-level="26.3" data-path="repeated-amend.html"><a href="repeated-amend.html#what-if-i-need-to-fall-back"><i class="fa fa-check"></i><b>26.3</b> What if I need to fall back?</a></li>
+<li class="chapter" data-level="26.4" data-path="repeated-amend.html"><a href="repeated-amend.html#why-dont-we-push-intermediate-progress"><i class="fa fa-check"></i><b>26.4</b> Why don’t we push intermediate progress?</a></li>
+<li class="chapter" data-level="26.5" data-path="repeated-amend.html"><a href="repeated-amend.html#um-what-if-i-did-push"><i class="fa fa-check"></i><b>26.5</b> Um, what if I did push?</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="push-rejected.html"><a href="push-rejected.html"><i class="fa fa-check"></i><b>27</b> Dealing with push rejection</a><ul>
+<li class="chapter" data-level="27.1" data-path="push-rejected.html"><a href="push-rejected.html#she-who-pushes-first-wins"><i class="fa fa-check"></i><b>27.1</b> She who pushes first wins!</a></li>
+<li class="chapter" data-level="27.2" data-path="push-rejected.html"><a href="push-rejected.html#stay-in-touch"><i class="fa fa-check"></i><b>27.2</b> Stay in touch</a></li>
+<li class="chapter" data-level="27.3" data-path="push-rejected.html"><a href="push-rejected.html#use-branches"><i class="fa fa-check"></i><b>27.3</b> Use branches</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="pull-tricky.html"><a href="pull-tricky.html"><i class="fa fa-check"></i><b>28</b> Pull, but you have local work</a><ul>
+<li class="chapter" data-level="28.1" data-path="pull-tricky.html"><a href="pull-tricky.html#local-work-is-uncommitted"><i class="fa fa-check"></i><b>28.1</b> Local work is uncommitted</a><ul>
+<li class="chapter" data-level="28.1.1" data-path="pull-tricky.html"><a href="pull-tricky.html#happy-simple-cases"><i class="fa fa-check"></i><b>28.1.1</b> Happy simple cases</a></li>
+<li class="chapter" data-level="28.1.2" data-path="pull-tricky.html"><a href="pull-tricky.html#git-stash-works-sometimes"><i class="fa fa-check"></i><b>28.1.2</b> <code>git stash</code> works, sometimes</a></li>
+<li class="chapter" data-level="28.1.3" data-path="pull-tricky.html"><a href="pull-tricky.html#git-stash-with-conflicts"><i class="fa fa-check"></i><b>28.1.3</b> <code>git stash</code> with conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="28.2" data-path="pull-tricky.html"><a href="pull-tricky.html#git-pull-with-local-commits"><i class="fa fa-check"></i><b>28.2</b> Local work is committed</a><ul>
+<li class="chapter" data-level="28.2.1" data-path="pull-tricky.html"><a href="pull-tricky.html#pull-fetch-and-merge"><i class="fa fa-check"></i><b>28.2.1</b> Pull (fetch and merge)</a></li>
+<li class="chapter" data-level="28.2.2" data-path="pull-tricky.html"><a href="pull-tricky.html#pull-and-rebase"><i class="fa fa-check"></i><b>28.2.2</b> Pull and rebase</a></li>
+</ul></li>
+<li class="chapter" data-level="28.3" data-path="pull-tricky.html"><a href="pull-tricky.html#other-approaches"><i class="fa fa-check"></i><b>28.3</b> Other approaches</a><ul>
+<li class="chapter" data-level="28.3.1" data-path="pull-tricky.html"><a href="pull-tricky.html#use-a-temporary-branch-for-local-work"><i class="fa fa-check"></i><b>28.3.1</b> Use a temporary branch for local work</a></li>
+</ul></li>
+<li class="chapter" data-level="28.4" data-path="pull-tricky.html"><a href="pull-tricky.html#some-local-work-is-committed-some-is-not"><i class="fa fa-check"></i><b>28.4</b> Some local work is committed, some is not</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html"><i class="fa fa-check"></i><b>29</b> Time travel: See the past</a><ul>
+<li class="chapter" data-level="29.1" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#hyperlinks-are-awesome"><i class="fa fa-check"></i><b>29.1</b> Hyperlinks are awesome!</a></li>
+<li class="chapter" data-level="29.2" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#browse-commit-history-and-specific-commits"><i class="fa fa-check"></i><b>29.2</b> Browse commit history and specific commits</a><ul>
+<li class="chapter" data-level="29.2.1" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#use-hyperlinks-yourself"><i class="fa fa-check"></i><b>29.2.1</b> Use hyperlinks yourself!</a></li>
+</ul></li>
+<li class="chapter" data-level="29.3" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#file-driven-inquiries"><i class="fa fa-check"></i><b>29.3</b> File driven inquiries</a><ul>
+<li class="chapter" data-level="29.3.1" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#blame"><i class="fa fa-check"></i><b>29.3.1</b> Blame</a></li>
+<li class="chapter" data-level="29.3.2" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#history"><i class="fa fa-check"></i><b>29.3.2</b> History</a></li>
+<li class="chapter" data-level="29.3.3" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#hyperlink-to-specific-lines-at-a-specific-state"><i class="fa fa-check"></i><b>29.3.3</b> Hyperlink to specific lines at a specific state</a></li>
+</ul></li>
+<li class="chapter" data-level="29.4" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#search"><i class="fa fa-check"></i><b>29.4</b> Search</a><ul>
+<li class="chapter" data-level="29.4.1" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#issue-search"><i class="fa fa-check"></i><b>29.4.1</b> Issue search</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="fork-and-clone.html"><a href="fork-and-clone.html"><i class="fa fa-check"></i><b>30</b> Fork and clone</a><ul>
+<li class="chapter" data-level="30.1" data-path="fork-and-clone.html"><a href="fork-and-clone.html#initial-workflow"><i class="fa fa-check"></i><b>30.1</b> Initial workflow</a></li>
+<li class="chapter" data-level="30.2" data-path="fork-and-clone.html"><a href="fork-and-clone.html#usethiscreate_from_githubownerrepo"><i class="fa fa-check"></i><b>30.2</b> <code>usethis::create_from_github("OWNER/REPO")</code></a></li>
+<li class="chapter" data-level="30.3" data-path="fork-and-clone.html"><a href="fork-and-clone.html#engage-with-the-new-repo"><i class="fa fa-check"></i><b>30.3</b> Engage with the new repo</a></li>
+<li class="chapter" data-level="30.4" data-path="fork-and-clone.html"><a href="fork-and-clone.html#dont-touch-master"><i class="fa fa-check"></i><b>30.4</b> Don’t mess with <code>master</code></a></li>
+<li class="chapter" data-level="30.5" data-path="fork-and-clone.html"><a href="fork-and-clone.html#the-original-repo-as-a-remote"><i class="fa fa-check"></i><b>30.5</b> The original repo as a remote</a><ul>
+<li class="chapter" data-level="30.5.1" data-path="fork-and-clone.html"><a href="fork-and-clone.html#no-you-cant-do-this-via-github"><i class="fa fa-check"></i><b>30.5.1</b> No, you can’t do this via GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="upstream-changes.html"><a href="upstream-changes.html"><i class="fa fa-check"></i><b>31</b> Get upstream changes for a fork</a><ul>
+<li class="chapter" data-level="31.1" data-path="upstream-changes.html"><a href="upstream-changes.html#no-you-cant-do-this-via-github-1"><i class="fa fa-check"></i><b>31.1</b> No, you can’t do this via GitHub</a></li>
+<li class="chapter" data-level="31.2" data-path="upstream-changes.html"><a href="upstream-changes.html#initial-conditions"><i class="fa fa-check"></i><b>31.2</b> Initial conditions</a></li>
+<li class="chapter" data-level="31.3" data-path="upstream-changes.html"><a href="upstream-changes.html#list-your-remotes"><i class="fa fa-check"></i><b>31.3</b> List your remotes</a></li>
+<li class="chapter" data-level="31.4" data-path="upstream-changes.html"><a href="upstream-changes.html#add-the-upstream-remote"><i class="fa fa-check"></i><b>31.4</b> Add the <code>upstream</code> remote</a><ul>
+<li class="chapter" data-level="31.4.1" data-path="upstream-changes.html"><a href="upstream-changes.html#command-line-git"><i class="fa fa-check"></i><b>31.4.1</b> Command line Git</a></li>
+<li class="chapter" data-level="31.4.2" data-path="upstream-changes.html"><a href="upstream-changes.html#rstudio"><i class="fa fa-check"></i><b>31.4.2</b> RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="31.5" data-path="upstream-changes.html"><a href="upstream-changes.html#verify-your-upstream-remote"><i class="fa fa-check"></i><b>31.5</b> Verify your <code>upstream</code> remote</a></li>
+<li class="chapter" data-level="31.6" data-path="upstream-changes.html"><a href="upstream-changes.html#pull-changes-from-upstream"><i class="fa fa-check"></i><b>31.6</b> Pull changes from <code>upstream</code></a></li>
+<li class="chapter" data-level="31.7" data-path="upstream-changes.html"><a href="upstream-changes.html#push-these-changes-to-originmaster"><i class="fa fa-check"></i><b>31.7</b> Push these changes to <code>origin/master</code></a></li>
+<li class="chapter" data-level="31.8" data-path="upstream-changes.html"><a href="upstream-changes.html#touched-master"><i class="fa fa-check"></i><b>31.8</b> Um, what if I did touch <code>master</code>?</a></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="pr-extend.html"><a href="pr-extend.html"><i class="fa fa-check"></i><b>32</b> Explore and extend a pull request</a><ul>
+<li class="chapter" data-level="32.1" data-path="pr-extend.html"><a href="pr-extend.html#terminology"><i class="fa fa-check"></i><b>32.1</b> Terminology</a></li>
+<li class="chapter" data-level="32.2" data-path="pr-extend.html"><a href="pr-extend.html#official-github-advice-version-1"><i class="fa fa-check"></i><b>32.2</b> Official GitHub advice, Version 1</a></li>
+<li class="chapter" data-level="32.3" data-path="pr-extend.html"><a href="pr-extend.html#official-github-advice-version-2"><i class="fa fa-check"></i><b>32.3</b> Official GitHub advice, Version 2</a></li>
+<li class="chapter" data-level="32.4" data-path="pr-extend.html"><a href="pr-extend.html#official-github-advice-version-3"><i class="fa fa-check"></i><b>32.4</b> Official GitHub advice, Version 3</a></li>
+<li class="chapter" data-level="32.5" data-path="pr-extend.html"><a href="pr-extend.html#my-under-development-workflow"><i class="fa fa-check"></i><b>32.5</b> My under-development workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="workflows-browsability.html"><a href="workflows-browsability.html"><i class="fa fa-check"></i><b>33</b> Make a GitHub repo browsable</a><ul>
+<li class="chapter" data-level="33.1" data-path="workflows-browsability.html"><a href="workflows-browsability.html#be-savvy-about-your-files"><i class="fa fa-check"></i><b>33.1</b> Be savvy about your files</a></li>
+<li class="chapter" data-level="33.2" data-path="workflows-browsability.html"><a href="workflows-browsability.html#get-over-your-hang-ups-re-committing-derived-products"><i class="fa fa-check"></i><b>33.2</b> Get over your hang ups re: committing derived products</a></li>
+<li class="chapter" data-level="33.3" data-path="workflows-browsability.html"><a href="workflows-browsability.html#markdown"><i class="fa fa-check"></i><b>33.3</b> Markdown</a></li>
+<li class="chapter" data-level="33.4" data-path="workflows-browsability.html"><a href="workflows-browsability.html#r-markdown"><i class="fa fa-check"></i><b>33.4</b> R Markdown</a></li>
+<li class="chapter" data-level="33.5" data-path="workflows-browsability.html"><a href="workflows-browsability.html#readme.md"><i class="fa fa-check"></i><b>33.5</b> <code>README.md</code></a></li>
+<li class="chapter" data-level="33.6" data-path="workflows-browsability.html"><a href="workflows-browsability.html#finding-stuff"><i class="fa fa-check"></i><b>33.6</b> Finding stuff</a></li>
+<li class="chapter" data-level="33.7" data-path="workflows-browsability.html"><a href="workflows-browsability.html#html"><i class="fa fa-check"></i><b>33.7</b> HTML</a></li>
+<li class="chapter" data-level="33.8" data-path="workflows-browsability.html"><a href="workflows-browsability.html#source-code"><i class="fa fa-check"></i><b>33.8</b> Source code</a></li>
+<li class="chapter" data-level="33.9" data-path="workflows-browsability.html"><a href="workflows-browsability.html#delimited-files"><i class="fa fa-check"></i><b>33.9</b> Delimited files</a></li>
+<li class="chapter" data-level="33.10" data-path="workflows-browsability.html"><a href="workflows-browsability.html#pngs"><i class="fa fa-check"></i><b>33.10</b> PNGs</a></li>
+<li class="chapter" data-level="33.11" data-path="workflows-browsability.html"><a href="workflows-browsability.html#other-document-formats"><i class="fa fa-check"></i><b>33.11</b> Other document formats</a></li>
+<li class="chapter" data-level="33.12" data-path="workflows-browsability.html"><a href="workflows-browsability.html#linking-to-a-zip-archive-of-your-repo"><i class="fa fa-check"></i><b>33.12</b> Linking to a ZIP archive of your repo</a></li>
+<li class="chapter" data-level="33.13" data-path="workflows-browsability.html"><a href="workflows-browsability.html#links-and-embedded-figures"><i class="fa fa-check"></i><b>33.13</b> Links and embedded figures</a></li>
+<li class="chapter" data-level="33.14" data-path="workflows-browsability.html"><a href="workflows-browsability.html#let-people-correct-you-on-the-internet"><i class="fa fa-check"></i><b>33.14</b> Let people correct you on the internet</a></li>
+</ul></li>
+<li class="part"><span><b>VII Activity prompts</b></span></li>
+<li class="chapter" data-level="34" data-path="clone.html"><a href="clone.html"><i class="fa fa-check"></i><b>34</b> Clone a repo</a></li>
+<li class="chapter" data-level="35" data-path="bingo.html"><a href="bingo.html"><i class="fa fa-check"></i><b>35</b> Create a bingo card</a></li>
+<li class="chapter" data-level="36" data-path="burn.html"><a href="burn.html"><i class="fa fa-check"></i><b>36</b> Burn it all down</a></li>
+<li class="chapter" data-level="37" data-path="reset.html"><a href="reset.html"><i class="fa fa-check"></i><b>37</b> Resetting</a></li>
+<li class="chapter" data-level="38" data-path="time-travel-see-past.html"><a href="time-travel-see-past.html#search"><i class="fa fa-check"></i><b>38</b> Search GitHub</a><ul>
+<li class="chapter" data-level="38.1" data-path="search.html"><a href="search.html"><i class="fa fa-check"></i><b>38.1</b> Basic resources</a></li>
+<li class="chapter" data-level="38.2" data-path="search.html"><a href="search.html#use-case"><i class="fa fa-check"></i><b>38.2</b> Use case</a></li>
+</ul></li>
+<li class="part"><span><b>VIII Notes</b></span></li>
+<li class="chapter" data-level="" data-path="notes-intro.html"><a href="notes-intro.html"><i class="fa fa-check"></i>Notes</a></li>
+<li class="chapter" data-level="39" data-path="classroom-overview.html"><a href="classroom-overview.html"><i class="fa fa-check"></i><b>39</b> Run a course with GitHub</a><ul>
+<li class="chapter" data-level="39.1" data-path="classroom-overview.html"><a href="classroom-overview.html#benefits"><i class="fa fa-check"></i><b>39.1</b> Benefits</a></li>
+<li class="chapter" data-level="39.2" data-path="classroom-overview.html"><a href="classroom-overview.html#the-stat-545-student-setup"><i class="fa fa-check"></i><b>39.2</b> The STAT 545 student setup</a></li>
+<li class="chapter" data-level="39.3" data-path="classroom-overview.html"><a href="classroom-overview.html#the-homework-flow"><i class="fa fa-check"></i><b>39.3</b> The homework-flow</a></li>
+<li class="chapter" data-level="39.4" data-path="classroom-overview.html"><a href="classroom-overview.html#github-as-course-management-system"><i class="fa fa-check"></i><b>39.4</b> GitHub as course management system</a><ul>
+<li class="chapter" data-level="39.4.1" data-path="classroom-overview.html"><a href="classroom-overview.html#use-a-github-organization"><i class="fa fa-check"></i><b>39.4.1</b> Use a GitHub Organization</a></li>
+<li class="chapter" data-level="39.4.2" data-path="classroom-overview.html"><a href="classroom-overview.html#github-pages-for-course-website"><i class="fa fa-check"></i><b>39.4.2</b> GitHub Pages for course website</a></li>
+<li class="chapter" data-level="39.4.3" data-path="classroom-overview.html"><a href="classroom-overview.html#student-specific-private-repos"><i class="fa fa-check"></i><b>39.4.3</b> Student-specific private repos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="40" data-path="ideas-for-content.html"><a href="ideas-for-content.html"><i class="fa fa-check"></i><b>40</b> Ideas for content</a><ul>
+<li class="chapter" data-level="40.1" data-path="ideas-for-content.html"><a href="ideas-for-content.html#common-workflow-questions"><i class="fa fa-check"></i><b>40.1</b> Common workflow questions</a><ul>
+<li class="chapter" data-level="40.1.1" data-path="ideas-for-content.html"><a href="ideas-for-content.html#common-predicaments-and-how-to-recoveravoid"><i class="fa fa-check"></i><b>40.1.1</b> Common predicaments and how to recover/avoid</a></li>
+<li class="chapter" data-level="40.1.2" data-path="ideas-for-content.html"><a href="ideas-for-content.html#keep-something-out-of-git"><i class="fa fa-check"></i><b>40.1.2</b> Keep something out of Git</a></li>
+<li class="chapter" data-level="40.1.3" data-path="ideas-for-content.html"><a href="ideas-for-content.html#i-didnt-mean-to-commit-that"><i class="fa fa-check"></i><b>40.1.3</b> I didn’t mean to commit that</a></li>
+</ul></li>
+<li class="chapter" data-level="40.2" data-path="ideas-for-content.html"><a href="ideas-for-content.html#git-stuff"><i class="fa fa-check"></i><b>40.2</b> git stuff</a></li>
+<li class="chapter" data-level="40.3" data-path="ideas-for-content.html"><a href="ideas-for-content.html#disaster-recovery"><i class="fa fa-check"></i><b>40.3</b> Disaster recovery</a></li>
+<li class="chapter" data-level="40.4" data-path="ideas-for-content.html"><a href="ideas-for-content.html#engage-with-r-source-on-github"><i class="fa fa-check"></i><b>40.4</b> Engage with R source on GitHub</a></li>
+<li class="chapter" data-level="40.5" data-path="ideas-for-content.html"><a href="ideas-for-content.html#workflow-and-psychology"><i class="fa fa-check"></i><b>40.5</b> Workflow and psychology</a></li>
+</ul></li>
+<li class="chapter" data-level="41" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html"><i class="fa fa-check"></i><b>41</b> Bookdown cheat sheet</a><ul>
+<li class="chapter" data-level="41.1" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html#heading-blah-blah"><i class="fa fa-check"></i><b>41.1</b> Heading blah blah</a></li>
+<li class="chapter" data-level="41.2" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html#id-example"><i class="fa fa-check"></i><b>41.2</b> About labelling things</a></li>
+<li class="chapter" data-level="41.3" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html#cross-references"><i class="fa fa-check"></i><b>41.3</b> Cross-references</a></li>
+<li class="chapter" data-level="41.4" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html#figures-tables-citations"><i class="fa fa-check"></i><b>41.4</b> Figures, tables, citations</a></li>
+<li class="chapter" data-level="41.5" data-path="bookdown-cheat-sheet.html"><a href="bookdown-cheat-sheet.html#how-the-square-bracket-links-work"><i class="fa fa-check"></i><b>41.5</b> How the square bracket links work</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="shell.html"><a href="shell.html"><i class="fa fa-check"></i><b>A</b> The shell</a><ul>
+<li class="chapter" data-level="A.1" data-path="shell.html"><a href="shell.html#what-is-the-shell"><i class="fa fa-check"></i><b>A.1</b> What is the shell?</a></li>
+<li class="chapter" data-level="A.2" data-path="shell.html"><a href="shell.html#starting-the-shell"><i class="fa fa-check"></i><b>A.2</b> Starting the shell</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="shell.html"><a href="shell.html#from-within-rstudio"><i class="fa fa-check"></i><b>A.2.1</b> From within RStudio</a></li>
+<li class="chapter" data-level="A.2.2" data-path="shell.html"><a href="shell.html#outside-of-rstudio"><i class="fa fa-check"></i><b>A.2.2</b> Outside of RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="shell.html"><a href="shell.html#windows-shell-hell"><i class="fa fa-check"></i><b>A.3</b> Windows is special … and not in a good way</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="shell.html"><a href="shell.html#git-bash"><i class="fa fa-check"></i><b>A.3.1</b> Git Bash</a></li>
+<li class="chapter" data-level="A.3.2" data-path="shell.html"><a href="shell.html#command-prompt"><i class="fa fa-check"></i><b>A.3.2</b> Command prompt</a></li>
+<li class="chapter" data-level="A.3.3" data-path="shell.html"><a href="shell.html#powershell"><i class="fa fa-check"></i><b>A.3.3</b> PowerShell</a></li>
+<li class="chapter" data-level="A.3.4" data-path="shell.html"><a href="shell.html#bash-via-windows-services-for-linux"><i class="fa fa-check"></i><b>A.3.4</b> Bash via Windows Services for Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="shell.html"><a href="shell.html#basic-shell-commands"><i class="fa fa-check"></i><b>A.4</b> Basic shell commands</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="github-pat.html"><a href="github-pat.html"><i class="fa fa-check"></i><b>B</b> GitHub Personal Access Tokens</a><ul>
+<li class="chapter" data-level="B.1" data-path="github-pat.html"><a href="github-pat.html#github-api"><i class="fa fa-check"></i><b>B.1</b> GitHub API</a></li>
+<li class="chapter" data-level="B.2" data-path="github-pat.html"><a href="github-pat.html#how-do-you-authenticate-yourself"><i class="fa fa-check"></i><b>B.2</b> How do you authenticate yourself?</a></li>
+<li class="chapter" data-level="B.3" data-path="github-pat.html"><a href="github-pat.html#step-by-step"><i class="fa fa-check"></i><b>B.3</b> Step-by-step</a><ul>
+<li class="chapter" data-level="B.3.1" data-path="github-pat.html"><a href="github-pat.html#create-a-pat"><i class="fa fa-check"></i><b>B.3.1</b> Create a PAT</a></li>
+<li class="chapter" data-level="B.3.2" data-path="github-pat.html"><a href="github-pat.html#add-your-pat-to-.renviron"><i class="fa fa-check"></i><b>B.3.2</b> Add your PAT to .Renviron</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="github-pat.html"><a href="github-pat.html#a-note-about-security"><i class="fa fa-check"></i><b>B.4</b> A note about security</a></li>
+<li class="chapter" data-level="B.5" data-path="github-pat.html"><a href="github-pat.html#why-.renviron-instead-of-bash-config"><i class="fa fa-check"></i><b>B.5</b> Why <code>.Renviron</code> instead of bash config?</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="comic-relief.html"><a href="comic-relief.html"><i class="fa fa-check"></i><b>C</b> Comic relief</a></li>
+<li class="chapter" data-level="D" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>D</b> Resources</a></li>
+<li class="chapter" data-level="E" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>E</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="index.html">Happy Git and GitHub for the useR</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="workflows-browsability" class="section level1">
+<h1><span class="header-section-number">Chapter 33</span> Make a GitHub repo browsable</h1>
+<p><strong>The unreasonable effectiveness of GitHub browsability</strong>. One of my favorite aspects of GitHub is the ability to inspect a repository’s files in a browser. Certain practices make browsing more rewarding and can postpone the day when you must create a proper website for a project. Perhaps indefinitely.</p>
+<div id="be-savvy-about-your-files" class="section level2">
+<h2><span class="header-section-number">33.1</span> Be savvy about your files</h2>
+<p>Keep files in the plainest, web-friendliest form that is compatible with your main goals. Plain text is the very best. GitHub offers special handling for certain types of files:</p>
+<ul>
+<li>Markdown files, which may be destined for conversion into, e.g., HTML</li>
+<li>Markdown files named <code>README.md</code></li>
+<li>HTML files, often the result of compiling Markdown files</li>
+<li>Source code, such as <code>.R</code> files</li>
+<li>Delimited files, such as CSVs and TSVs</li>
+<li>PNG files</li>
+</ul>
+</div>
+<div id="get-over-your-hang-ups-re-committing-derived-products" class="section level2">
+<h2><span class="header-section-number">33.2</span> Get over your hang ups re: committing derived products</h2>
+<p>Let’s acknowledge the discomfort some people feel about putting derived products under version control. Specifically, if you’ve got an R Markdown document <code>foo.Rmd</code>, it can be <code>knit()</code> to produce the intermediate product <code>foo.md</code>, which can be converted to the ultimate output <code>foo.html</code>. Which of those files are you “allowed” to put under version control? Source-is-real hardliners will say only <code>foo.Rmd</code> but pragmatists know this can be a serious bummer in real life. Just because I <em>can</em> rebuild everything from scratch, it doesn’t mean I <em>want</em> to.</p>
+<p>The taboo of keeping derived products under version control originates from compilation of binary executables from source. Software built on a Mac would not work on Windows and so it made sense to keep these binaries out of the holy source code repository. Also, you could assume the people with access to the repository have the full development stack and relish opportunities to use it. None of these arguments really apply to the <code>foo.Rmd --&gt; foo.md --&gt; foo.html</code> workflow. We don’t have to blindly follow traditions from the compilation domain!</p>
+<p>In fact, looking at the diffs for <code>foo.md</code> or <code>foo-figure-01.png</code> can be extremely informative. This is also true in larger data analytic projects after a <code>make clean; make all</code> operation. By looking at the diffs in the downstream products, you often catch unexpected changes. This can tip you off to changes in the underlying data and/or the behavior of packages you depend on.</p>
+<p>This chapter explores cool things GitHub can do with various file types, if they happen to end up in your repo. I won’t ask you how they got there.</p>
+</div>
+<div id="markdown" class="section level2">
+<h2><span class="header-section-number">33.3</span> Markdown</h2>
+<p>You will quickly discover that GitHub renders Markdown files very nicely. By clicking on <code>foo.md</code>, you’ll get a decent preview of <code>foo.html</code>. Yay! You should read <a href="https://guides.github.com/features/mastering-markdown/">GitHub’s own guide</a> on how to leverage automatic Markdown rendering.</p>
+<p>Exploit this aggressively. Make Markdown your default format for narrative text files and use them liberally to embed notes to yourself and others in a repository hosted on Github. It’s an easy way to get pseudo-webpages inside a project “for free”. You may never even compile these files to HTML explicitly; in many cases, the HTML preview offered by GitHub is all you ever need.</p>
+</div>
+<div id="r-markdown" class="section level2">
+<h2><span class="header-section-number">33.4</span> R Markdown</h2>
+<p>What does this mean for R Markdown files? <strong>Keep intermediate Markdown. Or only render to Markdown.</strong> Commit both <code>foo.Rmd</code> and <code>foo.md</code>, even if you choose to <code>.gitignore</code> the final product, e.g. <code>foo.html</code> or <code>foo.pdf</code> or <code>foo.docx</code>. From <a href="https://github.com/github/markup/pull/343">September 2014</a>, GitHub renders R Markdown files nicely, like Markdown, and with proper syntax highlighting, which is great. But, of course, the code blocks just sit there un-executed, so my advice about keeping Markdown still holds.</p>
+<p>If your target output format is not Markdown, you want <a href="https://gist.github.com/jennybc/402761e30b9be8023af9">YAML frontmatter</a> that looks something like this for <code>.Rmd</code>:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb176-1"><a href="workflows-browsability.html#cb176-1"></a><span class="pp">---</span></span>
+<span id="cb176-2"><a href="workflows-browsability.html#cb176-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Something fascinating&quot;</span></span>
+<span id="cb176-3"><a href="workflows-browsability.html#cb176-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Jenny Bryan&quot;</span></span>
+<span id="cb176-4"><a href="workflows-browsability.html#cb176-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`r format(Sys.Date())`&quot;</span></span>
+<span id="cb176-5"><a href="workflows-browsability.html#cb176-5"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb176-6"><a href="workflows-browsability.html#cb176-6"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb176-7"><a href="workflows-browsability.html#cb176-7"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">TRUE</span></span>
+<span id="cb176-8"><a href="workflows-browsability.html#cb176-8"></a><span class="pp">---</span></span></code></pre></div>
+<p>or like this for <code>.R</code>:</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb177-1"><a href="workflows-browsability.html#cb177-1"></a><span class="co">#&#39; ---</span></span>
+<span id="cb177-2"><a href="workflows-browsability.html#cb177-2"></a><span class="co">#&#39; title: &quot;Something fascinating&quot;</span></span>
+<span id="cb177-3"><a href="workflows-browsability.html#cb177-3"></a><span class="co">#&#39; author: &quot;Jenny Bryan&quot;</span></span>
+<span id="cb177-4"><a href="workflows-browsability.html#cb177-4"></a><span class="co">#&#39; date: &quot;`r format(Sys.Date())`&quot;</span></span>
+<span id="cb177-5"><a href="workflows-browsability.html#cb177-5"></a><span class="co">#&#39; output:</span></span>
+<span id="cb177-6"><a href="workflows-browsability.html#cb177-6"></a><span class="co">#&#39;   html_document:</span></span>
+<span id="cb177-7"><a href="workflows-browsability.html#cb177-7"></a><span class="co">#&#39;     keep_md: TRUE</span></span>
+<span id="cb177-8"><a href="workflows-browsability.html#cb177-8"></a><span class="co">#&#39; ---</span></span></code></pre></div>
+<p>The <code>keep_md: TRUE</code> part says to keep the intermediate Markdown. In RStudio, when editing <code>.Rmd</code>, click on the gear next to “Knit HTML” for YAML authoring help.</p>
+<p>Since 2016, <code>rmarkdown</code> offers a <a href="http://rmarkdown.rstudio.com/github_document_format.html">custom output format for GitHub-flavored markdown, <code>github_document</code></a>. Read about <a href="rmd-test-drive.html#rmd-test-drive">R Markdown workflows</a> for explicit examples of how to use this. If Markdown is your target output format, your <a href="https://gist.github.com/jennybc/402761e30b9be8023af9">YAML can be even simpler</a> and look like this for <code>.Rmd</code>:</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb178-1"><a href="workflows-browsability.html#cb178-1"></a><span class="pp">---</span></span>
+<span id="cb178-2"><a href="workflows-browsability.html#cb178-2"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> github_document</span></span>
+<span id="cb178-3"><a href="workflows-browsability.html#cb178-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>or like this for <code>.R</code>:</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb179-1"><a href="workflows-browsability.html#cb179-1"></a><span class="co">#&#39; ---</span></span>
+<span id="cb179-2"><a href="workflows-browsability.html#cb179-2"></a><span class="co">#&#39; output: github_document</span></span>
+<span id="cb179-3"><a href="workflows-browsability.html#cb179-3"></a><span class="co">#&#39; ---</span></span></code></pre></div>
+<p>For a quick, stand-alone document that doesn’t fit neatly into a repository or project (yet), make it a <a href="https://gist.github.com/">Gist</a>. Example: Hadley Wickham’s <a href="https://gist.github.com/hadley/820f09ded347c62c2864">advice on what you need to do to become a data scientist</a>. Gists can contain multiple files, so you can still provide the R script or R Markdown source <strong>and</strong> the resulting Markdown, as I’ve done in this write-up of <a href="https://gist.github.com/jennybc/04b71bfaaf0f88d9d2eb">Twitter-sourced tips for cross-tabulation</a>. I’ve collected <a href="https://gist.github.com/jennybc/402761e30b9be8023af9">YAML examples</a> for all the above scenarios in a gist.</p>
+</div>
+<div id="readme.md" class="section level2">
+<h2><span class="header-section-number">33.5</span> <code>README.md</code></h2>
+<p>You probably already know that GitHub renders <code>README.md</code> at the top-level of your repo as the <em>de facto</em> landing page. This is analogous to what happens when you point a web browser at a directory instead of a specific web page: if there is a file named <code>index.html</code>, that’s what the server will show you by default. On GitHub, files named <code>README.md</code> play exactly this role for directories in your repo.</p>
+<p>Implication: for any logical group of files or mini project-within-your-project, create a sub-directory in your repository. And then create a <code>README.md</code> file to annotate these files, collect relevant links, etc. Now when you navigate to the sub-directory on GitHub the nicely rendered <code>README.md</code> will simply appear. The GitHub repo that backs the <a href="https://cran.r-project.org/package=gapminder">gapminder</a> data package has a <a href="https://github.com/jennybc/gapminder/tree/master/data-raw#readme">README in the <code>data-raw</code> subdirectory</a> that explains exactly how the package data is created. In fact, it is generated programmatically from <a href="https://github.com/jennybc/gapminder/blob/master/data-raw/README.Rmd"><code>README.Rmd</code></a>.</p>
+<p>Some repositories consist solely of <code>README.md</code>. Examples: Jeff Leek’s write-ups on <a href="https://github.com/jtleek/datasharing">How to share data with a statistician</a> or <a href="https://github.com/jtleek/rpackages">Developing R packages</a>. I am becoming a bigger fan of <code>README</code>-only repos than gists because repo issues trigger notifications, whereas comments on gists do not.</p>
+<p>If you’ve got a directory full of web-friendly figures, such as PNGs, you can use <a href="https://gist.github.com/jennybc/0239f65633e09df7e5f4">code like this</a> to generate a <code>README.md</code> for a quick DIY gallery, as Karl Broman has done with <a href="https://github.com/kbroman/FruitSnacks/blob/master/PhotoGallery.md">his FruitSnacks</a>. I did same for all the <a href="https://github.com/jennybc/orly-full-res#readme">fantastic O RLY book covers</a> made by The Practical Dev.</p>
+<p>I have also used this device to share Keynote slides on GitHub (<em>mea culpa!</em>). Export them as PNGs images and throw ’em into a README gallery: slides on <a href="https://github.com/Reproducible-Science-Curriculum/rr-organization1/tree/27883c8fc4cdd4dcc6a8232f1fe5c726e96708a0/slides/organization-slides">file organization</a> and some on <a href="https://github.com/Reproducible-Science-Curriculum/rr-organization1/tree/27883c8fc4cdd4dcc6a8232f1fe5c726e96708a0/slides/naming-slides">file naming</a>.</p>
+</div>
+<div id="finding-stuff" class="section level2">
+<h2><span class="header-section-number">33.6</span> Finding stuff</h2>
+<p>OK these are pure GitHub tips but if you’ve made it this far, you’re obviously a keener.</p>
+<ul>
+<li>Press <code>t</code> to activate <a href="https://github.com/blog/793-introducing-the-file-finder">the file finder</a> whenever you’re in a repo’s file and directory view. AWESOME, especially when there are files tucked into lots of subdirectories.</li>
+<li>Press <code>y</code> to <a href="https://help.github.com/articles/getting-permanent-links-to-files/">get a permanent link</a> when you’re viewing a specific file. Watch what changes in the URL. This is important if you are about to <em>link</em> to a file or <a href="http://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github">to specific lines</a>. Otherwise your links will break easily in the future. If the file is deleted or renamed or if lines get inserted or deleted, your links will no longer point to what you intended. Use <code>y</code> to get links that include a specific commit in the URL.</li>
+</ul>
+</div>
+<div id="html" class="section level2">
+<h2><span class="header-section-number">33.7</span> HTML</h2>
+<p>If you have an HTML file in a GitHub repository, simply visiting the file shows the raw HTML. Here’s a nice ugly example:</p>
+<ul>
+<li><a href="https://github.com/STAT545-UBC/STAT545-UBC.github.io/blob/master/bit003_api-key-env-var.html" class="uri">https://github.com/STAT545-UBC/STAT545-UBC.github.io/blob/master/bit003_api-key-env-var.html</a></li>
+</ul>
+<p>No one wants to look at that. <del>You can provide this URL to <a href="http://rawgit.com/">rawgit.com</a> to serve this HTML more properly and get a decent preview.</del></p>
+<p><del>You can form two different types of URLs with <a href="http://rawgit.com/">rawgit.com</a>:</del></p>
+<ul>
+<li><del>For sharing low-traffic, temporary examples or demos with small numbers of people, do this:</del>
+<ul>
+<li><del><a href="https://rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html" class="uri">https://rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html</a></del></li>
+<li><del>Basically: replace <code>https://github.com/</code> with <code>https://rawgit.com/</code></del></li>
+</ul></li>
+<li><del>For use on production websites with any amount of traffic, do this:</del>
+<ul>
+<li><del><a href="https://cdn.rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html" class="uri">https://cdn.rawgit.com/STAT545-UBC/STAT545-UBC.github.io/master/bit003_api-key-env-var.html</a></del></li>
+<li><del>Basically: replace <code>https://github.com/</code> with <code>https://cdn.rawgit.com/</code></del></li>
+</ul></li>
+</ul>
+<p><em>2018-10-09 update: RawGit <a href="https://rawgit.com/">announced</a> that it is in a sunset phase and will soon shut down. They recommended: <a href="https://www.jsdelivr.com/rawgit">jsDelivr</a>, <a href="https://pages.github.com/">GitHub Pages</a>, <a href="https://codesandbox.io/">CodeSandbox</a>, and <a href="https://unpkg.com/#/">unpkg</a> as alternatives.</em></p>
+<p>This sort of enhanced link might be one of the useful things to put in a <code>README.md</code> or other Markdown file in the repo.</p>
+<p>You may also want to check out this <a href="https://chrome.google.com/webstore/detail/github-html-preview/cphnnfjainnhgejcpgboeeakfkgbkfek?hl=en">Chrome extension</a> or <a href="https://htmlpreview.github.io/">GitHub &amp; BitBucket HTML Preview</a>, though recently I’ve more success with <a href="http://rawgit.com/">rawgit.com</a>. (Neither work with private GitHub repos, which is all the more reason
+to keep intermediate markdown files for HTML, as described above.)</p>
+<p>Sometimes including HTML files will cause GitHub to think that your R repository is HTML. Besides being slightly annoying, this can make it difficult for people to find your work if they are searching specifically for R repos. You can exclude these files or directories from GitHub’s language statistics by <a href="https://github.com/github/linguist#using-gitattributes">adding a .gitattributes file</a> that marks them as ‘documentation’ rather than code. <a href="https://github.com/jennybc/googlesheets/blob/master/.gitattributes">See an example here</a>.</p>
+</div>
+<div id="source-code" class="section level2">
+<h2><span class="header-section-number">33.8</span> Source code</h2>
+<p>You will notice that GitHub does automatic syntax highlighting for source code. For example, notice the coloring of this <a href="https://github.com/jennybc/ggplot2-tutorial/blob/master/gapminder-ggplot2-stripplot.r">R script</a>. The file’s extension is the primary determinant for if/how syntax highlighting will be applied. You can see information on recognized languages, the default extensions and more at <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">github/linguist</a>. You should be doing it anyway, but let this be another reason to follow convention in your use of file extensions.</p>
+<p>Note you can click on “Raw” in this context as well, to get just the plain text and nothing but the plain text.</p>
+</div>
+<div id="delimited-files" class="section level2">
+<h2><span class="header-section-number">33.9</span> Delimited files</h2>
+<p>GitHub will nicely render tabular data in the form of <code>.csv</code> (comma-separated) and <code>.tsv</code> (tab-separated) files. You can read more in the <a href="https://github.com/blog/1601-see-your-csvs">blog post</a> announcing this feature in August 2013 or in <a href="https://help.github.com/articles/rendering-csv-and-tsv-data">this GitHub help page</a>.</p>
+<p>Advice: take advantage of this! If something in your repo can be naturally stored as delimited data, by all means, do so. Make the comma or tab your default delimiter and use the file suffixes GitHub is expecting. I have noticed that GitHub is more easily confused than R about things like quoting, so always inspect the GitHub-rendered <code>.csv</code> or <code>.tsv</code> file in the browser. You may need to do light cleaning to get the automagic rendering to work properly. Think of it as yet another way to learn about imperfections in your data.</p>
+<p>Here’s an example of a tab delimited file on GitHub: <a href="https://github.com/jennybc/lotr/blob/master/lotr_clean.tsv">lotr_clean.tsv</a>, originally found <del>here</del> (nope, IBM shut down manyeyes July 2015).</p>
+<p>Note you can click on “Raw” in this context as well, to get just the plain text and nothing but the plain text.</p>
+</div>
+<div id="pngs" class="section level2">
+<h2><span class="header-section-number">33.10</span> PNGs</h2>
+<p>PNG is the “no brainer” format in which to store figures for the web. But many of us like a vector-based format, such as PDF, for general purpose figures. Bottom line: PNGs will drive you less crazy than PDFs on GitHub. To reduce the aggravation around viewing figures in the browser, make sure to have a PNG version in the repo.</p>
+<p>Examples:</p>
+<ul>
+<li><a href="../github.com/jennybc/STAT545A_2013/blob/master/hw06_scaffolds/01_justR/stripplot_wordsByRace_The_Fellowship_Of_The_Ring.html">This PNG figure</a> just shows up in the browser</li>
+<li>A different figure <a href="https://github.com/jennybc/ggplot2-tutorial/blob/master/gapminder-country-colors.pdf">stored as PDF</a> <del>produces the dreaded, annoying “View Raw” speed bump. You’ll have to click through and, on my OS + browser, wait for the PDF to appear in an external PDF viewer.</del> <em>2015-06-19 update: since I first wrote this GitHub has <a href="https://github.com/blog/1974-pdf-viewing">elevated its treament of PDFs</a> so YAY. It’s slow but it works.</em></li>
+</ul>
+<p>Hopefully we are moving towards a world where you can have “web friendly” and “vector” at the same time, without undue headaches. As of <a href="https://github.com/blog/1902-svg-viewing-diffing">October 2014</a>, GitHub provides enhanced viewing and diffing of SVGs. So don’t read this advice as discouraging SVGs. Make them! But consider keeping a PNG around as emergency back up for now.</p>
+</div>
+<div id="other-document-formats" class="section level2">
+<h2><span class="header-section-number">33.11</span> Other document formats</h2>
+<p>You may also have a document you want others to be able to browse and interact with, but it is not in the markdown format. Fortunately, the open-source Pandoc program, written by John MacFarlane, allows you to convert a range of formats into markdown, including the widely used <code>.docx</code> format.</p>
+<p>When you click the Knit button in RStudio it is actually Pandoc which performs the final conversion to HTML or Microsoft Word (<code>.docx</code>) formats. If you are willing to use the command-line, you can perform the opposite conversion (eg <code>.docx</code> to <code>.md</code>), commonly retaining features such as headings, tables, equations and even figures.</p>
+<p>As some boilerplate, running in Windows PowerShell <code>pandoc --extract-media .\media  -f docx .\example.docx -t markdown_github -o example_image.md</code> converts a word document called <code>example.docx</code> to markdown, and extracts the images into a directory which corresponds to a filepath in the newly created <code>example.md</code> document. A full list of supported formats and example code for conversions are available at <a href="https://pandoc.org/" class="uri">https://pandoc.org/</a>.</p>
+<p>You can also perform simple conversions to GitHub-flavored markdown from different markdown flavours (Pandoc supports <code>markdown_mmd</code>, <code>markdown_php_extra</code> and <code>markdown_strict</code>) from within RStudio. To do so you need to rename the file by changing the extension (eg from <code>foo.md</code> to <code>foo.Rmd</code>), then open the renamed file in RStudio and add the following text to the top of the document.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb180-1"><a href="workflows-browsability.html#cb180-1"></a><span class="pp">---</span></span>
+<span id="cb180-2"><a href="workflows-browsability.html#cb180-2"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> github_document</span></span>
+<span id="cb180-3"><a href="workflows-browsability.html#cb180-3"></a><span class="pp">---</span></span></code></pre></div>
+<p>You can then click on “Knit” then “Knit to github document” to perform the conversion. See <a href="##%20Output%20format">Output format</a> for more details of controlling output formats with the YAML frontmatter.</p>
+</div>
+<div id="linking-to-a-zip-archive-of-your-repo" class="section level2">
+<h2><span class="header-section-number">33.12</span> Linking to a ZIP archive of your repo</h2>
+<p>The browsability of GitHub makes your work accessible to people who care about your content but who don’t (yet) use Git themselves. What if such a person wants all the files? Yes, there is a clickable “Download ZIP” button offered by GitHub. But what if you want a link to include in an email or other document? If you add <code>/archive/master.zip</code> <em>to the end</em> of the URL for your repo, you construct a link that will download a ZIP archive of your repository. Click here to try this out on a very small repo:</p>
+<p><a href="https://github.com/jennybc/lotr/archive/master.zip" class="uri">https://github.com/jennybc/lotr/archive/master.zip</a></p>
+<p>Go look in your downloads folder!</p>
+</div>
+<div id="links-and-embedded-figures" class="section level2">
+<h2><span class="header-section-number">33.13</span> Links and embedded figures</h2>
+<ul>
+<li><p>To link to another page in your repo, just use a relative link: <code>[admin](courseAdmin/)</code> will link to the <code>courseAdmin/</code> directory inside the current directory. <code>[admin](/courseAdmin/)</code> will link to the top-level <code>courseAdmin/</code> directory from any where in the repo</p></li>
+<li><p>The same idea also works for images. <code>![](image.png)</code> will include <code>image.png</code> located in the current directory</p></li>
+</ul>
+</div>
+<div id="let-people-correct-you-on-the-internet" class="section level2">
+<h2><span class="header-section-number">33.14</span> Let people correct you on the internet</h2>
+<p>They love that!</p>
+<p>You can create a link that takes people directly to an editing interface in the browser. Behind the scenes, assuming the click-er is signed into GitHub but is not you, this will create a fork in their account and send you a pull request. When I click the link below, I am able to actually commit directly to <code>master</code> for this repo.</p>
+<p><a href="https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd">CLICK HERE to suggest an edit to this page!</a></p>
+<p>Here’s what that link looks like in the Markdown source:</p>
+<pre><code>[CLICK HERE to suggest an edit to this page!](https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd)</code></pre>
+<p>and here it is with placeholders:</p>
+<pre><code>[INVITATION TO EDIT](&lt;URL to your repo&gt;/edit/master/&lt;path to target source file&gt;)</code></pre>
+<p>AFAIK, to do that in a slick automatic way across an entire repo/site, you need to be using Jekyll or some other automated system. But you could easily handcode such links on a small scale.</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pr-extend.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clone.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/jennybc/happy-git-with-r/edit/master/workflows-make-github-repo-browsable.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+
+<!-- Mirrored from happygitwithr.com/workflows-browsability.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Dec 2020 06:00:55 GMT -->
+</html>

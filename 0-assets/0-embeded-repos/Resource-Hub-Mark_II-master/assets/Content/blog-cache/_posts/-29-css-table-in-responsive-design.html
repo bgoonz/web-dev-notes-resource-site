@@ -1,0 +1,121 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In our <a href="http://whatznear.com">whatznear.com</a> we were using tables in some places. When we went to
+      responsive those tables are one of the biggest headaches. Since using table as it is for mobile is breaking our
+      design, we thought of render data seperatly for mobile and desktop.</p>
+    <p>Then <span class="citation" data-cites="shidhin">[@shidhin]</span>(http://twitter.com/shidhin) has came up with a
+      CSS trick to use the same table for the mobile so we can avoid seperate rendering.</p>
+    <figure>
+      <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/table-for-esktop_zpsd1511e3b.png"
+        alt="CSS table for desktop" />
+      <figcaption>CSS table for desktop</figcaption>
+    </figure>
+    <h2 id="the-css-trick">The CSS trick</h2>
+    <p>For this trick to work we need to store the column name on all its corresponding cells as a <code>data</code>
+      attribute like <code>&lt;td data-title="Order ID"&gt;#1&lt;/td&gt;</code>. Here we used <code>data-title</code>
+      attribute to store the column name “Order ID”. Next is to use CSS <strong><a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">content</a></strong> property to extract the
+      value of data attribute and display in <code>td:before</code> pseudo-element.</p>
+    <p>The HTML will look like</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;table&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">&lt;thead&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">      <span class="kw">&lt;td&gt;</span>Order ID<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="kw">&lt;td&gt;</span>Item Name<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">      <span class="kw">&lt;td&gt;</span>Price<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">  <span class="kw">&lt;/thead&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">  <span class="kw">&lt;tbody&gt;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Order ID&quot;</span><span class="kw">&gt;</span>#1<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Item Name&quot;</span><span class="kw">&gt;</span>Item 1<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Price&quot;</span><span class="kw">&gt;</span>100<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb1-15" title="15">    <span class="kw">&lt;tr&gt;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Order ID&quot;</span><span class="kw">&gt;</span>#2<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-17" title="17">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Item Name&quot;</span><span class="kw">&gt;</span>Item 2<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-18" title="18">      <span class="kw">&lt;td</span><span class="ot"> data-title=</span><span class="st">&quot;Price&quot;</span><span class="kw">&gt;</span>200<span class="kw">&lt;/td&gt;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="kw">&lt;/tr&gt;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">  <span class="kw">&lt;/tbody&gt;</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="kw">&lt;/table&gt;</span></a></code></pre>
+    </div>
+    <p>and the CSS</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1">table {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">}</a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5">thead {</a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">display</span>: <span class="dv">none</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">}</a>
+<a class="sourceLine" id="cb2-9" title="9"></a>
+<a class="sourceLine" id="cb2-10" title="10">td {</a>
+<a class="sourceLine" id="cb2-11" title="11">  <span class="kw">padding-left</span>: <span class="dv">30</span><span class="dt">%</span> <span class="at">!important</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="kw">display</span>: <span class="dv">block</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">}</a>
+<a class="sourceLine" id="cb2-14" title="14"></a>
+<a class="sourceLine" id="cb2-15" title="15">td<span class="in">:before</span> {</a>
+<a class="sourceLine" id="cb2-16" title="16">  <span class="kw">content</span>: <span class="fu">attr(</span>data-title<span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">  <span class="kw">left</span>: <span class="dv">6</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-20" title="20">}</a></code></pre>
+    </div>
+    <h2 id="live-preview">Live preview</h2>
+    <a class="jsbin-embed" href="http://jsbin.com/deziyo/6/embed?output">JS Bin</a>
+<<<<<<< HEAD
+    <script async defer src="http://static.jsbin.com/js/embed.js"></script>
+=======
+    <script src="http://static.jsbin.com/js/embed.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a

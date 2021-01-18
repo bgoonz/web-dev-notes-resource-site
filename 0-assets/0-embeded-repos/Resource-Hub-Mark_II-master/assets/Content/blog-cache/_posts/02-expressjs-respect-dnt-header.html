@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Nowadays big companies like google and facebook are tracking uses even they are logged out. Most of the sites are
+      now installed with facebook like button and google analytics which help them to track users easily.</p>
+    <p>We might need Google analytics and Facebook like button for our apps to reach and target users. Many users really
+      don’t want to be tracked and care about their privacy. Installing these trackers for those users is against our
+      ethics. Its our duty to respect the privacy of our users.</p>
+    <p>But how we will know whether users don’t want to be tracked when they visit our website?</p>
+    <p>Now every popular browsers are equipped with a <strong>Do not track (DNT)</strong> settings. The people who care
+      about privacy, will have DNT enabled in their browsers. If the user is enabled Do not Track, the browser will send
+      a <strong>DNT</strong> flag with headers. Using this flag you can identify the users who care for privacy and can
+      be opt out from installing tracker for them.</p>
+    <p>Recently, when I released <a href="http://gistreader.herokuapp.com/">Gist reader</a>, a toy app for reading gists
+      written in markdown, I thought I don’t want to install any tracker for those users who send <strong>DNT</strong>
+      header. Since <em>Gist reader</em> was build with <a href="http://expressjs.com">Express.js</a> I can show you how
+      I opt out Google Analytics for users with DNT flag.</p>
+    <p>Since DNT should be implement though out all the pages, I implemented it as a middleware. You can get the value
+      of DNT header from <code>req.headers.dnt</code>. I used the value from <code>req.headers.dnt</code> and passed to
+      view using <a href="http://expressjs.com/api.html#app.set">app.set</a>. The value of <code>req.headers.dnt</code>
+      will <strong><code>1</code></strong> if the user enable DNT and <strong><code>0</code></strong> if they didn’t.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// In app.js</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="va">app</span>.<span class="at">use</span>(<span class="kw">function</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="va">app</span>.<span class="at">set</span>(<span class="st">&quot;dnt&quot;</span><span class="op">,</span> <span class="va">req</span>.<span class="va">headers</span>.<span class="at">dnt</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="at">next</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now the value of DNT header will be available in views via <code>settings</code> variable and we can install
+      Google Analytics tracker for those DNT header value is <strong><code>0</code></strong>.</p>
+    <pre class="jade"><code>// layout.jade
+unless settings.dnt
+  script
+    | (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){
+    | (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    | m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    | })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
+
+    | ga(&#39;create&#39;, &#39;UA-xxxxxxx-xx&#39;, &#39;auto&#39;);
+    | ga(&#39;send&#39;, &#39;pageview&#39;);</code></pre>
+    <p>Done. Now you are respecting the users privacy by not installing the trackers. Same way you can replace the
+      Facebook like/share button with a simple share link.</p>
+
+  </body>
+
+  
+</html>

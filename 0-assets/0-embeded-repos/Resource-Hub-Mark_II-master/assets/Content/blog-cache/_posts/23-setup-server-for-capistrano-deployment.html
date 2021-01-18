@@ -1,0 +1,121 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When I was Rails developer I used to deploy using capistrano with a single command</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">cap</span> production deploy</a></code></pre>
+    </div>
+    <p>But when I came back to PHP development, the old FTP drag and drop welcomed me and I was like WTF?. I couldn’t
+      agree to this, since it takes too much time for deployment. So I decided to setup capistrano for my <a
+        href="http://yiiframework.com/">Yii</a> project.</p>
+    <p>Since I was a ruby developer all the ruby and capistrano setup was already there in my laptop. But I need to
+      setup these things in server. This blog post deals only with the setting up server only. The setting up of Yii
+      project for capistation deployment comes in next post.</p>
+    <h2 id="setting-up-server">Setting up server</h2>
+    <h3 id="installing-ruby-git-and-capistrano">Installing ruby, git and capistrano</h3>
+    <p>First step to setting up server for cap deployment is install ruby and git. I usually install ruby using <a
+        href="http://rvm.io">Ruby Version Manager (rvm)</a>. It helps me to manage the ruby versions.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">apt-get</span> install -y build-essential git-core libyaml-dev </a>
+<a class="sourceLine" id="cb2-2" title="2"> </a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="ex">gpg</span> --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="ex">curl</span> -L get.rvm.io <span class="kw">|</span> <span class="fu">bash</span> -s stable</a>
+<a class="sourceLine" id="cb2-5" title="5"> </a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="bu">source</span> /home/lookup/.rvm/scripts/rvm</a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="ex">rvm</span> reload</a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="ex">rvm</span> install 2.2.2</a>
+<a class="sourceLine" id="cb2-9" title="9"> </a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="ex">gem</span> install capistrano --no-ri --no-rdoc</a></code></pre>
+    </div>
+    <h4 id="add-a-usergroup-and-user-for-deployment.">Add a usergroup and user for deployment.</h4>
+    <p>After installing ruby and git, we need to add a new usergroup and user for deployment and give appropriate
+      permissions for the deployment directory. I used the default <code>/var/www</code> directory for the deployment.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">sudo</span> addgroup www <span class="co"># create a new usergroup</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="fu">sudo</span> adduser deploy <span class="co"># create a new user</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="fu">sudo</span> adduser deploy www <span class="co"># add deploy user to www group</span></a></code></pre>
+    </div>
+    <p>Since apache will run as <code>www-data</code> user we need to add <code>www-data</code> to our newly created
+      user group.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> adduser www-data www</a></code></pre>
+    </div>
+    <p>Now we need to give appropriate permission for the usergroup. Open <code>/etc/sudoers</code> file and add the
+      following.</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># open /etc/sudoers</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="ex">deploy</span> ALL=(ALL:ALL) <span class="ex">ALL</span></a></code></pre>
+    </div>
+    <p>and run the following commands to set the permissions of deploy directory in my case <code>/var/www</code> for
+      <code>deploy</code> user.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Set the ownership of the folder to members of `www` group</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">sudo</span> chown -R :www  /var/www</a>
+<a class="sourceLine" id="cb6-3" title="3"> </a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co"># Set folder permissions recursively</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="fu">sudo</span> chmod -R g+rwX /var/www</a>
+<a class="sourceLine" id="cb6-6" title="6"> </a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co"># Ensure permissions will affect future sub-directories etc.</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="fu">sudo</span> chmod g+s /var/www</a></code></pre>
+    </div>
+    <p>Now our server is ready for deployment. Next we need to setup our Yii project.</p>
+
+  </body>
+
+  
+</html>

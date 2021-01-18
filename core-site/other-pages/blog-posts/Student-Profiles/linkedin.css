@@ -1,0 +1,494 @@
+element.style {
+  cursor: auto;
+}
+  
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.large-header,
+.large-text,
+.medium-text,
+.small-text,
+blockquote,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #fff !important;
+}
+
+<style>:root,
+body,
+html {
+  background-color: #121212 !important;
+}
+
+<style>body {
+  background: none;
+}
+
+<style>#wrapper,
+body {
+  background: #121212;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+:root,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--warm-gray-20, #f5f5f5);
+  box-sizing: border-box;
+}
+
+.large-header,
+.large-text,
+.medium-text,
+.small-text,
+blockquote,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: var(--color-text);
+}
+
+:root,
+body,
+html {
+  background-color: var(--color-background-canvas) !important;
+}
+
+.large-header,
+body,
+h1,
+p {
+  font-weight: 400;
+  color: rgba(0, 0, 0, .9);
+}
+
+body,
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+}
+
+body {
+  line-height: 1;
+}
+
+abbr,
+audio,
+b,
+body,
+canvas,
+caption,
+cite,
+code,
+del,
+dfn,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+mark,
+object,
+q,
+samp,
+small,
+span,
+strong,
+summary,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+var,
+video {
+  outline: 0;
+}
+
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+summary,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body[Attributes Style] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+injected stylesheet body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  padding: 0px;
+}
+
+injected stylesheet body {
+  overflow-x: hidden;
+  min-width: 320px;
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0px;
+  background: rgb(255, 255, 255);
+}
+
+injected stylesheet body,
+html {
+  font-size: 16px;
+}
+
+injected stylesheet body,
+html {
+  height: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+injected stylesheet *,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+user agent stylesheet body {
+  display: block;
+  margin: 8px;
+}
+
+html.artdeco {
+  -webkit-font-smoothing: antialiased;
+}
+
+<style>:root {
+  --color-border-faint: hsla(0, 0%, 100%, 0.07);
+  --color-text-low-emphasis: #ccc;
+  --color-icon-nav-active: #fff;
+  --voyager-color-background-input-search: #424242;
+  --color-border-low-emphasis: hsla(0, 0%, 100%, 0.17);
+  --color-action: #0aa7eb;
+  --color-text: #fff;
+  --color-background-none-hover: #292929;
+  --color-icon: #fff;
+  --cool-gray-80: #ccc;
+  --warm-gray-30: hsla(0, 0%, 100%, 0.07);
+  --color-checked: #44a51d;
+  --blue-20: #292929;
+  --blue-70: #0aa7eb;
+  --voyager-color-background-container-tint-2: #292929;
+  --system-green-70: #44a51d;
+  --color-brand-accent-4-tint: #424242;
+  --voyager-color-action: #0aa7eb;
+  --warm-gray-40: hsla(0, 0%, 100%, 0.07);
+  --warm-gray-30: hsla(0, 0%, 100%, 0.17);
+  --warm-gray-20: hsla(0, 0%, 100%, 0.17);
+  --color-text-low-emphasis: #b3b3b3;
+  --color-signal-positive: #44a51d;
+  --color-action-active: #0aa7eb;
+  --cool-gray-70: #b3b3b3;
+  --color-border: hsla(0, 0%, 100%, 0.17);
+  --color-background-container: #1c1c1c;
+  --black-a15: hsla(0, 0%, 100%, 0.17);
+  --color-background-disabled: #424242;
+  --color-text-disabled: #b3b3b3;
+  --voyager-color-action-hover: #0773a2;
+  --color-border-active: #e6e6e6;
+  --color-element: #fff;
+  --color-text-active: #fff;
+  --elevation-raised: 0 0 0 1px #1c1c1c, 0 6px 9px #121212;
+  --voyager-color-background-comment: #292929;
+}
+
+:root {
+  --artdeco-typography-mono: SF Mono, Consolas, Roboto Mono, Noto Mono, Droid Mono, Fira Mono, Ubuntu Mono, Oxygen Mono, Lucida Console, Menlo, Monaco, monospace;
+  --artdeco-typography-sans: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+  --artdeco-typography-serif: Noto Serif, Droid Serif, Georgia, serif;
+  --artdeco-typography-ar: Arabic UI Display, Geeza Pro, Simplified Arabic, var(--artdeco-typography-sans);
+  --artdeco-typography-ja: Meiryo, Yu Gothic, Hiragino Kaku Gothic Pro, Hiragino Sans, var(--artdeco-typography-sans);
+  --artdeco-typography-ko: Malgun Gothic, Apple SD Gothic Neo, var(--artdeco-typography-sans);
+  --artdeco-typography-th: Leelawadee, Thonburi, var(--artdeco-typography-sans);
+  --artdeco-typography-zh: Microsoft Yahei, PingFang SC, PingFang TC, Hiragino Sans, Hiragino Kaku Gothic Pro, var(--artdeco-typography-sans);
+}
+
+:root {
+  --black: #000;
+  --black-a90: rgba(0, 0, 0, 0.9);
+  --black-a75: rgba(0, 0, 0, 0.75);
+  --black-a60: rgba(0, 0, 0, 0.6);
+  --black-a45: rgba(0, 0, 0, 0.45);
+  --black-a30: rgba(0, 0, 0, 0.3);
+  --black-a15: rgba(0, 0, 0, 0.15);
+  --black-a08: rgba(0, 0, 0, 0.08);
+  --black-a04: rgba(0, 0, 0, 0.04);
+  --white: #fff;
+  --white-a85: hsla(0, 0%, 100%, 0.85);
+  --white-a70: hsla(0, 0%, 100%, 0.7);
+  --white-a55: hsla(0, 0%, 100%, 0.55);
+  --white-a40: hsla(0, 0%, 100%, 0.4);
+  --white-a25: hsla(0, 0%, 100%, 0.25);
+  --white-a12: hsla(0, 0%, 100%, 0.12);
+  --white-a06: hsla(0, 0%, 100%, 0.06);
+  --blue-10: #f6fbff;
+  --blue-20: #e8f3ff;
+  --blue-30: #d0e8ff;
+  --blue-40: #a8d4ff;
+  --blue-50: #70b5f9;
+  --blue-50-a15: rgba(112, 181, 249, 0.15);
+  --blue-50-a20: rgba(112, 181, 249, 0.2);
+  --blue-50-a30: rgba(112, 181, 249, 0.3);
+  --blue-60: #378fe9;
+  --blue-70: #0a66c2;
+  --blue-80: #004182;
+  --blue-90: #09223b;
+  --cool-gray-10: #f9fafb;
+  --cool-gray-20: #eef3f8;
+  --cool-gray-30: #dce6f1;
+  --cool-gray-40: #c0d1e2;
+  --cool-gray-50: #9db3c8;
+  --cool-gray-60: #788fa5;
+  --cool-gray-70: #56687a;
+  --cool-gray-80: #38434f;
+  --cool-gray-90: #1d2226;
+  --warm-gray-10: #fafaf9;
+  --warm-gray-20: #f3f2ef;
+  --warm-gray-30: #e9e5df;
+  --warm-gray-40: #d6cec2;
+  --warm-gray-50: #b9af9f;
+  --warm-gray-60: #958b7b;
+  --warm-gray-70: #6e6558;
+  --warm-gray-80: #474139;
+  --warm-gray-90: #211f1c;
+  --warm-red-10: #fff9f7;
+  --warm-red-20: #ffefea;
+  --warm-red-30: #ffded5;
+  Show All Properties (357 more)
+}
+
+html {
+  font-size: 62.5%;
+}
+
+injected stylesheet body,
+html {
+  font-size: 16px;
+}
+
+injected stylesheet html {
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+injected stylesheet *,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+injected stylesheet *,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+<style>body ::-webkit-scrollbar,
+div ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
+  width: 12px;
+}
+
+<style>body ::-webkit-scrollbar-thumb,
+div ::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 100%, .17) !important;
+  border-radius: 10px;
+}
+
+<style>body ::-webkit-scrollbar-track,
+div ::-webkit-scrollbar-track,
+html ::-webkit-scrollbar-track {
+  background-color: #424242 !important;
+}
+
+<style>::selection {
+  background-color: #ccc !important;
+  color: #fff !important;
+}
+
+injected stylesheet::selection {
+  background-color: rgb(204, 226, 255);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+content.js:217 action {
+
+  resourceType: "profiles",
+  requestKey: "updateProfile:bryan-guner-046199128",
+  resources: Array(1),
+  includedResources: {
+    …
+  }
+
+  ,
+  type: "UPDATE_RESOURCES_SUCCEEDED"
+}
+
+content.js:217 next state {
+  entities: {
+    …
+  }
+
+  ,
+  internalEntities: {
+    …
+  }
+
+  ,
+  settings: {
+    …
+  }
+
+  ,
+  linkedinAuthentication: {
+    …
+  }
+
+  ,
+  count: 0,
+  …
+}
+
+​

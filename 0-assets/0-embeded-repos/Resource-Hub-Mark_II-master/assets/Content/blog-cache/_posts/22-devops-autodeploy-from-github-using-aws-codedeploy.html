@@ -1,0 +1,321 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>This is post is originally published on <a
+        href="http://crypt.codemancers.com/posts/2016-12-26-autodeploy-from-github-using-aws-codedeploy/">crypt.codemancers.com</a>.
+    </p>
+    <hr />
+    <p>AWS CodeDeploy is part of Amazon deployment services which can be used to deploy your application across EC2
+      instances. This post will walk you through how to setup <a
+        href="https://aws.amazon.com/documentation/codedeploy/">aws codedeploy</a> for you application on github.</p>
+    <h1 id="create-aws-iam-roles">Create AWS IAM roles</h1>
+    <p>The first step towards setting up codedeploy is to setup two IAM roles. One for codedeploy to talk to EC2
+      instances and other for EC2 instance to access s3.</p>
+    <p>A IAM role is a set of permission policies that can be used to grant access to various AWS resources by
+      associating with either by an IAM user in same account or different.</p>
+    <p>Let’s create the first role for codedeploy</p>
+    <ul>
+      <li>Go to IAM -&gt; roles -&gt; create new Role</li>
+      <li>Give a name for the role “code-deploy” and Goto Next Step</li>
+      <li>In Role Type -&gt; select -&gt; <code>Amazon EC2</code> below AWS service Roles</li>
+      <li>In Attach Policy select -&gt; <code>AWSCodeDeployRole</code></li>
+      <li>Create Role</li>
+      <li>Edit the <code>Trust relationship</code> and update the content to the following one</li>
+    </ul>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">&quot;Version&quot;</span><span class="fu">:</span> <span class="st">&quot;2012-10-17&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">&quot;Statement&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="dt">&quot;Sid&quot;</span><span class="fu">:</span> <span class="st">&quot;&quot;</span><span class="fu">,</span> </a>
+<a class="sourceLine" id="cb1-6" title="6">      <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-7" title="7">      <span class="dt">&quot;Principal&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="dt">&quot;Service&quot;</span><span class="fu">:</span> <span class="st">&quot;codedeploy.amazonaws.com&quot;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">      <span class="fu">},</span></a>
+<a class="sourceLine" id="cb1-10" title="10">      <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;sts:AssumeRole&quot;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-12" title="12">  <span class="ot">]</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>Now we can create the second role to give EC2 instance to access s3.</p>
+    <ul>
+      <li>Go to IAM -&gt; roles -&gt; create new Role</li>
+      <li>Give a name for the role “CodeDeploy-EC2” and Goto Next Step</li>
+      <li>In Role Type -&gt; select -&gt; <code>Amazon EC2</code> below AWS service Roles</li>
+      <li>In Attach Policy select -&gt; <code>AmazonS3ReadOnlyAccess</code></li>
+      <li>Create Role</li>
+    </ul>
+    <h1 id="create-aws-instance">Create AWS instance</h1>
+    <p>Next step is to Goto EC2 Instances and launch a new instance. While creating an instance you can choose any
+      instance type but make sure to choose <code>CodeDeploy-EC2</code> as IAM role in Configure instance.</p>
+    <p>In Add tags section add a tag with <code>Name</code> as key and <code>Value</code> as
+      <code>codedeploy-demo</code> (You can name the instance as per your need)
+    </p>
+    <h1 id="install-code-deploy">Install code deploy</h1>
+    <p>Once the instance is booted up we can install the code deploy agent that instance. Since I used ubuntu AMI to
+      create the EC2 instance, we can install the codedeploy agent using <code>apt-get</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">sudo</span> apt-get install python-pip ruby wget</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="bu">cd</span> /home/ubuntu</a></code></pre>
+    </div>
+    <p>Now you need to download the agent as per the region of you instance. Here is the <a
+        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-run-agent-install.html#how-to-run-agent-install-ubuntu">list
+        of all regions</a>. Since we booted the EC2 instance in <code>Asia Pacific (Mumbai) region</code> we can use the
+      below commands to download and install the codedeploy agent.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">wget</span> https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/install</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="fu">chmod</span> +x ./install</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="fu">sudo</span> ./install auto</a></code></pre>
+    </div>
+    <p>Once it is installed you can verify whether the codedeploy agent is running or not by using the command</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">sudo</span> service codedeploy-agent status</a></code></pre>
+    </div>
+    <p>If the service is inactive, you can start the service using the command:</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> service codedeploy-agent start</a></code></pre>
+    </div>
+    <h1 id="prepare-the-application">Prepare the application</h1>
+    <p>Next is to add the <code>appspec.yml</code> file to the application, <code>appspec.yml</code> file will have
+      information on what to install on to instances and what lifecycle events to run.</p>
+    <p>The format for <code>appspec.yml</code> file is</p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">version:</span><span class="at"> </span><span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="fu">os:</span><span class="at"> linux</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="fu">files:</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">-</span> <span class="fu">source:</span><span class="at"> /index.html</span></a>
+<a class="sourceLine" id="cb6-5" title="5">    <span class="fu">destination:</span><span class="at"> /var/www/html/</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="fu">hooks:</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="fu">BeforeInstall:</span></a>
+<a class="sourceLine" id="cb6-8" title="8">    <span class="kw">-</span> <span class="fu">location:</span><span class="at"> deploy/before_install</span></a>
+<a class="sourceLine" id="cb6-9" title="9">      <span class="fu">timeout:</span><span class="at"> </span><span class="dv">300</span></a>
+<a class="sourceLine" id="cb6-10" title="10">      <span class="fu">runas:</span><span class="at"> ubuntu</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="fu">AfterInstall:</span></a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="kw">-</span> <span class="fu">location:</span><span class="at"> deploy/restart_server</span></a>
+<a class="sourceLine" id="cb6-13" title="13">      <span class="fu">timeout:</span><span class="at"> </span><span class="dv">300</span></a>
+<a class="sourceLine" id="cb6-14" title="14">      <span class="fu">runas:</span><span class="at"> ubuntu</span></a></code></pre>
+    </div>
+    <p>The beforeInstall hook will will be</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># deploy/before_install</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="fu">sudo</span> rm -f /var/www/html/index.html</a></code></pre>
+    </div>
+    <p>and AfterInstall hook</p>
+    <div class="sourceCode" id="cb8">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># deploy/after_install</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="fu">sudo</span> service apache2 restart</a></code></pre>
+    </div>
+    <p>You can find more detailed options for appspec.yml on <a
+        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html">AWS CodeDeploy AppSpec File
+        Reference</a></p>
+    <h1 id="setup-aws-codedeploy">Setup AWS CodeDeploy</h1>
+    <p>Now its time to create a deployment. On aws navigate to AWS CodeDeploy and create new application.</p>
+    <p>Fill in the name of application and instances uing the tag <code>Name</code> and value
+      <code>codedeploy-demo</code>.
+    </p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/ba60e303-38a5-46ff-ae16-a271378ca386_zpsehmq5we4.png"
+        alt="codedeploy-createapp" />
+      <figcaption>codedeploy-createapp</figcaption>
+    </figure>
+    <p>Now choose the deployment configuration, for the demo purpose I set it as
+      <code>CodeDeployDefault.AllAtOnce</code>. More info on <a
+        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">aws doc</a>
+    </p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-deployment-config_zpssmtudjai.png"
+        alt="codedeploy-deployment-config" />
+      <figcaption>codedeploy-deployment-config</figcaption>
+    </figure>
+    <p>Now add the the IAM role <code>code-deploy</code>, which we create before as the service role</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-servicerole_zpslli4ft9e.jpg"
+        alt="codedeploy-servicerole" />
+      <figcaption>codedeploy-servicerole</figcaption>
+    </figure>
+    <p>Once the application is created, we can deploy new revision.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-create-newversion_zpsq7ukgrgk.jpg"
+        alt="codedeploy-create-newversion" />
+      <figcaption>codedeploy-create-newversion</figcaption>
+    </figure>
+    <p>For the first time, the codedeploy app will ask to <code>connect to Github</code>.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-connect-github_zpstqj3ucc8.png"
+        alt="codedeploy-connect-github" />
+      <figcaption>codedeploy-connect-github</figcaption>
+    </figure>
+    <p>Once the github connection is setup, You can provide the repo name along with github username, Eg:
+      <code>revathskumar/aws-github-auto-deploy</code>, commit id.
+    </p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/codedeploy-repo-details_zpspsbmrroo.png"
+        alt="codedeploy-repo-details" />
+      <figcaption>codedeploy-repo-details</figcaption>
+    </figure>
+    <p>Now we can click on <code>Deploy Now</code>, which will deploy to all the instance configured for the
+      codedeployment application.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/5eb496f1-080e-48c9-a18b-5c6da8303ff2_zpsbevqopxc.png"
+        alt="codedeploy-success" />
+      <figcaption>codedeploy-success</figcaption>
+    </figure>
+    <h1 id="setup-autodeploy-from-github">Setup Autodeploy from Github</h1>
+    <p>Now we are able to create the deployments, but manually creating the deployments eveytime is tedious. So lets
+      automate the deployments using <a href="https://github.com/integrations">Github Integrations</a>. For that first
+      we will create a new IAM policy and user for github.</p>
+    <h3 id="create-iam-policy">Create IAM policy</h3>
+    <p>First we will create a IAM policy which give access to register and create a new deployment, also to create new
+      revision for a deployment group.</p>
+    <p>Choose <code>Create Your own policy</code> from <strong>Create Policy</strong> and give some name
+      <code>codedeploy-github-access</code> and for policy document use the below template.
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="dt">&quot;Version&quot;</span><span class="fu">:</span> <span class="st">&quot;2012-10-17&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="dt">&quot;Statement&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-5" title="5">      <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-6" title="6">      <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;codedeploy:GetDeploymentConfig&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-7" title="7">      <span class="dt">&quot;Resource&quot;</span><span class="fu">:</span> <span class="st">&quot;arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentconfig:*&quot;</span></a>
+<a class="sourceLine" id="cb9-8" title="8">    <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb9-9" title="9">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-10" title="10">      <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-11" title="11">      <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;codedeploy:RegisterApplicationRevision&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-12" title="12">      <span class="dt">&quot;Resource&quot;</span><span class="fu">:</span> <span class="st">&quot;arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:application:APPLICATION_NAME&quot;</span></a>
+<a class="sourceLine" id="cb9-13" title="13">    <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb9-14" title="14">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-15" title="15">      <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-16" title="16">      <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;codedeploy:GetApplicationRevision&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-17" title="17">      <span class="dt">&quot;Resource&quot;</span><span class="fu">:</span> <span class="st">&quot;arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:application:APPLICATION_NAME&quot;</span></a>
+<a class="sourceLine" id="cb9-18" title="18">    <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb9-19" title="19">    <span class="fu">{</span></a>
+<a class="sourceLine" id="cb9-20" title="20">      <span class="dt">&quot;Effect&quot;</span><span class="fu">:</span> <span class="st">&quot;Allow&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-21" title="21">      <span class="dt">&quot;Action&quot;</span><span class="fu">:</span> <span class="st">&quot;codedeploy:CreateDeployment&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb9-22" title="22">      <span class="dt">&quot;Resource&quot;</span><span class="fu">:</span> <span class="st">&quot;arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentgroup:APPLICATION_NAME/DEPLOYMENT_GROUP&quot;</span></a>
+<a class="sourceLine" id="cb9-23" title="23">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb9-24" title="24">  <span class="ot">]</span></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>Please make sure you replace the ACCOUNT_REGION, ACCOUNT_ID, APPLICATION_NAME and DEPLOYMENT_GROUP according to
+      your application.</p>
+    <h3 id="create-iam-user">Create IAM user</h3>
+    <p>Now lets create a new user.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/9f12a5a9-e9ee-42f9-acfc-055ab6d04ac0_zpswohszkry.png"
+        alt="codedeploy-create-user" />
+      <figcaption>codedeploy-create-user</figcaption>
+    </figure>
+    <p>In the next screen attach the policy we created before</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/42a3886c-2670-49a3-ae3b-dd4587b55634_zpskwhe4upo.png"
+        alt="codedeploy-user-attach-policy" />
+      <figcaption>codedeploy-user-attach-policy</figcaption>
+    </figure>
+    <p>Once the user is created, it will show the <code>Access ID</code> and <code>Secret Access Token</code> Copy those
+      and keep it. Will come handy later.</p>
+    <h3 id="github-integration">Github Integration</h3>
+    <p>To invoke AWS codedeploy from github, we need to configure two integrations on Github. Before we configure we
+      need to <a href="https://github.com/settings/tokens/new">generate new token</a> with access to repo status and
+      repo_deployments.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-token_zpsropdhh5l.png"
+        alt="github-add-token" />
+      <figcaption>github-add-token</figcaption>
+    </figure>
+    <p>Once the token is generated, Copy the token and keep it. We need this token while enabling the integrations.</p>
+    <h5 id="aws-codedeploy">1) AWS CodeDeploy</h5>
+    <p>We can add AWS CodeDeploy integration by navigating to Project <code>Settings</code> -&gt; <code>Integrations and
+        services</code>. Then from the <code>Add service</code> dropdown choose <code>AWS CodeDeploy</code></p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-codedeploy_zpsvqrtforc.png"
+        alt="github-add-codedeploy" />
+      <figcaption>github-add-codedeploy</figcaption>
+    </figure>
+    <p>Fill the Application name, Deployment group, AWS region, Access Key, Secret Token and Gihub Token we generated.
+      Once we save it, We can move to next integration.</p>
+    <h5 id="github-auto-deployment">2) GitHub Auto-Deployment</h5>
+    <p>From the same Project <code>Settings</code> -&gt; <code>Integrations and services</code>, this time we can choose
+      <code>GitHub Auto-Deployment</code> from the <code>Add service</code> dropdown.
+    </p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/aws-codeploy/github-add-autodeploy_zpsoc2uzvzd.png"
+        alt="github-add-autodeploy" />
+      <figcaption>github-add-autodeploy</figcaption>
+    </figure>
+    <p>If you don’t have a CI server, You don’t need to check the <code>Deploy on status</code> checkbox.</p>
+    <p>Now when we edit file and commit on master branch or merge any Pull request a new deployment will be created on
+      AWS CodeDeploy.</p>
+    <p>Thanks for reading!</p>
+    <h5 id="references">References</h5>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=qZa5JXmsWZs">Code Deploy Setup (IAM, EC2)</a></li>
+      <li><a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy</a></li>
+      <li><a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">What Is IAM?</a></li>
+      <li><a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM Roles</a></li>
+    </ul>

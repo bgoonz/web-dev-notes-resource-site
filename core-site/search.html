@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>The Most Minimal Seeking</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.swiftype.search.js"></script>
+    <script type='text/javascript'>
+      $(function() {
+        $('#st-search-input').swiftypeSearch({
+          resultContainingElement: '#st-results-container',
+          engineKey: 'swiftype-example-api'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <input type="text" placeholder="Search" id="st-search-input" />
+    </form>
+    <div id="st-results-container"></div>
+  </body>
+</html>

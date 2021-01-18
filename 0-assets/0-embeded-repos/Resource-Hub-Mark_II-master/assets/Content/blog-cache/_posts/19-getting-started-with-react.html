@@ -1,0 +1,165 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently when I saw a tweet saying “its super easy to build UI components with <a
+        href="http://facebook.github.io/react/">React.js</a>” I thought I should try it as well.</p>
+    <h1 id="react">React</h1>
+    <p>React is a JavaScript library from Facebook to create UI components. React uses <code>*.jsx</code> extention. We
+      write both the HTML template and its logic in the same .jsx file. You can either precompile it with react npm
+      module or in the browser with <code>JSXTransformer.js</code>.</p>
+    <p>I started with installing react with bower.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">bower</span> install react</a></code></pre>
+    </div>
+    <p>After installing with bower I added react.js into my index.html.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/react.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a></code></pre>
+    </div>
+    <p>Since I prefer to precompile the jsx files, I installed react-tools npm module and gulp plugin for it.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">npm</span> install react-tools gulp-react --save</a></code></pre>
+    </div>
+    <h1 id="first-component">First component</h1>
+    <p>My first component was a simple HelloMessage with name and click handler.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">/** </span><span class="an">@jsx</span><span class="co"> React.DOM */</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">var</span> HelloMessage <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="dt">click</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;clicked&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> <span class="op">&lt;</span>div onClick<span class="op">={</span><span class="kw">this</span>.<span class="at">click</span><span class="op">}&gt;</span>Hello <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}</span> &lt;/div<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-10" title="10"></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="kw">var</span> parent <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.jumbotron&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="va">React</span>.<span class="at">renderComponent</span>(<span class="op">&lt;</span>HelloMessage name<span class="op">=</span><span class="st">&quot;Revath&quot;</span> /&gt;<span class="op">,</span> parent)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>To create a new component you need to extend <code>React.createClass</code></p>
+    <p>The <code>React.renderComponent</code> method accepts two arguments</p>
+    <ol type="1">
+      <li>
+        <p>The Component name and the properties</p>
+        <blockquote>
+          <p>In this case the component is <code>HelloMessage</code> which has a property <code>name</code> with value
+            “Revath”</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>The parent element is where it should inject in the DOM. &gt; In this case it is the element with class
+          <code>jumbtron</code>
+        </p>
+      </li>
+    </ol>
+    <p>The <code>render</code> method is where you will define the HTML template.</p>
+    <p>It is optional to use <code>/** @jsx React.DOM */</code> as the first line when you use <a href="">gulp-react</a>
+      to precompile.</p>
+    <p>To precompile this, I configured the gulpfile.</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// gulpfile.js</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">var</span> react <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;gulp-react&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;react&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-5" title="5">  <span class="cf">return</span> gulp</a>
+<a class="sourceLine" id="cb5-6" title="6">    .<span class="at">src</span>(<span class="st">&quot;app/scripts/*.jsx&quot;</span>)</a>
+<a class="sourceLine" id="cb5-7" title="7">    .<span class="at">pipe</span>(<span class="at">react</span>())</a>
+<a class="sourceLine" id="cb5-8" title="8">    .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;.tmp/scripts/&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>This will precompile all the <code>*.jsx</code> files in <code>app/scripts/</code> and put it in
+      <code>.tmp/scripts/</code>.
+    </p>
+    <h1 id="compile-from-browser">Compile from browser</h1>
+    <p>If you don’t wanna precompile, then load <code>JSXTransformer.js</code> along with <code>react</code>. Then write
+      your component in a script tag with type <code>text/jsx</code>.</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/react.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;bower_components/react/JSXTransformer.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;change-text&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/jsx&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">var</span> UpdateText <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-7" title="7">      <span class="dt">getInitialState</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-8" title="8">        <span class="cf">return</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb6-9" title="9">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-10" title="10">      <span class="dt">change</span><span class="op">:</span> <span class="kw">function</span>(e)<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-11" title="11">        <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span><span class="op">}</span>)</a>
+<a class="sourceLine" id="cb6-12" title="12">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb6-13" title="13">      <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-14" title="14">        <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb6-15" title="15">          <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-16" title="16">            <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span> name<span class="op">=</span><span class="st">&quot;name&quot;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">change</span><span class="op">}</span> /&gt;</a>
+<a class="sourceLine" id="cb6-17" title="17">            <span class="op">&lt;</span>h1<span class="op">&gt;</span> Hello <span class="op">{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="at">name</span><span class="op">}!!!</span>&lt;/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-18" title="18">          &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-19" title="19">        )</a>
+<a class="sourceLine" id="cb6-20" title="20">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb6-21" title="21">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-22" title="22"></a>
+<a class="sourceLine" id="cb6-23" title="23">    <span class="va">React</span>.<span class="at">renderComponent</span>(<span class="op">&lt;</span>UpdateText/<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.change-text&#39;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-24" title="24">  <span class="kw">&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb6-25" title="25"><span class="kw">&lt;/body&gt;</span></a></code></pre>
+    </div>
+    <p>The above example will update the <code>&lt;h1&gt;</code> tag with the name entered in the textbox. This utilises
+      the concept of <code>state</code> in react. <code>this.state</code> will store the internal state of the
+      application. When ever the state change the react will reinvoke the <code>render</code> method and change in the
+      data will be displyed to the user.</p>
+    <h1 id="conclusion">Conclusion</h1>
+    <p>In conclusion, I feel super easily to build the UI components with react, but I don’t really intrested in mixing
+      up of component logic and template (personal preference).</p>
+
+  </body>
+
+  
+</html>

@@ -1,0 +1,235 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When I started with MVC in PHP, I used to write the whole logic in controller, then when I learned about
+      <code>skinny controllers fat models</code> I reduced the code in controller and moved logic into models. But that
+      was not enough. When a action which interacts with more than one model, then it doesn’t make sense to write the
+      logic in one of the model.
+    </p>
+    <p>The code in controllers can’t be reused much, so in some cases like placing an Order which has to deal with
+      saving order, saving order items and address etc. Writing all the logic for this process in controller is not an
+      ideal solution since if we want to place and order from some other action we need to duplicate the code.</p>
+    <p>So in order to make this more convenient and reusable I thought of abstracting the logic for creating the order
+      into service classes. I got this idea of service classes from <code>Ruby on Rails</code>. So when I came back to
+      PHP world I thought of using service classes.</p>
+    <p>The code snippets in this post are based on <a href="yiiframework.com">Yii framework</a> Version 1.1.16 and since
+      my intention is to give an overview on service classes, I am not going to explain any functions which I used.</p>
+    <p>So here is what my controller action looks like before using service classes for creating an order.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;?php</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">class</span> OrdersController <span class="kw">extends</span> Controller {</a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="kw">public</span> <span class="kw">function</span> actionCreate<span class="ot">()</span> {</a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb1-6" title="6">        <span class="kw">$orderData</span>  = Yii::app<span class="ot">()</span>-&gt;request-&gt;getParam<span class="ot">(</span><span class="st">&#39;order&#39;</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8">        <span class="kw">if</span><span class="ot">(</span><span class="kw">empty</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">]))</span> {</a>
+<a class="sourceLine" id="cb1-9" title="9">          <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-10" title="10">            <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="st">&#39;Can</span><span class="kw">\&#39;</span><span class="st">t save order without items&#39;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">          <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-12" title="12">        }</a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="kw">$items</span> = <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb1-14" title="14">        <span class="kw">unset</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">]);</span></a>
+<a class="sourceLine" id="cb1-15" title="15">        <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb1-16" title="16">          <span class="kw">$order</span> = <span class="kw">new</span> Orders<span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-17" title="17">          <span class="kw">$orderTransaction</span> = <span class="kw">$order</span>-&gt;dbConnection-&gt;beginTransaction<span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-18" title="18">          <span class="kw">if</span><span class="ot">(</span><span class="kw">$order</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb1-19" title="19">            <span class="kw">$address</span> = Addresses::createIfDidntExist<span class="ot">(</span><span class="kw">$orderData</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb1-20" title="20">            <span class="kw">unset</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;address&#39;</span><span class="ot">]);</span></a>
+<a class="sourceLine" id="cb1-21" title="21">            <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;address_id&#39;</span><span class="ot">]</span> = <span class="kw">$address</span>-&gt;id<span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">            <span class="kw">$amount</span> = <span class="dv">0</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">            <span class="kw">foreach</span> <span class="ot">(</span><span class="kw">$items</span> <span class="kw">as</span> <span class="kw">$key</span> =&gt; <span class="kw">$item</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb1-24" title="24">              <span class="kw">$amount</span> += <span class="kw">$item</span><span class="ot">[</span><span class="st">&#39;total&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb1-25" title="25">            }</a>
+<a class="sourceLine" id="cb1-26" title="26">            <span class="kw">$amount</span> += <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;extra_charge&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb1-27" title="27">            <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;amount&#39;</span><span class="ot">]</span> = <span class="kw">$amount</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">            <span class="kw">$order</span>-&gt;attributes = <span class="kw">$orderData</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-29" title="29">            <span class="kw">if</span><span class="ot">(</span><span class="kw">$order</span>-&gt;save<span class="ot">())</span> {</a>
+<a class="sourceLine" id="cb1-30" title="30">              <span class="kw">if</span><span class="ot">(</span>OrderItems::batchSave<span class="ot">(</span><span class="kw">$items</span><span class="ot">,</span> <span class="kw">$order</span>-&gt;id<span class="ot">))</span> {</a>
+<a class="sourceLine" id="cb1-31" title="31">                <span class="kw">$orderTransaction</span>-&gt;commit<span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-32" title="32">                <span class="kw">$this</span>-&gt;sendMail<span class="ot">(</span><span class="kw">$order</span>-&gt;id<span class="ot">);</span></a>
+<a class="sourceLine" id="cb1-33" title="33">                <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">200</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-34" title="34">                  <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;success&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="st">&#39;Order placed successfully.&#39;</span></a>
+<a class="sourceLine" id="cb1-35" title="35">                <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-36" title="36">              }</a>
+<a class="sourceLine" id="cb1-37" title="37">              <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-38" title="38">              <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-39" title="39">                <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="st">&#39;Order creation failed&#39;</span></a>
+<a class="sourceLine" id="cb1-40" title="40">              <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-41" title="41">            }</a>
+<a class="sourceLine" id="cb1-42" title="42">            <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb1-43" title="43">              <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-44" title="44">              <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-45" title="45">                <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;errors&#39;</span> =&gt; <span class="kw">$order</span>-&gt;getErrors<span class="ot">()</span></a>
+<a class="sourceLine" id="cb1-46" title="46">              <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-47" title="47">            }</a>
+<a class="sourceLine" id="cb1-48" title="48">          }</a>
+<a class="sourceLine" id="cb1-49" title="49">        }</a>
+<a class="sourceLine" id="cb1-50" title="50">        <span class="kw">catch</span><span class="ot">(</span><span class="kw">Exception</span> <span class="kw">$e</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb1-51" title="51">          <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-52" title="52">          <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-53" title="53">            <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="kw">$e</span>-&gt;getMessage<span class="ot">()</span></a>
+<a class="sourceLine" id="cb1-54" title="54">          <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-55" title="55">        }</a>
+<a class="sourceLine" id="cb1-56" title="56">      }</a>
+<a class="sourceLine" id="cb1-57" title="57">      <span class="kw">catch</span><span class="ot">(</span><span class="kw">Exception</span> <span class="kw">$e</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb1-58" title="58">        <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-59" title="59">          <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="kw">$e</span>-&gt;getMessage<span class="ot">()</span></a>
+<a class="sourceLine" id="cb1-60" title="60">        <span class="ot">));</span></a>
+<a class="sourceLine" id="cb1-61" title="61">      }</a>
+<a class="sourceLine" id="cb1-62" title="62">    }</a>
+<a class="sourceLine" id="cb1-63" title="63"></a>
+<a class="sourceLine" id="cb1-64" title="64">  <span class="kw">public</span> <span class="kw">function</span> sendMail<span class="ot">(</span><span class="kw">$order_id</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb1-65" title="65">    <span class="co">// logic to send email after placing an order successfully</span></a>
+<a class="sourceLine" id="cb1-66" title="66">  }</a>
+<a class="sourceLine" id="cb1-67" title="67"></a>
+<a class="sourceLine" id="cb1-68" title="68"><span class="kw">?&gt;</span></a></code></pre>
+    </div>
+    <p>All the logic and exception handling is happening in controller itself and can’t be reused when I need to the
+      same functionality from another action. Also the above code is really difficult to unit test.</p>
+    <p>Then I moved the whole logic to <code>OrdersService</code> class which now looks like,</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;?php</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">class</span> OrdersService {</a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">(</span><span class="kw">$orderData</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">if</span><span class="ot">(</span><span class="kw">empty</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">]))</span> {</a>
+<a class="sourceLine" id="cb2-7" title="7">      <span class="kw">throw</span> <span class="kw">new</span> OrdersServiceException<span class="ot">(</span><span class="st">&#39;Order items can</span><span class="kw">\&#39;</span><span class="st">t be empty.&#39;</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    }</a>
+<a class="sourceLine" id="cb2-9" title="9">    <span class="kw">$items</span> = <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    <span class="kw">unset</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;items&#39;</span><span class="ot">]);</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb2-12" title="12">      <span class="kw">$order</span> = <span class="kw">new</span> Orders<span class="ot">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">      <span class="kw">$orderTransaction</span> = <span class="kw">$order</span>-&gt;dbConnection-&gt;beginTransaction<span class="ot">();</span></a>
+<a class="sourceLine" id="cb2-14" title="14"></a>
+<a class="sourceLine" id="cb2-15" title="15">      <span class="kw">$address</span> = Addresses::createIfDidntExist<span class="ot">(</span><span class="kw">$orderData</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-16" title="16">      <span class="kw">unset</span><span class="ot">(</span><span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;address&#39;</span><span class="ot">]);</span></a>
+<a class="sourceLine" id="cb2-17" title="17">      <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;address_id&#39;</span><span class="ot">]</span> = <span class="kw">$address</span>-&gt;id<span class="ot">;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">      <span class="kw">$amount</span> = <span class="dv">0</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">      <span class="kw">foreach</span> <span class="ot">(</span><span class="kw">$items</span> <span class="kw">as</span> <span class="kw">$key</span> =&gt; <span class="kw">$item</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb2-20" title="20">        <span class="kw">$amount</span> += <span class="kw">$item</span><span class="ot">[</span><span class="st">&#39;total&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb2-21" title="21">      }</a>
+<a class="sourceLine" id="cb2-22" title="22">      <span class="kw">$amount</span> += <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;extra_charge&#39;</span><span class="ot">];</span></a>
+<a class="sourceLine" id="cb2-23" title="23">      <span class="kw">$orderData</span><span class="ot">[</span><span class="st">&#39;amount&#39;</span><span class="ot">]</span> = <span class="kw">$amount</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb2-24" title="24">      <span class="kw">$order</span>-&gt;attributes = <span class="kw">$orderData</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb2-25" title="25">      <span class="kw">if</span><span class="ot">(</span><span class="kw">$order</span>-&gt;save<span class="ot">())</span> {</a>
+<a class="sourceLine" id="cb2-26" title="26">        <span class="kw">if</span><span class="ot">(</span>OrderItems::batchSave<span class="ot">(</span><span class="kw">$items</span><span class="ot">,</span> <span class="kw">$order</span>-&gt;id<span class="ot">))</span> {</a>
+<a class="sourceLine" id="cb2-27" title="27">          <span class="kw">$orderTransaction</span>-&gt;commit<span class="ot">();</span></a>
+<a class="sourceLine" id="cb2-28" title="28">          <span class="kw">$this</span>-&gt;sendMail<span class="ot">(</span><span class="kw">$order</span>-&gt;id<span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-29" title="29">          <span class="kw">return</span> <span class="kw">array</span><span class="ot">(</span><span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;success&#39;</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-30" title="30">        }</a>
+<a class="sourceLine" id="cb2-31" title="31">        <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb2-32" title="32">        <span class="kw">throw</span> <span class="kw">new</span> OrdersServiceException<span class="ot">(</span><span class="st">&quot;Failed to save the items.&quot;</span><span class="ot">,</span> <span class="dv">1</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-33" title="33">      }</a>
+<a class="sourceLine" id="cb2-34" title="34">      <span class="kw">else</span> {</a>
+<a class="sourceLine" id="cb2-35" title="35">        <span class="co">// handle validation errors</span></a>
+<a class="sourceLine" id="cb2-36" title="36">        <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb2-37" title="37">        <span class="kw">return</span> <span class="kw">array</span><span class="ot">(</span><span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;errors&#39;</span> =&gt; <span class="kw">$order</span>-&gt;getErrors<span class="ot">());</span></a>
+<a class="sourceLine" id="cb2-38" title="38">      }</a>
+<a class="sourceLine" id="cb2-39" title="39">    }</a>
+<a class="sourceLine" id="cb2-40" title="40">    <span class="kw">catch</span><span class="ot">(</span><span class="kw">Exception</span> <span class="kw">$e</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb2-41" title="41">      <span class="kw">$orderTransaction</span>-&gt;rollback<span class="ot">();</span></a>
+<a class="sourceLine" id="cb2-42" title="42">      <span class="kw">throw</span> <span class="kw">new</span> <span class="kw">Exception</span><span class="ot">(</span><span class="st">&#39;Something wrong happened&#39;</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb2-43" title="43">    }</a>
+<a class="sourceLine" id="cb2-44" title="44">  }</a>
+<a class="sourceLine" id="cb2-45" title="45"></a>
+<a class="sourceLine" id="cb2-46" title="46">  <span class="kw">public</span> <span class="kw">function</span> sendMail<span class="ot">(</span><span class="kw">$order_id</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb2-47" title="47">    <span class="co">// logic to send email after placing an order successfully</span></a>
+<a class="sourceLine" id="cb2-48" title="48">  }</a>
+<a class="sourceLine" id="cb2-49" title="49">}</a>
+<a class="sourceLine" id="cb2-50" title="50"></a>
+<a class="sourceLine" id="cb2-51" title="51"><span class="kw">class</span> OrdersException <span class="kw">extends</span> <span class="kw">Exception</span> {</a>
+<a class="sourceLine" id="cb2-52" title="52"></a>
+<a class="sourceLine" id="cb2-53" title="53">}</a>
+<a class="sourceLine" id="cb2-54" title="54"><span class="kw">?&gt;</span></a></code></pre>
+    </div>
+    <p>Now I am raising an exception for all the errors, except for the validation errors. So I can catch the exception
+      where ever I am using this service and show the errors according to the action like either render error message or
+      send back a JSON with status <em>error</em>.</p>
+    <p>Once I moved the order creation logic to service class, now my controller action looks like,</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;?php</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">class</span> OrdersController <span class="kw">extends</span> Controller {</a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">public</span> <span class="kw">function</span> actionCreate<span class="ot">()</span> {</a>
+<a class="sourceLine" id="cb3-4" title="4">      <span class="kw">$orderData</span> = Yii::app<span class="ot">()</span>-&gt;request-&gt;getParam<span class="ot">(</span><span class="st">&#39;order&#39;</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb3-5" title="5">      <span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb3-6" title="6">        <span class="kw">$order</span> = <span class="kw">new</span> OrdersService<span class="ot">();</span></a>
+<a class="sourceLine" id="cb3-7" title="7">        <span class="kw">$res</span> = <span class="kw">$order</span>-&gt;create<span class="ot">(</span><span class="kw">$orderData</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb3-8" title="8">        <span class="kw">if</span><span class="ot">(</span><span class="kw">isset</span><span class="ot">(</span><span class="kw">$res</span><span class="ot">[</span><span class="st">&#39;status&#39;</span><span class="ot">])</span> &amp;&amp; <span class="kw">$res</span><span class="ot">[</span><span class="st">&#39;status&#39;</span><span class="ot">]</span> == <span class="st">&#39;success&#39;</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb3-9" title="9">            <span class="kw">$res</span><span class="ot">[</span><span class="st">&#39;message&#39;</span><span class="ot">]</span> = <span class="st">&#39;Order placed successfully.&#39;</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">            <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">200</span><span class="ot">,</span> <span class="kw">$res</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb3-11" title="11">        }</a>
+<a class="sourceLine" id="cb3-12" title="12">        <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">$res</span><span class="ot">);</span></a>
+<a class="sourceLine" id="cb3-13" title="13">      }</a>
+<a class="sourceLine" id="cb3-14" title="14">      <span class="kw">catch</span><span class="ot">(</span>OrdersServiceException <span class="kw">$e</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb3-15" title="15">        <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb3-16" title="16">          <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="kw">$e</span>-&gt;getMessage<span class="ot">()</span></a>
+<a class="sourceLine" id="cb3-17" title="17">        <span class="ot">));</span></a>
+<a class="sourceLine" id="cb3-18" title="18">      }</a>
+<a class="sourceLine" id="cb3-19" title="19">      <span class="kw">catch</span><span class="ot">(</span><span class="kw">Exception</span> <span class="kw">$e</span><span class="ot">)</span> {</a>
+<a class="sourceLine" id="cb3-20" title="20">        <span class="kw">$this</span>-&gt;_sendResponse<span class="ot">(</span><span class="dv">403</span><span class="ot">,</span> <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb3-21" title="21">          <span class="st">&#39;status&#39;</span> =&gt; <span class="st">&#39;error&#39;</span><span class="ot">,</span> <span class="st">&#39;message&#39;</span> =&gt; <span class="kw">$e</span>-&gt;getMessage<span class="ot">()</span></a>
+<a class="sourceLine" id="cb3-22" title="22">        <span class="ot">));</span></a>
+<a class="sourceLine" id="cb3-23" title="23">      }</a>
+<a class="sourceLine" id="cb3-24" title="24">    }</a>
+<a class="sourceLine" id="cb3-25" title="25">  }</a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="kw">?&gt;</span></a></code></pre>
+    </div>
+    <p>Now the controller have only code which is need to this action. we don’t have reuse anything from this because
+      how to display error depends on that particular action.</p>
+    <p>Hope I gave you a basic idea on service classes. If you have any queries, please drop a comment.</p>
+    <p>Thank You.</p>
+
+  </body>
+
+  
+</html>

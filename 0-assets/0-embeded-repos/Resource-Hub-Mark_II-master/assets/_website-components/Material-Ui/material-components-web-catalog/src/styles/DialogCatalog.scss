@@ -1,0 +1,10 @@
+@import '@material/dialog/mdc-dialog';
+
+.hero-demo {
+  position: relative;
+  z-index: 0;
+}
+
+.mdc-dialog__content a:focus {
+  outline: 1px solid currentColor;
+}

@@ -1,0 +1,231 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When ever I read about reactjs, I heard that “Its needs a different thinking”. I understood that statement When I
+      worked on a simple form with loading indicator in reactjs. In usual case I used to add loading class in
+      <code>beforeSend</code> and remove it when <code>$.ajax</code> is <code>done</code>/<code>fail</code>.
+    </p>
+    <p>But I came to reactjs, first I tried to do the same, but later I understood it should go to <code>state</code>.
+      Here below the code for simple reactjs form. I used <code>loading</code> state to to render loading indicator.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">App</span>.<span class="va">Users</span>.<span class="at">Add</span> <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">getInitialState</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-4" title="4">      <span class="dt">username</span><span class="op">:</span> <span class="st">&quot;&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="dt">email</span><span class="op">:</span> <span class="st">&quot;&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-6" title="6">      <span class="dt">password</span><span class="op">:</span> <span class="st">&quot;&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-7" title="7">      <span class="dt">loading</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-8" title="8">      <span class="dt">errors</span><span class="op">:</span> <span class="op">{},</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="op">};</span></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-11" title="11">  <span class="dt">_create</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="cf">return</span> <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-13" title="13">      <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/api/users&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-14" title="14">      <span class="dt">type</span><span class="op">:</span> <span class="st">&quot;POST&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-15" title="15">      <span class="dt">data</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-16" title="16">        <span class="dt">username</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">state</span>.<span class="at">username</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-17" title="17">        <span class="dt">password</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">state</span>.<span class="at">password</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-18" title="18">        <span class="dt">email</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">state</span>.<span class="at">email</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-19" title="19">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-20" title="20">      <span class="dt">beforeSend</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-21" title="21">        <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span> <span class="dt">loading</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">      <span class="op">}</span>.<span class="at">bind</span>(<span class="kw">this</span>)<span class="op">,</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-24" title="24">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-25" title="25">  <span class="dt">_onSubmit</span><span class="op">:</span> <span class="kw">function</span> (e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-26" title="26">    <span class="va">e</span>.<span class="at">preventDefault</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-27" title="27">    <span class="kw">var</span> errors <span class="op">=</span> <span class="kw">this</span>.<span class="at">_validate</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-28" title="28">    <span class="cf">if</span> (<span class="va">Object</span>.<span class="at">keys</span>(errors).<span class="at">length</span> <span class="op">!=</span> <span class="dv">0</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-29" title="29">      <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-30" title="30">        <span class="dt">errors</span><span class="op">:</span> errors<span class="op">,</span></a>
+<a class="sourceLine" id="cb1-31" title="31">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-32" title="32">      <span class="cf">return</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-33" title="33">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-34" title="34">    <span class="kw">var</span> xhr <span class="op">=</span> <span class="kw">this</span>.<span class="at">_create</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-35" title="35">    <span class="va">xhr</span>.<span class="at">done</span>(<span class="kw">this</span>.<span class="at">_onSuccess</span>).<span class="at">fail</span>(<span class="kw">this</span>.<span class="at">_onError</span>).<span class="at">always</span>(<span class="kw">this</span>.<span class="at">hideLoading</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-37" title="37">  <span class="dt">hideLoading</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span> <span class="dt">loading</span><span class="op">:</span> <span class="kw">false</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-39" title="39">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-40" title="40">  <span class="dt">_onSuccess</span><span class="op">:</span> <span class="kw">function</span> (data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-41" title="41">    <span class="kw">this</span>.<span class="va">refs</span>.<span class="va">user_form</span>.<span class="at">getDOMNode</span>().<span class="at">reset</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-42" title="42">    <span class="kw">this</span>.<span class="at">setState</span>(<span class="kw">this</span>.<span class="at">getInitialState</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-43" title="43">    <span class="co">// show success message</span></a>
+<a class="sourceLine" id="cb1-44" title="44">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-45" title="45">  <span class="dt">_onError</span><span class="op">:</span> <span class="kw">function</span> (data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-46" title="46">    <span class="kw">var</span> message <span class="op">=</span> <span class="st">&quot;Failed to create the user&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-47" title="47">    <span class="kw">var</span> res <span class="op">=</span> <span class="va">data</span>.<span class="at">responseJSON</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-48" title="48">    <span class="cf">if</span> (<span class="va">res</span>.<span class="at">message</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-49" title="49">      message <span class="op">=</span> <span class="va">data</span>.<span class="va">responseJSON</span>.<span class="at">message</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-50" title="50">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-51" title="51">    <span class="cf">if</span> (<span class="va">res</span>.<span class="at">errors</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-52" title="52">      <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-53" title="53">        <span class="dt">errors</span><span class="op">:</span> <span class="va">res</span>.<span class="at">errors</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-54" title="54">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-55" title="55">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-56" title="56">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-57" title="57">  <span class="dt">_onChange</span><span class="op">:</span> <span class="kw">function</span> (e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-58" title="58">    <span class="kw">var</span> state <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb1-59" title="59">    state[<span class="va">e</span>.<span class="va">target</span>.<span class="at">name</span>] <span class="op">=</span> <span class="va">$</span>.<span class="at">trim</span>(<span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">    <span class="kw">this</span>.<span class="at">setState</span>(state)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-61" title="61">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-62" title="62">  <span class="dt">_validate</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-63" title="63">    <span class="kw">var</span> errors <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb1-64" title="64">    <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">state</span>.<span class="at">username</span> <span class="op">==</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-65" title="65">      <span class="va">errors</span>.<span class="at">username</span> <span class="op">=</span> <span class="st">&quot;Username is required&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-66" title="66">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-67" title="67">    <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">state</span>.<span class="at">email</span> <span class="op">==</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-68" title="68">      <span class="va">errors</span>.<span class="at">email</span> <span class="op">=</span> <span class="st">&quot;Email is required&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-69" title="69">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-70" title="70">    <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">state</span>.<span class="at">password</span> <span class="op">==</span> <span class="st">&quot;&quot;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-71" title="71">      <span class="va">errors</span>.<span class="at">password</span> <span class="op">=</span> <span class="st">&quot;Password is required&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-72" title="72">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-73" title="73">    <span class="cf">return</span> errors<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-74" title="74">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-75" title="75">  <span class="dt">_formGroupClass</span><span class="op">:</span> <span class="kw">function</span> (field) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-76" title="76">    <span class="kw">var</span> className <span class="op">=</span> <span class="st">&quot;form-group &quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-77" title="77">    <span class="cf">if</span> (field) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-78" title="78">      className <span class="op">+=</span> <span class="st">&quot; has-error&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-79" title="79">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-80" title="80">    <span class="cf">return</span> className<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-81" title="81">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-82" title="82">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-83" title="83">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb1-84" title="84">      <span class="op">&lt;</span>div className<span class="op">=</span><span class="st">&quot;form-container&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-85" title="85">        <span class="op">&lt;</span>form ref<span class="op">=</span><span class="st">&quot;user_form&quot;</span> onSubmit<span class="op">={</span><span class="kw">this</span>.<span class="at">_onSubmit</span><span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb1-86" title="86">          <span class="op">&lt;</span>div className<span class="op">={</span><span class="kw">this</span>.<span class="at">_formGroupClass</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">username</span>)<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb1-87" title="87">            <span class="op">&lt;</span>label className<span class="op">=</span><span class="st">&quot;control-label&quot;</span> <span class="cf">for</span><span class="op">=</span><span class="st">&quot;username&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-88" title="88">              Username<span class="op">{</span><span class="st">&quot; &quot;</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-89" title="89">            &lt;/label<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-90" title="90">            <span class="op">&lt;</span>input</a>
+<a class="sourceLine" id="cb1-91" title="91">              name<span class="op">=</span><span class="st">&quot;username&quot;</span></a>
+<a class="sourceLine" id="cb1-92" title="92">              ref<span class="op">=</span><span class="st">&quot;username&quot;</span></a>
+<a class="sourceLine" id="cb1-93" title="93">              type<span class="op">=</span><span class="st">&quot;text&quot;</span></a>
+<a class="sourceLine" id="cb1-94" title="94">              className<span class="op">=</span><span class="st">&quot;form-control&quot;</span></a>
+<a class="sourceLine" id="cb1-95" title="95">              id<span class="op">=</span><span class="st">&quot;username&quot;</span></a>
+<a class="sourceLine" id="cb1-96" title="96">              placeholder<span class="op">=</span><span class="st">&quot;Username&quot;</span></a>
+<a class="sourceLine" id="cb1-97" title="97">              onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">_onChange</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-98" title="98">            /&gt;</a>
+<a class="sourceLine" id="cb1-99" title="99">            <span class="op">&lt;</span>span className<span class="op">=</span><span class="st">&quot;help-block&quot;</span><span class="op">&gt;{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">username</span><span class="op">}</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-100" title="100">          &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-101" title="101">          <span class="op">&lt;</span>div className<span class="op">={</span><span class="kw">this</span>.<span class="at">_formGroupClass</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">email</span>)<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb1-102" title="102">            <span class="op">&lt;</span>label className<span class="op">=</span><span class="st">&quot;control-label&quot;</span> <span class="cf">for</span><span class="op">=</span><span class="st">&quot;email&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-103" title="103">              Email address</a>
+<a class="sourceLine" id="cb1-104" title="104">            &lt;/label<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-105" title="105">            <span class="op">&lt;</span>input</a>
+<a class="sourceLine" id="cb1-106" title="106">              name<span class="op">=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb1-107" title="107">              ref<span class="op">=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb1-108" title="108">              type<span class="op">=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb1-109" title="109">              className<span class="op">=</span><span class="st">&quot;form-control&quot;</span></a>
+<a class="sourceLine" id="cb1-110" title="110">              id<span class="op">=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb1-111" title="111">              placeholder<span class="op">=</span><span class="st">&quot;Email&quot;</span></a>
+<a class="sourceLine" id="cb1-112" title="112">              onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">_onChange</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-113" title="113">            /&gt;</a>
+<a class="sourceLine" id="cb1-114" title="114">            <span class="op">&lt;</span>span className<span class="op">=</span><span class="st">&quot;help-block&quot;</span><span class="op">&gt;{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">email</span><span class="op">}</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-115" title="115">          &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-116" title="116">          <span class="op">&lt;</span>div className<span class="op">={</span><span class="kw">this</span>.<span class="at">_formGroupClass</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">password</span>)<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb1-117" title="117">            <span class="op">&lt;</span>label className<span class="op">=</span><span class="st">&quot;control-label&quot;</span> <span class="cf">for</span><span class="op">=</span><span class="st">&quot;password&quot;</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-118" title="118">              Password</a>
+<a class="sourceLine" id="cb1-119" title="119">            &lt;/label<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-120" title="120">            <span class="op">&lt;</span>input</a>
+<a class="sourceLine" id="cb1-121" title="121">              name<span class="op">=</span><span class="st">&quot;password&quot;</span></a>
+<a class="sourceLine" id="cb1-122" title="122">              ref<span class="op">=</span><span class="st">&quot;password&quot;</span></a>
+<a class="sourceLine" id="cb1-123" title="123">              type<span class="op">=</span><span class="st">&quot;password&quot;</span></a>
+<a class="sourceLine" id="cb1-124" title="124">              className<span class="op">=</span><span class="st">&quot;form-control&quot;</span></a>
+<a class="sourceLine" id="cb1-125" title="125">              id<span class="op">=</span><span class="st">&quot;password&quot;</span></a>
+<a class="sourceLine" id="cb1-126" title="126">              placeholder<span class="op">=</span><span class="st">&quot;Password&quot;</span></a>
+<a class="sourceLine" id="cb1-127" title="127">              onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">_onChange</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-128" title="128">            /&gt;</a>
+<a class="sourceLine" id="cb1-129" title="129">            <span class="op">&lt;</span>span className<span class="op">=</span><span class="st">&quot;help-block&quot;</span><span class="op">&gt;{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="va">errors</span>.<span class="at">password</span><span class="op">}</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-130" title="130">          &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-131" title="131">          <span class="op">&lt;</span>button</a>
+<a class="sourceLine" id="cb1-132" title="132">            type<span class="op">=</span><span class="st">&quot;submit&quot;</span></a>
+<a class="sourceLine" id="cb1-133" title="133">            className<span class="op">=</span><span class="st">&quot;btn btn-default&quot;</span></a>
+<a class="sourceLine" id="cb1-134" title="134">            disabled<span class="op">={</span><span class="kw">this</span>.<span class="va">state</span>.<span class="at">loading</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-135" title="135">          <span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-136" title="136">            Create</a>
+<a class="sourceLine" id="cb1-137" title="137">            <span class="op">&lt;</span><span class="va">App</span>.<span class="at">Loading</span> loading<span class="op">={</span><span class="kw">this</span>.<span class="va">state</span>.<span class="at">loading</span><span class="op">}</span> /&gt;</a>
+<a class="sourceLine" id="cb1-138" title="138">          &lt;/button<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-139" title="139">        &lt;/form<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-140" title="140">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-141" title="141">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-142" title="142">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-143" title="143"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>So in the above component, I save the value entered in the text boxes into the <code>state</code> and validate
+      which submiting the form. Once I validation is success then I initialte an ajax request. In the
+      <code>beforeSend</code> of I set the <code>loading</code> state to <code>true</code> and whether its fail or
+      success I set the loading state to <code>false</code>. So when the loading state is <code>true</code> it will
+      render the loading component with <a href="http://fontawesome.io/">fontawesome</a> CSS classes.
+    </p>
+    <p>I extracted the loading component to reuse as much as I can.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">App</span>.<span class="at">Loading</span> <span class="op">=</span> <span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">loading</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-4" title="4">      <span class="cf">return</span> <span class="op">&lt;</span>span<span class="op">&gt;</span>&lt;/span<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="cf">return</span> <span class="op">&lt;</span>span className<span class="op">=</span><span class="st">&quot;fa-spinner fa-spin&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now I can render this <code>App.Users.Add</code> component anywhere.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">React</span>.<span class="at">render</span>(<span class="op">&lt;</span><span class="va">App</span>.<span class="va">Users</span>.<span class="at">Add</span> /<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;container&quot;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>I store all the validation errors in the state as well. So when ever the error occurs the reactjs will take care
+      of rending it.</p>
+
+  </body>
+
+  
+</html>

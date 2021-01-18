@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>I was really curious about the upcoming ES6 features. After a long time, today I made time to try out some of the
+      features using <a href="https://github.com/google/traceur-compiler">traceur-compiler</a>.</p>
+    <h2 id="boilerplate">Boilerplate</h2>
+    <p>First thing I done was to setup a boilerplate to run ES6 with traceur. {% highlight html %}</p>
+    <!-- index.html -->
+    &lt;!doctype html&gt;
+    <html class="no-js">
+    <!--<![endif]-->
+    <pre><code>&lt;head&gt;
+  &lt;title&gt;ES6&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;script src=&quot;https://traceur-compiler.googlecode.com/git/bin/traceur.js&quot;
+    type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://traceur-compiler.googlecode.com/git/src/bootstrap.js&quot;
+    type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    traceur.options.experimental = true;
+&lt;/script&gt;
+&lt;script type=&quot;text/traceur&quot; src=&quot;calc.js&quot;&gt;&lt;/script&gt;</code></pre>
+  </body>
+
+  </html>
+  <p>{% endhighlight %}</p>
+  <p>In the above traceur.js is the compiler and bootstrap.js is used for compile all the script tags with
+    <strong>type=“text/traceur”</strong> into vanilla js.
+  </p>
+  <p>Some of the experimental features in traceur are truned off by default, so we need to enable all the experimental
+    features using</p>
+  <p>{% highlight html %}</p>
+  <script>
+    traceur.options.experimental = true;
+  </script>
+  <p>{% endhighlight %}</p>
+  <p>You can look into <a href="https://github.com/google/traceur-compiler/blob/master/src/options.js">options</a> for
+    details.</p>
+  <h2 id="creating-class">Creating class</h2>
+  <p>Now lets create a class for calculator and define a function named add.</p>
+  <p>{% highlight js %} // calc.js class Calc { constructor(){ console.log(‘Calc constructor’); } add(a, b){ return a +
+    b; } }</p>
+  <p>var c = new Calc(); console.log(c.add(4,5)); // prints 9 {% endhighlight %}</p>
+  <p>Hooray!! it works!!</p>
+  <p>Modules are not fully implemented on traceur, so until then, we need to use <a
+      href="https://github.com/ModuleLoader/es6-module-loader">ES6 Loader polyfill</a>.</p>
+  <h2 id="using-command-line">Using Command line</h2>
+  <p>If you want traceur to work on command line, You can install via npm.</p>
+  <p>{% highlight js %} npm install traceur -g {% endhighlight %}</p>
+  <p>And we can run it by,</p>
+  <p>{% highlight js %} traceur calc.js {% endhighlight %}</p>
+  <p>This will you compile and execute the calc.js and output to terminal.</p>
+  <p>If you wanna compile to another file,</p>
+  <p>{% highlight js %} traceur –out build/calc.js calc.js {% endhighlight %}</p>
+  <p>This will store the compiled js to <em>build/calc.js</em>. You can trun on experimental features with
+    <code>--experimental</code> option.
+  </p>
+  <h2 id="using-grunt">Using Grunt</h2>
+  <p>If you want to set up traceur compiler with grunt, you can use <a
+      href="https://github.com/aaronfrost/grunt-traceur">grunt-traceur</a>.</p>
+  <p><strong>Install grunt-traceur</strong></p>
+  <p>{% highlight sh %} npm install grunt-traceur –save-dev {% endhighlight %}</p>
+  <p><strong>Configure traceur task</strong></p>
+  <p>{% highlight js %} // Gruntfile.js module.exports = function(grunt){ grunt.initConfig({ traceur: { options: {
+    sourceMaps: true, experimental:true // Turn on all experimental features blockBinding: true // Turn on support for
+    let and const }, custom: { files:{ ‘build/’: [‘calc.js’] } } } });</p>
+  <pre><code>grunt.loadNpmTasks(&#39;grunt-traceur&#39;);</code></pre>
+  <p>} {% endhighlight %}</p>
+  <p>You can run it by,</p>
+  <p>{% highlight sh %} grunt traceur {% endhighlight %}</p>
+
+  </body>
+
+  
+</html>

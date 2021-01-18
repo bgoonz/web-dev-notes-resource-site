@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Until last wednesday, I was really confused about the functionality of <code>visibility</code>,
+      <code>opacity</code> and <code>display</code> properties. Then <a href="http://twitter.com/shidhin">Shidhin</a>
+      spend some time, explained and make me understand what are the difference between those.
+    </p>
+    <p>In this post, I am trying to summarize the difference between <code>visibility:hidden</code>,
+      <code>display:none</code> and <code>opacity:0</code>.
+    </p>
+    <h1 id="demo">Demo</h1>
+    <a class="jsbin-embed" href="http://jsbin.com/fupeb/6/embed?output,css">JS Bin</a>
+<<<<<<< HEAD
+    <script async defer src="http://static.jsbin.com/js/embed.js"></script>
+=======
+    <script src="http://static.jsbin.com/js/embed.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <h1 id="visibility">Visibility</h1>
+    <p>Using the visibility property in CSS, we can toggle the visibility of an element using the values
+      <code>hidden</code> or <code>visible</code>. If we make the the element hidden, it will be hidden from the user
+      and user can’t access it’s child, but still in the DOM, <code>the space of the element will be consumed</code>.
+    </p>
+    <p>In the demo above, You can see a box below the text visibility.The box look like a rectangle even the child
+      element is given <code>visibility:hidden</code> proves that it still consumes the space on DOM.</p>
+    <h1 id="opacity">Opacity</h1>
+    <p>If we use <code>opacity:0</code> to hide an element, in the fist look it looks like hidden, but still the user
+      <code>can access the child element</code>. It also <code>consume the space</code> of the element in the DOM.
+    </p>
+    <p>In the above demo, you can try mousehover on the box just below the text opacity. You can see that the curson
+      turns to pointer. Its because there is a link inside that box, which will open <code>google.com</code> in a new
+      tab. Now go ahead and try a click, hooray a new tab opens even though its parent is not visible to our eyes.</p>
+    <h1 id="display">Display</h1>
+    <p>If we use <code>display:none</code>, the browser will consider as if the element is not available in the DOM as
+      the result it won’t consume the space.</p>
+    <p>In the demo above, you can see that the box below the text display is turned into a line and when you try to
+      comment the <code>display:none</code> in the CSS panel it truns back to normal rectangular box.</p>
+
+  </body>
+
+  
+</html>

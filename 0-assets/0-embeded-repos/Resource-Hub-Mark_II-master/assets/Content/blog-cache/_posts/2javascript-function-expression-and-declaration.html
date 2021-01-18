@@ -1,0 +1,109 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>The difference between function expression and function declaration is present in most of the interview question
+      references. So I though I should document it myself.</p>
+    <h1 id="function-expression"><a class="anchor" name="function-expression" href="#function-expression"><i
+          class="anchor-icon"></i></a>function expression</h1>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// function expression</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> a <span class="op">=</span> <span class="kw">function</span> () <span class="op">{};</span></a></code></pre>
+    </div>
+    <p>As I checked many docs, I think function expression is the best way to define a function. Also best for
+      javascript beginners, because it help them understand that function can be values in JavaScript. It will be
+      something new from those who are coming from PHP or Ruby background.</p>
+    <p>The two main points to remember about function expression is,</p>
+    <ul>
+      <li>evaluated only when interpreter reaches the expression</li>
+      <li>can’t be called before assignment, will be undefined.</li>
+    </ul>
+    <h1 id="named-function-expression"><a class="anchor" name="named-function-expression"
+        href="#named-function-expression"><i class="anchor-icon"></i></a>named function expression</h1>
+    <p>Its just a simple variant of function expression. Here instead of anonymous function we will assign a named
+      function.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// named function expression</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> a <span class="op">=</span> <span class="kw">function</span> <span class="at">a</span>() <span class="op">{};</span></a></code></pre>
+    </div>
+    <p>The named functions are helpful in debugging, since we can easily identify the function with its name in stack
+      trace. Also we use its for recursion. The normal function expression can’t be used for recurion.</p>
+    <p>The downside of named function expression is it breaks in <code>IE</code>. If the variable and function name is
+      <code>a</code> it won’t work in IE. So we need to specify different name for function than the variable.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// named function expression</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">var</span> a <span class="op">=</span> <span class="kw">function</span> <span class="at">ar</span>() <span class="op">{};</span></a></code></pre>
+    </div>
+    <p>This way we can use <code>ar</code> for recursion and <code>a</code> for normal function calls.</p>
+    <h1 id="function-declaration"><a class="anchor" name="function declaration" href="#function declaration"><i
+          class="anchor-icon"></i></a>function declaration</h1>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// function declaration</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">function</span> <span class="at">a</span>() <span class="op">{}</span></a></code></pre>
+    </div>
+    <p>function declaration is the most common practice among the self learning beginners.</p>
+    <p>The two main points to remember about function expression is,</p>
+    <ul>
+      <li>load before execution starts</li>
+      <li>Can be called even before the declation and no error is thrown</li>
+    </ul>
+    <p>Hope This shed some light in you about <code>function expression</code>, <code>named function</code> and
+      <code>function declation</code>. Please lemme know if you have more points to add to it.
+    </p>
+
+  </body>
+
+  
+</html>

@@ -1,0 +1,119 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently I was working on a rails app where its datasource was a API instead of a database. My team wants all the
+      components to be seperate, thats the reason we go with this kind of architecture. We were using Rails 3.2 and
+      ActiveResource for the frontend and of course our API is build with <a
+        href="https://github.com/rails-api/rails-api">rails-api</a>.</p>
+    <p>Here is my sample data from the JSON API.</p>
+    <p>{% highlight js %} { store: { name: ‘some store’, description: ‘some description’, contacts: { phone:
+      ‘0495-2414123’, email: ‘test@somestore.com’, mobile: ‘99950123456’ } } } {% endhighlight %}</p>
+    <p>ActiveResource will deal with the data pretty well except <code>contacts</code>. It tends to create an object for
+      contacts. The ActiveResource object will be something similar to</p>
+    <blockquote>
+      <p>#&lt;Store:0xb4aaec4 <span class="citation" data-cites="attributes">@attributes</span>={ “store” =&gt; {
+        “description” =&gt; “some description”, “contacts” =&gt; #&lt;Store::Contact:0xb4aa884 <span class="citation"
+          data-cites="attributes">@attributes</span>={ “contact” =&gt; {“opening_time” =&gt; “09:00”, “clo sing_time”
+        =&gt;“18:00”,“holidays”=&gt;[“Sunday”], “message” =&gt;"" } },<span class="citation"
+          data-cites="prefix_options">@prefix_options</span>={}, <span class="citation"
+          data-cites="persisted">@persisted</span>=false&gt;, “name”=&gt; “some store” } } , <span class="citation"
+          data-cites="prefix_options">@prefix_options</span>={}, <span class="citation"
+          data-cites="persisted">@persisted</span>=false&gt;</p>
+    </blockquote>
+    <p>So I hope you have noticed that contacts is an object of <code>Store::Contact</code>. This is pretty handy anyway
+      but the main issue was <code>contacts</code> attributes are are enclosed inside a root element
+      <code>contact</code>. This is not an issue if you are just finding and displaying data. But its a real issue when
+      you try to create or update.
+    </p>
+    <p>If we continue the same structure and use <code>Store.create</code> it will create the record like</p>
+    <p>{% highlight js %} { store: { name: ‘some store’, description: ‘some description’, contacts: { contacts: { phone:
+      ‘0495-2414123’, email: ‘test@somestore.com’, mobile: ‘99950123456’ } } } } {% endhighlight %}</p>
+    <p>Since we are using MongoDB to store data, the whole store and contact is a single document, the un-nessassory
+      nesting for contacts was the real problem for us. So we thought of diveing into ActiveResource source code to get
+      a solution. Atlast we had two ways to solve this issue.</p>
+    <ol type="1">
+      <li>Create a model for <code>Store::Contact</code> with <code>self.include_root_in_json = false</code></li>
+      <li>Monkey patch <code>ActiveResource::Base.create_resource_for</code> method</li>
+    </ol>
+    <h1 id="create-a-model">1. Create a model</h1>
+    <p>This will work out perfectly only if you have one or two situations like <code>Store::Contact</code> or else you
+      need to create a model for every attributes holding a hash value.</p>
+    <p>It will be better to create the model in the parent model file itself so that it will load the class when ever
+      the parent model loads.</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="appmodelstore.rb">app/model/store.rb</h1>
+    <p>class Store::Contact &lt; ActiveResource::Base self.include_root_in_json = false</p>
+    <p>end {% endhighlight %}</p>
+    <p>Now when ever the we call <code>Store.create</code> ActiveResource strip the extra nesting of contacts.</p>
+    <h1 id="monkey-patch-activeresource">2. Monkey patch ActiveResource</h1>
+    <p>If you are new to monkey patching, you can take a look to my another blog post which explains <a
+        href="/2012/12/ruby-check-whether-method-is-monkey-patched-or-not.html">how monkey patch in rails</a>.</p>
+    <p>My patch for this problem look like,</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="configinitializersactive_resource_base_patch.rb">config/initializers/active_resource_base_patch.rb</h1>
+    <p>module ActiveResource class Base</p>
+    <pre><code>def create_resource_for(resource_name)
+  resource = self.class.const_set(resource_name,
+    Class.new(ActiveResource::Base))
+  resource.prefix = self.class.prefix
+  resource.site   = self.class.site
+  resource.include_root_in_json = false
+  resource
+end</code></pre>
+    <p>end end {% endhighlight %}</p>
+    <p>This will work perfectly if you want all your sub models to strip the root element.</p>
+    <p>Since we had a lot of attributes holding hash value in different models we planned to move with the second option
+      and so far it works pretty fine.</p>
+
+  </body>
+
+  
+</html>

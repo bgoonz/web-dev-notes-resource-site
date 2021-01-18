@@ -1,0 +1,228 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In my last post on <a href="/2016/02/redux-using-with-vanilla-js.html">redux : using with vanilla js</a> we
+      created a simple counter. In this post let’s see how we can test the component as well as redux actions. For
+      testing I will be using <a href="http://mochajs.org/">mocha</a> testing framework and for assertion <a
+        href="https://github.com/LearnBoost/expect.js">expect.js</a>.</p>
+    <p>For my last post the counter module will look like</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> <span class="op">{</span>createStore<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">// reducer </span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">function</span> <span class="at">counter</span>(state<span class="op">=</span><span class="dv">0</span><span class="op">,</span> action) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;counter&#39;</span><span class="op">,</span> action)</a>
+<a class="sourceLine" id="cb1-6" title="6">  <span class="cf">switch</span>(<span class="va">action</span>.<span class="at">type</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="cf">case</span> <span class="st">&#39;INCREMENT&#39;</span><span class="op">:</span></a>
+<a class="sourceLine" id="cb1-8" title="8">      <span class="cf">return</span> state <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="cf">case</span> <span class="st">&#39;DECREMENT&#39;</span><span class="op">:</span></a>
+<a class="sourceLine" id="cb1-10" title="10">      <span class="cf">return</span> state <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="cf">default</span><span class="op">:</span></a>
+<a class="sourceLine" id="cb1-12" title="12">      <span class="cf">return</span> state<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="co">//actions</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="kw">const</span> increment <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-18" title="18">  <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;INCREMENT&#39;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">  <span class="op">};</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-22" title="22"></a>
+<a class="sourceLine" id="cb1-23" title="23"><span class="kw">const</span> decrement <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-24" title="24">  <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-25" title="25">    <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;DECREMENT&#39;</span></a>
+<a class="sourceLine" id="cb1-26" title="26">  <span class="op">};</span></a>
+<a class="sourceLine" id="cb1-27" title="27"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-28" title="28"></a>
+<a class="sourceLine" id="cb1-29" title="29"><span class="co">//create store</span></a>
+<a class="sourceLine" id="cb1-30" title="30"><span class="kw">const</span> store <span class="op">=</span> <span class="at">createStore</span>(counter)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-31" title="31"></a>
+<a class="sourceLine" id="cb1-32" title="32"><span class="kw">class</span> Counter <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-33" title="33">  <span class="at">constructor</span>(options) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-34" title="34">    <span class="kw">this</span>.<span class="at">$el</span> <span class="op">=</span> <span class="va">options</span>.<span class="at">el</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-35" title="35">    <span class="kw">this</span>.<span class="at">store</span> <span class="op">=</span> <span class="va">options</span>.<span class="at">store</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-36" title="36">    <span class="va">store</span>.<span class="at">subscribe</span>(<span class="kw">this</span>.<span class="va">update</span>.<span class="at">bind</span>(<span class="kw">this</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-37" title="37">    <span class="kw">this</span>.<span class="va">$el</span>.<span class="at">querySelector</span>(<span class="st">&#39;#inc&#39;</span>)</a>
+<a class="sourceLine" id="cb1-38" title="38">      .<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">inc</span>.<span class="at">bind</span>(<span class="kw">this</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-39" title="39">    <span class="kw">this</span>.<span class="va">$el</span>.<span class="at">querySelector</span>(<span class="st">&#39;#dec&#39;</span>)</a>
+<a class="sourceLine" id="cb1-40" title="40">      .<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">dec</span>.<span class="at">bind</span>(<span class="kw">this</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-41" title="41">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-42" title="42"></a>
+<a class="sourceLine" id="cb1-43" title="43">  <span class="at">inc</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-44" title="44">    <span class="kw">this</span>.<span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">increment</span>())</a>
+<a class="sourceLine" id="cb1-45" title="45">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-46" title="46"></a>
+<a class="sourceLine" id="cb1-47" title="47">  <span class="at">dec</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-48" title="48">    <span class="kw">this</span>.<span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">decrement</span>())</a>
+<a class="sourceLine" id="cb1-49" title="49">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-50" title="50"></a>
+<a class="sourceLine" id="cb1-51" title="51">  <span class="at">update</span>() <span class="op">{</span> </a>
+<a class="sourceLine" id="cb1-52" title="52">    <span class="va">console</span>.<span class="at">log</span>(<span class="va">store</span>.<span class="at">getState</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-53" title="53">    <span class="kw">this</span>.<span class="at">$el</span></a>
+<a class="sourceLine" id="cb1-54" title="54">      .<span class="at">querySelector</span>(<span class="st">&#39;#text&#39;</span>)</a>
+<a class="sourceLine" id="cb1-55" title="55">      .<span class="at">innerHTML</span> <span class="op">=</span> <span class="va">store</span>.<span class="at">getState</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-56" title="56">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-57" title="57"></a>
+<a class="sourceLine" id="cb1-58" title="58">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-59" title="59">    <span class="kw">this</span>.<span class="at">update</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-61" title="61"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>For testing purpose, I will be adding a new dispatch type called “RESET” which will reset the state to zero.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode diff"><code class="sourceCode diff"><a class="sourceLine" id="cb2-1" title="1">// reducer </a>
+<a class="sourceLine" id="cb2-2" title="2">function counter(state=0, action) {</a>
+<a class="sourceLine" id="cb2-3" title="3">  switch(action.type) {</a>
+<a class="sourceLine" id="cb2-4" title="4">    case &#39;INCREMENT&#39;:</a>
+<a class="sourceLine" id="cb2-5" title="5">      return state + 1;</a>
+<a class="sourceLine" id="cb2-6" title="6">    case &#39;DECREMENT&#39;:</a>
+<a class="sourceLine" id="cb2-7" title="7">      return state - 1;</a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="va">+    case &#39;RESET&#39;:</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="va">+      return 0;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">    default:</a>
+<a class="sourceLine" id="cb2-11" title="11">      return state;</a>
+<a class="sourceLine" id="cb2-12" title="12">  }</a>
+<a class="sourceLine" id="cb2-13" title="13">}</a></code></pre>
+    </div>
+    <p>Testing can be done in two parts, First unit test the actions then the <code>Counter</code> module. In initial
+      setup, we setup for <code>bdd</code> and will create a new store for test</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">mocha</span>.<span class="at">ui</span>(<span class="st">&#39;bdd&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">const</span> testStore <span class="op">=</span> <span class="at">createStore</span>(counter)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">// our tests</span></a>
+<a class="sourceLine" id="cb3-6" title="6"></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="va">mocha</span>.<span class="at">run</span>()<span class="op">;</span></a></code></pre>
+    </div>
+    <h2 id="testing-actions">Testing actions</h2>
+    <p>While testing action we dispatch the events and see the state is changed accordingly. For this before running
+      each test we need to reset the state to zero to make sure other test cases won’t effect one another’s results.</p>
+    <p>So in <code>beforeEach</code> callback we dispatch the reset event.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="at">describe</span>(<span class="st">&#39;actions&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="va">testStore</span>.<span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">&#39;RESET&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="co">// test for actions</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now we can write tests for the actions described.</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// code for the component from first snippet</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="va">mocha</span>.<span class="at">ui</span>(<span class="st">&#39;bdd&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="kw">const</span> testStore <span class="op">=</span> <span class="at">createStore</span>(counter)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-6" title="6"></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="at">describe</span>(<span class="st">&#39;actions&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-8" title="8">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="va">testStore</span>.<span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">&#39;RESET&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-11" title="11"></a>
+<a class="sourceLine" id="cb5-12" title="12">  <span class="at">it</span>(<span class="st">&#39;inc&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-13" title="13">    <span class="va">testStore</span>.<span class="at">dispatch</span>(<span class="at">increment</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-14" title="14">    <span class="at">expect</span>(<span class="va">testStore</span>.<span class="at">getState</span>()).<span class="at">toEqual</span>(<span class="dv">1</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-15" title="15">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-16" title="16"></a>
+<a class="sourceLine" id="cb5-17" title="17">  <span class="at">it</span>(<span class="st">&#39;dec&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-18" title="18">    <span class="va">testStore</span>.<span class="at">dispatch</span>(<span class="at">decrement</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-19" title="19">    <span class="at">expect</span>(<span class="va">testStore</span>.<span class="at">getState</span>()).<span class="at">toEqual</span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-20" title="20">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb5-21" title="21"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-22" title="22"></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="va">mocha</span>.<span class="at">run</span>()</a></code></pre>
+    </div>
+    <p>So we tested the <code>actions</code> separately, now we can test the actual <code>Counter</code> component.</p>
+    <h2 id="testing-component">Testing component</h2>
+    <p>For testing we <code>Counter</code> component we need to create the <code>Counter</code> object. For this I added
+      a new <code>div#test-counter</code> to my HTML and we instantiate the <code>Counter</code> before the tests.</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> el <span class="op">=</span> <span class="va">d</span>.<span class="at">getElementById</span>(<span class="st">&#39;test-counter&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">const</span> c <span class="op">=</span> <span class="kw">new</span> <span class="at">Counter</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb6-3" title="3">  el<span class="op">,</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="dt">store</span><span class="op">:</span> testStore</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now we can use the variable <code>c</code> in the following tests and we will <code>RESET</code> the store in
+      <code>beforeEach</code> as we did while testing actions. Now for testing we can call <code>c.inc()</code> and
+      <code>c.dec()</code> and check whether the states are changed.
+    </p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">let</span> c<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="at">describe</span>(<span class="st">&#39;Counter&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="va">testStore</span>.<span class="at">dispatch</span>(<span class="op">{</span><span class="dt">type</span><span class="op">:</span> <span class="st">&#39;RESET&#39;</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7">  <span class="at">it</span>(<span class="st">&#39;inc&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-8" title="8">    <span class="va">c</span>.<span class="at">inc</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-9" title="9">    <span class="at">expect</span>(<span class="va">testStore</span>.<span class="at">getState</span>()).<span class="at">toEqual</span>(<span class="dv">1</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-10" title="10">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-11" title="11"></a>
+<a class="sourceLine" id="cb7-12" title="12">  <span class="at">it</span>(<span class="st">&#39;dec&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-13" title="13">    <span class="va">c</span>.<span class="at">dec</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">    <span class="at">expect</span>(<span class="va">testStore</span>.<span class="at">getState</span>()).<span class="at">toEqual</span>(<span class="op">-</span><span class="dv">1</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-16" title="16"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Here is full version of <a href="https://jsbin.com/jibagu/edit?js,output">redux and component tests</a> in jsbin.
+    </p>
+    <a class="jsbin-embed" href="http://jsbin.com/jibagu/3/embed?js,output">JS Bin on jsbin.com</a>
+<<<<<<< HEAD
+    <script async defer src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+=======
+    <script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a

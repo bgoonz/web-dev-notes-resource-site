@@ -1,0 +1,93 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>From gulp 3.9.0, we can write gulpfile in ES6. But for this you need to add <code>babel-core</code> &amp;
+      <code>babel-preset-es2015</code> plugin to your devDependencies and install it. Also You need to name the gulpfile
+      as <code>gulpfile.babel.js</code> instead of gulpfile.js.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;some-project&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">&quot;devDependencies&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="dt">&quot;babel-core&quot;</span><span class="fu">:</span> <span class="st">&quot;^6.0.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="dt">&quot;babel-preset-es2015&quot;</span><span class="fu">:</span> <span class="st">&quot;^6.0.14&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="dt">&quot;gulp&quot;</span><span class="fu">:</span> <span class="st">&quot;^3.9.0&quot;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>Create a <code>.babelrc</code> file and add <code>es2015</code> preset.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">&quot;presets&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;es2015&quot;</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>I have explined in details on <a href="/2016/01/babeljs-writing-next-generation-js.html">how to setup
+        babel.js</a> in my previous blog post.</p>
+    <p>Once you are done setup babel.js and presets you can write <code>gulpfile.babel.js</code> in ES6.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// gulpfile.babel.js</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="im">import</span> fs <span class="im">from</span> <span class="st">&quot;fs&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;build&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="at">browserify</span>(<span class="st">&quot;./index.jsx&quot;</span>)</a>
+<a class="sourceLine" id="cb3-8" title="8">    .<span class="at">transform</span>(<span class="st">&quot;babelify&quot;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">presets</span><span class="op">:</span> [<span class="st">&quot;es2015&quot;</span><span class="op">,</span> <span class="st">&quot;react&quot;</span><span class="op">,</span> <span class="st">&quot;stage-0&quot;</span>] <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-9" title="9">    .<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb3-10" title="10">    .<span class="at">pipe</span>(<span class="va">fs</span>.<span class="at">createWriteStream</span>(<span class="st">&quot;./dist/index.js&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>You can use all the ES6 features in <code>babel-preset-es2015</code>.</p>
+
+  </body>
+
+  
+</html>

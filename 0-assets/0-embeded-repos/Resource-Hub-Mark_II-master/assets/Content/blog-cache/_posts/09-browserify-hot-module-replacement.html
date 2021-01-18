@@ -1,0 +1,142 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Ever since I heard about <a href="https://webpack.github.io/docs/hot-module-replacement.html">Hot Module
+        Replacement (HMR)</a> in webpack I loved the idea. But since I was using <a
+        href="/2016/01/browserify.html">browserify</a> to bundle I was not able to use it. Recently when I saw <a
+        href="https://github.com/substack/node-browserify/issues/1143">this thread</a> I thought I should try <a
+        href="https://github.com/AgentME/browserify-hmr/">browserify-hmr</a>.</p>
+    <p>browserify-hmr can be used a browserify plugin. By default it uses websocket server transfer the changes. You can
+      specify the mode using <code>-m</code> or <code>mode</code> option as websocket or ajax.</p>
+    <h2 id="setup">Setup</h2>
+    <p>To start we need to install a couple of node modules.</p>
+    <pre><code>npm i --save-dev babel-plugin-react-transform babel-plugin-transform-runtime react-transform-hmr</code></pre>
+    <p>These are the modules needed for browserify-hmr. I hope the other modules like <code>babel-core</code>,
+      <code>babel-preset-es2015</code>, <code>babel-preset-react</code>, <code>babelify</code> etc are already
+      installed.
+    </p>
+    <h2 id="setup-.babelrc">Setup <code>.babelrc</code></h2>
+    <p>Now we need some configuration in <code>.babelrc</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">&quot;presets&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;es2015&quot;</span><span class="ot">,</span> <span class="st">&quot;react&quot;</span><span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="dt">&quot;plugins&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;transform-runtime&quot;</span><span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="dt">&quot;env&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="dt">&quot;development&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-6" title="6">      <span class="dt">&quot;plugins&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-7" title="7">        <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-8" title="8">          <span class="st">&quot;react-transform&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb2-9" title="9">          <span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-10" title="10">            <span class="dt">&quot;transforms&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-11" title="11">              <span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-12" title="12">                <span class="dt">&quot;transform&quot;</span><span class="fu">:</span> <span class="st">&quot;react-transform-hmr&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-13" title="13">                <span class="dt">&quot;imports&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;react&quot;</span><span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-14" title="14">                <span class="dt">&quot;locals&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;module&quot;</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-15" title="15">              <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-16" title="16">            <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-17" title="17">          <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-18" title="18">        <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-19" title="19">      <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-20" title="20">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-21" title="21">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-22" title="22"><span class="fu">}</span></a></code></pre>
+    </div>
+    <h2 id="setup-gulp-task">Setup Gulp task</h2>
+    <p>Now we can write a gulp task with <code>watchify</code> and load <code>browserify-hmr</code> as a plugin.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> gulp <span class="im">from</span> <span class="st">&quot;gulp&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> browserify <span class="im">from</span> <span class="st">&quot;browserify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="im">import</span> source <span class="im">from</span> <span class="st">&quot;vinyl-source-stream&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="im">import</span> buffer <span class="im">from</span> <span class="st">&quot;vinyl-buffer&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="im">import</span> sourcemaps <span class="im">from</span> <span class="st">&quot;gulp-sourcemaps&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="im">import</span> util <span class="im">from</span> <span class="st">&quot;gulp-util&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="im">import</span> babelify <span class="im">from</span> <span class="st">&quot;babelify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="im">import</span> hmr <span class="im">from</span> <span class="st">&quot;browserify-hmr&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="im">import</span> watchify <span class="im">from</span> <span class="st">&quot;watchify&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-10" title="10"></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="va">gulp</span>.<span class="at">task</span>(<span class="st">&quot;hmr&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-12" title="12">  <span class="kw">const</span> b <span class="op">=</span> <span class="at">browserify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-13" title="13">    <span class="dt">entries</span><span class="op">:</span> <span class="st">&quot;src/index.jsx&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    <span class="dt">extensions</span><span class="op">:</span> [<span class="st">&quot;.jsx&quot;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb3-15" title="15">    <span class="dt">plugin</span><span class="op">:</span> [hmr<span class="op">,</span> watchify]<span class="op">,</span> <span class="co">// load hmr as plugin</span></a>
+<a class="sourceLine" id="cb3-16" title="16">    <span class="dt">debug</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-17" title="17">    <span class="dt">cache</span><span class="op">:</span> <span class="op">{},</span></a>
+<a class="sourceLine" id="cb3-18" title="18">    <span class="dt">packageCache</span><span class="op">:</span> <span class="op">{},</span></a>
+<a class="sourceLine" id="cb3-19" title="19">  <span class="op">}</span>).<span class="at">transform</span>(babelify)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"></a>
+<a class="sourceLine" id="cb3-21" title="21">  <span class="va">b</span>.<span class="at">on</span>(<span class="st">&quot;update&quot;</span><span class="op">,</span> bundle)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-22" title="22">  <span class="at">bundle</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-23" title="23"></a>
+<a class="sourceLine" id="cb3-24" title="24">  <span class="kw">function</span> <span class="at">bundle</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-25" title="25">    <span class="va">b</span>.<span class="at">bundle</span>()</a>
+<a class="sourceLine" id="cb3-26" title="26">      .<span class="at">on</span>(<span class="st">&quot;error&quot;</span><span class="op">,</span> (err) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-27" title="27">        <span class="va">util</span>.<span class="at">log</span>(<span class="st">&quot;Browserify Error&quot;</span><span class="op">,</span> <span class="va">util</span>.<span class="va">colors</span>.<span class="at">red</span>(<span class="va">err</span>.<span class="at">message</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-28" title="28">      <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-29" title="29">      .<span class="at">pipe</span>(<span class="at">source</span>(<span class="st">&quot;index.js&quot;</span>))</a>
+<a class="sourceLine" id="cb3-30" title="30">      .<span class="at">pipe</span>(<span class="at">buffer</span>())</a>
+<a class="sourceLine" id="cb3-31" title="31">      .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">init</span>(<span class="op">{</span> <span class="dt">loadMaps</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>))</a>
+<a class="sourceLine" id="cb3-32" title="32">      .<span class="at">pipe</span>(<span class="va">sourcemaps</span>.<span class="at">write</span>(<span class="st">&quot;./maps&quot;</span>))</a>
+<a class="sourceLine" id="cb3-33" title="33">      .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">&quot;./dist&quot;</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-34" title="34">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-35" title="35"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>You can also use <code>b.plugin()</code> method to specify the hmr plugin with options. You can find a <a
+        href="https://github.com/revathskumar/browserify-hmr-example">sample application</a> on github.</p>
+    <p>One of the issue with <code>browserify-hmr</code> is it <strong>doesn’t support</strong> <a
+        href="https://github.com/AgentME/browserify-hmr/issues/12">multiple bundles</a>.</p>
+    <p>You can also look into <a href="https://github.com/milankinen/livereactload">livereactload</a> or <a
+        href="https://medium.com/@caspervonb/amokify-and-an-interactive-programming-workflow-11f863aca2d0#.yghe07ae7">amok</a>.
+    </p>
+
+  </body>
+
+  
+</html>

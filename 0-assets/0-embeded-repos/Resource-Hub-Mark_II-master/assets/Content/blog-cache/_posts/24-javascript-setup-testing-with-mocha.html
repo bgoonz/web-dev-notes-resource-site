@@ -1,0 +1,131 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><a href="http://visionmedia.github.io/mocha/">Mocha</a> is the one of the testing framework available in
+      JavaScript. It supports both tdd and bdd and we can run tests from both browser and CLI.</p>
+    <h1 id="setup-for-testing-in-browser">Setup for testing in Browser</h1>
+    <p>Every release of the Mocha will contain a <a
+        href="https://github.com/visionmedia/mocha/blob/master/mocha.js">mocha.js</a> to enable testing in browser. We
+      can use <a href="http://chaijs.com/">chai.js</a> or <a
+        href="https://github.com/LearnBoost/expect.js">expect.js</a> for assertions. If you are using <code>tdd</code>
+      you need mocha to setup by,</p>
+    <p>{% highlight js %} mocha.setup(‘tdd’); {% endhighlight %}</p>
+    <p>or else you can use <code>mocha.setup('bdd')</code>. Here is the boilerplate html for mocha testing. After
+      including your scripts and tests, you can open up in a browser to run tests.</p>
+    <p>Don’t forget to include <code>mocha.run()</code> which will initiate the test runner.</p>
+    <p>{% highlight html %}</p>
+
+    <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+      <div id="mocha">
+
+      </div>
+<<<<<<< HEAD
+      <script async defer src="bower_components/mocha/mocha.js"></script>
+      <script>
+        mocha.setup( 'bdd' )
+      </script>
+      <script async defer src="bower_components/chai/chai.js"></script>
+=======
+      <script src="bower_components/mocha/mocha.js"></script>
+      <script>
+        mocha.setup( 'bdd' )
+      </script>
+      <script src="bower_components/chai/chai.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <script>
+        var assert = chai.assert;
+        var expect = chai.expect;
+        var should = chai.should();
+      </script>
+      <!-- include source files here... -->
+      <!-- include spec files here... -->
+<<<<<<< HEAD
+      <script async defer src="spec/test.js"></script>
+=======
+      <script src="spec/test.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <script>
+        mocha.run()
+      </script>
+    </body>
+    <p>{% endhighlight %}</p>
+    <h1 id="setup-for-testing-in-cli">Setup for testing in CLI</h1>
+    <p>When it comes to testing, I like CLI more than browser. So here is how you can run your mocha tests from CLI. At
+      first you need to install npm module mocha.</p>
+    <p>{% highlight sh %} npm install mocha {% endhighlight %}</p>
+    <p>If you are trying to run tests of an web app in the CLI, then you need to find the help of <a
+        href="http://phantomjs.org/">phatomjs</a> or else you can create some tests and try running with
+      <code>mocha</code> command.
+    </p>
+    <p>You can specify <strong>bdd</strong> or <strong>tdd</strong> using the <code>--ui</code> option.</p>
+    <h1 id="yeoman-generator-mocha">Yeoman : generator-mocha</h1>
+    <p><a href="http://yeoman.io">Yeoman</a> can help you to boilerplate your mocha testing setup. Install <a
+        href="https://github.com/yeoman/generator-mocha">generator-mocha</a> for it.</p>
+    <p>{% highlight sh %} npm install -g generator-mocha {% endhighlight %}</p>
+    <p>Then boilerplate the setup with the command, {% highlight sh %} yo mocha {% endhighlight %}</p>
+    <p>By default yeoman will generate boilerplate for <strong>bdd</strong>, if you wanna generate for
+      <strong>tdd</strong>, use the option <code>--ui</code> as same as for mocha command.
+    </p>
+    <p>Yeoman will install the mocha, chai etc with the help of bower and help to run tests with <a
+        href="https://github.com/kmiyashiro/grunt-mocha">grunt-mocha</a>. Yeoman will boilerplate for webapp and
+      grunt-mocha will run the tests with the help of phatomjs.</p>
+
+  </body>
+
+  
+</html>

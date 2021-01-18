@@ -1,0 +1,114 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>While I was working with PHP, I used to setup <em>.dev</em> domain with <a
+        href="http://www.phprepo.in/2011/09/adding-virtual-host-in-apache-on-ubuntu/">Apache VirtualHost</a> for my
+      development. But after I moved to Ruby on Rails, I never used it since Rails were not using apache server and port
+      80.</p>
+    <p>In the begining I tried to set domain with <code>/etc/hosts</code>, but I came to know that hosts file won’t
+      accept PORT. They only map IP address. But now I managed to find a way to setup <em>.dev</em> domain for rails
+      development.</p>
+    <p>You can either setup this manually or <a href="#invoker">use invoker</a> gem.</p>
+    <div id="manual">
+
+    </div>
+    <h2 id="manual-setup">1. Manual Setup</h2>
+    <p>To setup <em>.dev</em> domain, the prerequisites are <a
+        href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> and <a
+        href="http://www.boutell.com/rinetd/">rinetd</a>. <strong>dnsmasq</strong> is a DNS subsystem provides a local
+      DNS server for the network, with forwarding of all query types to upstream recursive DNS servers and cacheing of
+      common record types. <strong>rinetd</strong> is a internet redirection server rinetd redirects TCP connections
+      from one IP address and port to another</p>
+    <h3 id="installation">Installation</h3>
+    <p>On ubuntu use <code>apt-get</code> to install both dnsmasq &amp; rinetd</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> apt-get install dnsmasq rinetd</a></code></pre>
+    </div>
+    <h3 id="configure-dnsmasq">Configure dnsmasq</h3>
+    <p>create <code>/etc/dnsmasq.d/dev-tld</code> and add the below configuration into it.</p>
+    <pre><code>local=/dev/
+address=/dev/127.0.0.1</code></pre>
+    <h3 id="configure-rinetd">Configure rinetd</h3>
+    <p>The configuration file for rinetd resides at <code>/etc/rinetd.conf</code>. The syntax to add redirection rule is
+    </p>
+    <pre><code>&lt;to ip&gt; &lt;to port&gt; &lt;from ip&gt; &lt;from port&gt;</code></pre>
+    <p>in order to redirect your rails app running on port 4000 to default http port 80, append the below config to
+      /etc/rinetd.conf</p>
+    <pre><code>0.0.0.0 80 0.0.0.0 4000
+0.0.0.0 443 0.0.0.0 3003</code></pre>
+    <p>The second line in above config is needed only if you use SSL. After saving the config restart the rinetd,
+      dnsmasq &amp; network.</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">sudo</span> service rinetd restart</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="fu">sudo</span> service dnsmasq restart</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="fu">sudo</span> /etc/init.d/networking restart</a></code></pre>
+    </div>
+    <p>If you think these steps are hassle, you can set things with invoker gem.</p>
+    <div id="invoker">
+
+    </div>
+    <h2 id="setup-with-invoker">2. Setup with invoker</h2>
+    <p>You can automate all these <strong>dnsmasq</strong> &amp; <strong>rinetd</strong> setup using <a
+        href="http://invoker.codemancers.com/">invoker</a> gem.</p>
+    <p>{% highlight sh %} gem install invoker {% endhighlight %}</p>
+    <p>and run its setup command</p>
+    <p>{% highlight sh %} rvmsudo invoker setup {% endhighlight %}</p>
+    <p>More details about invoker configuration is available on <a
+        href="http://invoker.codemancers.com/#tld">invoker.codemancers.com</a></p>
+    <p>You are done, Now you can type <strong>&lt;you app&gt;.dev</strong> in the browser instead of
+      <code>localhost:4000</code>.
+    </p>
+
+  </body>
+
+  
+</html>

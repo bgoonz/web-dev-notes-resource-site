@@ -1,0 +1,88 @@
+<!--
+
+---
+ Send sms from php using way2sms [part2]
+date: 2010-01-22 15:34:58 UTC
+updated: 2011-07-16 15:34:58 UTC
+2008/kind#post php
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <span style="font-size: x-large;"><b style="color: red;">This post is updated in <a
+        href="http://www.phprepo.in/2011/07/send-sms-from-php-using-way2sms-updated/">www.phprepo.in</a> and you can
+      download from <a href="https://github.com/revathskumar/sms-with-php">Github</a></b></span><br /><br /><b>How to
+    use sms.zip which i provided in my last blog</b><br /><br />In the sms.zip you can see<br />
+  <ul>
+    <li>2 files(classSms.php and sendsms.php)&nbsp;</li>
+    <li>Folder named nusoap&nbsp;</li>
+  </ul><i>classSms.php</i><br />&nbsp;&nbsp; main class file for sending
+  sms<br /><br /><i>sendsms.php</i><br />&nbsp;&nbsp;&nbsp; demo file<br /><br />Let me consider you have two files in
+  your application<br />ie.,<br />
+  <ol>
+    <li>The form to enter the recepiants number and message</li>
+    <li>The action page of the form</li>
+  </ol>&nbsp;In the action page<br />
+  <ul>
+    <li>Include the sms class</li>
+  </ul>
+  <blockquote>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; require_once('classSms.php');</blockquote>
+  <ul>
+    <li>Create an object for the kitesSms class in classSms.php</li>
+  </ul>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; The constructor of
+  the kitesSms class&nbsp; takes two argument<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1.&nbsp; way2sms username<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 2.&nbsp;&nbsp; way2sms&nbsp; password<br />
+  <blockquote>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $ob = new
+    kitesSms("9895012345","password"); </blockquote>
+  <ul>
+    <li>Call the sendSMSToMany function with the object created in the previous step</li>
+  </ul>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; the sendSMSToMany function takes two
+  arguments<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 1. The recipients&nbsp;
+  phone number/numbers<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; if more than one recipient seperate each&nbsp; numbers using&nbsp;
+  ;(semicolon)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 2. The message you
+  want to send<br /><br />
+  <blockquote>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    &nbsp;&nbsp; &nbsp;&nbsp; $message=$ob-&gt;sendSMSToMany("989512345","This is a testing message");</blockquote>
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 3. The function returns "done" if message
+  send is successfull <br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp; &nbsp;&nbsp; the return type will be stored in $message variable<br /><br />That it you have done
+  it<br /><br />note:- the username and password is used is for demo purpose only

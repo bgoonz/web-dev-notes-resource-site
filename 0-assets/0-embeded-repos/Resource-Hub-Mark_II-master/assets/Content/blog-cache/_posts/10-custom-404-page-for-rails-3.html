@@ -1,0 +1,97 @@
+<!--
+
+---
+ custom 404 page for rails 3
+date: 2013-01-10 14:34:50 UTC
+updated: 2013-01-10 14:34:50 UTC
+2008/kind#post ruby-on-rails
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://3.bp.blogspot.com/--wFgBPcGyrs/UOxxoEpyd9I/AAAAAAAALL4/ZfiIgLaJM9c/s1600/rails3.gif"
+        imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+          src="http://3.bp.blogspot.com/--wFgBPcGyrs/UOxxoEpyd9I/AAAAAAAALL4/ZfiIgLaJM9c/s1600/rails3.gif" /></a></div>
+    <div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;"><br /></span></div>
+    <div class="separator" style="clear: both; text-align: justify;"><span style="text-align: left;">Handling exception
+        in Rails 3.x is entirely different from Rails 2.x. In Rails 3.x, whole exception handling is moved to rack
+        middleware stack. So we can't catch 404 and 500 exception from ApplicationContoller with </span><b
+        style="text-align: left;">rescue_from </b><span style="text-align: left;">method.</span></div><br />Here is the
+    simple way to handle 404 exceptions so that you can show custom page for them.<br /><br />For that first we need to
+    route the exception app to our own routes. Adding the following line of code to <b>application.rb</b> will do the
+    trick.<br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4483424.js?file=application.rb"></script><noscript>
+      <pre><br /><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">config</span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">.</span><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">exceptions_app</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">=</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="nb" style="background-color: white; color: #0086b3; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">self</span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">.</span><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">routes</span></pre>
+    </noscript>Now all the exceptions will be routes to our routes. Next we need to add routes to handle those.<br />
+    <script async defer src="https://gist.github.com/4483424.js?file=routes.rb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4483424.js?file=application.rb"></script><noscript>
+      <pre><br /><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">config</span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">.</span><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">exceptions_app</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">=</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="nb" style="background-color: white; color: #0086b3; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">self</span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">.</span><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">routes</span></pre>
+    </noscript>Now all the exceptions will be routes to our routes. Next we need to add routes to handle those.<br />
+    <script src="https://gist.github.com/4483424.js?file=routes.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br /><span class="n" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">match</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="s2" style="background-color: white; color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">"/404"</span><span class="p" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">,</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="ss" style="background-color: white; color: #990073; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">:to</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="o" style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; font-weight: bold; line-height: 16px; white-space: pre;">=&gt;</span><span style="background-color: white; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;"> </span><span class="s2" style="background-color: white; color: #dd1144; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; line-height: 16px; white-space: pre;">"errors#not_found"</span></pre>
+    </noscript>Now our route is ready. Please make sure that you use "<b>match</b>" for the route matching since we are
+    expecting exception from every single http requests such as get/post/put/delete. Next thing is just a controller,
+    action and view for the route.<br /><br /><b>Errors Controller</b><br /><br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4483424.js?file=errors_controller.rb"></script><noscript>
+      <pre><br /><span class="k" style="font-weight: bold;">class</span> <span class="nc" style="color: #445588; font-weight: bold;">ErrorsController</span> <span class="o" style="font-weight: bold;">&lt;</span> <span class="no" style="color: teal;">ApplicationController</span>  <span class="k" style="font-weight: bold;">def</span> <span class="nf" style="color: #990000; font-weight: bold;">not_found</span>    <span class="n">respond_to</span> <span class="k" style="font-weight: bold;">do</span> <span class="o" style="font-weight: bold;">|</span><span class="nb" style="color: #0086b3;">format</span><span class="o" style="font-weight: bold;">|</span>      <span class="nb" style="color: #0086b3;">format</span><span class="o" style="font-weight: bold;">.</span><span class="n">html</span>    <span class="k" style="font-weight: bold;">end</span>  <span class="k" style="font-weight: bold;">end</span><span class="k" style="font-weight: bold;">end</span></pre>
+    </noscript><b>Not found view</b><br /><br />
+    <script async defer src="https://gist.github.com/4483424.js?file=not_found.html.erb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4483424.js?file=errors_controller.rb"></script><noscript>
+      <pre><br /><span class="k" style="font-weight: bold;">class</span> <span class="nc" style="color: #445588; font-weight: bold;">ErrorsController</span> <span class="o" style="font-weight: bold;">&lt;</span> <span class="no" style="color: teal;">ApplicationController</span>  <span class="k" style="font-weight: bold;">def</span> <span class="nf" style="color: #990000; font-weight: bold;">not_found</span>    <span class="n">respond_to</span> <span class="k" style="font-weight: bold;">do</span> <span class="o" style="font-weight: bold;">|</span><span class="nb" style="color: #0086b3;">format</span><span class="o" style="font-weight: bold;">|</span>      <span class="nb" style="color: #0086b3;">format</span><span class="o" style="font-weight: bold;">.</span><span class="n">html</span>    <span class="k" style="font-weight: bold;">end</span>  <span class="k" style="font-weight: bold;">end</span><span class="k" style="font-weight: bold;">end</span></pre>
+    </noscript><b>Not found view</b><br /><br />
+    <script src="https://gist.github.com/4483424.js?file=not_found.html.erb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br /><span class="nt" style="color: navy;">&lt;section</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"section-wrapper not-found-w"</span><span class="nt" style="color: navy;">&gt;</span>  <span class="nt" style="color: navy;">&lt;div</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"container"</span><span class="nt" style="color: navy;">&gt;</span>    <span class="nt" style="color: navy;">&lt;div</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"row"</span><span class="nt" style="color: navy;">&gt;</span>      <span class="nt" style="color: navy;">&lt;div</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"span4"</span><span class="nt" style="color: navy;">&gt;</span>        <span class="cp" style="color: #999999; font-weight: bold;">&lt;%=</span> <span class="n">image_tag</span> <span class="s2" style="color: #dd1144;">"not-found-error.png"</span><span class="p">,</span> <span class="ss" style="color: #990073;">alt</span><span class="p">:</span> <span class="s1" style="color: #dd1144;">'Not-found-error'</span><span class="cp" style="color: #999999; font-weight: bold;">%&gt;</span>      <span class="nt" style="color: navy;">&lt;/div&gt;</span>      <span class="nt" style="color: navy;">&lt;div</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"span8"</span><span class="nt" style="color: navy;">&gt;</span>        <span class="nt" style="color: navy;">&lt;h1&gt;</span>Page not found<span class="nt" style="color: navy;">&lt;/h1&gt;</span>        <span class="nt" style="color: navy;">&lt;h4&gt;</span>Sorry the page you requested may have been moved or deleted.<span class="nt" style="color: navy;">&lt;/h4&gt;</span>        <span class="nt" style="color: navy;">&lt;p&gt;</span>Let's try one of the following remedies to get you back on track...<span class="nt" style="color: navy;">&lt;/p&gt;</span>        <span class="nt" style="color: navy;">&lt;div</span> <span class="na" style="color: teal;">class=</span><span class="s" style="color: #dd1144;">"not-found-solutions btn-group"</span><span class="nt" style="color: navy;">&gt;</span>          <span class="cp" style="color: #999999; font-weight: bold;">&lt;%=</span> <span class="n">link_to</span> <span class="n">raw</span><span class="p">(</span><span class="s1" style="color: #dd1144;">'&lt;i class="icon-circle-arrow-left"&gt;&lt;/i&gt; Revisit the previous page'</span><span class="p">),</span> <span class="s2" style="color: #dd1144;">"#"</span><span class="p">,</span> <span class="ss" style="color: #990073;">class</span><span class="p">:</span> <span class="s2" style="color: #dd1144;">"btn"</span><span class="p">,</span> <span class="ss" style="color: #990073;">onclick</span><span class="p">:</span> <span class="s2" style="color: #dd1144;">"javascript:window.history.back();return false;"</span> <span class="cp" style="color: #999999; font-weight: bold;">%&gt;</span>          <span class="cp" style="color: #999999; font-weight: bold;">&lt;%=</span> <span class="n">link_to</span> <span class="n">raw</span><span class="p">(</span><span class="s1" style="color: #dd1144;">'&lt;i class="icon-home"&gt;&lt;/i&gt; Go to the homepage'</span><span class="p">),</span> <span class="n">root_path</span><span class="p">,</span> <span class="ss" style="color: #990073;">class</span><span class="p">:</span> <span class="s2" style="color: #dd1144;">"btn"</span> <span class="cp" style="color: #999999; font-weight: bold;">%&gt;</span>        <span class="nt" style="color: navy;">&lt;/div&gt;</span>    <span class="nt" style="color: navy;">&lt;/div&gt;</span>  <span class="nt" style="color: navy;">&lt;/div&gt;</span><span class="nt" style="color: navy;">&lt;/div&gt;</span><span class="nt" style="color: navy;">&lt;/section&gt;</span></pre>
+    </noscript>Thats it. You have done. Now try to invoke a 404, you can view your custom 404 page.<br />Hope it helped
+    you.<br />Happy coding. ;)<br /><br />Photo Credit : <a
+      href="http://www.123rf.com/photo_10724496_3d-render-illustration-error-404-page-not-found-yellow-background--black-gray-3d-board-with-word-err.html"
+      rel="nofollow" target="_blank">123rf.com</a>
+  </div>
+</body>
+
+</html>
+$

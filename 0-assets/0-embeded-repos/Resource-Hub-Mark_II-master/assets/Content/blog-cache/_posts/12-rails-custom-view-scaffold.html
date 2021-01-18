@@ -1,0 +1,135 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently I thought of setting up custom view scaffold for our project. In order to setup the default views like
+      <code>index</code>, <code>edit</code>, <code>show</code>, <code>new</code> &amp; <code>_form</code> are easy, just
+      need to put our custom html in <code>lib/template/erb/scaffold</code> directory.
+    </p>
+    <p>Here is an example of <code>edit.html.erb</code> custom HTML.</p>
+    <p>{% highlight ruby %}</p>
+    <!-- lib/template/erb/scaffold/edit.html.erb -->
+    <p>&lt;%% provide(:title, ‘&lt;%= class_name %&gt;’) %&gt;</p>
+    <p>&lt;%% content_for :breadcrumb do %&gt; &lt;%%= link_to(‘Home’, root_path) %&gt; &lt;%%= link_to(‘&lt;%=
+      plural_table_name %&gt;’, &lt;%= plural_table_name %&gt;_path) %&gt; <a class="current">&lt;%%= @&lt;%=
+        singular_table_name %&gt;.name %&gt;</a> &lt;%% end %&gt;</p>
+    <p>&lt;%%= render ‘form’ %&gt; {% endhighlight %}</p>
+    <p>Note that I have used <code>&lt;%%</code> &amp; <code>&lt;%%=</code> which will prevent the evaluation of
+      expression. The <code>class_name</code>, <code>plural_table_name</code>, <code>singular_table_name</code> are the
+      methods provided by rails to create scaffold. Since I used <code>&lt;%=</code> around <code>class_name</code>, the
+      expression will be evaluated while generating the scaffold.</p>
+    <p>But things got complicated when I need to generate <code>index.js</code> along. In rails the view names are
+      hardcoded in <a
+        href="https://github.com/rails/rails/blob/b45b99894a60eda434abec94d133a1cfd8de2dda/railties/lib/rails/generators/erb/scaffold/scaffold_generator.rb#L26-L28">railties/lib/rails/generators/erb/scaffold/scaffold_generator.rb#L26-L28</a>
+    </p>
+    <h2 id="custom-generator">Custom generator</h2>
+    <p>After some googling, as usual a <a href="http://stackoverflow.com/a/18533215/250470">stackoverflow answer</a>
+      showed a way generate custom view files. In that answer, the author actually defined a new template engine. But It
+      doesn’t support generating <code>index.js</code>. So I tweaked some and made it possible.</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="libgeneratorscustomscaffold_generator.rb">lib/generators/custom/scaffold_generator.rb</h1>
+    <p>require ‘rails/generators/named_base’ require ‘rails/generators/resource_helpers’ require
+      ‘rails/generators/named_base’</p>
+    <p>module Custom # :nodoc: module Generators # :nodoc: class Base &lt; Rails::Generators::NamedBase #:nodoc:
+      protected</p>
+    <pre><code>  def format
+    :html
+  end
+
+  def handler
+    :erb
+  end
+
+  def filename_with_extensions(name)
+    cformat = name[/\.js/] ? nil : format
+    [name, cformat, handler].compact.join(&quot;.&quot;)
+  end
+end
+
+class ScaffoldGenerator &lt; Base # :nodoc:
+  include Rails::Generators::ResourceHelpers
+
+  source_root File.join(Rails.root, &#39;lib&#39;, &#39;templates&#39;, &#39;erb&#39;, &#39;scaffold&#39;, File::SEPARATOR)
+
+  argument :attributes, :type =&gt; :array, :default =&gt; [], :banner =&gt; &quot;field:type field:type&quot;
+
+  def create_root_folder
+    empty_directory File.join(&quot;app/views&quot;, controller_file_path)
+  end
+
+  def copy_view_files
+    available_views.each do |view|
+      filename = filename_with_extensions(view)
+      template filename, File.join(&quot;app/views&quot;, controller_file_path, filename)
+    end
+  end
+
+protected
+  def available_views
+    %w(index edit show new _form _search_form _table index.js)
+  end
+end</code></pre>
+    <p>end end {% endhighlight %}</p>
+    <p>Now configure new <code>Custom</code> template engine,</p>
+    <p>In <strong>Rails 3</strong></p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="configapplication.rb">config/application.rb</h1>
+    <p>config.generators do |g|</p>
+    <h1 id="section">…</h1>
+    <p>g.template_engine :custom g.fallbacks[:custom] = :erb # or haml/slim etc end {% endhighlight %}</p>
+    <p>Done, Now <code>rails g scaffold &lt;name&gt;</code> command will generate <code>index</code>, <code>edit</code>,
+      <code>show</code>, <code>new</code>, <code>_form</code>, <code>_search_form</code>, <code>_table</code> &amp;
+      <code>index.js</code>.
+    </p>
+
+  </body>
+
+  
+</html>

@@ -1,0 +1,463 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>We are tend to follow <code>DRY</code> while writing business logic, like we tend to move the block into a
+      function, component etc. But I didn’t see much people follow <code>DRY</code> while writing tests. In this post I
+      will try explain how to share tests cases.</p>
+    <p>Consider we have two React components which has similar functionality. First let see <code>FormA</code> which has
+      2 fields <code>name</code> &amp; <code>age</code> which uses internal state and on submit of the form it will
+      validates the input. Nice and simple component.</p>
+    <pre class="jsx"><code>import React, {Component} from &#39;react&#39;;
+
+class FormA extends Component {
+  constructor() {
+    super();
+    this.state = {
+      errors: {},
+      fields: {},
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({errors: {}});
+    let errors = {};
+    if (!this.state.fields.name) {
+      errors = {name: &#39;Name is Required&#39;};
+    }
+    if (!this.state.fields.age) {
+      errors = {...errors, age: &#39;Age is Required&#39;};
+    }
+    this.setState({errors});
+  }
+
+  onChange(e) {
+    const fields = {...this.state.fields, [e.target.name]: e.target.value};
+    this.setState({fields});
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;form onSubmit={this.onSubmit}&gt;
+          &lt;label&gt;Name &lt;/label&gt;
+          &lt;input
+            type=&quot;text&quot;
+            name=&quot;name&quot;
+            value={this.state.fields.name}
+            onChange={this.onChange}
+          /&gt;
+          &lt;div className=&quot;error-message&quot;&gt;{this.state.errors.name}&lt;/div&gt;
+          &lt;label&gt;Age &lt;/label&gt;
+          &lt;input
+            type=&quot;text&quot;
+            name=&quot;age&quot;
+            value={this.state.fields.age}
+            onChange={this.onChange}
+          /&gt;
+          &lt;div className=&quot;error-message&quot;&gt;{this.state.errors.age}&lt;/div&gt;
+          &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+    <p>Now let’s write some tests to make sure our validation is working fine and error messages are rendering in UI.
+      Also, we can add another test suite to make sure whether the input updates are updating the correct fields in
+      state.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="im">import</span> <span class="op">{</span>shallow<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;enzyme&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="im">import</span> fakeEvent <span class="im">from</span> <span class="st">&#39;fake-event&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4"></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="at">describe</span>(<span class="st">&#39;&lt;FormA /&gt;&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="kw">this</span>.<span class="at">commonProps</span> <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9"></a>
+<a class="sourceLine" id="cb2-10" title="10">  <span class="at">describe</span>(<span class="st">&#39;render error messages&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="at">test</span>(<span class="st">&#39;render name error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-12" title="12">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormA <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">      <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">age</span><span class="op">:</span> <span class="dv">12</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-14" title="14">      <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;button&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-15" title="15">      <span class="va">component</span>.<span class="at">update</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-16" title="16">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb2-17" title="17">        <span class="va">expec</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Name is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb2-18" title="18">      )<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-20" title="20"></a>
+<a class="sourceLine" id="cb2-21" title="21">    <span class="at">test</span>(<span class="st">&#39;render age error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-22" title="22">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormA <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-23" title="23">      <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-24" title="24">      <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;button&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-25" title="25">      <span class="va">component</span>.<span class="at">update</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-26" title="26">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb2-27" title="27">        <span class="va">expec</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Age is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb2-28" title="28">      )<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-29" title="29">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-30" title="30">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-31" title="31"></a>
+<a class="sourceLine" id="cb2-32" title="32">  <span class="at">describe</span>(<span class="st">&#39;change events update states&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-33" title="33">    <span class="at">test</span>(<span class="st">&#39;update name state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-34" title="34">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-35" title="35">      component</a>
+<a class="sourceLine" id="cb2-36" title="36">        .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;name&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb2-37" title="37">        .<span class="at">simulate</span>(<span class="st">&#39;change&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;name&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">}}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-38" title="38">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">name</span>).<span class="at">toEqual</span>(<span class="st">&#39;Name&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-39" title="39">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-40" title="40"></a>
+<a class="sourceLine" id="cb2-41" title="41">    <span class="at">test</span>(<span class="st">&#39;update age state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-42" title="42">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-43" title="43">      component</a>
+<a class="sourceLine" id="cb2-44" title="44">        .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;age&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb2-45" title="45">        .<span class="at">simulate</span>(<span class="st">&#39;change&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;age&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">}}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-46" title="46">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">age</span>).<span class="at">toEqual</span>(<span class="dv">20</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-47" title="47">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-48" title="48">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-49" title="49"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Let’s run the tests.<br />
+      Hooray. All are green. 🕺</p>
+    <p>After a while we get another requirement which leads to a new component <code>FormB</code>.<br />
+      <code>FormA</code> and <code>FormB</code> component differs only on the <code>gender</code> field. We already have
+      test cases for <code>FormA</code> and considering to write for <code>FormB</code>. We can easily duplicate the
+      <code>FormA</code> tests and add tests for the gender field. Now we have test coverage for both components.
+    </p>
+    <p>Below are the changes for <code>FormB</code> component</p>
+    <pre class="jsx"><code>// FormB.js
+class FormB extends Component
+
+  onSubmit() {
+    // ...
+    if (!this.state.fields.gender) {
+      errors = {...errors, gender: &quot;Gender is Required&quot; };
+    }
+    // ...
+  }
+
+  render() {
+    // ...
+
+    &lt;label&gt;Gender &lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;gender&quot; value={this.state.fields.gender} onChange={this.onChange} /&gt;
+    &lt;div className=&quot;error-message&quot;&gt;{this.state.errors.gender}&lt;/div&gt;
+    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+
+    // ...
+  }
+}</code></pre>
+    <p>and the tests for gender field.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// FormB.test.js</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">// test cases from above example</span></a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="at">test</span>(<span class="st">&#39;render age error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormB <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">,</span> <span class="dt">age</span><span class="op">:</span> <span class="dv">12</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;form&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;submit&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="va">expect</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Gender is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb4-11" title="11">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-13" title="13"></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="at">describe</span>(<span class="st">&#39;change events update states&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-15" title="15">  <span class="co">// test cases from aboove example</span></a>
+<a class="sourceLine" id="cb4-16" title="16"></a>
+<a class="sourceLine" id="cb4-17" title="17">  <span class="at">test</span>(<span class="st">&#39;update Gender state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-18" title="18">    <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormB <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-19" title="19">    component</a>
+<a class="sourceLine" id="cb4-20" title="20">      .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;gender&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb4-21" title="21">      .<span class="at">simulate</span>(<span class="st">&#39;change&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;gender&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">&#39;male&#39;</span><span class="op">}}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-22" title="22">    <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">gender</span>).<span class="at">toEqual</span>(<span class="st">&#39;male&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-23" title="23">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Let’s run the tests again.<br />
+      All looks fine and tests are back on green.</p>
+    <p>But when we look there are too much duplication in the test cases. Can we do better by <code>DRY</code> principle
+      and sharing tests between these two components?</p>
+    <h1 id="refactor-to-share-tests"><a class="anchor" name="refactor-to-share-tests" href="#refactor-to-share-tests"><i
+          class="anchor-icon"></i></a>Refactor to share tests</h1>
+    <p>Lets start with creating a directory called <code>test/shared</code> and add file
+      <code>shouldBehaveLikeForm.js</code>. All the shared cases for this Form will go into this. When we go back and
+      check the tests we can see there are two test suits cases which can be shared between these components.
+    </p>
+    <p>Lets take the rendering errors first.</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// shouldBehaveLikeForm.js</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="im">import</span> <span class="op">{</span>shallow<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;enzyme&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="im">export</span> <span class="kw">const</span> commonFormValidation <span class="op">=</span> <span class="kw">function</span>(Form) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="at">test</span>(<span class="st">&#39;render name error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-7" title="7">    <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-8" title="8">    <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">age</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span> <span class="dt">gender</span><span class="op">:</span> <span class="st">&#39;male&#39;</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;form&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;submit&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-10" title="10">    <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb5-11" title="11">      <span class="va">expect</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Name is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb5-12" title="12">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-13" title="13">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-14" title="14"></a>
+<a class="sourceLine" id="cb5-15" title="15">  <span class="at">test</span>(<span class="st">&#39;render age error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-16" title="16">    <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-17" title="17">    <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">,</span> <span class="dt">gender</span><span class="op">:</span> <span class="st">&#39;male&#39;</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-18" title="18">    <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;form&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;submit&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-19" title="19">    <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb5-20" title="20">      <span class="va">expect</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Age is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb5-21" title="21">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-22" title="22">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>we will export the <code>commonFormValidation</code> from <code>shouldBehaveLikeForm.js</code> with the two test
+      cases for rendering error message. Now let go back to <code>FormA.test.js</code> and make necessary changes to
+      make use of this <code>commonFormValidation</code>.</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="im">import</span> FormA <span class="im">from</span> <span class="st">&#39;../FormA&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="im">import</span> <span class="op">{</span>commonFormValidation<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;../test/shared/shouldBehaveLikeForm&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="at">describe</span>(<span class="st">&#39;&lt;FormA /&gt;&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">this</span>.<span class="at">commonProps</span> <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="at">describe</span>(<span class="st">&#39;render error messages&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-10" title="10">    <span class="va">commonFormValidation</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormA)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-12" title="12"></a>
+<a class="sourceLine" id="cb6-13" title="13">  <span class="co">// tests cases for onChange</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now use the same <code>commonFormValidation</code> in <code>FormB.test.js</code></p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="im">import</span> <span class="op">{</span>shallow<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;enzyme&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="im">import</span> fakeEvent <span class="im">from</span> <span class="st">&#39;fake-event&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="im">import</span> FormB <span class="im">from</span> <span class="st">&#39;../FormB&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="im">import</span> <span class="op">{</span>commonFormValidation<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;../test/shared/shouldBehaveLikeForm&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-7" title="7"></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="at">describe</span>(<span class="st">&#39;&lt;FormB /&gt;&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-9" title="9">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-10" title="10">    <span class="kw">this</span>.<span class="at">commonProps</span> <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb7-11" title="11">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-12" title="12"></a>
+<a class="sourceLine" id="cb7-13" title="13">  <span class="at">describe</span>(<span class="st">&#39;render error messages&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-14" title="14">    <span class="va">commonFormValidation</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormB)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15"></a>
+<a class="sourceLine" id="cb7-16" title="16">    <span class="at">test</span>(<span class="st">&#39;render age error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-17" title="17">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormB <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">      <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">,</span> <span class="dt">age</span><span class="op">:</span> <span class="dv">12</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-19" title="19">      <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;form&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;submit&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-20" title="20">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb7-21" title="21">        <span class="va">expect</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Gender is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb7-22" title="22">      )<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-23" title="23">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-24" title="24">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-25" title="25"></a>
+<a class="sourceLine" id="cb7-26" title="26">  <span class="co">// tests cases for onChange</span></a>
+<a class="sourceLine" id="cb7-27" title="27"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Same as above lets create another function <code>commonFormOnUpdate</code> in
+      <code>shouldBehaveLikeForm.js</code> which has the common test cases for <code>onChange</code>.
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// shouldBehaveLikeForm.js</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="im">import</span> <span class="op">{</span>shallow<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;enzyme&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="im">export</span> <span class="kw">const</span> commonFormOnUpdate <span class="op">=</span> <span class="kw">function</span>(Form) <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="at">test</span>(<span class="st">&#39;update name state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-8" title="8">    component</a>
+<a class="sourceLine" id="cb8-9" title="9">      .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;name&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb8-10" title="10">      .<span class="at">simulate</span>(<span class="st">&#39;change&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;name&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">}}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-11" title="11">    <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">name</span>).<span class="at">toEqual</span>(<span class="st">&#39;Name&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-12" title="12">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-13" title="13"></a>
+<a class="sourceLine" id="cb8-14" title="14">  <span class="at">test</span>(<span class="st">&#39;update age state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-15" title="15">    <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>Form <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-16" title="16">    component</a>
+<a class="sourceLine" id="cb8-17" title="17">      .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;age&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb8-18" title="18">      .<span class="at">simulate</span>(<span class="st">&#39;change&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;age&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">20</span><span class="op">}}</span>))<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-19" title="19">    <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">age</span>).<span class="at">toEqual</span>(<span class="dv">20</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-20" title="20">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-21" title="21"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>and can be used in same way.</p>
+    <div class="sourceCode" id="cb9">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// FormA.test.js</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="im">import</span> FormA <span class="im">from</span> <span class="st">&#39;../FormA&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="im">import</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-4" title="4">  commonFormValidation<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-5" title="5">  commonFormOnUpdate<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="op">}</span> <span class="im">from</span> <span class="st">&#39;../test/shared/shouldBehaveLikeForm&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-7" title="7"></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="at">describe</span>(<span class="st">&#39;&lt;FormA /&gt;&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-9" title="9">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-10" title="10">    <span class="kw">this</span>.<span class="at">commonProps</span> <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb9-11" title="11">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-12" title="12"></a>
+<a class="sourceLine" id="cb9-13" title="13">  <span class="at">describe</span>(<span class="st">&#39;render error messages&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-14" title="14">    <span class="va">commonFormValidation</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormA)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-15" title="15">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-16" title="16"></a>
+<a class="sourceLine" id="cb9-17" title="17">  <span class="at">describe</span>(<span class="st">&#39;change events update states&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-18" title="18">    <span class="va">commonFormOnUpdate</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormA)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-19" title="19">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>same shared test will be used in <code>FormB.test.js</code>.</p>
+    <div class="sourceCode" id="cb10">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// FormB.test.js</span></a>
+<a class="sourceLine" id="cb10-2" title="2"></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="im">import</span> <span class="op">{</span>shallow<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;enzyme&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="im">import</span> fakeEvent <span class="im">from</span> <span class="st">&#39;fake-event&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-6" title="6"></a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="im">import</span> FormB <span class="im">from</span> <span class="st">&#39;../FormB&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-8" title="8"><span class="im">import</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-9" title="9">  commonFormValidation<span class="op">,</span></a>
+<a class="sourceLine" id="cb10-10" title="10">  commonFormOnUpdate<span class="op">,</span></a>
+<a class="sourceLine" id="cb10-11" title="11"><span class="op">}</span> <span class="im">from</span> <span class="st">&#39;../test/shared/shouldBehaveLikeForm&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-12" title="12"></a>
+<a class="sourceLine" id="cb10-13" title="13"><span class="at">describe</span>(<span class="st">&#39;&lt;FormB /&gt;&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-14" title="14">  <span class="at">beforeEach</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-15" title="15">    <span class="kw">this</span>.<span class="at">commonProps</span> <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb10-16" title="16">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-17" title="17"></a>
+<a class="sourceLine" id="cb10-18" title="18">  <span class="at">describe</span>(<span class="st">&#39;render error messages&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-19" title="19">    <span class="va">commonFormValidation</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormB)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-20" title="20"></a>
+<a class="sourceLine" id="cb10-21" title="21">    <span class="at">test</span>(<span class="st">&#39;render age error message&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-22" title="22">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormB <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-23" title="23">      <span class="va">component</span>.<span class="at">setState</span>(<span class="op">{</span><span class="dt">fields</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Name&#39;</span><span class="op">,</span> <span class="dt">age</span><span class="op">:</span> <span class="dv">12</span><span class="op">}}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-24" title="24">      <span class="va">component</span>.<span class="at">find</span>(<span class="st">&#39;form&#39;</span>).<span class="at">simulate</span>(<span class="st">&#39;submit&#39;</span><span class="op">,</span> <span class="at">fakeEvent</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-25" title="25">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">text</span>()).<span class="at">toEqual</span>(</a>
+<a class="sourceLine" id="cb10-26" title="26">        <span class="va">expect</span>.<span class="at">stringContaining</span>(<span class="st">&#39;Gender is Required&#39;</span>)</a>
+<a class="sourceLine" id="cb10-27" title="27">      )<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-28" title="28">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-29" title="29">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-30" title="30"></a>
+<a class="sourceLine" id="cb10-31" title="31">  <span class="at">describe</span>(<span class="st">&#39;change events update states&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-32" title="32">    <span class="va">commonFormOnUpdate</span>.<span class="at">bind</span>(<span class="kw">this</span>)(FormB)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-33" title="33"></a>
+<a class="sourceLine" id="cb10-34" title="34">    <span class="at">test</span>(<span class="st">&#39;update Gender state&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-35" title="35">      <span class="kw">const</span> component <span class="op">=</span> <span class="at">shallow</span>(<span class="op">&lt;</span>FormB <span class="op">{</span>...<span class="va">this</span>.<span class="at">commonProps</span><span class="op">}</span> /&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-36" title="36">      component</a>
+<a class="sourceLine" id="cb10-37" title="37">        .<span class="at">find</span>(<span class="st">&#39;input[name=&quot;gender&quot;]&#39;</span>)</a>
+<a class="sourceLine" id="cb10-38" title="38">        .<span class="at">simulate</span>(</a>
+<a class="sourceLine" id="cb10-39" title="39">          <span class="st">&#39;change&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb10-40" title="40">          <span class="at">fakeEvent</span>(<span class="op">{</span><span class="dt">target</span><span class="op">:</span> <span class="op">{</span><span class="dt">name</span><span class="op">:</span> <span class="st">&#39;gender&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">&#39;male&#39;</span><span class="op">}}</span>)</a>
+<a class="sourceLine" id="cb10-41" title="41">        )<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-42" title="42">      <span class="at">expect</span>(<span class="va">component</span>.<span class="at">state</span>(<span class="st">&#39;fields&#39;</span>).<span class="at">gender</span>).<span class="at">toEqual</span>(<span class="st">&#39;male&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-43" title="43">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-44" title="44">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-45" title="45"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Finally, all the tests are green again. 💃</p>
+    <figure>
+      <img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/jest-shared-tests/jest-shared-example-2.png"
+        alt="shared tests running" />
+      <figcaption>shared tests running</figcaption>
+    </figure>
+    <h1 id="this-is-undefined-error"><a class="anchor" name="this-is-undefined-error" href="#this-is-undefined-error"><i
+          class="anchor-icon"></i></a><code>this</code> is undefined error</h1>
+    <p>One issue I face during the shared tests are <code>this</code> is undefined error, especially when I need to use
+      the <code>this.commonProps</code> in the shared tests. This can be fixed in two ways.</p>
+    <ol type="1">
+      <li>
+        <p>Avoid using <code>arrow</code> function for outer most <code>describe</code></p>
+        <p>replace <code>describe('&lt;FormB /&gt;', () =&gt; {</code> with <code>describe('&lt;FormB /&gt;', function
+            () {</code></p>
+      </li>
+      <li>
+        <p>Use <code>{ "allowTopLevelThis": true }</code> as option for <code>transform-es2015-modules-commonjs</code>
+          in <strong>.babelrc</strong></p>
+      </li>
+    </ol>
+    <div class="sourceCode" id="cb11">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb11-2" title="2">  <span class="dt">&quot;presets&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;react&quot;</span><span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb11-3" title="3">  <span class="dt">&quot;plugins&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="ot">[</span></a>
+<a class="sourceLine" id="cb11-5" title="5">      <span class="st">&quot;transform-es2015-modules-commonjs&quot;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb11-6" title="6">      <span class="fu">{</span></a>
+<a class="sourceLine" id="cb11-7" title="7">        <span class="dt">&quot;allowTopLevelThis&quot;</span><span class="fu">:</span> <span class="kw">true</span></a>
+<a class="sourceLine" id="cb11-8" title="8">      <span class="fu">}</span></a>
+<a class="sourceLine" id="cb11-9" title="9">    <span class="ot">]</span></a>
+<a class="sourceLine" id="cb11-10" title="10">  <span class="ot">]</span></a>
+<a class="sourceLine" id="cb11-11" title="11"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>The example code is available on <a
+        href="https://gitlab.com/revathskumar/jest-shared-test-example">gitlab.com/revathskumar/jest-shared-test-example</a>
+      and see the commit of refactoring part as nice <a
+        href="https://gitlab.com/revathskumar/jest-shared-test-example/commit/d9031be27747cd60cc2ee70282d52c9f7f45345c">gitlab
+        diff</a>.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      react       |  16.4.1 |
+|      jest        |  23.3.0 |
+|    babel-jest    |  23.2.0 |</code></pre>
+    <p>More details on the packages and version on <a
+        href="https://gitlab.com/revathskumar/jest-shared-test-example/blob/3721550f041652022de656279c90817496bba79e/package.json">package.json</a>
+    </p>
+
+  </body>
+
+  
+</html>

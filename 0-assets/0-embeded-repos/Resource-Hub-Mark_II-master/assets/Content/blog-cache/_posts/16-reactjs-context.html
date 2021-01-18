@@ -1,0 +1,164 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When my app grown to large app with lots of nested components, passing data from top to inner components via
+      props have become really nasty. This felt like a code smell to me and it’s started really difficult to maintain as
+      well. That’s when I found the React’s experimental feature called <a
+        href="http://facebook.github.io/react/docs/context.html">context</a>.</p>
+    <p>Please not that <strong>this is a experimental feature and the api might change in future</strong>.</p>
+    <p>React’s <code>context</code> helps to pass the data to component tree without passing through each of the
+      intermediate components. Even though this is against the philosophy of react ie., react always favor explicit data
+      flow where as <code>context</code> make it implicit.</p>
+    <p>While using <code>context</code> we need to know three things, <code>getChildContext</code>,
+      <code>childContextTypes</code> and <code>contextTypes</code>.
+    </p>
+    <p>we need to specify <code>getChildContext</code> method in top component and return an object with data which we
+      wish to pass via <code>context</code>.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> <span class="op">{</span>PropTypes<span class="op">,</span> Component<span class="op">}</span> <span class="op">=</span> React<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">const</span> <span class="op">{</span>render<span class="op">}</span> <span class="op">=</span> ReactDOM<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">class</span> App <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="at">getChildContext</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="cf">return</span> <span class="op">{</span><span class="dt">items</span><span class="op">:</span> [<span class="st">&#39;A&#39;</span><span class="op">,</span> <span class="st">&#39;B&#39;</span><span class="op">,</span> <span class="st">&#39;C&#39;</span>]<span class="op">};</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-8" title="8">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb1-10" title="10">      <span class="op">&lt;</span>List /<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-14" title="14"></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="va">App</span>.<span class="at">childContextTypes</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-16" title="16">  <span class="dt">items</span><span class="op">:</span> <span class="va">PropTypes</span>.<span class="at">array</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>Also we need to specify the what all data we are passing through <code>context</code> need to be specified in
+      <code>childContextTypes</code> of top component. If we miss specifying in <code>childContextTypes</code> the child
+      won’t be able to receive those data.
+    </p>
+    <p>Now in the child component where we need to receive data we need to specify all data need to receive in
+      <code>contextTypes</code>. Once that this done, we can access data in child component using
+      <code>this.context</code>.
+    </p>
+    <p>In the above example you can see that I am missing the <code>&lt;List /&gt;</code> component (which we will fill
+      in next example) and also you can see I am not passing any props to <code>&lt;List /&gt;</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// imports from above example</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">class</span> List <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb2-6" title="6">      <span class="op">&lt;</span>ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">        <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-8" title="8">          <span class="kw">this</span>.<span class="va">context</span>.<span class="va">items</span>.<span class="at">map</span>((item) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-9" title="9">            <span class="cf">return</span> <span class="op">&lt;</span>li<span class="op">&gt;{</span>item<span class="op">}</span>&lt;/li<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">          <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb2-11" title="11">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-12" title="12">      &lt;/ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">    )</a>
+<a class="sourceLine" id="cb2-14" title="14">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="op">}</span></a>
+<a class="sourceLine" id="cb2-16" title="16"></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="va">List</span>.<span class="at">contextTypes</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-18" title="18">  <span class="dt">items</span><span class="op">:</span> <span class="va">PropTypes</span>.<span class="at">array</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="op">}</span></a>
+<a class="sourceLine" id="cb2-20" title="20"></a>
+<a class="sourceLine" id="cb2-21" title="21"><span class="co">// app component from above example</span></a></code></pre>
+    </div>
+    <p>Now the code snippet looks like</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> <span class="op">{</span>PropTypes<span class="op">,</span> Component<span class="op">}</span> <span class="op">=</span> React<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> <span class="op">{</span>render<span class="op">}</span> <span class="op">=</span> ReactDOM<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">class</span> List <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb3-7" title="7">      <span class="op">&lt;</span>ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">        <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-9" title="9">          <span class="kw">this</span>.<span class="va">context</span>.<span class="va">items</span>.<span class="at">map</span>((item) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-10" title="10">            <span class="cf">return</span> <span class="op">&lt;</span>li<span class="op">&gt;{</span>item<span class="op">}</span>&lt;/li<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb3-11" title="11">          <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-12" title="12">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-13" title="13">      &lt;/ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    )</a>
+<a class="sourceLine" id="cb3-15" title="15">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="op">}</span></a>
+<a class="sourceLine" id="cb3-17" title="17"></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="va">List</span>.<span class="at">contextTypes</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-19" title="19">  <span class="dt">items</span><span class="op">:</span> <span class="va">PropTypes</span>.<span class="at">array</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="op">}</span></a>
+<a class="sourceLine" id="cb3-21" title="21"></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="kw">class</span> App <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-23" title="23">  <span class="at">getChildContext</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-24" title="24">    <span class="cf">return</span> <span class="op">{</span><span class="dt">items</span><span class="op">:</span> [<span class="st">&#39;A&#39;</span><span class="op">,</span> <span class="st">&#39;B&#39;</span><span class="op">,</span> <span class="st">&#39;C&#39;</span>]<span class="op">};</span></a>
+<a class="sourceLine" id="cb3-25" title="25">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-26" title="26">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-27" title="27">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb3-28" title="28">      <span class="op">&lt;</span>List /<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-29" title="29">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-30" title="30">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-31" title="31"><span class="op">}</span></a>
+<a class="sourceLine" id="cb3-32" title="32"></a>
+<a class="sourceLine" id="cb3-33" title="33"><span class="va">App</span>.<span class="at">childContextTypes</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-34" title="34">  <span class="dt">items</span><span class="op">:</span> <span class="va">PropTypes</span>.<span class="at">array</span></a>
+<a class="sourceLine" id="cb3-35" title="35"><span class="op">}</span></a>
+<a class="sourceLine" id="cb3-36" title="36"></a>
+<a class="sourceLine" id="cb3-37" title="37"><span class="at">render</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;mount&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>You can find an <a href="https://jsbin.com/bivile/edit?js,output">working example</a> in jsbin.</p>
+
+  </body>
+
+  
+</html>
