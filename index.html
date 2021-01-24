@@ -13,8 +13,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD3R78E3TJ"></script>
   <script async src="https://cdn.jsdelivr.net/npm/@elastic/app-search-javascript@7.10.0/dist/elastic_app_search.umd.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.swiftype.search.js"></script>
-
+<script type="text/javascript" src="jquery.swiftype.search.js"></script> 
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script async src="./netlify.js"></script>
   <style>
     div.full-width {
       position: relative;
@@ -301,7 +302,21 @@
                   <div class="brand footer-brand">
                     <img src="./landing-page/dist/images/logo.png" alt="logo">
                   </div>
-                
+                <div>
+          <!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+  <!-- <div data-netlify-identity-menu></div>
+
+  <!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+ <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
+                  
+                </div>
+                  
+                  
                 </div>
               </div>
             </div>
@@ -311,11 +326,6 @@
         </main>
         </div>
 
-        
-        
-        
-        
-        
         
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>

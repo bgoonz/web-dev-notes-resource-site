@@ -2,9 +2,13 @@
   "name": "webdevhub",
   "version": "1.0.0",
   "description": "my personal resource website",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon server.js",
+    "test": "test",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export"
   },
   "repository": {
     "type": "git",
@@ -289,8 +293,16 @@
   "homepage": "https://github.com/bgoonz/web-dev-notes-backup#readme",
   "dependencies": {
     "@elastic/app-search-node": "^7.10.1",
+    "bcrypt": "^5.0.0",
+    "draft-js": "^0.11.7",
+    "express": "^4.17.1",
     "headless-chrome-crawler": "^1.8.0",
+    "knex": "^0.21.16",
     "list.js": "^2.3.1",
-    "lunr": "^2.3.9"
+    "lunr": "^2.3.9",
+    "next": "10.0.4",
+    "pg": "^8.5.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
