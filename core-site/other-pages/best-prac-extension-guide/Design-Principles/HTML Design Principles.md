@@ -1,27 +1,6 @@
 # Table OF Contents
 
-- [Table OF Contents](#table-of-contents)
-  - [1\. Compatibility](#1-compatibility)
-    - [Support Existing Content](#support-existing-content)
-    - [Degrade Gracefully](#degrade-gracefully)
-    - [Do not Reinvent the Wheel](#do-not-reinvent-the-wheel)
-    - [Pave the Cowpaths](#pave-the-cowpaths)
-    - [Evolution Not Revolution](#evolution-not-revolution)
-  - [2\. Utility](#2-utility)
-    - [Solve Real Problems](#solve-real-problems)
-    - [Priority of Constituencies](#priority-of-constituencies)
-    - [Secure By Design](#secure-by-design)
-    - [Separation of Concerns](#separation-of-concerns)
-    - [DOM Consistency](#dom-consistency)
-  - [3\. Interoperability](#3-interoperability)
-    - [Well-defined Behavior](#well-defined-behavior)
-    - [Avoid Needless Complexity](#avoid-needless-complexity)
-    - [Handle Errors](#handle-errors)
-  - [4\. Universal Access](#4-universal-access)
-    - [Media Independence](#media-independence)
-    - [Support World Languages](#support-world-languages)
-    - [Accessibility](#accessibility)
-    - [Source](#source)
+- [Table OF Contents](#table-of-contents)  - [1\. Compatibility](#1-compatibility)    - [Support Existing Content](#support-existing-content)    - [Degrade Gracefully](#degrade-gracefully)    - [Do not Reinvent the Wheel](#do-not-reinvent-the-wheel)    - [Pave the Cowpaths](#pave-the-cowpaths)    - [Evolution Not Revolution](#evolution-not-revolution)  - [2\. Utility](#2-utility)    - [Solve Real Problems](#solve-real-problems)    - [Priority of Constituencies](#priority-of-constituencies)    - [Secure By Design](#secure-by-design)    - [Separation of Concerns](#separation-of-concerns)    - [DOM Consistency](#dom-consistency)  - [3\. Interoperability](#3-interoperability)    - [Well-defined Behavior](#well-defined-behavior)    - [Avoid Needless Complexity](#avoid-needless-complexity)    - [Handle Errors](#handle-errors)  - [4\. Universal Access](#4-universal-access)    - [Media Independence](#media-independence)    - [Support World Languages](#support-world-languages)    - [Accessibility](#accessibility)    - [Source](#source)
 
 ## 1\. Compatibility
 
@@ -113,9 +92,7 @@ This rundown isn't thorough; now and again marginally more muddled methodologies
 
 ### Do not Reinvent the Wheel
 
-If there is already a widely used and implemented technology covering particular use cases, consider specifying that technology in preference to inventing something new for the same purpose. Sometimes, though, new use cases may call for a new approach instead of more extensions on an old approach.
-
-**`contenteditable=""`** was already used and implemented by user agents. No need to invent a new feature.
+If there is already a widely used and implemented technology covering particular use cases, consider specifying that technology in preference to inventing something new for the same purpose. Sometimes, though, new use cases may call for a new approach instead of more extensions on an old approach. **`contenteditable=""`** was already used and implemented by user agents. No need to invent a new feature.
 
 ---
 

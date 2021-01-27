@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Language" content="en" />
+  <title>Binary to Decimal Converter Online</title>
+  <meta name="author" content="url-decode.com" />
+  <meta name="keywords" content="Binary to decimal">
+  <meta name="description" content="Binary to Decimal online tool can convert text from binary to decimal" />
+  <meta property="og:type" content="website" />
+  <meta name="og_title" content="Binary to decimal" />
+  <meta name="og_description" content="Binary to decimal" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <link rel="canonical" href="binary-to-decimal.html" />
+  <meta property="og:url" content="binary-to-decimal.html" />
+  <link rel="icon" href="../img/32.png" sizes="32x32" />
+  <link rel="icon" href="../img/64.png" sizes="64x64" />
+  <link rel="icon" href="../img/192.png" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="../img/180.png" />
+  <meta name="msapplication-TileImage" content="../img/270.html" />
+
+  <link rel="stylesheet" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+  <link href="../css/style.css" rel="stylesheet" />
+  <style>
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: var(--white, #ffffff);
+      vertical-align: middle;
+    }
+
+    .icon.icon-lg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .icon.icon-md {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .icon.icon-sm {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    .icon.icon-2x {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .icon.icon-3x {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .icon.icon-4x {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .icon.icon-5x {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .icon.icon-6x {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    .description h1,
+    .description h2,
+    .description h3,
+    .description h4,
+    .description h5,
+    .description h6 {
+      font-size: 1.6rem !important;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      padding: 3rem !important;
+    }
+  </style>
+
+  <script>( function ( w, d, s, l, i ) {
+      w[ l ] = w[ l ] || []; w[ l ].push( {
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      } ); var f = d.getElementsByTagName( s )[ 0 ],
+        j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore( j, f );
+          } )( window, document, 'script', 'dataLayer', 'GTM-MS5GMD3' );</script>
+
+</head>
+
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS5GMD3" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="overflow-hidden p-3 bg-light border-bottom-secondary">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-lg-9 col-12">
+            <h1>Binary to Decimal</h1>
+          </div>
+          <div class="col-lg-3 col-12 mb-lg-0 mb-3">
+            <span>
+              <a href="../index.html" class="badge badge-dark p-2 navigation-font font-weight-bold">Home</a></span>
+            <span class="pl-3">
+              <a href="../cat/index.html" class="badge badge-dark p-2 navigation-font font-weight-bold">All
+                Tools</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex flex-row form-group align-bottom">
+          <div class="col-5">
+            <span class="h3 inc-line-height">Enter Value:</span>
+            <textarea name="text" id="input-text" class="textarea-small form-control"></textarea>
+          </div>
+          <div class="col-5 ml-5">
+            <div class="h3"> Result
+              <span id="copy_result" class="pointer" data-clipboard-target="#result">
+                <i class="icon icon-copy icon-dark icon-md" aria-hidden="true"></i>
+              </span>
+            </div>
+            <textarea name="text" id="result" class="textarea-small form-control"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button type="button" class="btn btn-dark col-12 col-sm-3 col-md-2 mb-3 mb-sm-1" onclick="convertTodecimal();">Convert
+              To Decimal</button>
+
+            <button type="button" class="btn btn-dark col-12 col-sm-3 col-md-2 mb-3 mb-sm-1" data-toggle="modal"
+              data-target="#loadFromUrl"
+              onclick="record_activity('tool_used', 'Binary to Decimal','Load From URL Button Clicked')">Load
+              From URL</button>
+            <div class="btn btn-dark btn-file text-btn-file col-12 col-sm-3 col-md-2 mb-3 mb-sm-1">
+              <div class="form-group" style="margin-bottom: 0px !important;">
+                Browse… <input class="form-control-file" type="file" id="filesJs">
+              </div>
+            </div>
+            <div onclick="loadSampledata();record_activity('tool_used', 'Binary to Decimal','Load Sample Button Clicked'); "
+              class="btn col-12 col-sm-3 col-md-2 btn-dark mb-3 mb-sm-1">Load Sample Data</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="description col-lg-12">
+          </div>
+        </div>
+        </div>
+
+      <div class="modal" id="loadFromUrl">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h4 class="modal-title">Enter URL</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+              <input class="form-control" type="text" placeholder="Enter URL" id="url">
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="loadJsUrl" onclick="loadJsData();">Load Data</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        var ajax_uri = "../tools_files/binary-to-decimal/binary_to_decimal_ajax.html";
+        var t_n = "Binary to Decimal";
+        var sample_data = `01101000 01100101 01101100 01101100 01101111`;
+      </script>
+    </div>
+  </div>
+  <footer class="p-3 mt-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 mb-2">
+          <div class="row">
+            <div class="col-lg-1 visible-lg clearfix"></div>
+            <div class="col-sm-12 clearfix">
+              <h5>Related Tools</h5>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='octal-to-decimal.html'>Octal to Decimal</a></li>
+                <li class='pb-2'><a href='octal-to-binary.html'>Octal to Binary</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='octal-to-hex.html'>Octal to Hex</a></li>
+                <li class='pb-2'><a href='decimal-to-binary.html'>Decimal to Binary</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='decimal-to-hex.html'>Decimal to Hex</a></li>
+                <li class='pb-2'><a href='decimal-to-octal.html'>Decimal to Octal</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='binary-to-hex.html'>Binary to Hex</a></li>
+                <li class='pb-2'><a href='binary-to-octal.html'>Binary to Octal</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='hex-to-decimal.html'>Hex to Decimal</a></li>
+                <li class='pb-2'><a href='hex-to-binary.html'>Hex to Binary</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='hexadecimal-to-octal.html'>Hexadecimal to Octal</a></li>
+                <li class='pb-2'><a href='number-system-converter.html'>Number System Converter</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-1 visible-lg clearfix"></div>
+            <div class="col-sm-12 clearfix">
+              <h5>Other Tools (<a class="lc" href="../cat.html">See All Tools</a>)
+              </h5>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='build-string.html'>Build string</a></li>
+                <li class='pb-2'><a href='hex-to-rgb-color-converter.html'>HEX to RGB</a></li>
+                <li class='pb-2'><a href='rgb-to-hex-color-converter.html'>RGB to HEX</a></li>
+                <li class='pb-2'><a href='weight-converter.html'>Weight converter</a></li>
+                <li class='pb-2'><a href='length-converter.html'>Length converter</a></li>
+                <li class='pb-2'><a href='volume-converter.html'>Volume Converter</a></li>
+                <li class='pb-2'><a href='html-encode.html'>HTML Encode</a></li>
+                <li class='pb-2'><a href='reverse-string.html'>Reverse String</a></li>
+                <li class='pb-2'><a href='random-word-generator.html'>Random Word Generator</a></li>
+                <li class='pb-2'><a href='password-generator.html'>Password Generator</a></li>
+                <li class='pb-2'><a href='word-counter.html'>Word Counter</a></li>
+                <li class='pb-2'><a href='remove-lines-containing.html'>Remove Lines Containing</a></li>
+                <li class='pb-2'><a href='html-decode.html'>HTML Decode</a></li>
+                <li class='pb-2'><a href='remove-line-breaks.html'>Remove Line Breaks</a></li>
+                <li class='pb-2'><a href='remove-extra-spaces.html'>Remove Extra Spaces</a></li>
+                <li class='pb-2'><a href='remove-empty-lines.html'>Remove Empty Lines</a></li>
+                <li class='pb-2'><a href='remove-duplicate-lines.html'>Remove Duplicate Lines</a></li>
+                <li class='pb-2'><a href='url-encode.html'>URL Encode</a></li>
+                <li class='pb-2'><a href='url-decode.html'>Url Decode</a></li>
+                <li class='pb-2'><a href='binary-to-string.html'>Binary to String</a></li>
+                <li class='pb-2'><a href='string-to-binary.html'>String to Binary</a></li>
+                <li class='pb-2'><a href='hex-to-string.html'>HEX to String</a></li>
+                <li class='pb-2'><a href='string-to-hex.html'>String to Hex</a></li>
+                <li class='pb-2'><a href='base64-decode.html'>Base64 decode</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='base64-encode.html'>Base64 Encode</a></li>
+                <li class='pb-2'><a href='jpg-to-png-converter.html'>JPG to PNG Converter</a></li>
+                <li class='pb-2'><a href='js-validator.html'>JavaScript validator</a></li>
+                <li class='pb-2'><a href='minifyhtml.html'>Minify HTML</a></li>
+                <li class='pb-2'><a href='javascript-beautifier.html'>JavaScript Beautifier</a></li>
+                <li class='pb-2'><a href='html-beautify.html'>HTML beautify</a></li>
+                <li class='pb-2'><a href='css-beautifier.html'>CSS Beautifier</a></li>
+                <li class='pb-2'><a href='css-minifier.html'>CSS Minifier</a></li>
+                <li class='pb-2'><a href='json-validator.html'>JSON Validator</a></li>
+                <li class='pb-2'><a href='html-to-php.html'>HTML to PHP</a></li>
+                <li class='pb-2'><a href='code-compare.html'>Code Compare</a></li>
+                <li class='pb-2'><a href='ip-to-hostname.html'>IP to Hostname</a></li>
+                <li class='pb-2'><a href='hostname-to-ip.html'>Hostname To IP</a></li>
+                <li class='pb-2'><a href='nameserver-lookup.html'>Nameserver Lookup</a></li>
+                <li class='pb-2'><a href='mx-lookup.html'>MX Lookup</a></li>
+                <li class='pb-2'><a href='json-diff.html'>JSON Diff</a></li>
+                <li class='pb-2'><a href='sql-to-html-converter.html'>SQL to HTML Converter</a></li>
+                <li class='pb-2'><a href='sql-beautifier.html'>SQL Beautifier</a></li>
+                <li class='pb-2'><a href='unix-time-converter.html'>Unix time converter</a></li>
+                <li class='pb-2'><a href='add-nofollow-to-link.html'>Add Nofollow To Link</a></li>
+                <li class='pb-2'><a href='date-calculator.html'>Date calculator</a></li>
+                <li class='pb-2'><a href='time-converter.html'>Time converter</a></li>
+                <li class='pb-2'><a href='url-parser.html'>URL Parser</a></li>
+                <li class='pb-2'><a href='web-hosting-bandwidth-calculator.html'>Web hosting bandwidth calculator</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='acceleration-converter.html'>Acceleration Converter</a></li>
+                <li class='pb-2'><a href='area-converter.html'>Area Converter</a></li>
+                <li class='pb-2'><a href='density-mass-capacity-converter.html'>Density & Mass Capacity Converter</a>
+                </li>
+                <li class='pb-2'><a href='digital-storage-converter.html'>Digital Storage Converter</a></li>
+                <li class='pb-2'><a href='electricity-converter.html'>Electricity Converter</a></li>
+                <li class='pb-2'><a href='energy-converter.html'>Energy Converter</a></li>
+                <li class='pb-2'><a href='force-converter.html'>Force Converter</a></li>
+                <li class='pb-2'><a href='light-converter.html'>Light Converter</a></li>
+                <li class='pb-2'><a href='mass-converter.html'>Mass Converter</a></li>
+                <li class='pb-2'><a href='mass-flow-converter.html'>Mass Flow Converter</a></li>
+                <li class='pb-2'><a href='power-converter.html'>Power Converter</a></li>
+                <li class='pb-2'><a href='pressure-stress-converter.html'>Pressure & Stress Converter</a></li>
+                <li class='pb-2'><a href='torque-converter.html'>Torque Converter</a></li>
+                <li class='pb-2'><a href='velocity-and-speed-converte.html'>Velocity & Speed Converter</a></li>
+                <li class='pb-2'><a href='viscosity-converter.html'>Viscosity Converter</a></li>
+                <li class='pb-2'><a href='volume-and-capacity-converte.html'>Volume & Capacity Converter</a></li>
+                <li class='pb-2'><a href='temperature-converter.html'>Temperature converter</a></li>
+                <li class='pb-2'><a href='force-length-converter.html'>Force / length converter</a></li>
+                <li class='pb-2'><a href='htaccess-secure-directory.html'>Htaccess Secure Directory</a></li>
+                <li class='pb-2'><a href='create-array-js.html'>Create Array JS</a></li>
+                <li class='pb-2'><a href='electric-current-converter.html'>Electric Current Converter</a></li>
+                <li class='pb-2'><a href='astronomical-converter.html'>Astronomical Conversion</a></li>
+                <li class='pb-2'><a href='angle-converter.html'>Angle Converter</a></li>
+                <li class='pb-2'><a href='un-google-link.html'>Un-Google Link</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='json-escape-unescape.html'>JSON Escape/Unescape</a></li>
+                <li class='pb-2'><a href='javascript-escape-unescape.html'>Javascript Escape/Unescape</a></li>
+                <li class='pb-2'><a href='csharp-escape-unescape.html'>C# Escape/Unescape</a></li>
+                <li class='pb-2'><a href='java-escape-unescape.html'>Java Escape/Unescape</a></li>
+                <li class='pb-2'><a href='csv-escape-unescape.html'>CSV Escape/Unescape</a></li>
+                <li class='pb-2'><a href='sql-escape-unescape.html'>SQL Escape/Unescape</a></li>
+                <li class='pb-2'><a href='xml-escape-unescape.html'>XML Escape/Unescape</a></li>
+                <li class='pb-2'><a href='excel-to-html-converter.html'>Excel to HTML</a></li>
+                <li class='pb-2'><a href='html-to-csv-converter.html'>HTML to CSV Converter</a></li>
+                <li class='pb-2'><a href='cmyk-to-hex.html'>CMYK to HEX</a></li>
+                <li class='pb-2'><a href='cmyk-to-rgb.html'>CMYK to RGB</a></li>
+                <li class='pb-2'><a href='cmyk-to-hsv.html'>CMYK to HSV</a></li>
+                <li class='pb-2'><a href='hsv-to-hex.html'>HSV to HEX</a></li>
+                <li class='pb-2'><a href='hex-to-hsv.html'>HEX to HSV</a></li>
+                <li class='pb-2'><a href='hsv-to-rgb.html'>HSV to RGB</a></li>
+                <li class='pb-2'><a href='hsv-to-cmyk.html'>HSV to CMYK</a></li>
+                <li class='pb-2'><a href='hex-to-cmyk.html'>HEX to CMYK</a></li>
+                <li class='pb-2'><a href='rgb-to-hex.html'>RGB to HEX</a></li>
+                <li class='pb-2'><a href='rgb-to-hsv.html'>RGB to HSV</a></li>
+                <li class='pb-2'><a href='rgb-to-cmyk.html'>RGB to CMYK</a></li>
+                <li class='pb-2'><a href='hex-to-pantone.html'>HEX to Pantone</a></li>
+                <li class='pb-2'><a href='rgb-to-pantone.html'>RGB to Pantone</a></li>
+                <li class='pb-2'><a href='hsv-to-pantone.html'>HSV to Pantone</a></li>
+                <li class='pb-2'><a href='cmyk-to-pantone.html'>CMYK to Pantone</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='csv-to-multi-line.html'>CSV to Multi Line</a></li>
+                <li class='pb-2'><a href='csv-to-xml-json.html'>CSV to XML JSON</a></li>
+                <li class='pb-2'><a href='convert-csv-to-json.html'>CSV to JSON</a></li>
+                <li class='pb-2'><a href='csv-to-tsv.html'>CSV to TSV</a></li>
+                <li class='pb-2'><a href='csv-to-html.html'>CSV to HTML</a></li>
+                <li class='pb-2'><a href='csv-to-xml.html'>CSV to XML</a></li>
+                <li class='pb-2'><a href='json-to-csv.html'>JSON to CSV</a></li>
+                <li class='pb-2'><a href='json-to-tsv.html'>JSON to TSV</a></li>
+                <li class='pb-2'><a href='xml-to-csv.html'>XML to CSV</a></li>
+                <li class='pb-2'><a href='csv-to-sql.html'>CSV to SQL</a></li>
+                <li class='pb-2'><a href='sql-to-csv.html'>SQL to CSV</a></li>
+                <li class='pb-2'><a href='csv-to-excel.html'>CSV to Excel</a></li>
+                <li class='pb-2'><a href='guid-generator.html'>Guid generator</a></li>
+                <li class='pb-2'><a href='random-letter-generator.html'>Random Letter Generator</a></li>
+                <li class='pb-2'><a href='shuffle-letter.html'>Shuffle Letter</a></li>
+                <li class='pb-2'><a href='view-html-source-code.html'>View HTML Source Code</a></li>
+                <li class='pb-2'><a href='upside-down-text.html'>Upside down text</a></li>
+                <li class='pb-2'><a href='bubble-ball-text.html'>Bubble ball text</a></li>
+                <li class='pb-2'><a href='zalgo-text.html'>Zalgo text</a></li>
+                <li class='pb-2'><a href='email-obfuscation.html'>Email obfuscation</a></li>
+                <li class='pb-2'><a href='numbers-to-words-converter.html'>Numbers to words converter</a></li>
+                <li class='pb-2'><a href='morse-code-translator.html'>Morse code translator</a></li>
+                <li class='pb-2'><a href='broken-link-checker.html'>Broken Link Checker</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+              <ul class="m-0">
+                <li class='pb-2'><a href='html-entities-escape.html'>HTML Entities Escape</a></li>
+                <li class='pb-2'><a href='actionscript.html'>Actionscript Beautify & Minify</a></li>
+                <li class='pb-2'><a href='verify-email.html'>Verify Email</a></li>
+                <li class='pb-2'><a href='bytes-bits-converter.html'>Bytes/bits Converter</a></li>
+                <li class='pb-2'><a href='fuel-consumption.html'>Fuel Consumption</a></li>
+                <li class='pb-2'><a href='frequency-converter.html'>Frequency Converter</a></li>
+                <li class='pb-2'><a href='tableizer.html'>Tableizer</a></li>
+                <li class='pb-2'><a href='html-to-tsv-converter.html'>HTML to TSV</a></li>
+                <li class='pb-2'><a href='xml-to-json-converter.html'>XML to JSON</a></li>
+                <li class='pb-2'><a href='xml-to-tsv.html'>XML to TSV</a></li>
+                <li class='pb-2'><a href='json-to-java-converter.html'>JSON to JAVA</a></li>
+                <li class='pb-2'><a href='json-to-xml-converter.html'>JSON to XML</a></li>
+                <li class='pb-2'><a href='case-converter.html'>Case Converter</a></li>
+                <li class='pb-2'><a href='csslint.html'>CSS Lint</a></li>
+                <li class='pb-2'><a href='sql-to-json.html'>SQL to JSON</a></li>
+                <li class='pb-2'><a href='xml-to-java.html'>XML to JAVA</a></li>
+                <li class='pb-2'><a href='json-to-yaml.html'>JSON to YAML</a></li>
+                <li class='pb-2'><a href='sql-to-yaml.html'>SQL to YAML</a></li>
+                <li class='pb-2'><a href='sql-to-xml.html'>SQL to XML</a></li>
+                <li class='pb-2'><a href='xml-to-html.html'>XML to HTML</a></li>
+                <li class='pb-2'><a href='image-resize.html'>Image resize</a></li>
+                <li class='pb-2'><a href='xml-viewer.html'>XML viewer</a></li>
+                <li class='pb-2'><a href='disavow-file-generator.html'>Disavow File Generator</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h5>Links</h5>
+        </div>
+        <div class="col-12 footer_links">
+          <ul class="mb-0">
+
+            <li class="pb-0 mt-2">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/icons.css" rel="stylesheet" />
+  <script src="../vendor/components/jquery/jquery.min.js"></script>
+  <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../helpers/clipboard.js/dist/clipboard.js"> </script>
+  <script src="../tools_files/binary-to-decimal/binary-to-decimal.js"> </script>
+  <script src="../js/main.js"></script>
+  <script>
+      function record_activity( category, action, label ) {
+      try {
+        dataLayer.push( {
+          'gaEventLabel': label,
+          'gaEventAction': action,
+          'gaEventCategory': category,
+          'event': 'gaTriggerEvent'
+        } );
+      } catch ( err ) { }
+    }
+  </script>
+  <span style="display:none;" id="chk_hst_160349758325_3027856"></span>
+</body>
+
+</html>
