@@ -256,25 +256,25 @@
 <p>For parsing, the first step is to read the file. This involves acquiring the data and feeding it into the library. Here are a few common scenarios:</p>
 <p><strong>nodejs read a file</strong> (click to show)</p>
 <p><code>readFile</code> is only available in server environments. Browsers have no API for reading arbitrary files given a path, so another strategy must be used.</p>
-<p>if(typeof require !== ‘undefined’) XLSX = require(‘xlsx’);</p>
-<p>var workbook = XLSX.readFile(‘test.xlsx’);</p>
+<p>if(typeof require !== ‘undefined') XLSX = require(‘xlsx');</p>
+<p>var workbook = XLSX.readFile(‘test.xlsx');</p>
 <p><strong>Photoshop ExtendScript read a file</strong> (click to show)</p>
 <p><code>readFile</code> wraps the <code>File</code> logic in Photoshop and other ExtendScript targets. The specified path should be an absolute path:</p>
 <p>#include “xlsx.extendscript.js”</p>
-<p>var workbook = XLSX.readFile(Folder.myDocuments + ‘/’ + ‘test.xlsx’);</p>
+<p>var workbook = XLSX.readFile(Folder.myDocuments + ‘/' + ‘test.xlsx');</p>
 <p>The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/extendscript/"><code>extendscript</code> demo</a> includes a more complex example.</p>
 <p><strong>Browser read TABLE element from page</strong> (click to show)</p>
 <p>The <code>table_to_book</code> and <code>table_to_sheet</code> utility functions take a DOM TABLE element and iterate through the child nodes.</p>
-<p>var workbook = XLSX.utils.table_to_book(document.getElementById(‘tableau’));</p>
+<p>var workbook = XLSX.utils.table_to_book(document.getElementById(‘tableau'));</p>
 <p>Multiple tables on a web page can be converted to individual worksheets:</p>
 <p>var workbook = XLSX.utils.book_new();</p>
-<p>var ws1 = XLSX.utils.table_to_sheet(document.getElementById(‘table1’));</p>
+<p>var ws1 = XLSX.utils.table_to_sheet(document.getElementById(‘table1'));</p>
 <p>XLSX.utils.book_append_sheet(workbook, ws1, “Sheet1”);</p>
-<p>var ws2 = XLSX.utils.table_to_sheet(document.getElementById(‘table2’));</p>
+<p>var ws2 = XLSX.utils.table_to_sheet(document.getElementById(‘table2'));</p>
 <p>XLSX.utils.book_append_sheet(workbook, ws2, “Sheet2”);</p>
 <p>Alternatively, the HTML code can be extracted and parsed:</p>
-<p>var htmlstr = document.getElementById(‘tableau’).outerHTML;</p>
-<p>var workbook = XLSX.read(htmlstr, {type:‘string’});</p>
+<p>var htmlstr = document.getElementById(‘tableau').outerHTML;</p>
+<p>var workbook = XLSX.read(htmlstr, {type:‘string'});</p>
 <p><strong>Browser download file (ajax)</strong> (click to show)</p>
 <p>Note: for a more complete example that works in older browsers, check the demo at <a href="http://oss.sheetjs.com/js-xlsx/ajax.html">http://oss.sheetjs.com/js-xlsx/ajax.html</a>. The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/xhr/"><code>xhr</code> demo</a> includes more examples with <code>XMLHttpRequest</code> and <code>fetch</code>.</p>
 <p>var url = “http://oss.sheetjs.com/test_files/formula_stress_test.xlsx”;</p>
@@ -294,11 +294,11 @@
 <p>var reader = new FileReader();</p>
 <p>reader.onload = function(e) {</p>
 <p>var data = new Uint8Array(e.target.result);</p>
-<p>var workbook = XLSX.read(data, {type: ‘array’});</p>
+<p>var workbook = XLSX.read(data, {type: ‘array'});</p>
 <p>};</p>
 <p>reader.readAsArrayBuffer(f);</p>
 <p>}</p>
-<p>drop_dom_element.addEventListener(‘drop’, handleDrop, false);</p>
+<p>drop_dom_element.addEventListener(‘drop', handleDrop, false);</p>
 <p><strong>Browser file upload form element</strong> (click to show)</p>
 <p>Data from file input elements can be processed using the same <code>FileReader</code> API as in the drag-and-drop example:</p>
 <p>function handleFile(e) {</p>
@@ -306,11 +306,11 @@
 <p>var reader = new FileReader();</p>
 <p>reader.onload = function(e) {</p>
 <p>var data = new Uint8Array(e.target.result);</p>
-<p>var workbook = XLSX.read(data, {type: ‘array’});</p>
+<p>var workbook = XLSX.read(data, {type: ‘array'});</p>
 <p>};</p>
 <p>reader.readAsArrayBuffer(f);</p>
 <p>}</p>
-<p>input_dom_element.addEventListener(‘change’, handleFile, false);</p>
+<p>input_dom_element.addEventListener(‘change', handleFile, false);</p>
 <p>The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/oldie/"><code>oldie</code> demo</a> shows an IE-compatible fallback scenario.</p>
 <p>More specialized cases, including mobile app file processing, are covered in the <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/">included demos</a></p>
 <h3 id="parsing-examples">Parsing Examples</h3>
@@ -332,12 +332,12 @@
 <p>The most common and interesting formats (XLS, XLSX/M, XLSB, ODS) are ultimately ZIP or CFB containers of files. Neither format puts the directory structure at the beginning of the file: ZIP files place the Central Directory records at the end of the logical file, while CFB files can place the storage info anywhere in the file! As a result, to properly handle these formats, a streaming function would have to buffer the entire file before commencing. That belies the expectations of streaming, so we do not provide any streaming read API.</p>
 <p>When dealing with Readable Streams, the easiest approach is to buffer the stream and process the whole thing at the end. This can be done with a temporary file or by explicitly concatenating the stream:</p>
 <p><strong>Explicitly concatenating streams</strong> (click to show)</p>
-<p>var fs = require(‘fs’);</p>
-<p>var XLSX = require(‘xlsx’);</p>
+<p>var fs = require(‘fs');</p>
+<p>var XLSX = require(‘xlsx');</p>
 <p>function process_RS(stream, cb){</p>
 <p>var buffers = [];</p>
-<p>stream.on(‘data’, function(data) { buffers.push(data); });</p>
-<p>stream.on(‘end’, function() {</p>
+<p>stream.on(‘data', function(data) { buffers.push(data); });</p>
+<p>stream.on(‘end', function() {</p>
 <p>var buffer = Buffer.concat(buffers);</p>
 <p>var workbook = XLSX.read(buffer, {type:“buffer”});</p>
 <p>cb(workbook);</p>
@@ -346,14 +346,14 @@
 <p>More robust solutions are available using modules like <code>concat-stream</code>.</p>
 <p><strong>Writing to filesystem first</strong> (click to show)</p>
 <p>This example uses <a href="https://npm.im/tempfile"><code>tempfile</code></a> to generate file names:</p>
-<p>var fs = require(‘fs’), tempfile = require(‘tempfile’);</p>
-<p>var XLSX = require(‘xlsx’);</p>
+<p>var fs = require(‘fs'), tempfile = require(‘tempfile');</p>
+<p>var XLSX = require(‘xlsx');</p>
 <p>function process_RS(stream, cb){</p>
-<p>var fname = tempfile(‘.sheetjs’);</p>
+<p>var fname = tempfile(‘.sheetjs');</p>
 <p>console.log(fname);</p>
 <p>var ostream = fs.createWriteStream(fname);</p>
 <p>stream.pipe(ostream);</p>
-<p>ostream.on(‘finish’, function() {</p>
+<p>ostream.on(‘finish', function() {</p>
 <p>var workbook = XLSX.readFile(fname);</p>
 <p>fs.unlinkSync(fname);</p>
 <p>cb(workbook);</p>
@@ -364,7 +364,7 @@
 <p><strong>Reading a specific cell</strong> (click to show)</p>
 <p>This example extracts the value stored in cell A1 from the first worksheet:</p>
 <p>var first_sheet_name = workbook.SheetNames[0];</p>
-<p>var address_of_cell = ‘A1’;</p>
+<p>var address_of_cell = ‘A1';</p>
 <p>var worksheet = workbook.Sheets[first_sheet_name];</p>
 <p>var desired_cell = worksheet[address_of_cell];</p>
 <p>var desired_value = (desired_cell ? desired_cell.v : undefined);</p>
@@ -399,27 +399,27 @@
 <p>For writing, the first step is to generate output data. The helper functions <code>write</code> and <code>writeFile</code> will produce the data in various formats suitable for dissemination. The second step is to actual share the data with the end point. Assuming <code>workbook</code> is a workbook object:</p>
 <p><strong>nodejs write a file</strong> (click to show)</p>
 <p><code>XLSX.writeFile</code> uses <code>fs.writeFileSync</code> in server environments:</p>
-<p>if(typeof require !== ‘undefined’) XLSX = require(‘xlsx’);</p>
-<p>XLSX.writeFile(workbook, ‘out.xlsb’);</p>
+<p>if(typeof require !== ‘undefined') XLSX = require(‘xlsx');</p>
+<p>XLSX.writeFile(workbook, ‘out.xlsb');</p>
 <p><strong>Photoshop ExtendScript write a file</strong> (click to show)</p>
 <p><code>writeFile</code> wraps the <code>File</code> logic in Photoshop and other ExtendScript targets. The specified path should be an absolute path:</p>
 <p>#include “xlsx.extendscript.js”</p>
-<p>XLSX.writeFile(workbook, ‘out.xlsx’);</p>
+<p>XLSX.writeFile(workbook, ‘out.xlsx');</p>
 <p>The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/extendscript/"><code>extendscript</code> demo</a> includes a more complex example.</p>
 <p><strong>Browser add TABLE element to page</strong> (click to show)</p>
 <p>The <code>sheet_to_html</code> utility function generates HTML code that can be added to any DOM element.</p>
 <p>var worksheet = workbook.Sheets[workbook.SheetNames[0]];</p>
-<p>var container = document.getElementById(‘tableau’);</p>
+<p>var container = document.getElementById(‘tableau');</p>
 <p>container.innerHTML = XLSX.utils.sheet_to_html(worksheet);</p>
 <p><strong>Browser upload file (ajax)</strong> (click to show)</p>
 <p>A complete example using XHR is <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/xhr/">included in the XHR demo</a>, along with examples for fetch and wrapper libraries. This example assumes the server can handle Base64-encoded files (see the demo for a basic nodejs server):</p>
-<p>var wopts = { bookType:‘xlsx’, bookSST:false, type:‘base64’ };</p>
+<p>var wopts = { bookType:‘xlsx', bookSST:false, type:‘base64' };</p>
 <p>var wbout = XLSX.write(workbook,wopts);</p>
 <p>var req = new XMLHttpRequest();</p>
 <p>req.open(“POST”, “/upload”, true);</p>
 <p>var formdata = new FormData();</p>
-<p>formdata.append(‘file’, ‘test.xlsx’);</p>
-<p>formdata.append(‘data’, wbout);</p>
+<p>formdata.append(‘file', ‘test.xlsx');</p>
+<p>formdata.append(‘data', wbout);</p>
 <p>req.send(formdata);</p>
 <p><strong>Browser save file</strong> (click to show)</p>
 <p><code>XLSX.writeFile</code> wraps a few techniques for triggering a file save:</p>
@@ -429,19 +429,19 @@
 <li><code>IE_FileSave</code> uses VBScript and ActiveX to write a file in IE6+ for Windows XP and Windows 7. The shim must be included in the containing HTML page.</li>
 </ul>
 <p>There is no standard way to determine if the actual file has been downloaded.</p>
-<p>XLSX.writeFile(workbook, ‘out.xlsb’);</p>
+<p>XLSX.writeFile(workbook, ‘out.xlsb');</p>
 <p><strong>Browser save file (compatibility)</strong> (click to show)</p>
 <p><code>XLSX.writeFile</code> techniques work for most modern browsers as well as older IE. For much older browsers, there are workarounds implemented by wrapper libraries.</p>
 <p><a href="https://github.com/eligrey/FileSaver.js/"><code>FileSaver.js</code></a> implements <code>saveAs</code>. Note: <code>XLSX.writeFile</code> will automatically call <code>saveAs</code> if available.</p>
-<p>var wopts = { bookType:‘xlsx’, bookSST:false, type:‘array’ };</p>
+<p>var wopts = { bookType:‘xlsx', bookSST:false, type:‘array' };</p>
 <p>var wbout = XLSX.write(workbook,wopts);</p>
 <p>saveAs(new Blob([wbout],{type:“application/octet-stream”}), “test.xlsx”);</p>
 <p><a href="https://github.com/dcneiner/downloadify"><code>Downloadify</code></a> uses a Flash SWF button to generate local files, suitable for environments where ActiveX is unavailable:</p>
 <p>Downloadify.create(id,{</p>
 <p>filename: “test.xlsx”,</p>
-<p>data: function() { return XLSX.write(wb, {bookType:“xlsx”, type:‘base64’}); },</p>
+<p>data: function() { return XLSX.write(wb, {bookType:“xlsx”, type:‘base64'}); },</p>
 <p>append: false,</p>
-<p>dataType: ‘base64’</p>
+<p>dataType: ‘base64'</p>
 <p>});</p>
 <p>The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/oldie/"><code>oldie</code> demo</a> shows an IE-compatible fallback scenario.</p>
 <p>The <a href="https://github.com/SheetJS/sheetjs/blob/HEAD/demos/">included demos</a> cover mobile apps and other special deployments.</p>
@@ -668,7 +668,7 @@
 <p>Excel has no native concept of universal time. All times are specified in the local time zone. Excel limitations prevent specifying true absolute dates.</p>
 <p>Following Excel, this library treats all dates as relative to local time zone.</p>
 <p><strong>Epochs: 1900 and 1904</strong> (click to show)</p>
-<p>Excel supports two epochs (January 1 1900 and January 1 1904), see <a href="http://support2.microsoft.com/kb/180162">“1900 vs. 1904 Date System” article</a>. The workbook’s epoch can be determined by examining the workbook’s <code>wb.Workbook.WBProps.date1904</code> property:</p>
+<p>Excel supports two epochs (January 1 1900 and January 1 1904), see <a href="http://support2.microsoft.com/kb/180162">“1900 vs. 1904 Date System” article</a>. The workbook's epoch can be determined by examining the workbook's <code>wb.Workbook.WBProps.date1904</code> property:</p>
 <p>!!(((wb.Workbook||{}).WBProps||{}).date1904)</p>
 <h3 id="sheet-objects">Sheet Objects</h3>
 <p>Each key that does not start with <code>!</code> maps to a cell (using <code>A-1</code> notation)</p>
@@ -678,7 +678,7 @@
 <li><p><code>sheet['!ref']</code>: A-1 based range representing the sheet range. Functions that work with sheets should use this parameter to determine the range. Cells that are assigned outside of the range are not processed. In particular, when writing a sheet by hand, cells outside of the range are not included</p>
 <p>Functions that handle sheets should test for the presence of <code>!ref</code> field. If the <code>!ref</code> is omitted or is not a valid range, functions are free to treat the sheet as empty or attempt to guess the range. The standard utilities that ship with this library treat sheets as empty (for example, the CSV output is empty string).</p>
 <p>When reading a worksheet with the <code>sheetRows</code> property set, the ref parameter will use the restricted range. The original range is set at <code>ws['!fullref']</code></p></li>
-<li><p><code>sheet['!margins']</code>: Object representing the page margins. The default values follow Excel’s “normal” preset. Excel also has a “wide” and a “narrow” preset but they are stored as raw measurements. The main properties are listed below:</p></li>
+<li><p><code>sheet['!margins']</code>: Object representing the page margins. The default values follow Excel's “normal” preset. Excel also has a “wide” and a “narrow” preset but they are stored as raw measurements. The main properties are listed below:</p></li>
 </ul>
 <p><strong>Page margin details</strong> (click to show)</p>
 <table>
@@ -1016,31 +1016,31 @@
 <p><strong>Representation of A1=1, A2=2, A3=A1+A2</strong> (click to show)</p>
 <p>{</p>
 <p>“!ref”: “A1:A3”,</p>
-<p>A1: { t:‘n’, v:1 },</p>
-<p>A2: { t:‘n’, v:2 },</p>
-<p>A3: { t:‘n’, v:3, f:‘A1+A2’ }</p>
+<p>A1: { t:‘n', v:1 },</p>
+<p>A2: { t:‘n', v:2 },</p>
+<p>A3: { t:‘n', v:3, f:‘A1+A2' }</p>
 <p>}</p>
 <p>Shared formulae are decompressed and each cell has the formula corresponding to its cell. Writers generally do not attempt to generate shared formulae.</p>
 <p>Cells with formula entries but no value will be serialized in a way that Excel and other spreadsheet tools will recognize. This library will not automatically compute formula results! For example, to compute <code>BESSELJ</code> in a worksheet:</p>
 <p><strong>Formula without known value</strong> (click to show)</p>
 <p>{</p>
 <p>“!ref”: “A1:A3”,</p>
-<p>A1: { t:‘n’, v:3.14159 },</p>
-<p>A2: { t:‘n’, v:2 },</p>
-<p>A3: { t:‘n’, f:‘BESSELJ(A1,A2)’ }</p>
+<p>A1: { t:‘n', v:3.14159 },</p>
+<p>A2: { t:‘n', v:2 },</p>
+<p>A3: { t:‘n', f:‘BESSELJ(A1,A2)' }</p>
 <p>}</p>
 <p><strong>Array Formulae</strong></p>
 <p>Array formulae are stored in the top-left cell of the array block. All cells of an array formula have a <code>F</code> field corresponding to the range. A single-cell formula can be distinguished from a plain formula by the presence of <code>F</code> field.</p>
 <p><strong>Array Formula examples</strong> (click to show)</p>
 <p>For example, setting the cell <code>C1</code> to the array formula <code>{=SUM(A1:A3*B1:B3)}</code>:</p>
-<p>worksheet[‘C1’] = { t:‘n’, f: “SUM(A1:A3*B1:B3)”, F:“C1:C1” };</p>
+<p>worksheet[‘C1'] = { t:‘n', f: “SUM(A1:A3*B1:B3)”, F:“C1:C1” };</p>
 <p>For a multi-cell array formula, every cell has the same array range but only the first cell specifies the formula. Consider <code>D1:D3=A1:A3*B1:B3</code>:</p>
-<p>worksheet[‘D1’] = { t:‘n’, F:“D1:D3”, f:“A1:A3*B1:B3” };</p>
-<p>worksheet[‘D2’] = { t:‘n’, F:“D1:D3” };</p>
-<p>worksheet[‘D3’] = { t:‘n’, F:“D1:D3” };</p>
+<p>worksheet[‘D1'] = { t:‘n', F:“D1:D3”, f:“A1:A3*B1:B3” };</p>
+<p>worksheet[‘D2'] = { t:‘n', F:“D1:D3” };</p>
+<p>worksheet[‘D3'] = { t:‘n', F:“D1:D3” };</p>
 <p>Utilities and writers are expected to check for the presence of a <code>F</code> field and ignore any possible formula element <code>f</code> in cells other than the starting cell. They are not expected to perform validation of the formulae!</p>
 <p><strong>Formula Output Utility Function</strong> (click to show)</p>
-<p>The <code>sheet_to_formulae</code> method generates one line per formula or array formula. Array formulae are rendered in the form <code>range=formula</code> while plain cells are rendered in the form <code>cell=formula or value</code>. Note that string literals are prefixed with an apostrophe <code>'</code>, consistent with Excel’s formula bar display.</p>
+<p>The <code>sheet_to_formulae</code> method generates one line per formula or array formula. Array formulae are rendered in the form <code>range=formula</code> while plain cells are rendered in the form <code>cell=formula or value</code>. Note that string literals are prefixed with an apostrophe <code>'</code>, consistent with Excel's formula bar display.</p>
 <p><strong>Formulae File Format Details</strong> (click to show)</p>
 <table>
 <thead>
@@ -1262,15 +1262,15 @@
 <h4 id="hyperlinks">Hyperlinks</h4>
 <p>Hyperlinks are stored in the <code>l</code> key of cell objects. The <code>Target</code> field of the hyperlink object is the target of the link, including the URI fragment. Tooltips are stored in the <code>Tooltip</code> field and are displayed when you move your mouse over the text.</p>
 <p>For example, the following snippet creates a link from cell <code>A3</code> to <a href="http://sheetjs.com/">http://sheetjs.com</a> with the tip <code>"Find us @ SheetJS.com!"</code>:</p>
-<p>ws[‘A3’].l = { Target:“http://sheetjs.com”, Tooltip:“Find us @ SheetJS.com!” };</p>
+<p>ws[‘A3'].l = { Target:“http://sheetjs.com”, Tooltip:“Find us @ SheetJS.com!” };</p>
 <p>Note that Excel does not automatically style hyperlinks – they will generally be displayed as normal text.</p>
 <p>Links where the target is a cell or range or defined name in the same workbook (“Internal Links”) are marked with a leading hash character:</p>
-<p>ws[‘A2’].l = { Target:“#E2” };</p>
+<p>ws[‘A2'].l = { Target:“#E2” };</p>
 <h4 id="cell-comments">Cell Comments</h4>
 <p>Cell comments are objects stored in the <code>c</code> array of cell objects. The actual contents of the comment are split into blocks based on the comment author. The <code>a</code> field of each comment object is the author of the comment and the <code>t</code> field is the plain text representation.</p>
 <p>For example, the following snippet appends a cell comment into cell <code>A1</code>:</p>
 <p>if(!ws.A1.c) ws.A1.c = [];</p>
-<p>ws.A1.c.push({a:“SheetJS”, t:“I’m a little comment, short and stout!”});</p>
+<p>ws.A1.c.push({a:“SheetJS”, t:“I'm a little comment, short and stout!”});</p>
 <p>Note: XLSB enforces a 54 character limit on the Author name. Names longer than 54 characters may cause issues with other formats.</p>
 <p>To mark a comment as normally hidden, set the <code>hidden</code> property:</p>
 <p>if(!ws.A1.c) ws.A1.c = [];</p>
@@ -1306,10 +1306,10 @@
 </table>
 <p>With <a href="https://rawgit.com/SheetJS/test_files/master/sheet_visibility.xlsx">https://rawgit.com/SheetJS/test_files/master/sheet_visibility.xlsx</a>:</p>
 <p>&gt; wb.Workbook.Sheets.map(function(x) { return [x.name, x.Hidden] })</p>
-<p>[ [ ‘Visible’, 0 ], [ ‘Hidden’, 1 ], [ ‘VeryHidden’, 2 ] ]</p>
+<p>[ [ ‘Visible', 0 ], [ ‘Hidden', 1 ], [ ‘VeryHidden', 2 ] ]</p>
 <p>Non-Excel formats do not support the Very Hidden state. The best way to test if a sheet is visible is to check if the <code>Hidden</code> property is logical truth:</p>
 <p>&gt; wb.Workbook.Sheets.map(function(x) { return [x.name, !x.Hidden] })</p>
-<p>[ [ ‘Visible’, true ], [ ‘Hidden’, false ], [ ‘VeryHidden’, false ] ]</p>
+<p>[ [ ‘Visible', true ], [ ‘Hidden', false ], [ ‘VeryHidden', false ] ]</p>
 <h4 id="vba-and-macros">VBA and Macros</h4>
 <p>VBA Macros are stored in a special data blob that is exposed in the <code>vbaraw</code> property of the workbook object when the <code>bookVBA</code> option is <code>true</code>. They are supported in <code>XLSM</code>, <code>XLSB</code>, and <code>BIFF8 XLS</code> formats. The supported format writers automatically insert the data blobs if it is present in the workbook and associate with the worksheet names.</p>
 <p><strong>Custom Code Names</strong> (click to show)</p>
@@ -1322,7 +1322,7 @@
 <p>function wb_has_macro(wb) {</p>
 <p>if(!!wb.vbaraw) return true;</p>
 <p>const sheets = wb.SheetNames.map((n) =&gt; wb.Sheets[n]);</p>
-<p>return sheets.some((ws) =&gt; !!ws &amp;&amp; ws[‘!type’]==‘macro’);</p>
+<p>return sheets.some((ws) =&gt; !!ws &amp;&amp; ws[‘!type']==‘macro');</p>
 <p>}</p>
 <h2 id="parsing-options">Parsing Options</h2>
 <p>The exported <code>read</code> and <code>readFile</code> functions accept an options argument:</p>
@@ -1646,7 +1646,7 @@
 <p><strong>Why are random text files valid?</strong> (click to show)</p>
 <p>Excel is extremely aggressive in reading files. Adding an XLS extension to any display text file (where the only characters are ANSI display chars) tricks Excel into thinking that the file is potentially a CSV or TSV file, even if it is only one column! This library attempts to replicate that behavior.</p>
 <p>The best approach is to validate the desired worksheet and ensure it has the expected number of rows or columns. Extracting the range is extremely simple:</p>
-<p>var range = XLSX.utils.decode_range(worksheet[‘!ref’]);</p>
+<p>var range = XLSX.utils.decode_range(worksheet[‘!ref']);</p>
 <p>var ncols = range.e.c - range.s.c + 1, nrows = range.e.r - range.s.r + 1;</p>
 <h2 id="writing-options">Writing Options</h2>
 <p>The exported <code>write</code> and <code>writeFile</code> functions accept an options argument:</p>
@@ -2200,7 +2200,7 @@
 <p>&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;</p>
 <p>&lt;/table&gt;</p>
 <p>To process the table:</p>
-<p>var tbl = document.getElementById(‘sheetjs’);</p>
+<p>var tbl = document.getElementById(‘sheetjs');</p>
 <p>var wb = XLSX.utils.table_to_book(tbl);</p>
 <p>Note: <code>XLSX.read</code> can handle HTML represented as strings.</p>
 <p><code>XLSX.utils.sheet_add_dom</code> takes a table DOM element and updates an existing worksheet object. It follows the same process as <code>table_to_sheet</code> and accepts an options argument:</p>
@@ -2278,18 +2278,18 @@
 <p>ref.e.r += nrows;</p>
 <p>ws[“!ref”] = XLSX.utils.encode_range(ref);</p>
 <p>}</p>
-<p>var ws = XLSX.utils.table_to_sheet(document.getElementById(‘table1’));</p>
+<p>var ws = XLSX.utils.table_to_sheet(document.getElementById(‘table1'));</p>
 <p>create_gap_rows(ws, 1);</p>
-<p>XLSX.utils.sheet_add_dom(ws, document.getElementById(‘table2’), {origin: -1});</p>
+<p>XLSX.utils.sheet_add_dom(ws, document.getElementById(‘table2'), {origin: -1});</p>
 <p>create_gap_rows(ws, 3);</p>
-<p>XLSX.utils.sheet_add_dom(ws, document.getElementById(‘table3’), {origin: -1});</p>
+<p>XLSX.utils.sheet_add_dom(ws, document.getElementById(‘table3'), {origin: -1});</p>
 <h3 id="formulae-output">Formulae Output</h3>
 <p><code>XLSX.utils.sheet_to_formulae</code> generates an array of commands that represent how a person would enter data into an application. Each entry is of the form <code>A1-cell-address=formula-or-value</code>. String literals are prefixed with a <code>'</code> in accordance with Excel.</p>
 <p><strong>Examples</strong> (click to show)</p>
 <p>For the example sheet:</p>
 <p>&gt; var o = XLSX.utils.sheet_to_formulae(ws);</p>
 <p>&gt; [o[0], o[5], o[10], o[15], o[20]];</p>
-<p>[ ‘A1=\’S’, ‘F1=\’J’, ‘D2=4’, ‘B3=3’, ‘G3=8’ ]</p>
+<p>[ ‘A1=\'S', ‘F1=\'J', ‘D2=4', ‘B3=3', ‘G3=8' ]</p>
 <h3 id="delimiter-separated-output">Delimiter-Separated Output</h3>
 <p>As an alternative to the <code>writeFile</code> CSV type, <code>XLSX.utils.sheet_to_csv</code> also produces CSV output. The function takes an options argument:</p>
 <table>
@@ -2503,25 +2503,25 @@
 <p>[ { S: 1, h: 2, e: 3, e_1: 4, t: 5, J: 6, S_1: 7 },</p>
 <p>{ S: 2, h: 3, e: 4, e_1: 5, t: 6, J: 7, S_1: 8 } ]</p>
 <p>&gt; XLSX.utils.sheet_to_json(ws, {header:“A”});</p>
-<p>[ { A: ‘S’, B: ‘h’, C: ‘e’, D: ‘e’, E: ‘t’, F: ‘J’, G: ‘S’ },</p>
-<p>{ A: ‘1’, B: ‘2’, C: ‘3’, D: ‘4’, E: ‘5’, F: ‘6’, G: ‘7’ },</p>
-<p>{ A: ‘2’, B: ‘3’, C: ‘4’, D: ‘5’, E: ‘6’, F: ‘7’, G: ‘8’ } ]</p>
+<p>[ { A: ‘S', B: ‘h', C: ‘e', D: ‘e', E: ‘t', F: ‘J', G: ‘S' },</p>
+<p>{ A: ‘1', B: ‘2', C: ‘3', D: ‘4', E: ‘5', F: ‘6', G: ‘7' },</p>
+<p>{ A: ‘2', B: ‘3', C: ‘4', D: ‘5', E: ‘6', F: ‘7', G: ‘8' } ]</p>
 <p>&gt; XLSX.utils.sheet_to_json(ws, {header:[“A”,“E”,“I”,“O”,“U”,“6”,“9”]});</p>
-<p>[ { ‘6’: ‘J’, ‘9’: ‘S’, A: ‘S’, E: ‘h’, I: ‘e’, O: ‘e’, U: ‘t’ },</p>
-<p>{ ‘6’: ‘6’, ‘9’: ‘7’, A: ‘1’, E: ‘2’, I: ‘3’, O: ‘4’, U: ‘5’ },</p>
-<p>{ ‘6’: ‘7’, ‘9’: ‘8’, A: ‘2’, E: ‘3’, I: ‘4’, O: ‘5’, U: ‘6’ } ]</p>
+<p>[ { ‘6': ‘J', ‘9': ‘S', A: ‘S', E: ‘h', I: ‘e', O: ‘e', U: ‘t' },</p>
+<p>{ ‘6': ‘6', ‘9': ‘7', A: ‘1', E: ‘2', I: ‘3', O: ‘4', U: ‘5' },</p>
+<p>{ ‘6': ‘7', ‘9': ‘8', A: ‘2', E: ‘3', I: ‘4', O: ‘5', U: ‘6' } ]</p>
 <p>&gt; XLSX.utils.sheet_to_json(ws, {header:1});</p>
-<p>[ [ ‘S’, ‘h’, ‘e’, ‘e’, ‘t’, ‘J’, ‘S’ ],</p>
-<p>[ ‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’ ],</p>
-<p>[ ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’ ] ]</p>
+<p>[ [ ‘S', ‘h', ‘e', ‘e', ‘t', ‘J', ‘S' ],</p>
+<p>[ ‘1', ‘2', ‘3', ‘4', ‘5', ‘6', ‘7' ],</p>
+<p>[ ‘2', ‘3', ‘4', ‘5', ‘6', ‘7', ‘8' ] ]</p>
 <p>Example showing the effect of <code>raw</code>:</p>
-<p>&gt; ws[‘A2’].w = “3”;</p>
+<p>&gt; ws[‘A2'].w = “3”;</p>
 <p>&gt; XLSX.utils.sheet_to_json(ws, {header:1, raw:false});</p>
-<p>[ [ ‘S’, ‘h’, ‘e’, ‘e’, ‘t’, ‘J’, ‘S’ ],</p>
-<p>[ ‘3’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’ ],</p>
-<p>[ ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’ ] ]</p>
+<p>[ [ ‘S', ‘h', ‘e', ‘e', ‘t', ‘J', ‘S' ],</p>
+<p>[ ‘3', ‘2', ‘3', ‘4', ‘5', ‘6', ‘7' ],</p>
+<p>[ ‘2', ‘3', ‘4', ‘5', ‘6', ‘7', ‘8' ] ]</p>
 <p>&gt; XLSX.utils.sheet_to_json(ws, {header:1});</p>
-<p>[ [ ‘S’, ‘h’, ‘e’, ‘e’, ‘t’, ‘J’, ‘S’ ],</p>
+<p>[ [ ‘S', ‘h', ‘e', ‘e', ‘t', ‘J', ‘S' ],</p>
 <p>[ 1, 2, 3, 4, 5, 6, 7 ],</p>
 <p>[ 2, 3, 4, 5, 6, 7, 8 ] ]</p>
 <h2 id="file-formats">File Formats</h2>
@@ -2768,7 +2768,7 @@
 </ul>
 <h4 id="lotus-formatted-text-prn">Lotus Formatted Text (PRN)</h4>
 <p>(click to show)</p>
-<p>There is no real documentation, and in fact Excel treats PRN as an output-only file format. Nevertheless we can guess the column widths and reverse-engineer the original layout. Excel’s 240 character width limitation is not enforced.</p>
+<p>There is no real documentation, and in fact Excel treats PRN as an output-only file format. Nevertheless we can guess the column widths and reverse-engineer the original layout. Excel's 240 character width limitation is not enforced.</p>
 <h4 id="data-interchange-format-dif">Data Interchange Format (DIF)</h4>
 <p>(click to show)</p>
 <p>There is no unified definition. Visicalc DIF differs from Lotus DIF, and both differ from Excel DIF. Where ambiguous, the parser/writer follows the expected behavior from Excel. In particular, Excel extends DIF in incompatible ways:</p>
