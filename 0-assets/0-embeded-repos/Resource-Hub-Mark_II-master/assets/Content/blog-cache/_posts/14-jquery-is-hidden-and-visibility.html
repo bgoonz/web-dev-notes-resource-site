@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently I noticed that the <code>jQuery(':hidden')</code> won’t work on an element with
+      <code>visibility:hidden</code>. In order to test this I created a simple <a
+        href="http://jsbin.com/lucab/1/edit">jsbin</a> for it. It has 3 div’s one with <code>visibility:hidden</code>,
+      other with <code>display:none</code> and last with <code>opacity:0</code>. The <code>jQuery(':hidden')</code>
+      return <code>true</code> only for the element with <code>display:none</code>.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;visibility:hidden&quot;</span><span class="ot"> id=</span><span class="st">&quot;hidden&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;display:none&quot;</span><span class="ot"> id=</span><span class="st">&quot;display-none&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;opacity:0&quot;</span><span class="ot"> id=</span><span class="st">&quot;opacity&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">  (<span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="at">$</span>(<span class="st">&quot;#hidden&quot;</span>).<span class="at">is</span>(<span class="st">&quot;:hidden&quot;</span>)<span class="op">;</span> <span class="co">// return false</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="at">$</span>(<span class="st">&quot;#display-none&quot;</span>).<span class="at">is</span>(<span class="st">&quot;:hidden&quot;</span>)<span class="op">;</span> <span class="co">// return true</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="at">$</span>(<span class="st">&quot;#opacity&quot;</span>).<span class="at">is</span>(<span class="st">&quot;:hidden&quot;</span>)<span class="op">;</span> <span class="co">// return false</span></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="op">}</span>)()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="kw">&lt;/script&gt;</span></a></code></pre>
+    </div>
+    <p>The <a href="http://api.jquery.com/hidden-selector/">jQuery api doc</a> explains this well</p>
+    <p>Elements can be considered hidden for several reasons:</p>
+    <ul>
+      <li>They have a CSS display value of none.</li>
+      <li>They are form elements with type=“hidden”.</li>
+      <li>Their width and height are explicitly set to 0.</li>
+      <li>An ancestor element is hidden, so the element is not shown on the page.</li>
+    </ul>
+    <p><strong>Elements with visibility: hidden or opacity: 0 are considered to be visible, since they still consume
+        space in the layout.</strong></p>
+    <p>If you are confused on “consume space”, you can read my post <a
+        href="/2014/02/css-visibility-display-opacity.html">CSS : Visibility, Opacity and Display</a> which explains the
+      difference between visibility, opacity and display.</p>
+
+  </body>
+
+  
+</html>

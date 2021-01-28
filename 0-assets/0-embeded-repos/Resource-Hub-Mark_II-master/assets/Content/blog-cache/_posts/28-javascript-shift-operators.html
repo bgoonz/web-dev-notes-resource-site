@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Shift operators were always confusing for me. So I thought of revising old lessons like converting numbers to
+      binary, shift operators, etc.. once again.</p>
+    <h1 id="converting-integer-to-binary">Converting integer to binary</h1>
+    <p>These are one of the first lessons which I learned when I started learning computing. Even though computers use
+      32/64 bits for a integer, for ease I am using only 8 bits.</p>
+    <p>So in 8 bits, we can represent integers from <code>0</code>(<code>00000000</code>) to
+      <code>255</code>(<code>11111111</code>) if they are unsigned. When it comes to signed integers its bit confusing,
+      In 8 bits, we can represent <code>-128</code>(<code>11111111</code>) to <code>+127</code>(<code>01111111</code>)
+      signed integers.ie., if the 8th bit is <code>1</code> its a negative number. In another way, <code>0-127</code>
+      are positive and <code>128-255</code> are negative.
+    </p>
+    <h1 id="so-how-to-convert-a-negative-number-into-binary">So how to convert a negative number into binary?</h1>
+    <p>Lets our number be <code>-10</code>, so the esiest way to find the binary</p>
+    <pre><code>256 + (-10)
+256 - 10 = 246</code></pre>
+    <p>Converting <code>246</code> to binary, gives you <code>11110110</code>. which is equalent binary for
+      <code>-10</code>.
+    </p>
+    <p>Another way to find the binary of negative numbers is,</p>
+    <ul>
+      <li>Take the binary of postitive number</li>
+      <li>Find <a href="https://en.wikipedia.org/wiki/1%27s_complement">1’s compliment</a> (inverting all 0’s to 1’s and
+        1’s to 0’s )</li>
+      <li>Add 1 to it.</li>
+    </ul>
+    <p>To find <code>-10</code>’s binary, first we find binary of <code>10</code>, which is <code>00001010</code>.</p>
+    <pre><code>10 converted to 00001010
+1&#39;s compliment of 00001010 is 11110101
+Add 1 to it : 11110101 + 1 = 11110110</code></pre>
+    <p>So here I am gonna address 3 shift operators which revised recently, which are</p>
+    <ul>
+      <li><code>&gt;&gt;</code> (Signed right shift)</li>
+      <li><code>&lt;&lt;</code> (Signed left shift)</li>
+      <li><code>&gt;&gt;&gt;</code> (Unsigned right shift)</li>
+    </ul>
+    <p><br /> # <code>&gt;&gt;</code> (Signed right shift) On <code>10 &gt;&gt; 1</code>, here 10 is converted to binary
+      as <code>00001010</code> and shit the bits 1 position to the right. Which results <code>00000101</code> equalant
+      of 5 in decimal.</p>
+    <p>On <code>-10 &gt;&gt; 1</code>, -10 is converted to binary as <code>11110110</code> and when shifts to 1 position
+      to right it becomes <code>11111011</code> which is equalant to -5.</p>
+    <h1 id="signed-left-shift"><code>&lt;&lt;</code> (Signed left shift)</h1>
+    <p>On <code>10 &lt;&lt; 1</code>, here the difference is, it shift the bits 1 posision to its left. which results
+      <code>00010100</code> equalant of 20 in decimal. On <code>-10</code>, in the same way after shift it become
+      <code>11101100</code> equalant to -20
+    </p>
+    <h1 id="unsigned-right-shift"><code>&gt;&gt;&gt;</code> (Unsigned right shift)</h1>
+    <p>On <code>10 &gt;&gt;&gt; 1</code>, here the processing of positive integers are same the <code>&gt;&gt;</code>
+      (right shift) but bit different for the negative numbers.</p>
+    <p>On <code>-10 &gt;&gt;&gt; 1</code>, the binary equalant of <code>-10</code> is <code>11110110</code>. now shift 1
+      postition to right, adding zero’s on left. which results <code>01111011</code> converting this to decimal
+      (discarding sign) will result <code>123</code>.</p>
+
+  </body>
+
+  
+</html>

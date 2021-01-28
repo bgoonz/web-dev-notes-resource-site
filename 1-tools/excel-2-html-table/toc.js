@@ -31,4 +31,3 @@
       tocList.appendChild(tocListItem);
     }
     toc.appendChild(tocList);
-

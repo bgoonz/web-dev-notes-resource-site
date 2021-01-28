@@ -1,0 +1,106 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Github revolutionized how we contribute to Open Source. All my past contribution was through Github pull
+      requests. As a break from that recently I got a opportunity to contribute a minor patch to <a
+        href="https://git.zx2c4.com/wireguard-android/">wireguard-android</a> which is outside of github ecosystem.</p>
+    <p>Since <code>wireguard</code> follows linux way of accepting patches via <strong>email</strong> I have to setup
+      the <code>git send-email</code> command to send my patch. This post is about my learning on setting up git and use
+      my Gmail to send the patch.</p>
+    <p>This post is based on <code>Ubuntu</code> and expect you already have git installed setup on your machine</p>
+    <h2 id="installation">Installation</h2>
+    <p>We will get started with installing the required package from <code>apt-get</code>. <code>git-email</code> is the
+      package we required to send the patch via email. We can install this by running the command below.</p>
+    <pre><code>sudo apt-get install git-email</code></pre>
+    <p>Once the installation is success we can configure the <code>sendmail</code> smtp configuration.</p>
+    <h2 id="configuration">Configuration</h2>
+    <p>Add the following to your global/local git config as per your need. Since I am planning to use this only for
+      wireguard repo I added these into local config.</p>
+    <pre><code>#.git/config
+[sendemail]
+    smtpserver = smtp.googlemail.com
+    smtpencryption = tls
+    smtpserverport = 587
+    smtpuser = youremail@gmail.com</code></pre>
+    <p>Please remember to replace <code>youremail@gmail.com</code> with your original email which you indent to use.
+      That email should have post access to the email group to which we are sending the patch to.</p>
+    <p>Also remember not to use <code>alias</code> email if you are using gmail co-orporate account.</p>
+    <h2 id="create-a-application-password-on-gmail">Create a application password on gmail</h2>
+    <p>In Gmail instead of using your main password, you can generate different passwords for different application.
+      Goto <a href="https://myaccount.google.com/apppasswords">app passwords</a> in your google account and generate the
+      new password for <code>git-email</code> and keep it handy. I recommend using a password managers since you need
+      this password everytime you need to send the patch.</p>
+    <h2 id="create-the-patch">Create the patch</h2>
+    <p>Next let’s generate the patch files for all the commits which we need to send.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> format-patch --to=to@list.email.com HEAD~..HEAD</a></code></pre>
+    </div>
+    <p>The above command will generate patch only for the latest commit. if you have to send patches of last 2 commits
+      instead of <code>HEAD~..HEAD</code> use <code>HEAD~2..HEAD</code>.</p>
+    <p>This will create <code>.patch</code> file in the current directory. Please remember to update the
+      <code>--to</code> with actual email address.
+    </p>
+    <h2 id="send-patch-as-email">Send patch as email</h2>
+    <p>Once we have the <code>.patch</code> files we can initiate send.</p>
+    <pre><code>git send-email *.patch</code></pre>
+    <p>This command will initial the send and will ask for the <code>to</code> email and <code>cc</code> emails before
+      the gmail password prompt.</p>
+    <p><img src="https://static.revathskumar.com/2019/git-send/password-prompt.png" alt="password prompt" />{:
+      width=“100%”}</p>
+    <pre><code>Please make sure to provide only the app password we generated a while ago.</code></pre>
+    <p>Once the correct password is entered we will get the success message.</p>
+    <p><img src="https://static.revathskumar.com/2019/git-send/git-send-result.png" alt="success" />{: width=“100%”}</p>
+
+  </body>
+
+  
+</html>

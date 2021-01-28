@@ -1,0 +1,83 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><a href="https://www.wireguard.com/">WireGuard</a> is a moden next gen VPN which utilizes cryptography. Since
+      Wireguard is not available on FireTV’s app store, we have to sideload the app using adb.</p>
+    <h2 id="enable-adb-on-firetv.">Enable ADB on FireTV.</h2>
+    <p>First step to side load the app to FireTv is to enable <code>ADB debugging</code> and <code>Apps from unknown
+        sources</code>.</p>
+    <p>To do this Goto <code>Settings -&gt; My FireTV -&gt; Developer Options</code></p>
+    <ul>
+      <li>Choose Option <strong>My FireTV</strong> from Settings</li>
+    </ul>
+    <p><img src="/assets/images/firetv/settings-my-fire-tv.png"
+        alt="Choose Option My FireTV from Settings" />{:width=“100%”}</p>
+    <ul>
+      <li>Choose <strong>Developer Options</strong></li>
+    </ul>
+    <p><img src="/assets/images/firetv/settings-dev-options.png" alt="Choose Developer Options" />{:width=“100%”}</p>
+    <ul>
+      <li>Turn on <strong>ADB debugging</strong> and <strong>Apps from unknown sources</strong></li>
+    </ul>
+    <p><embed src="%7B%7B%20page.image%20%7D%7D" />{:width=“100%”}</p>
+    <h2 id="download-wireguard-apk-from-f-droid">Download Wireguard apk from F-Droid</h2>
+    <p>Next we can download the <a href="https://f-droid.org/en/packages/com.wireguard.android/">wireguard apk</a> from
+      F-droid to your system. Once the download is finished let’s connect the system to our FireTV.</p>
+    <pre><code>adb connect &lt;firetv ip&gt;:5555</code></pre>
+    <p>Once the connection is success, we can install the apk.</p>
+    <pre><code>adb install &lt;/path/to/wireguard.apk&gt;</code></pre>
+    <p>Done. once the installtion is success you can see wireguard among the other app on fireTV. Open the wireguard app
+      on fireTV to configure the VPN.</p>
+
+  </body>
+
+  
+</html>

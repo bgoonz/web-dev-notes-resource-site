@@ -1,0 +1,133 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Previously while we need to pass user authtoken with ActiveResource API calls, we were using class variables. But
+      that doesn’t look good as we were running multiple instances of our app. Our previous code look something like</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># app/controllers/application_controller.rb</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">  before_filter <span class="st">:set_active_resource_header</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8">  <span class="kw">private</span></a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="kw">def</span> set_active_resource_header</a>
+<a class="sourceLine" id="cb1-10" title="10">      <span class="kw">if</span> current_user</a>
+<a class="sourceLine" id="cb1-11" title="11">        <span class="dt">ActiveResource</span>::<span class="dt">Base</span>.auth_token = session[<span class="st">:user</span>].auth_token</a>
+<a class="sourceLine" id="cb1-12" title="12">      <span class="kw">end</span></a>
+<a class="sourceLine" id="cb1-13" title="13">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>and we patched <code>ActiveResource::Connection#authorization_header</code> to use our token</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># In ActiveResource::Connection#authorization_header patch</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">module</span> <span class="dt">ActiveResource</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="kw">class</span> <span class="dt">Base</span></a>
+<a class="sourceLine" id="cb2-5" title="5">    cattr_accessor <span class="st">:token</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="kw">class</span> <span class="dt">Connection</span></a>
+<a class="sourceLine" id="cb2-9" title="9">    <span class="kw">def</span> authorization_header(http_method, uri)</a>
+<a class="sourceLine" id="cb2-10" title="10">      { <span class="st">&#39;auth_token&#39;</span> =&gt; <span class="dt">ActiveResource</span>::<span class="dt">Base</span>.token }</a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Recently we figured out there was some issues and thought not to use class variables. Then we need some way to
+      access <code>session</code> inside <code>authorization_header</code> method. While searching for a solution we
+      came into <a href="https://github.com/steveklabnik/request_store">request_store</a> gem.</p>
+    <h1 id="request-store">Request Store</h1>
+    <p>Request store gem helps to store a global state in Rails app in a thread safe way. We can use it like</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> index</a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="dt">RequestStore</span>.store[<span class="st">:foo</span>] ||= <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="dt">RequestStore</span>.store[<span class="st">:foo</span>] += <span class="dv">1</span></a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5">  render <span class="st">:text</span> =&gt; <span class="dt">RequestStore</span>.store[<span class="st">:foo</span>]</a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Then we updated our code to use request_store.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># app/controllers/application_controller.rb</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5">  before_filter <span class="st">:store_user</span></a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="kw">private</span></a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="kw">def</span> store_user</a>
+<a class="sourceLine" id="cb4-9" title="9">      <span class="dt">RequestStore</span>.store[<span class="st">:user</span>] = session[<span class="st">:user</span>]</a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-12" title="12"></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co"># In ActiveResource::Connection#authorization_header patch</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="kw">module</span> <span class="dt">ActiveResource</span></a>
+<a class="sourceLine" id="cb4-15" title="15"></a>
+<a class="sourceLine" id="cb4-16" title="16">  <span class="kw">class</span> <span class="dt">Connection</span></a>
+<a class="sourceLine" id="cb4-17" title="17">    <span class="kw">def</span> authorization_header(http_method, uri)</a>
+<a class="sourceLine" id="cb4-18" title="18">      <span class="kw">if</span> ::<span class="dt">RequestStore</span>.store[<span class="st">:user</span>].present?</a>
+<a class="sourceLine" id="cb4-19" title="19">        { <span class="st">&#39;auth_token&#39;</span> =&gt; ::<span class="dt">RequestStore</span>.store[<span class="st">:user</span>].auth_token }</a>
+<a class="sourceLine" id="cb4-20" title="20">      <span class="kw">else</span></a>
+<a class="sourceLine" id="cb4-21" title="21">        {}</a>
+<a class="sourceLine" id="cb4-22" title="22">      <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-23" title="23">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-24" title="24">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb4-25" title="25"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Now it is working fine, But I would like to know your comments on this.</p>
+    <p>Thanks.</p>
+
+  </body>
+
+  
+</html>

@@ -1,0 +1,243 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><a href="http://elm-lang.org">ELM lang</a> is a new language to write reliable web apps which will generate
+      javascript with performance in focus and no runtime exceptions. To get started we need to go through the <a
+        href="https://guide.elm-lang.org/architecture/">The Elm Architecture</a> and understand the basic pattern of
+      <code>Model</code>, <code>Update</code> and <code>View</code>.
+    </p>
+    <p>Once we were done we can start with playing with some snippets. In this post, we will cover * How to setup ELM *
+      How to start playing with a <strong>Hello world</strong> example. * How to bundle your app with webpack.</p>
+    <h2 id="installing-elm">Installing ELM</h2>
+    <p>If ELM is not installed in your system, the easiest way to install ELM is installing it from <code>npm</code>.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> install -g elm elm-live</a></code></pre>
+    </div>
+    <p><a href="http://npm.im/elm">elm</a> will install <code>elm-package</code>, <code>elm-reactor</code>,
+      <code>elm-make</code> &amp; <code>elm-repl</code> and <a href="https://github.com/tomekwi/elm-live">elm-live</a>
+      is a flexible dev server with live reloading.
+    </p>
+    <figure>
+      <embed src="%7B%7B%20page.image%20%7D%7D" />
+      <figcaption>elm install</figcaption>
+    </figure>
+    <h2 id="setup-elm-project">Setup ELM project</h2>
+    <p>Since we have ELM installed in the system now, we can get started with installing the elm dependencies using
+      <code>elm package</code> in an empty directory.
+    </p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">elm</span> package install</a></code></pre>
+    </div>
+    <p>This will install <code>elm-lang/core</code>, <code>elm-lang/virtual-dom</code> &amp; <code>elm-lang/html</code>.
+      Also this command will generate a <code>elm-package.json</code> file.</p>
+    <figure>
+      <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-packge-install.png"
+        alt="elm package install" />
+      <figcaption>elm package install</figcaption>
+    </figure>
+    <p>A sample <code>elm-package.json</code> will look like the one below.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" title="1"><span class="er">//</span> <span class="er">elm-package.json</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;1.0.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="dt">&quot;summary&quot;</span><span class="fu">:</span> <span class="st">&quot;helpful summary of your project, less than 80 characters&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-5" title="5">    <span class="dt">&quot;repository&quot;</span><span class="fu">:</span> <span class="st">&quot;https://github.com/user/project.git&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="dt">&quot;license&quot;</span><span class="fu">:</span> <span class="st">&quot;BSD3&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="dt">&quot;source-directories&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb3-8" title="8">        <span class="st">&quot;.&quot;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">    <span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="dt">&quot;exposed-modules&quot;</span><span class="fu">:</span> <span class="ot">[]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-11" title="11">    <span class="dt">&quot;dependencies&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-12" title="12">        <span class="dt">&quot;elm-lang/core&quot;</span><span class="fu">:</span> <span class="st">&quot;5.1.1 &lt;= v &lt; 6.0.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-13" title="13">        <span class="dt">&quot;elm-lang/html&quot;</span><span class="fu">:</span> <span class="st">&quot;2.0.0 &lt;= v &lt; 3.0.0&quot;</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb3-15" title="15">    <span class="dt">&quot;elm-version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.18.0 &lt;= v &lt; 0.19.0&quot;</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>Now, let’s write a ELM program to show <strong>Hello World</strong>.</p>
+    <pre class="elm"><code>-- index.elm
+import Html exposing (..)
+import Html.Attributes exposing (..)
+
+main = span [class &quot;welcome&quot;] [text &quot;Hello World&quot;]</code></pre>
+    <p>Now, let’s run <code>elm reactor</code> and open <code>http://localhost:8000/</code> see its running in the
+      browser.</p>
+    <figure>
+      <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-hello-world.png"
+        alt="elm in browser" />
+      <figcaption>elm in browser</figcaption>
+    </figure>
+    <p>We can run <code>elm live</code> if we need the live reload for our development.</p>
+    <p>The hello world example have on <code>View</code> part in the basic ELM pattern. Let’s look into another example
+      which has a <code>Model</code> &amp; <code>Update</code>.</p>
+    <pre class="elm"><code>-- counter.elm
+import Html exposing (..)
+import Html.Events exposing (onClick)
+
+type alias Model = Int
+type Action = NoOp | Inc | Dec
+
+update : Action -&gt; Model -&gt; ( Model, Cmd Action)
+update action model =
+  case action of
+    NoOp -&gt; (model, Cmd.none)
+    Inc -&gt; (model + 1, Cmd.none)
+    Dec -&gt; (model - 1, Cmd.none)
+
+view : Model -&gt; Html Action
+view model =
+  div [] [
+    div [] [text &quot;Counter&quot;],
+    div [] [text (&quot;From model :: &quot; ++ (toString model))],
+    div [] [
+      button [onClick Dec] [text &quot;-&quot;],
+      span [] [text (toString model)],
+      button [onClick Inc] [text &quot;+&quot;]
+    ]
+  ]
+
+init : ( Model, Cmd Action )
+init =
+  (0, Cmd.none)
+
+subscriptions : Model -&gt; Sub Action
+subscriptions model =
+  Sub.none
+
+main =
+  Html.program {init = init, update = update, view = view, subscriptions = subscriptions}
+</code></pre>
+    <p>Now we know how to run small ELM program, but when it comes to a real project we will be using bundling tools
+      like <code>webpack</code>. Next, we will look into how we can bundle a ELM program with <strong>webpack</strong>.
+      We will use the same counter program to bundle and run with webpack.</p>
+    <h2 id="bundling-with-webpack">Bundling with Webpack</h2>
+    <p>We will start with setting up a <code>index.html</code> &amp; the entry point <code>index.js</code></p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="co">&lt;!--index.html--&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb6-5" title="5">    <span class="kw">&lt;title&gt;</span>ELM Counter<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;elm-app&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">    <span class="kw">&lt;script</span><span class="ot"> async src=</span><span class="st">&quot;app.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="kw">&lt;/html&gt;</span></a></code></pre>
+    </div>
+    <p>The above snippet will assume that our webpack config will compile the ELM to <code>app.js</code>.</p>
+    <p>Now the entry point <code>index.js</code> need to take care of requiring <code>counter.elm</code> and mounting
+      the ELM app in the <code>div#elm-app</code>.</p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// index.js</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="st">&#39;use strict&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">var</span> Elm <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./counter.elm&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="kw">var</span> mountNode <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;elm-app&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="co">// The third value on embed are the initial values for incomming ports into Elm</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="kw">var</span> app <span class="op">=</span> <span class="va">Elm</span>.<span class="va">Main</span>.<span class="at">embed</span>(mountNode)<span class="op">;</span></a></code></pre>
+    </div>
+    <h3 id="installing-configuring-webpack">Installing &amp; configuring webpack</h3>
+    <p>Let’s create a <code>package.json</code> using <code>npm init</code> command and then install the webpack and
+      other dependencies.</p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">npm</span> install --save elm-webpack-loader webpack webpack-dev-server</a></code></pre>
+    </div>
+    <p>Now let’s configure the webapack with <code>elm-webpack-loader</code>.</p>
+    <div class="sourceCode" id="cb9">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// webpack.config.js</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="dt">entry</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-4" title="4">    <span class="dt">app</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb9-5" title="5">      <span class="st">&#39;./index.js&#39;</span></a>
+<a class="sourceLine" id="cb9-6" title="6">    ]</a>
+<a class="sourceLine" id="cb9-7" title="7">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-8" title="8"></a>
+<a class="sourceLine" id="cb9-9" title="9">  <span class="dt">output</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-10" title="10">    <span class="dt">filename</span><span class="op">:</span> <span class="st">&#39;[name].js&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-11" title="11">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-12" title="12"></a>
+<a class="sourceLine" id="cb9-13" title="13">  <span class="dt">module</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-14" title="14">    <span class="dt">loaders</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb9-15" title="15">      <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-16" title="16">        <span class="dt">test</span><span class="op">:</span>    <span class="ss">/</span><span class="sc">\.</span><span class="ss">elm</span><span class="sc">$</span><span class="ss">/</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-17" title="17">        <span class="dt">exclude</span><span class="op">:</span> [<span class="ss">/elm-stuff/</span><span class="op">,</span> <span class="ss">/node_modules/</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-18" title="18">        <span class="dt">loader</span><span class="op">:</span>  <span class="st">&#39;elm-webpack-loader?verbose=true&amp;warn=true&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-19" title="19">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-20" title="20">    ]<span class="op">,</span></a>
+<a class="sourceLine" id="cb9-21" title="21"></a>
+<a class="sourceLine" id="cb9-22" title="22">    <span class="dt">noParse</span><span class="op">:</span> <span class="ss">/</span><span class="sc">\.</span><span class="ss">elm</span><span class="sc">$</span><span class="ss">/</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-23" title="23">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-24" title="24"></a>
+<a class="sourceLine" id="cb9-25" title="25">  <span class="dt">devServer</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-26" title="26">    <span class="dt">inline</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-27" title="27">    <span class="dt">stats</span><span class="op">:</span> <span class="op">{</span> <span class="dt">colors</span><span class="op">:</span> <span class="kw">true</span> <span class="op">},</span></a>
+<a class="sourceLine" id="cb9-28" title="28">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb9-29" title="29"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>Now we are done with configuring webpack with elm loader, Let’s see this in action by executing the command</p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">./node_modules/.bin/webpack-dev-server</span></a></code></pre>
+    </div>
+    <p>and open the <code>http://localhost:8081/</code> in the browser.</p>
+    <figure>
+      <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/elm-webpack/elm-counter-webpack.png"
+        alt="elm counter app in browser" />
+      <figcaption>elm counter app in browser</figcaption>
+    </figure>

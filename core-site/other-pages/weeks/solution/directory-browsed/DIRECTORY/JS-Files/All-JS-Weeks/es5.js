@@ -590,15 +590,16 @@ test('DayFromYear', function (t) {
 
 test('TimeFromYear', function (t) {
 	for (var i = 1900; i < 2100; i += 1) {
-		t.equal(ES.TimeFromYear(i), Date.UTC(i, 0, 1), 'TimeFromYear matches a Date object’s year: ' + i);
+		t.equal( ES.TimeFromYear( i ), Date.UTC( i, 0, 1 ), 'TimeFromYear matches a Date object'
+		    s year: ' + i);
 	}
 	t.end();
 });
 
 test('YearFromTime', function (t) {
 	for (var i = 1900; i < 2100; i += 1) {
-		t.equal(ES.YearFromTime(Date.UTC(i, 0, 1)), i, 'YearFromTime matches a Date object’s year on 1/1: ' + i);
-		t.equal(ES.YearFromTime(Date.UTC(i, 10, 1)), i, 'YearFromTime matches a Date object’s year on 10/1: ' + i);
+		t.equal(ES.YearFromTime(Date.UTC(i, 0, 1)), i, 'YearFromTime matches a Date object's year on 1/1: ' + i);
+		t.equal(ES.YearFromTime(Date.UTC(i, 10, 1)), i, 'YearFromTime matches a Date object's year on 10/1: ' + i);
 	}
 	t.end();
 });

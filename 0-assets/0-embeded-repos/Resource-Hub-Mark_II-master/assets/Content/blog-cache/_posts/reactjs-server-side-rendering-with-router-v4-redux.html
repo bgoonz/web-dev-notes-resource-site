@@ -1,0 +1,554 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>This is post is originally published on <a
+        href="http://crypt.codemancers.com/posts/2017-06-03-reactjs-server-side-rendering-with-router-v4-and-redux/">crypt.codemancers.com</a>.
+    </p>
+    <hr />
+    <p>When I wrote <a href="http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/">React.js:
+        Server side rendering</a> a few months back, I used react router v3.0.2. But ever since react router released
+      v4, which is a total rewrite into a declarative format, the old blog post won’t work with react router v4. So I
+      decided to write a new blog as 2nd part of it which uses <a
+        href="https://github.com/ReactTraining/react-router/tree/v4.1.1">react router v4</a> along with <a
+        href="http://redux.js.org/">redux</a>.</p>
+    <p>Since we already have a blog post explaining the initial setup, I will be skipping the repeated steps needed here
+      but will add the new updates need to use the new router.</p>
+    <h3 id="major-router-updates">Major Router Updates</h3>
+    <p>Major changes in React Router v4 are</p>
+    <ul>
+      <li>Declarative routing</li>
+      <li>No more central routes config</li>
+      <li>Separate packages for web &amp; native</li>
+      <li>No <code>onEnter</code> or <code>onChange</code> hooks/callbacks, instead use component lifecycle hooks</li>
+    </ul>
+    <h3 id="adding-react-router-v4-to-our-application">Adding React Router v4 to our application</h3>
+    <p>Since react router has separate packages for web and native, let go with installing the package needed for the
+      web.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> i --save react-router-dom react-router-config</a></code></pre>
+    </div>
+    <p><code>react-router-config</code> package will have configuration helpers to use with <code>StaticRouter</code>
+      for server side rendering. If your application already has <code>react-router</code> package, I recommend you to
+      remove it and use only the above ones.</p>
+    <h3 id="adding-redux-to-our-application">Adding Redux to our application</h3>
+    <p>Let add the redux packages need for our application. Since this demo contains async actions we will add
+      <code>redux-thunk</code> package as well.
+    </p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">npm</span> i --save redux react-redux redux-thunk</a></code></pre>
+    </div>
+    <p>If you are not familiar with the redux setup you can follow my previous blog on <a
+        href="http://blog.revathskumar.com/2016/02/redux.html">Getting started with redux</a>.</p>
+    <p>Also, let’s install <code>isomorphic-fetch</code> so we can use <code>fetch</code> on both server and client.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">npm</span> i --save isomorphic-fetch</a></code></pre>
+    </div>
+    <h3 id="setup-react-router">Setup React Router</h3>
+    <p>Setting up the Router will start with defining the routes.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// client/routes.js</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="im">import</span> AppRoot <span class="im">from</span> <span class="st">&#39;./app-root&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="im">import</span> Home <span class="im">from</span> <span class="st">&#39;./home&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="im">import</span> List <span class="im">from</span> <span class="st">&#39;./list&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw">const</span> routes <span class="op">=</span> [</a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="op">{</span> <span class="dt">component</span><span class="op">:</span> AppRoot<span class="op">,</span></a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="dt">routes</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb4-10" title="10">      <span class="op">{</span> <span class="dt">path</span><span class="op">:</span> <span class="st">&#39;/&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-11" title="11">        <span class="dt">exact</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-12" title="12">        <span class="dt">component</span><span class="op">:</span> Home</a>
+<a class="sourceLine" id="cb4-13" title="13">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-14" title="14">      <span class="op">{</span> <span class="dt">path</span><span class="op">:</span> <span class="st">&#39;/home&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-15" title="15">        <span class="dt">component</span><span class="op">:</span> Home</a>
+<a class="sourceLine" id="cb4-16" title="16">      <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-17" title="17">      <span class="op">{</span> <span class="dt">path</span><span class="op">:</span> <span class="st">&#39;/list&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-18" title="18">        <span class="dt">component</span><span class="op">:</span> List</a>
+<a class="sourceLine" id="cb4-19" title="19">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-20" title="20">    ]</a>
+<a class="sourceLine" id="cb4-21" title="21">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-22" title="22">]<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-23" title="23"></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="im">export</span> <span class="im">default</span> routes<span class="op">;</span></a></code></pre>
+    </div>
+    <p>And load the routes on client side like</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// client/app.jsx</span></a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="im">import</span> <span class="op">{</span>render<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="im">import</span> BrowserRouter <span class="im">from</span> <span class="st">&#39;react-router-dom/BrowserRouter&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="im">import</span> <span class="op">{</span> renderRoutes <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-config&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-8" title="8"></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="im">import</span> <span class="op">{</span> createStore<span class="op">,</span> applyMiddleware <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="im">import</span> <span class="op">{</span> Provider <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="im">import</span> thunk <span class="im">from</span> <span class="st">&#39;redux-thunk&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-12" title="12"></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="im">import</span> routes <span class="im">from</span> <span class="st">&#39;./routes&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="im">import</span> reducers <span class="im">from</span> <span class="st">&#39;./modules&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-15" title="15"></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="kw">const</span> store <span class="op">=</span> <span class="at">createStore</span>(</a>
+<a class="sourceLine" id="cb5-17" title="17">  reducers<span class="op">,</span> <span class="va">window</span>.<span class="at">__INITIAL_STATE__</span><span class="op">,</span> <span class="at">applyMiddleware</span>(thunk)</a>
+<a class="sourceLine" id="cb5-18" title="18">)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-19" title="19"></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="kw">const</span> AppRouter <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-21" title="21">  <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb5-22" title="22">    <span class="op">&lt;</span>Provider store<span class="op">={</span>store<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb5-23" title="23">      <span class="op">&lt;</span>BrowserRouter<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-24" title="24">        <span class="op">{</span><span class="at">renderRoutes</span>(routes)<span class="op">}</span></a>
+<a class="sourceLine" id="cb5-25" title="25">      &lt;/BrowserRouter<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-26" title="26">    &lt;/Provider<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb5-27" title="27">  )</a>
+<a class="sourceLine" id="cb5-28" title="28"><span class="op">}</span></a>
+<a class="sourceLine" id="cb5-29" title="29"></a>
+<a class="sourceLine" id="cb5-30" title="30"><span class="at">render</span>(<span class="op">&lt;</span>AppRouter /<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;#app&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Here <code>&lt;BrowserRouter&gt;</code> is a new component provided by react router which uses HTML5 history API.
+      The above setup is used only on client side. For server side rendering we will be using
+      <code>&lt;StaticRouter&gt;</code> component.
+    </p>
+    <h3 id="render-static-component-on-server">Render static component on Server</h3>
+    <p>As same as PART 1, we have a <code>/home</code> route which will render some HTML. No dynamic content or data
+      from API. Even though our <code>Home</code> component is same, we have a different setup on
+      <code>routes/index.jsx</code>.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// routes/index.jsx</span></a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="im">import</span> express <span class="im">from</span> <span class="st">&#39;express&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="im">import</span> request <span class="im">from</span> <span class="st">&#39;request&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="im">import</span> <span class="op">{</span> renderToString <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom/server&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-8" title="8"></a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="im">import</span> StaticRouter <span class="im">from</span> <span class="st">&#39;react-router-dom/StaticRouter&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="im">import</span> <span class="op">{</span> renderRoutes <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-config&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-11" title="11"></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="im">import</span> routes <span class="im">from</span> <span class="st">&#39;../client/routes&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-13" title="13"></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="kw">const</span> router <span class="op">=</span> <span class="va">express</span>.<span class="at">Router</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-15" title="15"></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-17" title="17">  <span class="kw">let</span> context <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb6-18" title="18">  <span class="kw">const</span> content <span class="op">=</span> <span class="at">renderToString</span>(</a>
+<a class="sourceLine" id="cb6-19" title="19">    <span class="op">&lt;</span>StaticRouter location<span class="op">={</span><span class="va">req</span>.<span class="at">url</span><span class="op">}</span> context<span class="op">={</span>context<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb6-20" title="20">      <span class="op">{</span><span class="at">renderRoutes</span>(routes)<span class="op">}</span></a>
+<a class="sourceLine" id="cb6-21" title="21">    &lt;/StaticRouter<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-22" title="22">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-23" title="23">  <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Express&#39;</span><span class="op">,</span> <span class="dt">data</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> content <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-24" title="24"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb6-25" title="25"></a>
+<a class="sourceLine" id="cb6-26" title="26"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></a></code></pre>
+    </div>
+    <h3 id="render-component-with-data">Render component with data</h3>
+    <p>Now when it comes to rendering component with data, we need to make some changes to the express route, setup
+      redux store and add static method on a component to fetch the data and update the store.</p>
+    <p>Since we are using <code>redux</code> we need to setup <code>reducer</code> &amp; <code>action</code> to fetch
+      the user details from API. Here I will be using <a
+        href="https://github.com/erikras/ducks-modular-redux">erikras/ducks-modular-redux</a> pattern, so the constants,
+      reducer &amp; actions will be available in a single file.</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// client/modules/users.js</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="im">import</span> <span class="st">&#39;isomorphic-fetch&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="im">export</span> <span class="kw">const</span> USERS_LOADED <span class="op">=</span> <span class="st">&#39;@ssr/users/loaded&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="kw">const</span> initialState <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="dt">items</span><span class="op">:</span> []</a>
+<a class="sourceLine" id="cb7-9" title="9"><span class="op">};</span></a>
+<a class="sourceLine" id="cb7-10" title="10"></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="at">reducer</span>(state <span class="op">=</span> initialState<span class="op">,</span> action) <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-12" title="12">  <span class="cf">switch</span> (<span class="va">action</span>.<span class="at">type</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-13" title="13">    <span class="cf">case</span> <span class="dt">USERS_LOADED</span><span class="op">:</span></a>
+<a class="sourceLine" id="cb7-14" title="14">      <span class="cf">return</span> <span class="va">Object</span>.<span class="at">assign</span>(<span class="op">{},</span> state<span class="op">,</span> <span class="op">{</span> <span class="dt">items</span><span class="op">:</span> <span class="va">action</span>.<span class="at">items</span> <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-15" title="15">  </a>
+<a class="sourceLine" id="cb7-16" title="16">    <span class="cf">default</span><span class="op">:</span></a>
+<a class="sourceLine" id="cb7-17" title="17">      <span class="cf">return</span> state<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb7-19" title="19"><span class="op">}</span></a>
+<a class="sourceLine" id="cb7-20" title="20"></a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="im">export</span> <span class="kw">const</span> fetchUsers <span class="op">=</span> () <span class="kw">=&gt;</span> (dispatch) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-22" title="22">  <span class="cf">return</span> <span class="at">fetch</span>(<span class="st">&#39;//jsonplaceholder.typicode.com/users&#39;</span>)</a>
+<a class="sourceLine" id="cb7-23" title="23">    .<span class="at">then</span>(res <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-24" title="24">      <span class="cf">return</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-25" title="25">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb7-26" title="26">    .<span class="at">then</span>(users <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-27" title="27">      <span class="at">dispatch</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb7-28" title="28">        <span class="dt">type</span><span class="op">:</span> USERS_LOADED<span class="op">,</span></a>
+<a class="sourceLine" id="cb7-29" title="29">        <span class="dt">items</span><span class="op">:</span> users</a>
+<a class="sourceLine" id="cb7-30" title="30">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-31" title="31">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb7-32" title="32"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>Now let’s modify the <code>List</code> component to use the <code>fetchUsers</code> action and also add a
+      <code>fetchData</code> static method which can be used on the server.
+    </p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// client/list.jsx</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>Component<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="im">import</span> PropTypes <span class="im">from</span> <span class="st">&#39;prop-types&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="im">import</span> <span class="op">{</span> bindActionCreators <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="im">import</span> <span class="op">{</span> connect <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-7" title="7"></a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="im">import</span> <span class="op">{</span> fetchUsers <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./modules/users&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10"><span class="kw">class</span> List <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-11" title="11">  <span class="kw">static</span> <span class="at">fetchData</span>(store) <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-12" title="12">    <span class="cf">return</span> <span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">fetchUsers</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-13" title="13">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-14" title="14"></a>
+<a class="sourceLine" id="cb8-15" title="15">  <span class="at">componentDidMount</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-16" title="16">    <span class="kw">this</span>.<span class="va">props</span>.<span class="at">fetchUsers</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-17" title="17">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-18" title="18"></a>
+<a class="sourceLine" id="cb8-19" title="19">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-20" title="20">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb8-21" title="21">      <span class="op">&lt;</span>div <span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-22" title="22">        <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-23" title="23">          <span class="kw">this</span>.<span class="va">props</span>.<span class="va">items</span>.<span class="at">map</span>(item <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-24" title="24">            <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb8-25" title="25">              <span class="op">&lt;</span>div key<span class="op">={</span><span class="va">item</span>.<span class="at">id</span><span class="op">}</span> <span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-26" title="26">                <span class="op">&lt;</span>span<span class="op">&gt;{</span><span class="va">item</span>.<span class="at">name</span><span class="op">}</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-27" title="27">              &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-28" title="28">            )</a>
+<a class="sourceLine" id="cb8-29" title="29">          <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb8-30" title="30">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-31" title="31">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-32" title="32">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-33" title="33">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-34" title="34"><span class="op">}</span></a>
+<a class="sourceLine" id="cb8-35" title="35"></a>
+<a class="sourceLine" id="cb8-36" title="36"><span class="kw">const</span> mapStateToProps <span class="op">=</span> (state) <span class="kw">=&gt;</span> (<span class="op">{</span><span class="dt">items</span><span class="op">:</span> <span class="va">state</span>.<span class="va">users</span>.<span class="at">items</span><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-37" title="37"><span class="kw">const</span> mapDispatchToProps <span class="op">=</span> (dispatch) <span class="kw">=&gt;</span> </a>
+<a class="sourceLine" id="cb8-38" title="38">  <span class="at">bindActionCreators</span>(<span class="op">{</span> fetchUsers <span class="op">},</span> dispatch)<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-39" title="39"></a>
+<a class="sourceLine" id="cb8-40" title="40"><span class="im">export</span> <span class="im">default</span> <span class="at">connect</span>(mapStateToProps<span class="op">,</span> mapDispatchToProps)(List)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now the updates for the express route.</p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// routes/index.jsx</span></a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="im">import</span> express <span class="im">from</span> <span class="st">&#39;express&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="im">import</span> request <span class="im">from</span> <span class="st">&#39;request&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-5" title="5"></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>Component<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="im">import</span> <span class="op">{</span>renderToString<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom/server&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-8" title="8"></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="im">import</span> StaticRouter <span class="im">from</span> <span class="st">&#39;react-router-dom/StaticRouter&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="im">import</span> <span class="op">{</span> matchRoutes<span class="op">,</span> renderRoutes <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-config&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="im">import</span> <span class="op">{</span> createStore<span class="op">,</span> applyMiddleware <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;redux&#39;</span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="im">import</span> <span class="op">{</span> Provider <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-redux&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="im">import</span> thunk <span class="im">from</span> <span class="st">&#39;redux-thunk&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-15" title="15"></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="im">import</span> routes <span class="im">from</span> <span class="st">&#39;../client/routes&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="im">import</span> reducers <span class="im">from</span> <span class="st">&#39;../client/modules&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-18" title="18"></a>
+<a class="sourceLine" id="cb9-19" title="19"><span class="co">/*eslint-disable*/</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="kw">const</span> router <span class="op">=</span> <span class="va">express</span>.<span class="at">Router</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-21" title="21"><span class="co">/*eslint-enable*/</span></a>
+<a class="sourceLine" id="cb9-22" title="22"></a>
+<a class="sourceLine" id="cb9-23" title="23"><span class="kw">const</span> store <span class="op">=</span> <span class="at">createStore</span>(reducers<span class="op">,</span> <span class="at">applyMiddleware</span>(thunk))<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-24" title="24"></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-26" title="26">  <span class="kw">const</span> branch <span class="op">=</span> <span class="at">matchRoutes</span>(routes<span class="op">,</span> <span class="va">req</span>.<span class="at">url</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-27" title="27">  <span class="kw">const</span> promises <span class="op">=</span> <span class="va">branch</span>.<span class="at">map</span>((<span class="op">{</span>route<span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-28" title="28">    <span class="kw">let</span> fetchData <span class="op">=</span> <span class="va">route</span>.<span class="va">component</span>.<span class="at">fetchData</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb9-29" title="29">    <span class="cf">return</span> fetchData <span class="kw">instanceof</span> Function <span class="op">?</span> <span class="at">fetchData</span>(store) : <span class="va">Promise</span>.<span class="at">resolve</span>(<span class="kw">null</span>)</a>
+<a class="sourceLine" id="cb9-30" title="30">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-31" title="31">  <span class="cf">return</span> <span class="va">Promise</span>.<span class="at">all</span>(promises).<span class="at">then</span>((data) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb9-32" title="32">    <span class="kw">let</span> context <span class="op">=</span> <span class="op">{};</span></a>
+<a class="sourceLine" id="cb9-33" title="33">    <span class="kw">const</span> content <span class="op">=</span> <span class="at">renderToString</span>(</a>
+<a class="sourceLine" id="cb9-34" title="34">      <span class="op">&lt;</span>Provider store<span class="op">={</span>store<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb9-35" title="35">        <span class="op">&lt;</span>StaticRouter location<span class="op">={</span><span class="va">req</span>.<span class="at">url</span><span class="op">}</span> context<span class="op">={</span>context<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb9-36" title="36">          <span class="op">{</span><span class="at">renderRoutes</span>(routes)<span class="op">}</span></a>
+<a class="sourceLine" id="cb9-37" title="37">        &lt;/StaticRouter<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb9-38" title="38">      &lt;/Provider<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb9-39" title="39">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-40" title="40">    <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Express&#39;</span><span class="op">,</span> <span class="dt">data</span><span class="op">:</span> <span class="va">store</span>.<span class="at">getState</span>()<span class="op">,</span> content <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-41" title="41">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-42" title="42"><span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-43" title="43"></a>
+<a class="sourceLine" id="cb9-44" title="44"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></a></code></pre>
+    </div>
+    <p>In the above snippet, <code>matchRoutes</code> will filter the routes and components needed to render the given
+      URL. Once we have the list of routes for the given URL, we can map through each and check whether it has a static
+      method named <code>fetchData</code>. If the component has the fetchData method, then execute those else return a
+      null promise.</p>
+    <p>Once we collect all the promises, executed and updated the store, we can render the component using
+      <code>&lt;StaticRouter&gt;</code> component and return the <code>data</code> and compiled HTML to the client.
+    </p>
+    <p>Now when we navigate to <code>/list</code>, the route we can see the list of users rendered from the server.</p>
+    <h3 id="handling-404">Handling 404</h3>
+    <p>Next, let’s see how to handle the 404. In this case just rendering the <code>NotFound</code> component is not
+      enough, we have to return back appropriate status code to the client as well.</p>
+    <p>Let’s start with adding <code>NotFound</code> component</p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// client/notfound.jsx</span></a>
+<a class="sourceLine" id="cb10-2" title="2"></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="im">import</span> <span class="op">{</span> Route <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-dom&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-5" title="5"></a>
+<a class="sourceLine" id="cb10-6" title="6"><span class="kw">const</span> NotFound <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-7" title="7">  <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb10-8" title="8">    <span class="op">&lt;</span>Route render<span class="op">={</span>(<span class="op">{</span> staticContext <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-9" title="9">      <span class="cf">if</span> (staticContext) <span class="op">{</span></a>
+<a class="sourceLine" id="cb10-10" title="10">        <span class="va">staticContext</span>.<span class="at">status</span> <span class="op">=</span> <span class="dv">404</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-11" title="11">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb10-12" title="12">      <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb10-13" title="13">        <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb10-14" title="14">          <span class="op">&lt;</span>h1<span class="op">&gt;</span><span class="dv">404</span> <span class="op">:</span> Not Found&lt;/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb10-15" title="15">        &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb10-16" title="16">      )</a>
+<a class="sourceLine" id="cb10-17" title="17">    <span class="op">}}</span>/&gt;</a>
+<a class="sourceLine" id="cb10-18" title="18">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb10-19" title="19"><span class="op">};</span></a>
+<a class="sourceLine" id="cb10-20" title="20"></a>
+<a class="sourceLine" id="cb10-21" title="21"><span class="im">export</span> <span class="im">default</span> NotFound<span class="op">;</span></a></code></pre>
+    </div>
+    <p>In <code>NotFound</code> component, rendering some 404 message is not enough. We should be setting the status on
+      <code>staticContext</code> so that when rendering on the server we can access the status on the
+      <code>context</code> object we passed.
+    </p>
+    <p>Remember <code>staticContext</code> will be available only on the server, so make sure we guard the setting of
+      status with <code>if</code> condition.</p>
+    <p>next, we add the route to handle 404.</p>
+    <div class="sourceCode" id="cb11">
+      <pre class="sourceCode diff"><code class="sourceCode diff"><a class="sourceLine" id="cb11-1" title="1">// client/routes.js</a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3">import AppRoot from &#39;./app-root&#39;;</a>
+<a class="sourceLine" id="cb11-4" title="4">import Home from &#39;./home&#39;;</a>
+<a class="sourceLine" id="cb11-5" title="5">import List from &#39;./list&#39;;</a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="va">+import NotFound from &#39;./notfound&#39;;</span></a>
+<a class="sourceLine" id="cb11-7" title="7"></a>
+<a class="sourceLine" id="cb11-8" title="8">const routes = [</a>
+<a class="sourceLine" id="cb11-9" title="9">  { component: AppRoot,</a>
+<a class="sourceLine" id="cb11-10" title="10">    routes: [</a>
+<a class="sourceLine" id="cb11-11" title="11">     { path: &#39;/&#39;,</a>
+<a class="sourceLine" id="cb11-12" title="12">        exact: true,</a>
+<a class="sourceLine" id="cb11-13" title="13">        component: Home</a>
+<a class="sourceLine" id="cb11-14" title="14">      },</a>
+<a class="sourceLine" id="cb11-15" title="15">      { path: &#39;/home&#39;,</a>
+<a class="sourceLine" id="cb11-16" title="16">        component: Home</a>
+<a class="sourceLine" id="cb11-17" title="17">      },</a>
+<a class="sourceLine" id="cb11-18" title="18">      { path: &#39;/list&#39;,</a>
+<a class="sourceLine" id="cb11-19" title="19">        component: List</a>
+<a class="sourceLine" id="cb11-20" title="20">      }</a>
+<a class="sourceLine" id="cb11-21" title="21"><span class="va">+     {</span></a>
+<a class="sourceLine" id="cb11-22" title="22"><span class="va">+       path: &#39;*&#39;,</span></a>
+<a class="sourceLine" id="cb11-23" title="23"><span class="va">+       component: NotFound</span></a>
+<a class="sourceLine" id="cb11-24" title="24"><span class="va">+     }</span></a>
+<a class="sourceLine" id="cb11-25" title="25">    ]</a>
+<a class="sourceLine" id="cb11-26" title="26">  }</a>
+<a class="sourceLine" id="cb11-27" title="27">];</a>
+<a class="sourceLine" id="cb11-28" title="28"></a>
+<a class="sourceLine" id="cb11-29" title="29">export default routes;</a></code></pre>
+    </div>
+    <p>Now we need to update the <code>express</code> routes to set the response status as 404.</p>
+    <div class="sourceCode" id="cb12">
+      <pre class="sourceCode diff"><code class="sourceCode diff"><a class="sourceLine" id="cb12-1" title="1">// routes/index.jsx</a>
+<a class="sourceLine" id="cb12-2" title="2"></a>
+<a class="sourceLine" id="cb12-3" title="3">import express from &#39;express&#39;;</a>
+<a class="sourceLine" id="cb12-4" title="4">import request from &#39;request&#39;;</a>
+<a class="sourceLine" id="cb12-5" title="5"></a>
+<a class="sourceLine" id="cb12-6" title="6">import React, {Component} from &#39;react&#39;;</a>
+<a class="sourceLine" id="cb12-7" title="7">import {renderToString} from &#39;react-dom/server&#39;;</a>
+<a class="sourceLine" id="cb12-8" title="8"></a>
+<a class="sourceLine" id="cb12-9" title="9">import StaticRouter from &#39;react-router-dom/StaticRouter&#39;;</a>
+<a class="sourceLine" id="cb12-10" title="10">import { matchRoutes, renderRoutes } from &#39;react-router-config&#39;;</a>
+<a class="sourceLine" id="cb12-11" title="11"></a>
+<a class="sourceLine" id="cb12-12" title="12">import { createStore, applyMiddleware } from &#39;redux&#39;</a>
+<a class="sourceLine" id="cb12-13" title="13">import { Provider } from &#39;react-redux&#39;;</a>
+<a class="sourceLine" id="cb12-14" title="14">import thunk from &#39;redux-thunk&#39;;</a>
+<a class="sourceLine" id="cb12-15" title="15"></a>
+<a class="sourceLine" id="cb12-16" title="16">import routes from &#39;../client/routes&#39;;</a>
+<a class="sourceLine" id="cb12-17" title="17">import reducers from &#39;../client/modules&#39;;</a>
+<a class="sourceLine" id="cb12-18" title="18"></a>
+<a class="sourceLine" id="cb12-19" title="19">const router = express.Router();</a>
+<a class="sourceLine" id="cb12-20" title="20"></a>
+<a class="sourceLine" id="cb12-21" title="21">const store = createStore(reducers, applyMiddleware(thunk));</a>
+<a class="sourceLine" id="cb12-22" title="22"></a>
+<a class="sourceLine" id="cb12-23" title="23">router.get(&#39;*&#39;, (req, res) =&gt; {</a>
+<a class="sourceLine" id="cb12-24" title="24">  const branch = matchRoutes(routes, req.url);</a>
+<a class="sourceLine" id="cb12-25" title="25">  const promises = branch.map(({route}) =&gt; {</a>
+<a class="sourceLine" id="cb12-26" title="26">    let fetchData = route.component.fetchData;</a>
+<a class="sourceLine" id="cb12-27" title="27">    return fetchData instanceof Function ? fetchData(store) : Promise.resolve(null)</a>
+<a class="sourceLine" id="cb12-28" title="28">  });</a>
+<a class="sourceLine" id="cb12-29" title="29">  return Promise.all(promises).then((data) =&gt; {</a>
+<a class="sourceLine" id="cb12-30" title="30">    let context = {};</a>
+<a class="sourceLine" id="cb12-31" title="31">    const content = renderToString(</a>
+<a class="sourceLine" id="cb12-32" title="32">      &lt;Provider store={store}&gt;</a>
+<a class="sourceLine" id="cb12-33" title="33">        &lt;StaticRouter location={req.url} context={context}&gt;</a>
+<a class="sourceLine" id="cb12-34" title="34">          {renderRoutes(routes)}</a>
+<a class="sourceLine" id="cb12-35" title="35">        &lt;/StaticRouter&gt;</a>
+<a class="sourceLine" id="cb12-36" title="36">      &lt;/Provider&gt;</a>
+<a class="sourceLine" id="cb12-37" title="37">    );</a>
+<a class="sourceLine" id="cb12-38" title="38"><span class="va">+   if(context.status === 404) {</span></a>
+<a class="sourceLine" id="cb12-39" title="39"><span class="va">+     res.status(404);</span></a>
+<a class="sourceLine" id="cb12-40" title="40"><span class="va">+   }</span></a>
+<a class="sourceLine" id="cb12-41" title="41">    res.render(&#39;index&#39;, {title: &#39;Express&#39;, data: store.getState(), content });</a>
+<a class="sourceLine" id="cb12-42" title="42">  });</a>
+<a class="sourceLine" id="cb12-43" title="43">});</a>
+<a class="sourceLine" id="cb12-44" title="44"></a>
+<a class="sourceLine" id="cb12-45" title="45">module.exports = router;</a></code></pre>
+    </div>
+    <h3 id="handling-redirects">Handling Redirects</h3>
+    <p>After handling 404, now we can handle redirects in a similar way. For redirects, we will be using
+      <code>&lt;Redirect&gt;</code> component from react router. To show the redirection we will be redirecting
+      <code>/list</code> route to a new route <code>/users</code> where we will list the users from API.
+    </p>
+    <p>For this, we will define a new component <code>ListToUsers</code> which utilises <code>&lt;Redirect&gt;</code>.
+    </p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="co">// client/listtousers.jsx</span></a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="im">import</span> <span class="op">{</span> Route<span class="op">,</span> Redirect <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-dom&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-5" title="5"></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="kw">const</span> ListToUsers <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-7" title="7">  <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb13-8" title="8">    <span class="op">&lt;</span>Route render<span class="op">={</span>(<span class="op">{</span> staticContext <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-9" title="9">      <span class="cf">if</span> (staticContext) <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-10" title="10">        <span class="va">staticContext</span>.<span class="at">status</span> <span class="op">=</span> <span class="dv">302</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-11" title="11">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb13-12" title="12">      <span class="cf">return</span> <span class="op">&lt;</span>Redirect <span class="im">from</span><span class="op">=</span><span class="st">&quot;/list&quot;</span> to<span class="op">=</span><span class="st">&quot;/users&quot;</span> /&gt;</a>
+<a class="sourceLine" id="cb13-13" title="13">    <span class="op">}}</span>/&gt;</a>
+<a class="sourceLine" id="cb13-14" title="14">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-15" title="15"><span class="op">};</span></a>
+<a class="sourceLine" id="cb13-16" title="16"></a>
+<a class="sourceLine" id="cb13-17" title="17"><span class="im">export</span> <span class="im">default</span> ListToUsers<span class="op">;</span></a></code></pre>
+    </div>
+    <p>As we did in handling <code>404</code>, here as well we need to set the status on <code>staticContext</code> to
+      <strong>302</strong> or <strong>301</strong> as per your need. Here I am using <strong>302</strong>.
+    </p>
+    <p>Now let’s update the <code>routes</code>.</p>
+    <div class="sourceCode" id="cb14">
+      <pre class="sourceCode diff"><code class="sourceCode diff"><a class="sourceLine" id="cb14-1" title="1">// client/routes.js</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3">import AppRoot from &#39;./app-root&#39;;</a>
+<a class="sourceLine" id="cb14-4" title="4">import Home from &#39;./home&#39;;</a>
+<a class="sourceLine" id="cb14-5" title="5">import List from &#39;./list&#39;;</a>
+<a class="sourceLine" id="cb14-6" title="6">import NotFound from &#39;./notfound&#39;;</a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="va">+import ListToUsers from &#39;./listtousers&#39;;</span></a>
+<a class="sourceLine" id="cb14-8" title="8"></a>
+<a class="sourceLine" id="cb14-9" title="9">const routes = [</a>
+<a class="sourceLine" id="cb14-10" title="10">  { component: AppRoot,</a>
+<a class="sourceLine" id="cb14-11" title="11">    routes: [</a>
+<a class="sourceLine" id="cb14-12" title="12">     { path: &#39;/&#39;,</a>
+<a class="sourceLine" id="cb14-13" title="13">        exact: true,</a>
+<a class="sourceLine" id="cb14-14" title="14">        component: Home</a>
+<a class="sourceLine" id="cb14-15" title="15">      },</a>
+<a class="sourceLine" id="cb14-16" title="16">      { path: &#39;/home&#39;,</a>
+<a class="sourceLine" id="cb14-17" title="17">        component: Home</a>
+<a class="sourceLine" id="cb14-18" title="18">      },</a>
+<a class="sourceLine" id="cb14-19" title="19"><span class="va">+     { path: &#39;/list&#39;,</span></a>
+<a class="sourceLine" id="cb14-20" title="20"><span class="va">+       component: ListToUsers</span></a>
+<a class="sourceLine" id="cb14-21" title="21"><span class="va">+     }</span></a>
+<a class="sourceLine" id="cb14-22" title="22"><span class="va">+     { path: &#39;/users&#39;,</span></a>
+<a class="sourceLine" id="cb14-23" title="23"><span class="va">+       component: List</span></a>
+<a class="sourceLine" id="cb14-24" title="24"><span class="va">+     }</span></a>
+<a class="sourceLine" id="cb14-25" title="25">      {</a>
+<a class="sourceLine" id="cb14-26" title="26">        path: &#39;*&#39;,</a>
+<a class="sourceLine" id="cb14-27" title="27">        component: NotFound</a>
+<a class="sourceLine" id="cb14-28" title="28">      }</a>
+<a class="sourceLine" id="cb14-29" title="29">    ]</a>
+<a class="sourceLine" id="cb14-30" title="30">  }</a>
+<a class="sourceLine" id="cb14-31" title="31">];</a>
+<a class="sourceLine" id="cb14-32" title="32"></a>
+<a class="sourceLine" id="cb14-33" title="33">export default routes;</a></code></pre>
+    </div>
+    <p>Next, make necessary changes for express routes so it will perform redirect</p>
+    <div class="sourceCode" id="cb15">
+      <pre class="sourceCode diff"><code class="sourceCode diff"><a class="sourceLine" id="cb15-1" title="1">// routes/index.jsx</a>
+<a class="sourceLine" id="cb15-2" title="2"></a>
+<a class="sourceLine" id="cb15-3" title="3">// All neeeded imports</a>
+<a class="sourceLine" id="cb15-4" title="4"></a>
+<a class="sourceLine" id="cb15-5" title="5">router.get(&#39;*&#39;, (req, res) =&gt; {</a>
+<a class="sourceLine" id="cb15-6" title="6">  const branch = matchRoutes(routes, req.url);</a>
+<a class="sourceLine" id="cb15-7" title="7">  const promises = branch.map(({route}) =&gt; {</a>
+<a class="sourceLine" id="cb15-8" title="8">    let fetchData = route.component.fetchData;</a>
+<a class="sourceLine" id="cb15-9" title="9">    return fetchData instanceof Function ? fetchData(store) : Promise.resolve(null)</a>
+<a class="sourceLine" id="cb15-10" title="10">  });</a>
+<a class="sourceLine" id="cb15-11" title="11">  return Promise.all(promises).then((data) =&gt; {</a>
+<a class="sourceLine" id="cb15-12" title="12">    </a>
+<a class="sourceLine" id="cb15-13" title="13">    // render component to string</a>
+<a class="sourceLine" id="cb15-14" title="14"></a>
+<a class="sourceLine" id="cb15-15" title="15"><span class="va">+   if (context.status === 302) {</span></a>
+<a class="sourceLine" id="cb15-16" title="16"><span class="va">+     return res.redirect(302, context.url);</span></a>
+<a class="sourceLine" id="cb15-17" title="17"><span class="va">+   }</span></a>
+<a class="sourceLine" id="cb15-18" title="18">    res.render(&#39;index&#39;, {title: &#39;Express&#39;, data: store.getState(), content });</a>
+<a class="sourceLine" id="cb15-19" title="19">  });</a>
+<a class="sourceLine" id="cb15-20" title="20">});</a>
+<a class="sourceLine" id="cb15-21" title="21"></a>
+<a class="sourceLine" id="cb15-22" title="22">module.exports = router;</a></code></pre>
+    </div>
+    <p>Now we have a fully functional server rendered react application.</p>
+    <p>The demo app is available on <a
+        href="https://github.com/revathskumar/react-server-render/tree/react-router-v4-redux">github</a> and working
+      demo can be found in <a href="https://server-render-hzoyerpkgh.now.sh">now.sh</a></p>
+
+  </body>
+
+  
+</html>

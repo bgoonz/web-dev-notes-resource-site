@@ -1,0 +1,53 @@
+@import "variables"; 
+
+.container { 
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.pokemon-view { 
+  border: 3px solid $grey; 
+  border-radius: 10px;
+  margin-right: 50px;
+  width: 20%;
+  max-height: 650px; 
+  overflow-y: scroll;
+}
+
+.poke { 
+  border-bottom: 1px solid $light-grey;
+  width: 100%;
+}
+
+.poke > span { 
+  padding: 0px 10px 0 10px;
+}
+
+.poke:hover { 
+  background-color: $light-grey;
+  cursor: pointer;
+}
+
+.pokemon-form { 
+  border: 3px solid $grey;
+  border-radius: 10px;
+  padding: 0 300px 20px 300px;
+}
+
+.pokemon-form input { 
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+select { 
+  margin-bottom: 15px;
+}
+
+.logo { 
+  width: 100%;
+  height: auto;
+  padding-bottom: 15px;
+  padding-top: 20px;
+}

@@ -850,8 +850,9 @@ GEOMETRY.prototype.escape = false;
  *
  * __What is best to use? It depends:__
  *
- * When choosing between the geometry and geography type for data storage, you should consider what you’ll be using it for.
- * If all you do are simple measurements and relationship checks on your data, and your data covers a fairly large area, then most likely you’ll be better off storing your data using the new geography type.
+ * When choosing between the geometry and geography type
+ for data storage, you should consider what you 'll be using it for. *
+   If all you do are simple measurements and relationship checks on your data, and your data covers a fairly large area, then most likely you 'll be better off storing your data using the new geography type.
  * Although the new geography data type can cover the globe, the geometry type is far from obsolete.
  * The geometry type has a much richer set of functions than geography, relationship checks are generally faster, and it has wider support currently across desktop and web-mapping tools
  *

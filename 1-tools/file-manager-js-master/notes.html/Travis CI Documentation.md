@@ -50,7 +50,7 @@ Travis CI offers a few different infrastructure environments, so you can select 
 
 More details on our build environments are available in our [CI Environment](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/user/ci-environment/) documentation.
 
-Now that you’ve read the basics, head over to our [Tutorial](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/user/tutorial/) for details on setting up your first build!
+Now that you've read the basics, head over to our [Tutorial](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/user/tutorial/) for details on setting up your first build!
 
 
 [Source](https://docs.travis-ci.com/user/for-beginners/)

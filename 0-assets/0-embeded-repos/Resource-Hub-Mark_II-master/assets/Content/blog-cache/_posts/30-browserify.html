@@ -1,0 +1,70 @@
+<figure>
+  <embed src="%7B%7B%20page.image%20%7D%7D" />
+  <figcaption>browseify</figcaption>
+</figure>
+<p>Browserify helps you to bring node modules to browser. You can write frontend javascript as commonjs modules and
+  require in browser. Also it helps to manage packages using npm and we no more need a different package manager for
+  frontend.</p>
+<div class="sourceCode" id="cb1">
+  <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// utils.js</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> get <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;get&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">var</span> set <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-7" title="7">  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;set&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-11" title="11">  <span class="dt">get</span><span class="op">:</span> get<span class="op">,</span></a>
+<a class="sourceLine" id="cb1-12" title="12">  <span class="dt">set</span><span class="op">:</span> set<span class="op">,</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="op">};</span></a></code></pre>
+</div>
+<p>Now I can require this module in my other modules like</p>
+<div class="sourceCode" id="cb2">
+  <pre
+    class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// src/start.js</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> utils <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;./utils.js&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="va">utils</span>.<span class="at">set</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="va">utils</span>.<span class="at">get</span>()<span class="op">;</span></a></code></pre>
+</div>
+<p>Now we can bundle this common js modules using browserify. We will start with installing the browserify.</p>
+<pre><code>npm install --save browserify</code></pre>
+<p>Now we an bundle it using the browserify command.</p>
+<pre><code>./node_modules/.bin/browserify src/start.js -o index.js</code></pre>
+<p>Now you can use the index.js in browser using script tag.</p>
+<div class="sourceCode" id="cb5">
+  <pre
+    class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;index.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a></code></pre>
+</div>
+<h2 id="watch-and-bundle">Watch and bundle</h2>
+<p>If you want browserify to bundle each time you make change to source, you need to install <code>watchify</code>.</p>
+<pre><code>npm install --save watchify</code></pre>
+<p>Now you can watch and bundle each time you make changes to source.</p>
+<pre><code>./node_modules/.bin/watchify src/start.js -o index.js</code></pre>
+<h2 id="transforms">Transforms</h2>
+<p>Tranforms can be used to convert source files like converting <code>.coffee</code> files or convert ES6 to ES5 while
+  bundling. In order to to this you need to install tranforms like <code>coffeeify</code> or <code>babelify</code>.</p>
+<p>For transform ES6, you need to install <code>babelify</code> and <code>babel-preset-es2015</code>.</p>
+<pre><code>npm i --save babelify babel-preset-es2015</code></pre>
+<p>Now you can use <code>-t</code> option to specify the transform while bundle.</p>
+<pre><code>./node_modules/.bin/browserify -t [ babelify --presets [ es2015 ] ] src/start-es6.js -o index-es6.js</code></pre>
+<p>When you provide options for babelify make sure to put spaces around the <code>[</code> and <code>]</code>.</p>
+<p>You can also specify presets using <code>.babelrc</code>. You can find more information at <a
+    href="/2016/01/babeljs-writing-next-generation-js.html">babeljs setup</a>.</p>
+<h2 id="using-with-react">Using with react</h2>
+<p>You can use <code>browserify</code> with <code>babelify</code> to bundle react modules as well. For that you need to
+  install <code>babel-preset-react</code>.</p>
+<pre><code>npm i --save babelify babel-preset-react</code></pre>
+<p>Now specify <code>react</code> along with <code>es2015</code> preset in <code>--presets</code> option.</p>
+<pre><code>./node_modules/.bin/browserify -t [ babelify --presets [ es2015 react ] ] src/start.jsx -o index.js</code></pre>
+<p>You can pass the same options to <code>watchify</code> to watch and bundle the changes.</p>
+<p>We will discuss the browserify with gulp, splitting the bundles and making the bundling faster in the upcoming posts.
+</p>
+<p>image courtesy <a href="http://www.braveterry.com">braveterry.com</a></p>
+
+</body>
+
+
+</html>

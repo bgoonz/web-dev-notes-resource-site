@@ -1,0 +1,22 @@
+// Don't need to import mdc-drawer since it's already imported in ComponentPage
+@import '@material/theme/mixins';
+
+.drawer-demos-display {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 400px;
+}
+
+.drawer-demo {
+  display: inline-block;
+  flex: 1 1 80%;
+  justify-content: space-around;
+  min-height: 400px;
+  min-width: 400px;
+  padding: 15px;
+}
+
+.drawer-iframe {
+  width: 100%;
+  height: 400px;
+}

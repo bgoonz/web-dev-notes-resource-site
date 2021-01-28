@@ -1,0 +1,27 @@
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+@import "@material/select/mixins";
+
+.custom-enhanced-select-width {
+  width: 240px;
+}
+
+.demo-select-box-shaped {
+  @include mdc-select-shape-radius(32%);
+}
+
+.demo-select-outline-shaped {
+  @include mdc-select-outline-shape-radius(50%);
+}
+
+.select-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .mdc-select {
+    margin-right: 5em;
+  }
+}

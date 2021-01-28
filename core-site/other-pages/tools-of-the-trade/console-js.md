@@ -15,9 +15,9 @@ Photo by [Hugo Rocha](https://unsplash.com/@hugorrocha?utm_source=medium&utm_med
 
 Are you a JavaScript developer who uses `console.log()` often to debug your code? There is nothing wrong in it. But if you are unaware, there are so many other methods of `console` object which are quite amazing. In this article, I would like to explain the effective usage of these methods.
 
-The `console` object in JavaScript provides access to the browser debugging console, where you can print values of the variables which you’ve used in your code. Oftentimes, this can be used to debug if the right value is being passed in your code.
+The `console` object in JavaScript provides access to the browser debugging console, where you can print values of the variables which you've used in your code. Oftentimes, this can be used to debug if the right value is being passed in your code.
 
-I’m pretty sure most of us developers have used `console.log()` to print values in our browser console. `log` is just one method of the `console` object. There are several other methods that are very useful.
+I'm pretty sure most of us developers have used `console.log()` to print values in our browser console. `log` is just one method of the `console` object. There are several other methods that are very useful.
 
 This method is mainly used to print the value passed to it to the console. Any type can be used inside the log(), be it a string, array, object, boolean etc.
 
@@ -156,7 +156,7 @@ console.log('%cI am a styled log', styles);
 
 Output
 
-The `console` object is very much useful for the developers to debug the code. We as developers often use only the `log` function. Let’s start using the console object to its fullest potential so that it’s easier to debug and to view the browser logs vividly. I hope this article was helpful.
+The `console` object is very much useful for the developers to debug the code. We as developers often use only the `log` function. Let's start using the console object to its fullest potential so that it's easier to debug and to view the browser logs vividly. I hope this article was helpful.
 
 Thank you for reading!
 

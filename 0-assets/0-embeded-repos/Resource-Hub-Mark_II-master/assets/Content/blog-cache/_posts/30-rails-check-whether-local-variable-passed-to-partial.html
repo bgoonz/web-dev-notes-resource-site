@@ -1,0 +1,70 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When we reuse the partial, there will be requirement to check whether the local variable in partial exists or
+      not. We always introduce some variable for a race condition, which is needed to pass from one <code>render</code>
+      location of many. Passing the default value for that variable in all the location you render the partial is
+      tedious and error-prone.</p>
+    <p>Instead of this, checking whether the variable passed to the partial will work great and easy. But the catch is,
+      you can’t use <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_expressions.html#UG">defined?</a>
+      opertator to do this. The <a
+        href="http://api.rubyonrails.org/classes/ActionView/Base.html#class-ActionView::Base-label-Passing+local+variables+to+sub+templates">ActionView
+        documentation</a> says its an implementation restriction.</p>
+    <p>So here is the way you can check whether the variable is available. Use <code>local_assigns</code> Hash.</p>
+    <pre class="erb"><code>&lt;% if local_assigns.has_key? :name %&gt;
+  &lt;p&gt;&lt;%= name %&gt;&lt;/p&gt;
+&lt;% end %&gt;</code></pre>
+    <p>The <code>local_assigns</code> Hash contains all the locals you passed to the partial</p>
+
+  </body>
+
+  
+</html>

@@ -1,0 +1,97 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/staging-servers/nathan-dumlao-744702-unsplash.jpg"
+        alt="nathan-dumlao-744702-unsplash" />{: width=“100%”}</p>
+    <p>Some thoughts on keeping the sanity of the staging server.</p>
+    <p>IMHO, staging servers are can be in broken state especially when one team works on backend and another on
+      frontend or when we have microservice architecture.</p>
+    <p>There is no point on going hard on the team for a broken staging server because only backend changes are merged.
+      Going hard on devs because some modules is broken on staging, because we didn’t had a proper plan is just like we
+      shifing the blame on to devs.</p>
+    <p>It scares the devs (especially juniour devs). people will be scared to merge the features to dev even though they
+      have done written test cases and they have done sanity testing.</p>
+    <p>That why we have releases, which will make sure all the parts needed for a feature across all services.</p>
+    <p>If we are giving this staging servers (suppose to be used by devs only) to quality assurance team, business
+      analysts or to project manager for demo which means we are teating it as pre-prod and things can go wrong.</p>
+    <p>Another reason for broken staging servers will be lack of <a
+        href="/2018/12/opinion-unblocking-frontend.html">contracts with frontend</a>. Then one fine day backend devs
+      decided to update the response of apis without planning/ communication.</p>
+    <p>May be instead of going hard on devs, some solutions are,</p>
+    <ul>
+      <li>Give pre-prod environment for QA/BA/PM which is separate from staging.</li>
+      <li>Plan release cycles.</li>
+      <li>Plan the related backend and frontend task in the same sprint.</li>
+      <li>Communicate well.</li>
+    </ul>
+    <p>Using <code>staging</code> for everything and expect devs to keep it like production is too much to expect
+      Especially in an enviorment where there is no planning.</p>
+    <p>Go gentle on devs.</p>
+    Photo credit : <a
+      style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+      href="https://unsplash.com/@nate_dumlao?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+      target="_blank" rel="noopener noreferrer"
+      title="Download free do whatever you want high-resolution photos from Nathan Dumlao"><span
+        style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
+          style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+          viewBox="0 0 32 32">
+          <title>
+            unsplash-logo
+          </title>
+          <p>
+            <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+        </svg></span><span style="display:inline-block;padding:2px 3px">Nathan Dumlao</span></a></p>
+
+  </body>
+
+  
+</html>

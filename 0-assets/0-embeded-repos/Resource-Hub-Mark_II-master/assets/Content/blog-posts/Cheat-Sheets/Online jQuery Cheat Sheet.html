@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- saved from url=(0034)https://htmlcheatsheet.com/jquery/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Online jQuery Cheat Sheet</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="jQuery Cheat Seet will help you create the code for animations, various effects and other features for your website.">
+	<meta name="keywords" content="jquery,cheat,sheet">
+	<link rel="canonical" href="https://htmlcheatsheet.com/jquery/">
+	<meta property="og:title" content="Online jQuery Cheat Sheet">
+	<meta property="og:description" content="jQuery Cheat Seet will help you create the code for animations, various effects and other features for your website.">
+	<meta property="og:url" content="https://htmlcheatsheet.com/jquery/">
+	<meta property="og:image" content="https://htmlcheatsheet.com/images/html-cheatsheet.jpg">
+	<meta property="og:type" content="website">
+	<link rel="icon" type="image/png" href="https://htmlcheatsheet.com/favicon.ico">
+	<link rel="stylesheet" href="./Online jQuery Cheat Sheet_files/docs.css">
+	<link rel="stylesheet" href="./Online jQuery Cheat Sheet_files/codemirror.css">
+	<script src="./Online jQuery Cheat Sheet_files/rules-p-xncav4ssEzwLp.js.download" async=""></script><script async="" src="./Online jQuery Cheat Sheet_files/analytics.js.download"></script><script src="./Online jQuery Cheat Sheet_files/quant.js.download" async="" type="text/javascript"></script><noscript><div><img src="./Online jQuery Cheat Sheet_files/p-xncav4ssEzwLp.gif" border="0" height="1" width="1" alt="Quantcast"></div></noscript><script async="" type="text/javascript" src="./Online jQuery Cheat Sheet_files/cmp2.js.download"></script><script async="" type="text/javascript" src="./Online jQuery Cheat Sheet_files/choice.js.download"></script><script src="./Online jQuery Cheat Sheet_files/jscolor.min.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/tinymce.gzip.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/jquery-1.10.2.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/jquery-ui.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/codemirror.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/xml-fold.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/matchtags.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/active-line.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/xml.js.download"></script>
+	<script src="./Online jQuery Cheat Sheet_files/css.js.download"></script>
+	<link href="./Online jQuery Cheat Sheet_files/jquery-ui.css" rel="stylesheet">
+	<script src="./Online jQuery Cheat Sheet_files/cheatsheet.js.download"></script>
+	<link rel="stylesheet" href="./Online jQuery Cheat Sheet_files/cheatsheet.css">
+	<script src="./Online jQuery Cheat Sheet_files/jquery.js.download"></script>
+	<link rel="stylesheet" href="./Online jQuery Cheat Sheet_files/jquery.css">
+	<script async="true">!function(){var e=window.location.hostname,t=document.createElement("script"),a=document.getElementsByTagName("script")[0],n="https://quantcast.mgr.consensu.org".concat("/choice/","xncav4ssEzwLp","/",e,"/choice.js"),i=0;t.async=!0,t.type="text/javascript",t.src=n,a.parentNode.insertBefore(t,a),function(){function e(){var t=s.document,a=!!s.frames[i];if(!a)if(t.body){var n=t.createElement("iframe");n.style.cssText="display:none",n.name=i,t.body.appendChild(n)}else setTimeout(e,5);return!a}function t(){var e,t=arguments;if(!t.length)return o;if("setGdprApplies"===t[0])t.length>3&&2===t[2]&&"boolean"==typeof t[3]&&(e=t[3],"function"==typeof t[2]&&t[2]("set",!0));else if("ping"===t[0]){var a={gdprApplies:e,cmpLoaded:!1,cmpStatus:"stub"};"function"==typeof t[2]&&t[2](a)}else o.push(t)}function a(e){var t="string"==typeof e.data,a={};try{a=t?JSON.parse(e.data):e.data}catch(e){}var n=a.__tcfapiCall;n&&window.__tcfapi(n.command,n.version,function(a,i){var o={__tcfapiReturn:{returnValue:a,success:i,callId:n.callId}};t&&(o=JSON.stringify(o)),e.source.postMessage(o,"*")},n.parameter)}for(var n,i="__tcfapiLocator",o=[],s=window;s;){try{if(s.frames[i]){n=s;break}}catch(e){}if(s===window.top)break;s=s.parent}n||(e(),s.__tcfapi=t,s.addEventListener("message",a,!1))}();var o=function(){var e=arguments;typeof window.__uspapi!==o&&setTimeout(function(){void 0!==window.__uspapi&&window.__uspapi.apply(window.__uspapi,e)},500)},s=function(){i++,window.__uspapi===o&&i<3?console.warn("USP is not accessible"):clearInterval(c)};if(void 0===window.__uspapi){window.__uspapi=o;var c=setInterval(s,6e3)}}();</script>
+<style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><link rel="stylesheet" type="text/css" id="u0" href="./Online jQuery Cheat Sheet_files/skin.min.css"></head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<body class="jspage" style="">
+	<div id="pagewrap">		
+		<div id="tabContainer"><div class="tabz">
+<a href="https://html-css-js.com/html/" class="html">HTML</a><a href="https://html-css-js.com/css/" class="css">CSS</a><a href="https://html-css-js.com/js/" class="js">JS</a>
+</div>
+<div class="subtabz">
+<nav>
+<ul class="html">
+<li><a href="https://htmlg.com/html-editor/" rel="nofollow">Editor</a></li>
+<li><a href="https://html-css-js.com/html/tags/">Tags</a></li>
+<li><a href="https://htmlcheatsheet.com/" class="activeMenuItem">Cheat Sheet</a></li>
+<li><a href="https://textfancy.com/characters/" rel="nofollow">Characters</a></li>
+<li><a href="https://html-css-js.com/html/generator/">Generators</a></li>
+<li><a href="https://html5-templates.com/" rel="nofollow">Templates</a></li>
+<li><a href="https://html-online.com/articles/category/html/" rel="nofollow">Blog</a></li>
+<li><a href="https://html-css-js.com/html/links/">Links</a></li>
+</ul>
+<ul class="css">
+<li><a href="https://html-css-js.com/css/editor/">Editor</a></li>
+<li><a href="https://htmlcheatsheet.com/css/" rel="nofollow">Cheat Sheet</a></li>
+<li><a href="https://html-css-js.com/css/generator/">Generators</a></li>
+<li><a href="https://html-online.com/articles/category/css/" rel="nofollow">Blog</a></li>
+<li><a href="https://html-css-js.com/css/links/">Links</a></li>
+</ul>			
+<ul class="js">
+<li><a href="https://html-css-js.com/js/editor/">Editor</a></li>
+<li><a href="https://html-css-js.com/js/compressor/">Compressor</a></li>
+<li><a href="https://htmlcheatsheet.com/js/" rel="nofollow">Cheat Sheet</a></li>
+<li><a href="https://htmlcheatsheet.com/jquery/" rel="nofollow" class="activeMenuItem">jQuery</a></li>
+<li><a href="https://html-online.com/articles/category/javascript/" rel="nofollow">Blog</a></li>
+<li><a href="https://html-css-js.com/js/links/">Links</a></li>
+</ul>
+</nav>
+</div></div>
+		<a href="https://htmlcheatsheet.com/" title="HTML CSS JavaScript Home" class="homeMenu">HTML CSS JS</a>
+		<div class="mainContent">			
+			<div class="header">
+				<div class="navigationtabs">
+					<nav>
+						<ul>
+							<li><a href="https://htmlcheatsheet.com/" class="htmlColor" title="HTML Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;">HTML</a></li>
+							<li><a href="https://htmlcheatsheet.com/css/" class="cssColor" title="CSS Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;">CSS</a></li>
+							<li><a href="https://htmlcheatsheet.com/js/" class="jsColor" title="JS Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;">JS</a></li>
+							<li><a href="https://htmlcheatsheet.com/jquery/#" class="jqColor" title="jQuery Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;"><span>jQ</span></a></li>
+							<li><a href="https://htmlcheatsheet.com/amp/" class="ampColor" title="AMP HTML Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;"><span>⚡</span>&nbsp;AMP</a></li>
+							<li><a href="https://htmlcheatsheet.com/seo/" class="seoColor" title="SEO Cheat Sheet" style="font-size: 13px; margin-bottom: 0px; padding: 2px 5px;"><strong>S</strong><strong>E</strong><strong>O</strong></a></li>
+						</ul>
+					</nav>
+				</div>
+				<h1><img src="./Online jQuery Cheat Sheet_files/logo-jquery.png" height="50" width="36" alt="jQuery Cheat Sheet"> jQuery CheatSheet</h1>
+				<div id="hideComments">Hide comments</div>
+			</div>
+		
+			<div id="minimizedPanels">
+			</div>
+			
+			<div class="masonryPanels" style="position: relative; height: 1718.82px;">
+				<div class="masonryPanelWrap noPencil" id="firstGridItem" style="position: absolute; left: 0px; top: 0px;">
+				</div>
+
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId1" style="position: absolute; left: 377px; top: 0px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Basics</h2>
+						<div class="panelHelper">Introduction to jQuery programming </div>
+						<div class="panelInner">
+							<h4>Include</h4>
+							
+							<a href="https://code.jquery.com/" target="_blank" rel="nofollow">Download</a>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable1" onclick="selectText(&quot;selectable1&quot;)"><span style="color:#1c02ff">&lt;<span style="font-weight:700">script</span> <span style="font-style:italic">src</span>=<span style="color:#d80800">"https://code.jquery.com/jquery-latest.min.js"</span> <span style="font-style:italic">type</span>=<span style="color:#d80800">"text/javascript"</span>&gt;&lt;/<span style="font-weight:700">script</span>&gt;</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable2" onclick="selectText(&quot;selectable2&quot;)"><span style="color:#1c02ff">&lt;<span style="font-weight:700">script</span> <span style="font-style:italic">src</span>=<span style="color:#d80800">"https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"</span>&gt;&lt;/<span style="font-weight:700">script</span>&gt;</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Syntax</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable3" onclick="selectText(&quot;selectable3&quot;)"><span style="color:#687687">$</span>(<span style="color:#6d79de;font-weight:700">document</span>).ready(function(){
+<span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).<span style="color:#3c4c72;font-weight:700">click</span>(function(){
+	<span style="color:#687687">$</span>(<span style="color:#0206ff;font-style:italic">this</span>).hide(<span style="color:#cd0000;font-style:italic">200</span>);
+});
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable4" onclick="selectText(&quot;selectable4&quot;)"><span style="color:#687687">$</span>(function(){
+<span style="color:#00b418" class="jsComment">// Short Document Ready</span>
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Each</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable5" onclick="selectText(&quot;selectable5&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).each(function() {                <span style="color:#00b418" class="jsComment">// parse each .demo element</span>
+<span style="color:#6d79de;font-weight:700">document</span>.<span style="color:#3c4c72;font-weight:700">write</span>(<span style="color:#687687">$</span>(<span style="color:#0206ff;font-style:italic">this</span>).<span style="color:#06960e;font-weight:700">text</span>() <span style="color:#687687">+</span> <span style="color:#d80800">"<span style="color:#26b31a">\n</span>"</span>);  <span style="color:#00b418" class="jsComment">// output their text</span>
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Trigger</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable6" onclick="selectText(&quot;selectable6&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"a#mylink"</span>).trigger(<span style="color:#d80800">"click"</span>); <span style="color:#00b418" class="jsComment">// triggers event on an element</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>noConflict</h4>
+<div class="preToEditorWrap" style="display: block;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable7" onclick="selectText(&quot;selectable7&quot;)">var jq <span style="color:#687687">=</span> <span style="color:#687687">$</span>.noConflict();            <span style="color:#00b418" class="jsComment">// avoid conflict with other frameworks also using the dollar sign</span>
+jq(<span style="color:#6d79de;font-weight:700">document</span>).ready(function(){
+jq(<span style="color:#d80800">"#demo"</span>).<span style="color:#06960e;font-weight:700">text</span>(<span style="color:#d80800">"Hello World!"</span>);
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId2" style="position: absolute; left: 755px; top: 0px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Selectors</h2>
+						<div class="panelHelper">Selectors to target elements. Similar to CSS. </div>
+						<div class="panelInner">
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable8" onclick="selectText(&quot;selectable8&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"*"</span>)                      <span style="color:#00b418" class="jsComment">// all elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p.demo"</span>)                 <span style="color:#00b418" class="jsComment">// &lt;p&gt; elements with class="intro"</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p:first"</span>)                <span style="color:#00b418" class="jsComment">// the first &lt;p&gt; element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p span"</span>)                 <span style="color:#00b418" class="jsComment">// span, descendant of p</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p &gt; span"</span>)               <span style="color:#00b418" class="jsComment">// span, direct child of p</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p + span"</span>)               <span style="color:#00b418" class="jsComment">// span immediately proceeded by a p</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p ~ span"</span>)               <span style="color:#00b418" class="jsComment">// strong element proceeded by p</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"ul li:first"</span>)            <span style="color:#00b418" class="jsComment">// the first &lt;li&gt; element of the first &lt;ul&gt;</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"ul li:first-child"</span>)      <span style="color:#00b418" class="jsComment">// the first &lt;li&gt; element of every &lt;ul&gt;</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"ul li:nth-child(3)"</span>)     <span style="color:#00b418" class="jsComment">// third child</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"[href]"</span>)                 <span style="color:#00b418" class="jsComment">// any element with an href attribute</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"a[target='_blank']"</span>)     <span style="color:#00b418" class="jsComment">// &lt;a&gt; elements with a target "_blank" attribute</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"a[target!='_blank']"</span>)    <span style="color:#00b418" class="jsComment">// &lt;a&gt; elements with a target attribute value other than "_blank"</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">":input"</span>)                 <span style="color:#00b418" class="jsComment">// all form elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">":button"</span>)                <span style="color:#00b418" class="jsComment">// &lt;button&gt; and &lt;input&gt; elements of type="button"</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"tr:even"</span>)                <span style="color:#00b418" class="jsComment">// even &lt;tr&gt; elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"tr:odd"</span>)                 <span style="color:#00b418" class="jsComment">// odd &lt;tr&gt; elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"span:parent"</span>)            <span style="color:#00b418" class="jsComment">// element which has child element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"span:contains('demo')"</span>)  <span style="color:#00b418" class="jsComment">// element conaining the specified text</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Actions</h4>
+							<strong>$(selector).action()</strong>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable9" onclick="selectText(&quot;selectable9&quot;)"><span style="color:#687687">$</span>(<span style="color:#0206ff;font-style:italic">this</span>).hide()      <span style="color:#00b418" class="jsComment">// the current element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).hide()     <span style="color:#00b418" class="jsComment">// all &lt;div&gt; elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).hide()   <span style="color:#00b418" class="jsComment">// all elements with class="demo"</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).hide()   <span style="color:#00b418" class="jsComment">// the element with id="demo"</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId3" style="position: absolute; left: 0px; top: 50px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Events</h2>
+						<div class="panelHelper">Trigger jQuery events </div>
+						<div class="panelInner">
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable10" onclick="selectText(&quot;selectable10&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).<span style="color:#3c4c72;font-weight:700">click</span>(function(){
+<span style="color:#687687">$</span>(<span style="color:#0206ff;font-style:italic">this</span>).hide(<span style="color:#cd0000;font-style:italic">200</span>);
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Mouse</h4>
+							scroll, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, load, resize, scroll, unload, error
+							<h4>Keyboard</h4>
+							keydown, keypress, keyup
+							<h4>Form</h4>
+							submit, change, focus, blur
+							<h4>DOM Element</h4>
+							blur, focus, focusin, focusout, change, select, submit
+							<h4>Browser</h4>
+							load, resize, scroll, unload, error
+							<h4>.bind()</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable11" onclick="selectText(&quot;selectable11&quot;)"><span style="color:#687687">$</span>(<span style="color:#6d79de;font-weight:700">document</span>).ready(function() {              <span style="color:#00b418" class="jsComment">// attach a handler to an event for the elements        </span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).bind(<span style="color:#d80800">'blur'</span>, function(e) {
+	<span style="color:#00b418" class="jsComment">//dom event fired</span>
+});
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId4" style="position: absolute; left: 755px; top: 471px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Ads</h2>
+						<div class="panelHelper">Otherwise we're starving. </div>
+						<div class="panelInner">
+							<div class="reklamocska">
+								<script async="" src="./Online jQuery Cheat Sheet_files/f.txt"></script>
+								<!-- Rectangle -->
+								<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9728962508602593" data-ad-slot="1534550908"></ins>
+								<script>
+								(adsbygoogle = window.adsbygoogle || []).push({});
+								</script>
+							</div>								
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId5" style="position: absolute; left: 0px; top: 536px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Effects</h2>
+						<div class="panelHelper">Animation effects </div>
+						<div class="panelInner">
+							<h4>Hide / Show</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable12" onclick="selectText(&quot;selectable12&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).hide();      <span style="color:#00b418" class="jsComment">// sets to display: none</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).show(<span style="color:#cd0000;font-style:italic">200</span>);   <span style="color:#00b418" class="jsComment">// shows hidden elemnt with animation (speed)</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).toggle();    <span style="color:#00b418" class="jsComment">// toggle between show and hide</span>
+
+<span style="color:#687687">$</span>( <span style="color:#d80800">"#element"</span> ).hide( <span style="color:#d80800">"slow"</span>, function() {  <span style="color:#00b418" class="jsComment">// hide with callback function</span>
+<span style="font-style:italic">console</span><span style="color:#3c4c72;font-weight:700">.log</span>( <span style="color:#d80800">"Animation complete."</span> );
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Fade</h4>
+							fadeIn, fadeOut, fadeToggle, fadeTo
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable13" onclick="selectText(&quot;selectable13&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).fadeIn();                <span style="color:#00b418" class="jsComment">// fade in a hidden element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).fadeOut(<span style="color:#cd0000;font-style:italic">300</span>);            <span style="color:#00b418" class="jsComment">// fade out</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).fadeToggle(<span style="color:#d80800">"slow"</span>);      <span style="color:#00b418" class="jsComment">// toggle between fadeIn and hadeOut</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).fadeTo(<span style="color:#d80800">"slow"</span>, <span style="color:#cd0000;font-style:italic">0.25</span>);    <span style="color:#00b418" class="jsComment">// fades to 0.25 opacity</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Slide</h4>
+							slideDown, slideUp, slideToggle
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable14" onclick="selectText(&quot;selectable14&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).slideDown();
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).slideUp(<span style="color:#d80800">"slow"</span>);
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).slideToggle();
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Animate</h4>
+							$(selector).animate({params},speed,callback);
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable15" onclick="selectText(&quot;selectable15&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).animate({
+opacity: <span style="color:#d80800">'0.5'</span>,
+left: <span style="color:#d80800">'200px'</span>,
+height: <span style="color:#d80800">'200px'</span>
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>stop() Method</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable16" onclick="selectText(&quot;selectable16&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">stop</span>();
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable17" onclick="selectText(&quot;selectable17&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">'#demo'</span>).mouseleave(function(<span style="color:#6d79de;font-weight:700">event</span>) {     <span style="color:#00b418" class="jsComment">// hover end</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">'.tab'</span>).<span style="color:#3c4c72;font-weight:700">stop</span>().animate({              <span style="color:#00b418" class="jsComment">// stop() method</span>
+	opacity : <span style="color:#d80800">'0.5'</span>,
+	marginTop: <span style="color:#d80800">'10px'</span>
+}, <span style="color:#cd0000;font-style:italic">500</span>, function() {                    <span style="color:#00b418" class="jsComment">// animation complete</span>
+	<span style="color:#687687">$</span>(<span style="color:#d80800">'#demo'</span>).removeClass(<span style="color:#d80800">'hovered'</span>);  <span style="color:#00b418" class="jsComment">// callback function</span>
+});
+});
+<span style="color:#687687">$</span>(<span style="color:#d80800">'#demo'</span>).mouseover(function(<span style="color:#6d79de;font-weight:700">event</span>) {      <span style="color:#00b418" class="jsComment">// hover begin</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">'.tab'</span>).<span style="color:#3c4c72;font-weight:700">stop</span>().animate({              <span style="color:#00b418" class="jsComment">// stop() method</span>
+	opacity : <span style="color:#d80800">'1'</span>,
+	marginTop: <span style="color:#d80800">'0px'</span>
+}, <span style="color:#cd0000;font-style:italic">300</span>, function() {                    <span style="color:#00b418" class="jsComment">// animation complete</span>
+	<span style="color:#687687">$</span>(<span style="color:#d80800">'#demo'</span>).addClass(<span style="color:#d80800">'hovered'</span>);     <span style="color:#00b418" class="jsComment">// callback function</span>
+});
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Chaining</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable18" onclick="selectText(&quot;selectable18&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).css(<span style="color:#d80800">"backgroundColor"</span>, <span style="color:#d80800">"green"</span>).slideUp(<span style="color:#cd0000;font-style:italic">500</span>).slideDown(<span style="color:#cd0000;font-style:italic">500</span>);
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId6" style="position: absolute; left: 377px; top: 540px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>DOM Manipulation</h2>
+						<div class="panelHelper">Accessing and manipulating the Document Object Model </div>
+						<div class="panelInner">
+							<h4>Content</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable19" onclick="selectText(&quot;selectable19&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#06960e;font-weight:700">text</span>();                  <span style="color:#00b418" class="jsComment">// returns text content</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).html();                  <span style="color:#00b418" class="jsComment">// returns content, including HTML markup</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).val();                   <span style="color:#00b418" class="jsComment">// returns field value</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).html(<span style="color:#d80800">'Hey &lt;em&gt;yo&lt;/em&gt;'</span>); <span style="color:#00b418" class="jsComment">// sets HTML content</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Attributes</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable20" onclick="selectText(&quot;selectable20&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#link"</span>).attr(<span style="color:#d80800">"href"</span>);                    <span style="color:#00b418" class="jsComment">// get an attribute</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#link"</span>).attr(<span style="color:#d80800">"href"</span>,<span style="color:#d80800">'https://htmlg.com'</span>); <span style="color:#00b418" class="jsComment">// set attribute</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#link"</span>).attr({
+<span style="color:#d80800">"href"</span> : <span style="color:#d80800">"https://htmlg.com"</span>,            <span style="color:#00b418" class="jsComment">// setting multiple attributes</span>
+<span style="color:#d80800">"title"</span> : <span style="color:#d80800">"HTML Editor"</span>
+});
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#link"</span>).attr(<span style="color:#d80800">"href"</span>, function(i, origValue){
+<span style="color:#0100b6;font-weight:700">return</span> origValue <span style="color:#687687">+</span> <span style="color:#d80800">"/help"</span>;             <span style="color:#00b418" class="jsComment">// callback function gets and changes the attribute</span>
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Add</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable21" onclick="selectText(&quot;selectable21&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).prepend(<span style="color:#d80800">"Yo!"</span>);          <span style="color:#00b418" class="jsComment">// adds content at the beginning in the selected elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).append(<span style="color:#d80800">"&lt;em&gt;Hey!&lt;/em&gt;"</span>); <span style="color:#00b418" class="jsComment">// adds content at the end in the selected elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).before(<span style="color:#d80800">"Cheers"</span>);        <span style="color:#00b418" class="jsComment">// adds content before the selected elements</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">".demo"</span>).after(<span style="color:#d80800">"&lt;em&gt;Peace&lt;/em&gt;"</span>); <span style="color:#00b418" class="jsComment">// adds content after the selected elements</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Remove</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable22" onclick="selectText(&quot;selectable22&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">remove</span>();            <span style="color:#00b418" class="jsComment">// removes the selected element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).empty();             <span style="color:#00b418" class="jsComment">// removes children</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).<span style="color:#3c4c72;font-weight:700">remove</span>(<span style="color:#d80800">".cl1, .cl2"</span>);  <span style="color:#00b418" class="jsComment">// removes divs with the listed classes</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Classes</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable23" onclick="selectText(&quot;selectable23&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).addClass(<span style="color:#d80800">"big red"</span>); <span style="color:#00b418" class="jsComment">// add class</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"h1, p"</span>).removeClass(<span style="color:#d80800">"red"</span>);  <span style="color:#00b418" class="jsComment">// remove class</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).toggleClass(<span style="color:#d80800">"big"</span>);  <span style="color:#00b418" class="jsComment">// toggle between adding and removing</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>CSS</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable24" onclick="selectText(&quot;selectable24&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).css(<span style="color:#d80800">"background-color"</span>);     <span style="color:#00b418" class="jsComment">// returns CSS value</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).css(<span style="color:#d80800">"color"</span>, <span style="color:#d80800">"blue"</span>);        <span style="color:#00b418" class="jsComment">// sets CSS rule</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).css({<span style="color:#d80800">"color"</span>: <span style="color:#d80800">"blue"</span>, <span style="color:#d80800">"font-size"</span>: <span style="color:#d80800">"20px"</span>}); <span style="color:#00b418" class="jsComment">// sets multiple CSS properties</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Dimensions</h4>
+							width, height, innerWidth, innerHeight, outerWidth, outerHeight<br>
+							<em><strong>inner</strong> - includes padding<br>
+							<strong>outer</strong> - includes padding and border</em>
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId7" style="position: absolute; left: 755px; top: 747px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Traversing</h2>
+						<div class="panelHelper">Select elements based on their relation to other elements. </div>
+						<div class="panelInner">
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable25" onclick="selectText(&quot;selectable25&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#06960e;font-weight:700">parent</span>();                <span style="color:#00b418" class="jsComment">// accessing direct parent</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"span"</span>).<span style="color:#06960e;font-weight:700">parent</span>().hide();          <span style="color:#00b418" class="jsComment">// changing parent color</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).parents();               <span style="color:#00b418" class="jsComment">// all ancestors of the element</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).parentsUntil(<span style="color:#d80800">"#demo2"</span>);  <span style="color:#00b418" class="jsComment">// all ancestors between two - demo is inside demo2</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).children();              <span style="color:#00b418" class="jsComment">// all direct children</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).children(<span style="color:#d80800">".first"</span>);      <span style="color:#00b418" class="jsComment">// all direct children having a specified class</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">find</span>(<span style="color:#d80800">"span"</span>);            <span style="color:#00b418" class="jsComment">// all span elements inside #demo</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">find</span>(<span style="color:#d80800">"*"</span>);               <span style="color:#00b418" class="jsComment">// all descendants</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).siblings(<span style="color:#d80800">"span"</span>);        <span style="color:#00b418" class="jsComment">// span siblings of #demo</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#06960e;font-weight:700">next</span>();                  <span style="color:#00b418" class="jsComment">// the next sibling</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p"</span>).nextAll();                   <span style="color:#00b418" class="jsComment">// all next siblings</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).nextUntil(<span style="color:#d80800">"#demo2"</span>);     <span style="color:#00b418" class="jsComment">// siblings between two arguments</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).prev();                  <span style="color:#00b418" class="jsComment">// the previous sibling</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"p"</span>).prevAll();                   <span style="color:#00b418" class="jsComment">// all previous siblings</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).prevUntil(<span style="color:#d80800">"#demo2"</span>);     <span style="color:#00b418" class="jsComment">// previous siblings between two arguments</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>Filtering</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable26" onclick="selectText(&quot;selectable26&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"span strong"</span>).first();   <span style="color:#00b418" class="jsComment">// first strong in first span</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"span strong"</span>).last();    <span style="color:#00b418" class="jsComment">// last strong in last span</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).eq(<span style="color:#cd0000;font-style:italic">9</span>);             <span style="color:#00b418" class="jsComment">// element with a specific index</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).filter(<span style="color:#d80800">".big"</span>);    <span style="color:#00b418" class="jsComment">// all div elements with .big class</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"div"</span>).not(<span style="color:#d80800">".big"</span>);       <span style="color:#00b418" class="jsComment">// opposite of filter</span>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId8" style="position: absolute; left: 755px; top: 1158px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Ads</h2>
+						<div class="panelHelper">Otherwise we're starving. </div>
+						<div class="panelInner">
+							<div class="reklamocska">
+								<script async="" src="./Online jQuery Cheat Sheet_files/f.txt"></script>
+								<!-- Rectangle -->
+								<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9728962508602593" data-ad-slot="1534550908"></ins>
+								<script>
+								(adsbygoogle = window.adsbygoogle || []).push({});
+								</script>
+							</div>								
+						</div>
+					</div>
+				</div>
+				
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId9" style="position: absolute; left: 377px; top: 1291px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Ajax</h2>
+						<div class="panelHelper">Exchanging data with the server dynamically updating parts of the page. </div>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable27" onclick="selectText(&quot;selectable27&quot;)"><span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">load</span>(<span style="color:#d80800">"file.txt h1.main"</span>);                                <span style="color:#00b418" class="jsComment">// returns the h1 tag in the text file</span>
+<span style="color:#687687">$</span>(<span style="color:#d80800">"#demo"</span>).<span style="color:#3c4c72;font-weight:700">load</span>(<span style="color:#d80800">"file.txt"</span>, function(responseTxt, statusTxt, xhr){  <span style="color:#00b418" class="jsComment">// callback function</span>
+<span style="color:#0100b6;font-weight:700">if</span>(statusTxt <span style="color:#687687">==</span> <span style="color:#d80800">"success"</span>) {
+	<span style="color:#6d79de;font-weight:700">document</span>.<span style="color:#3c4c72;font-weight:700">write</span>(<span style="color:#d80800">"Content loaded successfully!"</span>); 
+} <span style="color:#0100b6;font-weight:700">else</span> {
+	<span style="color:#6d79de;font-weight:700">document</span>.<span style="color:#3c4c72;font-weight:700">write</span>(<span style="color:#d80800">"Error: "</span> <span style="color:#687687">+</span> xhr.<span style="color:#06960e;font-weight:700">status</span> <span style="color:#687687">+</span> <span style="color:#d80800">": "</span> <span style="color:#687687">+</span> xhr.<span style="color:#06960e;font-weight:700">statusText</span>); 
+}
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						<div class="panelInner">
+							<h4>$.get()</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable28" onclick="selectText(&quot;selectable28&quot;)"><span style="color:#687687">$</span>.get(<span style="color:#d80800">"demo.asp"</span>, function(data, status){       <span style="color:#00b418" class="jsComment">//$.get(URL,callback);</span>
+<span style="color:#6d79de;font-weight:700">document</span>.<span style="color:#3c4c72;font-weight:700">write</span>(<span style="color:#d80800">"Data: "</span> <span style="color:#687687">+</span> data <span style="color:#687687">+</span> <span style="color:#d80800">"<span style="color:#26b31a">\n</span>Status: "</span> <span style="color:#687687">+</span> status);
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+							<h4>$.post()</h4>
+<div class="preToEditorWrap" style="display: none;"><a class="preToEditor" title="Send to editor">✎</a></div><pre style="color: rgb(0, 0, 0); position: relative;" id="selectable29" onclick="selectText(&quot;selectable29&quot;)"><span style="color:#687687">$</span>.post(<span style="color:#d80800">"demo.asp"</span>,      <span style="color:#00b418" class="jsComment">// send HTTP POST request to a page and get the answer</span>
+{
+name: <span style="color:#d80800">"John"</span>,       <span style="color:#00b418" class="jsComment">// send data</span>
+age: <span style="color:#cd0000;font-style:italic">30</span>
+},
+function(data, status){ <span style="color:#00b418" class="jsComment">//retreive response</span>
+<span style="font-style:italic">console</span><span style="color:#3c4c72;font-weight:700">.log</span>(<span style="color:#d80800">"Data: "</span> <span style="color:#687687">+</span> data <span style="color:#687687">+</span> <span style="color:#d80800">"<span style="color:#26b31a">\n</span>Status: "</span> <span style="color:#687687">+</span> status);
+});
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+						</div>
+					</div>
+				</div>
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId10" style="position: absolute; left: 0px; top: 1424px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Ads</h2>
+						<div class="panelHelper">Otherwise we're starving. </div>
+						<div class="panelInner">
+							<div class="reklamocska">
+								<script async="" src="./Online jQuery Cheat Sheet_files/f.txt"></script>
+								<!-- Rectangle -->
+								<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9728962508602593" data-ad-slot="1534550908"></ins>
+								<script>
+								(adsbygoogle = window.adsbygoogle || []).push({});
+								</script>
+							</div>								
+						</div>
+					</div>
+				</div>					
+				<div class="masonryPanelWrap noPencil visibleGrid" id="gridId11" style="position: absolute; left: 755px; top: 1433px;">
+					<div class="masonryPanel"><div class="wrapPanelControls"><a class="panelHelp" title="Help">?</a><a class="moveToTop" title="Move to the top">↖</a><a class="minimizePanel" title="Hide panel">x</a></div>
+						<h2>Useful Links</h2>
+						<div class="panelHelper">A list of free useful resources. </div>
+						<div class="panelInner">
+							<div class="buttonkaLista">
+								<a href="https://jquery.com/" target="_blank" rel="nofollow">jQuery</a>
+								<a href="https://jqueryui.com/" target="_blank" rel="nofollow">jQuery UI</a>
+								<a href="https://html-cleaner.com/js/" target="_blank" rel="nofollow">JS cleaner</a>
+								<a href="https://javascriptobfuscator.com/Javascript-Obfuscator.aspx" target="_blank" rel="nofollow">JS Obfuscator</a>
+								<a href="https://html-online.com/articles/category/jquery/" target="_blank" rel="nofollow">Articles</a>
+								<a href="https://caniuse.com/" target="_blank" rel="nofollow">Can I use?</a>
+								<!--
+								<a href="#" target="_blank" rel="nofollow">Link</a>
+								-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a name="editors" id="editorsAnchor"></a>
+			<div id="layover">
+			</div>
+			<div id="wrapPreviews" class="clearfix">
+				<div class="wrapPanelControls"><a class="undockPanel" title="Undock editors">↘</a></div>
+				<div class="sourceEditorWrap">
+					<div class="editorHeader"><abbr title="Real-Time Source Code Editor">HTML</abbr></div>
+					<div id="sourceFieldecske"><div class="CodeMirror cm-s-default CodeMirror-wrap ui-resizable" style="width: 100%; height: 238px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre style="position: relative;"><span>xxxxxxxxxx</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 0px;"></div></div></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+					<script>
+						var sourceEditorFricc = CodeMirror(document.getElementById("sourceFieldecske"), {
+							value: "",
+							lineNumbers: true,
+							styleActiveLine: true,
+							mode: "text/html",
+							lineWrapping: true,
+							matchTags: {bothTags: true},
+						  });		
+						sourceEditorFricc.on("change", function() {
+							inputChanged();
+						  });
+					</script>
+				</div>
+				
+				<div class="cssEditorWrap">
+					<div class="editorHeader"><abbr title="Style Sheets">CSS</abbr></div>
+					<div id="cssCodeFieldecske"><div class="CodeMirror cm-s-default CodeMirror-wrap ui-resizable" style="width: 100%; height: 238px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre style="position: relative;"><span>xxxxxxxxxx</span><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 0px;"></div></div></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div></div>
+					<script>
+						var cssEditorFricc = CodeMirror(document.getElementById("cssCodeFieldecske"), {
+							value: "",
+							lineNumbers: true,
+							styleActiveLine: true,
+							lineWrapping: true,
+							mode: "text/css",
+							matchTags: {bothTags: true},
+						  });
+					</script>
+					<a id="applyCss" title="Apply CSS style">Apply CSS</a>
+				</div>
+				
+				<div class="visualWrap">
+					<div class="editorHeader">Preview</div>
+					<form method="post">
+						<div id="mceu_13" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_13-body" class="mce-container-body mce-stack-layout"><div id="mceu_14" class="mce-container mce-menubar mce-toolbar mce-stack-layout-item mce-first" role="menubar" style="border-width: 0px 0px 1px;"><div id="mceu_14-body" class="mce-container-body mce-flow-layout"><div id="mceu_15" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_15" role="menuitem" aria-haspopup="true"><button id="mceu_15-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">File</span> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_16" role="menuitem" aria-haspopup="true"><button id="mceu_16-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Edit</span> <i class="mce-caret"></i></button></div><div id="mceu_17" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_17" role="menuitem" aria-haspopup="true"><button id="mceu_17-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">View</span> <i class="mce-caret"></i></button></div><div id="mceu_18" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item mce-last mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_18" role="menuitem" aria-haspopup="true"><button id="mceu_18-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Format</span> <i class="mce-caret"></i></button></div></div></div><div id="mceu_19" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"><div id="mceu_19-body" class="mce-container-body mce-stack-layout"><div id="mceu_20" class="mce-container mce-toolbar mce-stack-layout-item mce-first mce-last" role="toolbar"><div id="mceu_20-body" class="mce-container-body mce-flow-layout"><div id="mceu_21" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_21-body"><div id="mceu_0" class="mce-widget mce-btn mce-first mce-disabled" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Undo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_1" class="mce-widget mce-btn mce-last mce-disabled" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Redo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div></div></div><div id="mceu_22" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_22-body"><div id="mceu_2" class="mce-widget mce-btn mce-menubtn mce-first mce-last mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-haspopup="true"><button id="mceu_2-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Formats</span> <i class="mce-caret"></i></button></div></div></div><div id="mceu_23" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_23-body"><div id="mceu_3" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_3" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_4" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_4" role="button" aria-label="Italic"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div></div></div><div id="mceu_24" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_24-body"><div id="mceu_5" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_5" role="button" aria-label="Align left"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_6" role="button" aria-label="Align center"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_7" role="button" aria-label="Align right"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_8" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_8" role="button" aria-label="Justify"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignjustify"></i></button></div></div></div><div id="mceu_25" class="mce-container mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_25-body"><div id="mceu_9" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_9" role="button" aria-label="Bullet list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_10" role="button" aria-label="Numbered list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_11" role="button" aria-label="Decrease indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_12" role="button" aria-label="Increase indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div></div></div><div id="mceu_26" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_26-body"></div></div></div></div></div></div><div id="mceu_27" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="elm1_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 200px; display: block;" src="./Online jQuery Cheat Sheet_files/saved_resource.html"></iframe></div><div id="mceu_28" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-path mce-flow-layout-item mce-first"><div role="button" class="mce-path-item mce-last" data-index="0" tabindex="-1" id="mceu_29-0" aria-level="0">p</div></div><div id="mceu_30" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea id="elm1" name="elm1" style="display: none;" aria-hidden="true"></textarea>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="article">
+<article>
+<h3>Online jQuery Cheat Sheet</h3>
+<p><strong>jQuery Cheat Sheet will help you create the code for animations, various effects and other features for your website. Find the most common code snippets on a single page. </strong></p>
+<p>Hide the green comments with the link in the top right corner of the site. Click the code snippets to highlight then copy-paste them in your project!</p>
+<ul>
+<li><strong>Basics</strong> – Introduction to jQuery syntax through commonly used code examles. Learn how to include jQuery in your <a href="https://htmlcheatsheet.com/">HTML</a> code. </li>
+<li><strong>Selector</strong> – Similar to how we target <a href="https://htmlcheatsheet.com/css/">CSS</a> elements in the style sheets, we use selectors.</li>
+<li><strong>Events </strong> – Just like we have <a href="https://htmlcheatsheet.com/js/">JavaScript</a> events, we can set up listeners with jQuery.  </li>
+<li><strong>Effects </strong> – Learn how to animate the HTML elements. Make them fade, slide or set up any other effect with custom CSS properties. </li>
+<li><strong>Dom Manipulation </strong> – It's easy to get and edit the content of a Document Object Model item.  </li>
+<li><strong>Traversing </strong> – The way of targeting elements based on their hierarchy in the code. Imagine that the source of the page is a family tree where you can work with parents, children, siblings etc.  </li>
+<li><strong>Ajax </strong> – Exchange data with the server to dynamically update parts of the page. </li>
+<li><strong>Links </strong> – Useful links and online tools to work with jQuery. </li>
+</ul>
+<p>Make sure you save this link to help your next project.</p>
+</article>
+		</div>
+		<div class="footer">
+			HTML Cheat Sheet is using cookies. | <a href="https://htmlcheatsheet.com/jquery/jQuery-Cheat-Sheet.pdf" target="_blank">PDF</a> | <a href="https://html-css-js.com/terms-privacy/" target="_blank">Terms and Conditions, Privacy Policy</a><br>
+			©&nbsp;HTMLCheatSheet.com				
+		</div>		
+		<a id="back2Top" title="Back to top" href="https://htmlcheatsheet.com/jquery/#" style="display: none;">➤</a>
+	</div><iframe name="__tcfapiLocator" style="display: none;" src="./Online jQuery Cheat Sheet_files/saved_resource(1).html"></iframe> 
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-93090731-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body></html>

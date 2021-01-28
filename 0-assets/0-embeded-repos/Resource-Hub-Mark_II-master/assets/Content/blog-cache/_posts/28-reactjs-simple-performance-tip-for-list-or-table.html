@@ -1,0 +1,252 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>If you implement table or list of your own, this simple tip will gain some performance improvement and can save a
+      lot of rerenders.</p>
+    <p>Consider we have a <code>Table</code> and <code>TableRow</code> component which we use to show large Tabular data
+      which has checkboxes used by users to select the rows.</p>
+    <pre class="jsx"><code>// data source
+const users = [
+  {id: 1, name: &#39;A&#39;},
+  {id: 2, name: &#39;B&#39;},
+  {id: 3, name: &#39;C&#39;},
+  {id: 4, name: &#39;D&#39;},
+];
+
+class Table extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      selected: {},
+    }
+  }
+
+  handleSelect = (e) =&gt; {
+    const selected = this.state.selected;
+    selected[e.target.name] = e.target.checked;
+    this.setState({ selected });
+  }
+
+  render() {
+    return (
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th /&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          {
+            users.map((user) =&gt; {
+              return (
+                  &lt;TableRow
+                    key={user.id}
+                    id={user.id}
+                    name={user.name}
+                    selected={this.state.selected[user.id]}
+                    handleSelect={this.handleSelect}
+                  /&gt;;
+              );
+            })
+          }
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    );
+  }
+}</code></pre>
+    <p>And the <code>TableRow</code> component</p>
+    <pre class="jsx"><code>const TableRow = ({ selected, id, name, handleSelect }) =&gt; {
+  console.log(`render TableRow :: ${id} :: ${name}`);
+  return (
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;input
+          name={id}
+          type=&quot;checkbox&quot;
+          checked={selected}
+          onChange={handleSelect}
+        /&gt;
+      &lt;/td&gt;
+      &lt;td&gt;{id}&lt;/td&gt;
+      &lt;td&gt;{name}&lt;/td&gt;
+    &lt;/tr&gt;
+  );
+}
+
+TableRow.defaultProps = {
+  selected: false
+}</code></pre>
+    <p>The <code>TableRow</code> component have a <code>console.log</code> which will log the <code>id</code> &amp;
+      <code>name</code> when ever the component renders. This will help us to know which all rows are getting
+      rerendered.
+    </p>
+    <p>Now when the user select one of row, all the rows get rerendered in the above example. You can see
+      <code>console.log</code> for all the items in the data source.
+    </p>
+    <figure>
+      <img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/react-table-perf/react-before-optimised-table.gif"
+        alt="react-before-optimised-table" />
+      <figcaption>react-before-optimised-table</figcaption>
+    </figure>
+    <p>You can see the live version in <a href="https://jsbin.com/zubihot/2/edit?console,output">jsbin</a></p>
+    <a class="jsbin-embed" href="http://jsbin.com/zubihot/2/embed?console,output">JS Bin on jsbin.com</a>
+<<<<<<< HEAD
+    <script async defer src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+=======
+    <script src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p>In the above demo we have only 4 items and 3 columns, which didn’t cause much performance degradation. Where as
+      consider the above table with around 200 items and 50 columns? A simple checkbox selection will trigger 200
+      rerenders for <code>TableRow</code> component.</p>
+    <h3 id="using-purecomponent">Using PureComponent</h3>
+    <p>The simple and effective optimisation we can do here is convert the <code>TableRow</code> component to a
+      <code>PureComponent</code>.
+    </p>
+    <pre class="jsx"><code>class TableRow extends React.PureComponent {
+  defaultProps = {
+    selected: false
+  }
+
+  render() {
+    const { selected, id, name, handleSelect } = this.props;
+    console.log(`render TableRow :: ${id} :: ${name}`);
+    return (
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;input
+            name={id}
+            type=&quot;checkbox&quot;
+            checked={selected}
+            onChange={handleSelect}
+          /&gt;
+        &lt;/td&gt;
+        &lt;td&gt;{id}&lt;/td&gt;
+        &lt;td&gt;{name}&lt;/td&gt;
+      &lt;/tr&gt;
+    );
+  }
+}</code></pre>
+    <p>Now lets try selecting one of the row and see the improvement.</p>
+    <figure>
+      <img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2017/react-table-perf/react-optimised-table.gif"
+        alt="react-before-optimised-table" />
+      <figcaption>react-before-optimised-table</figcaption>
+    </figure>
+    <p>Now when we select a row, only that row rerenders. <a
+        href="https://reactjs.org/docs/react-api.html#reactpurecomponent">PureComponent</a> has implemented
+      <code>shouldComponentUpdate</code> which does a <strong>shallow compare</strong> of props and do rerenders only if
+      it differs.
+    </p>
+    <p>You can see the live version in <a href="https://jsbin.com/zubihot/edit?console,output">jsbin</a></p>
+    <a class="jsbin-embed" href="http://jsbin.com/zubihot/embed?console,output">JS Bin on jsbin.com</a>
+<<<<<<< HEAD
+    <script async defer src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+=======
+    <script src="https://static.jsbin.com/js/embed.min.js?4.1.4"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p>In the demo, the using of <code>PureComponent</code> was possible because the props where <code>number</code>
+      &amp; <code>string</code>. If the props are <code>Array</code> or <code>Object</code> we won’t be able to use
+      <code>PureComponent</code> since the <strong>shallow compare</strong> of <code>PureComponent</code> might lead to
+      false positives.
+    </p>
+    <p>In such cases we can implement write our own parent component which implements deep compare in
+      <code>shouldComponentUpdate</code>.
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> PerfComponent <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="at">shouldComponentUpdate</span>(nextProps) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="co">// implement/ use deep compare functionality</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="cf">if</span>(<span class="op">!</span>deepEqual) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-5" title="5">      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-7" title="7">    <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="op">}</span></a>
+<a class="sourceLine" id="cb4-10" title="10"></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="im">export</span> <span class="im">default</span> PerfComponent<span class="op">;</span></a></code></pre>
+    </div>
+    <p>and inherit <code>TableRow</code> from <code>PerfComponent</code>.</p>
+    <pre class="jsx"><code>class TableRow extends PerfComponent {
+  defaultProps = {
+    selected: false
+  }
+
+  render() {
+    const { selected, user, handleSelect } = this.props;
+    console.log(`render TableRow :: ${user.id} :: ${user.name}`);
+    return (
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;input
+            name={user.id}
+            type=&quot;checkbox&quot;
+            checked={selected}
+            onChange={handleSelect}
+          /&gt;
+        &lt;/td&gt;
+        &lt;td&gt;{user.id}&lt;/td&gt;
+        &lt;td&gt;{user.name}&lt;/td&gt;
+      &lt;/tr&gt;
+    );
+  }
+}</code></pre>
+    <p>Hope it helped.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      React       |  16.4.0 |</code></pre>

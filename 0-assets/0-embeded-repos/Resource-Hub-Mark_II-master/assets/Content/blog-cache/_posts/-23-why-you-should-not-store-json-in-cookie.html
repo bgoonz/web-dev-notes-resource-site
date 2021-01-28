@@ -1,0 +1,49 @@
+<blockquote>
+  <p>Storing JSON in cookies will increase the size of cookie unnecessarly, which effects your web apps performance.</p>
+</blockquote>
+<p>After a long time I fired up Firebug, which lead to a realization of mistake we done by storing JSON in cookies. I
+  think Firebug is best to check cookie more than Chrome Devtools. Unfortunately Firefox devtools cookie panel is still
+  not ready.</p>
+<p>Firebug shows you two types of cookie size.</p>
+<ul>
+  <li>Raw Size</li>
+  <li>Size</li>
+</ul>
+<p><strong>Size</strong> is the actual content size before encoding the content.</p>
+<p><strong>Raw size</strong> is the size of cookie after encoding the content, the actual size when they send to server.
+  When we store JSON, the <code>{</code>, <code>:</code>, <code>"</code>, <code>}</code> and <code>,</code> are encoded
+  and converted to <code>%7B</code>, <code>%3A</code>, <code>%22</code>, <code>%7D</code> and <code>%2C</code>
+  respectively.</p>
+<figure>
+  <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/firebug-cookie_zps27ccc4b4.png"
+    alt="Raw size" />
+  <figcaption>Raw size</figcaption>
+</figure>
+<p>So if you use JSON, the characters like <code>{}:",</code> etc will be a unnecessary weight for the cookie. In the
+  above image you can see that the difference of Raw size and size is around 48 Bytes which means this cookie’s ~40
+  Bytes are unnessary.</p>
+<p>We can avoid this unnessary weight, by choosing plain text in the cookie and writing our own parser to extract the
+  multiple values we stored in cookie.</p>
+<p>For example, instead of storing</p>
+<div class="sourceCode" id="cb1">
+  <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">&quot;city&quot;</span><span class="fu">:</span> <span class="st">&quot;kochi&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="dt">&quot;place&quot;</span><span class="fu">:</span> <span class="st">&quot;kakkanad&quot;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="fu">}</span></a></code></pre>
+</div>
+<p>we can store it as <code>kochi|1|kakkanad</code> and parse this ourselves which will reduce alot of weight.</p>
+<h2 id="why-you-should-care-about-cookie-size">Why you should care about cookie size?</h2>
+<p>Size of the cookie have effect on web performance.</p>
+<p>As per the <a href="https://developers.google.com/speed/docs/best-practices/request#MinimizeRequestSize">google best
+    practice</a></p>
+<blockquote>
+  <p>the average size of cookies served off any domain be less than 400 bytes.</p>
+</blockquote>
+<p>also <a href="https://developer.yahoo.com/performance/rules.html#cookie_size">Yahoo</a> recommends to reduce the
+  cookie’s size.</p>
+
+</body>
+
+
+</html>

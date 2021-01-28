@@ -1,0 +1,87 @@
+<!--
+
+---
+ "Rack OpenID : forcing for new session in google authentication"
+date: 2011-08-20 13:14:22 UTC
+updated: 2011-08-20 13:14:22 UTC
+2008/kind#post ruby-on-rails
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on"><span class="Apple-style-span"
+      style="font-family: inherit;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Currently Rack::OpenID didn't
+      support for forcing a new session in Google authentication. So if you need that functionality, you can easily add
+      via Monkey patching/Duck punching. By monkey patching we are going to pass PAPE&nbsp;<span
+        class="Apple-style-span" style="line-height: 16px;"><strong>&nbsp;(Provider Authentication Policy
+          Extension)</strong>&nbsp;as a parameter. For further information you can get the <a
+          href="http://code.google.com/apis/accounts/docs/OpenID.html#Parameters">Google
+          documentation</a>.</span></span><br /><span class="Apple-style-span" style="font-family: inherit;"><span
+        class="Apple-style-span" style="line-height: 16px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If you wonder what I
+        meant by&nbsp;</span></span>Monkey patching/Duck punching, then you have to read <a
+      href="http://en.wikipedia.org/wiki/Monkey_patch">wikipedia</a>&nbsp;first. The best&nbsp;definition I heard
+    about&nbsp;&nbsp;Monkey patching/Duck punching is by&nbsp;<span class="Apple-style-span"
+      style="border-collapse: collapse; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; line-height: 18px;">&nbsp;Patrick
+      Ewing in&nbsp;<a href="http://podcast.rubyonrails.org/programs/1/episodes/railsconf-2007" rel="nofollow"
+        style="background-attachment: initial; background-clip: initial; background-color: transparent; background-image: initial; background-origin: initial; background-position: initial initial; background-repeat: initial initial; border-bottom-width: 0px; border-color: initial; border-left-width: 0px; border-right-width: 0px; border-style: initial; border-top-width: 0px; color: #0077cc; cursor: pointer; font-size: 14px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-decoration: none; vertical-align: baseline;">RailsConf
+        2007</a>.</span><br />
+    <blockquote><span class="Apple-style-span"
+        style="border-collapse: collapse; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; line-height: 18px;">...if
+        it walks like a duck and talks like a duck, it's a duck, right? So if this duck is not giving you the noise that
+        you want, you’ve got to just punch that duck until it returns what you expect.</span></blockquote>Now the
+    patch.<br /><b>For rails :&nbsp;</b><br /><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b>Copy the following
+    code to a file and save it in config/initializers/ directory.
+    Eg:&nbsp;&nbsp;config/initializers/rack_openid_patch.rb<br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/1157611.js?file=pape_patch.rb">
+    </script><br />Now you need to add the <b>pape</b> option to the <b>Rack::OpenID.build_header</b> <br />
+    <script async defer src="https://gist.github.com/1157611.js?file=pape_usage.rb">
+=======
+    <script src="https://gist.github.com/1157611.js?file=pape_patch.rb">
+    </script><br />Now you need to add the <b>pape</b> option to the <b>Rack::OpenID.build_header</b> <br />
+    <script src="https://gist.github.com/1157611.js?file=pape_usage.rb">
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    </script><br />Now You can force for new session in google authentication with Rack::OpenID.But make sure you set
+    <b>max_auth_age = 0</b>
+  </div>
+</body>
+
+</html>
+$

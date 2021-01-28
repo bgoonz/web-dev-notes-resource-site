@@ -1,0 +1,101 @@
+<!--
+
+---
+ "mysql : create user and set privileges"
+date: 2012-05-30 21:03:05 UTC
+updated: 2012-04-30 21:03:05 UTC
+comments: false
+categories: mysql
+---
+
+-->
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+  According to me the easiest way to create a user in mysql and set privilege to some database is the grant
+  statement.
+  &nbsp;You can do both the tasks ie., creating a user and setting privileges by executing a single statement. Here is
+  the
+  syntax for the statement.<br /><br />
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/1582399.js?file=sample.sql"></script><br /><b>1. Privilage</b><br />You can
+  specify
+  what privilage should be given to the user on this database. like SELECT,CREATE. etc. Either you can use one privilege
+  or more than one privilege on a single statement.<br /><br />
+  <script async defer src="https://gist.github.com/1582399.js?file=example1.sql"></script><br />
+  <script async defer src="https://gist.github.com/1582399.js?file=example2.sql"></script><br />if you want to give all the
+  privilages
+  to the user then the short cut is<br /><br />
+  <script async defer src="https://gist.github.com/1582399.js?file=example3.sql"></script><br /><b>2. Database</b><br />Datebase
+  name
+  to which you need to give privilege to the user. If the user want privilege to all databases use "*".<br /><br />
+  <script async defer src="https://gist.github.com/1582399.js?file=example4.sql"></script><br /><b>3. Tablename</b><br />If you want
+  to set a particular privilege to a database table you can provide a table name else just provide * (astrik) which
+  means
+  to all tables in a given database.<br /><br />
+  <script async defer src="https://gist.github.com/1582399.js?file=example5.sql"></script><br /><b>4. username</b><br />Desired
+=======
+  <script src="https://gist.github.com/1582399.js?file=sample.sql"></script><br /><b>1. Privilage</b><br />You can
+  specify
+  what privilage should be given to the user on this database. like SELECT,CREATE. etc. Either you can use one privilege
+  or more than one privilege on a single statement.<br /><br />
+  <script src="https://gist.github.com/1582399.js?file=example1.sql"></script><br />
+  <script src="https://gist.github.com/1582399.js?file=example2.sql"></script><br />if you want to give all the
+  privilages
+  to the user then the short cut is<br /><br />
+  <script src="https://gist.github.com/1582399.js?file=example3.sql"></script><br /><b>2. Database</b><br />Datebase
+  name
+  to which you need to give privilege to the user. If the user want privilege to all databases use "*".<br /><br />
+  <script src="https://gist.github.com/1582399.js?file=example4.sql"></script><br /><b>3. Tablename</b><br />If you want
+  to set a particular privilege to a database table you can provide a table name else just provide * (astrik) which
+  means
+  to all tables in a given database.<br /><br />
+  <script src="https://gist.github.com/1582399.js?file=example5.sql"></script><br /><b>4. username</b><br />Desired
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+  username for the new user.Must me unique.<br /> <br /><b>5.ip</b><br />If you like to restrict the user from using
+  database from a particular ip then you can provide the allowed ip or just provide localhost there so that user can't
+  use
+  remote login to the database.giving '%' in the place indicated localhost.<br /><br /><b>6. password</b><br />Desired
+  password for the new user.<br /><br /><b>Eg:</b><br />
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/1582399.js?file=example6.sql"></script><br />After creating user and setting
+  privilage don't forget to <b>reload the privileges</b> using <br />
+  <script async defer src="https://gist.github.com/1582399.js?file=flush_privileges.sql"></script>
+=======
+  <script src="https://gist.github.com/1582399.js?file=example6.sql"></script><br />After creating user and setting
+  privilage don't forget to <b>reload the privileges</b> using <br />
+  <script src="https://gist.github.com/1582399.js?file=flush_privileges.sql"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a

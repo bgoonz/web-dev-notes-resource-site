@@ -1,0 +1,42 @@
+<!--
+
+---
+ "Ruby : create classes on fly"
+date: 2013-05-14 19:49:00 UTC
+updated: 2013-05-14 19:49:00 UTC
+comments: false
+categories: ruby metaprogramming
+---
+
+This is a simple blog post which demonstrate how we can create ruby classes on the fly.<br /><br />
+<h4>Using <code>class</code> keyword and <code>Class.new</code></h4>We can create a ruby class either using
+<code>class</code> keyword or using <code>Class</code> constructor. Ruby newbies will be only familiar with
+<code>class</code> keyword, but in order to create a class on the fly we need to use <code>Class</code>
+constructor<br /><br />
+<h4>Creating simple ruby class</h4>Here is how we can create a simple class on the fly using <code>Class</code>
+constructor.<br />
+<script src="https://gist.github.com/revathskumar/5578817.js?file=simple.rb"></script><noscript>
+  <pre><code>require 'active_support/inflector'<br />module SomeModule<br />class Test<br />   def create_class name<br /><br />      Object.const_set(name.classify,<br />    Class.new  do  <br />          def hello_class  <br />            p "Hello from new class"  <br />          end  <br />        end  <br />      )  <br /><br />    end  <br />  end  <br />end  <br /></code></pre>
+</noscript>The above code will create a new class when you call the instance method create_class. <br />
+<script src="https://gist.github.com/revathskumar/5578817.js?file=create.rb"></script><noscript>
+  <pre><code>testObj = SomeModule::Test.new  <br />testObj.create_class "airtel"  # Creates a new class Airtel  <br />Airtel.new.hello_class  # prints Hello from new class   <br /></code></pre>
+</noscript>In most cases the new class name will be on some variable. So we need to use const_get method to the new
+class.<br />
+<pre><code>Object.const_get("airtel".classify).new.hello_class   <br /></code></pre>I required
+<strong>"active_support/inflector"</strong> to get the method <code>classify</code>. what <a
+  href="http://apidock.com/ruby/Module/const_set">const_set</a> method is doing is <strong>sets a constant to the given
+  object</strong>, here sets the class name. <br />If you want the newly created class to be a part of
+<code>SomeModule</code> then you need to use <code>const_set</code> on <code>SomeModule</code> like<br />
+<script src="https://gist.github.com/revathskumar/5578817.js?file=inmodule.rb"></script><noscript>
+  <pre><code>  SomeModule.const_set(name.classify,  <br />    Class.new  do  <br />      def hello_class  <br />        p "Hello from new class"  <br />      end  <br />    end  <br />  )  <br /></code></pre>
+</noscript>then while const_get use<br />
+<pre><code>SomeModule.const_get('airtel'.classify)  <br /></code></pre><br />
+<h4>Creating inherited class</h4>If you understand how to create a simple class, then creating a inherited class is
+quite simple. You just need to pass the parent class to the <code>Class</code> constructor.<br /><br />
+<script src="https://gist.github.com/revathskumar/5578817.js?file=inherited.rb"></script><noscript>
+  <pre><code>  SomeModule.const_set(name.classify,  <br />    Class.new(SomeModule::Test)  do  <br />      def hello_class  <br />        p self.class.ancestors  <br />        p "Hello from new class"  <br />      end  <br />    end  <br />  )  <br /></code></pre>
+</noscript>This will create a new class inherited from
+<code>SomeModule::Test</code>.<br /><br /><code>self.class.ancestors</code> will print the hierarchy like
+<strong>[SomeModule::Airtel, SomeModule::Test, Object, Kernel, BasicObject]</strong>. <br /><br /><br />Am I missed
+something? Love to hear from you via comments.<br />Blogged via <a href="http://markdownblogger.herokuapp.com/">Markdown
+  Blogger</a>

@@ -1,0 +1,187 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>This post will explain how to use <code>elm/http</code> package to fetch data using XHR requests in ELM
+      applications. Since the reponse is from the outer world of ELM we need to <a
+        href="/2018/06/elm-decoding-json.html">decode JSON response</a> before ELM can consume it. For the purpose of
+      demo we will fetch <code>posts</code> from <a href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a> and
+      render the list of titles from its <code>/posts</code> resource.</p>
+    <p><img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2019/elm-http-xhr/elm-http-xhr.png"
+        alt="ELM fetch with XHR" />{: width=“100%”}</p>
+    <h2 id="setup-model"><a class="anchor" name="setup" href="#setup"><i class="anchor-icon"></i></a>Setup Model</h2>
+    <p>Lets start with defining model for the application. Our <code>Post</code> model will have
+      <code>id</code>,<code>title</code> &amp; <code>body</code> fields and main <code>Model</code> will contain the
+      list of <code>Post</code>s the <code>uiState</code> to show the state of request and <code>error</code> to store
+      the error message.
+    </p>
+    <pre class="elm"><code>type UiState
+    = Init
+    | Loading
+    | Success
+    | Failure
+
+type alias Post =
+    { id : Int, title : String, body : String }
+
+
+type alias Model =
+    { posts : List Post, uiState : UiState, error : Maybe String }
+
+
+initialModel : Model
+initialModel =
+    { posts = [], uiState = Init, error = Nothing }
+
+
+init : ( Model, Cmd Msg )
+init =
+    ( initialModel, Cmd.none )</code></pre>
+    <p>Once we have <code>Modal</code> and <code>Post</code> we can setup the decoders for these</p>
+    <h2 id="list-decoder"><a class="anchor" name="list-decoder" href="#list-decoder"><i class="anchor-icon"></i></a>List
+      Decoder</h2>
+    <pre class="elm"><code>postDecoder : Json.Decode.Decoder Post
+postDecoder =
+    Json.Decode.map3 Post
+        (Json.Decode.field &quot;id&quot; Json.Decode.int)
+        (Json.Decode.field &quot;title&quot; Json.Decode.string)
+        (Json.Decode.field &quot;body&quot; Json.Decode.string)
+
+
+postCollectionDecoder : Json.Decode.Decoder (List Post)
+postCollectionDecoder =
+    Json.Decode.map identity
+        (Json.Decode.list postDecoder)</code></pre>
+    <p>if your api is namespaced the collection with keys like <code>data</code> then the
+      <code>postCollectionDecoder</code> will become
+    </p>
+    <pre class="elm"><code>postCollectionDecoder : Json.Decode.Decoder (List Post)
+postCollectionDecoder =
+    Json.Decode.map identity
+        (Json.Decode.field &quot;data&quot; (Json.Decode.list repoDecoder))</code></pre>
+    <h2 id="fetch-update"><a class="anchor" name="fetch-update" href="#fetch-update"><i
+          class="anchor-icon"></i></a>fetch &amp; update</h2>
+    <p>Next we need to setup the <code>Msg</code> and <code>update</code> function.</p>
+    <p>We will make use of two <code>Msg</code>s. <code>InitFetchPosts</code> will update the uiState to loading and
+      initiate the fetch. Once the fetch result is available we will handle it with <code>FetchPosts</code> Msg.</p>
+    <pre class="elm"><code>type Msg
+    = InitFetchPosts
+    | FetchPosts (Result Http.Error (List Post))
+
+update : Msg -&gt; Model -&gt; ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        InitFetchPosts -&gt;
+            ( { model | uiState = Loading }, fetchPosts )
+
+        FetchPosts result -&gt;
+            case result of
+                Ok posts -&gt;
+                    ( { model | uiState = Success, posts = posts }, Cmd.none )
+
+                Err _ -&gt;
+                    ( { model | uiState = Failure, error = Just &quot;Error&quot; }, Cmd.none )</code></pre>
+    <p>then use <code>Http.get</code> to fetch the data</p>
+    <pre class="elm"><code>fetchPosts : Cmd Msg
+fetchPosts =
+    Http.get
+        { url = &quot;https://jsonplaceholder.typicode.com/posts&quot;
+        , expect = Http.expectJson FetchPosts postCollectionDecoder
+        }</code></pre>
+    <p>we can initiate <code>fetchPosts</code> either <a href="/2018/11/elm-send-command-on-init.html">on init using
+        task</a> or on a normal button click. For the purpose of this post let use a button to load the data we will be
+      able to notice the <code>Loading</code> state switch to <code>Success</code> when data is received.</p>
+    <h2 id="rendering-the-view"><a class="anchor" name="view" href="#view"><i class="anchor-icon"></i></a>Rendering the
+      view</h2>
+    <p>In view we will have a button which will initiate the xhr request and the render the data as per the xhr status.
+      Once the xhr is initiated we will show the text <code>Loading...</code> as the loading indicator and later change
+      it to either error message or the list of titles as per the status of xhr request.</p>
+    <pre class="elm"><code>renderItem : Post -&gt; Html Msg
+renderItem post =
+    li [] [ text post.title ]
+
+
+renderData : Model -&gt; Html Msg
+renderData model =
+    case model.uiState of
+        Init -&gt;
+            span [] []
+
+        Loading -&gt;
+            span [] [ text &quot;Loading...&quot; ]
+
+        Success -&gt;
+            ul [] (List.map (\post -&gt; renderItem post) model.posts)
+
+        Failure -&gt;
+            case model.error of
+                Just error -&gt;
+                    span [] [ text error ]
+
+                Nothing -&gt;
+                    span [] []
+
+
+view : Model -&gt; Html Msg
+view model =
+    div []
+        [ button [ onClick InitFetchPosts ] [ text &quot;Fetch Posts&quot; ]
+        , renderData model
+        ]</code></pre>
+    <p>The Running version is available on <a href="https://ellie-app.com/5rmGSL6kbB4a1">ellie-app</a>.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      ELM         |  0.19.0 |
+|   elm/http       |  2.0.0  |</code></pre>
+    <iframe src="https://ellie-app.com/embed/5rmGSL6kbB4a1" style="width:100%; height:400px; border:0; overflow:hidden;"
+      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+    </iframe>

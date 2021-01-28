@@ -1,0 +1,77 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When I connect the websocket from my PHP application, I always wanted to use the same URL of webapp for the
+      websocket connection. I was not happy with seperate url with a port to connect with websockets.</p>
+    <p>Recently I figured out how to proxy my websocket connection with apache. In order to proxy it, I need to enable
+      <code>mod_proxy_wstunnel</code> module in apache.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">sudo</span> a2enmod mod_proxy_wstunnel</a></code></pre>
+    </div>
+    <p>Next is to specify the endpoint which the websocket will connect, so we can proxy it to our websocket server.
+      This needs to be specified in virtual host using <code>ProxyPass</code> directive.</p>
+    <pre><code>ProxyRequests Off
+ProxyPass &quot;/ws/&quot;  &quot;ws://localhost:9030/&quot;
+ProxyPass &quot;/wss/&quot;  &quot;wss://localhost:9030/&quot;</code></pre>
+    <p>This configuration in my virtual host will proxy my websocket connection to websocket server through apache.</p>
+    <p>Now I can connect my websocket to the same URL as my webapp.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">var</span> connection <span class="op">=</span> <span class="kw">new</span> <span class="at">WebSocket</span>(<span class="st">&quot;ws://localhost/ws&quot;</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Now I don’t need to specify the port which websocket is running, instead I specify the endpoint.</p>
+
+  </body>
+
+  
+</html>

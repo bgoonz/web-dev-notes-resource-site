@@ -1,0 +1,169 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Ruby heredoc have two syntax, the one starts with <code>&lt;&lt;</code> and other with <code>&lt;&lt;-</code>.
+      The one starts with <code>&lt;&lt;</code> needs END marker should be at starting of a line.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> something</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="ot">@abc</span> = &lt;&lt;<span class="kw">ABC</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ot">    some</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="ot">    multiline</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="ot">    text</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">ABC</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>but <code>&lt;&lt;-</code> the one with dash, won’t need marker at the start of line, so we can easily intend END
+      marker.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">def</span> something</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="ot">@abc</span> = &lt;&lt;-<span class="kw">ABC</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="ot">    some</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="ot">    multiline</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="ot">    text</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="ot">  </span><span class="kw">ABC</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>while working on <a href="/2014/10/ruby-rendering-erb-template.html">erb rendering</a>, something caught my eye,
+      a wierd syntax (at least for me) with heredoc on <a
+        href="http://www.ruby-doc.org/stdlib-2.1.4/libdoc/erb/rdoc/ERB.html#method-c-new-label-Example">ruby doc</a>.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">ERB</span>.new(&lt;&lt;-<span class="kw">&#39;END_PRODUCT&#39;</span><span class="ot">.gsub(/^\s+/, &quot;&quot;), 0, &quot;&quot;, &quot;@product&quot;).result b</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="ot">  &lt;%= PRODUCT[:name] %&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="ot">  &lt;%= PRODUCT[:desc] %&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">END_PRODUCT</span></a></code></pre>
+    </div>
+    <p>Then only I came to know that heredoc can be easily passed to functions like</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb4-1" title="1">some_method(&lt;&lt;-<span class="kw">START</span><span class="ot">)</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="kw">START</span></a></code></pre>
+    </div>
+    <p>and if you have two heredoc to pass, then</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb5-1" title="1">some_method(&lt;&lt;-<span class="kw">START</span><span class="ot">, &lt;&lt;-END)</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="kw">START</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  another</a>
+<a class="sourceLine" id="cb5-7" title="7">  multiline</a>
+<a class="sourceLine" id="cb5-8" title="8">  text</a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="kw">END</span></a></code></pre>
+    </div>
+    <h1 id="single-quoted">Single quoted</h1>
+    <p>just like single quoted string, which won’t evalute the interpolated expression</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb6-1" title="1">a = <span class="dv">10</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="ot">@abc</span> = &lt;&lt;-<span class="kw">&#39;ABC&#39;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="ot">  #{a}</span></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="kw">ABC</span></a></code></pre>
+    </div>
+    <p>will result in</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb7-1" title="1"><span class="st">&#39;  some</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="st">  multiline</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="st">  text</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="st">  #{a}&#39;</span></a></code></pre>
+    </div>
+    <h1 id="double-quoted">Double quoted</h1>
+    <p>As you guessed, this will evalute the interpolated expression and substitute the value.</p>
+    <div class="sourceCode" id="cb8">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb8-1" title="1">a = <span class="dv">10</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="ot">@abc</span> = &lt;&lt;-<span class="kw">&quot;ABC&quot;</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="ot">  #{</span>a<span class="ot">}</span></a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="kw">ABC</span></a></code></pre>
+    </div>
+    <p>will result in</p>
+    <div class="sourceCode" id="cb9">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb9-1" title="1"><span class="st">&#39;  some</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">  multiline</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="st">  text</span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="st">  10&#39;</span></a></code></pre>
+    </div>
+    <h1 id="removing-unwanted-spaces-due-to-indentation">Removing unwanted spaces due to indentation</h1>
+    <p>Since we indend the heredoc to make code more readable, this will lead to unnecessary spaces in our text. To
+      avoid this you can use <a href="http://ruby-doc.org/core-2.1.4/String.html#method-i-gsub">gsub</a> method.</p>
+    <div class="sourceCode" id="cb10">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb10-1" title="1">some_method(&lt;&lt;-<span class="kw">START</span><span class="ot">.gsub(/^\s+/, &quot;&quot;))</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">START</span></a></code></pre>
+    </div>
+    <p>which will result in</p>
+    <div class="sourceCode" id="cb11">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb11-1" title="1"><span class="st">&#39;some</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="st">multiline</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="st">text</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="st">10&#39;</span></a></code></pre>
+    </div>
+    <p>if you are using Rails/ActiveSupport there is handy method you can use <a
+        href="http://apidock.com/rails/String/strip_heredoc">strip_heredoc</a></p>
+    <div class="sourceCode" id="cb12">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb12-1" title="1">some_method(&lt;&lt;-<span class="kw">START</span><span class="ot">.strip_heredoc)</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="ot">  some</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="ot">  multiline</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="ot">  text</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="kw">START</span></a></code></pre>
+    </div>
+  </body>
+
+  </html>
+  $

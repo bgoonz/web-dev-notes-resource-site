@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+      <title>postgreSQL-postBird_installation</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css.map">
+  <link rel="stylesheet" href="./../../css/blog-home.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/prism.css">
+  <script async defer src="./../../vendor/bootstrap/css/prism.js"></script>
+  <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css">
+
+
+  <link rel="stylesheet" href="./cheatsheets.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="./cheatsheets.css">
+    </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="post-sql">Post Sql</h1>
+
+<h2 class="mume-header" id="installing-postgresql-and-postboard">Installing PostgreSql and Postboard</h2>
+
+<h3 class="mume-header" id="install-postgresql-12">Install PostgreSQL 12</h3>
+
+<p><a class="btn" href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">Download link</a></p>
+<p>You don&apos;t want pgAdmin nor the Stack Builder things. Uncheck. Uncheck. Next</p>
+<h2 class="mume-header" id="this-is-specific-to-wsl-v-1-and-windows-running-ubuntu">This is specific to wsl -v 1 and windows running ubuntu</h2>
+
+<h3 class="mume-header" id="installing-postgresql-client-tools-on-ubuntu">Installing PostgreSQL Client Tools on Ubuntu</h3>
+
+<pre class="language-text">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; | sudo tee  /etc/apt/sources.list.d/pgdg.list
+
+
+sudo apt update
+sudo apt install postgresql-client-12 postgresql-common
+echo &apos;to see version psql--version&quot;
+</pre>
+<pre data-role="codeBlock" data-info class="language-"> <code class="language-javascript">add alias
+alias psql=&quot;psql -h localhost&quot;
+
+create user
+```console
+	psql -U postgres -c &quot;CREATE USER `whoami` WITH PASSWORD &apos;password&apos; SUPERUSER&quot;
+	echo &quot;to see who&quot;
+	psql -U postgres postgres
+	echo &quot; replace with password&quot;
+	psql -U postgres -c &quot;CREATE USER `whoami` WITH PASSWORD &apos;password&apos; SUPERUSER&quot;
+	echo &quot;create password&quot;
+	code ~/.pgpass
+	echo &quot;set replacing variables&quot;
+	echo&quot; PLACE IN FILE
+localhost:5432:*:&#xAB;your Ubuntu user name&#xBB;:&#xAB;the password you just used&#xBB;&quot;
+
+	echo&quot;change permissions so only you can read it&quot;
+	chmod go-rw ~/.pgpass
+	echo &quot; to confirm&quot;
+	ls -al ~/.pgpass
+
+##  Installin Postbird
+&lt;p class=&quot;mume-header &quot; id=&quot;installin-postbird&quot;&gt;&lt;/p&gt;
+
+
+[link to Postbird gh](https://github.com/Paxa/postbird/releases)
+
+Install
+
+When it&apos;s done installing, it will launch itself. Test it out by typing the &quot;postgres&quot; into the &quot;Username&quot; field and the password from your installation in the &quot;Password&quot; field. Click the Connect button. It should properly connect to the running
+
+</code></pre>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a class="btn" href="#post-sql">Post Sql</a>
+<ul>
+<li><a class="btn" href="#installing-postgresql-and-postboard">Installing PostgreSql and Postboard</a>
+<ul>
+<li><a class="btn" href="#install-postgresql-12">Install PostgreSQL 12</a></li>
+</ul>
+</li>
+<li><a class="btn" href="#this-is-specific-to-wsl-v-1-and-windows-running-ubuntu">This is specific to wsl -v 1 and windows running ubuntu</a>
+<ul>
+<li><a class="btn" href="#installing-postgresql-client-tools-on-ubuntu">Installing PostgreSQL Client Tools on Ubuntu</a></li>
+</ul>
+</li>
+<li><a class="btn" href="#installin-postbird">Installin Postbird</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script async>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

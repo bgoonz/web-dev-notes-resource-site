@@ -2,7 +2,7 @@
 
 const warnDeprecation = require('./warn-deprecation')
 
-// Node 4 doesn’t support new.target.
+// Node 4 doesn't support new.target.
 let hasNewTarget
 
 try {

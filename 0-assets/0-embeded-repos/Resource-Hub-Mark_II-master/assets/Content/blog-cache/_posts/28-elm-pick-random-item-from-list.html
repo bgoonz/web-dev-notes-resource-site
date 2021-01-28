@@ -1,0 +1,239 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Generating random number in <code>ELM</code> is tricky. We can’t call a function <code>Math.random()</code> like
+      in JavaScript. ELM by design support pure functions only. If you need to do anything impure you have to use
+      <code>Cmd</code>, <code>Msg</code> and <code>Update</code> means you have to use ELM runtime to the impure job. To
+      make our life easier ELM 0.19 comes with <a href="https://package.elm-lang.org/packages/elm/random">elm/random</a>
+      package.
+    </p>
+    <p><code>elm/random</code> gives a <code>Generator</code> which ask ELM runtime to generate a random number and pass
+      back as <code>Update</code> <code>Msg</code>. <code>Random.generate</code> will accept the <code>Msg</code> with 1
+      argument and a function with describe the type and range of the random.</p>
+    <pre class="elm"><code>type Msg = RandomNumber int
+Random.generate RandomNumber (Random.int 0 10)</code></pre>
+    <p>The above example is to generate random integer between 0 &amp; 10. Since instead of returning value,
+      <code>Random.generate</code> will send the message <code>RandomNumber</code> with random integer generated. To
+      receive and handle this generated random integer we should have <code>update</code> function as below
+    </p>
+    <pre class="elm"><code>update msg model -&gt;
+    case msg of
+        RandomNumber rn -&gt;
+            -- use the random number rn
+</code></pre>
+    <h2 id="random-item-from-list"><a class="anchor" name="random-item-list" href="#random-item-list"><i
+          class="anchor-icon"></i></a>Random Item from list</h2>
+    <p>Lets consider we have a list of items and we need to pick item randomly from this list.</p>
+    <pre class="elm"><code>type alias Char =
+    { text: String }
+
+type alias Flags =
+    {  }
+
+
+type alias Model =
+    { selected : Maybe Char, chars: List Char }
+
+
+initialModel : Model
+initialModel =
+    { selected = Nothing
+    , chars = [
+        {text= &quot;A&quot;}
+        ,{text= &quot;B&quot;}
+        ,{text = &quot;C&quot;}
+        ,{text= &quot;D&quot;}
+        ,{text= &quot;E&quot;}
+      ]
+    }</code></pre>
+    <p>selecting random item can be trigger in multiple ways like <code>a button click</code> or on <code>app
+        mount</code>. For this post let pick the random item on a <code>button click</code>.</p>
+    <pre class="elm"><code>renderText : Maybe Char -&gt; Html Msg
+renderText selected =
+    case selected of
+        Just char -&gt;
+            text char.text
+        Nothing -&gt;
+            text &quot;Please click on Random Button&quot;
+
+
+view : Model -&gt; Html Msg
+view model =
+    div []
+        [ button [ onClick FindRandom ] [ text &quot;Random&quot; ]
+        , div [] [ (renderText model.selected) ]
+        ]</code></pre>
+    <p>Now we have a button with <code>Random</code> text which will send Cmd <code>FindRandom</code>. Next lets handle
+      the <code>FindRandom</code> in the update.</p>
+    <pre class="elm"><code>type Msg
+    = FindRandom
+
+
+update : Msg -&gt; Model -&gt; (Model, Cmd Msg)
+update msg model =
+    case msg of
+        FindRandom -&gt;
+            (model, Random.generate RandomNumber (Random.int 0 (List.length model.chars - 1)))</code></pre>
+    <p>Once the update method receive the <code>Msg</code> <code>FindRandom</code> it will trigger the
+      <code>Random.generate</code> with boundary 0 &amp; no.of item in the list. ELM runtime generate random number in
+      the given boundary and will send the Msg <code>RandomNumber</code> with the generated number. Next lets handle
+      that. The above code will become,
+    </p>
+    <pre class="elm"><code>type Msg
+    = FindRandom
+    | RandomNumber Int
+
+
+update : Msg -&gt; Model -&gt; (Model, Cmd Msg)
+update msg model =
+    case msg of
+        FindRandom -&gt;
+            (model, Random.generate RandomNumber (Random.int 0 (List.length model.chars - 1)))
+        RandomNumber rn -&gt;
+            let
+                selected = Array.fromList model.chars
+                    |&gt; Array.get rn
+            in
+                ({ model | selected = selected }, Cmd.none)</code></pre>
+    <p>Once the update receives <code>RandomNumber</code> with the generated number, we have to pick Item from list.
+      Since we don’t have index for list we need to convert th list into array and use the generated number as index to
+      get the List Item. Once we get the List Item we update the <code>model.selected</code> value and that will get
+      rendered in the view.</p>
+    <p>The whole code will look like,</p>
+    <pre class="elm"><code>module Main exposing (main)
+
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+import Random
+import Array
+
+type alias Char =
+    { text: String }
+
+type alias Flags =
+    {  }
+
+
+type alias Model =
+    { selected : Maybe Char, chars: List Char }
+
+
+initialModel : Model
+initialModel =
+    { selected = Nothing
+    , chars = [
+        {text= &quot;A&quot;}
+        ,{text= &quot;B&quot;}
+        ,{text = &quot;C&quot;}
+        ,{text= &quot;D&quot;}
+        ,{text= &quot;E&quot;}
+      ]
+    }
+
+
+type Msg
+    = FindRandom
+    | RandomNumber Int
+
+
+update : Msg -&gt; Model -&gt; (Model, Cmd Msg)
+update msg model =
+    case msg of
+        FindRandom -&gt;
+            (model, Random.generate RandomNumber (Random.int 0 (List.length model.chars - 1)))
+        RandomNumber rn -&gt;
+            let
+                selected = Array.fromList model.chars
+                    |&gt; Array.get rn
+            in
+                ({ model | selected = selected }, Cmd.none)
+
+renderText : Maybe Char -&gt; Html Msg
+renderText selected =
+    case selected of
+        Just char -&gt;
+            text char.text
+        Nothing -&gt;
+            text &quot;Please click on Random Button&quot;
+
+
+view : Model -&gt; Html Msg
+view model =
+    div []
+        [ button [ onClick FindRandom ] [ text &quot;Random&quot; ]
+        , div [] [ (renderText model.selected) ]
+        ]
+
+init : Flags -&gt; (Model, Cmd Msg)
+init flags =
+    (initialModel, FindRandom)
+
+
+main : Program Flags Model Msg
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = always Sub.none
+        }</code></pre>
+    <p>This is an extracted version which used in <a href="https://revathskumar.github.io/random-gstin/">random
+        gstin</a> app and its source is available on <a
+        href="https://github.com/revathskumar/random-gstin/">github.com/revathskumar/random-gstin</a></p>
+    <p>The Running version is available on <a href="https://ellie-app.com/42fkLMFVdqBa1">ellie-app</a>.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      ELM         |  0.19.0 |
+|   elm/random     |  1.0.0  |</code></pre>

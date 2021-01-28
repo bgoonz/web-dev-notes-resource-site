@@ -1,0 +1,76 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Consider you wanna make sure a string is not empty as well as not nil. If you are using rails you have a <a
+        href="http://api.rubyonrails.org/classes/Object.html#method-i-blank-3F">blank?</a> method to do it. but what if
+      you are not on rails?</p>
+    <p>As usual you will write a method something like</p>
+    <p>{% highlight ruby %} def is_nil_or_empty? value value.empty? || value.nil? end {% endhighlight %}</p>
+    <p>But this will through error <strong>undefined method empty?’ for nil:NilClass</strong> when you pass a
+      <code>nil</code> to this method, since <code>nil</code> doesn’t have a method called <code>empty?</code>.
+    </p>
+    <p>So I recommend you to test <code>nil?</code> first, like</p>
+    <p>{% highlight ruby %} def is_nil_or_empty? value value.nil? || value.empty? end {% endhighlight %}</p>
+    <p>So <code>value.nil?</code> will return <code>true</code> and ruby won’t check the second part since ruby uses <a
+        href="http://blog.revathskumar.com/2013/05/short-circuit-evaluation-in-ruby.html">Short Circuit Evaluation</a>
+    </p>
+    <p>You can also convert the value to string before checking empty, so that you don’t wanna always follow this order.
+    </p>
+    <p>{% highlight ruby %} def is_nil_or_empty? value value.to_s.empty? end {% endhighlight %}</p>
+    <p>This will work since <code>nil.to_s</code> will return an empty string.</p>
+    <p>If you pass <code>false</code> as boolean this method will return false, since <code>"false".empty?</code> will
+      be false. If you are expecting other datatypes to this method then you will definity need more logic.</p>
+    <p>Happy coding. ;)</p>
+
+  </body>
+
+  
+</html>

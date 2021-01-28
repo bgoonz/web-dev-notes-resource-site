@@ -1,0 +1,141 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When I was working with a typeahead feature, I wanted to rate limit the ajax calls made by it using debounce.
+      Usually in such cases I use either <a href="http://benalman.com/projects/jquery-throttle-debounce-plugin/">jQuery
+        debounce</a> or <a href="http://underscorejs.org/#debounce">_.debounce</a>.</p>
+    <p>{: style=“text-align: center”} <embed src="%7B%7B%20page.image%20%7D%7D" />{: style=“width: 70%”}</p>
+    <p>But when it came to react components my usual approch didn’t worked since react wrap the events with <a
+        href="https://facebook.github.io/react/docs/events.html#syntheticevent">SyntheticEvent</a>. Since synthetic
+      events have <a href="https://facebook.github.io/react/docs/events.html#event-pooling">event pooling</a> all
+      properties will be nullified as soon as the callback function is invoked. Due to this the following code won’t
+      work.</p>
+    <p>Here I used <a href="https://www.npmjs.com/package/throttle-debounce">throttle-debounce</a></p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> react<span class="op">,</span> <span class="op">{</span> Component <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;react&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> <span class="op">{</span> debounce <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;throttle-debounce&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="im">export</span> <span class="im">default</span> <span class="kw">class</span> Comp <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="at">printChange</span>(e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;value :: &quot;</span><span class="op">,</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;which :: &quot;</span><span class="op">,</span> <span class="va">e</span>.<span class="at">which</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">    <span class="co">// call ajax</span></a>
+<a class="sourceLine" id="cb1-9" title="9">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb1-12" title="12">      <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">        <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span> onKeyUp<span class="op">={</span><span class="at">debounce</span>(<span class="dv">500</span><span class="op">,</span> <span class="kw">this</span>.<span class="at">printChange</span>)<span class="op">}</span> /&gt;</a>
+<a class="sourceLine" id="cb1-14" title="14">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-15" title="15">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>In the above code it will throw error <code>Uncaught TypeError: Cannot read property 'value' of null</code>
+      because <code>e.target</code> will be null due to event polling.</p>
+    <p>To make it work you need to remove debounce from event handler and use <code>e.persist()</code> on SyntheticEvent
+      like in the below code.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span> Component <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;react&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="im">import</span> <span class="op">{</span> debounce <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;throttle-debounce&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="im">export</span> <span class="im">default</span> <span class="kw">class</span> Comp <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="at">printChange</span>(e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="va">e</span>.<span class="at">persist</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="at">debounce</span>(<span class="dv">500</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-8" title="8">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;value :: &quot;</span><span class="op">,</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;which :: &quot;</span><span class="op">,</span> <span class="va">e</span>.<span class="at">which</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">      <span class="co">// call ajax</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="op">}</span>)()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-13" title="13">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-14" title="14">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb2-15" title="15">      <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-16" title="16">        <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span> onKeyUp<span class="op">={</span><span class="kw">this</span>.<span class="at">printChange</span><span class="op">}</span> /&gt;</a>
+<a class="sourceLine" id="cb2-17" title="17">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>Even though the above code work, the debounce won’t rate limit. So we need to wrap call ajax in another function
+      and wrap again that with debounce in <code>componentWillMount</code> or in <code>constructor</code> (if you are
+      using ES6 class) . Here is the better working code with debounce.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span> Component <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;react&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> <span class="op">{</span> debounce <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;throttle-debounce&quot;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="im">export</span> <span class="im">default</span> <span class="kw">class</span> Comp <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="at">constructor</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-6" title="6">    <span class="kw">super</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="kw">this</span>.<span class="at">callAjax</span> <span class="op">=</span> <span class="at">debounce</span>(<span class="dv">500</span><span class="op">,</span> <span class="kw">this</span>.<span class="at">callAjax</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-9" title="9">  <span class="at">printChange</span>(e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="kw">this</span>.<span class="at">callAjax</span>(<span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-11" title="11">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-12" title="12">  <span class="at">callAjax</span>(value) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-13" title="13">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;value :: &quot;</span><span class="op">,</span> value)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    <span class="co">// call ajax</span></a>
+<a class="sourceLine" id="cb3-15" title="15">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-16" title="16">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-17" title="17">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb3-18" title="18">      <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-19" title="19">        <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span> onKeyUp<span class="op">={</span><span class="kw">this</span>.<span class="va">printChange</span>.<span class="at">bind</span>(<span class="kw">this</span>)<span class="op">}</span> /&gt;</a>
+<a class="sourceLine" id="cb3-20" title="20">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb3-21" title="21">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-22" title="22">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="op">}</span></a></code></pre>
+    </div>
+    <p>Image courtesy <a href="http://www.slideshare.net/almirfilh0/throttle-and-debounce-patterns-in-web-apps">Almir
+        Filho</a></p>
+
+  </body>
+
+  
+</html>

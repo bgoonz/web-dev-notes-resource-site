@@ -1,0 +1,109 @@
+<!--
+
+---
+ Beginning to Xajax
+date: 2009-08-27 11:21:50 UTC
+updated: 2009-08-27 11:21:50 UTC
+2008/kind#post javascript php xajax
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <span style="font-size: small;">Xajax is mainly used to develop ajax application easily with php.</span><br /><span
+    style="font-size: small;">To start with xajax first we want to download the latest xajax.(ie.,xajax
+    0.5)</span><br /><span style="font-size: small;">you can download it from <a
+      href="http://sourceforge.net/projects/xajax/">here</a></span><br /><span
+    style="font-size: small;"><br /></span><br /><span style="font-size: small;">the steps are</span><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>1.</b>include the xajax.inc.php in
+      the php file.</span></div>
+  <div style="font-family: Verdana,sans-serif;"></div><span
+    style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eg:<b>require_once("<path
+        _moz-userdefined="">/xajax.inc.php");</path></b></span><br /><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>2.</b>Create an object for xajax
+      class.</span></div>
+  <div style="font-family: Verdana,sans-serif;"></div><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp;
+    <b>$x1=new xajax();</b></span><br /><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>3.</b>Register the function we want
+      to call.</span></div>
+  <div style="font-family: Verdana,sans-serif;"></div><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp;<b>
+      $x1=registerFunction("getdetails");</b></span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //the function be any thing you like . but it should be according to php
+    rules.</span><br /><span style="font-size: small;"><br /></span><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>4. </b>write the function.</span>
+  </div>
+  <div style="font-family: Verdana,sans-serif;"></div><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; function
+    getdetails(){</span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; //code to be
+    executed</span><br /><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <b>$res= new
+      xajaxResponse();</b></span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //this step is to create a new xajax response object.this line should
+    not&nbsp; be omitted.</span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<b>
+      $res-&gt;assign("div1","innerHTML","text to be displied");</b></span><br /><span
+    style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; //assign function is for xajax
+    0.5 the function for older version is addAssign() with same &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; parameters.</span><br /><span
+    style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; //the first parameter is the element
+    id where the message to be displayed.</span><br /><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp;
+    &nbsp;&nbsp; &nbsp;&nbsp; //The second parameter is the attribute of the object specified in
+    parameter1.</span><br /><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; //The
+    third is the text to be displied. It can be even a php variable.</span><br /><span
+    style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span><br /><span
+    style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<b> return $res; </b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; </span><br /><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; }</span><br /><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>5.</b>Specify the request
+      handler</span></div>
+  <div style="font-family: Verdana,sans-serif;"></div><span style="font-size: small;">&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; <b>$x1=processRequest();</b></span><br /><span style="font-size: small;"><b>&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </b>//this is specifically for&nbsp; xajax 0.5</span><br /><span
+    style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //processRequests() is the
+    function used in older versions</span><br /><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>6.</b><span
+        style="font-family: Verdana,sans-serif;">You wan to tell xajax to generate the javascript for it. The
+      </span>javascript&nbsp; should be between head tag.so specify the following code between head tags.</span></div>
+  <div style="font-family: Verdana,sans-serif;"></div><span style="font-size: small;">eg:&lt;head&gt;&lt;?php &nbsp;
+  </span><br /><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<b>&nbsp;
+      $x1-&gt;printJavascript();</b></span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    &nbsp;&nbsp; ?&gt;&nbsp;</span><br /><span style="font-size: small;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &lt;/head&gt;<br />&nbsp;</span><br /><span style="font-size: small;"><br /></span><br />
+  <div style="font-family: Verdana,sans-serif;"><span style="font-size: large;"><b>7.</b>Call the function from the html
+      control</span></div><span style="font-size: small;">&nbsp;&nbsp; &nbsp;&nbsp; eg:&lt;input type="text"
+    onblur="xajax_getdetails()"/&gt;</span><br /><span style="font-size: small;"><br /></span><br /><span
+    style="font-size: small;"><br /></span><br /><span style="font-size: small;">You can even pass arguments for the
+    function.</span><br /><span style="font-size: small;">good luck</span>

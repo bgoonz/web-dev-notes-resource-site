@@ -1,0 +1,68 @@
+{% macro render(m, mname, api, rootApi, ClassName) %}
+{% set lb = "{" %}
+{% set rb = "}" %}
+{% set pathParams = m.parameters|getPathParams|sort %}
+
+/**
+{% if m.description %}
+ * {{ m.description|cleanComments|safe|replace("\n", "\n * ") }}
+{% endif %}
+{% if m.fragment %}
+ * @example
+ * ```js
+ * {{ m.fragment|safe|replace("\n", "\n * ") }}
+ * ```
+{% endif %}
+ *
+ * @param params - Parameters for request
+ * @param options - Optionally override request options, such as `url`, `method`, and `encoding`.
+ * @param callback - Optional callback that handles the response.
+ * @returns A promise if used with async/await, or void if used with a callback. 
+ */
+{% if m.response.$ref %}
+  {% set responseType = "Schema$"+m.response.$ref %}
+{% elif m.supportsMediaDownload %}
+  {% set responseType = "unknown" %}
+{% else %}
+  {% set responseType = "void" %}
+{% endif %}
+{{ mname|camelify }}(params: Params${{ClassName}}${{mname|camelify|capitalize}}, options: StreamMethodOptions): GaxiosPromise<Readable>;
+{{ mname|camelify }}(params?: Params${{ClassName}}${{mname|camelify|capitalize}}, options?: MethodOptions): GaxiosPromise<{{responseType}}>;
+{{ mname|camelify }}(params: Params${{ClassName}}${{mname|camelify|capitalize}}, options: StreamMethodOptions|BodyResponseCallback<Readable>, callback: BodyResponseCallback<Readable>): void;
+{{ mname|camelify }}(params: Params${{ClassName}}${{mname|camelify|capitalize}}, options: MethodOptions|BodyResponseCallback<{{responseType}}>, callback: BodyResponseCallback<{{responseType}}>): void;
+{{ mname|camelify }}(params: Params${{ClassName}}${{mname|camelify|capitalize}}, callback: BodyResponseCallback<{{responseType}}>): void;
+{{ mname|camelify }}(callback: BodyResponseCallback<{{responseType}}>): void;
+{{ mname|camelify }}(paramsOrCallback?: Params${{ClassName}}${{mname|camelify|capitalize}}|BodyResponseCallback<{{responseType}}>|BodyResponseCallback<Readable>, optionsOrCallback?: MethodOptions|StreamMethodOptions|BodyResponseCallback<{{responseType}}>|BodyResponseCallback<Readable>, callback?: BodyResponseCallback<{{responseType}}>|BodyResponseCallback<Readable>): void|GaxiosPromise<{{responseType}}>|GaxiosPromise<Readable> {
+  let params = (paramsOrCallback || {}) as Params${{ClassName}}${{mname|camelify|capitalize}};
+  let options = (optionsOrCallback || {}) as MethodOptions;
+
+  if (typeof paramsOrCallback === 'function') {
+    callback = paramsOrCallback;
+    params = {} as Params${{ClassName}}${{mname|camelify|capitalize}};
+    options = {};
+  }
+
+  if (typeof optionsOrCallback === 'function') {
+    callback = optionsOrCallback;
+    options = {};
+  }
+
+  const rootUrl = options.rootUrl || {{ rootApi.rootUrl|buildurl|safe }};
+  const parameters = {
+    options: Object.assign({
+      url: (rootUrl + {{ ('/' + rootApi.servicePath + m.path)|buildurl|safe }}).replace(/([^:]\/)\/+/g, '$1'),
+      method: '{{ m.httpMethod }}'
+    }, options),
+    params,
+    {% if m.mediaUpload.protocols.simple.path %}mediaUrl: (rootUrl + {{ ('/' + m.mediaUpload.protocols.simple.path)|buildurl|safe }}).replace(/([^:]\/)\/+/g, '$1'),{% endif %}
+    requiredParams: [{% if m.parameterOrder.length %}'{{ m.parameterOrder|join("', '")|safe }}'{% endif %}],
+    pathParams: [{% if pathParams.length %}'{{ pathParams|join("', '")|safe }}'{% endif %}],
+    context: this.context,
+  };
+  if (callback) {
+    createAPIRequest<{{responseType}}>(parameters, callback as BodyResponseCallback<unknown>);
+  } else {
+    return createAPIRequest<{{responseType}}>(parameters);
+  }
+}
+{% endmacro %}

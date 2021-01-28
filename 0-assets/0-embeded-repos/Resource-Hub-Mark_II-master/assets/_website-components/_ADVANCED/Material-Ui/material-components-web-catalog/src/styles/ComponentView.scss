@@ -1,0 +1,21 @@
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/typography/mixins";
+
+.hero {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.sidebar-active {
+  font-weight: 600;
+}
+
+.demo-title {
+  border-bottom: 1px solid rgba(0, 0, 0, .87);
+}
+

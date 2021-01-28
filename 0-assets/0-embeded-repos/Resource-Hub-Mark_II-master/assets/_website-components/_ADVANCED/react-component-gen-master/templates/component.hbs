@@ -1,0 +1,30 @@
+// @flow
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { NamespacesConsumer } from "react-i18next";
+
+// css
+import "{{requirePath}}/{{componentName}}.scss";
+
+type Props = {
+};
+
+class {{componentName}} extends React.Component<Props> {
+  static defaultProps = {
+  };
+
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <NamespacesConsumer ns={["product_types", "common"]}>
+        {t => (
+            <React.Fragment></React.Fragment>
+        )}
+      </NamespacesConsumer>
+    )
+  }
+}
+
+export default {{componentName}};

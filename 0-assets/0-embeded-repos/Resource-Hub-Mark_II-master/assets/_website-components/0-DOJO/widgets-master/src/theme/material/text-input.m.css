@@ -1,0 +1,108 @@
+/* The root class of TextInput */
+.root {
+}
+
+/* The wrapper around the text input, label, leading, and trailing (not helper text) */
+.wrapper {
+	composes: mdc-text-field from '@material/textfield/dist/mdc.textfield.css';
+	display: flex;
+}
+
+/* Added to the input */
+.input {
+	composes: mdc-text-field__input from '@material/textfield/dist/mdc.textfield.css';
+}
+/* Contains the input element */
+.inputWrapper {
+	width: 100%;
+	composes: mdc-line-ripple from '@material/textfield/dist/mdc.textfield.css';
+}
+
+.root .wrapper {
+	background-color: var(--mdc-theme-on-surface);
+}
+
+.root:hover:not(.disabled) .wrapper {
+	background-color: var(--mdc-theme-on-surface-hover);
+}
+
+.inputWrapperFocused {
+	composes: mdc-line-ripple--active from '@material/textfield/dist/mdc.textfield.css';
+}
+
+.noLabel {
+	composes: mdc-text-field--no-label from '@material/textfield/dist/mdc.textfield.css';
+}
+
+/* Added to a disabled TextInput */
+.disabled {
+	composes: mdc-text-field--disabled from '@material/textfield/dist/mdc.textfield.css';
+}
+
+.root .disabled .input {
+	color: var(--mdc-secondary-text-color) !important;
+}
+
+/* Added to a focused input */
+.focused {
+	composes: mdc-text-field--focused from '@material/textfield/dist/mdc.textfield.css';
+}
+/* Added to a read-only input */
+.readonly {
+}
+/* Added to a required input */
+.required {
+}
+/* Added when the contents of the TextInput are invalid */
+.invalid {
+}
+/* Contains leading content */
+.addonRoot {
+	composes: mdc-text-field__icon from '@material/textfield/dist/mdc.textfield.css';
+}
+.root .addonRoot {
+	color: var(--mdc-secondary-text-color);
+}
+
+.hasLeading.hasTrailing .addonRoot,
+.hasLeading .addonRoot {
+	left: 16px;
+	right: auto;
+}
+
+.hasLeading.hasTrailing .addonRoot ~ .addonRoot,
+.hasTrailing .addonRoot {
+	right: 12px;
+	left: auto;
+}
+
+/* Added at the root when there is leading content */
+.hasLeading {
+	composes: mdc-text-field--with-leading-icon from '@material/textfield/dist/mdc.textfield.css';
+}
+
+/* Added at the root when there is trailing content */
+.hasTrailing {
+	composes: mdc-text-field--with-trailing-icon from '@material/textfield/dist/mdc.textfield.css';
+}
+
+/* Styles the input when the input is valid */
+.valid .input {
+	border-color: var(--success-color);
+}
+
+.wrapper:not(.disabled) .input {
+	color: var(--mdc-text-color);
+}
+
+.wrapper:not(.disabled):not(.focused) .inputWrapper:before {
+	border-bottom-color: var(--mdc-border-color);
+}
+
+.wrapper:not(.disabled):not(.focused) .inputWrapper:hover:before {
+	border-bottom-color: var(--mdc-border-color-hover);
+}
+
+.input::-ms-clear {
+	display: none;
+}

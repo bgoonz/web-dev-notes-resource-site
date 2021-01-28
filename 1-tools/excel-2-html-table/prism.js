@@ -437,7 +437,8 @@ var Prism = ( function ( _self ) {
     plugins: {},
 
     /**
-     * This is the most high-level function in Prism’s API.
+     * This is the most high - level
+     function in Prism 's API.
      * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
      * each one of them.
      *
@@ -581,7 +582,7 @@ var Prism = ( function ( _self ) {
     },
 
     /**
-     * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
+     * Low-level function, only use if you know what you're doing. It accepts a string of text as input
      * and the language definitions to use, and returns a string with the HTML produced.
      *
      * The following hooks will be run:

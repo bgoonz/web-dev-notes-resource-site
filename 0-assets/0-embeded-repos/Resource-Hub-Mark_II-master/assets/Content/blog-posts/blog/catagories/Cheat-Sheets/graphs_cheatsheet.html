@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+      <title>graphs_cheatsheet</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css.map">
+  <link rel="stylesheet" href="./../../css/blog-home.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/prism.css">
+  <script async defer src="./../../vendor/bootstrap/css/prism.js"></script>
+  <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css">
+
+
+  <link rel="stylesheet" href="./cheatsheets.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./cheatsheets.css">
+    </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="binary-tree">Binary Tree</h1>
+
+<h2 class="mume-header" id="tree-nodes">Tree Nodes</h2>
+
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">TreeNode</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="tree-traversal">Tree Traversal</h2>
+
+<h2 class="mume-header" id="bfs">BFS</h2>
+
+<p>implement a queue</p>
+<h2 class="mume-header" id="dfs">DFS</h2>
+
+<p>implement a stack</p>
+<h3 class="mume-header" id="pre-order">Pre-order</h3>
+
+<p>node,l. subtree, r. subtree</p>
+<h3 class="mume-header" id="in-order">In-order</h3>
+
+<p>l.subtree, node, r.subtreethe left subtree contains values less than the root</p>
+<h3 class="mume-header" id="post-order">Post-order</h3>
+
+<p>l.subtree, r.subtree, node</p>
+<p>BST Definition</p>
+<ol>
+<li>l. subtree contains values &lt; root</li>
+<li>r. subtree contains values &gt;= to the root</li>
+<li>l. &amp; r. subtree are BST</li>
+</ol>
+<p>insert: log(n)<br>
+search: log(n)</p>
+<h2 class="mume-header" id="example-of-dfs-using-a-adjacency-list-with-itera">Example of DFS using a adjacency list with itera</h2>
+
+<ul>
+<li>Using a node implementation with iteration:</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// This is easy to swap to a breadth-first approach by using a queue instead of a stack!</span>
+<span class="token comment">// Instead of popping from the top, we can shift from the front</span>
+<span class="token keyword">function</span> <span class="token function">depthFirstIter</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> visited <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span> node <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> node <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// if this node has already been visited, then skip this node</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>visited<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// otherwise it hasn&apos;t yet been visited,</span>
+        <span class="token comment">// so print it&apos;s val and mark it as visited.</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        visited<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// then add its neighbors to the stack to be explored</span>
+        stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>node<span class="token punctuation">.</span>neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+</pre>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a class="btn" href="#binary-tree">Binary Tree</a>
+<ul>
+<li><a class="btn" href="#tree-nodes">Tree Nodes</a></li>
+<li><a class="btn" href="#tree-traversal">Tree Traversal</a></li>
+<li><a class="btn" href="#bfs">BFS</a></li>
+<li><a class="btn" href="#dfs">DFS</a>
+<ul>
+<li><a class="btn" href="#pre-order">Pre-order</a></li>
+<li><a class="btn" href="#in-order">In-order</a></li>
+<li><a class="btn" href="#post-order">Post-order</a></li>
+</ul>
+</li>
+<li><a class="btn" href="#example-of-dfs-using-a-adjacency-list-with-itera">Example of DFS using a adjacency list with itera</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script async>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In many projects I needed the functionality of a router. Adding backbone just for the router seems heavy for me
+      beacause heavily coupled with Underscore.js. But then I found exoskeleton.</p>
+    <p><a href="http://exosjs.com/">Exoskeleton</a> is a faster and leaner Backbone for your HTML5 apps. It’s not
+      coupled with any external libraries and you can make a custom build with modules you only need. There are other
+      routers available for javascript but I prefer this because I already know its api.</p>
+    <h2 id="custom-build-of-backbone-router">Custom build of Backbone Router</h2>
+    <p>Creating a custom build with exoskeleton is easy. Clone exoskeleton from <a
+        href="https://github.com/paulmillr/exoskeleton">github</a>.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> clone  git@github.com:paulmillr/exoskeleton.git</a></code></pre>
+    </div>
+    <p>Now in the <code>lib</code> directory there will be the individual modules without any dependencies. In those
+      files <code>header</code> and <code>footer</code> are some common files you require in most builds.</p>
+    <p>Since I need only <code>router</code> with event capabilities, this is what my custom build look like.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">cat</span> lib/<span class="dt">{header,utils,events,history,router,footer}</span>.js <span class="op">&gt;</span> exoskeleton.js</a></code></pre>
+    </div>
+    <p>Then minify using make if needed. Its uses <a href="https://www.npmjs.com/package/uglifyjs">uglifyjs</a> for
+      minification.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">make</span> min</a></code></pre>
+    </div>
+    <p>Now I have the independent <code>Backbone.Router</code> which I can use with any other javascript framework.</p>
+
+  </body>
+
+  
+</html>

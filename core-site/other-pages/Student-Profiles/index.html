@@ -16,11 +16,34 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+    <style>
+      .image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+     .profile-img {
+     
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+
+     } 
+     body.zoomed { 
+    zoom: 0.3; 
+    -moz-transform: scale(0.3); 
+    -moz-transform-origin: 0 0;
+} 
+    </style>
   </head>
   <body class="is-preload">
     <!-- Sidebar -->
     <section id="sidebar">
       <div class="inner">
+        <img src="./assets/images/profile-image.jpg" alt="profile-pic" class="profile-img image-cropper">
         <nav>
           <ul>
             <li><a href="#intro">Home</a></li>
@@ -39,12 +62,7 @@
         <div class="inner">
           <!--#region SOCIALS  -->
           <ul class="icons">
-  
-            <li>
-              <a href="https://www.facebook.com/bryan.guner/" class="icon brands fa-facebook-f"
-                ><span class="label">Facebook</span></a
-              >
-            </li>
+                        
             <li>
               <a href="https://github.com/bgoonz" class="icon brands fa-github"
                 ><span class="label">GitHub</span></a
@@ -63,6 +81,7 @@
           </ul>
           <!--#endregion -->
           <h1>Hi I'm Bryan!</h1>
+          <h2>This site is a work in progress... as such, you may need to zoom out to about 50% to see it as intended depending on your browser!</h2>
           <p style="max-width: 70%">
            Web Developer, Electrical Engineer & Avid Musician/Producer!
           </p>
@@ -81,6 +100,7 @@
           /></a>
           <div class="content">
             <div class="inner">
+              
               <h2>Web Dev Resource Hub<i style="color: gold" class="far fa-star"></i></h2>
               <h3>My personal Web Development blog and resource sharing site </h3>
               <p></p>
@@ -166,11 +186,12 @@
               <ul class="actions">
                 <li><a href="" class="button">Learn more</a></li>
               </ul>
-              <iframe src="https://onedrive.live.com/embed?cid=D21009FDD967A241&amp;resid=D21009FDD967A241%21459307&amp;authkey=ABwIG4Hz-hsgPLU&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="900px" height="600px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-            <iframe src="https://onedrive.live.com/embed?cid=D21009FDD967A241&amp;resid=D21009FDD967A241%21467616&amp;authkey=AMeSH1xUVYxRi3c&amp;em=2" width="476px" height="1000px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> document, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-            </div>
-          </div>
-        </section>
+              <iframe src="https://onedrive.live.com/embed?cid=D21009FDD967A241&amp;resid=D21009FDD967A241%21459307&amp;authkey=ABwIG4Hz-hsgPLU&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="1400px" height="600px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<iframe src="https://onedrive.live.com/embed?cid=D21009FDD967A241&amp;resid=D21009FDD967A241%21467616&amp;authkey=AMeSH1xUVYxRi3c&amp;em=2" width="1400px" height="1200px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> document, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>          </div>
+                <h2>Click the 100% button above (below the <iframe>) and select "Page Width" to see to scale!</h2>
+
+                </div>
+</section>
       </section>
 
       <!-- Two -->
@@ -181,36 +202,42 @@
           <div class="features">
             <section>
               <span class="icon solid major fa-code"></span>
-              <h3>Lorem ipsum amet</h3>
+              <h3>Documentation</h3>
               <p>
-                Phasellus convallis elit id ullam corper amet et pulvinar. Duis
-                aliquam turpis mauris, sed ultricies erat dapibus.
+             I produce my own documentation compulsivley, I'm not 100% sure exactly why but I can't help myself.
               </p>
+                         <div>
+      <img width="560" height="315"  src="https://i.pinimg.com/originals/18/e0/64/18e0641748101b3f7275f5723d4405f0.gif">
+</div>
+        
             </section>
             <section>
               <span class="icon solid major fa-lock"></span>
-              <h3>Aliquam sed nullam</h3>
+              <h3>Music</h3>
               <p>
-                Phasellus convallis elit id ullam corper amet et pulvinar. Duis
-                aliquam turpis mauris, sed ultricies erat dapibus.
+                Playing, writing, recording and now developing audio applications are a huge part of my life.
               </p>
-            </section>
+               <iframe width="560" height="315"  class="videoframe" src="https://www.youtube.com/embed/videoseries?list=PLgbtZjUuZEfJnkrEJOUbcVNAUAX20xM-8"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+       </iframe>
+     </section>
             <section>
               <span class="icon solid major fa-cog"></span>
-              <h3>Sed erat ullam corper</h3>
+              <h3>Automatic Guitar Effects Triggering Using Dynamic Time Warping</h3>
               <p>
-                Phasellus convallis elit id ullam corper amet et pulvinar. Duis
-                aliquam turpis mauris, sed ultricies erat dapibus.
+                 This project proposes an automatic solution to the restrictions that guitar effect pedals present. The performer will record the primary performances into the proposed software, which will analyze and store the sequential frequencies. The performer will then utilize the software during a subsequent live performance, to trigger effects when preceding frequencies of the live performance are recognized against the first performance. 
               </p>
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSFvsw5kPGzq0D5KrRQoKTQI05sjeMbsMKqGvLwZA6ZFfDP6mAQD9dRubOeennDOP-UZmOJegN1IxKs/embed?start=true&loop=true&delayms=3000"width="560" height="315"  class="videoframe" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </section>
             <section>
               <span class="icon solid major fa-desktop"></span>
-              <h3>Veroeros quis lorem</h3>
+              <h3>Life Long Learner</h3>
               <p>
-                Phasellus convallis elit id ullam corper amet et pulvinar. Duis
-                aliquam turpis mauris, sed ultricies erat dapibus.
+            One of my greatest passions in life is learning and teaching, for as long as I can remember I have been trying to create collaborative learning enviornments on my own volition.
               </p>
-            </section>
+               <img width="560" height="315"  src="./assets/images/learning.JPG">
+               <div><p><!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> <!--Blank Space--> </p></div>
+              
+              <img width="560" height="315"  src="./assets/images/brain.JPG"></section>
             <section>
               <span class="icon solid major fa-link"></span>
               <h3>Urna quis bibendum</h3>
@@ -236,20 +263,7 @@
 
       
       <section>
-<div class="container">
-    <form action="#" class="ajax-form">
-        <input type="text" class="name" name="name" placeholder="Your name">
-        <input type="text" class="email" name="email" placeholder="Your email address">
-        <textarea name="message" class="message" placeholder="Enter your message"></textarea>
-        <div class="form-btn">
-            <input type="submit" class="submit" value="Submit">
-        </div>
-    </form>
-     <div class="form-thank-you">
-         <h3>Thank you for contacting me!</h3>
-         <p>I'll be in touch with you shortly</p>
-     </div>  
-</div>
+
 
         
       </section>
@@ -260,14 +274,21 @@
         <div class="inner">
           <h2>Get in touch</h2>
           <p>
-            Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam
-            turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus,
-            lacus eget hendrerit bibendum, urna est aliquam sem, sit amet
-            imperdiet est velit quis lorem.
+            As of now.... this form actually goes to my email... if you sent me a message before it was operational... I apologize.
           </p>
           <div class="split style1">
             <section>
-              <form method="post" action="#">
+              
+              
+              
+      
+              
+              
+              <form <form action="https://liveformhq.com/form/bfba7c80-a2f6-41a6-9c61-b2ad3d8e48c5" method="POST" accept-charset="utf-8">
+
+
+
+
                 <div class="fields">
                   <div class="field half">
                     <label for="name">Name</label>

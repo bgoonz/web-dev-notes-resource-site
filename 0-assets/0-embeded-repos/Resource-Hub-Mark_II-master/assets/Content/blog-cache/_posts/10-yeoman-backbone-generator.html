@@ -1,0 +1,99 @@
+<!--
+
+---
+ Yeoman backbone generator
+date: 2013-06-10 21:33:25 UTC
+updated: 2013-06-10 21:33:25 UTC
+comments: false
+categories: backbone yeoman
+---
+-->
+
+
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+  <p>In my blog post <a href="http://blog.revathskumar.com/2013/04/workflow-with-yeoman-grunt-and-bower.html">My
+      Javascript workflow</a> I already explained how to setup and use yeoman, grunt and bower for javascript
+    development. So In this post I would like to show how to use <a
+      href="https://github.com/yeoman/generator-backbone">backbone generator</a> for <strong>yeoman</strong>.</p>
+  <p><img
+      src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2013/06/yeoman-backbone-justlog_zps693c6195-1_zpseb563622.png"
+      alt="Yeoman + Backbone"></p>
+  <h3>Scaffold your backbone app</h3>
+  <p>Getting stated a backbone app is always tedious. we need to create all the directory structure, copy all dependency
+    for development and tests, setup tests to run with mocha or whatever you use and also setup a build system. Here
+    with yeoman, we are trying to make your life easier. Yeoman will take care of all of the above headaches for you.
+  </p>
+  <h3>yo backbone</h3>
+  <p>Yeoman will create a initial scaffold with a single command.</p>
+  <p><code>yo backbone</code> </p>
+  <p><img
+      src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2013/06/5362cc01-446c-48a7-b837-e43e0cf38af7_zps4a3ee257.jpg"
+      alt="yo backbone"></p>
+  <p>This command will create the basic app structure and create all the files need to run your app. It copy client
+    dependencies using bower and also install all the npm dependencies used for build the app. </p>
+  <h3>That&#39;s it? Just basic scaffold? No!</h3>
+  <p>Yeoman backbone generator is bundled with many sub generators, which helps to create backbone router, model,
+    collections and views. </p>
+  <p><code>yo backbone:model todo</code> : Creates backbone model<br><code>yo backbone:collection todos</code> : Creates
+    backbone collection<br><code>yo backbone:view todo</code> : Creates backbone view and its template<br><code>yo
+      backbone:router todo</code> : Creates backbone router </p>
+  <h3>What if I am coffeescripter ?</h3>
+  <p>Its quite simple use <code>--coffee</code> option with the generator. If you created basic scaffold with coffee
+    option then you don&#39;t want to use this option on every sub generator for that particular app. Yeoman
+    sub-generators are intelligent enough to detect coffee and create scaffold accordingly. </p>
+  <h3>Different HTML template engines</h3>
+  <p>Yeoman backbone generator supports <strong>Lodash</strong>, <strong>Handlebars</strong> and
+    <strong>Mustache</strong>. Default is set to lodash. if you wanna change it use <code>--template-framework</code>
+    option.
+  </p>
+  <p><code>yo backbone --template-framework=handlebars</code></p>
+  <p>This command will set the template engine as handlebars and when ever you create a backbone view it create the
+    handlebars template.</p>
+  <h3>Mocha or Jasmine?</h3>
+  <p>You can use either <strong>mocha</strong> or <strong>jasmine</strong> as the test framework for the app. Use the
+    option <code>--test-framework</code> option. Yeoman will setup the test environment according to the one you choose.
+    This option is defaulted to mocha. </p>
+  <p>Found any bug or have any feature request? File an <a
+      href="https://github.com/yeoman/generator-backbone/issues">issue</a> on github </p>
+  <p>Blogged via <a href="http://markdownblogger.herokuapp.com/">MarkdownBlogger</a></p>
+
+</body>
+
+
+</html>

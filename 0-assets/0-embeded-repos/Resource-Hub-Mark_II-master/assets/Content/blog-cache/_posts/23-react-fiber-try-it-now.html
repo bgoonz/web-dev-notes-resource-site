@@ -1,0 +1,84 @@
+<blockquote>
+  <p>Disclaimer : <strong>React Fiber</strong> is experimental and do not use it for production.</p>
+</blockquote>
+<p><strong>React Fiber</strong> is the new experimental version of <code>react</code> with new reconciliation algorithm
+  to diff one tree with another.</p>
+<p>It take advantage of scheduling, and set priority for each fibers. A unit of work to be done is called a
+  <code>fiber</code>. It uses <a
+    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback">requestIdleCallback</a> to
+  schedule the low priority fibers and <a
+    href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a> to
+  schedule the high priority work.
+</p>
+<figure>
+  <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/react-fiber_zps0rs4kvgd.jpg"
+    alt="react-fiber" />
+  <figcaption>react-fiber</figcaption>
+</figure>
+<p>If we want we can give a try, But it not available on npm as of now. So we need to clone the <a
+    href="https://github.com/facebook/react/">react</a> from github.</p>
+<div class="sourceCode" id="cb1">
+  <pre
+    class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> clone https://github.com/facebook/react.git</a></code></pre>
+</div>
+<p>Once the clone is complete, you can install the npm dependencies.</p>
+<div class="sourceCode" id="cb2">
+  <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">cd</span> react</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="ex">npm</span> i</a></code></pre>
+</div>
+<p>Now you can run gulp to build packages from the repo</p>
+<div class="sourceCode" id="cb3">
+  <pre
+    class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">gulp</span></a></code></pre>
+</div>
+<p>If you are getting any warnings,</p>
+<pre><code>Error message &quot;Missing owner for string ref %s&quot; cannot be found. The current React version and the error map are probably out of sync. Please run `gulp react:extract-errors` before building React.
+Error message &quot;render(): Invalid component element.&quot; cannot be found. The current React version and the error map are probably out of sync. Please run `gulp react:extract-errors` before building React.
+Error message &quot;%s(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.&quot; cannot be found. The current React version and the error map are probably out of sync. Please run `gulp react:extract-errors` before building React.</code></pre>
+<p>You can run <code>gulp react:extract-errors</code> and then <code>gulp</code>.</p>
+<figure>
+  <img
+    src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/Screenshot%20from%202017-01-22%2017-47-21_zpstgfllpbt.png"
+    alt="react-build" />
+  <figcaption>react-build</figcaption>
+</figure>
+<p>Now all the packages are build, and available in <code>build/packages</code> directory.</p>
+<figure>
+  <img
+    src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2017/react-fiber/2c5651b8-77f1-4902-ab2a-ee63e415b934_zps2ylyx2rn.png"
+    alt="react-packages" />
+  <figcaption>react-packages</figcaption>
+</figure>
+<h3 id="how-to-try-fiber-in-your-project">How to try fiber in your project</h3>
+<p>Once the package builds are ready, you can navigate into the those directories and run <code>npm link</code>.</p>
+<div class="sourceCode" id="cb5">
+  <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="bu">cd</span> build/packages/react</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="ex">npm</span> link</a></code></pre>
+</div>
+<p>Next link the <code>react-dom</code></p>
+<div class="sourceCode" id="cb6">
+  <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="bu">cd</span> build/packages/react-dom</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="ex">npm</span> link</a></code></pre>
+</div>
+<p>Now in your project directory, instead if <code>npm i react</code> do <code>npm link react</code>.</p>
+<div class="sourceCode" id="cb7">
+  <pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="ex">npm</span> link react</a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="ex">npm</span> link react-dom</a></code></pre>
+</div>
+<p>Now your project bundler can use the latest react from github master. But still it didn’t started using the fiber.
+  For that one last step need to be done. Replace your <code>react-dom</code> imports with</p>
+<div class="sourceCode" id="cb8">
+  <pre
+    class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="im">import</span> <span class="op">{</span> render <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom/fiber&#39;</span><span class="op">;</span></a></code></pre>
+</div>
+<p>Thats it, Now you project will be using <strong>React Fiber</strong>.</p>
+<h3 id="resources">Resources :</h3>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=aV1271hd9ew">Andrew Clark: What’s Next for React — ReactNext 2016</a>
+  </li>
+  <li><a href="https://github.com/acdlite/react-fiber-architecture">React Fiber Architecture (Unofficial)</a></li>
+</ul>
+<blockquote>
+  <p>Please note that <strong>React Fiber</strong> is experimental and do not use it for production. If you found any
+    bugs, you can file an issue on <a href="https://github.com/facebook/react/issues">github issues</a>.</p>
+</blockquote>

@@ -47,7 +47,9 @@ module.exports = {
       {
         recipeId: 9,
         listOrder: 2,
-        specification: 'Stir through the pesto and half the goat’s cheese. Serve topped with the remaining cheese.',
+        specification: 'Stir through the pesto and half the goat'
+        s cheese.Serve topped with the remaining cheese.
+        ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -68,7 +70,9 @@ module.exports = {
       {
         recipeId: 8,
         listOrder: 3,
-        specification: 'Meanwhile, put the roasting tin of cauliflower in the oven and cook for 20 mins until crisp and slightly charred. Tip the soup mixture into a food processor and blitz until smooth, tip back into the pan to warm through, adding the lemon juice and a little water if it’s too thick. Tip into bowls and top with the crispy cauliflower and fennel seeds to serve.',
+        specification: 'Meanwhile, put the roasting tin of cauliflower in the oven and cook for 20 mins until crisp and slightly charred. Tip the soup mixture into a food processor and blitz until smooth, tip back into the pan to warm through, adding the lemon juice and a little water if it'
+        s too thick.Tip into bowls and top with the crispy cauliflower and fennel seeds to serve.
+        ',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -117,7 +121,7 @@ module.exports = {
       {
         recipeId: 3,
         listOrder: 2,
-        specification: 'Meanwhile, heat the oil in a frying pan over a medium heat, add the leeks with a pinch of salt and cook for 10 mins, stirring so they don’t stick, until softened. Tip in the potatoes, turn up the heat and fry for a couple of mins to crisp them up a bit. Flake through the mackerel.',
+        specification: 'Meanwhile, heat the oil in a frying pan over a medium heat, add the leeks with a pinch of salt and cook for 10 mins, stirring so they don't stick, until softened. Tip in the potatoes, turn up the heat and fry for a couple of mins to crisp them up a bit. Flake through the mackerel.',
         createdAt: new Date(),
         updatedAt: new Date()
       },

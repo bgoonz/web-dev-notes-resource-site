@@ -37,7 +37,7 @@
 - Browser's role in the request/response cycle
   1. Parses HTML, CSS, and JS
   2. Renders that information to the user by constructing and rendering a DOM tree
-- You can go to the `Network` tab of your browser’s Developer Tools to view these requests and responses.
+- You can go to the `Network` tab of your browser's Developer Tools to view these requests and responses.
 
 ## `window` Object
 

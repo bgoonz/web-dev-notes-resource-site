@@ -1,0 +1,81 @@
+<!--
+
+---
+ Send sms from php using way2sms
+date: 2010-01-19 15:34:07 UTC
+updated: 2011-07-16 15:34:07 UTC
+2008/kind#post php
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <span style="font-size: x-large;"><b style="color: red;">This post is updated in <a
+        href="http://www.phprepo.in/2011/07/send-sms-from-php-using-way2sms-updated/">www.phprepo.in</a> and you can
+      download from <a href="https://github.com/revathskumar/sms-with-php">Github</a></b></span> <br /><br />As for a
+  long time i was using the web service as <a href="http://www.aswinanand.com/">aswin anand</a> guided in his <a
+    href="http://www.aswinanand.com/2009/12/free-sms-web-service-updated-2/">blog</a><br /><br />But now a days some
+  problem occured.<br /><br />As a php programmer i just edited his code and now its working.<br />to use it simpler i
+  made the code into class and member functions.<br /><br />you can download the edited code from <a
+    href="http://www.4shared.com/file/214370221/b0f784df/sms.html">here</a> .<br /><br />the only change this sesction
+  <br />
+  <blockquote>
+    <blockquote>curl_setopt ($curl, CURLOPT_URL,
+      "http://wwwd.way2sms.com/FirstServletsms?custid=");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      curl_setopt ($curl, CURLOPT_REFERER, curl_getinfo($curl,
+      CURLINFO_EFFECTIVE_URL));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      curl_setopt ($curl, CURLOPT_POST,
+      1);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      curl_setopt ($curl, CURLOPT_POSTFIELDS,
+      "HiddenAction=instantsms&amp;login=&amp;pass=&amp;custid=undefined&amp;MobNo=" . $p . "&amp;textArea=" .
+      $msg);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      $text = curl_exec($curl); </blockquote>
+  </blockquote><br />&nbsp;the new code is<br /><br />
+  <blockquote>curl_setopt ($curl, CURLOPT_URL, "http://www1.way2sms.com/FirstServletsms?custid=\"+custid+</blockquote>
+  &nbsp;\"&amp;sponserid=\"+sponserid+\"");<br />
+  <blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    curl_setopt ($curl, CURLOPT_REFERER, curl_getinfo($curl,
+    CURLINFO_EFFECTIVE_URL));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    curl_setopt ($curl, CURLOPT_POST,
+    1);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    curl_setopt ($curl, CURLOPT_POSTFIELDS, "MobNo=$p&amp;textArea=$msg&amp;HiddenAction=instantsms</blockquote><br />
+  <blockquote>
+    &amp;login=&amp;pass=&amp;Action=custfrom300000");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    $text = curl_exec($curl);</blockquote><br />Don't forget to comment on this changes.<br />Any problems please keep
+  informing<br />recommended to download and use it

@@ -1,0 +1,79 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Rails <code>remote</code> is one of the best way to submit a form with ajax. But it is not capable of uploading
+      files using ajax. That’s where <code>remotipart</code> gem comes into action.</p>
+    <h2 id="add-gem-to-gemfile">Add gem to Gemfile</h2>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Gemfile</span></a>
+<a class="sourceLine" id="cb1-2" title="2">gem <span class="st">&#39;remotipart&#39;</span></a></code></pre>
+    </div>
+    <p>After adding <code>remotipart</code> to <code>Gemfile</code> do the <code>bundle install</code>.</p>
+    <h2 id="add-to-javascript-manifest">Add to javascript manifest</h2>
+    <p>Then you need to require <code>remotipart</code> in javascript manifest.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// app/assets/javascripts/application.js</span></a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">//= require jquery.remotipart</span></a></code></pre>
+    </div>
+    <h2 id="set-multipart-option-for-form">set <code>multipart</code> option for form</h2>
+    <p>As in every form with fileupload, you need to set the <code>multipart</code> option.</p>
+    <pre class="erb"><code>&lt;%= form_for(@upload, remote: true, multipart: true) do |f| %&gt;
+    &lt;%= f.file_field :image %&gt;
+    &lt;%= f.submit %&gt;
+&lt;% end %&gt;</code></pre>
+    <p>Thats it, you don’t need any extra configuration for the forms. A <a
+        href="https://github.com/revathskumar/rails-ajax-upload">example application</a> is available on github.</p>
+    <h1 id="further-references">Further references</h1>
+    <ul>
+      <li><a href="https://github.com/JangoSteve/remotipart">code on github</a></li>
+      <li><a href="http://www.alfajango.com/blog/ajax-file-uploads-with-the-iframe-method/">iframe method</a></li>
+    </ul>

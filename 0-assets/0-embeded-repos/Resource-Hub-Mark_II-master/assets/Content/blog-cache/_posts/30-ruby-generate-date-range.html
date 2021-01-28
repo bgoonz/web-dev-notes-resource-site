@@ -1,0 +1,77 @@
+<!--
+
+---
+ "Ruby : generate a date range"
+excerpt: "Ruby : generate a date range"
+date: 2012-11-30 07:18:48 UTC
+updated: 2012-11-30 07:18:48 UTC
+2008/kind#post ruby
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="//1.bp.blogspot.com/-m99_zzl37V4/ULhdndEerbI/AAAAAAAAJpk/_ddENqvhXvI/s1600/date-range.png" imageanchor="1"
+        style="margin-left: 1em; margin-right: 1em;"><img border="0" height="77"
+          src="//1.bp.blogspot.com/-m99_zzl37V4/ULhdndEerbI/AAAAAAAAJpk/_ddENqvhXvI/s400/date-range.png"
+          width="400" /></a></div>
+    <div class="separator" style="clear: both; text-align: left;"><br /></div>
+    <div class="separator" style="clear: both; text-align: left;">&nbsp; &nbsp; This is a simple post just to
+      demonstrate how to get all the valid dates in between two given dates. Consider the situation that you have to
+      loop through each date between<b><span style="color: #e06666;">&nbsp;2012-10-27</span></b> and<b><span
+          style="color: #e06666;"> 2012-11-03</span></b>. Please find below the code which I used to achieve this.</div>
+    <br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4166998.js?file=generate_date_range.rb"></script><noscript>
+      <pre><br />require "active_support/time"<br />#<br /># Check the given date is valid or not<br /># @param  dt [String] [Date]<br />#<br /># @return [Boolean]<br />def valid_date?(dt)<br />  begin<br />    Date.parse(dt)<br />    true<br />  rescue => e<br />    false<br />  end<br />end<br /><br /><br />#<br /># Compute the first and last dates according to the params.<br />#<br /># @param  first [String] [First date]<br /># @param  last [String] [Last date]<br />#<br /># @return [Array] [Array include first and last date]<br />def generate_date_range(first, last)<br />  first, last = "", first unless last<br />  if last.nil? || last.empty?<br />    last = (Time.now - 1.day).in_time_zone('Kolkata').strftime("%Y-%m-%d")<br />  end<br />  if first.empty?<br />    first = Time.strptime(last, "%Y-%m-%d").in_time_zone('Kolkata').beginning_of_month.strftime("%Y-%m-%d")<br />  end<br />  (first..last).select { |d|  valid_date?(d) }<br />end<br /><br />p generate_date_range("2012-10-27",  "2012-11-03")<br /></pre>
+    </noscript><br /><b>Output : </b><br />
+    <script async defer src="https://gist.github.com/4166998.js?file=output.rb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4166998.js?file=generate_date_range.rb"></script><noscript>
+      <pre><br />require "active_support/time"<br />#<br /># Check the given date is valid or not<br /># @param  dt [String] [Date]<br />#<br /># @return [Boolean]<br />def valid_date?(dt)<br />  begin<br />    Date.parse(dt)<br />    true<br />  rescue => e<br />    false<br />  end<br />end<br /><br /><br />#<br /># Compute the first and last dates according to the params.<br />#<br /># @param  first [String] [First date]<br /># @param  last [String] [Last date]<br />#<br /># @return [Array] [Array include first and last date]<br />def generate_date_range(first, last)<br />  first, last = "", first unless last<br />  if last.nil? || last.empty?<br />    last = (Time.now - 1.day).in_time_zone('Kolkata').strftime("%Y-%m-%d")<br />  end<br />  if first.empty?<br />    first = Time.strptime(last, "%Y-%m-%d").in_time_zone('Kolkata').beginning_of_month.strftime("%Y-%m-%d")<br />  end<br />  (first..last).select { |d|  valid_date?(d) }<br />end<br /><br />p generate_date_range("2012-10-27",  "2012-11-03")<br /></pre>
+    </noscript><br /><b>Output : </b><br />
+    <script src="https://gist.github.com/4166998.js?file=output.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br />["2012-10-27", "2012-10-28", "2012-10-29", "2012-10-30", "2012-10-31", "2012-11-01", "2012-11-02", "2012-11-03"]<br /></pre>
+    </noscript><br />Hope it helped you.<br />Thank you.
+  </div>
+</body>
+
+</html>
+$

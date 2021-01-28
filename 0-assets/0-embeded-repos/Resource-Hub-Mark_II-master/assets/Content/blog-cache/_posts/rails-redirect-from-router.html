@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In one of my recent requirements, I need redirect the people/bot landing on an old/deprecated urls need to
+      redirected to either a new page or to our home page. Usually I do such redirecting from the controller, But
+      recently I came to know that we can even redirect from the router itself.</p>
+    <h2 id="simple-redirect">Simple redirect</h2>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1">match <span class="ot">/.*/</span>, <span class="st">to: </span> redirect(<span class="ch">&#39;/&#39;</span>), <span class="st">via: :all</span></a></code></pre>
+    </div>
+    <p>The above route will match anything and route to homepage. Be cautions to use such routes, and use only in end of
+      your <code>WhatznearWebApp::Application.routes.draw</code> block in router file. The routes on top of
+      <code>draw</code> block have higher precedence and matched first.
+    </p>
+    <h2 id="redirect-with-constraints">Redirect with constraints</h2>
+    <p>If you have some constraints for redirects you can use <code>:constaints</code> key to impose them.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1">match <span class="st">&quot;:url&quot;</span>, <span class="st">to: </span>redirect(<span class="ch">&#39;/&#39;</span>), <span class="st">via: :all</span>, <span class="st">constraints: </span>{ <span class="st">url: </span><span class="ot">/stores-.*/</span> }</a></code></pre>
+    </div>
+    <p>In the above route, the request will be redirected to homepage only if the url starts with <code>stores-</code>.
+      Make sure you don’t use <code>^</code>(Regexp anchor characters) to specify <code>starts with</code> rails won’t
+      accept that.</p>
+    <h2 id="why-i-am-redirecting">Why I am redirecting</h2>
+    <p>If you are thinking of asking me why I am redirecting instead of mapping this to home page, the reasons are</p>
+    <ul>
+      <li>since the urls are deprecated, I don’t want anyone to bookmark this.</li>
+      <li>search engine crawlers should know that this url is redirect and should not index as home page.</li>
+    </ul>
+    <p>Comments and corrections are welcome. If you like this article feel free to share this using the links below.</p>
+
+  </body>
+
+  
+</html>
