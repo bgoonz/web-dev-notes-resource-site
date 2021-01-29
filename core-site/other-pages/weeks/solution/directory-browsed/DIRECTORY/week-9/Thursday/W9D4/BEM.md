@@ -57,5 +57,4 @@ However, not all three parts must be present in the class name.
     * Ex: disabled, color yellow, size big, fixed
     * Modifier is an extra class name which you add to a block/element DOM node.(Examples: `.button--active`, .`button__textarea--red`)
     * Add modifier classes only to blocks/elements they modify, and keep the original class (e.g. keep the class `.button` and add `.button--active`).
-    * The CSS class is formed as block’s or element’s name plus two dashes: `.block--mod` OR `.block__element--mod` AND .`block--color-red`. (Spaces in complicated modifiers are replaced by dash.)
-
+    * The CSS class is formed as block's or element's name plus two dashes: `.block--mod` OR `.block__element--mod` AND .`block--color-red`. (Spaces in complicated modifiers are replaced by dash.)

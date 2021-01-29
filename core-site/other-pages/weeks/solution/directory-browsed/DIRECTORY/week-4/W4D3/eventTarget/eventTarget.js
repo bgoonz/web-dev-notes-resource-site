@@ -5,7 +5,7 @@
 
 
 window.addEventListener("DOMContentLoaded", event => {
-  // Add a click event listener on the document’s body
+  // Add a click event listener on the document's body
 
   document.body.addEventListener("click", event => {
     console.log('body was clicked!');

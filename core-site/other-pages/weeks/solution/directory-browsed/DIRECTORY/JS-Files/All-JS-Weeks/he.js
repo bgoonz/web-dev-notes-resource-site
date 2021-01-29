@@ -38,8 +38,8 @@
 		'\'': '&#x27;',
 		'<': '&lt;',
 		// See https://mathiasbynens.be/notes/ambiguous-ampersands: in HTML, the
-		// following is not strictly necessary unless it’s part of a tag or an
-		// unquoted attribute value. We’re only escaping it to support those
+		// following is not strictly necessary unless it's part of a tag or an
+		// unquoted attribute value. We're only escaping it to support those
 		// situations, and for XML support.
 		'>': '&gt;',
 		// In Internet Explorer ≤ 8, the backtick character can be used
@@ -197,7 +197,7 @@
 				return '&' + encodeMap[string] + ';';
 			});
 		} else if (!allowUnsafeSymbols) {
-			// Encode `<>"'&` using hexadecimal escapes, now that they’re not handled
+			// Encode `<>"'&` using hexadecimal escapes, now that they're not handled
 			// using named character references.
 			string = string.replace(regexEscape, escapeBmpSymbol);
 		}
@@ -287,7 +287,7 @@
 				return codePointToSymbol(codePoint, strict);
 			}
 
-			// If we’re still here, `if ($7)` is implied; it’s an ambiguous
+			// If we're still here, `if ($7)` is implied; it's an ambiguous
 			// ampersand for sure. https://mths.be/notes/ambiguous-ampersands
 			if (strict) {
 				parseError(

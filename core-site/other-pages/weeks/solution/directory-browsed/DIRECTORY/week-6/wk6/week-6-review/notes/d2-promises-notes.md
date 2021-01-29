@@ -117,7 +117,7 @@ The Callback Solution
 The Promise Solution
 - promise: object that may produce a single value some time in the future, either: 
 	- resolved value (like reading a file or getting JSON from a Web site) 
-	- reason that it’s not resolved (i.e file doesn't exist or the Web site is down)
+	- reason that it's not resolved (i.e file doesn't exist or the Web site is down)
 - can attach callbacks to handle the fulfilled value or the reason for rejection
 
 

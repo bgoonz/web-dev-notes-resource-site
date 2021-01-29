@@ -6,17 +6,17 @@
   3. [Given an arithmetic expression using +, -, *, /, %, compute its value](#expressions-objective-3)
   4. [Given an expression, predict if its value is NaN](#expressions-objective-4)
   5. [Construct the truth tables for &&, ||, !](#expressions-objective-5)
-  6. [Given an expression consisting of >, >=, ===, <, <=, compute it’s value](#expressions-objective-6)
-  7. [Apply De Morgan’s law to a boolean expression](#expressions-objective-7)
+  6. [Given an expression consisting of >, >=, ===, <, <=, compute it's value](#expressions-objective-6)
+  7. [Apply De Morgan's law to a boolean expression](#expressions-objective-7)
   8. [Given an expression that utilizes operator precedence, compute its value](#expressions-objective-8)
-  9. [Given an expression, use the grouping operator to change it’s evaluation](#expressions-objective-9)
+  9. [Given an expression, use the grouping operator to change it's evaluation](#expressions-objective-9)
   10. [Given expressions using == and ===, compute their values](#expressions-objective-10)
   11. [Given a code snippet using p(#expressions-objective-1)ostfix ++, postfix --, +=, -=. /=, *=, predict the value of labeled lines](#expressions-objective-11)
   12. [Create and assign a variable using let to a string, integer, and a boolean. Read its value and print to the console.](#expressions-objective-12)
 
 ## [Intro to Functions Learning Objectives](#intro-to-functions)
   1. [Define a function using function declaration](#functions-objective-1)
-  2. [Define a function that calculates the average of two numbers, call it, pass in arguments, and print it’s return value](#functions-objective-2)
+  2. [Define a function that calculates the average of two numbers, call it, pass in arguments, and print it's return value](#functions-objective-2)
   3. [Identify the difference between parameters vs arguments](#functions-objective-3)
 
 # Learning Objectives Examples
@@ -89,7 +89,7 @@ Construct the truth tables for &&, ||, !
 
 
 ### Expressions Objective 6
-Given an expression consisting of >, >=, ===, <, <=, compute it’s value
+Given an expression consisting of >, >=, ===, <, <=, compute it's value
 ```js
 console.log(1 > 4); // false
 console.log(1 < 4); // true
@@ -101,7 +101,7 @@ console.log((1 + 3) % 3 === 2 - 6 / 3 + 1) // true
 ```
 
 ### Expressions Objective 7
-Apply De Morgan’s law to a boolean expression
+Apply De Morgan's law to a boolean expression
 - !(A || B) === !A && !B
 - !(A && B) === !A || !B
 ```js
@@ -117,7 +117,7 @@ console.log(1 + 2 * 3 % 4); // 3 (multiplication and modulo are performed first,
 ```
 
 ### Expressions Objective 9
-Given an expression, use the grouping operator to change it’s evaluation
+Given an expression, use the grouping operator to change it's evaluation
 ```js
 console.log(1 + 2 * 3); // 7 (multiplication is performed first)
 console.log((1 + 2) * 3); // 9 (addition is first because it is grouped)
@@ -180,7 +180,7 @@ function myNewFunction(parameter1, parameter2) {
 ```
 
 ### Functions Objective 2
-Define a function that calculates the average of two numbers, call it, pass in arguments, and print it’s return value
+Define a function that calculates the average of two numbers, call it, pass in arguments, and print it's return value
 ```js
 function averageOfTwo(num1, num2){
   let sum = num1 + num2;

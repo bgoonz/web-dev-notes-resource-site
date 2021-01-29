@@ -73,7 +73,7 @@ const runSpecs = () => {
     // 1) `Parks` - the name of the table to insert into.
 
     // 2) Array containing one or more object literals
-    // that contain all of the `Park` model’s defined properties
+    // that contain all of the `Park` model's defined properties
     // as well as the Sequelize `createdAt` and `updatedAt` properties
     // (but not `id` property).
 

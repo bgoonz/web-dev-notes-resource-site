@@ -179,7 +179,7 @@ function isWhitespace(c) {
 
 // Returns true if the character can be printed without escaping.
 // From YAML 1.2: "any allowed characters known to be non-printable
-// should also be escaped. [However,] This isn’t mandatory"
+// should also be escaped. [However,] This isn't mandatory"
 // Derived from nb-char - \t - #x85 - #xA0 - #x2028 - #x2029.
 function isPrintable(c) {
   return  (0x00020 <= c && c <= 0x00007E)

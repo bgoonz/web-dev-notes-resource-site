@@ -9,7 +9,7 @@ Below is a complete list of the terminal learning objectives for this lesson. Wh
 4. Find what -c, -r, and -b flags do in grep by reading the manual.
 5. Identify the difference in two different files using diff.
 6. Open and close nano with and without saving a file.
-7. Use ‘curl’ to download a file.
+7. Use ‘curl' to download a file.
 8. Read the variables of $PATH.
 9. Explain the difference between .bash_profile and .bashrc.
 10. Create a new alias by editing the .bash_profile.

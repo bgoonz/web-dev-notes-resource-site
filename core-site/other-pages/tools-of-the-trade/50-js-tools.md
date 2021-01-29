@@ -10,15 +10,15 @@
 
 Jacob Gube is the Founder and Chief Editor of [Six Revisions](http://sixrevisions.com/), a web publication for web developers and designers, and the Deputy Editor of Design Instruct, a web … [More about Jacob Gube …](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/author/jacob-gube)
 
-**JavaScript** is a powerful client-side scripting language used in many modern websites and Web applications. In the hands of a skilled Web developer, JavaScript can enhance the user’s experience of the website and provide rich interactive components and features. But even though syntactically simple in nature, JavaScript is often difficult to author because of the environment it runs in: the Web browser.
+**JavaScript** is a powerful client-side scripting language used in many modern websites and Web applications. In the hands of a skilled Web developer, JavaScript can enhance the user's experience of the website and provide rich interactive components and features. But even though syntactically simple in nature, JavaScript is often difficult to author because of the environment it runs in: the Web browser.
 
 _By Jacob Gube_
 
-JavaScript’s popularity is evident in emerging technologies, such as Adobe AIR, which use it as a supported language for creating desktop-based applications.
+JavaScript's popularity is evident in emerging technologies, such as Adobe AIR, which use it as a supported language for creating desktop-based applications.
 
-Below, you’ll find **50 excellent tools to help you achieve various tasks involved in authoring JavaScript code**. You’ll find useful tools to speed up your coding processes, including debugging tools to hunt down places where your scripts break, unit testing and validation tools to test your scripts in various situations, security vulnerability scanners and code optimization tools to make sure your scripts are light as a feather.
+Below, you'll find **50 excellent tools to help you achieve various tasks involved in authoring JavaScript code**. You'll find useful tools to speed up your coding processes, including debugging tools to hunt down places where your scripts break, unit testing and validation tools to test your scripts in various situations, security vulnerability scanners and code optimization tools to make sure your scripts are light as a feather.
 
-You’ll also find a few new and alternative JavaScript and AJAX frameworks to help you explore options beyond the big names (i.e. MooTools, jQuery, YUI, Dojo, Prototype), in addition to useful scripts to help you accomplish a host of design and development tasks related to JavaScript.
+You'll also find a few new and alternative JavaScript and AJAX frameworks to help you explore options beyond the big names (i.e. MooTools, jQuery, YUI, Dojo, Prototype), in addition to useful scripts to help you accomplish a host of design and development tasks related to JavaScript.
 
 Also, be sure to check out the following related posts:
 
@@ -60,19 +60,19 @@ Also, be sure to check out the following related posts:
 
 ### Documentation Tools
 
-*   [JSDoc Toolkit](http://code.google.com/p/jsdoc-toolkit/) JSDoc Toolkit makes code documentation a breeze. Written in JavaScript, it helps developers automatically generate templates for JavaScript comments. It’s a great tool for managing large-scale applications developed by teams of developers who have different coding styles.
-*   [jGrouseDoc](http://jgrouse.com/#jgdoc) jGrouseDoc is an open-source project distributed through [Google Code](http://code.google.com/p/jgrousedoc/) under a modified BSD license. It lets developers document and manage their code comments using a format similar to [Javadoc](http://java.sun.com/j2se/javadoc/)’s.
+*   [JSDoc Toolkit](http://code.google.com/p/jsdoc-toolkit/) JSDoc Toolkit makes code documentation a breeze. Written in JavaScript, it helps developers automatically generate templates for JavaScript comments. It's a great tool for managing large-scale applications developed by teams of developers who have different coding styles.
+*   [jGrouseDoc](http://jgrouse.com/#jgdoc) jGrouseDoc is an open-source project distributed through [Google Code](http://code.google.com/p/jgrousedoc/) under a modified BSD license. It lets developers document and manage their code comments using a format similar to [Javadoc](http://java.sun.com/j2se/javadoc/)'s.
     
     [![jGrouseDoc - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/5bb6a7e8-7587-481b-a759-9f53397aaf7e/07-jsgrouse.jpg)](http://jgrouse.com/#jgdoc)
     
 
 ### JavaScript Debugging Tools
 
-*   [Firebug](http://getfirebug.com/) Firebug is an extremely popular and well-regarded front-end debugging tool. It has all the features you’d expect from a JavaScript debugging tool, such as the ability to set breakpoints in your code so that you can step through your script. For people developing outside of Mozilla-based browsers, check out [Firebug Lite](http://getfirebug.com/lite.html), which is a JavaScript library you can include in your Web pages to access some of the features of Firebug.
+*   [Firebug](http://getfirebug.com/) Firebug is an extremely popular and well-regarded front-end debugging tool. It has all the features you'd expect from a JavaScript debugging tool, such as the ability to set breakpoints in your code so that you can step through your script. For people developing outside of Mozilla-based browsers, check out [Firebug Lite](http://getfirebug.com/lite.html), which is a JavaScript library you can include in your Web pages to access some of the features of Firebug.
     
     [![Firebug - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e150f90a-67e5-45c8-bf70-efeb3f398a6f/08-firebug.jpg)](http://getfirebug.com/)
     
-*   Venkman JavaScript Debugger Venkman is Mozilla’s JavaScript debugger and an add-on for Gecko-based browsers. Venkman is a robust and fully featured JavaScript debugging environment, with a host of useful features and options, such as code profiling to inspect your script’s performance.
+*   Venkman JavaScript Debugger Venkman is Mozilla's JavaScript debugger and an add-on for Gecko-based browsers. Venkman is a robust and fully featured JavaScript debugging environment, with a host of useful features and options, such as code profiling to inspect your script's performance.
     
     ![Venkman JavaScript Debugger - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/3dc465fe-f201-4431-9456-98235cf477e6/09-venkman.jpg)
     
@@ -88,7 +88,7 @@ Also, be sure to check out the following related posts:
     
     [![DebugBar - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/4614ebf3-fea8-434e-a1da-6592f51f8052/11-debugbar.jpg)](http://www.debugbar.com/)
     
-*   Internet Explorer Developer Toolbar Similar to Firebug, IE Developer Toolbar is an in-browser tool to help you debug front-end code in Internet Explorer. It’s especially handy as a debugging and inspection alternative to Firefox when you’re developing and testing in IE.
+*   Internet Explorer Developer Toolbar Similar to Firebug, IE Developer Toolbar is an in-browser tool to help you debug front-end code in Internet Explorer. It's especially handy as a debugging and inspection alternative to Firefox when you're developing and testing in IE.
     
 
 ### JavaScript Testing and Validation Tools
@@ -97,7 +97,7 @@ Also, be sure to check out the following related posts:
     
     ![Test - JavaScriptMVC - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/fbb2b45e-dfbc-4fcb-94b8-9a774f8e94c6/12-test.jpg)
     
-*   JsUnit JsUnit is a popular unit testing framework for JavaScript code. It’s a JavaScript port from another unit testing framework for Java called [JUnit](http://www.junit.org/). JsUnit allows you to write test cases and provides tools for automated code execution.
+*   JsUnit JsUnit is a popular unit testing framework for JavaScript code. It's a JavaScript port from another unit testing framework for Java called [JUnit](http://www.junit.org/). JsUnit allows you to write test cases and provides tools for automated code execution.
     
 *   [JSLint](http://jslint.com/) JSLint is a Web-based tool for verifying your JavaScript code for errors. It has a ton of features and settings that you can use to customize verification algorithms to suit your needs.
     
@@ -105,13 +105,13 @@ Also, be sure to check out the following related posts:
     
 *   Crosscheck Crosscheck is an open-source testing framework for JavaScript. Crosscheck is unique because it works independent of environment: you can run tests outside of a Web browser, which avoids discrepancies that occur when testing in various browsers.
     
-*   [YUI Test](http://developer.yahoo.com/yui/yuitest/#start) YUI Test is a suite of testing utilities that’s part of the [YUI library](http://developer.yahoo.com/yui/) developed by Yahoo!. It has numerous features, such as easy creation of test cases through an intuitive syntax, advanced failure detection and the ability to organize test cases by grouping them into test suites.
+*   [YUI Test](http://developer.yahoo.com/yui/yuitest/#start) YUI Test is a suite of testing utilities that's part of the [YUI library](http://developer.yahoo.com/yui/) developed by Yahoo!. It has numerous features, such as easy creation of test cases through an intuitive syntax, advanced failure detection and the ability to organize test cases by grouping them into test suites.
     
     [![YUI Test - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/3ad41b43-6ee2-4bed-83a4-f2911187ab59/14-yui-test.jpg)](http://developer.yahoo.com/yui/yuitest/#start)
     
 *   [J3Unit](http://j3unit.sourceforge.net/) J3Unit is an excellent object-oriented unit-testing framework for JavaScript. It gives you a host of options for writing automated test cases and has three modes: [Static Mode](http://j3unit.sourceforge.net/#static), [Local Browser Mode](http://j3unit.sourceforge.net/#local) and [Remote Browser Mode](http://j3unit.sourceforge.net/#remote).
     
-*   [Regular Expression Tool](http://erik.eae.net/playground/regexp/regexp.html) The Regular Expression Tool is an online utility that allows you to test your RegEx code against a sample test. It’s a handy tool to have around when you want to quickly test the efficacy of your regular expressions in a variety of example texts.
+*   [Regular Expression Tool](http://erik.eae.net/playground/regexp/regexp.html) The Regular Expression Tool is an online utility that allows you to test your RegEx code against a sample test. It's a handy tool to have around when you want to quickly test the efficacy of your regular expressions in a variety of example texts.
     
     [![Regular Expression Tool - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/01eaa1bf-1a2d-4f1f-945c-88942acaf6d2/15-regex-tool.jpg)](http://erik.eae.net/playground/regexp/regexp.html)
     
@@ -139,7 +139,7 @@ Also, be sure to check out the following related posts:
     
     [![SAJAX - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/0ea47f83-fe68-48c6-a42e-3d733220a899/18-sajax.jpg)](http://www.modernmethod.com/sajax/index.phtml)
     
-*   [JavaScriptMVC](http://javascriptmvc.com/) JavaScriptMVC is a Web application framework based on the [MVC](http://en.wikipedia.org/wiki/Model-view-controller) software architectural pattern. It speeds up Web development processes and lays down best practices, maintainability and standards as principles in a project’s development.
+*   [JavaScriptMVC](http://javascriptmvc.com/) JavaScriptMVC is a Web application framework based on the [MVC](http://en.wikipedia.org/wiki/Model-view-controller) software architectural pattern. It speeds up Web development processes and lays down best practices, maintainability and standards as principles in a project's development.
     
 *   [qooxdoo](http://qooxdoo.org/) qooxdoo is a simple and intuitive AJAX application framework. Be sure to check out the [Demo Browser](http://demo.qooxdoo.org/current/demobrowser/), a Web-based application that allows you to view demos of qooxdoo at work.
     
@@ -156,7 +156,7 @@ Also, be sure to check out the following related posts:
     
 *   typeface.js typeface.js allows you to embed custom fonts on Web pages, freeing you from having to create images for HTML text.
     
-*   [CanvasGraph.js](http://www.liquidx.net/canvasgraphjs/) CanvasGraph.js is a simple JavaScript library that lets you construct bar, line and pie charts using HTML’s canvas element.
+*   [CanvasGraph.js](http://www.liquidx.net/canvasgraphjs/) CanvasGraph.js is a simple JavaScript library that lets you construct bar, line and pie charts using HTML's canvas element.
     
     [![CanvasGraph.js - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/49e091a9-6846-4df3-87b8-ee6e43d98874/21-canvas-graph.jpg)](http://www.liquidx.net/canvasgraphjs/)
     
@@ -174,8 +174,8 @@ Also, be sure to check out the following related posts:
 ### Useful Utilities and JavaScript Scripts
 
 *   [Processing.js](http://ejohn.org/blog/processingjs/) Processing.js is a JavaScript port of [Processing](http://processing.org/), the open-source data-visualization programming language. Check out [examples that use Processing.js](http://blog.osmeusapontamentos.com/processing/dataVisualizationExamplesUsingProcessingJS.htm).
-*   [AJAX Libraries API](http://code.google.com/apis/ajaxlibs/) Google’s AJAX Libraries API allows you to serve popular JavaScript libraries using its CDN, which reduces the server load on your website.
-*   DamnIT DamnIT is an error-reporting service that allows you to gather feedback from beta testers after they’ve encountered a JavaScript error. This is perfect for live production testing and as a monitoring tool that helps you track errors and weak spots in your Web applications.
+*   [AJAX Libraries API](http://code.google.com/apis/ajaxlibs/) Google's AJAX Libraries API allows you to serve popular JavaScript libraries using its CDN, which reduces the server load on your website.
+*   DamnIT DamnIT is an error-reporting service that allows you to gather feedback from beta testers after they've encountered a JavaScript error. This is perfect for live production testing and as a monitoring tool that helps you track errors and weak spots in your Web applications.
 *   [ie7-js](http://code.google.com/p/ie7-js/) ie7-js is a JavaScript library that forces Internet Explorer to behave like a standards-based browser (like Firefox or Opera). It automatically fixes IE browser quirks and deviations from Web standards, as in the case of its box model.
 *   [Lazy loader](http://www.appelsiini.net/projects/lazyload) Lazy loader is a jQuery plug-in that delays the loading of images so that text content can load first, thereby making image-heavy pages load faster.
 
@@ -185,7 +185,7 @@ Also, be sure to check out the following related posts:
     
     [![JS Minifier - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/d25935fc-d939-42fc-8566-1f552bf910c6/24-js-minifier.jpg)](http://fmarcia.info/jsmin/test.html)
     
-*   [JSMIN](http://www.crockford.com/javascript/jsmin.html) JSMIN is a popular JavaScript minifier that removes unneeded characters (like spaces and tabs) and comments, thus reducing your script’s file size.
+*   [JSMIN](http://www.crockford.com/javascript/jsmin.html) JSMIN is a popular JavaScript minifier that removes unneeded characters (like spaces and tabs) and comments, thus reducing your script's file size.
     
 *   [YUI Compressor](http://developer.yahoo.com/yui/compressor/) The YUI Compressor is another well-regarded JavaScript code-optimization tool developed by Yahoo!.
     

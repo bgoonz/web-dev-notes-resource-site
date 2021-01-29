@@ -1,6 +1,6 @@
 # App Academy Open
 
-> Learn to code online with access to App Academy’s entire full-stack course for free
+> Learn to code online with access to App Academy's entire full-stack course for free
 
 *   ⏱ 2 hours
     
@@ -12,7 +12,7 @@
 
 Craigslist is a notoriously under-designed and also very successful website. Its table-like design, gray panels, and royal blue hyperlinks hearken back to the early days of the Internet. It might be a blast from the past, but with a few simple style tweaks we can bring Craigslist into the modern world.
 
-In this project, you will use CSS attributes to update the styles on an example Craigslist homepage. Use what you’ve learned about HTML attributes and CSS selectors to apply styles to various DOM elements.
+In this project, you will use CSS attributes to update the styles on an example Craigslist homepage. Use what you've learned about HTML attributes and CSS selectors to apply styles to various DOM elements.
 
 **Note:** In some of the instructions, you will be given the name of a CSS property that you are to use. You can use the [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS) to help you figure out how to use those properties. Once a property has been introduced to you, following instructions that use it will not refer to the property, again.
 
@@ -21,7 +21,7 @@ To start, clone the repository at [https://github.com/appacademy-starters/css-mo
 Project overview
 ----------------
 
-The objective of this project is to re-skin the Craigslist homepage to use a more modern design aesthetic. Visit [craigslist.org](https://craigslist.org/) to see the most current version of the site. The following two screenshots show Craigslist’s current homepage and an updated homepage, respectively.
+The objective of this project is to re-skin the Craigslist homepage to use a more modern design aesthetic. Visit [craigslist.org](https://craigslist.org/) to see the most current version of the site. The following two screenshots show Craigslist's current homepage and an updated homepage, respectively.
 
 **Current Craigslist homepage:**
 
@@ -116,7 +116,7 @@ Use a **child combinator selector** to style all LI elements that are direct chi
 Phase 5: Add pseudo-elements
 ----------------------------
 
-The Craigslist logo is a purple peace sign, which also happens to be a common emoji these days. What else screams 2010s and beyond better than emojis? So, let’s add some to the Craigslist homepage!
+The Craigslist logo is a purple peace sign, which also happens to be a common emoji these days. What else screams 2010s and beyond better than emojis? So, let's add some to the Craigslist homepage!
 
 **Peace Symbol Emoji:**
 

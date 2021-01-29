@@ -29,7 +29,8 @@ fibonacci(5);
 /*
 the major differences between tabulation and memoization are:
 1.)     tabulation has to look through the entire search space; memoization does not
-2.)     tabulation requires careful ordering of the subproblems is; memoization doesn’t care much about the order of recursive calls.
+2. ) tabulation requires careful ordering of the subproblems is;
+memoization doesn 't care much about the order of recursive calls.
 */
 const memo = {
   0: 0,

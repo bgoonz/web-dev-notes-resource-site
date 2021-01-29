@@ -2883,11 +2883,11 @@ ________________________________________________________________________________
 # Inserting Data Into A Table
 ________________________________________________________________________________
 
-If you have data, but it’s not in tables, does the data even exist? Not to an
+If you have data, but it's not in tables, does the data even exist? Not to an
 app! We often need to create relational databases on the back end of the Web
-apps we’re building so that we can ultimately display this data on the front
+apps we're building so that we can ultimately display this data on the front
 end of our application. All relational database data is stored in tables, so
-it’s important to learn how to create tables and successfully query them.
+it's important to learn how to create tables and successfully query them.
 
 Of the four data manipulation statements, `INSERT` is the easiest.
 
@@ -2909,7 +2909,7 @@ VALUES
   (column1_value, colum2_value, column3_value);
 ```
 
-Let’s fill out our “friends” table with information about five friends. In
+Let's fill out our “friends” table with information about five friends. In
 psql, enter the following to add new table rows. _Note the use of single
 quotation marks for string values. Also note that, since we used the [`SERIAL`
 pseudo-type][1] to auto-increment the ID values, we can simply write `DEFAULT`
@@ -2951,7 +2951,7 @@ appacademy=# SELECT * FROM friends;
   5 | River      | Song
 ```
 
-Now let’s try to insert a new row using the ID of 5:
+Now let's try to insert a new row using the ID of 5:
 
 ```shell
 INSERT INTO friends (id, first_name, last_name)
@@ -3047,7 +3047,7 @@ VALUES
 
 ## Using JOIN to retrieve rows from multiple tables
 
-Now that we’ve set up an association between the “puppies” table and the
+Now that we've set up an association between the “puppies” table and the
 “friends” table, we can access data from both tables. We can do so by using a
 [JOIN operation][3] in our SELECT query. Type the following into psql:
 
@@ -3110,11 +3110,11 @@ ________________________________________________________________________________
 # Writing And Running A Seed File In PSQL
 
 After a database is created, we need to populate it, or _seed_ it, with data.
-Until now, we’ve used the command-line psql interface to create tables and
-insert rows into those tables. While that’s fine for small datasets, it would
+Until now, we've used the command-line psql interface to create tables and
+insert rows into those tables. While that's fine for small datasets, it would
 be cumbersome to add a large dataset using the command line.
 
-In this reading, we’ll learn how to create and run a seed file, which makes the
+In this reading, we'll learn how to create and run a seed file, which makes the
 process of populating a database with test data much easier.
 
 ## Creating a seed file
@@ -3122,7 +3122,7 @@ process of populating a database with test data much easier.
 You can create a seed file by opening up VSCode or any text editor and saving a
 file with the `.sql` extension.
 
-Let’s create a seed file called `seed-data.sql` that’s going to create a new
+Let's create a seed file called `seed-data.sql` that's going to create a new
 table called `pies` and insert 50 pie rows into the table. Use the code below
 to create the seed file, and make sure to save your seed file on your machine.
 
@@ -3226,13 +3226,13 @@ List of relations
 You could also use the “pipe” (`|`) to populate the database with your seed
 file.
 
-The syntax is `cat [path_to_file/file.sql] | psql -d [database]`. ‘cat’ is a
+The syntax is `cat [path_to_file/file.sql] | psql -d [database]`. ‘cat' is a
 standard Unix utility that reads files sequentially, writing them to standard
 output. The “pipe” (`|`) takes the standard output of the command on the left
 and pipes it as standard input to the command on the right.
 
 Try out this method in your terminal. If you have an existing “pies” table,
-you’ll need to drop this table before you can add it again:
+you'll need to drop this table before you can add it again:
 
 ```sql
 DROP TABLE pies;
@@ -3602,7 +3602,7 @@ Schemas allow use to easily visualize database tables and their relationships to
 one another, so that we can identify areas that need clarity, refinement, or
 redesign.
 
-In this reading, we’re going to cover the stages of relational database design
+In this reading, we're going to cover the stages of relational database design
 and how to create schema that depicts database table relationships.
 
 ## What is Relational Database Design?
@@ -3618,7 +3618,7 @@ contain rows (a.k.a. _records_) and columns (a.k.a. _fields_). We also learned
 how to uniquely identify table records by adding a `PRIMARY KEY` and how to
 create a table association by adding a `FOREIGN KEY`.
 
-A relational database usually contains multiple tables. It’s useful to create
+A relational database usually contains multiple tables. It's useful to create
 schema to help us visualize these tables, keep track of primary keys and foreign
 keys, and create relationships among tables. This is a key part of the RDD
 process defined below.
@@ -3637,7 +3637,7 @@ There are four generally-agreed-upon stages of Relational Database Design:
 The first stage is identifying the purpose of the database (_Why is the database
 being created? What problem is it solving? What is the data used for?_), as well
 as identifying the main entities, or _tables_, that need to be created. It also
-typically involves identifying the table’s attributes (i.e. _columns_ and
+typically involves identifying the table's attributes (i.e. _columns_ and
 _rows_).
 
 For example, if we were creating a database for order processing on an
@@ -3652,7 +3652,7 @@ orders.
 ### 2. Identify primary keys
 
 The second stage is to identify the primary key (_PK_) of each table. As we
-previously learned, a table’s primary key contains a unique value, or values,
+previously learned, a table's primary key contains a unique value, or values,
 that identify each distinct record. For our above example of online orders, we
 would probably create IDs to serve as the primary key for each table: a product
 ID, an order ID, and a user ID.
@@ -3831,16 +3831,16 @@ are less often used.
 
 **Third normal form rules:**
 
-- Eliminate fields that do not depend on the table’s key.
+- Eliminate fields that do not depend on the table's key.
 
 _Note: For examples of how to apply these forms, read [“Description of the
 database normalization basics”][3] from Microsoft._
 
 ## Schema design tools
 
-Many people draw their relational database design schema with good ol’ pen and
+Many people draw their relational database design schema with good ol' pen and
 paper, or on a whiteboard. However, there are also lots of online tools created
-for this purpose if you’d like to use something easily exportable/shareable.
+for this purpose if you'd like to use something easily exportable/shareable.
 Feel free to check out the ERD (short for “Entity Relationship Diagram”) tools
 below.
 
@@ -3876,9 +3876,9 @@ ________________________________________________________________________________
 # Using SQL Transactions
 
 Transactions allow us to make changes to a SQL database in a consistent and
-durable way, and it’s a best practice to use them regularly.
+durable way, and it's a best practice to use them regularly.
 
-In this reading, we’ll cover what a transaction is and why we want to use it, as
+In this reading, we'll cover what a transaction is and why we want to use it, as
 well as how to write explicit transactions.
 
 ## What is a transaction?
@@ -3960,7 +3960,7 @@ transaction state to what it was at the time of the save point.
 Syntax to create save point: `SAVEPOINT savepoint_name;`
 Syntax to delete a save point: `RELEASE SAVEPOINT savepoint_name;`
 
-Let’s say we had the following table called `fellowship`:
+Let's say we had the following table called `fellowship`:
 
 | name | age |
 |---|---|
@@ -3974,7 +3974,7 @@ Let’s say we had the following table called `fellowship`:
 | Gandalf | 2000 |
 
 We'll create a transaction on this table containing a few operations. Inside
-the transaction, we’ll establish a save point that we’ll roll back to before
+the transaction, we'll establish a save point that we'll roll back to before
 committing.
 
 ```sql
@@ -4025,7 +4025,7 @@ COMMIT;
 
 It is generally a good idea to use explicit SQL transactions when making any
 updates, insertions, or deletions, to a database. However, you generally
-wouldn’t write an explicit transaction for a simple `SELECT` query.
+wouldn't write an explicit transaction for a simple `SELECT` query.
 
 Transactions help you deal with crashes, failures, data consistency, and error
 handling. The ability to create savepoints and roll back to earlier points is
@@ -4073,7 +4073,7 @@ be reversed.
 
 ### Banking transaction example
 
-Let’s look at an example from the [PostgreSQL Transactions doc][1] that
+Let's look at an example from the [PostgreSQL Transactions doc][1] that
 demonstrates the ACID properties of a transaction. We have a bank database that
 contains customer account balances, as well as total deposit balances for
 branches. We want to record a payment of $100.00 from Alice's account to Bob's
@@ -4095,17 +4095,17 @@ COMMIT;
 
 There are several updates happening above. The bank wants to make sure that all
 of the updates happen or none happen, in order to ensure that funds are
-transferred from the proper account (i.e. Alice’s account) to the proper
-recipient’s account (i.e. Bob’s account). If any of the updates fails, none of
+transferred from the proper account (i.e. Alice's account) to the proper
+recipient's account (i.e. Bob's account). If any of the updates fails, none of
 them will take effect. That is, if something goes wrong either with withdrawing
-funds from Alice’s account or transferring the funds into Bob’s account, then
+funds from Alice's account or transferring the funds into Bob's account, then
 the entire transaction will be aborted and no changes will occur. This prevents
-Alice or Bob from seeing a transaction in their account summaries that isn’t
+Alice or Bob from seeing a transaction in their account summaries that isn't
 supposed to be there.
 
 There are many other scenarios where we would want to use an atomic operation to
 ensure a successful end result. Transactions are ideal for such scenarios, and
-we should use them whenever they’re applicable.
+we should use them whenever they're applicable.
 
 ## Helpful links:
 
@@ -4128,12 +4128,12 @@ we should use them whenever they’re applicable.
 ________________________________________________________________________________
 # Joins vs. Subqueries
 
-To select, or not to select? That is the query. We’ve barely scratched the
+To select, or not to select? That is the query. We've barely scratched the
 surface of SQL queries. Previously, we went over how to write simple SQL
 queries using the `SELECT` statement, and we learned how to incorporate a `WHERE` clause into our queries.
 
-There’s a lot more we could add to our queries to get more refined results. In
-this reading, we’ll go over joins and subqueries and talk about when we would
+There's a lot more we could add to our queries to get more refined results. In
+this reading, we'll go over joins and subqueries and talk about when we would
 use one over the other.
 
 ## What is a JOIN?
@@ -4207,7 +4207,7 @@ statement. A subquery can return a single (“scalar”) value or multiple rows.
 
 ### Single-value subquery
 
-Let’s see an example of how to use a subquery to return a single value. Take
+Let's see an example of how to use a subquery to return a single value. Take
 the "puppies" table from before. We had a column called `age_yrs` in that table
 (see below).
 
@@ -4228,7 +4228,7 @@ postgres=# SELECT * FROM puppies;
 (10 rows)
 ```
 
-We’ll use the [PostgreSQL aggregate function][4] `AVG` to get an average puppy
+We'll use the [PostgreSQL aggregate function][4] `AVG` to get an average puppy
 age.
 
 ```sql
@@ -4239,7 +4239,7 @@ FROM
 ```
 
 Assuming our previous “puppies” table still exists in our database, if we
-entered the above statement into psql we’d get an _**average age of 0.9**_.
+entered the above statement into psql we'd get an _**average age of 0.9**_.
 (_Note: Try it out yourself in psql! Refer to the reading "Retrieving Rows From
 A Table Using SELECT" if you need help remembering how we set up the “puppies”
 table._)
@@ -4301,7 +4301,7 @@ We could also write a subquery that returns multiple rows.
 In the reading "Creating A Table In An Existing PostgreSQL Database", we
 created a “friends” table. In "Foreign Keys And The JOIN Operation", we set up a
 primary key in the “puppies” table that is a foreign key in the “friends” table
--- `puppy_id`. We’ll use this ID in our subquery and outer query.
+-- `puppy_id`. We'll use this ID in our subquery and outer query.
 
 **"friends" table**
 ```shell
@@ -4314,7 +4314,7 @@ id | first_name | last_name | puppy_id
   5 | River      | Song      |        8
 ```
 
-Let’s say we wanted to find all the puppies that are younger than 6 months old.
+Let's say we wanted to find all the puppies that are younger than 6 months old.
 
 ```sql
 SELECT puppy_id
@@ -4334,7 +4334,7 @@ puppy_id
 ```
 
 Now we want to use the above statement as a subquery (inside parentheses) in
-another query. You’ll notice we’re using a `WHERE` clause with the [IN][5]
+another query. You'll notice we're using a `WHERE` clause with the [IN][5]
 operator to check if the `puppy_id` from the “friends” table meets the
 conditions in the subquery.
 
@@ -4397,7 +4397,7 @@ WHERE
   puppies.age_yrs < 0.6;
 ```
 
-Again, we’d get back one result, but because we used an `INNER JOIN` we have
+Again, we'd get back one result, but because we used an `INNER JOIN` we have
 information from both the “puppies” and “friends” tables.
 
 ```shell
@@ -4414,15 +4414,15 @@ for table rows. However, you might want to think about whether using a JOIN or a
 subquery is more appropriate for retrieving data.
 
 A JOIN operation is ideal when you want to combine rows from one or more tables
-based on a match condition. Subqueries work great when you’re returning a single
-value. When you’re returning multiple rows, you could opt for a subquery or a
+based on a match condition. Subqueries work great when you're returning a single
+value. When you're returning multiple rows, you could opt for a subquery or a
 JOIN.
 
 Executing a query using a JOIN could potentially be faster than executing a
 subquery that would return the same data. (A subquery will execute once for each
 row returned in the outer query, whereas the `INNER JOIN` only has to make one
-pass through the data.) However, this isn’t always the case. Performance
-depends on the size of your data, what you’re filtering for, and how the server
+pass through the data.) However, this isn't always the case. Performance
+depends on the size of your data, what you're filtering for, and how the server
 optimizes the query. With smaller datasets, the difference in performance of a
 JOIN and subquery is imperceptible. However, there are use cases where a
 subquery would improve performance.
@@ -4472,7 +4472,7 @@ to scan all the pages of the book to find the places where specific information
 appears, a reader can simply check the index. In similar fashion, PostgreSQL
 indexes, which are special lookup tables, let us make faster database queries.
 
-Let’s say we had the following table:
+Let's say we had the following table:
 
 | addresses    |
 |--------------|

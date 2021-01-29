@@ -49,7 +49,7 @@ console.log("fish" * 2); // NaN
 | False | True  |   False  |   True   | True  | False |
 | False | False |   False  |   False  | True  | True  |
 
-6. Given an expression consisting of >, >=, ===, <, <=, compute it’s value
+6. Given an expression consisting of >, >=, ===, <, <=, compute it's value
 
 | Operator | Meaning                  | Example Usage  | Example Output |
 |:--------:|:------------------------ |:-------------- |:--------------:|
@@ -59,7 +59,7 @@ console.log("fish" * 2); // NaN
 |    <     | less than                | 10 < (12 - 2)  | False          |
 |    <=    | less than or equal to    | 10 <= (12 - 2) | True           |
 
-7. Apply De Morgan’s law to a boolean expression
+7. Apply De Morgan's law to a boolean expression
 - De Morgan's law explains how to distribute `!` (a negation) across parentheses.
 - If we would like to distribute the negation, we also have to flip the comparison operator between `&&` and `||`:
   - `!(A || B)` is equivalent to `!A && !B`
@@ -72,7 +72,7 @@ console.log("fish" * 2); // NaN
   - 2 + 3 * 4 === 14
   - 4 % 3 + 6 / 2 === 4 (modulo takes place with multiplication/division)
 
-9. Given an expression, use the grouping operator to change it’s evaluation
+9. Given an expression, use the grouping operator to change it's evaluation
 - Reflecting on order of operations, parentheses (grouping operators) are highest priority. Anything inside is evaluated first.
   - 2 + 3 * 4 === 14
   - (2 + 3) * 4 === 20
@@ -127,7 +127,7 @@ function myFunction(firstParam, secondParam, thirdParam) {
 }
 ```
 
-2. Define a function that calculates the average of two numbers, call it, pass in arguments, and print it’s return value
+2. Define a function that calculates the average of two numbers, call it, pass in arguments, and print it's return value
 ```js
 function average(number1, number2) {
   return (number1 + number2) / 2;
