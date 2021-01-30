@@ -1,0 +1,129 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Since I started giving <a href="/talks.html">tech talks</a> in meetups I used <a
+        href="https://github.com/hakimel/reveal.js/">reveal.js</a> to build my slides. As a web developer its the finest
+      tool to create and share slides for me. I either share the slides on github or upload to slide hosting sites.</p>
+    <p>To upload the slides to hosting sites I need to convert html slides to pdf. The reveal.js have a workflow to
+      convert the html slides into pdf using chrome. But since I love CLI, I was looking for a way to convert my slides
+      to pdf using <a href="https://github.com/ariya/phantomjs/">phantom.js</a>. Then a <a
+        href="http://stackoverflow.com/questions/25027156/reveal-js-build-pdfs-dynamically-with-grunt-lib-phantomjs">stackoverflow
+        thread</a> got me into the following solution.</p>
+    <p>Before seeing the stackoverflow I never knew that reveal.js have equiped with a <a
+        href="https://github.com/hakimel/reveal.js/blob/master/plugin/print-pdf/print-pdf.js">plugin print-pdf.js</a> to
+      do this. For this solution to work, you need phantomjs to be installed. You can either download the compiled
+      phantomjs or install using <code>npm</code>.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> install -g phantomjs</a></code></pre>
+    </div>
+    <p>After installing the phantomjs you can run the following command to generate the pdf.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">phantomjs</span> path/to/print-pdf.js <span class="st">&quot;http://localhost:9000/index.html?print-pdf&quot;</span> file-name.pdf</a></code></pre>
+    </div>
+    <p>Since I installed revealjs using bower, my path to <code>print-pdf.js</code> plugin is
+      <code>bower_components/reveal.js/plugin/print-pdf/print-pdf.js</code> and my slides are served using simple http
+      server running at <code>localhost:9000</code>.
+    </p>
+    <p>But when I tried this first time, I got the blank slides because reveal.js load the slide content via ajax after
+      loading the <code>index.html</code> and as per the plugin phantomjs won’t wait for the ajax to complete. So I
+      found a simple hack to wait phantomjs to load the slide contents using <code>setTimeout</code>.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">page</span>.<span class="at">open</span>(revealFile<span class="op">,</span> <span class="kw">function</span> (status) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="co">// console.log( &#39;Printed succesfully&#39; );</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="co">// page.render( slideFile );</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="co">// phantom.exit();</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  <span class="va">console</span>.<span class="at">log</span>(status)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">  <span class="cf">if</span> (status <span class="op">!==</span> <span class="st">&quot;success&quot;</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-7" title="7">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Unable to load the address!&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">    <span class="va">phantom</span>.<span class="at">exit</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    <span class="at">setTimeout</span>(<span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-11" title="11">      <span class="va">page</span>.<span class="at">render</span>(slideFile)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-12" title="12">      <span class="va">phantom</span>.<span class="at">exit</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-13" title="13">    <span class="op">},</span> <span class="dv">1000</span>)<span class="op">;</span> <span class="co">// Change timeout as required to allow sufficient time</span></a>
+<a class="sourceLine" id="cb3-14" title="14">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>If you are using grunt, you can register the task to generate pdf.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">grunt</span>.<span class="at">registerTask</span>(<span class="st">&quot;pdf&quot;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="kw">var</span> childProcess <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;child_process&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">var</span> phantomjs <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;phantomjs&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="kw">var</span> binPath <span class="op">=</span> <span class="va">phantomjs</span>.<span class="at">path</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="kw">var</span> done <span class="op">=</span> <span class="va">grunt</span>.<span class="va">task</span>.<span class="va">current</span>.<span class="at">async</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7">  childArgs <span class="op">=</span> [</a>
+<a class="sourceLine" id="cb4-8" title="8">    <span class="st">&quot;bower_components/reveal.js/plugin/print-pdf/print-pdf.js&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="st">&quot;http://localhost:9000/index.html?print-pdf&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="st">&quot;filename.pdf&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-11" title="11">  ]<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-12" title="12"></a>
+<a class="sourceLine" id="cb4-13" title="13">  <span class="va">childProcess</span>.<span class="at">execFile</span>(binPath<span class="op">,</span> childArgs<span class="op">,</span> <span class="kw">function</span> (error<span class="op">,</span> stdout<span class="op">,</span> stderr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-14" title="14">    <span class="va">grunt</span>.<span class="va">log</span>.<span class="at">writeln</span>(stdout)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="at">done</span>(error)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-16" title="16">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>So from now generating pdf from reveal.js slides have become really easy, I just need to run</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">grunt</span> pdf</a></code></pre>
+    </div>
+    <p>If you have a better solution to check whether phantomjs finished loading the slides contents other than the
+      above hack, please do let me know.</p>
+    <p>Thank You.</p>
+
+  </body>
+
+  
+</html>

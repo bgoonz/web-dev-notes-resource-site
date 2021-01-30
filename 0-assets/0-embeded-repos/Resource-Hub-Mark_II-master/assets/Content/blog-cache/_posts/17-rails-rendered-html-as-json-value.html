@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When <a href="https://signalvnoise.com/posts/3697-server-generated-javascript-responses">SJR</a>(Server-generated
+      JavaScript Responses) was first introduced to me by <span class="citation"
+        data-cites="sunilkumar_g56">[@sunilkumar_g56]</span>(https://twitter.com/sunilkumar_g56), I was not much
+      impressed until I actually use it my project. Yes, they are really handy and helps you to work done really faster.
+      But one thing I hate about is writing a part of JavaScript in the rails views as <code>.js.erb</code>.</p>
+    <p>I found it bit difficult to read the code using SJR because while I read the ajax action in some JS file and then
+      I need to go into some other file to know what happens when it is success/failure. Also if you are use Constructor
+      pattern for your components, its difficult to access even the public methods in SJR. So I like to return the
+      response of the ajax request and do the DOM manipulation on success and failure in module itself.</p>
+    <p>If the ajax response is just some HTML and you need to make change only in one location on DOM, you just need to
+      render the partial/view, but when you have multiple data to return as ajax response and need to make DOM changes
+      in multiple areas we need to return the response as JSON.</p>
+    <p>You might now think that what so difficult to do it? Me too thought the same until I need to return a rendered
+      HTML as the value in JSON. The <code>jQuery.ajax</code> function started throwing error saying
+      <code>parseerror</code> to the returned json.
+    </p>
+    <p>To fix this you need to run to_json on the rendered HTML,</p>
+    <p>{% highlight erb %} { “status”: “success”, “html”: { “products”: &lt;%= (render partial:
+      ‘show.html’).to_json.html_safe %&gt; }, “data”: { “count”: &lt;%= <span class="citation"
+        data-cites="products">@products ["search_count"]</span> %&gt; } } {% endhighlight %}</p>
+    <p>So you might be wondering whether the <code>String</code> class have a method named <code>to_json</code>, No, but
+      <code>render</code> method really returns <code>EscapedString</code> which have a <code>to_json</code> method on
+      it. You can see the source in <a
+        href="https://github.com/rails/rails/blob/08754f12e65a9ec79633a605e986d0f1ffa4b251/activesupport/lib/active_support/json/encoding.rb#L54-L60">activesupport/lib/active_support/json/encoding.rb</a>
+    </p>
+    <p>This <code>to_json</code> method will escape &lt;, &gt;, and &amp; to unicode chars.</p>
+
+  </body>
+
+  
+</html>

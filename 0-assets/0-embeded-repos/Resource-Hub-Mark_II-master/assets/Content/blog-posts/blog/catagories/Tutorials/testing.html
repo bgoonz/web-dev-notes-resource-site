@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+      <title>testing</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css.map">
+  <link rel="stylesheet" href="./../../css/blog-home.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/prism.css">
+  <script async defer src="./../../vendor/bootstrap/css/prism.js"></script>
+  <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css">
+
+
+  <link rel="stylesheet" href="./cheatsheets.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="./cheatsheets.css">
+    </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="testing">Testing</h1>
+
+<h3 class="mume-header" id="testing-frameworks">Testing Frameworks</h3>
+
+<ul>
+<li>runs tests and presents them to a user</li>
+<li>an assertion library is the code used to write tests</li>
+<li>some testing libraries have built in assertion libraries, others will need you to import to utilize them</li>
+</ul>
+<h4 class="mume-header" id="mocha">Mocha</h4>
+
+<ul>
+<li>Javascript testing framework that specializes in running tests and presenting them in an organized user friendly way</li>
+<li>widely used because of its flexibility</li>
+<li>supports a whole variety of different assertion libraries and DSL interfaces to best suit the developer
+<ul>
+<li><strong>DSL (Domain Specific Language)</strong> refers to a computer language specialized for a particular purpose</li>
+<li>will usually be familiar but syntactically slightly different from other languages</li>
+</ul>
+</li>
+</ul>
+<p>Assertion libraries are used to actually write tests. Node has a library called <strong>Chai</strong> and <strong>Assert</strong></p>
+<ul>
+<li>Use Chai to structure your tests using behavior-driven development principles.<br>
+to set up chai and chai spies:</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"> <code class="language-javascript">// first npm install chai and chai-spies
+const chai = require(&quot;chai&quot;);
+const expect = chai.expect;
+const spies = require(&quot;chai-spies&quot;);
+chai.use(spies);
+</code></pre><p>Importing assert module:<br>
+ <code class="language-javascript">const assert = require(&#x201C;assert&quot;)</code></p>
+<h4 class="mume-header" id="describe"> <code class="language-javascript">describe()</code></h4>
+
+<ul>
+<li> <code class="language-javascript">describe()</code> is an organizational function. takes two parameters: descriptive string and a callback<br>
+the callback passed to describe is where we insert the actual tests</li>
+</ul>
+<h4 class="mume-header" id="it"> <code class="language-javascript">it()</code></h4>
+
+<ul>
+<li> <code class="language-javascript">it</code> goes inside the callback passed to describe</li>
+<li>accepts a descriptive string and a callback to set up our test</li>
+</ul>
+<h4 class="mume-header" id="context"> <code class="language-javascript">context</code></h4>
+
+<ul>
+<li>
+<p>an alias for the describe function</p>
+</li>
+<li>
+<p>denotes that we are setting up the context for a particular set of tests</p>
+</li>
+<li>
+<p>Use the pre- and post-test hooks provided by Mocha</p>
+</li>
+<li>
+<p><strong>Mocha Hooks</strong> are a way to set up before running the individual tests</p>
+<ul>
+<li> <code class="language-javascript">before</code> happens once before all tests</li>
+<li> <code class="language-javascript">beforeEach</code> happens before each test</li>
+<li> <code class="language-javascript">after</code> happens once at the end</li>
+<li> <code class="language-javascript">afterEach</code> happens after each test</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="the-testing-pyramid">The Testing Pyramid</h4>
+
+<ul>
+<li><strong>Unit Tests</strong>: used to test the smallest pieces of your application in isolation to ensure each piece works before you attempt to put those pieces together.
+<ul>
+<li>Each unit test should focus on testing one thing. These are generally the fastest tests to write and run.</li>
+</ul>
+</li>
+<li><strong>Integration Tests</strong>: test the interactions between two pieces of your application. will ensure the units you&apos;ve written work coherently together.</li>
+<li><strong>End-to-End (E2E) Tests</strong>: test the whole of your application. Closest automated tests come to testing the an actual user experience of your application. These are generally the slowest tests to write and run.</li>
+</ul>
+<h4 class="mume-header" id="test-driven-development-tdd">Test-Driven Development (TDD)</h4>
+
+<ul>
+<li>writing the test first&#x2014;so you have to think about what you want your code to do and what it would mean for the code to be successful before you start writing it</li>
+</ul>
+<ol>
+<li>Writing tests before code ensures that the code written works.
+<ul>
+<li>Code written to pass specs is guaranteed to be testable.</li>
+<li>Code with pre-written tests easily allows other developers to add and test new code while ensuring nothing else breaks along the way.</li>
+</ul>
+</li>
+<li>Only required code is written.
+<ul>
+<li>In the face of having to write tests for every piece of added functionality TDD can help reduce bloated un-needed functionality.</li>
+<li>TDD and YAGNI (&quot;you ain&apos;t gonna need it&quot;) go hand in hand!</li>
+</ul>
+</li>
+<li>TDD helps enforce code modularity.
+<ul>
+<li>A TDD developer is forced to think about their application in small, testable chunks - this ensures the developer will write each chunk to be modular and capable of individual testing.</li>
+</ul>
+</li>
+<li>Better understanding of what the code should be doing.
+<ul>
+<li>Writing tests for a piece of code ensures that the developer writing that code knows what the piece of code is trying to achieve.</li>
+</ul>
+</li>
+</ol>
+<h4 class="mume-header" id="tdd-workflow">TDD Workflow</h4>
+
+<ul>
+<li>Red: Write the tests and watch them fail (a failing test is red). It&apos;s important to ensure the tests initially fail so that you don&apos;t have false positives.</li>
+<li>Green: Write the minimum amount of code to ensure the tests pass (a passing test will be green).</li>
+<li>Refactor: Refactor the code you just wrote. Your job is not over when the tests pass! One of the most important things you do as a software developer is to ensure the code you write is easy to maintain and read.</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a class="btn" href="#testing">Testing</a>
+<ul>
+<li><a class="btn" href="#testing-frameworks">Testing Frameworks</a>
+<ul>
+<li><a class="btn" href="#mocha">Mocha</a></li>
+<li><a class="btn" href="#describe"> <code class="language-javascript">describe()</code></a></li>
+<li><a class="btn" href="#it"> <code class="language-javascript">it()</code></a></li>
+<li><a class="btn" href="#context"> <code class="language-javascript">context</code></a></li>
+<li><a class="btn" href="#the-testing-pyramid">The Testing Pyramid</a></li>
+<li><a class="btn" href="#test-driven-development-tdd">Test-Driven Development (TDD)</a></li>
+<li><a class="btn" href="#tdd-workflow">TDD Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script async>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

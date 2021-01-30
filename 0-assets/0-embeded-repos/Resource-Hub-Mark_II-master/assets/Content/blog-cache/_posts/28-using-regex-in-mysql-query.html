@@ -1,0 +1,77 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><strong>Disclaimer:</strong> I don’t recommend to use this in production since it cause heavy performance drop.
+      As I read, using <strong>REGEX</strong> in query is 10x slower than <strong>LIKE</strong> operator.</p>
+    <hr />
+    <p>Recently I had a requirement to filter out records which matches a particular pattern. Usually in such cases I
+      retrive the records and run filter in the program. This time I was curious to know whether there is an alternative
+      way. If I can filter using a pattern in MySQL, it will be easy for me. Thus I came to know about <a
+        href="https://dev.mysql.com/doc/refman/5.1/en/regexp.html">REGEX</a> in MySQL.</p>
+    <p>So now I my query looks like</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> messages <span class="kw">WHERE</span> nick_name REGEXP <span class="st">&#39;[a-z]0\.[0-9]+&#39;</span>;</a></code></pre>
+    </div>
+    <p>to get records matching my regex or I can use NOT REGEX to filter out.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> messages <span class="kw">WHERE</span> nick_name <span class="kw">NOT</span> REGEXP <span class="st">&#39;[a-z]0\.[0-9]+&#39;</span>;</a></code></pre>
+    </div>
+    <p>As I said in disclaimer there is a huge performance drawback for <strong>REGEX</strong> when compared to
+      <strong>LIKE</strong> operator. The <strong>REGEX</strong> operator is <code>10x</code> slower than
+      <strong>LIKE</strong> operator.
+    </p>
+
+  </body>
+
+  
+</html>

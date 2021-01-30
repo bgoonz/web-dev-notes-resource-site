@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog-Post</title>
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+  <p><a href="http://babeljs.io">BabelJS</a> allows you to write ES6 or ES7 today. I recently started writing all my
+    javascript in ES6 and transpile though babel.js.</p>
+  <h2 id="setup">setup</h2>
+  <div class="sourceCode" id="cb1">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> i --save-dev babel-cli babel-preset-es2015</a></code></pre>
+  </div>
+  <p>Now you can write your Javascript in ES6 and build/transpile with babel.</p>
+  <div class="sourceCode" id="cb2">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">./node_modules/.bin/babel</span> --presets=es2015 source.js -o output.js</a></code></pre>
+  </div>
+  <h2 id="using-.babelrc">Using .babelrc</h2>
+  <p>You can also define the presets in <code>.babelrc</code> file in the root folder of the project.</p>
+  <div class="sourceCode" id="cb3">
+    <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="dt">&quot;presets&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;es2015&quot;</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="fu">}</span></a></code></pre>
+  </div>
+  <p>Now you don’t have to specify this as CLI option.</p>
+  <div class="sourceCode" id="cb4">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">./node_modules/.bin/babel</span> source.js -o output.js</a></code></pre>
+  </div>
+  <p>If you have multiple files you can specify the input and output directories.</p>
+  <div class="sourceCode" id="cb5">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">./node_modules/.bin/babel</span> src/ -d dist/</a></code></pre>
+  </div>
+  <h2 id="source-maps">Source Maps</h2>
+  <p>You can generate source maps using <code>-s</code> option.</p>
+  <div class="sourceCode" id="cb6">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="ex">./node_modules/.bin/babel</span> src/ -d dist/ -s</a></code></pre>
+  </div>
+  <h2 id="npm-script">npm script</h2>
+  <p>For easiness you can set this in npm scripts.</p>
+  <div class="sourceCode" id="cb7">
+    <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb7-1" title="1"><span class="er">#</span> <span class="er">package.json</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;some-name&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="dt">&quot;scripts&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb7-5" title="5">    <span class="dt">&quot;build&quot;</span><span class="fu">:</span> <span class="st">&quot;babel source.js -o output.js&quot;</span></a>
+<a class="sourceLine" id="cb7-6" title="6">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="fu">}</span></a></code></pre>
+  </div>
+  <p>Now you can run the command <code>npm run build</code> to transpile.</p>
+  <h2 id="watch">Watch</h2>
+  <p>You can also set the babel.js to watch you source file and transpile when ever you save a change in the source
+    file. You can use <code>-w</code> or <code>--watch</code> option for it.</p>
+  <div class="sourceCode" id="cb8">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="ex">babel</span> -w source.js -o output.js</a></code></pre>
+  </div>
+  <p>Now babel will build your output file when ever you make some changes to the source file.</p>
+  <h2 id="using-with-reactjs">Using with ReactJS</h2>
+  <p>If you want to use with ReactJS, you need to install <code>babel-preset-react</code> preset as well.</p>
+  <div class="sourceCode" id="cb9">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">npm</span> i --save-dev babel-preset-react</a></code></pre>
+  </div>
+  <p>Once you install the react preset you can now build <code>.jsx</code> files using babel.</p>
+  <div class="sourceCode" id="cb10">
+    <pre
+      class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="ex">./node_modules/.bin/babel</span> --presets=es2015,react source.jsx -o output.js</a></code></pre>
+  </div>
+  <p>Now its time to say goodbye to coffeescript and write next generation JavaScript.</p>
+
+</body>
+
+
+</html>

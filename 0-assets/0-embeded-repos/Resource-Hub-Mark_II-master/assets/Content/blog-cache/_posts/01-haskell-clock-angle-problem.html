@@ -1,0 +1,133 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Last week, I stumble upon the <strong>clock angle problem, find the angle between the hour hand and minute
+        hand</strong>. I find it bit interesting and thought to give a try, but I didn’t have any idea where to start.
+      so I googled and went to its <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">wiki page</a>. There it
+      have really good explanation on how to solve it with all the equations.</p>
+    <p>I am writing this post as my own reference and if you want a better explantion you can goto <a
+        href="https://en.wikipedia.org/wiki/Clock_angle_problem">wikipedia : Clock angle problem</a> page.</p>
+    <p>For this problem the input will be the time accepted in 12 hours clock.</p>
+    <h2 id="rate-of-change">Rate of change</h2>
+    <p>The first step towards solving this is finding the rate at which the angle of both hour hand and minute hand
+      change in a minute.</p>
+    <p>Let take the <strong>Hour hand</strong> first and find its rate of change. An hour hand turns <strong>360
+        degree</strong> in 12 hours, which means 360 degree in 720 minutes. This will give its rate of change as
+      <strong>0.5 degree</strong> in 1 minute.
+    </p>
+    <pre><code>360 degree in 12 hours
+360 in 12*60 = 720 minutes
+rate of change = 360/720 = 0.5 degree</code></pre>
+    <p>In case of <strong>minute hand</strong> it turns 360 degree in 60 minutes, thus it’s rate of change will be
+      <strong>6 degree</strong> per minute.
+    </p>
+    <pre><code>360 in 60 minutes
+rate of change = 360/60 = 6 degree</code></pre>
+    <h2 id="angle-between-hands-and-12-oclock">Angle between hands and 12 O’Clock</h2>
+    <p>After finding the rate of change now we can find the angle between hour hand and 12 O’Clock and similarly angle
+      between minute hand and 12 O’Clock at the given time. The difference of these two result in our answer for angle
+      between hour and minute hand.</p>
+    <p>Since we already know the rate of change hour hand per minute, the angle between 12 O’Clock and hour hand will be
+      the <code>0.5 * time converted to minutes</code>. For example let say the given time is <strong>5:20</strong>,</p>
+    <pre><code>hourHandAngle = 0.5 * (60H + M)
+// H - Hour in given time
+// M - Minute in given time
+
+hourHandAngle = 0.5 * (60 * 5 + 20)
+              = 0.5 * (320)
+              = 160 degree</code></pre>
+    <p>The angle between 12 O’Clock and minute hand will be 6 times minutes, ie., <code>6 * Minutes</code></p>
+    <pre><code>minHandAngle = 6M // M - Minutes in given time
+
+minHandAngle = 6 * 20
+             = 120 degree</code></pre>
+    <p>Now the angle between hour hand and minute hand is <strong>absolute of difference between hourHandAngle and
+        minHandAngle</strong>.</p>
+    <pre><code>angleBetween = | hourHandAngle - minHandAngle |
+angleBetween = | 0.5 * (60H + M) - 6M |
+
+// Angle between the hour hand and minute hand
+// at 5:20
+angleBetween = | 160 -120 |
+             = 40 degree</code></pre>
+    <h2 id="solution-with-haskell">Solution with Haskell</h2>
+    <p>Now we know how to solve clock angle problem. Since I am learning Haskell nowadays, I thought I should try to
+      solve it with Haskell and here is my solution in Haskell.</p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode hs"><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">import</span> <span class="dt">System.IO</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="ot">angleHour ::</span> (<span class="dt">Float</span>, <span class="dt">Float</span>) <span class="ot">-&gt;</span> <span class="dt">Float</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="ot">angleMinute ::</span> <span class="dt">Float</span> <span class="ot">-&gt;</span> <span class="dt">Float</span></a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6">main <span class="ot">=</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  <span class="fu">putStrLn</span> <span class="st">&quot;Hour : &quot;</span></a>
+<a class="sourceLine" id="cb6-8" title="8">  hour <span class="ot">&lt;-</span> <span class="fu">getLine</span></a>
+<a class="sourceLine" id="cb6-9" title="9">  <span class="fu">putStrLn</span> <span class="st">&quot;Minute : &quot;</span></a>
+<a class="sourceLine" id="cb6-10" title="10">  minute <span class="ot">&lt;-</span> <span class="fu">getLine</span></a>
+<a class="sourceLine" id="cb6-11" title="11">  <span class="fu">putStrLn</span>(hour <span class="op">++</span> <span class="st">&quot;:&quot;</span> <span class="op">++</span> minute)</a>
+<a class="sourceLine" id="cb6-12" title="12">  <span class="kw">let</span> angleH <span class="ot">=</span> angleHour((<span class="fu">read</span><span class="ot"> hour ::</span> <span class="dt">Float</span>), (<span class="fu">read</span><span class="ot"> minute ::</span> <span class="dt">Float</span>))</a>
+<a class="sourceLine" id="cb6-13" title="13">  <span class="kw">let</span> angleM <span class="ot">=</span> angleMinute (<span class="fu">read</span><span class="ot"> minute ::</span> <span class="dt">Float</span>)</a>
+<a class="sourceLine" id="cb6-14" title="14">  <span class="fu">putStrLn</span> <span class="st">&quot;Angle Between : &quot;</span></a>
+<a class="sourceLine" id="cb6-15" title="15">  <span class="fu">putStrLn</span>(<span class="fu">show</span>(<span class="fu">abs</span>(angleH <span class="op">-</span> angleM)))</a>
+<a class="sourceLine" id="cb6-16" title="16"></a>
+<a class="sourceLine" id="cb6-17" title="17">angleHour (hr, <span class="fu">min</span>) <span class="ot">=</span> (<span class="fl">0.5</span> <span class="op">*</span> (<span class="dv">60</span><span class="op">*</span>hr <span class="op">+</span> <span class="fu">min</span>))</a>
+<a class="sourceLine" id="cb6-18" title="18">angleMinute (<span class="fu">min</span>) <span class="ot">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="fu">min</span></a></code></pre>
+    </div>
+    <p>In this I receive the time, hour and minute in different prompts. This might be a bad solution but please forgive
+      me for lack of knowledge. If you have suggestions to improve this code please lemme know via comments.</p>
+    <p>Thanks.</p>
+    <p>Happy New Year.</p>
+
+  </body>
+
+  
+</html>

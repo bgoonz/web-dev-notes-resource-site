@@ -1,0 +1,121 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When I first start using github pages to publish web pages, it was pretty difficult for me keep the source code
+      and build seperately. To publish the build with gihub pages I need to</p>
+    <ul>
+      <li>commit code to master</li>
+      <li>build and copy the build to temporary location</li>
+      <li>switch to gh-pages branch</li>
+      <li>copy back the build and push to gh-pages.</li>
+    </ul>
+    <p>It was too much complicated until I got introduced to <a
+        href="http://www.git-scm.com/book/en/Git-Tools-Submodules">git submodules</a>.</p>
+    <blockquote>
+      <p>Submodules allow you to keep a Git repository as a subdirectory of another Git repository.</p>
+    </blockquote>
+    <p>Its not only another repository, but also another branch of the same repository. Here to make publishing easier,
+      I used git submodules which will convert my publish directory points to gh-pages branch.</p>
+    <h2 id="setup-the-git-respository">Setup the Git respository</h2>
+    <p>To start with commit your sourcecode to master branch and push to the remote repository. Then create a
+      <code>orphan</code> branch named <code>gh-pages</code>.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> checkout --orphan gh-pages</a></code></pre>
+    </div>
+    <p>Removed all the files which are cached to commit. Then create a sample file and push to the remote. This is to
+      create the branch at remote. Then switch to master branch.</p>
+    <h2 id="setup-distpublish-folder">Setup dist/publish folder</h2>
+    <p>If you already have a dist/publish directory remove it from the project and <code>.gitignore</code>.</p>
+    <h2 id="create-submodule">Create submodule</h2>
+    <p>Create a gh-pages as the submodule to the dist directory</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">git</span> submodule add -b <span class="op">&lt;</span>branch name<span class="op">&gt;</span> <span class="op">&lt;</span>repo url<span class="op">&gt;</span> <span class="op">&lt;</span>dist/publish directory<span class="op">&gt;</span></a></code></pre>
+    </div>
+    <p>Eg:</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> submodule add -b gh-pages git@github.com:revathskumar/todo-custom-element-backbone.git dist</a></code></pre>
+    </div>
+    <p>You are done, the <code>gh-pages</code> is now cloned to <code>dist</code> directory. Now when I change directory
+      to dist the git branch will be be set to <code>gh-pages</code></p>
+    <figure>
+      <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/gh-pages_zpsba1924ac.png"
+        alt="Change to dist" />
+      <figcaption>Change to dist</figcaption>
+    </figure>
+    <p>and when I change back the git branch will be <code>master</code>.</p>
+    <figure>
+      <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/gh-pages-back_zps7b568471.png"
+        alt="change back" />
+      <figcaption>change back</figcaption>
+    </figure>
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <p>Sometimes I forgot to create a <code>gh-pages</code> branch in the remote before trying to clone
+      <code>gh-pages</code> to dist. This will lead to an error. Then I go and set up gh-pages and come back to clone it
+      again, But then I get another error which says
+    </p>
+    <blockquote>
+      <p>A git directory for ‘dist’ is found locally with remote(s)</p>
+    </blockquote>
+    <p>In this case the only solution which worked for me is to remove the <code>dist</code> module.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">rm</span> -rf .git/modules/path_to_submodule</a></code></pre>
+    </div>
+    <p>In my case it is <code>rm -rf .git/modules/dist</code></p>
+
+  </body>
+
+  
+</html>

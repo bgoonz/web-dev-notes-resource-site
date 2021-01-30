@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>We were using <a href="http://slim-lang.com/">slim template</a> at <a href="http://whatznear.com/">whatznear</a>.
+      Slim will minify HTML by default even in development. I found it bit annoying and difficult to debug in
+      development environment.</p>
+    <p>In order to disable HTML minifiaction by default, you can set <code>pretty</code> option to <code>true</code> in
+      <code>config/environments/development.rb</code>.
+    </p>
+    <p>Add the below code to the <code>Application.configure</code> block in <code>development.rb</code>.</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode rb"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># config/environments/development.rb</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dt">YourApp</span>::<span class="dt">Application</span>.configure <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  <span class="co"># ...</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="dt">Slim</span>::<span class="dt">Engine</span>.set_default_options <span class="st">pretty: </span><span class="dv">true</span></a>
+<a class="sourceLine" id="cb1-5" title="5">  <span class="co"># ...</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>Be careful not use spaces, to adjust you design. Since the minification is disabled in development, the design
+      might be good but there is a chance the design will break in production since the slim will minify the HTML and
+      trim all the possible spaces.</p>
+
+  </body>
+
+  
+</html>

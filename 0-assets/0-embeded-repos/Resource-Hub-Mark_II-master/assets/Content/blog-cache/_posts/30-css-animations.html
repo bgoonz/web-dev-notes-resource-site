@@ -1,0 +1,210 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><a href="http://whatznear.com">Whatznear</a> is using CSS animation for the loading indicators. So inorder to
+      work on this I need to learn some basics of CSS animations. This is just my expeimental work to see how the do
+      simple CSS animations.</p>
+    <p>At present the CSS animations is a experimental technology and all the major browsers are now supportted with
+      vendor prefixes. I hope when this get standardised they will remove the vendor prefixes. From IE 10, animations
+      are supported.</p>
+    <h1 id="animation">animation</h1>
+    <p><code>animation</code> property is the shorthand to properties like animation-name, animation-duration,
+      animation-timing, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode and
+      animation-play-state.</p>
+    <p>The formal synatax is</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb1-1" title="1">animation<span class="in">: name</span> duration timing delay iteration-count direction fill-mode</a>
+<a class="sourceLine" id="cb1-2" title="2">  play-state;</a></code></pre>
+    </div>
+    <p>In this <code>timing</code> and <code>delay</code> accepts time and the first time value seen by parser will be
+      assigned to <code>timing</code> and second will be assigned to <code>delay</code>. So the order of values are
+      important.</p>
+    <p>The various vendor prefixes are</p>
+    <blockquote>
+      <ul>
+        <li>Mozilla Firefox : <code>-moz-</code></li>
+        <li>Chrome/Safari : <code>-webkit-</code></li>
+        <li>Opera : <code>-o-</code></li>
+      </ul>
+    </blockquote>
+    <p>If you are familiar with flash animations, you will already know that time will be divided into lot of frames and
+      we will place the object in different places for each frame and when they are executed we will feel like the
+      object is moving. The same concept is used here as well. Using <code>@keyframes</code> we tell CSS engine to what
+      to do with the object at a particular frame.</p>
+    <h1 id="keyframes"><span class="citation" data-cites="keyframes">@keyframes</span></h1>
+    <p><code>@keyframes</code> let the author control over animation sequence, and author can tell what to do when it
+      reach this particular sequence. We will define a <code>@keyframes</code> with a name and that name will be
+      provided as <code>animation-name</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1"><span class="im">@keyframes</span> some-name {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dv">from</span> {</a>
+<a class="sourceLine" id="cb2-3" title="3">  }</a>
+<a class="sourceLine" id="cb2-4" title="4">  <span class="dv">to</span> {</a>
+<a class="sourceLine" id="cb2-5" title="5">  }</a>
+<a class="sourceLine" id="cb2-6" title="6">}</a></code></pre>
+    </div>
+    <p>Lets get into some real animation like rotation.</p>
+    <h1 id="boilerplate">boilerplate</h1>
+    <p>Let me add some boilerpate code say, placeholder for the animators. lets create some lines so we can do some
+      animations over it.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="co">&lt;!-- Boilerplate HTML --&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;wrapper&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;line1&quot;</span><span class="kw">&gt;</span>Loading...<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb4-1" title="1"><span class="co">/* Boilerplate CSS for wrapper and lines/holder */</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="fu">.wrapper</span> {</a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="kw">background-color</span>: <span class="cn">#fff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="kw">width</span>: <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">  <span class="kw">height</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="kw">padding</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">}</a>
+<a class="sourceLine" id="cb4-8" title="8"></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="fu">.line1</span> {</a>
+<a class="sourceLine" id="cb4-10" title="10">  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-11" title="11">  <span class="kw">height</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-12" title="12">  <span class="kw">background-color</span>: <span class="cn">#000</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-13" title="13">  <span class="kw">color</span>: <span class="cn">#fff</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-14" title="14">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-15" title="15">}</a></code></pre>
+    </div>
+    <p>So if I want to rotate the <code>.line1</code></p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb5-1" title="1"><span class="im">@-moz-keyframes</span> rotate_some {</a>
+<a class="sourceLine" id="cb5-2" title="2">  0% {</a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="kw">-moz-transform</span>: <span class="fu">rotate(</span><span class="dv">0</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-4" title="4">  }</a>
+<a class="sourceLine" id="cb5-5" title="5">  25% {</a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="kw">-moz-transform</span>: <span class="fu">rotate(</span><span class="dv">90</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7">  }</a>
+<a class="sourceLine" id="cb5-8" title="8">  50% {</a>
+<a class="sourceLine" id="cb5-9" title="9">    <span class="kw">-moz-transform</span>: <span class="fu">rotate(</span><span class="dv">180</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-10" title="10">  }</a>
+<a class="sourceLine" id="cb5-11" title="11">  75% {</a>
+<a class="sourceLine" id="cb5-12" title="12">    <span class="kw">-moz-transform</span>: <span class="fu">rotate(</span><span class="dv">270</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-13" title="13">  }</a>
+<a class="sourceLine" id="cb5-14" title="14">  100% {</a>
+<a class="sourceLine" id="cb5-15" title="15">    <span class="kw">-moz-transform</span>: <span class="fu">rotate(</span><span class="dv">360</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-16" title="16">  }</a>
+<a class="sourceLine" id="cb5-17" title="17">}</a></code></pre>
+    </div>
+    <p>Here we use <code>tranform</code> property to rotate the object. The <code>tranform</code> property will accept a
+      function, in this case <code>rotate</code> and <code>rotate</code> method will accept the angle to which it should
+      rotate.</p>
+    <p>So in the <code>@keyframes</code> we have already specified 5 interavals <code>0%</code>, <code>25%</code>,
+      <code>50%</code>, <code>75%</code> and <code>100%</code>. You can specify any number of intervals to make your
+      animation smooth. In each interval we have said that how much degree we should rotate the object. Then we will
+      give the <code>@keyframes</code> name to our <code>animation</code> property with values like
+      <code>duration</code> and <code>iteration-count</code>. By default the the <code>timing</code> is ease.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">.line1</span> {</a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">-moz-animation</span>: rotate_some <span class="dv">2</span><span class="dt">s</span> <span class="dv">infinite</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-3" title="3">}</a></code></pre>
+    </div>
+    <p>since <code>@keyframes</code> is vendor specific the above code will work only in firefox. In order to support
+      others</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb7-1" title="1"><span class="co">/* For Safari and Chrome */</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="im">@-webkit-keyframes</span> rotate_some {</a>
+<a class="sourceLine" id="cb7-3" title="3">  0% {</a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="kw">-webkit-transform</span>: <span class="fu">rotate(</span><span class="dv">0</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">  }</a>
+<a class="sourceLine" id="cb7-6" title="6">  25% {</a>
+<a class="sourceLine" id="cb7-7" title="7">    <span class="kw">-webkit-transform</span>: <span class="fu">rotate(</span><span class="dv">90</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-8" title="8">  }</a>
+<a class="sourceLine" id="cb7-9" title="9">  50% {</a>
+<a class="sourceLine" id="cb7-10" title="10">    <span class="kw">-webkit-transform</span>: <span class="fu">rotate(</span><span class="dv">180</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-11" title="11">  }</a>
+<a class="sourceLine" id="cb7-12" title="12">  75% {</a>
+<a class="sourceLine" id="cb7-13" title="13">    <span class="kw">-webkit-transform</span>: <span class="fu">rotate(</span><span class="dv">270</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">  }</a>
+<a class="sourceLine" id="cb7-15" title="15">  100% {</a>
+<a class="sourceLine" id="cb7-16" title="16">    <span class="kw">-webkit-transform</span>: <span class="fu">rotate(</span><span class="dv">360</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-17" title="17">  }</a>
+<a class="sourceLine" id="cb7-18" title="18">}</a>
+<a class="sourceLine" id="cb7-19" title="19"></a>
+<a class="sourceLine" id="cb7-20" title="20"><span class="co">/* for Opera */</span></a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="im">@-o-keyframes</span> rotate_some {</a>
+<a class="sourceLine" id="cb7-22" title="22">  0% {</a>
+<a class="sourceLine" id="cb7-23" title="23">    -o-transform: <span class="fu">rotate(</span><span class="dv">0</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-24" title="24">  }</a>
+<a class="sourceLine" id="cb7-25" title="25">  25% {</a>
+<a class="sourceLine" id="cb7-26" title="26">    -o-transform: <span class="fu">rotate(</span><span class="dv">90</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-27" title="27">  }</a>
+<a class="sourceLine" id="cb7-28" title="28">  50% {</a>
+<a class="sourceLine" id="cb7-29" title="29">    -o-transform: <span class="fu">rotate(</span><span class="dv">180</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-30" title="30">  }</a>
+<a class="sourceLine" id="cb7-31" title="31">  75% {</a>
+<a class="sourceLine" id="cb7-32" title="32">    -o-transform: <span class="fu">rotate(</span><span class="dv">270</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-33" title="33">  }</a>
+<a class="sourceLine" id="cb7-34" title="34">  100% {</a>
+<a class="sourceLine" id="cb7-35" title="35">    -o-transform: <span class="fu">rotate(</span><span class="dv">360</span><span class="dt">deg</span><span class="fu">)</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-36" title="36">  }</a>
+<a class="sourceLine" id="cb7-37" title="37">}</a>
+<a class="sourceLine" id="cb7-38" title="38"></a>
+<a class="sourceLine" id="cb7-39" title="39"><span class="fu">.line1</span> {</a>
+<a class="sourceLine" id="cb7-40" title="40">  <span class="kw">-webkit-animation</span>: rotate_some <span class="dv">2</span><span class="dt">s</span> <span class="dv">infinite</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-41" title="41">  -o-animation: rotate_some <span class="dv">2</span><span class="dt">s</span> <span class="dv">infinite</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-42" title="42">}</a></code></pre>
+    </div>
+    <p><code>tranform</code> property also support other transformations like <code>skew</code>, <code>translate</code>,
+      <code>scale</code> etc. You can try those tranformations as well. Here is a jsbin with some of those transforms
+      are implemented.
+    </p>
+    <a class="jsbin-embed" href="http://jsbin.com/wudel/4/embed?css,output">JS Bin</a>
+<<<<<<< HEAD
+    <script async defer src="http://static.jsbin.com/js/embed.js"></script>
+=======
+    <script src="http://static.jsbin.com/js/embed.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a

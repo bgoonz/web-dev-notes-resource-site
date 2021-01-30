@@ -1,0 +1,250 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In my last blog post we <a href="/2015/06/setup-server-for-capistrano-deployment.html">setup server for
+        capistrano deployment</a>. In this, we will setup the Yii project for capistano deployment.</p>
+    <h2 id="setting-up-yii-project-for-cap-deployment">Setting up Yii project for cap deployment</h2>
+    <p>Yii uses different config files for <code>cli</code> app (<code>console.php</code>) and <code>web</code> app
+      (<code>main.php</code>). We need to unify the common configuration into one file. So we will create a
+      <code>config.php</code> and <code>require</code> it in both <code>main.php</code> and <code>console.php</code>.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;?php</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># protected/config/config.php</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">$config</span> = <span class="kw">array</span><span class="ot">();</span></a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="kw">$db_name</span> = <span class="st">&#39;sample&#39;</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="kw">$db_host</span> = <span class="st">&#39;localhost&#39;</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="kw">$db_user</span> = <span class="st">&#39;root&#39;</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">$db_pass</span> = <span class="st">&#39;&#39;</span><span class="ot">;</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="kw">$config</span> = <span class="kw">array</span><span class="ot">(</span></a>
+<a class="sourceLine" id="cb1-11" title="11">  <span class="st">&#39;adminEmail&#39;</span> =&gt; <span class="st">&#39;admin@example.com&#39;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-12" title="12">  <span class="st">&#39;statusEmails&#39;</span> =&gt; <span class="kw">array</span><span class="ot">(</span><span class="st">&#39;admin@example.com&#39;</span><span class="ot">,</span> <span class="st">&#39;team@example.com&#39;</span><span class="ot">),</span></a>
+<a class="sourceLine" id="cb1-13" title="13">  <span class="st">&#39;accessToken&#39;</span> =&gt; <span class="st">&#39;&#39;</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="ot">);</span></a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="kw">?&gt;</span></a></code></pre>
+    </div>
+    <p><code>$config</code> is used for custom configuration values. Since I don’t want <code>git</code> to show
+      configuration file as changes during development, I renamed <code>config.php</code> to
+      <code>config.php.example</code> and added <code>config.php</code> to <code>.gitignore</code>. So when I start
+      development I will copy <code>config.php.example</code> to <code>config.php</code> and fill in the local
+      configuration values.
+    </p>
+    <p>Now add <code>.gitkeep</code> file to <code>assets/</code> and <code>protected/runtime/</code> folder and add to
+      git. This will make sure the folders will exist on server when capistrano pull code from git repository.</p>
+    <h3 id="configure-capistrano">Configure capistrano</h3>
+    <p>Next step is to configure capistrano for the deployment. If you don’t have ruby and capistrano in you local
+      machine install those by following the same ruby installation steps we used for seting up server.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">apt-get</span> install -y build-essential git-core libyaml-dev</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="ex">gpg</span> --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="ex">curl</span> -L get.rvm.io <span class="kw">|</span> <span class="fu">bash</span> -s stable</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="bu">source</span> /home/lookup/.rvm/scripts/rvm</a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="ex">rvm</span> reload</a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="ex">rvm</span> install 2.2.2</a>
+<a class="sourceLine" id="cb2-9" title="9"></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="ex">gem</span> install capistrano --no-ri --no-rdoc</a></code></pre>
+    </div>
+    <p>Now Initialize capistrano in the project directory, to generate the configuration files.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">cap</span> init</a></code></pre>
+    </div>
+    <p>It will create a <code>config</code> directory in project root folder along with configuration files. In
+      <code>config/deploy.rb</code> update the appropriate values for <code>:application</code>, <code>:repo_url</code>
+      and <code>:deploy_to</code> settings.
+    </p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb4-1" title="1">set <span class="st">:application</span>, <span class="st">&#39;project&#39;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">set <span class="st">:repo_url</span>, <span class="st">&#39;git@github.com:example/project.git&#39;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Default deploy_to directory is /var/www/my_app_name</span></a>
+<a class="sourceLine" id="cb4-5" title="5">set <span class="st">:deploy_to</span>, <span class="st">&#39;/var/www/example&#39;</span></a></code></pre>
+    </div>
+    <p>The default values for linked_directories will be set for rails, so we remove those and set values for Yii
+      application.</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># Default value for linked_dirs is []</span></a>
+<a class="sourceLine" id="cb5-2" title="2">set <span class="st">:linked_dirs</span>, fetch(<span class="st">:linked_dirs</span>, []).push(<span class="st">&#39;assets/&#39;</span>,<span class="st">&#39;protected/runtime&#39;</span>)</a></code></pre>
+    </div>
+    <p>Now we need to specify the production and staging server in the appropriate config file. In
+      <code>config/deploy/production.rb</code> set the production server ip or domain name.
+    </p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb6-1" title="1">server <span class="st">&#39;example.com&#39;</span>, <span class="st">user: &#39;deploy&#39;</span>, <span class="st">roles: </span><span class="ot">%w{</span><span class="st">app</span><span class="ot">}</span></a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3">role <span class="st">:app</span>,<span class="ot"> %w{</span><span class="st">deploy@example.com</span><span class="ot">}</span></a></code></pre>
+    </div>
+    <p>and for staging, update <code>config/deploy/staging.rb</code> same as we did for production.</p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb7-1" title="1">server <span class="st">&#39;staging.example.com&#39;</span>, <span class="st">user: &#39;deploy&#39;</span>, <span class="st">roles: </span><span class="ot">%w{</span><span class="st">app</span><span class="ot">}</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3">role <span class="st">:app</span>,<span class="ot"> %w{</span><span class="st">deploy@staging.example.com</span><span class="ot">}</span></a></code></pre>
+    </div>
+    <p><code>deploy</code> is the user we created on server while setting up.</p>
+    <p>The basic setup for the deployment of our Yii app is ready. but thats not enough we need to update the production
+      and staging configuration on respective server along with deployments.</p>
+    <p>In rails we used to put the configuration in the shared folder and symlink to current deployment folder. This
+      doesn’t work in Yii application. It will throw an path error if you try to do so. So we need to upload the
+      production configuration directly to current deployment folder.</p>
+    <h3 id="custom-rake-task-to-upload-configuration.">Custom rake task to upload configuration.</h3>
+    <p>For uploading production and staging configuration first we need them separately in our development machine. I
+      put my production configuration in <code>protected/config/config-production.php</code> and added to
+      <code>.gitignore</code> so I won’t add those to git by mistake. Same way for staging I put configuration in
+      <code>protected/config/config-staging.php</code> and added to <code>.gitignore</code>.
+    </p>
+    <p>In order to upload the configuration, we need to write the custom rake task. The <code>cap init</code> command
+      have created <code>lib/capistrano/tasks</code> folder for it.</p>
+    <div class="sourceCode" id="cb8">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb8-1" title="1"><span class="co"># lib/capistrano/tasks/custom.rake</span></a>
+<a class="sourceLine" id="cb8-2" title="2">namespace <span class="st">:db_access</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  desc <span class="st">&#39;Copy production config.php from local workstation&#39;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  task <span class="st">:copy_production</span> =&gt; <span class="st">:production</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb8-5" title="5">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb8-6" title="6">      upload! <span class="st">&#39;protected/config/config-production.php&#39;</span>, <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/config/config.php&quot;</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-8" title="8">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-9" title="9"></a>
+<a class="sourceLine" id="cb8-10" title="10">  task <span class="st">:copy_staging</span> =&gt; <span class="st">:staging</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb8-11" title="11">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb8-12" title="12">      upload! <span class="st">&#39;protected/config/config-staging.php&#39;</span>, <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/config/config.php&quot;</span></a>
+<a class="sourceLine" id="cb8-13" title="13">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-14" title="14">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb8-15" title="15"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>This task will upload our configuration to appropriate serves into the path
+      <code>/protected/config/config.php</code>. Now we need to tell capistrano to run this task after deployment is
+      finished. To do this in <code>config/deploy/production.rb</code> add the following line
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb9-1" title="1">after <span class="st">&#39;deploy:finishing&#39;</span>, <span class="st">&#39;db_access:copy_production&#39;</span></a></code></pre>
+    </div>
+    <p>and for staging add the following line in <code>config/deploy/staging.rb</code>.</p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb10-1" title="1">after <span class="st">&#39;deploy:finishing&#39;</span>, <span class="st">&#39;db_access:copy_staging&#39;</span></a></code></pre>
+    </div>
+    <h3 id="run-database-migration">Run Database migration</h3>
+    <p>So now we have the production configuration along with db credentials are in place. Now it time for database
+      migration. Yii supports running migration from commandline using <code>yiic migrate</code> command. Now we need to
+      run it on server using a custom rake task. so we will add</p>
+    <div class="sourceCode" id="cb11">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb11-1" title="1">  task <span class="st">:migrate</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb11-2" title="2">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb11-3" title="3">      execute <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/yiic migrate --interactive=0&quot;</span></a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb11-5" title="5">  <span class="kw">end</span></a></code></pre>
+    </div>
+    <p>in <code>lib/capistrano/tasks/custom.rake</code> with in <code>:db_access</code> namespace. now our
+      <code>custom.rake</code> will look like
+    </p>
+    <div class="sourceCode" id="cb12">
+      <pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># lib/capistrano/tasks/custom.rake</span></a>
+<a class="sourceLine" id="cb12-2" title="2">namespace <span class="st">:db_access</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-3" title="3">  desc <span class="st">&#39;Copy production config.php from local workstation&#39;</span></a>
+<a class="sourceLine" id="cb12-4" title="4">  task <span class="st">:copy_production</span> =&gt; <span class="st">:production</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-5" title="5">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-6" title="6">      upload! <span class="st">&#39;protected/config/config-production.php&#39;</span>, <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/config/config.php&quot;</span></a>
+<a class="sourceLine" id="cb12-7" title="7">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-8" title="8">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-9" title="9"></a>
+<a class="sourceLine" id="cb12-10" title="10">  task <span class="st">:copy_staging</span> =&gt; <span class="st">:staging</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-11" title="11">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-12" title="12">      upload! <span class="st">&#39;protected/config/config-staging.php&#39;</span>, <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/config/config.php&quot;</span></a>
+<a class="sourceLine" id="cb12-13" title="13">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-14" title="14">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-15" title="15"></a>
+<a class="sourceLine" id="cb12-16" title="16">  task <span class="st">:migrate</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-17" title="17">    on roles <span class="st">:app</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb12-18" title="18">      execute <span class="st">&quot;</span><span class="ot">#{</span>release_path<span class="ot">}</span><span class="st">/protected/yiic migrate --interactive=0&quot;</span></a>
+<a class="sourceLine" id="cb12-19" title="19">    <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-20" title="20">  <span class="kw">end</span></a>
+<a class="sourceLine" id="cb12-21" title="21"><span class="kw">end</span></a></code></pre>
+    </div>
+    <p>So our task is ready. Now we need to run soon after our configuration uploading of respective server finishes. To
+      do that in production server add</p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb13-1" title="1">after <span class="st">&#39;deploy:copy_production&#39;</span>, <span class="st">&#39;db_access:migrate&#39;</span></a></code></pre>
+    </div>
+    <p>in <code>config/deploy/production.rb</code> and for staging server add</p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb14-1" title="1">after <span class="st">&#39;deploy:copy_staging&#39;</span>, <span class="st">&#39;db_access:migrate&#39;</span></a></code></pre>
+    </div>
+    <p>in <code>config/deploy/staging.rb</code>.</p>
+    <p>Done. We just finished the whole setup and ready to deploy our Yii application with capistrano. Now you can run
+    </p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="ex">cap</span> production deploy</a></code></pre>
+    </div>
+    <p>for deploying production server and</p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb16-1" title="1"><span class="ex">cap</span> staging deploy</a></code></pre>
+    </div>
+    <p>for deploying application in staging server.</p>
+
+  </body>
+
+  
+</html>

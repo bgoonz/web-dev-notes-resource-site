@@ -1,0 +1,108 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently in an effort to separate the frontend test and backend test on travis, we came to know about the travis
+      feature called <a href="https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix">matrix</a>, Which
+      helps us to define parallel jobs in the build.</p>
+    <p>Our initial idea was to define separate <code>ENV</code> varaibles using matrix and conditionally run the
+      scripts. Our <code>.travis.yml</code> file looked like below one.</p>
+    <h2 id="highlight-yaml">{% highlight yaml %}</h2>
+    <p>sudo: required dist: trusty</p>
+    <p>language: ruby</p>
+    <p>rvm: - 2.1.2</p>
+    <p>before_install: - sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip - nvm
+      install v5.5</p>
+    <p>before_script: - mysql -u root -e ‘create database app_test;’ - cp config/database.travis.yml config/database.yml
+      - bundle exec rake db:test:load app:generate_secret_token - npm install</p>
+    <p>branches: only: - master</p>
+    <p>cache: bundler: true</p>
+    <p>env: global: - RAILS_ENV=test matrix: - TEST_CATEGORY=frontend - TEST_CATEGORY=backend</p>
+    <p>matrix: fast_finish: true</p>
+    <p>script: - if [ $TEST_CATEGORY == ‘frontend’ ]; then npm test; fi - if [ $TEST_CATEGORY == ‘backend’ ]; then
+      bundle exec parallel_rspec -n 2 spec; fi {% endhighlight %}</p>
+    <p>We were able to run jobs in parallel, but still they boot up same vm and configure everything in both VM.</p>
+    <figure>
+      <img
+        src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2016/11/8a502f9f-8a60-48f3-ae01-d56f2d456247_zpsi1okhajk.png"
+        alt="Travis Matrix Version 1" />
+      <figcaption>Travis Matrix Version 1</figcaption>
+    </figure>
+    <p>Since for our frontend spec doesn’t need any ruby related stuff we started looking for more ways to override the
+      vm’s used for the jobs. And suddenly <a
+        href="https://github.com/travis-ci/travis-ci/issues/2646#issuecomment-77361650">this comment</a> caught our eye.
+    </p>
+    <p>As per the comment there are ways to override vm in matrix but seems like they experimental since there is no
+      documentation was found on it. Also <a href="http://lint.travis-ci.org/">travis lint</a> will throw linting error.
+      But anyway thought of give a try and updated my travis config to the below one.</p>
+    <h2 id="highlight-yaml-1">{% highlight yaml %}</h2>
+    <p>sudo: required dist: trusty</p>
+    <p>branches: only: - master</p>
+    <p>matrix: fast_finish: true include: - node_js: 5.5 language: node_js env: NODE_ENV=test cache: directories: -
+      “<span class="math inline">$HOME/.nvm" - "$</span>HOME/.npm” before_install: - nvm install v5.5 install: - npm
+      install script: - npm test - rvm: 2.1.2 language: ruby env: RAILS_ENV=test cache: bundler: true before_install: -
+      sudo apt-get update -qq - sudo apt-get install -qq mysql-server mysql-client unzip before_script: - mysql -u root
+      -e ‘create database app_test;’ - cp config/database.travis.yml config/database.yml - bundle exec rake db:test:load
+      app:generate_secret_token script: - bundle exec parallel_rspec spec {% endhighlight %}</p>
+    <p>Now for frontend spec we dont need to setup anything related to ruby.</p>
+    <figure>
+      <embed src="%7B%7B%20page.image%20%7D%7D" />
+      <figcaption>Travis Version 2</figcaption>
+    </figure>
+    <p>Now the frontend job uses <strong>node_js</strong> vm where as backend job uses <strong>ruby</strong> vm. Also
+      our frontend job finished with in 3 minutes which is 5 minutes gain from previous version since we removed all the
+      ruby and rails setup for this job.</p>
+    <p>Even though now we have multiple jobs, github integration will show only build status not per job status.</p>
+    <p><strong>Disclaimer : The above feature is undocumented by travis and may change in future.</strong></p>
+
+  </body>
+
+  
+</html>

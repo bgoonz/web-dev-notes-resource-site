@@ -1,0 +1,119 @@
+<!--
+
+---
+ "Vlc : Add to playlist option in context menu [ubuntu]"
+date: 2011-11-15 20:08:51 UTC
+updated: 2011-11-15 20:08:51 UTC
+2008/kind#post vlc ubuntu
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: left;"><br /></div>If you are using vlc media player on
+    ubuntu, then most probably you will be missing the context menu for "Add to vlc playlist". Here is how you can
+    customize context menu and add the feature.<br /><br />
+    <div class="separator" style="clear: both; text-align: center;"></div><br />
+    <ol style="text-align: left;">
+      <li><b>Switch vlc to "Allow one instance only"</b><br />The first thing you have to do is to make sure your vlc
+        player allow only one instance. In order to set this change, goto <b>Tools -&gt; Preferences -&gt; Interface
+          -&gt; Check "Allow only one instance" option</b>.<br /><br />
+        <div class="separator" style="clear: both; text-align: center;"><a
+            href="http://1.bp.blogspot.com/-dnzUUeCrQJI/TrwVDMkOgII/AAAAAAAABqU/CtgdkH_NPDk/s1600/Screenshot-5.png"
+            imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="275"
+              src="http://1.bp.blogspot.com/-dnzUUeCrQJI/TrwVDMkOgII/AAAAAAAABqU/CtgdkH_NPDk/s400/Screenshot-5.png"
+              width="400" /></a></div>
+      </li>
+      <li><b>Install nautilus-actions package.</b><br />
+<<<<<<< HEAD
+        <script async defer src="https://gist.github.com/1355655.js?file=nautilus-actions.sh"></script><br />This package will
+=======
+        <script src="https://gist.github.com/1355655.js?file=nautilus-actions.sh"></script><br />This package will
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        install <b>"nautilus-actions-config-tool"</b> which will helps you to add and configure new menu in context menu
+      </li>
+      <li><b>Add context menu </b><br />To Add context menu you need to run <b>"nautilus-actions-config-tool"</b> in
+        terminal. Click on new icon and add caption for the menu. <div class="separator"
+          style="clear: both; text-align: center;"><a
+            href="http://1.bp.blogspot.com/-vsM90GHZ3oM/TrwdZpR3API/AAAAAAAABqc/RFZabExVUBk/s1600/Screenshot-7.png"
+            imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="235"
+              src="http://1.bp.blogspot.com/-vsM90GHZ3oM/TrwdZpR3API/AAAAAAAABqc/RFZabExVUBk/s400/Screenshot-7.png"
+              width="400" /></a></div><br /></li>
+      <li><b>Configure <i>command</i> to action menu </b><br />Now you need to Switch to Command tab and fill the
+        following.<br />
+        <ul>
+          <li>path : <i>/path/to/vlc</i> (for me it was /usr/bin/vlc). if you are not sure find with <b>which vlc</b>
+            command.</li>
+          <li>parameters : <i>--playlist-enqueue %U</i></li>
+          <li>working directory : <i>%d</i></li>
+        </ul><br />
+        <div class="separator" style="clear: both; text-align: center;"><a
+            href="http://3.bp.blogspot.com/-XIvf4eooyQg/TsLGluOkd0I/AAAAAAAABrQ/l5DNGewbYMQ/s1600/Screenshot-11.png"
+            imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="262"
+              src="http://3.bp.blogspot.com/-XIvf4eooyQg/TsLGluOkd0I/AAAAAAAABrQ/l5DNGewbYMQ/s400/Screenshot-11.png"
+              width="400" /></a></div><br />Now switch to <i>basename</i> tab and add the need file types.<br />
+        <div class="separator" style="clear: both; text-align: center;"><a
+            href="http://2.bp.blogspot.com/-Ihz8ZOO-rlg/TrwmAoFNUPI/AAAAAAAABq0/sE87c64h0dI/s1600/Screenshot-9.png"
+            imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="237"
+              src="http://2.bp.blogspot.com/-Ihz8ZOO-rlg/TrwmAoFNUPI/AAAAAAAABq0/sE87c64h0dI/s400/Screenshot-9.png"
+              width="400" /></a></div><br />Save the menu using save Icon (marked in red ellipse).
+      </li>
+      <li><b>Restart nautilus</b><br />Resart nautilus using the command <br />
+<<<<<<< HEAD
+        <script async defer src="https://gist.github.com/1355655.js?file=restart.sh"></script>
+=======
+        <script src="https://gist.github.com/1355655.js?file=restart.sh"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      </li>
+    </ol>Now check the the menu by right click on any file with configured extension in basename tab.Restart nautilus
+    each time when you made any changes on the context menu.You can also <b><i>select multiple files and give add to vlc
+        playlist</i></b>.<br />
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://1.bp.blogspot.com/-1OM4dihxiOU/TrwqQCYGBCI/AAAAAAAABrA/i9czNGFviXY/s1600/Screenshot-10.png"
+        imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400"
+          src="http://1.bp.blogspot.com/-1OM4dihxiOU/TrwqQCYGBCI/AAAAAAAABrA/i9czNGFviXY/s400/Screenshot-10.png"
+          width="347" />&nbsp;</a></div>
+    <div class="separator" style="clear: both; text-align: center;"><br /></div>If you like the post please drop your
+    suggestions and doubts as comments.
+  </div>
+</body>
+
+</html>
+$

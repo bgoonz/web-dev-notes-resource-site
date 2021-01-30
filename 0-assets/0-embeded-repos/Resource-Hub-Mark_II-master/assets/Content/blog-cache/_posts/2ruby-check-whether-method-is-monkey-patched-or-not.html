@@ -1,0 +1,85 @@
+<!--
+
+---
+ "Ruby : check whether method is monkey patched or not"
+date: 2012-12-01 10:00:00 UTC
+updated: 2012-12-01 04:00:00 UTC
+comments: false
+categories: ruby
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://4.bp.blogspot.com/-WmuA8WUESDw/ULd2dAWD2cI/AAAAAAAAJls/eDxKoBO_tAQ/s1600/ruby-monkey-patch.jpg"
+        imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300"
+          src="http://4.bp.blogspot.com/-WmuA8WUESDw/ULd2dAWD2cI/AAAAAAAAJls/eDxKoBO_tAQ/s400/ruby-monkey-patch.jpg"
+          width="400" /></a></div><br />Consider a situation that one of the ruby method is acting weird, means
+    not&nbsp;delivering&nbsp;the expected functionality. So you doubt that some of the gem is monkey patched that
+    method. How you are going to find the monkey patch?<br /><br />Here is the simple solution to make sure that the
+    method is not monkey patched, or get the file and line number where the method is patched.<br /><br />The trick
+    works with the help of&nbsp;<a href="http://www.ruby-doc.org/core-1.9.3/Method.html#method-i-source_location"
+      rel="nofollow" target="_blank">source_location</a> method. <b>This method will return the file path and line
+      number of the method or nil if the method is native</b>.<br /><br />
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://4.bp.blogspot.com/-SyvwFMQG3FQ/ULe7Fkcpk9I/AAAAAAAAJpM/8zOWwvrm8AY/s1600/ruby-check-monkey-patch.png"
+        imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="328"
+          src="http://4.bp.blogspot.com/-SyvwFMQG3FQ/ULe7Fkcpk9I/AAAAAAAAJpM/8zOWwvrm8AY/s400/ruby-check-monkey-patch.png"
+          width="400" /></a></div><br />In the above sample I tried to monkey patch the <a
+      href="http://www.ruby-doc.org/core-1.9.3/String.html#method-i-split" rel="nofollow" target="_blank">split</a>
+    method of <a href="http://www.ruby-doc.org/core-1.9.3/String.html" rel="nofollow"
+      target="_blank">String</a>&nbsp;class. In line number 2 you can see that
+    the&nbsp;<i>source_location</i>&nbsp;method returns <i style="font-weight: bold;">"nil" </i>since the method is not
+    patched. But in line number 5 you can see that the <i>source_location</i> method returns an array of two elements,
+    first is the file path, in this case it is pry/irb, &nbsp;second one is the line number.<br /><br />Here is the
+    snippet I used in the above example. You can fork and try to execute it.<br /><br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4171319.js?file=source.rb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4171319.js?file=source.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br /># Before Monkey patch<br />reply = "Hello world"<br />p reply.method(:split).source_location<br /><br /># Monkey patch<br />class String<br />  def split<br />    p "Monkey patch"<br />  end<br />end<br /><br /># After Monkey patch<br />p reply.method(:split).source_location<br /></pre>
+    </noscript><br />Hope this will save your time.<br />Thank you.
+  </div>
+</body>
+
+</html>
+$

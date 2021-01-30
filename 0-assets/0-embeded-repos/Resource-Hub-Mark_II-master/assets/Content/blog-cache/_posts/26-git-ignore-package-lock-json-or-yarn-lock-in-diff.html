@@ -1,0 +1,76 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Git diff with <code>package-lock.json</code>/<code>yarn.lock</code> is difficult since you need to scoll though
+      too much noice, but we can’t git ignore those as well. Those files are suppose to be checked into the repository.
+    </p>
+    <figure>
+      <img src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/git-diff/git-diff-package-lock.png"
+        alt="git diff" />
+      <figcaption>git diff</figcaption>
+    </figure>
+    <p>But those can be easily ignored only from the diff.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">git</span> diff -- <span class="st">&#39;:!package-lock.json&#39;</span> <span class="st">&#39;:!yarn.lock&#39;</span></a></code></pre>
+    </div>
+    <p>You can add this to your default alias for <code>git diff</code>.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="bu">alias</span> gd=<span class="st">&quot;git diff -- &#39;:!package-lock.json&#39; &#39;:!yarn.lock&#39;&quot;</span></a></code></pre>
+    </div>
+    <p>Hope this tip helped.<br />
+      Comments are welcome.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language  | Version |
+| ----------------- |---------|
+|      Git          |  2.17.1 |</code></pre>

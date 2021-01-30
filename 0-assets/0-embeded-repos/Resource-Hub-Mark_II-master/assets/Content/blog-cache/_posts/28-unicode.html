@@ -1,0 +1,129 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In the talk “JavaScript luv Unicode”, <span class="citation"
+        data-cites="mathiasb">[@mathiasb]</span>(https://mathiasbynens.be/) really given a pretty good introduction to
+      unicodes. This is a brief post on what I learned about uncodes from his talk. Please note that many of the
+      following things are explaned in the context of JavaScript.</p>
+    <p>All the symbols in unicode standard will have a unique number called <strong>code point</strong> and a unique
+      name. we don’t much care about the name in this post, but we use the word “code point” a lot. For example, the
+      letter “A” is represented as <strong>U+0041</strong> in unicode where the integer part <strong>0041</strong> is
+      called <strong>code point</strong>.</p>
+    <blockquote>
+      <p>A - U+0041 a - U+0061</p>
+    </blockquote>
+    <p>The codepoint will span from <code>000000</code> to <code>10FFFF</code>. Thats the whole range for possible
+      unicode code points. In this there are reserved code points, code points which are not yet assigned and most used
+      code points. For easiness, the whole unicodes are divided into <strong>17 planes</strong>.</p>
+    <h1 id="basic-multilingual-plane-bmp">Basic Multilingual plane (BMP)</h1>
+    <p>The group(plane) which consist of most used symbols are called Basic Multilingual Plane (BMP). This includes code
+      points from <code>0000</code> to <code>FFFF</code>. All the language symbols, even malayalam letters are included
+      in this plane.</p>
+    <h1 id="supplementary-planes-astral-planes">Supplementary planes/ Astral planes</h1>
+    <p>All the other 16 groups are collectively knows as supplementary planes. Astral plane span from
+      <code>010000</code> to <code>10FFFF</code>.
+    </p>
+    <h1 id="hexa-decimal-escape-sequence">Hexa-decimal escape sequence</h1>
+    <p>The symbols from <code>0000</code> to <code>00FF</code> can represented in hexa-decimal sequences. It can have
+      only 2 digits codepoints.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="st">&quot;</span><span class="sc">\x41</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// A</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="st">&quot;</span><span class="sc">\x42</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// B</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="st">&quot;</span><span class="sc">\x41\x42</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// AB</span></a></code></pre>
+    </div>
+    <h1 id="unicode-escape-sequence">Unicode escape sequence</h1>
+    <p>The symbols from <code>0000</code> to <code>FFFF</code> can be represented in unicode escape sequence. It can
+      have only 4 digit code point.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="st">&quot;</span><span class="sc">\u0041</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// A</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="st">&quot;</span><span class="sc">\u0042</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// B</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="st">&quot;</span><span class="sc">\u0041\u0042</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// AB</span></a></code></pre>
+    </div>
+    <p>This can be used to represent whole symbols in BMP. So what about astral planes?</p>
+    <p>Right now the symbols in astral planes are represented as two unicode escape sequences which is called
+      <strong>surrogate pairs</strong>. A pair of 16-bit code units. A surrogate pair will represent only 1 character.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="st">&quot;</span><span class="sc">\uD83D\uDCA9</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// surrogate pairs for unicode U+1F4A9 which represents PILE OF POO</span></a></code></pre>
+    </div>
+    <p>In ES6, a new escape sequence will be intoduced to JavaScript to overcome this.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// only in ES6</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="st">&quot;</span><span class="sc">\u{1F4A9}</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// PILE OF POO</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="st">&quot;</span><span class="sc">\u{0041}</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// A</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="st">&quot;</span><span class="sc">\u{0042}</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// B</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="st">&quot;</span><span class="sc">\u{0041}\u{0042}</span><span class="st">&quot;</span><span class="op">;</span> <span class="co">// AB</span></a></code></pre>
+    </div>
+    <p>Due to this representation of unicodes in astral planes, as surrogate pairs, there are lots of issues in
+      JavaScript in handling uncode string manipulations, which will come in later blog post.</p>
+    <h1 id="finding-surrogate-pairs">Finding Surrogate pairs</h1>
+    <p>As per the unicode spec, there is formula to find surrogate pairs. The first part of a surrogate pair is called
+      <em>High surrogate</em> and the second part is called <em>Low surrogate</em>.
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1">high <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>((codePoint <span class="op">-</span> <span class="bn">0x10000</span>) / <span class="bn">0x400</span>) <span class="op">+</span> <span class="bn">0xd800</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">low <span class="op">=</span> ((codePoint <span class="op">-</span> <span class="bn">0x10000</span>) <span class="op">%</span> <span class="bn">0x400</span>) <span class="op">+</span> <span class="bn">0xdc00</span><span class="op">;</span></a></code></pre>
+    </div>
+    <p>Thus, you can find the high surrogate and low surrogate with the above formula. Now if you want to find the
+      codepoint from the surrogate pairs, you can use the formula below.</p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1">codePoint <span class="op">=</span> (high <span class="op">-</span> <span class="bn">0xd800</span>) <span class="op">*</span> <span class="bn">0x400</span> <span class="op">+</span> low <span class="op">-</span> <span class="bn">0xdc00</span> <span class="op">+</span> <span class="bn">0x10000</span><span class="op">;</span></a></code></pre>
+    </div>
+  </body>
+
+  </html>
+  $

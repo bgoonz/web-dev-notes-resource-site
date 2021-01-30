@@ -1,0 +1,109 @@
+@import "@material/drawer/mdc-drawer";
+@import "@material/typography/mixins";
+@import "./variables";
+
+.hero {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  background-color: $catalog-hero-background-color;
+  overflow: auto;
+}
+
+.sidebar-active {
+  font-weight: 600;
+}
+
+.demo-title {
+  border-bottom: 1px solid rgba(0, 0, 0, .87);
+}
+
+.resources-graphic {
+  width: 30px;
+  height: 30px;
+}
+
+.demo-panel {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// TODO: Use mdc-drawer-z-index mixin once we've it.
+.mdc-drawer--dismissible.demo-drawer {
+  z-index: 1;
+}
+
+.demo-drawer {
+  height: 100%;
+
+  .mdc-list-item {
+    cursor: pointer;
+  }
+}
+
+.demo-drawer-header {
+  position: absolute;
+  top: 18px;
+  opacity: 0.74;
+}
+
+.demo-content {
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 16px 100px;
+  transition: 200ms transform cubic-bezier(.4, 0, .2, 1) 50ms;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /* CSS specific to iOS devices */
+  .demo-content {
+    overflow: scroll; /* Has to be scroll, not auto. */
+    -webkit-overflow-scrolling: touch; /* For momentum scrolling. */
+  }
+}
+
+.demo-content-transition {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.loadComponent-enter {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.loadComponent-enter.loadComponent-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 235ms linear 100ms;
+
+  // Fixed elements don't work well with transform so the snackbar needs to be hidden
+  // until the transition finishes.
+  .mdc-snackbar {
+    display: none;
+  }
+}
+
+.loadComponent-exit {
+  display: none;
+
+  &-active {
+    display: none;
+  }
+
+  &-done {
+    display: none;
+  }
+}

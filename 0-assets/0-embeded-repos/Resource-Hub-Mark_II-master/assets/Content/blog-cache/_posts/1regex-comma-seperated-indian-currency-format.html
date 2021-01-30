@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Recently, I got a request to show prices in comma seperated format on <a
+        href="http://whatznear.com">whatznear.com</a>. Since we are using rails, it have a handy method to do <a
+        href="http://api.rubyonrails.org/classes/ActionView/Helpers/NumberHelper.html#method-i-number_to_currency">number_to_currency</a>,
+      but unfortunately that was not enough because it follow US system of seperation with thousands. My requirement was
+      to show prices in Indian system of seperation with hundreds.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">450</span>,<span class="dv">500</span> <span class="co"># US system</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="dv">4</span>,<span class="dv">50</span>,<span class="dv">500</span> <span class="co"># Indian System</span></a></code></pre>
+    </div>
+    <p>So I dropped a mail to <a
+        href="https://groups.google.com/d/msg/kerala-ruby-users-group/9-TjkhSTspc/R-NIwr9XuxwJ">Kerala Ruby Users
+        Groups</a> and <a href="http://csnipp.com/coderhs">Hari Sankar</a> replied with a <a
+        href="https://groups.google.com/d/msg/kerala-ruby-users-group/9-TjkhSTspc/10ywX41mZiUJ">regular expression</a>
+      from his snippet collection.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb2-1" title="1">price.to_s.gsub(<span class="ot">/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/</span>, <span class="st">&quot;\\1,&quot;</span>)</a></code></pre>
+    </div>
+    <p>The above regex worked fine for me, but I was curious to know how it works. So I started digging into regex
+      documentation. I am gonna explain, what I understand about the regex.</p>
+    <p><a href="http://www.regexper.com/#%2F(%5Cd%2B%3F)(%3F%3D(%5Cd%5Cd)%2B(%5Cd)(%3F!%5Cd))(%5C.%5Cd%2B)%3F%2F"><img
+          src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-02223852_zpsaf17908a.png"
+          alt="Regex groups explained" /></a></p>
+    <h2 id="group-1-d">Group 1 <code>(\d+?)</code></h2>
+    <p>Let look into group 1 ie., <code>(\d+?)</code> which says digit should be matched as often as possible. I think
+      there is nothing much confusing here except the tailing <code>?</code>. The question mark tells the regex engine,
+      “<strong>preceding token zero times or once</strong>”. A <code>?</code> after <code>+</code> makes it <a
+        href="http://www.regular-expressions.info/repeat.html#lazy">lazy</a> and return as soon as the first match.</p>
+    <h2 id="positive-lookahead-dddd">positive lookahead <code>(?=(\d\d)+(\d)(?!\d))</code></h2>
+    <p>The Grouping start with <code>?=</code> means its a positive lookahead and the previously captured match (matched
+      by group 1) should follow match of this group. Whatever this Group 2 matches won’t expand the match of Group 1.
+    </p>
+    <p>In order to match this group, 2 digits should be found at least once (<code>(\d\d)+</code>), followed by a digit
+      (<code>(\d)</code>) and non digit.</p>
+    <p><code>(?!\d)</code> is a <a href="http://www.regular-expressions.info/lookaround.html">negative lookahead</a>
+      which succeeds when the regex inside lookahead fails. This helps to filter out last 3 digits of a number.</p>
+    <h2 id="how-group-1-positive-lookahead-works-together-ddddd">How Group 1 &amp; positive lookahead works together
+      <code>(\d+?)(?=(\d\d)+(\d)(?!\d))</code>
+    </h2>
+    <p>When the group 1 and positive lookahead works together, for the first match there should be a digit followed by
+      at least 1 group of 2 digits, followed by a single digit and non digit.</p>
+    <p>lets take the number <strong>1234567.00</strong>, as the regex engine always returns the leftmost match, the
+      first match will be <code>12</code> since it is followed by group of 2 digit (twice) (34 &amp; 56) and a digit
+      then a <code>.</code> (non digit). The second match will be <code>34</code> since it is followed by group of 2
+      digit (once) (56) and then a <code>.</code> (non digit). Then the engine will try to match again but
+      <code>56</code> <strong>won’t</strong> get a match since it is not followed by the group of 2 digits. So the
+      resulting match will be
+    </p>
+    <p><a href="http://rubular.com/r/mgw9bMV1HF"><img
+          src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/11/Screenshotfrom2014-11-03221047_zps332860c2.png" /></a>
+    </p>
+    <p>The last group <code>(\.\d+)?</code> is for floating point.</p>
+    <h2 id="stringgsub">String#gsub</h2>
+    <p>Now we have the two matches with first group as <code>12</code> and <code>34</code> respectively. First group in
+      two matches can be referenced by <code>\1</code> since we didn’t name the group. So with <a
+        href="http://ruby-doc.org/core-2.1.4/String.html#method-i-gsub">String#gsub</a> we can replace the content of
+      group 1 with <code>&lt;content of group1&gt;,</code>, ie., we can replace <code>12</code> with <code>12,</code>
+      and <code>34</code> with <code>34,</code>.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># replacing 12 with 12, and 34 with 34,.</span></a>
+<a class="sourceLine" id="cb3-2" title="2">.gsub(<span class="ot">/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/</span>, <span class="st">&quot;\\1,&quot;</span>)</a></code></pre>
+    </div>
+    <p>we used two backslash <code>"\\1,"</code> because we used a double quotes, if you are using single quotes just
+      <code>'\1,'</code> will be enough. if you didn’t escape the backslash wile using double quotes, ruby will consider
+      <code>"\1,"</code> as unicode 1 <code>\u0001,</code>.
+    </p>
+    <p>Hope this explanation helped. Thank you.</p>
+
+  </body>
+
+  
+</html>

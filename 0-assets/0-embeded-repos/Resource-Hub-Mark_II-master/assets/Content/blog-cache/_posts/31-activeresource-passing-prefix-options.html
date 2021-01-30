@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>ActiveResource can be used with nested resources, provided you need to pass the parameters accordingly.
+      ActiveResource call it as <code>prefix options</code> that used with nested resource. Its a bit tricky to pass the
+      prefix options to different methods, since methods use different approach to accept prefix params. Lets consider
+      we have a model for Inventory like on below,</p>
+    <p>{% highlight ruby %} class Inventory &lt; ActiveResource::Base self.prefix = ‘/api/admin/stores/:store_id/’ end
+      {% endhighlight %}</p>
+    <p>The prefix option <code>:store_id</code> is passed to various method in different ways. Make sure you use the
+      same key as you specified in the <code>self.prefix</code>.</p>
+    <h1 id="on-find">On find()</h1>
+    <p>For <code>find()</code> method you can pass the <code>:store_id</code> in <code>:params</code> hash, as second
+      parameter.</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="find">.find()</h1>
+    <p>Inventory.find(params[:id], params: { store_id: params[:store_id]}) {% endhighlight %}</p>
+    <h1 id="on-save">On save()</h1>
+    <p>For <code>save()</code> you can’t pass it as second parameter. So you need to explicitly set on the object before
+      calling the <code>.save()</code> method.</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="save">.save()</h1>
+    <p><span class="citation" data-cites="inventory">@inventory</span> = Inventory.new(params[:inventory]) <span
+        class="citation" data-cites="inventory.prefix_options">@inventory.prefix_options [:store_id]</span> = <span
+        class="citation" data-cites="store.id">@store.id</span> <span class="citation"
+        data-cites="inventory.save">@inventory.save</span> {% endhighlight %}</p>
+    <h1 id="on-update_attributes">On update_attributes()</h1>
+    <p><code>.update_attributes()</code> won’t accept any second parameter, so you need to pass it with other params.
+    </p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="update_attibutes">.update_attibutes()</h1>
+    <p>params[:inventory][:store_id] = <span class="citation" data-cites="store.id">@store.id</span> <span
+        class="citation"
+        data-cites="inventory.update_attributes">@inventory.update_attributes</span>(params[:inventory])
+      {% endhighlight %}</p>
+
+  </body>
+
+  
+</html>

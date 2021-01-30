@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Consider you have two tables products and Oraganisation, where product belongs to a particular organisation.</p>
+    <pre><code>Product                   Organisation
+  - id                      - id
+  - name                    - name
+  - organisation_id         - description</code></pre>
+    <p>So when you want to get the organisation name, which the product belongs to then you say,</p>
+    <p>{% highlight ruby %}</p>
+    <h1 id="please-note-that-thoughtout-this-post-i-will-be-refereing-to-product-which">Please note that thoughtout this
+      post I will be refereing to <code>@product</code> which</h1>
+    <h1 id="assumed-as-object-of-product-model.">assumed as object of Product model.</h1>
+    <p><span class="citation" data-cites="product.organisation.name">@product.organisation.name</span>
+      {% endhighlight %}</p>
+    <p>But according to “Rails Anti-patterns” more than one dot notation in a statement is an example of anti pattern.
+    </p>
+    <h1 id="normal-fix">Normal fix</h1>
+    <p>So How we can fix it, In Product model write a instance method <code>organisation_name</code> just like below.
+    </p>
+    <p>{% highlight ruby %} class Product &lt; ActiveRecord::Base belongs_to :organisation</p>
+    <p>def organisation_name organisation.name end end {% endhighlight %}</p>
+    <h1 id="using-delegate">Using delegate</h1>
+    <p>Writing methods for all the properties is a tedious task, Instead of that we can use <a
+        href="http://apidock.com/rails/Module/delegate">delegate</a> in rails.</p>
+    <p>You can simply use below code instead of writing a method <code>organisation_name</code>.</p>
+    <p>{% highlight ruby %} class Product &lt; ActiveRecord::Base belongs_to :organisation</p>
+    <p>delegate :name, to: :organisation, prefix: true end {% endhighlight %}</p>
+    <p>Now you can use <code>@product.organisation_name</code> to instead of <code>@product.organisation.name</code>.
+    </p>
+    <p>You can pass method name and target model/object via <code>:to</code> option. Here <code>:prefix</code> option
+      determine whether the method name should prepend with object name or not.</p>
+    <p>If you wanna custom prefix, then</p>
+    <p>{% highlight ruby %} class Product &lt; ActiveRecord::Base belongs_to :organisation</p>
+    <p>delegate :name, to: :organisation, prefix: :org end {% endhighlight %}</p>
+    <p>Now you can use as <code>@product.org_name</code></p>
+
+  </body>
+
+  
+</html>

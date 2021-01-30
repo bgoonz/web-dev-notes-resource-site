@@ -1,0 +1,316 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Handling client side validation using the HTML5 validation api is getting easier due to the wide support on
+      modern browsers. With HTML validation api you don’t have install any new package and learn its api.</p>
+    <p>Remember this might not be apt for your application and use case. Read the detailed incompatibility issues <a
+        href="https://www.quirksmode.org/blog/archives/2017/12/native_form_val.html">here</a>.</p>
+    <p>This post doesn’t intent to cover all the use cases and corner cases, but to give intro to using HTML5 apis in a
+      <code>Vue</code> app.
+    </p>
+    <h1 id="basic-implementation"><a class="anchor" name="basic" href="#basic"><i class="anchor-icon"></i></a>Basic
+      implementation</h1>
+    <p>For the basic version we don’t have to do anything specific to vue. Just need to bind <code>@submit</code> to
+      <code>handleSubmit</code> action will trigger the validation and show error message in native way.
+    </p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1">// SimpleForm.vue</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;section&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;columns&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;column is-5 is-offset-3&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-8" title="8">          <span class="kw">&lt;form</span> <span class="er">@submit.prevent</span><span class="ot">=</span><span class="st">&quot;handleSubmit&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-9" title="9">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-10" title="10">              <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;label&quot;</span><span class="kw">&gt;</span>Name<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb1-11" title="11">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">                <span class="kw">&lt;input</span><span class="ot"> class=</span><span class="st">&quot;input&quot;</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> placeholder=</span><span class="st">&quot;Text input&quot;</span><span class="ot"> required</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-14" title="14">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-15" title="15">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field is-grouped&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-16" title="16">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-17" title="17">                <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> class=</span><span class="st">&quot;button is-link&quot;</span><span class="kw">&gt;</span>Submit<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb1-18" title="18">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-19" title="19">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-20" title="20">          <span class="kw">&lt;/form&gt;</span></a>
+<a class="sourceLine" id="cb1-21" title="21">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-22" title="22">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-23" title="23">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-24" title="24">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb1-26" title="26"></a>
+<a class="sourceLine" id="cb1-27" title="27"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="im">export</span> <span class="im">default</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-29" title="29">  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;SimpleForm&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-30" title="30">  <span class="dt">methods</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-31" title="31">    <span class="at">handleSubmit</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-32" title="32"></a>
+<a class="sourceLine" id="cb1-33" title="33">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-34" title="34">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-35" title="35"><span class="op">}</span></a>
+<a class="sourceLine" id="cb1-36" title="36"><span class="kw">&lt;/script&gt;</span></a></code></pre>
+    </div>
+    <h1 id="form-submit-programmatically"><a class="anchor" name="programmatically" href="#programmatically"><i
+          class="anchor-icon"></i></a>Form submit programmatically</h1>
+    <p>When we use <code>form.submit()</code>, it wont trigger the native validations. This requirement usually arise
+      when we want to do some task (like update state) before the form submission. In such cases we have to trigger the
+      validation and report it manually using <code>checkValidity</code> and <code>reportVaidity</code> methods.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;section&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;columns&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;column is-5 is-offset-3&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">          <span class="kw">&lt;form</span><span class="ot"> ref=</span><span class="st">&quot;form&quot;</span> <span class="er">@submit.prevent</span><span class="ot">=</span><span class="st">&quot;handleSubmit&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-8" title="8">              <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;label&quot;</span><span class="kw">&gt;</span>Name<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">                <span class="kw">&lt;input</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="ot">                  class=</span><span class="st">&quot;input&quot;</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="ot">                  type=</span><span class="st">&quot;text&quot;</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="ot">                  placeholder=</span><span class="st">&quot;Text input&quot;</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="ot">                  required</span></a>
+<a class="sourceLine" id="cb2-15" title="15">                <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-16" title="16">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">            <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field is-grouped&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-20" title="20">                <span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> class=</span><span class="st">&quot;button is-link&quot;</span><span class="kw">&gt;</span>Submit<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb2-21" title="21">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-22" title="22">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-23" title="23">                <span class="kw">&lt;button</span></a>
+<a class="sourceLine" id="cb2-24" title="24"><span class="ot">                  type=</span><span class="st">&quot;button&quot;</span></a>
+<a class="sourceLine" id="cb2-25" title="25"><span class="ot">                  class=</span><span class="st">&quot;button is-link&quot;</span></a>
+<a class="sourceLine" id="cb2-26" title="26">                  <span class="er">@click</span><span class="ot">=</span><span class="st">&quot;handleSignup&quot;</span></a>
+<a class="sourceLine" id="cb2-27" title="27">                <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-28" title="28">                  Signup</a>
+<a class="sourceLine" id="cb2-29" title="29">                <span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb2-30" title="30">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-31" title="31">            <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-32" title="32">          <span class="kw">&lt;/form&gt;</span></a>
+<a class="sourceLine" id="cb2-33" title="33">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-34" title="34">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-35" title="35">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-36" title="36">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb2-38" title="38"></a>
+<a class="sourceLine" id="cb2-39" title="39"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb2-40" title="40"><span class="im">export</span> <span class="im">default</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-41" title="41">  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;MultipleButton&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-42" title="42">  <span class="dt">methods</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-43" title="43">    <span class="at">handleSubmit</span>(e) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-44" title="44">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;submit&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-45" title="45">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb2-46" title="46">    <span class="at">handleSignup</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-47" title="47">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;do task before submit&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-48" title="48">      <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">$refs</span>.<span class="va">form</span>.<span class="at">checkValidity</span>()) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-49" title="49">        <span class="kw">this</span>.<span class="at">handleSubmit</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-50" title="50">      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-51" title="51">        <span class="kw">this</span>.<span class="va">$refs</span>.<span class="va">form</span>.<span class="at">reportValidity</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-52" title="52">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-53" title="53">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-54" title="54">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb2-55" title="55"><span class="op">};</span></a>
+<a class="sourceLine" id="cb2-56" title="56"><span class="kw">&lt;/script&gt;</span></a></code></pre>
+    </div>
+    <p>In this case when <code>checkValidity</code> is true we have to call <code>handleSubmit</code> directly since the
+      <code>submit</code> event <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit">wont
+        be raised</a>.
+    </p>
+    <h1 id="custom-design-for-error-messages"><a class="anchor" name="custom-design" href="#custom-design"><i
+          class="anchor-icon"></i></a>Custom design for Error messages</h1>
+    <p>It now we didn’t controlled how the error message are shown to the user. Consider we need to show the error
+      message in a uniform way across the browsers and don’t want to hide those automatically.</p>
+    <p>In such case we have to bind callback to <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Events/invalid">form invalid</a> event, to collect error
+      message from all the child inputs. We will use <code>validationMessage</code> property on the input element to get
+      the localized message for the validation failure.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;section&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;columns&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-5" title="5">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;column is-5 is-offset-3&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">          <span class="kw">&lt;div</span><span class="ot"> className=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">            <span class="kw">&lt;form</span></a>
+<a class="sourceLine" id="cb3-8" title="8">              <span class="er">@submit</span><span class="ot">=</span><span class="st">&quot;handleSubmit&quot;</span></a>
+<a class="sourceLine" id="cb3-9" title="9">              <span class="er">@change</span><span class="ot">=</span><span class="st">&quot;handleChange&quot;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">              <span class="er">@invalid.capture.prevent</span><span class="ot">=</span><span class="st">&quot;handleInvalid&quot;</span></a>
+<a class="sourceLine" id="cb3-11" title="11">            <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-12" title="12">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-13" title="13">                <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;label&quot;</span><span class="kw">&gt;</span>Username<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb3-14" title="14">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control has-icons-left has-icons-right&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-15" title="15">                  <span class="kw">&lt;input</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="ot">                    class=</span><span class="st">&quot;input&quot;</span> </a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="ot">                    :class=</span><span class="st">&quot;errorClass(&#39;username&#39;)&quot;</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="ot">                    type=</span><span class="st">&quot;text&quot;</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="ot">                    placeholder=</span><span class="st">&quot;Name&quot;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="ot">                    required</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="ot">                    name=</span><span class="st">&quot;username&quot;</span></a>
+<a class="sourceLine" id="cb3-22" title="22">                  <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-23" title="23">                  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;icon is-small is-left&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-24" title="24">                    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fas fa-user&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-25" title="25">                  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb3-26" title="26">                  <span class="kw">&lt;span</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.username&quot;</span><span class="ot"> class=</span><span class="st">&quot;icon is-small is-right&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-27" title="27">                    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fas fa-exclamation-triangle&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-28" title="28">                  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb3-29" title="29">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-30" title="30">                <span class="kw">&lt;p</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.username&quot;</span><span class="ot"> class=</span><span class="st">&quot;help is-danger&quot;</span><span class="kw">&gt;</span>{{fieldErrors.username}}<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-31" title="31">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-32" title="32">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-33" title="33">                <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;label&quot;</span><span class="kw">&gt;</span>Email<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb3-34" title="34">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control has-icons-left has-icons-right&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-35" title="35">                  <span class="kw">&lt;input</span></a>
+<a class="sourceLine" id="cb3-36" title="36"><span class="ot">                    class=</span><span class="st">&quot;input&quot;</span></a>
+<a class="sourceLine" id="cb3-37" title="37"><span class="ot">                    :class=</span><span class="st">&quot;errorClass(&#39;email&#39;)&quot;</span></a>
+<a class="sourceLine" id="cb3-38" title="38"><span class="ot">                    type=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb3-39" title="39"><span class="ot">                    placeholder=</span><span class="st">&quot;Email input&quot;</span></a>
+<a class="sourceLine" id="cb3-40" title="40"><span class="ot">                    required</span></a>
+<a class="sourceLine" id="cb3-41" title="41"><span class="ot">                    name=</span><span class="st">&quot;email&quot;</span></a>
+<a class="sourceLine" id="cb3-42" title="42">                  <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-43" title="43">                  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;icon is-small is-left&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-44" title="44">                    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fas fa-envelope&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-45" title="45">                  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb3-46" title="46">                  <span class="kw">&lt;span</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.email&quot;</span><span class="ot"> class=</span><span class="st">&quot;icon is-small is-right&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-47" title="47">                    <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fas fa-exclamation-triangle&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-48" title="48">                  <span class="kw">&lt;/span&gt;</span></a>
+<a class="sourceLine" id="cb3-49" title="49">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-50" title="50">                <span class="kw">&lt;p</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.email&quot;</span><span class="ot"> class=</span><span class="st">&quot;help is-danger&quot;</span><span class="kw">&gt;</span>{{fieldErrors.email}}<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-51" title="51">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-52" title="52">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-53" title="53">                <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;label&quot;</span><span class="kw">&gt;</span>Message<span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb3-54" title="54">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-55" title="55">                  <span class="kw">&lt;textarea</span></a>
+<a class="sourceLine" id="cb3-56" title="56"><span class="ot">                    class=</span><span class="st">&quot;textarea&quot;</span></a>
+<a class="sourceLine" id="cb3-57" title="57"><span class="ot">                    :class=</span><span class="st">&quot;errorClass(&#39;message&#39;)&quot;</span></a>
+<a class="sourceLine" id="cb3-58" title="58"><span class="ot">                    placeholder=</span><span class="st">&quot;Textarea&quot;</span></a>
+<a class="sourceLine" id="cb3-59" title="59"><span class="ot">                    required</span></a>
+<a class="sourceLine" id="cb3-60" title="60"><span class="ot">                    name=</span><span class="st">&quot;message&quot;</span></a>
+<a class="sourceLine" id="cb3-61" title="61">                  <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-62" title="62">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-63" title="63">                <span class="kw">&lt;p</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.message&quot;</span><span class="ot"> class=</span><span class="st">&quot;help is-danger&quot;</span><span class="kw">&gt;</span>{{fieldErrors.message}}<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-64" title="64">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-65" title="65">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-66" title="66">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-67" title="67">                  <span class="kw">&lt;label</span><span class="ot"> class=</span><span class="st">&quot;checkbox&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-68" title="68">                    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> required name=</span><span class="st">&quot;toc&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb3-69" title="69">                    I agree to the <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>terms and conditions<span class="kw">&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb3-70" title="70">                  <span class="kw">&lt;/label&gt;</span></a>
+<a class="sourceLine" id="cb3-71" title="71">                  <span class="kw">&lt;p</span><span class="ot"> v-if=</span><span class="st">&quot;fieldErrors.toc&quot;</span><span class="ot"> class=</span><span class="st">&quot;help is-danger&quot;</span><span class="kw">&gt;</span>{{fieldErrors.toc}}<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb3-72" title="72">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-73" title="73">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-74" title="74">              <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;field is-grouped&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-75" title="75">                <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;control&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-76" title="76">                  <span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;button is-link&quot;</span><span class="kw">&gt;</span>Submit<span class="kw">&lt;/button&gt;</span></a>
+<a class="sourceLine" id="cb3-77" title="77">                <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-78" title="78">              <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-79" title="79">            <span class="kw">&lt;/form&gt;</span></a>
+<a class="sourceLine" id="cb3-80" title="80">          <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-81" title="81">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-82" title="82">      <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-83" title="83">    <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-84" title="84">  <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb3-85" title="85"><span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb3-86" title="86"></a>
+<a class="sourceLine" id="cb3-87" title="87"><span class="kw">&lt;script&gt;</span></a>
+<a class="sourceLine" id="cb3-88" title="88"><span class="im">export</span> <span class="im">default</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-89" title="89">  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;CustomDesign&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-90" title="90">  <span class="at">data</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-91" title="91">    <span class="cf">return</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-92" title="92">      <span class="dt">fieldErrors</span><span class="op">:</span> <span class="op">{}</span></a>
+<a class="sourceLine" id="cb3-93" title="93">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-94" title="94">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-95" title="95">  <span class="dt">methods</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-96" title="96">    <span class="at">handleSubmit</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-97" title="97">      </a>
+<a class="sourceLine" id="cb3-98" title="98">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-99" title="99">    <span class="at">handleChange</span>(evt) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-100" title="100">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;handleChange :: &#39;</span><span class="op">,</span> <span class="va">evt</span>.<span class="va">target</span>.<span class="at">name</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-101" title="101">      <span class="kw">this</span>.<span class="at">fieldErrors</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-102" title="102">        ...<span class="va">this</span>.<span class="at">fieldErrors</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-103" title="103">        [<span class="va">evt</span>.<span class="va">target</span>.<span class="at">name</span>]<span class="op">:</span> <span class="st">&quot;&quot;</span></a>
+<a class="sourceLine" id="cb3-104" title="104">      <span class="op">};</span></a>
+<a class="sourceLine" id="cb3-105" title="105">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-106" title="106">    <span class="at">handleInvalid</span>(evt) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-107" title="107">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;handleInvalid :: &#39;</span><span class="op">,</span> <span class="va">evt</span>.<span class="va">target</span>.<span class="at">name</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-108" title="108">      <span class="kw">this</span>.<span class="at">fieldErrors</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-109" title="109">        ...<span class="va">this</span>.<span class="at">fieldErrors</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-110" title="110">        [<span class="va">evt</span>.<span class="va">target</span>.<span class="at">name</span>]<span class="op">:</span> <span class="va">evt</span>.<span class="va">target</span>.<span class="at">validationMessage</span></a>
+<a class="sourceLine" id="cb3-111" title="111">      <span class="op">};</span></a>
+<a class="sourceLine" id="cb3-112" title="112">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-113" title="113">    <span class="at">errorClass</span>(field) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-114" title="114">      <span class="cf">return</span> <span class="kw">this</span>.<span class="at">fieldErrors</span>[field] <span class="op">?</span> <span class="st">&quot;is-danger&quot;</span> : <span class="st">&quot;&quot;</span></a>
+<a class="sourceLine" id="cb3-115" title="115">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb3-116" title="116">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb3-117" title="117"><span class="op">}</span></a>
+<a class="sourceLine" id="cb3-118" title="118"><span class="kw">&lt;/script&gt;</span></a></code></pre>
+    </div>
+    <p>In this make sure to use <code>capture</code> <a
+        href="https://vuejs.org/v2/guide/render-function.html#Event-amp-Key-Modifiers">modifier</a> like
+      <code>@invalid.capture.prevent</code> since the invalid event <a
+        href="https://github.com/vuejs/vue/issues/8647#issuecomment-412499477">won’t bubble</a>.
+    </p>
+    <p>The working sample is available on <a href="https://codesandbox.io/s/5zmz9q9m0p">codesandbox</a></p>
+    <p>{: style=“text-align: center”} <img
+        src="https://s3.ap-south-1.amazonaws.com/revathskumar-blog-images/2018/vue-html5-validation/Screenshot+from+2018-12-05+00-42-47.png"
+        alt="Vue HTML5 validation" /></p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      Vue         |  2.5.2 |</code></pre>
+    <p>if you have any feedback, please drop a comment below.</p>
+
+  </body>
+
+  
+</html>

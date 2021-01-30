@@ -1,0 +1,207 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>In the last blog we saw <a href="/2018/05/elm-update-field-in-a-list.html">how to update a field in the list of
+        items</a>. In that we had only one module <code>Main</code>. In this we will see what are the changes need when
+      we plan to move the <code>viewItem</code> into a child module and how the message passing works between the
+      modules.</p>
+    <p>If you are planning to seperate module,</p>
+    <ul>
+      <li>Parent should have a message to convert the parent message to child message</li>
+      <li>This message will take care of conversion of all the messages related to child module.</li>
+      <li>Same may we have to convert the <code>Cmd</code> from child module to parent one.</li>
+      <li>Use <code>.map</code> function to convert one message to another</li>
+    </ul>
+    <p>From the last post the whole code will look like</p>
+    <pre class="elm"><code>type alias Item =
+  { description : String
+  , id : Int
+  }
+
+
+type alias Model =
+  { items : List Item }
+
+update : Msg -&gt; Model -&gt; ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    UpdateDescription id description -&gt;
+      let
+        updateDescription item =
+          if (item.id == id) then
+            { item | description = description }
+          else
+            item
+
+        items =
+          List.map updateDescription model.items
+      in
+        ( { model | items = items }, Cmd.none )
+
+viewItem : Item -&gt; Html Msg
+viewItem item =
+  div [ class &quot;panel-block&quot; ]
+    [ div [ class &quot;columns&quot; ]
+      [ div [ class &quot;column&quot; ]
+        [ input [ type_ &quot;text&quot;, value item.description, onInput (UpdateDescription item.id) ] []
+        ]
+    ]
+
+view : Model -&gt; Html Msg
+view model =
+  div [ class &quot;panel&quot; ]
+    [ p [ class &quot;panel-heading&quot; ] [ text &quot;Items&quot; ]
+    , div []
+      (if (List.length model.items) &gt; 0 then
+        (List.map viewItem model.items)
+      else
+        [ text &quot;No Items to show&quot; ]
+      )</code></pre>
+    <p>As the first step we will move the <code>Item</code> into a different module.</p>
+    <pre class="elm"><code>module Item exposing (..)
+
+type alias Item =
+  { description : String
+  , id : Int
+  }
+
+type Msg = UpdateDescription String
+
+update : Msg -&gt; Item -&gt; ( Item, Cmd Msg )
+update msg item =
+  case msg of
+    UpdateDescription description -&gt;
+        ( { model | description = description }, Cmd.none )
+
+view : Item -&gt; Html Msg
+view item =
+  div [ class &quot;panel-block&quot; ]
+    [ div [ class &quot;columns&quot; ]
+      [ div [ class &quot;column&quot; ]
+        [ input [ type_ &quot;text&quot;, value item.description, onInput UpdateDescription ] []
+        ]
+    ]</code></pre>
+    <p>Now the <code>Item</code> module will handle the data for that item and <code>Main</code> module will handle the
+      list.</p>
+    <p>The <code>Main</code> module will be</p>
+    <pre class="elm"><code>module Main exposing (..)
+
+import Item
+
+type alias Model =
+  { items : List Item.Item }</code></pre>
+    <p>Next we need to declare the message which accepts an <code>id</code> and <code>Item</code> message to convert.
+    </p>
+    <pre class="elm"><code>type Msg = UpdateItem Int Item.Msg</code></pre>
+    <p>Next lets make changes to the <code>update</code>, Now the update function should do the following tasks</p>
+    <ul>
+      <li>Find the Item which need updation</li>
+      <li>Call <code>Item.update</code> with the item found</li>
+      <li>get back the updated Item and update the Item list.</li>
+    </ul>
+    <p>Since we are using <code>List</code> we can’t easily get the Item at a particular index, or update and Item at
+      particular index. We will use <a
+        href="http://package.elm-lang.org/packages/elm-community/list-extra/7.1.0">List.Extra</a> package which give
+      some handy method like <a
+        href="http://package.elm-lang.org/packages/elm-community/list-extra/7.1.0/List-Extra#findIndex">findIndex</a>,
+      <a href="http://package.elm-lang.org/packages/elm-community/list-extra/7.1.0/List-Extra#getAt">getAt</a> and <a
+        href="http://package.elm-lang.org/packages/elm-community/list-extra/7.1.0/List-Extra#setAt">setAt</a>.
+    </p>
+    <p>Lets utilise these methods to update our list of items</p>
+    <pre class="elm"><code>update : Msg -&gt; Model -&gt; ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    UpdateItem id itemMsg -&gt;
+        case itemMsg of
+            Item.UpdateDescription -&gt;
+                let
+                    mayBeIndex = (List.Extra.findIndex (\item -&gt; item.id == id) model.items)
+                    index =
+                        case mayBeIndex of
+                            Just index -&gt; index
+                            Nothing -&gt; -1
+
+                    selectedItem =
+                        case (List.Extra.getAt index model.items) of
+                            Just item -&gt; item
+                            Nothing -&gt; Item.initItem
+
+                    ( updatedItem, cmdMsg ) =
+                        Item.update childAction selectedItem
+
+                    items =
+                        List.Extra.setAt index updatedItem model.items
+                in
+                    ( { model | items = items }, Cmd.map (UpdateItem id) cmdMsg )</code></pre>
+    <p>Since <code>Item.update</code> will return the updated item and <code>Cmd Msg</code>, we should convert the item
+      message using <code>Cmd.map</code>.</p>
+    <p>Now into the <code>view</code>, Since the messages used by <code>Main</code> and <code>Item</code> is different
+      if we try to use <code>Item.view</code> instead of <code>viewItem</code> will result in error. With the help
+      <code>Html.map</code> we can use <code>UpdateItem</code> to convert the <code>Msg</code>.
+    </p>
+    <pre class="elm"><code>view : Model -&gt; Html Msg
+view model =
+  div [ class &quot;panel&quot; ]
+    [ p [ class &quot;panel-heading&quot; ] [ text &quot;Items&quot; ]
+    , div []
+        (if (List.length model.items) &gt; 0 then
+            div [] (List.map (\item -&gt; Html.map (UpdateItem item.id) (Item.view item)) model.items)
+        else
+            div [ class &quot;panel-block&quot; ] [ text &quot;No Items to show&quot; ]
+        )</code></pre>
+    <p>That’s it. we successfully moved <code>Item</code> into a separate module and started passing messages between
+      modules.</p>
+    <pre><code>Versions of Language/packages used in this post.
+
+| Library/Language | Version |
+| ---------------- |---------|
+|      ELM         |  0.18.0 |
+|    List.Extra    |  7.1.0  |</code></pre>

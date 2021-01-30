@@ -1,0 +1,405 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>This is post is originally published on <a
+        href="http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/">crypt.codemancers.com</a>.</p>
+    <hr />
+    <p>These days server side rendering has become an important feature for heavy client side applications and now most
+      of the client side frameworks support it. Yesterday I tried a bit of react server rendering along with express.js
+      and react-router.</p>
+    <h2 id="setup-express-js-server-and-dependencies.">Setup Express js server and dependencies.</h2>
+    <p>We can start with scaffolding a new express.js app using <a
+        href="http://expressjs.com/en/starter/generator.html">expressjs-generator</a> and installing all the
+      dependencies. We use <code>webpack</code> for client side bundling.</p>
+    <p>We can install all the dependencies by running</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> i --save react react-dom react-router babel-register</a></code></pre>
+    </div>
+    <p>and development dependencies by running</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">npm</span> i --save-dev babel-cli babel-core babel-preset-es2015 babel-preset-react babel-preset-stage-0 webpack babel-loader</a></code></pre>
+    </div>
+    <h2 id="setup-webpack-babel-for-client.">Setup webpack &amp; babel for client.</h2>
+    <p>We will keep all our client JavaScript and React components in a new folder named <code>client</code> and put all
+      the compiled js in <code>public/javascripts</code>. Also we shall add a <code>.babelrc</code> to load babel
+      presets and configs.</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="dt">&quot;presets&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;es2015&quot;</span><span class="ot">,</span> <span class="st">&quot;react&quot;</span><span class="ot">,</span> <span class="st">&quot;stage-0&quot;</span><span class="ot">]</span>  </a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="fu">}</span></a></code></pre>
+    </div>
+    <p>Now in <code>webpack.config.js</code>, we will configure the entry point, output directory and babel loader.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// webpack.config.js</span></a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">var</span> path <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;path&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="dt">entry</span><span class="op">:</span> <span class="st">&#39;./client/app.jsx&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="dt">output</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-9" title="9">    <span class="dt">filename</span><span class="op">:</span> <span class="st">&#39;app.js&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="dt">path</span><span class="op">:</span> <span class="va">path</span>.<span class="at">join</span>(<span class="st">&#39;public/javascripts/&#39;</span>)</a>
+<a class="sourceLine" id="cb4-11" title="11">  <span class="op">},</span></a>
+<a class="sourceLine" id="cb4-12" title="12"></a>
+<a class="sourceLine" id="cb4-13" title="13">  <span class="dt">module</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-14" title="14">    <span class="dt">loaders</span><span class="op">:</span> [</a>
+<a class="sourceLine" id="cb4-15" title="15">      <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-16" title="16">        <span class="dt">test</span><span class="op">:</span> <span class="ss">/</span><span class="sc">\.</span><span class="ss">jsx</span><span class="sc">?$</span><span class="ss">/</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-17" title="17">        <span class="dt">loader</span><span class="op">:</span> <span class="st">&#39;babel-loader&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-18" title="18">        <span class="dt">query</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-19" title="19">          <span class="dt">presets</span><span class="op">:</span> [<span class="st">&#39;react&#39;</span><span class="op">,</span> <span class="st">&#39;es2015&#39;</span>]</a>
+<a class="sourceLine" id="cb4-20" title="20">        <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-21" title="21">      <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-22" title="22">    ]</a>
+<a class="sourceLine" id="cb4-23" title="23">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb4-24" title="24"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>Now we can run the following to build client JavaScript files in development mode with debug flag turned on, and
+      watch for changes.</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1"><span class="ex">webpack</span> --debug --watch</a></code></pre>
+    </div>
+    <p>For easier use, we can add the command to <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> with name
+      <code>webpack:server</code>. Now we just need to run <code>npm run webpack:server</code>.
+    </p>
+    <h2 id="setup-react-router">Setup react router</h2>
+    <p>Now the basic scaffolding and development setup is finished and time to start building our app. We can start with
+      configuring the router. We are planning mainly for two routes <code>/home</code> to show the rendering of static
+      component and <code>/list</code> to show the server side rendering with some data.</p>
+    <p>First we have to define the entry point which will mount our <code>react-router</code> component to DOM.</p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// client/app.jsx</span></a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="im">import</span> <span class="op">{</span>render<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="im">import</span> AppRouter <span class="im">from</span> <span class="st">&#39;./router.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-7" title="7"></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="at">render</span>(<span class="op">&lt;</span>AppRouter/<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;#app&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Next, define routes in <code>client/router.jsx</code></p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// client/router.jsx</span></a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="im">import</span> <span class="op">{</span>Router<span class="op">,</span> browserHistory<span class="op">,</span> Route<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="im">import</span> AppRoot <span class="im">from</span> <span class="st">&#39;./app-root.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="im">import</span> Home <span class="im">from</span> <span class="st">&#39;./home.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="im">import</span> List <span class="im">from</span> <span class="st">&#39;./list.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="kw">const</span> AppRouter <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-11" title="11">  <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb7-12" title="12">    <span class="op">&lt;</span>Router history<span class="op">={</span>browserHistory<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb7-13" title="13">      <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/&quot;</span> component<span class="op">={</span>AppRoot<span class="op">}&gt;</span></a>
+<a class="sourceLine" id="cb7-14" title="14">        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/home&quot;</span> component<span class="op">={</span>Home<span class="op">}</span>/&gt;</a>
+<a class="sourceLine" id="cb7-15" title="15">        <span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/list&quot;</span> component<span class="op">={</span>List<span class="op">}</span>/&gt;</a>
+<a class="sourceLine" id="cb7-16" title="16">      &lt;/Route<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-17" title="17">    &lt;/Router<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb7-19" title="19"><span class="op">};</span></a>
+<a class="sourceLine" id="cb7-20" title="20"></a>
+<a class="sourceLine" id="cb7-21" title="21"><span class="im">export</span> <span class="im">default</span> AppRouter<span class="op">;</span></a></code></pre>
+    </div>
+    <p><code>AppRoot</code> is nothing but a simple layout for our app.</p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// client/app-root.jsx</span></a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>Component<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="im">import</span> <span class="op">{</span>Link<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="kw">class</span> AppRoot <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-7" title="7">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-8" title="8">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb8-9" title="9">      <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-10" title="10">        <span class="op">&lt;</span>h2<span class="op">&gt;</span>React Universal App&lt;/h2<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-11" title="11">        <span class="op">&lt;</span>Link to<span class="op">=</span><span class="st">&quot;/home&quot;</span><span class="op">&gt;</span> Home &lt;/Link<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-12" title="12">        <span class="op">&lt;</span>Link to<span class="op">=</span><span class="st">&quot;/list&quot;</span><span class="op">&gt;</span> List &lt;/Link<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-13" title="13">        <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">children</span><span class="op">}</span></a>
+<a class="sourceLine" id="cb8-14" title="14">      &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-15" title="15">    )<span class="op">;</span></a>
+<a class="sourceLine" id="cb8-16" title="16">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb8-17" title="17"><span class="op">}</span></a>
+<a class="sourceLine" id="cb8-18" title="18"></a>
+<a class="sourceLine" id="cb8-19" title="19"><span class="im">export</span> <span class="im">default</span> AppRoot<span class="op">;</span></a></code></pre>
+    </div>
+    <h2 id="setup-express-js-for-server-side-rendering">Setup express js for server side rendering</h2>
+    <p>Since we are using React + ES6 for components, we have to use the <code>babel-register</code> on server side so
+      that we can write express js routes also in ES6 and import the react routes we already wrote. Please note that, we
+      have to require/import the <code>babel-register</code> at the beginning of express js entry point
+      <code>app.js</code>.
+    </p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// app.js</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="at">require</span>(<span class="st">&#39;babel-register&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">var</span> express <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;express&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="kw">var</span> path <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;path&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="kw">var</span> favicon <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;serve-favicon&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb9-6" title="6"></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co">//rest of the express js boilerplate</span></a></code></pre>
+    </div>
+    <p>Then we rename the <code>routes/index.js</code> to <code>routes/index.jsx</code>, after this we can use the react
+      routes and react components on server side. For server side rendering we use <code>renderToString</code> method
+      from <code>react-dom/sever</code> package and methods like <code>match</code>, <code>createRoutes</code> and
+      <code>RouterContext</code> from <code>react-router</code>.
+    </p>
+    <p><a
+        href="https://github.com/ReactTraining/react-router/blob/c3cd9675bd8a31368f87da74ac588981cbd6eae7/docs/API.md#match-routes-location-history-options--cb">match</a>
+      function in <code>react-router</code> module will match a set of routes to a location and calls a callback,
+      without rendering. We use <a
+        href="https://github.com/reactjs/react-router/blob/master/docs/API.md#createroutesroutes">createRoutes</a>
+      method from <code>react-router</code> to create a set of routes from our
+      <code>client/router.jsx</code>(<code>appRouter</code>) component and provide it to <code>match</code>.
+    </p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="co">// routes/index.jsx</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co">// express and react imports</span></a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="im">import</span> appRouter <span class="im">from</span> <span class="st">&#39;../client/router.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb10-5" title="5"></a>
+<a class="sourceLine" id="cb10-6" title="6"><span class="kw">const</span> routes <span class="op">=</span> <span class="at">createRoutes</span>(<span class="at">appRouter</span>())<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Once we have a match <a
+        href="https://github.com/ReactTraining/react-router/blob/c3cd9675bd8a31368f87da74ac588981cbd6eae7/docs/API.md#routercontext">RouterContext</a>
+      will render the component tree for the given router state and return the component markup as a string with the
+      help of <code>renderToString</code> method.</p>
+    <div class="sourceCode" id="cb11">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="co">// Express.js route</span></a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;*&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-4" title="4">  <span class="at">match</span>(<span class="op">{</span>routes<span class="op">,</span> <span class="dt">location</span><span class="op">:</span> <span class="va">req</span>.<span class="at">url</span><span class="op">},</span> (error<span class="op">,</span> redirectLocation<span class="op">,</span> renderProps) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb11-5" title="5">    <span class="co">// check for error and redirection</span></a>
+<a class="sourceLine" id="cb11-6" title="6">    <span class="kw">const</span> content <span class="op">=</span> <span class="at">renderToString</span>(<span class="op">&lt;</span>RouterContext <span class="op">{</span>...<span class="at">renderProps</span><span class="op">}</span>/&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb11-7" title="7">    <span class="co">// pass content to jade view (we&#39;ll see it in a while)</span></a>
+<a class="sourceLine" id="cb11-8" title="8">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="op">}</span>)</a></code></pre>
+    </div>
+    <p>Now we have the react components rendered as string and we need to pass this to our <a
+        href="https://pugjs.org/api/getting-started.htmlF">pug.js (Previously known as jade)</a> view. The jade view
+      will accept the string in <code>content</code> variable and substitute inside the react app mount point.</p>
+    <pre class="jade"><code>//- views/index.jade
+extends layout
+
+block content
+  script(type=&#39;text/javascript&#39;).
+    window.__INITIAL_STATE__ = !{JSON.stringify(data)}
+  div.container#app!= content</code></pre>
+    <h2 id="rendering-a-static-component-on-server">Rendering a static component on server</h2>
+    <p><code>/home</code> points to a static component called <code>Home</code> which we are going to render from
+      server.</p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="kw">const</span> Home <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb13-4" title="4">  <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb13-5" title="5">    <span class="op">&lt;</span>div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-6" title="6">      <span class="op">&lt;</span>h1<span class="op">&gt;</span>Home&lt;/h1<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-7" title="7">    &lt;/div<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb13-8" title="8">  )<span class="op">;</span></a>
+<a class="sourceLine" id="cb13-9" title="9"><span class="op">};</span></a>
+<a class="sourceLine" id="cb13-10" title="10"></a>
+<a class="sourceLine" id="cb13-11" title="11"><span class="im">export</span> <span class="im">default</span> Home<span class="op">;</span></a></code></pre>
+    </div>
+    <p>and now when we join the dots the <code>routes/index.jsx</code> will look like this</p>
+    <div class="sourceCode" id="cb14">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1"><span class="im">import</span> express <span class="im">from</span> <span class="st">&#39;express&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="im">import</span> <span class="op">{</span>renderToString<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom/server&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="im">import</span> <span class="op">{</span>RouterContext<span class="op">,</span> match<span class="op">,</span> createRoutes<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-5" title="5"></a>
+<a class="sourceLine" id="cb14-6" title="6"><span class="im">import</span> appRouter <span class="im">from</span> <span class="st">&#39;../client/router.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb14-7" title="7"></a>
+<a class="sourceLine" id="cb14-8" title="8"><span class="kw">const</span> routes <span class="op">=</span> <span class="at">createRoutes</span>(<span class="at">appRouter</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-9" title="9"></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="kw">const</span> router <span class="op">=</span> <span class="va">express</span>.<span class="at">Router</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-11" title="11"></a>
+<a class="sourceLine" id="cb14-12" title="12"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/home&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-13" title="13">  <span class="at">match</span>(<span class="op">{</span>routes<span class="op">,</span> <span class="dt">location</span><span class="op">:</span> <span class="va">req</span>.<span class="at">url</span><span class="op">},</span> (error<span class="op">,</span> redirectLocation<span class="op">,</span> renderProps) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-14" title="14">    <span class="cf">if</span> (error) <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-15" title="15">      <span class="va">res</span>.<span class="at">status</span>(<span class="dv">500</span>).<span class="at">send</span>(<span class="va">error</span>.<span class="at">message</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-16" title="16">    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (redirectLocation) <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-17" title="17">      <span class="va">res</span>.<span class="at">redirect</span>(<span class="dv">302</span><span class="op">,</span> <span class="va">redirectLocation</span>.<span class="at">pathname</span> <span class="op">+</span> <span class="va">redirectLocation</span>.<span class="at">search</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-18" title="18">    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (renderProps) <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-19" title="19">      <span class="kw">const</span> content <span class="op">=</span> <span class="at">renderToString</span>(<span class="op">&lt;</span>RouterContext <span class="op">{</span>...<span class="at">renderProps</span><span class="op">}</span>/&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-20" title="20">      <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Express&#39;</span><span class="op">,</span> <span class="dt">data</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> content<span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-21" title="21">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb14-22" title="22">      <span class="va">res</span>.<span class="at">status</span>(<span class="dv">404</span>).<span class="at">send</span>(<span class="st">&#39;Not Found&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-23" title="23">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb14-24" title="24">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb14-25" title="25"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <h2 id="rendering-component-on-server-with-data">Rendering component on server with data</h2>
+    <p>In this section, we are trying to render a list of users, the data source is not DB but an API for demo purpose.
+      In order to render data, we need to fetch data from the server, pass it to a component via <a
+        href="https://facebook.github.io/react/docs/context.html">context</a>. For this we need to write a Higher Order
+      Component to set the data to context.</p>
+    <div class="sourceCode" id="cb15">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="im">import</span> express <span class="im">from</span> <span class="st">&#39;express&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="im">import</span> request <span class="im">from</span> <span class="st">&#39;request&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>Component<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="im">import</span> <span class="op">{</span>renderToString<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-dom/server&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="im">import</span> <span class="op">{</span>RouterContext<span class="op">,</span> match<span class="op">,</span> createRoutes<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-6" title="6"></a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="im">import</span> appRouter <span class="im">from</span> <span class="st">&#39;../client/router.jsx&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb15-8" title="8"></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="kw">const</span> routes <span class="op">=</span> <span class="at">createRoutes</span>(<span class="at">appRouter</span>())<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-10" title="10"></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="kw">class</span> DataProvider <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb15-12" title="12">  <span class="at">getChildContext</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb15-13" title="13">    <span class="cf">return</span> <span class="op">{</span><span class="dt">data</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">data</span><span class="op">};</span></a>
+<a class="sourceLine" id="cb15-14" title="14">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb15-15" title="15">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb15-16" title="16">    <span class="cf">return</span> <span class="op">&lt;</span>RouterContext <span class="op">{</span>...<span class="va">this</span>.<span class="at">props</span><span class="op">}</span>/&gt;<span class="op">;</span></a>
+<a class="sourceLine" id="cb15-17" title="17">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb15-18" title="18"><span class="op">}</span></a>
+<a class="sourceLine" id="cb15-19" title="19"></a>
+<a class="sourceLine" id="cb15-20" title="20"><span class="va">DataProvider</span>.<span class="at">propTypes</span> <span class="op">=</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb15-21" title="21">  <span class="dt">data</span><span class="op">:</span> <span class="va">React</span>.<span class="va">PropTypes</span>.<span class="at">object</span></a>
+<a class="sourceLine" id="cb15-22" title="22"><span class="op">};</span></a>
+<a class="sourceLine" id="cb15-23" title="23"></a>
+<a class="sourceLine" id="cb15-24" title="24"><span class="va">DataProvider</span>.<span class="at">childContextTypes</span> <span class="op">=</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb15-25" title="25">  <span class="dt">data</span><span class="op">:</span> <span class="va">React</span>.<span class="va">PropTypes</span>.<span class="at">object</span></a>
+<a class="sourceLine" id="cb15-26" title="26"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>The above <code>DataProvider</code> will set data to context if we pass it via props named <code>data</code>.</p>
+    <p>The <code>List</code> component will look like,</p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>Component<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb16-2" title="2"></a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="kw">class</span> List <span class="kw">extends</span> Component <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-4" title="4">  <span class="at">constructor</span>(props<span class="op">,</span> context) <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-5" title="5">    <span class="kw">super</span>(props<span class="op">,</span> context)<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-6" title="6">    <span class="kw">this</span>.<span class="at">state</span> <span class="op">=</span> <span class="kw">this</span>.<span class="va">context</span>.<span class="at">data</span> <span class="op">||</span> <span class="va">window</span>.<span class="at">__INITIAL_STATE__</span> <span class="op">||</span> <span class="op">{</span><span class="dt">items</span><span class="op">:</span> []<span class="op">};</span></a>
+<a class="sourceLine" id="cb16-7" title="7">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb16-8" title="8"></a>
+<a class="sourceLine" id="cb16-9" title="9">  <span class="at">componentDidMount</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-10" title="10">    <span class="kw">this</span>.<span class="at">fetchList</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-11" title="11">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb16-12" title="12"></a>
+<a class="sourceLine" id="cb16-13" title="13">  <span class="at">fetchList</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-14" title="14">    <span class="at">fetch</span>(<span class="st">&#39;http://jsonplaceholder.typicode.com/users&#39;</span>)</a>
+<a class="sourceLine" id="cb16-15" title="15">      .<span class="at">then</span>(res <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-16" title="16">        <span class="cf">return</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-17" title="17">      <span class="op">}</span>)  </a>
+<a class="sourceLine" id="cb16-18" title="18">      .<span class="at">then</span>(data <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-19" title="19">        <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb16-20" title="20">          <span class="dt">items</span><span class="op">:</span> data</a>
+<a class="sourceLine" id="cb16-21" title="21">        <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-22" title="22">      <span class="op">}</span>)  </a>
+<a class="sourceLine" id="cb16-23" title="23">      .<span class="at">catch</span>(err <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-24" title="24">        <span class="va">console</span>.<span class="at">log</span>(err)<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-25" title="25">      <span class="op">}</span>)<span class="op">;</span> </a>
+<a class="sourceLine" id="cb16-26" title="26">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb16-27" title="27"></a>
+<a class="sourceLine" id="cb16-28" title="28">  <span class="at">render</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-29" title="29">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb16-30" title="30">      <span class="op">&lt;</span>ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb16-31" title="31">        <span class="op">{</span><span class="kw">this</span>.<span class="va">state</span>.<span class="va">items</span>.<span class="at">map</span>(item <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb16-32" title="32">          <span class="cf">return</span> <span class="op">&lt;</span>li key<span class="op">={</span><span class="va">item</span>.<span class="at">id</span><span class="op">}&gt;{</span><span class="va">item</span>.<span class="at">name</span><span class="op">}</span>&lt;/li<span class="op">&gt;;</span></a>
+<a class="sourceLine" id="cb16-33" title="33">        <span class="op">}</span>)<span class="op">}</span></a>
+<a class="sourceLine" id="cb16-34" title="34">      &lt;/ul<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb16-35" title="35">    )<span class="op">;</span>  </a>
+<a class="sourceLine" id="cb16-36" title="36">  <span class="op">}</span></a>
+<a class="sourceLine" id="cb16-37" title="37"><span class="op">}</span></a>
+<a class="sourceLine" id="cb16-38" title="38"></a>
+<a class="sourceLine" id="cb16-39" title="39"><span class="va">List</span>.<span class="at">contextTypes</span> <span class="op">=</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb16-40" title="40">  <span class="dt">data</span><span class="op">:</span> <span class="va">React</span>.<span class="va">PropTypes</span>.<span class="at">object</span></a>
+<a class="sourceLine" id="cb16-41" title="41"><span class="op">};</span></a>
+<a class="sourceLine" id="cb16-42" title="42"></a>
+<a class="sourceLine" id="cb16-43" title="43"><span class="im">export</span> <span class="im">default</span> List<span class="op">;</span></a></code></pre>
+    </div>
+    <p>The above list component will look for data in context first, then in global state and later in component level
+      state. While we render it from server, the data will be available in context and component use the data in context
+      to render the initial HTML. Later after loading it in browser the component can fetch again and update the data.
+    </p>
+    <p>Now we can setup the route to fetch the data and render the component.</p>
+    <div class="sourceCode" id="cb17">
+      <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/list&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-2" title="2">  <span class="at">match</span>(<span class="op">{</span>routes<span class="op">,</span> <span class="dt">location</span><span class="op">:</span> <span class="va">req</span>.<span class="at">url</span><span class="op">},</span> (error<span class="op">,</span> redirectLocation<span class="op">,</span> renderProps) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="cf">if</span> (error) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-4" title="4">      <span class="va">res</span>.<span class="at">status</span>(<span class="dv">500</span>).<span class="at">send</span>(<span class="va">error</span>.<span class="at">message</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-5" title="5">    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (redirectLocation) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-6" title="6">      <span class="va">res</span>.<span class="at">redirect</span>(<span class="dv">302</span><span class="op">,</span> <span class="va">redirectLocation</span>.<span class="at">pathname</span> <span class="op">+</span> <span class="va">redirectLocation</span>.<span class="at">search</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-7" title="7">    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (renderProps) <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-8" title="8">      <span class="at">request</span>(<span class="st">&#39;http://jsonplaceholder.typicode.com/users&#39;</span><span class="op">,</span> (error<span class="op">,</span> response<span class="op">,</span> body) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-9" title="9">        <span class="kw">const</span> data <span class="op">=</span> <span class="op">{</span><span class="dt">items</span><span class="op">:</span> <span class="va">JSON</span>.<span class="at">parse</span>(body)<span class="op">};</span></a>
+<a class="sourceLine" id="cb17-10" title="10">        <span class="kw">const</span> content <span class="op">=</span> <span class="at">renderToString</span>(<span class="op">&lt;</span>DataProvider <span class="op">{</span>...<span class="at">renderProps</span><span class="op">}</span> data<span class="op">={</span>data<span class="op">}</span>/&gt;)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-11" title="11">        <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Express&#39;</span><span class="op">,</span> data<span class="op">,</span> content<span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-12" title="12">      <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-13" title="13">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb17-14" title="14">      <span class="va">res</span>.<span class="at">status</span>(<span class="dv">404</span>).<span class="at">send</span>(<span class="st">&#39;Not Found&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-15" title="15">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb17-16" title="16">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb17-17" title="17"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Thats it. We successfully rendered our react components from server side with and without data, so that user
+      don’t have to wait for another ajax request after loading the page to see the data.</p>
+    <p>Thanks to codemancers team especially <span class="citation"
+        data-cites="emil">[@emil]</span>(https://twitter.com/emilsoman), <span class="citation"
+        data-cites="kashyap">[@kashyap]</span>(https://twitter.com/kgrz) and <span class="citation"
+        data-cites="yuva">[@yuva]</span>(https://twitter.com/iffyuva) for helping to fix spelling and grammer mistakes.
+    </p>
+
+  </body>
+
+  
+</html>

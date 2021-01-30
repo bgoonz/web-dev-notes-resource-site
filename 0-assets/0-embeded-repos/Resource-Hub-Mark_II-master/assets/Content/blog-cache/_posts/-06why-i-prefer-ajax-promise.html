@@ -1,0 +1,170 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When first learned <code>$.ajax</code> I was using <code>success</code> and <code>error</code> options for the
+      async callbacks. Later when I learned more about <code>$.ajax</code> and promises I found <code>.done</code> and
+      <code>.fail</code> methods are more easy and useful.
+    </p>
+    <p>Usually I write a ajax call like below</p>
+    <div class="sourceCode" id="cb1">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1">  <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/someurl&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;GET&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="dt">data</span><span class="op">:</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb1-5" title="5">      <span class="dt">a</span><span class="op">:</span> <span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="dt">success</span><span class="op">:</span> <span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-8" title="8">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;success&#39;</span><span class="op">,</span> data) </a>
+<a class="sourceLine" id="cb1-9" title="9">    <span class="op">},</span></a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="dt">error</span><span class="op">:</span> <span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-11" title="11">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-13" title="13">  <span class="op">}</span>)</a></code></pre>
+    </div>
+    <p>But now a days I write using the <code>.done</code> and <code>.fail</code> methods.</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1">  <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/someurl&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;GET&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="dt">data</span><span class="op">:</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb2-5" title="5">      <span class="dt">a</span><span class="op">:</span> <span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb2-7" title="7">  .<span class="at">done</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;success&#39;</span><span class="op">,</span> data) </a>
+<a class="sourceLine" id="cb2-9" title="9">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb2-10" title="10">  .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">  <span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>For me the second method is better because of two reasons</p>
+    <h2 id="promise-method-can-be-used-to-bind-multiple-callbacks">Promise method can be used to bind multiple callbacks
+    </h2>
+    <p>When using options for callbacks, I can’t pass more than 1 callback for success or fail option. But on the other
+      hand youI bind any number of callbacks to <code>.done</code> and <code>.fail</code> like</p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1">  <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/someurl&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;GET&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb3-4" title="4">    <span class="dt">data</span><span class="op">:</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb3-5" title="5">      <span class="dt">a</span><span class="op">:</span> <span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb3-6" title="6">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-7" title="7">  .<span class="at">done</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-8" title="8">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;success callback 1&#39;</span><span class="op">,</span> data) </a>
+<a class="sourceLine" id="cb3-9" title="9">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-10" title="10">  .<span class="at">done</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-11" title="11">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;success callback 2&#39;</span><span class="op">,</span> data) </a>
+<a class="sourceLine" id="cb3-12" title="12">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-13" title="13">  .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-14" title="14">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error callback 1&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-15" title="15">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb3-16" title="16">  .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-17" title="17">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error callback 2&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-18" title="18">  <span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>This help you to smaller and compact functions, which lead to higher reusability and lower complexity. Also small
+      functions are easier to unit test.</p>
+    <h2 id="promise-can-be-used-to-bind-callback-conditionaly">Promise can be used to bind callback conditionaly</h2>
+    <p>When I want to do conditional functionality after a ajax call, If I am using an options I want to do condition
+      checking inside the callback where as when using <code>.done</code> or <code>.fail</code> method I can bind the
+      callback conditionaly.</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1">  <span class="kw">var</span> jqXhr <span class="op">=</span> <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb4-2" title="2">    <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/someurl&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;GET&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb4-4" title="4">    <span class="dt">data</span><span class="op">:</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb4-5" title="5">      <span class="dt">a</span><span class="op">:</span> <span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="cf">if</span> (someConditionIstrue) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-9" title="9">    jqXhr</a>
+<a class="sourceLine" id="cb4-10" title="10">    .<span class="at">done</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-11" title="11">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;when condition is true&#39;</span><span class="op">,</span> data)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-12" title="12">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb4-13" title="13">    .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-14" title="14">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error callback for true condition&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-15" title="15">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-16" title="16">  <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-17" title="17">    <span class="va">jqXhr</span>.<span class="at">done</span>(<span class="kw">function</span>(data)<span class="op">{</span></a>
+<a class="sourceLine" id="cb4-18" title="18">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;when condition is false&#39;</span><span class="op">,</span> data)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-19" title="19">    <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb4-20" title="20">    .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb4-21" title="21">      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error callback for false condition&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-22" title="22">    <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-23" title="23">  <span class="op">}</span></a></code></pre>
+    </div>
+    <p>if I want a common callback other than conditional ones, I can bind directly on <code>jqXhr</code> variable
+      outside the if-else block.</p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1">  <span class="kw">var</span> jqXhr <span class="op">=</span> <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb5-2" title="2">    <span class="dt">url</span><span class="op">:</span> <span class="st">&quot;/someurl&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;GET&quot;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="dt">data</span><span class="op">:</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb5-5" title="5">      <span class="dt">a</span><span class="op">:</span> <span class="st">&quot;a&quot;</span></a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8">  jqXhr</a>
+<a class="sourceLine" id="cb5-9" title="9">  .<span class="at">done</span>(<span class="kw">function</span>(data) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-10" title="10">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;common callback&#39;</span><span class="op">,</span> data)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-11" title="11">  <span class="op">}</span>)</a>
+<a class="sourceLine" id="cb5-12" title="12">  .<span class="at">fail</span>(<span class="kw">function</span>(xhr) <span class="op">{</span></a>
+<a class="sourceLine" id="cb5-13" title="13">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;error common back&#39;</span><span class="op">,</span> xhr)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-14" title="14">  <span class="op">}</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb5-15" title="15"></a>
+<a class="sourceLine" id="cb5-16" title="16">  <span class="co">// Conditional ones goes here</span></a></code></pre>
+    </div>
+    <p>If you are intrested, I have a ealier blog post on <a
+        href="/2014/11/jquery-set-ajax-callbacks-conditionally.html">conditional callbacks in jQuery</a>.</p>
+    <p>Thank You.</p>
+
+  </body>
+
+  
+</html>

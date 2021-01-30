@@ -1,0 +1,71 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>If your development machine, hangs due to CPU usage of elastic search, here are the two settings which you need
+      to update. I tested these settings and got real perfomance gain on my <strong>Ubuntu</strong> development machine.
+    </p>
+    <p><strong>The settings below should be used only on <code>development</code> machines.</strong></p>
+    <h1 id="set-heap-size">1. Set HEAP size</h1>
+    <p>My default the ElasticSearch heap size is 256m minimum and 1g maximum. You need to update the maximum size to
+      256m. To do this open <code>/etc/init.d/elasticsearch</code> and uncomment the line,</p>
+    <pre><code>ES_HEAP_SIZE=256m</code></pre>
+    <h1 id="set-number-of-shards-replicas">2. Set number of shards &amp; replicas</h1>
+    <p>By default the number of shards is set to 5 and replicas to 1. We can update to shards as 1 and replicas as 0 in
+      development, which will lead to real gain of perfomance.</p>
+    <pre><code># /etc/elasticsearch/elasticsearch.yml
+index.number_of_shards: 1
+index.number_of_replicas: 0</code></pre>
+    <p>Thanks.</p>
+
+  </body>
+
+  
+</html>

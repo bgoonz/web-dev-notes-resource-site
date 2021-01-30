@@ -1,0 +1,48 @@
+.root {
+	font-family: var(--mdc-theme-font-family);
+	box-sizing: border-box;
+	box-shadow: var(--mdc-theme-elevation-2);
+	background-color: var(--mdc-raised-surface-background);
+	color: var(--mdc-text-color);
+}
+
+.titleButton {
+	composes: nativeResetRoot from './button.m.css';
+	cursor: pointer;
+	position: relative;
+	padding: 12px 24px;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	transition: padding ease-in-out 0.25s;
+	background-color: var(--mdc-raised-surface-background);
+}
+
+.titleButton:active {
+	outline: none;
+}
+
+.titleButton:focus {
+	outline: none;
+}
+
+.arrow {
+	display: flex;
+	align-items: center;
+}
+
+.open .titleButton {
+	padding: 24px;
+}
+
+.content {
+	padding: 24px;
+	padding-top: 0;
+}
+
+.contentTransition {
+	transition: margin-top ease-in-out 0.25s;
+}

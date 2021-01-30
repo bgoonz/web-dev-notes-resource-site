@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+      <title>regex</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css.map">
+  <link rel="stylesheet" href="./../../css/blog-home.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/prism.css">
+  <script async defer src="./../../vendor/bootstrap/css/prism.js"></script>
+  <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css">
+
+
+  <link rel="stylesheet" href="./cheatsheets.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="./cheatsheets.css">
+    </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="regular-expressions">Regular Expressions</h2>
+
+<ul>
+<li>Regular expressions are patterns used to match character combinations in strings.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Regular  Expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>zero or more repitions</td>
+</tr>
+<tr>
+<td>+</td>
+<td>one or more repitions</td>
+</tr>
+<tr>
+<td rowspan="2">?</td>
+<td>once or none (optional)</td>
+</tr>
+<tr>
+
+<td>start of input</td>
+</tr>
+<tr>
+<td>$</td>
+<td>end of input</td>
+</tr>
+<tr>
+<td>.</td>
+<td>any character</td>
+</tr>
+<tr>
+<td>\</td>
+<td>escapes a special character</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>any of these characters</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>range of characters</td>
+</tr>
+<tr>
+<td>[^abc]</td>
+<td>not those characters</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>one digit (0 - 9)</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>any alphanumeric character</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>not whitespace</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>not digit</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>any non-alphanumeric character</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n repetitions</td>
+</tr>
+<tr>
+<td>{n }</td>
+<td>n or more repitions</td>
+</tr>
+<tr>
+<td>{x, y}</td>
+<td>x - y repitions</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="using-regular-expressions-in-javascript">Using Regular expressions in Javascript</h5>
+
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> re <span class="token operator">=</span> <span class="token regex">/EX$/</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&quot;We&apos;re learning REGEX&quot;</span>
+
+<span class="token keyword">const</span> li <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> di <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> re <span class="token operator">=</span> <span class="token regex">/regex/i</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`learning about regex`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`LEARNING ABOUT REGEX`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/e/ig</span><span class="token punctuation">,</span> <span class="token parameter">match</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      count <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> di <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`Mimi`</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token string">`My name is %name% and I am %age% years old`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> str2 <span class="token operator">=</span> <span class="token template-string"><span class="token string">`My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> and I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> re <span class="token operator">=</span> <span class="token regex">/%\w+%/g</span>
+
+<span class="token keyword">const</span> replaced <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> <span class="token parameter">match</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// match = %name%</span>
+  <span class="token keyword">const</span> key <span class="token operator">=</span> match<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/%/g</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token string">``</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// key = name</span>
+  <span class="token keyword">return</span> di<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>replaced<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h5 class="mume-header" id="you-construct-a-regular-expression-in-one-of-two-ways">You construct a regular expression in one of two ways:</h5>
+
+<ul>
+<li>Using a regular expression literal, which consists of a pattern enclosed between slashes, as follows:</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> re <span class="token operator">=</span> <span class="token regex">/ab+c/</span><span class="token punctuation">;</span>
+</pre><p>Regular expression literals provide compilation of the regular expression when the script is loaded. If the regular expression remains constant, using this can improve performance.</p>
+<ul>
+<li>Or calling the constructor function of the RegExp object, as follows:</li>
+</ul>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> re <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">&apos;ab+c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h4 class="mume-header" id="escaping">Escaping</h4>
+
+<ul>
+<li>If you need to use any of the special characters literally (actually searching for a &quot;*&quot;, for instance), you must escape it by putting a backslash in front of it.</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a class="btn" href="#regular-expressions">Regular Expressions</a><br>
+- <a class="btn" href="#using-regular-expressions-in-javascript">Using Regular expressions in Javascript</a><br>
+- <a class="btn" href="#you-construct-a-regular-expression-in-one-of-two-ways">You construct a regular expression in one of two ways:</a>
+<ul>
+<li><a class="btn" href="#escaping">Escaping</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script async>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

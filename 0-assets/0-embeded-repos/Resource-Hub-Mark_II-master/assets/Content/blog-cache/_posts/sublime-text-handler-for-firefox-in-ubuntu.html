@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p><a href="https://github.com/charliesome/better_errors">Better errors</a> is a pretty good gem for debugging. It
+      comes with live REPL on the error page which makes debugging lot easier. You can inspect the variable right from
+      the error page with the REPL and even you can switch the context in the stack frame.</p>
+    <p>Another best thing is you can open the file right from the browser in Sublime Text.</p>
+    <p><a
+        href="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/3d610a9c-fd0b-491d-8a20-56a74b91c066_zpsd222cd62.png"><img
+          src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/3d610a9c-fd0b-491d-8a20-56a74b91c066_zpsd222cd62.png"
+          alt="Better Errors" /></a>.</p>
+    <p>When you click on the filename <code>app/controllers/home_controller.rb</code> (the one marked on the above
+      image) it open the file, in your editor. But in order to this work on ubuntu, you need to register a handler for
+      it.</p>
+    <p>To register the handler, copy the below code into a file and save it somewhere the shell can find it.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co">#!/usr/bin/env bash</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="va">request=${1:23}</span>               <span class="co"># Delete the first 23 characters</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="va">request=${request//</span>%2F<span class="va">/</span>/<span class="va">}</span>     <span class="co"># Replace %2F with /</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="va">request=${request/</span>&amp;line=<span class="va">/</span>:<span class="va">}</span>   <span class="co"># Replace &amp;line= with :</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="va">request=${request/</span>&amp;column=<span class="va">/</span>:<span class="va">}</span> <span class="co"># Replace &amp;column= with :</span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="ex">subl</span> <span class="va">$request</span>                 <span class="co"># Launch ST2</span></a></code></pre>
+    </div>
+    <p>I saved this in <code>~/bin</code> since <code>~/bin</code> is already availabe in my <code>$PATH</code>. Make
+      sure you have given that file and executable permission.</p>
+    <p>After saving the handler, when you click on filename (shown in the image above), firefox will ask to point out
+      the handler for subl.</p>
+    <p><a
+        href="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/fafd05e5-2775-41d2-8e46-f47ea7bdb44a_zpsd2818e43.png"><img
+          src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/07/fafd05e5-2775-41d2-8e46-f47ea7bdb44a_zpsd2818e43.png"
+          alt="firefox" /></a></p>
+    <p>Click on choose and select your handler. Make sure you check the “remember my choice” option so that firefox
+      won’t ask the same again.</p>
+    <p>Easy debugging.</p>
+
+  </body>
+
+  
+</html>

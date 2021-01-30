@@ -1,0 +1,160 @@
+<!--
+
+---
+ Workflow with yeoman grunt and bower
+date: 2013-04-11 20:59:23 UTC
+updated: 2013-04-11 20:59:23 UTC
+comments: false
+categories: bower grunt yeoman
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <p>This is a simple blog post just to explain <strong>How I work on JavaScript project</strong> aka <strong>my
+      workflow</strong>. I am not forcing any one to follow me, but I would like to know if you are using a better
+    workflow. For those are interested to follow my workflow, find below how to get started to it. </p>
+  <h3>Boilerplate / Scaffold with <a href="http://yeoman.io">Yeoman</a></h3>
+  <p>I usually get started with boilerplate an app with Yeoman. You can Install yeoman using the command</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=1.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=1.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>npm install -g yo</code></p>
+  </noscript>
+  <p>Install the generator for your project, If you wanna start a backbone project you need to install <a
+      href="https://github.com/yeoman/generator-backbone" rel="nofollow">genearator-backbone</a>. Install the generator
+    locally in your project folder.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=2.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=2.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>npm install generator-backbone</code></p>
+  </noscript>
+  <p>Then start a project using the command <code>yo &lt;generator-name&gt;</code>. There are so many <a
+      href="https://npmjs.org/browse/keyword/yeoman-generator">generators available</a> for yeoman like backbone,
+    angular etc.</p>
+  <p>You can start a backbone app in a single command with yeoman.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=3.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=3.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>yo backbone</code></p>
+  </noscript>
+  <p>This will scaffold a new backbone project for you, with all the basic files and settings needed. The latest build
+    of <strong>Yeoman</strong> will install dependencies automatically, if you are using an old version you might need
+    to <code>npm install</code> to install the dependencies and start working.</p>
+  <h3>Manage dependencies with <a href="http://bower.io">Bower</a></h3>
+  <p>After getting the boilerplate, I install the client dependencies with <strong>Bower</strong>. Install bower using
+    the below command.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=4.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=4.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>npm install -g bower</code></p>
+  </noscript>
+  <p>You can do <code>bower install</code> to download and install the dependencies, listed with yeoman boilerpate. If I
+    need any additional dependencies I use the command <code>bower install jquery --save</code>. The <code>--save</code>
+    flag will add the installed dependency to the component.json. If the additional dependency is development dependency
+    use the flag <code>--save-dev</code>.</p>
+  <h3>Build with <a href="http://gruntjs.com" rel="nofollow">Grunt</a></h3>
+  <p>Install grunt using</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=5.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=5.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>npm install -g grunt-cli</code></p>
+  </noscript>
+  <p>All the yeoman generators comes with a Gruntfile, with so many task included. some of the tasks included are
+    server, jshint, test, build etc. </p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=6.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=6.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>grunt server</code> </p>
+  </noscript>
+  <p>Server task will help you to compile sass, coffeescript, template etc and starts a http server with live reload
+    then open your webapp in the browser. Live reload will help you to preview all the changes done after starting the
+    server right away in the browser, means you don&#39;t wanna reload the page manually.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=7.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=7.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>grunt jshint</code> </p>
+  </noscript>
+  <p>jshint task will help you to follow the coding standard through out your app. It will scan all the js files in the
+    app and report where ever your coding standard brokes.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=8.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=8.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>grunt test</code></p>
+  </noscript>
+  <p>This single command will execute all the tests in your app and make sure it works fine in all the conditions. This
+    will totally depend on you test coverage.</p>
+<<<<<<< HEAD
+  <script async defer src="https://gist.github.com/revathskumar/5437078.js?file=9.sh"></script><noscript>
+=======
+  <script src="https://gist.github.com/revathskumar/5437078.js?file=9.sh"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p><code>grunt build</code></p>
+  </noscript>
+  <p>This single command will help you to make your app ready for production, means this will compile the scripts,
+    concat all the jsfiles and minify. More over before saying production ready this will run the tests and jshint to
+    make sure everything works fine and follow the standard. According to <a
+      href="http://www.joelonsoftware.com/articles/fog0000000043.html">jeol on software</a> you should be able to build
+    in a single command and this will help you to achieve that. </p>
+  <p>You can customize the gruntfile according to your needs. That&#39;s all about my workflow on javascript projects.
+  </p>
+  <p>Hope you enjoyed reading. If you find any errata in this post, Ping me. I am happy to fix those. Thanks for
+    reading.</p>
+  <p>Happy coding ;)</p>
+
+</body>
+
+
+</html>

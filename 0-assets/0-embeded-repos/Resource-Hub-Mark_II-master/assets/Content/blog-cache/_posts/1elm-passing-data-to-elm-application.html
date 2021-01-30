@@ -1,0 +1,169 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>When we start introducing the ELM slowly into our existing application, there is high chance that we need to pass
+      some initial data to ELM module to configure it while it starts up.</p>
+    <p>Consider we have written a small application using <code>program</code>.</p>
+    <pre class="elm"><code>-- Main.elm
+type Action = NoOp
+
+type alias Model =
+  { name: String }
+
+initModel : Model
+initModel =
+  { name = &quot;A&quot; }
+
+view : Model -&gt; Html Action
+  div [] [
+    text model.name
+  ]
+
+update : Action -&gt; Model -&gt; (Model -&gt; Cmd Action)
+update action model -&gt;
+  case action of
+    NoOp -&gt;
+      (model, Cmd.none)
+
+init : (Model -&gt; Cmd Action)
+init =
+  (initModel, Cmd.none)
+
+main : Program Never Model Action
+main =
+  Html.program {
+    init: init,
+    update: update,
+    view: view,
+    subscription: \_ -&gt; Sub.none
+  }</code></pre>
+    <p>And the bootup will be</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> <span class="op">{</span> Main <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./Main.elm&#39;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> app <span class="op">=</span> <span class="va">Main</span>.<span class="at">embed</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;elm-app&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <p>In the above app we don’t have any way to pass the initial value for the name. To make the above app to accept
+      <code>name</code> while booting up we need to follow 2 steps
+    </p>
+    <ol type="1">
+      <li>Pass the data as second parameter to <code>embed</code></li>
+      <li>Use <code>programWithFlags</code> instead of <code>program</code>.</li>
+    </ol>
+    <p>Let start with defining the <code>type</code> flags</p>
+    <pre class="elm"><code>type alias Flags =
+  { name : String }</code></pre>
+    <p>Now use the <code>programWithFlags</code> instead of <code>program</code> for our <code>main</code>.</p>
+    <pre class="elm"><code>main : Program Flags Model Action
+main =
+  Html.programWithFlags {
+    init: init,
+    update: update,
+    view: view,
+    subscription: \_ -&gt; Sub.none
+  }</code></pre>
+    <p>Then, in <code>init</code> method update the model using the value we received via flag.</p>
+    <pre class="elm"><code>init : Flags -&gt; (Model -&gt; Cmd Action)
+init flags =
+  ({ initModel | name = flags.name }, Cmd.none)</code></pre>
+    <p>Now our app is ready to accept the name on startup. Let’s pass the value to our elm program.</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="im">import</span> <span class="op">{</span> Main <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./Main.elm&#39;</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">var</span> app <span class="op">=</span> <span class="va">Main</span>.<span class="at">embed</span>(<span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;elm-app&#39;</span>)<span class="op">,</span> <span class="op">{</span> </a>
+<a class="sourceLine" id="cb6-3" title="3">  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;ELM&#39;</span> </a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
+    </div>
+    <p>Thats it we are now passing the data to ELM program while it starting. If we are using <code>fullscreen</code>
+      method, same as <code>embed</code> it will accept the initial data as the second parameter.</p>
+    <p>So now our final code will look like,</p>
+    <pre class="elm"><code>-- Main.elm
+type alias Flags =
+  { name : String }
+
+type Action = NoOp
+
+type alias Model =
+  { name: String }
+
+initModel : Model
+initModel =
+  { name = &quot;A&quot; }
+
+view : Model -&gt; Html Action
+view model =
+  div [] [
+    text model.name
+  ]
+
+update : Action -&gt; Model -&gt; (Model -&gt; Cmd Action)
+update action model -&gt;
+  case action of
+    NoOp -&gt;
+      (model, Cmd.none)
+
+init : Flags -&gt; (Model -&gt; Cmd Action)
+init flags =
+  ({ initModel | name = flags.name }, Cmd.none)
+
+main : Program Flags Model Action
+main =
+  Html.programWithFlags {
+    init: init,
+    update: update,
+    view: view,
+    subscription: \_ -&gt; Sub.none
+  }</code></pre>
+    <p>Hope it helped.</p>
+
+  </body>
+
+  
+</html>

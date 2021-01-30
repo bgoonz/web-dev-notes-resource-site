@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+      <title>networking_cheatsheet</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/bootstrap.css.map">
+  <link rel="stylesheet" href="./../../css/blog-home.css">
+  <link rel="stylesheet" href="./../../vendor/bootstrap/css/prism.css">
+  <script async defer src="./../../vendor/bootstrap/css/prism.js"></script>
+  <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+  <link rel="stylesheet"
+    href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css">
+
+
+  <link rel="stylesheet" href="./cheatsheets.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="./cheatsheets.css">
+    </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p>Networking</p>
+<h2 class="mume-header" id="transport">Transport</h2>
+
+<ol>
+<li>UDP &gt;&gt; UDP is a connectionless protocol</li>
+<li>TCP is a connection-oriented protocol</li>
+</ol>
+<h2 class="mume-header" id="dns-record-types">DNS Record Types</h2>
+
+<ol>
+<li>SOA - Start of Authority record<br>
+points to the primary authority for the domain we&apos;re querying</li>
+<li>NS - Name Servers</li>
+</ol>
+<ul>
+<li>directory for devices and the IP addresses attached to them</li>
+<li>translate domain names into numerical IP addresses</li>
+</ul>
+<ol start="3">
+<li>A / AAAA - record that maps directly to an IP address</li>
+<li>CNAME - record that acts as an alias</li>
+<li>MX - Mail Exchanger - used for e-mail</li>
+</ol>
+<h2 class="mume-header" id="network-hardware">Network Hardware</h2>
+
+<h3 class="mume-header" id="router">Router</h3>
+
+<ul>
+<li>contains internal addresses of each device connected to router</li>
+<li>can join different networks, a feature switches and hubs cannot do</li>
+<li>performs NAT (network address translation)</li>
+<li>NAT allows router a single IP address</li>
+<li>router can direct traffic to the appropriate address</li>
+</ul>
+<h2 class="mume-header" id="switch">Switch</h2>
+
+<ul>
+<li>contains the MAC (media access control) address of all - connected devices</li>
+<li>flood - send to ALL connected devices &#x201D;</li>
+<li>forward - send to a particular device</li>
+<li>filter - drop data entirely</li>
+</ul>
+<h1 class="mume-header" id="switch-1">Switch</h1>
+
+<ul>
+<li>no network management ,,,</li>
+<li>signal splitter</li>
+<li>duplicates data and broadcasts it to ALL connected devices</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a class="btn" href="#transport">Transport</a></li>
+<li><a class="btn" href="#dns-record-types">DNS Record Types</a></li>
+<li><a class="btn" href="#network-hardware">Network Hardware</a>
+<ul>
+<li><a class="btn" href="#router">Router</a></li>
+</ul>
+</li>
+<li><a class="btn" href="#switch">Switch</a></li>
+<li><a class="btn" href="#switch-1">Switch</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script async>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

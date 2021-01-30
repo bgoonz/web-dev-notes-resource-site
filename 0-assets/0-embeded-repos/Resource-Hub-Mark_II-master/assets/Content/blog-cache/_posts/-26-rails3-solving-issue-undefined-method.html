@@ -1,0 +1,98 @@
+<!--
+
+---
+ "Rails3  : solving the issue \"undefined method `fixture_path=`\""
+date: 2012-07-26 18:24:01 UTC
+updated: 2012-07-26 18:24:01 UTC
+comments: false
+categories: ruby rspec ruby-on-rails
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div dir="ltr" style="text-align: left;" trbidi="on"><b id="internal-source-marker_0.6931519464123994"
+      style="text-align: -webkit-auto;"></b><br />
+    <div><span style="font-family: Consolas;"><span style="font-size: 15px;">Some days before when I am writing an
+          application without using ActiveRecord and writing its tests with Rspec, I ran into an
+          error&nbsp;</span></span><span style="background-color: white; font-size: 15px;"><span
+          style="font-family: Consolas;"><b>"undefined method `fixture_path=`" </b>when I executes the spec. If you are
+          facing this issue here is how you can fix this error.</span></span></div>
+    <div><span style="background-color: white; font-size: 15px;"><span
+          style="font-family: Consolas;"><br /></span></span></div>
+    <div><span style="background-color: white;"><span style="font-family: Consolas;"><span style="font-size: 15px;">I
+            have created this application with <b>-O option for rails</b> command so that it won't use ActiveRecord. I
+            think &nbsp;<b>rspec-rails</b> is not enough&nbsp;intelligent&nbsp;to know this. When I <b><a
+                href="http://blog.revathskumar.com/2012/07/set-up-rspec-for-rails-app.html">setup the rspec-rails for
+                Rails 3</a>&nbsp;</b>it generates a <b>spec/spec_helper.rb</b> with ActiveRecord
+            configurations.</span></span></span></div>
+    <div><span
+        style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;"><br /></span>
+    </div>
+    <div><span style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;">To fix it
+        you need to comment out two lines from <b>spec/spec_helper.rb. </b>In the the gist below 2nd and 7th are the
+        lines to comment.</span></div>
+    <div><span
+        style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;"><br /></span>
+    </div>
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/3182625.js?file=spec_helper_before.rb"></script>
+=======
+    <script src="https://gist.github.com/3182625.js?file=spec_helper_before.rb"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <div style="font-family: Consolas;"><span style="font-size: 15px; white-space: pre-wrap;">You can also assign
+        <b>false</b> to <i><b>config.use_transactional_fixtures</b> </i>instead of commenting. So now your
+        <b>spec/spec_helper.rb</b> will look like this.</span></div>
+    <div><span style="font-family: Consolas;"><span style="font-size: 15px; white-space: pre-wrap;"><br /></span></span>
+    </div>
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/3182625.js?file=spec_helper_after.rb"></script>
+=======
+    <script src="https://gist.github.com/3182625.js?file=spec_helper_after.rb"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <div><span style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;">Hope it
+        worked for you.</span></div>
+    <div><span style="background-color: white; font-family: Consolas; font-size: 15px; white-space: pre-wrap;">Happy
+        coding.</span></div>
+    <ul style="margin-bottom: 0pt; margin-top: 0pt;"></ul>
+  </div>
+</body>
+
+</html>
+$

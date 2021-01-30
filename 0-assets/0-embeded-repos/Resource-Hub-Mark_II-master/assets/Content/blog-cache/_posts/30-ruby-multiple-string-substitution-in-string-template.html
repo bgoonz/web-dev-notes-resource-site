@@ -1,0 +1,114 @@
+<!--
+
+---
+ "Ruby : multiple string substitution in string template"
+date: 2013-01-30 16:36:32 UTC
+updated: 2013-01-30 16:36:32 UTC
+comments: false
+categories: ruby
+---
+-->
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+  <title>basic-git-workflow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/bootstrap.grid.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.css.map">
+  <link rel="stylesheet" href="./css/blog-home.css">
+  <link rel="stylesheet" href="./css/prism.css">
+  <script async defer src="./css/prism.js"></script>
+</head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+<body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+  <div>
+    <div class="separator" style="clear: both; text-align: center;"><a
+        href="http://2.bp.blogspot.com/-TXeIgl7Ja6E/UQlL6ovcn2I/AAAAAAAALbA/apWL8C4Ef9Y/s1600/cursor_inside_print_interpol.png"
+        imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="136" width="400"
+          src="http://2.bp.blogspot.com/-TXeIgl7Ja6E/UQlL6ovcn2I/AAAAAAAALbA/apWL8C4Ef9Y/s400/cursor_inside_print_interpol.png" /></a>
+    </div> Consider the below string template in which you need to replace the product and cost with values
+    dynamically.<br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4673179.js?file=template.md"></script><noscript>
+=======
+    <script src="https://gist.github.com/4673179.js?file=template.md"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br />"Price of the <b>product</b> is Rs. <b>cost</b>."</pre>
+    </noscript>It may be apple and 70 or Orange and 40 etc.<br />
+    <h3 style="text-align: left;"><br /></h3>
+    <h3 style="text-align: left;">When to use String interpolation&nbsp;</h3>We can use string interpolation if we are
+    using this in only one place.<br /><br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4673179.js?file=interpolation.rb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4673179.js?file=interpolation.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br />product = "apple"<br /><br />cost = "70.00"<br /><br /><br /><br />p "Price of the #{product} is Rs. #{cost}."<br /><br /># prints Price of the apple is Rs. 70.00.</pre>
+    </noscript><br />It won't work when we need the reuse the template by assigning into a variable. Duplicating the
+    template everywhere is bad and lead to unmaintainable code.<br />
+    <h3 style="text-align: left;"><br /></h3>
+    <h3 style="text-align: left;">Why its better to use "%" method?</h3>The easiest way to&nbsp;substitute&nbsp;multiple
+    strings into a string template is using "<a href="http://www.ruby-doc.org/core-1.9.3/String.html#method-i-25"
+      rel="nofollow" target="_blank">%</a>" method of String class.<br />In order to reuse the template we can assign it
+    to a variable and pass the substituents into "%" method as an array or Hash.<br />
+    <h4 style="text-align: left;">Using Array</h4><br />
+<<<<<<< HEAD
+    <script async defer src="https://gist.github.com/4673179.js?file=array.rb"></script><noscript>
+=======
+    <script src="https://gist.github.com/4673179.js?file=array.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+      <pre><br />template = "Price of the %s is Rs. %f."<br /># %s - string, %f - float and %d - integer<br /><br />p template % ["apple", 70.00]<br /># prints Price of the apple is Rs. 70.000000.</pre>
+    </noscript>If you are using array<br /><br />
+    <ul style="text-align: left;">
+      <li>You should specify the placements as %s, %f or %d.</li>
+      <li>The order of substitutions should be maintained</li>
+      <li>The change in data type may result in errors.</li>
+      <li>You may need to format the output refer <a
+          href="http://www.ruby-doc.org/core-1.9.3/Kernel.html#method-i-sprintf" rel="nofollow"
+          target="_blank">sprintf</a></li>
+    </ul>
+    <h4 style="text-align: left;"><br /></h4>
+    <h4 style="text-align: left;">Using Hash</h4>
+    <div>For me using the Hash is the most&nbsp;continent and simple way. I can used named placements never need to
+      think of the list of issues above.</div>
+    <div><br /></div>
+    <div>
+<<<<<<< HEAD
+      <script async defer src="https://gist.github.com/4673179.js?file=hash.rb"></script><noscript>
+=======
+      <script src="https://gist.github.com/4673179.js?file=hash.rb"></script><noscript>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+        <pre><br />template = "Price of the %{product} is Rs. %{price}."<br /><br />p template % {product:"apple", price:70.00}<br /># prints Price of the apple is Rs. 70.0.</pre>
+      </noscript><br />
+    </div><br />
+  </div>
+</body>
+
+</html>
+$

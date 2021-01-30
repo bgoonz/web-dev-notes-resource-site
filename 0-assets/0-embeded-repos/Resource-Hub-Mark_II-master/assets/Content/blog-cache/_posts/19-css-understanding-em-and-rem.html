@@ -1,0 +1,142 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>We can use 4 units to specify font-size, <code>px</code>, <code>%</code>, <code>em</code> and newly added
+      <code>rem</code>. The <code>em</code> and <code>rem</code> where bit confusing for me. In this blog post I like to
+      discuss the difference between <code>em</code> and <code>rem</code> which <span class="citation"
+        data-cites="shidhin">[@shidhin]</span>(http://twitter.com/shidhin) taught me.
+    </p>
+    <h1 id="understanding-em-unit">Understanding <code>em</code> unit</h1>
+    <p><code>em</code>s are font-relative length units. They are calculated in relative to its parent font size. By
+      default,</p>
+    <pre><code>1em = 16px; // assuming parent fontsize as 100% or not set.
+</code></pre>
+    <p>when it comes to an equation</p>
+    <pre><code>Xem = 16 * X * (parent font size)/100
+</code></pre>
+    <p>If the parent font size is not set it gets the defaults from the font size of html tag. For easier calculation,
+      we can set the font size of html tag as 62%. Now as per the equation,</p>
+    <pre><code>1 em = 16 * 1 * 62/100
+     = 16 * 1 * .62
+     = ~10px</code></pre>
+    <p>But <code>em</code> have compounding issue, to expain what it is, consider we have</p>
+    <div class="sourceCode" id="cb4">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  div {</a>
+<a class="sourceLine" id="cb4-3" title="3">    <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4">  }</a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">&lt;div&gt;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">  this is parent</a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="kw">&lt;div&gt;</span>this is child<span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="kw">&lt;/div&gt;</span></a></code></pre>
+    </div>
+    <p>This will result in</p>
+    <center>
+      <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/em_zps2c126b54.png"
+        alt="em coumpounding issue" />
+    </center>
+    <p>This is because parent div have a font-size of 2em (16px <em>2 = 32px), when it comes to child div it 2em becomes
+        64px(32px </em> 2 = 64px) because its parent is set to 32px.</p>
+    <ul>
+      <li>parent : 16px * 2 = 32px</li>
+      <li>child : 32px * 2 = 64px (since parent is set to 32px)</li>
+    </ul>
+    <p>In order to fix this issue CSS3 has introduced <code>rem</code> unit.</p>
+    <h1 id="understanding-remroot-em-unit">Understanding <code>rem</code>(root em) unit</h1>
+    <p><code>rem</code>s are also font-relative length units but it depends on font size of the root element. A root
+      element is the element which doesn’t have a parent, in web its <code>&lt;html&gt;</code> tag. A similar equation
+      as of em’s can be used here also, but instead of parent font size here we use font-size of
+      <code>&lt;html&gt;</code> tag.
+    </p>
+    <pre><code>Xrem = 16 * X * (html font size)/100</code></pre>
+    <p>Since <code>rem</code> depends on root element it’s free from compounding issue, which make this special. just
+      consider an example</p>
+    <div class="sourceCode" id="cb6">
+      <pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;style&gt;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  div{</a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb6-4" title="4">  }</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">  this is parent</a>
+<a class="sourceLine" id="cb6-8" title="8">  <span class="kw">&lt;p&gt;</span></a>
+<a class="sourceLine" id="cb6-9" title="9">    this is child</a>
+<a class="sourceLine" id="cb6-10" title="10">  <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="kw">&lt;/p&gt;</span></a></code></pre>
+    </div>
+    <p>This will result same font-size for both parent and child paragraph.</p>
+    <center>
+      <img src="http://i653.photobucket.com/albums/uu253/revathskumar/Coderepo/2014/04/rem_zps28e36a26.png" alt="rem" />
+    </center>
+    <p><code>rem</code> is supported by all the <a href="http://caniuse.com/#search=rem">modern browers</a> and IE9+.
+      You can use the fallback techniques or a <a
+        href="https://github.com/chuckcarpenter/REM-unit-polyfill">polyfill</a> to support older browsers.</p>
+    <a class="jsbin-embed" href="http://jsbin.com/tawux/1/embed">JS Bin</a>
+<<<<<<< HEAD
+    <script async defer src="http://static.jsbin.com/js/embed.js"></script>
+=======
+    <script src="http://static.jsbin.com/js/embed.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <p>The fallback technique is using the font-size in pixes at first and font-size in rem second, so in older browsers
+      the font-size in rem won’t be effective and fallback to pixels.</p>
+    <div class="sourceCode" id="cb7">
+      <pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb7-1" title="1">div {</a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="kw">font-size</span>: <span class="dv">32</span><span class="dt">px</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="kw">font-size</span>: <span class="dv">2</span><span class="dt">rem</span><span class="op">;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">}</a></code></pre>
+    </div>
+    <p>So I hope you understood the <code>em</code> and <code>rem</code>, and you will be able to use it wisely.</p>
+
+  </body>
+
+  
+</html>

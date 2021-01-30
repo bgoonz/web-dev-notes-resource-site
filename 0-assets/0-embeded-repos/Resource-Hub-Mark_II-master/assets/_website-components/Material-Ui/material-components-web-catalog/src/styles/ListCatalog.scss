@@ -1,0 +1,19 @@
+@import "@material/list/mixins";
+
+.hero-list {
+  background: white;
+}
+
+.demo-list {
+  max-width: 600px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mdc-list--avatar-list .mdc-list-item__graphic {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.demo-list-item-shaped {
+  @include mdc-list-single-line-shape-radius(0 32px 32px 0, $rtl-reflexive: true);
+}

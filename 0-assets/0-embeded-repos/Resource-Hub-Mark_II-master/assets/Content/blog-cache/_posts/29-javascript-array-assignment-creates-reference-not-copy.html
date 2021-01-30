@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post</title>
+    <!--------------------------------(syntax hilighting)------------------------------------->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/default.min.css" />
+    <link rel="stlyesheet" href="./prism.css">
+    <!-------------------------------------(scripts)------------------------------------------>
+<<<<<<< HEAD
+    <script async defer src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+=======
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+    <script async src="./prism.js"></script>
+
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.grid.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.css.map">
+    <link rel="stylesheet" href="./css/blog-home.css">
+    <link rel="stylesheet" href="./css/prism.css">
+    <script async defer src="./css/prism.js"></script>
+  </head>
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------->
+
+
+
+  <body> 
+
+<<<<<<< HEAD
+<a class ="btn" href="https://serene-rosalind-3f429a.netlify.app/#gsc.tab=0">HOME</a>
+=======
+<a class ="btn" href="https://github.com/bgoonz/Resource-Hub-Mark_II/blob/3ce90be0dc055d1f5cc4de446ef94a44147ed138/experimental%2FPUBLIC%2Fpage-contact.html">HOME</a>
+>>>>>>> faa6aaf237eae4895460e74eebaa130feb27079a
+
+
+
+
+
+
+
+    <p>Consider we have an array <code>var a = [1,2,3,4];</code> and we assign <code>var b = a;</code> then b not a copy
+      of <code>a</code>, <code>b</code> is a pointer to <code>a</code>. So if you make any changes on <code>b</code>
+      will have effect on <code>a</code> as well. Here is an example.</p>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> a <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span>]<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> b <span class="op">=</span> a<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">var</span> <span class="va">b</span>.<span class="at">pop</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="va">console</span>.<span class="at">log</span>(b)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="va">console</span>.<span class="at">log</span>(a)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></a></code></pre>
+    </div>
+    <p>so if you really want a copy of <code>a</code> you need to use <code>.slice</code> method.</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">var</span> a <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span>]<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> b <span class="op">=</span> <span class="va">a</span>.<span class="at">slice</span>(<span class="dv">0</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">var</span> <span class="va">b</span>.<span class="at">pop</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="va">console</span>.<span class="at">log</span>(b)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="va">console</span>.<span class="at">log</span>(a)<span class="op">;</span> <span class="co">// [1, 2, 3, 4]</span></a></code></pre>
+    </div>
+    <p>JavaScript doesn’t have a clone method for array, so if you really want, you can define yourself on
+      <code>Array</code> but its not highly recommended.
+    </p>
+    <div class="sourceCode" id="cb3">
+      <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">Array</span>.<span class="va">prototype</span>.<span class="at">clone</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="cf">return</span> <span class="kw">this</span>.<span class="at">slice</span>(<span class="dv">0</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="op">};</span></a></code></pre>
+    </div>
+    <p>Now you can call <code>.clone</code> on any Array type.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">var</span> a <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span>]<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">var</span> b <span class="op">=</span> <span class="va">a</span>.<span class="at">clone</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">var</span> <span class="va">b</span>.<span class="at">pop</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="va">console</span>.<span class="at">log</span>(b)<span class="op">;</span> <span class="co">// [1, 2, 3]</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="va">console</span>.<span class="at">log</span>(a)<span class="op">;</span> <span class="co">// [1, 2, 3, 4]</span></a></code></pre>
+    </div>
+    <p>I recommend to keep this in mind when ever you are dealing with JavaScript Array’s, else you might facing some
+      unexpected behaviour and wonder why it happens.</p>
+    <p>Happy coding.</p>
+
+  </body>
+
+  
+</html>

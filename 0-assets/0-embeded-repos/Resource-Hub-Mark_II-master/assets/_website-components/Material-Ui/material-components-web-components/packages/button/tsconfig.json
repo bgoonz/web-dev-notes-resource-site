@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "outDir": ".",
+    "tsBuildInfoFile": ".tsbuildinfo"
+  },
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [
+    "test/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../base"
+    },
+    {
+      "path": "../ripple"
+    },
+    {
+      "path": "../icon"
+    }
+  ]
+}
