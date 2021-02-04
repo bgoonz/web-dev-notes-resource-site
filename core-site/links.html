@@ -4,6 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script async src="./js/theme.js"></script>
+  <script async src="./js/jquery.slim.js"></script>
+  <script async src="./js/bootstrap.min.js"></script>
+  <script async src="./js/animate.js"></script>
+  <script async src="./js/modernizr.custom.js"></script>
+
+
+
+
+
+
+  <script async src="./jquery.js"></script>
+  <script async src="./js/bootstrap.min.js"></script>
+  <script async defer>
+      ( function ( d ) {
+          "use strict";
+          for ( const h of d.querySelectorAll( "h1, h2, h3, a" ) ) {
+              if ( h.id != null && h.id.length > 0 ) {
+                  h.insertAdjacentHTML( 'beforeend',
+                      `<a href="#${h.id}" class="anchorLink">🔗</a>` )
+              }
+          }
+      } )( document );
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="./jquery-tabset.js"></script>
+              <script async defer>
+                  $( document ).ready( function () {
+                      $( "a.anchorLink" ).anchorAnimate()
+                  } );
+
+                  jQuery.fn.anchorAnimate = function ( settings ) {
+
+                      settings = jQuery.extend( {
+                          speed: 1100
+                      }, settings );
+
+                      return this.each( function () {
+                          var caller = this
+                          $( caller ).click( function ( event ) {
+                              event.preventDefault()
+                              var locationHref = window.location.href
+                              var elementClick = $( caller ).attr( "href" )
+
+                              var destination = $( elementClick ).offset().top;
+                              $( "html:not(:animated),body:not(:animated)" )
+                                  .animate( {
+                                          scrollTop: destination
+                                      },
+                                      settings.speed,
+                                      function () {
+                                          window.location.hash = elementClick
+                                      } );
+                              return false;
+                          } )
+                      } )
+                  }
+                  //---------------------------------------------------------------
+                  ( function ( d ) {
+                      "use strict";
+                      for ( const h of d.querySelectorAll( "h1, h2, h3, a" ) ) {
+                          if ( h.id != null && h.id.length > 0 ) {
+                              h.insertAdjacentHTML( 'beforeend',
+                                  `<a href="#${h.id}" class="anchorLink">🔗</a>` )
+                          }
+                      }
+                  } )( document );
+              </script>
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="./jquery-tabset.js"></script>
   <style>
     a {
       color: black;
