@@ -1,0 +1,19 @@
+{
+  "name": "worker-template-router",
+  "version": "1.0.0",
+  "description": "Selects the logic to respond to requests based on the `request` method and URL. Can be used with REST APIs or apps that require basic routing logic.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "keywords": [],
+  "author": "Bryan Guner",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.17.0"
+  },
+  "dependencies": {
+    "serverless-cloudflare-workers": "^1.2.0"
+  }
+}
