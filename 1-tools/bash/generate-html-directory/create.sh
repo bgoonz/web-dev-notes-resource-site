@@ -18,9 +18,9 @@ cmd() {
   echo '  <meta http-equiv="Content-Type" content="text/html">'
 
   echo '  <meta name="Author" content="Bryan Guner">'
-  echo '<link rel="stylesheet" href="./assets/prism.css">'
-  echo ' <link rel="stylesheet" href="./assets/style.css">'
-  echo ' <script async defer src="./assets/prism.js"></script>'
+
+  echo ' <link rel="stylesheet" href="./toc.css">'
+  echo ' <script async defer src="./toc.js"></script>'
 
   echo "  <TITLE> directory </TITLE> </head>"
 
