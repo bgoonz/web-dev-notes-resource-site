@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!-- saved from url=(0149)https://realworldmachine.com/web-apps/employment/new-jersey-weekly-benefit-amount-calculator/new-jersey-weekly-benefit-amount-calculator-20200401.htm -->
+<html manifest="offline.appcache"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=Edge" http-equiv="X-UA-Compatible">
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="GENERATOR" content="SpreadsheetConverter  version 10.3.7812.0">
+
+<!-- The parts of this webpage that is defined by the original spreadsheet have the same copyright as the original spreadsheet. -->
+
+<!-- The generic Excel-related parts of this page is Copyright (C) 2002-2020 Framtidsforum I&M AB, Sweden. -->
+
+    <title>new-jersey-weekly-benefit-amount-calculator</title>
+
+    <link rel="stylesheet" href="./theme-ssc-1567735141.min.css" id="ssc-theme">
+
+    <link rel="stylesheet" href="./app.min.css">
+
+<script language="javascript">try { if (top == self) {top.location.href='https://realworldmachine.com/finance/employment/new-jersey-weekly-benefit-amount-calculator/'; } } catch(er) { } </script>
+
+    <style type="text/css"></style></head>
+
+    <body onload="LoadFromQueryString();recalc_onclick(&#39;&#39;);" onunload="" browserstorage="false">
+
+        <noscript style="color:#F15623;">
+
+            This web page contains a live and functional spreadsheet created with <a href='https://www.spreadsheetconverter.com'>SpreadsheetConverter</a>. Please enable JavaScript in your web browser for the live calculations to work properly.
+
+        </noscript>
+
+        <form id="formc" name="formc" method="post" action="https://realworldmachine.com/web-apps/employment/new-jersey-weekly-benefit-amount-calculator/new-jersey-weekly-benefit-amount-calculator-20200401.htm" target="_self" novalidate="novalidate"><div id="formsaving" style="background-color: #FFD76E;position: fixed; left: 50%; top: 10px;z-index: 1000000; padding-left: 1em;padding-right: 1ex;text-align: center; border: 1px solid #E4C471;border-radius: 2px;" class="hideme">saving form...</div>
+
+		    <input type="hidden" id="xl_spreadsheet" name="xl_spreadsheet" value="new-jersey-weekly-benefit-amount-calculator">
+
+            <input type="hidden" id="xl_client" name="xl_client" value="x10.3.7812.0">
+
+<div id="tab" class="tab-content">
+
+
+
+                 <div id="sheet-1" style="padding: 1em 1.4em;" class=" active">
+
+                    <div class="container-fluid  ">
+
+<section class="">
+
+<table cellspacing="0" cellpadding="0" style="border-spacing:0;" onkeydown="javascript:navigate(event);">
+
+					<colgroup><col width="280">
+
+					<col width="129">
+
+                    </colgroup><tbody><tr style="height:13pt;">
+
+						<td class="ee100" style="height:13pt;" colspan="2">
+
+							New Jersey Unemployment Insurance Calculator:
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee100" style="height:13pt;" colspan="2">
+
+							Weekly Benefit
+  Amount
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Date Claim Filed
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+                                <div id="cal_calendar" class="input-group date ee117" style="min-width: 9em;">
+
+                                    <input id="calendar" name="calendar" class="form-control " size="16" type="text" data-widgettype="datepicker" data-caltype="button" tabindex="1" data-sheet="1" data-row="4" data-col="2">
+
+                                    <span class="input-group-addon add-on">
+
+                                        <i class="glyphicon glyphicon-calendar"></i> 
+
+                                    </span>
+
+                                </div>
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							claim effective Sunday of
+  same week
+
+						</td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Base Period: Calendar
+  Quarters
+
+						</td>
+
+						<td class="ee121" style="height:13pt;">
+
+							Wages Earned
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee123" style="height:13pt;">
+
+						<input id="XLEW_1_8_1" type="text" readonly="readonly" value="" class="ee123" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_8_1" tabindex="-1">
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+							<input id="XLEW_1_8_2" type="text" value="0.00" class="ee117 form-control" style="width:100%" onchange="this.value=eedisplayFloatNDTh(eeparseFloatTh(this.value),2);recalc_onclick(&#39;XLEW_1_8_2&#39;)" name="XLEW_1_8_2" placeholder="" tabindex="2" data-sheet="1" data-row="8" data-col="2">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee123" style="height:13pt;">
+
+						<input id="XLEW_1_9_1" type="text" readonly="readonly" value="" class="ee123" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_9_1" tabindex="-1">
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+							<input id="XLEW_1_9_2" type="text" value="0.00" class="ee117 form-control" style="width:100%" onchange="this.value=eedisplayFloatNDTh(eeparseFloatTh(this.value),2);recalc_onclick(&#39;XLEW_1_9_2&#39;)" name="XLEW_1_9_2" placeholder="" tabindex="3" data-sheet="1" data-row="9" data-col="2">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee123" style="height:13pt;">
+
+						<input id="XLEW_1_10_1" type="text" readonly="readonly" value="" class="ee123" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_10_1" tabindex="-1">
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+							<input id="XLEW_1_10_2" type="text" value="0.00" class="ee117 form-control" style="width:100%" onchange="this.value=eedisplayFloatNDTh(eeparseFloatTh(this.value),2);recalc_onclick(&#39;XLEW_1_10_2&#39;)" name="XLEW_1_10_2" placeholder="" tabindex="4" data-sheet="1" data-row="10" data-col="2">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee123" style="height:13pt;">
+
+						<input id="XLEW_1_11_1" type="text" readonly="readonly" value="" class="ee123" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_11_1" tabindex="-1">
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+							<input id="XLEW_1_11_2" type="text" value="0.00" class="ee117 form-control" style="width:100%" onchange="this.value=eedisplayFloatNDTh(eeparseFloatTh(this.value),2);recalc_onclick(&#39;XLEW_1_11_2&#39;)" name="XLEW_1_11_2" placeholder="" tabindex="5" data-sheet="1" data-row="11" data-col="2">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							enter total wages earned for
+  each quarter above
+
+						</td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Earned at least $200/week for
+  20+ weeks
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+						    <fieldset id="FS1$minimum" style="border:0;padding:0;">
+
+							    <select name="minimum" id="minimum" class="ee117 form-control" style=" width:100% ; padding-left:4px; padding-right:2px;" tabindex="6" onchange="recalc_onclick(&#39;minimum&#39;)" size="1" data-sheet="1" data-row="14" data-col="2">
+
+									<option data-value="s:Yes" selected="">Yes</option>
+
+									<option data-value="s:No">No</option>
+
+							    </select>
+
+						    </fieldset>
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							not an average and during the
+  preceding quarters
+
+						</td>
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							# of Weeks Worked
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+							<input id="XLEW_1_17_2" type="text" value="0" class="ee117 form-control" style="width:100%" onchange="this.value=eedisplayFloat(eeparseFloat(this.value));recalc_onclick(&#39;XLEW_1_17_2&#39;)" name="XLEW_1_17_2" placeholder="" tabindex="7" data-sheet="1" data-row="17" data-col="2">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							during the preceding quarters
+
+						</td>
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							# of Dependents
+
+						</td>
+
+						<td class="ee115" style="height:13pt;">
+
+						    <fieldset id="FS1$dependents" style="border:0;padding:0;">
+
+							    <select name="dependents" id="dependents" class="ee117 form-control" style=" width:100% ; padding-left:4px; padding-right:2px;" tabindex="8" onchange="recalc_onclick(&#39;dependents&#39;)" size="1" data-sheet="1" data-row="20" data-col="2">
+
+									<option data-value="n:0" selected="">0</option>
+
+									<option data-value="n:1">1</option>
+
+									<option data-value="n:2">2</option>
+
+									<option data-value="s:3+">3+</option>
+
+							    </select>
+
+						    </fieldset>
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							must be dependent spouse
+  and/or child
+
+						</td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee124" style="height:13pt;" colspan="2">
+
+							Results
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Estimated Weekly Benefit
+  Amount (WBA)
+
+						</td>
+
+						<td class="ee126" style="height:13pt;">
+
+						<input id="XLEW_1_25_2" type="text" readonly="readonly" value="-" class="ee126" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_25_2" tabindex="-1">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee127" style="height:13pt;">
+
+							may be reduced by other
+  compensation received
+
+						</td>
+
+						<td class="ee130" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Estimated Maximum Benefit
+  Amount (MBA)
+
+						</td>
+
+						<td class="ee126" style="height:13pt;">
+
+						<input id="XLEW_1_28_2" type="text" readonly="readonly" value="-" class="ee126" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_28_2" tabindex="-1">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							cannot exceed $18,538
+
+						</td>
+
+						<td class="ee121" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee112" style="height:13pt;">
+
+							Maximum # of Weeks
+
+						</td>
+
+						<td class="ee126" style="height:13pt;">
+
+						<input id="XLEW_1_31_2" type="text" readonly="readonly" value="0" class="ee126" style="overflow: hidden; border: 0px solid rgb(0, 0, 0); width: 100%; background: transparent;" name="XLEW_1_31_2" tabindex="-1">
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee118" style="height:13pt;">
+
+							cannot exceed 26 weeks
+
+						</td>
+
+						<td class="ee121" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee133" style="height:13pt;" colspan="2">
+
+							Eligibility
+  requirements apply to receive any benefits.
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee106" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee109" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee133" style="height:13pt;" colspan="2">
+
+							Information
+  provided "as-is" with no warranties, express or implied.
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee133" style="height:13pt;" colspan="2">
+
+							Information
+  provided may be inaccurate or incomplete.
+
+						</td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee133" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+						<td class="ee136" style="height:13pt;"><div style="overflow:hidden"></div></td>
+
+                    </tr>
+
+                    <tr style="height:13pt;">
+
+						<td class="ee133" style="height:13pt;" colspan="2">
+
+							Copyright © 2020
+  Real World Machine LLC. All rights reserved.
+
+						</td>
+
+                    </tr>
+
+                </tbody></table>
+
+
+
+              </section>
+
+</div>
+
+                </div>
+
+            </div>
+
+        <!-- Modal -->    <div class="modal fade" id="onlinefom-submit-conformation-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">    <div class="modal-dialog modal-sm">    <div class="modal-content">    <div class="modal-body">    <span class="glyphicon glyphicon-send form-submit"></span>    <p class="info">The form is being submitted.</p>    </div>    </div>    </div>    </div>        <!-- Modal -->    <div class="modal fade" id="onlineform-submit-status-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">    <div class="modal-dialog modal-sm">    <div class="modal-content">    <div class="modal-header">    <h4 class="modal-title">form submit</h4>    </div>    <div class="modal-body">    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->    <span class="glyphicon glyphicon-warning-sign status-icon"></span>    <p class="info">The form is being submitted.</p>    </div>    <div class="modal-footer">    <button type="button" class="btn btn-link" id="onlineform-submit-status-modal-close-btn" style="margin-left:4px">Close</button>    </div>    </div>    </div>    </div>        <!-- Modal -->    <div class="modal fade" id="offlineforms-save-conformation-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">    <div class="modal-dialog modal-sm">    <div class="modal-content">    <div class="modal-header">    <h4 class="modal-title">Save until online</h4>    </div>    <div class="modal-body">    <span class="glyphicon glyphicon-save status-icon" style="color:brown"></span>    <p class="info">You are currently offline and the submit failed. Do you want to save the submit and send it later when you are online.</p>    <p class="conform">Do you want to save?</p>    </div>    <div class="modal-footer">    <button type="button" id="offlineforms-save-conformation-yes-btn" class="btn btn-default" onclick="offlineforms_save_conformation_yes_btn_click()" data-loading-text="Done">Yes</button>    <button type="button" class="btn btn-link" onclick="$(&quot;#offlineforms-save-conformation-modal&quot;).modal(&quot;hide&quot;);return false;" style="margin-left:4px">No</button>    </div>    </div>    </div>    </div>        <!-- Modal -->    <div class="modal fade" id="offlineforms-submit-conformation-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">    <div class="modal-dialog modal-sm">    <div class="modal-content">    <div class="modal-header">    <h4 class="modal-title">Offline forms submit confirmation</h4>    </div>    <div class="modal-body">    <span class="glyphicon glyphicon-export status-icon" style="color:brown"></span>    <p class="info">There are Offline form(s), which are now ready to submit in server.</p>    <p class="conform">Do you want to submit?</p>    </div>    <div class="modal-footer">    <button type="button" id="offlineforms-submit-conformation-yes-btn" class="btn btn-default" onclick="offlineforms_submit_conformation_yes_btn_click()" data-loading-text="submitting...">Yes</button>    <button type="button" class="btn btn-link" onclick="$(&quot;#offlineforms-submit-conformation-modal&quot;).modal(&quot;hide&quot;);return false;" style="margin-left:4px">No</button>    </div>    </div>    </div>    </div>        <!-- Modal -->    <div class="modal fade" id="offlineforms-submit-status-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">    <div class="modal-dialog modal-sm">    <div class="modal-content">    <div class="modal-header">    <h4 class="modal-title">Offline Form submit failed</h4>    </div>    <div class="modal-body">    <span class="glyphicon glyphicon-warning-sign status-icon" style="color:rgb(198,0,0)"></span>    <p class="info">Unable to connect to the Internet. Please try submitting the offline forms later in internet connection.</p>    </div>    <div class="modal-footer">    <button type="button" id="offlineforms-submit-status-modal-close-btn" class="btn btn-link" style="margin-left:4px">Close</button>    </div>    </div>    </div>    </div></form>
+
+        <section class="row toolbar toolbar-position-bottom no-print">
+
+            
+
+            <div class="toolbar-panel-right col-xs-12 col-sm-12 col-md-5 col-md-push-6">    <div id="offlineforms-submit" class="hideme">        <button id="offlineforms-submit-btn" type="button" class="btn btn-offlineforms-submit btn-sm">        <span class="offlineforms-logo"></span><span>Offline Forms</span>        <span id="x1" class="badge badge-offlineforms-submit">0</span>        </button>    </div>
+
+                <section id="ssc-ls"></section>
+
+            </div><div class="toolbar-panel-left col-xs-12 col-sm-11 col-md-6 col-md-pull-5">
+
+                <button class="btn btn-sm button-update"><span class="glyphicon glyphicon-repeat"></span><span class="btn-label btn-label-right">Update</span></button>
+
+</div>        </section>        <script type="text/javascript" src="./app.min.js.download"></script>
+
+</body></html>
