@@ -1,6 +1,6 @@
 ![.github/workflows/azure.yml](https://github.com/bgoonz/web-dev-notes-resource-site/workflows/.github/workflows/azure.yml/badge.svg)
 
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
 
 
 This is the repo that contains my resource sharing and blog site ... centered mostly on web development and just a bit of audio production / generally nerdy things I find interesting. Please feel free to give me constructive feedback or even to branch off and improve it as you see fit... or don't, no pressure 🤷‍♂️.
