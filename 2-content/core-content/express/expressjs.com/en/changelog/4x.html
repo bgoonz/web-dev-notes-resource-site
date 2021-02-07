@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<title>Express 4.x changelog</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/en.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="en-doc">
+<section class="page content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br>
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<input id="q" placeholder="🔎 search">
+<ul id="navmenu">
+<li><a href="/" id="home-menu">Home</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/en/starter/installing.html">Getting started</a>
+<ul>
+<li>
+<a href="/en/starter/installing.html">
+Installing
+</a>
+</li>
+<li>
+<a href="/en/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/en/starter/generator.html">
+Express generator
+</a>
+</li>
+<li>
+<a href="/en/starter/basic-routing.html">
+Basic routing
+</a>
+</li>
+<li>
+<a href="/en/starter/static-files.html">
+Static files
+</a>
+</li>
+<li>
+<a href="/en/starter/examples.html">
+More examples
+</a>
+</li>
+<li>
+<a href="/en/starter/faq.html">
+FAQ
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+<li><a href="/en/guide/routing.html">Guide</a>
+<ul>
+<li><a href="/en/guide/routing.html">Routing</a>
+</li>
+<li><a href="/en/guide/writing-middleware.html">Writing middleware</a>
+</li>
+<li><a href="/en/guide/using-middleware.html">Using middleware</a>
+</li>
+<li><a href="/en/guide/overriding-express-api.html">Overriding the Express API</a>
+</li>
+<li><a href="/en/guide/using-template-engines.html">Using template engines</a>
+</li>
+<li><a href="/en/guide/error-handling.html">Error handling</a>
+</li>
+<li><a href="/en/guide/debugging.html">Debugging</a>
+</li>
+<li><a href="/en/guide/behind-proxies.html">Express behind proxies</a>
+</li>
+<li><a href="/en/guide/migrating-4.html">Moving to Express 4</a>
+</li>
+<li><a href="/en/guide/migrating-5.html">Moving to Express 5</a>
+</li>
+<li><a href="/en/guide/database-integration.html">Database integration</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/en/4x/api.html">API reference</a>
+<ul>
+<li><a href="/en/5x/api.html">5.x (alpha)</a>
+</li>
+<li><a href="/en/4x/api.html">4.x</a>
+</li>
+<li><a href="/en/3x/api.html">3.x (deprecated)</a>
+</li>
+<li><a href="/2x/">2.x (deprecated)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/en/advanced/developing-template-engines.html">Advanced topics</a>
+<ul>
+<li><a href="/en/advanced/developing-template-engines.html">Template engines</a>
+</li>
+<li><a href="/en/advanced/pm.html">Process managers</a>
+</li>
+<li><a href="/en/advanced/security-updates.html">Security updates</a>
+</li>
+<li><a href="/en/advanced/best-practice-security.html">Security best practices</a>
+</li>
+<li><a href="/en/advanced/best-practice-performance.html">Performance best practices</a>
+</li>
+<li><a href="/en/advanced/healthcheck-graceful-shutdown.html">Health checks and graceful shutdown</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/en/resources/glossary.html">Resources</a>
+<ul>
+<li>
+<a href="/en/resources/community.html">Community</a>
+</li>
+<li>
+<a href="/en/resources/glossary.html">Glossary</a>
+</li>
+<li>
+<a href="/en/resources/template-engines.html">Template Engines</a>
+</li>
+<li>
+<a href="/en/resources/middleware.html">Middleware</a>
+</li>
+<li>
+<a href="/en/resources/utils.html">Utility modules</a>
+</li>
+<li>
+<a href="/en/resources/frameworks.html">Frameworks</a>
+</li>
+<li>
+<a href="/en/resources/companies-using-express.html">Companies using Express</a>
+</li>
+<li>
+<a href="/en/resources/open-source-using-express.html">Open-source projects</a>
+</li>
+<li>
+<a href="/en/resources/learning.html">Additional learning</a>
+</li>
+<li>
+<a href="/en/resources/contributing.html">Contributing to Express</a>
+</li>
+<li>
+<a href="/en/changelog/4x.html">Release Change Log</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="page-doc" markdown="1">
+<h1 id="release-change-log">Release Change Log</h1>
+<h2 id="4.17.1">4.17.1 - Release date: 2019-05-25</h2>
+<p>The 4.17.1 patch release includes one bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>The change to the <code>res.status()</code> API has been reverted due to causing regressions in existing Express 4 applications.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4171--2019-05-25">History.md</a>.</p>
+<h2 id="4.17.0">4.17.0 - Release date: 2019-05-16</h2>
+<p>The 4.17.0 minor release includes bug fixes and some new features, including:</p>
+<ul>
+<li class="changelog-item">
+<p>The <code>express.raw()</code> and <code>express.text()</code> middleware have been added to provide request body parsing for more raw request payloads. This uses the <a href="https://www.npmjs.com/package/body-parser">expressjs/body-parser module</a> module underneath, so apps that are currently requiring the module separately can switch to the built-in parsers.</p>
+</li>
+<li class="changelog-item">
+<p>The <code>res.cookie()</code> API now supports the <code>"none"</code> value for the <code>sameSite</code> option.</p>
+</li>
+<li class="changelog-item">
+<p>When the <code>"trust proxy"</code> setting is enabled, the <code>req.hostname</code> now supports multiple <code>X-Forwarded-For</code> headers in a request.</p>
+</li>
+<li class="changelog-item">
+<p>Starting with this version, Express supports Node.js 10.x and 12.x.</p>
+</li>
+<li class="changelog-item">
+<p>The <code>res.sendFile()</code> API now provides and more immediate and easier to understand error when a non-string is passed as the <code>path</code> argument.</p>
+</li>
+<li class="changelog-item">
+<p>The <code>res.status()</code> API now provides and more immediate and easier to understand error when <code>null</code> or <code>undefined</code> is passed as the argument.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4170--2019-05-16">History.md</a>.</p>
+<h2 id="4.16.4">4.16.4 - Release date: 2018-10-10</h2>
+<p>The 4.16.4 patch release includes various bug fixes:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix issue where <code>"Request aborted"</code> may be logged in <code>res.sendfile</code>.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4164--2018-10-10">History.md</a>.</p>
+<h2 id="4.16.3">4.16.3 - Release date: 2018-03-12</h2>
+<p>The 4.16.3 patch release includes various bug fixes:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix issue where a plain <code>%</code> at the end of the url in the <code>res.location</code> method or the <code>res.redirect</code> method would not get encoded as <code>%25</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Fix issue where a blank <code>req.url</code> value can result in a thrown error within the default 404 handling.</p>
+</li>
+<li class="changelog-item">
+<p>Fix the generated HTML document for <code>express.static</code> redirect responses to properly include <code>&lt;/html&gt;</code>.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4163--2018-03-12">History.md</a>.</p>
+<h2 id="4.16.2">4.16.2 - Release date: 2017-10-09</h2>
+<p>The 4.16.2 patch release includes a regression bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix a <code>TypeError</code> that can occur in the <code>res.send</code> method when a <code>Buffer</code> is passed to <code>res.send</code> and the <code>ETag</code> header is already set on the response.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4162--2017-10-09">History.md</a>.</p>
+<h2 id="4.16.1">4.16.1 - Release date: 2017-09-29</h2>
+<p>The 4.16.1 patch release includes a regression bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/send">pillarjs/send module</a> to fix an edge case scenario regression that affected certain users of <code>express.static</code>.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4161--2017-09-29">History.md</a>.</p>
+<h2 id="4.16.0">4.16.0 - Release date: 2017-09-28</h2>
+<p>The 4.16.0 minor release includes security updates, bug fixes, performance enhancements, and some new features, including:</p>
+<ul>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/forwarded">jshttp/forwarded module</a> to address a <a href="https://nodesecurity.io/advisories/527">vulnerability</a>. This may affect your application if the following APIs are used: <code>req.host</code>, <code>req.hostname</code>, <code>req.ip</code>, <code>req.ips</code>, <code>req.protocol</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Update a dependency of the <a href="https://www.npmjs.com/package/send">pillarjs/send module</a> to address a <a href="https://nodesecurity.io/advisories/535">vulnerability</a> in the <code>mime</code> dependency. This may affect your application if untrusted string input is passed to the following APIs: <code>res.type()</code>.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="https://www.npmjs.com/package/send">pillarjs/send module</a> has implemented a protection against the Node.js 8.5.0 <a href="https://nodejs.org/en/blog/vulnerability/september-2017-path-validation/">vulnerability</a>. Using any prior version of Express.js with Node.js 8.5.0 (that specific Node.js version) will make the following APIs vulnerable: <code>express.static</code>, <code>res.sendfile</code>, and <code>res.sendFile</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Starting with this version, Express supports Node.js 8.x.</p>
+</li>
+<li class="changelog-item">
+<p>The new setting <code>"json escape"</code> can be enabled to escape characters in <code>res.json()</code>, <code>res.jsonp()</code> and <code>res.send()</code> responses that can trigger clients to sniff the response as HTML instead of honoring the <code>Content-Type</code>. This can help protect an Express app from a class of persistent XSS-based attacks.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#res.download"><code>res.download()</code> method</a> now accepts an optional <code>options</code> object.</p>
+</li>
+<li class="changelog-item">
+<p>The <code>express.json()</code> and <code>express.urlencoded()</code> middleware have been added to provide request body parsing support out-of-the-box. This uses the <a href="https://www.npmjs.com/package/body-parser">expressjs/body-parser module</a> module underneath, so apps that are currently requiring the module separately can switch to the built-in parsers.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#express.static"><code>express.static()</code> middleware</a> and <a href="/en/4x/api.html#res.sendFile"><code>res.sendFile()</code> method</a> now support setting the <code>immutable</code> directive on the <code>Cache-Control</code> header. Setting this header with an appropriate <code>maxAge</code> will prevent supporting web browsers from sending any request to the server when the file is still in their cache.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="https://www.npmjs.com/package/send">pillarjs/send module</a> has an updated list of MIME types to better set the <code>Content-Type</code> of more files. There are 70 new types for file extensions.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4160--2017-09-28">History.md</a>.</p>
+<h2 id="4.15.5">4.15.5 - Release date: 2017-09-24</h2>
+<p>The 4.15.5 patch release includes security updates, some minor performance enhancements, and a bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/debug">debug module</a> to address a <a href="https://snyk.io/vuln/npm:debug:20170905">vulnerability</a>, but this issue does not impact Express.</p>
+</li>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/fresh">jshttp/fresh module</a> to address a <a href="https://nodesecurity.io/advisories/526">vulnerability</a>. This will affect your application if the following APIs are used: <code>express.static</code>, <code>req.fresh</code>, <code>res.json</code>, <code>res.jsonp</code>, <code>res.send</code>, <code>res.sendfile</code> <code>res.sendFile</code>, <code>res.sendStatus</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/fresh">jshttp/fresh module</a> fixes handling of modified headers with invalid dates and makes parsing conditional headers (like <code>If-None-Match</code>) faster.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4155--2017-09-24">History.md</a>.</p>
+<h2 id="4.15.4">4.15.4 - Release date: 2017-08-06</h2>
+<p>The 4.15.4 patch release includes some minor bug fixes:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix array being set for <code>"trust proxy"</code> value being manipulated in certain conditions.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4154--2017-08-06">History.md</a>.</p>
+<h2 id="4.15.3">4.15.3 - Release date: 2017-05-16</h2>
+<p>The 4.15.3 patch release includes a security update and some minor bug fixes:</p>
+<ul>
+<li class="changelog-item">
+<p>Update a dependency of the <a href="https://www.npmjs.com/package/send">pillarjs/send module</a> to address a <a href="https://snyk.io/vuln/npm:ms:20170412">vulnerability</a>. This may affect your application if untrusted string input is passed to the <code>maxAge</code> option in the following APIs: <code>express.static</code>, <code>res.sendfile</code>, and <code>res.sendFile</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Fix error when <code>res.set</code> cannot add charset to <code>Content-Type</code>.</p>
+</li>
+<li class="changelog-item">
+<p>Fix missing <code>&lt;/html&gt;</code> in HTML document.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4153--2017-05-16">History.md</a>.</p>
+<h2 id="4.15.2">4.15.2 - Release date: 2017-03-06</h2>
+<p>The 4.15.2 patch release includes a minor bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix regression parsing keys starting with <code>[</code> in the extended (default) query parser.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4152--2017-03-06">History.md</a>.</p>
+<h2 id="4.15.1">4.15.1 - Release date: 2017-03-05</h2>
+<p>The 4.15.1 patch release includes a minor bug fix:</p>
+<ul>
+<li class="changelog-item">
+<p>Fix compatibility issue when using the datejs 1.x library where the <a href="/en/4x/api.html#express.static"><code>express.static()</code> middleware</a> and <a href="/en/4x/api.html#res.sendFile"><code>res.sendFile()</code> method</a> would incorrectly respond with 412 Precondition Failed.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4151--2017-03-05">History.md</a>.</p>
+<h2 id="4.15.0">4.15.0 - Release date: 2017-03-01</h2>
+<p>The 4.15.0 minor release includes bug fixes, performance improvements, and other minor feature additions, including:</p>
+<ul>
+<li class="changelog-item">
+<p>Starting with this version, Express supports Node.js 7.x.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#express.static"><code>express.static()</code> middleware</a> and <a href="/en/4x/api.html#res.sendFile"><code>res.sendFile()</code> method</a> now support the <code>If-Match</code> and <code>If-Unmodified-Since</code> request headers.</p>
+</li>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/etag">jshttp/etag module</a> to generate the default ETags for responses which work when Node.js has <a href="https://nodejs.org/dist/latest/docs/api/cli.html#cli_enable_fips">FIPS-compliant crypto enabled</a>.</p>
+</li>
+<li class="changelog-item">
+<p>Various auto-generated HTML responses like the default not found and error handlers will respond with complete HTML 5 documents and additional security headers.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4150--2017-03-01">History.md</a>.</p>
+<h2 id="4.14.1">4.14.1 - Release date: 2017-01-28</h2>
+<p>The 4.14.1 patch release includes bug fixes and performance improvements, including:</p>
+<ul>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/finalhandler">pillarjs/finalhandler module</a> fixes an exception when Express handles an <code>Error</code> object which has a <code>headers</code> property that is not an object.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4141--2017-01-28">History.md</a>.</p>
+<h2 id="4.14.0">4.14.0 - Release date: 2016-06-16</h2>
+<p>The 4.14.0 minor release includes bug fixes, security update, performance improvements, and other minor feature additions, including:</p>
+<ul>
+<li class="changelog-item">
+<p>Starting with this version, Express supports Node.js 6.x.</p>
+</li>
+<li class="changelog-item">
+<p>Update to <a href="https://www.npmjs.com/package/negotiator">jshttp/negotiator module</a> fixes a <a href="https://nodesecurity.io/advisories/106">regular expression denial of service vulnerability</a>.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#res.sendFile"><code>res.sendFile()</code> method</a> now accepts two new options: <code>acceptRanges</code> and <code>cacheControl</code>.</p>
+<ul>
+<li>
+<p><code>acceptRanges</code> (defaut is <code>true</code>), enables or disables accepting ranged requests. When disabled, the response does not send the <code>Accept-Ranges</code> header and ignores the contents of the <code>Range</code> request header.</p>
+</li>
+<li>
+ <p><code>cacheControl</code>, (default is <code>true</code>), enables or disables the <code>Cache-Control</code> response header. Disabling it will ignore the <code>maxAge</code> option.</p>
+</li>
+<li>
+<p><code>res.sendFile</code> has also been updated to handle <code>Range</code> header and redirections better.</p>
+</li>
+</ul>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#res.location"><code>res.location()</code> method</a> and <a href="/en/4x/api.html#res.redirect"><code>res.redirect()</code> method</a> will now URL-encode the URL string, if it is not already encoded.</p>
+</li>
+<li class="changelog-item">
+<p>The performance of the <a href="/en/4x/api.html#res.json"><code>res.json()</code> method</a> and <a href="/en/4x/api.html#res.jsonp"><code>res.jsonp()</code> method</a> have been improved in the common cases.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="https://www.npmjs.com/package/cookie">jshttp/cookie module</a> (in addition to a number of other improvements) has been updated and now the <a href="/en/4x/api.html#res.cookie"><code>res.cookie()</code> method</a> supports the <code>sameSite</code> option to let you specify the <a href="https://tools.ietf.org/html/draft-west-first-party-cookies-07">SameSite cookie attribute</a>. NOTE: This attribute has not yet been fully standardized, may change in the future, and many clients may ignore it.</p>
+<p>The possible value for the <code>sameSite</code> option are:</p>
+<ul>
+<li><code>true</code>, which sets the <code>SameSite</code> attribute to <code>Strict</code> for strict same site enforcement.</li>
+<li><code>false</code>, which does not set the <code>SameSite</code> attribute.</li>
+<li><code>'lax'</code>, which sets the <code>SameSite</code> attribute to <code>Lax</code> for lax same site enforcement.</li>
+<li><code>'strict'</code>, which sets the <code>SameSite</code> attribute to <code>Strict</code> for strict same site enforcement.</li>
+</ul>
+</li>
+<li class="changelog-item">
+<p>Absolute path checking on Windows, which was incorrect for some cases, has been fixed.</p>
+</li>
+<li class="changelog-item">
+<p>IP address resolution with proxies has been greatly improved.</p>
+</li>
+<li class="changelog-item">
+<p>The <a href="/en/4x/api.html#req.range"><code>req.range()</code> method</a> options object now supports a <code>combine</code> option (<code>false</code> by default), which when <code>true</code>, combines overlapping and adjacent ranges and returns them as if they were specified that way in the header.</p>
+</li>
+</ul>
+<p>For a complete list of changes in this release, see <a href="https://github.com/expressjs/express/blob/master/History.md#4140--2016-06-16">History.md</a>.</p>
+</div>
+</section>
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<section id="doc-langs">
+Documentation translations provided by <a href="http://strongloop.com">StrongLoop/IBM</a>:
+<a href="/fr/">French</a>, <a href="/de/">German</a>, <a href="/es/">Spanish</a>, <a href="/it/">Italian</a>, <a href="/ja/">Japanese</a>, <a href="/ru/">Russian</a>, <a href="/zh-cn/">Chinese</a>, <a href="/zh-tw/">Traditional Chinese</a>, <a href="/ko/">Korean</a>, <a href="/pt-br/">Portuguese</a>.
+<br>
+Community translation available for: <a href="/sk/">Slovak</a>, <a href="/uk/">Ukrainian</a>, <a href="/uz/">Uzbek</a>, <a href="/tr/">Turkish</a> and <a href="/th/">Thai</a>.
+</section>
+<div id="footer-content">
+<div id="github">
+<a class="github-button" href="https://github.com/expressjs/expressjs.com" data-icon="octicon-star" aria-label="Star expressjs/expressjs.com on GitHub">Star</a>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a> is a project of the <a href="https://openjsf.org">OpenJS Foundation</a>.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Fork the website on GitHub</a>.</div>
+<div>Copyright &copy; 2017 StrongLoop, IBM, and other expressjs.com contributors.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 United States License</a>.
+</div>
+</footer>
+<script async defer src="https://buttons.github.io/buttons.js" type="b632aeae74d83f2e17e24929-text/javascript"></script>
+<script type="b632aeae74d83f2e17e24929-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:en'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="b632aeae74d83f2e17e24929-|49" defer=""></script></body>
+</html>

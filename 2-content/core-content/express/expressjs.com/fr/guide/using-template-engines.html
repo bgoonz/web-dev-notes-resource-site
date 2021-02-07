@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+<head>
+<title>Utilisation de moteurs de modèles avec Express</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/fr.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="non-en-doc">
+<section class="page content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br>
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<ul id="navmenu">
+<input id="q" placeholder="🔎 search">
+<li><a href="/fr/" id="home-menu">Accueil</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/fr/starter/installing.html">Mise en route</a>
+<ul>
+<li>
+<a href="/fr/starter/installing.html">
+Installation
+</a>
+</li>
+<li>
+<a href="/fr/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/fr/starter/generator.html">
+Générateur Express
+</a>
+</li>
+<li>
+<a href="/fr/starter/basic-routing.html">
+Routage de base
+</a>
+</li>
+<li>
+<a href="/fr/starter/static-files.html">
+Fichiers statiques
+</a>
+</li>
+<li>
+<a href="/fr/starter/faq.html">
+FAQ
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+<li><a href="/fr/guide/routing.html" class="active">Guide</a>
+<ul>
+<li><a href="/fr/guide/routing.html">Routage</a>
+</li>
+<li><a href="/fr/guide/writing-middleware.html">Ecriture de middleware</a>
+ </li>
+<li><a href="/fr/guide/using-middleware.html">Utilisation de middleware</a>
+</li>
+<li><a href="/fr/guide/using-template-engines.html">Utilisation de moteurs de modèles</a>
+</li>
+<li><a href="/fr/guide/error-handling.html">Traitement d'erreurs</a>
+</li>
+<li><a href="/fr/guide/debugging.html">Débogage</a>
+</li>
+<li><a href="/fr/guide/behind-proxies.html">Express derrière Proxys</a>
+</li>
+<li><a href="/fr/guide/migrating-4.html">Migration vers Express 4</a>
+</li>
+<li><a href="/fr/guide/migrating-5.html">Migration vers Express 5</a>
+</li>
+<li><a href="/fr/guide/database-integration.html">Intégration de bases de données</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/fr/4x/api.html">Référence de l'API</a>
+<ul>
+<li><a href="/fr/4x/api.html">4.x</a>
+</li>
+<li><a href="/fr/3x/api.html">3.x (obsolète)</a>
+</li>
+<li><a href="/2x/">2.x (obsolète)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/fr/advanced/developing-template-engines.html">Rubriques avancées</a>
+<ul>
+<li><a href="/fr/advanced/developing-template-engines.html">Moteurs de modèles</a>
+</li>
+<li><a href="/fr/advanced/pm.html">Utilisation de gestionnaires de processus</a>
+</li>
+<li><a href="/fr/advanced/security-updates.html">Mises à jour de sécurité</a>
+</li>
+<li><a href="/fr/advanced/best-practice-security.html">Meilleures pratiques en termes de sécurité</a>
+</li>
+<li><a href="/fr/advanced/best-practice-performance.html">Meilleures pratiques en termes de performances</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/fr/resources/glossary.html">Ressources</a>
+<ul>
+<li><a href="/fr/resources/glossary.html">Glossaire</a>
+</li>
+<li><a href="/fr/resources/middleware.html">Middleware</a>
+</li>
+<li><a href="/fr/resources/community.html">Communauté</a>
+</li>
+<li><a href="/fr/resources/learning.html">Apprentissage supplémentaire</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p><p>Cette traduction fournie par <a href="http://strongloop.com">StrongLoop / IBM</a>.</p>
+Il se peut que ce document soit obsolète par rapport à la documentation en anglais. Pour connaître les mises à jour les plus récentes, reportez-vous à la <a href="/">documentation en anglais</a>.
+</p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<div id="page-doc" markdown="1">
+<h1 id="utilisation-de-moteurs-de-modèles-avec-express">Utilisation de moteurs de modèles avec Express</h1>
+<p>Pour qu’Express puisse afficher le rendu des fichiers modèles, vous devez définir les paramètres d’application suivants :</p>
+<ul>
+<li><code>views</code>, le répertoire dans lequel se trouvent les fichiers modèles. Par exemple : <code>app.set('views', './views')</code></li>
+<li><code>view engine</code>, le moteur de modèle à utiliser. Par exemple : <code>app.set('view engine', 'pug')</code></li>
+</ul>
+<p>Ensuite, installez le package npm du moteur de modèle correspondant :</p>
+<pre><code class="language-sh" translate="no">
+$ npm install pug --save
+</code>
+</pre>
+<div class="doc-box doc-notice">
+<p>Les moteurs de modèles conformes à Express tels que Pug exportent une fonction nommée <code>__express(filePath, options, callback)</code>, qui est appelée par la fonction <code>res.render()</code> pour générer le code de modèle.</p>
+<p>Certaines moteurs de modèles ne suivent pas cette convention. La bibliothèque <a href="https://www.npmjs.org/package/consolidate">Consolidate.js</a> suit cette convention en mappant tous les moteurs de modèles Node.js répandus, et fonctionne donc parfaitement avec Express.</p>
+</div>
+<p>Une fois le moteur de vue défini, vous n’avez pas à spécifier le moteur ou à charger le module de moteur de modèles dans votre application ; Express charge le module en interne, comme indiqué ci-dessous (pour l’exemple ci-dessus).</p>
+<pre><code class="language-javascript" translate="no">
+app.set('view engine', 'pug');
+</code>
+</pre>
+<p>Créez un fichier de modèle Pug nommé <code>index.pug</code> dans le répertoire <code>views</code>, avec le contenu suivant :</p>
+<pre><code class="language-javascript" translate="no">
+html
+  head
+    title= title
+  body
+    h1= message
+</code>
+</pre>
+<p>Puis, créez une route pour générer le fichier <code>index.pug</code>. Si la propriété <code>view engine</code> n’est pas définie, vous devez spécifier l’extension du fichier <code>view</code>. Sinon, vous pouvez l’omettre.</p>
+<pre><code class="language-javascript" translate="no">
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
+</code>
+</pre>
+<p>Lorsque vous faites une demande vers la page d’accueil, le fichier <code>index.pug</code> est généré en HTML.</p>
+<p>Pour en savoir plus sur le fonctionnement des moteurs de modèle dans Express, voir : <a href="/fr/advanced/developing-template-engines.html">“Développement de moteurs de modèles pour Express”</a>.</p>
+</div>
+</section>
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="//ghbtns.com/github-btn.html?user=expressjs&amp;repo=express&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a> est un projet de la <a href="https://openjsf.org">Fondation OpenJS</a>.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Consultez le site Web GitHub</a>.</div>
+<div>Copyright &copy; StrongLoop, Inc., et autres contributeurs expressjs.com.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 3.0 États-Unis</a>.
+</div>
+</footer>
+<script type="cb91070d7f743654938f4621-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:fr'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="cb91070d7f743654938f4621-|49" defer=""></script></body>
+</html>

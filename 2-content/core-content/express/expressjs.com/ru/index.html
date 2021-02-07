@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<title>Express - фреймворк веб-приложений Node.js</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/ru.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="non-en-doc">
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p><p>Этот перевод обеспечивается <a href="http://strongloop.com">StrongLoop / IBM</a>.</p>
+Этот документ может быть устаревшим по отношению к документации на английском языке. Последние обновления содержатся в <a href="/">документации на английском языке</a>.
+</p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<section id="home-content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br />
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<input id="q" placeholder="🔎 search" />
+<ul id="navmenu">
+<li><a href="/ru/" id="home-menu" class="active">Главная</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/ru/starter/installing.html">Начало работы</a>
+<ul>
+<li>
+<a href="/ru/starter/installing.html">
+Установка
+</a>
+</li>
+<li>
+<a href="/ru/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/ru/starter/generator.html">
+Генератор приложений Express
+</a>
+</li>
+<li>
+<a href="/ru/starter/basic-routing.html">
+Основы маршрутизации
+</a>
+</li>
+<li>
+<a href="/ru/starter/static-files.html">
+Статические файлы
+</a>
+</li>
+<li>
+<a href="/ru/starter/faq.html">
+FAQ
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+<li><a href="/ru/guide/routing.html">Руководство</a>
+<ul>
+<li><a href="/ru/guide/routing.html">Маршрутизация</a>
+</li>
+<li><a href="/ru/guide/writing-middleware.html">Написание кода промежуточных обработчиков</a>
+</li>
+<li><a href="/ru/guide/using-middleware.html">Использование промежуточных обработчиков</a>
+</li>
+<li><a href="/ru/guide/using-template-engines.html">Использование шаблонизаторов</a>
+</li>
+<li><a href="/ru/guide/error-handling.html">Обработка ошибок</a>
+</li>
+<li><a href="/ru/guide/debugging.html">Отладка</a>
+</li>
+<li><a href="/ru/guide/behind-proxies.html">Express за прокси</a>
+</li>
+<li><a href="/ru/guide/migrating-4.html">Переход к Express 4</a>
+</li>
+<li><a href="/ru/guide/migrating-5.html">Переход к Express 5</a>
+</li>
+<li><a href="/ru/guide/database-integration.html">Интеграция с базами данных</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/ru/4x/api.html">API</a>
+<ul>
+<li><a href="/ru/4x/api.html">4.x</a>
+</li>
+<li><a href="/ru/3x/api.html">3.x (устарел)</a>
+</li>
+<li><a href="/2x/">2.x (устарел)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/ru/advanced/developing-template-engines.html">Расширенные возможности</a>
+<ul>
+<li><a href="/ru/advanced/developing-template-engines.html">Шаблонизаторы</a>
+</li>
+<li><a href="/ru/advanced/pm.html">Работа с диспетчерами процессов</a>
+</li>
+<li><a href="/ru/advanced/security-updates.html">Обновления системы безопасности</a>
+</li>
+<li><a href="/ru/advanced/best-practice-security.html">Лучшие практические методы в области защиты</a>
+</li>
+<li><a href="/ru/advanced/best-practice-performance.html">Лучшие практические методы улучшения производительности</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/ru/resources/glossary.html">Ресурсы</a>
+<ul>
+<li><a href="/ru/resources/glossary.html">Глоссарий</a>
+</li>
+<li><a href="/ru/resources/middleware.html">Промежуточный обработчик</a>
+</li>
+<li><a href="/ru/resources/community.html">Сообщество</a>
+</li>
+<li><a href="/ru/resources/learning.html">Дополнительное обучение</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="homepage-leftpane" class="pane">
+<section id="description">
+<div class="express"><a href="/">Express</a></div>
+<span class="description">Быстрый, гибкий, минималистичный веб-фреймворк для приложений <a href="http://nodejs.org">Node.js</a></span>
+</section>
+<div id="install-command">$ npm install express --save</div>
+</div>
+<div id="homepage-rightpane" class="pane">
+<iframe src="https://www.youtube.com/embed/HxGt_3F0ULg" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+
+<section id="intro">
+<div id="boxes" class="clearfix">
+<div id="web-applications">
+<h3>Веб-приложения</h3> Express - это минималистичный и гибкий веб-фреймворк для приложений Node.js, предоставляющий обширный набор функций для мобильных и веб-приложений.
+</div>
+<div id="apis">
+<h3>API</h3> Имея в своем распоряжении множество служебных методов HTTP и промежуточных обработчиков, создать надежный API можно быстро и легко.
+</div>
+<div id="performance">
+<h3>Производительность</h3> Express предоставляет тонкий слой фундаментальных функций веб-приложений, которые не мешают вам работать с давно знакомыми и любимыми вами функциями Node.js.
+</div>
+<div id="sponsorship">
+<a href="http://loopback.io/"><h3>LoopBack</h3> Разработка приложений, управляемых моделями, с помощью фреймворка на основе Express.<br />Дополнительную информацию можно найти на странице loopback.io.</a>
+</div>
+</div>
+</section>
+
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="//ghbtns.com/github-btn.html?user=expressjs&amp;repo=express&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a> проект <a href="https://openjsf.org">фонда OpenJS</a>.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Создайте клон веб-сайта на GitHub</a>.</div>
+<div>Copyright &copy; StrongLoop, Inc. и других участников expressjs.com.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> Это произведение доступно по <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">лицензии Creative Commons «Attribution-ShareAlike» («Атрибуция — На тех же условиях») 3.0 США</a>.
+</div>
+</footer>
+<script type="0c114235639f989c2bd60429-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:ru'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="0c114235639f989c2bd60429-|49" defer=""></script></body>
+</html>

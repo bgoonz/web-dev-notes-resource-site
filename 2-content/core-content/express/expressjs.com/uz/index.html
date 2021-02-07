@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+<title>Express - Node.js web-dasturlar uchun freymvork</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/uz.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="non-en-doc">
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p>This document might be outdated relative to the documentation in English. For the latest updates, please refer to the <a href="/">documentation in English</a>.
+</p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<section id="home-content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br />
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<input id="q" placeholder="🔎 search" />
+<ul id="navmenu">
+<li><a href="/uz/" id="home-menu" class="active">Bosh sahifa</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/uz/starter/installing.html">Boshlang'ich ishlar</a>
+<ul>
+<li>
+<a href="/uz/starter/installing.html">
+O'rnatish
+</a>
+</li>
+<li>
+<a href="/uz/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/uz/starter/generator.html">
+Express generator
+</a>
+</li>
+<li>
+<a href="/uz/starter/basic-routing.html">
+Oddiy routing
+</a>
+</li>
+<li>
+<a href="/uz/starter/static-files.html">
+Statik fayllar
+</a>
+</li>
+<li>
+<a href="/uz/starter/faq.html">
+FAQ
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+<li><a href="/uz/guide/routing.html">Qo'llanma</a>
+<ul>
+<li><a href="/uz/guide/routing.html">Routing</a>
+</li>
+<li><a href="/uz/guide/writing-middleware.html">Middleware yozish</a>
+</li>
+<li><a href="/uz/guide/using-middleware.html">Middleware ishlatish</a>
+</li>
+<li><a href="/uz/guide/using-template-engines.html">Template engine ishlatish</a>
+</li>
+<li><a href="/uz/guide/error-handling.html">Xatolarni qayta ishlash</a>
+</li>
+<li><a href="/uz/guide/debugging.html">Debug qilish</a>
+</li>
+<li><a href="/uz/guide/behind-proxies.html">Express proksilar bilan</a>
+</li>
+<li><a href="/uz/guide/migrating-4.html">Express 4ga o'tish</a>
+</li>
+<li><a href="/uz/guide/migrating-5.html">Express 5ga o'tish</a>
+</li>
+<li><a href="/uz/guide/database-integration.html">Ma'lumotlar omboriga ulash</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/uz/4x/api.html">API qo'llanma</a>
+<ul>
+<li><a href="/uz/4x/api.html">4.x</a>
+</li>
+<li><a href="/uz/3x/api.html">3.x (eskirgan)</a>
+</li>
+<li><a href="/2x/">2.x (eskirgan)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/uz/advanced/developing-template-engines.html">Advanced topics</a>
+<ul>
+<li><a href="/uz/advanced/developing-template-engines.html">Template engines</a>
+</li>
+<li><a href="/uz/advanced/pm.html">Using process managers</a>
+</li>
+<li><a href="/uz/advanced/security-updates.html">Security updates</a>
+</li>
+<li><a href="/uz/advanced/best-practice-security.html">Security best practices</a>
+</li>
+<li><a href="/uz/advanced/best-practice-performance.html">Performance best practices</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/uz/resources/glossary.html">Resources</a>
+<ul>
+<li><a href="/uz/resources/glossary.html">Glossary</a>
+</li>
+<li><a href="/uz/resources/middleware.html">Middleware</a>
+</li>
+<li><a href="/uz/resources/community.html">Community</a>
+</li>
+<li><a href="/uz/resources/learning.html">Additional learning</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="homepage-leftpane" class="pane">
+<section id="description">
+<div class="express"><a href="/">Express</a></div>
+<span class="description"> <a href="https://nodejs.org/en/">Node.js</a> uchun tezkor, moslashuvchan, minimalistik web-freymvork.</span>
+</section>
+<div id="install-command">$ npm install express --save</div>
+</div>
+<div id="homepage-rightpane" class="pane">
+<iframe src="https://www.youtube.com/embed/HxGt_3F0ULg" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+<section id="intro">
+<div id="boxes" class="clearfix">
+<div id="web-applications">
+<h3>Web dasturlar</h3> Express, Node.jsda web-dasturlarni yaratishda keng ko'lamda yordam beruvchi, minimalistik va moslashuvchan freymvorkdir.
+</div>
+<div id="apis">
+<h3>APIs</h3> Ko'plab HTTP metodlar, oraliq qayta ishlovchi(middleware)lar yordamida, ishonchli tezkor va oson API server yaratish mumkin bo'ladi.
+</div>
+<div id="performance">
+<h3>Ishlab chiqaruvchanlik</h3> Express Nodedagi siz bilgan va sevgan imkoniyatlarni cheklamagan holda web-dasturlardagi eng asosiy imkoniyatlar bilan ta'minlab beradi.
+</div>
+<div id="frameworks">
+<h3>Freymvorklar</h3> Express asosida yaratilgan ko'plab <a href="resources/frameworks.html">mashxur freymvorklar</a> .
+</div>
+</div>
+</section>
+<section id="announcements">
+<ul>
+<li>
+<p class="announcement-title">Express 4.16.0 reliz qilindi</p>
+<p>
+Express 4.16.0 da ko’plab xatolar to’g’irlandi, xavfsizlikni ta’minlash uchun o’zgarishlar kiritildi, ishlash unumdorligi oshirildi va boshqa yangi imkoniyatlar qo’shildi. To’liq ma’lumot uchun <a href="/en/changelog/4x.html#4.16.0">4.16.0 changelog</a>.
+</p>
+</li>
+</ul>
+</section>
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="//ghbtns.com/github-btn.html?user=expressjs&amp;repo=express&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a> bu <a href="https://openjsf.org">OpenJS fondining</a> loyihasi.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Fork the website on GitHub</a>.</div>
+<div>Copyright &copy; StrongLoop, Inc., and other expressjs.com contributors.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike 3.0 United States License</a>.
+</div>
+</footer>
+<script type="f4d4b34edd1e8e902f883696-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:uz'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="f4d4b34edd1e8e902f883696-|49" defer=""></script></body>
+</html>

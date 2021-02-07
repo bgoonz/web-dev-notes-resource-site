@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+<title>Express - Node.js Web 应用程序框架</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/zh-cn.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="non-en-doc">
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p><p>这个翻译<a href="http://strongloop.com">StrongLoop / IBM</a>提供.</p>
+相对于英文版的文档，本文档可能已过时。要了解最近的更新，请参阅<a href="/">英文版文档</a>。
+</p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<section id="home-content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br />
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<input id="q" placeholder="🔎 search" />
+<ul id="navmenu">
+<li><a href="/zh-cn/" id="home-menu" class="active">主页</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/zh-cn/starter/installing.html">入门</a>
+<ul>
+<li>
+<a href="/zh-cn/starter/installing.html">
+安装
+</a>
+</li>
+<li>
+<a href="/zh-cn/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/zh-cn/starter/generator.html">
+Express 生成器
+</a>
+</li>
+<li>
+<a href="/zh-cn/starter/basic-routing.html">
+基本路由
+</a>
+</li>
+<li>
+<a href="/zh-cn/starter/static-files.html">
+静态文件
+</a>
+</li>
+<li>
+<a href="/zh-cn/starter/faq.html">
+常见问题及解答
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+<li><a href="/zh-cn/guide/routing.html">指南</a>
+<ul>
+<li><a href="/zh-cn/guide/routing.html">路由</a>
+</li>
+<li><a href="/zh-cn/guide/writing-middleware.html">编写中间件</a>
+</li>
+<li><a href="/zh-cn/guide/using-middleware.html">使用中间件</a>
+</li>
+<li><a href="/zh-cn/guide/using-template-engines.html">使用模板引擎</a>
+</li>
+<li><a href="/zh-cn/guide/error-handling.html">错误处理</a>
+</li>
+<li><a href="/zh-cn/guide/debugging.html">调试</a>
+</li>
+<li><a href="/zh-cn/guide/behind-proxies.html">代理背后的 Express</a>
+</li>
+<li><a href="/zh-cn/guide/migrating-4.html">迁移到 Express 4</a>
+</li>
+<li><a href="/zh-cn/guide/migrating-5.html">迁移到 Express 5</a>
+</li>
+<li><a href="/zh-cn/guide/database-integration.html">数据库集成</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/zh-cn/4x/api.html">API 参考</a>
+<ul>
+<li><a href="/zh-cn/4x/api.html">4.x</a>
+</li>
+<li><a href="/zh-cn/3x/api.html">3.x（不推荐）</a>
+</li>
+<li><a href="/2x/">2.x（不推荐）</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/zh-cn/advanced/developing-template-engines.html">高级主题</a>
+<ul>
+<li><a href="/zh-cn/advanced/developing-template-engines.html">模板引擎</a>
+</li>
+<li><a href="/zh-cn/advanced/pm.html">使用进程管理器</a>
+</li>
+<li><a href="/zh-cn/advanced/security-updates.html">安全更新</a>
+</li>
+<li><a href="/zh-cn/advanced/best-practice-security.html">安全最佳实践</a>
+</li>
+<li><a href="/zh-cn/advanced/best-practice-performance.html">性能最佳实践</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/zh-cn/resources/glossary.html">资源</a>
+<ul>
+<li><a href="/zh-cn/resources/glossary.html">词汇表</a>
+</li>
+<li><a href="/zh-cn/resources/middleware.html">中间件</a>
+</li>
+<li><a href="/zh-cn/resources/community.html">社区</a>
+</li>
+<li><a href="/zh-cn/resources/learning.html">额外学习</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="homepage-leftpane" class="pane">
+<section id="description">
+<div class="express"><a href="/">Express</a></div>
+<span class="description">高度包容、快速而极简的 <a href="http://nodejs.org">Node.js</a> Web 框架</span>
+</section>
+<div id="install-command">$ npm install express --save</div>
+</div>
+<div id="homepage-rightpane" class="pane">
+<iframe src="https://www.youtube.com/embed/HxGt_3F0ULg" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+
+<section id="intro">
+<div id="boxes" class="clearfix">
+<div id="web-applications">
+<h3>Web 应用程序</h3> Express 是一种保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。</div>
+<div id="apis">
+<h3>API</h3> 使用您提议的各种 HTTP 实用程序方法和中间件，快速方便地创建强大的 API。</div>
+<div id="performance">
+<h3>性能</h3> Express 提供精简的基本 Web 应用程序功能，而不会隐藏您了解和青睐的 Node.js 功能。</div>
+<div id="frameworks">
+<h3>框架</h3> 许多基于 Express 的 <a href="resources/frameworks.html">流行框架</a> 。
+</div>
+</div>
+</section>
+
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="//ghbtns.com/github-btn.html?user=expressjs&amp;repo=express&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a>是<a href="https://openjsf.org">OpenJS的基金会的</a>一个项目。</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">在 GitHub 上派生出网站</a>。</div>
+<div>Copyright &copy; StrongLoop, Inc., and other expressjs.com contributors.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> 本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">知识共享署名-相同方式共享 3.0 美国许可协议</a>进行许可。
+</div>
+</footer>
+<script type="30c1d19bc4b4a9805d659b1c-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:zh-cn'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="30c1d19bc4b4a9805d659b1c-|49" defer=""></script></body>
+</html>

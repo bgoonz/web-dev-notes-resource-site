@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+<title>Express - Framework per applicazioni web Node.js</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="og:image" content="https://expressjs.com/images/express-facebook-share.png">
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dropit.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+<link rel="stylesheet" href="/css/it.css">
+<link rel="stylesheet" href="/css/nodeinteractive.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-cfasync="false" src="/js/ismobile.js"></script>
+<script data-cfasync="false" src="/js/app.js"></script>
+<script data-cfasync="false" src="/js/retina.js"></script>
+<script data-cfasync="false" src="/js/dropit.js"></script>
+<script data-cfasync="false" src="/js/prism.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+</head>
+<body class="non-en-doc">
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p><p>Questa traduzione fornita da <a href="http://strongloop.com">StrongLoop / IBM</a>.</p>
+È possibile che questo documento non sia aggiornato poiché la documentazione è in inglese. Per gli ultimi aggiornamenti, fare riferimento alla <a href="/">documentazione in inglese</a>.
+</p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<section id="home-content">
+<header>
+<div id="blm-banner">
+Black Lives Matter. <br />
+<a id="blm-donate" href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+</div>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="/" class="express">Express</a>
+</section>
+<div id="navbar">
+<input id="q" placeholder="🔎 search" />
+<ul id="navmenu">
+<li><a href="/it/" id="home-menu" class="active">Home</a></li>
+<li>
+<ul id="getting-started-menu" class="menu">
+<li><a href="/it/starter/installing.html">Introduzione</a>
+<ul>
+<li>
+<a href="/it/starter/installing.html">
+Installazione</a>
+</li>
+<li>
+<a href="/it/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="/it/starter/generator.html">
+Programma di creazione Express
+</a>
+</li>
+<li>
+<a href="/it/starter/basic-routing.html">
+Routing di base</a>
+</li>
+<li>
+<a href="/it/starter/static-files.html">
+File statici
+</a>
+</li>
+<li>
+<a href="/it/starter/faq.html">
+FAQ</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="guide-menu" class="menu">
+ <li><a href="/it/guide/routing.html">Guida</a>
+<ul>
+<li><a href="/it/guide/routing.html">Routing</a>
+</li>
+<li><a href="/it/guide/writing-middleware.html">Scrittura del middleware</a>
+</li>
+<li><a href="/it/guide/using-middleware.html">Utilizzo del middleware</a>
+</li>
+<li><a href="/it/guide/using-template-engines.html">Utilizzo dei motori di template</a>
+</li>
+<li><a href="/it/guide/error-handling.html">Gestione degli errori</a>
+</li>
+<li><a href="/it/guide/debugging.html">Debug</a>
+</li>
+<li><a href="/it/guide/behind-proxies.html">Express con i proxy</a>
+</li>
+<li><a href="/it/guide/migrating-4.html">Passaggio a Express 4</a>
+</li>
+<li><a href="/it/guide/migrating-5.html">Passaggio a Express 5</a>
+</li>
+<li><a href="/it/guide/database-integration.html">Integrazione database</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="application-menu" class="menu">
+<li><a href="/it/4x/api.html">Riferimento API</a>
+<ul>
+<li><a href="/it/4x/api.html">4.x</a>
+</li>
+<li><a href="/it/3x/api.html">3.x (deprecato)</a>
+</li>
+<li><a href="/2x/">2.x (deprecato)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="advanced-topics-menu" class="menu">
+<li><a href="/it/advanced/developing-template-engines.html">Argomenti avanzati</a>
+<ul>
+<li><a href="/it/advanced/developing-template-engines.html">Motori di template</a>
+</li>
+<li><a href="/it/advanced/pm.html">Utilizzo dei process manager</a>
+</li>
+<li><a href="/it/advanced/security-updates.html">Aggiornamenti sulla sicurezza</a>
+</li>
+<li><a href="/it/advanced/best-practice-security.html">Best practice sulla sicurezza</a>
+</li>
+<li><a href="/it/advanced/best-practice-performance.html">Best practice sulle prestazioni</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu">
+<li><a href="/it/resources/glossary.html">Risorse</a>
+<ul>
+<li><a href="/it/resources/glossary.html">Glossario</a>
+</li>
+<li><a href="/it/resources/middleware.html">Middleware</a>
+</li>
+<li><a href="/it/resources/community.html">Community</a>
+</li>
+<li><a href="/it/resources/learning.html">Apprendimento aggiuntivo</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="homepage-leftpane" class="pane">
+<section id="description">
+<div class="express"><a href="/">Express</a></div>
+<span class="description">Framework web veloce, non categorico e minimalista per <a href="http://nodejs.org">Node.js</a></span>
+</section>
+<div id="install-command">$ npm install express --save</div>
+</div>
+<div id="homepage-rightpane" class="pane">
+<iframe src="https://www.youtube.com/embed/HxGt_3F0ULg" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+
+<section id="intro">
+<div id="boxes" class="clearfix">
+<div id="web-applications">
+<h3>Applicazioni web</h3> Express è un framework per applicazioni web Node.js flessibile e leggero che fornisce una serie di funzioni avanzate per le applicazioni web e per dispositivi mobili.
+</div>
+<div id="apis">
+<h3>API</h3> Con una miriade di metodi di utilità HTTP e middleware a disposizione, la creazione di un'API affidabile è un processo facile e veloce.
+</div>
+<div id="performance">
+<h3>Prestazioni</h3> Express fornisce uno strato sottile di funzionalità di base per le applicazioni web, senza nascondere le funzioni Node.js che conosci e ami.
+</div>
+<div id="sponsorship">
+<a href="http://loopback.io/"><h3>LoopBack</h3> Sviluppare applicazioni basate sul modello con un framework basato su Express.<br />Ulteriori informazioni su loopback.io.</a>
+</div>
+</div>
+</section>
+
+<a id="top" href="#"><img src="/images/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="//ghbtns.com/github-btn.html?user=expressjs&amp;repo=express&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://expressjs.com">Express</a> è un progetto della <a href="https://openjsf.org">Fondazione OpenJS</a>.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Avviare il sito web su GitHub</a>.</div>
+<div>Copyright &copy; StrongLoop, Inc. e altri contributor di expressjs.com.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/us/80x15.png" /></a> Quest'opera è distribuita con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribuzione - Condividi allo stesso modo 3.0 Stati Uniti</a>.
+</div>
+</footer>
+<script type="9e7b7aa5b792a015940d4d49-text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="docsearch({
+  apiKey: '7164e33055faa6ecddefd9e08fc59f5d',
+  indexName: 'expressjs',
+  inputSelector: '#q',
+  algoliaOptions: { 'facetFilters': ['lang:it'] }
+})" async></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="9e7b7aa5b792a015940d4d49-|49" defer=""></script></body>
+</html>
