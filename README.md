@@ -2,7 +2,16 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
 
-[![GitHub license](https://img.shields.io/github/license/bgoonz/web-dev-notes-resource-site?style=social)](https://github.com/bgoonz/web-dev-notes-resource-site)
+
+[![GitHub stars](https://img.shields.io/github/stars/bgoonz/web-dev-notes-resource-site)](https://github.com/bgoonz/web-dev-notes-resource-site/stargazers)
+
+
+
+[![GitHub license](https://img.shields.io/github/license/MIT/bgoonz/web-dev-notes-resource-site?logo=MIT&style=for-the-badge)](https://github.com/bgoonz/web-dev-notes-resource-site)
+
+
+
+
 This is the repo that contains my resource sharing and blog site ... centered mostly on web development and just a bit of audio production / generally nerdy things I find interesting. Please feel free to give me constructive feedback or even to branch off and improve it as you see fit... or don't, no pressure 🤷‍♂️.
 
 [![buddy pipeline](https://app.buddy.works/bryanguner/web-dev-notes-resource-site/pipelines/pipeline/304714/badge.svg?token=dd9ae1c0759c579bf7683f695df6b63494a159860ba5776b42b3dfea89dbc737 "buddy pipeline")](https://app.buddy.works/bryanguner/web-dev-notes-resource-site/pipelines/pipeline/304714)
@@ -14,7 +23,7 @@ This is the repo that contains my resource sharing and blog site ... centered mo
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./core-site/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">project_title</h3>
