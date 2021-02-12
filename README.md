@@ -7,7 +7,7 @@
 
 
 
-[![GitHub license](https://img.shields.io/github/license/MIT/bgoonz/web-dev-notes-resource-site?logo=MIT&style=for-the-badge)](https://github.com/bgoonz/web-dev-notes-resource-site)
+![history](commit-history.PNG)
 
 
 
