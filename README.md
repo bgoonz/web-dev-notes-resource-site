@@ -1,5 +1,5 @@
 ![.github/workflows/azure.yml](https://github.com/bgoonz/web-dev-notes-resource-site/workflows/.github/workflows/azure.yml/badge.svg)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/865c330e-e1e9-40b8-8420-bf603640b0fe/deploy-status)](https://app.netlify.com/sites/goofy-euclid-1cd736/deploys)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
 
 
@@ -23,10 +23,10 @@ This is the repo that contains my resource sharing and blog site ... centered mo
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="./core-site/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://media4.giphy.com/media/XkDyB1jCZMxUs/giphy.gif?cid=ecf05e478v9flczpr1h33r4wa1y2ee3jii7a62jq94zpp5gg&rid=giphy.gif" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">Web-Dev-Resource-Hub</h3>
 
   <p align="center">
     project_description

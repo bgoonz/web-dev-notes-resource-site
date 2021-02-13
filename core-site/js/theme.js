@@ -1,44 +1,44 @@
-; (function ($) {
+; ( function ( $ ) {
     "use strict"
 
 
-    var nav_offset_top = $('header').height() + 50;
+    var nav_offset_top = $( 'header' ).height() + 50;
     /*-------------------------------------------------------------------------------
-	  Navbar 
-	-------------------------------------------------------------------------------*/
+      Navbar 
+    -------------------------------------------------------------------------------*/
 
     //* Navbar Fixed  
-    function navbarFixed() {
-        if ($('.header_area').length) {
-            $(window).scroll(function () {
-                var scroll = $(window).scrollTop();
-                if (scroll >= nav_offset_top) {
-                    $(".header_area").addClass("navbar_fixed");
+    function navbarFixed () {
+        if ( $( '.header_area' ).length ) {
+            $( window ).scroll( function () {
+                var scroll = $( window ).scrollTop();
+                if ( scroll >= nav_offset_top ) {
+                    $( ".header_area" ).addClass( "navbar_fixed" );
                 } else {
-                    $(".header_area").removeClass("navbar_fixed");
+                    $( ".header_area" ).removeClass( "navbar_fixed" );
                 }
-            });
+            } );
         };
     };
     navbarFixed();
 
     // Search Toggle
-    $("#search_input_box").hide();
-    $("#search").on("click", function () {
-        $("#search_input_box").slideToggle('slow');
-        $("#search_input").focus();
-    });
-    $("#close_search").on("click", function () {
-        $('#search_input_box').slideUp('slow');
-    });
+    $( "#search_input_box" ).hide();
+    $( "#search" ).on( "click", function () {
+        $( "#search_input_box" ).slideToggle( 'slow' );
+        $( "#search_input" ).focus();
+    } );
+    $( "#close_search" ).on( "click", function () {
+        $( '#search_input_box' ).slideUp( 'slow' );
+    } );
 
 
     /*----------------------------------------------------*/
     /*  Clients Slider
     /*----------------------------------------------------*/
-    function active_testimonial() {
-        if ($('.active_testimonial').length) {
-            $('.active_testimonial').owlCarousel({
+    function active_testimonial () {
+        if ( $( '.active_testimonial' ).length ) {
+            $( '.active_testimonial' ).owlCarousel( {
                 loop: true,
                 margin: 0,
                 items: 1,
@@ -49,7 +49,7 @@
                 responsiveClass: true,
                 thumbs: true,
                 thumbsPrerendered: true,
-            })
+            } )
         }
     }
     active_testimonial();
@@ -58,34 +58,34 @@
     /*----------------------------------------------------*/
     /*  MailChimp Slider
     /*----------------------------------------------------*/
-    function mailChimp() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
+    function mailChimp () {
+        $( '#mc_embed_signup' ).find( 'form' ).ajaxChimp();
     }
     mailChimp();
 
-    $('select').niceSelect();
+    $( 'select' ).niceSelect();
 
     /*----------------------------------------------------*/
     /*  Simple Counter js
     /*----------------------------------------------------*/
-    $('.counter').counterUp({
+    $( '.counter' ).counterUp( {
         delay: 10,
         time: 1000
-    });
+    } );
 
     /*----------------------------------------------------*/
     /*  Google map js
     /*----------------------------------------------------*/
 
-    if ($('#mapBox').length) {
-        var $lat = $('#mapBox').data('lat');
-        var $lon = $('#mapBox').data('lon');
-        var $zoom = $('#mapBox').data('zoom');
-        var $marker = $('#mapBox').data('marker');
-        var $info = $('#mapBox').data('info');
-        var $markerLat = $('#mapBox').data('mlat');
-        var $markerLon = $('#mapBox').data('mlon');
-        var map = new GMaps({
+    if ( $( '#mapBox' ).length ) {
+        var $lat = $( '#mapBox' ).data( 'lat' );
+        var $lon = $( '#mapBox' ).data( 'lon' );
+        var $zoom = $( '#mapBox' ).data( 'zoom' );
+        var $marker = $( '#mapBox' ).data( 'marker' );
+        var $info = $( '#mapBox' ).data( 'info' );
+        var $markerLat = $( '#mapBox' ).data( 'mlat' );
+        var $markerLon = $( '#mapBox' ).data( 'mlon' );
+        var map = new GMaps( {
             el: '#mapBox',
             lat: $lat,
             lng: $lon,
@@ -281,22 +281,22 @@
                     ]
                 }
             ]
-        });
+        } );
     }
 
     /*----------------------------------------------------*/
     /*  Google map js
     /*----------------------------------------------------*/
 
-    if ($('#mapBox2').length) {
-        var $lat = $('#mapBox2').data('lat');
-        var $lon = $('#mapBox2').data('lon');
-        var $zoom = $('#mapBox2').data('zoom');
-        var $marker = $('#mapBox2').data('marker');
-        var $info = $('#mapBox2').data('info');
-        var $markerLat = $('#mapBox2').data('mlat');
-        var $markerLon = $('#mapBox2').data('mlon');
-        var map = new GMaps({
+    if ( $( '#mapBox2' ).length ) {
+        var $lat = $( '#mapBox2' ).data( 'lat' );
+        var $lon = $( '#mapBox2' ).data( 'lon' );
+        var $zoom = $( '#mapBox2' ).data( 'zoom' );
+        var $marker = $( '#mapBox2' ).data( 'marker' );
+        var $info = $( '#mapBox2' ).data( 'info' );
+        var $markerLat = $( '#mapBox2' ).data( 'mlat' );
+        var $markerLon = $( '#mapBox2' ).data( 'mlon' );
+        var map = new GMaps( {
             el: '#mapBox2',
             lat: $lat,
             lng: $lon,
@@ -321,8 +321,8 @@
                     ]
                 }
             ]
-        });
+        } );
     }
 
 
-})(jQuery)
+} )( jQuery )
