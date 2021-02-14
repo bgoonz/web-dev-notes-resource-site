@@ -72,6 +72,9 @@ This is the repo that contains my resource sharing and blog site ... centered mo
 
 
 
+
+![revision history](./0-assets/images/commit-history.PNG)
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 

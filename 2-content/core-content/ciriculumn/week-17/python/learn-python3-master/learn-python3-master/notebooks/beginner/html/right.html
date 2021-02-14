@@ -5,53 +5,50 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>html</title>
 <style type="text/css">
+HTML {font-size: small; font-family: sans-serif}
+BODY {background: #F8F8FA}
+A {text-decoration: none}
+A:hover {color: #FFF; background: #006699; border-radius: 8px; padding-left: 3px; padding-right: 3px;}
+TABLE.fancy {background: #DFDFDF; border-left: 1px solid;
+   border-top: 1px solid; border-bottom: 0px solid; border-color: #FFF}
+TABLE.fancy TD {border-right: 1px solid; border-bottom: 1px solid;
+  border-color: #FFF; text-align: center; padding-right: 5px}
+TABLE.fancy TD.no-right {border-right: 0px}
+TABLE.fancy TD.right {text-align: right}
+TABLE.fancy TD.left {text-align: left}
+TABLE.fancy TD.center {text-align: center}
+TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: center;
+   background: #488CB1; color: #FFF; border-color: #FFF; font-weight: bold}
+.anchor {font-weight: bold; border-top: 0px solid; text-align: center;
+   border-bottom: 1px solid; background: #006699; color: #FFF}
+.dark-blue {font-weight: bold; border-top: 0px solid; text-align: center;
+   border-bottom: 1px solid; background:#00537D; color: #FFF}
+.no-top-border {border-top: 0px}
 .centered {margin: auto}
-BODY {background-color: #F1F1F2; font: 1em Arial, Helvetica, sans-serif}
-TABLE.file-table {background-color:#d7dbdd; font:0.75em Arial, Helvetica, sans-serif;}
-TABLE.file-table TD {color:#5A666E; padding:2px; border-top:1px solid #FFF; border-left:1px solid #FFF;
- border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;  }
-TABLE.file-table TD a {color: #292E32; text-decoration:none;}
-TABLE.file-table TD a:hover {color: #FFF; background: #2B3154 }
-TABLE.file-table TD a:visited {color: #626B73}
-TABLE.file-table TD a:visited:hover {color: #FFF; background: #2B3154 }
-TABLE.file-table TR.row2 { background-color: #E6E8E9;}
-TABLE.file-table TD.center {text-align: center;}
-TABLE.file-table TH { background-color: #AAB0B5; color:#EDEFF0; padding:2px; text-align:center;
-   border-top: 1px solid #93A1AA; border-left: 1px solid #93A1AA; border-bottom: 1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-TABLE.file-table TD.header-row {background-color: #39536B; color: #FFF; text-align: center; font-weight:bold; font-size: medium;
- border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
- border-right:1px solid #2F3B42;}
-TABLE.file-table TD.anchor_table_td {text-align: center}
-TABLE.file-table TD.anchors {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background-color:#4B5D6D; color:#D7DBDD; border-color: #EEE;
-	 line-height: 1.05; font-size: medium;
-	 border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-TABLE.file-table TD.notes-color {background-color: #76838E; color: #d7dbdd;
-   border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-.summary-style {font-size: 0.75em; padding-left: 1em;}
+.rZ {text-align: right}
+.row2 {background: #D3D3E1}
 </style>
 </head>
 
 <body>
 
-<table border="0" cellspacing="1" cellpadding="2" summary="file table" class="file-table centered">
-<tr><td colspan="4" class="header-row"><b>Folders</b></td></tr>
-<tr><td style="text-align: center"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><td colspan="16" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
 </table>
 <br>
 
-<table border="0" cellspacing="1" cellpadding="2" summary="file table" class="file-table centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td><a href="classes.html" target="_parent">classes.html</a>&nbsp;</td><td><a href="file_io.html" target="_parent">file_io.html</a>&nbsp;</td><td><a href="modules_and_packages.html" target="_parent">modules_and_packages.html</a>&nbsp;</td><td><a href="strings.html" target="_parent">strings.html</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="conditionals.html" target="_parent">conditionals.html</a>&nbsp;</td><td><a href="for_loops.html" target="_parent">for_loops.html</a>&nbsp;</td><td><a href="numbers.html" target="_parent">numbers.html</a>&nbsp;</td><td><a href="testing1.html" target="_parent">testing1.html</a>&nbsp;</td></tr>
-<tr><td><a href="debugging.html" target="_parent">debugging.html</a>&nbsp;</td><td><a href="functions.html" target="_parent">functions.html</a>&nbsp;</td><td><a href="project_structure.html" target="_parent">project_structure.html</a>&nbsp;</td><td><a href="testing2.html" target="_parent">testing2.html</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="dictionaries.html" target="_parent">dictionaries.html</a>&nbsp;</td><td><a href="lists.html" target="_parent">lists.html</a>&nbsp;</td><td><a href="std_lib.html" target="_parent">std_lib.html</a>&nbsp;</td><td><a href="venv.html" target="_parent">venv.html</a>&nbsp;</td></tr>
-<tr><td><a href="exceptions.html" target="_parent">exceptions.html</a>&nbsp;</td><td></td><td></td><td></td></tr>
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="classes.html">classes.html</a>&nbsp;</td><td class="left"><a href="dictionaries.html">dictionaries.html</a>&nbsp;</td><td class="left"><a href="file_io.html">file_io.html</a>&nbsp;</td><td class="left"><a href="functions.html">functions.html</a>&nbsp;</td><td class="left"><a href="modules_and_packages.html">modules_and_packages.html</a>&nbsp;</td><td class="left"><a href="project_structure.html">project_structure.html</a>&nbsp;</td><td class="left"><a href="strings.html">strings.html</a>&nbsp;</td><td class="left"><a href="testing2.html">testing2.html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="conditionals.html">conditionals.html</a>&nbsp;</td><td class="left"><a href="exceptions.html">exceptions.html</a>&nbsp;</td><td class="left"><a href="for_loops.html">for_loops.html</a>&nbsp;</td><td class="left"><a href="lists.html">lists.html</a>&nbsp;</td><td class="left"><a href="numbers.html">numbers.html</a>&nbsp;</td><td class="left"><a href="std_lib.html">std_lib.html</a>&nbsp;</td><td class="left"><a href="testing1.html">testing1.html</a>&nbsp;</td><td class="left"><a href="venv.html">venv.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="debugging.html">debugging.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
+<p style="font-weight: bold; margin-bottom: 0px">
+Folders:  1<br>
+Files: 17<br>
+Size of all files: 4531848 K</p>
 
 </body>
 </html>

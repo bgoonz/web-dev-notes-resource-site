@@ -5,71 +5,59 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DOM</title>
 <style type="text/css">
+HTML {font-size: small; font-family: sans-serif}
+BODY {background: #F8F8FA}
+A {text-decoration: none}
+A:hover {color: #FFF; background: #006699; border-radius: 8px; padding-left: 3px; padding-right: 3px;}
+TABLE.fancy {background: #DFDFDF; border-left: 1px solid;
+   border-top: 1px solid; border-bottom: 0px solid; border-color: #FFF}
+TABLE.fancy TD {border-right: 1px solid; border-bottom: 1px solid;
+  border-color: #FFF; text-align: center; padding-right: 5px}
+TABLE.fancy TD.no-right {border-right: 0px}
+TABLE.fancy TD.right {text-align: right}
+TABLE.fancy TD.left {text-align: left}
+TABLE.fancy TD.center {text-align: center}
+TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: center;
+   background: #488CB1; color: #FFF; border-color: #FFF; font-weight: bold}
+.anchor {font-weight: bold; border-top: 0px solid; text-align: center;
+   border-bottom: 1px solid; background: #006699; color: #FFF}
+.dark-blue {font-weight: bold; border-top: 0px solid; text-align: center;
+   border-bottom: 1px solid; background:#00537D; color: #FFF}
+.no-top-border {border-top: 0px}
 .centered {margin: auto}
-BODY {background-color: #F1F1F2; font: 1em Arial, Helvetica, sans-serif}
-TABLE.file-table {background-color:#d7dbdd; font:0.75em Arial, Helvetica, sans-serif;}
-TABLE.file-table TD {color:#5A666E; padding:2px; border-top:1px solid #FFF; border-left:1px solid #FFF;
- border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;  }
-TABLE.file-table TD a {color: #292E32; text-decoration:none;}
-TABLE.file-table TD a:hover {color: #FFF; background: #2B3154 }
-TABLE.file-table TD a:visited {color: #626B73}
-TABLE.file-table TD a:visited:hover {color: #FFF; background: #2B3154 }
-TABLE.file-table TR.row2 { background-color: #E6E8E9;}
-TABLE.file-table TD.center {text-align: center;}
-TABLE.file-table TH { background-color: #AAB0B5; color:#EDEFF0; padding:2px; text-align:center;
-   border-top: 1px solid #93A1AA; border-left: 1px solid #93A1AA; border-bottom: 1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-TABLE.file-table TD.header-row {background-color: #39536B; color: #FFF; text-align: center; font-weight:bold; font-size: medium;
- border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
- border-right:1px solid #2F3B42;}
-TABLE.file-table TD.anchor_table_td {text-align: center}
-TABLE.file-table TD.anchors {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background-color:#4B5D6D; color:#D7DBDD; border-color: #EEE;
-	 line-height: 1.05; font-size: medium;
-	 border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-TABLE.file-table TD.notes-color {background-color: #76838E; color: #d7dbdd;
-   border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42;
-   border-right:1px solid #2F3B42;}
-.summary-style {font-size: 0.75em; padding-left: 1em;}
+.rZ {text-align: right}
+.row2 {background: #D3D3E1}
 </style>
 </head>
 
 <body>
 
-<table border="0" cellspacing="1" cellpadding="2" summary="file table" class="file-table centered">
-<tr><td colspan="4" class="header-row"><b>Folders</b></td></tr>
-<tr><td style="text-align: center"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><td colspan="16" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
 </table>
 <br>
 
-<table border="0" cellspacing="1" cellpadding="2" summary="file table" class="file-table centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td><a href="AbortController.jsdoc" target="_parent">AbortController.jsdoc</a>&nbsp;</td><td><a href="htmlcanvaselement.jsdoc" target="_parent">htmlcanvaselement.jsdoc</a>&nbsp;</td><td><a href="htmloptionelement.jsdoc" target="_parent">htmloptionelement.jsdoc</a>&nbsp;</td><td><a href="MutationObserver.jsdoc" target="_parent">MutationObserver.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="AbortSignal.jsdoc" target="_parent">AbortSignal.jsdoc</a>&nbsp;</td><td><a href="htmlcollection.jsdoc" target="_parent">htmlcollection.jsdoc</a>&nbsp;</td><td><a href="htmloptionscollection.jsdoc" target="_parent">htmloptionscollection.jsdoc</a>&nbsp;</td><td><a href="MutationRecord.jsdoc" target="_parent">MutationRecord.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="attr.jsdoc" target="_parent">attr.jsdoc</a>&nbsp;</td><td><a href="htmldivelement.jsdoc" target="_parent">htmldivelement.jsdoc</a>&nbsp;</td><td><a href="htmlparagraphelement.jsdoc" target="_parent">htmlparagraphelement.jsdoc</a>&nbsp;</td><td><a href="node.jsdoc" target="_parent">node.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="characterdata.jsdoc" target="_parent">characterdata.jsdoc</a>&nbsp;</td><td><a href="htmldlistelement.jsdoc" target="_parent">htmldlistelement.jsdoc</a>&nbsp;</td><td><a href="htmlpreelement.jsdoc" target="_parent">htmlpreelement.jsdoc</a>&nbsp;</td><td><a href="nodefilter.jsdoc" target="_parent">nodefilter.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="comment.jsdoc" target="_parent">comment.jsdoc</a>&nbsp;</td><td><a href="htmlelement.jsdoc" target="_parent">htmlelement.jsdoc</a>&nbsp;</td><td><a href="htmlquoteelement.jsdoc" target="_parent">htmlquoteelement.jsdoc</a>&nbsp;</td><td><a href="nodeiterator.jsdoc" target="_parent">nodeiterator.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="compositionevent.jsdoc" target="_parent">compositionevent.jsdoc</a>&nbsp;</td><td><a href="htmlembedelement.jsdoc" target="_parent">htmlembedelement.jsdoc</a>&nbsp;</td><td><a href="htmlscriptelement.jsdoc" target="_parent">htmlscriptelement.jsdoc</a>&nbsp;</td><td><a href="nodelist.jsdoc" target="_parent">nodelist.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="document.jsdoc" target="_parent">document.jsdoc</a>&nbsp;</td><td><a href="htmlformcontrolscollection.jsdoc" target="_parent">htmlformcontrolscollection.jsdoc</a>&nbsp;</td><td><a href="htmlselectelement.jsdoc" target="_parent">htmlselectelement.jsdoc</a>&nbsp;</td><td><a href="option.jsdoc" target="_parent">option.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="documentfragment.jsdoc" target="_parent">documentfragment.jsdoc</a>&nbsp;</td><td><a href="htmlformelement.jsdoc" target="_parent">htmlformelement.jsdoc</a>&nbsp;</td><td><a href="htmlslotelement.jsdoc" target="_parent">htmlslotelement.jsdoc</a>&nbsp;</td><td><a href="pointerevent.jsdoc" target="_parent">pointerevent.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="documenttype.jsdoc" target="_parent">documenttype.jsdoc</a>&nbsp;</td><td><a href="htmlheadelement.jsdoc" target="_parent">htmlheadelement.jsdoc</a>&nbsp;</td><td><a href="htmlspanelement.jsdoc" target="_parent">htmlspanelement.jsdoc</a>&nbsp;</td><td><a href="processinginstruction.jsdoc" target="_parent">processinginstruction.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="domimplementation.jsdoc" target="_parent">domimplementation.jsdoc</a>&nbsp;</td><td><a href="htmlheadingelement.jsdoc" target="_parent">htmlheadingelement.jsdoc</a>&nbsp;</td><td><a href="htmlstyleelement.jsdoc" target="_parent">htmlstyleelement.jsdoc</a>&nbsp;</td><td><a href="progressevent.jsdoc" target="_parent">progressevent.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="domparser.jsdoc" target="_parent">domparser.jsdoc</a>&nbsp;</td><td><a href="htmlhrelement.jsdoc" target="_parent">htmlhrelement.jsdoc</a>&nbsp;</td><td><a href="htmltablecellelement.jsdoc" target="_parent">htmltablecellelement.jsdoc</a>&nbsp;</td><td><a href="range.jsdoc" target="_parent">range.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="domstringmap.jsdoc" target="_parent">domstringmap.jsdoc</a>&nbsp;</td><td><a href="htmlhtmlelement.jsdoc" target="_parent">htmlhtmlelement.jsdoc</a>&nbsp;</td><td><a href="htmltableelement.jsdoc" target="_parent">htmltableelement.jsdoc</a>&nbsp;</td><td><a href="ResizeObserver.jsdoc" target="_parent">ResizeObserver.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="domtokenlist.jsdoc" target="_parent">domtokenlist.jsdoc</a>&nbsp;</td><td><a href="htmliframeelement.jsdoc" target="_parent">htmliframeelement.jsdoc</a>&nbsp;</td><td><a href="htmltablerowelement.jsdoc" target="_parent">htmltablerowelement.jsdoc</a>&nbsp;</td><td><a href="ResizeObserverEntry.jsdoc" target="_parent">ResizeObserverEntry.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="element.jsdoc" target="_parent">element.jsdoc</a>&nbsp;</td><td><a href="htmlimageelement.jsdoc" target="_parent">htmlimageelement.jsdoc</a>&nbsp;</td><td><a href="htmltimeelement.jsdoc" target="_parent">htmltimeelement.jsdoc</a>&nbsp;</td><td><a href="text.jsdoc" target="_parent">text.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="event.jsdoc" target="_parent">event.jsdoc</a>&nbsp;</td><td><a href="htmlinputelement.jsdoc" target="_parent">htmlinputelement.jsdoc</a>&nbsp;</td><td><a href="htmltitleelement.jsdoc" target="_parent">htmltitleelement.jsdoc</a>&nbsp;</td><td><a href="touch.jsdoc" target="_parent">touch.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="eventlistener.jsdoc" target="_parent">eventlistener.jsdoc</a>&nbsp;</td><td><a href="htmllielement.jsdoc" target="_parent">htmllielement.jsdoc</a>&nbsp;</td><td><a href="htmlulistelement.jsdoc" target="_parent">htmlulistelement.jsdoc</a>&nbsp;</td><td><a href="touchevent.jsdoc" target="_parent">touchevent.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="eventtarget.jsdoc" target="_parent">eventtarget.jsdoc</a>&nbsp;</td><td><a href="htmllinkelement.jsdoc" target="_parent">htmllinkelement.jsdoc</a>&nbsp;</td><td><a href="image.jsdoc" target="_parent">image.jsdoc</a>&nbsp;</td><td><a href="touchlist.jsdoc" target="_parent">touchlist.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="focusevent.jsdoc" target="_parent">focusevent.jsdoc</a>&nbsp;</td><td><a href="htmlmenuelement.jsdoc" target="_parent">htmlmenuelement.jsdoc</a>&nbsp;</td><td><a href="InputEvent.jsdoc" target="_parent">InputEvent.jsdoc</a>&nbsp;</td><td><a href="treewalker.jsdoc" target="_parent">treewalker.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="htmlanchorelement.jsdoc" target="_parent">htmlanchorelement.jsdoc</a>&nbsp;</td><td><a href="htmlmetaelement.jsdoc" target="_parent">htmlmetaelement.jsdoc</a>&nbsp;</td><td><a href="intersectionobserver.jsdoc" target="_parent">intersectionobserver.jsdoc</a>&nbsp;</td><td><a href="uievent.jsdoc" target="_parent">uievent.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="htmlbaseelement.jsdoc" target="_parent">htmlbaseelement.jsdoc</a>&nbsp;</td><td><a href="htmlmodelement.jsdoc" target="_parent">htmlmodelement.jsdoc</a>&nbsp;</td><td><a href="intersectionobserverentry.jsdoc" target="_parent">intersectionobserverentry.jsdoc</a>&nbsp;</td><td><a href="validitystate.jsdoc" target="_parent">validitystate.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="htmlbodyelement.jsdoc" target="_parent">htmlbodyelement.jsdoc</a>&nbsp;</td><td><a href="htmlolistelement.jsdoc" target="_parent">htmlolistelement.jsdoc</a>&nbsp;</td><td><a href="keyboardevent.jsdoc" target="_parent">keyboardevent.jsdoc</a>&nbsp;</td><td><a href="xmldocument.jsdoc" target="_parent">xmldocument.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td><a href="htmlbrelement.jsdoc" target="_parent">htmlbrelement.jsdoc</a>&nbsp;</td><td><a href="htmloptgroupelement.jsdoc" target="_parent">htmloptgroupelement.jsdoc</a>&nbsp;</td><td><a href="mouseevent.jsdoc" target="_parent">mouseevent.jsdoc</a>&nbsp;</td><td><a href="xmlserializer.jsdoc" target="_parent">xmlserializer.jsdoc</a>&nbsp;</td></tr>
-<tr><td><a href="htmlbuttonelement.jsdoc" target="_parent">htmlbuttonelement.jsdoc</a>&nbsp;</td><td></td><td></td><td></td></tr>
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="AbortController.jsdoc">AbortController.jsdoc</a>&nbsp;</td><td class="left"><a href="domtokenlist.jsdoc">domtokenlist.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcanvaselement.jsdoc">htmlcanvaselement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhtmlelement.jsdoc">htmlhtmlelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionelement.jsdoc">htmloptionelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltableelement.jsdoc">htmltableelement.jsdoc</a>&nbsp;</td><td class="left"><a href="MutationObserver.jsdoc">MutationObserver.jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserver.jsdoc">ResizeObserver.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="AbortSignal.jsdoc">AbortSignal.jsdoc</a>&nbsp;</td><td class="left"><a href="element.jsdoc">element.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcollection.jsdoc">htmlcollection.jsdoc</a>&nbsp;</td><td class="left"><a href="htmliframeelement.jsdoc">htmliframeelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionscollection.jsdoc">htmloptionscollection.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablerowelement.jsdoc">htmltablerowelement.jsdoc</a>&nbsp;</td><td class="left"><a href="MutationRecord.jsdoc">MutationRecord.jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserverEntry.jsdoc">ResizeObserverEntry.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="attr.jsdoc">attr.jsdoc</a>&nbsp;</td><td class="left"><a href="event.jsdoc">event.jsdoc</a>&nbsp;</td><td class="left"><a href="htmldivelement.jsdoc">htmldivelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlimageelement.jsdoc">htmlimageelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlparagraphelement.jsdoc">htmlparagraphelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltimeelement.jsdoc">htmltimeelement.jsdoc</a>&nbsp;</td><td class="left"><a href="node.jsdoc">node.jsdoc</a>&nbsp;</td><td class="left"><a href="text.jsdoc">text.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="characterdata.jsdoc">characterdata.jsdoc</a>&nbsp;</td><td class="left"><a href="eventlistener.jsdoc">eventlistener.jsdoc</a>&nbsp;</td><td class="left"><a href="htmldlistelement.jsdoc">htmldlistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlinputelement.jsdoc">htmlinputelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlpreelement.jsdoc">htmlpreelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltitleelement.jsdoc">htmltitleelement.jsdoc</a>&nbsp;</td><td class="left"><a href="nodefilter.jsdoc">nodefilter.jsdoc</a>&nbsp;</td><td class="left"><a href="touch.jsdoc">touch.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="comment.jsdoc">comment.jsdoc</a>&nbsp;</td><td class="left"><a href="eventtarget.jsdoc">eventtarget.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlelement.jsdoc">htmlelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmllielement.jsdoc">htmllielement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlquoteelement.jsdoc">htmlquoteelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlulistelement.jsdoc">htmlulistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="nodeiterator.jsdoc">nodeiterator.jsdoc</a>&nbsp;</td><td class="left"><a href="touchevent.jsdoc">touchevent.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="compositionevent.jsdoc">compositionevent.jsdoc</a>&nbsp;</td><td class="left"><a href="focusevent.jsdoc">focusevent.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlembedelement.jsdoc">htmlembedelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmllinkelement.jsdoc">htmllinkelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlscriptelement.jsdoc">htmlscriptelement.jsdoc</a>&nbsp;</td><td class="left"><a href="image.jsdoc">image.jsdoc</a>&nbsp;</td><td class="left"><a href="nodelist.jsdoc">nodelist.jsdoc</a>&nbsp;</td><td class="left"><a href="touchlist.jsdoc">touchlist.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="document.jsdoc">document.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlanchorelement.jsdoc">htmlanchorelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformcontrolscollection.jsdoc">htmlformcontrolscollection.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmenuelement.jsdoc">htmlmenuelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlselectelement.jsdoc">htmlselectelement.jsdoc</a>&nbsp;</td><td class="left"><a href="InputEvent.jsdoc">InputEvent.jsdoc</a>&nbsp;</td><td class="left"><a href="option.jsdoc">option.jsdoc</a>&nbsp;</td><td class="left"><a href="treewalker.jsdoc">treewalker.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="documentfragment.jsdoc">documentfragment.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbaseelement.jsdoc">htmlbaseelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformelement.jsdoc">htmlformelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmetaelement.jsdoc">htmlmetaelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlslotelement.jsdoc">htmlslotelement.jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserver.jsdoc">intersectionobserver.jsdoc</a>&nbsp;</td><td class="left"><a href="pointerevent.jsdoc">pointerevent.jsdoc</a>&nbsp;</td><td class="left"><a href="uievent.jsdoc">uievent.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="documenttype.jsdoc">documenttype.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbodyelement.jsdoc">htmlbodyelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadelement.jsdoc">htmlheadelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmodelement.jsdoc">htmlmodelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlspanelement.jsdoc">htmlspanelement.jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserverentry.jsdoc">intersectionobserverentry.jsdoc</a>&nbsp;</td><td class="left"><a href="processinginstruction.jsdoc">processinginstruction.jsdoc</a>&nbsp;</td><td class="left"><a href="validitystate.jsdoc">validitystate.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="domimplementation.jsdoc">domimplementation.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbrelement.jsdoc">htmlbrelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadingelement.jsdoc">htmlheadingelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlolistelement.jsdoc">htmlolistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlstyleelement.jsdoc">htmlstyleelement.jsdoc</a>&nbsp;</td><td class="left"><a href="keyboardevent.jsdoc">keyboardevent.jsdoc</a>&nbsp;</td><td class="left"><a href="progressevent.jsdoc">progressevent.jsdoc</a>&nbsp;</td><td class="left"><a href="xmldocument.jsdoc">xmldocument.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="domparser.jsdoc">domparser.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbuttonelement.jsdoc">htmlbuttonelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhrelement.jsdoc">htmlhrelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptgroupelement.jsdoc">htmloptgroupelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablecellelement.jsdoc">htmltablecellelement.jsdoc</a>&nbsp;</td><td class="left"><a href="mouseevent.jsdoc">mouseevent.jsdoc</a>&nbsp;</td><td class="left"><a href="range.jsdoc">range.jsdoc</a>&nbsp;</td><td class="left"><a href="xmlserializer.jsdoc">xmlserializer.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="domstringmap.jsdoc">domstringmap.jsdoc</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
+<p style="font-weight: bold; margin-bottom: 0px">
+Folders:  1<br>
+Files: 89<br>
+Size of all files: 180916 K</p>
 
 </body>
 </html>
