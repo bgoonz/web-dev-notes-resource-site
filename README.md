@@ -1,3 +1,13 @@
+
+<script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"/>
+<style>body { color: red }</style>
+
+
+
+
+
 ![.github/workflows/azure.yml](https://github.com/bgoonz/web-dev-notes-resource-site/workflows/.github/workflows/azure.yml/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/865c330e-e1e9-40b8-8420-bf603640b0fe/deploy-status)](https://app.netlify.com/sites/goofy-euclid-1cd736/deploys)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
