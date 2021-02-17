@@ -81,4 +81,4 @@ Clay Allsopp wrote a post about [all the crazy things you could do with a JavaSc
 
 We've spent a lot of efforts getting the onboarding as easy as possible and we're really happy that people noticed. We still have a lot of work to do on documentation, stay tuned!
 
-<blockquote class="twitter-tweet" lang="en"><p>Wow. Getting started with React Native might have been the smoothest experience I’ve ever had with a new developer product.</p>&mdash; Andreas Eldh (@eldh) <a href="https://twitter.com/eldh/status/581186172094980096">March 26, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p>Wow. Getting started with React Native might have been the smoothest experience I've ever had with a new developer product.</p>&mdash; Andreas Eldh (@eldh) <a href="https://twitter.com/eldh/status/581186172094980096">March 26, 2015</a></blockquote>

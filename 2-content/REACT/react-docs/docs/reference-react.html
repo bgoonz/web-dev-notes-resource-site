@@ -14,7 +14,8 @@
 <li><a href="#reactcomponent"><code>React.Component</code></a></li>
 <li><a href="#reactpurecomponent"><code>React.PureComponent</code></a></li>
 </ul>
-<p>If you don’t use ES6 classes, you may use the <code>create-react-class</code> module instead. See <a href="/docs/react-without-es6.html">Using React without ES6</a> for more information.</p>
+<p>If you don't use ES6 classes, you may use the <code>create-react-class</code> module instead. See <a
+        href="/docs/react-without-es6.html">Using React without ES6</a> for more information.</p>
 <p>React components can also be defined as functions which can be wrapped:</p>
 <ul>
 <li><a href="#reactmemo"><code>React.memo</code></a></li>
@@ -81,12 +82,22 @@
 <p>See the <a href="/docs/react-component.html">React.Component API Reference</a> for a list of methods and properties related to the base <code>React.Component</code> class.</p>
 <hr />
 <h3 id="reactpurecomponent"><code>React.PureComponent</code></h3>
-<p><code>React.PureComponent</code> is similar to <a href="#reactcomponent"><code>React.Component</code></a>. The difference between them is that <a href="#reactcomponent"><code>React.Component</code></a> doesn’t implement <a href="/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a>, but <code>React.PureComponent</code> implements it with a shallow prop and state comparison.</p>
-<p>If your React component’s <code>render()</code> function renders the same result given the same props and state, you can use <code>React.PureComponent</code> for a performance boost in some cases.</p>
+<p><code>React.PureComponent</code> is similar to <a href="#reactcomponent"><code>React.Component</code></a>. The
+    difference between them is that <a href="#reactcomponent"><code>React.Component</code></a> doesn't implement <a
+        href="/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a>, but
+    <code>React.PureComponent</code> implements it with a shallow prop and state comparison.</p>
+<p>If your React component's <code>render()</code> function renders the same result given the same props and state, you
+    can use <code>React.PureComponent</code> for a performance boost in some cases.</p>
 <blockquote>
 <p>Note</p>
-<p><code>React.PureComponent</code>’s <code>shouldComponentUpdate()</code> only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend <code>PureComponent</code> when you expect to have simple props and state, or use <a href="/docs/react-component.html#forceupdate"><code>forceUpdate()</code></a> when you know deep data structures have changed. Or, consider using <a href="https://facebook.github.io/immutable-js/">immutable objects</a> to facilitate fast comparisons of nested data.</p>
-<p>Furthermore, <code>React.PureComponent</code>’s <code>shouldComponentUpdate()</code> skips prop updates for the whole component subtree. Make sure all the children components are also “pure”.</p>
+<p><code>React.PureComponent</code>'s <code>shouldComponentUpdate()</code> only shallowly compares the objects. If these
+    contain complex data structures, it may produce false-negatives for deeper differences. Only extend
+    <code>PureComponent</code> when you expect to have simple props and state, or use <a
+        href="/docs/react-component.html#forceupdate"><code>forceUpdate()</code></a> when you know deep data structures
+    have changed. Or, consider using <a href="https://facebook.github.io/immutable-js/">immutable objects</a> to
+    facilitate fast comparisons of nested data.</p>
+<p>Furthermore, <code>React.PureComponent</code>'s <code>shouldComponentUpdate()</code> skips prop updates for the whole
+    component subtree. Make sure all the children components are also “pure”.</p>
 </blockquote>
 <hr />
 <h3 id="reactmemo"><code>React.memo</code></h3>
@@ -129,10 +140,14 @@
   [props],
   [...children]
 )</code></pre>
-<p>Clone and return a new React element using <code>element</code> as the starting point. The resulting element will have the original element’s props with the new props merged in shallowly. New children will replace existing children. <code>key</code> and <code>ref</code> from the original element will be preserved.</p>
+<p>Clone and return a new React element using <code>element</code> as the starting point. The resulting element will
+    have the original element's props with the new props merged in shallowly. New children will replace existing
+    children. <code>key</code> and <code>ref</code> from the original element will be preserved.</p>
 <p><code>React.cloneElement()</code> is almost equivalent to:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&lt;</span><span class="va">element</span>.<span class="at">type</span> <span class="op">{</span>...<span class="va">element</span>.<span class="at">props</span><span class="op">}</span> <span class="op">{</span>...<span class="at">props</span><span class="op">}&gt;{</span>children<span class="op">}</span>&lt;/<span class="va">element</span>.<span class="at">type</span><span class="op">&gt;</span></a></code></pre></div>
-<p>However, it also preserves <code>ref</code>s. This means that if you get a child with a <code>ref</code> on it, you won’t accidentally steal it from your ancestor. You will get the same <code>ref</code> attached to your new element.</p>
+<p>However, it also preserves <code>ref</code>s. This means that if you get a child with a <code>ref</code> on it, you
+    won't accidentally steal it from your ancestor. You will get the same <code>ref</code> attached to your new element.
+</p>
 <p>This API was introduced as a replacement of the deprecated <code>React.addons.cloneWithProps()</code>.</p>
 <hr />
 <h3 id="createfactory"><code>createFactory()</code></h3>
@@ -172,7 +187,9 @@
 <p>Returns the <code>children</code> opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice <code>this.props.children</code> before passing it down.</p>
 <blockquote>
 <p>Note:</p>
-<p><code>React.Children.toArray()</code> changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, <code>toArray</code> prefixes each key in the returned array so that each element’s key is scoped to the input array containing it.</p>
+<p><code>React.Children.toArray()</code> changes keys to preserve the semantics of nested arrays when flattening lists
+    of children. That is, <code>toArray</code> prefixes each key in the returned array so that each element's key is
+    scoped to the input array containing it.</p>
 </blockquote>
 <hr />
 <h3 id="reactfragment"><code>React.Fragment</code></h3>
@@ -200,11 +217,13 @@
 <p>As a result, after React attaches the ref, <code>ref.current</code> will point directly to the <code>&lt;button&gt;</code> DOM element instance.</p>
 <p>For more information, see <a href="/docs/forwarding-refs.html">forwarding refs</a>.</p>
 <h3 id="reactlazy"><code>React.lazy</code></h3>
-<p><code>React.lazy()</code> lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren’t used during the initial render.</p>
+<p><code>React.lazy()</code> lets you define a component that is loaded dynamically. This helps reduce the bundle size
+    to delay loading components that aren't used during the initial render.</p>
 <p>You can learn how to use it from our <a href="/docs/code-splitting.html#reactlazy">code splitting documentation</a>. You might also want to check out <a href="https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d">this article</a> explaining how to use it in more detail.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="co">// This component is loaded dynamically</span></a>
 <a class="sourceLine" id="cb15-2" title="2"><span class="kw">const</span> SomeComponent <span class="op">=</span> <span class="va">React</span>.<span class="at">lazy</span>(() <span class="kw">=&gt;</span> <span class="im">import</span>(<span class="st">&#39;./SomeComponent&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<p>Note that rendering <code>lazy</code> components requires that there’s a <code>&lt;React.Suspense&gt;</code> component higher in the rendering tree. This is how you specify a loading indicator.</p>
+<p>Note that rendering <code>lazy</code> components requires that there's a <code>&lt;React.Suspense&gt;</code>
+    component higher in the rendering tree. This is how you specify a loading indicator.</p>
 <blockquote>
 <p><strong>Note</strong></p>
 <p>Using <code>React.lazy</code>with dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.</p>
@@ -224,7 +243,10 @@
 <a class="sourceLine" id="cb16-11" title="11">    &lt;/<span class="va">React</span>.<span class="at">Suspense</span><span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb16-12" title="12">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-13" title="13"><span class="op">}</span></a></code></pre></div>
-<p>It is documented in our <a href="/docs/code-splitting.html#reactlazy">code splitting guide</a>. Note that <code>lazy</code> components can be deep inside the <code>Suspense</code> tree – it doesn’t have to wrap every one of them. The best practice is to place <code>&lt;Suspense&gt;</code> where you want to see a loading indicator, but to use <code>lazy()</code> wherever you want to do code splitting.</p>
+<p>It is documented in our <a href="/docs/code-splitting.html#reactlazy">code splitting guide</a>. Note that
+    <code>lazy</code> components can be deep inside the <code>Suspense</code> tree – it doesn't have to wrap every one
+    of them. The best practice is to place <code>&lt;Suspense&gt;</code> where you want to see a loading indicator, but
+    to use <code>lazy()</code> wherever you want to do code splitting.</p>
 <p>While this is not supported today, in the future we plan to let <code>Suspense</code> handle more scenarios such as data fetching. You can read about this in <a href="/blog/2018/11/27/react-16-roadmap.html">our roadmap</a>.</p>
 <blockquote>
 <p>Note:</p>

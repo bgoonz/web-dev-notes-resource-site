@@ -7,16 +7,22 @@
 </head>
 <body>;
 <p>This section is a collection of implementation notes for the <a href="/docs/codebase-overview.html#stack-reconciler">stack reconciler</a>.</p>
-<p>It is very technical and assumes a strong understanding of React public API as well as how it’s divided into core, renderers, and the reconciler. If you’re not very familiar with the React codebase, read <a href="/docs/codebase-overview.html">the codebase overview</a> first.</p>
+<p>It is very technical and assumes a strong understanding of React public API as well as how it's divided into core,
+    renderers, and the reconciler. If you're not very familiar with the React codebase, read <a
+        href="/docs/codebase-overview.html">the codebase overview</a> first.</p>
 <p>It also assumes an understanding of the <a href="/blog/2015/12/18/react-components-elements-and-instances.html">differences between React components, their instances, and elements</a>.</p>
 <p>The stack reconciler was used in React 15 and earlier. It is located at <a href="https://github.com/facebook/react/tree/15-stable/src/renderers/shared/stack/reconciler">src/renderers/shared/stack/reconciler</a>.</p>
 <h3 id="video-building-react-from-scratch">Video: Building React from Scratch</h3>
-<p><a href="https://twitter.com/zpao">Paul O’Shannessy</a> gave a talk about <a href="https://www.youtube.com/watch?v=_MAD4Oly9yg">building React from scratch</a> that largely inspired this document.</p>
+<p><a href="https://twitter.com/zpao">Paul O'Shannessy</a> gave a talk about <a
+        href="https://www.youtube.com/watch?v=_MAD4Oly9yg">building React from scratch</a> that largely inspired this
+    document.</p>
 <p>Both this document and his talk are simplifications of the real codebase so you might get a better understanding by getting familiar with both of them.</p>
 <h3 id="overview">Overview</h3>
-<p>The reconciler itself doesn’t have a public API. <a href="/docs/codebase-overview.html#renderers">Renderers</a> like React DOM and React Native use it to efficiently update the user interface according to the React components written by the user.</p>
+<p>The reconciler itself doesn't have a public API. <a href="/docs/codebase-overview.html#renderers">Renderers</a> like
+    React DOM and React Native use it to efficiently update the user interface according to the React components written
+    by the user.</p>
 <h3 id="mounting-as-a-recursive-process">Mounting as a Recursive Process</h3>
-<p>Let’s consider the first time you mount a component:</p>
+<p>Let's consider the first time you mount a component:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a></code></pre></div>
 <p>React DOM will pass <code>&lt;App /&gt;</code> along to the reconciler. Remember that <code>&lt;App /&gt;</code> is a React element, that is, a description of <em>what</em> to render. You can think about it as a plain object:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="op">&lt;</span>App /<span class="op">&gt;</span>)<span class="op">;</span></a>
@@ -75,23 +81,26 @@
 <a class="sourceLine" id="cb3-46" title="46"><span class="va">rootEl</span>.<span class="at">appendChild</span>(node)<span class="op">;</span></a></code></pre></div>
 <blockquote>
 <p><strong>Note:</strong></p>
-<p>This really <em>is</em> a pseudo-code. It isn’t similar to the real implementation. It will also cause a stack overflow because we haven’t discussed when to stop the recursion.</p>
+<p>This really <em>is</em> a pseudo-code. It isn't similar to the real implementation. It will also cause a stack
+    overflow because we haven't discussed when to stop the recursion.</p>
 </blockquote>
-<p>Let’s recap a few key ideas in the example above:</p>
+<p>Let's recap a few key ideas in the example above:</p>
 <ul>
 <li>React elements are plain objects representing the component type (e.g. <code>App</code>) and the props.</li>
 <li>User-defined components (e.g. <code>App</code>) can be classes or functions but they all “render to” elements.</li>
 <li>“Mounting” is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. <code>&lt;App /&gt;</code>).</li>
 </ul>
 <h3 id="mounting-host-elements">Mounting Host Elements</h3>
-<p>This process would be useless if we didn’t render something to the screen as a result.</p>
+<p>This process would be useless if we didn't render something to the screen as a result.</p>
 <p>In addition to user-defined (“composite”) components, React elements may also represent platform-specific (“host”) components. For example, <code>Button</code> might return a <code>&lt;div /&gt;</code> from its render method.</p>
-<p>If element’s <code>type</code> property is a string, we are dealing with a host element:</p>
+<p>If element's <code>type</code> property is a string, we are dealing with a host element:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="op">&lt;</span>div /<span class="op">&gt;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co">// { type: &#39;div&#39;, props: {} }</span></a></code></pre></div>
 <p>There is no user-defined code associated with host elements.</p>
 <p>When the reconciler encounters a host element, it lets the renderer take care of mounting it. For example, React DOM would create a DOM node.</p>
-<p>If the host element has children, the reconciler recursively mounts them following the same algorithm as above. It doesn’t matter whether children are host (like <code>&lt;div&gt;&lt;hr /&gt;&lt;/div&gt;</code>), composite (like <code>&lt;div&gt;&lt;Button /&gt;&lt;/div&gt;</code>), or both.</p>
+<p>If the host element has children, the reconciler recursively mounts them following the same algorithm as above. It
+    doesn't matter whether children are host (like <code>&lt;div&gt;&lt;hr /&gt;&lt;/div&gt;</code>), composite (like
+    <code>&lt;div&gt;&lt;Button /&gt;&lt;/div&gt;</code>), or both.</p>
 <p>The DOM nodes produced by the child components will be appended to the parent DOM node, and recursively, the complete DOM structure will be assembled.</p>
 <blockquote>
 <p><strong>Note:</strong></p>
@@ -186,11 +195,13 @@
 <a class="sourceLine" id="cb5-86" title="86"><span class="va">rootEl</span>.<span class="at">appendChild</span>(node)<span class="op">;</span></a></code></pre></div>
 <p>This is working but still far from how the reconciler is really implemented. The key missing ingredient is support for updates.</p>
 <h3 id="introducing-internal-instances">Introducing Internal Instances</h3>
-<p>The key feature of React is that you can re-render everything, and it won’t recreate the DOM or reset the state:</p>
+<p>The key feature of React is that you can re-render everything, and it won't recreate the DOM or reset the state:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="co">// Should reuse the existing DOM:</span></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a></code></pre></div>
-<p>However, our implementation above only knows how to mount the initial tree. It can’t perform updates on it because it doesn’t store all the necessary information, such as all the <code>publicInstance</code>s, or which DOM <code>node</code>s correspond to which components.</p>
+<p>However, our implementation above only knows how to mount the initial tree. It can't perform updates on it because it
+    doesn't store all the necessary information, such as all the <code>publicInstance</code>s, or which DOM
+    <code>node</code>s correspond to which components.</p>
 <p>The stack reconciler codebase solves this by making the <code>mount()</code> function a method and putting it on a class. There are drawbacks to this approach, and we are going in the opposite direction in the <a href="/docs/codebase-overview.html#fiber-reconciler">ongoing rewrite of the reconciler</a>. Nevertheless this is how it works now.</p>
 <p>Instead of separate <code>mountHost</code> and <code>mountComposite</code> functions, we will create two classes: <code>DOMComponent</code> and <code>CompositeComponent</code>.</p>
 <p>Both classes have a constructor accepting the <code>element</code>, as well as a <code>mount()</code> method returning the mounted node. We will replace a top-level <code>mount()</code> function with a factory that instantiates the correct class:</p>
@@ -204,7 +215,7 @@
 <a class="sourceLine" id="cb7-8" title="8">    <span class="cf">return</span> <span class="kw">new</span> <span class="at">DOMComponent</span>(element)<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-9" title="9">  <span class="op">}</span>  </a>
 <a class="sourceLine" id="cb7-10" title="10"><span class="op">}</span></a></code></pre></div>
-<p>First, let’s consider the implementation of <code>CompositeComponent</code>:</p>
+<p>First, let's consider the implementation of <code>CompositeComponent</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">class</span> CompositeComponent <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="at">constructor</span>(element) <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-3" title="3">    <span class="kw">this</span>.<span class="at">currentElement</span> <span class="op">=</span> element<span class="op">;</span></a>
@@ -332,7 +343,9 @@
 <li>The DOM node.</li>
 <li>All the child internal instances. Each of them can be either a <code>DOMComponent</code> or a <code>CompositeComponent</code>.</li>
 </ul>
-<p>If you’re struggling to imagine how an internal instance tree is structured in more complex applications, <a href="https://github.com/facebook/react-devtools">React DevTools</a> can give you a close approximation, as it highlights host instances with grey, and composite instances with purple:</p>
+<p>If you're struggling to imagine how an internal instance tree is structured in more complex applications, <a
+        href="https://github.com/facebook/react-devtools">React DevTools</a> can give you a close approximation, as it
+    highlights host instances with grey, and composite instances with purple:</p>
 <p><img src="../images/docs/implementation-notes-tree.png" width="500" style="max-width: 100%" alt="React DevTools tree" /></p>
 <p>To complete this refactoring, we will introduce a function that mounts a complete tree into a container node, just like <code>ReactDOM.render()</code>. It returns a public instance, also like <code>ReactDOM.render()</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">function</span> <span class="at">mountTree</span>(element<span class="op">,</span> containerNode) <span class="op">{</span></a>
@@ -416,7 +429,9 @@
 <a class="sourceLine" id="cb15-20" title="20"><span class="op">}</span></a></code></pre></div>
 <p>Now, running <code>unmountTree()</code>, or running <code>mountTree()</code> repeatedly, removes the old tree and runs the <code>componentWillUnmount()</code> lifecycle method on components.</p>
 <h3 id="updating">Updating</h3>
-<p>In the previous section, we implemented unmounting. However React wouldn’t be very useful if each prop change unmounted and mounted the whole tree. The goal of the reconciler is to reuse existing instances where possible to preserve the DOM and the state:</p>
+<p>In the previous section, we implemented unmounting. However React wouldn't be very useful if each prop change
+    unmounted and mounted the whole tree. The goal of the reconciler is to reuse existing instances where possible to
+    preserve the DOM and the state:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">var</span> rootEl <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-2" title="2"></a>
 <a class="sourceLine" id="cb16-3" title="3"><span class="at">mountTree</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a>
@@ -476,7 +491,8 @@
 <a class="sourceLine" id="cb18-31" title="31">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb18-32" title="32"></a>
 <a class="sourceLine" id="cb18-33" title="33">    <span class="co">// ...</span></a></code></pre></div>
-<p>Next, we can look at the rendered element’s <code>type</code>. If the <code>type</code> has not changed since the last render, the component below can also be updated in place.</p>
+<p>Next, we can look at the rendered element's <code>type</code>. If the <code>type</code> has not changed since the
+    last render, the component below can also be updated in place.</p>
 <p>For example, if it returned <code>&lt;Button color="red" /&gt;</code> the first time, and <code>&lt;Button color="blue" /&gt;</code> the second time, we can just tell the corresponding internal instance to <code>receive()</code> the next element:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1">    <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb19-2" title="2"></a>
@@ -488,7 +504,8 @@
 <a class="sourceLine" id="cb19-8" title="8">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb19-9" title="9"></a>
 <a class="sourceLine" id="cb19-10" title="10">    <span class="co">// ...</span></a></code></pre></div>
-<p>However, if the next rendered element has a different <code>type</code> than the previously rendered element, we can’t update the internal instance. A <code>&lt;button&gt;</code> can’t “become” an <code>&lt;input&gt;</code>.</p>
+<p>However, if the next rendered element has a different <code>type</code> than the previously rendered element, we
+    can't update the internal instance. A <code>&lt;button&gt;</code> can't “become” an <code>&lt;input&gt;</code>.</p>
 <p>Instead, we have to unmount the existing internal instance and mount the new one corresponding to the rendered element type. For example, this is what happens when a component that previously rendered a <code>&lt;button /&gt;</code> renders an <code>&lt;input /&gt;</code>:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1">    <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb20-2" title="2"></a>
@@ -513,8 +530,12 @@
 <a class="sourceLine" id="cb20-21" title="21">  }</a>
 <a class="sourceLine" id="cb20-22" title="22">}</a></code></pre></div>
 <p>To sum this up, when a composite component receives a new element, it may either delegate the update to its rendered internal instance, or unmount it and mount a new one in its place.</p>
-<p>There is another condition under which a component will re-mount rather than receive an element, and that is when the element’s <code>key</code> has changed. We don’t discuss <code>key</code> handling in this document because it adds more complexity to an already complex tutorial.</p>
-<p>Note that we needed to add a method called <code>getHostNode()</code> to the internal instance contract so that it’s possible to locate the platform-specific node and replace it during the update. Its implementation is straightforward for both classes:</p>
+<p>There is another condition under which a component will re-mount rather than receive an element, and that is when the
+    element's <code>key</code> has changed. We don't discuss <code>key</code> handling in this document because it adds
+    more complexity to an already complex tutorial.</p>
+<p>Note that we needed to add a method called <code>getHostNode()</code> to the internal instance contract so that it's
+    possible to locate the platform-specific node and replace it during the update. Its implementation is
+    straightforward for both classes:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">class</span> CompositeComponent <span class="op">{</span></a>
 <a class="sourceLine" id="cb21-2" title="2">  <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb21-3" title="3"></a>
@@ -559,7 +580,10 @@
 <a class="sourceLine" id="cb22-23" title="23"></a>
 <a class="sourceLine" id="cb22-24" title="24">    <span class="co">// ...</span></a></code></pre></div>
 <p>Then, host components need to update their children. Unlike composite components, they might contain more than a single child.</p>
-<p>In this simplified example, we use an array of internal instances and iterate over it, either updating or replacing the internal instances depending on whether the received <code>type</code> matches their previous <code>type</code>. The real reconciler also takes element’s <code>key</code> in the account and track moves in addition to insertions and deletions, but we will omit this logic.</p>
+<p>In this simplified example, we use an array of internal instances and iterate over it, either updating or replacing
+    the internal instances depending on whether the received <code>type</code> matches their previous <code>type</code>.
+    The real reconciler also takes element's <code>key</code> in the account and track moves in addition to insertions
+    and deletions, but we will omit this logic.</p>
 <p>We collect DOM operations on children in a list so we can execute them in batch:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1">    <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb23-2" title="2"></a>
@@ -683,7 +707,7 @@
 <a class="sourceLine" id="cb25-18" title="18">  <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb25-19" title="19"></a>
 <a class="sourceLine" id="cb25-20" title="20"><span class="op">}</span></a></code></pre></div>
-<p>Now calling <code>mountTree()</code> two times with the same type isn’t destructive:</p>
+<p>Now calling <code>mountTree()</code> two times with the same type isn't destructive:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">var</span> rootEl <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb26-2" title="2"></a>
 <a class="sourceLine" id="cb26-3" title="3"><span class="at">mountTree</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a>
@@ -691,7 +715,7 @@
 <a class="sourceLine" id="cb26-5" title="5"><span class="at">mountTree</span>(<span class="op">&lt;</span>App /<span class="op">&gt;,</span> rootEl)<span class="op">;</span></a></code></pre></div>
 <p>These are the basics of how React works internally.</p>
 <h3 id="what-we-left-out">What We Left Out</h3>
-<p>This document is simplified compared to the real codebase. There are a few important aspects we didn’t address:</p>
+<p>This document is simplified compared to the real codebase. There are a few important aspects we didn't address:</p>
 <ul>
 <li><p>Components can render <code>null</code>, and the reconciler can handle “empty slots” in arrays and rendered output.</p></li>
 <li><p>The reconciler also reads <code>key</code> from the elements, and uses it to establish which internal instance corresponds to which element in an array. A bulk of complexity in the actual React implementation is related to that.</p></li>

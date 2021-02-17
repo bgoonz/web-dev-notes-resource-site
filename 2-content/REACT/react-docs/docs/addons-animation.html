@@ -12,7 +12,10 @@
 </blockquote>
 <p>The <a href="#low-level-api-reacttransitiongroup"><code>ReactTransitionGroup</code></a> add-on component is a low-level API for animation, and <a href="#high-level-api-reactcsstransitiongroup"><code>ReactCSSTransitionGroup</code></a> is an add-on component for easily implementing basic CSS animations and transitions.</p>
 <h2 id="high-level-api-reactcsstransitiongroup">High-level API: ReactCSSTransitionGroup</h2>
-<p><code>ReactCSSTransitionGroup</code> is a high-level API based on <a href="#low-level-api-reacttransitiongroup"><code>ReactTransitionGroup</code></a> and is an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM. It’s inspired by the excellent <a href="https://docs.angularjs.org/api/ngAnimate">ng-animate</a> library.</p>
+<p><code>ReactCSSTransitionGroup</code> is a high-level API based on <a
+        href="#low-level-api-reacttransitiongroup"><code>ReactTransitionGroup</code></a> and is an easy way to perform
+    CSS transitions and animations when a React component enters or leaves the DOM. It's inspired by the excellent <a
+        href="https://docs.angularjs.org/api/ngAnimate">ng-animate</a> library.</p>
 <p><strong>Importing</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> ReactCSSTransitionGroup <span class="im">from</span> <span class="st">&#39;react-transition-group&#39;</span><span class="op">;</span> <span class="co">// ES6</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> ReactCSSTransitionGroup <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;react-transition-group&#39;</span>)<span class="op">;</span> <span class="co">// ES5 with npm</span></a></code></pre></div>
@@ -79,7 +82,9 @@
 <a class="sourceLine" id="cb3-15" title="15">  <span class="kw">opacity</span>: <span class="dv">0.01</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-16" title="16">  <span class="kw">transition</span>: opacity <span class="dv">300</span><span class="dt">ms</span> <span class="dv">ease-in</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-17" title="17">}</a></code></pre></div>
-<p>You’ll notice that animation durations need to be specified in both the CSS and the render method; this tells React when to remove the animation classes from the element and – if it’s leaving – when to remove the element from the DOM.</p>
+<p>You'll notice that animation durations need to be specified in both the CSS and the render method; this tells React
+    when to remove the animation classes from the element and – if it's leaving – when to remove the element from the
+    DOM.</p>
 <h3 id="animate-initial-mounting">Animate Initial Mounting</h3>
 <p><code>ReactCSSTransitionGroup</code> provides the optional prop <code>transitionAppear</code>, to add an extra transition phase at the initial mount of the component. There is generally no transition phase at the initial mount as the default value of <code>transitionAppear</code> is <code>false</code>. The following is an example which passes the prop <code>transitionAppear</code> with the value <code>true</code>.</p>
 <pre class="javascript{5-6}"><code>render() {
@@ -107,10 +112,18 @@
 <blockquote>
 <p>Note:</p>
 <p>The prop <code>transitionAppear</code> was added to <code>ReactCSSTransitionGroup</code> in version <code>0.13</code>. To maintain backwards compatibility, the default value is set to <code>false</code>.</p>
-<p>However, the default values of <code>transitionEnter</code> and <code>transitionLeave</code> are <code>true</code> so you must specify <code>transitionEnterTimeout</code> and <code>transitionLeaveTimeout</code> by default. If you don’t need either enter or leave animations, pass <code>transitionEnter={false}</code> or <code>transitionLeave={false}</code>.</p>
+<p>However, the default values of <code>transitionEnter</code> and <code>transitionLeave</code> are <code>true</code> so
+    you must specify <code>transitionEnterTimeout</code> and <code>transitionLeaveTimeout</code> by default. If you
+    don't need either enter or leave animations, pass <code>transitionEnter={false}</code> or
+    <code>transitionLeave={false}</code>.</p>
 </blockquote>
 <h3 id="custom-classes">Custom Classes</h3>
-<p>It is also possible to use custom class names for each of the steps in your transitions. Instead of passing a string into transitionName you can pass an object containing either the <code>enter</code> and <code>leave</code> class names, or an object containing the <code>enter</code>, <code>enter-active</code>, <code>leave-active</code>, and <code>leave</code> class names. If only the enter and leave classes are provided, the enter-active and leave-active classes will be determined by appending ‘-active’ to the end of the class name. Here are two examples using custom classes:</p>
+<p>It is also possible to use custom class names for each of the steps in your transitions. Instead of passing a string
+    into transitionName you can pass an object containing either the <code>enter</code> and <code>leave</code> class
+    names, or an object containing the <code>enter</code>, <code>enter-active</code>, <code>leave-active</code>, and
+    <code>leave</code> class names. If only the enter and leave classes are provided, the enter-active and leave-active
+    classes will be determined by appending ‘-active' to the end of the class name. Here are two examples using custom
+    classes:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// ...</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="op">&lt;</span>ReactCSSTransitionGroup</a>
 <a class="sourceLine" id="cb6-3" title="3">  transitionName<span class="op">={</span> <span class="op">{</span></a>
@@ -172,7 +185,10 @@ function ImageCarousel(props) {
 <p>You can disable animating <code>enter</code> or <code>leave</code> animations if you want. For example, sometimes you may want an <code>enter</code> animation and no <code>leave</code> animation, but <code>ReactCSSTransitionGroup</code> waits for an animation to complete before removing your DOM node. You can add <code>transitionEnter={false}</code> or <code>transitionLeave={false}</code> props to <code>ReactCSSTransitionGroup</code> to disable these animations.</p>
 <blockquote>
 <p>Note:</p>
-<p>When using <code>ReactCSSTransitionGroup</code>, there’s no way for your components to be notified when a transition has ended or to perform any more complex logic around animation. If you want more fine-grained control, you can use the lower-level <code>ReactTransitionGroup</code> API which provides the hooks you need to do custom transitions.</p>
+<p>When using <code>ReactCSSTransitionGroup</code>, there's no way for your components to be notified when a transition
+    has ended or to perform any more complex logic around animation. If you want more fine-grained control, you can use
+    the lower-level <code>ReactTransitionGroup</code> API which provides the hooks you need to do custom transitions.
+</p>
 </blockquote>
 <hr />
 <h2 id="low-level-api-reacttransitiongroup">Low-level API: ReactTransitionGroup</h2>
@@ -189,15 +205,19 @@ function ImageCarousel(props) {
 <li><a href="#componentdidleave"><code>componentDidLeave()</code></a></li>
 </ul>
 <h4 id="rendering-a-different-component">Rendering a Different Component</h4>
-<p><code>ReactTransitionGroup</code> renders as a <code>span</code> by default. You can change this behavior by providing a <code>component</code> prop. For example, here’s how you would render a <code>&lt;ul&gt;</code>:</p>
+<p><code>ReactTransitionGroup</code> renders as a <code>span</code> by default. You can change this behavior by
+    providing a <code>component</code> prop. For example, here's how you would render a <code>&lt;ul&gt;</code>:</p>
 <pre class="javascript{1}"><code>&lt;ReactTransitionGroup component=&quot;ul&quot;&gt;
   {/* ... */}
 &lt;/ReactTransitionGroup&gt;</code></pre>
-<p>Any additional, user-defined, properties will become properties of the rendered component. For example, here’s how you would render a <code>&lt;ul&gt;</code> with CSS class:</p>
+<p>Any additional, user-defined, properties will become properties of the rendered component. For example, here's how
+    you would render a <code>&lt;ul&gt;</code> with CSS class:</p>
 <pre class="javascript{1}"><code>&lt;ReactTransitionGroup component=&quot;ul&quot; className=&quot;animated-list&quot;&gt;
   {/* ... */}
 &lt;/ReactTransitionGroup&gt;</code></pre>
-<p>Every DOM component that React can render is available for use. However, <code>component</code> does not need to be a DOM component. It can be any React component you want; even ones you’ve written yourself! Just write <code>component={List}</code> and your component will receive <code>this.props.children</code>.</p>
+<p>Every DOM component that React can render is available for use. However, <code>component</code> does not need to be a
+    DOM component. It can be any React component you want; even ones you've written yourself! Just write
+    <code>component={List}</code> and your component will receive <code>this.props.children</code>.</p>
 <h4 id="rendering-a-single-child">Rendering a Single Child</h4>
 <p>People often use <code>ReactTransitionGroup</code> to animate mounting and unmounting of a single child such as a collapsible panel. Normally <code>ReactTransitionGroup</code> wraps all its children in a <code>span</code> (or a custom <code>component</code> as described above). This is because any React component has to return a single root element, and <code>ReactTransitionGroup</code> is no exception to this rule.</p>
 <p>However if you only need to render a single child inside <code>ReactTransitionGroup</code>, you can completely avoid wrapping it in a <code>&lt;span&gt;</code> or any other DOM component. To do this, create a custom component that renders the first child passed to it directly:</p>
@@ -209,7 +229,11 @@ function ImageCarousel(props) {
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&lt;</span>ReactTransitionGroup component<span class="op">={</span>FirstChild<span class="op">}&gt;</span></a>
 <a class="sourceLine" id="cb13-2" title="2">  <span class="op">{</span>someCondition <span class="op">?</span> <span class="op">&lt;</span>MyComponent /<span class="op">&gt;</span> : <span class="kw">null</span><span class="op">}</span></a>
 <a class="sourceLine" id="cb13-3" title="3">&lt;/ReactTransitionGroup<span class="op">&gt;</span></a></code></pre></div>
-<p>This only works when you are animating a single child in and out, such as a collapsible panel. This approach wouldn’t work when animating multiple children or replacing the single child with another child, such as an image carousel. For an image carousel, while the current image is animating out, another image will animate in, so <code>&lt;ReactTransitionGroup&gt;</code> needs to give them a common DOM parent. You can’t avoid the wrapper for multiple children, but you can customize the wrapper with the <code>component</code> prop as described above.</p>
+<p>This only works when you are animating a single child in and out, such as a collapsible panel. This approach wouldn't
+    work when animating multiple children or replacing the single child with another child, such as an image carousel.
+    For an image carousel, while the current image is animating out, another image will animate in, so
+    <code>&lt;ReactTransitionGroup&gt;</code> needs to give them a common DOM parent. You can't avoid the wrapper for
+    multiple children, but you can customize the wrapper with the <code>component</code> prop as described above.</p>
 <hr />
 <h2 id="reference">Reference</h2>
 <h3 id="componentwillappear"><code>componentWillAppear()</code></h3>

@@ -6,12 +6,26 @@
   <title>Document</title>
 </head>
 <body>;
-<p>This release is the result of several months of hard work from members of the team and the community. While there are no groundbreaking changes in core, we’ve worked hard to improve performance and memory usage. We’ve also worked hard to make sure we are being consistent in our usage of DOM properties.</p>
-<p>The biggest change you’ll notice as a developer is that we no longer support <code>class</code> in JSX as a way to provide CSS classes. Since this prop was being converted to <code>className</code> at the transform step, it caused some confusion when trying to access it in composite components. As a result we decided to make our DOM properties mirror their counterparts in the JS DOM API. There are <a href="https://github.com/facebook/react/blob/master/src/dom/DefaultDOMPropertyConfig.js#L156">a few exceptions</a> where we deviate slightly in an attempt to be consistent internally.</p>
-<p>The other major change in v0.5 is that we’ve added an additional build - <code>react-with-addons</code> - which adds support for some extras that we’ve been working on including animations and two-way binding. <a href="/docs/addons.html">Read more about these addons in the docs</a>.</p>
+<p>This release is the result of several months of hard work from members of the team and the community. While there are
+    no groundbreaking changes in core, we've worked hard to improve performance and memory usage. We've also worked hard
+    to make sure we are being consistent in our usage of DOM properties.</p>
+<p>The biggest change you'll notice as a developer is that we no longer support <code>class</code> in JSX as a way to
+    provide CSS classes. Since this prop was being converted to <code>className</code> at the transform step, it caused
+    some confusion when trying to access it in composite components. As a result we decided to make our DOM properties
+    mirror their counterparts in the JS DOM API. There are <a
+        href="https://github.com/facebook/react/blob/master/src/dom/DefaultDOMPropertyConfig.js#L156">a few
+        exceptions</a> where we deviate slightly in an attempt to be consistent internally.</p>
+<p>The other major change in v0.5 is that we've added an additional build - <code>react-with-addons</code> - which adds
+    support for some extras that we've been working on including animations and two-way binding. <a
+        href="/docs/addons.html">Read more about these addons in the docs</a>.</p>
 <h2 id="thanks-to-our-community">Thanks to Our Community</h2>
-<p>We added <em>22 new people</em> to the list of authors since we launched React v0.4.1 nearly 3 months ago. With a total of 48 names in our <code>AUTHORS</code> file, that means we’ve nearly doubled the number of contributors in that time period. We’ve seen the number of people contributing to discussion on IRC, mailing lists, Stack Overflow, and GitHub continue rising. We’ve also had people tell us about talks they’ve given in their local community about React.</p>
-<p>It’s been awesome to see the things that people are building with React, and we can’t wait to see what you come up with next!</p>
+<p>We added <em>22 new people</em> to the list of authors since we launched React v0.4.1 nearly 3 months ago. With a
+    total of 48 names in our <code>AUTHORS</code> file, that means we've nearly doubled the number of contributors in
+    that time period. We've seen the number of people contributing to discussion on IRC, mailing lists, Stack Overflow,
+    and GitHub continue rising. We've also had people tell us about talks they've given in their local community about
+    React.</p>
+<p>It's been awesome to see the things that people are building with React, and we can't wait to see what you come up
+    with next!</p>
 <h2 id="changelog">Changelog</h2>
 <h3 id="react">React</h3>
 <ul>

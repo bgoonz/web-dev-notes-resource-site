@@ -6,10 +6,10 @@ License: MIT
 ***/
 
 .sp-container {
-    position:absolute;
-    top:0;
-    left:0;
-    display:inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
     *display: inline;
     *zoom: 1;
     /* https://github.com/bgrins/spectrum/issues/40 */
@@ -22,48 +22,49 @@ License: MIT
 
 /* http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio */
 .sp-top {
-  position:relative;
-  width: 100%;
-  display:inline-block;
+    position: relative;
+    width: 100%;
+    display: inline-block;
 }
 .sp-top-inner {
-   position:absolute;
-   top:0;
-   left:0;
-   bottom:0;
-   right:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 .sp-color {
     position: absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:20%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 20%;
 }
 
 
 .sp-clear-enabled .sp-hue {
-    top:33px;
+    top: 33px;
     height: 77.5%;
 }
 
 .sp-fill {
     padding-top: 80%;
 }
-.sp-sat, .sp-val {
+.sp-sat,
+.sp-val {
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .sp-alpha-enabled .sp-alpha {
     display: block;
 }
 .sp-alpha-handle {
-    position:absolute;
-    top:-4px;
+    position: absolute;
+    top: -4px;
     bottom: -4px;
     width: 6px;
     left: 50%;
@@ -91,19 +92,28 @@ License: MIT
 
 .sp-clear-enabled .sp-clear {
     display: block;
-    position:absolute;
-    top:0px;
-    right:0;
-    bottom:0;
-    left:84%;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 84%;
     height: 28px;
 }
 
 /* Don't allow text selection */
-.sp-container, .sp-replacer, .sp-preview, .sp-dragger, .sp-slider, .sp-alpha, .sp-clear, .sp-alpha-handle, .sp-container.sp-dragging .sp-input, .sp-container button  {
-    -webkit-user-select:none;
+.sp-container,
+.sp-replacer,
+.sp-preview,
+.sp-dragger,
+.sp-slider,
+.sp-alpha,
+.sp-clear,
+.sp-alpha-handle,
+.sp-container.sp-dragging .sp-input,
+.sp-container button {
+    -webkit-user-select: none;
     -moz-user-select: -moz-none;
-    -o-user-select:none;
+    -o-user-select: none;
     user-select: none;
 }
 
@@ -130,14 +140,14 @@ License: MIT
 
 /* Gradients for hue, saturation and value instead of images.  Not pretty... but it works */
 .sp-sat {
-    background-image: -webkit-gradient(linear,  0 0, 100% 0, from(#FFF), to(rgba(204, 154, 129, 0)));
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(rgba(204, 154, 129, 0)));
     background-image: -webkit-linear-gradient(left, #FFF, rgba(204, 154, 129, 0));
     background-image: -moz-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
     background-image: -o-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
     background-image: -ms-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
     background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr=#FFFFFFFF, endColorstr=#00CC9A81)";
-    filter : progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr='#FFFFFFFF', endColorstr='#00CC9A81');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#FFFFFFFF', endColorstr='#00CC9A81');
 }
 .sp-val {
     background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#000000), to(rgba(204, 154, 129, 0)));
@@ -147,7 +157,7 @@ License: MIT
     background-image: -ms-linear-gradient(bottom, #000, rgba(204, 154, 129, 0));
     background-image: linear-gradient(to top, #000, rgba(204, 154, 129, 0));
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00CC9A81, endColorstr=#FF000000)";
-    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#00CC9A81', endColorstr='#FF000000');
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00CC9A81', endColorstr='#FF000000');
 }
 
 .sp-hue {
@@ -164,20 +174,20 @@ License: MIT
 }
 
 .sp-dragger {
-   border-radius: 5px;
-   height: 5px;
-   width: 5px;
-   border: 1px solid #fff;
-   background: #000;
-   cursor: pointer;
-   position:absolute;
-   top:0;
-   left: 0;
+    border-radius: 5px;
+    height: 5px;
+    width: 5px;
+    border: 1px solid #fff;
+    background: #000;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .sp-slider {
     position: absolute;
-    top:0;
-    cursor:pointer;
+    top: 0;
+    cursor: pointer;
     height: 3px;
     left: -1px;
     right: -1px;
@@ -202,15 +212,18 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 .sp-top {
     margin-bottom: 3px;
 }
-.sp-color, .sp-hue, .sp-clear {
+.sp-color,
+.sp-hue,
+.sp-clear {
     border: solid 1px #666;
 }
 
 .sp-input.sp-validation-error {
     background: #fdd;
 }
-.sp-picker-container , .sp-palette-container {
-    float:left;
+.sp-picker-container,
+.sp-palette-container {
+    float: left;
     position: relative;
     padding: 10px;
     padding-bottom: 300px;
@@ -232,19 +245,20 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 .sp-palette .sp-thumb-el {
     display: block;
-    position:relative;
-    float:left;
+    position: relative;
+    float: left;
     width: 24px;
     height: 15px;
     margin: 3px;
     cursor: pointer;
-    border:solid 2px transparent;
+    border: solid 2px transparent;
 }
-.sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active {
+.sp-palette .sp-thumb-el:hover,
+.sp-palette .sp-thumb-el.sp-thumb-active {
     border-color: orange;
 }
 .sp-thumb-el {
-    position:relative;
+    position: relative;
 }
 
 /* Initial */
@@ -255,10 +269,10 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 .sp-initial span {
     width: 30px;
     height: 25px;
-    border:none;
-    display:block;
-    float:left;
-    margin:0;
+    border: none;
+    display: block;
+    float: left;
+    margin: 0;
 }
 
 .sp-initial .sp-clear-display {
@@ -273,11 +287,11 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 /* Replacer (the little preview div that shows up instead of the <input>) */
 .sp-replacer {
-    margin:0;
-    overflow:hidden;
-    cursor:pointer;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
     padding: 4px;
-    display:inline-block;
+    display: inline-block;
     *zoom: 1;
     *display: inline;
     border: solid 1px #91765d;
@@ -285,12 +299,13 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     color: #333;
     vertical-align: middle;
 }
-.sp-replacer:hover, .sp-replacer.sp-active {
+.sp-replacer:hover,
+.sp-replacer.sp-active {
     border-color: #F0C49B;
     color: #111;
 }
 .sp-replacer.sp-disabled {
-    cursor:default;
+    cursor: default;
     border-color: silver;
     color: silver;
 }
@@ -298,16 +313,16 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     padding: 2px 0;
     height: 16px;
     line-height: 16px;
-    float:left;
-    font-size:10px;
+    float: left;
+    font-size: 10px;
 }
 .sp-preview {
-    position:relative;
-    width:25px;
+    position: relative;
+    width: 25px;
     height: 20px;
     border: solid 1px #222;
     margin-right: 5px;
-    float:left;
+    float: left;
     z-index: 0;
 }
 
@@ -316,35 +331,35 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
     max-width: 220px;
 }
 .sp-palette .sp-thumb-el {
-    width:16px;
+    width: 16px;
     height: 16px;
-    margin:2px 1px;
+    margin: 2px 1px;
     border: solid 1px #d0d0d0;
 }
 
 .sp-container {
-    padding-bottom:0;
+    padding-bottom: 0;
 }
 
 
 /* Buttons: http://hellohappy.org/css3-buttons/ */
 .sp-container button {
-  background-color: #eeeeee;
-  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
-  border: 1px solid #ccc;
-  border-bottom: 1px solid #bbb;
-  border-radius: 3px;
-  color: #333;
-  font-size: 14px;
-  line-height: 1;
-  padding: 5px 4px;
-  text-align: center;
-  text-shadow: 0 1px 0 #eee;
-  vertical-align: middle;
+    background-color: #eeeeee;
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+    border-radius: 3px;
+    color: #333;
+    font-size: 14px;
+    line-height: 1;
+    padding: 5px 4px;
+    text-align: center;
+    text-shadow: 0 1px 0 #eee;
+    vertical-align: middle;
 }
 .sp-container button:hover {
     background-color: #dddddd;
@@ -370,11 +385,11 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 .sp-cancel {
     font-size: 11px;
     color: #d93f3f !important;
-    margin:0;
-    padding:2px;
+    margin: 0;
+    padding: 2px;
     margin-right: 5px;
     vertical-align: middle;
-    text-decoration:none;
+    text-decoration: none;
 
 }
 .sp-cancel:hover {
@@ -383,18 +398,26 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 
 
-.sp-palette span:hover, .sp-palette span.sp-thumb-active {
+.sp-palette span:hover,
+.sp-palette span.sp-thumb-active {
     border-color: #000;
 }
 
-.sp-preview, .sp-alpha, .sp-thumb-el {
-    position:relative;
+.sp-preview,
+.sp-alpha,
+.sp-thumb-el {
+    position: relative;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
 }
-.sp-preview-inner, .sp-alpha-inner, .sp-thumb-inner {
-    display:block;
-    position:absolute;
-    top:0;left:0;bottom:0;right:0;
+.sp-preview-inner,
+.sp-alpha-inner,
+.sp-thumb-inner {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .sp-palette .sp-thumb-inner {
@@ -411,7 +434,7 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 }
 
 .sp-clear-display {
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center;
     background-image: url(data:image/gif;base64,R0lGODlhFAAUAPcAAAAAAJmZmZ2dnZ6enqKioqOjo6SkpKWlpaampqenp6ioqKmpqaqqqqurq/Hx8fLy8vT09PX19ff39/j4+Pn5+fr6+vv7+wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAUABQAAAihAP9FoPCvoMGDBy08+EdhQAIJCCMybCDAAYUEARBAlFiQQoMABQhKUJBxY0SPICEYHBnggEmDKAuoPMjS5cGYMxHW3IiT478JJA8M/CjTZ0GgLRekNGpwAsYABHIypcAgQMsITDtWJYBR6NSqMico9cqR6tKfY7GeBCuVwlipDNmefAtTrkSzB1RaIAoXodsABiZAEFB06gIBWC1mLVgBa0AAOw==);
 }

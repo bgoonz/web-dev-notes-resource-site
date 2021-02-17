@@ -6,7 +6,7 @@ date: 2015-02-24 11:00
 
 React v0.13 is right around the corner and so we wanted to discuss some upcoming changes to ReactElement. In particular, we added several warnings to some esoteric use cases of ReactElement. There are no runtime behavior changes for ReactElement - we're adding these warnings in the hope that we can change some behavior in v0.14 if the changes are valuable to the community.
 
-If you use React in an idiomatic way, chances are, you’ll never see any of these warnings. In that case, you can skip this blog post. You can just enjoy the benefits! These changes will unlock simplified semantics, better error messages, stack traces and compiler optimizations!
+If you use React in an idiomatic way, chances are, you'll never see any of these warnings. In that case, you can skip this blog post. You can just enjoy the benefits! These changes will unlock simplified semantics, better error messages, stack traces and compiler optimizations!
 
 ## Immutable Props {#immutable-props}
 
@@ -20,9 +20,9 @@ if (shouldUseFoo) {
 }
 ```
 
-The problem is that we don’t have a convenient way to tell when you’re done mutating.
+The problem is that we don't have a convenient way to tell when you're done mutating.
 
-### Problem: Mutating Props You Don’t Own {#problem-mutating-props-you-dont-own}
+### Problem: Mutating Props You Don't Own {#problem-mutating-props-you-dont-own}
 
 If you mutate something, you destroy the original value. Therefore, there is nothing to diff against. Imagine something like this:
 
@@ -38,7 +38,7 @@ You could imagine that this would work. However, this disables the ability for a
 
 Additionally, if this element is reused in other places or used to switch back and forth between two modes, then you have all kinds of weird race conditions.
 
-It has always been broken to mutate the props of something passed into you. The problem is that we can’t warn you about this special case if you accidentally do this.
+It has always been broken to mutate the props of something passed into you. The problem is that we can't warn you about this special case if you accidentally do this.
 
 ### Problem: Too Late Validation {#problem-too-late-validation}
 
@@ -81,7 +81,7 @@ In this case it's still ok to mutate the myModel object in state. We recommend t
 
 ### Solution: Early PropType Warnings {#solution-early-proptype-warnings}
 
-We will also start warning you for PropTypes at the JSX or createElement callsite. This will help debugging as you’ll have the stack trace right there. Similarly, Flow also validates PropTypes at this callsite.
+We will also start warning you for PropTypes at the JSX or createElement callsite. This will help debugging as you'll have the stack trace right there. Similarly, Flow also validates PropTypes at this callsite.
 
 Note: There are valid patterns that clones a ReactElement and adds additional props to it. In that case these additional props needs to be optional.
 
@@ -108,7 +108,7 @@ There is also an undocumented feature called "context" that also relies on the c
 
 ### Problem: The Semantics are Opaque and Confusing {#problem-the-semantics-are-opaque-and-confusing}
 
-The problem is that these are hidden artifacts attached to the ReactElement. In fact, you probably didn’t even know about it. It silently changes semantics. Take this for example:
+The problem is that these are hidden artifacts attached to the ReactElement. In fact, you probably didn't even know about it. It silently changes semantics. Take this for example:
 
 ```js
 var foo = <input className="foo" />;
@@ -142,25 +142,25 @@ The owner of the `span` is actually `B`, not `A` because of the timing of the ca
 
 ### Problem: It Couples JSX to React {#problem-it-couples-jsx-to-react}
 
-Have you wondered why JSX depends on React? Couldn’t the transpiler have that built-in to its runtime? The reason you need to have `React.createElement` in scope is because we depend on internal state of React to capture the current "owner". Without this, you wouldn’t need to have React in scope.
+Have you wondered why JSX depends on React? Couldn't the transpiler have that built-in to its runtime? The reason you need to have `React.createElement` in scope is because we depend on internal state of React to capture the current "owner". Without this, you wouldn't need to have React in scope.
 
 ### Solution: Make Context Parent-Based Instead of Owner-Based {#solution-make-context-parent-based-instead-of-owner-based}
 
-The first thing we’re doing is warning you if you’re using the "owner" feature in a way that relies on it propagating through owners. Instead, we’re planning on propagating it through parents to its children. In almost all cases, this shouldn’t matter. In fact, parent-based contexts is simply a superset.
+The first thing we're doing is warning you if you're using the "owner" feature in a way that relies on it propagating through owners. Instead, we're planning on propagating it through parents to its children. In almost all cases, this shouldn't matter. In fact, parent-based contexts is simply a superset.
 
 ### Solution: Remove the Semantic Implications of Owner {#solution-remove-the-semantic-implications-of-owner}
 
-It turns out that there are very few cases where owners are actually important part of state-semantics. As a precaution, we’ll warn you if it turns out that the owner is important to determine state. In almost every case this shouldn’t matter. Unless you’re doing some weird optimizations, you shouldn’t see this warning.
+It turns out that there are very few cases where owners are actually important part of state-semantics. As a precaution, we'll warn you if it turns out that the owner is important to determine state. In almost every case this shouldn't matter. Unless you're doing some weird optimizations, you shouldn't see this warning.
 
 ### Pending: Change the refs Semantics {#pending-change-the-refs-semantics}
 
-Refs are still based on "owner". We haven’t fully solved this special case just yet.
+Refs are still based on "owner". We haven't fully solved this special case just yet.
 
-In 0.13 we introduced a new callback-refs API that doesn’t suffer from these problems but we’ll keep on a nice declarative alternative to the current semantics for refs. As always, we won’t deprecate something until we’re sure that you’ll have a nice upgrade path.
+In 0.13 we introduced a new callback-refs API that doesn't suffer from these problems but we'll keep on a nice declarative alternative to the current semantics for refs. As always, we won't deprecate something until we're sure that you'll have a nice upgrade path.
 
 ## Keyed Objects as Maps {#keyed-objects-as-maps}
 
-In React 0.12, and earlier, you could use keyed objects to provide an external key to an element or a set. This pattern isn’t actually widely used. It shouldn’t be an issue for most of you.
+In React 0.12, and earlier, you could use keyed objects to provide an external key to an element or a set. This pattern isn't actually widely used. It shouldn't be an issue for most of you.
 
 ```js
 <div>{ {a: <span />, b: <span />} }</div>
@@ -184,9 +184,9 @@ return <div>{children}</div>;
 
 Imagine if `item.title === '__proto__'` for example.
 
-### Problem: Can’t be Differentiated from Arbitrary Objects {#problem-cant-be-differentiated-from-arbitrary-objects}
+### Problem: Can't be Differentiated from Arbitrary Objects {#problem-cant-be-differentiated-from-arbitrary-objects}
 
-Since these objects can have any keys with almost any value, we can’t differentiate them from a mistake. If you put some random object, we will try our best to traverse it and render it, instead of failing with a helpful warning. In fact, this is one of the few places where you can accidentally get an infinite loop in React.
+Since these objects can have any keys with almost any value, we can't differentiate them from a mistake. If you put some random object, we will try our best to traverse it and render it, instead of failing with a helpful warning. In fact, this is one of the few places where you can accidentally get an infinite loop in React.
 
 To differentiate ReactElements from one of these objects, we have to tag them with `_isReactElement`. This is another issue preventing us from inlining ReactElements as simple object literals.
 
@@ -201,7 +201,7 @@ var children = items.map(item => <span key={item.title} />);
 
 ### Solution: React.addons.createFragment {#solution-reactaddonscreatefragment}
 
-However, this is not always possible if you’re trying to add a prefix key to an unknown set (e.g. this.props.children). It is also not always the easiest upgrade path. Therefore, we are adding a helper to `React.addons` called `createFragment()`. This accepts a keyed object and returns an opaque type.
+However, this is not always possible if you're trying to add a prefix key to an unknown set (e.g. this.props.children). It is also not always the easiest upgrade path. Therefore, we are adding a helper to `React.addons` called `createFragment()`. This accepts a keyed object and returns an opaque type.
 
 ```js
 <div>{React.addons.createFragment({ a: <div />, b: this.props.children })}</div>
@@ -225,6 +225,6 @@ See these GitHub Issues for a deep dive into compiler optimizations:
 
 ## Rationale {#rationale}
 
-I thought that these changes were particularly important because the mere existence of these patterns means that even components that DON’T use these patterns have to pay the price. There are other problematic patterns such as mutating state, but they’re at least localized to a component subtree so they don’t harm the ecosystem.
+I thought that these changes were particularly important because the mere existence of these patterns means that even components that DON'T use these patterns have to pay the price. There are other problematic patterns such as mutating state, but they're at least localized to a component subtree so they don't harm the ecosystem.
 
-As always, we’d love to hear your feedback and if you have any trouble upgrading, please let us know.
+As always, we'd love to hear your feedback and if you have any trouble upgrading, please let us know.

@@ -187,7 +187,7 @@ on dependencies, <code>dep1</code> (<code>dep2</code>, .. etc.).  The published 
 }
 </code></pre>
 <h4 id="caret-dependencies">Caret Dependencies</h4>
-<p>If <code>app</code>’s <code>package.json</code> contains:</p>
+<p>If <code>app</code>'s <code>package.json</code> contains:</p>
 <pre lang="json"><code>"dependencies": {
   "dep1": "^1.1.1"
 }
@@ -195,7 +195,7 @@ on dependencies, <code>dep1</code> (<code>dep2</code>, .. etc.).  The published 
 <p>Then <code>npm update</code> will install <code>dep1@1.2.2</code>, because <code>1.2.2</code> is <code>latest</code> and
 <code>1.2.2</code> satisfies <code>^1.1.1</code>.</p>
 <h4 id="tilde-dependencies">Tilde Dependencies</h4>
-<p>However, if <code>app</code>’s <code>package.json</code> contains:</p>
+<p>However, if <code>app</code>'s <code>package.json</code> contains:</p>
 <pre lang="json"><code>"dependencies": {
   "dep1": "~1.1.1"
 }

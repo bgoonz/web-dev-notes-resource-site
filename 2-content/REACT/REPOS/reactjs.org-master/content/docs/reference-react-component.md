@@ -325,7 +325,7 @@ For more details, see [*Error Handling in React 16*](/blog/2017/07/26/error-hand
 
 > Note
 >
-> Error boundaries only catch errors in the components **below** them in the tree. An error boundary can’t catch an error within itself.
+> Error boundaries only catch errors in the components **below** them in the tree. An error boundary can't catch an error within itself.
 
 ### `static getDerivedStateFromError()` {#static-getderivedstatefromerror}
 ```javascript

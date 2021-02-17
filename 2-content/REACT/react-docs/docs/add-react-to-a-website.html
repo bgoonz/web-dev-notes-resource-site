@@ -8,7 +8,9 @@
 <body>;
 <p>Use as little or as much React as you need.</p>
 <p>React has been designed from the start for gradual adoption, and <strong>you can use as little or as much React as you need</strong>. Perhaps you only want to add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.</p>
-<p>The majority of websites aren’t, and don’t need to be, single-page apps. With <strong>a few lines of code and no build tooling</strong>, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.</p>
+<p>The majority of websites aren't, and don't need to be, single-page apps. With <strong>a few lines of code and no
+        build tooling</strong>, try React in a small part of your website. You can then either gradually expand its
+    presence, or keep it contained to a few dynamic widgets.</p>
 <hr />
 <ul>
 <li><a href="#add-react-in-one-minute">Add React in One Minute</a></li>
@@ -49,7 +51,9 @@
 <p>Open <strong><a href="https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js">this starter code</a></strong> and paste it into the file you created.</p>
 <blockquote>
 <p>Tip</p>
-<p>This code defines a React component called <code>LikeButton</code>. Don’t worry if you don’t understand it yet – we’ll cover the building blocks of React later in our <a href="/tutorial/tutorial.html">hands-on tutorial</a> and <a href="/docs/hello-world.html">main concepts guide</a>. For now, let’s just get it showing on the screen!</p>
+<p>This code defines a React component called <code>LikeButton</code>. Don't worry if you don't understand it yet –
+    we'll cover the building blocks of React later in our <a href="/tutorial/tutorial.html">hands-on tutorial</a> and <a
+        href="/docs/hello-world.html">main concepts guide</a>. For now, let's just get it showing on the screen!</p>
 </blockquote>
 <p>After <strong><a href="https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js">the starter code</a></strong>, add two lines to the bottom of <code>like_button.js</code>:</p>
 <pre class="js{3,4}"><code>// ... the starter code you pasted ...
@@ -57,7 +61,7 @@
 const domContainer = document.querySelector(&#39;#like_button_container&#39;);
 ReactDOM.render(e(LikeButton), domContainer);</code></pre>
 <p>These two lines of code find the <code>&lt;div&gt;</code> we added to our HTML in the first step, and then display our “Like” button React component inside of it.</p>
-<h3 id="thats-it">That’s It!</h3>
+<h3 id="thats-it">That's It!</h3>
 <p>There is no step four. <strong>You have just added the first React component to your website.</strong></p>
 <p>Check out the next sections for more tips on integrating React.</p>
 <p><strong><a href="https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605">View the full example source code</a></strong></p>
@@ -68,14 +72,17 @@ ReactDOM.render(e(LikeButton), domContainer);</code></pre>
 <p><a href="https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip">Download the full example (2KB zipped)</a></p>
 <blockquote>
 <p>Note</p>
-<p>This strategy is mostly useful while React-powered parts of the page are isolated from each other. Inside React code, it’s easier to use <a href="/docs/components-and-props.html#composing-components">component composition</a> instead.</p>
+<p>This strategy is mostly useful while React-powered parts of the page are isolated from each other. Inside React code,
+    it's easier to use <a href="/docs/components-and-props.html#composing-components">component composition</a> instead.
+</p>
 </blockquote>
 <h3 id="tip-minify-javascript-for-production">Tip: Minify JavaScript for Production</h3>
 <p>Before deploying your website to production, be mindful that unminified JavaScript can significantly slow down the page for your users.</p>
 <p>If you already minify the application scripts, <strong>your site will be production-ready</strong> if you ensure that the deployed HTML loads the versions of React ending in <code>production.min.js</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">&quot;https://unpkg.com/react@17/umd/react.production.min.js&quot;</span> crossorigin<span class="op">&gt;</span>&lt;/script<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">&quot;https://unpkg.com/react-dom@17/umd/react-dom.production.min.js&quot;</span> crossorigin<span class="op">&gt;</span>&lt;/script<span class="op">&gt;</span></a></code></pre></div>
-<p>If you don’t have a minification step for your scripts, <a href="https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3">here’s one way to set it up</a>.</p>
+<p>If you don't have a minification step for your scripts, <a
+        href="https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3">here's one way to set it up</a>.</p>
 <h2 id="optional-try-react-with-jsx">Optional: Try React with JSX</h2>
 <p>In the examples above, we only relied on features that are natively supported by the browsers. This is why we used a JavaScript function call to tell React what to display:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> e <span class="op">=</span> <span class="va">React</span>.<span class="at">createElement</span><span class="op">;</span></a>
@@ -99,17 +106,24 @@ ReactDOM.render(e(LikeButton), domContainer);</code></pre>
 <p>The quickest way to try JSX in your project is to add this <code>&lt;script&gt;</code> tag to your page:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></a></code></pre></div>
 <p>Now you can use JSX in any <code>&lt;script&gt;</code> tag by adding <code>type="text/babel"</code> attribute to it. Here is <a href="https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html">an example HTML file with JSX</a> that you can download and play with.</p>
-<p>This approach is fine for learning and creating simple demos. However, it makes your website slow and <strong>isn’t suitable for production</strong>. When you’re ready to move forward, remove this new <code>&lt;script&gt;</code> tag and the <code>type="text/babel"</code> attributes you’ve added. Instead, in the next section you will set up a JSX preprocessor to convert all your <code>&lt;script&gt;</code> tags automatically.</p>
+<p>This approach is fine for learning and creating simple demos. However, it makes your website slow and <strong>isn't
+        suitable for production</strong>. When you're ready to move forward, remove this new <code>&lt;script&gt;</code>
+    tag and the <code>type="text/babel"</code> attributes you've added. Instead, in the next section you will set up a
+    JSX preprocessor to convert all your <code>&lt;script&gt;</code> tags automatically.</p>
 <h3 id="add-jsx-to-a-project">Add JSX to a Project</h3>
-<p>Adding JSX to a project doesn’t require complicated tools like a bundler or a development server. Essentially, adding JSX <strong>is a lot like adding a CSS preprocessor.</strong> The only requirement is to have <a href="https://nodejs.org/">Node.js</a> installed on your computer.</p>
+<p>Adding JSX to a project doesn't require complicated tools like a bundler or a development server. Essentially, adding
+    JSX <strong>is a lot like adding a CSS preprocessor.</strong> The only requirement is to have <a
+        href="https://nodejs.org/">Node.js</a> installed on your computer.</p>
 <p>Go to your project folder in the terminal, and paste these two commands:</p>
 <ol type="1">
-<li><strong>Step 1:</strong> Run <code>npm init -y</code> (if it fails, <a href="https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d">here’s a fix</a>)</li>
+<li><strong>Step 1:</strong> Run <code>npm init -y</code> (if it fails, <a
+        href="https://gist.github.com/gaearon/246f6380610e262f8a648e3e51cad40d">here's a fix</a>)</li>
 <li><strong>Step 2:</strong> Run <code>npm install babel-cli@6 babel-preset-react-app@3</code></li>
 </ol>
 <blockquote>
 <p>Tip</p>
-<p>We’re <strong>using npm here only to install the JSX preprocessor;</strong> you won’t need it for anything else. Both React and the application code can stay as <code>&lt;script&gt;</code> tags with no changes.</p>
+<p>We're <strong>using npm here only to install the JSX preprocessor;</strong> you won't need it for anything else. Both
+    React and the application code can stay as <code>&lt;script&gt;</code> tags with no changes.</p>
 </blockquote>
 <p>Congratulations! You just added a <strong>production-ready JSX setup</strong> to your project.</p>
 <h3 id="run-jsx-preprocessor">Run JSX Preprocessor</h3>
@@ -117,11 +131,15 @@ ReactDOM.render(e(LikeButton), domContainer);</code></pre>
 <pre><code>npx babel --watch src --out-dir . --presets react-app/prod</code></pre>
 <blockquote>
 <p>Note</p>
-<p><code>npx</code> is not a typo – it’s a <a href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">package runner tool that comes with npm 5.2+</a>.</p>
+<p><code>npx</code> is not a typo – it's a <a
+        href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">package runner tool that
+        comes with npm 5.2+</a>.</p>
 <p>If you see an error message saying “You have mistakenly installed the <code>babel</code> package”, you might have missed <a href="#add-jsx-to-a-project">the previous step</a>. Perform it in the same folder, and then try again.</p>
 </blockquote>
-<p>Don’t wait for it to finish – this command starts an automated watcher for JSX.</p>
+<p>Don't wait for it to finish – this command starts an automated watcher for JSX.</p>
 <p>If you now create a file called <code>src/like_button.js</code> with this <strong><a href="https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js">JSX starter code</a></strong>, the watcher will create a preprocessed <code>like_button.js</code> with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.</p>
 <p>As a bonus, this also lets you use modern JavaScript syntax features like classes without worrying about breaking older browsers. The tool we just used is called Babel, and you can learn more about it from <a href="https://babeljs.io/docs/en/babel-cli/">its documentation</a>.</p>
-<p>If you notice that you’re getting comfortable with build tools and want them to do more for you, <a href="/docs/create-a-new-react-app.html">the next section</a> describes some of the most popular and approachable toolchains. If not – those script tags will do just fine!</p>
+<p>If you notice that you're getting comfortable with build tools and want them to do more for you, <a
+        href="/docs/create-a-new-react-app.html">the next section</a> describes some of the most popular and
+    approachable toolchains. If not – those script tags will do just fine!</p>
 </body></html>

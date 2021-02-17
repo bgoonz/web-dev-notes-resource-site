@@ -27,7 +27,8 @@
 <a class="sourceLine" id="cb2-12" title="12"><span class="co">// { type: &#39;a&#39;,</span></a>
 <a class="sourceLine" id="cb2-13" title="13"><span class="co">//   props: { href: &#39;https://www.facebook.com/&#39; },</span></a>
 <a class="sourceLine" id="cb2-14" title="14"><span class="co">//   children: [ &#39;Facebook&#39; ] }</span></a></code></pre></div>
-<p>You can use Jest’s snapshot testing feature to automatically save a copy of the JSON tree to a file and check in your tests that it hasn’t changed: <a href="https://jestjs.io/docs/en/snapshot-testing">Learn more about it</a>.</p>
+<p>You can use Jest's snapshot testing feature to automatically save a copy of the JSON tree to a file and check in your
+    tests that it hasn't changed: <a href="https://jestjs.io/docs/en/snapshot-testing">Learn more about it</a>.</p>
 <p>You can also traverse the output to find specific nodes and make assertions about them.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> TestRenderer <span class="im">from</span> <span class="st">&#39;react-test-renderer&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
@@ -82,7 +83,9 @@
 <h2 id="reference">Reference</h2>
 <h3 id="testrenderercreate"><code>TestRenderer.create()</code></h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">TestRenderer</span>.<span class="at">create</span>(element<span class="op">,</span> options)<span class="op">;</span></a></code></pre></div>
-<p>Create a <code>TestRenderer</code> instance with the passed React element. It doesn’t use the real DOM, but it still fully renders the component tree into memory so you can make assertions about it. Returns a <a href="#testrenderer-instance">TestRenderer instance</a>.</p>
+<p>Create a <code>TestRenderer</code> instance with the passed React element. It doesn't use the real DOM, but it still
+    fully renders the component tree into memory so you can make assertions about it. Returns a <a
+        href="#testrenderer-instance">TestRenderer instance</a>.</p>
 <h3 id="testrendereract"><code>TestRenderer.act()</code></h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">TestRenderer</span>.<span class="at">act</span>(callback)<span class="op">;</span></a></code></pre></div>
 <p>Similar to the <a href="/docs/test-utils.html#act"><code>act()</code> helper from <code>react-dom/test-utils</code></a>, <code>TestRenderer.act</code> prepares a component for assertions. Use this version of <code>act()</code> to wrap calls to <code>TestRenderer.create</code> and <code>testRenderer.update</code>.</p>
@@ -107,10 +110,16 @@
 <a class="sourceLine" id="cb6-19" title="19"><span class="at">expect</span>(<span class="va">root</span>.<span class="at">toJSON</span>()).<span class="at">toMatchSnapshot</span>()<span class="op">;</span></a></code></pre></div>
 <h3 id="testrenderertojson"><code>testRenderer.toJSON()</code></h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="va">testRenderer</span>.<span class="at">toJSON</span>()</a></code></pre></div>
-<p>Return an object representing the rendered tree. This tree only contains the platform-specific nodes like <code>&lt;div&gt;</code> or <code>&lt;View&gt;</code> and their props, but doesn’t contain any user-written components. This is handy for <a href="https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest">snapshot testing</a>.</p>
+<p>Return an object representing the rendered tree. This tree only contains the platform-specific nodes like
+    <code>&lt;div&gt;</code> or <code>&lt;View&gt;</code> and their props, but doesn't contain any user-written
+    components. This is handy for <a
+        href="https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest">snapshot
+        testing</a>.</p>
 <h3 id="testrenderertotree"><code>testRenderer.toTree()</code></h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="va">testRenderer</span>.<span class="at">toTree</span>()</a></code></pre></div>
-<p>Return an object representing the rendered tree. The representation is more detailed than the one provided by <code>toJSON()</code>, and includes the user-written components. You probably don’t need this method unless you’re writing your own assertion library on top of the test renderer.</p>
+<p>Return an object representing the rendered tree. The representation is more detailed than the one provided by
+    <code>toJSON()</code>, and includes the user-written components. You probably don't need this method unless you're
+    writing your own assertion library on top of the test renderer.</p>
 <h3 id="testrendererupdate"><code>testRenderer.update()</code></h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="va">testRenderer</span>.<span class="at">update</span>(element)</a></code></pre></div>
 <p>Re-render the in-memory tree with a new root element. This simulates a React update at the root. If the new element has the same type and key as the previous element, the tree will be updated; otherwise, it will re-mount a new tree.</p>
@@ -119,7 +128,8 @@
 <p>Unmount the in-memory tree, triggering the appropriate lifecycle events.</p>
 <h3 id="testrenderergetinstance"><code>testRenderer.getInstance()</code></h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="va">testRenderer</span>.<span class="at">getInstance</span>()</a></code></pre></div>
-<p>Return the instance corresponding to the root element, if available. This will not work if the root element is a function component because they don’t have instances.</p>
+<p>Return the instance corresponding to the root element, if available. This will not work if the root element is a
+    function component because they don't have instances.</p>
 <h3 id="testrendererroot"><code>testRenderer.root</code></h3>
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="va">testRenderer</span>.<span class="at">root</span></a></code></pre></div>
 <p>Returns the root “test instance” object that is useful for making assertions about specific nodes in the tree. You can use it to find other “test instances” deeper below.</p>
@@ -143,7 +153,8 @@
 <p>Find all descendant test instances with the provided <code>props</code>.</p>
 <h3 id="testinstanceinstance"><code>testInstance.instance</code></h3>
 <div class="sourceCode" id="cb19"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb19-1" title="1"><span class="va">testInstance</span>.<span class="at">instance</span></a></code></pre></div>
-<p>The component instance corresponding to this test instance. It is only available for class components, as function components don’t have instances. It matches the <code>this</code> value inside the given component.</p>
+<p>The component instance corresponding to this test instance. It is only available for class components, as function
+    components don't have instances. It matches the <code>this</code> value inside the given component.</p>
 <h3 id="testinstancetype"><code>testInstance.type</code></h3>
 <div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="va">testInstance</span>.<span class="at">type</span></a></code></pre></div>
 <p>The component type corresponding to this test instance. For example, a <code>&lt;Button /&gt;</code> component has a type of <code>Button</code>.</p>

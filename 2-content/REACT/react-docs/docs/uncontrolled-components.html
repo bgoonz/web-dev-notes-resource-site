@@ -35,7 +35,9 @@
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/WooRWa?editors=0010"><strong>Try it on CodePen</strong></a></p>
 <p>Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components. It can also be slightly less code if you want to be quick and dirty. Otherwise, you should usually use controlled components.</p>
-<p>If it’s still not clear which type of component you should use for a particular situation, you might find <a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">this article on controlled versus uncontrolled inputs</a> to be helpful.</p>
+<p>If it's still not clear which type of component you should use for a particular situation, you might find <a
+        href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">this article on controlled versus
+        uncontrolled inputs</a> to be helpful.</p>
 <h3 id="default-values">Default Values</h3>
 <p>In the React rendering lifecycle, the <code>value</code> attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a <code>defaultValue</code> attribute instead of <code>value</code>. Changing the value of <code>defaultValue</code> attribute after a component has mounted will not cause any update of the value in the DOM.</p>
 <pre class="javascript{7}"><code>render() {

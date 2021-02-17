@@ -1,5 +1,3 @@
-
-
 JavaScript development touches a lot of diverse environments: Node, Chrome, Safari, etc. These various environments have different levels of compatibility with advanced JavaScript features like JSX and ES6. To ensure that our JSX and ES6 code works in any environment, we will use a _transpiler_ called **Babel** to convert our code into ES5, the universal, vanilla Javascript compatible with all browsers and Node.
 
 ## Configuring Babel for Web Apps
@@ -12,7 +10,7 @@ Webpack can be configured to transpile your JSX and ES6 source code into browser
 
 `@babel/core` is the transpiling engine itself. `@babel/preset-env` and `@babel/preset-react` are configurations that tell the core transpiler how to interpret ES6 and JSX, respectively.
 
-**Configure the `module` key of your `webpack.config.js`:**
+**Configure the `module` key of your `webpack.config.js` :**
 
     module: {
       rules: [

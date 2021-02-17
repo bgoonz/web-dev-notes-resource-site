@@ -26,7 +26,11 @@
 <p><a href="codesandbox://16-4-release-blog-post/pointer-events-example">Check out this example on CodeSandbox.</a></p>
 <p>Huge thanks to <a href="https://github.com/philipp-spiess">Philipp Spiess</a> for contributing this change!</p>
 <h2 id="bugfix-for-getderivedstatefromprops">Bugfix for <code>getDerivedStateFromProps</code></h2>
-<p><code>getDerivedStateFromProps</code> is now called every time a component is rendered, regardless of the cause of the update. Previously, it was only called if the component was re-rendered by its parent, and would not fire as the result of a local <code>setState</code>. This was an oversight in the initial implementation that has now been corrected. The previous behavior was more similar to <code>componentWillReceiveProps</code>, but the improved behavior ensures compatibility with React’s upcoming asynchronous rendering mode.</p>
+<p><code>getDerivedStateFromProps</code> is now called every time a component is rendered, regardless of the cause of
+    the update. Previously, it was only called if the component was re-rendered by its parent, and would not fire as the
+    result of a local <code>setState</code>. This was an oversight in the initial implementation that has now been
+    corrected. The previous behavior was more similar to <code>componentWillReceiveProps</code>, but the improved
+    behavior ensures compatibility with React's upcoming asynchronous rendering mode.</p>
 <p><strong>This bug fix will not affect most apps</strong>, but it may cause issues with a small fraction of components. The rare cases where it does matter fall into one of two categories:</p>
 <h3 id="avoid-side-effects-in-getderivedstatefromprops-1-avoid-side-effects-in-getderivedstatefromprops">1. Avoid Side Effects in <code>getDerivedStateFromProps</code> {#1-avoid-side-effects-in-getderivedstatefromprops}</h3>
 <p>Like the render method, <code>getDerivedStateFromProps</code> should be a pure function of props and state. Side effects in <code>getDerivedStateFromProps</code> were never supported, but since it now fires more often than it used to, the recent change may expose previously undiscovered bugs.</p>
@@ -58,7 +62,11 @@
 <a class="sourceLine" id="cb2-11" title="11">    controlledValue<span class="op">,</span></a>
 <a class="sourceLine" id="cb2-12" title="12">  <span class="op">};</span></a>
 <a class="sourceLine" id="cb2-13" title="13"><span class="op">}</span></a></code></pre></div>
-<p>However, <strong>code that “mirrors” props in state usually contains bugs</strong>, whether you use the newer <code>getDerivedStateFromProps</code> or the legacy <code>componentWillReceiveProps</code>. We published a follow-up blog post that explains these problems in more detail, and suggests <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">simpler solutions that don’t involve <code>getDerivedStateFromProps()</code></a>.</p>
+<p>However, <strong>code that “mirrors” props in state usually contains bugs</strong>, whether you use the newer
+    <code>getDerivedStateFromProps</code> or the legacy <code>componentWillReceiveProps</code>. We published a follow-up
+    blog post that explains these problems in more detail, and suggests <a
+        href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">simpler solutions that don't involve
+        <code>getDerivedStateFromProps()</code></a>.</p>
 <h2 id="installation">Installation</h2>
 <p>React v16.4.0 is available on the npm registry.</p>
 <p>To install React 16 with Yarn, run:</p>
@@ -81,7 +89,9 @@
 <li>Fix a bug that prevented context propagation in some cases. (<span class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a href="https://github.com/facebook/react/pull/12708">#12708</a>)</li>
 <li>Fix re-rendering of components using <code>forwardRef()</code> on a deeper <code>setState()</code>. (<span class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a href="https://github.com/facebook/react/pull/12690">#12690</a>)</li>
 <li>Fix some attributes incorrectly getting removed from custom element nodes. (<span class="citation" data-cites="airamrguez">[@airamrguez]</span>(https://github.com/airamrguez) in <a href="https://github.com/facebook/react/pull/12702">#12702</a>)</li>
-<li>Fix context providers to not bail out on children if there’s a legacy context provider above. (<span class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a href="https://github.com/facebook/react/pull/12586">#12586</a>)</li>
+<li>Fix context providers to not bail out on children if there's a legacy context provider above. (<span
+        class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a
+        href="https://github.com/facebook/react/pull/12586">#12586</a>)</li>
 <li>Add the ability to specify <code>propTypes</code> on a context provider component. (<span class="citation" data-cites="nicolevy">[@nicolevy]</span>(https://github.com/nicolevy) in <a href="https://github.com/facebook/react/pull/12658">#12658</a>)</li>
 <li>Fix a false positive warning when using <code>react-lifecycles-compat</code> in <code>&lt;StrictMode&gt;</code>. (<span class="citation" data-cites="bvaughn">[@bvaughn]</span>(https://github.com/bvaughn) in <a href="https://github.com/facebook/react/pull/12644">#12644</a>)</li>
 <li>Warn when the <code>forwardRef()</code> render function has <code>propTypes</code> or <code>defaultProps</code>. (<span class="citation" data-cites="bvaughn">[@bvaughn]</span>(https://github.com/bvaughn) in <a href="https://github.com/facebook/react/pull/12644">#12644</a>)</li>
@@ -101,10 +111,17 @@
 </ul>
 <h3 id="react-call-return-experimental">React Call Return (Experimental)</h3>
 <ul>
-<li>This experiment was deleted because it was affecting the bundle size and the API wasn’t good enough. It’s likely to come back in the future in some other form. (<span class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a href="https://github.com/facebook/react/pull/12820">#12820</a>)</li>
+<li>This experiment was deleted because it was affecting the bundle size and the API wasn't good enough. It's likely to
+    come back in the future in some other form. (<span class="citation"
+        data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a
+        href="https://github.com/facebook/react/pull/12820">#12820</a>)</li>
 </ul>
 <h3 id="react-reconciler-experimental">React Reconciler (Experimental)</h3>
 <ul>
-<li>The <a href="https://github.com/facebook/react/blob/c601f7a64640290af85c9f0e33c78480656b46bc/packages/react-noop-renderer/src/createReactNoop.js#L82-L285">new host config shape</a> is flat and doesn’t use nested objects. (<span class="citation" data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a href="https://github.com/facebook/react/pull/12792">#12792</a>)</li>
+<li>The <a
+        href="https://github.com/facebook/react/blob/c601f7a64640290af85c9f0e33c78480656b46bc/packages/react-noop-renderer/src/createReactNoop.js#L82-L285">new
+        host config shape</a> is flat and doesn't use nested objects. (<span class="citation"
+        data-cites="gaearon">[@gaearon]</span>(https://github.com/gaearon) in <a
+        href="https://github.com/facebook/react/pull/12792">#12792</a>)</li>
 </ul>
 </body></html>

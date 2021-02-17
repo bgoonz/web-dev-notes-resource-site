@@ -1,5 +1,3 @@
-
-
 ### What is React?
 
 [React](https://facebook.github.io/react/) is a JavaScript library for creating UI components. React's specialty is exactly what its name implies: reaction. When the data that is represented by the UI changes, React _reacts_ by updating the UI.

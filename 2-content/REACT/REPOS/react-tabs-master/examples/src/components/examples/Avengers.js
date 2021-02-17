@@ -22,7 +22,7 @@ const code = `class Component extends React.Component {
       Hawkeye: { img: "${hawkeye}", color: "MediumOrchid", text: "white", desc: "\\"Just can't seem to miss.\\"" },
       "Iron Man": { img: "${ironman}", color: "LightCoral", text: "black", desc: "\\"My armor was never a distraction or a hobby. It was a cocoon. And now I'm a changed man. You can take away my house, all my tricks and toys. But one thing you can't take away... I am Iron Man.\\"" },
       Loki: { img: "${loki}", color: "LightGreen", text: "black", desc: "\\"I, Loki, Prince of Asgard, Odinson, the rightful King of Jotunheim, God of Mischief, do hereby pledge to you, my undying fidelity.\\"" },
-      Thor: { img: "${thor}", color: "SkyBlue", text: "black", desc: "\\"You know I’m 1500 years old. I’ve killed twice as many enemies as that. And every one of them would have rather killed me than not succeeded. I’m only alive because fate wants me alive. Thanos is just the latest of a long line of bastards, and he’ll be the latest to feel my vengeance. Fate wills it so.\\"" },
+      Thor: { img: "${thor}", color: "SkyBlue", text: "black", desc: "\\"You know I'm 1500 years old. I've killed twice as many enemies as that. And every one of them would have rather killed me than not succeeded. I'm only alive because fate wants me alive. Thanos is just the latest of a long line of bastards, and he'll be the latest to feel my vengeance. Fate wills it so.\\"" },
       "War Machine": { img: "${warMachine}", color: "LightGrey", text: "black", desc: "\\"138 combat missions. That's how many I've flown, Tony. Every one of them could've been my last, but I flew 'em. Because the fight needed to be fought.\\"" }
     };
 

@@ -86,7 +86,7 @@ function Home() {
             <div className="col col--4 col--offset-1">
               <h2>Get started in seconds</h2>
               <p>
-                Whether you’re using React or another library, Create React App
+                              Whether you're using React or another library, Create React App
                 lets you <strong>focus on code, not build tools</strong>.
                 <br />
                 <br />

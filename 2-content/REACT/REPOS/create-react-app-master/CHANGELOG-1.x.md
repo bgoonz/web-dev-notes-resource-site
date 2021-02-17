@@ -728,7 +728,7 @@ or
 yarn add --exact react-scripts@1.0.12
 ```
 
-**Note:** there’s a [known issue](https://github.com/facebook/create-react-app/issues/3041) that might cause the project to not compile after upgrading. In this case, migrate straight to `1.0.13` which doesn’t have this issue.
+**Note:** there's a [known issue](https://github.com/facebook/create-react-app/issues/3041) that might cause the project to not compile after upgrading. In this case, migrate straight to `1.0.13` which doesn't have this issue.
 
 ## 1.0.11 (August 9, 2017)
 
@@ -1106,9 +1106,9 @@ yarn add --dev --exact react-scripts@1.0.8
 
 **If you previously used `HTTPS=true` environment variable in development**, make sure you aren't affected by a now-fixed vulnerability in webpack by [visiting this page](http://badcert.mike.works/). You can read more about the vulnerability [here](https://medium.com/@mikenorth/webpack-preact-cli-vulnerability-961572624c54).
 
-You may optionally then move `react-scripts` from `devDependencies` to `dependencies` since that’s how we’ll structure newly created projects. It is not necessary though.
+You may optionally then move `react-scripts` from `devDependencies` to `dependencies` since that's how we'll structure newly created projects. It is not necessary though.
 
-If you left the service worker integration enabled and didn’t change how it works, you can replace `src/registerServiceWorker.js` with [this updated version](https://raw.githubusercontent.com/facebook/create-react-app/895c475d3fc218c65dcac9a3ef3f2c0ea746a1ed/packages/react-scripts/template/src/registerServiceWorker.js).
+If you left the service worker integration enabled and didn't change how it works, you can replace `src/registerServiceWorker.js` with [this updated version](https://raw.githubusercontent.com/facebook/create-react-app/895c475d3fc218c65dcac9a3ef3f2c0ea746a1ed/packages/react-scripts/template/src/registerServiceWorker.js).
 
 If you haven't changed the default CSS organization, you may want to apply [this fix](https://github.com/facebook/create-react-app/pull/2470/files) that makes `index.css` take precedence over `App.css` in your project.
 
@@ -1278,7 +1278,7 @@ yarn add --dev --exact react-scripts@1.0.4
 
 - `react-dev-utils`
 
-  - [#2297](https://github.com/facebook/create-react-app/pull/2297) Don’t serve the development version from public IPs by default. ([@Timer](https://github.com/Timer))
+  - [#2297](https://github.com/facebook/create-react-app/pull/2297) Don't serve the development version from public IPs by default. ([@Timer](https://github.com/Timer))
 
 - `eslint-config-react-app`
 
@@ -1443,10 +1443,10 @@ yarn add --dev --exact react-scripts@1.0.1
 
 ## 1.0.0 (May 18, 2017)
 
-We’ve been working on this release for the past few months, and there are many big improvements, from migrating to webpack 2 to a brand new runtime error overlay and built-in support for Progressive Web Apps.
+We've been working on this release for the past few months, and there are many big improvements, from migrating to webpack 2 to a brand new runtime error overlay and built-in support for Progressive Web Apps.
 
 So instead of just enumerating them here, we decided to write a blog post about all the new features.<br>
-Check it out: **[What’s New in Create React App](https://facebook.github.io/react/blog/2017/05/18/whats-new-in-create-react-app.html)**.
+Check it out: **[What's New in Create React App](https://facebook.github.io/react/blog/2017/05/18/whats-new-in-create-react-app.html)**.
 
 Have you read it? Now let's see how to update your app to the latest version.
 
@@ -1481,7 +1481,7 @@ To remedy this, simply move any files that you `import` within `src/` and update
 
 If you used relative imports outside the project directory as a way to share code with another project, consider using a [monorepo](https://github.com/lerna/lerna) instead, so that other projects are symlinked to your project's `node_modules/`. Then you can import them as a Node modules.
 
-While running `npm test`, you may notice some of your tests are missing. Please move any top-level test directory (i.e. `__test__`, `__spec__`) or files (i.e. `*.test.js`, `*.spec.js`) into `src/`. Conversely, if you have some similarly named files that you _don’t_ want Jest to run, move them outside of `src/`.
+While running `npm test`, you may notice some of your tests are missing. Please move any top-level test directory (i.e. `__test__`, `__spec__`) or files (i.e. `*.test.js`, `*.spec.js`) into `src/`. Conversely, if you have some similarly named files that you _don't_ want Jest to run, move them outside of `src/`.
 
 #### Import required locales for Moment.js
 
@@ -1570,7 +1570,7 @@ If you still have the problem please file an issue.
 
 #### Some of my tests started crashing because of unhandled rejections
 
-Unhandled Promise rejections will now crash tests. You can fix them by explicitly catching the errors you don’t care about.
+Unhandled Promise rejections will now crash tests. You can fix them by explicitly catching the errors you don't care about.
 
 #### How to turn my app into a [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)?
 

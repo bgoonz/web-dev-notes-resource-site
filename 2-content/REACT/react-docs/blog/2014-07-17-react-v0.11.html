@@ -6,9 +6,15 @@
   <title>Document</title>
 </head>
 <body>;
-<p><strong>Update:</strong> We missed a few important changes in our initial post and changelog. We’ve updated this post with details about <a href="#descriptors">Descriptors</a> and <a href="#prop-type-validation">Prop Type Validation</a>.</p>
+<p><strong>Update:</strong> We missed a few important changes in our initial post and changelog. We've updated this post
+    with details about <a href="#descriptors">Descriptors</a> and <a href="#prop-type-validation">Prop Type
+        Validation</a>.</p>
 <hr />
-<p>We’re really happy to announce the availability of React v0.11. There seems to be a lot of excitement already and we appreciate everybody who gave the release candidate a try over the weekend. We made a couple small changes in response to the feedback and issues filed. We enabled the destructuring assignment transform when using <code>jsx --harmony</code>, fixed a small regression with <code>statics</code>, and made sure we actually exposed the new API we said we were shipping: <code>React.Children.count</code>.</p>
+<p>We're really happy to announce the availability of React v0.11. There seems to be a lot of excitement already and we
+    appreciate everybody who gave the release candidate a try over the weekend. We made a couple small changes in
+    response to the feedback and issues filed. We enabled the destructuring assignment transform when using <code>jsx
+        --harmony</code>, fixed a small regression with <code>statics</code>, and made sure we actually exposed the new
+    API we said we were shipping: <code>React.Children.count</code>.</p>
 <p>This version has been cooking for a couple months now and includes a wide array of bug fixes and features. We highlighted some of the most important changes below, along with the full changelog.</p>
 <p>The release is available for download from the CDN:</p>
 <ul>
@@ -23,12 +29,19 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.11.0.m
 <li><strong>In-Browser JSX transformer</strong><br />
 <a href="https://fb.me/JSXTransformer-0.11.0.js" class="uri">https://fb.me/JSXTransformer-0.11.0.js</a></li>
 </ul>
-<p>We’ve also published version <code>0.11.0</code> of the <code>react</code> and <code>react-tools</code> packages on npm and the <code>react</code> package on bower.</p>
+<p>We've also published version <code>0.11.0</code> of the <code>react</code> and <code>react-tools</code> packages on
+    npm and the <code>react</code> package on bower.</p>
 <p>Please try these builds out and <a href="https://github.com/facebook/react/issues/new">file an issue on GitHub</a> if you see anything awry.</p>
 <h2 id="getdefaultprops"><code>getDefaultProps</code></h2>
 <p>Starting in React 0.11, <code>getDefaultProps()</code> is called only once when <code>React.createClass()</code> is called, instead of each time a component is rendered. This means that <code>getDefaultProps()</code> can no longer vary its return value based on <code>this.props</code> and any objects will be shared across all instances. This change improves performance and will make it possible in the future to do PropTypes checks earlier in the rendering process, allowing us to give better error messages.</p>
 <h2 id="rendering-to-null">Rendering to <code>null</code></h2>
-<p>Since React’s release, people have been using work arounds to “render nothing”. Usually this means returning an empty <code>&lt;div/&gt;</code> or <code>&lt;span/&gt;</code>. Some people even got clever and started returning <code>&lt;noscript/&gt;</code> to avoid extraneous DOM nodes. We finally provided a “blessed” solution that allows developers to write meaningful code. Returning <code>null</code> is an explicit indication to React that you do not want anything rendered. Behind the scenes we make this work with a <code>&lt;noscript&gt;</code> element, though in the future we hope to not put anything in the document. In the mean time, <code>&lt;noscript&gt;</code> elements do not affect layout in any way, so you can feel safe using <code>null</code> today!</p>
+<p>Since React's release, people have been using work arounds to “render nothing”. Usually this means returning an empty
+    <code>&lt;div/&gt;</code> or <code>&lt;span/&gt;</code>. Some people even got clever and started returning
+    <code>&lt;noscript/&gt;</code> to avoid extraneous DOM nodes. We finally provided a “blessed” solution that allows
+    developers to write meaningful code. Returning <code>null</code> is an explicit indication to React that you do not
+    want anything rendered. Behind the scenes we make this work with a <code>&lt;noscript&gt;</code> element, though in
+    the future we hope to not put anything in the document. In the mean time, <code>&lt;noscript&gt;</code> elements do
+    not affect layout in any way, so you can feel safe using <code>null</code> today!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// Before</span></a>
 <a class="sourceLine" id="cb1-2" title="2">render<span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-3" title="3">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">this</span>.<span class="va">state</span>.<span class="at">visible</span>) <span class="op">{</span></a>
@@ -45,7 +58,10 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.11.0.m
 <a class="sourceLine" id="cb1-14" title="14">  <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb1-15" title="15"><span class="op">}</span></a></code></pre></div>
 <h2 id="jsx-namespacing">JSX Namespacing</h2>
-<p>Another feature request we’ve been hearing for a long time is the ability to have namespaces in JSX. Given that JSX is just JavaScript, we didn’t want to use XML namespacing. Instead we opted for a standard JS approach: object property access. Instead of assigning variables to access components stored in an object (such as a component library), you can now use the component directly as <code>&lt;Namespace.Component/&gt;</code>.</p>
+<p>Another feature request we've been hearing for a long time is the ability to have namespaces in JSX. Given that JSX
+    is just JavaScript, we didn't want to use XML namespacing. Instead we opted for a standard JS approach: object
+    property access. Instead of assigning variables to access components stored in an object (such as a component
+    library), you can now use the component directly as <code>&lt;Namespace.Component/&gt;</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// Before</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> UI <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;UI&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">var</span> UILayout <span class="op">=</span> <span class="va">UI</span>.<span class="at">Layout</span><span class="op">;</span></a>
@@ -76,7 +92,11 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.11.0.m
 <p>Keyboard and mouse events also now include a normalized <code>e.getModifierState()</code> that works consistently across browsers.</p>
 <h2 id="descriptors">Descriptors</h2>
 <p>In our <a href="/blog/2014/03/21/react-v0.10.html#clone-on-mount">v0.10 release notes</a>, we called out that we were deprecating the existing behavior of the component function call (eg <code>component = MyComponent(props, ...children)</code> or <code>component = &lt;MyComponent prop={...}/&gt;</code>). Previously that would create an instance and React would modify that internally. You could store that reference and then call functions on it (eg <code>component.setProps(...)</code>). This no longer works. <code>component</code> in the above examples will be a descriptor and not an instance that can be operated on. The v0.10 release notes provide a complete example along with a migration path. The development builds also provided warnings if you called functions on descriptors.</p>
-<p>Along with this change to descriptors, <code>React.isValidComponent</code> and <code>React.PropTypes.component</code> now actually validate that the value is a descriptor. Overwhelmingly, these functions are used to validate the value of <code>MyComponent()</code>, which as mentioned is now a descriptor, not a component instance. We opted to reduce code churn and make the migration to 0.11 as easy as possible. However, we realize this is has caused some confusion and we’re working to make sure we are consistent with our terminology.</p>
+<p>Along with this change to descriptors, <code>React.isValidComponent</code> and <code>React.PropTypes.component</code>
+    now actually validate that the value is a descriptor. Overwhelmingly, these functions are used to validate the value
+    of <code>MyComponent()</code>, which as mentioned is now a descriptor, not a component instance. We opted to reduce
+    code churn and make the migration to 0.11 as easy as possible. However, we realize this is has caused some confusion
+    and we're working to make sure we are consistent with our terminology.</p>
 <h2 id="prop-type-validation">Prop Type Validation</h2>
 <p>Previously <code>React.PropTypes</code> validation worked by simply logging to the console. Internally, each validator was responsible for doing this itself. Additionally, you could write a custom validator and the expectation was that you would also simply <code>console.log</code> your error message. Very shortly into the 0.11 cycle we changed this so that our validators return (<em>not throw</em>) an <code>Error</code> object. We then log the <code>error.message</code> property in a central place in ReactCompositeComponent. Overall the result is the same, but this provides a clearer intent in validation. In addition, to better transition into our descriptor factory changes, we also currently run prop type validation twice in development builds. As a result, custom validators doing their own logging result in duplicate messages. To update, simply return an <code>Error</code> with your message instead.</p>
 <h2 id="changelog">Changelog</h2>

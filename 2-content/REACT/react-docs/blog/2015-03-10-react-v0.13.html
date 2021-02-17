@@ -6,10 +6,25 @@
   <title>Document</title>
 </head>
 <body>;
-<p>Today, we’re happy to release React v0.13!</p>
-<p>The most notable new feature is <a href="/blog/2015/01/27/react-v0.13.0-beta-1.html">support for ES6 classes</a>, which allows developers to have more flexibility when writing components. Our eventual goal is for ES6 classes to replace <code>React.createClass</code> completely, but until we have a replacement for current mixin use cases and support for class property initializers in the language, we don’t plan to deprecate <code>React.createClass</code>.</p>
-<p>At EmberConf and ng-conf last week, we were excited to see that Ember and Angular have been working on speed improvements and now both have performance comparable to React. We’ve always thought that performance isn’t the most important reason to choose React, but we’re still planning more optimizations to <strong>make React even faster</strong>.</p>
-<p>Our planned optimizations require that ReactElement objects are immutable, which has always been a best practice when writing idiomatic React code. In this release, we’ve added runtime warnings that fire when props are changed or added between the time an element is created and when it’s rendered. When migrating your code, you may want to use new <code>React.cloneElement</code> API (which is similar to <code>React.addons.cloneWithProps</code> but preserves <code>key</code> and <code>ref</code> and does not merge <code>style</code> or <code>className</code> automatically). For more information about our planned optimizations, see GitHub issues <a href="https://github.com/facebook/react/issues/3226">#3226</a>, <a href="https://github.com/facebook/react/issues/3227">#3227</a>, <a href="https://github.com/facebook/react/issues/3228">#3228</a>.</p>
+<p>Today, we're happy to release React v0.13!</p>
+<p>The most notable new feature is <a href="/blog/2015/01/27/react-v0.13.0-beta-1.html">support for ES6 classes</a>,
+    which allows developers to have more flexibility when writing components. Our eventual goal is for ES6 classes to
+    replace <code>React.createClass</code> completely, but until we have a replacement for current mixin use cases and
+    support for class property initializers in the language, we don't plan to deprecate <code>React.createClass</code>.
+</p>
+<p>At EmberConf and ng-conf last week, we were excited to see that Ember and Angular have been working on speed
+    improvements and now both have performance comparable to React. We've always thought that performance isn't the most
+    important reason to choose React, but we're still planning more optimizations to <strong>make React even
+        faster</strong>.</p>
+<p>Our planned optimizations require that ReactElement objects are immutable, which has always been a best practice when
+    writing idiomatic React code. In this release, we've added runtime warnings that fire when props are changed or
+    added between the time an element is created and when it's rendered. When migrating your code, you may want to use
+    new <code>React.cloneElement</code> API (which is similar to <code>React.addons.cloneWithProps</code> but preserves
+    <code>key</code> and <code>ref</code> and does not merge <code>style</code> or <code>className</code>
+    automatically). For more information about our planned optimizations, see GitHub issues <a
+        href="https://github.com/facebook/react/issues/3226">#3226</a>, <a
+        href="https://github.com/facebook/react/issues/3227">#3227</a>, <a
+        href="https://github.com/facebook/react/issues/3228">#3228</a>.</p>
 <p>The release is now available for download:</p>
 <ul>
 <li><strong>React</strong><br />
@@ -23,16 +38,21 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.13.0.m
 <li><strong>In-Browser JSX transformer</strong><br />
 <a href="https://fb.me/JSXTransformer-0.13.0.js" class="uri">https://fb.me/JSXTransformer-0.13.0.js</a></li>
 </ul>
-<p>We’ve also published version <code>0.13.0</code> of the <code>react</code> and <code>react-tools</code> packages on npm and the <code>react</code> package on bower.</p>
+<p>We've also published version <code>0.13.0</code> of the <code>react</code> and <code>react-tools</code> packages on
+    npm and the <code>react</code> package on bower.</p>
 <hr />
 <h2 id="changelog">Changelog</h2>
 <h3 id="react-core">React Core</h3>
 <h4 id="breaking-changes">Breaking Changes</h4>
 <ul>
 <li>Deprecated patterns that warned in 0.12 no longer work: most prominently, calling component classes without using JSX or React.createElement and using non-component functions with JSX or createElement</li>
-<li>Mutating <code>props</code> after an element is created is deprecated and will cause warnings in development mode; future versions of React will incorporate performance optimizations assuming that props aren’t mutated</li>
+<li>Mutating <code>props</code> after an element is created is deprecated and will cause warnings in development mode;
+    future versions of React will incorporate performance optimizations assuming that props aren't mutated</li>
 <li>Static methods (defined in <code>statics</code>) are no longer autobound to the component class</li>
-<li><code>ref</code> resolution order has changed slightly such that a ref to a component is available immediately after its <code>componentDidMount</code> method is called; this change should be observable only if your component calls a parent component’s callback within your <code>componentDidMount</code>, which is an anti-pattern and should be avoided regardless</li>
+<li><code>ref</code> resolution order has changed slightly such that a ref to a component is available immediately after
+    its <code>componentDidMount</code> method is called; this change should be observable only if your component calls a
+    parent component's callback within your <code>componentDidMount</code>, which is an anti-pattern and should be
+    avoided regardless</li>
 <li>Calls to <code>setState</code> in life-cycle methods are now always batched and therefore asynchronous. Previously the first call on the first mount was synchronous.</li>
 <li><code>setState</code> and <code>forceUpdate</code> on an unmounted component now warns instead of throwing. That avoids a possible race condition with Promises.</li>
 <li>Access to most internal properties has been completely removed, including <code>this._pendingState</code> and <code>this._rootNodeID</code>.</li>

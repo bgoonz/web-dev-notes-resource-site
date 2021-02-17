@@ -58,7 +58,7 @@ This round-up is the proof that React has taken off from its Facebook's root: it
 
 [Robert Zaremba](http://rz.scale-it.pl/) working on [AgFlow](http://www.agflow.com/) recently talked in Poland about React.
 
-> In a nutshell, I presented why we chose React among other available options (ember.js, angular, backbone ...) in AgFlow, where I’m leading an application development.
+> In a nutshell, I presented why we chose React among other available options (ember.js, angular, backbone ...) in AgFlow, where I'm leading an application development.
 >
 > During the talk a wanted to highlight that React is not about implementing a Model, but a way to construct visible components with some state. React is simple. It is super simple, you can learn it in 1h. On the other hand what is model? Which functionality it should provide? React does one thing and does it the best (for me)!
 >

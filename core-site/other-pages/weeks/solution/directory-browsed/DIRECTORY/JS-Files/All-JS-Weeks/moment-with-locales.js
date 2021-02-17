@@ -9857,7 +9857,7 @@
             LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
-            sameDay: '[Aujourd’hui à] LT',
+            sameDay: '[Aujourd'hui à]LT',
             nextDay: '[Demain à] LT',
             nextWeek: 'dddd [à] LT',
             lastDay: '[Hier à] LT',
@@ -9923,7 +9923,7 @@
             LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
-            sameDay: '[Aujourd’hui à] LT',
+            sameDay: '[Aujourd'hui à]LT',
             nextDay: '[Demain à] LT',
             nextWeek: 'dddd [à] LT',
             lastDay: '[Hier à] LT',
@@ -10017,7 +10017,7 @@
             LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
-            sameDay: '[Aujourd’hui à] LT',
+            sameDay: '[Aujourd'hui à]LT',
             nextDay: '[Demain à] LT',
             nextWeek: 'dddd [à] LT',
             lastDay: '[Hier à] LT',
@@ -13804,7 +13804,7 @@
             sameElse: 'L',
         },
         relativeTime: {
-            future: 'f’ %s',
+            future: 'f' % s',
             past: '%s ilu',
             s: 'ftit sekondi',
             ss: '%d sekondi',
@@ -16634,7 +16634,7 @@
 
     //! moment.js locale configuration
 
-    var numbersNouns = 'pagh_wa’_cha’_wej_loS_vagh_jav_Soch_chorgh_Hut'.split('_');
+    var numbersNouns = 'pagh_wa'_cha'_wej_loS_vagh_jav_Soch_chorgh_Hut'.split( '_' );
 
     function translateFuture(output) {
         var time = output;
@@ -16653,7 +16653,7 @@
         var time = output;
         time =
             output.indexOf('jaj') !== -1
-                ? time.slice(0, -3) + 'Hu’'
+                ? time.slice( 0, -3 ) + 'Hu''
                 : output.indexOf('jar') !== -1
                 ? time.slice(0, -3) + 'wen'
                 : output.indexOf('DIS') !== -1
@@ -16698,10 +16698,10 @@
     }
 
     hooks.defineLocale('tlh', {
-        months: 'tera’ jar wa’_tera’ jar cha’_tera’ jar wej_tera’ jar loS_tera’ jar vagh_tera’ jar jav_tera’ jar Soch_tera’ jar chorgh_tera’ jar Hut_tera’ jar wa’maH_tera’ jar wa’maH wa’_tera’ jar wa’maH cha’'.split(
+        months: 'tera' jar wa'_tera' jar cha'_tera' jar wej_tera' jar loS_tera' jar vagh_tera' jar jav_tera' jar Soch_tera' jar chorgh_tera' jar Hut_tera' jar wa'maH_tera' jar wa'maH wa'_tera' jar wa'maH cha''.split(
             '_'
         ),
-        monthsShort: 'jar wa’_jar cha’_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa’maH_jar wa’maH wa’_jar wa’maH cha’'.split(
+        monthsShort: 'jar wa'_jar cha'_jar wej_jar loS_jar vagh_jar jav_jar Soch_jar chorgh_jar Hut_jar wa'maH_jar wa'maH wa'_jar wa'maH cha''.split(
             '_'
         ),
         monthsParseExact: true,
@@ -16724,9 +16724,9 @@
         },
         calendar: {
             sameDay: '[DaHjaj] LT',
-            nextDay: '[wa’leS] LT',
+            nextDay: '[wa'leS]LT',
             nextWeek: 'LLL',
-            lastDay: '[wa’Hu’] LT',
+            lastDay: '[wa'Hu'] LT',
             lastWeek: 'LLL',
             sameElse: 'L',
         },
@@ -16735,15 +16735,15 @@
             past: translatePast,
             s: 'puS lup',
             ss: translate$a,
-            m: 'wa’ tup',
+            m: 'wa' tup',
             mm: translate$a,
-            h: 'wa’ rep',
+            h: 'wa' rep',
             hh: translate$a,
-            d: 'wa’ jaj',
+            d: 'wa' jaj',
             dd: translate$a,
-            M: 'wa’ jar',
+            M: 'wa' jar',
             MM: translate$a,
-            y: 'wa’ DIS',
+            y: 'wa' DIS',
             yy: translate$a,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
@@ -17177,13 +17177,13 @@
     }
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
-                nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
+            nominative: 'неділя_понеділок_вівторок_середа_четвер_п'ятниця_субота'.split(
                     '_'
                 ),
-                accusative: 'неділю_понеділок_вівторок_середу_четвер_п’ятницю_суботу'.split(
+        accusative: 'неділю_понеділок_вівторок_середу_четвер_п'ятницю_суботу'.split(
                     '_'
                 ),
-                genitive: 'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split(
+        genitive: 'неділі_понеділка_вівторка_середи_четверга_п'ятниці_суботи'.split(
                     '_'
                 ),
             },

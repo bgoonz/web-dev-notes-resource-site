@@ -5,28 +5,174 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Libraries</title>
 <style type="text/css">
-HTML {font-size: small; font-family: sans-serif}
-BODY {background: #F8F8FA}
-A {text-decoration: none}
-A:hover {color: #FFF; background: #006699; border-radius: 8px; padding-left: 3px; padding-right: 3px;}
-TABLE.fancy {background: #DFDFDF; border-left: 1px solid;
-   border-top: 1px solid; border-bottom: 0px solid; border-color: #FFF}
-TABLE.fancy TD {border-right: 1px solid; border-bottom: 1px solid;
-  border-color: #FFF; text-align: center; padding-right: 5px}
-TABLE.fancy TD.no-right {border-right: 0px}
-TABLE.fancy TD.right {text-align: right}
-TABLE.fancy TD.left {text-align: left}
-TABLE.fancy TD.center {text-align: center}
-TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: center;
-   background: #488CB1; color: #FFF; border-color: #FFF; font-weight: bold}
-.anchor {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background: #006699; color: #FFF}
-.dark-blue {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background:#00537D; color: #FFF}
-.no-top-border {border-top: 0px}
-.centered {margin: auto}
-.rZ {text-align: right}
-.row2 {background: #D3D3E1}
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+    HTML {
+    font-size: medium;
+    font-family: Garamond
+    }
+
+    BODY {
+    background: black
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#1F2739;
+    }
+    h1 {
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+    }
+    p {
+    color: grey;
+    }
+
+    A {
+    text-decoration: none color:black;
+    }
+
+    A:hover {
+    color: red;
+    background: whitesmoke;
+    border-radius: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    }
+
+    TABLE.fancy {
+    background: #fffefe;
+    border-left: 1px solid;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid;
+    border-bottom: 0px solid;
+    border-color: #FFF;
+    overflow-y:scroll;
+
+    width: 80%;
+
+    display: table;
+    padding: 0 0 8em 0;
+    }
+
+    TABLE.fancy TD {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #FFF;
+    text-align: center;
+    padding-right: 5px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+    }
+    TABLE.fancy tr:nth-child(odd) {
+    background-color: #323C50;
+    }
+    TABLE.fancy tr:nth-child(even) {
+    background-color: #2C3446;
+    }
+
+    TABLE.fancy th {
+    background-color: #1F2739;
+    }
+    TABLE.fancy td, TABLE.fancy th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+    }
+    TABLE.fancy tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+    }
+    TABLE.fancy td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px
+    6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+    }
+
+    @media (max-width: 800px) {
+    TABLE.fancy td:nth-child(4),
+    TABLE.fancy th:nth-child(4) { display: none; }
+    }
+    TABLE.fancy TD.no-right {
+    border-right: 0px
+    }
+
+    TABLE.fancy TD.right {
+    text-align: right
+    }
+
+    TABLE.fancy TD.left {
+    text-align: left
+    }
+
+    TABLE.fancy TD.center {
+    text-align: center
+    }
+
+    TABLE.fancy TH {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    text-align: center;
+    background: black;
+    color: #FFF;
+    border-color: #FFF;
+    font-weight: bold;
+    padding: 12px 15px;
+    }
+
+    .anchor {
+    font-weight: bold;
+    border-top: 0px solid;
+    text-align: center;
+    border-bottom: 1px solid;
+    background: black;
+    color: #FFF
+    }
+
+    .dark-blue {
+    font-weight: bold;
+    border-top: 0px solid;
+    text-align: center;
+    border-bottom: 1px solid;
+    background: black;
+    color: #FFF
+    }
+
+    .no-top-border {
+    border-top: 0px
+    }
+
+    .centered {
+    margin: auto
+    }
+
+    .rZ {
+    text-align: right
+    }
+
+    .row2 {
+    background: #D3D3E1
+    }
 </style>
 </head>
 
@@ -37,7 +183,7 @@ TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: c
 <tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="AppState/right.html" target="rframe">AppState</a></td><td class="left">&nbsp;<a href="Components/right.html" target="rframe">Components</a></td><td class="left">&nbsp;<a href="FBLazyVector/right.html" target="rframe">FBLazyVector</a></td><td class="left">&nbsp;<a href="Inspector/right.html" target="rframe">Inspector</a></td><td class="left">&nbsp;<a href="Linking/right.html" target="rframe">Linking</a></td><td class="left">&nbsp;<a href="Modal/right.html" target="rframe">Modal</a></td><td class="left">&nbsp;<a href="Network/right.html" target="rframe">Network</a></td><td class="left">&nbsp;<a href="Pressability/right.html" target="rframe">Pressability</a></td><td class="left">&nbsp;<a href="ReactNative/right.html" target="rframe">ReactNative</a></td><td class="left">&nbsp;<a href="Renderer/right.html" target="rframe">Renderer</a></td><td class="left">&nbsp;<a href="Storage/right.html" target="rframe">Storage</a></td><td class="left">&nbsp;<a href="SurfaceHostingComponent/right.html" target="rframe">SurfaceHostingComponent</a></td><td class="left">&nbsp;<a href="Types/right.html" target="rframe">Types</a></td><td class="left">&nbsp;<a href="vendor/right.html" target="rframe">vendor</a></td><td class="left">&nbsp;<a href="Wrapper/right.html" target="rframe">Wrapper</a></td></tr>
 <tr class="row2"><td class="left"><a href="ActionSheetIOS/right.html" target="rframe">ActionSheetIOS</a></td><td class="left">&nbsp;<a href="BatchedBridge/right.html" target="rframe">BatchedBridge</a></td><td class="left">&nbsp;<a href="Core/right.html" target="rframe">Core</a></td><td class="left">&nbsp;<a href="FBReactNativeSpec/right.html" target="rframe">FBReactNativeSpec</a></td><td class="left">&nbsp;<a href="Interaction/right.html" target="rframe">Interaction</a></td><td class="left">&nbsp;<a href="LinkingIOS/right.html" target="rframe">LinkingIOS</a></td><td class="left">&nbsp;<a href="NativeAnimation/right.html" target="rframe">NativeAnimation</a></td><td class="left">&nbsp;<a href="NewAppScreen/right.html" target="rframe">NewAppScreen</a></td><td class="left">&nbsp;<a href="PushNotificationIOS/right.html" target="rframe">PushNotificationIOS</a></td><td class="left">&nbsp;<a href="ReactPrivate/right.html" target="rframe">ReactPrivate</a></td><td class="left">&nbsp;<a href="Settings/right.html" target="rframe">Settings</a></td><td class="left">&nbsp;<a href="StyleSheet/right.html" target="rframe">StyleSheet</a></td><td class="left">&nbsp;<a href="Text/right.html" target="rframe">Text</a></td><td class="left">&nbsp;<a href="TypeSafety/right.html" target="rframe">TypeSafety</a></td><td class="left">&nbsp;<a href="Vibration/right.html" target="rframe">Vibration</a></td><td class="left">&nbsp;<a href="YellowBox/right.html" target="rframe">YellowBox</a></td></tr>
 <tr><td class="left"><a href="Alert/right.html" target="rframe">Alert</a></td><td class="left">&nbsp;<a href="Blob/right.html" target="rframe">Blob</a></td><td class="left">&nbsp;<a href="DeprecatedPropTypes/right.html" target="rframe">DeprecatedPropTypes</a></td><td class="left">&nbsp;<a href="HeapCapture/right.html" target="rframe">HeapCapture</a></td><td class="left">&nbsp;<a href="JSInspector/right.html" target="rframe">JSInspector</a></td><td class="left">&nbsp;<a href="Lists/right.html" target="rframe">Lists</a></td><td class="left">&nbsp;<a href="NativeComponent/right.html" target="rframe">NativeComponent</a></td><td class="left">&nbsp;<a href="Performance/right.html" target="rframe">Performance</a></td><td class="left">&nbsp;<a href="RCTRequired/right.html" target="rframe">RCTRequired</a></td><td class="left">&nbsp;<a href="Reliability/right.html" target="rframe">Reliability</a></td><td class="left">&nbsp;<a href="Share/right.html" target="rframe">Share</a></td><td class="left">&nbsp;<a href="SurfaceBackedComponent/right.html" target="rframe">SurfaceBackedComponent</a></td><td class="left">&nbsp;<a href="TurboModule/right.html" target="rframe">TurboModule</a></td><td class="left">&nbsp;<a href="Utilities/right.html" target="rframe">Utilities</a></td><td class="left">&nbsp;<a href="WebSocket/right.html" target="rframe">WebSocket</a></td><td class="left">&nbsp;<a href="__flowtests__/right.html" target="rframe">__flowtests__</a></td></tr>
-<tr class="row2"><td class="left"><a href="Animated/right.html" target="rframe">Animated</a></td><td class="left">&nbsp;<a href="BugReporting/right.html" target="rframe">BugReporting</a></td><td class="left">&nbsp;<a href="EventEmitter/right.html" target="rframe">EventEmitter</a></td><td class="left">&nbsp;<a href="Image/right.html" target="rframe">Image</a></td><td class="left">&nbsp;<a href="LayoutAnimation/right.html" target="rframe">LayoutAnimation</a></td><td class="left">&nbsp;<a href="LogBox/right.html" target="rframe">LogBox</a></td><td class="left">&nbsp;<a href="NativeModules/right.html" target="rframe">NativeModules</a></td><td class="left">&nbsp;<a href="PermissionsAndroid/right.html" target="rframe">PermissionsAndroid</a></td></tr>
+<tr class="row2"><td class="left"><a href="Animated/right.html" target="rframe">Animated</a></td><td class="left">&nbsp;<a href="BugReporting/right.html" target="rframe">BugReporting</a></td><td class="left">&nbsp;<a href="EventEmitter/right.html" target="rframe">EventEmitter</a></td><td class="left">&nbsp;<a href="Image/right.html" target="rframe">Image</a></td><td class="left">&nbsp;<a href="LayoutAnimation/right.html" target="rframe">LayoutAnimation</a></td><td class="left">&nbsp;<a href="LogBox/right.html" target="rframe">LogBox</a></td><td class="left">&nbsp;<a href="NativeModules/right.html" target="rframe">NativeModules</a></td><td class="left">&nbsp;<a href="PermissionsAndroid/right.html" target="rframe">PermissionsAndroid</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 

@@ -164,7 +164,7 @@ export default Child;
 
 ### props.children Example
 
-1. Read [A quick intro to React’s props.children](https://medium.com/better-programming/passing-data-to-props-children-in-react-5399baea0356)
+1. Read [A quick intro to React's props.children](https://medium.com/better-programming/passing-data-to-props-children-in-react-5399baea0356)
 2. Read [React This Props Children](https://learn.co/lessons/react-this-props-children)
 3. Watch [React Tutorial 13: props.children](https://www.youtube.com/watch?v=Sq0FoUPxj_c)
 
@@ -203,7 +203,7 @@ This de-couples the <MyComponent> component from its content and makes it more r
 The possible usage for {props.children} are:
 
 - Grouping unknown number of similar elements into a parent element.
-- You don’t know elements ahead of the time.
+- You don't know elements ahead of the time.
 - The nested structure that needs a wrapper.
 
 ### Using Third-Party Components like Reactstrap
@@ -225,7 +225,7 @@ Now, we are all set to use reactstrap UI components in React app.
 
 #### Using Reactstrap Buttons in React
 
-Let’s check out how we can use reactstrap buttons in React app. First, we have to import Buttons component in src/App.js file and include the Buttons code from reactstrap site.
+Let's check out how we can use reactstrap buttons in React app. First, we have to import Buttons component in src/App.js file and include the Buttons code from reactstrap site.
 
 ```js
 import React from 'react';
@@ -295,7 +295,7 @@ First let us create an array of random quotes and save it in a json file
 ```js
 [
   {
-    quote: 'Life isn’t about getting and having, it’s about giving and being.'
+    quote: 'Life isn't about getting and having, it's about giving and being.'
   },
   {
     quote: 'Whatever the mind of man can conceive and believe, it can achieve.'

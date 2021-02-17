@@ -10,7 +10,8 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">ReactDOM</span>.<span class="at">createPortal</span>(child<span class="op">,</span> container)</a></code></pre></div>
 <p>The first argument (<code>child</code>) is any <a href="/docs/react-component.html#render">renderable React child</a>, such as an element, string, or fragment. The second argument (<code>container</code>) is a DOM element.</p>
 <h2 id="usage">Usage</h2>
-<p>Normally, when you return an element from a component’s render method, it’s mounted into the DOM as a child of the nearest parent node:</p>
+<p>Normally, when you return an element from a component's render method, it's mounted into the DOM as a child of the
+    nearest parent node:</p>
 <pre class="js{4,6}"><code>render() {
   // React mounts a new div and renders the children into it
   return (
@@ -19,7 +20,7 @@
     &lt;/div&gt;
   );
 }</code></pre>
-<p>However, sometimes it’s useful to insert a child into a different location in the DOM:</p>
+<p>However, sometimes it's useful to insert a child into a different location in the DOM:</p>
 <pre class="js{6}"><code>render() {
   // React does *not* create a new div. It renders the children into `domNode`.
   // `domNode` is any valid DOM node, regardless of its location in the DOM.
@@ -125,5 +126,7 @@ function Child() {
 
 ReactDOM.render(&lt;Parent /&gt;, appRoot);</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/jGBWpE"><strong>Try it on CodePen</strong></a></p>
-<p>Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals. For example, if you render a <code>&lt;Modal /&gt;</code> component, the parent can capture its events regardless of whether it’s implemented using portals.</p>
+<p>Catching an event bubbling up from a portal in a parent component allows the development of more flexible
+    abstractions that are not inherently reliant on portals. For example, if you render a <code>&lt;Modal /&gt;</code>
+    component, the parent can capture its events regardless of whether it's implemented using portals.</p>
 </body></html>

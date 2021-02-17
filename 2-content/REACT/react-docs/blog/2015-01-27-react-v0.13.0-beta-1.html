@@ -6,13 +6,19 @@
   <title>Document</title>
 </head>
 <body>;
-<p>React 0.13 has a lot of nice features but there is one particular feature that I’m really excited about. I couldn’t wait for React.js Conf to start tomorrow morning.</p>
-<p>Maybe you’re like me and staying up late excited about the conference, or maybe you weren’t one of the lucky ones to get a ticket. Either way I figured I’d give you all something to play with until then.</p>
-<p>We just published a beta version of React v0.13.0 to <a href="https://www.npmjs.com/package/react">npm</a>! You can install it with <code>npm install react@0.13.0-beta.1</code>. Since this is a pre-release, we don’t have proper release notes ready.</p>
-<p>So what is that one feature I’m so excited about that I just couldn’t wait to share?</p>
+<p>React 0.13 has a lot of nice features but there is one particular feature that I'm really excited about. I couldn't
+    wait for React.js Conf to start tomorrow morning.</p>
+<p>Maybe you're like me and staying up late excited about the conference, or maybe you weren't one of the lucky ones to
+    get a ticket. Either way I figured I'd give you all something to play with until then.</p>
+<p>We just published a beta version of React v0.13.0 to <a href="https://www.npmjs.com/package/react">npm</a>! You can
+    install it with <code>npm install react@0.13.0-beta.1</code>. Since this is a pre-release, we don't have proper
+    release notes ready.</p>
+<p>So what is that one feature I'm so excited about that I just couldn't wait to share?</p>
 <h2 id="plain-javascript-classes">Plain JavaScript Classes!!</h2>
-<p>JavaScript originally didn’t have a built-in class system. Every popular framework built their own, and so did we. This means that you have a learn slightly different semantics for each framework.</p>
-<p>We figured that we’re not in the business of designing a class system. We just want to use whatever is the idiomatic JavaScript way of creating classes.</p>
+<p>JavaScript originally didn't have a built-in class system. Every popular framework built their own, and so did we.
+    This means that you have a learn slightly different semantics for each framework.</p>
+<p>We figured that we're not in the business of designing a class system. We just want to use whatever is the idiomatic
+    JavaScript way of creating classes.</p>
 <p>In React 0.13.0 you no longer need to use <code>React.createClass</code> to create React components. If you have a transpiler you can use ES6 classes today. You can use the transpiler we ship with <code>react-tools</code> by making use of the harmony option: <code>jsx --harmony</code>.</p>
 <h3 id="es6-classes">ES6 Classes</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> HelloMessage <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
@@ -42,7 +48,9 @@
 <a class="sourceLine" id="cb2-17" title="17"><span class="va">Counter</span>.<span class="at">propTypes</span> <span class="op">=</span> <span class="op">{</span> <span class="dt">initialCount</span><span class="op">:</span> <span class="va">React</span>.<span class="va">PropTypes</span>.<span class="at">number</span> <span class="op">};</span></a>
 <a class="sourceLine" id="cb2-18" title="18"><span class="va">Counter</span>.<span class="at">defaultProps</span> <span class="op">=</span> <span class="op">{</span> <span class="dt">initialCount</span><span class="op">:</span> <span class="dv">0</span> <span class="op">};</span></a></code></pre></div>
 <h3 id="es7-property-initializers">ES7+ Property Initializers</h3>
-<p>Wait, assigning to properties seems like a very imperative way of defining classes! You’re right, however, we designed it this way because it’s idiomatic. We fully expect a more declarative syntax for property initialization to arrive in future version of JavaScript. It might look something like this:</p>
+<p>Wait, assigning to properties seems like a very imperative way of defining classes! You're right, however, we
+    designed it this way because it's idiomatic. We fully expect a more declarative syntax for property initialization
+    to arrive in future version of JavaScript. It might look something like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// Future Version</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="im">export</span> <span class="kw">class</span> Counter <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="kw">static</span> propTypes <span class="op">=</span> <span class="op">{</span> <span class="dt">initialCount</span><span class="op">:</span> <span class="va">React</span>.<span class="va">PropTypes</span>.<span class="at">number</span> <span class="op">};</span></a>
@@ -59,10 +67,11 @@
 <a class="sourceLine" id="cb3-14" title="14">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-15" title="15">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb3-16" title="16"><span class="op">}</span></a></code></pre></div>
-<p>This was inspired by TypeScript’s property initializers.</p>
+<p>This was inspired by TypeScript's property initializers.</p>
 <h3 id="autobinding">Autobinding</h3>
 <p><code>React.createClass</code> has a built-in magic feature that bound all methods to <code>this</code> automatically for you. This can be a little confusing for JavaScript developers that are not used to this feature in other classes, or it can be confusing when they move from React to other classes.</p>
-<p>Therefore we decided not to have this built-in into React’s class model. You can still explicitly prebind methods in your constructor if you want.</p>
+<p>Therefore we decided not to have this built-in into React's class model. You can still explicitly prebind methods in
+    your constructor if you want.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> Counter <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="at">constructor</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-3" title="3">    <span class="kw">super</span>(props)<span class="op">;</span></a>
@@ -82,7 +91,10 @@
 <a class="sourceLine" id="cb5-6" title="6"><span class="op">}</span></a></code></pre></div>
 <h3 id="mixins">Mixins</h3>
 <p>Unfortunately, we will not launch any mixin support for ES6 classes in React. That would defeat the purpose of only using idiomatic JavaScript concepts.</p>
-<p>There is no standard and universal way to define mixins in JavaScript. In fact, several features to support mixins were dropped from ES6 today. There are a lot of libraries with different semantics. We think that there should be one way of defining mixins that you can use for any JavaScript class. React just making another doesn’t help that effort.</p>
+<p>There is no standard and universal way to define mixins in JavaScript. In fact, several features to support mixins
+    were dropped from ES6 today. There are a lot of libraries with different semantics. We think that there should be
+    one way of defining mixins that you can use for any JavaScript class. React just making another doesn't help that
+    effort.</p>
 <p>Therefore, we will keep working with the larger JS community to create a standard for mixins. We will also start designing a new compositional API that will help make common tasks easier to do without mixins. E.g. first-class subscriptions to any kind of Flux store.</p>
 <p>Luckily, if you want to keep using mixins, you can just keep using <code>React.createClass</code>.</p>
 <blockquote>

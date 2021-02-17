@@ -8,18 +8,24 @@
 <body>;
 <p>This section will give you an overview of the React codebase organization, its conventions, and the implementation.</p>
 <p>If you want to <a href="/docs/how-to-contribute.html">contribute to React</a> we hope that this guide will help you feel more comfortable making changes.</p>
-<p>We don’t necessarily recommend any of these conventions in React apps. Many of them exist for historical reasons and might change with time.</p>
+<p>We don't necessarily recommend any of these conventions in React apps. Many of them exist for historical reasons and
+    might change with time.</p>
 <h3 id="top-level-folders">Top-Level Folders</h3>
 <p>After cloning the <a href="https://github.com/facebook/react">React repository</a>, you will see a few top-level folders in it:</p>
 <ul>
-<li><a href="https://github.com/facebook/react/tree/master/packages"><code>packages</code></a> contains metadata (such as <code>package.json</code>) and the source code (<code>src</code> subdirectory) for all packages in the React repository. <strong>If your change is related to the code, the <code>src</code> subdirectory of each package is where you’ll spend most of your time.</strong></li>
+<li><a href="https://github.com/facebook/react/tree/master/packages"><code>packages</code></a> contains metadata (such
+    as <code>package.json</code>) and the source code (<code>src</code> subdirectory) for all packages in the React
+    repository. <strong>If your change is related to the code, the <code>src</code> subdirectory of each package is
+        where you'll spend most of your time.</strong></li>
 <li><a href="https://github.com/facebook/react/tree/master/fixtures"><code>fixtures</code></a> contains a few small React test applications for contributors.</li>
 <li><code>build</code> is the build output of React. It is not in the repository but it will appear in your React clone after you <a href="/docs/how-to-contribute.html#development-workflow">build it</a> for the first time.</li>
 </ul>
 <p>The documentation is hosted <a href="https://github.com/reactjs/reactjs.org">in a separate repository from React</a>.</p>
-<p>There are a few other top-level folders but they are mostly used for the tooling and you likely won’t ever encounter them when contributing.</p>
+<p>There are a few other top-level folders but they are mostly used for the tooling and you likely won't ever encounter
+    them when contributing.</p>
 <h3 id="colocated-tests">Colocated Tests</h3>
-<p>We don’t have a top-level directory for unit tests. Instead, we put them into a directory called <code>__tests__</code> relative to the files that they test.</p>
+<p>We don't have a top-level directory for unit tests. Instead, we put them into a directory called
+    <code>__tests__</code> relative to the files that they test.</p>
 <p>For example, a test for <a href="https://github.com/facebook/react/blob/87724bd87506325fcaf2648c70fc1f43411a87be/src/renderers/dom/client/utils/setInnerHTML.js"><code>setInnerHTML.js</code></a> is located in <a href="https://github.com/facebook/react/blob/87724bd87506325fcaf2648c70fc1f43411a87be/src/renderers/dom/client/utils/__tests__/setInnerHTML-test.js"><code>__tests__/setInnerHTML-test.js</code></a> right next to it.</p>
 <h3 id="warnings-and-invariants">Warnings and Invariants</h3>
 <p>The React codebase uses <code>console.error</code> to display warnings:</p>
@@ -99,5 +105,6 @@
 <h3 id="event-system">Event System</h3>
 <p>React implements a layer over native events to smooth out cross-browser differences. Its source code is located in <a href="https://github.com/facebook/react/tree/master/packages/react-dom/src/events"><code>packages/react-dom/src/events</code></a>.</p>
 <h3 id="what-next">What Next?</h3>
-<p>Read the <a href="/docs/implementation-notes.html">next section</a> to learn about the pre-React 16 implementation of reconciler in more detail. We haven’t documented the internals of the new reconciler yet.</p>
+<p>Read the <a href="/docs/implementation-notes.html">next section</a> to learn about the pre-React 16 implementation of
+    reconciler in more detail. We haven't documented the internals of the new reconciler yet.</p>
 </body></html>

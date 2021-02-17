@@ -12,7 +12,7 @@
 <a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}</span>&lt;/h1<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb1-4" title="4">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb1-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>If you don’t use ES6 yet, you may use the <code>create-react-class</code> module instead:</p>
+<p>If you don't use ES6 yet, you may use the <code>create-react-class</code> module instead:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">var</span> createReactClass <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;create-react-class&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">var</span> Greeting <span class="op">=</span> <span class="at">createReactClass</span>(<span class="op">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span></a>
@@ -57,7 +57,9 @@
 <a class="sourceLine" id="cb6-5" title="5">  <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb6-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <h2 id="autobinding">Autobinding</h2>
-<p>In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means that they don’t automatically bind <code>this</code> to the instance. You’ll have to explicitly use <code>.bind(this)</code> in the constructor:</p>
+<p>In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means
+    that they don't automatically bind <code>this</code> to the instance. You'll have to explicitly use
+    <code>.bind(this)</code> in the constructor:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">class</span> SayHello <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="at">constructor</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-3" title="3">    <span class="kw">super</span>(props)<span class="op">;</span></a>
@@ -119,7 +121,7 @@
 <a class="sourceLine" id="cb9-18" title="18">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb9-19" title="19"><span class="op">}</span></a></code></pre></div>
 <p>Please note that the syntax above is <strong>experimental</strong> and the syntax may change, or the proposal might not make it into the language.</p>
-<p>If you’d rather play it safe, you have a few options:</p>
+<p>If you'd rather play it safe, you have a few options:</p>
 <ul>
 <li>Bind methods in the constructor.</li>
 <li>Use arrow functions, e.g. <code>onClick={(e) =&gt; this.handleClick(e)}</code>.</li>
@@ -129,11 +131,18 @@
 <blockquote>
 <p><strong>Note:</strong></p>
 <p>ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes.</p>
-<p><strong>We also found numerous issues in codebases using mixins, <a href="/blog/2016/07/13/mixins-considered-harmful.html">and don’t recommend using them in the new code</a>.</strong></p>
+<p><strong>We also found numerous issues in codebases using mixins, <a
+            href="/blog/2016/07/13/mixins-considered-harmful.html">and don't recommend using them in the new
+            code</a>.</strong></p>
 <p>This section exists only for the reference.</p>
 </blockquote>
 <p>Sometimes very different components may share some common functionality. These are sometimes called <a href="https://en.wikipedia.org/wiki/Cross-cutting_concern">cross-cutting concerns</a>. <code>createReactClass</code> lets you use a legacy <code>mixins</code> system for that.</p>
-<p>One common use case is a component wanting to update itself on a time interval. It’s easy to use <code>setInterval()</code>, but it’s important to cancel your interval when you don’t need it anymore to save memory. React provides <a href="/docs/react-component.html#the-component-lifecycle">lifecycle methods</a> that let you know when a component is about to be created or destroyed. Let’s create a simple mixin that uses these methods to provide an easy <code>setInterval()</code> function that will automatically get cleaned up when your component is destroyed.</p>
+<p>One common use case is a component wanting to update itself on a time interval. It's easy to use
+    <code>setInterval()</code>, but it's important to cancel your interval when you don't need it anymore to save
+    memory. React provides <a href="/docs/react-component.html#the-component-lifecycle">lifecycle methods</a> that let
+    you know when a component is about to be created or destroyed. Let's create a simple mixin that uses these methods
+    to provide an easy <code>setInterval()</code> function that will automatically get cleaned up when your component is
+    destroyed.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">var</span> SetIntervalMixin <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="dt">componentWillMount</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb10-3" title="3">    <span class="kw">this</span>.<span class="at">intervals</span> <span class="op">=</span> []<span class="op">;</span></a>

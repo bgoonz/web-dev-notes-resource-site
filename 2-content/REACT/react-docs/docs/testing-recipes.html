@@ -9,9 +9,13 @@
 <p>Common testing patterns for React components.</p>
 <blockquote>
 <p>Note:</p>
-<p>This page assumes you’re using <a href="https://jestjs.io/">Jest</a> as a test runner. If you use a different test runner, you may need to adjust the API, but the overall shape of the solution will likely be the same. Read more details on setting up a testing environment on the <a href="/docs/testing-environments.html">Testing Environments</a> page.</p>
+<p>This page assumes you're using <a href="https://jestjs.io/">Jest</a> as a test runner. If you use a different test
+    runner, you may need to adjust the API, but the overall shape of the solution will likely be the same. Read more
+    details on setting up a testing environment on the <a href="/docs/testing-environments.html">Testing
+        Environments</a> page.</p>
 </blockquote>
-<p>On this page, we will primarily use function components. However, these testing strategies don’t depend on implementation details, and work just as well for class components too.</p>
+<p>On this page, we will primarily use function components. However, these testing strategies don't depend on
+    implementation details, and work just as well for class components too.</p>
 <ul>
 <li><a href="#setup--teardown">Setup/Teardown</a></li>
 <li><a href="#act"><code>act()</code></a></li>
@@ -26,8 +30,11 @@
 </ul>
 <hr />
 <h3 id="setup--teardown">Setup/Teardown</h3>
-<p>For each test, we usually want to render our React tree to a DOM element that’s attached to <code>document</code>. This is important so that it can receive DOM events. When the test ends, we want to “clean up” and unmount the tree from the <code>document</code>.</p>
-<p>A common way to do it is to use a pair of <code>beforeEach</code> and <code>afterEach</code> blocks so that they’ll always run and isolate the effects of a test to itself:</p>
+<p>For each test, we usually want to render our React tree to a DOM element that's attached to <code>document</code>.
+    This is important so that it can receive DOM events. When the test ends, we want to “clean up” and unmount the tree
+    from the <code>document</code>.</p>
+<p>A common way to do it is to use a pair of <code>beforeEach</code> and <code>afterEach</code> blocks so that they'll
+    always run and isolate the effects of a test to itself:</p>
 <pre class="jsx"><code>import { unmountComponentAtNode } from &quot;react-dom&quot;;
 
 let container = null;
@@ -227,7 +234,8 @@ export default function Contact(props) {
     &lt;/div&gt;
   );
 }</code></pre>
-<p>If we don’t want to load this component in our tests, we can mock out the dependency itself to a dummy component, and run our tests:</p>
+<p>If we don't want to load this component in our tests, we can mock out the dependency itself to a dummy component, and
+    run our tests:</p>
 <pre class="jsx{10-18}"><code>// contact.test.js
 
 import React from &quot;react&quot;;
@@ -364,7 +372,9 @@ it(&quot;changes value when clicked&quot;, () =&gt; {
 </blockquote>
 <hr />
 <h3 id="timers">Timers</h3>
-<p>Your code might use timer-based functions like <code>setTimeout</code> to schedule more work in the future. In this example, a multiple choice panel waits for a selection and advances, timing out if a selection isn’t made in 5 seconds:</p>
+<p>Your code might use timer-based functions like <code>setTimeout</code> to schedule more work in the future. In this
+    example, a multiple choice panel waits for a selection and advances, timing out if a selection isn't made in 5
+    seconds:</p>
 <pre class="jsx"><code>// card.js
 
 import React, { useEffect } from &quot;react&quot;;
@@ -389,7 +399,8 @@ export default function Card(props) {
     &lt;/button&gt;
   ));
 }</code></pre>
-<p>We can write tests for this component by leveraging <a href="https://jestjs.io/docs/en/timer-mocks">Jest’s timer mocks</a>, and testing the different states it can be in.</p>
+<p>We can write tests for this component by leveraging <a href="https://jestjs.io/docs/en/timer-mocks">Jest's timer
+        mocks</a>, and testing the different states it can be in.</p>
 <pre class="jsx{7,31,37,49,59}"><code>// card.test.js
 
 import React from &quot;react&quot;;
@@ -469,7 +480,9 @@ it(&quot;should accept selections&quot;, () =&gt; {
 
   expect(onSelect).toHaveBeenCalledWith(2);
 });</code></pre>
-<p>You can use fake timers only in some tests. Above, we enabled them by calling <code>jest.useFakeTimers()</code>. The main advantage they provide is that your test doesn’t actually have to wait five seconds to execute, and you also didn’t need to make the component code more convoluted just for testing.</p>
+<p>You can use fake timers only in some tests. Above, we enabled them by calling <code>jest.useFakeTimers()</code>. The
+    main advantage they provide is that your test doesn't actually have to wait five seconds to execute, and you also
+    didn't need to make the component code more convoluted just for testing.</p>
 <hr />
 <h3 id="snapshot-testing">Snapshot Testing</h3>
 <p>Frameworks like Jest also let you save “snapshots” of data with <a href="https://jestjs.io/docs/en/snapshot-testing"><code>toMatchSnapshot</code> / <code>toMatchInlineSnapshot</code></a>. With these, we can “save” the rendered component output and ensure that a change to it has to be explicitly committed as a change to the snapshot.</p>
@@ -522,7 +535,10 @@ it(&quot;should render a greeting&quot;, () =&gt; {
     pretty(container.innerHTML)
   ).toMatchInlineSnapshot(); /* ... gets filled automatically by jest ... */
 });</code></pre>
-<p>It’s typically better to make more specific assertions than to use snapshots. These kinds of tests include implementation details so they break easily, and teams can get desensitized to snapshot breakages. Selectively <a href="#mocking-modules">mocking some child components</a> can help reduce the size of snapshots and keep them readable for the code review.</p>
+<p>It's typically better to make more specific assertions than to use snapshots. These kinds of tests include
+    implementation details so they break easily, and teams can get desensitized to snapshot breakages. Selectively <a
+        href="#mocking-modules">mocking some child components</a> can help reduce the size of snapshots and keep them
+    readable for the code review.</p>
 <hr />
 <h3 id="multiple-renderers">Multiple Renderers</h3>
 <p>In rare cases, you may be running a test on a component that uses multiple renderers. For example, you may be running snapshot tests on a component with <code>react-test-renderer</code>, that internally uses <code>ReactDOM.render</code> inside a child component to render some content. In this scenario, you can wrap updates with <code>act()</code>s corresponding to their renderers.</p>

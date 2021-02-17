@@ -150,11 +150,11 @@ npm command-line interface
 aliases: run, rum, urn
 </code></pre>
 <h3 id="description">Description</h3>
-<p>This runs an arbitrary command from a package’s <code>"scripts"</code> object.  If no
+<p>This runs an arbitrary command from a package's <code>"scripts"</code> object. If no
 <code>"command"</code> is provided, it will list the available scripts.</p>
 <p><code>run[-script]</code> is used by the test, start, restart, and stop commands, but
 can be called directly, as well. When the scripts in the package are
-printed out, they’re separated into lifecycle (test, start, restart) and
+printed out, they're separated into lifecycle (test, start, restart) and
 directly-run scripts.</p>
 <p>Any positional arguments are passed to the specified script.  Use <code>--</code> to
 pass <code>-</code>-prefixed flags and options which would otherwise be parsed by npm.</p>
@@ -167,7 +167,7 @@ and not to any pre or post script.</p>
 environment variables that will be available to the script at runtime. If an
 “env” command is defined in your package, it will take precedence over the
 built-in.</p>
-<p>In addition to the shell’s pre-existing <code>PATH</code>, <code>npm run</code> adds
+<p>In addition to the shell's pre-existing <code>PATH</code>, <code>npm run</code> adds
 <code>node_modules/.bin</code> to the <code>PATH</code> provided to scripts. Any binaries
 provided by locally-installed dependencies can be used without the
 <code>node_modules/.bin</code> prefix. For example, if there is a <code>devDependency</code> on
@@ -183,7 +183,7 @@ The actual shell referred to by <code>/bin/sh</code> also depends on the system.
 You can customize the shell with the <code>script-shell</code> configuration.</p>
 <p>Scripts are run from the root of the package folder, regardless of what the
 current working directory is when <code>npm run</code> is called. If you want your
-script to use different behavior based on what subdirectory you’re in, you
+script to use different behavior based on what subdirectory you're in, you
 can use the <code>INIT_CWD</code> environment variable, which holds the full path you
 were in when you ran <code>npm run</code>.</p>
 <p><code>npm run</code> sets the <code>NODE</code> environment variable to the <code>node</code> executable
@@ -193,7 +193,7 @@ If <code>--scripts-prepend-node-path=auto</code> is passed (which has been the d
 in <code>npm</code> v3), this is only performed when that <code>node</code> executable is not
 found in the <code>PATH</code>.</p>
 <p>If you try to run a script without having a <code>node_modules</code> directory and it fails,
-you will be given a warning to run <code>npm install</code>, just in case you’ve forgotten.</p>
+you will be given a warning to run <code>npm install</code>, just in case you've forgotten.</p>
 <p>You can use the <code>--silent</code> flag to prevent showing <code>npm ERR!</code> output on error.</p>
 <p>You can use the <code>--if-present</code> flag to avoid exiting with a non-zero exit code
 when the script is undefined. This lets you run potentially undefined scripts

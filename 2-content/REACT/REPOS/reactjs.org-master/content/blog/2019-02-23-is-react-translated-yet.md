@@ -3,7 +3,7 @@ title: "Is React Translated Yet? ¡Sí! Sim! はい！"
 author: [tesseralis]
 ---
 
-We’re excited to announce an ongoing effort to maintain official translations of the React documentation website into different languages. Thanks to the dedicated efforts of React community members from around the world, React is now being translated into *over 30* languages! You can find them on the new [Languages](/languages) page.
+We're excited to announce an ongoing effort to maintain official translations of the React documentation website into different languages. Thanks to the dedicated efforts of React community members from around the world, React is now being translated into *over 30* languages! You can find them on the new [Languages](/languages) page.
 
 In addition, the following three languages have completed translating most of the React Docs! 🎉
 
@@ -15,7 +15,7 @@ Special congratulations to [Alejandro Ñáñez Ortiz](https://github.com/alejand
 
 ## Why Localization Matters {#why-localization-matters}
 
-React already has many meetups and conferences around the world, but many programmers don't use English as their primary language. We’d love to support local communities who use React by making our documentation available in most popular languages.
+React already has many meetups and conferences around the world, but many programmers don't use English as their primary language. We'd love to support local communities who use React by making our documentation available in most popular languages.
 
 In the past, React community members have created unofficial translations for [Chinese](https://github.com/discountry/react), [Arabic](https://wiki.hsoub.com/React), and [Korean](https://github.com/reactjs/ko.reactjs.org/issues/4); by making an official channel for these translated docs we're hoping to make them easier to find and help make sure that non-English-speaking users of React aren't left behind.
 

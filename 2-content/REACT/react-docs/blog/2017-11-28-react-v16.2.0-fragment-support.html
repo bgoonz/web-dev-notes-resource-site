@@ -6,7 +6,8 @@
   <title>Document</title>
 </head>
 <body>;
-<p>React 16.2 is now available! The biggest addition is improved support for returning multiple children from a component’s render method. We call this feature <em>fragments</em>:</p>
+<p>React 16.2 is now available! The biggest addition is improved support for returning multiple children from a
+    component's render method. We call this feature <em>fragments</em>:</p>
 <p>Fragments look like empty JSX tags. They let you group a list of children without adding extra nodes to the DOM:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="cf">return</span> (</a>
@@ -38,7 +39,10 @@
 <a class="sourceLine" id="cb3-10" title="10">    &lt;/div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb3-11" title="11">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-12" title="12"><span class="op">}</span></a></code></pre></div>
-<p>To address this limitation, React 16.0 added support for <a href="/blog/2017/09/26/react-v16.0.html#new-render-return-types-fragments-and-strings">returning an array of elements from a component’s <code>render</code> method</a>. Instead of wrapping the children in a DOM element, you can put them into an array:</p>
+<p>To address this limitation, React 16.0 added support for <a
+        href="/blog/2017/09/26/react-v16.0.html#new-render-return-types-fragments-and-strings">returning an array of
+        elements from a component's <code>render</code> method</a>. Instead of wrapping the children in a DOM element,
+    you can put them into an array:</p>
 <pre class="jsx"><code>render() {
  return [
   &quot;Some text.&quot;,
@@ -51,7 +55,8 @@
 <p>However, this has some confusing differences from normal JSX:</p>
 <ul>
 <li>Children in an array must be separated by commas.</li>
-<li>Children in an array must have a key to prevent React’s <a href="/docs/lists-and-keys.html#keys">key warning</a>.</li>
+<li>Children in an array must have a key to prevent React's <a href="/docs/lists-and-keys.html#keys">key warning</a>.
+</li>
 <li>Strings must be wrapped in quotes.</li>
 </ul>
 <p>To provide a more consistent authoring experience for fragments, React now provides a first-class <code>Fragment</code> component that can be used in place of arrays.</p>
@@ -66,7 +71,8 @@
     &lt;/Fragment&gt;
   );
 }</code></pre>
-<p>You can use <code>&lt;Fragment /&gt;</code> the same way you’d use any other element, without changing the way you write JSX. No commas, no keys, no quotes.</p>
+<p>You can use <code>&lt;Fragment /&gt;</code> the same way you'd use any other element, without changing the way you
+    write JSX. No commas, no keys, no quotes.</p>
 <p>The Fragment component is available on the main React object:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> Fragment <span class="op">=</span> <span class="va">React</span>.<span class="at">Fragment</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
@@ -83,7 +89,9 @@
 <a class="sourceLine" id="cb6-13" title="13">  <span class="op">&lt;</span>ChildC /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb6-14" title="14">&lt;/<span class="va">React</span>.<span class="at">Fragment</span><span class="op">&gt;</span></a></code></pre></div>
 <h2 id="jsx-fragment-syntax">JSX Fragment Syntax</h2>
-<p>Fragments are a common pattern in our codebases at Facebook. We anticipate they’ll be widely adopted by other teams, too. To make the authoring experience as convenient as possible, we’re adding syntactical support for fragments to JSX:</p>
+<p>Fragments are a common pattern in our codebases at Facebook. We anticipate they'll be widely adopted by other teams,
+    too. To make the authoring experience as convenient as possible, we're adding syntactical support for fragments to
+    JSX:</p>
 <pre class="jsx{3,9}"><code>render() {
   return (
     &lt;&gt;
@@ -96,7 +104,9 @@
   );
 }</code></pre>
 <p>In React, this desugars to a <code>&lt;React.Fragment/&gt;</code> element, as in the example from the previous section. (Non-React frameworks that use JSX may compile to something different.)</p>
-<p>Fragment syntax in JSX was inspired by prior art such as the <code>XMLList() &lt;&gt;&lt;/&gt;</code> constructor in <a href="https://developer.mozilla.org/en-US/docs/Archive/Web/E4X/E4X_for_templating">E4X</a>. Using a pair of empty tags is meant to represent the idea it won’t add an actual element to the DOM.</p>
+<p>Fragment syntax in JSX was inspired by prior art such as the <code>XMLList() &lt;&gt;&lt;/&gt;</code> constructor in
+    <a href="https://developer.mozilla.org/en-US/docs/Archive/Web/E4X/E4X_for_templating">E4X</a>. Using a pair of empty
+    tags is meant to represent the idea it won't add an actual element to the DOM.</p>
 <h3 id="keyed-fragments">Keyed Fragments</h3>
 <p>Note that the <code>&lt;&gt;&lt;/&gt;</code> syntax does not accept attributes, including keys.</p>
 <p>If you need a keyed fragment, you can use <code>&lt;Fragment /&gt;</code> directly. A use case for this is mapping a collection to an array of fragments – for example, to create a description list:</p>
@@ -117,7 +127,9 @@
 <h3 id="live-demo">Live Demo</h3>
 <p>You can experiment with JSX fragment syntax with this <a href="https://codepen.io/reactjs/pen/VrEbjE?editors=1000">CodePen</a>.</p>
 <h2 id="support-for-fragment-syntax">Support for Fragment Syntax</h2>
-<p>Support for fragment syntax in JSX will vary depending on the tools you use to build your app. Please be patient as the JSX community works to adopt the new syntax. We’ve been working closely with maintainers of the most popular projects:</p>
+<p>Support for fragment syntax in JSX will vary depending on the tools you use to build your app. Please be patient as
+    the JSX community works to adopt the new syntax. We've been working closely with maintainers of the most popular
+    projects:</p>
 <h3 id="create-react-app">Create React App</h3>
 <p>Experimental support for fragment syntax will be added to Create React App within the next few days. A stable release may take a bit longer as we await adoption by upstream projects.</p>
 <h3 id="babel">Babel</h3>
@@ -166,14 +178,22 @@
 <a class="sourceLine" id="cb14-4" title="4"><span class="ex">npm</span> update eslint@3.x babel-eslint@7</a></code></pre></div>
 <p>Ensure you have the following line inside your <code>.eslintrc</code>:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb15-1" title="1"><span class="er">&quot;parser&quot;:</span> <span class="er">&quot;babel-eslint&quot;</span></a></code></pre></div>
-<p>That’s it!</p>
-<p>Note that <code>babel-eslint</code> is not officially supported by ESLint. We’ll be looking into adding support for fragments to ESLint 4.x itself in the coming weeks (see <a href="https://github.com/eslint/eslint/issues/9662">issue #9662</a>).</p>
+<p>That's it!</p>
+<p>Note that <code>babel-eslint</code> is not officially supported by ESLint. We'll be looking into adding support for
+    fragments to ESLint 4.x itself in the coming weeks (see <a href="https://github.com/eslint/eslint/issues/9662">issue
+        #9662</a>).</p>
 <h3 id="editor-support">Editor Support</h3>
 <p>It may take a while for fragment syntax to be supported in your text editor. Please be patient as the community works to adopt the latest changes. In the meantime, you may see errors or inconsistent highlighting if your editor does not yet support fragment syntax. Generally, these errors can be safely ignored.</p>
 <h4 id="typescript-editor-support">TypeScript Editor Support</h4>
-<p>If you’re a TypeScript user – great news! Editor support for JSX fragments is already available in <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48593">Visual Studio 2015</a>, <a href="https://www.microsoft.com/en-us/download/details.aspx?id=55258">Visual Studio 2017</a>, <a href="https://code.visualstudio.com/updates/v1_19#_jsx-fragment-syntax">Visual Studio Code</a> and <a href="https://packagecontrol.io/packages/TypeScript">Sublime Text via Package Control</a>.</p>
+<p>If you're a TypeScript user – great news! Editor support for JSX fragments is already available in <a
+        href="https://www.microsoft.com/en-us/download/details.aspx?id=48593">Visual Studio 2015</a>, <a
+        href="https://www.microsoft.com/en-us/download/details.aspx?id=55258">Visual Studio 2017</a>, <a
+        href="https://code.visualstudio.com/updates/v1_19#_jsx-fragment-syntax">Visual Studio Code</a> and <a
+        href="https://packagecontrol.io/packages/TypeScript">Sublime Text via Package Control</a>.</p>
 <h3 id="other-tools">Other Tools</h3>
-<p>For other tools, please check with the corresponding documentation to check if there is support available. However, if you’re blocked by your tooling, you can always start with using the <code>&lt;Fragment&gt;</code> component and perform a codemod later to replace it with the shorthand syntax when the appropriate support is available.</p>
+<p>For other tools, please check with the corresponding documentation to check if there is support available. However,
+    if you're blocked by your tooling, you can always start with using the <code>&lt;Fragment&gt;</code> component and
+    perform a codemod later to replace it with the shorthand syntax when the appropriate support is available.</p>
 <h2 id="installation">Installation</h2>
 <p>React v16.2.0 is available on the npm registry.</p>
 <p>To install React 16 with Yarn, run:</p>

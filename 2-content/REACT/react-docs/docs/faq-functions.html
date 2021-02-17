@@ -70,10 +70,13 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">var</span> method <span class="op">=</span> <span class="va">obj</span>.<span class="at">method</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="at">method</span>()<span class="op">;</span></a></code></pre></div>
 <p>Binding methods helps ensure that the second snippet works the same way as the first one.</p>
-<p>With React, typically you only need to bind the methods you <em>pass</em> to other components. For example, <code>&lt;button onClick={this.handleClick}&gt;</code> passes <code>this.handleClick</code> so you want to bind it. However, it is unnecessary to bind the <code>render</code> method or the lifecycle methods: we don’t pass them to other components.</p>
+<p>With React, typically you only need to bind the methods you <em>pass</em> to other components. For example,
+    <code>&lt;button onClick={this.handleClick}&gt;</code> passes <code>this.handleClick</code> so you want to bind it.
+    However, it is unnecessary to bind the <code>render</code> method or the lifecycle methods: we don't pass them to
+    other components.</p>
 <p><a href="https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/">This post by Yehuda Katz</a> explains what binding is, and how functions work in JavaScript, in detail.</p>
 <h3 id="why-is-my-function-being-called-every-time-the-component-renders">Why is my function being called every time the component renders?</h3>
-<p>Make sure you aren’t <em>calling the function</em> when you pass it to the component:</p>
+<p>Make sure you aren't <em>calling the function</em> when you pass it to the component:</p>
 <pre class="jsx"><code>render() {
   // Wrong: handleClick is called instead of passed as a reference!
   return &lt;button onClick={this.handleClick()}&gt;Click Me&lt;/button&gt;

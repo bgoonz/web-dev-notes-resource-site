@@ -10,11 +10,15 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> ReactTestUtils <span class="im">from</span> <span class="st">&#39;react-dom/test-utils&#39;</span><span class="op">;</span> <span class="co">// ES6</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> ReactTestUtils <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;react-dom/test-utils&#39;</span>)<span class="op">;</span> <span class="co">// ES5 with npm</span></a></code></pre></div>
 <h2 id="overview">Overview</h2>
-<p><code>ReactTestUtils</code> makes it easy to test React components in the testing framework of your choice. At Facebook we use <a href="https://facebook.github.io/jest/">Jest</a> for painless JavaScript testing. Learn how to get started with Jest through the Jest website’s <a href="https://jestjs.io/docs/tutorial-react">React Tutorial</a>.</p>
+<p><code>ReactTestUtils</code> makes it easy to test React components in the testing framework of your choice. At
+    Facebook we use <a href="https://facebook.github.io/jest/">Jest</a> for painless JavaScript testing. Learn how to
+    get started with Jest through the Jest website's <a href="https://jestjs.io/docs/tutorial-react">React Tutorial</a>.
+</p>
 <blockquote>
 <p>Note:</p>
 <p>We recommend using <a href="https://testing-library.com/react">React Testing Library</a> which is designed to enable and encourage writing tests that use your components as the end users do.</p>
-<p>Alternatively, Airbnb has released a testing utility called <a href="https://airbnb.io/enzyme/">Enzyme</a>, which makes it easy to assert, manipulate, and traverse your React Components’ output.</p>
+<p>Alternatively, Airbnb has released a testing utility called <a href="https://airbnb.io/enzyme/">Enzyme</a>, which
+    makes it easy to assert, manipulate, and traverse your React Components' output.</p>
 </blockquote>
 <ul>
 <li><a href="#act"><code>act()</code></a></li>
@@ -41,7 +45,7 @@
 <p>Note</p>
 <p>If you use <code>react-test-renderer</code>, it also provides an <code>act</code> export that behaves the same way.</p>
 </blockquote>
-<p>For example, let’s say we have this <code>Counter</code> component:</p>
+<p>For example, let's say we have this <code>Counter</code> component:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">class</span> Counter <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="at">constructor</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="kw">super</span>(props)<span class="op">;</span></a>
@@ -106,7 +110,11 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
   expect(document.title).toBe(&#39;You clicked 1 times&#39;);
 });</code></pre>
 <ul>
-<li><p>Don’t forget that dispatching DOM events only works when the DOM container is added to the <code>document</code>. You can use a library like <a href="https://testing-library.com/react">React Testing Library</a> to reduce the boilerplate code.</p></li>
+<li>
+    <p>Don't forget that dispatching DOM events only works when the DOM container is added to the <code>document</code>.
+        You can use a library like <a href="https://testing-library.com/react">React Testing Library</a> to reduce the
+        boilerplate code.</p>
+</li>
 <li><p>The <a href="/docs/testing-recipes.html"><code>recipes</code></a> document contains more details on how <code>act()</code> behaves, with examples and usage.</p></li>
 </ul>
 <hr />
@@ -152,7 +160,8 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
 <a class="sourceLine" id="cb10-2" title="2">  tree<span class="op">,</span></a>
 <a class="sourceLine" id="cb10-3" title="3">  test</a>
 <a class="sourceLine" id="cb10-4" title="4">)</a></code></pre></div>
-<p>Traverse all components in <code>tree</code> and accumulate all components where <code>test(component)</code> is <code>true</code>. This is not that useful on its own, but it’s used as a primitive for other test utils.</p>
+<p>Traverse all components in <code>tree</code> and accumulate all components where <code>test(component)</code> is
+    <code>true</code>. This is not that useful on its own, but it's used as a primitive for other test utils.</p>
 <hr />
 <h3 id="scryrendereddomcomponentswithclass"><code>scryRenderedDOMComponentsWithClass()</code></h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="at">scryRenderedDOMComponentsWithClass</span>(</a>
@@ -203,7 +212,9 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
 <a class="sourceLine" id="cb18-2" title="2"><span class="va">ReactDOM</span>.<span class="at">render</span>(element<span class="op">,</span> domContainer)<span class="op">;</span></a></code></pre></div>
 <blockquote>
 <p>Note:</p>
-<p>You will need to have <code>window</code>, <code>window.document</code> and <code>window.document.createElement</code> globally available <strong>before</strong> you import <code>React</code>. Otherwise React will think it can’t access the DOM and methods like <code>setState</code> won’t work.</p>
+<p>You will need to have <code>window</code>, <code>window.document</code> and
+    <code>window.document.createElement</code> globally available <strong>before</strong> you import <code>React</code>.
+    Otherwise React will think it can't access the DOM and methods like <code>setState</code> won't work.</p>
 </blockquote>
 <hr />
 <h2 id="other-utilities">Other Utilities</h2>
@@ -226,7 +237,8 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
 <a class="sourceLine" id="cb21-5" title="5"><span class="va">ReactTestUtils</span>.<span class="va">Simulate</span>.<span class="at">keyDown</span>(node<span class="op">,</span> <span class="op">{</span><span class="dt">key</span><span class="op">:</span> <span class="st">&quot;Enter&quot;</span><span class="op">,</span> <span class="dt">keyCode</span><span class="op">:</span> <span class="dv">13</span><span class="op">,</span> <span class="dt">which</span><span class="op">:</span> <span class="dv">13</span><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <blockquote>
 <p>Note</p>
-<p>You will have to provide any event property that you’re using in your component (e.g. keyCode, which, etc…) as React is not creating any of these for you.</p>
+<p>You will have to provide any event property that you're using in your component (e.g. keyCode, which, etc…) as React
+    is not creating any of these for you.</p>
 </blockquote>
 <hr />
 </body></html>

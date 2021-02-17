@@ -201,13 +201,13 @@ install:</p>
 `-- B@0.0.2
     `-- C@0.0.1
 </code></pre>
-<p>assuming the new version did not modify B’s dependencies. Of course,
+<p>assuming the new version did not modify B's dependencies. Of course,
 the new version of B could include a new version of C and any number
 of new dependencies. If such changes are undesirable, the author of A
-could specify a dependency on B@0.0.1. However, if A’s author and B’s
-author are not the same person, there’s no way for A’s author to say
+could specify a dependency on B@0.0.1. However, if A's author and B's
+author are not the same person, there's no way for A's author to say
 that he or she does not want to pull in newly published versions of C
-when B hasn’t changed at all.</p>
+when B hasn't changed at all.</p>
 <p>To prevent this potential issue, npm uses <a href="../configuring-npm/package-lock-json.html">package-lock.json</a> or, if present, <a href="../configuring-npm/shrinkwrap-json.html">npm-shrinkwrap.json</a>. These files are called package locks, or lockfiles.</p>
 <p>Whenever you run <code>npm install</code>, npm generates or updates your package lock,
 which will look something like this:</p>
@@ -230,7 +230,7 @@ which will look something like this:</p>
 }
 </code></pre>
 <p>This file describes an <em>exact</em>, and more importantly <em>reproducible</em>
-<code>node_modules</code> tree. Once it’s present, any future installation will base its
+<code>node_modules</code> tree. Once it's present, any future installation will base its
 work off this file, instead of recalculating dependency versions off
 <a href="../configuring-npm/package-json.html">package.json</a>.</p>
 <p>The presence of a package lock changes the installation behavior such that:</p>
@@ -239,7 +239,7 @@ work off this file, instead of recalculating dependency versions off
 <p>The module tree described by the package lock is reproduced. This means
 reproducing the structure described in the file, using the specific files
 referenced in “resolved” if available, falling back to normal package resolution
-using “version” if one isn’t.</p>
+using “version” if one isn't.</p>
 </li>
 <li>
 <p>The tree is walked and any missing dependencies are installed in the usual
@@ -258,7 +258,7 @@ file:</p>
 </code></pre>
 <h4 id="using-locked-packages">Using locked packages</h4>
 <p>Using a locked package is no different than using any package without a package
-lock: any commands that update <code>node_modules</code> and/or <code>package.json</code>’s
+lock: any commands that update <code>node_modules</code> and/or <code>package.json</code>'s
 dependencies will automatically sync the existing lockfile. This includes <code>npm install</code>, <code>npm rm</code>, <code>npm update</code>, etc. To prevent this update from happening,
 you can use the <code>--no-save</code> option to prevent saving altogether, or
 <code>--no-shrinkwrap</code> to allow <code>package.json</code> to be updated while leaving

@@ -12,7 +12,8 @@
 </ul>
 <h3 id="motivation">Motivation</h3>
 <p>In the <a href="./react-part-1-intro.md">React Intro</a>, we have discussed how React renders HTML.</p>
-<p>Now the problem arises: How do we store and change component information we want in the UI? For example, maybe you want a button’s background color to change once it’s been clicked. The solution is to use <code>state</code>.</p>
+<p>Now the problem arises: How do we store and change component information we want in the UI? For example, maybe you
+    want a button's background color to change once it's been clicked. The solution is to use <code>state</code>.</p>
 <h3 id="objectives">Objectives</h3>
 <ul>
 <li>Component state</li>
@@ -33,7 +34,7 @@
 <li>Correct <code>javascript class Message extends React.Component { constructor(){ this.state = { message : "message" } } render(){ console.log(this.state.message); } }</code></li>
 </ul>
 <ol start="2" type="1">
-<li>Don’t forget to update state immutably.</li>
+<li>Don't forget to update state immutably.</li>
 </ol>
 <ul>
 <li><p>Incorrect</p>
@@ -149,7 +150,8 @@ Soweaddtheconditionstobuttonslike:-</li>
 <a class="sourceLine" id="cb16-6" title="6">    <span class="op">&lt;</span>button onClick<span class="op">={</span><span class="kw">this</span>.<span class="at">subtractValue</span><span class="op">}&gt;</span>Decrement&lt;/button<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb16-7" title="7">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-8" title="8"><span class="op">}</span></a></code></pre></div>
-<p>That’s all. We have completed our first application in React using React state. To see the complete code <a href="https://codepen.io/ashish24_nagpal/pen/jObzXzM">Codepen</a>.</p>
+<p>That's all. We have completed our first application in React using React state. To see the complete code <a
+        href="https://codepen.io/ashish24_nagpal/pen/jObzXzM">Codepen</a>.</p>
 <p><strong>Note :- Component will re-render itself only when its state is changed by the component itself and also when the props are changed by parent component. If a component changes its own <em>props</em> , then the component will not be re-rendered. Let us understand this with an example.</strong><br />
 Say there is a parent component called <code>App</code> and a <code>Message</code> child component which displays a certain message. <code>App</code> component has a property in state called <code>message</code> with initial value as <code>message</code>. This state property is passed as prop to <code>Message</code> component. <code>Message</code> component has its own state and a property <code>value</code> which is defined in it. There are 3 buttons :-</p>
 <ol type="1">

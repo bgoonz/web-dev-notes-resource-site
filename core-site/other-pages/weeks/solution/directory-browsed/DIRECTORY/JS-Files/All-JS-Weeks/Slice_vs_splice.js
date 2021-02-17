@@ -8,7 +8,7 @@
 
 /*1. The splice() method returns the removed item(s) in an array and slice() method returns the selected element(s) in an array, as a new array object.
 
-2. The splice() method changes the original array and slice() method doesn’t change the original array. (splice mutates, slice does not)
+2. The splice() method changes the original array and slice() method doesn't change the original array. (splice mutates, slice does not)
 
 3. The splice() method can take an unlimited (n) number  of arguments:
 
@@ -85,7 +85,7 @@ console.log(array6);
 
 
 
-//If Argument(1) or Argument(2) is greater than Array’s length, either argument will use the Array’s length.
+//If Argument(1) or Argument(2) is greater than Array's length, either argument will use the Array's length.
 
 
 let array7 = [31, 32, 33, 34, 35];
@@ -143,7 +143,7 @@ console.log(array3);
 
 
 
-//If either argument is greater than the Array’s length, either argument will use the Array’s length
+//If either argument is greater than the Array's length, either argument will use the Array's length
 
 
 let array4 = [16, 17, 18, 19, 20];

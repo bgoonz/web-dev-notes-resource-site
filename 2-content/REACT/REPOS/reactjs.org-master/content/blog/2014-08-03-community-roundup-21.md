@@ -39,7 +39,7 @@ Areeb Malik, from Facebook, talks about his experience using React. "On paper, a
 - Are the Virtual DOM and Shadow DOM the same?
 - Can React be used with other JavaScript MVC frameworks?
 - Who uses React?
-- Is React a premature optimization if you aren’t Facebook or Instagram?
+- Is React a premature optimization if you aren't Facebook or Instagram?
 - Can I work with designers?
 - Will React hurt my search engine optimizations (SEO)?
 - Is React a framework for building applications or a library with one feature?

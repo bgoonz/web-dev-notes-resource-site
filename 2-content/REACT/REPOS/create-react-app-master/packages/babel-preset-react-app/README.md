@@ -8,7 +8,7 @@ Please refer to its documentation:
 
 ## Usage in Create React App Projects
 
-The easiest way to use this configuration is with [Create React App](https://github.com/facebook/create-react-app), which includes it by default. **You don’t need to install it separately in Create React App projects.**
+The easiest way to use this configuration is with [Create React App](https://github.com/facebook/create-react-app), which includes it by default. **You don't need to install it separately in Create React App projects.**
 
 ## Usage Outside of Create React App
 

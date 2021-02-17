@@ -10926,7 +10926,7 @@ const mathmlBuilder$6 = (group, options) => {
 
 defineFunction({
   type: "genfrac",
-  names: ["\\cfrac", "\\dfrac", "\\frac", "\\tfrac", "\\dbinom", "\\binom", "\\tbinom", "\\\\atopfrac", // can’t be entered directly
+    names: [ "\\cfrac", "\\dfrac", "\\frac", "\\tfrac", "\\dbinom", "\\binom", "\\tbinom", "\\\\atopfrac", // can't be entered directly
   "\\\\bracefrac", "\\\\brackfrac"],
   props: {
     numArgs: 2,
@@ -13979,8 +13979,8 @@ function defineMacro(name, body) {
 
 defineMacro("\\noexpand", function (context) {
   // The expansion is the token itself; but that token is interpreted
-  // as if its meaning were ‘\relax’ if it is a control sequence that
-  // would ordinarily be expanded by TeX’s expansion rules.
+  // as if its meaning were ‘\relax' if it is a control sequence that
+  // would ordinarily be expanded by TeX's expansion rules.
   const t = context.popToken();
 
   if (context.isExpandable(t.text)) {
@@ -13995,7 +13995,7 @@ defineMacro("\\noexpand", function (context) {
 });
 defineMacro("\\expandafter", function (context) {
   // TeX first reads the token that comes immediately after \expandafter,
-  // without expanding it; let’s call this token t. Then TeX reads the
+  // without expanding it; let's call this token t. Then TeX reads the
   // token that comes after t (and possibly more tokens, if that token
   // has an argument), replacing it by its expansion. Finally TeX puts
   // t back in front of that expansion.
@@ -15114,7 +15114,7 @@ class MacroExpander {
         // \relax stops the expansion, but shouldn't get returned (a
         // null return value couldn't get implemented as a function).
         // the token after \noexpand is interpreted as if its meaning
-        // were ‘\relax’
+        // were ‘\relax'
         if (expanded.text === "\\relax" || expanded.treatAsRelax) {
           this.stack.pop();
         } else {
@@ -16078,9 +16078,9 @@ class Parser {
     for (let i = 0; i < totalArgs; i++) {
       const argType = funcData.argTypes && funcData.argTypes[i];
       const isOptional = i < funcData.numOptionalArgs; // Ignore spaces between arguments.  As the TeXbook says:
-      // "After you have said ‘\def\row#1#2{...}’, you are allowed to
-      //  put spaces between the arguments (e.g., ‘\row x n’), because
-      //  TeX doesn’t use single spaces as undelimited arguments."
+      // "After you have said ‘\def\row#1#2{...}', you are allowed to
+      //  put spaces between the arguments (e.g., ‘\row x n'), because
+      //  TeX doesn't use single spaces as undelimited arguments."
 
       const consumeSpaces = i > 0 && !isOptional || // Also consume leading spaces in math mode, as parseSymbol
       // won't know what to do with them.  This can only happen with

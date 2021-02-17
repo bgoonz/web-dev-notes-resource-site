@@ -36,8 +36,12 @@
     &lt;/a&gt;
   );
 }</code></pre>
-<p>Here, <code>e</code> is a synthetic event. React defines these synthetic events according to the <a href="https://www.w3.org/TR/DOM-Level-3-Events/">W3C spec</a>, so you don’t need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the <a href="/docs/events.html"><code>SyntheticEvent</code></a> reference guide to learn more.</p>
-<p>When using React, you generally don’t need to call <code>addEventListener</code> to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.</p>
+<p>Here, <code>e</code> is a synthetic event. React defines these synthetic events according to the <a
+        href="https://www.w3.org/TR/DOM-Level-3-Events/">W3C spec</a>, so you don't need to worry about cross-browser
+    compatibility. React events do not work exactly the same as native events. See the <a
+        href="/docs/events.html"><code>SyntheticEvent</code></a> reference guide to learn more.</p>
+<p>When using React, you generally don't need to call <code>addEventListener</code> to add listeners to a DOM element
+    after it is created. Instead, just provide a listener when the element is initially rendered.</p>
 <p>When you define a component using an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class</a>, a common pattern is for an event handler to be a method on the class. For example, this <code>Toggle</code> component renders a button that lets the user toggle between “ON” and “OFF” states:</p>
 <pre class="js{6,7,10-14,18}"><code>class Toggle extends React.Component {
   constructor(props) {
@@ -87,7 +91,9 @@ ReactDOM.render(
   }
 }</code></pre>
 <p>This syntax is enabled by default in <a href="https://github.com/facebookincubator/create-react-app">Create React App</a>.</p>
-<p>If you aren’t using class fields syntax, you can use an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function</a> in the callback:</p>
+<p>If you aren't using class fields syntax, you can use an <a
+        href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow
+        function</a> in the callback:</p>
 <pre class="js{7-9}"><code>class LoggingButton extends React.Component {
   handleClick() {
     console.log(&#39;this is:&#39;, this);

@@ -1,13 +1,11 @@
+* ⏱ 30 minutes
 
+* Catalog
+* Js Py Sep 2020 Online
+* Week 10 Sep 2020 Online
+* Installing Postgresql On Macos
 
-- ⏱ 30 minutes
-
-- Catalog
-- Js Py Sep 2020 Online
-- Week 10 Sep 2020 Online
-- Installing Postgresql On Macos
-
-You will install two pieces of software so that you can start using PostgreSQL. You sill install PostgreSQL itself along with all of its tools. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better than just using the command line tool `psql`.
+You will install two pieces of software so that you can start using PostgreSQL. You sill install PostgreSQL itself along with all of its tools. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better than just using the command line tool `psql` .
 
 You can install both of these products using Homebrew. Your Windows-using classmates don't have this convenience, so pretend you're having a hard time doing this. 😉
 

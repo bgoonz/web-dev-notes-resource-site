@@ -23,37 +23,37 @@ This is critically useful for us, and will make Reactiflux even more open and ac
 
 ### Great apps {#great-apps}
 
-Out of all of the services we’ve tried, Discord’s apps are by far the most polished. They are well designed, easy to use, and surprisingly fast. In addition to the web app, they have mobile apps on both iOS and Android as well as desktop apps for OS X and Windows, with Linux support coming soon.
+Out of all of the services we've tried, Discord's apps are by far the most polished. They are well designed, easy to use, and surprisingly fast. In addition to the web app, they have mobile apps on both iOS and Android as well as desktop apps for OS X and Windows, with Linux support coming soon.
 
 Their desktop apps are built with React and Electron, and their iOS app is built with React Native.
 
 ### Moderation tools {#moderation-tools}
 
-So far, we’ve been fortunate not to have to deal with spammers and trolls. As our community continues to grow, that might change. Unsurprisingly, Discord is the only app we’ve seen with legitimate moderation tools. It was built for gaming communities, after all.
+So far, we've been fortunate not to have to deal with spammers and trolls. As our community continues to grow, that might change. Unsurprisingly, Discord is the only app we've seen with legitimate moderation tools. It was built for gaming communities, after all.
 
 ### Great multiple Server support {#great-multiple-server-support}
 
-Your  Discord account works with every Discord server, which is the equivalent of a Slack team. You don’t need to create a new account every time you join a new team. You can join new servers in one click, and it’s very easy to switch between them. Discord messages also work across servers, so your personal conversations are not scoped to a single server.
+Your  Discord account works with every Discord server, which is the equivalent of a Slack team. You don't need to create a new account every time you join a new team. You can join new servers in one click, and it's very easy to switch between them. Discord messages also work across servers, so your personal conversations are not scoped to a single server.
 
 Instead of having one huge, crowded Reactiflux server, we can branch off closely related channels into sub-servers. Communities will start overlapping, and it will be easy to interact with non-Reactiflux channels.
 
-### It’s hosted {#its-hosted}
+### It's hosted {#its-hosted}
 
-Self-hosted apps require maintenance. We’re all busy, and we can barely find the time to keep our landing page up to date and running smoothly. More than anything, we need a stable platform, and we don’t have the resources to guarantee that right now.
+Self-hosted apps require maintenance. We're all busy, and we can barely find the time to keep our landing page up to date and running smoothly. More than anything, we need a stable platform, and we don't have the resources to guarantee that right now.
 
-It’s a much safer bet to offload the hosting to Discord, who is already keeping the lights on for all their users.
+It's a much safer bet to offload the hosting to Discord, who is already keeping the lights on for all their users.
 
 ### We like the team {#we-like-the-team}
 
-And they seem to like us back. They are excited for us to join them, and they’ve been very responsive to our feedback and suggestions.
+And they seem to like us back. They are excited for us to join them, and they've been very responsive to our feedback and suggestions.
 
 They implemented code syntax highlighting just a few days after we told them we needed it.
 
-Discord’s team has already built a solid suite of apps, and they have shown us how much they care about their users. We’re excited to see how they will continue to improve their product.
+Discord's team has already built a solid suite of apps, and they have shown us how much they care about their users. We're excited to see how they will continue to improve their product.
 
-## And what’s the catch? {#and-whats-the-catch}
+## And what's the catch? {#and-whats-the-catch}
 
-Choosing the best chat service is subjective. There are a million reasons why Discord *might be* a terrible idea. Here are the ones that we’re most worried about:
+Choosing the best chat service is subjective. There are a million reasons why Discord *might be* a terrible idea. Here are the ones that we're most worried about:
 
 ### Difficult channel management {#difficult-channel-management}
 
@@ -69,13 +69,13 @@ Lack of search is clearly a bummer, but Discord is working on it. Search is comi
 
 ### Firewall {#firewall}
 
-A couple of users aren’t able to access Discord at work since other corporate filters classify it as a gaming application. This sucks, but it seems to be a  rare case. So far, it seems only to affect 0.6% of our current community (3/500).
+A couple of users aren't able to access Discord at work since other corporate filters classify it as a gaming application. This sucks, but it seems to be a  rare case. So far, it seems only to affect 0.6% of our current community (3/500).
 
-We hope that these users can get Discord's domains whitelisted, and we’ll try to find a solution if this is a widespread issue. The Discord team is aware of the issue as well.
+We hope that these users can get Discord's domains whitelisted, and we'll try to find a solution if this is a widespread issue. The Discord team is aware of the issue as well.
 
 ## Is Discord going to disappear tomorrow? {#is-discord-going-to-disappear-tomorrow}
 
-Probably not tomorrow. They have 14 people [full time](https://discordapp.com/company), and they’ve raised money from some of the best investors in Silicon Valley, including [Benchmark](http://www.benchmark.com/) and [Accel](http://www.accel.com/companies/).
+Probably not tomorrow. They have 14 people [full time](https://discordapp.com/company), and they've raised money from some of the best investors in Silicon Valley, including [Benchmark](http://www.benchmark.com/) and [Accel](http://www.accel.com/companies/).
 
 By focusing on gaming communities, Discord has differentiated itself from the many other communication apps. Discord is well received and has a rapidly growing user base.  They plan to keep their basic offerings free for unlimited users and hope to make money with premium offerings (themes, add-ons, content, and more).
 
@@ -83,4 +83,4 @@ By focusing on gaming communities, Discord has differentiated itself from the ma
 
 More than 500 of us have already migrated to the new Reactiflux.  Join us, we're one click away: [http://join.reactiflux.com](http://join.reactiflux.com/)
 
-*Note: Jordan Hawker’s thorough [research](http://jhawk.co/team-chat-comparison) made our decision a lot easier.*
+*Note: Jordan Hawker's thorough [research](http://jhawk.co/team-chat-comparison) made our decision a lot easier.*

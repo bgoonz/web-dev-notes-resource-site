@@ -12,7 +12,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28�
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-keynote"></a>Keynote <a class="hash-link" href="#talk-keynote">#</a></h3>
     <p>
-      <strong>Tom Occhino</strong> opened with a history of how React came to be, before announcing Facebook’s answer to a long-looming what-if question: what if we could use React to target something other than the DOM?
+      <strong>Tom Occhino</strong> opened with a history of how React came to be, before announcing Facebook's answer to a long-looming what-if question: what if we could use React to target something other than the DOM?
     </p>
   </div>
   <div class="skinny-col">
@@ -24,7 +24,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28�
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-tweak"></a>Tweaking in real time <a class="hash-link" href="#talk-tweak">#</a></h3>
     <p>
-      <strong>Brenton Simpson</strong> showed us how eBay brings Bret Victor’s feedback loop to your favorite editor using webpack, react-hot-loader, and <a href="https://github.com/appsforartists/ambidex">Ambidex</a>.
+      <strong>Brenton Simpson</strong> showed us how eBay brings Bret Victor's feedback loop to your favorite editor using webpack, react-hot-loader, and <a href="https://github.com/appsforartists/ambidex">Ambidex</a>.
     </p>
   </div>
   <div class="skinny-col">
@@ -96,7 +96,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28�
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-performance"></a>High-performance <a class="hash-link" href="#talk-performance">#</a></h3>
     <p>
-      <strong>Jason Bonta</strong> showed us how complex user interfaces can get, and how his team keeps them performant as they scale. He also had the pleasure of open-sourcing his team’s work on <a href="https://facebook.github.io/fixed-data-table/">FixedDataTable</a>.
+      <strong>Jason Bonta</strong> showed us how complex user interfaces can get, and how his team keeps them performant as they scale. He also had the pleasure of open-sourcing his team's work on <a href="https://facebook.github.io/fixed-data-table/">FixedDataTable</a>.
     </p>
   </div>
   <div class="skinny-col">
@@ -212,7 +212,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28�
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-communication"></a>Component communication <a class="hash-link" href="#talk-communication">#</a></h3>
     <p>
-      <strong>Bonnie Eisenman</strong> led us through the ‘adapter’ approach to inter-component communication taken by her team at Codecademy.
+      <strong>Bonnie Eisenman</strong> led us through the ‘adapter' approach to inter-component communication taken by her team at Codecademy.
   </div>
   <div class="skinny-col">
     <iframe width="650" height="171" src="https://www.youtube-nocookie.com/embed/ZM6wXoFTY3o" frameborder="0" allowfullscreen></iframe>
@@ -247,7 +247,7 @@ The conference is over, but the conversation has just begun.
 
 **Mihai Parparita** detailed his efforts to [hack his way to a React.js Conf ticket](http://blog.persistent.info/2014/12/html-munging-my-way-to-reactjs-conf.html); **James Long** blogged about [his first encounter with React Native](http://jlongster.com/First-Impressions-using-React-Native); **Eric Florenzano** talked about how he perceives the [impact of Relay, GraphQL, and React Native](https://medium.com/@ericflo/facebook-just-taught-us-all-how-to-build-websites-51f1e7e996f2) on software development; **Margaret Staples** blogged about her experience of [being on-campus at Facebook HQ](http://deadlugosi.blogspot.com/2015/02/facebook-gave-me-ice-cream.html); **Jeff Barczewski** tied his experience of attending the conference up with a bow in this [blog post filled with photos, videos, and links](http://codewinds.com/blog/2015-02-04-reactjs-conf.html); **Kevin Old** left us with [his takeaways](http://kevinold.com/2015/01/31/takeaways-from-reactjs-conf-2015.html); **Paul Wittmann** found React Native [freshly on his radar](http://www.railslove.com/stories/fresh-on-our-radar-react-native); and finally, undeterred by not being able to attend the conference in person, **Justin Ball** [summarized it from afar](http://www.justinball.com/2015/02/02/i-didn't-attend-react.js-conf.html).
 
-And, in case you missed a session, you can borrow **Michael Chan’s** [drawings](http://chantastic.io/2015-reactjs-conf/), **Mihai Parparita’s** [summary](https://quip.com/uJQeABv7nkFN), or **Shaohua Zhou’s** [day 1](http://getshao.com/2015/01/29/react-js-conf-notes-day1/) / [day 2](http://getshao.com/2015/01/29/react-js-conf-notes-day-2/) notes.
+And, in case you missed a session, you can borrow **Michael Chan's** [drawings](http://chantastic.io/2015-reactjs-conf/), **Mihai Parparita's** [summary](https://quip.com/uJQeABv7nkFN), or **Shaohua Zhou's** [day 1](http://getshao.com/2015/01/29/react-js-conf-notes-day1/) / [day 2](http://getshao.com/2015/01/29/react-js-conf-notes-day-2/) notes.
 
 <div class="skinny-row">
   <div class="skinny-col">

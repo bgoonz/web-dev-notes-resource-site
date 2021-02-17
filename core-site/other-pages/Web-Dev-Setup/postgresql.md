@@ -1,13 +1,11 @@
+* ✅ Completed
 
+* Catalog
+* Js Py Sep 2020 Online
+* Week 10 Sep 2020 Online
+* Installing Postgresql On Windows
 
-- ✅ Completed
-
-- Catalog
-- Js Py Sep 2020 Online
-- Week 10 Sep 2020 Online
-- Installing Postgresql On Windows
-
-You will install three pieces of software so that you can start using PostgreSQL. You will install PostgreSQL itself on your Windows installation. Then, you will install `psql` in your Ubuntu installation. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better than just using the command line tool `psql`.
+You will install three pieces of software so that you can start using PostgreSQL. You will install PostgreSQL itself on your Windows installation. Then, you will install `psql` in your Ubuntu installation. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better than just using the command line tool `psql` .
 
 When you read "installation", that means the actual OS that's running on your machine. So, you have a Windows installation, Windows 10, that's running when you boot your computer. Then, when you start the Ubuntu installation, it's as if there's a completely separate computer running inside your computer. It's like having two completely different laptops.
 
@@ -21,25 +19,27 @@ Open [https://www.enterprisedb.com/downloads/postgres-postgresql-downloads](http
 
 Once that installer downloads, run it. You need to go through the normal steps of installing software.
 
-- Yes, Windows, let the installer make changes to _my_ device.
-- Thanks for the welcome. Next.
-- Yeah, that's a good place to install it. Next.
-- I don't want that pgAdmin nor the Stack Builder things. Uncheck. Uncheck. Next.
+* Yes, Windows, let the installer make changes to _my_ device.
+* Thanks for the welcome. Next.
+* Yeah, that's a good place to install it. Next.
+* I don't want that pgAdmin nor the Stack Builder things. Uncheck. Uncheck. Next.
 
-  ![Deselect pgAdmin 4 and Stack Builder components](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/postgresql-installation-uncheck-components.png)
+  
 
-- Also, great looking directory. Thanks. Next.
-- Oooh! A password! I'll enter **\*\*\*\***. I sure won't forget that because, if I do, I'll have to uninstall and reinstall PostgreSQL and lose all of my hard work. **Seriously, write down this password or use one you will not forget.** Next.
-- Sure. 5432. Good to go. Next.
-- Not even sure what that means. Default! Next.
-- Yep. Looks good. Next.
-- Geez. Really? Thanks. Next.
-- _Time to get a tea._
-- All right! All done. Finish!
+![Deselect pgAdmin 4 and Stack Builder components](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/postgresql-installation-uncheck-components.png)
+
+* Also, great looking directory. Thanks. Next.
+* Oooh! A password! I'll enter **\*\*\*\***. I sure won't forget that because, if I do, I'll have to uninstall and reinstall PostgreSQL and lose all of my hard work. **Seriously, write down this password or use one you will not forget.** Next.
+* Sure. 5432. Good to go. Next.
+* Not even sure what that means. Default! Next.
+* Yep. Looks good. Next.
+* Geez. Really? Thanks. Next.
+* _Time to get a tea._
+* All right! All done. Finish!
 
 ## Installing PostgreSQL Client Tools on Ubuntu
 
-Now, to install the PostgreSQL Client tools for Ubuntu. You need to do this so that the Node.js (and later Python) programs running on your Ubuntu installation can access the PostgreSQL server running on your Windows installation. You need to tell `apt`, the package manager, that you want it to go find the PostgreSQL 12 client tools from PostgreSQL itself rather than the common package repositories. You do that by issuing the following two commands. Copy and paste them one at a time into your shell. (If your Ubuntu shell isn't running, start one.)
+Now, to install the PostgreSQL Client tools for Ubuntu. You need to do this so that the Node.js (and later Python) programs running on your Ubuntu installation can access the PostgreSQL server running on your Windows installation. You need to tell `apt` , the package manager, that you want it to go find the PostgreSQL 12 client tools from PostgreSQL itself rather than the common package repositories. You do that by issuing the following two commands. Copy and paste them one at a time into your shell. (If your Ubuntu shell isn't running, start one.)
 
 **Pro-tip**: Copy those commands because you're not going to type them, right? After you copy one of them, you can just right-click on the Ubuntu shell. That should paste them in there for you.
 
@@ -47,7 +47,7 @@ Now, to install the PostgreSQL Client tools for Ubuntu. You need to do this so t
 
 If prompted for your password, type it.
 
-    echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" | sudo tee  /etc/apt/sources.list.d/pgdg.list
+    echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs` -pgdg main" | sudo tee  /etc/apt/sources.list.d/pgdg.list
 
 The last line of output of those two commands running should read "OK". If it does not, try copying and pasting them one at a time.
 
@@ -61,7 +61,7 @@ Once that's finished running, the new entries for PostgreSQL 12 should be in the
 
 If it asks you if you want to install them, please tell it "Y".
 
-Test that it installed by typing `psql --version`. You should see it print out information about the version of the installed tools. If it tells you that it can't find the command, try these instructions over.
+Test that it installed by typing `psql --version` . You should see it print out information about the version of the installed tools. If it tells you that it can't find the command, try these instructions over.
 
 ## Configuring the client tools
 
@@ -69,7 +69,7 @@ Since you're going to be accessing the PosgreSQL installation from your Ubuntu i
 
 This assumes you're still using Bash. If you changed the shell that your Ubuntu installation uses, please follow that shell's directions for adding an alias to its startup file.
 
-Make sure you're in your Ubuntu home directory. You can do that by typing `cd` and hitting enter. Use `ls` to find out if you have a `.bashrc` file. Type `ls .bashrc`. If it shows you that one exists, that's the one you will add the alias to. If it tells you that there is no file named that, then type `ls .profile`. If it shows you that one exists, that's the one you will add the alias to. If it shows you that it does not exist, then use the file name `.bashrc` in the following section.
+Make sure you're in your Ubuntu home directory. You can do that by typing `cd` and hitting enter. Use `ls` to find out if you have a `.bashrc` file. Type `ls .bashrc` . If it shows you that one exists, that's the one you will add the alias to. If it tells you that there is no file named that, then type `ls .profile` . If it shows you that one exists, that's the one you will add the alias to. If it shows you that it does not exist, then use the file name `.bashrc` in the following section.
 
 Now that you know which profile file to use, type `code «profile file name»` where "profile file name" is the name of the file you determined from the last section. Once Visual Studio Code starts up with your file, at the end of it (or if you've already added aliases, in that section), type the following.
 
@@ -77,7 +77,7 @@ Now that you know which profile file to use, type `code «profile file name»` w
 
 When you run `psql` from the command line, it will now always add the part about wanting to connect to _localhost_ every time. You would have to type that each time, otherwise.
 
-To make sure that you set that up correctly, type `psql -U postgres postgres`. This tells the `psql` client that you want to connect as the user "postgres" (`-U postgres`) to the database postgres (`postgres` at the end), which is the default database created when PostgreSQL is installed. It will prompt you for a password. Type the password that you used when you installed PostgrSQL, earlier. If the alias works correctly and you type the correct password, then you should see something like the following output.
+To make sure that you set that up correctly, type `psql -U postgres postgres` . This tells the `psql` client that you want to connect as the user "postgres" ( `-U postgres` ) to the database postgres ( `postgres` at the end), which is the default database created when PostgreSQL is installed. It will prompt you for a password. Type the password that you used when you installed PostgrSQL, earlier. If the alias works correctly and you type the correct password, then you should see something like the following output.
 
     psql (12.2 (Ubuntu 12.2-2.pgdg18.04+1))
     Type "help" for help.
@@ -112,11 +112,11 @@ The last step you have to take is change the permission on that file so that it 
 
     chmod go-rw ~/.pgpass
 
-You can confirm that only you have read/write permission by typing `ls -al ~/.pgpass`. That should return output that looks like this, **with your Ubuntu user name instead of "appacademy".**
+You can confirm that only you have read/write permission by typing `ls -al ~/.pgpass` . That should return output that looks like this, **with your Ubuntu user name instead of "appacademy".**
 
     -rw------- 1 appacademy appacademy 37 Mar 28 21:20 /home/appacademy/.pgpass
 
-Now, try connecting to PostreSQL by typing `psql postgres`. Because you added the alias to your startup script, and because you created your **.pgpass** file, it should now connect without prompting you for any credentials! Type `\q` and press Enter to exit the PostgreSQL command line client.
+Now, try connecting to PostreSQL by typing `psql postgres` . Because you added the alias to your startup script, and because you created your **.pgpass** file, it should now connect without prompting you for any credentials! Type `\q` and press Enter to exit the PostgreSQL command line client.
 
 ## Installing Postbird
 

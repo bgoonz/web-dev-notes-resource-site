@@ -177,7 +177,7 @@ would become <code>npm_config_allow_same_version=true</code>.</p>
 option <code>--userconfig</code> or environment variable <code>$NPM_CONFIG_USERCONFIG</code>)</li>
 <li>global configuration file (defaults to <code>$PREFIX/etc/npmrc</code>; configurable via
 CLI option <code>--globalconfig</code> or environment variable <code>$NPM_CONFIG_GLOBALCONFIG</code>)</li>
-<li>npm’s built-in configuration file (<code>/path/to/npm/npmrc</code>)</li>
+<li>npm's built-in configuration file (<code>/path/to/npm/npmrc</code>)</li>
 </ul>
 <p>See <a href="../configuring-npm/npmrc.html">npmrc</a> for more details.</p>
 <h4 id="default-configs">Default Configs</h4>
@@ -294,7 +294,7 @@ a non-zero exit code.</p>
 </ul>
 <p>If passed to <code>npm install</code>, will rebuild the npm tree such that only versions
 that were available <strong>on or before</strong> the <code>--before</code> time get installed.
-If there’s no versions available for the current set of direct dependencies, the
+If there's no versions available for the current set of direct dependencies, the
 command will error.</p>
 <p>If the requested version is a <code>dist-tag</code> and the given tag does not pass the
 <code>--before</code> filter, the most recent version less than or equal to that tag will
@@ -308,7 +308,7 @@ is <code>2.0</code>.</p>
 <p>Tells npm to create symlinks (or <code>.cmd</code> shims on Windows) for package
 executables.</p>
 <p>Set to false to have it not do this.  This can be used to work around
-the fact that some file systems don’t support symlinks, even on
+the fact that some file systems don't support symlinks, even on
 ostensibly Unix systems.</p>
 <h4 id="browser">browser</h4>
 <ul>
@@ -342,14 +342,14 @@ ca[]="..."
 <li>Type: path</li>
 </ul>
 <p>A path to a file containing one or multiple Certificate Authority signing
-certificates. Similar to the <code>ca</code> setting, but allows for multiple CA’s, as
+certificates. Similar to the <code>ca</code> setting, but allows for multiple CA's, as
 well as for the CA information to be stored in a file on disk.</p>
 <h4 id="cache">cache</h4>
 <ul>
 <li>Default: Windows: <code>%AppData%\npm-cache</code>, Posix: <code>~/.npm</code></li>
 <li>Type: path</li>
 </ul>
-<p>The location of npm’s cache directory.  See <a href="../commands/npm-cache.html"><code>npm cache</code></a></p>
+<p>The location of npm's cache directory. See <a href="../commands/npm-cache.html"><code>npm cache</code></a></p>
 <h4 id="cache-lock-stale">cache-lock-stale</h4>
 <ul>
 <li>Default: 60000 (1 minute)</li>
@@ -446,7 +446,7 @@ disabled when the environment variable <code>NO_COLOR</code> is set to any value
 <li>Default: false</li>
 <li>Type: Boolean</li>
 </ul>
-<p>Indicates that you don’t want npm to make any changes and that it should
+<p>Indicates that you don't want npm to make any changes and that it should
 only report what it would have done.  This can be passed into any of the
 commands that modify your local installation, eg, <code>install</code>, <code>update</code>,
 <code>dedupe</code>, <code>uninstall</code>.  This is NOT currently honored by some network related
@@ -486,7 +486,7 @@ range (including SemVer-major changes).</li>
 <li>Allow a module to be installed as a direct dependency of itself.</li>
 <li>Allow unpublishing all versions of a published package.</li>
 </ul>
-<p>If you don’t have a clear idea of what you want to do, it is strongly
+<p>If you don't have a clear idea of what you want to do, it is strongly
 recommended that you do not use this option!</p>
 <h4 id="format-package-lock">format-package-lock</h4>
 <ul>
@@ -601,8 +601,8 @@ proxy settings will be honored by the underlying <code>request</code> library.</
 <li>Type: Boolean</li>
 </ul>
 <p>If true, npm will not exit with an error code when <code>run-script</code> is invoked for
-a script that isn’t defined in the <code>scripts</code> section of <code>package.json</code>. This
-option can be used when it’s desirable to optionally run a script when it’s
+a script that isn't defined in the <code>scripts</code> section of <code>package.json</code>. This
+option can be used when it's desirable to optionally run a script when it's
 present and fail if the script fails. This is useful, for example, when running
 scripts that may only apply for some builds in an otherwise generic CI setup.</p>
 <h4 id="ignore-prepublish">ignore-prepublish</h4>
@@ -639,21 +639,21 @@ for more information, or <a href="../commands/npm-init.html">npm init</a>.</p>
 <li>Default: “”</li>
 <li>Type: String</li>
 </ul>
-<p>The value <code>npm init</code> should use by default for the package author’s name.</p>
+<p>The value <code>npm init</code> should use by default for the package author's name.</p>
 <h4 id="init-author-email">init-author-email</h4>
 <ul>
 <li>Alias: <code>init.author.email</code></li>
 <li>Default: “”</li>
 <li>Type: String</li>
 </ul>
-<p>The value <code>npm init</code> should use by default for the package author’s email.</p>
+<p>The value <code>npm init</code> should use by default for the package author's email.</p>
 <h4 id="init-author-url">init-author-url</h4>
 <ul>
 <li>Alias: <code>init.author.url</code></li>
 <li>Default: “”</li>
 <li>Type: String</li>
 </ul>
-<p>The value <code>npm init</code> should use by default for the package author’s homepage.</p>
+<p>The value <code>npm init</code> should use by default for the package author's homepage.</p>
 <h4 id="init-license">init-license</h4>
 <ul>
 <li>Alias: <code>init.license</code></li>
@@ -783,7 +783,7 @@ impact how lifecycle scripts are called.</p>
 <li>Default: process.version</li>
 <li>Type: semver or false</li>
 </ul>
-<p>The node version to use when checking a package’s <code>engines</code> map.</p>
+<p>The node version to use when checking a package's <code>engines</code> map.</p>
 <h4 id="noproxy">noproxy</h4>
 <ul>
 <li>Default: null</li>
@@ -824,7 +824,7 @@ process is not aborted.</p>
 <li>Default: null</li>
 <li>Type: Number</li>
 </ul>
-<p>This is a one-time password from a two-factor authenticator.  It’s needed
+<p>This is a one-time password from a two-factor authenticator. It's needed
 when publishing or changing package permissions with <code>npm access</code>.</p>
 <h4 id="package-lock">package-lock</h4>
 <ul>
@@ -976,7 +976,7 @@ also the default behavior if <code>--save</code> is true, and neither <code>--sa
 </ul>
 <p>Dependencies saved to package.json using <code>--save</code>, <code>--save-dev</code> or
 <code>--save-optional</code> will be configured with an exact version rather than
-using npm’s default semver range operator.</p>
+using npm's default semver range operator.</p>
 <h4 id="save-optional">save-optional</h4>
 <ul>
 <li>Default: false</li>
@@ -989,7 +989,7 @@ optionalDependencies.</p>
 <p>Only works if there is already a package.json file present.</p>
 <h4 id="save-prefix">save-prefix</h4>
 <ul>
-<li>Default: ‘^’</li>
+<li>Default: ‘^'</li>
 <li>Type: String</li>
 </ul>
 <p>Configure how versions of packages installed to a package.json file via
@@ -1098,8 +1098,8 @@ for this to work properly.</p>
 should be polled while the user is completing authentication.</p>
 <h4 id="sso-type">sso-type</h4>
 <ul>
-<li>Default: ‘oauth’</li>
-<li>Type: ‘oauth’, ‘saml’, or null</li>
+<li>Default: ‘oauth'</li>
+<li>Type: ‘oauth', ‘saml', or null</li>
 </ul>
 <p>If <code>--auth-type=sso</code>, the type of SSO type to use.</p>
 <h4 id="strict-peer-deps">strict-peer-deps</h4>
@@ -1114,7 +1114,7 @@ dependency relationships.</p>
 <p>By default, conflicting <code>peerDependencies</code> in the dependency graph will be
 resolved using the nearest non-peer dependency specification, even if doing
 so will result in some packages receiving a peer dependency outside the
-range set in their package’s <code>peerDependencies</code> object.  When such and
+range set in their package's <code>peerDependencies</code> object. When such and
 override is performed, a warning is printed, explaining the conflict and
 the packages involved.  If <code>--strict-peer-deps</code> is set, then the warning is
 treated as a failure.</p>
@@ -1131,7 +1131,7 @@ registry via https.</p>
 <li>Default: latest</li>
 <li>Type: String</li>
 </ul>
-<p>If you ask npm to install a package and don’t tell it a specific version, then
+<p>If you ask npm to install a package and don't tell it a specific version, then
 it will install the specified tag.</p>
 <p>Also the tag that is added to the package@version specified by the <code>npm tag</code> command, if no explicit tag is given.</p>
 <h4 id="tag-version-prefix">tag-version-prefix</h4>
@@ -1217,7 +1217,7 @@ this value.  Thus, the defaults are <code>0755</code> and <code>0644</code> resp
 <li>Default: false</li>
 <li>Type: boolean</li>
 </ul>
-<p>If true, output the npm version as well as node’s <code>process.versions</code> map, and
+<p>If true, output the npm version as well as node's <code>process.versions</code> map, and
 exit successfully.</p>
 <p>Only relevant when specified explicitly on the command line.</p>
 <h4 id="viewer">viewer</h4>

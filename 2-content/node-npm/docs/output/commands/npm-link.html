@@ -189,7 +189,7 @@ npm link ../node-redis     # link the dir of your dependency
 npm link redis
 </code></pre>
 <p>That is, it first creates a global link, and then links the global
-installation target into your project’s <code>node_modules</code> folder.</p>
+installation target into your project's <code>node_modules</code> folder.</p>
 <p>Note that in this case, you are referring to the directory name,
 <code>node-redis</code>, rather than the package name <code>redis</code>.</p>
 <p>If your linked package is scoped (see <a href="../using-npm/scope.html"><code>scope</code></a>) your
@@ -202,7 +202,7 @@ link command must include that scope, e.g.</p>
 a link stand in for a regular non-link dependency.  Otherwise, for example,
 if you depend on <code>redis@^3.0.1</code>, and ran <code>npm link redis</code>, it would replace
 the <code>^3.0.1</code> dependency with <code>file:../path/to/node-redis</code>, which you
-probably don’t want!  Additionally, other users or developers on your
+probably don't want! Additionally, other users or developers on your
 project would run into issues if they do not have their folders set up
 exactly the same as yours.</p>
 <p>If you are adding a <em>new</em> dependency as a link, you should add it to the

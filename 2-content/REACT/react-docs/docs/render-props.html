@@ -12,9 +12,10 @@
   &lt;h1&gt;Hello {data.target}&lt;/h1&gt;
 )}/&gt;</code></pre>
 <p>Libraries that use render props include <a href="https://reacttraining.com/react-router/web/api/Route/render-func">React Router</a>, <a href="https://github.com/paypal/downshift">Downshift</a> and <a href="https://github.com/jaredpalmer/formik">Formik</a>.</p>
-<p>In this document, we’ll discuss why render props are useful, and how to write your own.</p>
+<p>In this document, we'll discuss why render props are useful, and how to write your own.</p>
 <h2 id="use-render-props-for-cross-cutting-concerns">Use Render Props for Cross-Cutting Concerns</h2>
-<p>Components are the primary unit of code reuse in React, but it’s not always obvious how to share the state or behavior that one component encapsulates to other components that need that same state.</p>
+<p>Components are the primary unit of code reuse in React, but it's not always obvious how to share the state or
+    behavior that one component encapsulates to other components that need that same state.</p>
 <p>For example, the following component tracks the mouse position in a web app:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">class</span> MouseTracker <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="at">constructor</span>(props) <span class="op">{</span></a>
@@ -41,7 +42,8 @@
 <a class="sourceLine" id="cb2-23" title="23"><span class="op">}</span></a></code></pre></div>
 <p>As the cursor moves around the screen, the component displays its (x, y) coordinates in a <code>&lt;p&gt;</code>.</p>
 <p>Now the question is: How can we reuse this behavior in another component? In other words, if another component needs to know about the cursor position, can we encapsulate that behavior so that we can easily share it with that component?</p>
-<p>Since components are the basic unit of code reuse in React, let’s try refactoring the code a bit to use a <code>&lt;Mouse&gt;</code> component that encapsulates the behavior we need to reuse elsewhere.</p>
+<p>Since components are the basic unit of code reuse in React, let's try refactoring the code a bit to use a
+    <code>&lt;Mouse&gt;</code> component that encapsulates the behavior we need to reuse elsewhere.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// The &lt;Mouse&gt; component encapsulates the behavior we need...</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">class</span> Mouse <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="at">constructor</span>(props) <span class="op">{</span></a>
@@ -78,9 +80,13 @@
 <a class="sourceLine" id="cb3-34" title="34">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-35" title="35">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb3-36" title="36"><span class="op">}</span></a></code></pre></div>
-<p>Now the <code>&lt;Mouse&gt;</code> component encapsulates all behavior associated with listening for <code>mousemove</code> events and storing the (x, y) position of the cursor, but it’s not yet truly reusable.</p>
-<p>For example, let’s say we have a <code>&lt;Cat&gt;</code> component that renders the image of a cat chasing the mouse around the screen. We might use a <code>&lt;Cat mouse={{ x, y }}&gt;</code> prop to tell the component the coordinates of the mouse so it knows where to position the image on the screen.</p>
-<p>As a first pass, you might try rendering the <code>&lt;Cat&gt;</code> <em>inside <code>&lt;Mouse&gt;</code>’s <code>render</code> method</em>, like this:</p>
+<p>Now the <code>&lt;Mouse&gt;</code> component encapsulates all behavior associated with listening for
+    <code>mousemove</code> events and storing the (x, y) position of the cursor, but it's not yet truly reusable.</p>
+<p>For example, let's say we have a <code>&lt;Cat&gt;</code> component that renders the image of a cat chasing the mouse
+    around the screen. We might use a <code>&lt;Cat mouse={{ x, y }}&gt;</code> prop to tell the component the
+    coordinates of the mouse so it knows where to position the image on the screen.</p>
+<p>As a first pass, you might try rendering the <code>&lt;Cat&gt;</code> <em>inside <code>&lt;Mouse&gt;</code>'s
+        <code>render</code> method</em>, like this:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> Cat <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-3" title="3">    <span class="kw">const</span> mouse <span class="op">=</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">mouse</span><span class="op">;</span></a>
@@ -130,8 +136,14 @@
 <a class="sourceLine" id="cb4-47" title="47">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb4-48" title="48">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb4-49" title="49"><span class="op">}</span></a></code></pre></div>
-<p>This approach will work for our specific use case, but we haven’t achieved the objective of truly encapsulating the behavior in a reusable way. Now, every time we want the mouse position for a different use case, we have to create a new component (i.e. essentially another <code>&lt;MouseWithCat&gt;</code>) that renders something specifically for that use case.</p>
-<p>Here’s where the render prop comes in: Instead of hard-coding a <code>&lt;Cat&gt;</code> inside a <code>&lt;Mouse&gt;</code> component, and effectively changing its rendered output, we can provide <code>&lt;Mouse&gt;</code> with a function prop that it uses to dynamically determine what to render–a render prop.</p>
+<p>This approach will work for our specific use case, but we haven't achieved the objective of truly encapsulating the
+    behavior in a reusable way. Now, every time we want the mouse position for a different use case, we have to create a
+    new component (i.e. essentially another <code>&lt;MouseWithCat&gt;</code>) that renders something specifically for
+    that use case.</p>
+<p>Here's where the render prop comes in: Instead of hard-coding a <code>&lt;Cat&gt;</code> inside a
+    <code>&lt;Mouse&gt;</code> component, and effectively changing its rendered output, we can provide
+    <code>&lt;Mouse&gt;</code> with a function prop that it uses to dynamically determine what to render–a render prop.
+</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">class</span> Cat <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb5-3" title="3">    <span class="kw">const</span> mouse <span class="op">=</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">mouse</span><span class="op">;</span></a>
@@ -200,19 +212,24 @@
 <a class="sourceLine" id="cb6-13" title="13"><span class="op">}</span></a></code></pre></div>
 <p>So using a render prop makes it possible to use either pattern.</p>
 <h2 id="using-props-other-than-render">Using Props Other Than <code>render</code></h2>
-<p>It’s important to remember that just because the pattern is called “render props” you don’t <em>have to use a prop named <code>render</code> to use this pattern</em>. In fact, <a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce"><em>any</em> prop that is a function that a component uses to know what to render is technically a “render prop”</a>.</p>
+<p>It's important to remember that just because the pattern is called “render props” you don't <em>have to use a prop
+        named <code>render</code> to use this pattern</em>. In fact, <a
+        href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce"><em>any</em> prop that is a function that a
+        component uses to know what to render is technically a “render prop”</a>.</p>
 <p>Although the examples above use <code>render</code>, we could just as easily use the <code>children</code> prop!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="op">&lt;</span>Mouse children<span class="op">={</span>mouse <span class="kw">=&gt;</span> (</a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="op">&lt;</span>p<span class="op">&gt;</span>The mouse position is <span class="op">{</span><span class="va">mouse</span>.<span class="at">x</span><span class="op">},</span> <span class="op">{</span><span class="va">mouse</span>.<span class="at">y</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb7-3" title="3">)<span class="op">}</span>/&gt;</a></code></pre></div>
-<p>And remember, the <code>children</code> prop doesn’t actually need to be named in the list of “attributes” in your JSX element. Instead, you can put it directly <em>inside</em> the element!</p>
+<p>And remember, the <code>children</code> prop doesn't actually need to be named in the list of “attributes” in your
+    JSX element. Instead, you can put it directly <em>inside</em> the element!</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&lt;</span>Mouse<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="op">{</span>mouse <span class="kw">=&gt;</span> (</a>
 <a class="sourceLine" id="cb8-3" title="3">    <span class="op">&lt;</span>p<span class="op">&gt;</span>The mouse position is <span class="op">{</span><span class="va">mouse</span>.<span class="at">x</span><span class="op">},</span> <span class="op">{</span><span class="va">mouse</span>.<span class="at">y</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb8-4" title="4">  )<span class="op">}</span></a>
 <a class="sourceLine" id="cb8-5" title="5">&lt;/Mouse<span class="op">&gt;</span></a></code></pre></div>
-<p>You’ll see this technique used in the <a href="https://github.com/chenglou/react-motion">react-motion</a> API.</p>
-<p>Since this technique is a little unusual, you’ll probably want to explicitly state that <code>children</code> should be a function in your <code>propTypes</code> when designing an API like this.</p>
+<p>You'll see this technique used in the <a href="https://github.com/chenglou/react-motion">react-motion</a> API.</p>
+<p>Since this technique is a little unusual, you'll probably want to explicitly state that <code>children</code> should
+    be a function in your <code>propTypes</code> when designing an API like this.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="va">Mouse</span>.<span class="at">propTypes</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb9-2" title="2">  <span class="dt">children</span><span class="op">:</span> <span class="va">PropTypes</span>.<span class="va">func</span>.<span class="at">isRequired</span></a>
 <a class="sourceLine" id="cb9-3" title="3"><span class="op">};</span></a></code></pre></div>
@@ -259,5 +276,6 @@
 <a class="sourceLine" id="cb11-14" title="14">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb11-15" title="15">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb11-16" title="16"><span class="op">}</span></a></code></pre></div>
-<p>In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state) <code>&lt;Mouse&gt;</code> should extend <code>React.Component</code> instead.</p>
+<p>In cases where you cannot define the prop statically (e.g. because you need to close over the component's props
+    and/or state) <code>&lt;Mouse&gt;</code> should extend <code>React.Component</code> instead.</p>
 </body></html>

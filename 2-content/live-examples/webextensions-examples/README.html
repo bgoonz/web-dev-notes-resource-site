@@ -8,18 +8,37 @@
 <h2 id="how-to-use-webextensions-examples">How to use “webextensions-examples”</h2>
 <p>To use the repository, first clone it.</p>
 <p>Each example is in a top-level folder and includes a short README explaining what it does. To see how an example works, install it in Firefox by following the <a href="#installing-an-example">installation instructions</a>.</p>
-<p>To find your way around a WebExtension’s internal structure, have a look at the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension">Anatomy of a WebExtension</a> page on MDN.</p>
+<p>To find your way around a WebExtension's internal structure, have a look at the <a
+        href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension">Anatomy of a
+        WebExtension</a> page on MDN.</p>
 <p>To use these examples in Firefox, use the most recent release of Firefox. However, most examples work with earlier releases.</p>
-<p>A few examples rely on APIs that are only available in pre-release versions of Firefox. Where this is the case, the example declares the minimum version that it needs in the <code>strict_min_version</code> attribute of the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/browser_specific_settings"><code>browser_specific_settings key</code></a> in the extension’s manifest.json file.</p>
+<p>A few examples rely on APIs that are only available in pre-release versions of Firefox. Where this is the case, the
+    example declares the minimum version that it needs in the <code>strict_min_version</code> attribute of the <a
+        href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/browser_specific_settings"><code>browser_specific_settings
+            key</code></a> in the extension's manifest.json file.</p>
 <h2 id="installing-an-example">Installing an example</h2>
-<p>Some examples work only on specific domains or pages. Details of any restrictions are provided in each example’s README file. None of the examples work in private browsing windows by default, see <a href="https://support.mozilla.org/en-US/kb/extensions-private-browsing#w_enabling-or-disabling-extensions-in-private-windows">Extensions in Private Browsing</a> for details.</p>
+<p>Some examples work only on specific domains or pages. Details of any restrictions are provided in each example's
+    README file. None of the examples work in private browsing windows by default, see <a
+        href="https://support.mozilla.org/en-US/kb/extensions-private-browsing#w_enabling-or-disabling-extensions-in-private-windows">Extensions
+        in Private Browsing</a> for details.</p>
 <p>To run an example extension:</p>
 <ol type="1">
 <li>Open Firefox and load the <code>about:debugging</code> page. Click <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox">Load Temporary Add-on</a> and select the <code>manifest.json</code> file within the folder of an example extension. Here is a <a href="https://www.youtube.com/watch?v=cer9EUKegG4">video</a> that demonstrates how to do this.</li>
-<li>Install the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext">web-ext</a> tool. At the command line, open the example extension’s folder and type <code>web-ext run</code>. This launches Firefox and installs the extension automatically. This tool provides some additional development features, such as <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext#Automatic_extension_reloading">automatic reloading</a>.</li>
+<li>Install the <a
+        href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext">web-ext</a> tool.
+    At the command line, open the example extension's folder and type <code>web-ext run</code>. This launches Firefox
+    and installs the extension automatically. This tool provides some additional development features, such as <a
+        href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext#Automatic_extension_reloading">automatic
+        reloading</a>.</li>
 </ol>
 <h2 id="support-for-other-browsers">Support for other browsers</h2>
-<p>These examples are tested in Firefox. They may work in other browsers, if the <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs">browser supports the APIs used</a>. Note that these examples all use the <code>browser</code> namespace and promises to work with asynchronous functions. This means the examples won’t work in Chrome unless you use the <a href="https://github.com/mozilla/webextension-polyfill">polyfill provided by Mozilla</a>. See <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API">the overview of WebExtension APIs</a> for more information.</p>
+<p>These examples are tested in Firefox. They may work in other browsers, if the <a
+        href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs">browser
+        supports the APIs used</a>. Note that these examples all use the <code>browser</code> namespace and promises to
+    work with asynchronous functions. This means the examples won't work in Chrome unless you use the <a
+        href="https://github.com/mozilla/webextension-polyfill">polyfill provided by Mozilla</a>. See <a
+        href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API">the overview of WebExtension
+        APIs</a> for more information.</p>
 <h2 id="learn-more">Learn more</h2>
 <p>To learn more about developing WebExtensions, see the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">WebExtensions documentation on MDN</a> for getting started guides, tutorials, and full API reference docs.</p>
 <h2 id="problems">Problems?</h2>

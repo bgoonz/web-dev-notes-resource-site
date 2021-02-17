@@ -11,7 +11,7 @@ _Note: in this tutorial I've used webpack 5.9.0._
 What Is Webpack?
 ----------------
 
-As its core, webpack is a static module bundler. In a particular project, webpack treats all files and assets as modules. Under the hood, it relies on a dependency graph. A dependency graph describes how modules relate to each other using the references (**require** and **import** statements) between files. In this way, webpack statically traverses all modules to build the graph, and uses it to generate a single bundle (or several bundles) — a JavaScript file containing the code from all modules combined in the correct order. “Statically” means that, when webpack builds its dependency graph, it doesn't execute the source code but stitches modules and their dependencies together into a bundle. This can then be included in your HTML files.
+As its core, webpack is a static module bundler. In a particular project, webpack treats all files and assets as modules. Under the hood, it relies on a dependency graph. A dependency graph describes how modules relate to each other using the references (**require** and **import** statements) between files. In this way, webpack statically traverses all modules to build the graph, and uses it to generate a single bundle (or several bundles) — a JavaScript file containing the code from all modules combined in the correct order. "Statically" means that, when webpack builds its dependency graph, it doesn't execute the source code but stitches modules and their dependencies together into a bundle. This can then be included in your HTML files.
 
 Now, to expand the above cursory overview, let's explore the main concepts webpack uses.
 
@@ -48,7 +48,7 @@ A webpack 5 release [was announced in October 2020](https://webpack.js.org/blog/
 *   Automatic Node.js polyfills are removed. Previous versions of webpack have included polyfills for native Node.js libraries like `crypto`. In many cases they are unnecessary and increase the bundle size drastically. That's why webpack 5 stops automatically polyfilling these core modules and focuses on front-end–compatible modules.
 *   As an improvement of development, webpack 5 allows us to pass a list of targets and also support versions of target. It provides automatic determination of the public path. And also, it offers automatic, unique naming, which prevents conflicts between multiple webpack runtimes that use the same global variable for chunk loading.
 *   The `webpack-dev-server` command is now `webpack serve`.
-*   [Asset modules](https://webpack.js.org/guides/asset-modules/) are introduced, which replace the uses of `file-loader`, `raw-loader`, and `url-loader`.
+*   [Asset modules](https://webpack.js.org/guides/asset-modules/) are introduced, which replace the uses of `file-loader`,  `raw-loader`, and `url-loader`.
 
 Please open the announcement link above to find more complete and detailed information about all the updates.
 
@@ -114,9 +114,9 @@ Normally
     },
     
 
-Within the `scripts` property, `npm` allows us to reference locally installed Node.js packages by their names. We use that and the `--mode` flag to define `dev` and `build` tasks, which will run webpack in development (`npm run dev`) and production (`npm run build`) mode respectively.
+Within the `scripts` property, `npm` allows us to reference locally installed Node.js packages by their names. We use that and the `--mode` flag to define `dev` and `build` tasks, which will run webpack in development ( `npm run dev` ) and production ( `npm run build` ) mode respectively.
 
-Before we test the tasks we've just created, let's create a `src` directory and put an `index.js` file in it so that it contains `console.log("Hello, Webpack!");`. Now we can already run the `dev` task to start webpack in development mode:
+Before we test the tasks we've just created, let's create a `src` directory and put an `index.js` file in it so that it contains `console.log("Hello, Webpack!");` . Now we can already run the `dev` task to start webpack in development mode:
 
     $ npm run dev
     
@@ -129,7 +129,7 @@ Before we test the tasks we've just created, let's create a `src` directory and 
     webpack 5.9.0 compiled successfully in 122 ms
     
 
-As I mentioned before, webpack sets the default entry point to `./src/index.js` and the default output to `./dist/main.js`. So what webpack does when we run the `dev` task is to get the source code from `index.js` file and bundle the final code in a `main.js` file.
+As I mentioned before, webpack sets the default entry point to `./src/index.js` and the default output to `./dist/main.js` . So what webpack does when we run the `dev` task is to get the source code from `index.js` file and bundle the final code in a `main.js` file.
 
 Great! It works as expected. But to verify that we get the correct output, we need to display the result in the browser. To do that, let's create an `index.html` file in the `dist` directory:
 
@@ -148,12 +148,12 @@ Now, if we open the file in the browser, we should see the _Hello, Webpack!_ mes
 
 ![Webpack Console Message Displayed](https://uploads.sitepoint.com/wp-content/uploads/2020/12/1606990554webpack-console-message.png)
 
-So far, so good. But writing our `index.html` file manually can be problematic in some cases. For example, if we change the name of our entry point, the generated bundle will be renamed, but our `index.html` file will still reference the old name. So, we'll need to update our HTML file manually every time we rename an entry point or add new one. Fortunately, we can easily fix that with the `html-webpack-plugin`. Let's install it now:
+So far, so good. But writing our `index.html` file manually can be problematic in some cases. For example, if we change the name of our entry point, the generated bundle will be renamed, but our `index.html` file will still reference the old name. So, we'll need to update our HTML file manually every time we rename an entry point or add new one. Fortunately, we can easily fix that with the `html-webpack-plugin` . Let's install it now:
 
     npm install html-webpack-plugin@next --save-dev
     
 
-_Note: notice that I have typed `html-webpack-plugin@next` instead of just `html-webpack-plugin`. At the time of writing, the former is the proper version for webpack 5, and the latter is the version for webpack 4. This could change in future, so for the actual version check the [html-webpack-plugin repo](https://github.com/jantimon/html-webpack-plugin)._
+_Note: notice that I have typed `html-webpack-plugin@next` instead of just `html-webpack-plugin` . At the time of writing, the former is the proper version for webpack 5, and the latter is the version for webpack 4. This could change in future, so for the actual version check the [html-webpack-plugin repo](https://github.com/jantimon/html-webpack-plugin)._
 
 At this point, to activate the plugin, we need to create a `webpack.config.js` file in the root directory with the following content:
 
@@ -185,7 +185,7 @@ Let's run webpack now to see what will happen:
     webpack 5.9.0 compiled successfully in 151 ms
     
 
-Let's open the `index.html`. As we can see, the plugin automatically creates an updated `index.html` file for us, which uses the `title` option from the configuration:
+Let's open the `index.html` . As we can see, the plugin automatically creates an updated `index.html` file for us, which uses the `title` option from the configuration:
 
     <!DOCTYPE html>
     <html>
@@ -211,7 +211,7 @@ Let's now expand our project and specify custom names for the `entry` and `outpu
     },
     
 
-Here, we change the entry file to `app.js` and the output folder to `deploy`. We also tweak the name of the generated bundle file slightly. Now it will start with the name of the entry (“main”) followed by the word “bundle” and the `.js` file extension.
+Here, we change the entry file to `app.js` and the output folder to `deploy` . We also tweak the name of the generated bundle file slightly. Now it will start with the name of the entry ("main") followed by the word "bundle" and the `.js` file extension.
 
 Now, we'll create an `src/component.js` file:
 
@@ -248,13 +248,13 @@ Now, let's run webpack again:
     webpack 5.9.0 compiled successfully in 194 ms
     
 
-Let's examine and clarify the information from the webpack output. After the “Compilation finished” message you can see the files generated in the `deploy` directory (`main.bundle.js` and `index.html`). Below them, you can see the source files: the entry module (`app.js`) and its dependency (`component.js`).
+Let's examine and clarify the information from the webpack output. After the "Compilation finished" message you can see the files generated in the `deploy` directory ( `main.bundle.js` and `index.html` ). Below them, you can see the source files: the entry module ( `app.js` ) and its dependency ( `component.js` ).
 
-So now, in the `deploy` folder, we have the newly generated bundle file `main.bundle.js`. If we open the `index.html` file in the browser, we should see _Hello, Webpack!_ displayed on the page.
+So now, in the `deploy` folder, we have the newly generated bundle file `main.bundle.js` . If we open the `index.html` file in the browser, we should see _Hello, Webpack!_ displayed on the page.
 
 ![Webpack Browser Message Displayed](https://uploads.sitepoint.com/wp-content/uploads/2020/12/1606990551webpack-browser-message.png)
 
-Also, if we check the source of `index.html`, we'll see that the value of the `src` property in the `script` tag is updated to `main.bundle.js`.
+Also, if we check the source of `index.html` , we'll see that the value of the `src` property in the `script` tag is updated to `main.bundle.js` .
 
 At this point, we can delete the `dist` folder, which webpack generated initially, because we won't need it anymore.
 
@@ -268,7 +268,7 @@ In this section, we'll discover how ES6 can be transpiled to ES5-compliant code 
 
 Here, I run webpack with `devtool` option set to `inline-source-map` in order to render the code more readable. This way I can demonstrate the code transpilation from ES6 to ES5 more clearly.
 
-Next, let's open `main.bundle.js`:
+Next, let's open `main.bundle.js` :
 
     
     
@@ -354,7 +354,7 @@ In this section, we'll see how we can add some styles to our project. To do this
 *   `css-loader` parses the CSS into JavaScript and resolves any dependencies
 *   `style-loader` outputs our CSS into a `<style>` tag in the HTML document.
 
-Let's add the necessary configuration in `webpack.config.js`:
+Let's add the necessary configuration in `webpack.config.js` :
 
     module: {
       rules: [
@@ -367,30 +367,30 @@ Let's add the necessary configuration in `webpack.config.js`:
     },
     
 
-Here, the order of loaders is important. They're evaluated in reverse order — that is, from right to left and from bottom to top. In our case, the `css-loader` is evaluated first, followed by the `style-loader`.
+Here, the order of loaders is important. They're evaluated in reverse order — that is, from right to left and from bottom to top. In our case, the `css-loader` is evaluated first, followed by the `style-loader` .
 
-Now, let's create a file `src/style.css`:
+Now, let's create a file `src/style.css` :
 
     h1 {
       color: red;
     }
     
 
-Then we import it into `app.js`:
+Then we import it into `app.js` :
 
     import './style.css';
     
 
-When we run webpack (`npm run dev`) and then open the `index.html`, we should see the **Hello, Webpack!** message in red color.
+When we run webpack ( `npm run dev` ) and then open the `index.html` , we should see the **Hello, Webpack!** message in red color.
 
 ![Webpack Browser Message With Style Applied](https://uploads.sitepoint.com/wp-content/uploads/2020/12/1606990553webpack-browser-message-styled.png)
 
 Asset Management
 ----------------
 
-Most often your project will contain assets such as images, fonts, and so on. In webpack 4, to work with assets, we had to install one or more of the following loaders: `file-loader`, `raw-loader`, and `url-loader`. In webpack 5, as we saw earlier, this is not needed anymore, because the new version comes with the built-in [asset modules](https://webpack.js.org/guides/asset-modules/).
+Most often your project will contain assets such as images, fonts, and so on. In webpack 4, to work with assets, we had to install one or more of the following loaders: `file-loader` , `raw-loader` , and `url-loader` . In webpack 5, as we saw earlier, this is not needed anymore, because the new version comes with the built-in [asset modules](https://webpack.js.org/guides/asset-modules/).
 
-Here, we'll explore an example with images. Let's add new rule in the `webpack.config.js`:
+Here, we'll explore an example with images. Let's add new rule in the `webpack.config.js` :
 
     module: {
       rules: [
@@ -403,7 +403,7 @@ Here, we'll explore an example with images. Let's add new rule in the `webpack.c
     },
     
 
-Here, the type `asset/resource` is used instead of `file-loader`.
+Here, the type `asset/resource` is used instead of `file-loader` .
 
 Now, to test the loader we'll create an `image-component.js` file, in the `src` directory, with the following content:
 
@@ -416,18 +416,19 @@ Now, to test the loader we'll create an `image-component.js` file, in the `src` 
 
 Here, we import our image as a module and use it to create an `<img/>` tag. To make the above code work, you need to [download the image](https://github.com/webpack/media/blob/master/logo/icon-square-small.png) and then rename it to `image.png` and put it in the `src` directory.
 
-The next thing is to import our image component in `app.js`:
+The next thing is to import our image component in `app.js` :
 
     import './image-component';
     
 
-And voila. Now, when we run webpack (`npm run dev`) and open the page, we should see the image above the **Hello, Webpack!** message.
+And voila. Now, when we run webpack ( `npm run dev` ) and open the page, we should see the image above the **Hello, Webpack!** message.
 
 ![Webpack Image Component Displayed](https://uploads.sitepoint.com/wp-content/uploads/2020/12/1606990556webpack-image-component.png)
 
-If you take a look at the `deploy` folder right now, you'll find three files generated in it: `a1af828b4e65d37668e1.png`, `main.bundle.js`, and `index.js`. Here's what webpack does behind the scenes: the image is added to the `deploy` folder and assigned a unique hash, followed by the image extension. The image is then included in the newly generated `main.bundle.js` file as a module. Finally, an `index.html` file is generated with reference to the `main.bundle.js` file.
+If you take a look at the `deploy` folder right now, you'll find three files generated in it: `a1af828b4e65d37668e1.png` , `main.bundle.js` , and `index.js` . Here's what webpack does behind the scenes: the image is added to the `deploy` folder and assigned a unique hash, followed by the image extension. The image is then included in the newly generated `main.bundle.js` file as a module. Finally, an `index.html` file is generated with reference to the `main.bundle.js` file.
 
 Speed Up the Development Process with `webpack-dev-server`
+
 ----------------------------------------------------------
 
 Currently, we need to rebuild our code every time we make a change. Fortunately, webpack offers a live-reloading web server which automatically builds and refreshes the page. To install it, run the following:
@@ -435,12 +436,12 @@ Currently, we need to rebuild our code every time we make a change. Fortunately,
     npm install webpack-dev-server --save-dev
     
 
-We need to update our `dev` script, in `package.json`, to use the server:
+We need to update our `dev` script, in `package.json` , to use the server:
 
     "dev": "webpack serve --mode development"
     
 
-Now let's configure the server in `webpack.config.js` by adding the following property after the `output`:
+Now let's configure the server in `webpack.config.js` by adding the following property after the `output` :
 
     devServer: {
       contentBase: './deploy',
@@ -450,7 +451,7 @@ Now let's configure the server in `webpack.config.js` by adding the following pr
 
 This tells `webpack-dev-server` to serve the files from the `deploy` directory and to open the entry page automatically.
 
-Now, if we run webpack (`npm run dev`), we should see how the page is automatically opened in the browser on [http://localhost:8080](http://localhost:8080/).
+Now, if we run webpack ( `npm run dev` ), we should see how the page is automatically opened in the browser on [http://localhost:8080](http://localhost:8080/).
 
 _Note: After running the webpack-dev-server you won't find any files in the `deploy` folder (it will be empty) because the server doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path. See [the webpack development guide](https://webpack.js.org/guides/development/#using-webpack-dev-server) for more information. However, when you run the `build` command, the `deploy` folder will be populated with the generated files as expected._
 
@@ -461,12 +462,12 @@ If we now change any of the source files and save them, the web server will auto
 Clean Up the Output
 -------------------
 
-As our project progresses, the `deploy` folder might become quite cluttered. On every build, webpack will generate the bundles and put them in the `deploy` folder, but it doesn't keep track of which files are actually in use by your project. So it's a good practice to clean the `deploy` folder before each build, so that only the files in use will be generated. To do this, we need to install and configure the `clean-webpack-plugin`:
+As our project progresses, the `deploy` folder might become quite cluttered. On every build, webpack will generate the bundles and put them in the `deploy` folder, but it doesn't keep track of which files are actually in use by your project. So it's a good practice to clean the `deploy` folder before each build, so that only the files in use will be generated. To do this, we need to install and configure the `clean-webpack-plugin` :
 
     npm install clean-webpack-plugin --save-dev
     
 
-In `webpack.config.js`:
+In `webpack.config.js` :
 
     const { CleanWebpackPlugin } = require('clean-webpack-plugin');
     
@@ -478,7 +479,7 @@ In `webpack.config.js`:
     ],
     
 
-Now, run webpack (`npm run build`) and inspect the `deploy` folder. You should now only see the files generated from the build without old and unused files. To test it, create a simple text file which is not used in the project and run the `build` script again. After the compilation the file will be deleted.
+Now, run webpack ( `npm run build` ) and inspect the `deploy` folder. You should now only see the files generated from the build without old and unused files. To test it, create a simple text file which is not used in the project and run the `build` script again. After the compilation the file will be deleted.
 
 Conclusion
 ----------
@@ -488,6 +489,5 @@ Webpack is a useful and powerful tool. This tutorial introduces only the core co
 *   [Official webpack Documentation](https://webpack.js.org/concepts). The documentation offers you structured information about webpack's main concepts and configuration, as well as plugins and loaders you can use in your project, and basic guides and API references.
 *   [Webpack 5: From Apprentice to Master](https://survivejs.com/webpack/foreword/). A complete manual which dives deeply into each webpack aspect. Written by Juho Vepsäläinen, a core developer of webpack.
 *   [Webpack: The Core Concepts](https://webpack.academy/p/the-core-concepts). A great introductory video course by Sean Larkin, one of webpack's maintainers.
-
 
 [Source](https://www.sitepoint.com/shell-scripts-javascript/)

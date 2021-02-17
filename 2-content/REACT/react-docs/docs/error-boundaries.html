@@ -6,9 +6,15 @@
   <title>Document</title>
 </head>
 <body>;
-<p>In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to <a href="https://github.com/facebook/react/issues/4026">emit</a> <a href="https://github.com/facebook/react/issues/6895">cryptic</a> <a href="https://github.com/facebook/react/issues/8579">errors</a> on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them.</p>
+<p>In the past, JavaScript errors inside components used to corrupt React's internal state and cause it to <a
+        href="https://github.com/facebook/react/issues/4026">emit</a> <a
+        href="https://github.com/facebook/react/issues/6895">cryptic</a> <a
+        href="https://github.com/facebook/react/issues/8579">errors</a> on next renders. These errors were always caused
+    by an earlier error in the application code, but React did not provide a way to handle them gracefully in
+    components, and could not recover from them.</p>
 <h2 id="introducing-error-boundaries">Introducing Error Boundaries</h2>
-<p>A JavaScript error in a part of the UI shouldn’t break the whole app. To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.</p>
+<p>A JavaScript error in a part of the UI shouldn't break the whole app. To solve this problem for React users, React 16
+    introduces a new concept of an “error boundary”.</p>
 <p>Error boundaries are React components that <strong>catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI</strong> instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.</p>
 <blockquote>
 <p>Note</p>
@@ -50,8 +56,13 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&lt;</span>ErrorBoundary<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="op">&lt;</span>MyWidget /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">&lt;/ErrorBoundary<span class="op">&gt;</span></a></code></pre></div>
-<p>Error boundaries work like a JavaScript <code>catch {}</code> block, but for components. Only class components can be error boundaries. In practice, most of the time you’ll want to declare an error boundary component once and use it throughout your application.</p>
-<p>Note that <strong>error boundaries only catch errors in the components below them in the tree</strong>. An error boundary can’t catch an error within itself. If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. This, too, is similar to how catch {} block works in JavaScript.</p>
+<p>Error boundaries work like a JavaScript <code>catch {}</code> block, but for components. Only class components can be
+    error boundaries. In practice, most of the time you'll want to declare an error boundary component once and use it
+    throughout your application.</p>
+<p>Note that <strong>error boundaries only catch errors in the components below them in the tree</strong>. An error
+    boundary can't catch an error within itself. If an error boundary fails trying to render the error message, the
+    error will propagate to the closest error boundary above it. This, too, is similar to how catch {} block works in
+    JavaScript.</p>
 <h2 id="live-demo">Live Demo</h2>
 <p>Check out <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010">this example of declaring and using an error boundary</a> with <a href="/blog/2017/09/26/react-v16.0.html">React 16</a>.</p>
 <h2 id="where-to-place-error-boundaries">Where to Place Error Boundaries</h2>
@@ -67,7 +78,10 @@
 <p><img src="../images/docs/error-boundaries-stack-trace.png" style="max-width:100%" alt="Error caught by Error Boundary component"></p>
 <p>You can also see the filenames and line numbers in the component stack trace. This works by default in <a href="https://github.com/facebookincubator/create-react-app">Create React App</a> projects:</p>
 <p><img src="../images/docs/error-boundaries-stack-trace-line-numbers.png" style="max-width:100%" alt="Error caught by Error Boundary component with line numbers"></p>
-<p>If you don’t use Create React App, you can add <a href="https://www.npmjs.com/package/@babel/plugin-transform-react-jsx-source">this plugin</a> manually to your Babel configuration. Note that it’s intended only for development and <strong>must be disabled in production</strong>.</p>
+<p>If you don't use Create React App, you can add <a
+        href="https://www.npmjs.com/package/@babel/plugin-transform-react-jsx-source">this plugin</a> manually to your
+    Babel configuration. Note that it's intended only for development and <strong>must be disabled in
+        production</strong>.</p>
 <blockquote>
 <p>Note</p>
 <p>Component names displayed in the stack traces depend on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name"><code>Function.name</code></a> property. If you support older browsers and devices which may not yet provide this natively (e.g. IE 11), consider including a <code>Function.name</code> polyfill in your bundled application, such as <a href="https://github.com/JamesMGreene/Function.name"><code>function.name-polyfill</code></a>. Alternatively, you may explicitly set the <a href="/docs/react-component.html#displayname"><code>displayName</code></a> property on all your components.</p>
@@ -84,7 +98,9 @@
 <p>Error boundaries preserve the declarative nature of React, and behave as you would expect. For example, even if an error occurs in a <code>componentDidUpdate</code> method caused by a <code>setState</code> somewhere deep in the tree, it will still correctly propagate to the closest error boundary.</p>
 <h2 id="how-about-event-handlers">How About Event Handlers?</h2>
 <p>Error boundaries <strong>do not</strong> catch errors inside event handlers.</p>
-<p>React doesn’t need error boundaries to recover from errors in event handlers. Unlike the render method and lifecycle methods, the event handlers don’t happen during rendering. So if they throw, React still knows what to display on the screen.</p>
+<p>React doesn't need error boundaries to recover from errors in event handlers. Unlike the render method and lifecycle
+    methods, the event handlers don't happen during rendering. So if they throw, React still knows what to display on
+    the screen.</p>
 <p>If you need to catch an error inside event handler, use the regular JavaScript <code>try</code> / <code>catch</code> statement:</p>
 <pre class="js{9-13,17-20}"><code>class MyComponent extends React.Component {
   constructor(props) {
@@ -108,8 +124,9 @@
     return &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
   }
 }</code></pre>
-<p>Note that the above example is demonstrating regular JavaScript behavior and doesn’t use error boundaries.</p>
+<p>Note that the above example is demonstrating regular JavaScript behavior and doesn't use error boundaries.</p>
 <h2 id="naming-changes-from-react-15">Naming Changes from React 15</h2>
 <p>React 15 included a very limited support for error boundaries under a different method name: <code>unstable_handleError</code>. This method no longer works, and you will need to change it to <code>componentDidCatch</code> in your code starting from the first 16 beta release.</p>
-<p>For this change, we’ve provided a <a href="https://github.com/reactjs/react-codemod#error-boundaries">codemod</a> to automatically migrate your code.</p>
+<p>For this change, we've provided a <a href="https://github.com/reactjs/react-codemod#error-boundaries">codemod</a> to
+    automatically migrate your code.</p>
 </body></html>

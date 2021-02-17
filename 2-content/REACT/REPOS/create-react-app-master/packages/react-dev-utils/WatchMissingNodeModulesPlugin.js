@@ -6,7 +6,7 @@
  */
 
 // This webpack plugin ensures `npm install <library>` forces a project rebuild.
-// We’re not sure why this isn't webpack's default behavior.
+// We're not sure why this isn't webpack's default behavior.
 // See https://github.com/facebook/create-react-app/issues/186.
 
 'use strict';

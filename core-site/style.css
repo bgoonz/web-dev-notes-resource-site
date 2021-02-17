@@ -126,8 +126,9 @@ h6 {
 
 .cop-logo img,
 a {
-    color: blue;
+    color: rgb(0, 136, 255);
     text-decoration: none !important;
+    font-size: large;
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
     transition: all ease 0.3s;
@@ -189,6 +190,11 @@ blockquote:before {
     color: #f6f6f6;
     font-size: 24px;
     left: 10px;
+}
+
+#email-nav {
+    color: white;
+    border: 1px solid gold;
 }
 
 /******************************************
@@ -358,7 +364,7 @@ HEADER
 
 .modal-backdrop.in {
     opacity: 1;
-    background: url(images/pattern.png) repeat center center rgba(0, 0, 0, 1);
+    background: url(./images/aux-images/pattern.png) repeat center center rgba(0, 0, 0, 1);
 }
 
 .modal-header {
@@ -1895,7 +1901,7 @@ BUTTONS
     font-size: 14px;
     border: 1px solid #fff;
     font-weight: bold;
-    color: #ffffff !important;
+    color: black;
     padding: 13px 40px;
     text-transform: capitalize;
 }
@@ -2021,7 +2027,7 @@ mark,
 .pagination a:hover,
 .tags-widget a:hover,
 .btn-primary:hover {
-    color: #ffffff !important;
+    color: black !important;
     box-shadow: inset 0 100px 0 0 #00a8bd;
     border-color: #00a8bd;
 }
@@ -2210,4 +2216,20 @@ RESPONSIVE
     left: 0;
     width: 100%;
     height: 100%;
+}
+.footer-text {
+    font-size: 14px;
+    line-height: 21px;
+    font-family: "Roboto", sans-serif;
+    padding: 0 12px 0 12px;
+    color: #626262;
+    margin-left: 40px;
+}
+
+.footer-text>a {
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-text span.coupon {
+    color: #e05745;
 }

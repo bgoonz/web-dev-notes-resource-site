@@ -15,8 +15,11 @@
 <div class="scary">
 <blockquote>
 <p>Caution:</p>
-<p>This page describes <strong>experimental features that are not yet available in a stable release</strong>. Don’t rely on experimental builds of React in production apps. These features may change significantly and without a warning before they become a part of React.</p>
-<p>This documentation is aimed at early adopters and people who are curious. <strong>If you’re new to React, don’t worry about these features</strong> – you don’t need to learn them right now.</p>
+<p>This page describes <strong>experimental features that are not yet available in a stable release</strong>. Don't rely
+    on experimental builds of React in production apps. These features may change significantly and without a warning
+    before they become a part of React.</p>
+<p>This documentation is aimed at early adopters and people who are curious. <strong>If you're new to React, don't worry
+        about these features</strong> – you don't need to learn them right now.</p>
 </blockquote>
 </div>
 <ul>
@@ -38,14 +41,21 @@
 <p><strong>There are no semantic versioning guarantees for the experimental builds.</strong><br />
 APIs may be added, changed, or removed with any <code>@experimental</code> release.</p>
 <p><strong>Experimental releases will have frequent breaking changes.</strong></p>
-<p>You can try these builds on personal projects or in a branch, but we don’t recommend running them in production. At Facebook, we <em>do</em> run them in production, but that’s because we’re also there to fix bugs when something breaks. You’ve been warned!</p>
+<p>You can try these builds on personal projects or in a branch, but we don't recommend running them in production. At
+    Facebook, we <em>do</em> run them in production, but that's because we're also there to fix bugs when something
+    breaks. You've been warned!</p>
 <h3 id="who-is-this-experimental-release-for">Who Is This Experimental Release For?</h3>
 <p>This release is primarily aimed at early adopters, library authors, and curious people.</p>
-<p>We’re using this code in production (and it works for us) but there are still some bugs, missing features, and gaps in the documentation. We’d like to hear more about what breaks in Concurrent Mode so we can better prepare it for an official stable release in the future.</p>
+<p>We're using this code in production (and it works for us) but there are still some bugs, missing features, and gaps
+    in the documentation. We'd like to hear more about what breaks in Concurrent Mode so we can better prepare it for an
+    official stable release in the future.</p>
 <h3 id="enabling-concurrent-mode">Enabling Concurrent Mode</h3>
 <p>Normally, when we add features to React, you can start using them immediately. Fragments, Context, and even Hooks are examples of such features. You can use them in new code without making any changes to the existing code.</p>
-<p>Concurrent Mode is different. It introduces semantic changes to how React works. Otherwise, the <a href="/docs/concurrent-mode-patterns.html">new features</a> enabled by it <em>wouldn’t be possible</em>. This is why they’re grouped into a new “mode” rather than released one by one in isolation.</p>
-<p>You can’t opt into Concurrent Mode on a per-subtree basis. Instead, to opt in, you have to do it in the place where today you call <code>ReactDOM.render()</code>.</p>
+<p>Concurrent Mode is different. It introduces semantic changes to how React works. Otherwise, the <a
+        href="/docs/concurrent-mode-patterns.html">new features</a> enabled by it <em>wouldn't be possible</em>. This is
+    why they're grouped into a new “mode” rather than released one by one in isolation.</p>
+<p>You can't opt into Concurrent Mode on a per-subtree basis. Instead, to opt in, you have to do it in the place where
+    today you call <code>ReactDOM.render()</code>.</p>
 <p><strong>This will enable Concurrent Mode for the whole <code>&lt;App /&gt;</code> tree:</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> ReactDOM <span class="im">from</span> <span class="st">&#39;react-dom&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
@@ -62,21 +72,38 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
 <p>Note:</p>
 <p>Concurrent Mode APIs such as <code>createRoot</code> only exist in the experimental builds of React.</p>
 </blockquote>
-<p>In Concurrent Mode, the lifecycle methods <a href="/blog/2018/03/27/update-on-async-rendering.html">previously marked</a> as “unsafe” actually <em>are</em> unsafe, and lead to bugs even more than in today’s React. We don’t recommend trying Concurrent Mode until your app is <a href="/docs/strict-mode.html">Strict Mode</a>-compatible.</p>
+<p>In Concurrent Mode, the lifecycle methods <a href="/blog/2018/03/27/update-on-async-rendering.html">previously
+        marked</a> as “unsafe” actually <em>are</em> unsafe, and lead to bugs even more than in today's React. We don't
+    recommend trying Concurrent Mode until your app is <a href="/docs/strict-mode.html">Strict Mode</a>-compatible.</p>
 <h2 id="what-to-expect">What to Expect</h2>
-<p>If you have a large existing app, or if your app depends on a lot of third-party packages, please don’t expect that you can use the Concurrent Mode immediately. <strong>For example, at Facebook we are using Concurrent Mode for the new website, but we’re not planning to enable it on the old website.</strong> This is because our old website still uses unsafe lifecycle methods in the product code, incompatible third-party libraries, and patterns that don’t work well with the Concurrent Mode.</p>
-<p>In our experience, code that uses idiomatic React patterns and doesn’t rely on external state management solutions is the easiest to get running in the Concurrent Mode. We will describe common problems we’ve seen and the solutions to them separately in the coming weeks.</p>
+<p>If you have a large existing app, or if your app depends on a lot of third-party packages, please don't expect that
+    you can use the Concurrent Mode immediately. <strong>For example, at Facebook we are using Concurrent Mode for the
+        new website, but we're not planning to enable it on the old website.</strong> This is because our old website
+    still uses unsafe lifecycle methods in the product code, incompatible third-party libraries, and patterns that don't
+    work well with the Concurrent Mode.</p>
+<p>In our experience, code that uses idiomatic React patterns and doesn't rely on external state management solutions is
+    the easiest to get running in the Concurrent Mode. We will describe common problems we've seen and the solutions to
+    them separately in the coming weeks.</p>
 <h3 id="migration-step-blocking-mode">Migration Step: Blocking Mode</h3>
 <p>For older codebases, Concurrent Mode might be a step too far. This is why we also provide a new “Blocking Mode” in the experimental React builds. You can try it by substituting <code>createRoot</code> with <code>createBlockingRoot</code>. It only offers a <em>small subset</em> of the Concurrent Mode features, but it is closer to how React works today and can serve as a migration step.</p>
 <p>To recap:</p>
 <ul>
-<li><strong>Legacy Mode:</strong> <code>ReactDOM.render(&lt;App /&gt;, rootNode)</code>. This is what React apps use today. There are no plans to remove the legacy mode in the observable future — but it won’t be able to support these new features.</li>
+<li><strong>Legacy Mode:</strong> <code>ReactDOM.render(&lt;App /&gt;, rootNode)</code>. This is what React apps use
+    today. There are no plans to remove the legacy mode in the observable future — but it won't be able to support these
+    new features.</li>
 <li><strong>Blocking Mode:</strong> <code>ReactDOM.createBlockingRoot(rootNode).render(&lt;App /&gt;)</code>. It is currently experimental. It is intended as a first migration step for apps that want to get a subset of Concurrent Mode features.</li>
 <li><strong>Concurrent Mode:</strong> <code>ReactDOM.createRoot(rootNode).render(&lt;App /&gt;)</code>. It is currently experimental. In the future, after it stabilizes, we intend to make it the default React mode. This mode enables <em>all</em> the new features.</li>
 </ul>
 <h3 id="why-so-many-modes">Why So Many Modes?</h3>
 <p>We think it is better to offer a <a href="/docs/faq-versioning.html#commitment-to-stability">gradual migration strategy</a> than to make huge breaking changes — or to let React stagnate into irrelevance.</p>
-<p>In practice, we expect that most apps using Legacy Mode today should be able to migrate at least to the Blocking Mode (if not Concurrent Mode). This fragmentation can be annoying for libraries that aim to support all Modes in the short term. However, gradually moving the ecosystem away from the Legacy Mode will also <em>solve</em> problems that affect major libraries in the React ecosystem, such as <a href="https://github.com/facebook/react/issues/14536">confusing Suspense behavior when reading layout</a> and <a href="https://github.com/facebook/react/issues/15080">lack of consistent batching guarantees</a>. There’s a number of bugs that can’t be fixed in Legacy Mode without changing semantics, but don’t exist in Blocking and Concurrent Modes.</p>
+<p>In practice, we expect that most apps using Legacy Mode today should be able to migrate at least to the Blocking Mode
+    (if not Concurrent Mode). This fragmentation can be annoying for libraries that aim to support all Modes in the
+    short term. However, gradually moving the ecosystem away from the Legacy Mode will also <em>solve</em> problems that
+    affect major libraries in the React ecosystem, such as <a
+        href="https://github.com/facebook/react/issues/14536">confusing Suspense behavior when reading layout</a> and <a
+        href="https://github.com/facebook/react/issues/15080">lack of consistent batching guarantees</a>. There's a
+    number of bugs that can't be fixed in Legacy Mode without changing semantics, but don't exist in Blocking and
+    Concurrent Modes.</p>
 <p>You can think of the Blocking Mode as a “gracefully degraded” version of the Concurrent Mode. <strong>As a result, in longer term we should be able to converge and stop thinking about different Modes altogether.</strong> But for now, Modes are an important migration strategy. They let everyone decide when a migration is worth it, and upgrade at their own pace.</p>
 <h3 id="feature-comparison">Feature Comparison</h3>
 <style>
@@ -188,6 +215,8 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
 </tbody>
 </table>
 </div>
-<p>*: Legacy mode has automatic batching in React-managed events but it’s limited to one browser task. Non-React events must opt-in using <code>unstable_batchedUpdates</code>. In Blocking Mode and Concurrent Mode, all <code>setState</code>s are batched by default.</p>
+<p>*: Legacy mode has automatic batching in React-managed events but it's limited to one browser task. Non-React events
+    must opt-in using <code>unstable_batchedUpdates</code>. In Blocking Mode and Concurrent Mode, all
+    <code>setState</code>s are batched by default.</p>
 <p>**: Warns in development.</p>
 </body></html>

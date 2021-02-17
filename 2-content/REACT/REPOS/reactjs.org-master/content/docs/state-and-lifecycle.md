@@ -246,7 +246,7 @@ The `componentDidMount()` method runs after the component output has been render
 
 Note how we save the timer ID right on `this` (`this.timerID`).
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn't participate in the data flow (like a timer ID).
 
 We will tear down the timer in the `componentWillUnmount()` lifecycle method:
 

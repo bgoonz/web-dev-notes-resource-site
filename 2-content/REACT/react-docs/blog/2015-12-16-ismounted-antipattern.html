@@ -6,7 +6,8 @@
   <title>Document</title>
 </head>
 <body>;
-<p>As we move closer to officially deprecating isMounted, it’s worth understanding why the function is an antipattern, and how to write code without the isMounted function.</p>
+<p>As we move closer to officially deprecating isMounted, it's worth understanding why the function is an antipattern,
+    and how to write code without the isMounted function.</p>
 <p>The primary use case for <code>isMounted()</code> is to avoid calling <code>setState()</code> after a component has unmounted, because calling <code>setState()</code> after a component has unmounted will emit a warning. The “setState warning” exists to help you catch bugs, because calling <code>setState()</code> on an unmounted component is an indication that your app/component has somehow failed to clean up properly. Specifically, calling <code>setState()</code> in an unmounted component means that your app is still holding a reference to the component after the component has been unmounted - which often indicates a memory leak!</p>
 <p>To avoid the error message, people often add lines like this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="cf">if</span> (<span class="kw">this</span>.<span class="at">isMounted</span>()) <span class="op">{</span> <span class="co">// This is bad.</span></a>
@@ -14,7 +15,9 @@
 <a class="sourceLine" id="cb1-3" title="3"><span class="op">}</span></a></code></pre></div>
 <p>Checking <code>isMounted</code> before calling <code>setState()</code> does eliminate the warning, but it also defeats the purpose of the warning, since now you will never get the warning (even when you should!)</p>
 <p>Other uses of <code>isMounted()</code> are similarly erroneous; using <code>isMounted()</code> is a code smell because the only reason you would check is because you think you might be holding a reference after the component has unmounted.</p>
-<p>An easy migration strategy for anyone upgrading their code to avoid <code>isMounted()</code> is to track the mounted status yourself. Just set a <code>_isMounted</code> property to true in <code>componentDidMount</code> and set it to false in <code>componentWillUnmount</code>, and use this variable to check your component’s status.</p>
+<p>An easy migration strategy for anyone upgrading their code to avoid <code>isMounted()</code> is to track the mounted
+    status yourself. Just set a <code>_isMounted</code> property to true in <code>componentDidMount</code> and set it to
+    false in <code>componentWillUnmount</code>, and use this variable to check your component's status.</p>
 <p>An optimal solution would be to find places where <code>setState()</code> might be called after a component has unmounted, and fix them. Such situations most commonly occur due to callbacks, when a component is waiting for some data and gets unmounted before the data arrives. Ideally, any callbacks should be canceled in <code>componentWillUnmount</code>, prior to unmounting.</p>
 <p>For instance, if you are using a Flux store in your component, you must unsubscribe in <code>componentWillUnmount</code>:</p>
 <pre class="javascript{9}"><code>class MyComponent extends React.Component {

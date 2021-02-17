@@ -6,7 +6,9 @@
   <title>Document</title>
 </head>
 <body>;
-<p>Today we’re releasing React 16.6 with a few new convenient features. A form of PureComponent/shouldComponentUpdate for function components, a way to do code splitting using Suspense and an easier way to consume Context from class components.</p>
+<p>Today we're releasing React 16.6 with a few new convenient features. A form of PureComponent/shouldComponentUpdate
+    for function components, a way to do code splitting using Suspense and an easier way to consume Context from class
+    components.</p>
 <p>Check out the full <a href="#changelog">changelog</a> below.</p>
 <h2 id="reactmemo"><a href="/docs/react-api.html#reactmemo"><code>React.memo</code></a></h2>
 <p>Class components can bail out from rendering when their input props are the same using <a href="/docs/react-api.html#reactpurecomponent"><code>PureComponent</code></a> or <a href="/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate</code></a>. Now you can do the same with function components by wrapping them in <a href="/docs/react-api.html#reactmemo"><code>React.memo</code></a>.</p>
@@ -14,7 +16,10 @@
 <a class="sourceLine" id="cb1-2" title="2">  <span class="co">/* only rerenders if props change */</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <h2 id="reactlazy-code-splitting-with-suspense"><a href="/docs/code-splitting.html#reactlazy"><code>React.lazy</code></a>: Code-Splitting with <code>Suspense</code></h2>
-<p>You may have seen <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">Dan’s talk about React Suspense at JSConf Iceland</a>. Now you can use the Suspense component to do <a href="/docs/code-splitting.html#reactlazy">code-splitting</a> by wrapping a dynamic import in a call to <code>React.lazy()</code>.</p>
+<p>You may have seen <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">Dan's talk about React Suspense at
+        JSConf Iceland</a>. Now you can use the Suspense component to do <a
+        href="/docs/code-splitting.html#reactlazy">code-splitting</a> by wrapping a dynamic import in a call to
+    <code>React.lazy()</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">import</span> React<span class="op">,</span> <span class="op">{</span>lazy<span class="op">,</span> Suspense<span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">const</span> OtherComponent <span class="op">=</span> <span class="at">lazy</span>(() <span class="kw">=&gt;</span> <span class="im">import</span>(<span class="st">&#39;./OtherComponent&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"></a>
@@ -32,7 +37,9 @@
 <h2 id="static-contexttype"><a href="/docs/context.html#classcontexttype"><code>static contextType</code></a></h2>
 <p>In <a href="/blog/2018/03/29/react-v-16-3.html">React 16.3</a> we introduced the official Context API as a replacement to the previous <a href="/docs/legacy-context.html">Legacy Context</a> API.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> MyContext <span class="op">=</span> <span class="va">React</span>.<span class="at">createContext</span>()<span class="op">;</span></a></code></pre></div>
-<p>We’ve heard feedback that adopting the new render prop API can be difficult in class components. So we’ve added a convenience API to <a href="/docs/context.html#classcontexttype">consume a context value from within a class component</a>.</p>
+<p>We've heard feedback that adopting the new render prop API can be difficult in class components. So we've added a
+    convenience API to <a href="/docs/context.html#classcontexttype">consume a context value from within a class
+        component</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> MyClass <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="kw">static</span> contextType <span class="op">=</span> MyContext<span class="op">;</span></a>
 <a class="sourceLine" id="cb4-3" title="3">  <span class="at">componentDidMount</span>() <span class="op">{</span></a>
@@ -53,20 +60,33 @@
 <a class="sourceLine" id="cb4-18" title="18">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb4-19" title="19"><span class="op">}</span></a></code></pre></div>
 <h2 id="static-getderivedstatefromerror"><a href="/docs/react-component.html#static-getderivedstatefromerror"><code>static getDerivedStateFromError()</code></a></h2>
-<p>React 16 introduced <a href="/blog/2017/07/26/error-handling-in-react-16.html">Error Boundaries</a> for handling errors thrown in React renders. We already had the <code>componentDidCatch</code> lifecycle method which gets fired after an error has already happened. It’s great for logging errors to the server. It also lets you show a different UI to the user by calling <code>setState</code>.</p>
-<p>Before that is fired, we render <code>null</code> in place of the tree that threw an error. This sometimes breaks parent components that don’t expect their refs to be empty. It also doesn’t work to recover from errors on the server since the <code>Did</code> lifecycle methods don’t fire during server-side rendering.</p>
-<p>We’re adding another error method that lets you render the fallback UI before the render completes. See the docs for <a href="/docs/react-component.html#static-getderivedstatefromerror"><code>getDerivedStateFromError()</code></a>.</p>
+<p>React 16 introduced <a href="/blog/2017/07/26/error-handling-in-react-16.html">Error Boundaries</a> for handling
+    errors thrown in React renders. We already had the <code>componentDidCatch</code> lifecycle method which gets fired
+    after an error has already happened. It's great for logging errors to the server. It also lets you show a different
+    UI to the user by calling <code>setState</code>.</p>
+<p>Before that is fired, we render <code>null</code> in place of the tree that threw an error. This sometimes breaks
+    parent components that don't expect their refs to be empty. It also doesn't work to recover from errors on the
+    server since the <code>Did</code> lifecycle methods don't fire during server-side rendering.</p>
+<p>We're adding another error method that lets you render the fallback UI before the render completes. See the docs for
+    <a href="/docs/react-component.html#static-getderivedstatefromerror"><code>getDerivedStateFromError()</code></a>.
+</p>
 <blockquote>
-<p>Note: <code>getDerivedStateFromError()</code> is not yet available for server-side rendering. It is designed to work with server-side rendering in a future release. We’re releasing it early so that you can start preparing to use it.</p>
+<p>Note: <code>getDerivedStateFromError()</code> is not yet available for server-side rendering. It is designed to work
+    with server-side rendering in a future release. We're releasing it early so that you can start preparing to use it.
+</p>
 </blockquote>
 <h2 id="deprecations-in-strictmode">Deprecations in StrictMode</h2>
 <p>In <a href="/blog/2018/03/29/react-v-16-3.html#strictmode-component">16.3</a> we introduced the <a href="/docs/strict-mode.html"><code>StrictMode</code></a> component. It lets you opt-in to early warnings for patterns that might cause problems in the future.</p>
-<p>We’ve added two more APIs to the list of deprecated APIs in <code>StrictMode</code>. If you don’t use <code>StrictMode</code> you don’t have to worry; these warning won’t fire for you.</p>
+<p>We've added two more APIs to the list of deprecated APIs in <code>StrictMode</code>. If you don't use
+    <code>StrictMode</code> you don't have to worry; these warning won't fire for you.</p>
 <ul>
 <li><strong>ReactDOM.findDOMNode()</strong> - This API is often misunderstood and most uses of it are unnecessary. It can also be surprisingly slow in React 16. <a href="/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage">See the docs</a> for possible upgrade paths.</li>
-<li><strong>Legacy Context</strong> using contextTypes and getChildContext - Legacy context makes React slightly slower and bigger than it needs to be. That’s why we strongly want to encourage upgrading to the <a href="/docs/context.html">new context API</a>. Hopefully the addition of the <a href="/docs/context.html#classcontexttype"><code>contextType</code></a> API makes this a bit easier.</li>
+<li><strong>Legacy Context</strong> using contextTypes and getChildContext - Legacy context makes React slightly slower
+    and bigger than it needs to be. That's why we strongly want to encourage upgrading to the <a
+        href="/docs/context.html">new context API</a>. Hopefully the addition of the <a
+        href="/docs/context.html#classcontexttype"><code>contextType</code></a> API makes this a bit easier.</li>
 </ul>
-<p>If you’re having trouble upgrading, we’d like to hear your feedback.</p>
+<p>If you're having trouble upgrading, we'd like to hear your feedback.</p>
 <h2 id="installation">Installation</h2>
 <p>React v16.6.0 is available on the npm registry.</p>
 <p>To install React 16 with Yarn, run:</p>

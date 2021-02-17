@@ -9,7 +9,8 @@
 <p>React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.</p>
 <p>In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.</p>
 <h2 id="containment">Containment</h2>
-<p>Some components don’t know their children ahead of time. This is especially common for components like <code>Sidebar</code> or <code>Dialog</code> that represent generic “boxes”.</p>
+<p>Some components don't know their children ahead of time. This is especially common for components like
+    <code>Sidebar</code> or <code>Dialog</code> that represent generic “boxes”.</p>
 <p>We recommend that such components use the special <code>children</code> prop to pass children elements directly into their output:</p>
 <pre class="js{4}"><code>function FancyBorder(props) {
   return (
@@ -130,7 +131,10 @@ class SignUpDialog extends React.Component {
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/gwZbYa?editors=0010"><strong>Try it on CodePen</strong></a></p>
 <h2 id="so-what-about-inheritance">So What About Inheritance?</h2>
-<p>At Facebook, we use React in thousands of components, and we haven’t found any use cases where we would recommend creating component inheritance hierarchies.</p>
-<p>Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.</p>
+<p>At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend
+    creating component inheritance hierarchies.</p>
+<p>Props and composition give you all the flexibility you need to customize a component's look and behavior in an
+    explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React
+    elements, or functions.</p>
 <p>If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.</p>
 </body></html>

@@ -47,12 +47,19 @@ We shipped reddit's first production <a href="https://twitter.com/reactjs"><span
 </td>
 </tr>
 </table>
-<h2 id="reacts-architecture">React’s Architecture</h2>
-<p><a href="http://blog.vjeux.com/">Vjeux</a>, from the React team, gave a talk at OSCON on the history of React and the various optimizations strategies that are implemented. You can also check out the <a href="https://speakerdeck.com/vjeux/oscon-react-architecture">annotated slides</a> or <a href="http://thenewstack.io/author/chrisdawson/">Chris Dawson</a>’s notes titled <a href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">JavaScript’s History and How it Led To React</a>.</p>
+<h2 id="reacts-architecture">React's Architecture</h2>
+<p><a href="http://blog.vjeux.com/">Vjeux</a>, from the React team, gave a talk at OSCON on the history of React and the
+    various optimizations strategies that are implemented. You can also check out the <a
+        href="https://speakerdeck.com/vjeux/oscon-react-architecture">annotated slides</a> or <a
+        href="http://thenewstack.io/author/chrisdawson/">Chris Dawson</a>'s notes titled <a
+        href="http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/">JavaScript's History and How it Led
+        To React</a>.</p>
 <iframe width="650" height="315" src="//www.youtube-nocookie.com/embed/eCf5CquV_Bw" frameborder="0" allowfullscreen>
 </iframe>
 <h2 id="v8-optimizations">v8 optimizations</h2>
-<p>Jakob Kummerow landed <a href="http://www.chromium.org/developers/speed-hall-of-fame#TOC-2014-06-18">two optimizations to V8</a> specifically targeted at optimizing React. That’s really exciting to see browser vendors helping out on performance!</p>
+<p>Jakob Kummerow landed <a href="http://www.chromium.org/developers/speed-hall-of-fame#TOC-2014-06-18">two
+        optimizations to V8</a> specifically targeted at optimizing React. That's really exciting to see browser vendors
+    helping out on performance!</p>
 <h2 id="reusable-components-by-khan-academy">Reusable Components by Khan Academy</h2>
 <p><a href="https://www.khanacademy.org/">Khan Academy</a> released <a href="https://khan.github.io/react-components/">many high quality standalone components</a> they are using. This is a good opportunity to see what React code used in production look like.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> TeX <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;react-components/js/tex.jsx&#39;</span>)<span class="op">;</span></a>
@@ -100,17 +107,21 @@ We shipped reddit's first production <a href="https://twitter.com/reactjs"><span
 <h2 id="saving-time--staying-sane">Saving time &amp; staying sane?</h2>
 <p>When <a href="http://http://kentwilliam.com/">Kent William Innholt</a> who works at <a href="http://mpath.com/">M&gt;Path</a> summed up his experience using React in an <a href="http://kentwilliam.com/articles/saving-time-staying-sane-pros-cons-of-react-js">article</a>.</p>
 <blockquote>
-<p>We’re building an ambitious new web app, where the UI complexity represents most of the app’s complexity overall. It includes a tremendous amount of UI widgets as well as a lot rules on what-to-show-when. This is exactly the sort of situation React.js was built to simplify.</p>
+<p>We're building an ambitious new web app, where the UI complexity represents most of the app's complexity overall. It
+    includes a tremendous amount of UI widgets as well as a lot rules on what-to-show-when. This is exactly the sort of
+    situation React.js was built to simplify.</p>
 <ul>
 <li><strong>Big win</strong>: Tighter coupling of markup and behavior</li>
-<li><strong>Jury’s still out</strong>: CSS lives outside React.js</li>
+<li><strong>Jury's still out</strong>: CSS lives outside React.js</li>
 <li><strong>Big win</strong>: Cascading updates and functional thinking</li>
-<li><strong>Jury’s still out</strong>: Verbose propagation</li>
+<li><strong>Jury's still out</strong>: Verbose propagation</li>
 </ul>
 <p><a href="http://kentwilliam.com/articles/saving-time-staying-sane-pros-cons-of-react-js">Read the article…</a></p>
 </blockquote>
 <h2 id="weather">Weather</h2>
-<p>To finish this round-up, Andrew Gleave made a page that displays the <a href="https://github.com/andrewgleave/react-weather">Weather</a>. It’s great to see that React is also used for small prototypes.</p>
+<p>To finish this round-up, Andrew Gleave made a page that displays the <a
+        href="https://github.com/andrewgleave/react-weather">Weather</a>. It's great to see that React is also used for
+    small prototypes.</p>
 <figure>
 <a href="https://github.com/andrewgleave/react-weather"><img src="../images/blog/weather.png" /></a>
 </figure>

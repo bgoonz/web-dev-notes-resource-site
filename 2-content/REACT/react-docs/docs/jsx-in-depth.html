@@ -37,7 +37,8 @@ function WarningButton() {
   // return React.createElement(CustomButton, {color: &#39;red&#39;}, null);
   return &lt;CustomButton color=&quot;red&quot; /&gt;;
 }</code></pre>
-<p>If you don’t use a JavaScript bundler and loaded React from a <code>&lt;script&gt;</code> tag, it is already in scope as the <code>React</code> global.</p>
+<p>If you don't use a JavaScript bundler and loaded React from a <code>&lt;script&gt;</code> tag, it is already in scope
+    as the <code>React</code> global.</p>
 <h3 id="using-dot-notation-for-jsx-type">Using Dot Notation for JSX Type</h3>
 <p>You can also refer to a React component using dot-notation from within JSX. This is convenient if you have a single module that exports many React components. For example, if <code>MyComponents.DatePicker</code> is a component, you can use it directly from JSX with:</p>
 <pre class="js{10}"><code>import React from &#39;react&#39;;
@@ -114,7 +115,8 @@ function Story(props) {
 <p>You can pass any JavaScript expression as a prop, by surrounding it with <code>{}</code>. For example, in this JSX:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="op">&lt;</span>MyComponent foo<span class="op">={</span><span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span><span class="op">}</span> /&gt;</a></code></pre></div>
 <p>For <code>MyComponent</code>, the value of <code>props.foo</code> will be <code>10</code> because the expression <code>1 + 2 + 3 + 4</code> gets evaluated.</p>
-<p><code>if</code> statements and <code>for</code> loops are not expressions in JavaScript, so they can’t be used in JSX directly. Instead, you can put these in the surrounding code. For example:</p>
+<p><code>if</code> statements and <code>for</code> loops are not expressions in JavaScript, so they can't be used in JSX
+    directly. Instead, you can put these in the surrounding code. For example:</p>
 <pre class="js{3-7}"><code>function NumberDescriber(props) {
   let description;
   if (props.number % 2 == 0) {
@@ -134,13 +136,16 @@ function Story(props) {
 <div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1"><span class="op">&lt;</span>MyComponent message<span class="op">=</span><span class="st">&quot;&amp;lt;3&quot;</span> /&gt;</a>
 <a class="sourceLine" id="cb14-2" title="2"></a>
 <a class="sourceLine" id="cb14-3" title="3"><span class="op">&lt;</span>MyComponent message<span class="op">={</span><span class="st">&#39;&lt;3&#39;</span><span class="op">}</span> /&gt;</a></code></pre></div>
-<p>This behavior is usually not relevant. It’s only mentioned here for completeness.</p>
+<p>This behavior is usually not relevant. It's only mentioned here for completeness.</p>
 <h3 id="props-default-to-true">Props Default to “True”</h3>
 <p>If you pass no value for a prop, it defaults to <code>true</code>. These two JSX expressions are equivalent:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="op">&lt;</span>MyTextBox autocomplete /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb15-2" title="2"></a>
 <a class="sourceLine" id="cb15-3" title="3"><span class="op">&lt;</span>MyTextBox autocomplete<span class="op">={</span><span class="kw">true</span><span class="op">}</span> /&gt;</a></code></pre></div>
-<p>In general, we don’t recommend <em>not</em> passing a value for a prop, because it can be confused with the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015">ES6 object shorthand</a> <code>{foo}</code> which is short for <code>{foo: foo}</code> rather than <code>{foo: true}</code>. This behavior is just there so that it matches the behavior of HTML.</p>
+<p>In general, we don't recommend <em>not</em> passing a value for a prop, because it can be confused with the <a
+        href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015">ES6
+        object shorthand</a> <code>{foo}</code> which is short for <code>{foo: foo}</code> rather than <code>{foo:
+        true}</code>. This behavior is just there so that it matches the behavior of HTML.</p>
 <h3 id="spread-attributes">Spread Attributes</h3>
 <p>If you already have <code>props</code> as an object, and you want to pass it in JSX, you can use <code>...</code> as a “spread” operator to pass the whole props object. These two components are equivalent:</p>
 <pre class="js{7}"><code>function App1() {
@@ -168,7 +173,8 @@ const App = () =&gt; {
   );
 };</code></pre>
 <p>In the example above, the <code>kind</code> prop is safely consumed and <em>is not</em> passed on to the <code>&lt;button&gt;</code> element in the DOM. All other props are passed via the <code>...other</code> object making this component really flexible. You can see that it passes an <code>onClick</code> and <code>children</code> props.</p>
-<p>Spread attributes can be useful but they also make it easy to pass unnecessary props to components that don’t care about them or to pass invalid HTML attributes to the DOM. We recommend using this syntax sparingly.</p>
+<p>Spread attributes can be useful but they also make it easy to pass unnecessary props to components that don't care
+    about them or to pass invalid HTML attributes to the DOM. We recommend using this syntax sparingly.</p>
 <h2 id="children-in-jsx">Children in JSX</h2>
 <p>In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop: <code>props.children</code>. There are several different ways to pass children:</p>
 <h3 id="string-literals-1">String Literals</h3>
@@ -258,7 +264,8 @@ function ListOfTenThings() {
 }</code></pre>
 <p>Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering. This usage is not common, but it works if you want to stretch what JSX is capable of.</p>
 <h3 id="booleans-null-and-undefined-are-ignored">Booleans, Null, and Undefined Are Ignored</h3>
-<p><code>false</code>, <code>null</code>, <code>undefined</code>, and <code>true</code> are valid children. They simply don’t render. These JSX expressions will all render to the same thing:</p>
+<p><code>false</code>, <code>null</code>, <code>undefined</code>, and <code>true</code> are valid children. They simply
+    don't render. These JSX expressions will all render to the same thing:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="op">&lt;</span>div /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb28-2" title="2"></a>
 <a class="sourceLine" id="cb28-3" title="3"><span class="op">&lt;</span>div<span class="op">&gt;</span>&lt;/div<span class="op">&gt;</span></a>

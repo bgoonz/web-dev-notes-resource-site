@@ -1,10 +1,8 @@
-
-
 There are several ways to declare a component in React.
 
 ## Inheriting from `React.Component`
 
-A component can be defined as a ES6 style JS class that [`extends`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends) `React.Component`. This declaration style gives you the most functionality because it allows you to set component state and use lifecycle methods. It also requires more boilerplate code, so you should prefer functional components when you don't need the extra power.
+A component can be defined as a ES6 style JS class that [ `extends` ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends) `React.Component` . This declaration style gives you the most functionality because it allows you to set component state and use lifecycle methods. It also requires more boilerplate code, so you should prefer functional components when you don't need the extra power.
 
     class List extends React.Component {
       constructor() {
@@ -33,7 +31,7 @@ A component can be defined as a ES6 style JS class that [`extends`](https://deve
       }
     }
 
-**NB**: In the earlier days of React, before using ES6 style classes was commonplace, components were usually created using the `React.createclass()` function. You'll still sometimes see this syntax in the wild. If in the future you ever find yourself needing to create a React component without ES6 style classes there is a separate module React supports named [`create-react-class`](https://reactjs.org/docs/react-without-es6.html).
+**NB**: In the earlier days of React, before using ES6 style classes was commonplace, components were usually created using the `React.createclass()` function. You'll still sometimes see this syntax in the wild. If in the future you ever find yourself needing to create a React component without ES6 style classes there is a separate module React supports named [ `create-react-class` ](https://reactjs.org/docs/react-without-es6.html).
 
 ## Purely Functional Components
 

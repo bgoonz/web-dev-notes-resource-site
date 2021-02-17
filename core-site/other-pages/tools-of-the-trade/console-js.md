@@ -24,13 +24,13 @@ This method is mainly used to print the value passed to it to the console. Any t
 **Example**
 -----------
 
-console.log('JavaScript');  
-console.log(7);  
-console.log(true);  
-console.log(null);  
-console.log(undefined);  
-console.log(\[1, 2, 3\]);  
-console.log({a: 1, b: 2, c: 3});
+console.log('JavaScript'); 
+console.log(7); 
+console.log(true); 
+console.log(null); 
+console.log(undefined); 
+console.log(\[1, 2, 3\]); 
+console.log({a: 1, b: 2, c: 3}); 
 
 ![Image for post](https://miro.medium.com/max/60/1*L0vaz4jpLViLIJ-oXr2o6Q.png?q=20)
 
@@ -43,7 +43,7 @@ This method is useful while testing code. It is used to log errors to the browse
 Example
 -------
 
-console.error('Error found');
+console.error('Error found'); 
 
 ![Image for post](https://miro.medium.com/max/60/1*bLNgJWF1wGx1NRd53mTYPw.png?q=20)
 
@@ -56,7 +56,7 @@ This method is also used to test code. Usually, it helps in throwing warnings to
 Example
 -------
 
-console.warn('Warning!');
+console.warn('Warning!'); 
 
 ![Image for post](https://miro.medium.com/max/60/1*z61it_h7bxHF84T_DCATcA.png?q=20)
 
@@ -83,11 +83,11 @@ Example
 -------
 
 console.time('timer'); const hello =  function(){  
-  console.log('Hello Console!');  
+  console.log('Hello Console!'); 
 }const bye = function(){  
-  console.log('Bye Console!');  
-}hello(); // calling hello();  
-bye(); // calling bye();console.timeEnd('timer');
+  console.log('Bye Console!'); 
+}hello(); // calling hello(); 
+bye(); // calling bye(); console.timeEnd('timer'); 
 
 ![Image for post](https://miro.medium.com/max/60/1*S63BR8aOlGfYfAhgaR9TJw.png?q=20)
 
@@ -114,7 +114,7 @@ Example
 -------
 
 for(let i=0; i<3; i++){  
-  console.count(i);  
+  console.count(i); 
 }
 
 ![Image for post](https://miro.medium.com/max/60/1*hfucVhBEtQBFjgzTv3QoFg.png?q=20)
@@ -128,12 +128,12 @@ These methods `group()` and `groupEnd()` allows us to group contents in a separa
 Example
 -------
 
-console.group('group1');   
-  console.warn('warning');   
-  console.error('error');   
-  console.log('I belong to a group');   
-console.groupEnd('group1');   
-console.log('I dont belong to any group');
+console.group('group1'); 
+  console.warn('warning'); 
+  console.error('error'); 
+  console.log('I belong to a group'); 
+console.groupEnd('group1'); 
+console.log('I dont belong to any group'); 
 
 ![Image for post](https://miro.medium.com/max/60/1*Q_Ok_EnFSioEiNES7vpq3A.png?q=20)
 
@@ -146,9 +146,9 @@ You can also add Styling to the console logs in order to make logs look fancy. I
 Example
 -------
 
-const spacing = '10px';   
-const styles =  \`padding: ${spacing}; background-color: white; color: red; font-style: italic; border: 1px solid black; font-size: 2em;\`;   
-console.log('%cI am a styled log', styles);
+const spacing = '10px'; 
+const styles =  \ `padding: ${spacing}; background-color: white; color: red; font-style: italic; border: 1px solid black; font-size: 2em;\` ; 
+console.log('%cI am a styled log', styles); 
 
 ![Image for post](https://miro.medium.com/max/60/1*GgIhLJQK-_yV2FdLvV-u6A.png?q=20)
 
@@ -159,6 +159,5 @@ Output
 The `console` object is very much useful for the developers to debug the code. We as developers often use only the `log` function. Let's start using the console object to its fullest potential so that it's easier to debug and to view the browser logs vividly. I hope this article was helpful.
 
 Thank you for reading!
-
 
 [Source](https://medium.com/javascript-in-plain-english/stop-using-console-log-in-javascript-d29d6c24dc26)

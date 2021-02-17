@@ -23,7 +23,8 @@
 <blockquote>
 <p><strong>Note:</strong></p>
 <p>Callback refs will continue to be supported in addition to the new <code>createRef</code> API.</p>
-<p>You don’t need to replace callback refs in your components. They are slightly more flexible, so they will remain as an advanced feature.</p>
+<p>You don't need to replace callback refs in your components. They are slightly more flexible, so they will remain as
+    an advanced feature.</p>
 </blockquote>
 <p><a href="/docs/refs-and-the-dom.html">Learn more about the new <code>createRef</code> API here.</a></p>
 <h2 id="forwardref-api"><code>forwardRef</code> API</h2>
@@ -35,8 +36,16 @@
 <p>Ref forwarding is not limited to “leaf” components that render DOM nodes. If you write <a href="/docs/higher-order-components.html">higher order components</a>, we recommend using ref forwarding to automatically pass the ref down to the wrapped class component instances.</p>
 <p><a href="/docs/forwarding-refs.html">Learn more about the forwardRef API here.</a></p>
 <h2 id="component-lifecycle-changes">Component Lifecycle Changes</h2>
-<p>React’s class component API has been around for years with little change. However, as we add support for more advanced features (such as <a href="/docs/react-component.html#componentdidcatch">error boundaries</a> and the upcoming <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">async rendering mode</a>) we stretch this model in ways that it was not originally intended.</p>
-<p>For example, with the current API, it is too easy to block the initial render with non-essential logic. In part this is because there are too many ways to accomplish a given task, and it can be unclear which is best. We’ve observed that the interrupting behavior of error handling is often not taken into consideration and can result in memory leaks (something that will also impact the upcoming async rendering mode). The current class component API also complicates other efforts, like our work on <a href="https://twitter.com/trueadm/status/944908776896978946">prototyping a React compiler</a>.</p>
+<p>React's class component API has been around for years with little change. However, as we add support for more
+    advanced features (such as <a href="/docs/react-component.html#componentdidcatch">error boundaries</a> and the
+    upcoming <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">async rendering mode</a>) we stretch this model
+    in ways that it was not originally intended.</p>
+<p>For example, with the current API, it is too easy to block the initial render with non-essential logic. In part this
+    is because there are too many ways to accomplish a given task, and it can be unclear which is best. We've observed
+    that the interrupting behavior of error handling is often not taken into consideration and can result in memory
+    leaks (something that will also impact the upcoming async rendering mode). The current class component API also
+    complicates other efforts, like our work on <a
+        href="https://twitter.com/trueadm/status/944908776896978946">prototyping a React compiler</a>.</p>
 <p>Many of these issues are exacerbated by a subset of the component lifecycles (<code>componentWillMount</code>, <code>componentWillReceiveProps</code>, and <code>componentWillUpdate</code>). These also happen to be the lifecycles that cause the most confusion within the React community. For these reasons, we are going to deprecate those methods in favor of better alternatives.</p>
 <p>We recognize that this change will impact many existing components. Because of this, the migration path will be as gradual as possible, and will provide escape hatches. (At Facebook, we maintain more than 50,000 React components. We depend on a gradual release cycle too!)</p>
 <blockquote>
@@ -44,7 +53,13 @@
 <p>Deprecation warnings will be enabled with a future 16.x release, <strong>but the legacy lifecycles will continue to work until version 17</strong>.</p>
 <p>Even in version 17, it will still be possible to use them, but they will be aliased with an “UNSAFE_” prefix to indicate that they might cause issues. We have also prepared an <a href="https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles">automated script to rename them</a> in existing code.</p>
 </blockquote>
-<p>In addition to deprecating unsafe lifecycles, we are also adding a couple of new lifecyles: * <a href="/docs/react-component.html#static-getderivedstatefromprops"><code>getDerivedStateFromProps</code></a> is being added as a safer alternative to the legacy <code>componentWillReceiveProps</code>. (Note that <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">in most cases you don’t need either of them</a>.) * <a href="/docs/react-component.html#getsnapshotbeforeupdate"><code>getSnapshotBeforeUpdate</code></a> is being added to support safely reading properties from e.g. the DOM before updates are made.</p>
+<p>In addition to deprecating unsafe lifecycles, we are also adding a couple of new lifecyles: * <a
+        href="/docs/react-component.html#static-getderivedstatefromprops"><code>getDerivedStateFromProps</code></a> is
+    being added as a safer alternative to the legacy <code>componentWillReceiveProps</code>. (Note that <a
+        href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">in most cases you don't need either of
+        them</a>.) * <a
+        href="/docs/react-component.html#getsnapshotbeforeupdate"><code>getSnapshotBeforeUpdate</code></a> is being
+    added to support safely reading properties from e.g. the DOM before updates are made.</p>
 <p><a href="/blog/2018/03/27/update-on-async-rendering.html">Learn more about these lifecycle changes here.</a></p>
 <h2 id="strictmode-component"><code>StrictMode</code> Component</h2>
 <p><code>StrictMode</code> is a tool for highlighting potential problems in an application. Like <code>Fragment</code>, <code>StrictMode</code> does not render any visible UI. It activates additional checks and warnings for its descendants.</p>

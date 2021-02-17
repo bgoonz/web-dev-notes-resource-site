@@ -518,7 +518,7 @@
         "D": "`0, 10 and 10, 20`"
     },
     "correctAnswer": "C",
-    "answerExplanation": "Regular functions cannot be stopped mid-way after invocation. However, a generator function can be \"stopped\" midway, and later continue from where it stopped. Every time a generator function encounters a `yield` keyword, the function yields the value specified after it. Note that the generator function in that case doesn’t _return_ the value, it _yields_ the value.\n\nFirst, we initialize the generator function with `i` equal to `10`. We invoke the generator function using the `next()` method. The first time we invoke the generator function, `i` is equal to `10`. It encounters the first `yield` keyword: it yields the value of `i`. The generator is now \"paused\", and `10` gets logged.\n\nThen, we invoke the function again with the `next()` method. It starts to continue where it stopped previously, still with `i` equal to `10`. Now, it encounters the next `yield` keyword, and yields `i * 2`. `i` is equal to `10`, so it returns `10 * 2`, which is `20`. This results in `10, 20`."
+    "answerExplanation": "Regular functions cannot be stopped mid-way after invocation. However, a generator function can be \"stopped\" midway, and later continue from where it stopped. Every time a generator function encounters a `yield` keyword, the function yields the value specified after it. Note that the generator function in that case doesn't _return_ the value, it _yields_ the value.\n\nFirst, we initialize the generator function with `i` equal to `10`. We invoke the generator function using the `next()` method. The first time we invoke the generator function, `i` is equal to `10`. It encounters the first `yield` keyword: it yields the value of `i`. The generator is now \"paused\", and `10` gets logged.\n\nThen, we invoke the function again with the `next()` method. It starts to continue where it stopped previously, still with `i` equal to `10`. Now, it encounters the next `yield` keyword, and yields `i * 2`. `i` is equal to `10`, so it returns `10 * 2`, which is `20`. This results in `10, 20`."
 }, {
     "id": 45,
     "question": " What does this return?",
@@ -554,7 +554,7 @@
         "D": "`[\"name\", \"Lydia\"], [\"age\", 21]`"
     },
     "correctAnswer": "B",
-    "answerExplanation": "With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged."
+    "answerExplanation": "With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it's iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged."
 }, {
     "id": 48,
     "question": " What's the output?",
@@ -590,7 +590,7 @@
         "D": "`[ 3 x empty ]`"
     },
     "correctAnswer": "C",
-    "answerExplanation": "When mapping over the array, the value of `num` is equal to the element it’s currently looping over. In this case, the elements are numbers, so the condition of the if statement `typeof num === \"number\"` returns `true`. The map function creates a new array and inserts the values returned from the function.\n\nHowever, we don’t return a value. When we don’t return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`."
+    "answerExplanation": "When mapping over the array, the value of `num` is equal to the element it's currently looping over. In this case, the elements are numbers, so the condition of the if statement `typeof num === \"number\"` returns `true`. The map function creates a new array and inserts the values returned from the function.\n\nHowever, we don't return a value. When we don't return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`."
 }, {
     "id": 51,
     "question": " What's the output?",
@@ -1774,7 +1774,7 @@
         "D": "`['🍇', '🍌', '🍊', '🍎']`"
     },
     "correctAnswer": "C",
-    "answerExplanation": "First, we invoke the `slice` method on the fruit array. The slice method does not modify the original array, but returns the value that it sliced off the array: the banana emoji.\nThen, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`.\nAt last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value, ‘🍇’ in this case,  as the first element in the array.  The fruit array now consists of `['🍇', '🍊', '🍎']`."
+    "answerExplanation": "First, we invoke the `slice` method on the fruit array. The slice method does not modify the original array, but returns the value that it sliced off the array: the banana emoji.\nThen, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`.\nAt last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value, ‘🍇' in this case,  as the first element in the array.  The fruit array now consists of `['🍇', '🍊', '🍎']`."
 }, {
     "id": 150,
     "question": " What's the output?",
@@ -1786,7 +1786,7 @@
         "D": "`ReferenceError`"
     },
     "correctAnswer": "B",
-    "answerExplanation": "Object keys are converted to strings. \n\nSince the value of  `dog` is an object,  `animals[dog]` actually means that we’re creating a new property called `\"object Object\"` equal to the new object. `animals[\"object Object\"]` is now equal to `{ emoji: \"🐶\", name: \"Mara\"}`.\n\n`cat` is also an object, which means that `animals[cat]` actually means that we’re overwriting the value of  `animals[``\"``object Object``\"``]` with the new cat properties. \n\nLogging `animals[dog]`, or actually `animals[\"object Object\"]` since converting the `dog` object to a string results `\"object Object\"`, returns the `{ emoji: \"🐈\", name: \"Sara\" }`."
+    "answerExplanation": "Object keys are converted to strings. \n\nSince the value of  `dog` is an object,  `animals[dog]` actually means that we're creating a new property called `\"object Object\"` equal to the new object. `animals[\"object Object\"]` is now equal to `{ emoji: \"🐶\", name: \"Mara\"}`.\n\n`cat` is also an object, which means that `animals[cat]` actually means that we're overwriting the value of  `animals[``\"``object Object``\"``]` with the new cat properties. \n\nLogging `animals[dog]`, or actually `animals[\"object Object\"]` since converting the `dog` object to a string results `\"object Object\"`, returns the `{ emoji: \"🐈\", name: \"Sara\" }`."
 }, {
     "id": 151,
     "question": " What's the output?",
@@ -1810,7 +1810,7 @@
         "D": "`'Third'`"
     },
     "correctAnswer": "D",
-    "answerExplanation": "The `Promise.all` method runs the passed promises in parallel. If one promise fails, the `Promise.all` method _rejects) with the value of the rejected promise. In this case, `promise3` rejected with the value `\"Third\"`. We’re catching the rejected value in the chained `catch` method on the `runPromises` invocation to catch any errors  within the `runPromises` function. Only `\"Third\"` gets logged, since `promise3` rejected with this value."
+    "answerExplanation": "The `Promise.all` method runs the passed promises in parallel. If one promise fails, the `Promise.all` method _rejects) with the value of the rejected promise. In this case, `promise3` rejected with the value `\"Third\"`. We're catching the rejected value in the chained `catch` method on the `runPromises` invocation to catch any errors  within the `runPromises` function. Only `\"Third\"` gets logged, since `promise3` rejected with this value."
 }, {
     "id": 153,
     "question": " What should the value of `method` be to log `{ name: \"Lydia\", age: 22 }`? ",
@@ -1822,7 +1822,7 @@
         "D": "`forEach`"
     },
     "correctAnswer": "C",
-    "answerExplanation": "The `fromEntries` method turns a 2d array into an object. The first element in each subarray will be the key, and the second element in each subarray will be the value. In this case, we’re mapping over the `keys` array, which returns an array which first element is the item on the key array on the current index, and the second element is the item of the values array on the current index. \n\nThis creates an array of subarrays containing the correct keys and values, which results in `{ name: \"Lydia\", age: 22 }`"
+    "answerExplanation": "The `fromEntries` method turns a 2d array into an object. The first element in each subarray will be the key, and the second element in each subarray will be the value. In this case, we're mapping over the `keys` array, which returns an array which first element is the item on the key array on the current index, and the second element is the item of the values array on the current index. \n\nThis creates an array of subarrays containing the correct keys and values, which results in `{ name: \"Lydia\", age: 22 }`"
 }, {
     "id": 154,
     "question": " What's the output?",

@@ -8,7 +8,10 @@
 <body>;
 <p>At the React.js conference in late January 2015, we revealed our next major technology in the React family: <a href="/blog/2015/02/20/introducing-relay-and-graphql.html">Relay</a>.</p>
 <p>Relay is a new way of structuring client applications that co-locates data-fetching requirements and React components. Instead of placing data fetching logic in some other part of the client application – or embedding this logic in a custom endpoint on the server – we instead co-locate a <em>declarative</em> data-fetching specification alongside the React component. The language of this declarative specification is GraphQL.</p>
-<p>GraphQL was not invented to enable Relay. In fact, GraphQL predates Relay by nearly three years. It was invented during the move from Facebook’s HTML5-driven mobile applications to purely native applications. It is a query language for graph data that powers the lion’s share of interactions in the Facebook Android and iOS applications. Any user of the native iOS or Android app in the last two years has used an app powered by GraphQL.</p>
+<p>GraphQL was not invented to enable Relay. In fact, GraphQL predates Relay by nearly three years. It was invented
+    during the move from Facebook's HTML5-driven mobile applications to purely native applications. It is a query
+    language for graph data that powers the lion's share of interactions in the Facebook Android and iOS applications.
+    Any user of the native iOS or Android app in the last two years has used an app powered by GraphQL.</p>
 <p>We plan to open-source a reference implementation of a GraphQL server and publish a language specification in the coming months. Our goal is to evolve GraphQL to adapt to a wide range of backends, so that projects and companies can use this technology to access their own data. We believe that this is a compelling way to structure servers and to provide powerful abstractions, frameworks and tools – including, but not exclusively, Relay – for product developers.</p>
 <h2 id="what-is-graphql">What is GraphQL?</h2>
 <p>A GraphQL query is a string interpreted by a server that returns data in a specified format. Here is an example query:</p>
@@ -24,7 +27,8 @@
 <a class="sourceLine" id="cb1-10" title="10">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb1-11" title="11">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb1-12" title="12"><span class="op">}</span></a></code></pre></div>
-<p>(Note: this syntax is slightly different from previous GraphQL examples. We’ve recently been making improvements to the language.)</p>
+<p>(Note: this syntax is slightly different from previous GraphQL examples. We've recently been making improvements to
+    the language.)</p>
 <p>And here is the response to that query.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="dt">&quot;user&quot;</span> <span class="fu">:</span> <span class="fu">{</span></a>
@@ -50,7 +54,8 @@
 <li><strong>Introspective:</strong> GraphQL is introspective. Clients and tools can query the type system using the GraphQL syntax itself. This is a powerful platform for building tools and client software, such as automatic parsing of incoming data into strongly-typed interfaces. It is especially useful in statically typed languages such as Swift, Objective-C and Java, as it obviates the need for repetitive and error-prone code to shuffle raw, untyped JSON into strongly-typed business objects.</li>
 </ul>
 <h2 id="why-invent-something-new">Why invent something new?</h2>
-<p>Obviously GraphQL is not the first system to manage client-server interactions. In today’s world there are two dominant architectural styles for client-server interaction: REST and <em>ad hoc</em> endpoints.</p>
+<p>Obviously GraphQL is not the first system to manage client-server interactions. In today's world there are two
+    dominant architectural styles for client-server interaction: REST and <em>ad hoc</em> endpoints.</p>
 <h3 id="rest">REST</h3>
 <p>REST, an acronym for Representational State Transfer, is an architectural style rather than a formal protocol. There is actually much debate about what exactly REST is and is not. We wish to avoid such debates. We are interested in the typical attributes of systems that <em>self-identify</em> as REST, rather than systems which are formally REST.</p>
 <p>Objects in a typical REST system are addressable by URI and interacted with using verbs in the HTTP protocol. An HTTP GET to a particular URI fetches an object and returns a server-specified set of fields. An HTTP PUT edits an object; an HTTP DELETE deletes an object; and so on.</p>
@@ -62,7 +67,10 @@
 <li>Many of these attributes are linked to the fact that “REST is intended for long-lived network-based applications that span multiple organizations” <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">according to its inventor</a>. This is not a requirement for APIs that serve a client app built within the same organization.</li>
 </ul>
 <p>Nearly all externally facing REST APIs we know of trend or end up in these non-ideal states, as well as nearly all <em>internal</em> REST APIs. The consequences of opaqueness and over-fetching are more severe in internal APIs since their velocity of change and level of usage is almost always higher.</p>
-<p>Because of multiple round-trips and over-fetching, applications built in the REST style inevitably end up building <em>ad hoc</em> endpoints that are superficially in the REST style. These actually couple the data to a particular view which explicitly violates one of REST’s major goals. Most REST systems of any complexity end up as a continuum of endpoints that span from “traditional” REST to <em>ad hoc</em> endpoints.</p>
+<p>Because of multiple round-trips and over-fetching, applications built in the REST style inevitably end up building
+    <em>ad hoc</em> endpoints that are superficially in the REST style. These actually couple the data to a particular
+    view which explicitly violates one of REST's major goals. Most REST systems of any complexity end up as a continuum
+    of endpoints that span from “traditional” REST to <em>ad hoc</em> endpoints.</p>
 <h3 id="ad-hoc-endpoints">Ad Hoc Endpoints</h3>
 <p>Many applications have no formalized client-server contract. Product developers access server capabilities through <em>ad hoc</em> endpoints and write custom code to fetch the data they need. Servers define procedures, and they return data. This approach has the virtue of simplicity, but can often become untenable as systems age.</p>
 <ul>
@@ -73,7 +81,15 @@
 </ul>
 <p>We believe that GraphQL represents a novel way of structuring the client-server contract. Servers publish a type system specific to their application, and GraphQL provides a unified language to query data within the constraints of that type system. That language allows product developers to express data requirements in a form natural to them: a declarative and hierarchal one.</p>
 <p>This is a liberating platform for product developers. With GraphQL, no more contending with <em>ad hoc</em> endpoints or object retrieval with multiple roundtrips to access server data; instead an elegant, hierarchical, declarative query dispatched to a single endpoint. No more frequent jumps between client and server development environments to do experimentation or to change or create views of existing data; instead experiments are done and new views built within a native, client development environment exclusively. No more shuffling unstructured data from <em>ad hoc</em> endpoints into business objects; instead a powerful, introspective type system that serves as a platform for tool building.</p>
-<p>Product developers are free to focus on their client software and requirements while rarely leaving their development environment; they can more confidently support shipped clients as a system evolves; and they are using a protocol designed to operate well within the constraints of mobile applications. Product developers can query for exactly what they want, in the way they think about it, across their entire application’s data model.</p>
-<h2 id="whats-next">What’s next?</h2>
-<p>Over the coming months, we will share more technical details about GraphQL, including additional language features, tools that support it, and how it is built and used at Facebook. These posts will culminate in a formal specification of GraphQL to guide implementors across various languages and platforms. We also plan on releasing a reference implementation in the summer, in order to provide a basis for custom deployments and a platform for experimentation. We’re incredibly excited to share this system and work with the open source community to improve it.</p>
+<p>Product developers are free to focus on their client software and requirements while rarely leaving their development
+    environment; they can more confidently support shipped clients as a system evolves; and they are using a protocol
+    designed to operate well within the constraints of mobile applications. Product developers can query for exactly
+    what they want, in the way they think about it, across their entire application's data model.</p>
+<h2 id="whats-next">What's next?</h2>
+<p>Over the coming months, we will share more technical details about GraphQL, including additional language features,
+    tools that support it, and how it is built and used at Facebook. These posts will culminate in a formal
+    specification of GraphQL to guide implementors across various languages and platforms. We also plan on releasing a
+    reference implementation in the summer, in order to provide a basis for custom deployments and a platform for
+    experimentation. We're incredibly excited to share this system and work with the open source community to improve
+    it.</p>
 </body></html>

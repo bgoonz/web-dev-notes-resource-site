@@ -6,13 +6,15 @@
   <title>Document</title>
 </head>
 <body>;
-<p>We’ve made an entirely new version of the devtools, and we want you to try it out!</p>
+<p>We've made an entirely new version of the devtools, and we want you to try it out!</p>
 <figure>
 <img src="../images/blog/devtools-full.gif" alt="The full devtools gif" /><figcaption>The full devtools gif</figcaption>
 </figure>
 <h2 id="why-entirely-new">Why entirely new?</h2>
 <p>Perhaps the biggest reason was to create a defined API for dealing with internals, so that other tools could benefit as well and not have to depend on implementation details. This gives us more freedom to refactor things internally without worrying about breaking tooling.</p>
-<p>The current version of the devtools is a fork of Blink’s “Elements” pane, and is imperative, mutation-driven, and tightly integrated with Chrome-specific APIs. The new devtools are much less coupled to Chrome, and easier to reason about thanks to React.</p>
+<p>The current version of the devtools is a fork of Blink's “Elements” pane, and is imperative, mutation-driven, and
+    tightly integrated with Chrome-specific APIs. The new devtools are much less coupled to Chrome, and easier to reason
+    about thanks to React.</p>
 <h2 id="what-are-the-benefits">What are the benefits?</h2>
 <ul>
 <li>100% React</li>
@@ -50,8 +52,12 @@
 </ul>
 <p><img src="../images/blog/devtools-side-pane.gif" /></p>
 <h2 id="how-do-i-install-it">How do I install it?</h2>
-<p>First, disable the Chrome web store version, or it will break things. Then <a href="https://github.com/facebook/react-devtools/releases">download the .crx</a> and drag it into your <code>chrome://extensions</code> page. If it’s not working to drag it from the downloads bar, try opening your downloads folder and drag it from there.</p>
-<p>Once we’ve determined that there aren’t any major regressions, we’ll update the official web store version, and everyone will be automatically upgraded.</p>
+<p>First, disable the Chrome web store version, or it will break things. Then <a
+        href="https://github.com/facebook/react-devtools/releases">download the .crx</a> and drag it into your
+    <code>chrome://extensions</code> page. If it's not working to drag it from the downloads bar, try opening your
+    downloads folder and drag it from there.</p>
+<p>Once we've determined that there aren't any major regressions, we'll update the official web store version, and
+    everyone will be automatically upgraded.</p>
 <h3 id="also-firefox">Also Firefox!</h3>
 <p>We also have an initial version of the devtools for Firefox, which you can download from the same <a href="https://github.com/facebook/react-devtools/releases">release page</a>.</p>
 <h2 id="feedback-welcome">Feedback welcome</h2>

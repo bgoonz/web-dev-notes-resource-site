@@ -5,28 +5,174 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>problems</title>
 <style type="text/css">
-HTML {font-size: small; font-family: sans-serif}
-BODY {background: #F8F8FA}
-A {text-decoration: none}
-A:hover {color: #FFF; background: #006699; border-radius: 8px; padding-left: 3px; padding-right: 3px;}
-TABLE.fancy {background: #DFDFDF; border-left: 1px solid;
-   border-top: 1px solid; border-bottom: 0px solid; border-color: #FFF}
-TABLE.fancy TD {border-right: 1px solid; border-bottom: 1px solid;
-  border-color: #FFF; text-align: center; padding-right: 5px}
-TABLE.fancy TD.no-right {border-right: 0px}
-TABLE.fancy TD.right {text-align: right}
-TABLE.fancy TD.left {text-align: left}
-TABLE.fancy TD.center {text-align: center}
-TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: center;
-   background: #488CB1; color: #FFF; border-color: #FFF; font-weight: bold}
-.anchor {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background: #006699; color: #FFF}
-.dark-blue {font-weight: bold; border-top: 0px solid; text-align: center;
-   border-bottom: 1px solid; background:#00537D; color: #FFF}
-.no-top-border {border-top: 0px}
-.centered {margin: auto}
-.rZ {text-align: right}
-.row2 {background: #D3D3E1}
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+    HTML {
+    font-size: medium;
+    font-family: Garamond
+    }
+
+    BODY {
+    background: black
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#1F2739;
+    }
+    h1 {
+    font-size:3em;
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+    }
+    p {
+    color: grey;
+    }
+
+    A {
+    text-decoration: none color:black;
+    }
+
+    A:hover {
+    color: red;
+    background: whitesmoke;
+    border-radius: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    }
+
+    TABLE.fancy {
+    background: #fffefe;
+    border-left: 1px solid;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid;
+    border-bottom: 0px solid;
+    border-color: #FFF;
+    overflow-y:scroll;
+
+    width: 80%;
+
+    display: table;
+    padding: 0 0 8em 0;
+    }
+
+    TABLE.fancy TD {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #FFF;
+    text-align: center;
+    padding-right: 5px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+    }
+    TABLE.fancy tr:nth-child(odd) {
+    background-color: #323C50;
+    }
+    TABLE.fancy tr:nth-child(even) {
+    background-color: #2C3446;
+    }
+
+    TABLE.fancy th {
+    background-color: #1F2739;
+    }
+    TABLE.fancy td, TABLE.fancy th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left:2%;
+    }
+    TABLE.fancy tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+    }
+    TABLE.fancy td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px
+    6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+    }
+
+    @media (max-width: 800px) {
+    TABLE.fancy td:nth-child(4),
+    TABLE.fancy th:nth-child(4) { display: none; }
+    }
+    TABLE.fancy TD.no-right {
+    border-right: 0px
+    }
+
+    TABLE.fancy TD.right {
+    text-align: right
+    }
+
+    TABLE.fancy TD.left {
+    text-align: left
+    }
+
+    TABLE.fancy TD.center {
+    text-align: center
+    }
+
+    TABLE.fancy TH {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    text-align: center;
+    background: black;
+    color: #FFF;
+    border-color: #FFF;
+    font-weight: bold;
+    padding: 12px 15px;
+    }
+
+    .anchor {
+    font-weight: bold;
+    border-top: 0px solid;
+    text-align: center;
+    border-bottom: 1px solid;
+    background: black;
+    color: #FFF
+    }
+
+    .dark-blue {
+    font-weight: bold;
+    border-top: 0px solid;
+    text-align: center;
+    border-bottom: 1px solid;
+    background: black;
+    color: #FFF
+    }
+
+    .no-top-border {
+    border-top: 0px
+    }
+
+    .centered {
+    margin: auto
+    }
+
+    .rZ {
+    text-align: right
+    }
+
+    .row2 {
+    background: #D3D3E1
+    }
 </style>
 </head>
 
@@ -44,7 +190,16 @@ TABLE.fancy TH {border-right: 1px solid; border-bottom: 1px solid; text-align: c
 <tr class="row2"><td class="left"><a href="01-arrow-full-name.js">01-arrow-full-name.js</a>&nbsp;</td><td class="left"><a href="06-calculator.js">06-calculator.js</a>&nbsp;</td><td class="left"><a href="10-change-context.js">10-change-context.js</a>&nbsp;</td><td class="left"><a href="14-fancy-calculator.js">14-fancy-calculator.js</a>&nbsp;</td><td class="left"><a href="18-call-me-later.js">18-call-me-later.js</a>&nbsp;</td><td class="left"><a href="22-dynamic-divide.js">22-dynamic-divide.js</a>&nbsp;</td><td class="left"><a href="26-coupon.js">26-coupon.js</a>&nbsp;</td><td class="left"><a href="30-coin-collector.js">30-coin-collector.js</a>&nbsp;</td></tr>
 <tr><td class="left"><a href="02-arrow-my-map.js">02-arrow-my-map.js</a>&nbsp;</td><td class="left"><a href="07-make-dog.js">07-make-dog.js</a>&nbsp;</td><td class="left"><a href="11-bound-by-arg.js">11-bound-by-arg.js</a>&nbsp;</td><td class="left"><a href="15-interrupter.js">15-interrupter.js</a>&nbsp;</td><td class="left"><a href="19-lazy-adder.js">19-lazy-adder.js</a>&nbsp;</td><td class="left"><a href="23-smoothie-machine.js">23-smoothie-machine.js</a>&nbsp;</td><td class="left"><a href="27-arrow-reverse.js">27-arrow-reverse.js</a>&nbsp;</td><td class="left"><a href="31-curried-sum.js">31-curried-sum.js</a>&nbsp;</td></tr>
 <tr class="row2"><td class="left"><a href="03-arrow-rest-sum.js">03-arrow-rest-sum.js</a>&nbsp;</td><td class="left"><a href="08-arrow-mirror-array.js">08-arrow-mirror-array.js</a>&nbsp;</td><td class="left"><a href="12-set-time-out.js">12-set-time-out.js</a>&nbsp;</td><td class="left"><a href="16-count-down.js">16-count-down.js</a>&nbsp;</td><td class="left"><a href="20-call-on-target.js">20-call-on-target.js</a>&nbsp;</td><td class="left"><a href="24-closure-dynamic-multi.js">24-closure-dynamic-multi.js</a>&nbsp;</td><td class="left"><a href="28-bind-set-time-out.js">28-bind-set-time-out.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="04-arrow-average-value.js">04-arrow-average-value.js</a>&nbsp;</td></tr>
+<tr>
+    <td class="left"><a href="04-arrow-average-value.js">04-arrow-average-value.js</a>&nbsp;</td>
+    <td class="left"></td>
+    <td class="left"></td>
+    <td class="left"></td>
+    <td class="left"></td>
+    <td class="left"></td>
+    <td class="left"></td>
+    <td class="left"></td>
+</tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">

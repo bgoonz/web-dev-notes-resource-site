@@ -4,7 +4,7 @@ const util = require('util')
 
 const dummyFunctions = new Map()
 
-// Node 4 doesn’t support process.emitWarning(message, 'DeprecationWarning', code).
+// Node 4 doesn't support process.emitWarning(message, 'DeprecationWarning', code).
 const warnDeprecation = (message, code) => {
   let dummy = dummyFunctions.get(code)
 

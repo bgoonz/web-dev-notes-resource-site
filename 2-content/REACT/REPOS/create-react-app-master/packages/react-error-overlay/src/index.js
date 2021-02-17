@@ -68,7 +68,7 @@ export function startReportingRuntimeErrors(options: RuntimeReportingOptions) {
   }
   if (options.launchEditorEndpoint) {
     console.warn(
-      'Warning: `startReportingRuntimeErrors` doesn’t accept ' +
+        'Warning: `startReportingRuntimeErrors` doesn't accept ' +
         '`launchEditorEndpoint` argument anymore. Use `listenToOpenInEditor` ' +
         'instead with your own implementation to open errors in editor '
     );

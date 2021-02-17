@@ -70,7 +70,8 @@ function Glossary(props) {
     &lt;/dl&gt;
   );
 }</code></pre>
-<p>When you don’t need any props on the Fragment tag you can use the <a href="/docs/fragments.html#short-syntax">short syntax</a>, if your tooling supports it:</p>
+<p>When you don't need any props on the Fragment tag you can use the <a href="/docs/fragments.html#short-syntax">short
+        syntax</a>, if your tooling supports it:</p>
 <pre class="javascript{3,6}"><code>function ListItem({ item }) {
   return (
     &lt;&gt;
@@ -146,7 +147,10 @@ function Glossary(props) {
 <a class="sourceLine" id="cb7-3" title="3">  <span class="co">// Note: we&#39;re accessing &quot;current&quot; to get the DOM node</span></a>
 <a class="sourceLine" id="cb7-4" title="4">  <span class="kw">this</span>.<span class="va">textInput</span>.<span class="va">current</span>.<span class="at">focus</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>Sometimes a parent component needs to set focus to an element in a child component. We can do this by <a href="/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components">exposing DOM refs to parent components</a> through a special prop on the child component that forwards the parent’s ref to the child’s DOM node.</p>
+<p>Sometimes a parent component needs to set focus to an element in a child component. We can do this by <a
+        href="/docs/refs-and-the-dom.html#exposing-dom-refs-to-parent-components">exposing DOM refs to parent
+        components</a> through a special prop on the child component that forwards the parent's ref to the child's DOM
+    node.</p>
 <pre class="javascript{4,12,16}"><code>function CustomTextInput(props) {
   return (
     &lt;div&gt;
@@ -177,7 +181,8 @@ this.inputElement.current.focus();</code></pre>
 </blockquote>
 <h2 id="mouse-and-pointer-events">Mouse and pointer events</h2>
 <p>Ensure that all functionality exposed through a mouse or pointer event can also be accessed using the keyboard alone. Depending only on the pointer device will lead to many cases where keyboard users cannot use your application.</p>
-<p>To illustrate this, let’s look at a prolific example of broken accessibility caused by click events. This is the outside click pattern, where a user can disable an opened popover by clicking outside the element.</p>
+<p>To illustrate this, let's look at a prolific example of broken accessibility caused by click events. This is the
+    outside click pattern, where a user can disable an opened popover by clicking outside the element.</p>
 <p><img src="../images/docs/outerclick-with-mouse.gif" alt="A toggle button opening a popover list implemented with the click outside pattern and operated with a mouse showing that the close action works." /></p>
 <p>This is typically implemented by attaching a <code>click</code> event to the <code>window</code> object that closes the popover:</p>
 <pre class="javascript{12-14,26-30}"><code>class OuterClickExample extends React.Component {
@@ -286,7 +291,9 @@ this.inputElement.current.focus();</code></pre>
     );
   }
 }</code></pre>
-<p>This code exposes the functionality to both pointer device and keyboard users. Also note the added <code>aria-*</code> props to support screen-reader users. For simplicity’s sake the keyboard events to enable <code>arrow key</code> interaction of the popover options have not been implemented.</p>
+<p>This code exposes the functionality to both pointer device and keyboard users. Also note the added
+    <code>aria-*</code> props to support screen-reader users. For simplicity's sake the keyboard events to enable
+    <code>arrow key</code> interaction of the popover options have not been implemented.</p>
 <p><img src="../images/docs/blur-popover-close.gif" alt="A popover list correctly closing for both mouse and keyboard users." /></p>
 <p>This is one example of many cases where depending on only pointer and mouse events will break functionality for keyboard users. Always testing with the keyboard will immediately highlight the problem areas which can then be fixed by using keyboard aware event handlers.</p>
 <h2 id="more-complex-widgets">More Complex Widgets</h2>
@@ -335,9 +342,12 @@ this.inputElement.current.focus();</code></pre>
 <li>Where required, using your keyboard arrow keys to interact with some elements, such as menus and dropdowns.</li>
 </ol>
 <h3 id="development-assistance">Development assistance</h3>
-<p>We can check some accessibility features directly in our JSX code. Often intellisense checks are already provided in JSX aware IDE’s for the ARIA roles, states and properties. We also have access to the following tool:</p>
+<p>We can check some accessibility features directly in our JSX code. Often intellisense checks are already provided in
+    JSX aware IDE's for the ARIA roles, states and properties. We also have access to the following tool:</p>
 <h4 id="eslint-plugin-jsx-a11y">eslint-plugin-jsx-a11y</h4>
-<p>The <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y">eslint-plugin-jsx-a11y</a> plugin for ESLint provides AST linting feedback regarding accessibility issues in your JSX. Many IDE’s allow you to integrate these findings directly into code analysis and source code windows.</p>
+<p>The <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y">eslint-plugin-jsx-a11y</a> plugin for ESLint provides
+    AST linting feedback regarding accessibility issues in your JSX. Many IDE's allow you to integrate these findings
+    directly into code analysis and source code windows.</p>
 <p><a href="https://github.com/facebookincubator/create-react-app">Create React App</a> has this plugin with a subset of rules activated. If you want to enable even more accessibility rules, you can create an <code>.eslintrc</code> file in the root of your project with this content:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb11-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb11-2" title="2">  <span class="dt">&quot;extends&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;react-app&quot;</span><span class="ot">,</span> <span class="st">&quot;plugin:jsx-a11y/recommended&quot;</span><span class="ot">]</span><span class="fu">,</span></a>

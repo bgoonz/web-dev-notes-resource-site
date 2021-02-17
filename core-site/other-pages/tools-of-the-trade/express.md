@@ -1,9 +1,7 @@
-
-
 ## Learning Goals
 
-- Understand what Express is
-- Understand Express' role in the MERN stack
+* Understand what Express is
+* Understand Express' role in the MERN stack
 
 ### What is Express?
 

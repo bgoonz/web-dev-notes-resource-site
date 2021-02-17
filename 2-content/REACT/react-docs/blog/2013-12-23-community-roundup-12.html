@@ -10,7 +10,10 @@
 <h2 id="the-future-of-javascript-mvc">The Future of JavaScript MVC</h2>
 <p><a href="https://swannodette.github.io/">David Nolen</a> announced Om, a thin wrapper on-top of React in ClojureScript. It stands out by only using immutable data structures. This unlocks the ability to write a very efficient <a href="/docs/component-specs.html#updating-shouldcomponentupdate">shouldComponentUpdate</a> and get huge performance improvements on some tasks.</p>
 <blockquote>
-<p>We’ve known this for some time over here in the ClojureScript corner of the world - all of our collections are immutable and modeled directly on the original Clojure versions written in Java. Modern JavaScript engines have now been tuned to the point that it’s no longer uncommon to see collection performance within 2.5X of the Java Virtual Machine.</p>
+<p>We've known this for some time over here in the ClojureScript corner of the world - all of our collections are
+    immutable and modeled directly on the original Clojure versions written in Java. Modern JavaScript engines have now
+    been tuned to the point that it's no longer uncommon to see collection performance within 2.5X of the Java Virtual
+    Machine.</p>
 <p>Wait, wait, wait. What does the performance of persistent data structures have to do with the future of JavaScript MVCs?</p>
 A whole lot.
 <figure>
@@ -36,7 +39,9 @@ A whole lot.
 <p><a href="http://blog.vjeux.com/2013/javascript/scroll-position-with-react.html">Check out the blog article…</a></p>
 </blockquote>
 <h2 id="lights-out">Lights Out</h2>
-React declarative approach is well suited to write games. <a href="https://github.com/chenglou">Cheng Lou</a> wrote the famous Lights Out game in React. It’s a good example of use of <a href="/docs/animation.html">TransitionGroup</a> to implement animations.
+React declarative approach is well suited to write games. <a href="https://github.com/chenglou">Cheng Lou</a> wrote the
+famous Lights Out game in React. It's a good example of use of <a href="/docs/animation.html">TransitionGroup</a> to
+implement animations.
 <figure>
 <a href="https://chenglou.github.io/react-lights-out/"><img src="../images/blog/lights-out.png"></a>
 </figure>
@@ -48,12 +53,16 @@ React declarative approach is well suited to write games. <a href="https://githu
 </figure>
 <p><a href="http://www.phpied.com/reactivetable-bookmarklet/">Check out the blog post…</a></p>
 <h2 id="montagejs-tutorial-in-react">MontageJS Tutorial in React</h2>
-<p><a href="https://twitter.com/ssorallen">Ross Allen</a> implemented <a href="http://montagejs.org/">MontageJS</a>’s <a href="http://montagejs.org/docs/tutorial-reddit-client-with-montagejs.html">Reddit tutorial</a> in React. This is a good opportunity to compare the philosophies of the two libraries.</p>
+<p><a href="https://twitter.com/ssorallen">Ross Allen</a> implemented <a href="http://montagejs.org/">MontageJS</a>'s <a
+        href="http://montagejs.org/docs/tutorial-reddit-client-with-montagejs.html">Reddit tutorial</a> in React. This
+    is a good opportunity to compare the philosophies of the two libraries.</p>
 <p><a href="https://jsfiddle.net/ssorallen/fEsYt/">View the source on JSFiddle…</a></p>
 <h2 id="writing-good-react-components">Writing Good React Components</h2>
 <p><a href="http://blog.whn.se/">William Högman Rudenmalm</a> wrote an article on how to write good React components. This is full of good advice.</p>
 <blockquote>
-<p>The idea of dividing software into smaller parts or components is hardly new - It is the essance of good software. The same principles that apply to software in general apply to building React components. That doesn’t mean that writing good React components is just about applying general rules.</p>
+<p>The idea of dividing software into smaller parts or components is hardly new - It is the essance of good software.
+    The same principles that apply to software in general apply to building React components. That doesn't mean that
+    writing good React components is just about applying general rules.</p>
 <p>The web offers a unique set of challenges, which React offers interesting solutions to. First and foremost among these solutions is the what is called the Mock DOM. Rather than having user code interface with the DOM in a direct fashion, as is the case with most DOM manipulation libraries.</p>
 <p>You build a model of how you want the DOM end up like. React then inserts this model into the DOM. This is very useful for updates because React simply compares the model or mock DOM against the actual DOM, and then only updates based on the difference between the two states.</p>
 <p><a href="http://blog.whn.se/post/69621609605/writing-good-react-components">Read the full article …</a></p>

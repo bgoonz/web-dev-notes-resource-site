@@ -16,7 +16,8 @@
 <a class="sourceLine" id="cb1-5" title="5"><span class="kw">function</span> <span class="at">GuestGreeting</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-6" title="6">  <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Please sign <span class="va">up</span>.&lt;/h1<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="op">}</span></a></code></pre></div>
-<p>We’ll create a <code>Greeting</code> component that displays either of these components depending on whether a user is logged in:</p>
+<p>We'll create a <code>Greeting</code> component that displays either of these components depending on whether a user
+    is logged in:</p>
 <pre class="javascript{3-7,11,12}"><code>function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
@@ -33,7 +34,8 @@ ReactDOM.render(
 <p><a href="https://codepen.io/gaearon/pen/ZpVxNq?editors=0011"><strong>Try it on CodePen</strong></a></p>
 <p>This example renders a different greeting depending on the value of <code>isLoggedIn</code> prop.</p>
 <h3 id="element-variables">Element Variables</h3>
-<p>You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn’t change.</p>
+<p>You can use variables to store elements. This can help you conditionally render a part of the component while the
+    rest of the output doesn't change.</p>
 <p>Consider these two new components representing Logout and Login buttons:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">LoginButton</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="cf">return</span> (</a>
@@ -137,7 +139,7 @@ ReactDOM.render(
     &lt;/div&gt;
   );
 }</code></pre>
-<p>It can also be used for larger expressions although it is less obvious what’s going on:</p>
+<p>It can also be used for larger expressions although it is less obvious what's going on:</p>
 <pre class="js{5,7,9}"><code>render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
@@ -195,5 +197,6 @@ ReactDOM.render(
   document.getElementById(&#39;root&#39;)
 );</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/Xjoqwm?editors=0010"><strong>Try it on CodePen</strong></a></p>
-<p>Returning <code>null</code> from a component’s <code>render</code> method does not affect the firing of the component’s lifecycle methods. For instance <code>componentDidUpdate</code> will still be called.</p>
+<p>Returning <code>null</code> from a component's <code>render</code> method does not affect the firing of the
+    component's lifecycle methods. For instance <code>componentDidUpdate</code> will still be called.</p>
 </body></html>

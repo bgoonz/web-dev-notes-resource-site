@@ -1,44 +1,34 @@
-
 <script src="https://unpkg.com/react@15.6.1/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15.6.1/dist/react-dom.js"></script>
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"/>
 <style>body { color: red }</style>
 
-
-
-
-
 ![.github/workflows/azure.yml](https://github.com/bgoonz/web-dev-notes-resource-site/workflows/.github/workflows/azure.yml/badge.svg)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/865c330e-e1e9-40b8-8420-bf603640b0fe/deploy-status)](https://app.netlify.com/sites/goofy-euclid-1cd736/deploys)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
 
-
 [![GitHub stars](https://img.shields.io/github/stars/bgoonz/web-dev-notes-resource-site)](https://github.com/bgoonz/web-dev-notes-resource-site/stargazers)
 
-
-
 [![GitHub license](https://img.shields.io/github/license/MIT/bgoonz/web-dev-notes-resource-site?logo=MIT&style=for-the-badge)](https://github.com/bgoonz/web-dev-notes-resource-site)
-
-
-
 
 This is the repo that contains my resource sharing and blog site ... centered mostly on web development and just a bit of audio production / generally nerdy things I find interesting. Please feel free to give me constructive feedback or even to branch off and improve it as you see fit... or don't, no pressure 🤷‍♂️.
 
 [![buddy pipeline](https://app.buddy.works/bryanguner/web-dev-notes-resource-site/pipelines/pipeline/304714/badge.svg?token=dd9ae1c0759c579bf7683f695df6b63494a159860ba5776b42b3dfea89dbc737 "buddy pipeline")](https://app.buddy.works/bryanguner/web-dev-notes-resource-site/pipelines/pipeline/304714)
 
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
+
     <img src="https://media4.giphy.com/media/XkDyB1jCZMxUs/giphy.gif?cid=ecf05e478v9flczpr1h33r4wa1y2ee3jii7a62jq94zpp5gg&rid=giphy.gif" alt="Logo" width="80" height="80">
+
   </a>
 
   <h3 align="center">Web-Dev-Resource-Hub</h3>
 
   <p align="center">
+
     project_description
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
@@ -49,15 +39,15 @@ This is the repo that contains my resource sharing and blog site ... centered mo
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
     ·
     <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
+
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
@@ -77,23 +67,21 @@ This is the repo that contains my resource sharing and blog site ... centered mo
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
+
   </ol>
 </details>
 
-
-
-
-![revision history](./0-assets/images/commit-history.PNG)
+![revision history](./0-assets/images/commit-history. PNG)
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
+`github_username` , `repo_name` , `twitter_handle` , `email` , `project_title` , `project_description`
 
 ### Built With
 
@@ -101,9 +89,8 @@ Here's a blank template to get started:
 * []()
 * []()
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -111,41 +98,49 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
+
 * npm
-  ```sh
+
+  
+
+``` sh
   npm install npm@latest -g
   ```
 
 ### Installation
 
 1. Clone the repo
-   ```sh
+
+   
+
+``` sh
    git clone https://github.com/github_username/repo_name.git
    ```
+
 2. Install NPM packages
-   ```sh
+
+   
+
+``` sh
    npm install
    ```
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -156,34 +151,27 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
-
-
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
 * []()
 * []()
 * []()
-
-
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -200,13 +188,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
 
-
-
-
-
-
 ![](2021-01-26-17-35-46.png)
-
 
 ![](2021-01-26-17-41-56.png)
 
@@ -218,11 +200,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 ---
 ---
+
 > https://goofy-euclid-1cd736.netlify.app/0-assets/planning/documentation/portfolio/tree-diagram.html
+
 <img src="./Force-Directed Directory Tree Diagram.svg">
 
 ---
-```
+
+``` 
 \___________________________________________________
 bryan_dir:Stable_exitstatus:130 ====>
 

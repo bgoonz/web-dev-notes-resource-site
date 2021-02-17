@@ -6,7 +6,8 @@
   <title>Document</title>
 </head>
 <body>;
-<p>The <code>ReactDOMServer</code> object enables you to render components to static markup. Typically, it’s used on a Node server:</p>
+<p>The <code>ReactDOMServer</code> object enables you to render components to static markup. Typically, it's used on a
+    Node server:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// ES modules</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> ReactDOMServer <span class="im">from</span> <span class="st">&#39;react-dom/server&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co">// CommonJS</span></a>
@@ -17,7 +18,8 @@
 <li><a href="#rendertostring"><code>renderToString()</code></a></li>
 <li><a href="#rendertostaticmarkup"><code>renderToStaticMarkup()</code></a></li>
 </ul>
-<p>These additional methods depend on a package (<code>stream</code>) that is <strong>only available on the server</strong>, and won’t work in the browser.</p>
+<p>These additional methods depend on a package (<code>stream</code>) that is <strong>only available on the
+        server</strong>, and won't work in the browser.</p>
 <ul>
 <li><a href="#rendertonodestream"><code>renderToNodeStream()</code></a></li>
 <li><a href="#rendertostaticnodestream"><code>renderToStaticNodeStream()</code></a></li>
@@ -31,7 +33,9 @@
 <hr />
 <h3 id="rendertostaticmarkup"><code>renderToStaticMarkup()</code></h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">ReactDOMServer</span>.<span class="at">renderToStaticMarkup</span>(element)</a></code></pre></div>
-<p>Similar to <a href="#rendertostring"><code>renderToString</code></a>, except this doesn’t create extra DOM attributes that React uses internally, such as <code>data-reactroot</code>. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.</p>
+<p>Similar to <a href="#rendertostring"><code>renderToString</code></a>, except this doesn't create extra DOM attributes
+    that React uses internally, such as <code>data-reactroot</code>. This is useful if you want to use React as a simple
+    static page generator, as stripping away the extra attributes can save some bytes.</p>
 <p>If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use <a href="#rendertostring"><code>renderToString</code></a> on the server and <a href="/docs/react-dom.html#hydrate"><code>ReactDOM.hydrate()</code></a> on the client.</p>
 <hr />
 <h3 id="rendertonodestream"><code>renderToNodeStream()</code></h3>
@@ -46,7 +50,9 @@
 <hr />
 <h3 id="rendertostaticnodestream"><code>renderToStaticNodeStream()</code></h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">ReactDOMServer</span>.<span class="at">renderToStaticNodeStream</span>(element)</a></code></pre></div>
-<p>Similar to <a href="#rendertonodestream"><code>renderToNodeStream</code></a>, except this doesn’t create extra DOM attributes that React uses internally, such as <code>data-reactroot</code>. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.</p>
+<p>Similar to <a href="#rendertonodestream"><code>renderToNodeStream</code></a>, except this doesn't create extra DOM
+    attributes that React uses internally, such as <code>data-reactroot</code>. This is useful if you want to use React
+    as a simple static page generator, as stripping away the extra attributes can save some bytes.</p>
 <p>The HTML output by this stream is exactly equal to what <a href="#rendertostaticmarkup"><code>ReactDOMServer.renderToStaticMarkup</code></a> would return.</p>
 <p>If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use <a href="#rendertonodestream"><code>renderToNodeStream</code></a> on the server and <a href="/docs/react-dom.html#hydrate"><code>ReactDOM.hydrate()</code></a> on the client.</p>
 <blockquote>

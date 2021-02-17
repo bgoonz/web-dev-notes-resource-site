@@ -1,11 +1,9 @@
+* ⏱ 8 minutes
 
-
-- ⏱ 8 minutes
-
-- Catalog
-- Full Stack Online
-- React
-- Jsx
+* Catalog
+* Full Stack Online
+* React
+* Jsx
 
 ## What is JSX?
 
@@ -35,7 +33,7 @@ and are rendered onto the `document.body` using:
 
     ReactDOM.render(quotes, document.body);
 
-In both examples, the variable `quotes` is assigned to a React component that renders the HTML onto the page when passed to `ReactDOM.render(quotes, document.body)`. However, the example using JSX is much simpler and easier to read.
+In both examples, the variable `quotes` is assigned to a React component that renders the HTML onto the page when passed to `ReactDOM.render(quotes, document.body)` . However, the example using JSX is much simpler and easier to read.
 
 ## Interpolation
 
@@ -51,7 +49,7 @@ Even though it looks like HTML, JSX is still Javascript at the core. As such, yo
 
 Note that, because the return value is inserted into your element, only single expressions are allowed.
 
-For example, this block of code throws a `SyntaxError`.
+For example, this block of code throws a `SyntaxError` .
 
     const myElement = (
       <h1>
@@ -64,7 +62,7 @@ For example, this block of code throws a `SyntaxError`.
 
 ## Transpilation
 
-JSX cannot be directly interpreted by browsers like Chrome or Firefox. Instead, JSX code must be passed through a preprocessor, such as `Babel`, that **transpiles** it into vanilla Javascript.
+JSX cannot be directly interpreted by browsers like Chrome or Firefox. Instead, JSX code must be passed through a preprocessor, such as `Babel` , that **transpiles** it into vanilla Javascript.
 
 ## Official Documentation
 

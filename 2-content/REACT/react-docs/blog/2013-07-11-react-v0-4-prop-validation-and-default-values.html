@@ -24,7 +24,7 @@
 <a class="sourceLine" id="cb1-12" title="12">  ...</a>
 <a class="sourceLine" id="cb1-13" title="13"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <h2 id="default-values">Default Values</h2>
-<p>One common pattern we’ve seen with our React code is to do something like this:</p>
+<p>One common pattern we've seen with our React code is to do something like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">React</span>.<span class="at">createClass</span>(<span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="dt">render</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="kw">var</span> value <span class="op">=</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">value</span> <span class="op">||</span> <span class="st">&#39;default value&#39;</span><span class="op">;</span></a>
@@ -42,5 +42,6 @@
 <a class="sourceLine" id="cb3-8" title="8"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>We will use the cached result of this function before each <code>render</code>. We also perform all validations before each <code>render</code> to ensure that you have all of the data you need in the right form before you try to use it.</p>
 <hr />
-<p>Both of these features are entirely optional. We’ve found them to be increasingly valuable at Facebook as our applications grow and evolve, and we hope others find them useful as well.</p>
+<p>Both of these features are entirely optional. We've found them to be increasingly valuable at Facebook as our
+    applications grow and evolve, and we hope others find them useful as well.</p>
 </body></html>

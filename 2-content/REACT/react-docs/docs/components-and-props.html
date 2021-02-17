@@ -20,7 +20,7 @@
 <a class="sourceLine" id="cb2-3" title="3">    <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> <span class="op">{</span><span class="kw">this</span>.<span class="va">props</span>.<span class="at">name</span><span class="op">}</span>&lt;/h1<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb2-4" title="4">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>The above two components are equivalent from React’s point of view.</p>
+<p>The above two components are equivalent from React's point of view.</p>
 <p>Function and Class components both have some additional features that we will discuss in the <a href="/docs/state-and-lifecycle.html">next sections</a>.</p>
 <h2 id="rendering-a-component">Rendering a Component</h2>
 <p>Previously, we only encountered React elements that represent DOM tags:</p>
@@ -39,7 +39,7 @@ ReactDOM.render(
   document.getElementById(&#39;root&#39;)
 );</code></pre>
 <p><a href="codepen://components-and-props/rendering-a-component"></a></p>
-<p>Let’s recap what happens in this example:</p>
+<p>Let's recap what happens in this example:</p>
 <ol type="1">
 <li>We call <code>ReactDOM.render()</code> with the <code>&lt;Welcome name="Sara" /&gt;</code> element.</li>
 <li>React calls the <code>Welcome</code> component with <code>{name: 'Sara'}</code> as the props.</li>
@@ -75,7 +75,7 @@ ReactDOM.render(
 <p><a href="codepen://components-and-props/composing-components"></a></p>
 <p>Typically, new React apps have a single <code>App</code> component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like <code>Button</code> and gradually work your way to the top of the view hierarchy.</p>
 <h2 id="extracting-components">Extracting Components</h2>
-<p>Don’t be afraid to split components into smaller components.</p>
+<p>Don't be afraid to split components into smaller components.</p>
 <p>For example, consider this <code>Comment</code> component:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">function</span> <span class="at">Comment</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="cf">return</span> (</a>
@@ -100,7 +100,8 @@ ReactDOM.render(
 <a class="sourceLine" id="cb7-21" title="21"><span class="op">}</span></a></code></pre></div>
 <p><a href="codepen://components-and-props/extracting-components"></a></p>
 <p>It accepts <code>author</code> (an object), <code>text</code> (a string), and <code>date</code> (a date) as props, and describes a comment on a social media website.</p>
-<p>This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let’s extract a few components from it.</p>
+<p>This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of
+    it. Let's extract a few components from it.</p>
 <p>First, we will extract <code>Avatar</code>:</p>
 <pre class="js{3-6}"><code>function Avatar(props) {
   return (
@@ -110,8 +111,10 @@ ReactDOM.render(
     /&gt;
   );
 }</code></pre>
-<p>The <code>Avatar</code> doesn’t need to know that it is being rendered inside a <code>Comment</code>. This is why we have given its prop a more generic name: <code>user</code> rather than <code>author</code>.</p>
-<p>We recommend naming props from the component’s own point of view rather than the context in which it is being used.</p>
+<p>The <code>Avatar</code> doesn't need to know that it is being rendered inside a <code>Comment</code>. This is why we
+    have given its prop a more generic name: <code>user</code> rather than <code>author</code>.</p>
+<p>We recommend naming props from the component's own point of view rather than the context in which it is being used.
+</p>
 <p>We can now simplify <code>Comment</code> a tiny bit:</p>
 <pre class="js{5}"><code>function Comment(props) {
   return (
@@ -131,7 +134,8 @@ ReactDOM.render(
     &lt;/div&gt;
   );
 }</code></pre>
-<p>Next, we will extract a <code>UserInfo</code> component that renders an <code>Avatar</code> next to the user’s name:</p>
+<p>Next, we will extract a <code>UserInfo</code> component that renders an <code>Avatar</code> next to the user's name:
+</p>
 <pre class="js{3-8}"><code>function UserInfo(props) {
   return (
     &lt;div className=&quot;UserInfo&quot;&gt;

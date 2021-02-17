@@ -1,16 +1,14 @@
-
-
 Being a developer isn't just about hacking away into the wee hours of the morning or debugging a new feature. All craftspeople must have mastery of their tools to be successful in their trade, and programmers are no different. For a developer the most important tools are our CLI, text editor, web browser, compiler, package manager, and Node environment for running JavaScript. Mastery of these tools will be invaluable for the entire duration of our careers.
 
 This reading will cover the installation of the basic tools you'll need to run code on your computer.
 
 When you finish this reading, you should have:
 
-- Installed Visual Studio Code (VS Code)
-- Installed Node & NPM (Node Package Manager)
-- Installed Google Chrome
-- Installed Xcode & Homebrew (Mac)
-- Installed Python 3
+* Installed Visual Studio Code (VS Code)
+* Installed Node & NPM (Node Package Manager)
+* Installed Google Chrome
+* Installed Xcode & Homebrew (Mac)
+* Installed Python 3
 
 ## Preparing your machine
 
@@ -44,7 +42,7 @@ Enter the following in your terminal to download and install Homebrew:
 
 You will be given a list of dependencies that will be installed and prompted to continue or abort. Press `RETURN` to continue.
 
-Let's break this command down a bit. `curl`, a command-line tool commonly used for downloading files from the internet, is used to download the Homebrew installation file. The `"$(...)"` transforms the file content into a string. Finally, the string is passed to a Ruby language executable (`/usr/bin/ruby` is where the system Ruby executable file is stored on our machine) with the `-e` flag to tell Ruby to run the argument as code.
+Let's break this command down a bit. `curl` , a command-line tool commonly used for downloading files from the internet, is used to download the Homebrew installation file. The `"$(...)"` transforms the file content into a string. Finally, the string is passed to a Ruby language executable ( `/usr/bin/ruby` is where the system Ruby executable file is stored on our machine) with the `-e` flag to tell Ruby to run the argument as code.
 
 Check out the [Homebrew website](https://brew.sh/) to learn the basic commands.
 
@@ -77,7 +75,7 @@ Node comes with a package manager called [NPM](https://docs.npmjs.com/), which p
 
 This one is pretty easy. Go to website for [Visual Studio Code](https://code.visualstudio.com/), then download and install VS Code.
 
-To verify that the shell commands were installed correctly, run `which code` in your terminal. If `code` is not a recognized command, open the VS Code editor, open the Command Palette (`Cmd+Shift+P` on macOS ,`Ctrl+Shift+P` on Linux) and type `shell command` to find the `Shell Command: Install 'code' command in PATH` command. Then restart the terminal. This will now allow you to easily open files in VS Code from the terminal using the `code` command followed by a file or directory.
+To verify that the shell commands were installed correctly, run `which code` in your terminal. If `code` is not a recognized command, open the VS Code editor, open the Command Palette ( `Cmd+Shift+P` on macOS , `Ctrl+Shift+P` on Linux) and type `shell command` to find the `Shell Command: Install 'code' command in PATH` command. Then restart the terminal. This will now allow you to easily open files in VS Code from the terminal using the `code` command followed by a file or directory.
 
 Next, we'll want to install a few useful VS Code extensions and configure VS Code to play nice with these extensions. Download [this zip file](https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-JavaScript/js-local/setup-vs-code.zip), which contains a script that will do the work for you. Unzip the file and navigate into the directory where the file is located in the terminal (drag and drop the folder over to the terminal icon on macOS or right click in the directory and select `Open in Terminal` on most Linux distributions).
 
@@ -89,7 +87,7 @@ The script will do the rest. Now restart VS Code and you'll be good to go.
 
 ### Mocha testing framework
 
-The last thing we'll be installing will be Mocha. Mocha is a JavaScript testing framework that we will be using to test our work in the future. Here are the instructions of how to install `mocha`!
+The last thing we'll be installing will be Mocha. Mocha is a JavaScript testing framework that we will be using to test our work in the future. Here are the instructions of how to install `mocha` !
 
 #### Installing Mocha
 
@@ -109,12 +107,12 @@ How to install the various tools you'll need to create a development environment
 
 After you finished this reading you should have the following installed:
 
-- Virtual Studio Code (VS Code)
-- Node & NPM (Node Package Manager)
-- Mocha the JavaScript testing framework
-- Google Chrome
-- Xcode & Homebrew (Mac)
-- Python 3
+* Virtual Studio Code (VS Code)
+* Node & NPM (Node Package Manager)
+* Mocha the JavaScript testing framework
+* Google Chrome
+* Xcode & Homebrew (Mac)
+* Python 3
 
 Did you find this lesson helpful?
 

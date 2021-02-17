@@ -15,7 +15,7 @@ let rotate360 = [
 
 
 ## Automatically removing filling animations
-It is possible to trigger a large number of animations on the same element. If they are indefinite (i.e., forwards-filling), this can result in a huge animations list, which could create a memory leak. For this reason, we’ve implemented the part of the Web Animations spec that automatically removes overriding forward filling animations, unless the developer explicitly specifies to keep them.
+It is possible to trigger a large number of animations on the same element. If they are indefinite (i.e., forwards-filling), this can result in a huge animations list, which could create a memory leak. For this reason, we've implemented the part of the Web Animations spec that automatically removes overriding forward filling animations, unless the developer explicitly specifies to keep them.
 
 [See a live demo of this](https://mdn.github.io/dom-examples/web-animations-api/replace-indefinite-animations.html). 
 

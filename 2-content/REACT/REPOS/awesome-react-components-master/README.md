@@ -469,7 +469,7 @@ _Set of components + responsive layout system_
 - [carbon](https://github.com/carbon-design-system/carbon) - [demo/docs](https://www.carbondesignsystem.com/) - A design system built by IBM. _(Wait, since when are IBM known for design?? 🎨)_
 - [elemental](https://github.com/elementalui/elemental) - A flexible and beautiful UI framework for React.js.
 - [grommet](https://github.com/grommet/grommet) - The most advanced UX framework for enterprise applications.
-- [gestalt](https://github.com/pinterest/gestalt) - [demo/docs](https://pinterest.github.io/gestalt/#/) - A set of components that supports Pinterest’s design language. _(Nice... but surprisingly not as well-designed as I would have thought from Pinterest. 😬)_
+- [gestalt](https://github.com/pinterest/gestalt) - [demo/docs](https://pinterest.github.io/gestalt/#/) - A set of components that supports Pinterest's design language. _(Nice... but surprisingly not as well-designed as I would have thought from Pinterest. 😬)_
 - [pivotal-ui-react](https://github.com/pivotal-cf/pivotal-ui) - React components based on a custom version of the Bootstrap library.
 - [office-ui-fabric-react](https://github.com/OfficeDev/office-ui-fabric-react) - React components for building Microsoft web experiences. _(🤔 But I'm not sure I want a "MSFT experience?")_
 - [rctui](https://github.com/Lobos/react-ui) - A collection of components for React.

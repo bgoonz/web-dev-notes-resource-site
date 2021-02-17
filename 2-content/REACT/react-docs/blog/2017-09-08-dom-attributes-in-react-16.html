@@ -6,7 +6,8 @@
   <title>Document</title>
 </head>
 <body>;
-<p>In the past, React used to ignore unknown DOM attributes. If you wrote JSX with an attribute that React doesn’t recognize, React would just skip it. For example, this:</p>
+<p>In the past, React used to ignore unknown DOM attributes. If you wrote JSX with an attribute that React doesn't
+    recognize, React would just skip it. For example, this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// Your code:</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="op">&lt;</span>div mycustomattribute<span class="op">=</span><span class="st">&quot;something&quot;</span> /&gt;</a></code></pre></div>
 <p>would render an empty div to the DOM with React 15:</p>
@@ -30,16 +31,19 @@
 <li><p>You could not <a href="https://github.com/facebook/react/issues/140">pass a custom attribute</a>. This is useful for supplying browser-specific non-standard attributes, trying new DOM APIs, and integrating with opinionated third-party libraries.</p></li>
 <li><p>The attribute list kept growing over time, but most React canonical attribute names are already valid in the DOM. Removing most of the whitelist helped us reduce the bundle size a little bit.</p></li>
 </ul>
-<p>With the new approach, both of these problems are solved. With React 16, you can now pass custom attributes to all HTML and SVG elements, and React doesn’t have to include the whole attribute whitelist in the production version.</p>
+<p>With the new approach, both of these problems are solved. With React 16, you can now pass custom attributes to all
+    HTML and SVG elements, and React doesn't have to include the whole attribute whitelist in the production version.
+</p>
 <p><strong>Note that you should still use the canonical React naming for known attributes:</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// Yes, please</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="op">&lt;</span>div tabIndex<span class="op">={-</span><span class="dv">1</span><span class="op">}</span> /&gt;</a>
 <a class="sourceLine" id="cb6-3" title="3"></a>
 <a class="sourceLine" id="cb6-4" title="4"><span class="co">// Warning: Invalid DOM property `tabindex`. Did you mean `tabIndex`?</span></a>
 <a class="sourceLine" id="cb6-5" title="5"><span class="op">&lt;</span>div tabindex<span class="op">={-</span><span class="dv">1</span><span class="op">}</span> /&gt;</a></code></pre></div>
-<p>In other words, the way you use DOM components in React hasn’t changed, but now you have some new capabilities.</p>
+<p>In other words, the way you use DOM components in React hasn't changed, but now you have some new capabilities.</p>
 <h2 id="should-i-keep-data-in-custom-attributes">Should I Keep Data in Custom Attributes?</h2>
-<p>No. We don’t encourage you to keep data in DOM attributes. Even if you have to, <code>data-</code> attributes are probably a better approach, but in most cases data should be kept in React component state or external stores.</p>
+<p>No. We don't encourage you to keep data in DOM attributes. Even if you have to, <code>data-</code> attributes are
+    probably a better approach, but in most cases data should be kept in React component state or external stores.</p>
 <p>However, the new feature is handy if you need to use a non-standard or a new DOM attribute, or if you need to integrate with a third-party library that relies on such attributes.</p>
 <h2 id="data-and-aria-attributes">Data and ARIA Attributes</h2>
 <p>Just like before, React lets you pass <code>data-</code> and <code>aria-</code> attributes freely:</p>
@@ -48,13 +52,21 @@
 <p>This has not changed.</p>
 <p><a href="/docs/accessibility.html">Accessibility</a> is very important, so even though React 16 passes any attributes through, it still validates that <code>aria-</code> props have correct names in development mode, just like React 15 did.</p>
 <h2 id="migration-path">Migration Path</h2>
-<p>We have included <a href="/warnings/unknown-prop.html">a warning about unknown attributes</a> since <a href="https://github.com/facebook/react/releases/tag/v15.2.0">React 15.2.0</a> which came out more than a year ago. The vast majority of third-party libraries have already updated their code. If your app doesn’t produce warnings with React 15.2.0 or higher, this change should not require modifications in your application code.</p>
+<p>We have included <a href="/warnings/unknown-prop.html">a warning about unknown attributes</a> since <a
+        href="https://github.com/facebook/react/releases/tag/v15.2.0">React 15.2.0</a> which came out more than a year
+    ago. The vast majority of third-party libraries have already updated their code. If your app doesn't produce
+    warnings with React 15.2.0 or higher, this change should not require modifications in your application code.</p>
 <p>If you still accidentally forward non-DOM props to DOM components, with React 16 you will start seeing those attributes in the DOM, for example:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&lt;</span>div myData<span class="op">=</span><span class="st">&#39;[Object object]&#39;</span> /&gt;</a></code></pre></div>
-<p>This is somewhat safe (the browser will just ignore them) but we recommend to fix these cases when you see them. One potential hazard is if you pass an object that implements a custom <code>toString()</code> or <code>valueOf()</code> method that throws. Another possible issue is that legacy HTML attributes like <code>align</code> and <code>valign</code> will now be passed to the DOM. They used to be stripped out because React didn’t support them.</p>
+<p>This is somewhat safe (the browser will just ignore them) but we recommend to fix these cases when you see them. One
+    potential hazard is if you pass an object that implements a custom <code>toString()</code> or <code>valueOf()</code>
+    method that throws. Another possible issue is that legacy HTML attributes like <code>align</code> and
+    <code>valign</code> will now be passed to the DOM. They used to be stripped out because React didn't support them.
+</p>
 <p>To avoid these problems, we suggest to fix the warnings you see in React 15 before upgrading to React 16.</p>
 <h2 id="changes-in-detail">Changes in Detail</h2>
-<p>We’ve made a few other changes to make the behavior more predictable and help ensure you’re not making mistakes. We don’t anticipate that these changes are likely to break real-world applications.</p>
+<p>We've made a few other changes to make the behavior more predictable and help ensure you're not making mistakes. We
+    don't anticipate that these changes are likely to break real-world applications.</p>
 <p><strong>These changes only affect DOM components like <code>&lt;div&gt;</code>, not your own components.</strong></p>
 <p>Below is a detailed list of them.</p>
 <ul>
@@ -98,5 +110,8 @@ It uses React 16 RC, and you can <a href="https://github.com/facebook/react/issu
 <p>Major changes in a popular project can take a lot of time and research. Nathan demonstrated perseverance and commitment to getting this change through, and we are very thankful to him for this and other efforts.</p>
 <p>We would also like to thank <a href="https://github.com/aweary">Brandon Dail</a> and <a href="https://github.com/jquense">Jason Quense</a> for their invaluable help maintaining React this year.</p>
 <h2 id="future-work">Future Work</h2>
-<p>We are not changing how <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements">custom elements</a> work in React 16, but there are <a href="https://github.com/facebook/react/issues/7249">existing discussions</a> about setting properties instead of attributes, and we might revisit this in React 17. Feel free to chime in if you’d like to help!</p>
+<p>We are not changing how <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Custom_Elements">custom
+        elements</a> work in React 16, but there are <a href="https://github.com/facebook/react/issues/7249">existing
+        discussions</a> about setting properties instead of attributes, and we might revisit this in React 17. Feel free
+    to chime in if you'd like to help!</p>
 </body></html>

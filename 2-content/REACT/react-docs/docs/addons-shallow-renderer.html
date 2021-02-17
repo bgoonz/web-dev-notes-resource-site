@@ -36,12 +36,17 @@
 <p>Shallow testing currently has some limitations, namely not supporting refs.</p>
 <blockquote>
 <p>Note:</p>
-<p>We also recommend checking out Enzyme’s <a href="https://airbnb.io/enzyme/docs/api/shallow.html">Shallow Rendering API</a>. It provides a nicer higher-level API over the same functionality.</p>
+<p>We also recommend checking out Enzyme's <a href="https://airbnb.io/enzyme/docs/api/shallow.html">Shallow Rendering
+        API</a>. It provides a nicer higher-level API over the same functionality.</p>
 </blockquote>
 <h2 id="reference">Reference</h2>
 <h3 id="shallowrendererrender"><code>shallowRenderer.render()</code></h3>
-<p>You can think of the shallowRenderer as a “place” to render the component you’re testing, and from which you can extract the component’s output.</p>
-<p><code>shallowRenderer.render()</code> is similar to <a href="/docs/react-dom.html#render"><code>ReactDOM.render()</code></a> but it doesn’t require DOM and only renders a single level deep. This means you can test components isolated from how their children are implemented.</p>
+<p>You can think of the shallowRenderer as a “place” to render the component you're testing, and from which you can
+    extract the component's output.</p>
+<p><code>shallowRenderer.render()</code> is similar to <a
+        href="/docs/react-dom.html#render"><code>ReactDOM.render()</code></a> but it doesn't require DOM and only
+    renders a single level deep. This means you can test components isolated from how their children are implemented.
+</p>
 <h3 id="shallowrenderergetrenderoutput"><code>shallowRenderer.getRenderOutput()</code></h3>
 <p>After <code>shallowRenderer.render()</code> has been called, you can use <code>shallowRenderer.getRenderOutput()</code> to get the shallowly rendered output.</p>
 <p>You can then begin to assert facts about the output.</p>

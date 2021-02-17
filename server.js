@@ -1,9 +1,9 @@
-var server = require('pushstate-server');
+var server = require( 'pushstate-server' );
 
-server.start({
-  port: 4200,
-  directories: ['./core-site', './1-tools', './2-content']
-});
+server.start( {
+    port: 4200,
+    directories: [ './core-site', './1-tools', './2-content' ]
+} );
 
 
 ///---------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get( '/', ( req, res ) => {
-  res.send( 'Hello World' );
+    res.send( 'Hello World' );
 } );
 
 app.listen( PORT, HOST );

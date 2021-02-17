@@ -13,9 +13,15 @@
 <p>JSX produces React “elements”. We will explore rendering them to the DOM in the <a href="/docs/rendering-elements.html">next section</a>. Below, you can find the basics of JSX necessary to get you started.</p>
 <h3 id="why-jsx">Why JSX?</h3>
 <p>React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.</p>
-<p>Instead of artificially separating <em>technologies</em> by putting markup and logic in separate files, React <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separates <em>concerns</em></a> with loosely coupled units called “components” that contain both. We will come back to components in a <a href="/docs/components-and-props.html">further section</a>, but if you’re not yet comfortable putting markup in JS, <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">this talk</a> might convince you otherwise.</p>
-<p>React <a href="/docs/react-without-jsx.html">doesn’t require</a> using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.</p>
-<p>With that out of the way, let’s get started!</p>
+<p>Instead of artificially separating <em>technologies</em> by putting markup and logic in separate files, React <a
+        href="https://en.wikipedia.org/wiki/Separation_of_concerns">separates <em>concerns</em></a> with loosely coupled
+    units called “components” that contain both. We will come back to components in a <a
+        href="/docs/components-and-props.html">further section</a>, but if you're not yet comfortable putting markup in
+    JS, <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">this talk</a> might convince you otherwise.</p>
+<p>React <a href="/docs/react-without-jsx.html">doesn't require</a> using JSX, but most people find it helpful as a
+    visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and
+    warning messages.</p>
+<p>With that out of the way, let's get started!</p>
 <h3 id="embedding-expressions-in-jsx">Embedding Expressions in JSX</h3>
 <p>In the example below, we declare a variable called <code>name</code> and then use it inside JSX by wrapping it in curly braces:</p>
 <pre class="js{1,2}"><code>const name = &#39;Josh Perez&#39;;
@@ -47,7 +53,9 @@ ReactDOM.render(
   document.getElementById(&#39;root&#39;)
 );</code></pre>
 <p><a href="codepen://introducing-jsx"></a></p>
-<p>We split JSX over multiple lines for readability. While it isn’t required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of <a href="https://stackoverflow.com/q/2846283">automatic semicolon insertion</a>.</p>
+<p>We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend
+    wrapping it in parentheses to avoid the pitfalls of <a href="https://stackoverflow.com/q/2846283">automatic
+        semicolon insertion</a>.</p>
 <h3 id="jsx-is-an-expression-too">JSX is an Expression Too</h3>
 <p>After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.</p>
 <p>This means that you can use JSX inside of <code>if</code> statements and <code>for</code> loops, assign it to variables, accept it as arguments, and return it from functions:</p>
@@ -62,7 +70,8 @@ ReactDOM.render(
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>div tabIndex<span class="op">=</span><span class="st">&quot;0&quot;</span><span class="op">&gt;</span>&lt;/div<span class="op">&gt;;</span></a></code></pre></div>
 <p>You may also use curly braces to embed a JavaScript expression in an attribute:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>img src<span class="op">={</span><span class="va">user</span>.<span class="at">avatarUrl</span><span class="op">}&gt;</span>&lt;/img<span class="op">&gt;;</span></a></code></pre></div>
-<p>Don’t put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.</p>
+<p>Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use
+    quotes (for string values) or curly braces (for expressions), but not both in the same attribute.</p>
 <blockquote>
 <p><strong>Warning:</strong></p>
 <p>Since JSX is closer to JavaScript than to HTML, React DOM uses <code>camelCase</code> property naming convention instead of HTML attribute names.</p>
@@ -83,7 +92,11 @@ ReactDOM.render(
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">const</span> title <span class="op">=</span> <span class="va">response</span>.<span class="at">potentiallyMaliciousInput</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="co">// This is safe:</span></a>
 <a class="sourceLine" id="cb9-3" title="3"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;{</span>title<span class="op">}</span>&lt;/h1<span class="op">&gt;;</span></a></code></pre></div>
-<p>By default, React DOM <a href="https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html">escapes</a> any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS (cross-site-scripting)</a> attacks.</p>
+<p>By default, React DOM <a
+        href="https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html">escapes</a> any
+    values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not
+    explicitly written in your application. Everything is converted to a string before being rendered. This helps
+    prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS (cross-site-scripting)</a> attacks.</p>
 <h3 id="jsx-represents-objects">JSX Represents Objects</h3>
 <p>Babel compiles JSX down to <code>React.createElement()</code> calls.</p>
 <p>These two examples are identical:</p>

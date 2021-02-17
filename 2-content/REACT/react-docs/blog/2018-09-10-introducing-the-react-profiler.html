@@ -6,7 +6,11 @@
   <title>Document</title>
 </head>
 <body>;
-<p>React 16.5 adds support for a new DevTools profiler plugin. This plugin uses React’s <a href="https://github.com/reactjs/rfcs/pull/51">experimental Profiler API</a> to collect timing information about each component that’s rendered in order to identify performance bottlenecks in React applications. It will be fully compatible with our upcoming <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">time slicing and suspense</a> features.</p>
+<p>React 16.5 adds support for a new DevTools profiler plugin. This plugin uses React's <a
+        href="https://github.com/reactjs/rfcs/pull/51">experimental Profiler API</a> to collect timing information about
+    each component that's rendered in order to identify performance bottlenecks in React applications. It will be fully
+    compatible with our upcoming <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">time slicing and
+        suspense</a> features.</p>
 <p>This blog post covers the following topics: * <a href="#profiling-an-application">Profiling an application</a> * <a href="#reading-performance-data">Reading performance data</a> * <a href="#browsing-commits">Browsing commits</a> * <a href="#filtering-commits">Filtering commits</a> * <a href="#flame-chart">Flame chart</a> * <a href="#ranked-chart">Ranked chart</a> * <a href="#component-chart">Component chart</a> * <a href="#interactions">Interactions</a> * <a href="#troubleshooting">Troubleshooting</a> * <a href="#no-profiling-data-has-been-recorded-for-the-selected-root">No profiling data has been recorded for the selected root</a> * <a href="#no-timing-data-to-display-for-the-selected-commit">No timing data to display for the selected commit</a> * <a href="#deep-dive-video">Deep dive video</a></p>
 <h2 id="profiling-an-application">Profiling an application</h2>
 <p>DevTools will show a “Profiler” tab for applications that support the new profiling API:</p>
@@ -21,11 +25,13 @@
 <figure>
 <img src="../images/blog/introducing-the-react-profiler/start-profiling.png" alt="Click “record” to start profiling" /><figcaption>Click “record” to start profiling</figcaption>
 </figure>
-<p>Once you’ve started recording, DevTools will automatically collect performance information each time your application renders. Use your app as you normally would. When you are finished profiling, click the “Stop” button.</p>
+<p>Once you've started recording, DevTools will automatically collect performance information each time your application
+    renders. Use your app as you normally would. When you are finished profiling, click the “Stop” button.</p>
 <figure>
 <img src="../images/blog/introducing-the-react-profiler/stop-profiling.png" alt="Click “stop” when you are finished profiling" /><figcaption>Click “stop” when you are finished profiling</figcaption>
 </figure>
-<p>Assuming your application rendered at least once while profiling, DevTools will show several ways to view the performance data. We’ll <a href="#reading-performance-data">take a look at each of these below</a>.</p>
+<p>Assuming your application rendered at least once while profiling, DevTools will show several ways to view the
+    performance data. We'll <a href="#reading-performance-data">take a look at each of these below</a>.</p>
 <h2 id="reading-performance-data">Reading performance data</h2>
 <h3 id="browsing-commits">Browsing commits</h3>
 <p>Conceptually, React does work in two phases:</p>
@@ -54,11 +60,16 @@
 <p>The width of a bar indicates how long it took to render the component (and its children) when they last rendered. If the component did not re-render as part of this commit, the time represents a previous render. The wider a component is, the longer it took to render.</p>
 <p>The color of a bar indicates how long the component (and its children) took to render in the selected commit. Yellow components took more time, blue components took less time, and gray components did not render at all during this commit.</p>
 </blockquote>
-<p>For example, the commit shown above took a total of 18.4ms to render. The <code>Router</code> component was the “most expensive” to render (taking 18.4ms). Most of this time was due to two of its children, <code>Nav</code> (8.4ms) and <code>Route</code> (7.9ms). The rest of the time was divided between its remaining children or spent in the component’s own render method.</p>
+<p>For example, the commit shown above took a total of 18.4ms to render. The <code>Router</code> component was the “most
+    expensive” to render (taking 18.4ms). Most of this time was due to two of its children, <code>Nav</code> (8.4ms) and
+    <code>Route</code> (7.9ms). The rest of the time was divided between its remaining children or spent in the
+    component's own render method.</p>
 <p>You can zoom in or out on a flame chart by clicking on components: <img src="../images/blog/introducing-the-react-profiler/zoom-in-and-out.gif" alt="Click on a component to zoom in or out" /></p>
 <p>Clicking on a component will also select it and show information in the right side panel which includes its <code>props</code> and <code>state</code> at the time of this commit. You can drill into these to learn more about what the component actually rendered during the commit:</p>
 <figure>
-<img src="../images/blog/introducing-the-react-profiler/props-and-state.gif" alt="Viewing a component’s props and state for a commit" /><figcaption>Viewing a component’s props and state for a commit</figcaption>
+<img src="../images/blog/introducing-the-react-profiler/props-and-state.gif"
+    alt="Viewing a component's props and state for a commit" />
+<figcaption>Viewing a component's props and state for a commit</figcaption>
 </figure>
 <p>In some cases, selecting a component and stepping between commits may also provide a hint as to <em>why</em> the component rendered:</p>
 <figure>
@@ -72,11 +83,15 @@
 </figure>
 <blockquote>
 <p>Note:</p>
-<p>A component’s render time includes the time spent rendering its children, so the components which took the longest to render are generally near the top of the tree.</p>
+<p>A component's render time includes the time spent rendering its children, so the components which took the longest to
+    render are generally near the top of the tree.</p>
 </blockquote>
 <p>As with the flame chart, you can zoom in or out on a ranked chart by clicking on components.</p>
 <h3 id="component-chart">Component chart</h3>
-<p>Sometimes it’s useful to see how many times a particular component rendered while you were profiling. The component chart provides this information in the form of a bar chart. Each bar in the chart represents a time when the component rendered. The color and height of each bar corresponds to how long the component took to render <em>relative to other components</em> in a particular commit.</p>
+<p>Sometimes it's useful to see how many times a particular component rendered while you were profiling. The component
+    chart provides this information in the form of a bar chart. Each bar in the chart represents a time when the
+    component rendered. The color and height of each bar corresponds to how long the component took to render
+    <em>relative to other components</em> in a particular commit.</p>
 <figure>
 <img src="../images/blog/introducing-the-react-profiler/component-chart.png" alt="Example component chart" /><figcaption>Example component chart</figcaption>
 </figure>
@@ -107,12 +122,14 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="no-profiling-data-has-been-recorded-for-the-selected-root">No profiling data has been recorded for the selected root</h3>
 <p>If your application has multiple “roots”, you may see the following message after profiling: <img src="../images/blog/introducing-the-react-profiler/no-profiler-data-multi-root.png" alt="No profiling data has been recorded for the selected root" /></p>
-<p>This message indicates that no performance data was recorded for the root that’s selected in the “Elements” panel. In this case, try selecting a different root in that panel to view profiling information for that root:</p>
+<p>This message indicates that no performance data was recorded for the root that's selected in the “Elements” panel. In
+    this case, try selecting a different root in that panel to view profiling information for that root:</p>
 <figure>
 <img src="../images/blog/introducing-the-react-profiler/select-a-root-to-view-profiling-data.gif" alt="Select a root in the “Elements” panel to view its performance data" /><figcaption>Select a root in the “Elements” panel to view its performance data</figcaption>
 </figure>
 <h3 id="no-timing-data-to-display-for-the-selected-commit">No timing data to display for the selected commit</h3>
-<p>Sometimes a commit may be so fast that <code>performance.now()</code> doesn’t give DevTools any meaningful timing information. In this case, the following message will be shown:</p>
+<p>Sometimes a commit may be so fast that <code>performance.now()</code> doesn't give DevTools any meaningful timing
+    information. In this case, the following message will be shown:</p>
 <figure>
 <img src="../images/blog/introducing-the-react-profiler/no-timing-data-for-commit.png" alt="No timing data to display for the selected commit" /><figcaption>No timing data to display for the selected commit</figcaption>
 </figure>

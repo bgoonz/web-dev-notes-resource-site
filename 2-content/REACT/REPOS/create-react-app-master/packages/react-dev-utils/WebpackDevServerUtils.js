@@ -418,8 +418,8 @@ function prepareProxy(proxy, appPublicFolder, servedPathname) {
       // `GET` method, we can proxy all non-`GET` requests.
       // For `GET` requests, if request `accept`s text/html, we pick /index.html.
       // Modern browsers include text/html into `accept` header when navigating.
-      // However API calls like `fetch()` won’t generally accept text/html.
-      // If this heuristic doesn’t work well for you, use `src/setupProxy.js`.
+      // However API calls like `fetch()` won't generally accept text/html.
+      // If this heuristic doesn't work well for you, use `src/setupProxy.js`.
       context: function (pathname, req) {
         return (
           req.method !== 'GET' ||

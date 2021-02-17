@@ -13,9 +13,17 @@
 <p>When the user clicks the reset button, the page reloads, and reverts to its original form.</p>
 <p>Note that:</p>
 <ul>
-<li><p>if the user reloads the tab, or switches tabs, while the popup is open, then the popup won’t be able to beastify the page any more (because the content script was injected into the original tab).</p></li>
+<li>
+    <p>if the user reloads the tab, or switches tabs, while the popup is open, then the popup won't be able to beastify
+        the page any more (because the content script was injected into the original tab).</p>
+</li>
 <li><p>by default <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript"><code>tabs.executeScript()</code></a> injects the script only when the web page and its resources have finished loading. This means that clicks in the popup will have no effect until the page has finished loading.</p></li>
-<li><p>it’s not possible to inject content scripts into certain pages, including privileged browser pages like “about:debugging” and the <a href="https://addons.mozilla.org/">addons.mozilla.org</a> website. If the user clicks the beastify icon when such a page is loaded into the active tab, the popup displays an error message.</p></li>
+<li>
+    <p>it's not possible to inject content scripts into certain pages, including privileged browser pages like
+        “about:debugging” and the <a href="https://addons.mozilla.org/">addons.mozilla.org</a> website. If the user
+        clicks the beastify icon when such a page is loaded into the active tab, the popup displays an error message.
+    </p>
+</li>
 </ul>
 <h2 id="what-it-shows">What it shows</h2>
 <ul>

@@ -24,7 +24,7 @@ Upgrading to the new transform is completely optional, but it has a few benefits
 
 Now let's take a closer look at the differences between the old and the new transform.
 
-## What’s Different in the New Transform? {#whats-different-in-the-new-transform}
+## What's Different in the New Transform? {#whats-different-in-the-new-transform}
 
 When you use JSX, the compiler transforms it into React function calls that the browser can understand. **The old JSX transform** turned JSX into `React.createElement(...)` calls.
 

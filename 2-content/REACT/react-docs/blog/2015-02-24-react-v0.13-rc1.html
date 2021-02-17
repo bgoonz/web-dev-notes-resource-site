@@ -7,7 +7,12 @@
 </head>
 <body>;
 <p>Over the weekend we pushed out our first (and hopefully only) release candidate for React v0.13!</p>
-<p>We’ve talked a little bit about the changes that are coming. The splashiest of these changes is support for ES6 Classes. You can read more about this in <a href="/blog/2015/01/27/react-v0.13.0-beta-1.html">our beta announcement</a>. We’re really excited about this! Sebastian also posted earlier this morning about <a href="/blog/2015/02/24/streamlining-react-elements.html">some of the other changes coming focused around ReactElement</a>. The changes we’ve been working on there will hopefully enable lots of improvements to performance and developer experience.</p>
+<p>We've talked a little bit about the changes that are coming. The splashiest of these changes is support for ES6
+    Classes. You can read more about this in <a href="/blog/2015/01/27/react-v0.13.0-beta-1.html">our beta
+        announcement</a>. We're really excited about this! Sebastian also posted earlier this morning about <a
+        href="/blog/2015/02/24/streamlining-react-elements.html">some of the other changes coming focused around
+        ReactElement</a>. The changes we've been working on there will hopefully enable lots of improvements to
+    performance and developer experience.</p>
 <p>The release candidate is available for download:</p>
 <ul>
 <li><strong>React</strong><br />
@@ -21,15 +26,20 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.13.0-r
 <li><strong>In-Browser JSX transformer</strong><br />
 <a href="https://fb.me/JSXTransformer-0.13.0-rc1.js" class="uri">https://fb.me/JSXTransformer-0.13.0-rc1.js</a></li>
 </ul>
-<p>We’ve also published version <code>0.13.0-rc1</code> of the <code>react</code> and <code>react-tools</code> packages on npm and the <code>react</code> package on bower.</p>
+<p>We've also published version <code>0.13.0-rc1</code> of the <code>react</code> and <code>react-tools</code> packages
+    on npm and the <code>react</code> package on bower.</p>
 <hr />
 <h2 id="changelog">Changelog</h2>
 <h3 id="react-core">React Core</h3>
 <h4 id="breaking-changes">Breaking Changes</h4>
 <ul>
-<li>Mutating <code>props</code> after an element is created is deprecated and will cause warnings in development mode; future versions of React will incorporate performance optimizations assuming that props aren’t mutated</li>
+<li>Mutating <code>props</code> after an element is created is deprecated and will cause warnings in development mode;
+    future versions of React will incorporate performance optimizations assuming that props aren't mutated</li>
 <li>Static methods (defined in <code>statics</code>) are no longer autobound to the component class</li>
-<li><code>ref</code> resolution order has changed slightly such that a ref to a component is available immediately after its <code>componentDidMount</code> method is called; this change should be observable only if your component calls a parent component’s callback within your <code>componentDidMount</code>, which is an anti-pattern and should be avoided regardless</li>
+<li><code>ref</code> resolution order has changed slightly such that a ref to a component is available immediately after
+    its <code>componentDidMount</code> method is called; this change should be observable only if your component calls a
+    parent component's callback within your <code>componentDidMount</code>, which is an anti-pattern and should be
+    avoided regardless</li>
 <li>Calls to <code>setState</code> in life-cycle methods are now always batched and therefore asynchronous. Previously the first call on the first mount was synchronous.</li>
 <li><code>setState</code> and <code>forceUpdate</code> on an unmounted component now warns instead of throwing. That avoids a possible race condition with Promises.</li>
 <li>Access to most internal properties has been completely removed, including <code>this._pendingState</code> and <code>this._rootNodeID</code>.</li>

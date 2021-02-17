@@ -46,8 +46,14 @@
 <a class="sourceLine" id="cb1-7" title="7"><span class="op">&lt;</span>Link href<span class="op">={</span><span class="va">user</span>.<span class="at">permalink</span><span class="op">}&gt;</span></a>
 <a class="sourceLine" id="cb1-8" title="8">  <span class="op">&lt;</span>Avatar user<span class="op">={</span>user<span class="op">}</span> size<span class="op">={</span>avatarSize<span class="op">}</span> /&gt;</a>
 <a class="sourceLine" id="cb1-9" title="9">&lt;/Link<span class="op">&gt;</span></a></code></pre></div>
-<p>It might feel redundant to pass down the <code>user</code> and <code>avatarSize</code> props through many levels if in the end only the <code>Avatar</code> component really needs it. It’s also annoying that whenever the <code>Avatar</code> component needs more props from the top, you have to add them at all the intermediate levels too.</p>
-<p>One way to solve this issue <strong>without context</strong> is to <a href="/docs/composition-vs-inheritance.html#containment">pass down the <code>Avatar</code> component itself</a> so that the intermediate components don’t need to know about the <code>user</code> or <code>avatarSize</code> props:</p>
+<p>It might feel redundant to pass down the <code>user</code> and <code>avatarSize</code> props through many levels if
+    in the end only the <code>Avatar</code> component really needs it. It's also annoying that whenever the
+    <code>Avatar</code> component needs more props from the top, you have to add them at all the intermediate levels
+    too.</p>
+<p>One way to solve this issue <strong>without context</strong> is to <a
+        href="/docs/composition-vs-inheritance.html#containment">pass down the <code>Avatar</code> component itself</a>
+    so that the intermediate components don't need to know about the <code>user</code> or <code>avatarSize</code> props:
+</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span> <span class="at">Page</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="kw">const</span> user <span class="op">=</span> <span class="va">props</span>.<span class="at">user</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="kw">const</span> userLink <span class="op">=</span> (</a>
@@ -66,9 +72,14 @@
 <a class="sourceLine" id="cb2-16" title="16"><span class="op">&lt;</span>NavigationBar userLink<span class="op">={</span>...<span class="op">}</span> /&gt;</a>
 <a class="sourceLine" id="cb2-17" title="17"><span class="co">// ... which renders ...</span></a>
 <a class="sourceLine" id="cb2-18" title="18"><span class="op">{</span><span class="va">props</span>.<span class="at">userLink</span><span class="op">}</span></a></code></pre></div>
-<p>With this change, only the top-most Page component needs to know about the <code>Link</code> and <code>Avatar</code> components’ use of <code>user</code> and <code>avatarSize</code>.</p>
-<p>This <em>inversion of control</em> can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. However, this isn’t the right choice in every case: moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.</p>
-<p>You’re not limited to a single child for a component. You may pass multiple children, or even have multiple separate “slots” for children, <a href="/docs/composition-vs-inheritance.html#containment">as documented here</a>:</p>
+<p>With this change, only the top-most Page component needs to know about the <code>Link</code> and <code>Avatar</code>
+    components' use of <code>user</code> and <code>avatarSize</code>.</p>
+<p>This <em>inversion of control</em> can make your code cleaner in many cases by reducing the amount of props you need
+    to pass through your application and giving more control to the root components. However, this isn't the right
+    choice in every case: moving more complexity higher in the tree makes those higher-level components more complicated
+    and forces the lower-level components to be more flexible than you may want.</p>
+<p>You're not limited to a single child for a component. You may pass multiple children, or even have multiple separate
+    “slots” for children, <a href="/docs/composition-vs-inheritance.html#containment">as documented here</a>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">Page</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="kw">const</span> user <span class="op">=</span> <span class="va">props</span>.<span class="at">user</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="kw">const</span> content <span class="op">=</span> <span class="op">&lt;</span>Feed user<span class="op">={</span>user<span class="op">}</span> /&gt;<span class="op">;</span></a>
@@ -97,7 +108,12 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&lt;</span><span class="va">MyContext</span>.<span class="at">Provider</span> value<span class="op">={</span><span class="co">/* some value */</span><span class="op">}&gt;</span></a></code></pre></div>
 <p>Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.</p>
 <p>The Provider component accepts a <code>value</code> prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.</p>
-<p>All consumers that are descendants of a Provider will re-render whenever the Provider’s <code>value</code> prop changes. The propagation from Provider to its descendant consumers (including <a href="#classcontexttype"><code>.contextType</code></a> and <a href="/docs/hooks-reference.html#usecontext"><code>useContext</code></a>) is not subject to the <code>shouldComponentUpdate</code> method, so the consumer is updated even when an ancestor component skips an update.</p>
+<p>All consumers that are descendants of a Provider will re-render whenever the Provider's <code>value</code> prop
+    changes. The propagation from Provider to its descendant consumers (including <a
+        href="#classcontexttype"><code>.contextType</code></a> and <a
+        href="/docs/hooks-reference.html#usecontext"><code>useContext</code></a>) is not subject to the
+    <code>shouldComponentUpdate</code> method, so the consumer is updated even when an ancestor component skips an
+    update.</p>
 <p>Changes are determined by comparing the new and old values using the same algorithm as <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description"><code>Object.is</code></a>.</p>
 <blockquote>
 <p>Note</p>
@@ -144,7 +160,8 @@
 <p>Requires a <a href="/docs/render-props.html#using-props-other-than-render">function as a child</a>. The function receives the current context value and returns a React node. The <code>value</code> argument passed to the function will be equal to the <code>value</code> prop of the closest Provider for this context above in the tree. If there is no Provider for this context above, the <code>value</code> argument will be equal to the <code>defaultValue</code> that was passed to <code>createContext()</code>.</p>
 <blockquote>
 <p>Note</p>
-<p>For more information about the ‘function as a child’ pattern, see <a href="/docs/render-props.html">render props</a>.</p>
+<p>For more information about the ‘function as a child' pattern, see <a href="/docs/render-props.html">render props</a>.
+</p>
 </blockquote>
 <h3 id="contextdisplayname"><code>Context.displayName</code></h3>
 <p>Context object accepts a <code>displayName</code> string property. React DevTools uses this string to determine what to display for the context.</p>
@@ -170,9 +187,11 @@ MyContext.displayName = &#39;MyDisplayName&#39;;
 <p><code>embed:context/multiple-contexts.js</code></p>
 <p>If two or more context values are often used together, you might want to consider creating your own render prop component that provides both.</p>
 <h2 id="caveats">Caveats</h2>
-<p>Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders. For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for <code>value</code>:</p>
+<p>Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger
+    unintentional renders in consumers when a provider's parent re-renders. For example, the code below will re-render
+    all consumers every time the Provider re-renders because a new object is always created for <code>value</code>:</p>
 <p><code>embed:context/reference-caveats-problem.js</code></p>
-<p>To get around this, lift the value into the parent’s state:</p>
+<p>To get around this, lift the value into the parent's state:</p>
 <p><code>embed:context/reference-caveats-solution.js</code></p>
 <h2 id="legacy-api">Legacy API</h2>
 <blockquote>

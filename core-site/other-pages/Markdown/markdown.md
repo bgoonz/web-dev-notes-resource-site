@@ -35,17 +35,17 @@ _You **can** combine them_
 
 **Inordered:**
 
-    * Milk
-    * Bread
+    - Milk
+    - Bread
         * Wholegrain
-    * Butter
+    - Butter
 
 Result:
 
-- Milk
-- Bread
-  - Wholegrain
-- Butter
+* Milk
+* Bread
+  + Wholegrain
+* Butter
 
 **Ordered:**
 
@@ -61,7 +61,9 @@ Result:
 
 ### Images
 
-    ![Alt Text](url)
+    
+
+![Alt Text](url)
 
 Result:
 
@@ -187,21 +189,27 @@ The quick brown fox[^1] jumped over the lazy dog[^2].
 
 ### Syntax Highlighting
 
-    ```javascript
+    
+
+``` javascript
     function fancyAlert(arg) {
-      if(arg) {
-        $.facebox({div:'#foo'})
-      }
+        if (arg) {
+            $.facebox({
+                div: '#foo'
+            })
+        }
     }
-    ```
+```
 
 Result:
 
-```javascript
+``` javascript
 function fancyAlert(arg) {
-  if (arg) {
-    $.facebox({ div: "#foo" });
-  }
+    if (arg) {
+        $.facebox({
+            div: "#foo"
+        });
+    }
 }
 ```
 
@@ -214,14 +222,14 @@ function fancyAlert(arg) {
 
 Result:
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+* [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+* [x] list syntax required (any unordered or ordered list supported)
+* [x] this is a complete item
+* [ ] this is an incomplete item
 
 ### Tables
 
-You can create tables by assembling a list of words and dividing them with hyphens `-` (for the first row), and then separating each column with a pipe `|`:
+You can create tables by assembling a list of words and dividing them with hyphens `-` (for the first row), and then separating each column with a pipe `|` :
 
 | First Header                | Second Header                |
 | --------------------------- | ---------------------------- |
@@ -254,5 +262,5 @@ GitHub supports emoji! Check out the [Emoji Cheat Sheet](http://www.emoji-cheat-
 
 ## References
 
-- http://blog.ghost.org/markdown/
-- https://guides.github.com/features/mastering-markdown/
+* http://blog.ghost.org/markdown/
+* https://guides.github.com/features/mastering-markdown/

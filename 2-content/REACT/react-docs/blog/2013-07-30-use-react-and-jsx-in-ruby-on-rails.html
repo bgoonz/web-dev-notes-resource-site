@@ -6,14 +6,17 @@
   <title>Document</title>
 </head>
 <body>;
-<p>Today we’re releasing a gem to make it easier to use React and JSX in Ruby on Rails applications: <a href="https://github.com/facebook/react-rails">react-rails</a>.</p>
+<p>Today we're releasing a gem to make it easier to use React and JSX in Ruby on Rails applications: <a
+        href="https://github.com/facebook/react-rails">react-rails</a>.</p>
 <p>This gem has 2 primary purposes:</p>
 <ol type="1">
-<li>To package <code>react.js</code> in a way that’s easy to use and easy to update.</li>
+<li>To package <code>react.js</code> in a way that's easy to use and easy to update.</li>
 <li>To allow you to write JSX without an external build step to transform that into JS.</li>
 </ol>
 <h2 id="packaging-reactjs">Packaging react.js</h2>
-<p>To make <code>react.js</code> available for use client-side, simply add <code>react</code> to your manifest, and declare the variant you’d like to use in your environment. When you use <code>:production</code>, the minified and optimized <code>react.min.js</code> will be used instead of the development version. For example:</p>
+<p>To make <code>react.js</code> available for use client-side, simply add <code>react</code> to your manifest, and
+    declare the variant you'd like to use in your environment. When you use <code>:production</code>, the minified and
+    optimized <code>react.min.js</code> will be used instead of the development version. For example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># config/environments/development.rb</span></a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="dt">MyApp</span>::<span class="dt">Application</span>.configure <span class="kw">do</span></a>
@@ -30,5 +33,6 @@
 <h2 id="asset-pipeline">Asset Pipeline</h2>
 <p><code>react-rails</code> takes advantage of the <a href="http://guides.rubyonrails.org/asset_pipeline.html">asset pipeline</a> that was introduced in Rails 3.1. A very important part of that pipeline is the <code>assets:precompile</code> Rake task. <code>react-rails</code> will ensure that your JSX files will be transformed into regular JS before all of your assets are minified and packaged.</p>
 <h2 id="installation">Installation</h2>
-<p>Installation follows the same process you’re familiar with. You can install it globally with <code>gem install react-rails</code>, though we suggest you add the dependency to your <code>Gemfile</code> directly.</p>
+<p>Installation follows the same process you're familiar with. You can install it globally with <code>gem install
+        react-rails</code>, though we suggest you add the dependency to your <code>Gemfile</code> directly.</p>
 </body></html>

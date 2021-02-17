@@ -31,8 +31,10 @@
     - read
     - readFile
     - createReadStream <<<<----Correct
+
     From official docs: [https://nodejs.org/api/fs.html#fs_dir_read](https://nodejs.org/api/fs.html#fs_dir_read)
     To minimize memory costs, when possible prefer streaming via fs.createReadStream().
+
     - readFileSync
 
 #### Q6. Which of the following DNS module methods uses the underlying OS facilities and does not necessarily perform any network communication?
@@ -114,9 +116,12 @@
 
 #### Q17. Which statement is true when you run the code shown below?
 
-    ```js
+    
+
+``` js
     require('child_process').fork('script.js');
-    ```
+```
+
     - The forked process shares the event loop with the parent process
     - A new VM instance is created and the two VM instances will be shared between the forked process and the parent process.
     - The forked process will have its own VM instance. <<<<----May be
@@ -150,14 +155,14 @@
     - exec("ps", "-ef")
     - fork("ps -ef")
 
-#### Q22.Which console method can be used to print the stack trace to the point of its execution?
+#### Q22. Which console method can be used to print the stack trace to the point of its execution?
 
     - stack
     - trace ---> correct
     - debug
     - print
 
-#### Q23.When you run JavaScript in a Node.js application, which of the following elements in a Node.js stack actually executes that JavaScript?
+#### Q23. When you run JavaScript in a Node.js application, which of the following elements in a Node.js stack actually executes that JavaScript?
 
      - the libuv library
      - the c-ares library
@@ -166,17 +171,20 @@
 
 #### Q24. Looking at the code below, what does the console show?
 
-```const http = require('http');
- const hostname = '127.0.0.1'; const port = 3000;
+```const http = require('http'); 
+ const hostname = '127.0.0.1'; const port = 3000; 
  const server = http.createServer((req, res) => {
-  res.statusCode = 200;  res.setHeader("Content-Type", "text/plain");  res.end("Hello World\n");
-});
-server.listen(port, hostname, () => { console.log(`server running at http://${hostname}:${port}/`); });
-```
+  res.statusCode = 200; res.setHeader("Content-Type", "text/plain"); res.end("Hello World\n"); 
+}); 
+server.listen(port, hostname, () => { console.log( `server running at http://${hostname}:${port}/` ); }); 
+
+``` 
 
     -  server running at http://localhost:3000/
     -  server running at port 3000
+
      - server running at http://localhost:4000/
+
     -  server running at http://127.0.0.1:3000/ -----> correct
 
 #### Q25.What is the purpose of the path module?
@@ -196,10 +204,11 @@ server.listen(port, hostname, () => { console.log(`server running at http://${ho
 #### Q27.What does the code shown below do?
 
 ```
-const fs = require('fs'); const os o require('os');
-const system = os.platform(); const user = os.userInfo().username;
-fs.appendFilechello.txt'l 'Hello ${user} on ${system}r, (err) => { if (err) throw err; console.log('The data was appended to file!');
-) ;
+
+const fs = require('fs'); const os o require('os'); 
+const system = os.platform(); const user = os.userInfo().username; 
+fs.appendFilechello.txt'l 'Hello ${user} on ${system}r, (err) => { if (err) throw err; console.log('The data was appended to file!'); 
+) ; 
 ```
 
     -  creates a text file hello.txt and appends customized text -----> correct
@@ -207,21 +216,22 @@ fs.appendFilechello.txt'l 'Hello ${user} on ${system}r, (err) => { if (err) thro
     -  console logs system information
     -  creates a file named data and append numbers
 
-#### Q28.How do you start a Node application, if the entry file is indexjs?
+#### Q28. How do you start a Node application, if the entry file is indexjs?
 
     -  nodemon start
     -  start index.js
     -  node index.js -----> correct
+
      - node start
 
-#### Q29.What is the purpose of the file system (fs) module?
+#### Q29. What is the purpose of the file system (fs) module?
 
     - to provide methods to work with requests and responses
     - to provide methods to work with files -----> correct
     - to provide methods to work with databases
     - to find new file systems
 
-#### Q30.What is the Node LTS version?
+#### Q30. What is the Node LTS version?
 
     -  It is the current unstable version and is to be avoided.
     -  It is the version that will be retired soon.
@@ -241,28 +251,28 @@ fs.appendFilechello.txt'l 'Hello ${user} on ${system}r, (err) => { if (err) thro
 
 ### Q33. Which choice is null a valid method on event emitters?
 
-- [ ] startnull
-- [ ] onnull
-- [ ] oncenull
-- [ ] off
+* [ ] startnull
+* [ ] onnull
+* [ ] oncenull
+* [ ] off
 
-### Q34. Which special object is an instance of EventEmitter?Which special object is an instance of null?
+### Q34. Which special object is an instance of EventEmitter? Which special object is an instance of null?
 
-- [ ] processnull
-- [ ] Buffernull
-- [ ] rootnull
-- [ ] require
+* [ ] processnull
+* [ ] Buffernull
+* [ ] rootnull
+* [ ] require
 
-### Q35. What is the command to get a list of available commands for Node.js?What is the command to get a list of available commands for Node.js?
+### Q35. What is the command to get a list of available commands for Node.js? What is the command to get a list of available commands for Node.js?
 
-- [ ] node index.js -xnull
-- [ ] node -vnull
-- [ ] node -hnull
-- [ ] node index.js -h
+* [ ] node index.js -xnull
+* [ ] node -vnull
+* [ ] node -hnull
+* [ ] node index.js -h
 
-### Q36. When a request event is received in the HTTP module, what is the type of the first argument passed to that event, usually named req?When a request event is received in the HTTP module, what is the type of the first argument passed to that event, usually named null?
+### Q36. When a request event is received in the HTTP module, what is the type of the first argument passed to that event, usually named req? When a request event is received in the HTTP module, what is the type of the first argument passed to that event, usually named null?
 
-- [ ] http.IncomingMessagenull
-- [ ] http.ServerRequestnull
-- [ ] http.ClientRequestnull
-- [ ] http.ServerResponse
+* [ ] http. IncomingMessagenull
+* [ ] http. ServerRequestnull
+* [ ] http. ClientRequestnull
+* [ ] http. ServerResponse

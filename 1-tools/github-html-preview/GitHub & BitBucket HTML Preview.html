@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>GitHub &amp; BitBucket HTML Preview</title>
+    <style>
+        body {
+            font: 12px 'Helvetica Neue', Helvetica, Arial, freesans, clean, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        a {
+            color: #666;
+        }
+
+        #previewform {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        strong {
+            color: #333;
+            background-color: #FAFFA6;
+            padding: 0.1em;
+        }
+
+        #footer {
+            margin: 20px 0;
+            font-size: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="previewform" onsubmit="location.href=&#39;/?&#39;+this.file.value;return false" style="display: block;">
+        <h1>GitHub &amp; BitBucket HTML Preview</h1>
+        <p>
+            Enter URL of the HTML file to preview:
+            <input type="url" id="file" value="" placeholder="e.g. https://github.com/user/repo/blob/master/index.html"
+                size="60" autofocus="">
+            <input type="submit" value="Preview">
+        </p>
+        <p>or prepend to the URL:
+            <code><strong>http://htmlpreview.github.io/?</strong>https://github.com/twbs/bootstrap/blob/gh-pages/2.3.2/index.html</code>
+        </p>
+        <p id="footer">Developed by <a href="https://github.com/niutech">niu tech</a> | Contribute on <a
+                href="https://github.com/htmlpreview/htmlpreview.github.com">GitHub</a></p>
+    </form>
+    <script src="./GitHub&amp;BitBucketHTMLPreview_files/htmlpreview.js.download"></script>
+
+
+    <span
+        style="margin: 0px auto; border: 2px dotted rgb(0, 0, 0); position: absolute; z-index: 2147483647; visibility: hidden; left: 302px; width: 0px; top: 105px; height: 0px;"></span><span
+        style="z-index: 2147483647; position: absolute; visibility: hidden; left: 287px; width: 50px; top: 90px; height: 20px; font-size: 10px; color: black;"></span>
+</body>
+
+</html>

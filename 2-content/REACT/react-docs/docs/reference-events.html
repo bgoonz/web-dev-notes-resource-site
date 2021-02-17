@@ -6,10 +6,18 @@
   <title>Document</title>
 </head>
 <body>;
-<p>This reference guide documents the <code>SyntheticEvent</code> wrapper that forms part of React’s Event System. See the <a href="/docs/handling-events.html">Handling Events</a> guide to learn more.</p>
+<p>This reference guide documents the <code>SyntheticEvent</code> wrapper that forms part of React's Event System. See
+    the <a href="/docs/handling-events.html">Handling Events</a> guide to learn more.</p>
 <h2 id="overview">Overview</h2>
-<p>Your event handlers will be passed instances of <code>SyntheticEvent</code>, a cross-browser wrapper around the browser’s native event. It has the same interface as the browser’s native event, including <code>stopPropagation()</code> and <code>preventDefault()</code>, except the events work identically across all browsers.</p>
-<p>If you find that you need the underlying browser event for some reason, simply use the <code>nativeEvent</code> attribute to get it. The synthetic events are different from, and do not map directly to, the browser’s native events. For example in <code>onMouseLeave</code> <code>event.nativeEvent</code> will point to a <code>mouseout</code> event. The specific mapping is not part of the public API and may change at any time. Every <code>SyntheticEvent</code> object has the following attributes:</p>
+<p>Your event handlers will be passed instances of <code>SyntheticEvent</code>, a cross-browser wrapper around the
+    browser's native event. It has the same interface as the browser's native event, including
+    <code>stopPropagation()</code> and <code>preventDefault()</code>, except the events work identically across all
+    browsers.</p>
+<p>If you find that you need the underlying browser event for some reason, simply use the <code>nativeEvent</code>
+    attribute to get it. The synthetic events are different from, and do not map directly to, the browser's native
+    events. For example in <code>onMouseLeave</code> <code>event.nativeEvent</code> will point to a
+    <code>mouseout</code> event. The specific mapping is not part of the public API and may change at any time. Every
+    <code>SyntheticEvent</code> object has the following attributes:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1">boolean bubbles</a>
 <a class="sourceLine" id="cb1-2" title="2">boolean cancelable</a>
 <a class="sourceLine" id="cb1-3" title="3">DOMEventTarget currentTarget</a>
@@ -27,7 +35,8 @@
 <a class="sourceLine" id="cb1-15" title="15">string type</a></code></pre></div>
 <blockquote>
 <p>Note:</p>
-<p>As of v17, <code>e.persist()</code> doesn’t do anything because the <code>SyntheticEvent</code> is no longer <a href="/docs/legacy-event-pooling.html">pooled</a>.</p>
+<p>As of v17, <code>e.persist()</code> doesn't do anything because the <code>SyntheticEvent</code> is no longer <a
+        href="/docs/legacy-event-pooling.html">pooled</a>.</p>
 </blockquote>
 <blockquote>
 <p>Note:</p>
@@ -94,7 +103,8 @@
 <p>Properties:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1">DOMEventTarget relatedTarget</a></code></pre></div>
 <h4 id="onfocus">onFocus</h4>
-<p>The <code>onFocus</code> event is called when the element (or some element inside of it) receives focus. For example, it’s called when the user clicks on a text input.</p>
+<p>The <code>onFocus</code> event is called when the element (or some element inside of it) receives focus. For example,
+    it's called when the user clicks on a text input.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">function</span> <span class="at">Example</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb10-3" title="3">    <span class="op">&lt;</span>input</a>
@@ -106,7 +116,8 @@
 <a class="sourceLine" id="cb10-9" title="9">  )</a>
 <a class="sourceLine" id="cb10-10" title="10"><span class="op">}</span></a></code></pre></div>
 <h4 id="onblur">onBlur</h4>
-<p>The <code>onBlur</code> event handler is called when focus has left the element (or left some element inside of it). For example, it’s called when the user clicks outside of a focused text input.</p>
+<p>The <code>onBlur</code> event handler is called when focus has left the element (or left some element inside of it).
+    For example, it's called when the user clicks outside of a focused text input.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">function</span> <span class="at">Example</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb11-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb11-3" title="3">    <span class="op">&lt;</span>input</a>

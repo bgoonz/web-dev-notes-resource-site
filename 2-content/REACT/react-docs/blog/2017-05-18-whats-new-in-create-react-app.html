@@ -15,13 +15,21 @@
 <p><em>This change was contributed by <span class="citation" data-cites="Timer">[@Timer]</span>(https://github.com/Timer) in <a href="https://github.com/facebookincubator/create-react-app/pull/1291">#1291</a>.</em></p>
 </blockquote>
 <p>We have upgraded to webpack 2 which has been <a href="https://medium.com/webpack/webpack-2-and-beyond-40520af9067f">officially released</a> a few months ago. It is a big upgrade with many bugfixes and general improvements. We have been testing it for a while, and now consider it stable enough to recommend it to everyone.</p>
-<p>While the Webpack configuration format has changed, Create React App users who didn’t eject don’t need to worry about it as we have updated the configuration on our side.</p>
-<p>If you had to eject your app for one reason or another, Webpack provides a <a href="https://webpack.js.org/guides/migrating/">configuration migration guide</a> that you can follow to update your apps. Note that with each release of Create React App, we are working to support more use cases out of the box so that you don’t have to eject in the future.</p>
-<p>The biggest notable webpack 2 feature is the ability to write and import <a href="http://2ality.com/2014/09/es6-modules-final.html">ES6 modules</a> directly without compiling them to CommonJS. This shouldn’t affect how you write code since you likely already use <code>import</code> and <code>export</code> statements, but it will help catch more mistakes like missing named exports at compile time:</p>
+<p>While the Webpack configuration format has changed, Create React App users who didn't eject don't need to worry about
+    it as we have updated the configuration on our side.</p>
+<p>If you had to eject your app for one reason or another, Webpack provides a <a
+        href="https://webpack.js.org/guides/migrating/">configuration migration guide</a> that you can follow to update
+    your apps. Note that with each release of Create React App, we are working to support more use cases out of the box
+    so that you don't have to eject in the future.</p>
+<p>The biggest notable webpack 2 feature is the ability to write and import <a
+        href="http://2ality.com/2014/09/es6-modules-final.html">ES6 modules</a> directly without compiling them to
+    CommonJS. This shouldn't affect how you write code since you likely already use <code>import</code> and
+    <code>export</code> statements, but it will help catch more mistakes like missing named exports at compile time:</p>
 <figure>
 <img src="../images/blog/cra-update-exports.gif" alt="Export validation" /><figcaption>Export validation</figcaption>
 </figure>
-<p>In the future, as the ecosystem around ES6 modules matures, you can expect more improvements to your app’s bundle size thanks to <a href="https://webpack.js.org/guides/tree-shaking/">tree shaking</a>.</p>
+<p>In the future, as the ecosystem around ES6 modules matures, you can expect more improvements to your app's bundle
+    size thanks to <a href="https://webpack.js.org/guides/tree-shaking/">tree shaking</a>.</p>
 <p>### Runtime Error Overlay {#error-overlay}</p>
 <blockquote>
 <p><em>This change was contributed by <span class="citation" data-cites="Timer">[@Timer]</span>(https://github.com/Timer) and <span class="citation" data-cites="nicinabox">[@nicinabox]</span>(https://github.com/nicinabox) in <a href="https://github.com/facebookincubator/create-react-app/pull/1101">#1101</a>, <span class="citation" data-cites="bvaughn">[@bvaughn]</span>(https://github.com/bvaughn) in <a href="https://github.com/facebookincubator/create-react-app/pull/2201">#2201</a>.</em></p>
@@ -59,7 +67,11 @@
 <p><em>This change was contributed by <span class="citation" data-cites="Timer">[@Timer]</span>(https://github.com/Timer) in <a href="https://github.com/facebookincubator/create-react-app/pull/1538">#1538</a> and <span class="citation" data-cites="tharakawj">[@tharakawj]</span>(https://github.com/tharakawj) in <a href="https://github.com/facebookincubator/create-react-app/pull/1801">#1801</a>.</em></p>
 </blockquote>
 <p>It is important to keep the initial JavaScript payload of web apps down to the minimum, and <a href="https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2">load the rest of the code on demand</a>. Although Create React App supported <a href="https://webpack.js.org/guides/code-splitting-async/">code splitting</a> using <code>require.ensure()</code> since the first release, it used a webpack-specific syntax that did not work in Jest or other environments.</p>
-<p>In this release, we are adding support for the <a href="http://2ality.com/2017/01/import-operator.html#loading-code-on-demand">dynamic <code>import()</code> proposal</a> which aligns with the future web standards. Unlike <code>require.ensure()</code>, it doesn’t break Jest tests, and should eventually become a part of JavaScript. We encourage you to use <code>import()</code> to delay loading the code for non-critical component subtrees until you need to render them.</p>
+<p>In this release, we are adding support for the <a
+        href="http://2ality.com/2017/01/import-operator.html#loading-code-on-demand">dynamic <code>import()</code>
+        proposal</a> which aligns with the future web standards. Unlike <code>require.ensure()</code>, it doesn't break
+    Jest tests, and should eventually become a part of JavaScript. We encourage you to use <code>import()</code> to
+    delay loading the code for non-critical component subtrees until you need to render them.</p>
 <figure>
 <img src="../images/blog/cra-dynamic-import.gif" alt="Creating chunks with dynamic import" /><figcaption>Creating chunks with dynamic import</figcaption>
 </figure>
@@ -73,7 +85,7 @@
 <img src="../images/blog/cra-better-output.png" alt="Better console output" /><figcaption>Better console output</figcaption>
 </figure>
 <p>When lint errors are reported, we no longer show the warnings so that you can concentrate on more critical issues. Errors and warnings in the production build output are better formatted, and the build error overlay font size now matches the browser font size more closely.</p>
-<h3 id="but-wait-theres-more">But Wait… There’s More!</h3>
+<h3 id="but-wait-theres-more">But Wait… There's More!</h3>
 <p>You can only fit so much in a blog post, but there are other long-requested features in this release, such as <a href="https://github.com/facebookincubator/create-react-app/pull/1344">environment-specific and local <code>.env</code> files</a>, <a href="https://github.com/facebookincubator/create-react-app/pull/2130">a lint rule against confusingly named globals</a>, <a href="https://github.com/facebookincubator/create-react-app/pull/1790">support for multiple proxies in development</a>, <a href="https://github.com/facebookincubator/create-react-app/pull/1590">a customizable browser launch script</a>, and many bugfixes.</p>
 <p>You can read the full changelog and the migration guide in the <a href="https://github.com/facebookincubator/create-react-app/releases/tag/v1.0.0">v1.0.0 release notes</a>.</p>
 <h3 id="acknowledgements">Acknowledgements</h3>

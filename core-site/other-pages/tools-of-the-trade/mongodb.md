@@ -1,16 +1,14 @@
+* ⏱ 20 minutes
 
-
-- ⏱ 20 minutes
-
-- Catalog
-- Full Stack Online
-- Mern Stack Curriculum
-- Mongo Db
+* Catalog
+* Full Stack Online
+* Mern Stack Curriculum
+* Mongo Db
 
 ## Learning Goals
 
-- Understand what MongoDB is and its benefits
-- Identify the differences between SQL and NoSQL databases
+* Understand what MongoDB is and its benefits
+* Identify the differences between SQL and NoSQL databases
 
 ## What is MongoDB?
 
@@ -48,8 +46,8 @@ Storing sub-documents within a document is know as **embedding**. Embedding rela
 
 You should use an embedded data model when you are trying to model the following:
 
-- One-to-One relationships
-- Small One-to-Many relationships
+* One-to-One relationships
+* Small One-to-Many relationships
 
 An **important** thing to keep in mind is that MongoDB documents have a size limit of 16 megabytes. This essentially means that there is a limit to how much you can embed within a document. A good rule of thumb is if you are expecting to embed 50 or more sub-documents within a document then you should break those sub-documents out into their own collection. You can then utilize **referencing** to model their relationships.
 
@@ -59,9 +57,9 @@ You may have also noticed in the example `user` document, there are several Obje
 
 Referencing will seem very familiar after working with a relational database. However, the benefits of embedding are lost when we use referencing. Despite this, here are a few situations where we might need to use referencing:
 
-- Many-to-Many relationships
-- Modeling large hierarchical data sets
-- Large One-to-Many relationships
+* Many-to-Many relationships
+* Modeling large hierarchical data sets
+* Large One-to-Many relationships
 
 ### NoSQL
 
@@ -69,10 +67,10 @@ NoSQL databases are non-relational databases, and one of the best ways to unders
 
 First, the most basic way that SQL and NoSQL databases differ is in how they store data. SQL databases store data in tables where each row may represent an object. NoSQL databases can store data in several different ways other than tables. These include:
 
-- Documents
-- Graphs
-- Key-value pairs
-- Wide-column stores
+* Documents
+* Graphs
+* Key-value pairs
+* Wide-column stores
 
 MongoDB, as mentioned in the previous section, stores data using a document data structure.
 
@@ -82,23 +80,23 @@ Third, SQL databases follow ACID properties while NoSQL databases tend to follow
 
 ACID:
 
-- Atomicity
-  - All components of a transaction are treated as a single action.
-- Consistency
-  - All transactions must follow the defined rules of the database, such as constraints.
-- Isolation
-  - Concurrently executed transactions result in the same database state as if they were sequentially executed.
-- Durability
-  - Once a transaction is committed, it will persist and cannot be undone by something like a system failure.
+* Atomicity
+  + All components of a transaction are treated as a single action.
+* Consistency
+  + All transactions must follow the defined rules of the database, such as constraints.
+* Isolation
+  + Concurrently executed transactions result in the same database state as if they were sequentially executed.
+* Durability
+  + Once a transaction is committed, it will persist and cannot be undone by something like a system failure.
 
 CAP theorem:
 
-- Consistency
-  - All duplicates of the same data will be the same value across a distributed system.
-- Availability
-  - All nodes within a system can process operations and respond to queries.
-- Partition tolerance
-  - The system continues to operate despite any unplanned network connectivity loss between nodes.
+* Consistency
+  + All duplicates of the same data will be the same value across a distributed system.
+* Availability
+  + All nodes within a system can process operations and respond to queries.
+* Partition tolerance
+  + The system continues to operate despite any unplanned network connectivity loss between nodes.
 
 It is important to note that according to the CAP theorem, in the case of a network partition, one must choose between consistency and availability. Specifically, MongoDB chooses to keep consistency over availability by not accepting writes to a system until it believes it can safely do so.
 

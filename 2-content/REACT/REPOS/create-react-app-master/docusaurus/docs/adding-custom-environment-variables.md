@@ -12,7 +12,7 @@ Your project can consume variables declared in your environment as if they were 
 >
 > Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.
 
-**The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, as [described here](title-and-meta-tags.md#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
+**The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can't possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, as [described here](title-and-meta-tags.md#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
 
 > Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid accidentally [exposing a private key on the machine that could have the same name](https://github.com/facebook/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
 
@@ -22,7 +22,7 @@ There is also a built-in environment variable called `NODE_ENV`. You can read it
 
 These environment variables can be useful for displaying information conditionally based on where the project is deployed or consuming sensitive data that lives outside of version control.
 
-First, you need to have environment variables defined. For example, let’s say you wanted to consume an environment variable inside a `<form>`:
+First, you need to have environment variables defined. For example, let's say you wanted to consume an environment variable inside a `<form>`:
 
 ```jsx
 render() {
@@ -83,7 +83,7 @@ Note that the caveats from the above section apply:
 
 ## Adding Temporary Environment Variables In Your Shell
 
-Defining environment variables can vary between OSes. It’s also important to know that this manner is temporary for the life of the shell session.
+Defining environment variables can vary between OSes. It's also important to know that this manner is temporary for the life of the shell session.
 
 ### Windows (cmd.exe)
 

@@ -7,14 +7,21 @@
 </head>
 <body>;
 <p>Today we are releasing React 15.4.0.</p>
-<p>We didn’t announce the <a href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1510-may-20-2016">previous</a> <a href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1520-july-1-2016">minor</a> <a href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1530-july-29-2016">releases</a> on the blog because most of the changes were bug fixes. However, 15.4.0 is a special release, and we would like to highlight a few notable changes in it.</p>
+<p>We didn't announce the <a
+        href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1510-may-20-2016">previous</a> <a
+        href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1520-july-1-2016">minor</a> <a
+        href="https://github.com/facebook/react/blob/master/CHANGELOG.md#1530-july-29-2016">releases</a> on the blog
+    because most of the changes were bug fixes. However, 15.4.0 is a special release, and we would like to highlight a
+    few notable changes in it.</p>
 <h3 id="separating-react-and-react-dom">Separating React and React DOM</h3>
 <p><a href="/blog/2015/09/10/react-v0.14-rc1.html#two-packages-react-and-react-dom">More than a year ago</a>, we started separating React and React DOM into separate packages. We deprecated <code>React.render()</code> in favor of <code>ReactDOM.render()</code> in React 0.14, and removed DOM-specific APIs from <code>React</code> completely in React 15. However, the React DOM implementation still <a href="https://www.reddit.com/r/javascript/comments/3m6wyu/found_this_line_in_the_react_codebase_made_me/cvcyo4a/">secretly lived inside the React package</a>.</p>
 <p>In React 15.4.0, we are finally moving React DOM implementation to the React DOM package. The React package will now contain only the renderer-agnostic code such as <code>React.Component</code> and <code>React.createElement()</code>.</p>
 <p>This solves a few long-standing issues, such as <a href="https://github.com/facebook/react/issues/7386">errors</a> when you import React DOM in the same file as the <a href="https://facebook.github.io/jest/blog/2016/07/27/jest-14.html">snapshot testing</a> renderer.</p>
-<p><strong>If you only use the official and documented React APIs you won’t need to change anything in your application.</strong></p>
+<p><strong>If you only use the official and documented React APIs you won't need to change anything in your
+        application.</strong></p>
 <p>However, there is a possibility that you imported private APIs from <code>react/lib/*</code>, or that a package you rely on might use them. We would like to remind you that this was never supported, and that your apps should not rely on internal APIs. The React internals will keep changing as we work to make React better.</p>
-<p>Another thing to watch out for is that React DOM Server is now about the same size as React DOM since it contains its own copy of the React reconciler. We don’t recommend using React DOM Server on the client in most cases.</p>
+<p>Another thing to watch out for is that React DOM Server is now about the same size as React DOM since it contains its
+    own copy of the React reconciler. We don't recommend using React DOM Server on the client in most cases.</p>
 <h3 id="profiling-components-with-chrome-timeline">Profiling Components with Chrome Timeline</h3>
 <p>You can now visualize React components in the Chrome Timeline. This lets you see which components exactly get mounted, updated, and unmounted, how much time they take relative to each other.</p>
 <p><img src="../images/blog/react-perf-chrome-timeline.png" width="651" height="228" alt="React components in Chrome timeline" /></p>
@@ -22,14 +29,19 @@
 <ol type="1">
 <li><p>Load your app with <code>?react_perf</code> in the query string (for example, <code>http://localhost:3000/?react_perf</code>).</p></li>
 <li><p>Open the Chrome DevTools <strong>Timeline</strong> tab and press <strong>Record</strong>.</p></li>
-<li><p>Perform the actions you want to profile. Don’t record more than 20 seconds or Chrome might hang.</p></li>
+<li>
+    <p>Perform the actions you want to profile. Don't record more than 20 seconds or Chrome might hang.</p>
+</li>
 <li><p>Stop recording.</p></li>
 <li><p>React events will be grouped under the <strong>User Timing</strong> label.</p></li>
 </ol>
 <p>Note that the numbers are relative so components will render faster in production. Still, this should help you realize when unrelated UI gets updated by mistake, and how deep and how often your UI updates occur.</p>
 <p>Currently Chrome, Edge, and IE are the only browsers supporting this feature, but we use the standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API">User Timing API</a> so we expect more browsers to add support for it.</p>
 <h3 id="mocking-refs-for-snapshot-testing">Mocking Refs for Snapshot Testing</h3>
-<p>If you’re using Jest <a href="https://facebook.github.io/jest/blog/2016/07/27/jest-14.html">snapshot testing</a>, you might have had <a href="https://github.com/facebook/react/issues/7371">issues</a> with components that rely on refs. With React 15.4.0, we introduce a way to provide mock refs to the test renderer. For example, consider this component using a ref in <code>componentDidMount</code>:</p>
+<p>If you're using Jest <a href="https://facebook.github.io/jest/blog/2016/07/27/jest-14.html">snapshot testing</a>, you
+    might have had <a href="https://github.com/facebook/react/issues/7371">issues</a> with components that rely on refs.
+    With React 15.4.0, we introduce a way to provide mock refs to the test renderer. For example, consider this
+    component using a ref in <code>componentDidMount</code>:</p>
 <pre class="js{5,11}"><code>import React from &#39;react&#39;;
 
 export default class MyInput extends React.Component {
@@ -68,14 +80,17 @@ it(&#39;renders correctly&#39;, () =&gt; {
 <p>You can learn more about snapshot testing in <a href="https://facebook.github.io/jest/blog/2016/07/27/jest-14.html">this Jest blog post</a>.</p>
 <hr />
 <h2 id="installation">Installation</h2>
-<p>We recommend using <a href="https://yarnpkg.com/">Yarn</a> or <a href="https://www.npmjs.com/">npm</a> for managing front-end dependencies. If you’re new to package managers, the <a href="https://yarnpkg.com/en/docs/getting-started">Yarn documentation</a> is a good place to get started.</p>
+<p>We recommend using <a href="https://yarnpkg.com/">Yarn</a> or <a href="https://www.npmjs.com/">npm</a> for managing
+    front-end dependencies. If you're new to package managers, the <a
+        href="https://yarnpkg.com/en/docs/getting-started">Yarn documentation</a> is a good place to get started.</p>
 <p>To install React with Yarn, run:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="ex">yarn</span> add react@15.4.0 react-dom@15.4.0</a></code></pre></div>
 <p>To install React with npm, run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="ex">npm</span> install --save react@15.4.0 react-dom@15.4.0</a></code></pre></div>
 <p>We recommend using a bundler like <a href="https://webpack.js.org/">webpack</a> or <a href="http://browserify.org/">Browserify</a> so you can write modular code and bundle it together into small packages to optimize load time.</p>
 <p>Remember that by default, React runs extra checks and provides helpful warnings in development mode. When deploying your app, make sure to <a href="/docs/installation.html#development-and-production-versions">compile it in production mode</a>.</p>
-<p>In case you don’t use a bundler, we also provide pre-built bundles in the npm packages which you can <a href="/docs/installation.html#using-a-cdn">include as script tags</a> on your page:</p>
+<p>In case you don't use a bundler, we also provide pre-built bundles in the npm packages which you can <a
+        href="/docs/installation.html#using-a-cdn">include as script tags</a> on your page:</p>
 <ul>
 <li><strong>React</strong><br />
 Dev build with warnings: <a href="https://unpkg.com/react@15.4.0/dist/react.js">react/dist/react.js</a><br />
@@ -93,7 +108,8 @@ Minified build for production: <a href="https://unpkg.com/react-dom@15.4.0/dist/
 Dev build with warnings: <a href="https://unpkg.com/react-dom@15.4.0/dist/react-dom-server.js">react-dom/dist/react-dom-server.js</a><br />
 Minified build for production: <a href="https://unpkg.com/react-dom@15.4.0/dist/react-dom-server.min.js">react-dom/dist/react-dom-server.min.js</a></li>
 </ul>
-<p>We’ve also published version <code>15.4.0</code> of the <code>react</code>, <code>react-dom</code>, and addons packages on npm and the <code>react</code> package on bower.</p>
+<p>We've also published version <code>15.4.0</code> of the <code>react</code>, <code>react-dom</code>, and addons
+    packages on npm and the <code>react</code> package on bower.</p>
 <hr />
 <h2 id="changelog">Changelog</h2>
 <h3 id="react">React</h3>
@@ -117,7 +133,7 @@ Minified build for production: <a href="https://unpkg.com/react-dom@15.4.0/dist/
 <small>(<span class="citation" data-cites="nhunzaker">[@nhunzaker]</span>(https://github.com/nhunzaker) in <a href="https://github.com/facebook/react/pull/7629">#7629</a>)</small></li>
 <li>Clarified the warning about not calling PropTypes manually.<br />
 <small>(<span class="citation" data-cites="jedwards1211">[@jedwards1211]</span>(https://github.com/jedwards1211) in <a href="https://github.com/facebook/react/pull/7777">#7777</a>)</small></li>
-<li>The unstable <code>batchedUpdates</code> API now passes the wrapped function’s return value through.<br />
+<li>The unstable <code>batchedUpdates</code> API now passes the wrapped function's return value through.<br />
 <small>(<span class="citation" data-cites="bgnorlov">[@bgnorlov]</span>(https://github.com/bgnorlov) in <a href="https://github.com/facebook/react/pull/7444">#7444</a>)</small></li>
 <li>Fixed a bug with updating text in IE 8.<br />
 <small>(<span class="citation" data-cites="mnpenner">[@mnpenner]</span>(https://github.com/mnpenner) in <a href="https://github.com/facebook/react/pull/7832">#7832</a>)</small></li>
@@ -129,7 +145,8 @@ Minified build for production: <a href="https://unpkg.com/react-dom@15.4.0/dist/
 </ul>
 <h3 id="react-test-utils">React Test Utils</h3>
 <ul>
-<li>If you call <code>Simulate.click()</code> on a <code>&lt;input disabled onClick={foo} /&gt;</code> then <code>foo</code> will get called whereas it didn’t before.<br />
+<li>If you call <code>Simulate.click()</code> on a <code>&lt;input disabled onClick={foo} /&gt;</code> then
+    <code>foo</code> will get called whereas it didn't before.<br />
 <small>(<span class="citation" data-cites="nhunzaker">[@nhunzaker]</span>(https://github.com/nhunzaker) in <a href="https://github.com/facebook/react/pull/7642">#7642</a>)</small></li>
 </ul>
 <h3 id="react-test-renderer">React Test Renderer</h3>

@@ -1,11 +1,5 @@
 
 
-- ⏱ 15 minutes
-
-- Catalog
-- Full Stack Online
-- React
-- Npm
 
 You're likely already somewhat familiar with Node Package Manager (NPM) and how it can be used to install JavaScript dependencies called **node modules** to your app (e.g. `npm install webpack -g`).
 

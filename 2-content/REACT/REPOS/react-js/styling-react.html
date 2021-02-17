@@ -34,12 +34,20 @@
 </ul>
 <h3 id="guided-practice">Guided Practice</h3>
 <blockquote>
-<h4 id="lets-create-a-simple-div-and-style-it-using-inline-css-and-flexbox.-then-we-will-achieve-same-using-external-css-and-bootstrap-separately.">Let’s create a simple div, and style it using inline CSS and flexbox. Then we will achieve same using external CSS and Bootstrap separately.</h4>
+<h4
+    id="lets-create-a-simple-div-and-style-it-using-inline-css-and-flexbox.-then-we-will-achieve-same-using-external-css-and-bootstrap-separately.">
+    Let's create a simple div, and style it using inline CSS and flexbox. Then we will achieve same using external CSS
+    and Bootstrap separately.</h4>
 </blockquote>
 <ul>
 <li><p>First, we need to create a React application. - Create a React app using create React app command. <code>npx create-react-app</code>.</p>
 <ul>
-<li><p>This will create a simple React app , and now we will start making changes to this app. - First of all get rid of all the unnecessary stuff showing on DOM , remove all the lines in render of <code>App.js</code>. - Now we create a simple div <strong>parent div</strong> which will contain few div as <em>child</em> elements. - After creating that , your <code>App.js</code> will look like this - ``` import React from ‘react’; import ‘./App.css’;</p>
+<li>
+    <p>This will create a simple React app , and now we will start making changes to this app. - First of all get rid of
+        all the unnecessary stuff showing on DOM , remove all the lines in render of <code>App.js</code>. - Now we
+        create a simple div <strong>parent div</strong> which will contain few div as <em>child</em> elements. - After
+        creating that , your <code>App.js</code> will look like this - ``` import React from ‘react'; import
+        ‘./App.css';</p>
 <pre><code>        function App() {</code></pre>
 return (
 <div data-classname="App">
@@ -149,7 +157,7 @@ return (
 </ol></li>
 <li>Using Bootstrap
 <ol type="1">
-<li>Let’s add Bootstrap CDN in index.html file.</li>
+<li>Let's add Bootstrap CDN in index.html file.</li>
 <li>Create a row and make child <strong>div</strong> as <code>col-3</code>.</li>
 <li>Since Bootstrap has different colors, we have to add <code>backgroundColor</code> as inline CSS to differentiate between child element <strong>div</strong>.</li>
 <li><code>App.js</code> will look like -</li>
@@ -218,7 +226,14 @@ return (
   - &gt; ./src/App.js</code></pre></li>
 </ul></li>
 </ul></li>
-<li><p>CamelCase is supported in React for CSS styles. - Using <strong>class</strong> instead of <strong>className</strong> gives warning. - If any inline style property is used as <strong>two words</strong> like <strong>background-color</strong>, you will encounter an error. This is because these styles are not in a .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what’s in these braces will be pure JavaScript.” <code>style={}</code>. Then inside is a JS object <code>{backgroundColor: “red”}</code>.</p>
+<li>
+    <p>CamelCase is supported in React for CSS styles. - Using <strong>class</strong> instead of
+        <strong>className</strong> gives warning. - If any inline style property is used as <strong>two words</strong>
+        like <strong>background-color</strong>, you will encounter an error. This is because these styles are not in a
+        .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse
+        dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what's in
+        these braces will be pure JavaScript.” <code>style={}</code>. Then inside is a JS object <code>{backgroundColor:
+            “red”}</code>.</p>
 <pre><code>  - &gt; **Incorrect Way** - ``` &lt;button style={{background-color:&quot;red&quot; }}&gt; ```
   - &gt; **Correct Way** -   ``` &lt;button style={{backgroundColor:&quot;red&quot;}} &gt; ```</code></pre></li>
 </ul>

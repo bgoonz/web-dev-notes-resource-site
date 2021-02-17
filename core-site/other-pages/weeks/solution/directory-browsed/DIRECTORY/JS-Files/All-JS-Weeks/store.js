@@ -1,7 +1,7 @@
 /*:nodoc:*
  * class ActionStore
  *
- * This action just stores the argument’s value. This is the default action.
+ * This action just stores the argument's value. This is the default action.
  *
  * This class inherited from [[Action]]
  *

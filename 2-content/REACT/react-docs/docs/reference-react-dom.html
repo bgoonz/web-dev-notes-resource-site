@@ -20,7 +20,9 @@
 <p>React supports all popular browsers, including Internet Explorer 9 and above, although <a href="/docs/javascript-environment-requirements.html">some polyfills are required</a> for older browsers such as IE 9 and IE 10.</p>
 <blockquote>
 <p>Note</p>
-<p>We don’t support older browsers that don’t support ES5 methods, but you may find that your apps do work in older browsers if polyfills such as <a href="https://github.com/es-shims/es5-shim">es5-shim and es5-sham</a> are included in the page. You’re on your own if you choose to take this path.</p>
+<p>We don't support older browsers that don't support ES5 methods, but you may find that your apps do work in older
+    browsers if polyfills such as <a href="https://github.com/es-shims/es5-shim">es5-shim and es5-sham</a> are included
+    in the page. You're on your own if you choose to take this path.</p>
 </blockquote>
 <hr />
 <h2 id="reference">Reference</h2>
@@ -31,7 +33,8 @@
 <p>If the optional callback is provided, it will be executed after the component is rendered or updated.</p>
 <blockquote>
 <p>Note:</p>
-<p><code>ReactDOM.render()</code> controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.</p>
+<p><code>ReactDOM.render()</code> controls the contents of the container node you pass in. Any existing DOM elements
+    inside are replaced when first called. Later calls use React's DOM diffing algorithm for efficient updates.</p>
 <p><code>ReactDOM.render()</code> does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.</p>
 <p><code>ReactDOM.render()</code> currently returns a reference to the root <code>ReactComponent</code> instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root <code>ReactComponent</code> instance, the preferred solution is to attach a <a href="/docs/more-about-refs.html#the-ref-callback-attribute">callback ref</a> to the root element.</p>
 <p>Using <code>ReactDOM.render()</code> to hydrate a server-rendered container is deprecated and will be removed in React 17. Use <a href="#hydrate"><code>hydrate()</code></a> instead.</p>
@@ -41,7 +44,10 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">ReactDOM</span>.<span class="at">hydrate</span>(element<span class="op">,</span> container[<span class="op">,</span> callback])</a></code></pre></div>
 <p>Same as <a href="#render"><code>render()</code></a>, but is used to hydrate a container whose HTML contents were rendered by <a href="/docs/react-dom-server.html"><code>ReactDOMServer</code></a>. React will attempt to attach event listeners to the existing markup.</p>
 <p>React expects that the rendered content is identical between the server and the client. It can patch up differences in text content, but you should treat mismatches as bugs and fix them. In development mode, React warns about mismatches during hydration. There are no guarantees that attribute differences will be patched up in case of mismatches. This is important for performance reasons because in most apps, mismatches are rare, and so validating all markup would be prohibitively expensive.</p>
-<p>If a single element’s attribute or text content is unavoidably different between the server and the client (for example, a timestamp), you may silence the warning by adding <code>suppressHydrationWarning={true}</code> to the element. It only works one level deep, and is intended to be an escape hatch. Don’t overuse it. Unless it’s text content, React still won’t attempt to patch it up, so it may remain inconsistent until future updates.</p>
+<p>If a single element's attribute or text content is unavoidably different between the server and the client (for
+    example, a timestamp), you may silence the warning by adding <code>suppressHydrationWarning={true}</code> to the
+    element. It only works one level deep, and is intended to be an escape hatch. Don't overuse it. Unless it's text
+    content, React still won't attempt to patch it up, so it may remain inconsistent until future updates.</p>
 <p>If you intentionally need to render something different on the server and the client, you can do a two-pass rendering. Components that render something different on the client can read a state variable like <code>this.state.isClient</code>, which you can set to <code>true</code> in <code>componentDidMount()</code>. This way the initial render pass will render the same content as the server, avoiding mismatches, but an additional pass will happen synchronously right after hydration. Note that this approach will make your components slower because they have to render twice, so use it with caution.</p>
 <p>Remember to be mindful of user experience on slow connections. The JavaScript code may load significantly later than the initial HTML render, so if you render something different in the client-only pass, the transition can be jarring. However, if executed well, it may be beneficial to render a “shell” of the application on the server, and only show some of the extra widgets on the client. To learn how to do this without getting the markup mismatch issues, refer to the explanation in the previous paragraph.</p>
 <hr />

@@ -43,23 +43,23 @@
 	 * @description Inidcates bottom display
 	 */
 .fs-tooltip {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  top: -999px;
-  left: -999px;
-  z-index: 10;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: opacity 0.15s linear;
-          transition: opacity 0.15s linear;
-  /**
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+    /**
 		 * @class
 		 * @name .fs-tooltip-content
 		 * @type element
 		 * @description Tooltip content wrapper
 		 */
-  /**
+    /**
 		 * @class
 		 * @name .fs-tooltip-caret
 		 * @type element
@@ -72,80 +72,80 @@
 .fs-tooltip *,
 .fs-tooltip *:after,
 .fs-tooltip *:before {
-  box-sizing: border-box;
-  -webkit-transition: none;
-          transition: none;
-  -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-      -ms-user-select: none !important;
-          user-select: none !important;
+    box-sizing: border-box;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
 }
 .fs-tooltip-visible {
-  opacity: 1;
+    opacity: 1;
 }
 .fs-tooltip-content {
-  background: #111111;
-  border-radius: 3px;
-  color: #ffffff;
-  display: block;
-  float: left;
-  font-size: 14px;
-  margin: 0;
-  padding: 10px 15px;
-  position: relative;
-  white-space: nowrap;
+    background: #111111;
+    border-radius: 3px;
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 15px;
+    position: relative;
+    white-space: nowrap;
 }
 .fs-tooltip-caret {
-  width: 0;
-  height: 0;
-  content: '';
-  display: block;
-  margin: 0;
-  position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+    display: block;
+    margin: 0;
+    position: absolute;
 }
 .fs-tooltip-right .fs-tooltip-content {
-  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.35);
 }
 .fs-tooltip-right .fs-tooltip-caret {
-  top: 0;
-  left: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid #111111;
+    top: 0;
+    left: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #111111;
 }
 .fs-tooltip-left .fs-tooltip-content {
-  box-shadow: -1px 0 5px rgba(0, 0, 0, 0.35);
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.35);
 }
 .fs-tooltip-left .fs-tooltip-caret {
-  top: 0;
-  right: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid #111111;
+    top: 0;
+    right: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #111111;
 }
 .fs-tooltip-top .fs-tooltip-caret,
 .fs-tooltip-bottom .fs-tooltip-caret {
-  display: block;
-  float: none;
-  margin: 0 auto;
+    display: block;
+    float: none;
+    margin: 0 auto;
 }
 .fs-tooltip-top .fs-tooltip-content {
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.35);
 }
 .fs-tooltip-top .fs-tooltip-caret {
-  bottom: -5px;
-  left: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #111111;
+    bottom: -5px;
+    left: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #111111;
 }
 .fs-tooltip-bottom .fs-tooltip-content {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
 }
 .fs-tooltip-bottom .fs-tooltip-caret {
-  top: -5px;
-  left: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid #111111;
+    top: -5px;
+    left: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #111111;
 }

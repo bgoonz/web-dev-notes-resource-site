@@ -389,7 +389,7 @@ module.exports = function (
     '    Removes this tool and copies build dependencies, configuration files'
   );
   console.log(
-    '    and scripts into the app directory. If you do this, you can’t go back!'
+      '    and scripts into the app directory. If you do this, you can't go back!'
   );
   console.log();
   console.log('We suggest that you begin by typing:');

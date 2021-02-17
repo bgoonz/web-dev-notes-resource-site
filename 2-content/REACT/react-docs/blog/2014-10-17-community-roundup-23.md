@@ -35,9 +35,9 @@ Yahoo is converting Yahoo Mail to React and Flux and in the process, they open s
 
 [Ian Obermiller](http://ianobermiller.com/), engineer at Facebook, [made a lengthy interview](http://ianobermiller.com/blog/2014/09/15/react-and-flux-interview/) on the experience of using React and Flux in order to build probably the biggest React application ever written so far.
 
-> I’ve actually said this many times to my team too, I love React. It’s really great for making these complex applications. One thing that really surprised me with it is that React combined with a sane module system like CommonJS, and making sure that you actually modulize your stuff properly has scaled really well to a team of almost 10 developers working on hundreds of files and tens of thousands of lines of code.
+> I've actually said this many times to my team too, I love React. It's really great for making these complex applications. One thing that really surprised me with it is that React combined with a sane module system like CommonJS, and making sure that you actually modulize your stuff properly has scaled really well to a team of almost 10 developers working on hundreds of files and tens of thousands of lines of code.
 >
-> Really, a fairly large code base... stuff just works. You don’t have to worry about mutating, and the state of the DOM just really makes stuff easy. Just conceptually it’s easier just to think about here’s what I have, here’s my data, here’s how it renders, I don’t care about anything else. For most cases that is really simplifying and makes it really fast to do stuff.
+> Really, a fairly large code base... stuff just works. You don't have to worry about mutating, and the state of the DOM just really makes stuff easy. Just conceptually it's easier just to think about here's what I have, here's my data, here's how it renders, I don't care about anything else. For most cases that is really simplifying and makes it really fast to do stuff.
 >
 > [Read the full interview...](http://ianobermiller.com/blog/2014/09/15/react-and-flux-interview/)
 

@@ -16,7 +16,7 @@ A component with a render prop takes a function that returns a React element and
 
 Libraries that use render props include [React Router](https://reacttraining.com/react-router/web/api/Route/render-func), [Downshift](https://github.com/paypal/downshift) and [Formik](https://github.com/jaredpalmer/formik).
 
-In this document, we’ll discuss why render props are useful, and how to write your own.
+In this document, we'll discuss why render props are useful, and how to write your own.
 
 ## Use Render Props for Cross-Cutting Concerns {#use-render-props-for-cross-cutting-concerns}
 

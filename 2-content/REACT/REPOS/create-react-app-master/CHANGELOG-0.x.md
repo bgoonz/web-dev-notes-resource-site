@@ -167,7 +167,7 @@ npm install -g create-react-app@1.3.0
 - `create-react-app`
   - [#1675](https://github.com/facebook/create-react-app/pull/1675) Delete project folder on failed installation on Windows. ([@johann-sonntagbauer](https://github.com/johann-sonntagbauer))
   - [#1662](https://github.com/facebook/create-react-app/pull/1662) Validate project name before creating a project. ([@johann-sonntagbauer](https://github.com/johann-sonntagbauer))
-  - [#1669](https://github.com/facebook/create-react-app/pull/1669) Make sure React dependencies aren’t pinned in new projects. ([@johann-sonntagbauer](https://github.com/johann-sonntagbauer))
+  - [#1669](https://github.com/facebook/create-react-app/pull/1669) Make sure React dependencies aren't pinned in new projects. ([@johann-sonntagbauer](https://github.com/johann-sonntagbauer))
 
 #### :nail_care: Enhancement
 
@@ -363,7 +363,7 @@ Thanks to [@Timer](https://github.com/timer) for cutting this release.
 
   - [#1489](https://github.com/facebook/create-react-app/pull/1489) Support setting `"homepage"` to `"."` to generate relative asset paths. ([@tibdex](https://github.com/tibdex))
 
-    Applications that don’t use the HTML5 `pushState` API can now be built to be served from any relative URL. To enable this, specify `"."` as your `homepage` setting in `package.json`. It used to be possible before with a few known bugs, but they should be fixed now. See [Serving the Same Build from Different Paths](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#serving-the-same-build-from-different-paths).
+    Applications that don't use the HTML5 `pushState` API can now be built to be served from any relative URL. To enable this, specify `"."` as your `homepage` setting in `package.json`. It used to be possible before with a few known bugs, but they should be fixed now. See [Serving the Same Build from Different Paths](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#serving-the-same-build-from-different-paths).
 
   - [#937](https://github.com/facebook/create-react-app/pull/1504) Add `PUBLIC_URL` environment variable for advanced use. ([@EnoahNetzach](https://github.com/EnoahNetzach))
 
@@ -496,7 +496,7 @@ Thanks to [@Timer](https://github.com/timer) for cutting this release.
 - MUA ([MsUzoAgu](https://github.com/MsUzoAgu))
 - Matthew Holloway ([holloway](https://github.com/holloway))
 - Nguyen Le Vu Long ([vulong23](https://github.com/vulong23))
-- Paul O’Shannessy ([zpao](https://github.com/zpao))
+- Paul O'Shannessy ([zpao](https://github.com/zpao))
 - Pedro Nauck ([pedronauck](https://github.com/pedronauck))
 - Robbie H ([TheBlackBolt](https://github.com/TheBlackBolt))
 - Thibault Derousseaux ([tibdex](https://github.com/tibdex))
@@ -587,7 +587,7 @@ npm install -g create-react-app@1.0.3
 
   - [#1229](https://github.com/facebook/create-react-app/pull/1229) Disable jest watch mode when --coverage flag is present [#1207]. ([@BenoitAverty](https://github.com/BenoitAverty))
 
-    Since coverage doesn't work well with watch mode, we don’t run the watcher on `npm test -- --coverage` anymore.
+    Since coverage doesn't work well with watch mode, we don't run the watcher on `npm test -- --coverage` anymore.
 
   - [#1212](https://github.com/facebook/create-react-app/pull/1212) Proxy rewrites Origin header to match the target server URL. ([@koles](https://github.com/koles))
 
@@ -975,7 +975,7 @@ Thanks to [@fson](https://github.com/fson) for cutting this release.
 
 ### Migrating from 0.7.0 to 0.8.0
 
-You may optionally update the global command (it’s not required, but it adds Yarn support for new projects):
+You may optionally update the global command (it's not required, but it adds Yarn support for new projects):
 
 ```sh
 npm install -g create-react-app@1.0.0
@@ -1027,7 +1027,7 @@ Thanks to [@fson](https://github.com/fson) for cutting this release.
 
 ### Migrating from 0.6.1 to 0.7.0
 
-You may optionally update the global command (it’s not required):
+You may optionally update the global command (it's not required):
 
 ```sh
 npm install -g create-react-app@0.6.0
@@ -1113,7 +1113,7 @@ npm install --save-dev --save-exact react-scripts@0.5.1
 - You can now [specify defaults](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env) for environment variables with `.env` file. ([@ayrton](https://github.com/ayrton) in [#695](https://github.com/facebook/create-react-app/pull/695))
 - Ejecting now generates proper `.babelrc` and `.eslintrc`. ([@fson](https://github.com/fson) in [#689](https://github.com/facebook/create-react-app/pull/689), [@gaearon](https://github.com/gaearon) in [#705](https://github.com/facebook/create-react-app/pull/705))
 - Some React warnings now [include the component stacktrace](https://twitter.com/dan_abramov/status/779308833399332864). ([@gaearon](https://github.com/gaearon) in [#716](https://github.com/facebook/create-react-app/pull/716))
-- `npm start` doesn’t fail in a composed Docker container. ([@arekkas](https://github.com/arekkas) in [#711](https://github.com/facebook/create-react-app/issues/711))
+- `npm start` doesn't fail in a composed Docker container. ([@arekkas](https://github.com/arekkas) in [#711](https://github.com/facebook/create-react-app/issues/711))
 - The projects generated with `eject` are now cleaner. ([@gaearon](https://github.com/gaearon) in [#723](https://github.com/facebook/create-react-app/pull/723))
 - The project is now managed as a monorepo. ([@ryanyogan](https://github.com/ryanyogan) in [#419](https://github.com/facebook/create-react-app/pull/419), [@fson](https://github.com/fson) in [#678](https://github.com/facebook/create-react-app/pull/678))
 
@@ -1146,11 +1146,11 @@ npm install --save-dev --save-exact react-scripts@0.5.0
 
 #### Global ESLint Plugin Versions
 
-If you used a global ESLint installation for the editor integration, you’ll need to install [these versions of global ESLint packages](https://github.com/facebook/create-react-app/blob/c092086b1b256fd081f10744f90d216dd5217e29/packages/eslint-config-react-app/package.json#L14-L19).
+If you used a global ESLint installation for the editor integration, you'll need to install [these versions of global ESLint packages](https://github.com/facebook/create-react-app/blob/c092086b1b256fd081f10744f90d216dd5217e29/packages/eslint-config-react-app/package.json#L14-L19).
 
 #### Moving `index.html` into `public` Folder
 
-You’ll also need to create a new folder called `public` in the root of your project. Then, move `index.html` and files it references (such as a favicon) into that folder.
+You'll also need to create a new folder called `public` in the root of your project. Then, move `index.html` and files it references (such as a favicon) into that folder.
 
 You can no longer reference any files from `./src` in `index.html`. Instead, `public/index.html` can now only reference files other inside of the `public` folder using a special variable called `%PUBLIC_URL%`.
 
@@ -1212,7 +1212,7 @@ npm install --save-dev --save-exact react-scripts@0.4.3
 
 ### Migrating from 0.4.1 to 0.4.2
 
-You may optionally update the global command (it’s not required):
+You may optionally update the global command (it's not required):
 
 ```sh
 npm install -g create-react-app@0.4.2
@@ -1228,7 +1228,7 @@ npm install --save-dev --save-exact react-scripts@0.4.2
 
 ### Build Dependency (`react-scripts`)
 
-- We now support (but [don’t recommend](https://github.com/facebook/create-react-app/issues/87#issuecomment-234627904)) `.jsx` file extension. ([@tizmagik](https://github.com/tizmagik) in [#563](https://github.com/facebook/create-react-app/pull/563))
+- We now support (but [don't recommend](https://github.com/facebook/create-react-app/issues/87#issuecomment-234627904)) `.jsx` file extension. ([@tizmagik](https://github.com/tizmagik) in [#563](https://github.com/facebook/create-react-app/pull/563))
 - Proxy request errors are now printed to the console. ([@cloudmu](https://github.com/cloudmu) in [#502](https://github.com/facebook/create-react-app/pull/502))
 
 ### Migrating from 0.4.0 to 0.4.1
@@ -1258,7 +1258,7 @@ npm install --save-dev --save-exact react-scripts@0.4.0
 
 ### Breaking Change in 0.4.0
 
-Paths like `/src/somefile.png` used to be served in development, but only by accident. They never worked in production builds. Since 0.4.0, we [don’t serve static files by default in development anymore either](https://github.com/facebook/create-react-app/pull/551). This removes a dangerous inconsistency that we never intentionally supported.
+Paths like `/src/somefile.png` used to be served in development, but only by accident. They never worked in production builds. Since 0.4.0, we [don't serve static files by default in development anymore either](https://github.com/facebook/create-react-app/pull/551). This removes a dangerous inconsistency that we never intentionally supported.
 
 If you need a static file to be part for the build, [import it from JavaScript and you will get its filename](https://github.com/facebook/create-react-app/blob/master/template/README.md#adding-images-and-fonts). This ensures it gets included into the production build as well, and its filename contains the content hash.
 
@@ -1298,7 +1298,7 @@ npm install --save-dev --save-exact react-scripts@0.3.1
 
 ### Migrating from 0.2.3 to 0.3.0
 
-You may optionally update the global command (it’s not required):
+You may optionally update the global command (it's not required):
 
 ```sh
 npm install -g create-react-app@0.3.0
@@ -1347,9 +1347,9 @@ Since 0.3.0 added a test runner, we recommend that you add it to the `scripts` s
 
 ### Migrating from 0.2.2 to 0.2.3
 
-Update `react-scripts` to point to `0.2.3` in your `package.json` and run `npm install`. You shouldn’t need to do anything else.
+Update `react-scripts` to point to `0.2.3` in your `package.json` and run `npm install`. You shouldn't need to do anything else.
 
-Newly created projects will use `0.2.3` automatically. You **don’t** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn’t have any changes.
+Newly created projects will use `0.2.3` automatically. You **don't** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn't have any changes.
 
 ## 0.2.2 (August 22, 2016)
 
@@ -1358,18 +1358,18 @@ Newly created projects will use `0.2.3` automatically. You **don’t** need to u
 - When the bundle size changes, we now display the difference after build. ([@elijahmanor](https://github.com/elijahmanor) in [#340](https://github.com/facebook/create-react-app/pull/340))
 - `npm install`ing a missing dependency now forces a rebuild. ([@gaearon](https://github.com/gaearon) in [#349](https://github.com/facebook/create-react-app/pull/349))
 - Autoprefixer config now includes more commonly supported browsers. ([@kripod](https://github.com/kripod) in [#345](https://github.com/facebook/create-react-app/pull/345))
-- All the configuration is now documented inline so ejecting doesn’t leave you in the dark. ([@gaearon](https://github.com/gaearon) in [#362](https://github.com/facebook/create-react-app/pull/362))
+- All the configuration is now documented inline so ejecting doesn't leave you in the dark. ([@gaearon](https://github.com/gaearon) in [#362](https://github.com/facebook/create-react-app/pull/362))
 - `Object.assign()` polyfill is now bundled by default. ([@gaearon](https://github.com/gaearon) in [#399](https://github.com/facebook/create-react-app/pull/399))
 - [React Native Web](https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/) now works out of the box. ([@grigio](https://github.com/grigio) in [#407](https://github.com/facebook/create-react-app/pull/407))
-- Same asset filenames in different folders don’t confuse the server now. ([@arunoda](https://github.com/arunoda) in [#446](https://github.com/facebook/create-react-app/pull/446))
+- Same asset filenames in different folders don't confuse the server now. ([@arunoda](https://github.com/arunoda) in [#446](https://github.com/facebook/create-react-app/pull/446))
 - The `otf` font format is now supported. ([@A-gambit](https://github.com/A-gambit) in [#434](https://github.com/facebook/create-react-app/pull/434))
 - The `new-cap` linting rule has been disabled thanks to feedback from Immutable.js users. ([@rricard](https://github.com/rricard) in [#470](https://github.com/facebook/create-react-app/pull/470))
 
 ### Migrating from 0.2.1 to 0.2.2
 
-Update `react-scripts` to point to `0.2.2` in your `package.json` and run `npm install`. You shouldn’t need to do anything else.
+Update `react-scripts` to point to `0.2.2` in your `package.json` and run `npm install`. You shouldn't need to do anything else.
 
-Newly created projects will use `0.2.2` automatically. You **don’t** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn’t have any changes.
+Newly created projects will use `0.2.2` automatically. You **don't** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn't have any changes.
 
 ## 0.2.1 (August 1, 2016)
 
@@ -1384,9 +1384,9 @@ Newly created projects will use `0.2.2` automatically. You **don’t** need to u
 
 ### Migrating from 0.2.0 to 0.2.1
 
-Update `react-scripts` to point to `0.2.1` in your `package.json` and run `npm install`. You shouldn’t need to do anything else. If you see a warning about wrong file casing next time you `npm start`, fix your imports to use the correct filename casing.
+Update `react-scripts` to point to `0.2.1` in your `package.json` and run `npm install`. You shouldn't need to do anything else. If you see a warning about wrong file casing next time you `npm start`, fix your imports to use the correct filename casing.
 
-Newly created projects will use `0.2.1` automatically. You **don’t** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn’t have any changes.
+Newly created projects will use `0.2.1` automatically. You **don't** need to update the global `create-react-app` CLI itself. It stays at `0.2.0` for now because it doesn't have any changes.
 
 ## 0.2.0 (July 28, 2016)
 
@@ -1416,7 +1416,7 @@ Newly created projects will use `0.2.1` automatically. You **don’t** need to u
 
 ### Migrating from 0.1.0 to 0.2.0
 
-You may optionally update the global command (it’s not required):
+You may optionally update the global command (it's not required):
 
 ```sh
 npm install -g create-react-app@0.2.0

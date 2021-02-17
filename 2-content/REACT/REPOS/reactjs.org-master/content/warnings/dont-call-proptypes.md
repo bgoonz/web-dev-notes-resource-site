@@ -24,7 +24,7 @@ Button.propTypes = {
 
 Nothing changes here.
 
-### Don’t call PropTypes directly {#dont-call-proptypes-directly}
+### Don't call PropTypes directly {#dont-call-proptypes-directly}
 
 Using PropTypes in any other way than annotating React components with them is no longer supported:
 
@@ -44,7 +44,7 @@ If you don't fix the warning, this code will crash in production with React 16.
 
 ### If you don't call PropTypes directly but still get the warning {#if-you-dont-call-proptypes-directly-but-still-get-the-warning}
 
-Inspect the stack trace produced by the warning. You will find the component definition responsible for the PropTypes direct call. Most likely, the issue is due to third-party PropTypes that wrap React’s PropTypes, for example:
+Inspect the stack trace produced by the warning. You will find the component definition responsible for the PropTypes direct call. Most likely, the issue is due to third-party PropTypes that wrap React's PropTypes, for example:
 
 ```js
 Button.propTypes = {

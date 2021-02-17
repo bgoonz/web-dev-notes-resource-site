@@ -10,9 +10,9 @@ For an example, a basic button component could have the following states:
 - In the disabled mode.
 - In a loading state.
 
-Usually, it’s hard to see these states without running a sample app or some examples.
+Usually, it's hard to see these states without running a sample app or some examples.
 
-Create React App doesn’t include any tools for this by default, but you can add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React App doesn't include any tools for this by default, but you can add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
 
 ![Storybook for React Demo](https://i.imgur.com/7CIAWpB.gif)
 
@@ -22,7 +22,7 @@ You can also deploy your Storybook or style guide as a static app. This way, eve
 
 Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
-Run the following command inside your app’s directory:
+Run the following command inside your app's directory:
 
 ```sh
 npx -p @storybook/cli sb init
@@ -62,7 +62,7 @@ Then, add these scripts to your `package.json`:
      "start": "react-scripts start",
 ```
 
-Then, run the following command inside your app’s directory:
+Then, run the following command inside your app's directory:
 
 ```sh
 npm run styleguide

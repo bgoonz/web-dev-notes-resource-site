@@ -8,11 +8,11 @@ Please refer to its documentation:
 
 ## Usage in Create React App Projects
 
-These utilities come by default with [Create React App](https://github.com/facebook/create-react-app). **You don’t need to install it separately in Create React App projects.**
+These utilities come by default with [Create React App](https://github.com/facebook/create-react-app). **You don't need to install it separately in Create React App projects.**
 
 ## Usage Outside of Create React App
 
-If you don’t use Create React App, or if you [ejected](https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject), you may keep using these utilities. Their development will be aligned with Create React App, so major versions of these utilities may come out relatively often. Feel free to fork or copy and paste them into your projects if you’d like to have more control over them, or feel free to use the old versions. Not all of them are React-specific, but we might make some of them more React-specific in the future.
+If you don't use Create React App, or if you [ejected](https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject), you may keep using these utilities. Their development will be aligned with Create React App, so major versions of these utilities may come out relatively often. Feel free to fork or copy and paste them into your projects if you'd like to have more control over them, or feel free to use the old versions. Not all of them are React-specific, but we might make some of them more React-specific in the future.
 
 ### Entry Points
 
@@ -114,7 +114,7 @@ module.exports = {
 #### `new WatchMissingNodeModulesPlugin(nodeModulesPath: string)`
 
 This webpack plugin ensures `npm install <library>` forces a project rebuild.<br>
-We’re not sure why this isn't webpack's default behavior.<br>
+We're not sure why this isn't webpack's default behavior.<br>
 See [#186](https://github.com/facebook/create-react-app/issues/186) for details.
 
 ```js
@@ -328,7 +328,7 @@ printHostingInstructions(appPackage, publicUrl, publicPath, 'build', true);
 
 ##### `choosePort(host: string, defaultPort: number): Promise<number | null>`
 
-Returns a Promise resolving to either `defaultPort` or next available port if the user confirms it is okay to do. If the port is taken and the user has refused to use another port, or if the terminal is not interactive and can’t present user with the choice, resolves to `null`.
+Returns a Promise resolving to either `defaultPort` or next available port if the user confirms it is okay to do. If the port is taken and the user has refused to use another port, or if the terminal is not interactive and can't present user with the choice, resolves to `null`.
 
 ##### `createCompiler(args: Object): WebpackCompiler`
 

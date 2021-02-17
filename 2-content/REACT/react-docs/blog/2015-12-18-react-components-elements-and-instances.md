@@ -7,7 +7,7 @@ The difference between **components, their instances, and elements** confuses ma
 
 ## Managing the Instances {#managing-the-instances}
 
-If you’re new to React, you probably only worked with component classes and instances before. For example, you may declare a `Button` *component* by creating a class. When the app is running, you may have several *instances* of this component on screen, each with its own properties and local state. This is the traditional object-oriented UI programming. Why introduce *elements*?
+If you're new to React, you probably only worked with component classes and instances before. For example, you may declare a `Button` *component* by creating a class. When the app is running, you may have several *instances* of this component on screen, each with its own properties and local state. This is the traditional object-oriented UI programming. Why introduce *elements*?
 
 In this traditional UI model, it is up to you to take care of creating and destroying child component instances. If a `Form` component wants to render a `Button` component, it needs to create its instance, and manually keep it up to date with any new information.
 
@@ -57,11 +57,11 @@ So how is React different?
 
 In React, this is where the *elements* come to rescue. **An element is a plain object *describing* a component instance or DOM node and its desired properties.** It contains only information about the component type (for example, a `Button`), its properties (for example, its `color`), and any child elements inside it.
 
-An element is not an actual instance. Rather, it is a way to tell React what you *want* to see on the screen. You can’t call any methods on the element. It’s just an immutable description object with two fields: `type: (string | ReactClass)` and `props: Object`[^1].
+An element is not an actual instance. Rather, it is a way to tell React what you *want* to see on the screen. You can't call any methods on the element. It's just an immutable description object with two fields: `type: (string | ReactClass)` and `props: Object`[^1].
 
 ### DOM Elements {#dom-elements}
 
-When an element’s `type` is a string, it represents a DOM node with that tag name, and `props` correspond to its attributes. This is what React will render. For example:
+When an element's `type` is a string, it represents a DOM node with that tag name, and `props` correspond to its attributes. This is what React will render. For example:
 
 ```js
 {
@@ -90,9 +90,9 @@ This element is just a way to represent the following HTML as a plain object:
 
 Note how elements can be nested. By convention, when we want to create an element tree, we specify one or more child elements as the `children` prop of their containing element.
 
-What’s important is that both child and parent elements are *just descriptions and not the actual instances*. They don’t refer to anything on the screen when you create them. You can create them and throw them away, and it won’t matter much.
+What's important is that both child and parent elements are *just descriptions and not the actual instances*. They don't refer to anything on the screen when you create them. You can create them and throw them away, and it won't matter much.
 
-React elements are easy to traverse, don’t need to be parsed, and of course they are much lighter than the actual DOM elements—they’re just objects!
+React elements are easy to traverse, don't need to be parsed, and of course they are much lighter than the actual DOM elements—they're just objects!
 
 ### Component Elements {#component-elements}
 
@@ -230,7 +230,7 @@ const Form = ({ isSubmitted, buttonText }) => {
 };
 ```
 
-That’s it! For a React component, props are the input, and an element tree is the output.
+That's it! For a React component, props are the input, and an element tree is the output.
 
 **The returned element tree can contain both elements describing DOM nodes, and elements describing other components. This lets you compose independent parts of UI without relying on their internal DOM structure.**
 
@@ -358,7 +358,7 @@ You might have noticed that this blog entry talks a lot about components and ele
 
 Only components declared as classes have instances, and you never create them directly: React does that for you. While [mechanisms for a parent component instance to access a child component instance](/docs/more-about-refs.html) exist, they are only used for imperative actions (such as setting focus on a field), and should generally be avoided.
 
-React takes care of creating an instance for every class component, so you can write components in an object-oriented way with methods and local state, but other than that, instances are not very important in the React’s programming model and are managed by React itself.
+React takes care of creating an instance for every class component, so you can write components in an object-oriented way with methods and local state, but other than that, instances are not very important in the React's programming model and are managed by React itself.
 
 ## Summary {#summary}
 
@@ -370,9 +370,9 @@ When a component receives some props as an input, it is because a particular par
 
 An *instance* is what you refer to as `this` in the component class you write. It is useful for [storing local state and reacting to the lifecycle events](/docs/component-api.html).
 
-Function components don’t have instances at all. Class components have instances, but you never need to create a component instance directly—React takes care of this.
+Function components don't have instances at all. Class components have instances, but you never need to create a component instance directly—React takes care of this.
 
-Finally, to create elements, use [`React.createElement()`](/docs/top-level-api.html#react.createelement), [JSX](/docs/jsx-in-depth.html), or an [element factory helper](/docs/top-level-api.html#react.createfactory). Don’t write elements as plain objects in the real code—just know that they are plain objects under the hood.
+Finally, to create elements, use [`React.createElement()`](/docs/top-level-api.html#react.createelement), [JSX](/docs/jsx-in-depth.html), or an [element factory helper](/docs/top-level-api.html#react.createfactory). Don't write elements as plain objects in the real code—just know that they are plain objects under the hood.
 
 ## Further Reading {#further-reading}
 
@@ -380,4 +380,4 @@ Finally, to create elements, use [`React.createElement()`](/docs/top-level-api.h
 * [Streamlining React Elements](/blog/2015/02/24/streamlining-react-elements.html)
 * [React (Virtual) DOM Terminology](/docs/glossary.html)
 
-[^1]: All React elements require an additional ``$$typeof: Symbol.for('react.element')`` field declared on the object for [security reasons](https://github.com/facebook/react/pull/4832). It is omitted in the examples above. This blog entry uses inline objects for elements to give you an idea of what’s happening underneath but the code won’t run as is unless you either add `$$typeof` to the elements, or change the code to use `React.createElement()` or JSX.
+[^1]: All React elements require an additional ``$$typeof: Symbol.for('react.element')`` field declared on the object for [security reasons](https://github.com/facebook/react/pull/4832). It is omitted in the examples above. This blog entry uses inline objects for elements to give you an idea of what's happening underneath but the code won't run as is unless you either add `$$typeof` to the elements, or change the code to use `React.createElement()` or JSX.

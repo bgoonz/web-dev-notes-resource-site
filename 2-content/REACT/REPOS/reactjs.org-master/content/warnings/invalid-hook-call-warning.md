@@ -43,7 +43,7 @@ function useWindowWidth() {
 }
 ```
 
-To avoid confusion, it’s **not** supported to call Hooks in other cases:
+To avoid confusion, it's **not** supported to call Hooks in other cases:
 
 * 🔴 Do not call Hooks in class components.
 * 🔴 Do not call in event handlers.

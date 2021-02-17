@@ -6,10 +6,19 @@
   <title>Document</title>
 </head>
 <body>;
-<p>Interest in React seems to have surged ever since David Nolen (<span class="citation" data-cites="swannodette">[@swannodette]</span>(https://twitter.com/swannodette))’s introduction of <a href="https://github.com/swannodette/om">Om</a> in his post <a href="https://swannodette.github.io/2013/12/17/the-future-of-javascript-mvcs/">“The Future of JavaScript MVC Frameworks”</a>.</p>
+<p>Interest in React seems to have surged ever since David Nolen (<span class="citation"
+        data-cites="swannodette">[@swannodette]</span>(https://twitter.com/swannodette))'s introduction of <a
+        href="https://github.com/swannodette/om">Om</a> in his post <a
+        href="https://swannodette.github.io/2013/12/17/the-future-of-javascript-mvcs/">“The Future of JavaScript MVC
+        Frameworks”</a>.</p>
 <p>In this React Community Round-up, we are taking a closer look at React from a functional programming perspective.</p>
 <h2 id="react-another-level-of-indirection">“React: Another Level of Indirection”</h2>
-<p>To start things off, Eric Normand (<span class="citation" data-cites="ericnormand">[@ericnormand]</span>(https://twitter.com/ericnormand)) of <a href="http://lispcast.com">LispCast</a> makes the case for <a href="http://www.lispcast.com/react-another-level-of-indirection">React from a general functional programming standpoint</a> and explains how React’s “Virtual DOM provides the last piece of the Web Frontend Puzzle for ClojureScript”.</p>
+<p>To start things off, Eric Normand (<span class="citation"
+        data-cites="ericnormand">[@ericnormand]</span>(https://twitter.com/ericnormand)) of <a
+        href="http://lispcast.com">LispCast</a> makes the case for <a
+        href="http://www.lispcast.com/react-another-level-of-indirection">React from a general functional programming
+        standpoint</a> and explains how React's “Virtual DOM provides the last piece of the Web Frontend Puzzle for
+    ClojureScript”.</p>
 <blockquote>
 <p>The Virtual DOM is an indirection mechanism that solves the difficult problem of DOM programming: how to deal with incremental changes to a stateful tree structure. By abstracting away the statefulness, the Virtual DOM turns the real DOM into an immediate mode GUI, which is perfect for functional programming.</p>
 <p><a href="http://www.lispcast.com/react-another-level-of-indirection">Read the full post…</a></p>
@@ -22,9 +31,13 @@
 <p><a href="https://holmsand.github.io/reagent/">Check it out on GitHub…</a></p>
 </blockquote>
 <h2 id="functional-dom-programming">Functional DOM programming</h2>
-<p>React’s one-way data-binding naturally lends itself to a functional programming approach. Facebook’s Pete Hunt (<span class="citation" data-cites="floydophone">[@floydophone]</span>(https://twitter.com/floydophone)) explores how one would go about <a href="https://medium.com/p/67d81637d43">writing web apps in a functional manner</a>. Spoiler alert:</p>
+<p>React's one-way data-binding naturally lends itself to a functional programming approach. Facebook's Pete Hunt (<span
+        class="citation" data-cites="floydophone">[@floydophone]</span>(https://twitter.com/floydophone)) explores how
+    one would go about <a href="https://medium.com/p/67d81637d43">writing web apps in a functional manner</a>. Spoiler
+    alert:</p>
 <blockquote>
-<p>This is React. It’s not about templates, or data binding, or DOM manipulation. It’s about using functional programming with a virtual DOM representation to build ambitious, high-performance apps with JavaScript.</p>
+<p>This is React. It's not about templates, or data binding, or DOM manipulation. It's about using functional
+    programming with a virtual DOM representation to build ambitious, high-performance apps with JavaScript.</p>
 <p><a href="https://medium.com/p/67d81637d43">Read the full post…</a></p>
 </blockquote>
 <p>Pete also explains this in detail at his #MeteorDevShop talk (about 30 Minutes):</p>
@@ -70,7 +83,10 @@
 <a class="sourceLine" id="cb2-23" title="23"></a>
 <a class="sourceLine" id="cb2-24" title="24">(om/root app-state my-page (.-body js/document))</a></code></pre></div>
 <h2 id="om">Om</h2>
-<p>In an interview with David Nolen, Tom Coupland (<span class="citation" data-cites="tcoupland">[@tcoupland]</span>(https://twitter.com/tcoupland)) of InfoQ provides a nice summary of recent developments around Om (“<a href="http://www.infoq.com/news/2014/01/om-react">Om: Enhancing Facebook’s React with Immutability</a>”).</p>
+<p>In an interview with David Nolen, Tom Coupland (<span class="citation"
+        data-cites="tcoupland">[@tcoupland]</span>(https://twitter.com/tcoupland)) of InfoQ provides a nice summary of
+    recent developments around Om (“<a href="http://www.infoq.com/news/2014/01/om-react">Om: Enhancing Facebook's React
+        with Immutability</a>”).</p>
 <blockquote>
 <p>David [Nolen]: I think people are starting to see the limitations of just JavaScript and jQuery and even more structured solutions like Backbone, Angular, Ember, etc. React is a fresh approach to the DOM problem that seems obvious in hindsight.</p>
 <p><a href="http://www.infoq.com/news/2014/01/om-react">Read the full interview…</a></p>
@@ -95,7 +111,8 @@
 <div>
 <blockquote class="twitter-tweet" lang="en">
 <p>
-<span class="citation" data-cites="swannodette">[@swannodette]</span>(https://twitter.com/swannodette) No thank you! It’s honestly a bit weird because Om is exactly what I didn’t know I wanted for doing functional UI work.
+<span class="citation" data-cites="swannodette">[@swannodette]</span>(https://twitter.com/swannodette) No thank you!
+It's honestly a bit weird because Om is exactly what I didn't know I wanted for doing functional UI work.
 </p>
 — Adam Solove (<span class="citation" data-cites="asolove">@asolove</span>) <a href="https://twitter.com/asolove/status/420294067637858304">January 6, 2014</a>
 </blockquote>

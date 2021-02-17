@@ -1,6 +1,6 @@
 /*
 Given a magazine of words and a ransom note, 
-determine if it’s possible to “cut out” and create the ransom note from the magazine words.
+determine if it's possible to “cut out” and create the ransom note from the magazine words.
 *each word has to exist in the magazine in it's entirety, not just letters
 */
 
@@ -36,6 +36,3 @@ console.log(ransomNote("sit ad est sint", magazine))
 console.log(ransomNote("sit ad est love", magazine))
 console.log(ransomNote("sit ad est sint in in", magazine))
 console.log(ransomNote("sit ad est sint in in in in", magazine))
-
-
-

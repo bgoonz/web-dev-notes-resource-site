@@ -21,7 +21,7 @@ While the Webpack configuration format has changed, Create React App users who d
 
 If you had to eject your app for one reason or another, Webpack provides a [configuration migration guide](https://webpack.js.org/guides/migrating/) that you can follow to update your apps. Note that with each release of Create React App, we are working to support more use cases out of the box so that you don't have to eject in the future.
 
-The biggest notable webpack 2 feature is the ability to write and import [ES6 modules](http://2ality.com/2014/09/es6-modules-final.html) directly without compiling them to CommonJS. This shouldn’t affect how you write code since you likely already use `import` and `export` statements, but it will help catch more mistakes like missing named exports at compile time:
+The biggest notable webpack 2 feature is the ability to write and import [ES6 modules](http://2ality.com/2014/09/es6-modules-final.html) directly without compiling them to CommonJS. This shouldn't affect how you write code since you likely already use `import` and `export` statements, but it will help catch more mistakes like missing named exports at compile time:
 
 ![Export validation](../images/blog/cra-update-exports.gif) 
 
@@ -104,4 +104,3 @@ This release is a result of months of work from many people in the React communi
 We are grateful to [everyone who has offered their contributions](https://github.com/facebookincubator/create-react-app/graphs/contributors), whether in code, documentation, or by helping other people. We would like to specifically thank [Joe Haddad](https://github.com/timer) for his invaluable help maintaining the project.
 
 We are excited to bring these improvements to everybody using Create React App, and we are looking forward to more of your feedback and contributions.
-

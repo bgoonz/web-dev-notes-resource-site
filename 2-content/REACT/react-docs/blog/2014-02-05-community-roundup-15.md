@@ -28,7 +28,7 @@ Dan Holmsand ([@holmsand](https://twitter.com/holmsand)) created [Reagent](https
 
 React's one-way data-binding naturally lends itself to a functional programming approach. Facebook's Pete Hunt ([@floydophone](https://twitter.com/floydophone)) explores how one would go about [writing web apps in a functional manner](https://medium.com/p/67d81637d43). Spoiler alert:
 
-> This is React. It’s not about templates, or data binding, or DOM manipulation. It’s about using functional programming with a virtual DOM representation to build ambitious, high-performance apps with JavaScript.
+> This is React. It's not about templates, or data binding, or DOM manipulation. It's about using functional programming with a virtual DOM representation to build ambitious, high-performance apps with JavaScript.
 >
 > [Read the full post...](https://medium.com/p/67d81637d43)
 

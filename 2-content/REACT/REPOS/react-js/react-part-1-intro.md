@@ -19,7 +19,7 @@
 
 React makes it easy to update your HTML as data changes and build complex apps out of simple, reusable components.
 
-React is an open-source JavaScript library that is used for building user interfaces. It’s used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.
+React is an open-source JavaScript library that is used for building user interfaces. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.
 
 React allows developers to create large web applications that can change data, without reloading the page. The main purpose of React is to be fast, scalable, and simple.
 

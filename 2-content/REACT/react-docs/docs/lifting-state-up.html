@@ -6,7 +6,8 @@
   <title>Document</title>
 </head>
 <body>;
-<p>Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.</p>
+<p>Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their
+    closest common ancestor. Let's see how this works in action.</p>
 <p>In this section, we will create a temperature calculator that calculates whether the water would boil at a given temperature.</p>
 <p>We will start with a component called <code>BoilingVerdict</code>. It accepts the <code>celsius</code> temperature as a prop, and prints whether it is enough to boil the water:</p>
 <pre class="js{3,5}"><code>function BoilingVerdict(props) {
@@ -86,8 +87,10 @@ class TemperatureInput extends React.Component {
   }
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/jGBryx?editors=0010"><strong>Try it on CodePen</strong></a></p>
-<p>We have two inputs now, but when you enter the temperature in one of them, the other doesn’t update. This contradicts our requirement: we want to keep them in sync.</p>
-<p>We also can’t display the <code>BoilingVerdict</code> from <code>Calculator</code>. The <code>Calculator</code> doesn’t know the current temperature because it is hidden inside the <code>TemperatureInput</code>.</p>
+<p>We have two inputs now, but when you enter the temperature in one of them, the other doesn't update. This contradicts
+    our requirement: we want to keep them in sync.</p>
+<p>We also can't display the <code>BoilingVerdict</code> from <code>Calculator</code>. The <code>Calculator</code>
+    doesn't know the current temperature because it is hidden inside the <code>TemperatureInput</code>.</p>
 <h2 id="writing-conversion-functions">Writing Conversion Functions</h2>
 <p>First, we will write two functions to convert from Celsius to Fahrenheit and back:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">function</span> <span class="at">toCelsius</span>(fahrenheit) <span class="op">{</span></a>
@@ -128,8 +131,10 @@ class TemperatureInput extends React.Component {
 <p>However, we want these two inputs to be in sync with each other. When we update the Celsius input, the Fahrenheit input should reflect the converted temperature, and vice versa.</p>
 <p>In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the <code>TemperatureInput</code> and move it into the <code>Calculator</code> instead.</p>
 <p>If the <code>Calculator</code> owns the shared state, it becomes the “source of truth” for the current temperature in both inputs. It can instruct them both to have values that are consistent with each other. Since the props of both <code>TemperatureInput</code> components are coming from the same parent <code>Calculator</code> component, the two inputs will always be in sync.</p>
-<p>Let’s see how this works step by step.</p>
-<p>First, we will replace <code>this.state.temperature</code> with <code>this.props.temperature</code> in the <code>TemperatureInput</code> component. For now, let’s pretend <code>this.props.temperature</code> already exists, although we will need to pass it from the <code>Calculator</code> in the future:</p>
+<p>Let's see how this works step by step.</p>
+<p>First, we will replace <code>this.state.temperature</code> with <code>this.props.temperature</code> in the
+    <code>TemperatureInput</code> component. For now, let's pretend <code>this.props.temperature</code> already exists,
+    although we will need to pass it from the <code>Calculator</code> in the future:</p>
 <pre class="js{3}"><code>  render() {
     // Before: const temperature = this.state.temperature;
     const temperature = this.props.temperature;
@@ -146,7 +151,11 @@ class TemperatureInput extends React.Component {
 <p>There is no special meaning to either <code>temperature</code> or <code>onTemperatureChange</code> prop names in custom components. We could have called them anything else, like name them <code>value</code> and <code>onChange</code> which is a common convention.</p>
 </blockquote>
 <p>The <code>onTemperatureChange</code> prop will be provided together with the <code>temperature</code> prop by the parent <code>Calculator</code> component. It will handle the change by modifying its own local state, thus re-rendering both inputs with the new values. We will look at the new <code>Calculator</code> implementation very soon.</p>
-<p>Before diving into the changes in the <code>Calculator</code>, let’s recap our changes to the <code>TemperatureInput</code> component. We have removed the local state from it, and instead of reading <code>this.state.temperature</code>, we now read <code>this.props.temperature</code>. Instead of calling <code>this.setState()</code> when we want to make a change, we now call <code>this.props.onTemperatureChange()</code>, which will be provided by the <code>Calculator</code>:</p>
+<p>Before diving into the changes in the <code>Calculator</code>, let's recap our changes to the
+    <code>TemperatureInput</code> component. We have removed the local state from it, and instead of reading
+    <code>this.state.temperature</code>, we now read <code>this.props.temperature</code>. Instead of calling
+    <code>this.setState()</code> when we want to make a change, we now call
+    <code>this.props.onTemperatureChange()</code>, which will be provided by the <code>Calculator</code>:</p>
 <pre class="js{8,12}"><code>class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
@@ -169,8 +178,10 @@ class TemperatureInput extends React.Component {
     );
   }
 }</code></pre>
-<p>Now let’s turn to the <code>Calculator</code> component.</p>
-<p>We will store the current input’s <code>temperature</code> and <code>scale</code> in its local state. This is the state we “lifted up” from the inputs, and it will serve as the “source of truth” for both of them. It is the minimal representation of all the data we need to know in order to render both inputs.</p>
+<p>Now let's turn to the <code>Calculator</code> component.</p>
+<p>We will store the current input's <code>temperature</code> and <code>scale</code> in its local state. This is the
+    state we “lifted up” from the inputs, and it will serve as the “source of truth” for both of them. It is the minimal
+    representation of all the data we need to know in order to render both inputs.</p>
 <p>For example, if we enter 37 into the Celsius input, the state of the <code>Calculator</code> component will be:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="op">{</span></a>
 <a class="sourceLine" id="cb11-2" title="2">  <span class="dt">temperature</span><span class="op">:</span> <span class="st">&#39;37&#39;</span><span class="op">,</span></a>
@@ -223,13 +234,19 @@ class TemperatureInput extends React.Component {
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/WZpxpz?editors=0010"><strong>Try it on CodePen</strong></a></p>
 <p>Now, no matter which input you edit, <code>this.state.temperature</code> and <code>this.state.scale</code> in the <code>Calculator</code> get updated. One of the inputs gets the value as is, so any user input is preserved, and the other input value is always recalculated based on it.</p>
-<p>Let’s recap what happens when you edit an input:</p>
+<p>Let's recap what happens when you edit an input:</p>
 <ul>
 <li>React calls the function specified as <code>onChange</code> on the DOM <code>&lt;input&gt;</code>. In our case, this is the <code>handleChange</code> method in the <code>TemperatureInput</code> component.</li>
 <li>The <code>handleChange</code> method in the <code>TemperatureInput</code> component calls <code>this.props.onTemperatureChange()</code> with the new desired value. Its props, including <code>onTemperatureChange</code>, were provided by its parent component, the <code>Calculator</code>.</li>
-<li>When it previously rendered, the <code>Calculator</code> had specified that <code>onTemperatureChange</code> of the Celsius <code>TemperatureInput</code> is the <code>Calculator</code>’s <code>handleCelsiusChange</code> method, and <code>onTemperatureChange</code> of the Fahrenheit <code>TemperatureInput</code> is the <code>Calculator</code>’s <code>handleFahrenheitChange</code> method. So either of these two <code>Calculator</code> methods gets called depending on which input we edited.</li>
+<li>When it previously rendered, the <code>Calculator</code> had specified that <code>onTemperatureChange</code> of the
+    Celsius <code>TemperatureInput</code> is the <code>Calculator</code>'s <code>handleCelsiusChange</code> method, and
+    <code>onTemperatureChange</code> of the Fahrenheit <code>TemperatureInput</code> is the <code>Calculator</code>'s
+    <code>handleFahrenheitChange</code> method. So either of these two <code>Calculator</code> methods gets called
+    depending on which input we edited.</li>
 <li>Inside these methods, the <code>Calculator</code> component asks React to re-render itself by calling <code>this.setState()</code> with the new input value and the current scale of the input we just edited.</li>
-<li>React calls the <code>Calculator</code> component’s <code>render</code> method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.</li>
+<li>React calls the <code>Calculator</code> component's <code>render</code> method to learn what the UI should look
+    like. The values of both inputs are recomputed based on the current temperature and the active scale. The
+    temperature conversion is performed here.</li>
 <li>React calls the <code>render</code> methods of the individual <code>TemperatureInput</code> components with their new props specified by the <code>Calculator</code>. It learns what their UI should look like.</li>
 <li>React calls the <code>render</code> method of the <code>BoilingVerdict</code> component, passing the temperature in Celsius as its props.</li>
 <li>React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.</li>
@@ -238,7 +255,11 @@ class TemperatureInput extends React.Component {
 <h2 id="lessons-learned">Lessons Learned</h2>
 <p>There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the <a href="/docs/state-and-lifecycle.html#the-data-flows-down">top-down data flow</a>.</p>
 <p>Lifting state involves writing more “boilerplate” code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.</p>
-<p>If something can be derived from either props or state, it probably shouldn’t be in the state. For example, instead of storing both <code>celsiusValue</code> and <code>fahrenheitValue</code>, we store just the last edited <code>temperature</code> and its <code>scale</code>. The value of the other input can always be calculated from them in the <code>render()</code> method. This lets us clear or apply rounding to the other field without losing any precision in the user input.</p>
+<p>If something can be derived from either props or state, it probably shouldn't be in the state. For example, instead
+    of storing both <code>celsiusValue</code> and <code>fahrenheitValue</code>, we store just the last edited
+    <code>temperature</code> and its <code>scale</code>. The value of the other input can always be calculated from them
+    in the <code>render()</code> method. This lets us clear or apply rounding to the other field without losing any
+    precision in the user input.</p>
 <p>When you see something wrong in the UI, you can use <a href="https://github.com/facebook/react/tree/master/packages/react-devtools">React Developer Tools</a> to inspect the props and move up the tree until you find the component responsible for updating the state. This lets you trace the bugs to their source:</p>
 <p><img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%"></p>
 </body></html>

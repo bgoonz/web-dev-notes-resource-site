@@ -14,7 +14,10 @@
 <a class="sourceLine" id="cb1-5" title="5">  <span class="kw">&lt;/label&gt;</span></a>
 <a class="sourceLine" id="cb1-6" title="6">  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Submit&quot;</span> <span class="kw">/&gt;</span></a>
 <a class="sourceLine" id="cb1-7" title="7"><span class="kw">&lt;/form&gt;</span></a></code></pre></div>
-<p>This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it’s convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called “controlled components”.</p>
+<p>This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want
+    this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles
+    the submission of the form and has access to the data that the user entered into the form. The standard way to
+    achieve this is with a technique called “controlled components”.</p>
 <h2 id="controlled-components">Controlled Components</h2>
 <p>In HTML, form elements such as <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with <a href="/docs/react-component.html#setstate"><code>setState()</code></a>.</p>
 <p>We can combine the two by making the React state be the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.</p>
@@ -51,7 +54,8 @@
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/VmmPgp?editors=0010"><strong>Try it on CodePen</strong></a></p>
 <p>Since the <code>value</code> attribute is set on our form element, the displayed value will always be <code>this.state.value</code>, making the React state the source of truth. Since <code>handleChange</code> runs on every keystroke to update the React state, the displayed value will update as the user types.</p>
-<p>With a controlled component, the input’s value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.</p>
+<p>With a controlled component, the input's value is always driven by the React state. While this means you have to type
+    a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.</p>
 <h2 id="the-textarea-tag">The textarea Tag</h2>
 <p>In HTML, a <code>&lt;textarea&gt;</code> element defines its text by its children:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;textarea&gt;</span></a>
@@ -205,7 +209,9 @@ partialState[name] = value;
 this.setState(partialState);</code></pre>
 <p>Also, since <code>setState()</code> automatically <a href="/docs/state-and-lifecycle.html#state-updates-are-merged">merges a partial state into the current state</a>, we only needed to call it with the changed parts.</p>
 <h2 id="controlled-input-null-value">Controlled Input Null Value</h2>
-<p>Specifying the value prop on a <a href="/docs/forms.html#controlled-components">controlled component</a> prevents the user from changing the input unless you desire so. If you’ve specified a <code>value</code> but the input is still editable, you may have accidentally set <code>value</code> to <code>undefined</code> or <code>null</code>.</p>
+<p>Specifying the value prop on a <a href="/docs/forms.html#controlled-components">controlled component</a> prevents the
+    user from changing the input unless you desire so. If you've specified a <code>value</code> but the input is still
+    editable, you may have accidentally set <code>value</code> to <code>undefined</code> or <code>null</code>.</p>
 <p>The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>input value<span class="op">=</span><span class="st">&quot;hi&quot;</span> /&gt;<span class="op">,</span> mountNode)<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-2" title="2"></a>
@@ -215,5 +221,7 @@ this.setState(partialState);</code></pre>
 <h2 id="alternatives-to-controlled-components">Alternatives to Controlled Components</h2>
 <p>It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out <a href="/docs/uncontrolled-components.html">uncontrolled components</a>, an alternative technique for implementing input forms.</p>
 <h2 id="fully-fledged-solutions">Fully-Fledged Solutions</h2>
-<p>If you’re looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, <a href="https://jaredpalmer.com/formik">Formik</a> is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don’t neglect to learn them.</p>
+<p>If you're looking for a complete solution including validation, keeping track of the visited fields, and handling
+    form submission, <a href="https://jaredpalmer.com/formik">Formik</a> is one of the popular choices. However, it is
+    built on the same principles of controlled components and managing state — so don't neglect to learn them.</p>
 </body></html>
