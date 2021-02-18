@@ -5,7 +5,8 @@ description: Manage your authentication tokens
 ---
 
 ### Synopsis
-```bash
+
+``` bash
   npm token list [--json|--parseable]
   npm token create [--read-only] [--cidr=1.1.1.1/24,2.2.2.2/16]
   npm token revoke <id|token>
@@ -16,10 +17,11 @@ description: Manage your authentication tokens
 This lets you list, create and revoke authentication tokens.
 
 * `npm token list`:
-  Shows a table of all active authentication tokens. You can request this as
-  JSON with `--json` or tab-separated values with `--parseable`.
 
-```bash
+  Shows a table of all active authentication tokens. You can request this as
+  JSON with `--json` or tab-separated values with `--parseable` .
+
+``` bash
 +--------+---------+------------+----------+----------------+
 | id     | token   | created    | read-only | CIDR whitelist |
 +--------+---------+------------+----------+----------------+
@@ -40,12 +42,13 @@ This lets you list, create and revoke authentication tokens.
 ```
 
 * `npm token create [--read-only] [--cidr=<cidr-ranges>]`:
+
   Create a new authentication token. It can be `--read-only` or accept a list of
   [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) ranges to
   limit use of this token to. This will prompt you for your password, and, if you have
   two-factor authentication enabled, an otp.
 
-```bash
+``` bash
 +----------------+--------------------------------------+
 | token          | a73c9572-f1b9-8983-983d-ba3ac3cc913d |
 +----------------+--------------------------------------+
@@ -58,7 +61,8 @@ This lets you list, create and revoke authentication tokens.
 ```
 
 * `npm token revoke <token|id>`:
+
   This removes an authentication token, making it immediately unusable. This can accept
   both complete tokens (as you get back from `npm token create` and will
-  find in your `.npmrc`) and ids as seen in the `npm token list` output. 
+  find in your `.npmrc` ) and ids as seen in the `npm token list` output. 
   This will NOT accept the truncated token found in `npm token list` output.

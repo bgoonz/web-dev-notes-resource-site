@@ -160,15 +160,15 @@
         <code class="option">stop</code> mode shuts down the server that is running in
         the specified data directory. Three different
         shutdown methods can be selected with the <code class="option">-m</code>
-        option. <span class="quote">“<span class="quote">Smart</span>”</span> mode disallows new connections, then waits
+        option. <span class="quote">"<span class="quote">Smart</span>"</span> mode disallows new connections, then waits
         for all existing clients to disconnect and any online backup to finish.
         If the server is in hot standby, recovery and streaming replication
         will be terminated once all clients have disconnected.
-        <span class="quote">“<span class="quote">Fast</span>”</span> mode (the default) does not wait for clients to
+        <span class="quote">"<span class="quote">Fast</span>"</span> mode (the default) does not wait for clients to
         disconnect and
         will terminate an online backup in progress. All active transactions are
         rolled back and clients are forcibly disconnected, then the
-        server is shut down. <span class="quote">“<span class="quote">Immediate</span>”</span> mode will abort
+        server is shut down. <span class="quote">"<span class="quote">Immediate</span>"</span> mode will abort
         all server processes immediately, without a clean shutdown. This choice
         will lead to a crash-recovery cycle during the next server start.
       </p>
@@ -219,9 +219,9 @@
         <code class="option">register</code> mode registers the <span class="productname">PostgreSQL</span>
         server as a system service on <span class="productname">Microsoft Windows</span>.
         The <code class="option">-S</code> option allows selection of service start type,
-        either <span class="quote">“<span class="quote">auto</span>”</span> (start service automatically on system
+        either <span class="quote">"<span class="quote">auto</span>"</span> (start service automatically on system
         startup)
-        or <span class="quote">“<span class="quote">demand</span>”</span> (start service on demand).
+        or <span class="quote">"<span class="quote">demand</span>"</span> (start service on demand).
       </p>
       <p>
         <code class="option">unregister</code> mode unregisters a system service

@@ -54,7 +54,7 @@ SELECT x FROM tab WHERE x = 'key' AND z &lt; 42;
    required by the query are available from the index, so an index-only scan
    is physically possible.  But there is an additional requirement for any
    table scan in <span class="productname">PostgreSQL</span>: it must verify that
-   each retrieved row be <span class="quote">“<span class="quote">visible</span>”</span> to the query's MVCC
+   each retrieved row be <span class="quote">"<span class="quote">visible</span>"</span> to the query's MVCC
    snapshot, as discussed in <a class="xref" href="mvcc.html" title="Chapter 13. Concurrency Control">Chapter 13</a>.  Visibility information
    is not stored in index entries, only in heap entries; so at first glance
    it would seem that every row retrieval would require a heap access
@@ -88,7 +88,7 @@ SELECT x FROM tab WHERE x = 'key' AND z &lt; 42;
    type of query that you run frequently.  Since queries typically need to
    retrieve more columns than just the ones they search
    on, <span class="productname">PostgreSQL</span> allows you to create an index
-   in which some columns are just <span class="quote">“<span class="quote">payload</span>”</span> and are not part
+   in which some columns are just <span class="quote">"<span class="quote">payload</span>"</span> and are not part
    of the search key.  This is done by adding an <code class="literal">INCLUDE</code>
    clause listing the extra columns.  For example, if you commonly run
    queries like

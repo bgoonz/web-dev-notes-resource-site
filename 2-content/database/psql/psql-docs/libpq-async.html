@@ -230,7 +230,7 @@ int PQconsumeInput(PGconn *conn);
 </pre><p>
       </p><p>
        <code class="function">PQconsumeInput</code> normally returns 1 indicating
-       <span class="quote">“<span class="quote">no error</span>”</span>, but returns 0 if there was some kind of
+       <span class="quote">"<span class="quote">no error</span>"</span>, but returns 0 if there was some kind of
        trouble (in which case <code class="function">PQerrorMessage</code> can be
        consulted).  Note that the result does not say whether any input
        data was actually collected. After calling

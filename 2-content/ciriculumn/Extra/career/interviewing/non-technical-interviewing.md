@@ -28,7 +28,7 @@ Behavioral interview questions and technical experience are a chance to provide 
 
 ### Lesson - Personal Narrative
 
-Your personal narrative is a prepared ~2min response to the question “tell me about yourself.” It should tell the audience who you are and why you are relevant to them. Specifically, it is the storyline of how you got to that exact conversation – why you are in that interview or at that event, speaking to that person.
+Your personal narrative is a prepared ~2min response to the question “tell me about yourself." It should tell the audience who you are and why you are relevant to them. Specifically, it is the storyline of how you got to that exact conversation – why you are in that interview or at that event, speaking to that person.
 
 Take some time to think about how you got to Techtonica and what you're interested in next. This [guide](https://docs.google.com/document/d/1SkGqJfPYdDvZO1VDzTLxT7Uq_D5WiscvhX5-dYjrvac/edit?usp=sharing) can help you think about and format your response.
 
@@ -49,7 +49,7 @@ Consider questions like:
 
 Think about what experiences come to mind to response to these questions. Pick a few significant projects you've done and frame them within Action - Context- Result format:
 
-- Action - “Punchline” of the story, one-line answer to the question
+- Action - “Punchline" of the story, one-line answer to the question
 - Context - describe the situation in which your actions took place
 - Result - reiterate the initial answer to the original question, clearly defining the results you produced
 

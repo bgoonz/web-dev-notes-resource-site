@@ -61,7 +61,7 @@
       correctness of the access method functions behind index scans and
       other important operations relies on these invariants always
       holding. For example, certain functions verify, among other things,
-      that all B-Tree pages have items in <span class="quote">“<span class="quote">logical</span>”</span> order (e.g.,
+      that all B-Tree pages have items in <span class="quote">"<span class="quote">logical</span>"</span> order (e.g.,
       for B-Tree indexes on <code class="type">text</code>, index tuples should be in
       collated lexical order). If that particular invariant somehow fails
       to hold, we can expect binary searches on the affected page to
@@ -129,7 +129,7 @@ ORDER BY c.relpages DESC LIMIT 10;
 </pre>
             <p>
               This example shows a session that performs verification of the
-              10 largest catalog indexes in the database <span class="quote">“<span class="quote">test</span>”</span>.
+              10 largest catalog indexes in the database <span class="quote">"<span class="quote">test</span>"</span>.
               Verification of the presence of heap tuples as index tuples is
               requested for the subset that are unique indexes. Since no
               error is raised, all indexes tested appear to be logically
@@ -220,12 +220,12 @@ ORDER BY c.relpages DESC LIMIT 10;
         When the <em class="parameter"><code>heapallindexed</code></em> argument to
         verification functions is <code class="literal">true</code>, an additional
         phase of verification is performed against the table associated with
-        the target index relation. This consists of a <span class="quote">“<span class="quote">dummy</span>”</span>
+        the target index relation. This consists of a <span class="quote">"<span class="quote">dummy</span>"</span>
         <code class="command">CREATE INDEX</code> operation, which checks for the
         presence of all hypothetical new index tuples against a temporary,
         in-memory summarizing structure (this is built when needed during
         the basic first phase of verification). The summarizing structure
-        <span class="quote">“<span class="quote">fingerprints</span>”</span> every tuple found within the target
+        <span class="quote">"<span class="quote">fingerprints</span>"</span> every tuple found within the target
         index. The high level principle behind
         <em class="parameter"><code>heapallindexed</code></em> verification is that a new
         index that is equivalent to the existing, target index must only

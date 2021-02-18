@@ -17,7 +17,7 @@
     components, and could not recover from them.</p>
 <h2 id="introducing-error-boundaries">Introducing Error Boundaries</h2>
 <p>A JavaScript error in a part of the UI shouldn't break the whole app. To solve this problem for React users, React 16
-    introduces a new concept of an “error boundary”.</p>
+    introduces a new concept of an "error boundary".</p>
 <p>Error boundaries are React components that <strong>catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI</strong> instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.</p>
 <p>A class component becomes an error boundary if it defines a new lifecycle method called <code>componentDidCatch(error, info)</code>:</p>
 <pre class="js{7-12,15-18}"><code>class ErrorBoundary extends React.Component {
@@ -55,7 +55,7 @@
 <h2 id="live-demo">Live Demo</h2>
 <p>Check out <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010">this example of declaring and using an error boundary</a> with <a href="https://github.com/facebook/react/issues/10294">React 16 beta</a>.</p>
 <h2 id="where-to-place-error-boundaries">Where to Place Error Boundaries</h2>
-<p>The granularity of error boundaries is up to you. You may wrap top-level route components to display a “Something went wrong” message to the user, just like server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.</p>
+<p>The granularity of error boundaries is up to you. You may wrap top-level route components to display a "Something went wrong" message to the user, just like server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.</p>
 <h2 id="new-behavior-for-uncaught-errors">New Behavior for Uncaught Errors</h2>
 <p>This change has an important implication. <strong>As of React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree.</strong></p>
 <p>We debated this decision, but in our experience it is worse to leave corrupted UI in place than to completely remove it. For example, in a product like Messenger leaving the broken UI visible could lead to somebody sending a message to the wrong person. Similarly, it is worse for a payments app to display a wrong amount than to render nothing.</p>

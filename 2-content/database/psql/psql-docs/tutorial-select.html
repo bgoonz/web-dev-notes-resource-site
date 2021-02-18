@@ -15,7 +15,7 @@
 </p><pre class="programlisting">
 SELECT * FROM weather;
 </pre><p>
-    Here <code class="literal">*</code> is a shorthand for <span class="quote">“<span class="quote">all columns</span>”</span>.
+    Here <code class="literal">*</code> is a shorthand for <span class="quote">"<span class="quote">all columns</span>"</span>.
      <a href="#ftn.id-1.4.4.6.2.10" class="footnote"><sup class="footnote" id="id-1.4.4.6.2.10">[2]</sup></a>
     So the same result would be had with:
 </p><pre class="programlisting">
@@ -50,7 +50,7 @@ SELECT city, (temp_hi+temp_lo)/2 AS temp_avg, date FROM weather;
     Notice how the <code class="literal">AS</code> clause is used to relabel the
     output column.  (The <code class="literal">AS</code> clause is optional.)
    </p><p>
-    A query can be <span class="quote">“<span class="quote">qualified</span>”</span> by adding a <code class="literal">WHERE</code>
+    A query can be <span class="quote">"<span class="quote">qualified</span>"</span> by adding a <code class="literal">WHERE</code>
     clause that specifies which rows are wanted.  The <code class="literal">WHERE</code>
     clause contains a Boolean (truth value) expression, and only rows for
     which the Boolean expression is true are returned.  The usual

@@ -31,7 +31,7 @@
 <li>Introduction to Refactoring
 <ol type="1">
 <li>Purpose</li>
-<li>Impact in a corporate code base (importance of managing “technical debt”, working in “legacy code”)</li>
+<li>Impact in a corporate code base (importance of managing “technical debt", working in “legacy code")</li>
 <li>Funky code to look for (ex: magic numbers, unhelpful variable names, etc.)</li>
 <li>Leveraging functions</li>
 <li>Using libraries</li>
@@ -59,9 +59,13 @@
 </ul>
 <p>A possible solution:</p>
 <ol type="1">
-<li><p>The number <code>8</code> is a “magic number” - let’s declare it as a constant (eg: <code>let NUM_OF_SPIDER_LEGS = 8</code>) Using all caps is a good way to indicate to someone else that this variable is a magic number.</p></li>
+<li>
+    <p>The number <code>8</code> is a “magic number" - let’s declare it as a constant (eg: <code>let NUM_OF_SPIDER_LEGS
+            = 8</code>) Using all caps is a good way to indicate to someone else that this variable is a magic number.
+    </p>
+</li>
 <li><p>Make let <code>legs</code> more descriptive (eg: let <code>getTotalNumOfSpiderLegs</code>) This variable name makes it very clear that we are talking about both spider legs and trying to get the number. The variable name may be a bit long, but better to be long and clear, than short and confusing.)</p></li>
-<li><p>Remove any dead code since it isn’t used in the function (eg: let <code>eyes</code> &amp; let <code>totalEyes</code>) It can be tempting to save code for “one day”. You might think “What if maybe one day I want to calculate the total number of spider eyes?”. It’s better to just add that code back once you actually use it, rather than leave confusing code and having someone else spend time trying to figure out why <code>eyes</code> is important to this function.</p></li>
+<li><p>Remove any dead code since it isn’t used in the function (eg: let <code>eyes</code> &amp; let <code>totalEyes</code>) It can be tempting to save code for “one day". You might think “What if maybe one day I want to calculate the total number of spider eyes?". It’s better to just add that code back once you actually use it, rather than leave confusing code and having someone else spend time trying to figure out why <code>eyes</code> is important to this function.</p></li>
 </ol>
 <p>Your refactored code may look like this (but doesn’t have to!):</p>
 <pre><code>const getTotalNumOfSpiderLegs = function(numOfSpiders) {

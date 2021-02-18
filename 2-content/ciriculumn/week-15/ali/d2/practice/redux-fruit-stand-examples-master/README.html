@@ -88,7 +88,8 @@
 <a class="sourceLine" id="cb5-15" title="15">  <span class="ot">]</span></a>
 <a class="sourceLine" id="cb5-16" title="16"><span class="fu">}</span></a></code></pre></div>
 <h4 id="fruitsone-delete"><code>/fruits/one</code> <code>DELETE</code></h4>
-<p>“Sells” a single fruit by finding the first occurrence of the provided fruit name and deleting it from the database.</p>
+<p>“Sells" a single fruit by finding the first occurrence of the provided fruit name and deleting it from the database.
+</p>
 <p>Sample request body:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb6-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb6-2" title="2">    <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Apple&quot;</span></a>
@@ -100,7 +101,8 @@
 <a class="sourceLine" id="cb7-3" title="3">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;APPLE&quot;</span></a>
 <a class="sourceLine" id="cb7-4" title="4"><span class="fu">}</span></a></code></pre></div>
 <h4 id="fruitsmultiple-delete"><code>/fruits/multiple</code> <code>DELETE</code></h4>
-<p>“Sells” multiple fruits by retrieving the fruits from the database using the provided fruit IDs and deleting the available fruits from the database. Fruit IDs that can’t be initially retrieved from the database are ignored.</p>
+<p>“Sells" multiple fruits by retrieving the fruits from the database using the provided fruit IDs and deleting the
+    available fruits from the database. Fruit IDs that can’t be initially retrieved from the database are ignored.</p>
 <p>Sample request body:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb8-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb8-2" title="2">    <span class="dt">&quot;fruitIDs&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="dv">2</span><span class="ot">,</span> <span class="dv">3</span><span class="ot">]</span></a>
@@ -151,7 +153,7 @@
 <a class="sourceLine" id="cb12-4" title="4">  <span class="dt">&quot;paid&quot;</span><span class="fu">:</span> <span class="kw">false</span></a>
 <a class="sourceLine" id="cb12-5" title="5"><span class="fu">}</span></a></code></pre></div>
 <h4 id="farmersfarmeridpay-patch"><code>/farmers/:farmerId/pay</code> <code>PATCH</code></h4>
-<p>“Pays” the farmer for the provided farmer ID by setting their <code>paid</code> column value to <code>true</code>.</p>
+<p>“Pays" the farmer for the provided farmer ID by setting their <code>paid</code> column value to <code>true</code>.</p>
 <p>HTTP response status code: <code>200</code></p>
 <p>Sample response body:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb13-1" title="1"><span class="fu">{</span></a>

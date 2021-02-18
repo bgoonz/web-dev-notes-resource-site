@@ -6,10 +6,11 @@ description: An explanation of npm lockfiles
 
 ### Description
 
-Conceptually, the "input" to [`npm install`](/commands/npm-install) is a [package.json](/configuring-npm/package-json), while its
+Conceptually, the "input" to [ `npm install` ](/commands/npm-install) is a [package.json](/configuring-npm/package-json), while its
 "output" is a fully-formed `node_modules` tree: a representation of the
 dependencies you declared. In an ideal world, npm would work like a pure
 function: the same `package.json` should produce the exact same `node_modules`
+
 tree, any time. In some cases, this is indeed true. But in many others, npm is
 unable to do this. There are multiple reasons for this:
 
@@ -23,7 +24,7 @@ unable to do this. There are multiple reasons for this:
 
 As an example, consider package A:
 
-```json
+``` json
 {
   "name": "A",
   "version": "0.1.0",
@@ -35,7 +36,7 @@ As an example, consider package A:
 
 package B:
 
-```json
+``` json
 {
   "name": "B",
   "version": "0.0.1",
@@ -46,7 +47,8 @@ package B:
 ```
 
 and package C:
-```json
+
+``` json
 {
   "name": "C",
   "version": "0.0.1"
@@ -56,7 +58,7 @@ and package C:
 If these are the only versions of A, B, and C available in the
 registry, then a normal `npm install A` will install:
 
-```json
+``` json
 A@0.1.0
 `-- B@0.0.1
     `-- C@0.0.1
@@ -65,13 +67,13 @@ A@0.1.0
 However, if B@0.0.2 is published, then a fresh `npm install A` will
 install:
 
-```bash
+``` bash
 A@0.1.0
 `-- B@0.0.2
     `-- C@0.0.1
 ```
 
-assuming the new version did not modify B's dependencies. Of course,
+assuming the new version did not modify B's dependencies. Of course, 
 the new version of B could include a new version of C and any number
 of new dependencies. If such changes are undesirable, the author of A
 could specify a dependency on B@0.0.1. However, if A's author and B's
@@ -81,10 +83,10 @@ when B hasn't changed at all.
 
 To prevent this potential issue, npm uses [package-lock.json](/configuring-npm/package-lock-json) or, if present, [npm-shrinkwrap.json](/configuring-npm/shrinkwrap-json). These files are called package locks, or lockfiles.
 
-Whenever you run `npm install`, npm generates or updates your package lock,
+Whenever you run `npm install` , npm generates or updates your package lock, 
 which will look something like this:
 
-```json
+``` json
 {
   "name": "A",
   "version": "0.1.0",
@@ -112,21 +114,25 @@ work off this file, instead of recalculating dependency versions off
 The presence of a package lock changes the installation behavior such that:
 
 1. The module tree described by the package lock is reproduced. This means
+
 reproducing the structure described in the file, using the specific files
 referenced in "resolved" if available, falling back to normal package resolution
 using "version" if one isn't.
 
 2. The tree is walked and any missing dependencies are installed in the usual
+
 fashion.
 
-If `preshrinkwrap`, `shrinkwrap` or `postshrinkwrap` are in the `scripts`
-property of the `package.json`, they will be executed in order. `preshrinkwrap`
+If `preshrinkwrap` , `shrinkwrap` or `postshrinkwrap` are in the `scripts`
+
+property of the `package.json` , they will be executed in order. `preshrinkwrap`
+
 and `shrinkwrap` are executed before the shrinkwrap, `postshrinkwrap` is
 executed afterwards. These scripts run for both `package-lock.json` and
-`npm-shrinkwrap.json`. For example to run some postprocessing on the generated
+`npm-shrinkwrap.json` . For example to run some postprocessing on the generated
 file:
 
-```json
+``` json
   "scripts": {
     "postshrinkwrap": "json -I -e \"this.myMetadata = $MY_APP_METADATA\""
   }
@@ -135,9 +141,9 @@ file:
 #### Using locked packages
 
 Using a locked package is no different than using any package without a package
-lock: any commands that update `node_modules` and/or `package.json`'s
+lock: any commands that update `node_modules` and/or `package.json` 's
 dependencies will automatically sync the existing lockfile. This includes `npm
-install`, `npm rm`, `npm update`, etc. To prevent this update from happening,
+install `, ` npm rm `, ` npm update`, etc. To prevent this update from happening, 
 you can use the `--no-save` option to prevent saving altogether, or
 `--no-shrinkwrap` to allow `package.json` to be updated while leaving
 `package-lock.json` or `npm-shrinkwrap.json` intact.
@@ -147,25 +153,25 @@ control: this will allow anyone else on your team, your deployments, your
 CI/continuous integration, and anyone else who runs `npm install` in your
 package source to get the exact same dependency tree that you were developing
 on. Additionally, the diffs from these changes are human-readable and will
-inform you of any changes npm has made to your `node_modules`, so you can notice
+inform you of any changes npm has made to your `node_modules` , so you can notice
 if any transitive dependencies were updated, hoisted, etc.
 
 #### Resolving lockfile conflicts
 
 Occasionally, two separate npm install will create package locks that cause
-merge conflicts in source control systems. As of `npm@5.7.0`, these conflicts
+merge conflicts in source control systems. As of `npm@5.7.0` , these conflicts
 can be resolved by manually fixing any `package.json` conflicts, and then
 running `npm install [--package-lock-only]` again. npm will automatically
 resolve any conflicts for you and write a merged package lock that includes all
 the dependencies from both branches in a reasonable tree. If
 `--package-lock-only` is provided, it will do this without also modifying your
-local `node_modules/`.
+local `node_modules/` .
 
 To make this process seamless on git, consider installing
-[`npm-merge-driver`](https://npm.im/npm-merge-driver), which will teach git how
+[ `npm-merge-driver` ](https://npm.im/npm-merge-driver), which will teach git how
 to do this itself without any user interaction. In short: `$ npx
 npm-merge-driver install -g` will let you do this, and even works with
-pre-`npm@5.7.0` versions of npm 5, albeit a bit more noisily. Note that if
+pre- `npm@5.7.0` versions of npm 5, albeit a bit more noisily. Note that if
 `package.json` itself conflicts, you will have to resolve that by hand and run
 `npm install` manually, even with the merge driver.
 

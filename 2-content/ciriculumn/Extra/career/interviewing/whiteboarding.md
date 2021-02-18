@@ -91,7 +91,7 @@ White-boarding is a practice performed in virtually all companies. It is frequen
 
 - Prove that it works with a test. Or disprove it ;)
 - On a computer: Type a testing function
-  Have the test function call your function with a new argument, and have it return “ok” or “fail”
+  Have the test function call your function with a new argument, and have it return “ok" or “fail"
 - On a board: talk through a test example.
   Write an input example, and walk it through the function's process and discuss if the result is what you expected.
 

@@ -90,7 +90,9 @@
 <a class="sourceLine" id="cb5-16" title="16"><span class="op">}</span></a>
 <a class="sourceLine" id="cb5-17" title="17"></a>
 <a class="sourceLine" id="cb5-18" title="18"><span class="im">export</span> <span class="im">default</span> Calculator<span class="op">;</span></a></code></pre></div>
-<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the <code>&lt;h1&gt;</code> element. Make sure “Calculator” still shows up in the browser, this time with “Time for math!” from your <code>Calculator</code> component.</p>
+<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the
+    <code>&lt;h1&gt;</code> element. Make sure "Calculator" still shows up in the browser, this time with "Time for
+    math!" from your <code>Calculator</code> component.</p>
 <h3 id="state">State</h3>
 <p>Now let’s initialize the <code>state</code> of your <code>Calculator</code> component! The state of your component is just a JavaScript object. For the calculator, it will contain three keys: the result and two numbers from user input.</p>
 <p>Within the <code>constructor()</code> method of your <code>Calculator</code> component, define <code>this.state</code> with default values for the result and two numbers. The <code>result</code> should have a default value of <code>0</code>. You actually want the two numbers to start out blank, so give <code>num1</code> and <code>num2</code> a default value of an empty string:</p>
@@ -116,8 +118,17 @@
 <a class="sourceLine" id="cb8-3" title="3"><span class="op">};</span></a></code></pre></div>
 <p>Add an <code>&lt;input&gt;</code> element underneath your rendered <code>result</code>. Assign the <code>onChange</code> prop to a <code>handleFirstNum()</code> callback like so:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="op">&lt;</span>input onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">handleFirstNum</span><span class="op">}</span> placeholder<span class="op">=</span><span class="st">&quot;First number&quot;</span> /&gt;</a></code></pre></div>
-<p>Try typing in your “First number” input field and seeing what is logged in your developer tools console from the <em>change</em> event. As a reminder, event objects from your event listeners have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the <code>&lt;input&gt;</code> element.</p>
-<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code> to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> (“Not a Number”) output. Also make note that you need to use <a href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s state and re-render the component with the updated state.</p>
+<p>Try typing in your "First number" input field and seeing what is logged in your developer tools console from the
+    <em>change</em> event. As a reminder, event objects from your event listeners have <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this
+    case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the
+    <code>&lt;input&gt;</code> element.</p>
+<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code>
+    to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> ("Not a
+    Number") output. Also make note that you need to use <a
+        href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s
+    state and re-render the component with the updated state.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1">handleFirstNum <span class="op">=</span> e <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Parse value</span></a>
 <a class="sourceLine" id="cb10-3" title="3">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Set state</span></a>
@@ -125,7 +136,7 @@
 <p>You also want your input fields to always reflect the current version of the state and properly update when you trigger a re-render by changing the state, so make sure to include <code>value={this.state.num1}</code> in the input tag.</p>
 <p>That’s one of the inputs! Create a second <code>&lt;input&gt;</code> element and a <code>handleSecondNum()</code> callback. It should look very similar.</p>
 <h2 id="phase-5-creating-calculator-buttons">Phase 5: Creating calculator buttons</h2>
-<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a “+” button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
+<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a "+" button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
 <p>The current values for <code>num1</code> and <code>num2</code> should be properly updated and stored within the state of your component. Create four methods to handle adding, subtracting, multiplying, and dividing. Remember to use <code>setState()</code> to set <code>this.state.result</code> to the correct result.</p>
 <h3 id="clear">Clear</h3>
 <p>It’d also be nice to be able to clear out the input fields. Make a button that resets the state to its initial values. You can add an <code>onClick</code> listener to this button to invoke a <code>clearInput</code> method to reset the state, and therefore clear each input field’s <code>value</code>.</p>

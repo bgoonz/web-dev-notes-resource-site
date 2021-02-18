@@ -52,7 +52,7 @@ ERROR:  could not load library "/opt/dbs/pgsql/lib/plperl.so": Bad address
      heap instead of the shared library segments where it would
      otherwise be placed.
     </p><p>
-     The <span class="quote">“<span class="quote">ideal</span>”</span> solution for this is to use a 64-bit
+     The <span class="quote">"<span class="quote">ideal</span>"</span> solution for this is to use a 64-bit
      build of PostgreSQL, but that is not always practical, because
      systems with 32-bit processors can build, but not run, 64-bit
      binaries.
@@ -152,7 +152,7 @@ make MAX_CONNECTIONS=5 check
     directory <code class="filename">/usr/share/doc/Cygwin</code>.
    </p></div><div class="sect2" id="INSTALLATION-NOTES-MACOS"><div class="titlepage"><div><div><h3 class="title">16.7.3. macOS</h3></div></div></div><a id="id-1.6.3.11.6.2" class="indexterm"></a><p>
     On recent <span class="productname">macOS</span> releases, it's necessary to
-    embed the <span class="quote">“<span class="quote">sysroot</span>”</span> path in the include switches used to
+    embed the <span class="quote">"<span class="quote">sysroot</span>"</span> path in the include switches used to
     find some system header files.  This results in the outputs of
     the <span class="application">configure</span> script varying depending on
     which SDK version was used during <span class="application">configure</span>.
@@ -179,8 +179,8 @@ xcodebuild -version -sdk macosx Path
 ./configure ... PG_SYSROOT=<em class="replaceable"><code>/desired/path</code></em>
 </pre><p>
    </p><p>
-    <span class="productname">macOS</span>'s <span class="quote">“<span class="quote">System Integrity
-    Protection</span>”</span> (SIP) feature breaks <code class="literal">make check</code>,
+    <span class="productname">macOS</span>'s <span class="quote">"<span class="quote">System Integrity
+    Protection</span>"</span> (SIP) feature breaks <code class="literal">make check</code>,
     because it prevents passing the needed setting
     of <code class="literal">DYLD_LIBRARY_PATH</code> down to the executables being
     tested.  You can work around that by doing <code class="literal">make

@@ -15,14 +15,14 @@ At one time during my career at GitHub I was lucky enough to work on a project c
 Issue template config options[](#issue-template-config-options)
 ---------------------------------------------------------------
 
-Perfecting the planning and tracking process on GitHub can make all the difference between “oh gawd how can I possibly triage all of the things” and “I can actually bear to look at my open source projects.”
+Perfecting the planning and tracking process on GitHub can make all the difference between "oh gawd how can I possibly triage all of the things" and "I can actually bear to look at my open source projects."
 
 We’ve got a bunch of cool new things in store for you in the planning and tracking space coming soon, but in the meantime, here are some cool things you can do using the [issue template config](https://help.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository#configuring-the-template-chooser) to make sure that issues coming _into_ your repositories are concise and helpful. Some fantastic projects such as [VS Code](https://github.com/microsoft/vscode/blob/master/.github/ISSUE_TEMPLATE/config.yml), [Homebrew](https://github.com/Homebrew/brew/issues/new/choose), and [React](https://github.com/facebook/react/blob/master/.github/ISSUE_TEMPLATE/config.yml) are already using them.
 
 A plethora of deep links[](#a-plethora-of-deep-links)
 -----------------------------------------------------
 
-One day I’m going to sit down and write my magnum opus, “The Art of Deep Linking on GitHub”, but until that day, here are a few ways you can use IDs hidden within GitHub to share a link with someone that goes _directly_ to the most-relevant content:
+One day I’m going to sit down and write my magnum opus, "The Art of Deep Linking on GitHub", but until that day, here are a few ways you can use IDs hidden within GitHub to share a link with someone that goes _directly_ to the most-relevant content:
 
 Other links for sharing[](#other-links-for-sharing)
 ---------------------------------------------------

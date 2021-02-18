@@ -114,7 +114,11 @@
 <p>So far, the above example class component behaves exactly as its function component counterpart. This might leave you wondering why you’d want or need to create a class component.</p>
 <p><strong>One of the two reasons why you would use a Class component over a Function component is to add and manage local or internal state to your component. The second main reason to use a Class component is to use a component’s lifecycle methods.</strong> The following sections will focus on how to add and manage a component’s state. You’ll learn more about a component’s lifecycle (and the associated component lifecycle methods) later in a future reading.</p>
 <h3 id="what-is-state">What is state?</h3>
-<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to a component. State is owned by the component where it’s defined and used. That’s why we say it’s “internal” or “local” to that component. Whereas props are not to be changed by a component, state is intended to be updated or mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to determine how the component should behave and render.</p>
+<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to
+    a component. State is owned by the component where it’s defined and used. That’s why we say it’s "internal" or
+    "local" to that component. Whereas props are not to be changed by a component, state is intended to be updated or
+    mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to
+    determine how the component should behave and render.</p>
 <h3 id="when-to-use-state">When to use state</h3>
 <p>State should only be used when it’s absolutely necessary. If a bit of data is never going to change or if it is needed across the entire application, use props instead.</p>
 <p>When you’re just learning React, it can be challenging to know when it’s okay to use state and when it’s not. State is often used when creating components that retrieve data from APIs or render forms. You’ll see examples of those kinds of components later in this lesson. To start, we’ll look at simple, contrived example of using state in just a bit.</p>
@@ -180,7 +184,11 @@
 <p>Sometimes the same quote will be displayed more than once in a row. You’ll see in a bit how to fix that bug.</p>
 </blockquote>
 <h3 id="using-the-react-developer-tools-to-view-a-components-state">Using the React Developer Tools to view a component’s state</h3>
-<p>Assuming you have the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> installed, open up your browser’s developer tools and view the “Components” tab. On the left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.</p>
+<p>Assuming you have the <a
+        href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React
+        Developer Tools</a> installed, open up your browser’s developer tools and view the "Components" tab. On the
+    left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.
+</p>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/react-class-components-init-state.png" alt="init state" /><figcaption>init state</figcaption>
 </figure>
@@ -206,7 +214,7 @@
 <p>The <code>changeQuote</code> event handler calls the <code>this.getRandomInt</code> method to get a new random integer and then calls the <code>this.setState</code> method to update the component’s state. The <code>this.setState</code> method accepts an object literal containing the state properties to update.</p>
 <p>After updating the state, React re-renders the component and displays the new quote (provided that the current quote index actually changed). Because calling the <code>this.setState</code> method triggers a re-render, it should not be called from within the <code>render</code> method, as that would trigger an infinite loop.</p>
 <p>Notice that the object literal passed into the <code>this.setState</code> method only contains the state property that needs to be updated. The <code>this.setState</code> method merges state updates into the current state object, so you only need to provide the state properties that need to be updated.</p>
-<p>Now, instead of refreshing the page, you can click the “Change Quote” button to display a new random quote!</p>
+<p>Now, instead of refreshing the page, you can click the "Change Quote" button to display a new random quote!</p>
 <p>For your reference, here’s the updated <code>RandomQuote</code> component:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="co">// ./src/RandomQuote.js</span></a>
 <a class="sourceLine" id="cb12-2" title="2"></a>
@@ -306,7 +314,7 @@
 <a class="sourceLine" id="cb16-13" title="13">    <span class="op">};</span></a>
 <a class="sourceLine" id="cb16-14" title="14">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-15" title="15"><span class="op">}</span></a></code></pre></div>
-<p>Now, if you retest your application, clicking the “Change Quote” button will display a different random quote every time!</p>
+<p>Now, if you retest your application, clicking the "Change Quote" button will display a different random quote every time!</p>
 <h2 id="providing-default-values-for-props">Providing default values for props</h2>
 <p>Currently, the list of quotes doesn’t change once it’s initialized in the <code>constructor</code> method:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="at">constructor</span>() <span class="op">{</span></a>

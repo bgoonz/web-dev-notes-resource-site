@@ -38,7 +38,7 @@ $$ LANGUAGE plperl;
     entries for <code class="literal">Variable "%s" will not stay shared</code> and
     <code class="literal">Variable "%s" is not available</code> in the
     <span class="citerefentry"><span class="refentrytitle">perldiag</span></span> man page, or
-    search the Internet for <span class="quote">“<span class="quote">perl nested named subroutine</span>”</span>.
+    search the Internet for <span class="quote">"<span class="quote">perl nested named subroutine</span>"</span>.
    </p></div><p>
    The syntax of the <code class="command">CREATE FUNCTION</code> command requires
    the function body to be written as a string constant.  It is usually
@@ -68,7 +68,7 @@ $$ LANGUAGE plperl;
       database encoding upon return.
     </p></div><p>
    If an SQL null value<a id="id-1.8.10.9.10.1" class="indexterm"></a> is passed to a function,
-   the argument value will appear as <span class="quote">“<span class="quote">undefined</span>”</span> in Perl.  The
+   the argument value will appear as <span class="quote">"<span class="quote">undefined</span>"</span> in Perl.  The
    above function definition will not behave very nicely with null
    inputs (in fact, it will act as though they are zeroes).  We could
    add <code class="literal">STRICT</code> to the function definition to make

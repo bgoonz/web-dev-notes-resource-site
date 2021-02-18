@@ -1,11 +1,11 @@
 <h2 id="cat-schema-instructions">Cat Schema Instructions</h2>
 <p>You are in charge of implementing the schema found in database-schema.png. You will implement the database using SQL. After it, you will drop the database and implement it again using Sequelize.</p>
-<p>Before you start, create a user called “cats_app” with a password and CREATEDB privileges.</p>
+<p>Before you start, create a user called "cats_app" with a password and CREATEDB privileges.</p>
 <ul>
 <li>SQL Practice
 <ol type="1">
-<li>Create a database called “cats” with owner “cats_app”</li>
-<li>Create the three tables in the schema “Cats”, “CatToys” and “Toys”. Ensure that you capture the associations as foreign keys in your tables</li>
+<li>Create a database called "cats" with owner "cats_app"</li>
+<li>Create the three tables in the schema "Cats", "CatToys" and "Toys". Ensure that you capture the associations as foreign keys in your tables</li>
 <li>Create a sql file with seed data from <code>data-seed.txt</code>. Seed your database.</li>
 <li>Write the following queries in SQL</li>
 </ol>
@@ -16,10 +16,10 @@
 </ul></li>
 <li>Sequelize Practice (Bonus)
 <ol type="1">
-<li>Drop the database called “cats”</li>
+<li>Drop the database called "cats"</li>
 <li>Use sequelize to initialize a project</li>
-<li>Update config/config.json with your “cats_app” user and the “cats” database</li>
-<li>Utilize sequelize_cli model:generate to create the three Models that correspond to every table in the schema. Remember that <code>sequelize model:generate</code> takes the singular model names (“Cat”, and “Toy”) and will generate a migration file with the pluralized table names (“Cats” and “Toys”).</li>
+<li>Update config/config.json with your "cats_app" user and the "cats" database</li>
+<li>Utilize sequelize_cli model:generate to create the three Models that correspond to every table in the schema. Remember that <code>sequelize model:generate</code> takes the singular model names ("Cat", and "Toy") and will generate a migration file with the pluralized table names ("Cats" and "Toys").</li>
 <li>Update the migrations files with validations and references</li>
 <li>Update the models with the associations in the schema</li>
 <li>Utilize sequelize-cli seed:generate to create seed files for each Model, and migrate the data in <code>data-seed.txt</code> into these files.</li>

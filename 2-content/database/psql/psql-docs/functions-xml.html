@@ -19,8 +19,8 @@
 </pre><p>
      The function <code class="function">xmlcomment</code> creates an XML value
      containing an XML comment with the specified text as content.
-     The text cannot contain <span class="quote">“<span class="quote"><code class="literal">--</code></span>”</span> or end with a
-     <span class="quote">“<span class="quote"><code class="literal">-</code></span>”</span> so that the resulting construct is a valid
+     The text cannot contain <span class="quote">"<span class="quote"><code class="literal">--</code></span>"</span> or end with a
+     <span class="quote">"<span class="quote"><code class="literal">-</code></span>"</span> so that the resulting construct is a valid
      XML comment.  If the argument is null, the result is null.
     </p><p>
      Example:
@@ -52,9 +52,9 @@ SELECT xmlconcat('&lt;abc/&gt;', '&lt;bar&gt;foo&lt;/bar&gt;');
      argument values have the same XML version declaration, that
      version is used in the result, else no version is used.  If all
      argument values have the standalone declaration value
-     <span class="quote">“<span class="quote">yes</span>”</span>, then that value is used in the result.  If
+     <span class="quote">"<span class="quote">yes</span>"</span>, then that value is used in the result.  If
      all argument values have a standalone declaration value and at
-     least one is <span class="quote">“<span class="quote">no</span>”</span>, then that is used in the result.
+     least one is <span class="quote">"<span class="quote">no</span>"</span>, then that is used in the result.
      Else the result will have no standalone declaration.  If the
      result is determined to require a standalone declaration but no
      version declaration, a version declaration with version 1.0 will

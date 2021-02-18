@@ -8,7 +8,7 @@
 <li><a href="#declarative-programming">Declarative programming</a></li>
 <li><a href="#reusability">Reusability</a></li>
 <li><a href="#one-flow-of-data">One-flow of data</a></li>
-<li><a href="#the-virtual-dom">The “virtual DOM”</a></li>
+<li><a href="#the-virtual-dom">The "virtual DOM"</a></li>
 <li><a href="#speed">Speed</a></li>
 <li><a href="#what-you-learned">What you learned</a></li>
 </ul>
@@ -18,7 +18,9 @@
 <h2 id="modularity">Modularity</h2>
 <p>Unlike the mess of code that you can create with event listeners and template strings in your JavaScript code to manipulate the DOM by adding, updating, and removing elements from it, React provides modularity from the ground up. If you see modularity, understanding where code is that’s running, then React is for you.</p>
 <h2 id="easy-to-start">Easy to start</h2>
-<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the <code>createElement</code> method that React provides to define reusable “components” for what appears in the browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
+<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the
+    <code>createElement</code> method that React provides to define reusable "components" for what appears in the
+    browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
 <p>For more complex applications, there are may tools available to you to get a fully-functioning React application running from a single command on the command line, tools such as <em>Create React App</em>. This handy tools will create a full React application with live reload, testing, and support for things like advanced CSS manipulation.</p>
 <h2 id="declarative-programming">Declarative programming</h2>
 <p>In the same way that you use HTML to <em>declare</em> what the user interface should look like, React provides the same mechanism in its element-based programming API, either through the <code>createElement</code> method or the higher-level language known as JSX.</p>
@@ -26,7 +28,7 @@
 <p>React encourages you to think in terms of reusability as you construct the user interface from elements and components that you create. It works best when you think of the page as pieces of UI working in harmony with one another. When you make a list or a button or a product card, you can then reuse those components to show different data that your UI demands to show.</p>
 <h2 id="one-flow-of-data">One-flow of data</h2>
 <p>React applications are built as a combination of parent and child components. As the names suggest, each child component has a parent and a parent component will have one or more child components. Components receive data via an argument traditionally named <code>props</code>. Parent components can decide the data that its children should show by passing only a subset of what it has to its children. Data is never passed up from the child to the parent. Because you always know which way data flows, you can more easily debug your application to determine where the data display or event handling code is.</p>
-<h2 id="the-virtual-dom">The “virtual DOM”</h2>
+<h2 id="the-virtual-dom">The "virtual DOM"</h2>
 <p>You may have come to the conclusion that writing things like</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="va">el</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="vs">  &lt;table&gt;</span></a>
@@ -47,5 +49,5 @@
 <li>React follows the declarative programming style</li>
 <li>React encourages reusability in your code</li>
 <li>React has one way that data flows, which makes it much easier to reason about the code</li>
-<li>React uses a “virtual DOM” to make changes to the real DOM very fast and efficient</li>
+<li>React uses a "virtual DOM" to make changes to the real DOM very fast and efficient</li>
 </ul>

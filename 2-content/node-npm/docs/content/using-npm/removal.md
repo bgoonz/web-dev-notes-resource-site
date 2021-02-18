@@ -8,13 +8,13 @@ description: Cleaning the Slate
 
 So sad to see you go.
 
-```bash
+``` bash
 sudo npm uninstall npm -g
 ```
 
 Or, if that fails, get the npm source code, and do:
 
-```bash
+``` bash
 sudo make uninstall
 ```
 
@@ -23,22 +23,23 @@ sudo make uninstall
 Usually, the above instructions are sufficient.  That will remove
 npm, but leave behind anything you've installed.
 
-If that doesn't work, or if you require more drastic measures,
+If that doesn't work, or if you require more drastic measures, 
 continue reading.
 
 Note that this is only necessary for globally-installed packages.  Local
 installs are completely contained within a project's `node_modules`
+
 folder.  Delete that folder, and everything is gone less a package's
 install script is particularly ill-behaved).
 
 This assumes that you installed node and npm in the default place.  If
-you configured node with a different `--prefix`, or installed npm with a
+you configured node with a different `--prefix` , or installed npm with a
 different prefix setting, then adjust the paths accordingly, replacing
 `/usr/local` with your install prefix.
 
 To remove everything npm-related manually:
 
-```bash
+``` bash
 rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/npm*
 ```
 
@@ -47,14 +48,14 @@ them with npm first, and then install them again once you have a
 proper install.  This can help find any symlinks that are lying
 around:
 
-```bash
+``` bash
 ls -laF /usr/local/{lib/node{,/.npm},bin,share/man} | grep npm
 ```
 
 Prior to version 0.3, npm used shim files for executables and node
 modules.  To track those down, you can do the following:
 
-```bash
+``` bash
 find /usr/local/{lib/node,bin} -exec grep -l npm \{\} \; ;
 ```
 

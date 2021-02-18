@@ -47,7 +47,7 @@
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <!-- Accepts URIs that begin with "rntester://example” -->
+        <!-- Accepts URIs that begin with "rntester://example" -->
         <data android:scheme="rntester" android:host="example" />
       </intent-filter>
     </activity>

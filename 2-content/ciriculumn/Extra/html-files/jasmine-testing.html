@@ -55,7 +55,8 @@
 </ul>
 <p><em>Create Files</em></p>
 <ul>
-<li>To add tests, create files in the <code>/spec</code> folder that end with “.spec.js” so that Jasmine knows which files are the test files.</li>
+<li>To add tests, create files in the <code>/spec</code> folder that end with “.spec.js" so that Jasmine knows which
+    files are the test files.</li>
 <li>Create a file that we’ll add some tests to: <code>spec/string.spec.js</code>.</li>
 <li>Note: we named our file <code>string.spec.js</code>, because we’ll be testing some string functionality! In general, try to name your test files for the behavior that they’re testing.</li>
 </ul>
@@ -83,14 +84,17 @@ Incomplete: No specs found</code></pre>
 <a class="sourceLine" id="cb2-5" title="5">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <ul>
-<li><code>describe</code>, provides context for a group of tests. <code>describe</code> is a function that takes 2 arguments (“STRING”, FUNCTION(){}). The “STRING” should describe the context for what we are testing, and the “FUNCTION” will contain one or more tests.</li>
-<li>Inside the <code>describe</code>, you can add multiple <code>it</code> statements. Each <code>it</code> will contain tests for a specific behavior (also known as “specs”).</li>
+<li><code>describe</code>, provides context for a group of tests. <code>describe</code> is a function that takes 2
+    arguments (“STRING", FUNCTION(){}). The “STRING" should describe the context for what we are testing, and the
+    “FUNCTION" will contain one or more tests.</li>
+<li>Inside the <code>describe</code>, you can add multiple <code>it</code> statements. Each <code>it</code> will contain
+    tests for a specific behavior (also known as “specs").</li>
 <li>To add an actual test, we add an <code>expect</code> statement within the <code>it</code>.
 <ul>
-<li>In the above example, we are testing that the length of the string “word” is 4.</li>
+<li>In the above example, we are testing that the length of the string “word" is 4.</li>
 <li>This test passess, because <code>"word".length == 4</code> evaluates to <code>true</code>!</li>
 </ul></li>
-<li>Notice that if you read the <code>describe</code> and <code>it</code> statements together, they form the sentence “A string that contains 4 letters should have length 4”. It’s good practice to write Jasmine tests that read like sentences and clearly state what they are trying to test.</li>
+<li>Notice that if you read the <code>describe</code> and <code>it</code> statements together, they form the sentence “A string that contains 4 letters should have length 4". It’s good practice to write Jasmine tests that read like sentences and clearly state what they are trying to test.</li>
 <li>Now, run the new test by typing in <code>jasmine</code> in the command line. You should see something like this:</li>
 </ul>
 <pre><code>Started
@@ -118,7 +122,7 @@ Failures:
 
 1 spec, 1 failure</code></pre>
 <ul>
-<li>We now see the failing test printed to the terminal. Notice that the error message “Expected false to be true” isn’t super helpful yet - we’ll make the error message more helpful later by using more specific matchers than <code>toBe</code>.</li>
+<li>We now see the failing test printed to the terminal. Notice that the error message “Expected false to be true" isn’t super helpful yet - we’ll make the error message more helpful later by using more specific matchers than <code>toBe</code>.</li>
 </ul>
 <p><em>Adding more tests</em></p>
 <ul>
@@ -184,7 +188,7 @@ Failures:
         at UserContext.&lt;anonymous&gt; (/Users/brookeangel/Code/jasmine-practice/spec/string.spec.js:13:27)
         at &lt;Jasmine&gt;</code></pre>
 <ul>
-<li>Remember our last failing test? This one has a more helpful error message, because it tells us exactly what’s wrong: “Expected 4 to be greater than 5.” Oops! <code>WORD.length</code> is 4 - let’s provide a different value so that our test passes:</li>
+<li>Remember our last failing test? This one has a more helpful error message, because it tells us exactly what’s wrong: “Expected 4 to be greater than 5." Oops! <code>WORD.length</code> is 4 - let’s provide a different value so that our test passes:</li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="at">describe</span>(<span class="st">&#39;A string&#39;</span><span class="op">,</span> <span class="kw">function</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb9-2" title="2">  <span class="co">// ... previous tests</span></a>
@@ -214,12 +218,12 @@ Failures:
 <li><code>npm init --yes</code> - Makes a <code>package.json</code> file, for projects that don’t already have one.</li>
 <li><code>npm install --save-dev jasmine</code> will save Jasmine locally in your current project. Notice that this creates a <code>package-lock.json</code> file in the project. You don’t need to understand everything in this file - just know that it specifies exactly which verion of Jasmine you downloaded to the project.</li>
 <li>When we initialized Jasmine before, we ran <code>jasmine init</code>. With a local installation, you can initialize Jasmine by running <code>node node_modules/jasmine/bin/jasmine init</code>. (We don’t have to run this for our project, since Jasmine is already initialized.)</li>
-<li>To run Jasmine from the local installation, edit the “test” line in the “package.json” file to say: <code>"test": "jasmine"</code></li>
+<li>To run Jasmine from the local installation, edit the “test" line in the “package.json" file to say: <code>"test": "jasmine"</code></li>
 <li>Now, rather than running <code>jasmine</code> from the command line, run <code>npm test</code> to run all the specs.</li>
 </ul>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ol type="1">
-<li>Remember: you can get “false positives” and “false negatives” in tests. That’s why it’s good to follow a Red-Green-Refactor pattern, and make sure that your tests fail before implementing the code to make them pass.</li>
+<li>Remember: you can get “false positives" and “false negatives" in tests. That’s why it’s good to follow a Red-Green-Refactor pattern, and make sure that your tests fail before implementing the code to make them pass.</li>
 <li>A test with no expectations in it will pass. Don’t forget to add at least one <code>expect</code> to every <code>it</code> function, or you could end up with this false positive.</li>
 <li>Pay attention to when you are writing tests for Asynchronous code. The testing engine might complete before asynchronous code has completed running, giving you unreliable tests.</li>
 <li><code>expect</code> inside of asynchronous code is ignored, therefore passing. (false positive)
@@ -232,9 +236,9 @@ Failures:
 <p><em>FizzBuzz</em> (from basic JS practice, challenge 4)</p>
 <p>We’re going to TDD a slight twist on <code>fizzBuzz</code>. The function will:</p>
 <ul>
-<li>Return “fizz” when given a multiple of 3</li>
-<li>Return “buzz” when given a multiple of 5</li>
-<li>Return “fizzbuzz” when given a multiple of 3 and 5</li>
+<li>Return “fizz" when given a multiple of 3</li>
+<li>Return “buzz" when given a multiple of 5</li>
+<li>Return “fizzbuzz" when given a multiple of 3 and 5</li>
 <li>Otherwise, return the input number</li>
 </ul>
 <ol type="1">
@@ -264,8 +268,8 @@ describe("fizzBuzz", function(){
 </pre>
 </details>
 <ol start="5" type="1">
-<li>Let’s make the test pass! Create a new directory <code>/src</code> in the project, and make a <code>fizzBuzz.js</code> file within the directory. Add a fizzBuzz function to the file, and export it from the file so that we can import it in our test. Don’t add any functionality to <code>fizzBuzz</code> just yet! All that our function has to do to make the test pass is “be defined”.</li>
-<li>Now, import your <code>fizzBuzz</code> function into the spec file. (Hint: see the “Including modules in Jasmine tests” section above.)</li>
+<li>Let’s make the test pass! Create a new directory <code>/src</code> in the project, and make a <code>fizzBuzz.js</code> file within the directory. Add a fizzBuzz function to the file, and export it from the file so that we can import it in our test. Don’t add any functionality to <code>fizzBuzz</code> just yet! All that our function has to do to make the test pass is “be defined".</li>
+<li>Now, import your <code>fizzBuzz</code> function into the spec file. (Hint: see the “Including modules in Jasmine tests" section above.)</li>
 <li>The first test should now pass!
 <details>
 <summary>Check your work so far</summary>
@@ -273,28 +277,28 @@ describe("fizzBuzz", function(){
 <code> // src/fizzBuzz.js function fizzBuzz() {};</li>
 </ol>
 <p>module.exports = fizzBuzz;</p>
-// spec/fizzBuzz.spec.js describe(“fizzBuzz”, function(){ it(“should be defined”, function(){ expect(fizzBuzz).toBeDefined(); }); }); </code>
+// spec/fizzBuzz.spec.js describe(“fizzBuzz", function(){ it(“should be defined", function(){ expect(fizzBuzz).toBeDefined(); }); }); </code>
 </pre>
 </details>
 <ol start="8" type="1">
-<li>Great! Our test is passing. Add another test that checks that calling fizzBuzz with a multiple of 3 returns “fizz”. Make sure that your test fails.</li>
+<li>Great! Our test is passing. Add another test that checks that calling fizzBuzz with a multiple of 3 returns “fizz". Make sure that your test fails.</li>
 <li>Now, make your test pass in the simplest way possible by adding functionality to the <code>fizzBuzz</code> function.
 <details>
 <summary>Check your work so far</summary>
 <pre>
-<code> // src/fizzBuzz.js function fizzBuzz(num) { return “fizz”; };</li>
+<code> // src/fizzBuzz.js function fizzBuzz(num) { return “fizz"; };</li>
 </ol>
 <p>module.exports = fizzBuzz;</p>
-<p>// spec/fizzBuzz.spec.js describe(“fizzBuzz”, function(){ // older tests</p>
-it(“should return ‘fizz’ when given a multiple of 3”, function(){ expect(fizzBuzz(3)).toBe(“fizz”); expect(fizzBuzz(6)).toBe(“fizz”); }); }); </code>
+<p>// spec/fizzBuzz.spec.js describe(“fizzBuzz", function(){ // older tests</p>
+it(“should return ‘fizz’ when given a multiple of 3", function(){ expect(fizzBuzz(3)).toBe(“fizz"); expect(fizzBuzz(6)).toBe(“fizz"); }); }); </code>
 </pre>
 <p>Notice that we haven’t implemented all the functionality for <code>fizzBuzz</code> yet - we don’t have to for the test to pass. That means we should add more tests!</p>
 </details>
 <ol start="10" type="1">
 <li>Let’s add the complete functionality for <code>fizzBuzz</code>.
 <ul>
-<li>Test that when given a multiple of 5, it returns “buzz”, then make your test pass.</li>
-<li>Test that when given a multiple of 3 AND 5, it returns “fizzbuzz”, then make your test pass.</li>
+<li>Test that when given a multiple of 5, it returns “buzz", then make your test pass.</li>
+<li>Test that when given a multiple of 3 AND 5, it returns “fizzbuzz", then make your test pass.</li>
 <li>Test that when given any other number, it returns the input number, then make your test pass.</li>
 </ul></li>
 </ol>
@@ -344,7 +348,7 @@ expect(fizzBuzz(30)).toBe("fizzbuzz");
 <h3 id="independent-practice">Independent Practice</h3>
 <p>Exploring new matchers:</p>
 <ol type="1">
-<li>Re-implement Challenge 6, “Sleeping In”, from the basic JavaScript practice linked above, using TDD. Since this function returns a boolean, use the matchers <code>toBeTruthy</code> and <code>toBeFalsy</code> in your tests.</li>
+<li>Re-implement Challenge 6, “Sleeping In", from the basic JavaScript practice linked above, using TDD. Since this function returns a boolean, use the matchers <code>toBeTruthy</code> and <code>toBeFalsy</code> in your tests.</li>
 <li>Write a function <code>mySplit</code> that takes a string, and returns an array of its letters, using TDD. Use the matcher <code>toContain</code> in your test.
 <ul>
 <li>e.g. <code>mySplit("dog") =&gt; ["d","o","g"]</code></li>

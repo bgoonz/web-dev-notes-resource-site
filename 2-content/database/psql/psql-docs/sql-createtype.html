@@ -215,7 +215,7 @@ CREATE TYPE <em class="replaceable"><code>name</code></em>
    is passed the declared modifier(s) in the form of a <code class="type">cstring</code>
    array.  It must check the values for validity (throwing an error if they
    are wrong), and if they are correct, return a single non-negative
-   <code class="type">integer</code> value that will be stored as the column <span class="quote">“<span class="quote">typmod</span>”</span>.
+   <code class="type">integer</code> value that will be stored as the column <span class="quote">"<span class="quote">typmod</span>"</span>.
    Type modifiers will be rejected if the type does not have a
    <em class="replaceable"><code>type_modifier_input_function</code></em>.
    The <em class="replaceable"><code>type_modifier_output_function</code></em>
@@ -231,7 +231,7 @@ CREATE TYPE <em class="replaceable"><code>name</code></em>
    The optional <em class="replaceable"><code>analyze_function</code></em>
    performs type-specific statistics collection for columns of the data type.
    By default, <code class="command">ANALYZE</code> will attempt to gather statistics using
-   the type's <span class="quote">“<span class="quote">equals</span>”</span> and <span class="quote">“<span class="quote">less-than</span>”</span> operators, if there
+   the type's <span class="quote">"<span class="quote">equals</span>"</span> and <span class="quote">"<span class="quote">less-than</span>"</span> operators, if there
    is a default b-tree operator class for the type.  For non-scalar types
    this behavior is likely to be unsuitable, so it can be overridden by
    specifying a custom analysis function.  The analysis function must be
@@ -304,21 +304,21 @@ CREATE TYPE <em class="replaceable"><code>name</code></em>
    named type.  (It is possible, though usually undesirable, to override
    some of these values by specifying them along with the <code class="literal">LIKE</code>
    clause.)  Specifying representation this way is especially useful when
-   the low-level implementation of the new type <span class="quote">“<span class="quote">piggybacks</span>”</span> on an
+   the low-level implementation of the new type <span class="quote">"<span class="quote">piggybacks</span>"</span> on an
    existing type in some fashion.
   </p><p>
    The <em class="replaceable"><code>category</code></em> and
    <em class="replaceable"><code>preferred</code></em> parameters can be
    used to help control which implicit cast will be applied in ambiguous
    situations.  Each data type belongs to a category named by a single ASCII
-   character, and each type is either <span class="quote">“<span class="quote">preferred</span>”</span> or not within its
+   character, and each type is either <span class="quote">"<span class="quote">preferred</span>"</span> or not within its
    category.  The parser will prefer casting to preferred types (but only from
    other types within the same category) when this rule is helpful in
    resolving overloaded functions or operators.  For more details see <a class="xref" href="typeconv.html" title="Chapter 10. Type Conversion">Chapter 10</a>.  For types that have no implicit casts to or from any
    other types, it is sufficient to leave these settings at the defaults.
    However, for a group of related types that have implicit casts, it is often
    helpful to mark them all as belonging to a category and select one or two
-   of the <span class="quote">“<span class="quote">most general</span>”</span> types as being preferred within the category.
+   of the <span class="quote">"<span class="quote">most general</span>"</span> types as being preferred within the category.
    The <em class="replaceable"><code>category</code></em> parameter is
    especially useful when adding a user-defined type to an existing built-in
    category, such as the numeric or string types.  However, it is also
@@ -449,7 +449,7 @@ CREATE TYPE <em class="replaceable"><code>name</code></em>
       specification elsewhere in this <code class="command">CREATE TYPE</code> command.
      </p></dd><dt><span class="term"><em class="replaceable"><code>category</code></em></span></dt><dd><p>
       The category code (a single ASCII character) for this type.
-      The default is <code class="literal">'U'</code> for <span class="quote">“<span class="quote">user-defined type</span>”</span>.
+      The default is <code class="literal">'U'</code> for <span class="quote">"<span class="quote">user-defined type</span>"</span>.
       Other standard category codes can be found in
       <a class="xref" href="catalog-pg-type.html#CATALOG-TYPCATEGORY-TABLE" title="Table 51.64. typcategory Codes">Table 51.64</a>.  You may also choose
       other ASCII characters in order to create custom categories.
@@ -477,7 +477,7 @@ CREATE TYPE <em class="replaceable"><code>name</code></em>
    This is usually
    not an issue for the sorts of functions that are useful in a type
    definition.  But you might want to think twice before designing a type
-   in a way that would require <span class="quote">“<span class="quote">secret</span>”</span> information to be used
+   in a way that would require <span class="quote">"<span class="quote">secret</span>"</span> information to be used
    while converting it to or from external form.
   </p><p>
    Before <span class="productname">PostgreSQL</span> version 8.3, the name of

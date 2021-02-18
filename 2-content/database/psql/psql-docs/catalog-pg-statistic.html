@@ -31,7 +31,7 @@
    to assume very much about what sort of statistics it stores.  Only
    extremely general statistics (such as nullness) are given dedicated
    columns in <code class="structname">pg_statistic</code>.  Everything else
-   is stored in <span class="quote">“<span class="quote">slots</span>”</span>, which are groups of associated columns
+   is stored in <span class="quote">"<span class="quote">slots</span>"</span>, which are groups of associated columns
    whose content is identified by a code number in one of the slot's columns.
    For more information see
    <code class="filename">src/include/catalog/pg_statistic.h</code>.
@@ -54,25 +54,25 @@
       A zero value means the number of distinct values is unknown.
       </td></tr><tr><td><code class="structfield">stakind<em class="replaceable"><code>N</code></em></code></td><td><code class="type">int2</code></td><td> </td><td>
        A code number indicating the kind of statistics stored in the
-       <em class="replaceable"><code>N</code></em>th <span class="quote">“<span class="quote">slot</span>”</span> of the
+       <em class="replaceable"><code>N</code></em>th <span class="quote">"<span class="quote">slot</span>"</span> of the
        <code class="structname">pg_statistic</code> row.
       </td></tr><tr><td><code class="structfield">staop<em class="replaceable"><code>N</code></em></code></td><td><code class="type">oid</code></td><td><code class="literal"><a class="link" href="catalog-pg-operator.html" title="51.34. pg_operator"><code class="structname">pg_operator</code></a>.oid</code></td><td>
        An operator used to derive the statistics stored in the
-       <em class="replaceable"><code>N</code></em>th <span class="quote">“<span class="quote">slot</span>”</span>.  For example, a
+       <em class="replaceable"><code>N</code></em>th <span class="quote">"<span class="quote">slot</span>"</span>.  For example, a
        histogram slot would show the <code class="literal">&lt;</code> operator
        that defines the sort order of the data.
       </td></tr><tr><td><code class="structfield">stacoll<em class="replaceable"><code>N</code></em></code></td><td><code class="type">oid</code></td><td><code class="literal"><a class="link" href="catalog-pg-collation.html" title="51.12. pg_collation"><code class="structname">pg_collation</code></a>.oid</code></td><td>
        The collation used to derive the statistics stored in the
-       <em class="replaceable"><code>N</code></em>th <span class="quote">“<span class="quote">slot</span>”</span>.  For example, a
+       <em class="replaceable"><code>N</code></em>th <span class="quote">"<span class="quote">slot</span>"</span>.  For example, a
        histogram slot for a collatable column would show the collation that
        defines the sort order of the data.  Zero for noncollatable data.
       </td></tr><tr><td><code class="structfield">stanumbers<em class="replaceable"><code>N</code></em></code></td><td><code class="type">float4[]</code></td><td> </td><td>
        Numerical statistics of the appropriate kind for the
-       <em class="replaceable"><code>N</code></em>th <span class="quote">“<span class="quote">slot</span>”</span>, or null if the slot
+       <em class="replaceable"><code>N</code></em>th <span class="quote">"<span class="quote">slot</span>"</span>, or null if the slot
        kind does not involve numerical values
       </td></tr><tr><td><code class="structfield">stavalues<em class="replaceable"><code>N</code></em></code></td><td><code class="type">anyarray</code></td><td> </td><td>
        Column data values of the appropriate kind for the
-       <em class="replaceable"><code>N</code></em>th <span class="quote">“<span class="quote">slot</span>”</span>, or null if the slot
+       <em class="replaceable"><code>N</code></em>th <span class="quote">"<span class="quote">slot</span>"</span>, or null if the slot
        kind does not store any data values.  Each array's element
        values are actually of the specific column's data type, or a related
        type such as an array's element type, so there is no way to define

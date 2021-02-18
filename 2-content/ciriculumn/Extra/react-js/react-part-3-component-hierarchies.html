@@ -10,7 +10,12 @@
 <li><a href="./react-part-2-component-state.md">React Part 2 - Component State</a></li>
 </ul>
 <h3 id="motivation">Motivation</h3>
-<p>React is a User Interface (UI) library. Building a React application involves breaking up your app into smaller pieces called “components.” This make your code more readabel, manageable and scalable, as an app grows it can become difficult to get a sense of your overall component hierarchy and how components relate to each other. Sometimes, we want these components to communicate with each other and pass data among with each other. For this we use props and states. Sometimes, we would have to use 3rd party components to improve the the functionality or customization capability of out project</p>
+<p>React is a User Interface (UI) library. Building a React application involves breaking up your app into smaller
+    pieces called “components." This make your code more readabel, manageable and scalable, as an app grows it can
+    become difficult to get a sense of your overall component hierarchy and how components relate to each other.
+    Sometimes, we want these components to communicate with each other and pass data among with each other. For this we
+    use props and states. Sometimes, we would have to use 3rd party components to improve the the functionality or
+    customization capability of out project</p>
 <h3 id="objectives">Objectives</h3>
 <p><strong>Participants will be able to:</strong></p>
 <ul>
@@ -74,7 +79,8 @@
 <a class="sourceLine" id="cb2-17" title="17"></a>
 <a class="sourceLine" id="cb2-18" title="18"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>Person /<span class="op">&gt;,</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>))<span class="op">;</span></a></code></pre></div>
 <p><a href="https://codepen.io/annu12340/pen/WNQGBjy?editors=1010">Run code</a><br />
-Here we have created 2 components- Car and Garage. We send the “brand” property from the Garage component to the Car component using props</p>
+Here we have created 2 components- Car and Garage. We send the “brand" property from the Garage component to the Car
+component using props</p>
 <h4 id="from-child-to-parent-use-a-callback-and-states">From Child to Parent — Use a callback and states</h4>
 <p>You may also want to pass data from child to parent. For this we can use states and callback methods Consider the 2 components - parent and child. Here we wish the child to pass a message ‘Data received’ to its parent, when a button is pressed <em>Example</em></p>
 <p>Parent.js</p>
@@ -243,7 +249,7 @@ Here we have created 2 components- Car and Garage. We send the “brand” prope
 <li>QuoteText.js</li>
 </ul>
 <ol type="1">
-<li>QuoteText.js This component takes in a text and wraps it in a h1 tags with an id “text” using an arrow function. It is then exported back</li>
+<li>QuoteText.js This component takes in a text and wraps it in a h1 tags with an id “text" using an arrow function. It is then exported back</li>
 </ol>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb10-2" title="2"><span class="kw">const</span> QuoteText <span class="op">=</span> (<span class="op">{</span> text <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">&lt;</span>h1 id<span class="op">=</span><span class="st">&quot;text&quot;</span><span class="op">&gt;{</span>text<span class="op">}</span>&lt;/h1<span class="op">&gt;;</span></a>

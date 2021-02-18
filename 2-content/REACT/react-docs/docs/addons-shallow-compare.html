@@ -15,7 +15,7 @@
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">var</span> shallowCompare <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;react-addons-shallow-compare&#39;</span>)<span class="op">;</span> <span class="co">// ES5 with npm</span></a></code></pre></div>
 <h2 id="overview">Overview</h2>
 <p>Before <a href="/docs/react-api.html#reactpurecomponent"><code>React.PureComponent</code></a> was introduced, <code>shallowCompare</code> was commonly used to achieve the same functionality as <a href="pure-render-mixin.html"><code>PureRenderMixin</code></a> while using ES6 classes with React.</p>
-<p>If your React component's render function is “pure” (in other words, it renders the same result given the same props
+<p>If your React component's render function is "pure" (in other words, it renders the same result given the same props
     and state), you can use this helper function for a performance boost in some cases.</p>
 <p>Example:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="im">export</span> <span class="kw">class</span> SampleComponent <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>

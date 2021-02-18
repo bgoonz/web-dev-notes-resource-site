@@ -28,7 +28,7 @@
 <li>Demonstrate how to import other CSS files into your CSS file</li>
 <li>Explain how CSS rules are applied based on their order and specificity</li>
 <li>Describe and apply element, id, and class selectors</li>
-<li>Write “combinators” to create compound selector statements to target specific elements</li>
+<li>Write "combinators" to create compound selector statements to target specific elements</li>
 <li>Explain and apply pseudo selectors for specific elements in specific states</li>
 <li>Explain and apply the <code>::before</code> and <code>::after</code> pseudo elements</li>
 <li>Style content on an HTML page targeting
@@ -41,7 +41,7 @@
 <li>Opacity (transparency)</li>
 <li>Covering an element with a background image</li>
 </ul></li>
-<li>Explain the generic font names “serif”, “sans-serif”, and “monospace” and correctly identify examples of each</li>
+<li>Explain the generic font names "serif", "sans-serif", and "monospace" and correctly identify examples of each</li>
 <li>Explain why using Web fonts helps with consistent experience across viewing devices</li>
 <li>Recall and explain the different absolute and relative length units in CSS</li>
 <li>Demonstrate how to link a stylesheet into an HTML page</li>
@@ -53,7 +53,7 @@
 <li>Demonstrate how to import other CSS files into your CSS file</li>
 <li>Explain how CSS rules are applied based on their order and specificity</li>
 <li>Describe and apply element, id, and class selectors</li>
-<li>Write “combinators” to create compound selector statements to target specific elements</li>
+<li>Write "combinators" to create compound selector statements to target specific elements</li>
 <li>Explain and apply pseudo selectors for specific elements in specific states</li>
 <li>Explain and apply the <code>::before</code> and <code>::after</code> pseudo elements</li>
 <li>Style content on an HTML page targeting
@@ -66,7 +66,7 @@
 <li>Opacity (transparency)</li>
 <li>Covering an element with a background image</li>
 </ul></li>
-<li>Explain the generic font names “serif”, “sans-serif”, and “monospace” and correctly identify examples of each</li>
+<li>Explain the generic font names "serif", "sans-serif", and "monospace" and correctly identify examples of each</li>
 <li>Explain why using Web fonts helps with consistent experience across viewing devices</li>
 <li>Recall and explain the different absolute and relative length units in CSS</li>
 <li>Demonstrate how to link a stylesheet into an HTML page</li>
@@ -98,7 +98,7 @@
 <a class="sourceLine" id="cb2-7" title="7">  <span class="kw">&lt;body&gt;</span></a>
 <a class="sourceLine" id="cb2-8" title="8">  <span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb2-9" title="9"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
-<p>Now, you can link to an external stylesheet, or even multiple <em>stylesheets</em>! Whenever you want to add an external stylesheet, make sure to add it inside of the <code>&lt;head&gt;</code> tags and use the <a href="http://getbem.com/naming/"><code>&lt;link&gt;</code></a> tag we used above. For example, now that the styles have been normalized, you would normally want to add the styles for your specific Web application. To do that, you’d just add another <code>link</code> element with the “href” attribute set to the (normally relative) URL to your site’s stylesheet file.</p>
+<p>Now, you can link to an external stylesheet, or even multiple <em>stylesheets</em>! Whenever you want to add an external stylesheet, make sure to add it inside of the <code>&lt;head&gt;</code> tags and use the <a href="http://getbem.com/naming/"><code>&lt;link&gt;</code></a> tag we used above. For example, now that the styles have been normalized, you would normally want to add the styles for your specific Web application. To do that, you’d just add another <code>link</code> element with the "href" attribute set to the (normally relative) URL to your site’s stylesheet file.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="co">&lt;!-- example.html --&gt;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="kw">&lt;html&gt;</span></a>
@@ -118,8 +118,8 @@
 <p>A <a href="http://getbem.com/">CSS selector</a> applies styles to a specific DOM element or elements. A selector can be any of the following basic types:</p>
 <ul>
 <li><strong>Type selectors</strong> – matches elements by node name (e.g. <code>div</code>, <code>li</code>, <code>a</code>, <code>p</code>)</li>
-<li><strong>Class selectors</strong> – matches elements by class name (e.g. <code>&lt;button class=“active”&gt;</code>)</li>
-<li><strong>ID selectors</strong> – matches elements by ID name (e.g. <code>&lt;div id=”list-1”&gt;</code>)</li>
+<li><strong>Class selectors</strong> – matches elements by class name (e.g. <code>&lt;button class="active"&gt;</code>)</li>
+<li><strong>ID selectors</strong> – matches elements by ID name (e.g. <code>&lt;div id="list-1"&gt;</code>)</li>
 <li><strong>Universal selectors</strong> – matches elements of any type (e.g. <code>*</code>)</li>
 <li><strong><a href="http://getbem.com/naming/">Attribute selectors</a></strong> – matches elements based on the presence or value of a given attribute (e.g. <code>a[title]</code> matches all <code>a</code> elements with a <code>title</code> attribute)</li>
 </ul>
@@ -151,7 +151,7 @@
 <p>See the MDN doc on <a href="http://getbem.com/">CSS Selectors</a> for more examples using different types of selectors.</p>
 <h2 id="class-selectors">Class selectors</h2>
 <p>You will probably be using class selectors the most often in your CSS, since they will apply styles to every element that has a particular class name. Let’s look at an example of using a class selector to style multiple elements.</p>
-<p>We want to style all elements with the <strong>class of “boxy”</strong> to have:</p>
+<p>We want to style all elements with the <strong>class of "boxy"</strong> to have:</p>
 <ul>
 <li>A <code>border-radius</code> of 4px</li>
 <li>A <code>box-shadow</code> with a y-offset of 2px</li>
@@ -221,7 +221,7 @@
 <a class="sourceLine" id="cb7-2" title="2">h2 {</a>
 <a class="sourceLine" id="cb7-3" title="3">  <span class="kw">font-style</span>: <span class="dv">italic</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb7-4" title="4">}</a></code></pre></div>
-<p>Now, what if we wanted to italicize only H1s with the ID “heading” and H2s with the class name “subheading”. We could combine tag selectors with ID or class selectors by writing the tag name immediately followed by the ID or class selector. Again, we can apply the same styles to multiple elements by comma separating the selectors.</p>
+<p>Now, what if we wanted to italicize only H1s with the ID "heading" and H2s with the class name "subheading". We could combine tag selectors with ID or class selectors by writing the tag name immediately followed by the ID or class selector. Again, we can apply the same styles to multiple elements by comma separating the selectors.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb8-1" title="1">h1<span class="pp">#heading</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb8-2" title="2">h2<span class="fu">.subheading</span> {</a>
 <a class="sourceLine" id="cb8-3" title="3">  <span class="kw">font-style</span>: <span class="dv">italic</span><span class="op">;</span></a>
@@ -256,7 +256,7 @@
 <a class="sourceLine" id="cb10-18" title="18">    <span class="kw">&lt;/p&gt;</span></a>
 <a class="sourceLine" id="cb10-19" title="19">  <span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb10-20" title="20">. . .</a></code></pre></div>
-<p>Given the HTML and CSS above, the uppercase style would be applied to the ABBR elements containing “html”, “css”, “gif” and “ted” because they are all descendants of a P element. The ABBR elements containing “nasa” and “ufo” are not descendants of a P element and would remain lowercase.</p>
+<p>Given the HTML and CSS above, the uppercase style would be applied to the ABBR elements containing "html", "css", "gif" and "ted" because they are all descendants of a P element. The ABBR elements containing "nasa" and "ufo" are not descendants of a P element and would remain lowercase.</p>
 <p>Because the descendant selector just looks at white space between the different selectors, the following two will work just as well in your browser. However, <em>don’t do this</em>! This is bad and unmaintainable code.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb11-1" title="1"><span class="co">/* UNMAINTAINABLE CODE. DO NOT DO THIS. EXAMPLE ONLY. */</span></a>
 <a class="sourceLine" id="cb11-2" title="2">p                            abbr {</a>
@@ -272,7 +272,7 @@
 <a class="sourceLine" id="cb11-12" title="12">}</a></code></pre></div>
 <h3 id="direct-child-selector">Direct child selector</h3>
 <p>The <code>&gt;</code> selector selects nodes that are direct children of the first element (syntax: A &gt; B). It will match every element B that is immediately nested inside an element A. This is different than the descendant selector because it selects <em>only</em> the <strong>direct children</strong> of an element.</p>
-<p>Let’s look at an example. We want to style all <strong>elements with the “is-active” class that are direct children of elements with the “menu” class</strong> to have a #FFE0B2 background color.</p>
+<p>Let’s look at an example. We want to style all <strong>elements with the "is-active" class that are direct children of elements with the "menu" class</strong> to have a #FFE0B2 background color.</p>
 <p>We can use the following CSS to achieve the above specs:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">.menu</span> <span class="op">&gt;</span> <span class="fu">.is-active</span> {</a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#ffe0b2</span><span class="op">;</span></a>
@@ -296,7 +296,7 @@
 <a class="sourceLine" id="cb13-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb13-17" title="17"><span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb13-18" title="18">. . .</a></code></pre></div>
-<p>Given the HTML and CSS above, the background color would be applied to just one DIV – the DIV containing “Belka” – because it’s the only DIV with the “is-active” class that is a direct child of the DIV with the “menu” class.</p>
+<p>Given the HTML and CSS above, the background color would be applied to just one DIV – the DIV containing "Belka" – because it’s the only DIV with the "is-active" class that is a direct child of the DIV with the "menu" class.</p>
 <h3 id="adjacent-sibling-selectors">Adjacent sibling selectors</h3>
 <p>The <code>+</code> selector selects adjacent siblings (syntax: A + B). This means that the second element (B) directly follows the first (A), and both share the same parent.</p>
 <p>Let’s look at an example. We want to style all <strong>H2 elements immediately preceded by H1 elements</strong> to be italic. The style should be applied to H2s only (not H1s). We can use the following CSS to achieve the above specs:</p>
@@ -326,8 +326,8 @@
 <p>Hovering over an element is a <em>state</em> related to a user action and not to anything in the DOM. In the above CSS, we used the <code>:hover</code> pseudo-class selector to apply styles to <code>&lt;a&gt;</code> elements only when a user hovers over them.</p>
 <p>Check out the MDN doc on <a href="https://necolas.github.io/normalize.css/">Pseudo-classes</a> for a full list of pseudo-classes we can use with CSS selectors. Quite often, you will use the following pseudo-classes in real-world CSS.</p>
 <ul>
-<li><code>active</code>: applies to elements like buttons when activated by a person, like when they “push down” on the button</li>
-<li><code>checked</code>: applies to radio inputs, checkbox inputs, and options in drop downs when the user has toggled it into an “on” state</li>
+<li><code>active</code>: applies to elements like buttons when activated by a person, like when they "push down" on the button</li>
+<li><code>checked</code>: applies to radio inputs, checkbox inputs, and options in drop downs when the user has toggled it into an "on" state</li>
 <li><code>disabled</code>: applies to any disabled element, like a disabled button or input</li>
 <li><code>first-child</code>: applies to the first element among a group of sibling elements</li>
 <li><code>focus</code>: applies to elements that have the current focus, like inputs and buttons</li>
@@ -380,7 +380,7 @@
 <li>a background color of orange set by the <code>.orange</code> class</li>
 <li>a solid black border one pixel in width set by the <code>.box</code> class</li>
 </ul>
-<p>Whenever two rules apply, the browser will just combine all of the different properties and apply them all to the targeted element. This is the <em>cascade</em> in “Cascading Style Sheets”. That can lead to problems.</p>
+<p>Whenever two rules apply, the browser will just combine all of the different properties and apply them all to the targeted element. This is the <em>cascade</em> in "Cascading Style Sheets". That can lead to problems.</p>
 <p>The element <code>.box.yellow</code> has the following styles:</p>
 <ul>
 <li>a height of 50 pixels set by the <code>.box</code> class</li>
@@ -549,18 +549,18 @@
 <li>How to apply styles based on an element’s state with pseudo-classes</li>
 <li>How to create and select pseudo-elements using <code>::before</code> and <code>::after</code></li>
 <li>How to calculate the specificity of CSS rules to determine how they apply</li>
-<li>The definition of a “CSS rule”</li>
+<li>The definition of a "CSS rule"</li>
 </ul>
 <hr />
 <h1 id="css-type-properties-and-imports">CSS: Type, Properties And Imports</h1>
 <p>There are a lot of different properties of HTML elements that you can set with Cascading Style Sheets (CSS). This article introduces you to the common properties used to style text and elements on a page. Further lessons will show you more properties to do even more fancy things.</p>
-<p>There is technically a difference between the term “typeface” and “font”. You may have never even heard the word “typeface” before. The difference between “typeface” and “font” really only interests those people that design type faces and those people that really like to correct other people about arcane and silly things. This course will treat the terms interchangeably.</p>
+<p>There is technically a difference between the term "typeface" and "font". You may have never even heard the word "typeface" before. The difference between "typeface" and "font" really only interests those people that design type faces and those people that really like to correct other people about arcane and silly things. This course will treat the terms interchangeably.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-type-blocks.jpg" alt="type blocks" /><figcaption>type blocks</figcaption>
 </figure>
-<p>All of this terminology goes back to the days of the printing press, when they used printing presses with “type blocks”, wood or lead blocks that had the reversed image of a letter on it. They’d roll ink onto the raised letters and, then, press them against paper to get the words on the page. This is why it’s called a “printing press”, of course!</p>
+<p>All of this terminology goes back to the days of the printing press, when they used printing presses with "type blocks", wood or lead blocks that had the reversed image of a letter on it. They’d roll ink onto the raised letters and, then, press them against paper to get the words on the page. This is why it’s called a "printing press", of course!</p>
 <h2 id="typography">Typography</h2>
-<p>The World Wide Web is primarily a text-based medium. It is important, then, that you can use the CSS properties that relate to the text that you see on the screen. When the browser draws the text on the screen for you to read, it uses a combination of properties to determine how to render that text. That combination is literally “the font” that will be used for showing you the text.</p>
+<p>The World Wide Web is primarily a text-based medium. It is important, then, that you can use the CSS properties that relate to the text that you see on the screen. When the browser draws the text on the screen for you to read, it uses a combination of properties to determine how to render that text. That combination is literally "the font" that will be used for showing you the text.</p>
 <p>In this section, you will learn about the following properties that control how fonts are selected to use so that text gets rendered to the screen.</p>
 <ul>
 <li><code>font-family</code></li>
@@ -581,25 +581,25 @@
 <div class="sourceCode" id="cb21"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb21-1" title="1">font-family<span class="in">: &#39;Times</span> New Roman&#39;;</a></code></pre></div>
 <p>That means that you would like the browser to use the family of fonts named <em>Times New Roman</em> as part of figuring out what that should mean. The browser will then supply defaults for the other aspects of the font (size, weight, etc.) and show the text affected by the rule.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb22-1" title="1">font-family<span class="in">: &#39;Helvetica</span> Neue&#39;<span class="op">,</span> &#39;Helvetica&#39;<span class="op">,</span> sans-serif;</a></code></pre></div>
-<p>That means that it should apply the font named “Helvetica Neue”. If that doesn’t exist on the system (because it’s not macOS or doesn’t have an Adobe product on it), then try to use “Helvetica”. Most Windows computers have “Helvetica”. Now, if the computer doesn’t have “Helvetica Neue” nor does it have “Helvetica”, then it should fall back to the default system “sans-serif” font. “What’s that,” you ask….</p>
-<p>Besides named fonts like “Times New Roman”, “Comic Sans”, and “Helvetica”, the most recent CSS specification defines eight generic names that you can use that will rely on each browser and the OS that it’s running on. Here is a table that contains each of those eight names and the example rendering in Chrome on macOS for that generic name. (You’ll note that the “emoji”, “math”, and “fangsong” generic names don’t do anything.)</p>
+<p>That means that it should apply the font named "Helvetica Neue". If that doesn’t exist on the system (because it’s not macOS or doesn’t have an Adobe product on it), then try to use "Helvetica". Most Windows computers have "Helvetica". Now, if the computer doesn’t have "Helvetica Neue" nor does it have "Helvetica", then it should fall back to the default system "sans-serif" font. "What’s that," you ask….</p>
+<p>Besides named fonts like "Times New Roman", "Comic Sans", and "Helvetica", the most recent CSS specification defines eight generic names that you can use that will rely on each browser and the OS that it’s running on. Here is a table that contains each of those eight names and the example rendering in Chrome on macOS for that generic name. (You’ll note that the "emoji", "math", and "fangsong" generic names don’t do anything.)</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-generic-font-names.png" alt="example generic names" /><figcaption>example generic names</figcaption>
 </figure>
 <p>A <em>serif font</em> is a font that has <a href="https://en.wikipedia.org/wiki/Serif">serifs</a>, those little widenings at the ends of letters.</p>
 <p>A <em>sans-serif font</em> is a font that doesn’t have serifs. In Latin <em>sans</em> means without. The original typesetters in Western Europe who invented this lingo were all learned in Latin, the smarty-pants language of the day.</p>
-<p>A <em>monospace</em> font is one where every letter and symbol has the same width. These are often called “typewriter fonts”, too.</p>
+<p>A <em>monospace</em> font is one where every letter and symbol has the same width. These are often called "typewriter fonts", too.</p>
 <p>The <em>cursive</em> and <em>fanatasy</em> fonts are novelty fonts that don’t get a lot of use due to the widely different looks between browsers and OSes. Speaking of OSes…</p>
 <h3 id="fonts-across-the-internet">Fonts across the Internet</h3>
 <p>It’s really important for you to know this following nugget: <em>not all computers have the same fonts on them</em>. That means, if you want to use some fancy font that you have installed on your computer that other people don’t have, then the folks that don’t have that font will see the default <em>serif</em> font instead. This was especially prevalent a long time ago when Windows and Mac OS had very different installed fonts. It was nearly impossible to make text look consistent across browsing experiences. In 1998, the CSS Working Group introduced a new feature of CSS, the <code>@font-face</code> directive that would allow a browser to import fonts from files hosted on the Internet. But, it wasn’t until 2008 that Apple Safari and Mozilla Firefox actually implemented the feature. All of sudden, Web designers were free to include stylized fonts on their Web pages that <em>everyone</em> could properly see!</p>
 <p>In most cases, you won’t use <code>@font-face</code> yourself. Instead, you’ll use one of the font-hosting services on the Internet or use the ones that your company has purchased. That’s right, purchased! Many fonts are commercial which means you buy them for specific types of uses, be it for Web or print, commercial or personal. But, many people use Google Fonts which are free to use. However, Google tracks the use of each font across the Internet by putting cookies on people’s devices. If you are privacy-oriented, you will <em>not</em> want to subject your Web application users to that invasion.</p>
-<p>But, let’s say you don’t care! Let’s say you want a fancy hand-written looking font for your Web page. If you go to <a href="https://fonts.google.com">Google Fonts</a> and search for “liu jian mao cao”. When you click on the search result, you will be taken to its page.</p>
+<p>But, let’s say you don’t care! Let’s say you want a fancy hand-written looking font for your Web page. If you go to <a href="https://fonts.google.com">Google Fonts</a> and search for "liu jian mao cao". When you click on the search result, you will be taken to its page.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-using-google-font.png" alt="Google Fonts" /><figcaption>Google Fonts</figcaption>
 </figure>
-<p>When you click the “+ Select this style” link, it will show you a review panel. You can click on the “Embed” header and, then, the “<span class="citation" data-cites="import">@import</span>” link. That’s the information that you want so you can add it to your Web page. At the top of your CSS file, you need to put the <code>@import</code> line from the example.</p>
+<p>When you click the "+ Select this style" link, it will show you a review panel. You can click on the "Embed" header and, then, the "<span class="citation" data-cites="import">@import</span>" link. That’s the information that you want so you can add it to your Web page. At the top of your CSS file, you need to put the <code>@import</code> line from the example.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb23-1" title="1"><span class="im">@import</span> <span class="fu">url(</span><span class="st">&#39;https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&amp;display=swap&#39;</span><span class="fu">)</span><span class="op">;</span></a></code></pre></div>
-<p>Now you can use it to change the font family for any element on your page by following the second part of the embedding instructions. Here’s an example of some text that has the “.liu-jian-mao-cao” class applied to its surrounding element and the CSS property/value to set it to the font.</p>
+<p>Now you can use it to change the font family for any element on your page by following the second part of the embedding instructions. Here’s an example of some text that has the ".liu-jian-mao-cao" class applied to its surrounding element and the CSS property/value to set it to the font.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb24-1" title="1"><span class="fu">.liu-jian-mao-cao</span> {</a>
 <a class="sourceLine" id="cb24-2" title="2">  <span class="kw">font-family</span>: <span class="st">&#39;Liu Jian Mao Cao&#39;</span><span class="op">,</span> <span class="dv">cursive</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb24-3" title="3">}</a></code></pre></div>
@@ -608,7 +608,7 @@
 </figure>
 <h2 id="font-size">Font size</h2>
 <p>Now that you can change the family of the font, the next important aspect to control is the size of the text begin rendered. You do this with the <code>font-size</code> property in CSS. That’s the easy part. The hard part is the <em>unit of measurement</em> you use with the size. CSS has two kinds of units: absolute and relative.</p>
-<p>In either case, the syntax for using these measurements is <code>(number)(unit of measure)</code>. That means if you wanted something to be one centimeter in your Web page, you would choose what property you want it to apply to and use the value “1cm”. If you want to set the size of your font to one centimeter, you would use the property value combination like this:</p>
+<p>In either case, the syntax for using these measurements is <code>(number)(unit of measure)</code>. That means if you wanted something to be one centimeter in your Web page, you would choose what property you want it to apply to and use the value "1cm". If you want to set the size of your font to one centimeter, you would use the property value combination like this:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb25-1" title="1">font-size<span class="in">: 1cm;</span></a></code></pre></div>
 <p><strong>Please note</strong> that there is <em>no space</em> between the value (1) and the unit of measure (cm). Putting a space between the value and the unit of measure will <em>cause the property to not get applied</em>! This is a source of many Web developers’ mistakes. Take care when you type your CSS.</p>
 <h3 id="absolute-units">Absolute units</h3>
@@ -634,7 +634,7 @@
 </tr>
 </tbody>
 </table>
-<p>Back in the 1990s and early 2000s, the “pt” unit was still used quite a bit. By the mid-2000s, it had fallen out of favor. Most of the time, you will likely only see “px” which makes sense because pixels are how the dimensions of your screen that you’re looking at are measured.</p>
+<p>Back in the 1990s and early 2000s, the "pt" unit was still used quite a bit. By the mid-2000s, it had fallen out of favor. Most of the time, you will likely only see "px" which makes sense because pixels are how the dimensions of your screen that you’re looking at are measured.</p>
 <h3 id="relative-units">Relative units</h3>
 <p>You will also see only two relative units most of the time in CSS out in production.</p>
 <table>
@@ -674,9 +674,9 @@
 <a class="sourceLine" id="cb26-15" title="15">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb26-16" title="16">  <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb26-17" title="17"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<p>When that renders, the browser gets to the first <code>div</code> (that is, <code>#outer</code>) and says to itself, “Hey! This needs to be <code>1.5em</code>, that is, 1.5 times the size of the font that it would normally be. The browser checks and notices that it would normally be”8px" tall (as specified by the CSS rule for the <code>html</code> element). Therefore, it calculates that the text for that needs to be <code>1.5 * 8px = 12px</code>. The text “This is some div text” gets drawn at 12 pixels tall.</p>
-<p>Then, it gets to <code>#nested</code> which is a <code>div</code>. The browser says, “Hey! this needs to be <code>1.5em</code>, that is, 1.5 times the size of the font that it would normally be.” Right now, the browser is drawing its text at <code>12px</code> from the previous calculation (it’s still in <code>#outer</code>), so it calculates a new font size of <code>1.5 * 12px = 18px</code>. The text “This is some nested div text” gets drawn 18 pixels tall.</p>
-<p>Finally, it gets to the inner-most <code>div</code>, <code>#doubly-nested</code>. It does the same calculation as before, multiplying 1.5 by the size that it’s currently drawing text. That’s 18 pixels, right now. Thus, the text “This is doubly nested text” gets drawn at <code>1.5 * 18px = 27px</code> tall.</p>
+<p>When that renders, the browser gets to the first <code>div</code> (that is, <code>#outer</code>) and says to itself, "Hey! This needs to be <code>1.5em</code>, that is, 1.5 times the size of the font that it would normally be. The browser checks and notices that it would normally be"8px" tall (as specified by the CSS rule for the <code>html</code> element). Therefore, it calculates that the text for that needs to be <code>1.5 * 8px = 12px</code>. The text "This is some div text" gets drawn at 12 pixels tall.</p>
+<p>Then, it gets to <code>#nested</code> which is a <code>div</code>. The browser says, "Hey! this needs to be <code>1.5em</code>, that is, 1.5 times the size of the font that it would normally be." Right now, the browser is drawing its text at <code>12px</code> from the previous calculation (it’s still in <code>#outer</code>), so it calculates a new font size of <code>1.5 * 12px = 18px</code>. The text "This is some nested div text" gets drawn 18 pixels tall.</p>
+<p>Finally, it gets to the inner-most <code>div</code>, <code>#doubly-nested</code>. It does the same calculation as before, multiplying 1.5 by the size that it’s currently drawing text. That’s 18 pixels, right now. Thus, the text "This is doubly nested text" gets drawn at <code>1.5 * 18px = 27px</code> tall.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-em-font-size.png" alt="Example of em sizing" /><figcaption>Example of em sizing</figcaption>
 </figure>
@@ -700,7 +700,7 @@
 <a class="sourceLine" id="cb27-16" title="16">    <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb27-17" title="17">  <span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb27-18" title="18"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
-<p>Now, every time the browser gets to a <code>div</code>, it asks itself, “What is 1.5 times the root element’s font size?” That answer is the same, every time, because the root element’s font size doesn’t change. It’s just <code>8px</code> set right there in the <code>html</code> rule. So, it doesn’t matter that the <code>div</code> elements are nested; all of the text just gets drawn at <code>1.5 * 8px = 12px</code>.</p>
+<p>Now, every time the browser gets to a <code>div</code>, it asks itself, "What is 1.5 times the root element’s font size?" That answer is the same, every time, because the root element’s font size doesn’t change. It’s just <code>8px</code> set right there in the <code>html</code> rule. So, it doesn’t matter that the <code>div</code> elements are nested; all of the text just gets drawn at <code>1.5 * 8px = 12px</code>.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-rem-font-size.png" alt="Example of rem sizing" /><figcaption>Example of rem sizing</figcaption>
 </figure>
@@ -724,12 +724,12 @@
 <a class="sourceLine" id="cb29-5" title="5"><span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;bold&quot;</span><span class="kw">&gt;</span>This looks bold.<span class="kw">&lt;/p&gt;</span></a>
 <a class="sourceLine" id="cb29-6" title="6"><span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;also-bold&quot;</span><span class="kw">&gt;</span>This looks bold.<span class="kw">&lt;/p&gt;</span></a></code></pre></div>
 <h2 id="aligning-your-text">Aligning your text</h2>
-<p>There are four ways that you can align your text in an element. If you’ve ever used a word processor like <a href="https://www.libreoffice.org/discover/writer/">LibreOffice Writer</a> or Google Docs, then you probably have used the “left”, “center”, and “right” alignments available to you in those programs. You just set them on the element that you want to affect the layout of the text.</p>
+<p>There are four ways that you can align your text in an element. If you’ve ever used a word processor like <a href="https://www.libreoffice.org/discover/writer/">LibreOffice Writer</a> or Google Docs, then you probably have used the "left", "center", and "right" alignments available to you in those programs. You just set them on the element that you want to affect the layout of the text.</p>
 <p>In the following table, all of the <code>th</code> and <code>td</code> elements have <code>text-align: center</code> set on them.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-generic-font-names.png" alt="example generic names" /><figcaption>example generic names</figcaption>
 </figure>
-<p>There’s one more, “justify”, that makes the words align to the left and right like you see in some books by adjusting the spaces between the words. The inconsistent spacing between words created by justified text can be problematic for people with cognitive concerns such as Dyslexia. The Web Content Accessibility Guidelines expressly forbid this setting.</p>
+<p>There’s one more, "justify", that makes the words align to the left and right like you see in some books by adjusting the spaces between the words. The inconsistent spacing between words created by justified text can be problematic for people with cognitive concerns such as Dyslexia. The Web Content Accessibility Guidelines expressly forbid this setting.</p>
 <h2 id="decorating-your-text">Decorating your text</h2>
 <p>With the <code>text-decoration</code> property, you can put lines above, through, and under text. The lines can be solid, dashed, or wavy! By default, links on a Web page have an underline. That underline comes from this property.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb30-1" title="1"><span class="co">/* Default browser setting */</span></a>
@@ -750,11 +750,11 @@
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/properties-text-transform.png" alt="text transform" /><figcaption>text transform</figcaption>
 </figure>
-<p>You can see that the “uppercase” setting forces all text to be capital letters, the “lowercase” setting forces all text to be lowercase letters, and the “capitalize” setting forces the first letter of every word to be capitalized but leaves the rest alone.</p>
+<p>You can see that the "uppercase" setting forces all text to be capital letters, the "lowercase" setting forces all text to be lowercase letters, and the "capitalize" setting forces the first letter of every word to be capitalized but leaves the rest alone.</p>
 <h2 id="background-images">Background images</h2>
-<p>One of the fanciest things you can do is set the background image for an element. The reason that you’d do this rather than including an <code>img</code> element in your page is that you can “clip” the image however you want.</p>
+<p>One of the fanciest things you can do is set the background image for an element. The reason that you’d do this rather than including an <code>img</code> element in your page is that you can "clip" the image however you want.</p>
 <p>To specify a background image for an element, you set the <code>background-image</code> property to a URL using the CSS <code>url()</code> function.</p>
-<p>Then, to set the size of the background image so that it “best” covers the element, you set the <code>background-size</code> property to “cover”. To put that together, if you want to see the logo on a page in a 100 pixel by 100 pixel <code>div</code> with an id of “aa-logo”, then you would write the following CSS to do that.</p>
+<p>Then, to set the size of the background image so that it "best" covers the element, you set the <code>background-size</code> property to "cover". To put that together, if you want to see the logo on a page in a 100 pixel by 100 pixel <code>div</code> with an id of "aa-logo", then you would write the following CSS to do that.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb32-1" title="1"><span class="pp">#aa-logo</span> {</a>
 <a class="sourceLine" id="cb32-2" title="2">  <span class="kw">background-color</span>: <span class="cn">white</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb32-3" title="3">  <span class="kw">background-image</span>: <span class="fu">url(</span><span class="st">https://.github.io/styleguide/assets/logo/logo-emblem-black-1000.png</span><span class="fu">)</span><span class="op">;</span></a>
@@ -762,9 +762,9 @@
 <a class="sourceLine" id="cb32-5" title="5">  <span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb32-6" title="6">  <span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb32-7" title="7">}</a></code></pre></div>
-<p>Here’s the <a href="https://codepen.io/aa-academics/pen/rNVZJeb?editors=1100">Background Image of an Element</a> CodePen for you to play around with that shows the above CSS. Try changing the width and height of the <code>#aa-logo</code> to see how the “cover” setting behaves with the square Logo image.</p>
+<p>Here’s the <a href="https://codepen.io/aa-academics/pen/rNVZJeb?editors=1100">Background Image of an Element</a> CodePen for you to play around with that shows the above CSS. Try changing the width and height of the <code>#aa-logo</code> to see how the "cover" setting behaves with the square Logo image.</p>
 <h2 id="what-youve-learned">What you’ve learned</h2>
-<p>These are the fundamentals of making readable Web pages! Wow, that’s some great information. With all of that, you can now speak and act confidently about type faces, sizes, styles, and weights. You know some of the generic names that browsers support for font families. You can also adjust the alignment of the text on your Web pages, as well as affect that its capitalization through transformation. You also learned about how to use Web fonts through the use of the <code>@import</code> statement from a hosting facility like Google Fonts. Finally, you learned about four kinds of measures for fonts in this: “pt”, “px”, “em”, and “rem”.</p>
+<p>These are the fundamentals of making readable Web pages! Wow, that’s some great information. With all of that, you can now speak and act confidently about type faces, sizes, styles, and weights. You know some of the generic names that browsers support for font families. You can also adjust the alignment of the text on your Web pages, as well as affect that its capitalization through transformation. You also learned about how to use Web fonts through the use of the <code>@import</code> statement from a hosting facility like Google Fonts. Finally, you learned about four kinds of measures for fonts in this: "pt", "px", "em", and "rem".</p>
 <hr />
 <h1 id="css-colors-borders-and-shadows">CSS: Colors, Borders, and Shadows</h1>
 <p>A Web page that just has black text on a white background is pretty boring. It makes sense that some of the earliest features that allowed you to customize the style of a Web page had to do with colors. Once those were firmly in place, borders, shadows, and transparency came along pretty quickly. In this article, you’ll learn about how to affect these.</p>
@@ -871,7 +871,7 @@
 </tr>
 </tbody>
 </table>
-<p>I know. Why isn’t it named “text-color”? «shrug» It sure would be more consistent. But, that’s what is there.</p>
+<p>I know. Why isn’t it named "text-color"? «shrug» It sure would be more consistent. But, that’s what is there.</p>
 <p>So, to make unreadable text, you might use</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb33-1" title="1"><span class="co">/* Try to decode the colors from */</span></a>
 <a class="sourceLine" id="cb33-2" title="2"><span class="co">/* the color table above         */</span></a>
@@ -922,7 +922,7 @@
 <p>There are two kinds of shadows in CSS, <em>box shadows</em> and <em>text shadows</em>. The box shadows apply to HTML elements. Text shadows apply to text.</p>
 <p>To specify box shadows, you use the <code>box-shadow</code> property and specify one of the following:</p>
 <ul>
-<li>The word “none” if you want no shadow</li>
+<li>The word "none" if you want no shadow</li>
 <li>Two lengths and a color</li>
 <li>Three lengths and a color</li>
 <li>Four lengths and a color</li>
@@ -966,7 +966,7 @@
 <p>Your Craigslist page should be bare-bones HTML at this point. Add the following initial styles to the page in your <em><strong>attributes-project.css</strong></em> file to make it look better:</p>
 <p>Use the <strong>universal selector</strong> to make all elements:</p>
 <ul>
-<li>Use the font “Helvetica Neue”, “Helvetica”, sans-serif</li>
+<li>Use the font "Helvetica Neue", "Helvetica", sans-serif</li>
 <li>Have a background color of Whitesmoke (#F5F5F5)</li>
 <li>Have a text color of Charcoal Gray (#464646)</li>
 </ul>
@@ -986,12 +986,12 @@
 <li>Style links that are hovered on to have a font weight of bold</li>
 </ul>
 <h2 id="phase-3-style-the-main-page-sections">Phase 3: Style the main page sections</h2>
-<p>There are three main sections in the body of the page, represented by the HTML elements with these IDs: “leftbar”, “center” and “rightbar”. Style their container, represented by the element with the class name of “page-container”, as well as the three main sections, according to the specs below.</p>
-<p>Use a <strong>class selector</strong> to select the element with the class “page-container” and:</p>
+<p>There are three main sections in the body of the page, represented by the HTML elements with these IDs: "leftbar", "center" and "rightbar". Style their container, represented by the element with the class name of "page-container", as well as the three main sections, according to the specs below.</p>
+<p>Use a <strong>class selector</strong> to select the element with the class "page-container" and:</p>
 <ul>
 <li>Give the container a maximum width of 1200 pixels using the <code>max-width</code> property</li>
 </ul>
-<p>Use <strong>ID selectors</strong> to style the elements with the IDs “leftbar”, “center”, and “rightbar” so that:</p>
+<p>Use <strong>ID selectors</strong> to style the elements with the IDs "leftbar", "center", and "rightbar" so that:</p>
 <ul>
 <li>They are all floated left using the <code>float</code> property</li>
 <li>They all have top/bottom padding of zero and left/right padding of 30 pixels using the <code>padding</code> property</li>
@@ -1001,33 +1001,33 @@
 <ul>
 <li>Make the footer clear the float in both directions using the <code>clear</code> property</li>
 </ul>
-<p>Use <strong>ID selectors</strong> to select the elements with the IDs “leftbar” and “rightbar” and:</p>
+<p>Use <strong>ID selectors</strong> to select the elements with the IDs "leftbar" and "rightbar" and:</p>
 <ul>
 <li>Give them a width of 25%</li>
 </ul>
-<p>Use an <strong>ID selector</strong> to select the element with the ID “center” and:</p>
+<p>Use an <strong>ID selector</strong> to select the element with the ID "center" and:</p>
 <ul>
 <li>Give it a width of 50%</li>
 <li>Give it a solid one pixel border in the color #464646</li>
 <li>Give it a border radius of ten pixels using the <code>border-radius</code> property</li>
 </ul>
-<p>Use a <strong>child combinator selector</strong> to style all DIVs that are direct children of the element with the “center” ID:</p>
+<p>Use a <strong>child combinator selector</strong> to style all DIVs that are direct children of the element with the "center" ID:</p>
 <ul>
 <li>Float them to the left</li>
 <li>Give each of them a width of 33%</li>
 </ul>
-<p>Use a <strong>descendant combinator selector</strong> to style the H2 that is a descendant of the element with the “topban” ID:</p>
+<p>Use a <strong>descendant combinator selector</strong> to style the H2 that is a descendant of the element with the "topban" ID:</p>
 <ul>
 <li>Align the text of the H2 to the center</li>
 </ul>
 <h2 id="phase-4-style-the-footer-list">Phase 4: Style the footer list</h2>
-<p>Use a <strong>tag+class selector</strong> to style the UL element with the class name “clfooter” and:</p>
+<p>Use a <strong>tag+class selector</strong> to style the UL element with the class name "clfooter" and:</p>
 <ul>
 <li>Align the text of the UL to the center</li>
 <li>Give it a top border only that is one pixel solid gray</li>
 <li>Give it top/bottom padding of ten pixels and left/right padding of zero pixels</li>
 </ul>
-<p>Use a <strong>child combinator selector</strong> to style all LI elements that are direct children of the UL with the class name “clfooter” and:</p>
+<p>Use a <strong>child combinator selector</strong> to style all LI elements that are direct children of the UL with the class name "clfooter" and:</p>
 <ul>
 <li>Display all LIs as inline elements using the <code>display</code> property</li>
 <li>Give all LIs in the <code>ul.clfooter</code> 5px padding on the right side</li>
@@ -1038,7 +1038,7 @@
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/attributes/assets/peace-symbol-emoji.png" alt="Peace emoji" /><figcaption>Peace emoji</figcaption>
 </figure>
-<p>Create <strong>pseudo-elements</strong> to add the purple peace sign emoji before every H4 element with the class name “ban” using the <code>::before</code> <a href="http://getbem.com/naming/">pseudo-element</a>.</p>
+<p>Create <strong>pseudo-elements</strong> to add the purple peace sign emoji before every H4 element with the class name "ban" using the <code>::before</code> <a href="http://getbem.com/naming/">pseudo-element</a>.</p>
 <p><strong>Hint</strong>: While pseudo-classes let you style elements based on their state, <a href="http://getbem.com/naming/">pseudo-elements</a> let you style specific parts of the selected element. The <a href="https://necolas.github.io/normalize.css/">::before</a> pseudo-element will create a pseudo-element that is the first child of the selected element. This pseudo-element will not introduce a new element into the DOM (hence, pseudo).</p>
 <p><strong>macOS Pro-Tip</strong>: You can use <code>Control+Command+Spacebar</code> on a Mac to pull up the emoji keyboard. Search for the purple peace sign emoji.</p>
 <h2 id="bonus-style-the-calendar">Bonus: style the calendar</h2>
@@ -1050,7 +1050,7 @@
 <li>Center-align the content of all the TDs in the calendar.</li>
 <li>Change the color of the text of the days in the calendar that are not links to a half-transparent black.</li>
 <li>Use the <code>cursor</code> property to indicate that a day without a link is not clickable. You’ll have to analyze the HTML to figure out how to do that. You cannot use CSS selectors to select an element and, then, apply a style to a parent element. So, you’ll need to figure out a way to select those table data elements.</li>
-<li>Highlight the day indicated as “today” (look at the HTML) by setting its background color to dark violet and its text color to white.</li>
+<li>Highlight the day indicated as "today" (look at the HTML) by setting its background color to dark violet and its text color to white.</li>
 <li>When the pointer (cursor) is over one of the table data cells that contains the numbers, have the table cell’s background color turn lavender.</li>
 </ul>
 <h2 id="bonus-use-more-pseudo-classes">Bonus: use more pseudo-classes</h2>
@@ -1098,7 +1098,7 @@
 <p>When you arrive on that page, you get an entirely new HTML page from the server, and your browser loads it up.</p>
 <p>Back in the early days of the Web, this kind of flow sufficed. However, as websites progressively got more interactive, this approach became inefficient and insufficient. For example, let’s imagine that you’re on that book’s show page above, and all you wanted to do was hit the <code>Want to Read</code> button. Using the old approach, here’s what would happen:</p>
 <ol type="1">
-<li>You submit a request to the server to mark that specific book as “Want To Read”.</li>
+<li>You submit a request to the server to mark that specific book as "Want To Read".</li>
 <li>The server would make the necessary changes to the database.</li>
 <li>The server prepares the entire HTML page for this book, except this time it would render ‘Want To Read’ under the book image in that HTML document so that the user can see the updated status of the book.</li>
 <li>Finally, your browser would load up the entire newly-received HTML document just to show the change in status:</li>
@@ -1110,13 +1110,13 @@
 <p>You’ll get a more in-depth explanation of how AJAX works in the next reading, but at a high level, AJAX is a group of different technologies that work together to allow a website to communicate with a server in the background without requiring the website to reload in order to display new changes.</p>
 <p>Specifically, the key difference with AJAX is that when a change happens, the server is no longer responsible for updating the HTML and then sending the entire HTML document back. Instead, the server would send back data about the change, either in an XML or JSON format, and the website could then process that data and update the DOM accordingly.</p>
 <h2 id="asynchronous-javascript-and-xml">Asynchronous JavaScript and XML</h2>
-<p>Let’s use our Goodreads “Want to Read” example to break down the AJAX acronym.</p>
+<p>Let’s use our Goodreads "Want to Read" example to break down the AJAX acronym.</p>
 <h3 id="asynchronous">Asynchronous</h3>
-<p>Using AJAX, when the user hits the “Want to Read” button, the updates would now happen asynchronously. In other words, the browser would interact with the server in the background without blocking any other events from happening on the web page.</p>
+<p>Using AJAX, when the user hits the "Want to Read" button, the updates would now happen asynchronously. In other words, the browser would interact with the server in the background without blocking any other events from happening on the web page.</p>
 <h3 id="javascript">JavaScript</h3>
-<p>JavaScript is the engine behind AJAX. When the user hits the “Want to Read” button, JavaScript is used to make the request to the server. When the data comes back from the server, JavaScript can also then be used to make the necessary updates to the DOM. In the next reading, we’ll go more in-depth into the specifics of how JavaScript is used.</p>
+<p>JavaScript is the engine behind AJAX. When the user hits the "Want to Read" button, JavaScript is used to make the request to the server. When the data comes back from the server, JavaScript can also then be used to make the necessary updates to the DOM. In the next reading, we’ll go more in-depth into the specifics of how JavaScript is used.</p>
 <h3 id="xml">XML</h3>
-<p>The XML portion of this acronym is outdated. In the early days of AJAX, after successfully updating the book’s status to “Want To Read”, the server would send back data in XML format, like so:</p>
+<p>The XML portion of this acronym is outdated. In the early days of AJAX, after successfully updating the book’s status to "Want To Read", the server would send back data in XML format, like so:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb36-1" title="1"></a>
 <a class="sourceLine" id="cb36-2" title="2">  <span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
 <a class="sourceLine" id="cb36-3" title="3">  <span class="kw">&lt;book&gt;</span></a>
@@ -1168,7 +1168,7 @@
 <ol type="1">
 <li><code>fetch</code>’s first argument is the URL that you want to make a request to. The second argument is an optional <code>options</code> object that is not necessary for now, but will be used in a later example.</li>
 <li>Invoking <code>fetch</code> returns a Promise that resolves with a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response">Fetch Response object</a>. This Response object represents the entire HTTP response, and it holds crucial information like <code>status</code> and <code>url</code>.</li>
-<li>In the first callback, the body of the response is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream">ReadableStream</a>. We won’t get into the details of data streams here, but for now just know that the <code>.json()</code> method takes that stream and, according to the MDN docs on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/json">.json()</a> method, <em>“It returns a promise that resolves with the result of parsing the body text as JSON.”</em> The <code>.json()</code> method is the equivalent of using <code>JSON.parse()</code> except that it works on a <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream">ReadableStream</a> instead of just a string.</li>
+<li>In the first callback, the body of the response is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream">ReadableStream</a>. We won’t get into the details of data streams here, but for now just know that the <code>.json()</code> method takes that stream and, according to the MDN docs on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/json">.json()</a> method, <em>"It returns a promise that resolves with the result of parsing the body text as JSON."</em> The <code>.json()</code> method is the equivalent of using <code>JSON.parse()</code> except that it works on a <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream">ReadableStream</a> instead of just a string.</li>
 <li><p>In the second callback, you can now access the data found in the body of the response. In this case, a GET request to <code>https://jservice.xyz/api/games</code> returns a list of Jeopardy games stored in an object that looks like this:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb39-1" title="1"><span class="op">{</span></a>
 <a class="sourceLine" id="cb39-2" title="2">  <span class="dt">games</span><span class="op">:</span> [</a>
@@ -1232,11 +1232,11 @@
 <p>Now, if the server responds with an error, the code throws an error that will be handled by the <code>catch</code> block. This <code>catch</code> block will also handle any errors that result from network failures.</p>
 <h2 id="ajax-broken-down">AJAX broken down</h2>
 <p>Now that you’ve gone over how the Fetch API works, let’s begin walking through the AJAX example!</p>
-<p>Recall that in the previous example, all you wanted to do was allow the user to click the “Want To Read” button without requiring an entire page reload. Before AJAX, this was not possible because when the user clicked the “Want To Read” button, an HTTP request would be sent to the server to mark that book as “Want To Read”, and then the server would send back an entire HTML document (with the book marked as “Want To Read”) for the browser to load up.</p>
+<p>Recall that in the previous example, all you wanted to do was allow the user to click the "Want To Read" button without requiring an entire page reload. Before AJAX, this was not possible because when the user clicked the "Want To Read" button, an HTTP request would be sent to the server to mark that book as "Want To Read", and then the server would send back an entire HTML document (with the book marked as "Want To Read") for the browser to load up.</p>
 <p>Now, however, we can allow for that HTTP request to happen asynchronously and then update the DOM when the server returns a response about whether or not that HTTP request was successful.</p>
 <p>Let’s go step by step into how this works!</p>
 <h3 id="event-listener-and-fetch">Event listener and Fetch</h3>
-<p>The “Want to Read” button has a <code>click</code> event handler. This handler would then interact with a browser API for making asynchronous call to the server.</p>
+<p>The "Want to Read" button has a <code>click</code> event handler. This handler would then interact with a browser API for making asynchronous call to the server.</p>
 <p>The code for this might look like:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">&lt;button</span><span class="ot"> class=</span><span class="st">&quot;want-to-read&quot;</span><span class="kw">&gt;</span>Want to Read<span class="kw">&lt;/button&gt;</span></a>
 <a class="sourceLine" id="cb42-2" title="2"></a>
@@ -1252,17 +1252,17 @@
 <a class="sourceLine" id="cb42-12" title="12">    <span class="co">// IN A LATER STEP.</span></a>
 <a class="sourceLine" id="cb42-13" title="13">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb42-14" title="14"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
-<p>In the diagram, this is the step where the user interface makes a “javascript call” to the “AJAX engine”:</p>
+<p>In the diagram, this is the step where the user interface makes a "javascript call" to the "AJAX engine":</p>
 <figure>
 <img src="https://assets.aaonline.io/Module-Web/ajax/ajax-js-call.png" alt="ajax-js-call" /><figcaption>ajax-js-call</figcaption>
 </figure>
-<p>To be clear, there is no actual formal “AJAX engine” that lives in the browser. Rather, in this example, the “AJAX engine” is really just the JavaScript code (ie. the click event handler, invocations of the Fetch API, and any sort of DOM manipulation).</p>
+<p>To be clear, there is no actual formal "AJAX engine" that lives in the browser. Rather, in this example, the "AJAX engine" is really just the JavaScript code (ie. the click event handler, invocations of the Fetch API, and any sort of DOM manipulation).</p>
 <h3 id="patch-request-is-made-to-web-server">PATCH request is made to web server</h3>
 <p>During this step, the PATCH request is made asynchronously to the server:</p>
 <figure>
 <img src="https://assets.aaonline.io/Module-Web/ajax/ajax-patch-request.png" alt="ajax-patch-request" /><figcaption>ajax-patch-request</figcaption>
 </figure>
-<p>At this step, the JavaScript code (in this case the <code>click</code> event handler) calls the Fetch API and delegates all of the logic of making the PATCH request to the Fetch API. Meanwhile, the rest of the JavaScript can continue working without being blocked. For example, if there was another click handler for another element on the page, it <strong>does not</strong> have to wait for this “Want To Read” status update PATCH request to be finished.</p>
+<p>At this step, the JavaScript code (in this case the <code>click</code> event handler) calls the Fetch API and delegates all of the logic of making the PATCH request to the Fetch API. Meanwhile, the rest of the JavaScript can continue working without being blocked. For example, if there was another click handler for another element on the page, it <strong>does not</strong> have to wait for this "Want To Read" status update PATCH request to be finished.</p>
 <p>If you need a refresher on how JavaScript works asynchronously, please refer back to the previous lesson on asynchronous JavaScript from earlier in the course.</p>
 <p>The PATCH request is then made to the server, and the server updates the status of that specific book.</p>
 <h3 id="server-sends-back-a-response">Server sends back a response</h3>
@@ -1347,7 +1347,7 @@
 <a class="sourceLine" id="cb45-32" title="32">      <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb45-33" title="33">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb45-34" title="34"><span class="kw">&lt;/script&gt;</span></a></code></pre></div>
-<p>In the example above, since there was a successful response from the server, then the button is updated to include a check mark to show that the book has been successfully marked as “Want To Read”.</p>
+<p>In the example above, since there was a successful response from the server, then the button is updated to include a check mark to show that the book has been successfully marked as "Want To Read".</p>
 <p>Recall from the section on the Fetch API that even if the server responds with an error, the response is still resolved. Because of that, it’s important to check whether or not the response was successful in the response’s <code>ok</code> and/or <code>status</code> code and then handle errors accordingly.</p>
 <p>In the <code>catch</code> block, we ensure that if an error were to have happened, then the website would show an error message to the user.</p>
 <h2 id="what-youve-learned-3">What you’ve learned</h2>
@@ -1484,13 +1484,13 @@
 <h2 id="phase-2-implement-new-pic-button">Phase 2: Implement <code>New Pic</code> button</h2>
 <p>Now that your website loads a kitten picture initially, we want to implement a feature where the user can request a new kitten picture.</p>
 <p>At the moment, the user could simply refresh the website to do that, but let’s instead use AJAX to give the user a smooth experience that does not require a full page reload.</p>
-<p>To do this, in <code>public/events.js</code>, add another event listener that now listens for when anyone clicks the “New Pic” button. When that button is clicked, it should ask the server for another kitten image and then display that image.</p>
-<p>Once you’ve finished that, go ahead and let the user know when the client is waiting for the response from the server. We can do this by displaying the text “Loading…” in the div with the class of “loader” any time we fire off an HTTP request to the server and then clear that “Loading…” text once the response arrives.</p>
+<p>To do this, in <code>public/events.js</code>, add another event listener that now listens for when anyone clicks the "New Pic" button. When that button is clicked, it should ask the server for another kitten image and then display that image.</p>
+<p>Once you’ve finished that, go ahead and let the user know when the client is waiting for the response from the server. We can do this by displaying the text "Loading…" in the div with the class of "loader" any time we fire off an HTTP request to the server and then clear that "Loading…" text once the response arrives.</p>
 <h2 id="phase-3-error-handling">Phase 3: Error Handling</h2>
 <p>Various issues can arise in the HTTP request/response cycle. As developers, it’s your responsibility to handle errors that might come back from the server.</p>
 <p>For example, if your server’s request for a new image from the The Cat API failed, then your app should notify your users of the issue.</p>
 <p>Let’s simulate errors by adjusting the <code>ERROR_RATE</code> variable in <code>index.js</code>. As the comment above the <code>ERROR_RATE</code> variable in <code>index.js</code> file mentions, <code>ERROR_RATE</code> represents the probability that an error will be thrown. So, if the <code>ERROR_RATE</code> is updated to 100 percent, then the <code>generateRandomError</code> function will throw an error every single time it’s invoked. If the rate is at 0, then an error will never be thrown.</p>
-<p>Go ahead and bump the rate up to 100 as you’re implementing error handling. For now, if the server responds with an error, go ahead and just <code>alert</code> the user with a “Something went wrong! Please try again!” message.</p>
+<p>Go ahead and bump the rate up to 100 as you’re implementing error handling. For now, if the server responds with an error, go ahead and just <code>alert</code> the user with a "Something went wrong! Please try again!" message.</p>
 <h2 id="phase-4-voting">Phase 4: Voting</h2>
 <p>Next, let’s add the ability to upvote and downvote the kitten picture. As you’re implementing this feature, pay close attention to the HTTP method used to make this request.</p>
 <p>Although the <code>upvote</code> and <code>downvote</code> endpoints don’t have the <code>generateRandomError()</code> function inside, it’s still possible for errors to occur, so be sure to implement error handling here as well.</p>
@@ -1505,12 +1505,12 @@
 <p>Let’s improve our error handling to not use the <code>alert</code> function. Instead, let’s display the specific error message that our server is responding with.</p>
 <p>If we look at <code>index.js</code>, <code>generateRandomError</code> will randomly throw one of the following the following three error messages:</p>
 <ul>
-<li>“No cat for you!”</li>
-<li>“Sad day. No kitten here.”</li>
-<li>“Please try again!”</li>
+<li>"No cat for you!"</li>
+<li>"Sad day. No kitten here."</li>
+<li>"Please try again!"</li>
 </ul>
 <p>It would be ideal if the user can see the specific error message that’s coming from the server.</p>
-<p>Please display the specific error message in the div with the class of “error”. Feel free to adjust the <code>ERROR_RATE</code> again in order to make it easier to implement this feature.</p>
+<p>Please display the specific error message in the div with the class of "error". Feel free to adjust the <code>ERROR_RATE</code> again in order to make it easier to implement this feature.</p>
 <h2 id="recap">Recap</h2>
 <p>At this point, you should have the following features implemented:</p>
 <ul>
@@ -1533,10 +1533,10 @@
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ol type="1">
 <li>Identify the different types of media that a media query can target</li>
-<li>Explain how the media features (and prefixed subfeatures) of “aspect ratio”, “height”, “orientation”, and “width” are applied</li>
+<li>Explain how the media features (and prefixed subfeatures) of "aspect ratio", "height", "orientation", and "width" are applied</li>
 <li><p>Use media queries to change the styles of content in an HTML page to achieve a desired effectctives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p></li>
 <li>Identify the different types of media that a media query can target</li>
-<li>Explain how the media features (and prefixed subfeatures) of “aspect ratio”, “height”, “orientation”, and “width” are applied</li>
+<li>Explain how the media features (and prefixed subfeatures) of "aspect ratio", "height", "orientation", and "width" are applied</li>
 <li><p>Use media queries to change the styles of content in an HTML page to achieve a desired effect</p></li>
 </ol>
 <hr />
@@ -1554,8 +1554,8 @@
 <li>Identify elements rendered with specific padding and margin settings</li>
 <li>Apply padding and margins to HTML elements to achieve a desired layout</li>
 <li>Apply positioning settings to elements (fixed, relative, and absolute) to HTML elements to achieve a desired layout</li>
-<li>Identify which HTML elements have a default “inline” display value</li>
-<li>Identify which HTML elements have a default “block” display value</li>
+<li>Identify which HTML elements have a default "inline" display value</li>
+<li>Identify which HTML elements have a default "block" display value</li>
 <li>Describe and use z-index positioning of elements</li>
 </ol>
 <p><em>Note:</em> You will learn about <em>sticky</em> positioning. Because it’s not supported on old but still used browsers, you will not be assessed on it. However, feel free to learn about it and use it in your code unless otherwise specifically instructed to do otherwise.arning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
@@ -1571,8 +1571,8 @@
 <li>Identify elements rendered with specific padding and margin settings</li>
 <li>Apply padding and margins to HTML elements to achieve a desired layout</li>
 <li>Apply positioning settings to elements (fixed, relative, and absolute) to HTML elements to achieve a desired layout</li>
-<li>Identify which HTML elements have a default “inline” display value</li>
-<li>Identify which HTML elements have a default “block” display value</li>
+<li>Identify which HTML elements have a default "inline" display value</li>
+<li>Identify which HTML elements have a default "block" display value</li>
 <li>Describe and use z-index positioning of elements</li>
 </ol>
 <p><em>Note:</em> You will learn about <em>sticky</em> positioning. Because it’s not supported on old but still used browsers, you will not be assessed on it. However, feel free to learn about it and use it in your code unless otherwise specifically instructed to do otherwise.</p>
@@ -1600,26 +1600,26 @@
 <li>Explain how grid layout lays out elements</li>
 <li>Use the <code>grid-template-columns</code>, <code>grid-template-rows</code>, and <code>grid-template</code> properties to specify the layout of the grid using relative and absolute measures</li>
 <li>Use <code>grid-template-areas</code> to label areas of a grid and <code>grid-area</code> to assign an element to the area</li>
-<li>Use <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code> to set the “gutter” areas between elements in a grid layout</li>
-<li>Use <code>grid-column-start</code>/<code>grid-column-end</code> and <code>grid-row-start</code>/<code>grid-row-end</code> to create spans across multiple columns and rows with positive integers, negative integers, and in conjunction with the “span” operator</li>
+<li>Use <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code> to set the "gutter" areas between elements in a grid layout</li>
+<li>Use <code>grid-column-start</code>/<code>grid-column-end</code> and <code>grid-row-start</code>/<code>grid-row-end</code> to create spans across multiple columns and rows with positive integers, negative integers, and in conjunction with the "span" operator</li>
 <li>Explain and use the shorthand versions of <code>grid-column</code> and <code>grid-row</code> to define how an element will span a grid layout</li>
 <li>Use the <code>order</code> property to change the default order in which items are laid out</li>
-<li>Explain and use the “fr” unit of measure</li>
+<li>Explain and use the "fr" unit of measure</li>
 <li><p>Use <code>justify-items</code>, <code>align-items</code>, <code>justify-content</code> and <code>align-content</code> to layout items in each grid areaal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p></li>
 <li>Explain how grid layout lays out elements</li>
 <li>Use the <code>grid-template-columns</code>, <code>grid-template-rows</code>, and <code>grid-template</code> properties to specify the layout of the grid using relative and absolute measures</li>
 <li>Use <code>grid-template-areas</code> to label areas of a grid and <code>grid-area</code> to assign an element to the area</li>
-<li>Use <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code> to set the “gutter” areas between elements in a grid layout</li>
-<li>Use <code>grid-column-start</code>/<code>grid-column-end</code> and <code>grid-row-start</code>/<code>grid-row-end</code> to create spans across multiple columns and rows with positive integers, negative integers, and in conjunction with the “span” operator</li>
+<li>Use <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code> to set the "gutter" areas between elements in a grid layout</li>
+<li>Use <code>grid-column-start</code>/<code>grid-column-end</code> and <code>grid-row-start</code>/<code>grid-row-end</code> to create spans across multiple columns and rows with positive integers, negative integers, and in conjunction with the "span" operator</li>
 <li>Explain and use the shorthand versions of <code>grid-column</code> and <code>grid-row</code> to define how an element will span a grid layout</li>
 <li>Use the <code>order</code> property to change the default order in which items are laid out</li>
-<li>Explain and use the “fr” unit of measure</li>
+<li>Explain and use the "fr" unit of measure</li>
 <li><p>Use <code>justify-items</code>, <code>align-items</code>, <code>justify-content</code> and <code>align-content</code> to layout items in each grid area</p></li>
 </ol>
 <hr />
 <h1 id="layout-the-box-model">Layout: The Box Model</h1>
 <p>Understanding how to utilize margin, border, and padding around page elements is an essential part of designing/developing for the Web.</p>
-<p>In this reading, we’ll go over “The Box Model” and how to use the CSS properties <code>margin</code>, <code>border</code> and <code>padding</code> on elements to create/enhance the page layout.</p>
+<p>In this reading, we’ll go over "The Box Model" and how to use the CSS properties <code>margin</code>, <code>border</code> and <code>padding</code> on elements to create/enhance the page layout.</p>
 <h2 id="the-box-model">The Box Model</h2>
 <p>The CSS Box Model is a concept that basically boils down to every DOM element has a box around it. The diagram below shows The Box Model with content in the innermost layer, padding wrapped around it, a border wrapped around the padding, and margin as the outermost layer.</p>
 <figure>
@@ -1629,14 +1629,14 @@
 <p>We can change the size of the content with the CSS <code>width</code> and <code>height</code> properties. We can add or remove padding with the <code>padding</code> property, set the border with the <code>border</code> property, and add or remove the margin with the <code>margin</code> property.</p>
 <h3 id="default-box-settings">Default box settings</h3>
 <p>According to <a href="http://getbem.com/">MDN</a>, we know certain things about each box based on whether the boxed element is displayed as a block or inline.</p>
-<p>With elements (boxes) that have a <code>display</code> value of “block”, either because it is the default value for that kind of element (i.e., <code>div</code> elements, headers, and <code>p</code> elements) or it is specifically overridden in the CSS, the browser follows these rules to layout the element:</p>
+<p>With elements (boxes) that have a <code>display</code> value of "block", either because it is the default value for that kind of element (i.e., <code>div</code> elements, headers, and <code>p</code> elements) or it is specifically overridden in the CSS, the browser follows these rules to layout the element:</p>
 <ul>
 <li>The box fills available container space, and in most cases it fills up 100% of the available space, becoming as wide as its container.</li>
 <li>Each new box appears on a new line/row.</li>
 <li>The CSS properties <code>width</code> and <code>height</code> are respected.</li>
 <li>The <code>padding</code>, <code>margin</code> and <code>border</code> of the box will push other elements farther away from the box.</li>
 </ul>
-<p>With elements (boxes) that have a <code>display</code> value of “inline”, either because it is the default value for that kind of element (i.e., <code>span</code>, <code>a</code>, and <code>img</code> elements) or it is specifically overridden in the CSS, the browser follows these rules to layout the element:</p>
+<p>With elements (boxes) that have a <code>display</code> value of "inline", either because it is the default value for that kind of element (i.e., <code>span</code>, <code>a</code>, and <code>img</code> elements) or it is specifically overridden in the CSS, the browser follows these rules to layout the element:</p>
 <ul>
 <li>Each box appears next to each other in a single line until it fills up the available space.</li>
 <li>The CSS properties <code>width</code> and <code>height</code> don’t apply.</li>
@@ -1655,7 +1655,7 @@
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/standard-box.svg" alt="Standard content box layout" /><figcaption>Standard content box layout</figcaption>
 </figure>
-<p>This way of calculating width and height bothered many programmers. They wanted to set the width and height of an element to <em>include</em> the padding and border because that just makes more sense than the other way. In CSS version 3, the <code>box-sizing</code> property was added to the CSS specification which allows you to set it to the values “content-box” (which is how it is by default) or “border-box”, which does what most Web developers want. Setting the <code>box-sizing</code> property to <code>border-box</code> includes the width of the left border, right border, left padding, and right padding in the overall <code>width</code>, and the top border, bottom border, top padding, and bottom padding in the overall calculation of the <code>height</code>.</p>
+<p>This way of calculating width and height bothered many programmers. They wanted to set the width and height of an element to <em>include</em> the padding and border because that just makes more sense than the other way. In CSS version 3, the <code>box-sizing</code> property was added to the CSS specification which allows you to set it to the values "content-box" (which is how it is by default) or "border-box", which does what most Web developers want. Setting the <code>box-sizing</code> property to <code>border-box</code> includes the width of the left border, right border, left padding, and right padding in the overall <code>width</code>, and the top border, bottom border, top padding, and bottom padding in the overall calculation of the <code>height</code>.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb55-1" title="1"><span class="fu">.box</span> {</a>
 <a class="sourceLine" id="cb55-2" title="2">  <span class="kw">border</span>:  <span class="dv">10</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">black</span><span class="op">;</span> <span class="co">/* Applies to all four sides. */</span></a>
 <a class="sourceLine" id="cb55-3" title="3">  <span class="kw">box-sizing</span>: <span class="dv">border-box</span><span class="op">;</span></a>
@@ -1668,17 +1668,17 @@
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/border-box.svg" alt="Border box layout" /><figcaption>Border box layout</figcaption>
 </figure>
 <h3 id="inline-block-inline-block">Inline + block = inline-block</h3>
-<p>For a long time, you had to choose between “inline” and “block” layout. What you couldn’t do was get block elements to be next to each other horizontally like this.</p>
+<p>For a long time, you had to choose between "inline" and "block" layout. What you couldn’t do was get block elements to be next to each other horizontally like this.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/static-pink-box.png" alt="Statically positioned" /><figcaption>Statically positioned</figcaption>
 </figure>
 <p>Instead, you had to hack around it using the <code>float</code> property and hope that it worked properly.</p>
-<p>When the CSS version 2 came out, it introduced a new display property value of “inline-block”. This combined the best of both the “inline” and “block” settings:</p>
+<p>When the CSS version 2 came out, it introduced a new display property value of "inline-block". This combined the best of both the "inline" and "block" settings:</p>
 <ul>
 <li>Elements would still get laid out left to right</li>
 <li>The layout would take into account their specified width and height properties</li>
 </ul>
-<p>With “inline-block”, you could finally get what looked like columns without having to resort to the <code>float</code> hack.</p>
+<p>With "inline-block", you could finally get what looked like columns without having to resort to the <code>float</code> hack.</p>
 <h2 id="padding">Padding</h2>
 <p><a href="http://getbem.com/naming/">Padding</a> is a CSS property that applies padding on every side of a box. This property is a shorthand for <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> (in clockwise order).</p>
 <p>Padding values can be a length (i.e. px, em, rem) or a percentage (%). Here are some examples:</p>
@@ -1706,7 +1706,7 @@
 <a class="sourceLine" id="cb56-22" title="22">  <span class="co">/* Global values */</span></a>
 <a class="sourceLine" id="cb56-23" title="23">  <span class="kw">padding</span>: <span class="bu">inherit</span><span class="op">;</span>  <span class="co">/* OR initial OR unset */</span></a>
 <a class="sourceLine" id="cb56-24" title="24">}</a></code></pre></div>
-<p>As previously stated, <code>padding</code> is a shorthand value. Thus, the definition above for the “box-4” class could be declared like this, too.</p>
+<p>As previously stated, <code>padding</code> is a shorthand value. Thus, the definition above for the "box-4" class could be declared like this, too.</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb57-1" title="1"><span class="fu">.box-4</span> {</a>
 <a class="sourceLine" id="cb57-2" title="2">  <span class="kw">padding-top</span>: <span class="dv">0</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb57-3" title="3">  <span class="kw">padding-right</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></a>
@@ -1917,7 +1917,7 @@
 <h2 id="absolute-positioning">Absolute positioning</h2>
 <p>An absolutely positioned element is removed from the page flow, and other elements around it act like it’s not there. The element is positioned in relation to its closest <em>positioned</em> ancestor, or, if one cannot be found, to the <code>&lt;html&gt;</code> document. It can be offset from that position using the <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> properties. Absolute positioning creates a <a href="https://necolas.github.io/normalize.css/">stacking context</a> – overlapping elements whose order can be set by the <code>z-index</code> property. (See the MDN doc on <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">z-index</a> for an example.)</p>
 <h3 id="example-of-an-absolutely-positioned-element">Example of an absolutely positioned element</h3>
-<p>In the following CSS, you will note that the container element has a position set to “relative”. This is so the browser will calculate the position of any absolutely positioned children from its top-left corner.</p>
+<p>In the following CSS, you will note that the container element has a position set to "relative". This is so the browser will calculate the position of any absolutely positioned children from its top-left corner.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb68-1" title="1"><span class="fu">.container</span> {</a>
 <a class="sourceLine" id="cb68-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2B2D2F</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb68-3" title="3">  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></a>
@@ -1934,7 +1934,7 @@
 <ul>
 <li>The pink box is positioned absolutely, meaning that it was removed from the flow of the document. The image above shows us that the blue box has filled in the place of pink box because the browser does not consider the pink box to be in the normal left-to-right layout of the content.</li>
 <li>The pink box is stacked on top of the static blue box (static because that is the default <code>position</code> value). When the browser removed the pink box from the flow, it put it in its own virtual layer <em>above</em> the statically positioned elements.</li>
-<li>Again, it’s important to note that the container element has its <code>position</code> set to “relative”. This is so the browser will position the pink box relative to its parent.</li>
+<li>Again, it’s important to note that the container element has its <code>position</code> set to "relative". This is so the browser will position the pink box relative to its parent.</li>
 </ul>
 <p>It’s important to do that relative thing if you want the absolute positioning of the element to be calculated from the top-left corner of the closest positioned ancestor element, in this case, the container element.</p>
 <h3 id="example-of-two-absolutely-positioned-elements">Example of two absolutely positioned elements</h3>
@@ -1971,7 +1971,7 @@
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/relative-parent-absolute-child.png" alt="Relative parent and absolute child shifted up" /><figcaption>Relative parent and absolute child shifted up</figcaption>
 </figure>
-<p>You can see that the browser has shifted the pink box up, so much so, that you can’t see the number “2” anymore.</p>
+<p>You can see that the browser has shifted the pink box up, so much so, that you can’t see the number "2" anymore.</p>
 <p>If you had not relative positioned the container element, the browser would try to find the bottom of its nearest positioned ancestor. Since none occurs, the browser assumes you meant that it should be 60 pixels from the <em>bottom of the document</em>!</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb71-1" title="1"><span class="fu">.container</span> {</a>
 <a class="sourceLine" id="cb71-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#2b2d2f</span><span class="op">;</span></a>
@@ -1998,7 +1998,7 @@
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/layout/assets/fixed-element-scroll.png" /></p>
 <p>Fixed positioning can be useful for things like nav bars, buttons, links, videos, etc. that we want to keep visible as the user scrolls. Ensure that elements positioned with an absolute or fixed value do not obscure other content when the page is zoomed to increase text size.</p>
 <h2 id="sticky-positioning">Sticky positioning</h2>
-<p>A sticky element remains in its original position in the page flow, and it is positioned relative to its closest block-level ancestor and any <em>scrolling</em> ancestors (created when <code>overflow</code> is <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>). It behaves like a relatively positioned element until the point at which you would normally scroll past it in the viewport. At that scrolling point, the element “sticks” to the page wherever it has been positioned by the <code>top</code>, <code>left</code>, <code>bottom</code> and <code>right</code> properties. Sticky positioning creates a <a href="https://necolas.github.io/normalize.css/">stacking context</a> – overlapping elements whose order can be set by the <code>z-index</code> property. (See the MDN doc on <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">z-index</a> for an example.)</p>
+<p>A sticky element remains in its original position in the page flow, and it is positioned relative to its closest block-level ancestor and any <em>scrolling</em> ancestors (created when <code>overflow</code> is <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>). It behaves like a relatively positioned element until the point at which you would normally scroll past it in the viewport. At that scrolling point, the element "sticks" to the page wherever it has been positioned by the <code>top</code>, <code>left</code>, <code>bottom</code> and <code>right</code> properties. Sticky positioning creates a <a href="https://necolas.github.io/normalize.css/">stacking context</a> – overlapping elements whose order can be set by the <code>z-index</code> property. (See the MDN doc on <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">z-index</a> for an example.)</p>
 <p>You must set at least one threshold value using <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code> in order for sticky positioning to work. A sticky element will start off as <em>relatively</em> positioned until you scroll past its original position – at which point it will be <em>fixed</em> to the position you specified.</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb73-1" title="1"><span class="pp">#pink-box</span> {</a>
 <a class="sourceLine" id="cb73-2" title="2">  <span class="kw">background-color</span>: <span class="cn">#FF69B4</span><span class="op">;</span></a>
@@ -2124,7 +2124,7 @@
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/grid-layout.svg"/></p>
 <h2 id="bootstrap-vs.-css-grid">Bootstrap vs. CSS Grid</h2>
 <p>Prior to CSS Grid, developers used various tools to achieve a grid layout, the earliest of these being the HTML <code>&lt;table&gt;</code>. We then progressed into using CSS libraries for a responsive grid layout, the most ubiquitous being <a href="http://getbem.com/naming/">Bootstrap</a>, a front-end library with pre-built grid classes and also jQuery plugins.</p>
-<p>While many developers and dev shops still use Bootstrap for convenience, it does come with some caveats: A Bootstrap grid is 12 columns, and this cannot be changed. Bootstrap automatically adds padding around columns (known as “gutters” ) that you may or may not want to override. There are a number of HTML classes to use for the container, row, and columns at responsive breakpoints – meaning more stuff to add to your HTML file. That said, Bootstrap is a common out-of-the-box solution that’s worth knowing about.</p>
+<p>While many developers and dev shops still use Bootstrap for convenience, it does come with some caveats: A Bootstrap grid is 12 columns, and this cannot be changed. Bootstrap automatically adds padding around columns (known as "gutters" ) that you may or may not want to override. There are a number of HTML classes to use for the container, row, and columns at responsive breakpoints – meaning more stuff to add to your HTML file. That said, Bootstrap is a common out-of-the-box solution that’s worth knowing about.</p>
 <p>In comparison, <a href="http://getbem.com/">CSS Grid</a> provides greater flexibility and control over the grid layout. You can add as many columns and rows as you want. There are no HTML classes to use, only CSS properties. You can customize anything in the grid you want – including the sizes of rows and columns, the alignment of grid items, the position of grid items, the gutters/spacing, etc. You can also make grid items easily span multiple rows and/or columns. No external libraries are required, meaning no code bloat. CSS Grid is pretty powerful! That said, there is a learning curve, and not all <a href="https://necolas.github.io/normalize.css/">browsers support</a> CSS Grid (especially newer features).</p>
 <h2 id="using-css-grid">Using CSS Grid</h2>
 <p>CSS Grid can be used to create an entire page layout or for a specific container element. Just like with flexbox, a grid layout consists of CSS styles applied to:</p>
@@ -2221,7 +2221,7 @@
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/grid-template-areas.svg"/></p>
 <p>In this example, we’ve created a 3x3 grid. The <code>header</code> area takes up the entire first row / all three columns across. In the second row, the first column is filled by <code>main</code> area, the second column is blank (represented by a period), and the third column is filled by the <code>sidebar</code> area. We used the <code>fr</code> unit for the columns, so they should flexibly fill the available space, and the rows will <code>auto</code> resize to fit their items.</p>
 <h2 id="grid-gaps">Grid Gaps</h2>
-<p>Grid gaps refer to the spaces between rows or between columns. They are basically “gutters”. These properties allow us to set the spacing between rows or columns:</p>
+<p>Grid gaps refer to the spaces between rows or between columns. They are basically "gutters". These properties allow us to set the spacing between rows or columns:</p>
 <ul>
 <li><code>grid-column-gap</code> - accepts a size value</li>
 <li><code>grid-row-gap</code> - accepts a size value</li>
@@ -2365,17 +2365,17 @@
 </ul>
 <p>Example CSS using a mix of acceptable values:</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb93-1" title="1"><span class="fu">.item-1</span> {</a>
-<a class="sourceLine" id="cb93-2" title="2">  <span class="kw">grid-row-start</span>: row2-start<span class="op">;</span>  <span class="co">/* Item starts at row line named “row2-start” */</span></a>
+<a class="sourceLine" id="cb93-2" title="2">  <span class="kw">grid-row-start</span>: row2-start<span class="op">;</span>  <span class="co">/* Item starts at row line named "row2-start" */</span></a>
 <a class="sourceLine" id="cb93-3" title="3">  <span class="kw">grid-row-end</span>: <span class="dv">5</span><span class="op">;</span>  <span class="co">/* Item ends at row line 5 */</span></a>
 <a class="sourceLine" id="cb93-4" title="4">  <span class="kw">grid-column-start</span>: <span class="dv">1</span><span class="op">;</span>  <span class="co">/* Item starts at column line 1 */</span></a>
-<a class="sourceLine" id="cb93-5" title="5">  <span class="kw">grid-column-end</span>: three<span class="op">;</span>  <span class="co">/* Item ends at column line named “three” */</span></a>
+<a class="sourceLine" id="cb93-5" title="5">  <span class="kw">grid-column-end</span>: three<span class="op">;</span>  <span class="co">/* Item ends at column line named "three" */</span></a>
 <a class="sourceLine" id="cb93-6" title="6">}</a>
 <a class="sourceLine" id="cb93-7" title="7"></a>
 <a class="sourceLine" id="cb93-8" title="8"><span class="fu">.item-2</span> {</a>
 <a class="sourceLine" id="cb93-9" title="9">  <span class="kw">grid-row-start</span>: <span class="dv">1</span><span class="op">;</span>  <span class="co">/* Item starts at row line 1 */</span></a>
 <a class="sourceLine" id="cb93-10" title="10">  <span class="kw">grid-row-end</span>: span <span class="dv">2</span><span class="op">;</span>  <span class="co">/* Item spans two rows and ends at row line 3 */</span></a>
 <a class="sourceLine" id="cb93-11" title="11">  <span class="kw">grid-column-start</span>: <span class="dv">3</span><span class="op">;</span>  <span class="co">/* Item starts at column line 3 */</span></a>
-<a class="sourceLine" id="cb93-12" title="12">  <span class="kw">grid-column-end</span>: span col5-start<span class="op">;</span>  <span class="co">/* Item spans and ends at line named “col5-start” */</span></a>
+<a class="sourceLine" id="cb93-12" title="12">  <span class="kw">grid-column-end</span>: span col5-start<span class="op">;</span>  <span class="co">/* Item spans and ends at line named "col5-start" */</span></a>
 <a class="sourceLine" id="cb93-13" title="13">}</a></code></pre></div>
 <p><img src="grid-item-span.svg"/></p>
 <h2 id="grid-areas">Grid Areas</h2>
@@ -2404,7 +2404,7 @@
 <p>In the above example, we gave the <code>grid-area</code> property name values: header, main, sidebar, and footer. We could also use this property as a shorthand for <code>grid-row-start</code> + <code>grid-column-start</code> + <code>grid-row-end</code> + <code>grid-column-end</code>.</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb95-1" title="1"><span class="fu">.item</span> {</a>
 <a class="sourceLine" id="cb95-2" title="2">  <span class="kw">grid-area</span>: row1-start / col4-start / <span class="dv">5</span> / <span class="dv">3</span><span class="op">;</span></a>
-<a class="sourceLine" id="cb95-3" title="3">  <span class="co">/* Starts at line named “row1-start” / Starts at line named “col4-start” / Ends at row line 5 / Ends at column line 3 */</span></a>
+<a class="sourceLine" id="cb95-3" title="3">  <span class="co">/* Starts at line named "row1-start" / Starts at line named "col4-start" / Ends at row line 5 / Ends at column line 3 */</span></a>
 <a class="sourceLine" id="cb95-4" title="4">}</a></code></pre></div>
 <h2 id="justifyalign-self">Justify/Align Self</h2>
 <p>We can use the grid container properties <code>justify-items</code> and <code>align-items</code> to align all grid items at once, but we might want to change the alignment of the single grid item. In that case, we could use these properties on the item:</p>
@@ -2474,9 +2474,9 @@
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/trello-small-screen.png" alt="Trello on a small screen" /><figcaption>Trello on a small screen</figcaption>
 </figure>
-<p>All of the elements needed for the page are contained in the <code>flexbox-project.html</code> file. In addition to linking to <code>flexbox-project.css</code>, where you’ll add your styles, the page also includes a CDN link to Font Awesome, a font that contains nice icons you can use for the header. To use an icon from Font Awesome, you just need to include an <code>i</code> element with the classes “fa«indicator»” and “fa-«icon name»”. For example, to include the solid “home” icon which looks like a house, you would add this HTML to your source code.</p>
+<p>All of the elements needed for the page are contained in the <code>flexbox-project.html</code> file. In addition to linking to <code>flexbox-project.css</code>, where you’ll add your styles, the page also includes a CDN link to Font Awesome, a font that contains nice icons you can use for the header. To use an icon from Font Awesome, you just need to include an <code>i</code> element with the classes "fa«indicator»" and "fa-«icon name»". For example, to include the solid "home" icon which looks like a house, you would add this HTML to your source code.</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb97-1" title="1"><span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fas fa-home&quot;</span><span class="kw">&gt;&lt;/i&gt;</span></a></code></pre></div>
-<p>The “fas” means “Font Awesome Solid!” So easy! Here’s a link to the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">Font Awesome free icon search page</a> so you can have it open if you want to include more icons.</p>
+<p>The "fas" means "Font Awesome Solid!" So easy! Here’s a link to the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">Font Awesome free icon search page</a> so you can have it open if you want to include more icons.</p>
 <h2 id="phase-1-use-flexbox-to-create-the-header-nav-bar">Phase 1: Use flexbox to create the header nav bar</h2>
 <p>Use flexbox to recreate the blue header nav bar at the top of the page. Try to replicate the header so it’s as close to what’s on the site/screenshots as possible. We have included icons, which are similar to the original icons, for you to use in your project folder.</p>
 <figure>
@@ -2509,7 +2509,7 @@
 </tr>
 </tbody>
 </table>
-<p>Style the <code>.header-nav__container</code> with the following properties. The third entry in the table, “Line height”, use MDN to figure out what that CSS property is for that setting.</p>
+<p>Style the <code>.header-nav__container</code> with the following properties. The third entry in the table, "Line height", use MDN to figure out what that CSS property is for that setting.</p>
 <table>
 <thead>
 <tr class="header">
@@ -2543,14 +2543,14 @@
 <p>Now, you’ll need to use <code>display: flex</code> on the <code>header-nav__container</code> to put the three sections in the right place. You want all three elements to span the same widths in the nav bar.</p>
 <p>Then, in the left <code>.header-nav__group</code>, use flexbox to layout each <code>.header-nav__link</code>. You’ll want to manipulate the margin and padding to get the different elements spaced apart from one another.</p>
 <p>In the middle <code>.header-nav__group</code>, center the Trello logo.</p>
-<p>In the right <code>.header-nav__group</code>, have the buttons align right with the same spacing between them as you set between the elements in the first <code>.header-nav__group</code>. The alert button should have a background color of “#CF513D”.</p>
-<p>Once you have that, add a media query “breakpoint” to hide the search input field and the “Boards” text on screens with widths less than or equal to 730 pixels.</p>
+<p>In the right <code>.header-nav__group</code>, have the buttons align right with the same spacing between them as you set between the elements in the first <code>.header-nav__group</code>. The alert button should have a background color of "#CF513D".</p>
+<p>Once you have that, add a media query "breakpoint" to hide the search input field and the "Boards" text on screens with widths less than or equal to 730 pixels.</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb98-1" title="1"><span class="im">@media</span> <span class="dv">screen</span> <span class="kw">and</span> (<span class="kw">max-width</span>: <span class="dv">730</span><span class="dt">px</span>) {</a>
 <a class="sourceLine" id="cb98-2" title="2">  <span class="co">/* Hide the header search input field. */</span></a>
 <a class="sourceLine" id="cb98-3" title="3">  <span class="co">/* Hide the &quot;Boards&quot; text, but leave the boards icon. */</span></a>
 <a class="sourceLine" id="cb98-4" title="4">}</a></code></pre></div>
-<h2 id="phase-2-use-flexbox-to-layout-the-my-team-section">Phase 2: Use flexbox to layout the “My Team” section</h2>
-<p>Use flexbox to recreate the “My Team” section under the header nav bar.</p>
+<h2 id="phase-2-use-flexbox-to-layout-the-my-team-section">Phase 2: Use flexbox to layout the "My Team" section</h2>
+<p>Use flexbox to recreate the "My Team" section under the header nav bar.</p>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/trello-my-team.png" /></p>
 <p>Set the following properties to the indicated values for <code>.team__container</code>:</p>
 <table>
@@ -2737,7 +2737,7 @@
 </tbody>
 </table>
 <p>Add a media query that applies to screens with widths <em>greater than</em> 500 pixels. Use flexbox to handle the layout of the children of <code>.tabbed-nav__group</code>. Make sure they’re aligned and centered.</p>
-<p>Now, for the screens <em>less than or equal to</em> 500 pixels wide, add a media query that applies to that subfeature. In that media query, set the <code>display</code> of the <code>.tabbed-nav__group</code> and any <code>.tabbed-nav__link</code> to “block”. This will make the tabs look stacked on small screens rather than horizontal on screens wider than 500 pixels.</p>
+<p>Now, for the screens <em>less than or equal to</em> 500 pixels wide, add a media query that applies to that subfeature. In that media query, set the <code>display</code> of the <code>.tabbed-nav__group</code> and any <code>.tabbed-nav__link</code> to "block". This will make the tabs look stacked on small screens rather than horizontal on screens wider than 500 pixels.</p>
 <h2 id="phase-4-use-flexbox-to-create-the-boards">Phase 4: Use flexbox to create the boards</h2>
 <p>For the boards, there is a collection of ten images in the <strong>board-backgrounds</strong> directory of the project. You can set the background image of each element individually since each has a unique class on it. It will look something similar to the following, though the images will differ.</p>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/flexbox/assets/trello-boards.png" /></p>
@@ -2869,7 +2869,7 @@
 <hr />
 <h1 id="project-gridding-up-a-page-overview">Project: Gridding Up A Page: Overview</h1>
 <p>CSS Grid is a powerful tool that gives us a lot of control over the layout of a Web page. With the Grid, we no longer have to import external CSS libraries or frameworks for layout. We can set up and fully customize a grid layout with vanilla CSS.</p>
-<p>There’s no better way to practice page layout than by going back to where it all began – the newspaper! Printed papers have been painstakingly laid out with considerations of both limited space and limited attention spans. Some of these layout and design principles have persisted from print to the Web – for examples, the term “above-the-fold” (above the literal page fold in print, and the visible part of the screen before scrolling down online) and the concept of CSS floats from text-wrapped images.</p>
+<p>There’s no better way to practice page layout than by going back to where it all began – the newspaper! Printed papers have been painstakingly laid out with considerations of both limited space and limited attention spans. Some of these layout and design principles have persisted from print to the Web – for examples, the term "above-the-fold" (above the literal page fold in print, and the visible part of the screen before scrolling down online) and the concept of CSS floats from text-wrapped images.</p>
 <p>In this project, you’ll use CSS Grid to re-create THE LAYOUT ONLY of the columns and rows of the overall structure, and then the layout inside each of the sections of the layout. We’ve chosen to emulate the layout of the <em>The New York Times</em> for this project because the homepage is a complex series of rows and columns, and it’s a prime use-case for a grid layout.</p>
 <p>The project is broken up into three phases.</p>
 <ul>
@@ -2884,14 +2884,14 @@
 <li><strong>grid-project.css</strong> which contains some basic CSS for the page and in which you will write your CSS</li>
 <li><strong>nyt-logo.svg</strong> which contains the New York Times’ logo.</li>
 </ul>
-<p>Refer to your reading and resources like <a href="http://getbem.com/">“CSS Grid Layout”</a> (MDN Docs) or <a href="http://getbem.com/naming/">“A Complete Guide to Grid”</a> (CSS-Tricks) for guidance on setting up the grid for your project.</p>
+<p>Refer to your reading and resources like <a href="http://getbem.com/">"CSS Grid Layout"</a> (MDN Docs) or <a href="http://getbem.com/naming/">"A Complete Guide to Grid"</a> (CSS-Tricks) for guidance on setting up the grid for your project.</p>
 <p>When you are done, you will have a Web page similar to what you see in this rather large screenshot.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-solution-screenshot.png" alt="Full screenshot of solution" /><figcaption>Full screenshot of solution</figcaption>
 </figure>
 <hr />
 <h1 id="gridding-up-a-page-phase-one">Gridding Up A Page: Phase One</h1>
-<p>Based on the large screenshot from before, you will need to set up a grid with 10 sections, i.e. “areas”, which you’ll can refer to these labels in order of appearance.</p>
+<p>Based on the large screenshot from before, you will need to set up a grid with 10 sections, i.e. "areas", which you’ll can refer to these labels in order of appearance.</p>
 <ul>
 <li><strong>header</strong> (Section 1)</li>
 <li><strong>main</strong> (Section 2)</li>
@@ -3181,49 +3181,49 @@
 <hr />
 <h1 id="gridding-up-a-page-phase-four">Gridding Up A Page: Phase Four</h1>
 <p>Use your knowledge of both flexbox and CSS Grid, you can finish the layout for all 10 areas of the main grid. Each section below contains the specifications for you to finish it. You should be pretty familiar with the content of the HTML file, now. For each of the sections below, you will be dealing with the CSS class <code>.grid__section-«number»</code> where «number» is 4, 5, 6, etc.</p>
-<h2 id="for-section-4-other-news">For Section 4 (“Other News”)</h2>
+<h2 id="for-section-4-other-news">For Section 4 ("Other News")</h2>
 <ul>
 <li>Set this section’s height to 590px.</li>
 <li>Create a grid with 5 columns of equal width and 6 rows of equal width.</li>
 <li>Place the 9 grid items in the correct locations (see screenshot below).</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-3.png" /></p>
-<h2 id="for-section-5-smarter-living">For Section 5 (“Smarter Living”)</h2>
+<h2 id="for-section-5-smarter-living">For Section 5 ("Smarter Living")</h2>
 <ul>
 <li>Set this section’s height to 273px.</li>
 <li>Create a flex container that contains a row of items.</li>
 <li>Set the 5 items to be equal width so that they appear on the row, according to the screenshot (see screenshot below).</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-3.png" /></p>
-<h2 id="for-section-6-features">For Section 6 (“Features”)</h2>
+<h2 id="for-section-6-features">For Section 6 ("Features")</h2>
 <ul>
 <li>Set this section’s height to 712px.</li>
 <li>Create a grid with 6 columns of equal width and 2 rows of equal width.</li>
 <li>Place the 5 grid items in the correct locations (see screenshot below).</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-4.png" /></p>
-<h2 id="for-section-7-discovery">For Section 7 (“Discovery”)</h2>
+<h2 id="for-section-7-discovery">For Section 7 ("Discovery")</h2>
 <ul>
 <li>Set this section’s height to 400px.</li>
 <li>Create a grid with 7 columns of equal width and 2 rows of equal width.</li>
 <li>Place the 4 grid items in the correct locations (see screenshot below).</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-5.png" /></p>
-<h2 id="for-section-8-most-popular">For Section 8 (“Most Popular”)</h2>
+<h2 id="for-section-8-most-popular">For Section 8 ("Most Popular")</h2>
 <ul>
 <li>Set this section’s height to 360px.</li>
 <li>Create a grid with 5 columns of equal width and 3 rows of equal width.</li>
 <li>Place the 6 grid items in the correct locations (see screenshot below).</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-5.png" /></p>
-<h2 id="for-section-9-news">For Section 9 (“News”)</h2>
+<h2 id="for-section-9-news">For Section 9 ("News")</h2>
 <ul>
 <li>Create a flex container that contains rows of items and allows items that don’t fit to wrap to a new row.</li>
 <li>Set each one of the 17 items to have a height of 360px and width of 20%.</li>
 <li>The items in this section should flexibly fill their container, like in the screenshot below.</li>
 </ul>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/grid/assets/nyt-home-6.png" /></p>
-<h2 id="for-section-10-footer">For Section 10 (“Footer”)</h2>
+<h2 id="for-section-10-footer">For Section 10 ("Footer")</h2>
 <ul>
 <li>Set this section’s height to 404px.</li>
 <li>Create a grid with 6 columns. The first 5 columns should be equal width, and the last column should be 213px wide. The grid should also be 3 rows of equal width.</li>
@@ -3238,10 +3238,10 @@
 <h1 id="interactivity-learning-objectives">Interactivity Learning Objectives</h1>
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ul>
-<li>Use the “hover” pseudo-class to be able to make changes to elements when the device pointer is over an element</li>
+<li>Use the "hover" pseudo-class to be able to make changes to elements when the device pointer is over an element</li>
 <li>Describe and use the <code>transition</code> property show animated changes due to class and pseudo-class CSS rule application</li>
 <li><p>Describe and use the <code>overflow</code>, <code>overflow-x</code>, and <code>overflow-y</code> properties to effect clipping and scrolling on elementsjectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p></li>
-<li>Use the “hover” pseudo-class to be able to make changes to elements when the device pointer is over an element</li>
+<li>Use the "hover" pseudo-class to be able to make changes to elements when the device pointer is over an element</li>
 <li>Describe and use the <code>transition</code> property show animated changes due to class and pseudo-class CSS rule application</li>
 <li><p>Describe and use the <code>overflow</code>, <code>overflow-x</code>, and <code>overflow-y</code> properties to effect clipping and scrolling on elements</p></li>
 </ul>
@@ -3293,7 +3293,7 @@
 <h2 id="a-note-about-browser-support">A note about browser support</h2>
 <p>If you open up your HTML file in a browser, right-click on the button and inspect it, you should see a bunch of <code>button</code> styles from <em>user agent stylesheet</em>. These are the default styles your browser has added to the <code>button</code> element.</p>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/browser-default-styles.png" width="50%"></p>
-<p>If you don’t want any of these default styles on the button, you’ll have to write override styles. Check this CSS-Tricks article <a href="http://getbem.com/naming/">“Overriding Default Button Styles”</a> for more information about default button styles across different browsers.</p>
+<p>If you don’t want any of these default styles on the button, you’ll have to write override styles. Check this CSS-Tricks article <a href="http://getbem.com/naming/">"Overriding Default Button Styles"</a> for more information about default button styles across different browsers.</p>
 <p>It’s also a good idea to use a CSS library like <a href="https://necolas.github.io/normalize.css/">Normalize.css</a> to make sure that element styles are rendered consistently across browsers. Once you’re done styling an element or a page, open it up in different browsers and test for expected behavior.</p>
 <h2 id="content-overflow">Content overflow</h2>
 <p>What happens when you size an element to a width and height that can’t hold all of the content? By default, the browser will just show it all to you and, maybe, mess up the way the page renders. To fix that, you can use the <code>overflow</code> family of properties to specify how you want it to work.</p>
@@ -3392,7 +3392,7 @@
 <figure>
 <img src="https://assets.aaonline.io/Module-Solo-Prep-Work/assets/example-css-transition-simple.gif" alt="Simple transition example" /><figcaption>Simple transition example</figcaption>
 </figure>
-<p>In the following, any element with the “box” class will have combined transitions for: width, height, background-color, transform.</p>
+<p>In the following, any element with the "box" class will have combined transitions for: width, height, background-color, transform.</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb111-1" title="1"><span class="fu">.box</span> {</a>
 <a class="sourceLine" id="cb111-2" title="2">    <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb111-3" title="3">    <span class="kw">border-width</span>: <span class="dv">1</span><span class="dt">px</span><span class="op">;</span></a>
@@ -3422,9 +3422,9 @@
 <p>Ah, CSS: where your code gets a style upgrade. As a developer, you can do a lot with CSS to dress up your code, from using colors and background images to doing fancy animations. It can be fun to play with CSS, using different tricks to get your website content to stand out. However, there’s one aspect of CSS that is a pain point for developers: naming conventions.</p>
 <p>Bad, or loose, CSS naming conventions are rampant in the codebases of many software development shops. Without guidelines to follow, engineers create their own, often conflicting, naming standards. One engineer might use <code>sword-case</code> for her CSS classes, while another might use <code>snake_case</code>. Another person on the same team might, for inexplicable reasons, decide to use <code>camelCase</code>. The mismatched standards make for code that isn’t easy to read and can lead to confusion, errors, and extra time spent debugging or hunting for the correct classes. In other words, complete anarchy!</p>
 <h2 id="bem-guidelines">BEM Guidelines</h2>
-<p>To solve the problem of loose standards, reputable developers have created guidelines by which all developers can abide. One of the most popular sets of CSS conventions is <a href="http://getbem.com/">BEM</a>, or the <strong>“Block, Element, Modifier”</strong> methodology.</p>
+<p>To solve the problem of loose standards, reputable developers have created guidelines by which all developers can abide. One of the most popular sets of CSS conventions is <a href="http://getbem.com/">BEM</a>, or the <strong>"Block, Element, Modifier"</strong> methodology.</p>
 <h2 id="what-is-a-block">What is a Block?</h2>
-<p>According to <a href="http://getbem.com/naming/">BEM</a>, <em>a <strong>Block</strong> represents “a standalone entity that is meaningful on its own.”</em></p>
+<p>According to <a href="http://getbem.com/naming/">BEM</a>, <em>a <strong>Block</strong> represents "a standalone entity that is meaningful on its own."</em></p>
 <p>Rules for Blocks:</p>
 <ul>
 <li>Blocks can be nested and interact with each other, but they are semantically equal.</li>
@@ -3434,13 +3434,13 @@
 </ul>
 <p>Example Block:</p>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;”block”&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb112-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;"block"&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
 <p><strong>CSS</strong></p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb113-1" title="1"><span class="fu">.block</span> {</a>
 <a class="sourceLine" id="cb113-2" title="2">  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb113-3" title="3">}</a></code></pre></div>
 <h2 id="what-is-an-element">What is an Element?</h2>
-<p>According to <a href="http://getbem.com/naming/">BEM</a>, <em>an <strong>Element</strong> represents “part of a block and has <strong>no</strong> standalone meaning.”</em></p>
+<p>According to <a href="http://getbem.com/naming/">BEM</a>, <em>an <strong>Element</strong> represents "part of a block and has <strong>no</strong> standalone meaning."</em></p>
 <p>Rules for Elements:</p>
 <ul>
 <li>Any element is semantically tied to its block.</li>
@@ -3451,7 +3451,7 @@
 </ul>
 <p>Example Element:</p>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb114-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;”block”&quot;</span><span class="kw">&gt;</span></a>
+<div class="sourceCode" id="cb114"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb114-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;"block"&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb114-2" title="2">  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;block__elem&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></a>
 <a class="sourceLine" id="cb114-3" title="3"><span class="kw">&lt;/div&gt;</span></a></code></pre></div>
 <p><strong>Good CSS</strong></p>
@@ -3466,7 +3466,7 @@
 <a class="sourceLine" id="cb116-5" title="5">  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb116-6" title="6">}</a></code></pre></div>
 <h2 id="what-is-a-modifier">What is a Modifier?</h2>
-<p>According to <a href="http://getbem.com/">BEM</a>, <em>a <strong>Modifier</strong> represents “a flag on blocks or elements. Use them to change appearance, behavior or state.”</em></p>
+<p>According to <a href="http://getbem.com/">BEM</a>, <em>a <strong>Modifier</strong> represents "a flag on blocks or elements. Use them to change appearance, behavior or state."</em></p>
 <p>Rules for Modifiers:</p>
 <ul>
 <li>Modifier is an extra class name which you add to a block/element DOM node.(Examples: .button–<em>active</em>, .button_<em>text–_red</em>)</li>
@@ -3527,7 +3527,7 @@
 <h2 id="what-we-learned-6">What we learned:</h2>
 <ul>
 <li>Developers use CSS guidelines, like BEM, to make their classes and styles more consistent.</li>
-<li>BEM stands for “Block, Element, Modifier”.</li>
+<li>BEM stands for "Block, Element, Modifier".</li>
 <li>The definition of a Block and examples.</li>
 <li>The definition of an Element and examples.</li>
 <li>The definition of a Modifier and examples.</li>
@@ -3563,12 +3563,12 @@
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-hill-layers.png" alt="Mole head and hill layers" /><figcaption>Mole head and hill layers</figcaption>
 </figure>
 <p>Similarly to what you experienced in the positioning of the blue and pink boxes, you want to create some kind of HTML element that contains the head and hill. The parent element needs to have relative positioning. The elements that have the head and hill need to be absolutely positioned.</p>
-<p>Open up <strong>mole.html</strong> in VS Code. In the body, add a <code>div</code> element. Inside the <code>div</code> element, create two image elements, one that uses <strong>mole-head.png</strong> as its source and the other that uses <strong>mole-hill.png</strong> as its source. The image that needs to be “on top” has to be the second one, so order matters here: first the head image, then the hill image. (In case you forgot how to create an image element, here’s the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">img documentation</a>.)</p>
+<p>Open up <strong>mole.html</strong> in VS Code. In the body, add a <code>div</code> element. Inside the <code>div</code> element, create two image elements, one that uses <strong>mole-head.png</strong> as its source and the other that uses <strong>mole-hill.png</strong> as its source. The image that needs to be "on top" has to be the second one, so order matters here: first the head image, then the hill image. (In case you forgot how to create an image element, here’s the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img">img documentation</a>.)</p>
 <p>Open up the <strong>mole.html</strong> file in your browser. If you did things right, your page should look like this, right now. Just two images hanging out next to each other.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-images-unstyled.png" alt="Mole images unstyled" /><figcaption>Mole images unstyled</figcaption>
 </figure>
-<p>Now, it’s time to get them properly “layered”. After that, you will get them positioned correctly so everything’s properly lined up. To do this, you need some CSS classes.</p>
+<p>Now, it’s time to get them properly "layered". After that, you will get them positioned correctly so everything’s properly lined up. To do this, you need some CSS classes.</p>
 <p>Following good maintainability standards, you need to come up with a name for this Block that you’re creating. It is meant to represent a whackable game space. It contains a mole head and a dirt pile. The mole head and the dirt pile have no standalone meaning, they exist inside this game space for a reason. If they were outside the game space, then there existence would have another meaning altogether. That means the mole head and dirt pile are Elements of the Block. So, using BEM, you could create the following class names to represent these HTML elements.</p>
 <table>
 <colgroup>
@@ -3585,7 +3585,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td>wgs (short for “whackable game space”)</td>
+<td>wgs (short for "whackable game space")</td>
 <td>Block</td>
 <td>Used to encapsulate all of the things that are needed to whack a mole</td>
 </tr>
@@ -3602,7 +3602,7 @@
 </tbody>
 </table>
 <p>Using those (or whatever you dreamed up), add those classes to the appropriate targets, the <code>div</code> and the two <code>img</code> elements.</p>
-<p>Open up the <strong>mole.css</strong> file. Create three CSS rules, one for each of the classes that you added to the elements. (Remember that a CSS rule is the selector , the curly braces, and the properties to set.) Add “height”, “position”, and “width” properties to each of the three rules setting them to the indicated values in that layer diagram from above.</p>
+<p>Open up the <strong>mole.css</strong> file. Create three CSS rules, one for each of the classes that you added to the elements. (Remember that a CSS rule is the selector , the curly braces, and the properties to set.) Add "height", "position", and "width" properties to each of the three rules setting them to the indicated values in that layer diagram from above.</p>
 <p>If you got that set up, it should look like this, now.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-images-layered.png" alt="Mole images layered" /><figcaption>Mole images layered</figcaption>
@@ -3617,13 +3617,13 @@
 </figure>
 <p>If for some reason your images don’t align like that with the numbers provided, try adjusting the value that you used for the mole head to make it look correct in your browser.</p>
 <h2 id="hiding-the-mole">Hiding the mole</h2>
-<p>Now that you have the mole aligned properly, you need to get it so the mole can go down into its hole to hide from your whacker. In the <strong>mole.html</strong>, copy and paste the <code>div</code> and its images so you have two moles and dirt piles on your Web page. Because those <code>div</code> elements are “block” elements by default, they end up on top of each other. Just to make it easier <em>for now</em>, set the <code>display</code> property of the Block CSS class to “inline-block”;</p>
+<p>Now that you have the mole aligned properly, you need to get it so the mole can go down into its hole to hide from your whacker. In the <strong>mole.html</strong>, copy and paste the <code>div</code> and its images so you have two moles and dirt piles on your Web page. Because those <code>div</code> elements are "block" elements by default, they end up on top of each other. Just to make it easier <em>for now</em>, set the <code>display</code> property of the Block CSS class to "inline-block";</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/games-spaces-inline-block.png" alt="Game spaces inline block" /><figcaption>Game spaces inline block</figcaption>
 </figure>
-<p>You are going to make it so the mole head of the right image is hidden. You want to hide it by moving it down so that it is visually vertically beneath the pile of dirt. That is a perfect example of a BEM Modifier. Recall that a Modifier is used to <em>change appearance, behavior, or state</em>. In this case, it changes the state of the mole head by moving it “down into the ground”.</p>
-<p>You will want to animate this, eventually, so you can’t just set the <code>top</code> property, if you recall. The <code>top</code> and other placement specifiers cannot be animated using CSS. Instead, you’ll want to use the <code>margin-top</code> property to “move” the image down by increasing the margin above the element.</p>
-<p>Create a new CSS class named <code>wgs__mole-head--hidden</code> which indicates that this is the “hidden state” Modifier for the “mole-head” Element of the “wgs” Block. Add that class to the second mole head in your HTML. Then, create a CSS rule for that CSS class. You want to move the top of the mole head all the way to the bottom of the <code>div</code>, visually beneath the dirt pile. To do that, set the <code>margin-top</code> property of the rule for <code>wgs__mole-head--hidden</code> to the height of the Block. Once you do that and refresh your HTML page in the browser, it should look like this.</p>
+<p>You are going to make it so the mole head of the right image is hidden. You want to hide it by moving it down so that it is visually vertically beneath the pile of dirt. That is a perfect example of a BEM Modifier. Recall that a Modifier is used to <em>change appearance, behavior, or state</em>. In this case, it changes the state of the mole head by moving it "down into the ground".</p>
+<p>You will want to animate this, eventually, so you can’t just set the <code>top</code> property, if you recall. The <code>top</code> and other placement specifiers cannot be animated using CSS. Instead, you’ll want to use the <code>margin-top</code> property to "move" the image down by increasing the margin above the element.</p>
+<p>Create a new CSS class named <code>wgs__mole-head--hidden</code> which indicates that this is the "hidden state" Modifier for the "mole-head" Element of the "wgs" Block. Add that class to the second mole head in your HTML. Then, create a CSS rule for that CSS class. You want to move the top of the mole head all the way to the bottom of the <code>div</code>, visually beneath the dirt pile. To do that, set the <code>margin-top</code> property of the rule for <code>wgs__mole-head--hidden</code> to the height of the Block. Once you do that and refresh your HTML page in the browser, it should look like this.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-head-beneath-dirt-pile-unclipped.png" alt="Unclipped mole head" /><figcaption>Unclipped mole head</figcaption>
 </figure>
@@ -3633,7 +3633,7 @@
 </figure>
 <p>The mole head is still there. It’s just that you’ve hidden anything outside of the boundaries of the Block element. Because of that, it is now hidden.</p>
 <h2 id="animating-the-disappearing-mole-head">Animating the disappearing mole head</h2>
-<p>Now that you have that set up, it’s time to add some animation to get that mole head out of the way with some panache. All you have to do is set the <code>transition</code> property of the Element CSS class for the mole head. Set it to “margin-top” and give it a transition duration of 0.25 seconds. If you refresh your screen, nothing will have seemed to change. That’s because transitions only affect when CSS property values <em>change</em>.</p>
+<p>Now that you have that set up, it’s time to add some animation to get that mole head out of the way with some panache. All you have to do is set the <code>transition</code> property of the Element CSS class for the mole head. Set it to "margin-top" and give it a transition duration of 0.25 seconds. If you refresh your screen, nothing will have seemed to change. That’s because transitions only affect when CSS property values <em>change</em>.</p>
 <p>In previous examples, the values of CSS properties changed because you hovered over an element or something cool like that. Changes to CSS property values can also be triggered when JavaScript adds or removes a CSS class from an element. That’s what you’ll do to see if everything is working.</p>
 <p>To test it, remove the Modifier CSS class from the mole head image in the HTML. Refresh the browser and make sure you can see both of the mole heads, now. Then add the following JavaScript block to the <strong>mole.js</strong> file. If you used different CSS class names in your code, adjust the code below to target the CSS class names that you used.</p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb122-1" title="1"><span class="va">window</span>.<span class="at">addEventListener</span>(<span class="st">&#39;DOMContentLoaded&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -3653,13 +3653,13 @@
 <p>When you get tired of looking at that, delete the JavaScript and continue.</p>
 <h2 id="making-the-playing-field">Making the playing field</h2>
 <p>The original screen shot had eight mole heads in two rows of four. Two rows. Four columns. That sounds like a job for a specific kind of layout.</p>
-<p>The playing field is another Block. Go ahead and put a <code>div</code> element <em>around</em> the two <code>div</code> elements that you already have. Add a Block CSS class name to that outer <code>div</code> element. (For the sake of this article, the BEM class used for it will be “pf”, short for “playing field”.) Then, copy and paste six more of the <code>wgs</code> Blocks in that outer <code>div</code>. When you refresh the page, you should now see eight mole heads and dirt piles. You may have to scroll around to see them because those images are kind of large.</p>
+<p>The playing field is another Block. Go ahead and put a <code>div</code> element <em>around</em> the two <code>div</code> elements that you already have. Add a Block CSS class name to that outer <code>div</code> element. (For the sake of this article, the BEM class used for it will be "pf", short for "playing field".) Then, copy and paste six more of the <code>wgs</code> Blocks in that outer <code>div</code>. When you refresh the page, you should now see eight mole heads and dirt piles. You may have to scroll around to see them because those images are kind of large.</p>
 <p>You can fix that by going into your <strong>mole.css</strong> file and dividing all of the widths, heights, lefts, bottoms, tops, rights, and margin tops by 2. For example, the <code>width</code> property of the <code>wgs__dirt-pile</code> is set to 640 pixels. Just divide that value by two (640 / 2 = 320), and set the <code>width</code> to that value. If you have an odd number, when you divide it by two, just round it either way and use that. When you refresh the screen, all of the visuals should just be half as big.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-playing-field-of-eight.png" alt="Eight moles not in a grid" /><figcaption>Eight moles not in a grid</figcaption>
 </figure>
 <p>Even though on your screen it may look like they’re in two rows of four columns each they’re not. If you adjust the size of the window, the images will reflow and end up in different places. Now, use CSS Grid Layout to make it so the eight game spaces are appropriately laid out.</p>
-<p>Set the <code>display</code> property of that outer <code>div</code> element’s Block CSS Class to “grid”. (In this article, the name of that class is <code>pf</code>, short for “playing field”.) Because you’re not doing any tricky spans in this layout, just define the Grid Layout to have two rows and four columns.</p>
+<p>Set the <code>display</code> property of that outer <code>div</code> element’s Block CSS Class to "grid". (In this article, the name of that class is <code>pf</code>, short for "playing field".) Because you’re not doing any tricky spans in this layout, just define the Grid Layout to have two rows and four columns.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/mole-playing-field-in-grid.png" alt="Eight moles in a grid" /><figcaption>Eight moles in a grid</figcaption>
 </figure>
@@ -3691,16 +3691,16 @@
 <li>add the <code>--hidden</code> Modifier CSS class from the element passed in as an argument</li>
 <li>set a timeout for one second to call <code>popUpRandomMole</code></li>
 </ul>
-<p>Finally, add an event listener for the “DOMContentLoaded” event. In the event handler, set a timeout zero seconds to call <code>popUpRandomMole</code></p>
+<p>Finally, add an event listener for the "DOMContentLoaded" event. In the event handler, set a timeout zero seconds to call <code>popUpRandomMole</code></p>
 <p>Assuming you got that coded correctly, here’s what you should now see.</p>
 <p><img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/interactivity/assets/moles-randomly-popping-up.gif" alt="Moles randomly popping up" />:</p>
 <h2 id="step-3-whack-the-mole">Step 3: whack the mole</h2>
-<p>In the event handler that you have for the “DOMContentLoaded” event, select all of the mole head elements on the page. For each one, add an event listener for the “click” event. In that event handler, have it add back the <code>--hidden</code> Modifier CSS class to the event object’s target.</p>
-<p>In <code>popUpRandomMole</code>, change the timeout value to call <code>hideMole</code> from one second to three seconds. this should give you some time to actually “whack” a mole.</p>
+<p>In the event handler that you have for the "DOMContentLoaded" event, select all of the mole head elements on the page. For each one, add an event listener for the "click" event. In that event handler, have it add back the <code>--hidden</code> Modifier CSS class to the event object’s target.</p>
+<p>In <code>popUpRandomMole</code>, change the timeout value to call <code>hideMole</code> from one second to three seconds. this should give you some time to actually "whack" a mole.</p>
 <p>When you refresh the page, the moles should wait around for three seconds before automatically hiding. You should also be able to click a mole to make it hide immediately.</p>
 <h2 id="step-4-marking-a-mole-whacked">Step 4: marking a mole whacked</h2>
 <p>CSS classes aren’t just for styling. They can also add meaning to an element that you can then use later in your program. That’s what you’ll do in this section.</p>
-<p>In the click event handler that you have where you whack a mole, add <em>another</em> class to the event’s target. This is another Modifier CSS class to indicate the state of the mole head as “whacked”. Earlier, you created a Modifier class to indicate that the mole head is hidden. In this article, it is named, <code>wgs__mole-head--hidden</code>. A class to mean “whacked” could then be <code>wgs__mole-head--whacked</code>. If you use that name, great! If you come up with your own Modifier name, that’s great, too! Either way, that’s the name of the class that you want to add to the event target in the “click” event handler.</p>
+<p>In the click event handler that you have where you whack a mole, add <em>another</em> class to the event’s target. This is another Modifier CSS class to indicate the state of the mole head as "whacked". Earlier, you created a Modifier class to indicate that the mole head is hidden. In this article, it is named, <code>wgs__mole-head--hidden</code>. A class to mean "whacked" could then be <code>wgs__mole-head--whacked</code>. If you use that name, great! If you come up with your own Modifier name, that’s great, too! Either way, that’s the name of the class that you want to add to the event target in the "click" event handler.</p>
 <p>Now that the whacked moles are marked, the <code>popUpRandomMole</code> function should choose only moles that are <em>not</em> marked with that <code>--whacked</code> Modifier class. You may recall from your readings that there is a <code>not()</code> pseudo-selector available to you. You want <code>popUpRandomMole</code> to select elements <em>with</em> <code>wgs__mole-head</code> and <em>without</em> <code>wgs__mole-head--whacked</code>. That’s a compound selector that looks like this.</p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb124-1" title="1"><span class="fu">.wgs__mole-head</span><span class="in">:not(</span><span class="fu">.wgs__mole-head--whacked</span><span class="in">)</span></a></code></pre></div>
 <p>Change out the simple selector in <code>popUpRandomMole</code> with that one.</p>
@@ -3708,7 +3708,7 @@
 <h2 id="winning-the-game">Winning the game</h2>
 <p>If you play this, now, you will find that after you whack all eight moles, you may get a JavaScript error. That’s likely because the selector in <code>popUpRandomMole</code> is returning an empty list because all of the moles are whacked. Put a test after your code selects that list. If the list length is zero, you won! Have it indicate that in some way and just exit the function.</p>
 <h2 id="bonus-fast-and-furious">Bonus: fast and furious</h2>
-<p>Instead of “winning” the game by whacking all of the moles, make it score based.</p>
+<p>Instead of "winning" the game by whacking all of the moles, make it score based.</p>
 <p>Have the game only popup moles 30 times. You should keep track of the total number of whacks from the player and display it as the score. With each successful whack, make the amount of time the mole stays popped up shorter. Have the moles stop popping up after 30 moles are shown and indicate that the game is now over. (To do this, you’ll have to stop marking the moles as whacked or change the selector back to selecting all moles.)</p>
 <p>Show a countdown of how many moles are left in the game. Show the player’s score. Style it so it doesn’t look bad with your CSS super powers.</p>
 <p>Align the game spaces in the grid so that they’re centered within their own column.</p>
@@ -3765,7 +3765,7 @@
 <h3 id="the-home-page.js-file">The home-page.js file</h3>
 <p>This file will contain the home-page specific event handling that will drive some of the interactivity of the Web page. Right now, it’s empty. You’ll start adding to it in step 4.</p>
 <h3 id="the-home-page.css-file">The home-page.css file</h3>
-<p>This file will contain the overall structure of the “home page” of the Web site that you’re building, here. Right now, it’s empty. In the first step, you’ll use Emmet to add standard HTML 5 structure to this file. Then, you’ll add the most common top-level structural elements, too: <code>header</code>, <code>main</code>, and <code>footer</code>.</p>
+<p>This file will contain the overall structure of the "home page" of the Web site that you’re building, here. Right now, it’s empty. In the first step, you’ll use Emmet to add standard HTML 5 structure to this file. Then, you’ll add the most common top-level structural elements, too: <code>header</code>, <code>main</code>, and <code>footer</code>.</p>
 <h3 id="the-main-styles.css-file">The main-styles.css file</h3>
 <p>You shouldn’t have to make changes to this file.</p>
 <p>Inside <strong>main-styles.css</strong>, there are a series of <code>@import</code> statements that load the various CSS files in the project. You do this so that you don’t have to go searching through a file that has thousands of lines of CSS in it. This way, when you work on a section of content on your team, each person can work in their own file, if need be, without causing a huge mess.</p>
@@ -3785,14 +3785,14 @@
 <p>You should be able to list the imports from the components subdirectory in any order that you like. The CSS rules in those files should contain BEM-compliant CSS class names. Because they use BEM, you won’t have to worry about CSS class names clashing with one another. This is one of the main reasons Web developers use BEM.</p>
 <p>Just as a reminder, BEM is Block, Element, Modifier. Don’t forget the double underscores and dashes when naming your classes.</p>
 <h3 id="the-reset.css-file">The reset.css file</h3>
-<p>Quite often, you will want to use what’s known as a “reset” file to remove all of the quirky, inconsistent default styles that browsers add to Web pages. If you performed a search for “CSS reset files”, you will find many articles and versions of them. This project already includes one for you.</p>
+<p>Quite often, you will want to use what’s known as a "reset" file to remove all of the quirky, inconsistent default styles that browsers add to Web pages. If you performed a search for "CSS reset files", you will find many articles and versions of them. This project already includes one for you.</p>
 <p>Whenever you choose to use a CSS reset file, it is <em>vitally</em> important that you include it as the first one of your <code>@import</code> statements. If you don’t do that, then all of the hard work that you put into making things look better can get erased by the reset file if it comes after yours in the order of imports. Remember that CSS specificity will always choose the last rule read for rules that have the same specificity. So, it’s important to have it first so that <em>your</em> CSS comes after.</p>
 <h2 id="the-specifications-directory">The specifications directory</h2>
 <p>The <strong>specifications</strong> directory contains files similar to what you would get from a Web designer. Those files are organized into two subdirectories for you.</p>
 <p>The <strong>screenshots</strong> subdirectory contains the screenshots of the entire project that you saw at the beginning of this page. It also contains the screenshots that you will use in each of the steps of this project so that you can have them locally.</p>
 <p>The <strong>text</strong> subdirectory contains all of the text that you see on the Web page. This way, you can just copy and paste it into the HTML as you develop the page.</p>
 <p>Also in the <strong>text</strong> directory is a Markdown file named <strong>styles.md</strong>. This file contains a list of the colors, external resources, font families, global styles, and measurements that you will use during this project.</p>
-<p><strong>An important note</strong>: You may want to keep your DevTools open and the <em>Disable Cache</em> checkbox <strong>checked</strong>. This will guarantee that changes to your CSS files are loaded by the browser every time you refresh it. You can open your Chrome DevTools on Windows by pressing F12 or Control+Shift+I. You can open Chrome DevTools on macOS by pressing Command+Option+I. Then, go to the Network pane and make sure the “Disable cache” checkbox is checked. <strong>Keep your DevTools open!</strong></p>
+<p><strong>An important note</strong>: You may want to keep your DevTools open and the <em>Disable Cache</em> checkbox <strong>checked</strong>. This will guarantee that changes to your CSS files are loaded by the browser every time you refresh it. You can open your Chrome DevTools on Windows by pressing F12 or Control+Shift+I. You can open Chrome DevTools on macOS by pressing Command+Option+I. Then, go to the Network pane and make sure the "Disable cache" checkbox is checked. <strong>Keep your DevTools open!</strong></p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/devtools-enable-cache.png" alt="disable cache" /><figcaption>disable cache</figcaption>
 </figure>
@@ -3817,11 +3817,11 @@
 <p>As you get more and more experience with this type of visual decomposition, this type of analysis will become second-nature to you. When you’re starting out, though, it really can help to have real-life print-outs of these mockups so that you can draw the rows and columns as you see fit</p>
 <p>To get started making those rows, it’s time to open the <strong>index.html</strong> and start filling it in.</p>
 <h2 id="pro-tip-using-emmet">Pro-tip: using Emmet</h2>
-<p>Open <strong>index.html</strong> in Visual Studio Code. It’s a nice empty file just waiting for you to put code in it. Visual Studio Code comes with a nice code completion feature named <em>Emmet</em> that has good built-in templates. Try typing just “html” in that file (without the quotation marks). You should see a drop down that suggests different types of completion.</p>
+<p>Open <strong>index.html</strong> in Visual Studio Code. It’s a nice empty file just waiting for you to put code in it. Visual Studio Code comes with a nice code completion feature named <em>Emmet</em> that has good built-in templates. Try typing just "html" in that file (without the quotation marks). You should see a drop down that suggests different types of completion.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/visual-studio-code-emmet-html5.png" alt="emmet html5 completion" /><figcaption>emmet html5 completion</figcaption>
 </figure>
-<p>Either click the one that reads “html:5” with your mouse, or select “html:5” from the dropdown using your arrow keys, and press Return (or Enter, whatever is on your computer). When you do that, it inserts the following code into your text editor for you!</p>
+<p>Either click the one that reads "html:5" with your mouse, or select "html:5" from the dropdown using your arrow keys, and press Return (or Enter, whatever is on your computer). When you do that, it inserts the following code into your text editor for you!</p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb127-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
 <a class="sourceLine" id="cb127-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb127-3" title="3"><span class="kw">&lt;head&gt;</span></a>
@@ -3834,18 +3834,18 @@
 <a class="sourceLine" id="cb127-10" title="10"><span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb127-11" title="11"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
 <p>Please change the title of the document to " Times". Now, you’re ready to figure out that structure.</p>
-<p>In the head, link in the <strong>main-styles.css</strong> file. Don’t forget to set the “rel” attribute to “stylesheet”, otherwise the browser won’t treat the CSS as CSS. If you don’t get the value for the “href” property correct, it won’t correctly load the style sheet and your styles won’t show up. Take a moment to make sure it’s loading properly. In your DevTools (they should be open), make sure you still have the Network tab chosen. Refresh your page. If you see a 200 next to the entry, then it’s loading just fine! Great job!</p>
-<p>If you see that you are getting a 404 for <strong>main-styles.css</strong> in the list of files loaded, then you should know what that means: Not Found. The value for the “href” property needs to be <em>relative</em> to the current page.</p>
+<p>In the head, link in the <strong>main-styles.css</strong> file. Don’t forget to set the "rel" attribute to "stylesheet", otherwise the browser won’t treat the CSS as CSS. If you don’t get the value for the "href" property correct, it won’t correctly load the style sheet and your styles won’t show up. Take a moment to make sure it’s loading properly. In your DevTools (they should be open), make sure you still have the Network tab chosen. Refresh your page. If you see a 200 next to the entry, then it’s loading just fine! Great job!</p>
+<p>If you see that you are getting a 404 for <strong>main-styles.css</strong> in the list of files loaded, then you should know what that means: Not Found. The value for the "href" property needs to be <em>relative</em> to the current page.</p>
 <p>Most Web pages have a page header section, a main section, and a footer section. It doesn’t hurt to always put those in there so that you can structure your documents so that everyone knows that’s what’s there. Luckily, HTML gives you those three tags to use: <code>header</code>, <code>main</code>, and <code>footer</code>. Go ahead and put those in the body of your document as <em>siblings</em> to one another.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb128-1" title="1"><span class="kw">&lt;header&gt;&lt;/header&gt;</span></a>
 <a class="sourceLine" id="cb128-2" title="2"><span class="kw">&lt;main&gt;&lt;/main&gt;</span></a>
 <a class="sourceLine" id="cb128-3" title="3"><span class="kw">&lt;footer&gt;&lt;/footer&gt;</span></a></code></pre></div>
 <p>While an HTML document should ever have one and only one <code>main</code> element, the <code>header</code> and <code>footer</code> elements can appear elsewhere in the document, usually in <code>section</code> tags where sections have some kind of header or footer. But, when the <code>header</code> and <code>footer</code> are direct children of the <code>body</code> tag, that implies that they are the <code>header</code> and <code>footer</code> for the entire document.</p>
-<p>In the <strong>global.css</strong> file, set the maximum width for the <code>header</code>, <code>footer</code>, and <code>main</code> elements to be 1400 pixels per the measurement in the <strong>styles.md</strong> file. Also, set <code>margin</code> to “auto” so that they center within the body. Finally, set some horizontal padding of 40px on the left and right.</p>
-<p>The <code>body</code> element should use “arial, helvetica, sans-serif” as its font family with a line height of “1em”. You can set that latter property using the <code>line-height</code> property. Put those settings in the <strong>global.css</strong> file, too.</p>
+<p>In the <strong>global.css</strong> file, set the maximum width for the <code>header</code>, <code>footer</code>, and <code>main</code> elements to be 1400 pixels per the measurement in the <strong>styles.md</strong> file. Also, set <code>margin</code> to "auto" so that they center within the body. Finally, set some horizontal padding of 40px on the left and right.</p>
+<p>The <code>body</code> element should use "arial, helvetica, sans-serif" as its font family with a line height of "1em". You can set that latter property using the <code>line-height</code> property. Put those settings in the <strong>global.css</strong> file, too.</p>
 <h2 id="three-rows-three-columns-one-masthead">Three rows, three columns, one masthead</h2>
 <p>The masthead is in the header of the document. That means that structure that you’ll put into place will go in the <code>header</code> element. There are nine regions. Content is in the four corners and the two lower center regions. A nice way to approach this is to start with the structure that puts things in their right places. After you get those in place, you can start filling it in with the correct words and images.</p>
-<p>First, structure. In the <code>header</code> element, create a <code>div</code> element with the BEM class “masthead.” Then, create six child <code>div</code> elements inside <code>.masthead</code>. These six elements will contain the content of each of the six regions that have content. Put some unique text in each of them to figure out which of the blocks they are with respect to the content you see in the screenshot. Perhaps you could have something like this:</p>
+<p>First, structure. In the <code>header</code> element, create a <code>div</code> element with the BEM class "masthead." Then, create six child <code>div</code> elements inside <code>.masthead</code>. These six elements will contain the content of each of the six regions that have content. Put some unique text in each of them to figure out which of the blocks they are with respect to the content you see in the screenshot. Perhaps you could have something like this:</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb129-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;masthead&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb129-2" title="2">  <span class="kw">&lt;div&gt;</span>menu and search<span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb129-3" title="3">  <span class="kw">&lt;div&gt;</span>action buttons<span class="kw">&lt;/div&gt;</span></a>
@@ -3858,14 +3858,14 @@
 <blockquote>
 <p>Pro tip: When trying to get a layout to look correct when you don’t have any content to show, you can use a tool like the Chrome extension <a href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">pesticide</a> to show you the borders of your elements without interfering with your actual layout.</p>
 </blockquote>
-<p>Now, open the <strong>masthead.css</strong> file. In there, create a CSS rule for the elements with the “masthead” class that sets its display to use CSS grid layout and declares a grid with three equally-sized columns. Refresh your page. The six lines of text should now layout as two rows of three equally-sized columns.</p>
+<p>Now, open the <strong>masthead.css</strong> file. In there, create a CSS rule for the elements with the "masthead" class that sets its display to use CSS grid layout and declares a grid with three equally-sized columns. Refresh your page. The six lines of text should now layout as two rows of three equally-sized columns.</p>
 <p>If you forgot how to do this, you can use fr(actional units) from the CSS Grid Layout standard.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/six-regions-in-two-rows.png" alt="six regions in two rows" /><figcaption>six regions in two rows</figcaption>
 </figure>
 <p>(Ignore any difference in font families at this stage.)</p>
 <p>It’s now time to get them into three rows and in the correct positions.</p>
-<p>Add BEM classes to each of the six child <code>div</code> elements of <code>.masthead</code>. Each of these is an Element of the “masthead” Block, so name them accordingly with double underscores between the Block and Element names. For example, the solution uses the following class names for the six regions. However, you should feel empowered to name them to whatever makes sense to you and your pair!</p>
+<p>Add BEM classes to each of the six child <code>div</code> elements of <code>.masthead</code>. Each of these is an Element of the "masthead" Block, so name them accordingly with double underscores between the Block and Element names. For example, the solution uses the following class names for the six regions. However, you should feel empowered to name them to whatever makes sense to you and your pair!</p>
 <ul>
 <li>masthead__menu-and-search</li>
 <li>masthead__actions</li>
@@ -3887,7 +3887,7 @@
 <h2 id="the-menu-and-search-icons">The menu and search icons</h2>
 <p>These two icons are from the Font Awesome library. To include that, you need to add another <code>link</code> to the <code>head</code> element that will import the Font Awesome stylesheet. The URL to use is in the <strong>specifications/text/styles.md</strong> file.</p>
 <p>It’s generally good practice to place the <code>link</code> elements that load third-party resources <em>before</em> the <code>link</code> elements that load your own stylesheets. This prevents some other style from inadvertently overriding yours.</p>
-<p>Once you have that linked in there, replace the words “menu and search” of the div that appears in the upper-left corner with the following HTML.</p>
+<p>Once you have that linked in there, replace the words "menu and search" of the div that appears in the upper-left corner with the following HTML.</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb130-1" title="1"><span class="kw">&lt;div&gt;</span></a>
 <a class="sourceLine" id="cb130-2" title="2">  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;fa fa-bars&quot;</span><span class="kw">&gt;&lt;/i&gt;</span></a>
 <a class="sourceLine" id="cb130-3" title="3"><span class="kw">&lt;/div&gt;</span></a>
@@ -3924,7 +3924,7 @@
 </table>
 <p>Once you set those for the new CSS class, your icons should look fancy.</p>
 <p>Make sure you note that our background color should only appear when you hover over the icons.</p>
-<p>What you need to do is layout the <code>div</code> elements in a row. You can do that by setting their <code>display</code> property to “inline-block” or by setting the parent <code>div</code> element’s <code>display</code> property to “flex”. The solution uses the “flexbox” version. Since we want the buttons to align in the middle of this div you might consider using <code>align-items</code> to center them vertically if you are using “flexbox”.</p>
+<p>What you need to do is layout the <code>div</code> elements in a row. You can do that by setting their <code>display</code> property to "inline-block" or by setting the parent <code>div</code> element’s <code>display</code> property to "flex". The solution uses the "flexbox" version. Since we want the buttons to align in the middle of this div you might consider using <code>align-items</code> to center them vertically if you are using "flexbox".</p>
 <p>Finally, add 20 pixels of padding to the left of the <code>div</code> element that contains the icons.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/masthead-menu-and-search-icons.png" alt="masthead menu and search icons" /><figcaption>masthead menu and search icons</figcaption>
@@ -3991,21 +3991,21 @@
 <p>All buttons on this Web page have a common style. The specification for them is in the <strong>style.md</strong> file. Create a rule for the <code>button</code> selector in the <strong>global.css</strong> file and make it match the specifications in <strong>style.md</strong>.</p>
 <p>The content for the upper right corner is three elements:</p>
 <ul>
-<li>a button with the text “Subscribe Now”</li>
-<li>a button with the text “Log In”</li>
+<li>a button with the text "Subscribe Now"</li>
+<li>a button with the text "Log In"</li>
 <li>a masthead icon button with the Font Awesome icon <code>&lt;i class="fas fa-cog"&gt;&lt;/i&gt;</code> (Remember to use the same markup you used for the other icons on the left side of the masthead)</li>
 </ul>
 <p>Once you add that, you should be able to refresh the page and see the three elements!</p>
-<p>Use flexbox to get those three elements into a row and aligned right. Remember that when you “justify content” in a flexbox container, you don’t use directions like “left” and “right”; instead, you use “flex-start” and “flex-end”. Also these icons should be vertically centered too, so you should use the same <code>align-items</code> as you did on the other masthead icons.</p>
+<p>Use flexbox to get those three elements into a row and aligned right. Remember that when you "justify content" in a flexbox container, you don’t use directions like "left" and "right"; instead, you use "flex-start" and "flex-end". Also these icons should be vertically centered too, so you should use the same <code>align-items</code> as you did on the other masthead icons.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/masthead-action-buttons.png" alt="masthead action buttons" /><figcaption>masthead action buttons</figcaption>
 </figure>
 <h2 id="fix-the-height-of-the-first-row">Fix the height of the first row</h2>
 <p>When compared to the specification, there is missing padding above and below the buttons we just added. Setting the height of either <code>div</code> element that contains the buttons should change the height of the entire row. You could also add padding to one or both of the <code>div</code> elements. Because they are part of a grid, setting the height of one affects the other. Try out different amounts until it looks right to you and matches the specification.</p>
 <h2 id="the-little-technology-text">The little technology text</h2>
-<p>In the <code>div</code> that’s in the center of the grid, put another <code>div</code> element that contains four <code>span</code> elements containing the text “CSS”, “HTML”, “JavaScript”, and “Python.” Add some BEM classes to these new elements so that you can make the text transform to upper case, have a font size of 10 pixels, and have a text color of dark gray (refer to <strong>styles.md</strong> for the actual hexadecimal value). Put some margin between the <code>span</code> elements to space out the words nicely. Make sure it’s all centered.</p>
+<p>In the <code>div</code> that’s in the center of the grid, put another <code>div</code> element that contains four <code>span</code> elements containing the text "CSS", "HTML", "JavaScript", and "Python." Add some BEM classes to these new elements so that you can make the text transform to upper case, have a font size of 10 pixels, and have a text color of dark gray (refer to <strong>styles.md</strong> for the actual hexadecimal value). Put some margin between the <code>span</code> elements to space out the words nicely. Make sure it’s all centered.</p>
 <p>You’ll come back later to add the fancy little border over the top of the words.</p>
-<p>The solution has this code for the HTML in the “little technologies” block:</p>
+<p>The solution has this code for the HTML in the "little technologies" block:</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb133-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;masthead__technologies&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb133-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;masthead__technology-list&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb133-3" title="3">    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;masthead__technology&quot;</span><span class="kw">&gt;</span>CSS<span class="kw">&lt;/span&gt;</span></a>
@@ -4035,7 +4035,7 @@
 <p>In the bottom-left corner, put the date in there. You can get the text from the <strong>specifications/text/01_masthead.txt</strong> file. Or, you can just type it in there.</p>
 <p>In the bottom-right corner, put the content <code>&lt;i class="far fa-newspaper"&gt;&lt;/i&gt; Today's Paper</code>.</p>
 <p>The text in the two bottom corners should be 11 pixels high.</p>
-<p>The CSS Grid Layout has vertically stretched the <code>div</code> elements in the bottom row. For the two in the bottom corners, set the <code>display</code> property to “flex.” Then, use <code>align-items</code> to get them to the bottom of the element using the “flex-end” setting. For the <code>div</code> that contains the text “Today’s Paper”, have it justify its content to “flex-end.” That should do that part.</p>
+<p>The CSS Grid Layout has vertically stretched the <code>div</code> elements in the bottom row. For the two in the bottom corners, set the <code>display</code> property to "flex." Then, use <code>align-items</code> to get them to the bottom of the element using the "flex-end" setting. For the <code>div</code> that contains the text "Today’s Paper", have it justify its content to "flex-end." That should do that part.</p>
 <p>Finally, it seems that the third row needs some more height to push it away from the little technology words. Add some padding to the top of the <code>div</code> element that contains the logo.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/masthead-nearly-finished.png" alt="masthead nearly finished" /><figcaption>masthead nearly finished</figcaption>
@@ -4258,7 +4258,7 @@
 </figure>
 <p>This is just a series of words centered and spaced beneath the masthead that you just created. This should, hopefully, be something that you can conquer without too much trouble.</p>
 <h2 id="some-tips-from-industry">Some tips from industry</h2>
-<p>It has become fairly prevalent in the Web-programming world to use <code>ul</code> elements when creating navigation. Say that your Web site has four main navigation links, “Products”, “Services”, “About”, “Contact Us”. Then, you will likely see something similar to this in the HTML for those links with some CSS to style it appropriately.</p>
+<p>It has become fairly prevalent in the Web-programming world to use <code>ul</code> elements when creating navigation. Say that your Web site has four main navigation links, "Products", "Services", "About", "Contact Us". Then, you will likely see something similar to this in the HTML for those links with some CSS to style it appropriately.</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb140-1" title="1"><span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;main&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb140-2" title="2">  <span class="kw">&lt;ul&gt;</span></a>
 <a class="sourceLine" id="cb140-3" title="3">    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/products&quot;</span><span class="kw">&gt;</span>Products<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></a>
@@ -4267,7 +4267,7 @@
 <a class="sourceLine" id="cb140-6" title="6">    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/contact&quot;</span><span class="kw">&gt;</span>Contact Us<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></a>
 <a class="sourceLine" id="cb140-7" title="7">  <span class="kw">&lt;/ul&gt;</span></a>
 <a class="sourceLine" id="cb140-8" title="8"><span class="kw">&lt;/nav&gt;</span></a></code></pre></div>
-<p>Your CSS reset already helps out a lot if you choose to mimic that structure. It has removed the “bullet points” from <code>ul</code> elements. It has removed margin and padding from the <code>ul</code> elements, too. The one thing it does not do is change the way it gets laid out which, by default, is like a list! It’ll look like a list!</p>
+<p>Your CSS reset already helps out a lot if you choose to mimic that structure. It has removed the "bullet points" from <code>ul</code> elements. It has removed margin and padding from the <code>ul</code> elements, too. The one thing it does not do is change the way it gets laid out which, by default, is like a list! It’ll look like a list!</p>
 <pre><code>Products
 Services
 About
@@ -4291,7 +4291,7 @@ Contact Us</code></pre>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/interests-bar.png" alt="interests bar" /><figcaption>interests bar</figcaption>
 </figure>
-<p>This poses an interesting problem, these so-called “interest links”. At first glance, you may see only five columns:</p>
+<p>This poses an interesting problem, these so-called "interest links". At first glance, you may see only five columns:</p>
 <ul>
 <li>Dog Programmers</li>
 <li>Cats and Coding</li>
@@ -4308,7 +4308,7 @@ Contact Us</code></pre>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/interests-bar-subclasses-shown.png" alt="interests bar subclasses shown" /><figcaption>interests bar subclasses shown</figcaption>
 </figure>
-<p>With it highlighted like this, you can see that all of the images essentially share the same size and position. You can see all of the headlines and teasers have the same styling and layout. You can see that the fake stock prices all have similar layouts. You can define a BEM class like <code>interests-bar__story-title</code> and apply it to “Dog Programmers”, “Cats and Coding”, and “Plugging stuff in” because they’re <em>all</em> title Elements in the interests bar Block.</p>
+<p>With it highlighted like this, you can see that all of the images essentially share the same size and position. You can see all of the headlines and teasers have the same styling and layout. You can see that the fake stock prices all have similar layouts. You can define a BEM class like <code>interests-bar__story-title</code> and apply it to "Dog Programmers", "Cats and Coding", and "Plugging stuff in" because they’re <em>all</em> title Elements in the interests bar Block.</p>
 <p>Taking all of that analysis, here is the layout without any of the content. The same colors mean the same BEM class.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/interest-bar-layout.svg" alt="interests bar layout" /><figcaption>interests bar layout</figcaption>
@@ -4368,10 +4368,10 @@ Contact Us</code></pre>
 </figure>
 <p>In this portion of the exercise, you are provided the HTML and CSS. The challenge is for you to put this into your existing HTML and use JavaScript to show and hide it.</p>
 <p>When someone clicks the gear icon, it will show the menu. When the preferences drop down is shown, any click will dismiss it. Create a file in the <strong>scripts/</strong> directory. Use a <code>script</code> element to include that file. This may be the first time you’ve written a <code>script</code> element in HTML. If you don’t remember what it looks like, go back and look at your previous projects.</p>
-<p>After you’ve included the script file in your HTML file, test out whether it is being loaded into your browser. Type a simple <code>console.log("hello")</code> and open up your DevTools console to view your log. If your script file has loaded correctly, you should see “hello” in your DevTools console.</p>
+<p>After you’ve included the script file in your HTML file, test out whether it is being loaded into your browser. Type a simple <code>console.log("hello")</code> and open up your DevTools console to view your log. If your script file has loaded correctly, you should see "hello" in your DevTools console.</p>
 <p>You may also need to remember how to stop event bubbling/propagation, too, depending on how you code it. This was back in the DOM days, so if you don’t remember, here <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event#Methods">the link to the event methods</a> on MDN.</p>
 <p>To make sure your script is loading, you can check the Network tab in your DevTools (still open?) to make sure that you’re getting a 200 and not an error code.</p>
-<p>You can also test it out by writing a <code>console.log('did this load?');</code> in the file. Then, you can look at the output in the Console tab in the DevTools to see if “did this load?” shows up. If it did, great! Otherwise, here’s the [link to the script tag] from MDN.</p>
+<p>You can also test it out by writing a <code>console.log('did this load?');</code> in the file. Then, you can look at the output in the Console tab in the DevTools to see if "did this load?" shows up. If it did, great! Otherwise, here’s the [link to the script tag] from MDN.</p>
 <p>This is the HTML for the menu.</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb142-1" title="1"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;pref pref--hidden&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb142-2" title="2">  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;pref__section&quot;</span><span class="kw">&gt;</span></a>
@@ -4442,7 +4442,7 @@ Contact Us</code></pre>
 <p>This is similar to what you did with the preference pane dropdown. However, you don’t have to do any unusual positioning of these elements.</p>
 <ul>
 <li>When a user clicks the magnifying glass, it toggles the visibility state of the search box and button. One click, visible. Two clicks, invisible. Three clicks, visible. Four clicks, invisible. And, so on.</li>
-<li>The <code>input</code> is of <code>type</code> “search” and has a <code>placeholder</code> of “Search” (<code>&lt;input type="search" placeholder="Search"&gt;</code>).</li>
+<li>The <code>input</code> is of <code>type</code> "search" and has a <code>placeholder</code> of "Search" (<code>&lt;input type="search" placeholder="Search"&gt;</code>).</li>
 <li>The button is just a normal button.</li>
 </ul>
 <p>The <strong>reset.css</strong> style sheet removed all of the styling from the input box. You won’t see it when you put it on the HTML page. Because of that, you have to style it yourself. In this exercise, that is to add a one pixel border to the input with a border radius of two pixels.</p>
@@ -4459,7 +4459,7 @@ Contact Us</code></pre>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/marked-up-screen-shot.png" alt="marked-up-screen-shot" /><figcaption>marked-up-screen-shot</figcaption>
 </figure>
 <p>Put your CSS rules into <strong>main-content.css</strong>.</p>
-<p>To add <em>back</em> the bullet points to a <code>ul</code> element like you see in the first article, use the CSS property <code>list-type</code> with the value “disc”.</p>
+<p>To add <em>back</em> the bullet points to a <code>ul</code> element like you see in the first article, use the CSS property <code>list-type</code> with the value "disc".</p>
 <p>In the real world, when you want to embed a video, usually your video hosting provider gives you a code snippet for how to embed videos in your page. App Academy uses Vimeo as its hosting services. You can use the following code to embed the video into your page:</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">&lt;iframe</span><span class="ot"> src=</span><span class="st">&quot;https://player.vimeo.com/video/380193367&quot;</span><span class="ot"> width=</span><span class="st">&quot;480&quot;</span></a>
 <a class="sourceLine" id="cb144-2" title="2"><span class="ot">  height=</span><span class="st">&quot;280&quot;</span><span class="ot"> frameborder=</span><span class="st">&quot;0&quot;</span><span class="ot"> allow=</span><span class="st">&quot;autoplay; fullscreen&quot;</span></a>
@@ -4500,7 +4500,7 @@ Contact Us</code></pre>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Responsive-Design/response-design-projects/aa-times/assets/sidebar.gif" alt="slide-in-gif" /><figcaption>slide-in-gif</figcaption>
 </figure>
-<p>The bonus, here, is to add a slide-in sidebar. This is a two step procedure. First, get the element to “slide in” when someone clicks the menu button. That’s not an easy thing to do. It should stay over on the left side of the screen even during screen resizes.</p>
+<p>The bonus, here, is to add a slide-in sidebar. This is a two step procedure. First, get the element to "slide in" when someone clicks the menu button. That’s not an easy thing to do. It should stay over on the left side of the screen even during screen resizes.</p>
 <p>Here’s some starter HTML to get the ball rolling. See if you can make it appear and be styled when someone clicks on the menu icon.</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb146-1" title="1"><span class="kw">&lt;nav</span><span class="ot"> class=</span><span class="st">&quot;sidebar&quot;</span><span class="kw">&gt;</span></a>
 <a class="sourceLine" id="cb146-2" title="2">  <span class="kw">&lt;ul</span><span class="ot"> class=</span><span class="st">&quot;sidebar__list&quot;</span><span class="kw">&gt;</span></a>

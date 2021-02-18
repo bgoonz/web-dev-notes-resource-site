@@ -64,8 +64,14 @@
 </ul></li>
 <li><p>Piping commands together</p>
 <ul>
-<li>You can chain commands using the pipe operator, <code>|</code>, located above your return key (to get to the pipe <code>|</code>, press shift and <code>\</code>). Commands connected by pipes are run in order from left to right. The output of the first command gets “piped” or fed into the next command, which is run, and then the output of that is piped into the next command, and so forth.</li>
-<li><p>Example: the command on the third line below will print all text files (<code>cat *.txt</code>), searching for only lines containing “error” (<code>grep error</code>), and print a count of those lines(<code>wc -l</code>). Try these commands and watch how the output changes:</p>
+<li>You can chain commands using the pipe operator, <code>|</code>, located above your return key (to get to the pipe
+    <code>|</code>, press shift and <code>\</code>). Commands connected by pipes are run in order from left to right.
+    The output of the first command gets “piped" or fed into the next command, which is run, and then the output of that
+    is piped into the next command, and so forth.</li>
+<li>
+    <p>Example: the command on the third line below will print all text files (<code>cat *.txt</code>), searching for
+        only lines containing “error" (<code>grep error</code>), and print a count of those lines(<code>wc -l</code>).
+        Try these commands and watch how the output changes:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">cat</span> *.txt</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="fu">cat</span> *.txt <span class="kw">|</span> <span class="fu">grep</span> error</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="fu">cat</span> *.txt <span class="kw">|</span> <span class="fu">grep</span> error <span class="kw">|</span> <span class="fu">wc</span> -l</a></code></pre></div>
@@ -86,7 +92,10 @@
 <ul>
 <li>We can add text to a file from the command line without even opening up a text editor.</li>
 <li>This is also useful for saving the long output of some useful command into a file so I can reference it later.</li>
-<li>Write output to a file with <code>&gt;</code>. <code>&gt;</code> takes the output of whatever is before the <code>&gt;</code> and writes it directly into the filename provided after the <code>&gt;</code>. Caution: <code>&gt;</code> will overwrite the entire previous contents of that file, if any. Some call this the “shovel operator,” because it looks like a shovel, and you’re shoveling text into a file.</li>
+<li>Write output to a file with <code>&gt;</code>. <code>&gt;</code> takes the output of whatever is before the
+    <code>&gt;</code> and writes it directly into the filename provided after the <code>&gt;</code>. Caution:
+    <code>&gt;</code> will overwrite the entire previous contents of that file, if any. Some call this the “shovel
+    operator," because it looks like a shovel, and you’re shoveling text into a file.</li>
 <li><code>&gt;&gt;</code> is similar, except it appends text to the end of the file (instead of overwriting the entire file). Some call this the double shovel operator.</li>
 </ul></li>
 <li><p>Permissions</p>
@@ -106,7 +115,7 @@
 <ul>
 <li>Some special characters must be treated differently to use literally.</li>
 <li><code>&amp;</code> is a special character. It must be quoted if you’re going to use it in a string.</li>
-<li><p>Quotes within quotes (specifically, quotes that you’re using as part of your text within quotes you’re using to tell the command line that you’re making a string) need to be marked as “not the set of quotes that will mark the end of the string.” This process is called “escaping”, as in “don’t forget to escape these characters.” On the command line, the escape character is <code>\</code>, and you use it by placing it immediately before the character you need to escape.</p>
+<li><p>Quotes within quotes (specifically, quotes that you’re using as part of your text within quotes you’re using to tell the command line that you’re making a string) need to be marked as “not the set of quotes that will mark the end of the string." This process is called “escaping", as in “don’t forget to escape these characters." On the command line, the escape character is <code>\</code>, and you use it by placing it immediately before the character you need to escape.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1"><span class="bu">echo</span> <span class="st">&quot;My name is </span><span class="dt">\&quot;</span><span class="st">Lin</span><span class="dt">\&quot;</span><span class="st">&quot;</span></a></code></pre></div>
 <p>would produce the output <code>My name is "Lin"</code>.</p></li>
 </ul></li>
@@ -195,9 +204,9 @@
 <a class="sourceLine" id="cb14-13" title="13"><span class="ex">gold</span>     1    1988  Canada              Maple Leaf</a></code></pre></div>
 <p>The columns are: metal, weight in ounces, date minted, country of origin, description,</p>
 <ul>
-<li>First, use <code>grep</code> to find all the lines that start with “gold”.</li>
+<li>First, use <code>grep</code> to find all the lines that start with “gold".</li>
 <li>Now, use <code>awk</code> to do the same thing.</li>
-<li>Now, use <code>awk</code> to only print the country of origin for all of the “gold” metals listed (Hint: using <code>$</code> followed by a number, refers to the corresponding word on that line. e.g. <code>$1</code> references the first word of a line, and $2 )</li>
+<li>Now, use <code>awk</code> to only print the country of origin for all of the “gold" metals listed (Hint: using <code>$</code> followed by a number, refers to the corresponding word on that line. e.g. <code>$1</code> references the first word of a line, and $2 )</li>
 <li>Now, use <code>awk</code> to print all of the coins that have been minted before 1980.</li>
 <li>Continue to do the rest of the guided practice with this link, including the practice at the end: <a href="https://en.wikibooks.org/wiki/An_Awk_Primer/Awk_Command-Line_Examples">An Awk Primer/Awk Command-Line Examples</a></li>
 </ul>

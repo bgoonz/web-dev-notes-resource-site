@@ -31,7 +31,7 @@
 <hr />
 <h3 id="setup--teardown">Setup/Teardown</h3>
 <p>For each test, we usually want to render our React tree to a DOM element that's attached to <code>document</code>.
-    This is important so that it can receive DOM events. When the test ends, we want to “clean up” and unmount the tree
+    This is important so that it can receive DOM events. When the test ends, we want to "clean up" and unmount the tree
     from the <code>document</code>.</p>
 <p>A common way to do it is to use a pair of <code>beforeEach</code> and <code>afterEach</code> blocks so that they'll
     always run and isolate the effects of a test to itself:</p>
@@ -50,10 +50,10 @@ afterEach(() =&gt; {
   container.remove();
   container = null;
 });</code></pre>
-<p>You may use a different pattern, but keep in mind that we want to execute the cleanup <em>even if a test fails</em>. Otherwise, tests can become “leaky”, and one test can change the behavior of another test. That makes them difficult to debug.</p>
+<p>You may use a different pattern, but keep in mind that we want to execute the cleanup <em>even if a test fails</em>. Otherwise, tests can become "leaky", and one test can change the behavior of another test. That makes them difficult to debug.</p>
 <hr />
 <h3 id="act"><code>act()</code></h3>
-<p>When writing UI tests, tasks like rendering, user events, or data fetching can be considered as “units” of interaction with a user interface. <code>react-dom/test-utils</code> provides a helper called <a href="/docs/test-utils.html#act"><code>act()</code></a> that makes sure all updates related to these “units” have been processed and applied to the DOM before you make any assertions:</p>
+<p>When writing UI tests, tasks like rendering, user events, or data fetching can be considered as "units" of interaction with a user interface. <code>react-dom/test-utils</code> provides a helper called <a href="/docs/test-utils.html#act"><code>act()</code></a> that makes sure all updates related to these "units" have been processed and applied to the DOM before you make any assertions:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="at">act</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="co">// render components</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="op">}</span>)<span class="op">;</span></a>
@@ -119,7 +119,7 @@ it(&quot;renders with or without a name&quot;, () =&gt; {
 });</code></pre>
 <hr />
 <h3 id="data-fetching">Data Fetching</h3>
-<p>Instead of calling real APIs in all your tests, you can mock requests with dummy data. Mocking data fetching with “fake” data prevents flaky tests due to an unavailable backend, and makes them run faster. Note: you may still want to run a subset of tests using an <a href="/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests">“end-to-end”</a> framework that tells whether the whole app is working together.</p>
+<p>Instead of calling real APIs in all your tests, you can mock requests with dummy data. Mocking data fetching with "fake" data prevents flaky tests due to an unavailable backend, and makes them run faster. Note: you may still want to run a subset of tests using an <a href="/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests">"end-to-end"</a> framework that tells whether the whole app is working together.</p>
 <pre class="jsx"><code>// user.js
 
 import React, { useState, useEffect } from &quot;react&quot;;
@@ -485,7 +485,7 @@ it(&quot;should accept selections&quot;, () =&gt; {
     didn't need to make the component code more convoluted just for testing.</p>
 <hr />
 <h3 id="snapshot-testing">Snapshot Testing</h3>
-<p>Frameworks like Jest also let you save “snapshots” of data with <a href="https://jestjs.io/docs/en/snapshot-testing"><code>toMatchSnapshot</code> / <code>toMatchInlineSnapshot</code></a>. With these, we can “save” the rendered component output and ensure that a change to it has to be explicitly committed as a change to the snapshot.</p>
+<p>Frameworks like Jest also let you save "snapshots" of data with <a href="https://jestjs.io/docs/en/snapshot-testing"><code>toMatchSnapshot</code> / <code>toMatchInlineSnapshot</code></a>. With these, we can "save" the rendered component output and ensure that a change to it has to be explicitly committed as a change to the snapshot.</p>
 <p>In this example, we render a component and format the rendered HTML with the <a href="https://www.npmjs.com/package/pretty"><code>pretty</code></a> package, before saving it as an inline snapshot:</p>
 <pre class="jsx{29-31}"><code>// hello.test.js, again
 

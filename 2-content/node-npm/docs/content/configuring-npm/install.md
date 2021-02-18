@@ -10,15 +10,23 @@ To publish and install packages to and from the public npm registry, you must in
 
 ### Overview
 
-- [Checking your version of npm and Node.js](#checking-your-version-of-npm-and-node-js)
-- [Using a Node version manager to install Node.js and npm](#using-a-node-version-manager-to-install-node-js-and-npm)
-- [Using a Node installer to install Node.js and npm](#using-a-node-installer-to-install-node-js-and-npm)
+* [Description](#description)
+* [Overview](#overview)
+* [Checking your version of npm and Node.js](#checking-your-version-of-npm-and-nodejs)
+* [Using a Node version manager to install Node.js and npm](#using-a-node-version-manager-to-install-nodejs-and-npm)
+  + [OSX or Linux Node version managers](#osx-or-linux-node-version-managers)
+  + [Windows Node version managers](#windows-node-version-managers)
+* [Using a Node installer to install Node.js and npm](#using-a-node-installer-to-install-nodejs-and-npm)
+  + [OS X or Windows Node installers](#os-x-or-windows-node-installers)
+  + [Linux or other operating systems Node installers](#linux-or-other-operating-systems-node-installers)
+  + [Less-common operating systems](#less-common-operating-systems)
 
 ### Checking your version of npm and Node.js
 
 To see if you already have Node.js and npm installed and check the installed version, run the following commands:
 
-```
+``` 
+
 node -v
 npm -v
 ```
@@ -52,15 +60,13 @@ If you're using OS X or Windows, use one of the installers from the [Node.js dow
 
 If you're using Linux or another operating system, use one of the following installers:
 
-- [NodeSource installer](https://github.com/nodesource/distributions) (recommended)
-- One of the installers on the [Node.js download page](https://nodejs.org/en/download/)
+* [NodeSource installer](https://github.com/nodesource/distributions) (recommended)
+* One of the installers on the [Node.js download page](https://nodejs.org/en/download/)
 
 Or see [this page](https://nodejs.org/en/download/package-manager/) to install npm for Linux in the way many Linux developers prefer.
-
 
 #### Less-common operating systems
 
 For more information on installing Node.js on a variety of operating systems, see [this page][pkg-mgr].
-
 
 [pkg-mgr]: https://nodejs.org/en/download/package-manager/

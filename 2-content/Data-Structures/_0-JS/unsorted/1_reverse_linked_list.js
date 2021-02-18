@@ -60,55 +60,55 @@
 // -----------
 // Let's code!
 // -----------
-function reverseLinkedList(linkedList) {
-  // TODO: Implement the reverseLinkedList function!
-  let node = linkedList.head;
-  let first = node;
-  let next,
-    prev = null;
-  while ((next = node.next)) {
-    // next = node.next;
-    node.next = prev;
-    prev = node;
-    node = next;
-  }
-  linkedList.head = node;
-  linkedList.head.next = prev;
-  linkedList.tail = first;
+function reverseLinkedList ( linkedList ) {
+    // TODO: Implement the reverseLinkedList function!
+    let node = linkedList.head;
+    let first = node;
+    let next,
+        prev = null;
+    while ( ( next = node.next ) ) {
+        // next = node.next;
+        node.next = prev;
+        prev = node;
+        node = next;
+    }
+    linkedList.head = node;
+    linkedList.head.next = prev;
+    linkedList.tail = first;
 
-  return linkedList;
+    return linkedList;
 }
 
 // ----------------------------------------
 // Given: Singly Linked List - Do Not Edit!
 // ----------------------------------------
 class Node {
-  constructor(val) {
-    this.value = val;
-    this.next = null;
-  }
+    constructor ( val ) {
+        this.value = val;
+        this.next = null;
+    }
 }
 
 class LinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
-
-  addToTail(val) {
-    const newNode = new Node(val);
-
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      this.tail.next = newNode;
+    constructor () {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
     }
 
-    this.tail = newNode;
-    this.length++;
-    return this;
-  }
+    addToTail ( val ) {
+        const newNode = new Node( val );
+
+        if ( !this.head ) {
+            this.head = newNode;
+        } else {
+            this.tail.next = newNode;
+        }
+
+        this.tail = newNode;
+        this.length++;
+        return this;
+    }
 }
 
 exports.Node = Node;

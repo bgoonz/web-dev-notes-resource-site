@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>;
-<p>You might have heard about features like “Hooks”, “Suspense”, and “Concurrent Rendering” in the previous blog posts
+<p>You might have heard about features like "Hooks", "Suspense", and "Concurrent Rendering" in the previous blog posts
     and talks. In this post, we'll look at how they fit together and the expected timeline for their availability in a
     stable release of React.</p>
 <blockquote>
@@ -43,7 +43,7 @@
     be confusing. Let's look at what these different features mean for your app, how they relate to each other, and when
     you can expect to start learning and using them.</p>
 <h3 id="react-166-shipped-the-one-with-suspense-for-code-splitting"><a href="/blog/2018/10/23/react-v-16-6.html">React 16.6</a> (shipped): The One with Suspense for Code Splitting</h3>
-<p><em>Suspense</em> refers to React's new ability to “suspend” rendering while components are waiting for something,
+<p><em>Suspense</em> refers to React's new ability to "suspend" rendering while components are waiting for something,
     and display a loading indicator. In React 16.6, Suspense supports only one use case: lazy loading components with
     <code>React.lazy()</code> and <code>&lt;React.Suspense&gt;</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// This component is loaded dynamically</span></a>
@@ -96,7 +96,7 @@
     (see the end of <a href="https://github.com/reactjs/rfcs/pull/68#issuecomment-439314884">this comment</a> for
     details). It is possible that the minor release with Hooks might not be React 16.7.</p>
 <p>Hooks represent our vision for the future of React. They solve both problems that React users experience directly
-    (“wrapper hell” of render props and higher-order components, duplication of logic in lifecycle methods), and the
+    ("wrapper hell" of render props and higher-order components, duplication of logic in lifecycle methods), and the
     issues we've encountered optimizing React at scale (such as difficulties in inlining components with a compiler).
     Hooks don't deprecate classes. However, if Hooks are successful, it is possible that in a future <em>major</em>
     release class support might move to a separate package, reducing the default bundle size of React.</p>
@@ -118,7 +118,7 @@
 <blockquote>
 <p>Note</p>
 <p>You might have previously heard Concurrent Mode being referred to as <a
-        href="/blog/2018/03/27/update-on-async-rendering.html">“async mode”</a>. We've changed the name to Concurrent
+        href="/blog/2018/03/27/update-on-async-rendering.html">"async mode"</a>. We've changed the name to Concurrent
     Mode to highlight React's ability to perform work on different priority levels. This sets it apart from other
     approaches to async rendering.</p>
 </blockquote>
@@ -135,7 +135,7 @@
     will likely be unfamiliar at first. Documenting its benefits, how to use it efficiently, and its pitfalls is a high
     priority for us, and will be a prerequisite for calling it stable. Until then, <a
         href="https://www.youtube.com/watch?v=ByBPyMBTzM0">Andrew's talk</a> is the best introduction available.</p>
-<p>Concurrent Mode is <em>much</em> less polished than Hooks. Some APIs aren't properly “wired up” yet and don't do what
+<p>Concurrent Mode is <em>much</em> less polished than Hooks. Some APIs aren't properly "wired up" yet and don't do what
     they're expected to. At the time of writing this post, we don't recommend using it for anything except very early
     experimentation. We don't expect many bugs in Concurrent Mode itself, but note that components that produce warnings
     in <a href="https://reactjs.org/docs/strict-mode.html"><code>&lt;React.StrictMode&gt;</code></a> may not work
@@ -167,10 +167,10 @@
     compatible. For example, at Facebook we mostly intend to use the Concurrent Mode in the more recently developed
     codebases, and keep the legacy ones running in the synchronous mode for the near future.</p>
 <h3 id="react-16x-mid-2019-the-one-with-suspense-for-data-fetching">React 16.x (~mid 2019): The One with Suspense for Data Fetching</h3>
-<p>As mentioned earlier, <em>Suspense</em> refers to React's ability to “suspend” rendering while components are waiting
+<p>As mentioned earlier, <em>Suspense</em> refers to React's ability to "suspend" rendering while components are waiting
     for something, and display a loading indicator. In the already shipped React 16.6, the only supported use case for
     Suspense is code splitting. In this future minor release, we'd like to provide officially supported ways to use it
-    for data fetching too. We'll provide a reference implementation of a basic “React Cache” that's compatible with
+    for data fetching too. We'll provide a reference implementation of a basic "React Cache" that's compatible with
     Suspense, but you can also write your own. Data fetching libraries like Apollo and Relay will be able to integrate
     with Suspense by following a simple specification that we'll document.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// React Cache for simple data fetching (not final API)</span></a>
@@ -234,7 +234,7 @@
     Suspense for Data Fetching becomes officially supported.</p>
 <h2 id="other-projects">Other Projects</h2>
 <h3 id="modernizing-react-dom">Modernizing React DOM</h3>
-<p>We started an investigation into <a href="https://github.com/facebook/react/issues/13525">simplifying and modernizing</a> ReactDOM, with a goal of reduced bundle size and aligning closer with the browser behavior. It is still early to say which specific bullet points will “make it” because the project is in an exploratory phase. We will communicate our progress on that issue.</p>
+<p>We started an investigation into <a href="https://github.com/facebook/react/issues/13525">simplifying and modernizing</a> ReactDOM, with a goal of reduced bundle size and aligning closer with the browser behavior. It is still early to say which specific bullet points will "make it" because the project is in an exploratory phase. We will communicate our progress on that issue.</p>
 <h3 id="suspense-for-server-rendering">Suspense for Server Rendering</h3>
 <p>We started designing a new server renderer that supports Suspense (including waiting for asynchronous data on the
     server without double rendering) and progressively loading and hydrating page content in chunks for best user

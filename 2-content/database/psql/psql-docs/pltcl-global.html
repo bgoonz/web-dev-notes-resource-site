@@ -10,7 +10,7 @@
      role in a separate Tcl interpreter for that role.  This prevents
      accidental or malicious interference by one user with the behavior of
      another user's PL/Tcl functions.  Each such interpreter will have its own
-     values for any <span class="quote">“<span class="quote">global</span>”</span> Tcl variables.  Thus, two PL/Tcl
+     values for any <span class="quote">"<span class="quote">global</span>"</span> Tcl variables.  Thus, two PL/Tcl
      functions will share the same global variables if and only if they are
      executed by the same SQL role.  In an application wherein a single
      session executes code under multiple SQL roles (via <code class="literal">SECURITY

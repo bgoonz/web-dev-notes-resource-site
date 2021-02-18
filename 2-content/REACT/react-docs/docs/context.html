@@ -29,7 +29,7 @@
 <li><a href="#legacy-api">Legacy API</a></li>
 </ul>
 <h2 id="when-to-use-context">When to Use Context</h2>
-<p>Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a “theme” prop in order to style the Button component:</p>
+<p>Context is designed to share data that can be considered "global" for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a "theme" prop in order to style the Button component:</p>
 <p><code>embed:context/motivation-problem.js</code></p>
 <p>Using context, we can avoid passing props through intermediate elements:</p>
 <p><code>embed:context/motivation-solution.js</code></p>
@@ -79,7 +79,7 @@
     choice in every case: moving more complexity higher in the tree makes those higher-level components more complicated
     and forces the lower-level components to be more flexible than you may want.</p>
 <p>You're not limited to a single child for a component. You may pass multiple children, or even have multiple separate
-    “slots” for children, <a href="/docs/composition-vs-inheritance.html#containment">as documented here</a>:</p>
+    "slots" for children, <a href="/docs/composition-vs-inheritance.html#containment">as documented here</a>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">Page</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="kw">const</span> user <span class="op">=</span> <span class="va">props</span>.<span class="at">user</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="kw">const</span> content <span class="op">=</span> <span class="op">&lt;</span>Feed user<span class="op">={</span>user<span class="op">}</span> /&gt;<span class="op">;</span></a>
@@ -98,7 +98,7 @@
 <a class="sourceLine" id="cb3-16" title="16">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-17" title="17"><span class="op">}</span></a></code></pre></div>
 <p>This pattern is sufficient for many cases when you need to decouple a child from its immediate parents. You can take it even further with <a href="/docs/render-props.html">render props</a> if the child needs to communicate with the parent before rendering.</p>
-<p>However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you “broadcast” such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.</p>
+<p>However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you "broadcast" such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.</p>
 <h2 id="api">API</h2>
 <h3 id="reactcreatecontext"><code>React.createContext</code></h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">const</span> MyContext <span class="op">=</span> <span class="va">React</span>.<span class="at">createContext</span>(defaultValue)<span class="op">;</span></a></code></pre></div>
@@ -160,7 +160,7 @@
 <p>Requires a <a href="/docs/render-props.html#using-props-other-than-render">function as a child</a>. The function receives the current context value and returns a React node. The <code>value</code> argument passed to the function will be equal to the <code>value</code> prop of the closest Provider for this context above in the tree. If there is no Provider for this context above, the <code>value</code> argument will be equal to the <code>defaultValue</code> that was passed to <code>createContext()</code>.</p>
 <blockquote>
 <p>Note</p>
-<p>For more information about the ‘function as a child' pattern, see <a href="/docs/render-props.html">render props</a>.
+<p>For more information about the 'function as a child' pattern, see <a href="/docs/render-props.html">render props</a>.
 </p>
 </blockquote>
 <h3 id="contextdisplayname"><code>Context.displayName</code></h3>

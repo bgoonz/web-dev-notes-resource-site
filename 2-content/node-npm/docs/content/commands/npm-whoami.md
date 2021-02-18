@@ -6,7 +6,7 @@ description: Display npm username
 
 ### Synopsis
 
-```bash
+``` bash
 npm whoami [--registry <registry>]
 ```
 

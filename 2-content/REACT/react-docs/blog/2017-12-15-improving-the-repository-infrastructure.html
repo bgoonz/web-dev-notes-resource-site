@@ -40,7 +40,7 @@
     located in the source tree. Every time you run <code>yarn</code>, in addition to installing your dependencies it
     also sets up the symlinks that point from your project's <code>node_modules</code> to the source folders of your
     packages.</p>
-<p>Thanks to Workspaces, absolute imports between our own packages (such as importing <code>react</code> from <code>react-dom</code>) “just work” with any tools that support the Node resolution mechanism. The only problem we encountered was Jest not running the transforms inside the linked packages, but we <a href="https://github.com/facebook/jest/pull/4761">found a fix</a>, and it was merged into Jest.</p>
+<p>Thanks to Workspaces, absolute imports between our own packages (such as importing <code>react</code> from <code>react-dom</code>) "just work" with any tools that support the Node resolution mechanism. The only problem we encountered was Jest not running the transforms inside the linked packages, but we <a href="https://github.com/facebook/jest/pull/4761">found a fix</a>, and it was merged into Jest.</p>
 <p>To enable Yarn Workspaces, we added <code>"workspaces": ["packages/*"]</code> to our <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/package.json#L4-L6"><code>package.json</code></a>, and moved all the code into <a href="https://github.com/facebook/react/tree/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages">top-level <code>packages/*</code> folders</a>, each with its own <code>package.json</code> file.</p>
 <p>Each package is structured in a similar way. For every public API entry point such as <code>react-dom</code> or <code>react-dom/server</code>, there is a <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages/react-dom/index.js">file</a> in the package root folder that re-exports the implementation from the <a href="https://github.com/facebook/react/tree/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages/react-dom/src"><code>/src/</code></a> subfolder. The decision to point entry points to the source rather than to the built versions was intentional. Typically, we re-run a subset of tests after every change during development. Having to build the project to run a test would have been prohibitively slow. When we publish packages to npm, we replace these entry points with files in the <a href="https://github.com/facebook/react/tree/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages/react-dom/npm"><code>/npm/</code></a> folder that point to the build artifacts.</p>
 <p>Not all packages have to be published on npm. For example, we keep some utilities that are tiny enough and can be
@@ -53,7 +53,7 @@
     <code>shared/</code> in the build artifacts. So you can use Yarn Workspaces even if you don't plan to publish actual
     npm packages!</p>
 <h3 id="removing-the-custom-module-system">Removing the Custom Module System</h3>
-<p>In the past, we used a non-standard module system called “Haste” that lets you import any file from any other file by its unique <code>@providesModule</code> directive no matter where it is in the tree. It neatly avoids the problem of deep relative imports with paths like <code>../../../../</code> and is great for the product code. However, this makes it hard to understand the dependencies between packages. We also had to resort to hacks to make it work with different tools.</p>
+<p>In the past, we used a non-standard module system called "Haste" that lets you import any file from any other file by its unique <code>@providesModule</code> directive no matter where it is in the tree. It neatly avoids the problem of deep relative imports with paths like <code>../../../../</code> and is great for the product code. However, this makes it hard to understand the dependencies between packages. We also had to resort to hacks to make it work with different tools.</p>
 <p>We decided to <a href="https://github.com/facebook/react/pull/11303">remove Haste</a> and use the Node resolution with relative imports instead. To avoid the problem of deep relative paths, we have <a href="https://github.com/facebook/react/pull/11304">flattened our repository structure</a> so that it goes at most one level deep inside each package:</p>
 <pre><code>|-react
 |  |-npm
@@ -68,7 +68,7 @@
 <p>This way, the relative paths can only contain one <code>./</code> or <code>../</code> followed by the filename. If one package needs to import something from another package, it can do so with an absolute import from a top-level entry point.</p>
 <p>In practice, we still have <a
         href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages/react-dom/src/client/ReactDOMFiberComponent.js#L10-L11">some
-        cross-package “internal” imports</a> that violate this principle, but they're explicit, and we plan to gradually
+        cross-package "internal" imports</a> that violate this principle, but they're explicit, and we plan to gradually
     get rid of them.</p>
 <h2 id="compiling-flat-bundles">Compiling Flat Bundles</h2>
 <p>Historically, React was distributed in two different formats: as a single-file build that you can add as a <code>&lt;script&gt;</code> tag in the browser, and as a collection of CommonJS modules that you can bundle with a tool like webpack or Browserify.</p>
@@ -76,7 +76,7 @@
 <p>However, this approach had multiple disadvantages:</p>
 <ul>
 <li><strong>It was inconsistent.</strong> Different tools produce bundles of different sizes for identical code importing React, with the difference going as far as 30 kB (before gzip).</li>
-<li><strong>It was inefficient for bundler users.</strong> The code produced by most bundlers today contains a lot of “glue code” at the module boundaries. It keeps the modules isolated from each other, but increases the parse time, the bundle size, and the build time.</li>
+<li><strong>It was inefficient for bundler users.</strong> The code produced by most bundlers today contains a lot of "glue code" at the module boundaries. It keeps the modules isolated from each other, but increases the parse time, the bundle size, and the build time.</li>
 <li><strong>It was inefficient for Node users.</strong> When running in Node, performing
     <code>process.env.NODE_ENV</code> checks before development-only code incurs the overhead of actually looking up
     environment variables. This slowed down React server rendering. We couldn't cache it in a variable either because it
@@ -95,7 +95,7 @@
 <a class="sourceLine" id="cb2-5" title="5"><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-6" title="6">  <span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./cjs/react.development.js&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="op">}</span></a></code></pre></div>
-<p>In every package provided by React, the <a href="https://unpkg.com/react@16/cjs/"><code>cjs</code> folder</a> (short for “CommonJS”) contains a development and a production pre-built bundle for each entry point.</p>
+<p>In every package provided by React, the <a href="https://unpkg.com/react@16/cjs/"><code>cjs</code> folder</a> (short for "CommonJS") contains a development and a production pre-built bundle for each entry point.</p>
 <p>For example, <a href="https://unpkg.com/react@16/cjs/react.development.js"><code>react.development.js</code></a> is the version intended for development. It is readable and includes comments. On the other hand, <a href="https://unpkg.com/react@16/cjs/react.production.min.js"><code>react.production.min.js</code></a> was minified and optimized before it was published to npm.</p>
 <p>Note how this is essentially the same strategy that we've been using for the single-file browser builds (which now
     reside in the <a href="https://unpkg.com/react@16/umd/"><code>umd</code> directory</a>, short for <a
@@ -116,13 +116,13 @@
     <em>libraries</em> like React that can be pre-built and then integrated into apps.</p>
 <p>You can find our Rollup build configuration <a href="https://github.com/facebook/react/blob/8ec146c38ee4f4c84b6ecf59f52de3371224e8bd/scripts/rollup/build.js#L336-L362">here</a>, with a <a href="https://github.com/facebook/react/blob/8ec146c38ee4f4c84b6ecf59f52de3371224e8bd/scripts/rollup/build.js#L196-L273">list of plugins we currently use</a>.</p>
 <h3 id="migrating-to-google-closure-compiler">Migrating to Google Closure Compiler</h3>
-<p>After migrating to flat bundles, we <a href="https://github.com/facebook/react/pull/10236">started</a> using <a href="https://github.com/google/closure-compiler-js">the JavaScript version of the Google Closure Compiler</a> in its “simple” mode. In our experience, even with the advanced optimizations disabled, it still provided a significant advantage over Uglify, as it was able to better eliminate dead code and automatically inline small functions when appropriate.</p>
+<p>After migrating to flat bundles, we <a href="https://github.com/facebook/react/pull/10236">started</a> using <a href="https://github.com/google/closure-compiler-js">the JavaScript version of the Google Closure Compiler</a> in its "simple" mode. In our experience, even with the advanced optimizations disabled, it still provided a significant advantage over Uglify, as it was able to better eliminate dead code and automatically inline small functions when appropriate.</p>
 <p>At first, we could only use Google Closure Compiler for the React bundles we shipped in the open source. At Facebook, we still needed the checked-in bundles to be unminified so we could symbolicate React production crashes with our error reporting tools. We ended up contributing <a href="https://github.com/google/closure-compiler/pull/2707">a flag</a> that completely disables the renaming compiler pass. This lets us apply other optimizations like function inlining, but keep the code fully readable for the Facebook-specific builds of React. To improve the output readability, we <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/scripts/rollup/build.js#L249-L250">also format that custom build using Prettier</a>. Interestingly, running Prettier on production bundles while debugging the build process is a great way to find unnecessary code in the bundles!</p>
 <p>Currently, all production React bundles <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/scripts/rollup/build.js#L235-L248">run through Google Closure Compiler in simple mode</a>, and we may look into enabling advanced optimizations in the future.</p>
 <h3 id="protecting-against-weak-dead-code-elimination">Protecting Against Weak Dead Code Elimination</h3>
 <p>While we use an efficient <a href="https://en.wikipedia.org/wiki/Dead_code_elimination">dead code elimination</a>
     solution in React itself, we can't make a lot of assumptions about the tools used by the React consumers.</p>
-<p>Typically, when you <a href="/docs/optimizing-performance.html#use-the-production-build">configure a bundler for production</a>, you need to tell it to substitute <code>process.env.NODE_ENV</code> with the <code>"production"</code> string literal. This process is sometimes called “envification”. Consider this code:</p>
+<p>Typically, when you <a href="/docs/optimizing-performance.html#use-the-production-build">configure a bundler for production</a>, you need to tell it to substitute <code>process.env.NODE_ENV</code> with the <code>"production"</code> string literal. This process is sometimes called "envification". Consider this code:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="cf">if</span> (<span class="va">process</span>.<span class="va">env</span>.<span class="at">NODE_ENV</span> <span class="op">!==</span> <span class="st">&quot;production&quot;</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="co">// development-only code</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -280,8 +280,8 @@
     For example, the <a href="/blog/2017/09/08/dom-attributes-in-react-16.html">DOM attribute handling in React 16</a>
     was very hard to pull off with confidence at first. We kept discovering different edge cases, and almost gave up on
     doing it in time for the React 16 release. However, then we've built an <a
-        href="https://github.com/facebook/react/tree/d906de7f602df810c38aa622c83023228b047db6/fixtures/attribute-behavior">“attribute
-        table” fixture</a> that renders all supported attributes and their misspellings with previous and next version
+        href="https://github.com/facebook/react/tree/d906de7f602df810c38aa622c83023228b047db6/fixtures/attribute-behavior">"attribute
+        table" fixture</a> that renders all supported attributes and their misspellings with previous and next version
     of React, and displays the differences. It took a few iterations (the key insight was to group attributes with
     similar behavior together) but it ultimately allowed us to fix all major issues in just a few days.</p>
 <p><br></p>
@@ -335,7 +335,7 @@ We went through the table to vet the new behavior for every case (and discovered
     React DOM bundles shouldn't even attempt to import the React Native redbox helpers. It is also unfortunate to bundle
     the code that never gets used in a particular environment.</p>
 <p>Another solution is to use dynamic dependency injection. However, it often produces code that is hard to understand, and may cause cyclical dependencies. It also defies some optimization opportunities.</p>
-<p>From the code point of view, ideally we just want to “redirect” a module to its different “forks” for specific bundles. The “forks” have the exact same API as the original modules, but do something different. We found this mental model very intuitive, and <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/scripts/rollup/forks.js">created a fork configuration file</a> that specifies how the original modules map to their forks, and the conditions under which this should happen.</p>
+<p>From the code point of view, ideally we just want to "redirect" a module to its different "forks" for specific bundles. The "forks" have the exact same API as the original modules, but do something different. We found this mental model very intuitive, and <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/scripts/rollup/forks.js">created a fork configuration file</a> that specifies how the original modules map to their forks, and the conditions under which this should happen.</p>
 <p>For example, this fork config entry specifies different <a href="https://github.com/facebook/react/blob/cc52e06b490e0dc2482b345aa5d0d65fae931095/packages/shared/ReactFeatureFlags.js">feature flags</a> for different bundles:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="st">&#39;shared/ReactFeatureFlags&#39;</span><span class="op">:</span> (bundleType<span class="op">,</span> entry) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="cf">switch</span> (entry) <span class="op">{</span></a>

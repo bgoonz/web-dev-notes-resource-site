@@ -14,7 +14,7 @@
        For a fixed-size type, <code class="structfield">typlen</code> is the number
        of bytes in the internal representation of the type.  But for a
        variable-length type, <code class="structfield">typlen</code> is negative.
-       -1 indicates a <span class="quote">“<span class="quote">varlena</span>”</span> type (one that has a length word),
+       -1 indicates a <span class="quote">"<span class="quote">varlena</span>"</span> type (one that has a length word),
        -2 indicates a null-terminated C string.
       </td></tr><tr><td><code class="structfield">typbyval</code></td><td><code class="type">bool</code></td><td> </td><td>
        <code class="structfield">typbyval</code> determines whether internal
@@ -38,7 +38,7 @@
       </td></tr><tr><td><code class="structfield">typcategory</code></td><td><code class="type">char</code></td><td> </td><td>
        <code class="structfield">typcategory</code> is an arbitrary classification
        of data types that is used by the parser to determine which implicit
-       casts should be <span class="quote">“<span class="quote">preferred</span>”</span>.
+       casts should be <span class="quote">"<span class="quote">preferred</span>"</span>.
        See <a class="xref" href="catalog-pg-type.html#CATALOG-TYPCATEGORY-TABLE" title="Table 51.64. typcategory Codes">Table 51.64</a>.
       </td></tr><tr><td><code class="structfield">typispreferred</code></td><td><code class="type">bool</code></td><td> </td><td>
        True if the type is a preferred cast target within its
@@ -66,7 +66,7 @@
        identifies another row in <code class="structname">pg_type</code>.
        The current type can then be subscripted like an array yielding
        values of type <code class="structfield">typelem</code>.  A
-       <span class="quote">“<span class="quote">true</span>”</span> array type is variable length
+       <span class="quote">"<span class="quote">true</span>"</span> array type is variable length
        (<code class="structfield">typlen</code> = -1),
        but some fixed-length (<code class="structfield">typlen</code> &gt; 0) types
        also have nonzero <code class="structfield">typelem</code>, for example
@@ -79,7 +79,7 @@
       </td></tr><tr><td><code class="structfield">typarray</code></td><td><code class="type">oid</code></td><td><code class="literal"><a class="link" href="catalog-pg-type.html" title="51.63. pg_type"><code class="structname">pg_type</code></a>.oid</code></td><td>
        If <code class="structfield">typarray</code> is not 0 then it
        identifies another row in <code class="structname">pg_type</code>, which
-       is the <span class="quote">“<span class="quote">true</span>”</span> array type having this type as element
+       is the <span class="quote">"<span class="quote">true</span>"</span> array type having this type as element
       </td></tr><tr><td><code class="structfield">typinput</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Input conversion function (text format)</td></tr><tr><td><code class="structfield">typoutput</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Output conversion function (text format)</td></tr><tr><td><code class="structfield">typreceive</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Input conversion function (binary format), or 0 if none</td></tr><tr><td><code class="structfield">typsend</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Output conversion function (binary format), or 0 if none</td></tr><tr><td><code class="structfield">typmodin</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Type modifier input function, or 0 if type does not support modifiers</td></tr><tr><td><code class="structfield">typmodout</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Type modifier output function, or 0 to use the standard format</td></tr><tr><td><code class="structfield">typanalyze</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Custom <code class="command">ANALYZE</code> function, or 0 to use the standard function</td></tr><tr><td><code class="structfield">typalign</code></td><td><code class="type">char</code></td><td> </td><td><p>
 
        <code class="structfield">typalign</code> is the alignment required
@@ -108,10 +108,10 @@
        for attributes of this type should be.
        Possible values are
        </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">p</code>: Value must always be stored plain.</p></li><li class="listitem"><p>
-          <code class="literal">e</code>: Value can be stored in a <span class="quote">“<span class="quote">secondary</span>”</span>
+          <code class="literal">e</code>: Value can be stored in a <span class="quote">"<span class="quote">secondary</span>"</span>
           relation (if relation has one, see
           <code class="literal">pg_class.reltoastrelid</code>).
-         </p></li><li class="listitem"><p><code class="literal">m</code>: Value can be stored compressed inline.</p></li><li class="listitem"><p><code class="literal">x</code>: Value can be stored compressed inline or stored in <span class="quote">“<span class="quote">secondary</span>”</span> storage.</p></li></ul></div><p>
+         </p></li><li class="listitem"><p><code class="literal">m</code>: Value can be stored compressed inline.</p></li><li class="listitem"><p><code class="literal">x</code>: Value can be stored compressed inline or stored in <span class="quote">"<span class="quote">secondary</span>"</span> storage.</p></li></ul></div><p>
        Note that <code class="literal">m</code> columns can also be moved out to secondary
        storage, but only as a last resort (<code class="literal">e</code> and <code class="literal">x</code> columns are
        moved first).

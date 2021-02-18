@@ -21,7 +21,10 @@
 <li>[YUI]: (2006) A full framework that provided dynamic loading of scripts, events, visual components, data binding, and a philosophy on how to build client-side applications.</li>
 <li>[Knockout]: (2010) This is a standalone JavaScript implementation of the [Model-View-ViewModel] pattern used to build very fast dynamic components for client-side applications. It is the progenitor of many other libraries, include React.</li>
 <li>[AngularJS]: (2011) This framework from Google built on the success of Knockout and introduced a full set of utilities and philosophies to build modular client-side applications. (The current version has been branded [Angular].) In the rewrite of Angular to make the idea of a component a first-order concept, many developers left and joined the React community.</li>
-<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your front-end application in Elm. Then, you “compile” it. The Elm “compiler” translates all of the source code written in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that your front-end code will have “no runtime exceptions” which is a bold (and mostly true) claim.</li>
+<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your
+    front-end application in Elm. Then, you "compile" it. The Elm "compiler" translates all of the source code written
+    in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that
+    your front-end code will have "no runtime exceptions" which is a bold (and mostly true) claim.</li>
 </ul>
 <h2 id="react-2013">React (2013)</h2>
 <p>In an effort to make its own Web front-end more maintainable, Facebook decided to build its own JavaScript-based library to create fast and functional front-end Web applications. Thus, React was born.</p>
@@ -58,12 +61,15 @@ fetch(&#39;https://example.com/api/people&#39;)
     const props = { people };
     ReactDOM.render(&lt;PeopleList props={props}/&gt;, peopleListElement);
   });</code></pre>
-<p>In this “simple” example, you may think, “Well, that’s like twice the code! Why would I do that?” Great question! When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into their own files and <em>organize</em> the code so you know where everything is.</p>
+<p>In this "simple" example, you may think, "Well, that’s like twice the code! Why would I do that?" Great question!
+    When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to
+    manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into
+    their own files and <em>organize</em> the code so you know where everything is.</p>
 <h2 id="using-tools-with-react">Using tools with React</h2>
 <p>Oh, and the tools! Because software developers constantly look for ways to make things easier, the tools that have grown up around React are amazing. You’ll install React DevTools, a new tab in the Developer Tools that lets you see how React actually works in the browser, much like the <em>Elements</em> tab does for just HTML elements.</p>
 <p>[React DevTools]</p>
 <p>There is <code>create-react-app</code>, an extensible command-line tool that helps you generate standard React applications. We’ll show you how to use it with custom templates, too, to help remove some of the over-engineered stuff that comes with the standard template.</p>
-<p>Because browsers only understand JavaScript and not JSX, there is an extra “build step” involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called [Webpack]. Later this week, you’ll get into some of the details about how that works.</p>
+<p>Because browsers only understand JavaScript and not JSX, there is an extra "build step" involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called [Webpack]. Later this week, you’ll get into some of the details about how that works.</p>
 <p>[Webpack.js]</p>
 <p>A really popular feature of modern React development is the concept of <em>hot module replacement</em> (HMR). When you make changes to your source code, right now, you must refresh your browser to see the changes. HMR sense what has changed and send the change to the browser without you having to refresh it. The changes are delivered in <em>real-time</em>, updating the UI for you as you make changes to the source code. It is almost magic what happens.</p>
 <p>After using React on their own massively complex Web interface, React developers decided they did need to have an opinion about how to architect the state of their application, that is, how to allow discretely different parts of their Web page to consume and modify data received from back-end APIs. This introduced the <em>Flux architecture</em> which you will learn about next week.</p>

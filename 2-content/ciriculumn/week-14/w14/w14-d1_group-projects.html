@@ -14,7 +14,10 @@
 <li>[YUI]: (2006) A full framework that provided dynamic loading of scripts, events, visual components, data binding, and a philosophy on how to build client-side applications.</li>
 <li>[Knockout]: (2010) This is a standalone JavaScript implementation of the [Model-View-ViewModel] pattern used to build very fast dynamic components for client-side applications. It is the progenitor of many other libraries, include React.</li>
 <li>[AngularJS]: (2011) This framework from Google built on the success of Knockout and introduced a full set of utilities and philosophies to build modular client-side applications. (The current version has been branded [Angular].) In the rewrite of Angular to make the idea of a component a first-order concept, many developers left and joined the React community.</li>
-<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your front-end application in Elm. Then, you “compile” it. The Elm “compiler” translates all of the source code written in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that your front-end code will have “no runtime exceptions” which is a bold (and mostly true) claim.</li>
+<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your
+    front-end application in Elm. Then, you "compile" it. The Elm "compiler" translates all of the source code written
+    in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that
+    your front-end code will have "no runtime exceptions" which is a bold (and mostly true) claim.</li>
 </ul>
 <h2 id="react-2013">React (2013)</h2>
 <p>In an effort to make its own Web front-end more maintainable, Facebook decided to build its own JavaScript-based library to create fast and functional front-end Web applications. Thus, React was born.</p>
@@ -51,12 +54,15 @@ fetch(&#39;https://example.com/api/people&#39;)
     const props = { people };
     ReactDOM.render(&lt;PeopleList props={props}/&gt;, peopleListElement);
   });</code></pre>
-<p>In this “simple” example, you may think, “Well, that’s like twice the code! Why would I do that?” Great question! When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into their own files and <em>organize</em> the code so you know where everything is.</p>
+<p>In this "simple" example, you may think, "Well, that’s like twice the code! Why would I do that?" Great question!
+    When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to
+    manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into
+    their own files and <em>organize</em> the code so you know where everything is.</p>
 <h2 id="using-tools-with-react">Using tools with React</h2>
 <p>Oh, and the tools! Because software developers constantly look for ways to make things easier, the tools that have grown up around React are amazing. You’ll install React DevTools, a new tab in the Developer Tools that lets you see how React actually works in the browser, much like the <em>Elements</em> tab does for just HTML elements.</p>
 <p>[React DevTools]</p>
 <p>There is <code>create-react-app</code>, an extensible command-line tool that helps you generate standard React applications. We’ll show you how to use it with custom templates, too, to help remove some of the over-engineered stuff that comes with the standard template.</p>
-<p>Because browsers only understand JavaScript and not JSX, there is an extra “build step” involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called [Webpack]. Later this week, you’ll get into some of the details about how that works.</p>
+<p>Because browsers only understand JavaScript and not JSX, there is an extra "build step" involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called [Webpack]. Later this week, you’ll get into some of the details about how that works.</p>
 <p>[Webpack.js]</p>
 <p>A really popular feature of modern React development is the concept of <em>hot module replacement</em> (HMR). When you make changes to your source code, right now, you must refresh your browser to see the changes. HMR sense what has changed and send the change to the browser without you having to refresh it. The changes are delivered in <em>real-time</em>, updating the UI for you as you make changes to the source code. It is almost magic what happens.</p>
 <p>After using React on their own massively complex Web interface, React developers decided they did need to have an opinion about how to architect the state of their application, that is, how to allow discretely different parts of their Web page to consume and modify data received from back-end APIs. This introduced the <em>Flux architecture</em> which you will learn about next week.</p>
@@ -70,7 +76,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <h2 id="modularity">Modularity</h2>
 <p>Unlike the mess of code that you can create with event listeners and template strings in your JavaScript code to manipulate the DOM by adding, updating, and removing elements from it, React provides modularity from the ground up. If you see modularity, understanding where code is that’s running, then React is for you.</p>
 <h2 id="easy-to-start">Easy to start</h2>
-<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the <code>createElement</code> method that React provides to define reusable “components” for what appears in the browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
+<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the <code>createElement</code> method that React provides to define reusable "components" for what appears in the browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
 <p>For more complex applications, there are may tools available to you to get a fully-functioning React application running from a single command on the command line, tools such as <em>Create React App</em>. This handy tools will create a full React application with live reload, testing, and support for things like advanced CSS manipulation.</p>
 <h2 id="declarative-programming">Declarative programming</h2>
 <p>In the same way that you use HTML to <em>declare</em> what the user interface should look like, React provides the same mechanism in its element-based programming API, either through the <code>createElement</code> method or the higher-level language known as JSX.</p>
@@ -78,7 +84,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <p>React encourages you to think in terms of reusability as you construct the user interface from elements and components that you create. It works best when you think of the page as pieces of UI working in harmony with one another. When you make a list or a button or a product card, you can then reuse those components to show different data that your UI demands to show.</p>
 <h2 id="one-flow-of-data">One-flow of data</h2>
 <p>React applications are built as a combination of parent and child components. As the names suggest, each child component has a parent and a parent component will have one or more child components. Components receive data via an argument traditionally named <code>props</code>. Parent components can decide the data that its children should show by passing only a subset of what it has to its children. Data is never passed up from the child to the parent. Because you always know which way data flows, you can more easily debug your application to determine where the data display or event handling code is.</p>
-<h2 id="the-virtual-dom">The “virtual DOM”</h2>
+<h2 id="the-virtual-dom">The "virtual DOM"</h2>
 <p>You may have come to the conclusion that writing things like</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">el</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="vs">  &lt;table&gt;</span></a>
@@ -99,7 +105,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <li>React follows the declarative programming style</li>
 <li>React encourages reusability in your code</li>
 <li>React has one way that data flows, which makes it much easier to reason about the code</li>
-<li>React uses a “virtual DOM” to make changes to the real DOM very fast and efficient</li>
+<li>React uses a "virtual DOM" to make changes to the real DOM very fast and efficient</li>
 </ul>
 <hr />
 <h1 id="intro-to-es6-modules">Intro to ES6 Modules</h1>
@@ -268,7 +274,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <p>Follow the guidelines below to use an HTTP server and import JavaScript files with ES6 module syntax:</p>
 <ol type="1">
 <li>Create a folder with an <code>index.html</code> file. Fill in the file with the contents below. Note the use of the <code>type="module"</code> attribute in the <code>&lt;script&gt;</code> tag. You must include the <code>.js</code> file extension in the name of the module (<code>./program.js</code>). The browser needs to know the entire name of the JavaScript file it will be loading from a server. <code>html  &lt;html&gt;  &lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;    &lt;title&gt;Browser&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;button id="button"&gt;Start Game&lt;/button&gt;    &lt;div id="message"&gt;&lt;/div&gt;    &lt;script type="module" src="./program.js"&gt;&lt;/script&gt;  &lt;/body&gt;  &lt;/html&gt;</code></li>
-<li><p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() { this.gameStartMessage = “Hello! Do you want to play a game?”; }</p>
+<li><p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() { this.gameStartMessage = "Hello! Do you want to play a game?"; }</p>
 start() { document .getElementById(‘button’) .addEventListener(‘click’, () =&gt; { const messageContainer = document.getElementById(‘message’); messageContainer.innerText = this.gameStartMessage; }); } } ```</li>
 <li><p>Create a <code>program.js</code> file with the contents below: ```js import { Game } from ‘./game.js’;</p>
 window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game(); game.start(); }); ```</li>

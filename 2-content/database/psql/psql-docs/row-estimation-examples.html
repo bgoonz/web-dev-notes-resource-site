@@ -75,7 +75,7 @@ WHERE tablename='tenk1' AND attname='unique1';
  {0,993,1997,3050,4040,5036,5957,7057,8029,9016,9995}
 </pre><p>
 
-   Next the fraction of the histogram occupied by <span class="quote">“<span class="quote">&lt; 1000</span>”</span>
+   Next the fraction of the histogram occupied by <span class="quote">"<span class="quote">&lt; 1000</span>"</span>
    is worked out. This is the selectivity. The histogram divides the range
    into equal frequency buckets, so all we have to do is locate the bucket
    that our value is in and count <span class="emphasis"><em>part</em></span> of it and
@@ -198,7 +198,7 @@ rows = 10000 * 0.0014559
    population represented by the MCVs</em></span>.  We do things this way because
    it allows more precise estimation.  In this situation
    <code class="function">scalarltsel</code> directly applies the condition (e.g.,
-   <span class="quote">“<span class="quote">&lt; 1000</span>”</span>) to each value of the MCV list, and adds up the
+   <span class="quote">"<span class="quote">&lt; 1000</span>"</span>) to each value of the MCV list, and adds up the
    frequencies of the MCVs for which the condition is true.  This gives
    an exact estimate of the selectivity within the portion of the table
    that is MCVs.  The histogram is then used in the same way as above

@@ -63,8 +63,8 @@ function Example() {
 <a class="sourceLine" id="cb4-2" title="2">  <span class="co">// You can use Hooks here!</span></a>
 <a class="sourceLine" id="cb4-3" title="3">  <span class="cf">return</span> <span class="op">&lt;</span>div /<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="op">}</span></a></code></pre></div>
-<p>You might have previously known these as “stateless components”. We're now introducing the ability to use React state
-    from these, so we prefer the name “function components”.</p>
+<p>You might have previously known these as "stateless components". We're now introducing the ability to use React state
+    from these, so we prefer the name "function components".</p>
 <p>Hooks <strong>don't</strong> work inside classes. But you can use them instead of writing classes.</p>
 <h2 id="whats-a-hook">What's a Hook?</h2>
 <p>Our new example starts by importing the <code>useState</code> Hook from React:</p>
@@ -73,7 +73,7 @@ function Example() {
 function Example() {
   // ...
 }</code></pre>
-<p><strong>What is a Hook?</strong> A Hook is a special function that lets you “hook into” React features. For example,
+<p><strong>What is a Hook?</strong> A Hook is a special function that lets you "hook into" React features. For example,
     <code>useState</code> is a Hook that lets you add React state to function components. We'll learn other Hooks later.
 </p>
 <p><strong>When would I use a Hook?</strong> If you write a function component and realize you need to add some state to
@@ -100,7 +100,7 @@ function Example() {
 function Example() {
   // Declare a new state variable, which we&#39;ll call &quot;count&quot;
   const [count, setCount] = useState(0);</code></pre>
-<p><strong>What does calling <code>useState</code> do?</strong> It declares a “state variable”. Our variable is called <code>count</code> but we could call it anything else, like <code>banana</code>. This is a way to “preserve” some values between the function calls — <code>useState</code> is a new way to use the exact same capabilities that <code>this.state</code> provides in a class. Normally, variables “disappear” when the function exits but state variables are preserved by React.</p>
+<p><strong>What does calling <code>useState</code> do?</strong> It declares a "state variable". Our variable is called <code>count</code> but we could call it anything else, like <code>banana</code>. This is a way to "preserve" some values between the function calls — <code>useState</code> is a new way to use the exact same capabilities that <code>this.state</code> provides in a class. Normally, variables "disappear" when the function exits but state variables are preserved by React.</p>
 <p><strong>What do we pass to <code>useState</code> as an argument?</strong> The only argument to the
     <code>useState()</code> Hook is the initial state. Unlike with classes, the state doesn't have to be an object. We
     can keep a number or a string if that's all we need. In our example, we just want a number for how many times the
@@ -121,8 +121,8 @@ function Example() {
 <blockquote>
 <p>Note</p>
 <p>You might be wondering: why is <code>useState</code> not named <code>createState</code> instead?</p>
-<p>“Create” wouldn't be quite accurate because the state is only created the first time our component renders. During
-    the next renders, <code>useState</code> gives us the current state. Otherwise it wouldn't be “state” at all! There's
+<p>"Create" wouldn't be quite accurate because the state is only created the first time our component renders. During
+    the next renders, <code>useState</code> gives us the current state. Otherwise it wouldn't be "state" at all! There's
     also a reason why Hook names <em>always</em> start with <code>use</code>. We'll learn why later in the <a
         href="/docs/hooks-rules.html">Rules of Hooks</a>.</p>
 </blockquote>
@@ -171,7 +171,7 @@ function Example() {
 <li><strong>Line 9:</strong> When the user clicks, we call <code>setCount</code> with a new value. React will then re-render the <code>Example</code> component, passing the new <code>count</code> value to it.</li>
 </ul>
 <p>This might seem like a lot to take in at first. Don't rush it! If you're lost in the explanation, look at the code
-    above again and try to read it from top to bottom. We promise that once you try to “forget” how state works in
+    above again and try to read it from top to bottom. We promise that once you try to "forget" how state works in
     classes, and look at this code with fresh eyes, it will make sense.</p>
 <h3 id="tip-what-do-square-brackets-mean">Tip: What Do Square Brackets Mean?</h3>
 <p>You might have noticed the square brackets when we declare a state variable:</p>
@@ -179,8 +179,8 @@ function Example() {
 <p>The names on the left aren't a part of the React API. You can name your own state variables:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1">  <span class="kw">const</span> [fruit<span class="op">,</span> setFruit] <span class="op">=</span> <span class="at">useState</span>(<span class="st">&#39;banana&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <p>This JavaScript syntax is called <a
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring">“array
-        destructuring”</a>. It means that we're making two new variables <code>fruit</code> and <code>setFruit</code>,
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring">"array
+        destructuring"</a>. It means that we're making two new variables <code>fruit</code> and <code>setFruit</code>,
     where <code>fruit</code> is set to the first value returned by <code>useState</code>, and <code>setFruit</code> is
     the second. It is equivalent to this code:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1">  <span class="kw">var</span> fruitStateVariable <span class="op">=</span> <span class="at">useState</span>(<span class="st">&#39;banana&#39;</span>)<span class="op">;</span> <span class="co">// Returns a pair</span></a>
@@ -212,9 +212,9 @@ function Example() {
 <p>We provide more recommendations on splitting independent state variables <a href="/docs/hooks-faq.html#should-i-use-one-or-many-state-variables">in the FAQ</a>.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>On this page we've learned about one of the Hooks provided by React, called <code>useState</code>. We're also
-    sometimes going to refer to it as the “State Hook”. It lets us add local state to React function components – which
+    sometimes going to refer to it as the "State Hook". It lets us add local state to React function components – which
     we did for the first time ever!</p>
-<p>We also learned a little bit more about what Hooks are. Hooks are functions that let you “hook into” React features
+<p>We also learned a little bit more about what Hooks are. Hooks are functions that let you "hook into" React features
     from function components. Their names always start with <code>use</code>, and there are more Hooks we haven't seen
     yet.</p>
 <p><strong>Now let's continue by <a href="/docs/hooks-effect.html">learning the next Hook:

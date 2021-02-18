@@ -39,26 +39,26 @@ const sum = curriedSum(3)(2)(1)(7); // => returns 10
 
 ***********************************************************************/
 
-function curriedSum(numArgs) {
-  const numbers = [];
+function curriedSum ( numArgs ) {
+    const numbers = [];
 
-  function _curriedSum(num) {
-    numbers.push(num);
+    function _curriedSum ( num ) {
+        numbers.push( num );
 
-    if (numbers.length === numArgs) {
-      let total = 0;
+        if ( numbers.length === numArgs ) {
+            let total = 0;
 
-      numbers.forEach(n => {
-        total += n;
-      });
+            numbers.forEach( n => {
+                total += n;
+            } );
 
-      return total;
-    } else {
-      return _curriedSum;
+            return total;
+        } else {
+            return _curriedSum;
+        }
     }
-  }
 
-  return _curriedSum;
+    return _curriedSum;
 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = curriedSum;

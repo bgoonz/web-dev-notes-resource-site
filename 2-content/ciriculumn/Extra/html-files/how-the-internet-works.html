@@ -4,7 +4,8 @@
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
 <li><a href="/command-line/command-line-interface.md">Command Line</a></li>
-<li><a href="./README.md">Intro to Computer Networking</a> - this emphasizes the parts that you need to know well, vs. just “know about”</li>
+<li><a href="./README.md">Intro to Computer Networking</a> - this emphasizes the parts that you need to know well,
+    vs. just “know about"</li>
 </ul>
 <h3 id="motivation">Motivation</h3>
 <p>As an engineer, your users will connect to your apps via the Internet! Understanding how the Internet actually works will help you know what your code is doing and how your code interacts with other code on the internet.</p>
@@ -44,9 +45,12 @@
 <p><a href="https://docs.google.com/presentation/d/1Ny1BZiNO5heJ2Ad-PaakGL4S861W8CfL7LHYFeun7Io/edit#slide=id.p">Slide Deck - How the Internet Works</a></p>
 <h3 id="independent-practice">Independent Practice</h3>
 <p>These exercises are divided up by video. I recommend watching or re-watching the video, and then answering the questions for that section.</p>
-<p>Many of the exercises involve using command line tools to explore different aspects of internet infrastructure. You can learn more about a tool by looking at its “man page” (short for “manual page”). These can sometimes be tricky to understand so don’t worry if you don’t understand everything! Even if you don’t understand everything, you can often learn by spending some time reading the man page. You can also google a command to learn more about it.</p>
+<p>Many of the exercises involve using command line tools to explore different aspects of internet infrastructure. You
+    can learn more about a tool by looking at its “man page" (short for “manual page"). These can sometimes be tricky to
+    understand so don’t worry if you don’t understand everything! Even if you don’t understand everything, you can often
+    learn by spending some time reading the man page. You can also google a command to learn more about it.</p>
 <h4 id="server">Server</h4>
-<p>A server is a computer somewhere running all the time so it is always ready to respond to requests, called “serving a request” which is where the name <code>server</code> comes from.</p>
+<p>A server is a computer somewhere running all the time so it is always ready to respond to requests, called “serving a request" which is where the name <code>server</code> comes from.</p>
 <p>One type of server is a web server that serves web pages. When you visit <a href="https://techtonica.org/">Techtonica</a> the files you see are being delivered by a web server.</p>
 <h4 id="wires-cables-and-wifi">Wires, Cables, and Wifi</h4>
 <p>Watch the video: https://www.youtube.com/watch?v=ZhEf7e4kopM</p>
@@ -87,7 +91,7 @@
 <p><code>dig</code> is a command line program that looks up the DNS record for a URL.</p>
 <p>You can type <code>man dig</code> in Terminal to learn more about dig.</p>
 <p>Try running the following command on Terminal: <code>dig google.com</code></p>
-<p>In the “ANSWER” section, you can see which IP address was found for the hostname. Which IP address was found for google.com? What happens if you go to that URL in your browser?</p>
+<p>In the “ANSWER" section, you can see which IP address was found for the hostname. Which IP address was found for google.com? What happens if you go to that URL in your browser?</p>
 <h4 id="packets-routing-and-reliability">Packets, Routing, and Reliability</h4>
 <p>Watch the video: https://www.youtube.com/watch?v=AYdF7b3nMto</p>
 <p><strong>Traceroute</strong></p>
@@ -100,18 +104,18 @@
 <h4 id="http-html">HTTP + HTML</h4>
 <p>Watch the video: https://www.youtube.com/watch?v=kBXQZMmiA4s</p>
 <p>When you open a website, your browser (the client) needs to get information from the server, which stores the information. To request information from a server, it makes HTTP requests. The server responds with the requested content, and then the browser displays that content to you. In this exercise we’ll investigate which HTTP requests some websites are making and what content is being returned by the server.</p>
-<p>We’ll use Chrome DevTools to inspect requests and responses. We’ll use the “Network” tab for this exercise.</p>
+<p>We’ll use Chrome DevTools to inspect requests and responses. We’ll use the “Network" tab for this exercise.</p>
 <p>You can watch this video to learn about the Network Tab: https://www.youtube.com/watch?v=PwoT18tp6Hs</p>
 <p><strong>To open the DevTools network tab:</strong></p>
 <ol type="1">
 <li>Open Google Chrome</li>
-<li>Open Chrome DevTools (Right click anywhere on the page -&gt; Click “Inspect”)</li>
-<li>Click on the “Network” tab</li>
+<li>Open Chrome DevTools (Right click anywhere on the page -&gt; Click “Inspect")</li>
+<li>Click on the “Network" tab</li>
 </ol>
 <p>We’ll start by going to to https://news.ycombinator.com/news. Go to this site and open the Network tab. Refresh the page to see all the requests used to fetch the content for the page.</p>
 <p>The Network tab will show all the requests that your browser made to the server. For each request you can see the method (GET/POST/PUT) and the response status (200/400/404/etc) and other information.</p>
-<p>You can click on a request to see more specific information about that request. Once you click on a request, look at the tabs for Headers and Preview. “Headers” shows the data sent from the browser to the server, and “Preview” shows the response sent back from the server. The “Response” tab also shows the response, sometimes in a different format.</p>
-<p>You can click the “X” to get back to the main network tab.</p>
+<p>You can click on a request to see more specific information about that request. Once you click on a request, look at the tabs for Headers and Preview. “Headers" shows the data sent from the browser to the server, and “Preview" shows the response sent back from the server. The “Response" tab also shows the response, sometimes in a different format.</p>
+<p>You can click the “X" to get back to the main network tab.</p>
 <p><strong>Exercises:</strong></p>
 <p>Go to https://news.ycombinator.com/news</p>
 <ul>
@@ -130,11 +134,11 @@
 <li>What did the other requests fetch?</li>
 <li>Do you see GET or POST requests? Why do you think that type of request was used?</li>
 </ul>
-<p>Now go to https://news.ycombinator.com/login. We’ll look at how a browser and server could interact to let a user log in to a website. On https://news.ycombinator.com/login, in the “Login” form, put some random text in the “username” and “password” fields, and press “login”.</p>
+<p>Now go to https://news.ycombinator.com/login. We’ll look at how a browser and server could interact to let a user log in to a website. On https://news.ycombinator.com/login, in the “Login" form, put some random text in the “username" and “password" fields, and press “login".</p>
 <ul>
 <li>What request was made?</li>
 <li>What was the type of the request? Why do you think that type of request was used?</li>
-<li>Click on the request and go to the “Headers” section. Scroll to the bottom where it says “Form Data”. Do you see the username and password you entered?</li>
+<li>Click on the request and go to the “Headers" section. Scroll to the bottom where it says “Form Data". Do you see the username and password you entered?</li>
 </ul>
 <p>We chose pretty simple websites to look at for this exercise, but some websites are much more complex and make many requests to the server! Choose a few other websites to go to. Look at the requests being made from your browser to that website. What can you learn from looking at the Network tab?</p>
 <h3 id="challenges">Challenges</h3>

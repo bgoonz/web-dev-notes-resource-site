@@ -41,7 +41,7 @@ Define a function called `metersToInches` that takes an input of the number of m
 
 ### [Challenge 2] - Loop `n` Times
 
-Write a function named `loopThrough` that takes an argument that is a number and loops through and displays a message _“Hello World”_ that number of times.
+Write a function named `loopThrough` that takes an argument that is a number and loops through and displays a message _“Hello World"_ that number of times.
 
 #### Results
 

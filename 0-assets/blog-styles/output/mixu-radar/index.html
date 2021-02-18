@@ -27,7 +27,6 @@
 </ul>
     </div>
   </div>
-
   <div id="wrapper">
     <div id="header">
 
@@ -46,7 +45,12 @@
 time</a>.</p>
 <ul class="list">
 <li><a href="http://en.wikipedia.org/wiki/DAG">Kosaraju&#39;s algorithm</a> uses two passes of <a href="http://en.wikipedia.org/wiki/DAG">depth first search</a>. The first, in the original graph, is used to choose the order in which the outer loop of the second depth first search tests vertices for having been visited already and recursively explores them if not. The second depth first search is on the <a href="http://en.wikipedia.org/wiki/DAG">transpose graph</a> of the original graph, and each recursive exploration finds a single new strongly connected component. It is named after <a href="http://en.wikipedia.org/wiki/DAG">S. Rao Kosaraju</a>, who described it (but did not publish his results) in 1978; <a href="http://en.wikipedia.org/wiki/DAG">Micha Sharir</a> later published it in 1981.</li>
-<li><a href="http://en.wikipedia.org/wiki/DAG">Tarjan&#39;s strongly connected components algorithm</a>, published by <a href="http://en.wikipedia.org/wiki/DAG">Robert Tarjan</a> in 1972, performs a single pass of depth first search. It maintains a <a href="http://en.wikipedia.org/wiki/DAG">stack</a> of vertices that have been explored by the search but not yet assigned to a component, and calculates “low numbers” of each vertex (an index number of the highest ancestor reachable in one step from a descendant of the vertex) which it uses to determine when a set of vertices should be popped off the stack into a new component.</li>
+<li><a href="http://en.wikipedia.org/wiki/DAG">Tarjan&#39;s strongly connected components algorithm</a>, published by <a
+        href="http://en.wikipedia.org/wiki/DAG">Robert Tarjan</a> in 1972, performs a single pass of depth first search.
+    It maintains a <a href="http://en.wikipedia.org/wiki/DAG">stack</a> of vertices that have been explored by the
+    search but not yet assigned to a component, and calculates "low numbers" of each vertex (an index number of the
+    highest ancestor reachable in one step from a descendant of the vertex) which it uses to determine when a set of
+    vertices should be popped off the stack into a new component.</li>
 <li>The <a href="http://en.wikipedia.org/wiki/DAG">path-based strong component algorithm</a> uses a depth first search, like Tarjan&#39;s algorithm, but with two stacks. One of the stacks is used to keep track of the vertices not yet assigned to components, while the other keeps track of the current path in the depth first search tree. The first linear time version of this algorithm was published by <a href="http://en.wikipedia.org/wiki/DAG">Edsger W. Dijkstra</a> in 1976.</li>
 </ul>
 <p>Although Kosaraju&#39;s algorithm is conceptually simple, Tarjan&#39;s and the
@@ -55,8 +59,7 @@ one <a href="http://en.wikipedia.org/wiki/DAG">depth-first search</a> rather tha
 <h2 id="applications"><a class="header-link" href="#applications"></a>Applications</h2>
 <p>Algorithms for finding strongly connected components may be used to
 solve <a href="http://en.wikipedia.org/wiki/DAG">2-satisfiability</a> problems (systems of Boolean variables with constraints on the values of pairs of variables): as showed, a <a href="http://en.wikipedia.org/wiki/DAG">2-satisfiability</a> instance is unsatisfiable if and only if there is a variable <em>v</em> such that <em>v</em> and its complement are both contained in the same strongly connected component of the <a href="http://en.wikipedia.org/wiki/DAG">implication graph</a> of the instance.</p>
-<p>Strongly connected components are also used to compute the <a href="http://en.wikipedia.org/wiki/DAG">Dulmage–Mendelsohn decomposition</a>, a classification of the edges of a <a href="http://en.wikipedia.org/wiki/DAG">bipartite graph</a>, according to whether or not they can be part of a <a href="http://en.wikipedia.org/wiki/DAG">perfect matching</a> in the graph.</p>
-<h2 id="related-results"><a class="header-link" href="#related-results"></a>Related results</h2>
+<p>Strong<h2 id="related-results"><a class="header-link" href="#related-results"></a>Related results</h2>
 <p>A directed graph is strongly connected if and only if it has an <a href="http://en.wikipedia.org/wiki/DAG">ear decomposition</a>, a partition of the edges into a sequence of directed paths and cycles such that the first subgraph in the sequence is a cycle, and each subsequent subgraph is either a cycle sharing one vertex with previous subgraphs, or a path sharing its two endpoints with previous subgraphs.</p>
 <p>According to <a href="http://en.wikipedia.org/wiki/DAG">Robbins&#39; theorem</a>, an undirected graph may be <a href="http://en.wikipedia.org/wiki/Linear_time">oriented</a> in such a way that it becomes strongly connected, if and only if it is <a href="http://en.wikipedia.org/wiki/DAG">2-edge-connected</a>. One way to prove this result is to find an ear decomposition of the underlying undirected graph and then orient each ear consistently.</p>
 <h2 id="see-also"><a class="header-link" href="#see-also"></a>See also</h2>
@@ -66,34 +69,28 @@ solve <a href="http://en.wikipedia.org/wiki/DAG">2-satisfiability</a> problems (
 </ul>
 <h2 id="we-all-like-making-lists"><a class="header-link" href="#we-all-like-making-lists"></a>We all like making lists</h2>
 <p>The above header should be an H2 tag. Now, for a list of fruits:</p>
-<ul class="list">
-<li>Red Apples</li>
+<ul class<li>Red Apples</li>
 <li>Purple Grapes</li>
 <li>Green Kiwifruits</li>
-</ul>
-<p>Let&#39;s get crazy:</p>
+</ul><p>Let&#39;s get crazy:</p>
 <ol class="list">
 <li><p>This is a list item with two paragraphs. Lorem ipsum dolor
-sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-mi posuere lectus.</p>
+sit amet,mi posuere lectus.</p>
 <p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet
 vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
 sit amet velit.</p>
-</li>
-<li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p>
-</li>
+uspendisse id sem consectetuer libero luctus adipiscing.</p>
+
 </ol>
 <p>What about some code <strong>in</strong> a list? That&#39;s insane, right?</p>
 <ol class="list">
-<li>In Ruby you can map like this:</li>
-</ol>
+<li>In Ru</ol>
 <pre class="hljs"><code>[<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>].map { |x| x.uppercase }</code></pre><ol class="list">
 <li>In Rails, you can do a shortcut:</li>
 </ol>
 <pre class="hljs"><code>[<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>].map(&amp;<span class="hljs-symbol">:uppercase</span>)</code></pre><p>Some people seem to like definition lists</p>
 <dl>
-  <dt>Lower cost</dt>
-  <dd>The new version of this product costs significantly less than the previous one!</dd>
+  <dt>Low  <dd>The new version of this product costs significantly less than the previous one!</dd>
   <dt>Easier to use</dt>
   <dd>We&#39;ve changed the product so that it&#39;s much easier to use!</dd>
 </dl>
@@ -104,20 +101,16 @@ sit amet velit.</p>
   has_many <span class="hljs-symbol">:wheels</span>, <span class="hljs-symbol">class_name:</span> <span class="hljs-string">'Wheel'</span>, <span class="hljs-symbol">foreign_key:</span> <span class="hljs-string">'car_id'</span>
   scope <span class="hljs-symbol">:available</span>, -&gt; { where(<span class="hljs-symbol">available:</span> <span class="hljs-keyword">true</span>) }
 <span class="hljs-keyword">end</span></code></pre><p>You see, that was formatted as code because it&#39;s been indented by four spaces.</p>
-<p>How about we throw some angle braces and ampersands in there?</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer"</span>&gt;</span>
-    &amp;copy; 2004 Foo Corporation
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><p>CSV:</p>
+    &amp;copy; 2004 Foo Corporation<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><p>CSV:</p>
 <pre class="hljs"><code>Year,Make,Model,Length
-<span class="hljs-number">2</span><span class="hljs-regexp">/5/</span><span class="hljs-number">08</span>,Ford,E350,<span class="hljs-number">2.34</span>
-<span class="hljs-number">1</span><span class="hljs-regexp">/2/</span><span class="hljs-number">06</span>,Mercury,Cougar,<span class="hljs-number">2.38</span></code></pre><h2 id="set-in-stone"><a class="header-link" href="#set-in-stone"></a>Set in stone</h2>
+<span class="hljs-number">2</spn<span class="hljs-number">1</span><span class="hljs-regexp">/2/</span><span class="hljs-number">06</span>,Mercury,Cougar,<span class="hljs-number">2.38</span></code></pre><h2 id="set-in-stone"><a class="header-link" href="#set-in-stone"></a>Set in stone</h2>
 <p>Preformatted blocks are useful for ASCII art:</p>
 <pre>
              ,-.
     ,     ,-.   ,-.
    / \   (   )-(   )
-   \ |  ,.>-(   )-<
-    \|,' (   )-(   )
+   \ |  ,.>-(   )-<    \|,' (   )-(   )
      Y ___`-'   `-'
      |/__/   `-'
      |

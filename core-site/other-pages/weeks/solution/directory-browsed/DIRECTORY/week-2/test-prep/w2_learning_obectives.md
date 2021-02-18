@@ -172,7 +172,7 @@ Below is a complete list of the terminal learning objectives for this lesson. Wh
 ## Callbacks Lesson Learning Objectives
 
 
-- Given multiple plausible reasons, identify why functions are called “First Class Objects” in JavaScript.
+- Given multiple plausible reasons, identify why functions are called "First Class Objects" in JavaScript.
    - they can be stored in variables, passed as arguments to other functions, and serve as return value for a function
    - supports same basic operations as other types (strings, bools, numbers)
    - higher-order functions take functions as arguments or return functions as values

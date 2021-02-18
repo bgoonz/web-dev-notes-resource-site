@@ -6,7 +6,7 @@ description: Browse an installed package
 
 ### Synopsis
 
-```bash
+``` bash
 npm explore <pkg> [ -- <command>]
 ```
 
@@ -20,7 +20,7 @@ immediately terminates.
 This is particularly handy in the case of git submodules in the
 `node_modules` folder:
 
-```bash
+``` bash
 npm explore some-dependency -- git pull origin master
 ```
 
@@ -32,7 +32,9 @@ sure to use `npm rebuild <pkg>` if you make any changes.
 #### shell
 
 * Default: SHELL environment variable, or "bash" on Posix, or "cmd" on
+
   Windows
+
 * Type: path
 
 The shell to run for the `npm explore` command.

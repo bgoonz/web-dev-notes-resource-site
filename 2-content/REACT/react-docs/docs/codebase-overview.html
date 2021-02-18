@@ -40,7 +40,7 @@
 <a class="sourceLine" id="cb2-5" title="5">  <span class="st">&#39;You shall not pass!&#39;</span></a>
 <a class="sourceLine" id="cb2-6" title="6">)<span class="op">;</span></a></code></pre></div>
 <p><strong>The invariant is thrown when the <code>invariant</code> condition is <code>false</code>.</strong></p>
-<p>“Invariant” is just a way of saying “this condition always holds true”. You can think about it as making an assertion.</p>
+<p>"Invariant" is just a way of saying "this condition always holds true". You can think about it as making an assertion.</p>
 <p>It is important to keep development and production behavior similar, so <code>invariant</code> throws both in development and in production. The error messages are automatically replaced with error codes in production to avoid negatively affecting the byte size.</p>
 <h3 id="development-and-production">Development and Production</h3>
 <p>You can use <code>__DEV__</code> pseudo-global variable in the codebase to guard development-only blocks of code.</p>
@@ -62,7 +62,7 @@
 <h3 id="multiple-packages">Multiple Packages</h3>
 <p>React is a <a href="https://danluu.com/monorepo/">monorepo</a>. Its repository contains multiple separate packages so that their changes can be coordinated together, and issues live in one place.</p>
 <h3 id="react-core">React Core</h3>
-<p>The “core” of React includes all the <a href="/docs/top-level-api.html#react">top-level <code>React</code> APIs</a>, for example:</p>
+<p>The "core" of React includes all the <a href="/docs/top-level-api.html#react">top-level <code>React</code> APIs</a>, for example:</p>
 <ul>
 <li><code>React.createElement()</code></li>
 <li><code>React.Component</code></li>
@@ -71,7 +71,7 @@
 <p><strong>React core only includes the APIs necessary to define components.</strong> It does not include the <a href="/docs/reconciliation.html">reconciliation</a> algorithm or any platform-specific code. It is used both by React DOM and React Native components.</p>
 <p>The code for React core is located in <a href="https://github.com/facebook/react/tree/master/packages/react"><code>packages/react</code></a> in the source tree. It is available on npm as the <a href="https://www.npmjs.com/package/react"><code>react</code></a> package. The corresponding standalone browser build is called <code>react.js</code>, and it exports a global called <code>React</code>.</p>
 <h3 id="renderers">Renderers</h3>
-<p>React was originally created for the DOM but it was later adapted to also support native platforms with <a href="https://reactnative.dev/">React Native</a>. This introduced the concept of “renderers” to React internals.</p>
+<p>React was originally created for the DOM but it was later adapted to also support native platforms with <a href="https://reactnative.dev/">React Native</a>. This introduced the concept of "renderers" to React internals.</p>
 <p><strong>Renderers manage how a React tree turns into the underlying platform calls.</strong></p>
 <p>Renderers are also located in <a href="https://github.com/facebook/react/tree/master/packages/"><code>packages/</code></a>:</p>
 <ul>
@@ -86,12 +86,12 @@
 </blockquote>
 <h3 id="reconcilers">Reconcilers</h3>
 <p>Even vastly different renderers like React DOM and React Native need to share a lot of logic. In particular, the <a href="/docs/reconciliation.html">reconciliation</a> algorithm should be as similar as possible so that declarative rendering, custom components, state, lifecycle methods, and refs work consistently across platforms.</p>
-<p>To solve this, different renderers share some code between them. We call this part of React a “reconciler”. When an update such as <code>setState()</code> is scheduled, the reconciler calls <code>render()</code> on components in the tree and mounts, updates, or unmounts them.</p>
+<p>To solve this, different renderers share some code between them. We call this part of React a "reconciler". When an update such as <code>setState()</code> is scheduled, the reconciler calls <code>render()</code> on components in the tree and mounts, updates, or unmounts them.</p>
 <p>Reconcilers are not packaged separately because they currently have no public API. Instead, they are exclusively used by renderers such as React DOM and React Native.</p>
 <h3 id="stack-reconciler">Stack Reconciler</h3>
-<p>The “stack” reconciler is the implementation powering React 15 and earlier. We have since stopped using it, but it is documented in detail in the <a href="/docs/implementation-notes.html">next section</a>.</p>
+<p>The "stack" reconciler is the implementation powering React 15 and earlier. We have since stopped using it, but it is documented in detail in the <a href="/docs/implementation-notes.html">next section</a>.</p>
 <h3 id="fiber-reconciler">Fiber Reconciler</h3>
-<p>The “fiber” reconciler is a new effort aiming to resolve the problems inherent in the stack reconciler and fix a few long-standing issues. It has been the default reconciler since React 16.</p>
+<p>The "fiber" reconciler is a new effort aiming to resolve the problems inherent in the stack reconciler and fix a few long-standing issues. It has been the default reconciler since React 16.</p>
 <p>Its main goals are:</p>
 <ul>
 <li>Ability to split interruptible work in chunks.</li>

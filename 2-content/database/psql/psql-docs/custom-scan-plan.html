@@ -46,7 +46,7 @@ typedef struct CustomScan
    should be zero.
   </p><p>
    Plan trees must be able to be duplicated using <code class="function">copyObject</code>,
-   so all the data stored within the <span class="quote">“<span class="quote">custom</span>”</span> fields must consist of
+   so all the data stored within the <span class="quote">"<span class="quote">custom</span>"</span> fields must consist of
    nodes that that function can handle.  Furthermore, custom scan providers
    cannot substitute a larger structure that embeds
    a <code class="structname">CustomScan</code> for the structure itself, as would be possible

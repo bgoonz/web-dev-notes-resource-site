@@ -10,9 +10,9 @@ Pedro Nauck ([pedronauck](https://github.com/pedronauck)) delivered an impeccabl
 
 <script async class="speakerdeck-embed" data-id="44129b9054c901328b89221e99b278fe" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-Murilo Pereira ([mpereira](https://github.com/mpereira)) tussles with the topic of complexity in this blog post about [coping with scaling up](http://www.techsonian.net/2014/09/from-backbone-to-react-our-experience-scaling-a-web-application/), where he describes how his team used React to make possible the “nearly impossible.”
+Murilo Pereira ([mpereira](https://github.com/mpereira)) tussles with the topic of complexity in this blog post about [coping with scaling up](http://www.techsonian.net/2014/09/from-backbone-to-react-our-experience-scaling-a-web-application/), where he describes how his team used React to make possible the "nearly impossible."
 
-I ([steveluscher](https://github.com/steveluscher)) spoke at Manning Publications' “Powered By JavaScript” Strangeloop pre-conf in St. Louis. There, I proposed a new notation to talk about development complexity – Big-Coffee Notation ☕(n) – and spoke about the features of React that help keep our Big-Coffee from going quadratic, as our user interfaces get more complex.
+I ([steveluscher](https://github.com/steveluscher)) spoke at Manning Publications' "Powered By JavaScript" Strangeloop pre-conf in St. Louis. There, I proposed a new notation to talk about development complexity – Big-Coffee Notation ☕(n) – and spoke about the features of React that help keep our Big-Coffee from going quadratic, as our user interfaces get more complex.
 
 <iframe width="650" height="315" src="//www.youtube-nocookie.com/embed/rI0GQc__0SM" frameborder="0" allowfullscreen></iframe>
 
@@ -42,7 +42,7 @@ Jonathan Beebe ([somethingkindawierd](https://github.com/somethingkindawierd)) s
 
 If you take a peek under the covers, you'll find that React powers [Carousel](https://blog.carousel.com/2014/11/introducing-carousel-for-web-ipad-and-android-tablet/), Dropbox's new photo and video gallery app.
 
-We enjoyed a cinematic/narrative experience with this React-powered, interactive story by British author William Boyd. Dive into “[The Vanishing Game](https://thevanishinggame.wellstoried.com)” and see for yourself.
+We enjoyed a cinematic/narrative experience with this React-powered, interactive story by British author William Boyd. Dive into "[The Vanishing Game](https://thevanishinggame.wellstoried.com)" and see for yourself.
 
 ## Be Kind, Rewind {#be-kind-rewind}
 

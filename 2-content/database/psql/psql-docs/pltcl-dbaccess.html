@@ -23,7 +23,7 @@
         instead stored into elements of the named associative array, with the
         column names used as array indexes.  In addition, the current row
         number within the result (counting from zero) is stored into the array
-        element named <span class="quote">“<span class="quote"><code class="literal">.tupno</code></span>”</span>, unless that name is
+        element named <span class="quote">"<span class="quote"><code class="literal">.tupno</code></span>"</span>, unless that name is
         in use as a column name in the result.
        </p><p>
         If the command is a <code class="command">SELECT</code> statement and no <em class="replaceable"><code>loop-body</code></em>
@@ -56,7 +56,7 @@ spi_exec -array C "SELECT * FROM pg_class" {
         usual way inside the loop body.
        </p><p>
         If a column of a query result is null, the target
-        variable for it is <span class="quote">“<span class="quote">unset</span>”</span> rather than being set.
+        variable for it is <span class="quote">"<span class="quote">unset</span>"</span> rather than being set.
        </p></dd><dt><span class="term"><code class="function">spi_prepare</code> <em class="replaceable"><code>query</code></em> <em class="replaceable"><code>typelist</code></em></span></dt><dd><p>
         Prepares and saves a query plan for later execution.  The
         saved plan will be retained for the life of the current

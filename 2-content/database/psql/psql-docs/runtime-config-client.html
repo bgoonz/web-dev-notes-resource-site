@@ -174,11 +174,11 @@
       <a id="id-1.6.6.14.2.2.8.1.4" class="indexterm"></a>
       </span></dt><dd><p>
         Each SQL transaction has an isolation level, which can be
-        either <span class="quote">“<span class="quote">read uncommitted</span>”</span>, <span class="quote">“<span class="quote">read
-        committed</span>”</span>, <span class="quote">“<span class="quote">repeatable read</span>”</span>, or
-        <span class="quote">“<span class="quote">serializable</span>”</span>.  This parameter controls the
+        either <span class="quote">"<span class="quote">read uncommitted</span>"</span>, <span class="quote">"<span class="quote">read
+        committed</span>"</span>, <span class="quote">"<span class="quote">repeatable read</span>"</span>, or
+        <span class="quote">"<span class="quote">serializable</span>"</span>.  This parameter controls the
         default isolation level of each new transaction. The default
-        is <span class="quote">“<span class="quote">read committed</span>”</span>.
+        is <span class="quote">"<span class="quote">read committed</span>"</span>.
        </p><p>
         Consult <a class="xref" href="mvcc.html" title="Chapter 13. Concurrency Control">Chapter 13</a> and <a class="xref" href="sql-set-transaction.html" title="SET TRANSACTION"><span class="refentrytitle">SET TRANSACTION</span></a> for more information.
        </p></dd><dt id="GUC-DEFAULT-TRANSACTION-READ-ONLY"><span class="term"><code class="varname">default_transaction_read_only</code> (<code class="type">boolean</code>)
@@ -460,7 +460,7 @@ SET XML OPTION { DOCUMENT | CONTENT };
         when the <code class="varname">DateStyle</code>
         parameter was set to non-<code class="literal">ISO</code> output.
         The value <code class="literal">iso_8601</code> will produce output matching the time
-        interval <span class="quote">“<span class="quote">format with designators</span>”</span> defined in section
+        interval <span class="quote">"<span class="quote">format with designators</span>"</span> defined in section
         4.4.3.2 of ISO 8601.
        </p><p>
         The <code class="varname">IntervalStyle</code> parameter also affects the
@@ -600,7 +600,7 @@ SET XML OPTION { DOCUMENT | CONTENT };
      </p><p>
       Only shared libraries specifically intended to be used with PostgreSQL
       can be loaded this way.  Every PostgreSQL-supported library has
-      a <span class="quote">“<span class="quote">magic block</span>”</span> that is checked to guarantee compatibility.  For
+      a <span class="quote">"<span class="quote">magic block</span>"</span> that is checked to guarantee compatibility.  For
       this reason, non-PostgreSQL libraries cannot be loaded in this way.  You
       might be able to use operating-system facilities such
       as <code class="envar">LD_PRELOAD</code> for that.
@@ -625,7 +625,7 @@ SET XML OPTION { DOCUMENT | CONTENT };
         that can be loaded are restricted to those appearing in the
         <code class="filename">plugins</code> subdirectory of the installation's
         standard library directory.  (It is the database administrator's
-        responsibility to ensure that only <span class="quote">“<span class="quote">safe</span>”</span> libraries
+        responsibility to ensure that only <span class="quote">"<span class="quote">safe</span>"</span> libraries
         are installed there.)  Entries in <code class="varname">local_preload_libraries</code>
         can specify this directory explicitly, for example
         <code class="literal">$libdir/plugins/mylib</code>, or just specify

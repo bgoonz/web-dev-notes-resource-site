@@ -21,7 +21,10 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> <span class="op">{</span> createStore <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;redux&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <h3 id="store">Store</h3>
 <p>You’ll use the <code>createStore</code> method to generate your Redux store by invoking it with a reducer. As a reminder, each application should only have one Redux store where all of an application’s state is managed. This is unlike using React Context, where a single React application can utilize multiple contexts.</p>
-<p>Conceptually speaking, you can think of the reducer as a function that helps manage the Redux store by routing actions based on their <code>type</code> attribute. Based on the official Redux documentation on the <a href="https://redux.js.org/api/createstore/">createStore</a> method and its parameters, a reducer is a “reducing function that returns the next state tree, given the current state tree and an action to handle.”</p>
+<p>Conceptually speaking, you can think of the reducer as a function that helps manage the Redux store by routing
+    actions based on their <code>type</code> attribute. Based on the official Redux documentation on the <a
+        href="https://redux.js.org/api/createstore/">createStore</a> method and its parameters, a reducer is a “reducing
+    function that returns the next state tree, given the current state tree and an action to handle."</p>
 <p>Now that we’ve gone over a conceptual overview of reducers, let’s create a <code>tasksReducer</code> to manage the to-do list tasks in your Redux store!</p>
 <p>Define the <code>tasksReducer</code> function and have it take in the Redux store’s <code>state</code> and an <code>action</code> as parameters. You’ll want the <code>state</code> to default to an empty (<code>[]</code>) if the <code>tasksReducer</code> is invoked without a state. Since you invoke the <code>createStore</code> method with the <code>tasksReducer</code>, you’ll need to define the <code>tasksReducer</code> before invoking the <code>createStore</code> method to generate the Redux store.</p>
 <blockquote>
@@ -160,7 +163,11 @@
 <p>Notice how you are currently using <code>console.log</code> statements to test and debug your code. Later in the project, you’ll get a chance to investigate your code with the VS Code debugger to gain more context and insight about your code and its variable values.</p>
 </blockquote>
 <h3 id="dispatch-the-create_task-action">Dispatch the <code>CREATE_TASK</code> action</h3>
-<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. Invoke the <code>createTask</code> action creator function with a task message, and then dispatch the invoked action. As a reminder, dispatching the action will “send” it through the reducer (in this case, the <code>tasksReducer</code>) and determine what operation to perform based on the action’s <code>type</code> property.</p>
+<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch
+    the <code>CREATE_TASK</code> action. Invoke the <code>createTask</code> action creator function with a task message,
+    and then dispatch the invoked action. As a reminder, dispatching the action will “send" it through the reducer (in
+    this case, the <code>tasksReducer</code>) and determine what operation to perform based on the action’s
+    <code>type</code> property.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;walk dog&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb21-2" title="2"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;feed cat&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb21-3" title="3"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;talk to bird&#39;</span>))<span class="op">;</span></a>
@@ -239,7 +246,7 @@
 <a class="sourceLine" id="cb27-24" title="24"></a>
 <a class="sourceLine" id="cb27-25" title="25"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Task reset action&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb27-26" title="26"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">resetTaskList</span>())<span class="op">;</span></a></code></pre></div>
-<p>Run your application with <code>node appWithSubscription.js</code> and you should see the following output. Notice how the state was logged four times under “Task creation actions” because of how four actions were dispatched, and the state was logged twice after “Task deletion actions” because of how two actions were dispatched.</p>
+<p>Run your application with <code>node appWithSubscription.js</code> and you should see the following output. Notice how the state was logged four times under “Task creation actions" because of how four actions were dispatched, and the state was logged twice after “Task deletion actions" because of how two actions were dispatched.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" title="1"><span class="ex">Default</span> Redux Store (empty task list)<span class="bu">:</span></a>
 <a class="sourceLine" id="cb28-2" title="2">[]</a>
 <a class="sourceLine" id="cb28-3" title="3"><span class="ex">Task</span> creation actions:</a>
@@ -322,7 +329,7 @@
 <p>Here is a quick breakdown of what happens with the <code>CREATE_TASK</code> action is dispatched, to guide the navigation of using VS Code debugger to investigate the Redux cycle:</p>
 <ol type="1">
 <li>The <code>createTask</code> action creator function is invoked with the string <code>'walk dog'</code>.</li>
-<li>The <code>createTask</code> function returns a POJO (known as an “action”) with a <code>type</code> attribute and <code>taskMessage</code> properties. The POJO is structured like this:</li>
+<li>The <code>createTask</code> function returns a POJO (known as an “action") with a <code>type</code> attribute and <code>taskMessage</code> properties. The POJO is structured like this:</li>
 </ol>
 <div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb34-1" title="1"><span class="op">{</span></a>
 <a class="sourceLine" id="cb34-2" title="2">  <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;CREATE_TASK&#39;</span><span class="op">,</span></a>

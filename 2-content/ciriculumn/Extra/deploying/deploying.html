@@ -37,7 +37,10 @@
 </ul>
 <h4 id="deploying">Deploying</h4>
 <p>Now we’ll work on deploying your app to Heroku.</p>
-<p>We’ll be combining your front-end (create-react-app) with your back-end (express) and deploying it to Heroku. Your front-end contains “static” JavaScript files – when you deploy to Heroku, it turns your whole React app into a couple of static files that it will serve to the browser. No matter what data you have in the database, these files will always be the same.</p>
+<p>We’ll be combining your front-end (create-react-app) with your back-end (express) and deploying it to Heroku. Your
+    front-end contains “static" JavaScript files – when you deploy to Heroku, it turns your whole React app into a
+    couple of static files that it will serve to the browser. No matter what data you have in the database, these files
+    will always be the same.</p>
 <p>Your backend, on the other hand, is dynamic – when you make an API request, the backend runs javascript code to do things like reading and writing to a database. Unlike the React app, which always serves the same files to the browser, the backend will serve different information to the browser depending on what’s in the database. We’re going to combine your dynamic code (express), with your static code (create-react-app).</p>
 <ol type="1">
 <li>cd into the React app and create 2 new directories <code>client</code> and <code>server</code>, then move <em>everything</em> into the directory <code>client</code>:</li>
@@ -95,7 +98,14 @@ node server/app.js</code></pre>
 <p>You can replace <code>node server/server.js</code> with whatever you named your API code file.</p>
 <ol start="7" type="1">
 <li><p>Create a free Heroku account at https://signup.heroku.com/dc.<br />
-Through the Heroku web UI, create a new Application. Once you create the app, add the Postgres add-on by going to the Resources tab and searching in the “Add-ons” search box for Postgres. Click the “Heroku Postgres” option. Finally, select the free version and click “Provision”. Or you can create a new Application from the CLI. To create an application with name, install the Heroku CLI and run the following command <code>heroku create app_name</code> This command will only be used on an initialized git repository. In that case, the command creates the application as well as a git remote, that you can use to push your code to Heroku: ```mkdir example cd example git init heroku apps:create app_name</p></li>
+Through the Heroku web UI, create a new Application. Once you create the app, add the Postgres add-on by going to the
+Resources tab and searching in the “Add-ons" search box for Postgres. Click the “Heroku Postgres" option. Finally,
+select the free version and click “Provision". Or you can create a new Application from the CLI. To create an
+application with name, install the Heroku CLI and run the following command <code>heroku create app_name</code> This
+command will only be used on an initialized git repository. In that case, the command creates the application as well as
+a git remote, that you can use to push your code to Heroku: ```mkdir example cd example git init heroku apps:create
+app_name</p>
+</li>
 <li><p>Install the Heroku CLI: <code>brew tap heroku/brew &amp;&amp; brew install heroku</code> then use <code>heroku login</code></p></li>
 <li><p>Attach your Heroku app to your code by running <code>heroku git:remote -a YOUR-APP-NAME</code> inside the terminal at the root of your project directory.</p></li>
 <li><p>Configure your database. Heroku will specify environment variables you can use to connect to the DB:</p></li>

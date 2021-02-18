@@ -209,15 +209,15 @@ SELECT ts_lexize('public.simple_dict', 'The');
      only once, when it is first used within the session.  If you modify a
      configuration file and want to force existing sessions to pick up the
      new contents, issue an <code class="command">ALTER TEXT SEARCH DICTIONARY</code> command
-     on the dictionary.  This can be a <span class="quote">“<span class="quote">dummy</span>”</span> update that doesn't
+     on the dictionary.  This can be a <span class="quote">"<span class="quote">dummy</span>"</span> update that doesn't
      actually change any parameter values.
     </p></div></div><div class="sect2" id="TEXTSEARCH-SYNONYM-DICTIONARY"><div class="titlepage"><div><div><h3 class="title">12.6.3. Synonym Dictionary</h3></div></div></div><p>
     This dictionary template is used to create dictionaries that replace a
     word with a synonym. Phrases are not supported (use the thesaurus
     template (<a class="xref" href="textsearch-dictionaries.html#TEXTSEARCH-THESAURUS" title="12.6.4. Thesaurus Dictionary">Section 12.6.4</a>) for that).  A synonym
     dictionary can be used to overcome linguistic problems, for example, to
-    prevent an English stemmer dictionary from reducing the word <span class="quote">“<span class="quote">Paris</span>”</span> to
-    <span class="quote">“<span class="quote">pari</span>”</span>.  It is enough to have a <code class="literal">Paris paris</code> line in the
+    prevent an English stemmer dictionary from reducing the word <span class="quote">"<span class="quote">Paris</span>"</span> to
+    <span class="quote">"<span class="quote">pari</span>"</span>.  It is enough to have a <code class="literal">Paris paris</code> line in the
     synonym dictionary and put it before the <code class="literal">english_stem</code>
     dictionary.  For example:
 

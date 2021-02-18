@@ -204,7 +204,7 @@ typedef struct spgChooseOut
        zero for the root level.
        <code class="structfield">allTheSame</code> is true if the current inner tuple is
        marked as containing multiple equivalent nodes
-       (see <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. “All-the-Same” Inner Tuples">Section 65.4.3</a>).
+       (see <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. "All-the-Same" Inner Tuples">Section 65.4.3</a>).
        <code class="structfield">hasPrefix</code> is true if the current inner tuple contains
        a prefix; if so,
        <code class="structfield">prefixDatum</code> is its value.
@@ -340,7 +340,7 @@ typedef struct spgPickSplitOut
        <code class="literal">allTheSame</code> to signify that this has happened.  The
        <code class="function">choose</code> and <code class="function">inner_consistent</code> functions
        must take suitable care with such inner tuples.
-       See <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. “All-the-Same” Inner Tuples">Section 65.4.3</a> for more information.
+       See <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. "All-the-Same" Inner Tuples">Section 65.4.3</a> for more information.
       </p><p>
        <code class="function">picksplit</code> can be applied to a single leaf tuple only
        in the case that the <code class="function">config</code> function set
@@ -425,9 +425,9 @@ typedef struct spgInnerConsistentOut
        required for this query; this will only be so if the
        <code class="function">config</code> function asserted <code class="structfield">canReturnData</code>.
        <code class="structfield">allTheSame</code> is true if the current inner tuple is
-       marked <span class="quote">“<span class="quote">all-the-same</span>”</span>; in this case all the nodes have the
+       marked <span class="quote">"<span class="quote">all-the-same</span>"</span>; in this case all the nodes have the
        same label (if any) and so either all or none of them match the query
-       (see <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. “All-the-Same” Inner Tuples">Section 65.4.3</a>).
+       (see <a class="xref" href="spgist-implementation.html#SPGIST-ALL-THE-SAME" title="65.4.3. "All-the-Same" Inner Tuples">Section 65.4.3</a>).
        <code class="structfield">hasPrefix</code> is true if the current inner tuple contains
        a prefix; if so,
        <code class="structfield">prefixDatum</code> is its value.
@@ -454,7 +454,7 @@ typedef struct spgInnerConsistentOut
        array (nodes with lowest distances will be processed first).  Leave it
        NULL otherwise.
        If it is desired to pass down additional out-of-band information
-       (<span class="quote">“<span class="quote">traverse values</span>”</span>) to lower levels of the tree search,
+       (<span class="quote">"<span class="quote">traverse values</span>"</span>) to lower levels of the tree search,
        set <code class="structfield">traversalValues</code> to an array of the appropriate
        traverse values, one for each child node to be visited; otherwise,
        leave <code class="structfield">traversalValues</code> as NULL.

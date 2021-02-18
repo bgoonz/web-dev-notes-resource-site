@@ -368,7 +368,7 @@ console like usual). Play around with different scroll values. Pretty neat, huh?
 
 Two important terms to understand when you’re developing in Javascript are
 **context** and **scope**. Ryan Morr has a great write-up about the differences
-between the two here: [“Understanding Scope and Context in Javascript”][4].
+between the two here: ["Understanding Scope and Context in Javascript"][4].
 
 The important things to note about **context** are:
 
@@ -406,7 +406,7 @@ When you open your console in the browser and run this code, you should see the
 defaults to the global context, or in the case of running code in the browser,
 the `window` object.
 
-Refer to [“Understanding Scope and Context in Javascript”][4] for more about the
+Refer to ["Understanding Scope and Context in Javascript"][4] for more about the
 scope chain, closures, and using `.call()` and `.apply()` on functions.
 
 ## Running a script on DOMContentLoaded
@@ -738,13 +738,13 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
-1. Given HTML that includes `<div id=”catch-me-if-you-can”>HI!</div>`, write a
+1. Given HTML that includes `<div id="catch-me-if-you-can">HI!</div>`, write a
    JavaScript statement that stores a reference to the HTMLDivElement with the
-   id “catch-me-if-you-can” in a variable named “divOfInterest”.
-2. Given HTML that includes seven SPAN elements each with the class “cloudy”,
+   id "catch-me-if-you-can" in a variable named "divOfInterest".
+2. Given HTML that includes seven SPAN elements each with the class "cloudy",
    write a JavaScript statement that stores a reference to a NodeList filled
    with references to the seven HTMLSpanElements in a variable named
-   “cloudySpans”.
+   "cloudySpans".
 3. Given an HTML file with HTML, HEAD, TITLE, and BODY elements, create and
    reference a JS file that in which the JavaScript will create and attach to
    the BODY element an H1 element with the id "sleeping-giant" with the content
@@ -773,13 +773,13 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
-1. Given HTML that includes `<div id=”catch-me-if-you-can”>HI!</div>`, write a
+1. Given HTML that includes `<div id="catch-me-if-you-can">HI!</div>`, write a
    JavaScript statement that stores a reference to the HTMLDivElement with the
-   id “catch-me-if-you-can” in a variable named “divOfInterest”.
-2. Given HTML that includes seven SPAN elements each with the class “cloudy”,
+   id "catch-me-if-you-can" in a variable named "divOfInterest".
+2. Given HTML that includes seven SPAN elements each with the class "cloudy",
    write a JavaScript statement that stores a reference to a NodeList filled
    with references to the seven HTMLSpanElements in a variable named
-   “cloudySpans”.
+   "cloudySpans".
 3. Given an HTML file with HTML, HEAD, TITLE, and BODY elements, create and
    reference a JS file that in which the JavaScript will create and attach to
    the BODY element an H1 element with the id "sleeping-giant" with the content
@@ -844,7 +844,7 @@ Let’s assume we have an HTML file that includes the following `div`:
 **HTML**
 
 ```html
-<div id="”catch-me-if-you-can”">HI!</div>
+<div id=""catch-me-if-you-can"">HI!</div>
 ```
 
 Because we've added the element to our HTML file, that element is available in
@@ -855,7 +855,7 @@ method document.getElementById(). We then assign the reference to a variable.
 **Javascript**
 
 ```js
-const divOfInterest = document.getElementById(“catch-me-if-you-can”)
+const divOfInterest = document.getElementById("catch-me-if-you-can")
 ```
 
 Now let’s say that our HTML file contains seven `span` elements that share a
@@ -864,13 +864,13 @@ class name of `cloudy`, like below:
 **HTML**
 
 ```html
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
 ```
 
 In Javascript, we can reference all seven of these elements and store them in a
@@ -883,7 +883,7 @@ const cloudySpans = document.querySelectorAll("span.cloudy");
 ```
 
 While `getElementById` allows us to reference a single element,
-`querySelectorAll` references all elements with the class name “cloudy” as a
+`querySelectorAll` references all elements with the class name "cloudy" as a
 static `NodeList` (_static_ meaning that any changes in the DOM do not affect
 the content of the collection). Note that a NodeList is different from an array,
 but it is possible to iterate over a NodeList as with an array using
@@ -953,7 +953,7 @@ window.onload = addElement;
 
 If we open up our HTML file in a browser, we should now see the words
 `Jell-O Burled!` on our page. If we use the browser tools to inspect the page
-(right-click on the page and select “inspect”, or hotkeys fn + f12), we notice
+(right-click on the page and select "inspect", or hotkeys fn + f12), we notice
 the new `h1` with the id we gave it.
 
 ________________________________________________________________________________
@@ -1345,7 +1345,7 @@ directory called `myProfile.js`. Test that your Javascript file is linked
 correctly by printing something you can read in the browser console. Example:
 
 ```js
-console.log(“This is my profile page!”)
+console.log("This is my profile page!")
 ```
 
 ## Phase 2: Populating your profile
@@ -1454,7 +1454,7 @@ Here’s an example:
 
 ```js
 const myDetails = document.createElement("ul");
-myDetails.setAttribute(“class”, “my-details”);
+myDetails.setAttribute("class", "my-details");
 ```
 
 Now that you know how to set an element’s class name, practice setting
@@ -1509,7 +1509,7 @@ Objectives:
 
 You just created a live clock, and it’s _time_ for congratulations! (Har har.)
 Can you go the extra mile? Figure out how to insert your clock into a new list
-item under your personal details that says “I live in City, State, and it’s
+item under your personal details that says "I live in City, State, and it’s
 currently `[CLOCK]` here.
 
 ## Bonus: You’re so extra!
@@ -1525,8 +1525,8 @@ Using Javascript, create new elements and:
 - Insert an image into your profile under your name. _Hint:_ You could insert a
   new `img`, or you could add a `div` and set the background image using a CSS
   class.
-- Insert more sections to your profile. Examples: “Likes” list and “Dislikes”
-  list, “Favorite Restaurants”, “My Activities”, etc.
+- Insert more sections to your profile. Examples: "Likes" list and "Dislikes"
+  list, "Favorite Restaurants", "My Activities", etc.
 
 ### Bonus B: Use other Element methods
 
@@ -1587,7 +1587,7 @@ assessment for this lesson.
    JavaScript that will change the background color of the page to cyan five
    seconds after a page loads unless the field input#stopper contains only the
    text "STOP".
-4. Given an HTML page with that includes `<input type=”text” id=”fancypants”>`,
+4. Given an HTML page with that includes `<input type="text" id="fancypants">`,
    write JavaScript that changes the background color of the textbox to #E8F5E9
    when the caret is in the textbox and turns it back to its normal color when
    focus is elsewhere.
@@ -1618,7 +1618,7 @@ assessment for this lesson.
    JavaScript that will change the background color of the page to cyan five
    seconds after a page loads unless the field input#stopper contains only the
    text "STOP".
-4. Given an HTML page with that includes `<input type=”text” id=”fancypants”>`,
+4. Given an HTML page with that includes `<input type="text" id="fancypants">`,
    write JavaScript that changes the background color of the textbox to #E8F5E9
    when the caret is in the textbox and turns it back to its normal color when
    focus is elsewhere.
@@ -2655,8 +2655,8 @@ another example that demonstrates bubbling.
 ```
 
 If you save this HTML file, open it in a browser, and click on the `<p>`, three
-different messages should appear in the console: first “P”, second “DIV”, and
-third “MAIN”. The click event bubbled upwards from the `<p>` element to the
+different messages should appear in the console: first "P", second "DIV", and
+third "MAIN". The click event bubbled upwards from the `<p>` element to the
 `<div>` and finally to the `<main>`.
 
 We could think of this succession of events as bubbles popping. The innermost
@@ -3435,7 +3435,7 @@ storage.
 
 Web Storage exists in the window as an object, and we can access it by using
 [Window.localStorage][2]. As we previously reviewed, with window properties we
-can omit the _”window”_ part and simply use the property name, `localStorage`.
+can omit the _"window"_ part and simply use the property name, `localStorage`.
 
 We can set a key-value pair in local storage with a single line of code. Here
 are a few examples:
@@ -3622,7 +3622,7 @@ the function you wrote in Phase 2.
 Insert **Remove** buttons next to each cart item you inserted on the page. Then,
 write a function that does the following:
 
-* Listen for a click event on the “Remove” buttons
+* Listen for a click event on the "Remove" buttons
 * Remove the corresponding item from `localStorage`
 * Remove the item from the `shopping-cart` DIV
 
@@ -3648,7 +3648,7 @@ should be able to add an item with a given quantity to the cart. You should be
 able to see this item in `localStorage` in your browser’s Developer Tools, and
 it should show up in the Shopping Cart section of the page.
 
-When a user removes an item by clicking the “Remove” button, that item should
+When a user removes an item by clicking the "Remove" button, that item should
 be removed from `localStorage` as well as the page.
 
 When you refresh the page, or close and reopen the browser, the cart items that
@@ -3656,7 +3656,7 @@ have not been removed should still appear on the page.
 
 ## Bonus A: Update cart item quantities and reset values
 
-Instead of displaying text values of the item quantities (e.g. “1”, “5”, “12”)
+Instead of displaying text values of the item quantities (e.g. "1", "5", "12")
 on the page, replace those with an [HTML5 number spinner][9]. What’s that, you
 ask? It’s really just a fancy way to say an input field that lets you increment
 and decrement a number value. We’ve actually already used one on the page.

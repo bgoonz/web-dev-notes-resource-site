@@ -1163,8 +1163,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // The spec says:
 	    //   Line 4: An optional source root, useful for relocating source
 	    //   files on a server or removing repeated values in the
-	    //   “sources” entry.  This value is prepended to the individual
-	    //   entries in the “source” field.
+	    //   "sources" entry.  This value is prepended to the individual
+	    //   entries in the "source" field.
 	    sourceURL = sourceRoot + sourceURL;
 	  }
 
@@ -1180,7 +1180,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  //
 	  // The spec says:
 	  //   If the sources are not absolute URLs after prepending of the
-	  //   “sourceRoot”, the sources are resolved relative to the
+	  //   "sourceRoot", the sources are resolved relative to the
 	  //   SourceMap (like resolving script src in a html document).
 	  if (sourceMapURL) {
 	    var parsed = urlParse(sourceMapURL);

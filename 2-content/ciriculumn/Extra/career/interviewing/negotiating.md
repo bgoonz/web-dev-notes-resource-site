@@ -41,7 +41,7 @@
 
 - Recruiters are expecting this conversation, and you have almost nothing to lose if you are reasonable and polite. In the VERY UNLIKELY case that they do rescind the offer, this is a very big RED FLAG for that company, and you are probably better off not working there.
 
-**Negotiation “DO-NOT-DO” List:**
+**Negotiation “DO-NOT-DO" List:**
 
 - Give a salary expectation number
 - Give up leverage (e.g. expressing positivity about the

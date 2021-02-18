@@ -10,12 +10,12 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> world<span class="op">!</span>&lt;/h1<span class="op">&gt;;</span></a></code></pre></div>
 <p>This funny tag syntax is neither a string nor HTML.</p>
 <p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
-<p>JSX produces React “elements”. We will explore rendering them to the DOM in the <a href="/docs/rendering-elements.html">next section</a>. Below, you can find the basics of JSX necessary to get you started.</p>
+<p>JSX produces React "elements". We will explore rendering them to the DOM in the <a href="/docs/rendering-elements.html">next section</a>. Below, you can find the basics of JSX necessary to get you started.</p>
 <h3 id="why-jsx">Why JSX?</h3>
 <p>React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.</p>
 <p>Instead of artificially separating <em>technologies</em> by putting markup and logic in separate files, React <a
         href="https://en.wikipedia.org/wiki/Separation_of_concerns">separates <em>concerns</em></a> with loosely coupled
-    units called “components” that contain both. We will come back to components in a <a
+    units called "components" that contain both. We will come back to components in a <a
         href="/docs/components-and-props.html">further section</a>, but if you're not yet comfortable putting markup in
     JS, <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">this talk</a> might convince you otherwise.</p>
 <p>React <a href="/docs/react-without-jsx.html">doesn't require</a> using JSX, but most people find it helpful as a
@@ -119,10 +119,10 @@ ReactDOM.render(
 <a class="sourceLine" id="cb12-6" title="6">    <span class="dt">children</span><span class="op">:</span> <span class="st">&#39;Hello, world!&#39;</span></a>
 <a class="sourceLine" id="cb12-7" title="7">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb12-8" title="8"><span class="op">};</span></a></code></pre></div>
-<p>These objects are called “React elements”. You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.</p>
+<p>These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.</p>
 <p>We will explore rendering React elements to the DOM in the <a href="/docs/rendering-elements.html">next section</a>.</p>
 <blockquote>
 <p><strong>Tip:</strong></p>
-<p>We recommend using the <a href="https://babeljs.io/docs/en/next/editors">“Babel” language definition</a> for your editor of choice so that both ES6 and JSX code is properly highlighted.</p>
+<p>We recommend using the <a href="https://babeljs.io/docs/en/next/editors">"Babel" language definition</a> for your editor of choice so that both ES6 and JSX code is properly highlighted.</p>
 </blockquote>
 </body></html>

@@ -46,8 +46,8 @@
     <p>This will create a simple React app , and now we will start making changes to this app. - First of all get rid of
         all the unnecessary stuff showing on DOM , remove all the lines in render of <code>App.js</code>. - Now we
         create a simple div <strong>parent div</strong> which will contain few div as <em>child</em> elements. - After
-        creating that , your <code>App.js</code> will look like this - ``` import React from ‘react'; import
-        ‘./App.css';</p>
+        creating that , your <code>App.js</code> will look like this - ``` import React from 'react'; import
+        './App.css';</p>
 <pre><code>        function App() {</code></pre>
 return (
 <div data-classname="App">
@@ -231,9 +231,9 @@ return (
         <strong>className</strong> gives warning. - If any inline style property is used as <strong>two words</strong>
         like <strong>background-color</strong>, you will encounter an error. This is because these styles are not in a
         .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse
-        dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what's in
-        these braces will be pure JavaScript.” <code>style={}</code>. Then inside is a JS object <code>{backgroundColor:
-            “red”}</code>.</p>
+        dashes. Also note the double curly-braces. The outer set of braces means "now instead of React JSX, what's in
+        these braces will be pure JavaScript." <code>style={}</code>. Then inside is a JS object <code>{backgroundColor:
+            "red"}</code>.</p>
 <pre><code>  - &gt; **Incorrect Way** - ``` &lt;button style={{background-color:&quot;red&quot; }}&gt; ```
   - &gt; **Correct Way** -   ``` &lt;button style={{backgroundColor:&quot;red&quot;}} &gt; ```</code></pre></li>
 </ul>

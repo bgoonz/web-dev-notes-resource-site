@@ -6,7 +6,7 @@ description: Check your npm environment
 
 ### Synopsis
 
-```bash
+``` bash
 npm doctor
 ```
 
@@ -16,15 +16,19 @@ npm doctor
 what it needs to manage your JavaScript packages. npm is mostly a
 standalone tool, but it does have some basic requirements that must be met:
 
-+ Node.js and git must be executable by npm.
-+ The primary npm registry, `registry.npmjs.com`, or another service that
+* Node.js and git must be executable by npm.
+* The primary npm registry,    `registry.npmjs.com`, or another service that
+
   uses the registry API, is available.
-+ The directories that npm uses, `node_modules` (both locally and
+
+* The directories that npm uses,    `node_modules` (both locally and
+
   globally), exist and can be written by the current user.
-+ The npm cache exists, and the package tarballs within it aren't corrupt.
+
+* The npm cache exists, and the package tarballs within it aren't corrupt.
 
 Without all of these working properly, npm may not work properly.  Many
-issues are often attributable to things that are outside npm's code base,
+issues are often attributable to things that are outside npm's code base, 
 so `npm doctor` confirms that the npm installation is in a good state.
 
 Also, in addition to this, there are also very many issue reports due to
@@ -36,14 +40,14 @@ are any recommended changes, it will display them.
 
 #### `npm ping`
 
-By default, npm installs from the primary npm registry,
-`registry.npmjs.org`.  `npm doctor` hits a special ping endpoint within the
-registry. This can also be checked with `npm ping`. If this check fails,
+By default, npm installs from the primary npm registry, 
+`registry.npmjs.org` . `npm doctor` hits a special ping endpoint within the
+registry. This can also be checked with `npm ping` . If this check fails, 
 you may be using a proxy that needs to be configured, or may need to talk
-to your IT staff to get access over HTTPS to `registry.npmjs.org`.
+to your IT staff to get access over HTTPS to `registry.npmjs.org` .
 
 This check is done against whichever registry you've configured (you can
-see what that is by running `npm config get registry`), and if you're using
+see what that is by running `npm config get registry` ), and if you're using
 a private registry that doesn't support the `/whoami` endpoint supported by
 the primary registry, this check may fail.
 
@@ -88,6 +92,7 @@ that Git is available.
 * Your cache must be readable and writable by the user running npm.
 * Global package binaries must be writable by the user running npm.
 * Your local `node_modules` path, if you're running `npm doctor` with a
+
   project directory, must be readable and writable by the user running npm.
 
 #### Validate the checksums of cached packages
@@ -96,7 +101,7 @@ When an npm package is published, the publishing process generates a
 checksum that npm uses at install time to verify that the package didn't
 get corrupted in transit. `npm doctor` uses these checksums to validate the
 package tarballs in your local cache (you can see where that cache is
-located with `npm config get cache`). In the event that there are corrupt
+located with `npm config get cache` ). In the event that there are corrupt
 packages in your cache, you should probably run `npm cache clean -f` and
 reset the cache.
 

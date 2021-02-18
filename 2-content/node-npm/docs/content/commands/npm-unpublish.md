@@ -8,13 +8,13 @@ description: Remove a package from the registry
 
 #### Unpublishing a single version of a package
 
-```bash
+``` bash
 npm unpublish [<@scope>/]<pkg>@<version>
 ```
 
-#### Unpublishing an entire package
+#### Unpu
 
-```bash
+``` bash
 npm unpublish [<@scope>/]<pkg> --force
 ```
 
@@ -22,7 +22,7 @@ npm unpublish [<@scope>/]<pkg> --force
 
 Consider using the `deprecate` command instead, if your intent is to encourage users to upgrade, or if you no longer want to maintain a package.
 
-### Description
+### Descr
 
 This removes a package version from the registry, deleting its
 entry and removing the tarball.
@@ -35,7 +35,6 @@ version combination can never be reused. In order to publish the
 package again, a new version number must be used. If you unpublish the entire package, you may not publish any new versions of that package until 24 hours have passed.
 
 To learn more about how unpublish is treated on the npm registry, see our <a href="https://www.npmjs.com/policies/unpublish" target="_blank" rel="noopener noreferrer"> unpublish policies</a>. 
-
 
 ### See Also
 

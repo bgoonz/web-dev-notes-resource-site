@@ -6,7 +6,7 @@ description: Install a project with a clean slate and run tests
 
 ### Synopsis
 
-```bash
+``` bash
 npm install-ci-test
 
 alias: npm cit
@@ -14,7 +14,7 @@ alias: npm cit
 
 ### Description
 
-This command runs `npm ci` followed immediately by `npm test`.
+This command runs `npm ci` followed immediately by `npm test` .
 
 ### See Also
 

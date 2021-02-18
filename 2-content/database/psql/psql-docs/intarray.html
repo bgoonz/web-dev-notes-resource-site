@@ -57,7 +57,7 @@
    The choice between GiST and GIN indexing depends on the relative
    performance characteristics of GiST and GIN, which are discussed elsewhere.
   </p></div><div class="sect2" id="id-1.11.7.27.8"><div class="titlepage"><div><div><h3 class="title">F.18.3. Example</h3></div></div></div><pre class="programlisting">
--- a message can be in one or more <span class="quote">“<span class="quote">sections</span>”</span>
+-- a message can be in one or more <span class="quote">"<span class="quote">sections</span>"</span>
 CREATE TABLE message (mid INT PRIMARY KEY, sections INT[], ...);
 
 -- create specialized index

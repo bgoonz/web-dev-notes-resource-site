@@ -55,7 +55,10 @@
 <p><em>Install Mocha</em></p>
 <ul>
 <li><code>npm install --save-dev mocha</code></li>
-<li>Note: remember the discussion of “global” vs. “local” installation in the <a href="../testing-and-tdd/jasmine-testing.md">Jasmine lesson</a>? In this case, we are opting to install Mocha <em>locally</em> first. This ensures that everyone running the project will use the same version of Mocha. However, you can also install Mocha globally, if you like. <a href="https://mochajs.org/#installation">See docs</a>.</li>
+<li>Note: remember the discussion of “global" vs. “local" installation in the <a
+        href="../testing-and-tdd/jasmine-testing.md">Jasmine lesson</a>? In this case, we are opting to install Mocha
+    <em>locally</em> first. This ensures that everyone running the project will use the same version of Mocha. However,
+    you can also install Mocha globally, if you like. <a href="https://mochajs.org/#installation">See docs</a>.</li>
 </ul>
 <p><em>Create Test Files</em></p>
 <ul>
@@ -64,7 +67,8 @@
 </ul>
 <p><em>Start Test</em></p>
 <ul>
-<li>To run Mocha from the local installation, edit the “test” line in the “package.json” file to say: <code>"test": "mocha"</code></li>
+<li>To run Mocha from the local installation, edit the “test" line in the “package.json" file to say: <code>"test":
+        "mocha"</code></li>
 <li>Run <code>npm test</code>! Since you have no tests written yet, you should see something like this:</li>
 </ul>
 <pre><code>&gt; mocha
@@ -144,7 +148,7 @@
 <p><em>setting up Chai</em></p>
 <ul>
 <li>You can now use Chai within your Mocha tests to make assertions. Chai provides a few different styles for making assertions. Let’s take a quick look at each of them!</li>
-<li><a href="https://www.chaijs.com/guide/styles/#assert"><code>assert</code></a>: These statements typically take two arguments, and “assert” that something is truthful.</li>
+<li><a href="https://www.chaijs.com/guide/styles/#assert"><code>assert</code></a>: These statements typically take two arguments, and “assert" that something is truthful.</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> assert <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chai&#39;</span>).<span class="at">assert</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
@@ -156,7 +160,7 @@
 <a class="sourceLine" id="cb6-8" title="8"><span class="co">// Failing - note that the third argument is an optional error message</span></a>
 <a class="sourceLine" id="cb6-9" title="9"><span class="va">assert</span>.<span class="at">equal</span>(foo<span class="op">,</span> <span class="st">&#39;bar&#39;</span><span class="op">,</span> <span class="st">&#39;foo equal `bar`&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <ul>
-<li><a href="https://www.chaijs.com/guide/styles/#expect"><code>expect</code></a>: “Expect” statements chain together assertions that feel like natural language</li>
+<li><a href="https://www.chaijs.com/guide/styles/#expect"><code>expect</code></a>: “Expect" statements chain together assertions that feel like natural language</li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> expect <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chai&#39;</span>).<span class="at">expect</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb7-2" title="2"></a>
@@ -168,7 +172,7 @@
 <a class="sourceLine" id="cb7-8" title="8"><span class="co">// Failing</span></a>
 <a class="sourceLine" id="cb7-9" title="9"><span class="at">expect</span>(foo).<span class="va">to</span>.<span class="at">equal</span>(<span class="st">&#39;bar&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <ul>
-<li><a href="https://www.chaijs.com/guide/styles/#should"><code>should</code></a>: “Should” statements are similar to “expect”, but start with the start each chain with a <code>should</code></li>
+<li><a href="https://www.chaijs.com/guide/styles/#should"><code>should</code></a>: “Should" statements are similar to “expect", but start with the start each chain with a <code>should</code></li>
 </ul>
 <div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> should <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;chai&#39;</span>).<span class="at">should</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb8-2" title="2"></a>
@@ -224,7 +228,7 @@ assert(fizzBuzz(30), "fizzbuzz");
 </details>
 <h3 id="independent-practice">Independent Practice</h3>
 <ol type="1">
-<li>Re-implement Challenge 1, “Convert Inches to Meters” from <a href="../javascript/basic-js-practice.md">Basic JS Practice</a> in a TDD Style. Use Chai’s <code>expect</code> style assertions, referring to the <a href="https://www.chaijs.com/api/bdd/">docs</a> as needed. Add assertions that:
+<li>Re-implement Challenge 1, “Convert Inches to Meters" from <a href="../javascript/basic-js-practice.md">Basic JS Practice</a> in a TDD Style. Use Chai’s <code>expect</code> style assertions, referring to the <a href="https://www.chaijs.com/api/bdd/">docs</a> as needed. Add assertions that:
 <ul>
 <li>The values returned by <code>metersToInches</code> are floats</li>
 <li>The values returned by <code>metersToInches</code> have the correct results:</li>
@@ -263,7 +267,7 @@ assert(fizzBuzz(30), "fizzbuzz");
 <li>Write a test that the object has all keys ‘cats’, ‘dogs’, and ‘reptiles’.</li>
 <li>Write a test that the object does not have the property ‘rabbits’,</li>
 <li>Write a test that the value at ‘cats’ is an array</li>
-<li>Write a test that the ‘cats’ array contains contains the string “Mr. Snuffalufagus”</li>
+<li>Write a test that the ‘cats’ array contains contains the string “Mr. Snuffalufagus"</li>
 <li>Write a test that the value at ‘dogs’ equals <code>['Fido', 'Fluffy', 'Roxy']</code> (Hint: if the <code>equal</code> assertion fails, take a look at <a href="https://medium.com/building-ibotta/testing-arrays-and-objects-with-chai-js-4b372310fe6d">this article</a>)</li>
 <li>Write a test that ‘lizards’ is an empty array</li>
 </ul></li>
@@ -277,7 +281,7 @@ assert(fizzBuzz(30), "fizzbuzz");
 <li>Accompanied by this github repo of tests, <a href="https://github.com/npatro/javascript-unit-testing-with-mocha">link</a></li>
 <li>A quick and complete guide to Mocha testing" by Glad Chinda, <a href="https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d">link</a></li>
 </ul></li>
-<li>Video series by “WebDevJourney”
+<li>Video series by “WebDevJourney"
 <ul>
 <li><a href="https://youtu.be/2q62EhBy0sE">Node JS - Authentication - Login/Logout Mocha Testing by Web Dev Journey</a></li>
 <li>github repo with mocha test included, <a href="https://github.com/webdevjourneyWDJ/Todo-API">link</a>.</li>

@@ -203,7 +203,7 @@ For an introduction to routing, see <a href="/en/starter/basic-routing.html">Bas
 for example, <code>app.get()</code> to handle GET requests and <code>app.post</code> to handle POST requests. For a full list,
 see <a href="/en/4x/api.html#app.METHOD">app.METHOD</a>. You can also use <a href="/en/4x/api.html#app.all">app.all()</a> to handle all HTTP methods and <a href="/en/4x/api.html#app.use">app.use()</a> to
 specify middleware as the callback function (See <a href="/en/guide/using-middleware.html">Using middleware</a> for details).</p>
-<p>These routing methods specify a callback function (sometimes called “handler functions”) called when the application receives a request to the specified route (endpoint) and HTTP method. In other words, the application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.</p>
+<p>These routing methods specify a callback function (sometimes called "handler functions") called when the application receives a request to the specified route (endpoint) and HTTP method. In other words, the application "listens" for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.</p>
 <p>In fact, the routing methods can have more than one callback function as arguments.
 With multiple callback functions, it is important to provide <code>next</code> as an argument to the callback function and then call <code>next()</code> within the body of the function to hand off control
 to the next callback.</p>
@@ -231,7 +231,7 @@ app.post('/', function (req, res) {
 </code></pre>
 <p>Express supports methods that correspond to all HTTP request methods: <code>get</code>, <code>post</code>, and so on.
 For a full list, see <a href="/en/4x/api.html#app.METHOD">app.METHOD</a>.</p>
-<p>There is a special routing method, <code>app.all()</code>, used to load middleware functions at a path for <em>all</em> HTTP request methods. For example, the following handler is executed for requests to the route “/secret” whether using GET, POST, PUT, DELETE, or any other HTTP request method supported in the <a href="https://nodejs.org/api/http.html#http_http_methods">http module</a>.</p>
+<p>There is a special routing method, <code>app.all()</code>, used to load middleware functions at a path for <em>all</em> HTTP request methods. For example, the following handler is executed for requests to the route "/secret" whether using GET, POST, PUT, DELETE, or any other HTTP request method supported in the <a href="https://nodejs.org/api/http.html#http_http_methods">http module</a>.</p>
 <pre><code class="language-js">app.all('/secret', function (req, res, next) {
   console.log('Accessing the secret section ...')
   next() // pass control to the next handler
@@ -240,7 +240,7 @@ For a full list, see <a href="/en/4x/api.html#app.METHOD">app.METHOD</a>.</p>
 <h2 id="route-paths">Route paths</h2>
 <p>Route paths, in combination with a request method, define the endpoints at which requests can be made. Route paths can be strings, string patterns, or regular expressions.</p>
 <p>The characters <code>?</code>, <code>+</code>, <code>*</code>, and <code>()</code> are subsets of their regular expression counterparts. The hyphen (<code>-</code>) and the dot (<code>.</code>) are interpreted literally by string-based paths.</p>
-<p>If you need to use the dollar character (<code>$</code>) in a path string, enclose it escaped within <code>([</code> and <code>])</code>. For example, the path string for requests at “<code>/data/$book</code>”, would be “<code>/data/([\$])book</code>”.</p>
+<p>If you need to use the dollar character (<code>$</code>) in a path string, enclose it escaped within <code>([</code> and <code>])</code>. For example, the path string for requests at "<code>/data/$book</code>", would be "<code>/data/([\$])book</code>".</p>
 <div class="doc-box doc-info">
 <p>Express uses <a href="https://www.npmjs.com/package/path-to-regexp">path-to-regexp</a> for matching the route paths; see the path-to-regexp documentation for all the possibilities in defining route paths. <a href="http://forbeslindesay.github.io/express-route-tester/">Express Route Tester</a> is a handy tool for testing basic Express routes, although it does not support pattern matching.</p>
 </div>
@@ -285,7 +285,7 @@ For a full list, see <a href="/en/4x/api.html#app.METHOD">app.METHOD</a>.</p>
 })
 </code></pre>
 <p>Examples of route paths based on regular expressions:</p>
-<p>This route path will match anything with an “a” in it.</p>
+<p>This route path will match anything with an "a" in it.</p>
 <pre><code class="language-js">app.get(/a/, function (req, res) {
   res.send('/a/')
 })
@@ -307,7 +307,7 @@ req.params: { "userId": "34", "bookId": "8989" }
 })
 </code></pre>
 <div class="doc-box doc-notice">
-<p>The name of route parameters must be made up of “word characters” ([A-Za-z0-9_]).</p>
+<p>The name of route parameters must be made up of "word characters" ([A-Za-z0-9_]).</p>
 </div>
 <p>Since the hyphen (<code>-</code>) and the dot (<code>.</code>) are interpreted literally, they can be used along with route parameters for useful purposes.</p>
 <pre><code>Route path: /flights/:from-:to
@@ -444,7 +444,7 @@ Because the path is specified at a single location, creating modular routes is h
   })
 </code></pre>
 <h2 id="express-router">express.Router</h2>
-<p>Use the <code>express.Router</code> class to create modular, mountable route handlers. A <code>Router</code> instance is a complete middleware and routing system; for this reason, it is often referred to as a “mini-app”.</p>
+<p>Use the <code>express.Router</code> class to create modular, mountable route handlers. A <code>Router</code> instance is a complete middleware and routing system; for this reason, it is often referred to as a "mini-app".</p>
 <p>The following example creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module on a path in the main app.</p>
 <p>Create a router file named <code>birds.js</code> in the app directory, with the following content:</p>
 <pre><code class="language-js">var express = require('express')

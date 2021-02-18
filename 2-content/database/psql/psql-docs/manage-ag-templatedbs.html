@@ -3,7 +3,7 @@
    <code class="command">CREATE DATABASE</code> actually works by copying an existing
    database.  By default, it copies the standard system database named
    <code class="literal">template1</code>.<a id="id-1.6.9.6.2.3" class="indexterm"></a> Thus that
-   database is the <span class="quote">“<span class="quote">template</span>”</span> from which new databases are
+   database is the <span class="quote">"<span class="quote">template</span>"</span> from which new databases are
    made.  If you add objects to <code class="literal">template1</code>, these objects
    will be copied into subsequently created user databases.  This
    behavior allows site-local modifications to the standard set of
@@ -21,7 +21,7 @@
    should never be changed after the database cluster has been
    initialized.  By instructing
    <code class="command">CREATE DATABASE</code> to copy <code class="literal">template0</code> instead
-   of <code class="literal">template1</code>, you can create a <span class="quote">“<span class="quote">virgin</span>”</span> user
+   of <code class="literal">template1</code>, you can create a <span class="quote">"<span class="quote">virgin</span>"</span> user
    database that contains none of the site-local additions in
    <code class="literal">template1</code>.  This is particularly handy when restoring a
    <code class="literal">pg_dump</code> dump: the dump script should be restored in a
@@ -50,7 +50,7 @@ createdb -T template0 <em class="replaceable"><code>dbname</code></em>
    one can copy any database in a cluster by specifying its name
    as the template for <code class="command">CREATE DATABASE</code>.  It is important to
    understand, however, that this is not (yet) intended as
-   a general-purpose <span class="quote">“<span class="quote"><code class="command">COPY DATABASE</code></span>”</span> facility.
+   a general-purpose <span class="quote">"<span class="quote"><code class="command">COPY DATABASE</code></span>"</span> facility.
    The principal limitation is that no other sessions can be connected to
    the source database while it is being copied.  <code class="command">CREATE
    DATABASE</code> will fail if any other connection exists when it starts;

@@ -6,7 +6,7 @@ description: Edit an installed package
 
 ### Synopsis
 
-```bash
+``` bash
 npm edit <pkg>
 ```
 
@@ -14,7 +14,8 @@ npm edit <pkg>
 
 Selects a dependency in the current project and opens the package folder in
 the default editor (or whatever you've configured as the npm `editor`
-config -- see [`npm-config`](npm-config).)
+
+config -- see [ `npm-config` ](npm-config).)
 
 After it has been edited, the package is rebuilt so as to pick up any
 changes in compiled packages.
@@ -27,11 +28,13 @@ changes to your locally installed copy.
 
 #### editor
 
-* Default: `EDITOR` environment variable if set, or `"vi"` on Posix,
+* Default: `EDITOR` environment variable if set, or `"vi"` on Posix, 
+
   or `"notepad"` on Windows.
+
 * Type: path
 
-The command to run for `npm edit` or `npm config edit`.
+The command to run for `npm edit` or `npm config edit` .
 
 ### See Also
 

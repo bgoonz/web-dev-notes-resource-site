@@ -98,7 +98,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given a working REPL interface, write and execute a statement that will print
-   “hello world” using console.log
+   "hello world" using console.log
 2. Identify that strings are a list of characters defined by using double or
    single quotes
 3. Given an arithmetic expression using +, -, \*, /, %, compute its value
@@ -118,7 +118,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given a working REPL interface, write and execute a statement that will print
-   “hello world” using console.log
+   "hello world" using console.log
 2. Identify that strings are a list of characters defined by using double or
    single quotes
 3. Given an arithmetic expression using +, -, \*, /, %, compute its value

@@ -56,16 +56,16 @@
    against this scenario by requiring the scan keys to be rechecked
    against the heap row in all cases, but that is too expensive.  Instead,
    we use a pin on an index page as a proxy to indicate that the reader
-   might still be <span class="quote">“<span class="quote">in flight</span>”</span> from the index entry to the matching
+   might still be <span class="quote">"<span class="quote">in flight</span>"</span> from the index entry to the matching
    heap entry.  Making <code class="function">ambulkdelete</code> block on such a pin ensures
    that <code class="command">VACUUM</code> cannot delete the heap entry before the reader
    is done with it.  This solution costs little in run time, and adds blocking
    overhead only in the rare cases where there actually is a conflict.
   </p><p>
-   This solution requires that index scans be <span class="quote">“<span class="quote">synchronous</span>”</span>: we have
+   This solution requires that index scans be <span class="quote">"<span class="quote">synchronous</span>"</span>: we have
    to fetch each heap tuple immediately after scanning the corresponding index
    entry.  This is expensive for a number of reasons.  An
-   <span class="quote">“<span class="quote">asynchronous</span>”</span> scan in which we collect many TIDs from the index,
+   <span class="quote">"<span class="quote">asynchronous</span>"</span> scan in which we collect many TIDs from the index,
    and only visit the heap tuples sometime later, requires much less index
    locking overhead and can allow a more efficient heap access pattern.
    Per the above analysis, we must use the synchronous approach for

@@ -27,7 +27,7 @@
 <p>Scientists track some individual animals of endangered species, so we want to store data about each individual as well</p>
 <ul>
 <li>Integer primary key</li>
-<li>Nickname (e.g. “Prickly Petunia”)</li>
+<li>Nickname (e.g. “Prickly Petunia")</li>
 <li>Species</li>
 <li>Record creation timestamp</li>
 </ul>
@@ -37,7 +37,8 @@
 <li>Integer primary key</li>
 <li>The date and time of the sighting (the scientist might enter the data when they get back to their lab so it could be in the past)</li>
 <li>Individual seen</li>
-<li>Location of sighting - just text so the scientist can be as specific as they want: “37.791278, -122.394680”, “Yellowstone North Gate” or just “California”</li>
+<li>Location of sighting - just text so the scientist can be as specific as they want: “37.791278, -122.394680",
+    “Yellowstone North Gate" or just “California"</li>
 <li>Boolean whether the animal appeared healthy or not (obviously this just an educated guess, but good for tracking of injuries or serious illness)</li>
 <li>email address of sighter in case researchers need more info</li>
 <li>(Optional) Record creation timestmap</li>
@@ -80,7 +81,7 @@
 <li>Be able to store a sighting where multiple individuals were spotted together. This means a sighting record needs to be able to be associated with multiple individuals. What type of data relationship is this? How do you need to change your DB schema to make this work?</li>
 </ul>
 <h4 id="filtering">Filtering</h4>
-<p>Add a “Healthy” filter checkbox</p>
+<p>Add a “Healthy" filter checkbox</p>
 <ul>
 <li>the list of sightings should be filtered to only show sightings where the animal is healthy</li>
 <li>When unchecked, all sightings should be shown again.</li>

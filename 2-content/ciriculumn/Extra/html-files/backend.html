@@ -14,7 +14,8 @@
 <ul>
 <li>We don’t need to warn electricians about violations at properties they didn’t actually work on. Exclude <code>withdrawn</code> and <code>cancelled</code> permits from the report.</li>
 <li>We don’t need to tell electricians about problems which we know were fixed before they started work. Exclude fire violations with a <code>Close Date</code> before the <code>Filed Date</code> of the contactor’s permit.</li>
-<li>For large businesses this could be a very long list of results. Give the client some way to request a limited “page” of results at a time.</li>
+<li>For large businesses this could be a very long list of results. Give the client some way to request a limited “page"
+    of results at a time.</li>
 </ul>
 <h3 id="city-report">City report</h3>
 <p>When a city inspector finds a new fire violation they want to know which contractors are working nearby and need to be warned about a potential danger. Build an API endpoint which accepts a <code>Block</code> identifier and a date and returns a JSON structure containing contact information for the businesses which have permits on that block.</p>

@@ -27,7 +27,8 @@
 <p>Because browsers don’t understand JSX, you have to use some tools to translate JSX into just plain old JavaScript. The main tool that you will use in almost every case is one called <a href="https://babeljs.io/">Babel</a>. It is a tool that can convert versions of modern JavaScript into old version of JavaScript. It can convert <em>future</em> features of JavaScript into modern JavaScript. It can convert JSX into modern (or old) JavaScript.</p>
 <p>However, using Babel by itself is like building a house with just a hammer. It’d be nice to have fancier tools to help you build that house. That’s where tools like <a href="https://github.com/facebook/create-react-app">Create React App</a> come into play. <strong>Create React App</strong> uses Babel underneath and, then, adds a whole lot more. You’ll see more of **Create React App* as you progress through the course.</p>
 <h2 id="jsx-syntax">JSX Syntax</h2>
-<p>Here’s a function-based component using <code>React.createElement</code> that has an <code>h1</code> element with the content “Hello!”, a placeholder image, and a link to some search engine passed in through props.</p>
+<p>Here’s a function-based component using <code>React.createElement</code> that has an <code>h1</code> element with the
+    content "Hello!", a placeholder image, and a link to some search engine passed in through props.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> ExampleComponent <span class="op">=</span> props <span class="kw">=&gt;</span> <span class="va">React</span>.<span class="at">createElement</span>(</a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="va">React</span>.<span class="at">Fragment</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb1-3" title="3">  <span class="kw">null</span><span class="op">,</span></a>
@@ -46,7 +47,9 @@
 <p>You can see Babel in action converting that JSX code above. Here’s a <a href="https://babeljs.io/en/repl#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;spec=false&amp;loose=false&amp;code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=false&amp;fileSize=false&amp;timeTravel=false&amp;sourceType=module&amp;lineWrap=true&amp;presets=es2015%2Creact%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=7.4.3">link to Babel</a> already configured for you. Copy and paste that code above to see it transform back into <code>React.createElement</code> invocations.</p>
 <h3 id="html-like-tags-but">HTML-like tags, but…</h3>
 <p>The <code>React.Fragment</code> element <em>contains</em> the <code>h1</code>, <code>img</code>, and <code>a</code>, just like it does in the <code>React.createElement</code> version, except instead of using a method call to do it, it uses more familiar HTML-like tags. There’s one super big difference between the HTML that you know and what JSX expects. Can you see it?</p>
-<p>Look at the end of the <code>img</code> tag. See that “/” before the closing angle bracket? You <em>must</em> include that if the tag that you’re using doesn’t have a close tag. If you want to use those HTML element in your JSX, then you have to put the slash. The following table shows some common tags that you’d use and their JSX equivalent.</p>
+<p>Look at the end of the <code>img</code> tag. See that "/" before the closing angle bracket? You <em>must</em> include
+    that if the tag that you’re using doesn’t have a close tag. If you want to use those HTML element in your JSX, then
+    you have to put the slash. The following table shows some common tags that you’d use and their JSX equivalent.</p>
 <table>
 <thead>
 <tr class="header">
@@ -126,13 +129,13 @@
     &lt;/div&gt;
   );
 }</code></pre>
-<p>You’ll see that the JSX block is wrapped in parentheses. This is due to the way that JavaScript handles something called <a href="https://www.ecma-international.org/ecma-262/#sec-rules-of-automatic-semicolon-insertion">“automatic semicolon insertion”</a>. Here’s a simple example. What do you think the function returns? (Yes, this <em>is</em> a “trick question”.)</p>
+<p>You’ll see that the JSX block is wrapped in parentheses. This is due to the way that JavaScript handles something called <a href="https://www.ecma-international.org/ecma-262/#sec-rules-of-automatic-semicolon-insertion">"automatic semicolon insertion"</a>. Here’s a simple example. What do you think the function returns? (Yes, this <em>is</em> a "trick question".)</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">function</span> <span class="at">sum</span>(i<span class="op">,</span> j) <span class="op">{</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="cf">return</span></a>
 <a class="sourceLine" id="cb10-3" title="3">    i <span class="op">+</span> j<span class="op">;</span></a>
 <a class="sourceLine" id="cb10-4" title="4"><span class="op">}</span></a></code></pre></div>
 <p>If the answer isn’t obvious, start Node on the command line, type it in exactly the way it is there, and try calling it with <code>sum(1, 2)</code>.</p>
-<p>You may be surprised to see that it returns <code>undefined</code>. Here’s why: when JavaScript reads your source code, it tries to be “helpful”. When it reads the lines of your code, it asks, is each line a “complete” line? Is it and the following lines valid JavaScript expressions? If the answer is “yes”, then it will add a semicolon at the end of the line <em>for you</em>. When it reads the above “sum” function, the JavaScript runner “thinks” to itself:</p>
+<p>You may be surprised to see that it returns <code>undefined</code>. Here’s why: when JavaScript reads your source code, it tries to be "helpful". When it reads the lines of your code, it asks, is each line a "complete" line? Is it and the following lines valid JavaScript expressions? If the answer is "yes", then it will add a semicolon at the end of the line <em>for you</em>. When it reads the above "sum" function, the JavaScript runner "thinks" to itself:</p>
 <ul>
 <li>Ok, I have two lines:
 <ul>
@@ -151,14 +154,14 @@
 <a class="sourceLine" id="cb11-2" title="2">  <span class="cf">return</span><span class="op">;</span> <span class="co">// &lt;- There&#39;s a new semicolon!</span></a>
 <a class="sourceLine" id="cb11-3" title="3">    i <span class="op">+</span> j<span class="op">;</span></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="op">}</span></a></code></pre></div>
-<p>That function never gets to <code>i + j</code> because it always returns “no value” on the first line. Yikes!</p>
-<p>To get around that, you can add parentheses to tell JavaScript that “more is coming”.</p>
+<p>That function never gets to <code>i + j</code> because it always returns "no value" on the first line. Yikes!</p>
+<p>To get around that, you can add parentheses to tell JavaScript that "more is coming".</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">function</span> <span class="at">sum</span>(i<span class="op">,</span> j) <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb12-3" title="3">    i <span class="op">+</span> j</a>
 <a class="sourceLine" id="cb12-4" title="4">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>Now, when JavaScript reads the line <code>return (</code>, it “thinks” to itself, “Well, that’s not a complete expression. There must be more coming. I will <em>not</em> put a semicolon there.”</p>
+<p>Now, when JavaScript reads the line <code>return (</code>, it "thinks" to itself, "Well, that’s not a complete expression. There must be more coming. I will <em>not</em> put a semicolon there."</p>
 <p>The same is true for functions containing JSX. The above code</p>
 <pre class="jsx"><code>function App() {
   return (
@@ -180,7 +183,7 @@
 <a class="sourceLine" id="cb14-9" title="9">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb14-10" title="10"><span class="op">}</span></a></code></pre></div>
 <p>Without the parentheses starting right after the <code>return</code> keyword and ending after the outer call of <code>React.createElement</code>, JavaScript would just stick a semicolon after the <code>return</code> keyword and all of the fancy React stuff would get ignored.</p>
-<p>The message is clear: if you use the <code>return</code> keyword in a function to “return some JSX”, then make sure you wrap the JSX in parentheses.</p>
+<p>The message is clear: if you use the <code>return</code> keyword in a function to "return some JSX", then make sure you wrap the JSX in parentheses.</p>
 <h2 id="what-youve-learned">What you’ve learned</h2>
 <p>That’s really all there is to JSX. You combine your knowledge of HTML and your knowledge of <code>React.createElement</code> to allow the Babel tool to turn your code into plain old JavaScript for you. Specifically, you have seen the following conversions:</p>
 <table>
@@ -215,4 +218,4 @@
 </tbody>
 </table>
 <p>You’ve also read about the special property names that React supports.</p>
-<p>Finally, you learned about the frustrating side effect of “automatic semicolon insertion” and, if you do use the <code>return</code> keyword in your functions, that you should wrap the JSX in parentheses to prevent JavaScript from <em>not</em> returning your code.</p>
+<p>Finally, you learned about the frustrating side effect of "automatic semicolon insertion" and, if you do use the <code>return</code> keyword in your functions, that you should wrap the JSX in parentheses to prevent JavaScript from <em>not</em> returning your code.</p>

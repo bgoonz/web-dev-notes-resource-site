@@ -44,7 +44,10 @@
 <a class="sourceLine" id="cb1-15" title="15"><span class="op">}</span></a>
 <a class="sourceLine" id="cb1-16" title="16"></a>
 <a class="sourceLine" id="cb1-17" title="17"><span class="im">export</span> <span class="im">default</span> AlertButton<span class="op">;</span></a></code></pre></div>
-<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the <code>window.alert</code> method to display the text “Button clicked!” within a browser alert dialog. The <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
+<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the
+    <code>window.alert</code> method to display the text "Button clicked!" within a browser alert dialog. The
+    <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click
+    event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
 <p>When adding event listeners, be sure to camelCase the event name (i.e. <code>onClick</code> instead of <code>onclick</code>) and pass a reference to the event handler method instead of calling it (i.e. <code>this.showAlert</code> instead of <code>this.showAlert()</code>).</p>
 <p>Also notice the slightly odd looking class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) that’s used to define the <code>showAlert</code> method. Using this experimental syntax for defining a class property in combination with an arrow function ensures that you can reliably use the <code>this</code> keyword within the event handler method. We’ll exam this issue in more detail in just a bit.</p>
 <blockquote>
@@ -75,7 +78,10 @@
 <a class="sourceLine" id="cb2-19" title="19"><span class="im">export</span> <span class="im">default</span> NoDefaultSubmitForm<span class="op">;</span></a></code></pre></div>
 <p>In this example, a <code>&lt;button&gt;</code> element without a <code>type</code> attribute is rendered within a <code>&lt;form&gt;</code> element. By default, this button will submit the form when clicked. This has the unintended consequence of reloading the page when the button is clicked, instead of allowing the <code>this.submitForm</code> event handler method to handle the form submission.</p>
 <blockquote>
-<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep this example as simple as possible, the <code>window.alert</code> method is used to display the text “Handling form submission…”.</p>
+<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s
+    Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep
+    this example as simple as possible, the <code>window.alert</code> method is used to display the text "Handling form
+    submission…".</p>
 </blockquote>
 <p>To keep the default form submission from occurring, the event handler method can be updated to this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1">submitForm <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -87,7 +93,7 @@
 <p>The <code>e</code> parameter is a <code>SyntheticEvent</code> object type. You’ll learn more about this object type in just a bit.</p>
 </blockquote>
 <h2 id="using-this-in-event-handlers">Using <code>this</code> in event handlers</h2>
-<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the “happy path” and make things break.</p>
+<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the "happy path" and make things break.</p>
 <p>Here’s the example of a button click event handler again that correctly defines the <code>showAlert</code> event handler method:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// ./src/AlertButton.js</span></a>
 <a class="sourceLine" id="cb4-2" title="2"></a>
@@ -146,7 +152,7 @@
 <a class="sourceLine" id="cb7-20" title="20"><span class="co">// to the class instance.</span></a>
 <a class="sourceLine" id="cb7-21" title="21"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="at">displayName</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb7-22" title="22"><span class="at">displayName</span>()<span class="op">;</span> <span class="co">// TypeError: Cannot read property &#39;name&#39; of undefined</span></a></code></pre></div>
-<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. “Jane Smith” is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
+<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. "Jane Smith" is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
 <p>The second time that the <code>displayName</code> method is called, a reference to the class method is stored in a variable and the method is called using the variable. This breaks the <code>this</code> keyword’s implicit binding to the instance of the class (i.e. <code>p</code>) resulting in the <code>TypeError</code> because <code>this</code> is <code>undefined</code>.</p>
 <p>The <code>bind</code> method can be used to <em>explicitly</em> bind the <code>displayName</code> class method to the <code>p</code> class instance. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>bind</code> method</a> returns a function that’s bound to the passed in object. Now the <code>displayName</code> variable can be successfully called to display the person’s name in the console:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="va">displayName</span>.<span class="at">bind</span>(p)<span class="op">;</span></a>

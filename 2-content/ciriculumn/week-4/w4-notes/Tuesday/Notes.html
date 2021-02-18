@@ -13,17 +13,23 @@
 <p><strong>Referncing the DOM</strong></p>
 <ul>
 <li><p><strong><code>document.getElementById</code></strong> : used to reference a single html element via an id.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">&quot;”catch-me-if-you-can”&quot;</span><span class="op">&gt;</span>HI<span class="op">!</span>&lt;/div<span class="op">&gt;</span></a>
+<div class="sourceCode" id="cb1">
+    <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">&quot;"catch-me-if-you-can"&quot;</span><span class="op">&gt;</span>HI<span class="op">!</span>&lt;/div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">const</span> divOfInterest <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(“catch<span class="op">-</span>me<span class="op">-</span><span class="cf">if</span><span class="op">-</span>you<span class="op">-</span>can”)</a></code></pre></div></li>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">const</span> divOfInterest <span class="op">=</span> <span
+        class="va">document</span>.<span class="at">getElementById</span>("catch<span class="op">-</span>me<span
+        class="op">-</span><span class="cf">if</span><span class="op">-</span>you<span
+        class="op">-</span>can")</a></code></pre>
+</div>
+</li>
 <li><p><strong><code>document.querySelectorAll</code></strong> : used to reference multiple html elements via a class.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;“cloudy”&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="op">&lt;</span>span <span class="kw">class</span><span class="op">=</span><span class="st">&quot;"cloudy"&quot;</span><span class="op">&gt;</span>&lt;/span<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb2-8" title="8"></a>
 <a class="sourceLine" id="cb2-9" title="9"><span class="kw">const</span> cloudySpans <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelectorAll</span>(<span class="st">&quot;span.cloudy&quot;</span>)<span class="op">;</span></a></code></pre></div>
 <ul>

@@ -57,7 +57,7 @@
     are considered; and all the initially-determined relation scan plans
     are available.  The estimated cost is the cheapest of these
     possibilities.)  Join sequences with lower estimated cost are considered
-    <span class="quote">“<span class="quote">more fit</span>”</span> than those with higher cost.  The genetic algorithm
+    <span class="quote">"<span class="quote">more fit</span>"</span> than those with higher cost.  The genetic algorithm
     discards the least fit candidates.  Then new candidates are generated
     by combining genes of more-fit candidates — that is, by using
     randomly-chosen portions of known low-cost join sequences to create
@@ -68,7 +68,7 @@
    </p><p>
     This process is inherently nondeterministic, because of the randomized
     choices made during both the initial population selection and subsequent
-    <span class="quote">“<span class="quote">mutation</span>”</span> of the best candidates.  To avoid surprising changes
+    <span class="quote">"<span class="quote">mutation</span>"</span> of the best candidates.  To avoid surprising changes
     of the selected plan, each run of the GEQO algorithm restarts its
     random number generator with the current <a class="xref" href="runtime-config-query.html#GUC-GEQO-SEED">geqo_seed</a>
     parameter setting.  As long as <code class="varname">geqo_seed</code> and the other

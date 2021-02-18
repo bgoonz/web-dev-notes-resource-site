@@ -20,7 +20,7 @@ For example, [@robb](https://github.com/robb) uses code examples to clearly comm
 
 ![Cartography README](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/images/finding-users/cartography.jpg)
 
-For a deeper dive into messaging, check out Mozilla's [“Personas and Pathways”](https://mozillascience.github.io/working-open-workshop/personas_pathways/) exercise for developing user personas.
+For a deeper dive into messaging, check out Mozilla's ["Personas and Pathways"](https://mozillascience.github.io/working-open-workshop/personas_pathways/) exercise for developing user personas.
 
 [](#help-people-find-and-follow-your-project)Help people find and follow your project
 -------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ If you don't wish to set up outlets for your project yet, promote your own Twitt
 
 **Consider creating a website for your project.** A website makes your project friendlier and easier to navigate, especially when it's paired with clear documentation and tutorials. Having a website also suggests that your project is active which will make your audience feel more comfortable using it. Provide examples to give people ideas for how to use your project.
 
-[@adrianholovaty](https://news.ycombinator.com/item?id=7531689), co-creator of Django, said that a website was _“by far the best thing we did with Django in the early days”_.
+[@adrianholovaty](https://news.ycombinator.com/item?id=7531689), co-creator of Django, said that a website was _"by far the best thing we did with Django in the early days"_.
 
 If your project is hosted on GitHub, you can use [GitHub Pages](https://pages.github.com/) to easily make a website. [Yeoman](http://yeoman.io/), [Vagrant](https://www.vagrantup.com/), and [Middleman](https://middlemanapp.com/) are [a few examples](https://github.com/showcases/github-pages-examples) of excellent, comprehensive websites.
 
@@ -52,7 +52,7 @@ See if you can find ways to share your project in relevant ways:
 
 *   **Get to know relevant open source projects and communities.** Sometimes, you don't have to directly promote your project. If your project is perfect for data scientists who use Python, get to know the Python data science community. As people get to know you, natural opportunities will arise to talk about and share your work.
 *   **Find people experiencing the problem that your project solves.** Search through related forums for people who fall into your project's target audience. Answer their question and find a tactful way, when appropriate, to suggest your project as a solution.
-*   **Ask for feedback.** Introduce yourself and your work to an audience that would find it relevant and interesting. Be specific about who you think would benefit from your project. Try to finish the sentence: _“I think my project would really help X, who are trying to do Y_”. Listen and respond to others' feedback, rather than simply promoting your work.
+*   **Ask for feedback.** Introduce yourself and your work to an audience that would find it relevant and interesting. Be specific about who you think would benefit from your project. Try to finish the sentence: _"I think my project would really help X, who are trying to do Y_". Listen and respond to others' feedback, rather than simply promoting your work.
 
 Generally speaking, focus on helping others before asking for things in return. Because anyone can easily promote a project online, there will be a lot of noise. To stand out from the crowd, give people context for who you are and not just what you want.
 

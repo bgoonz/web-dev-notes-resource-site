@@ -22,7 +22,7 @@
    certificate authority (<acronym class="acronym">CA</acronym>) certificate on one
    computer and a leaf certificate <span class="emphasis"><em>signed</em></span> by the
    root certificate on another computer.  It is also possible to use an
-   <span class="quote">“<span class="quote">intermediate</span>”</span> certificate which is signed by the root
+   <span class="quote">"<span class="quote">intermediate</span>"</span> certificate which is signed by the root
    certificate and signs leaf certificates.
   </p><p>
    To allow the client to verify the identity of the server, place a root
@@ -101,7 +101,7 @@
   </p><p>
    The first certificate in <code class="filename">postgresql.crt</code> must be the
    client's certificate because it must match the client's private key.
-   <span class="quote">“<span class="quote">Intermediate</span>”</span> certificates can be optionally appended
+   <span class="quote">"<span class="quote">Intermediate</span>"</span> certificates can be optionally appended
    to the file — doing so avoids requiring storage of intermediate
    certificates on the server (<a class="xref" href="runtime-config-connection.html#GUC-SSL-CA-FILE">ssl_ca_file</a>).
   </p><p>

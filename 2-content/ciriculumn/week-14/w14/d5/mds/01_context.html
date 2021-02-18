@@ -15,7 +15,9 @@
 <!-- /code_chunk_output -->
 <hr />
 <p>At this point, you know how to manage a component’s state and pass information down an application’s component tree by threading props from parent components to child components. Think of how tedious it could be to pass down information, like current user data or a UI theme, to every component in an application. Instead of threading the information as props from a parent component to its children and grandchildren, you can share information with any of your application’s components by using React Context!</p>
-<p><a href="https://reactjs.org/docs/context.html">React Context</a> gives you a way to pass data through the component tree without having to manually thread props. Context gives developers a convenient way to share and update “global” data across a React application. Now it’s time to dive into application-wide data management!</p>
+<p><a href="https://reactjs.org/docs/context.html">React Context</a> gives you a way to pass data through the component
+    tree without having to manually thread props. Context gives developers a convenient way to share and update "global"
+    data across a React application. Now it’s time to dive into application-wide data management!</p>
 <p>When you finish this article, you should be able to:</p>
 <ul>
 <li>Use React Context to pass down global information</li>
@@ -180,7 +182,11 @@
 <a class="sourceLine" id="cb12-37" title="37">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-38" title="38">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb12-39" title="39"><span class="op">}</span></a></code></pre></div>
-<p>As you can see, the <code>PupForm</code> has a default <code>selectedPup</code> state that will set the default select option to be “Select a pup!”. There is also an <code>updateSelection</code> method that listens for change events in the dropdown menu to update the <code>selectedPup</code> slice of state. Now that you have a basic dropdown menu set up, it’s time to create a consumer wrapper so that the <code>PupForm</code> component can have access to the <code>PupContext</code>!</p>
+<p>As you can see, the <code>PupForm</code> has a default <code>selectedPup</code> state that will set the default
+    select option to be "Select a pup!". There is also an <code>updateSelection</code> method that listens for change
+    events in the dropdown menu to update the <code>selectedPup</code> slice of state. Now that you have a basic
+    dropdown menu set up, it’s time to create a consumer wrapper so that the <code>PupForm</code> component can have
+    access to the <code>PupContext</code>!</p>
 <p>You’ll want to use a <a href="https://reactjs.org/docs/context.html#contextconsumer">Context.Consumer</a> component to wrap your <code>PupForm</code> component, this way the wrapped component can subscribe to context changes. Note that the <code>Context.Consumer</code> component expects a function as a child:</p>
 <pre class="jsx"><code>&lt;MyContext.Consumer&gt;
   {(value) =&gt; &lt;Component value={value} /&gt;}

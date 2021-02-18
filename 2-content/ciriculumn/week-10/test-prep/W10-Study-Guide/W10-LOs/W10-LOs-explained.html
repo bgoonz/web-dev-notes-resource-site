@@ -25,7 +25,7 @@
 <ul>
 <li>Postgres Docs: https://www.postgresql.org/docs/</li>
 <li>Sequelize Docs: https://sequelize.org/</li>
-<li>Sequelize “Cheatsheet”</li>
+<li>Sequelize “Cheatsheet"</li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -107,7 +107,8 @@
 <ul>
 <li>RDBMS stands for Relational Database Management System</li>
 <li>A software application that you run that your programs can connect to so that they can store, modify, and retrieve data.</li>
-<li>An RDBMS can track many databases. We will use PostgreSQL, or “postgres”, primarily for our RDBMS and it will be able to create individual databases for each of our projects.</li>
+<li>An RDBMS can track many databases. We will use PostgreSQL, or “postgres", primarily for our RDBMS and it will be
+    able to create individual databases for each of our projects.</li>
 </ul>
 <ol start="2" type="1">
 <li>Describe what relational data is</li>
@@ -115,7 +116,7 @@
 <ul>
 <li>In general, relational data is information that is connected to other pieces of information.</li>
 <li>When working with relational databases, we can connect two entries together utilizing foreign keys (explained below).</li>
-<li>In a pets database, we could be keeping track of dogs and cats as well as the toys that each of them own. That “ownership” of a cat to a toy is the “relational” aspect of relational data. Two pieces of information that can be connected together to show some sort of meaning.</li>
+<li>In a pets database, we could be keeping track of dogs and cats as well as the toys that each of them own. That “ownership" of a cat to a toy is the “relational" aspect of relational data. Two pieces of information that can be connected together to show some sort of meaning.</li>
 </ul>
 <ol start="3" type="1">
 <li>Define what a database is</li>
@@ -138,7 +139,7 @@
 </ol>
 <ul>
 <li>A primary key is used in the database as a unique identifier for the table.</li>
-<li>We often use an “id” field that simply increments with each entry. The incrementing ensures that each record has a unique identifier, even if their are other fields of the record that are repeated (two people with the same name would still need to have a unique identifier, for example).</li>
+<li>We often use an “id" field that simply increments with each entry. The incrementing ensures that each record has a unique identifier, even if their are other fields of the record that are repeated (two people with the same name would still need to have a unique identifier, for example).</li>
 <li>With a unique identifier, we can easily connect records within the table to records from other tables.</li>
 </ul>
 <ol start="6" type="1">
@@ -146,21 +147,21 @@
 </ol>
 <ul>
 <li>A foreign key is used as the connector from this record to the primary key of another table’s record.</li>
-<li>In our pets example, we can imagine two tables to demonstrate: a table to represent cats and a table to represent toys. Each of these tables has a primary key of “id” that is used as the unique identifier. In order to make a connection between a toy and a cat, we can add another field to the cat table called “owner_id”, indicating that it is a foreign key for the cat table. By setting a toy’s “owner_id” to the same value as a particular cat’s “id”, we can indicate that the cat is the owner of that toy.</li>
+<li>In our pets example, we can imagine two tables to demonstrate: a table to represent cats and a table to represent toys. Each of these tables has a primary key of “id" that is used as the unique identifier. In order to make a connection between a toy and a cat, we can add another field to the cat table called “owner_id", indicating that it is a foreign key for the cat table. By setting a toy’s “owner_id" to the same value as a particular cat’s “id", we can indicate that the cat is the owner of that toy.</li>
 </ul>
 <ol start="7" type="1">
 <li>Describe how to properly name things in PostgreSQL</li>
 </ol>
 <ul>
 <li>Names within postgres should generally consist of only lowercase letters, numbers, and underscores.</li>
-<li>Tables within a database are plural by convention, so a table for cats would typically be “cats” and office locations would be “office_locations” (all lowercase, underscores to replace spaces, plural)</li>
+<li>Tables within a database are plural by convention, so a table for cats would typically be “cats" and office locations would be “office_locations" (all lowercase, underscores to replace spaces, plural)</li>
 </ul>
 <ol start="8" type="1">
 <li>Install and configure PostgreSQL 12, its client tools, and a GUI client for it named Postbird</li>
 </ol>
 <ul>
 <li>macOS: https://open.appacademy.io/learn/js-py—aug-2020-online/week-10-aug-2020-online/installing-postgresql-on-macos</li>
-<li>Ubuntu: The section starting with “Installing PostgreSQL Client Tools on Ubuntu”: https://open.appacademy.io/learn/js-py—aug-2020-online/week-10-aug-2020-online/installing-postgresql-on-windows
+<li>Ubuntu: The section starting with “Installing PostgreSQL Client Tools on Ubuntu": https://open.appacademy.io/learn/js-py—aug-2020-online/week-10-aug-2020-online/installing-postgresql-on-windows
 <ul>
 <li>Additional resource: https://help.ubuntu.com/community/PostgreSQL</li>
 </ul></li>
@@ -356,7 +357,7 @@
 <li><code>WHERE {column} = {value}</code> provides an exact comparison</li>
 <li><code>WHERE {column} IN ({value1}, {value2}, {value3}, etc.)</code> matches any provided value in the <code>IN</code> statement. We can make this more complex by having a subquery inside of the parentheses, having our column match any values within the returned results.</li>
 <li><code>WHERE {column} BETWEEN {value1} AND {value2}</code> can check for matches between two values (numeric ranges)</li>
-<li><code>WHERE {column} LIKE {pattern}</code> can check for matches to a string. This is most useful when we use the wildcard <code>%</code>, such as <code>WHERE breed LIKE '%Shepherd'</code>, which will match any breed that ends in “Shepherd”</li>
+<li><code>WHERE {column} LIKE {pattern}</code> can check for matches to a string. This is most useful when we use the wildcard <code>%</code>, such as <code>WHERE breed LIKE '%Shepherd'</code>, which will match any breed that ends in “Shepherd"</li>
 <li>The <code>NOT</code> operator can also be used for negation in the checks.</li>
 <li>Mathematical operators can be used when performing calculations or comparisons within a query as well, such as</li>
 </ul>
@@ -556,7 +557,7 @@
 <li>The return value of this asynchronous function is an object with a <code>rows</code> key that points to an array of objects, each object representing a record with field names as keys.</li>
 </ul>
 <ol start="6" type="1">
-<li>Explain how to write prepared statements with placeholders for parameters of the form “$1”, “$2”, and so on</li>
+<li>Explain how to write prepared statements with placeholders for parameters of the form “$1", “$2", and so on</li>
 </ol>
 <ul>
 <li>The prepared statement (SQL string that we wrote) can also be made more dynamic by allowing for parameters to be passed in.</li>
@@ -687,7 +688,7 @@
 <a class="sourceLine" id="cb22-16" title="16"><span class="op">}</span></a></code></pre></div></li>
 <li>Another key part of the model file is setting up our associations. We can use the <code>belongsTo</code>, <code>hasMany</code>, and <code>belongsToMany</code> methods to set up model-level associations. Doing so is what creates the helpful functionality like <code>addOwner</code> that we saw in the pets example, a function that automatically generates the SQL necessary to create a petOwner record and supplies the appropriate petId and ownerId.
 <ul>
-<li>In a one-to-many association, we need to have a <code>belongsTo</code> association on the “many” side, and a <code>hasMany</code> association on the “one” side:
+<li>In a one-to-many association, we need to have a <code>belongsTo</code> association on the “many" side, and a <code>hasMany</code> association on the “one" side:
 <ul>
 <li><code>Instruction.belongsTo(models.Recipe, { foreignKey: 'recipeId' });</code></li>
 <li><code>Recipe.hasMany(models.Instruction, { foreignKey: 'recipeId' });</code></li>
@@ -900,7 +901,7 @@
 <ul>
 <li>Just like the where clause, we can pass an order key to specify we want our results ordered</li>
 <li>The key <code>order</code> points to an array with the fields that we want to order by</li>
-<li>By default, the order is ascending, just like standard SQL. If we want to specify descending, we can instead use a nested array with the field name as the first element and “DESC” as the second element. (We could also specify “ASC” as a second element in a nested array, but it is unnecessary as it is default)</li>
+<li>By default, the order is ascending, just like standard SQL. If we want to specify descending, we can instead use a nested array with the field name as the first element and “DESC" as the second element. (We could also specify “ASC" as a second element in a nested array, but it is unnecessary as it is default)</li>
 </ul>
 <div class="sourceCode" id="cb38"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">const</span> cats <span class="op">=</span> <span class="cf">await</span> <span class="va">Cat</span>.<span class="at">findAll</span>(<span class="op">{</span></a>
 <a class="sourceLine" id="cb38-2" title="2">  <span class="co">// Order by age descending, then by firstName ascending if cats have the same age</span></a>

@@ -27,7 +27,9 @@
 <p>Read through the lesson slides for an intro to data modeling: <a href="https://docs.google.com/presentation/d/19XTnwuzk11SaE0Kgn0R0t_nvQ_1L0j_Tk-AdwfcsiTg/edit">Introduction to Data Models</a></p>
 <h4 id="data-modeling-overview">Data modeling overview</h4>
 <p>Databases are made up of one or more tables. Each table has one or more columns. Database design is similar to something you’ve seen before: Object Oriented Programming. In OOP you need to choose which objects to create and which attributes each object should have. Similarly, for database modeling you need to decide which tables and columns your database will need.</p>
-<p>Tables are sometimes also called “entities” and columns can be called “attributes” of an entity. In this lesson we’ll use the words interchangeably. The description of which tables and columns your database will have is called the “database schema”.</p>
+<p>Tables are sometimes also called “entities" and columns can be called “attributes" of an entity. In this lesson we’ll
+    use the words interchangeably. The description of which tables and columns your database will have is called the
+    “database schema".</p>
 <p>To model data, you’ll need to think through the pieces of data your application needs and how those pieces of data relate to each other.</p>
 <p>When you’re modeling data, you’ll need to determine:</p>
 <ul>
@@ -75,7 +77,8 @@
 <li>Whether I own it (Boolean)</li>
 </ul>
 <h4 id="date-modeling-considerations">Date modeling considerations</h4>
-<p>There are often multiple valid ways to model our data. Let’s return to our example from above. One way we could change the data model is instead of having a Book have an attribute “author”, we could have attributes for:</p>
+<p>There are often multiple valid ways to model our data. Let’s return to our example from above. One way we could
+    change the data model is instead of having a Book have an attribute “author", we could have attributes for:</p>
 <ul>
 <li>Author first name</li>
 <li>Author middle name</li>
@@ -83,8 +86,8 @@
 </ul>
 <p>We might choose to make this change if we wanted to make sure to collect the author data in a structured form rather than just a free-form string. An example could be if we want to sort the data by author’s last name.</p>
 <h4 id="primary-keys">Primary keys</h4>
-<p>Each entity should have a “primary key”. This is a unique identifier for a given row in the database.</p>
-<p>To understand rows, let’s look at an example. For each table in our database, we’ll have multple “rows” representing individual instances of the entity. For example, I might have 2 books:</p>
+<p>Each entity should have a “primary key". This is a unique identifier for a given row in the database.</p>
+<p>To understand rows, let’s look at an example. For each table in our database, we’ll have multple “rows" representing individual instances of the entity. For example, I might have 2 books:</p>
 <p>Book:</p>
 <ul>
 <li>Title: Harry Potter and the Sorcerer’s Stone</li>
@@ -102,9 +105,9 @@
 <li>Whether I own it: False</li>
 </ul>
 <p>How can I uniquely identify a book in my collection? A first thought might be to use the book’s title. But sometimes multiple books can exist with the same title. Or sometimes a title could change (e.g. if I typed it in wrong and later corrected it).</p>
-<p>For books, an option could be to add an attribute for ISBN (International Standard Book Number), which is a unique identifier that happens to exist for books. Then the “isbn” column could be my primary key.</p>
+<p>For books, an option could be to add an attribute for ISBN (International Standard Book Number), which is a unique identifier that happens to exist for books. Then the “isbn" column could be my primary key.</p>
 <p>But what if I also wanted to add magazines into the table, which don’t have an ISBN?</p>
-<p>A common solution to this is to create a new attribute called “id” (or something similar, like “bookId”). This attribute’s data type will be integer, and we’ll assign a unique value to every row.</p>
+<p>A common solution to this is to create a new attribute called “id" (or something similar, like “bookId"). This attribute’s data type will be integer, and we’ll assign a unique value to every row.</p>
 <p>Now our data model will look like:</p>
 <p>Book</p>
 <ul>

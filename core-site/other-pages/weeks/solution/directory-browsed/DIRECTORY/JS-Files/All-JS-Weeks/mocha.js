@@ -13448,9 +13448,9 @@ module.exports = function hasSymbols() {
 		var output = '';
 		if ((codePoint >= 0xD800 && codePoint <= 0xDFFF) || codePoint > 0x10FFFF) {
 			// See issue #4:
-			// “Otherwise, if the number is in the range 0xD800 to 0xDFFF or is
+			// "Otherwise, if the number is in the range 0xD800 to 0xDFFF or is
 			// greater than 0x10FFFF, then this is a parse error. Return a U+FFFD
-			// REPLACEMENT CHARACTER.”
+			// REPLACEMENT CHARACTER."
 			if (strict) {
 				parseError('character reference outside the permissible Unicode range');
 			}

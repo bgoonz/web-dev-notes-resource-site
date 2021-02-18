@@ -100,7 +100,7 @@ These are some misconceptions that people have in their mind but it is not alway
 
 - **Antivirus will secure my computer** - It is one of the most common misconceptions. But a virus is a piece of code, anti-virus is also the piece of code. They both are created by those having knowledge of both and to fight against each other and competitive with each other.
 
-- **Cyber Security is just a form of defense** - “The best defense is a good offense.”
+- **Cyber Security is just a form of defense** - “The best defense is a good offense."
 
 - **You will never be attacked** - Unfortunately, the attacked business is often the last to know that it's been breached. It's only after banks discover fraudulent charges that businesses hear about a suspected hack. ([Top 8 Data Breach Misconceptions](https://www.insureon.com/blog/post/2015/01/12/top-8-data-breach-misconceptions.aspx))
 

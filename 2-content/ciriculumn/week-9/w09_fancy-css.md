@@ -279,8 +279,8 @@ selector can be any of the following basic types:
 - **Type selectors** -- matches elements by node name (e.g. `div`, `li`, `a`,
   `p`)
 - **Class selectors** -- matches elements by class name (e.g.
-  `<button class=“active”>`)
-- **ID selectors** -- matches elements by ID name (e.g. `<div id=”list-1”>`)
+  `<button class="active">`)
+- **ID selectors** -- matches elements by ID name (e.g. `<div id="list-1">`)
 - **Universal selectors** -- matches elements of any type (e.g. `*`)
 - **[Attribute selectors][2]** -- matches elements based on the presence or
   value of a given attribute (e.g. `a[title]` matches all `a` elements with a
@@ -2706,7 +2706,7 @@ ________________________________________________________________________________
 Understanding how to utilize margin, border, and padding around page elements
 is an essential part of designing/developing for the Web.
 
-In this reading, we’ll go over “The Box Model” and how to use the CSS
+In this reading, we’ll go over "The Box Model" and how to use the CSS
 properties `margin`, `border` and `padding` on elements to create/enhance the
 page layout.
 
@@ -3361,7 +3361,7 @@ positioned relative to its closest block-level ancestor and any _scrolling_
 ancestors (created when `overflow` is `hidden`, `scroll`, `auto`, or `overlay`).
 It behaves like a relatively positioned element until the point at which you
 would normally scroll past it in the viewport. At that scrolling point, the
-element “sticks” to the page wherever it has been positioned by the `top`,
+element "sticks" to the page wherever it has been positioned by the `top`,
 `left`, `bottom` and `right` properties. Sticky positioning creates a [stacking
 context][3] -- overlapping elements whose order can be set by the `z-index`
 property. (See the MDN doc on [z-index][4] for an example.)
@@ -3603,7 +3603,7 @@ plugins.
 
 While many developers and dev shops still use Bootstrap for convenience, it
 does come with some caveats: A Bootstrap grid is 12 columns, and this cannot be
-changed. Bootstrap automatically adds padding around columns (known as “gutters”
+changed. Bootstrap automatically adds padding around columns (known as "gutters"
 ) that you may or may not want to override. There are a number of HTML classes
 to use for the container, row, and columns at responsive breakpoints -- meaning
 more stuff to add to your HTML file. That said, Bootstrap is a common
@@ -3803,7 +3803,7 @@ rows will `auto` resize to fit their items.
 ## Grid Gaps
 
 Grid gaps refer to the spaces between rows or between columns. They are
-basically “gutters”. These properties allow us to set the spacing between rows
+basically "gutters". These properties allow us to set the spacing between rows
 or columns:
 
 * `grid-column-gap` - accepts a size value
@@ -4015,17 +4015,17 @@ Example CSS using a mix of acceptable values:
 
 ```css
 .item-1 {
-  grid-row-start: row2-start;  /* Item starts at row line named “row2-start” */
+  grid-row-start: row2-start;  /* Item starts at row line named "row2-start" */
   grid-row-end: 5;  /* Item ends at row line 5 */
   grid-column-start: 1;  /* Item starts at column line 1 */
-  grid-column-end: three;  /* Item ends at column line named “three” */
+  grid-column-end: three;  /* Item ends at column line named "three" */
 }
 
 .item-2 {
   grid-row-start: 1;  /* Item starts at row line 1 */
   grid-row-end: span 2;  /* Item spans two rows and ends at row line 3 */
   grid-column-start: 3;  /* Item starts at column line 3 */
-  grid-column-end: span col5-start;  /* Item spans and ends at line named “col5-start” */
+  grid-column-end: span col5-start;  /* Item spans and ends at line named "col5-start" */
 }
 ```
 
@@ -4068,7 +4068,7 @@ main, sidebar, and footer. We could also use this property as a shorthand for
 ```css
 .item {
   grid-area: row1-start / col4-start / 5 / 3;
-  /* Starts at line named “row1-start” / Starts at line named “col4-start” / Ends at row line 5 / Ends at column line 3 */
+  /* Starts at line named "row1-start" / Starts at line named "col4-start" / Ends at row line 5 / Ends at column line 3 */
 }
 ```
 
@@ -4427,7 +4427,7 @@ There’s no better way to practice page layout than by going back to where it a
 began -- the newspaper! Printed papers have been painstakingly laid out with
 considerations of both limited space and limited attention spans. Some of these
 layout and design principles have persisted from print to the Web -- for
-examples, the term “above-the-fold” (above the literal page fold in print, and
+examples, the term "above-the-fold" (above the literal page fold in print, and
 the visible part of the screen before scrolling down online) and the concept of
 CSS floats from text-wrapped images.
 
@@ -4454,8 +4454,8 @@ you will find the following files.
   you will write your CSS
 * **nyt-logo.svg** which contains the New York Times' logo.
 
-Refer to your reading and resources like [“CSS Grid Layout”][1] (MDN Docs) or [
-“A Complete Guide to Grid”][2] (CSS-Tricks) for guidance on setting up the grid
+Refer to your reading and resources like ["CSS Grid Layout"][1] (MDN Docs) or [
+"A Complete Guide to Grid"][2] (CSS-Tricks) for guidance on setting up the grid
 for your project.
 
 When you are done, you will have a Web page similar to what you see in this
@@ -4470,7 +4470,7 @@ ________________________________________________________________________________
 # Gridding Up A Page: Phase One
 
 Based on the large screenshot from before, you will need to set up a grid with
-10 sections, i.e. “areas”, which you’ll can refer to these labels in order of
+10 sections, i.e. "areas", which you’ll can refer to these labels in order of
 appearance.
 
 * **header** (Section 1)
@@ -5143,12 +5143,12 @@ classes. In other words, complete anarchy!
 
 To solve the problem of loose standards, reputable developers have created
 guidelines by which all developers can abide. One of the most popular sets of
-CSS conventions is [BEM][1], or the **“Block, Element, Modifier”** methodology.
+CSS conventions is [BEM][1], or the **"Block, Element, Modifier"** methodology.
 
 ## What is a Block?
 
-According to [BEM][2], _a **Block** represents “a standalone entity that is
-meaningful on its own.”_
+According to [BEM][2], _a **Block** represents "a standalone entity that is
+meaningful on its own."_
 
 Rules for Blocks:
 
@@ -5164,7 +5164,7 @@ Example Block:
 **HTML**
 
 ```html
-<div class="”block”"></div>
+<div class=""block""></div>
 ```
 
 **CSS**
@@ -5177,8 +5177,8 @@ Example Block:
 
 ## What is an Element?
 
-According to [BEM](http://getbem.com/naming/), _an **Element** represents “part
-of a block and has **no** standalone meaning.”_
+According to [BEM](http://getbem.com/naming/), _an **Element** represents "part
+of a block and has **no** standalone meaning."_
 
 Rules for Elements:
 
@@ -5196,7 +5196,7 @@ Example Element:
 **HTML**
 
 ```html
-<div class="”block”">
+<div class=""block"">
   <span class="block__elem"></span>
 </div>
 ```
@@ -5222,8 +5222,8 @@ div.block__elem {
 
 ## What is a Modifier?
 
-According to [BEM][1], _a **Modifier** represents “a flag on blocks or elements.
-Use them to change appearance, behavior or state.”_
+According to [BEM][1], _a **Modifier** represents "a flag on blocks or elements.
+Use them to change appearance, behavior or state."_
 
 Rules for Modifiers:
 

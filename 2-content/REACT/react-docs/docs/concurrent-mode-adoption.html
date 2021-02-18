@@ -53,7 +53,7 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
 <p>Normally, when we add features to React, you can start using them immediately. Fragments, Context, and even Hooks are examples of such features. You can use them in new code without making any changes to the existing code.</p>
 <p>Concurrent Mode is different. It introduces semantic changes to how React works. Otherwise, the <a
         href="/docs/concurrent-mode-patterns.html">new features</a> enabled by it <em>wouldn't be possible</em>. This is
-    why they're grouped into a new “mode” rather than released one by one in isolation.</p>
+    why they're grouped into a new "mode" rather than released one by one in isolation.</p>
 <p>You can't opt into Concurrent Mode on a per-subtree basis. Instead, to opt in, you have to do it in the place where
     today you call <code>ReactDOM.render()</code>.</p>
 <p><strong>This will enable Concurrent Mode for the whole <code>&lt;App /&gt;</code> tree:</strong></p>
@@ -73,7 +73,7 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
 <p>Concurrent Mode APIs such as <code>createRoot</code> only exist in the experimental builds of React.</p>
 </blockquote>
 <p>In Concurrent Mode, the lifecycle methods <a href="/blog/2018/03/27/update-on-async-rendering.html">previously
-        marked</a> as “unsafe” actually <em>are</em> unsafe, and lead to bugs even more than in today's React. We don't
+        marked</a> as "unsafe" actually <em>are</em> unsafe, and lead to bugs even more than in today's React. We don't
     recommend trying Concurrent Mode until your app is <a href="/docs/strict-mode.html">Strict Mode</a>-compatible.</p>
 <h2 id="what-to-expect">What to Expect</h2>
 <p>If you have a large existing app, or if your app depends on a lot of third-party packages, please don't expect that
@@ -85,7 +85,7 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
     the easiest to get running in the Concurrent Mode. We will describe common problems we've seen and the solutions to
     them separately in the coming weeks.</p>
 <h3 id="migration-step-blocking-mode">Migration Step: Blocking Mode</h3>
-<p>For older codebases, Concurrent Mode might be a step too far. This is why we also provide a new “Blocking Mode” in the experimental React builds. You can try it by substituting <code>createRoot</code> with <code>createBlockingRoot</code>. It only offers a <em>small subset</em> of the Concurrent Mode features, but it is closer to how React works today and can serve as a migration step.</p>
+<p>For older codebases, Concurrent Mode might be a step too far. This is why we also provide a new "Blocking Mode" in the experimental React builds. You can try it by substituting <code>createRoot</code> with <code>createBlockingRoot</code>. It only offers a <em>small subset</em> of the Concurrent Mode features, but it is closer to how React works today and can serve as a migration step.</p>
 <p>To recap:</p>
 <ul>
 <li><strong>Legacy Mode:</strong> <code>ReactDOM.render(&lt;App /&gt;, rootNode)</code>. This is what React apps use
@@ -104,7 +104,7 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
         href="https://github.com/facebook/react/issues/15080">lack of consistent batching guarantees</a>. There's a
     number of bugs that can't be fixed in Legacy Mode without changing semantics, but don't exist in Blocking and
     Concurrent Modes.</p>
-<p>You can think of the Blocking Mode as a “gracefully degraded” version of the Concurrent Mode. <strong>As a result, in longer term we should be able to converge and stop thinking about different Modes altogether.</strong> But for now, Modes are an important migration strategy. They let everyone decide when a migration is worth it, and upgrade at their own pace.</p>
+<p>You can think of the Blocking Mode as a "gracefully degraded" version of the Concurrent Mode. <strong>As a result, in longer term we should be able to converge and stop thinking about different Modes altogether.</strong> But for now, Modes are an important migration strategy. They let everyone decide when a migration is worth it, and upgrade at their own pace.</p>
 <h3 id="feature-comparison">Feature Comparison</h3>
 <style>
   #feature-table table { border-collapse: collapse; }
@@ -207,7 +207,7 @@ APIs may be added, changed, or removed with any <code>@experimental</code> relea
 <td>✅</td>
 </tr>
 <tr class="odd">
-<td><a href="/docs/concurrent-mode-patterns.html#suspense-reveal-train">Suspense Reveal “Train”</a></td>
+<td><a href="/docs/concurrent-mode-patterns.html#suspense-reveal-train">Suspense Reveal "Train"</a></td>
 <td>🚫</td>
 <td>🚫</td>
 <td>✅</td>

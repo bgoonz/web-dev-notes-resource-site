@@ -6,7 +6,7 @@ description: Bump a package version
 
 ### Synopsis
 
-```bash
+``` bash
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
 
 'npm [-v | --version]' to print npm version
@@ -17,17 +17,17 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 ### Description
 
 Run this in a package directory to bump the version and write the new
-data back to `package.json`, `package-lock.json`, and, if present, `npm-shrinkwrap.json`.
+data back to `package.json` , `package-lock.json` , and, if present, `npm-shrinkwrap.json` .
 
 The `newversion` argument should be a valid semver string, a
-valid second argument to [semver.inc](https://github.com/npm/node-semver#functions) (one of `patch`, `minor`, `major`,
-`prepatch`, `preminor`, `premajor`, `prerelease`), or `from-git`. In the second case,
+valid second argument to [semver.inc](https://github.com/npm/node-semver#functions) (one of `patch` , `minor` , `major` , 
+`prepatch` , `preminor` , `premajor` , `prerelease` ), or `from-git` . In the second case, 
 the existing version will be incremented by 1 in the specified field.
 `from-git` will try to read the latest git tag, and use that as the new npm version.
 
 If run in a git repo, it will also create a version commit and tag.
 This behavior is controlled by `git-tag-version` (see below), and can
-be disabled on the command line by running `npm --no-git-tag-version version`.
+be disabled on the command line by running `npm --no-git-tag-version version` .
 It will fail if the working directory is not clean, unless the `-f` or
 `--force` flag is set.
 
@@ -36,7 +36,7 @@ use it as a commit message when creating a version commit.  If the
 `message` config contains `%s` then that will be replaced with the
 resulting version number.  For example:
 
-```bash
+``` bash
 npm version patch -m "Upgrade to %s for reasons"
 ```
 
@@ -44,7 +44,7 @@ If the `sign-git-tag` config is set, then the tag will be signed using
 the `-s` flag to git.  Note that you must have a default GPG key set up
 in your git config for this to work properly.  For example:
 
-```bash
+``` bash
 $ npm config set sign-git-tag true
 $ npm version patch
 
@@ -55,27 +55,35 @@ user: "isaacs (http://blog.izs.me/) <i@izs.me>"
 Enter passphrase:
 ```
 
-If `preversion`, `version`, or `postversion` are in the `scripts` property of
-the package.json, they will be executed as part of running `npm version`.
+If `preversion` , `version` , or `postversion` are in the `scripts` property of
+the package.json, they will be executed as part of running `npm version` .
 
 The exact order of execution is as follows:
+
   1. Check to make sure the git working directory is clean before we get started.
+
      Your scripts may add files to the commit in future steps.
      This step is skipped if the `--force` flag is set.
+
   2. Run the `preversion` script. These scripts have access to the old `version` in package.json.
+
      A typical use would be running your full test suite before deploying.
-     Any files you want added to the commit should be explicitly added using `git add`.
-  3. Bump `version` in `package.json` as requested (`patch`, `minor`, `major`, etc).
+     Any files you want added to the commit should be explicitly added using `git add` .
+
+  3. Bump `version` in `package.json` as requested (`patch`,     `minor`,     `major`, etc).
   4. Run the `version` script. These scripts have access to the new `version` in package.json
+
      (so they can incorporate it into file headers in generated files for example).
-     Again, scripts should explicitly add generated files to the commit using `git add`.
+     Again, scripts should explicitly add generated files to the commit using `git add` .
+
   5. Commit and tag.
   6. Run the `postversion` script. Use it to clean up the file system or automatically push
+
      the commit and/or tag.
 
 Take the following example:
 
-```json
+``` json
     "scripts": {
       "preversion": "npm test",
       "version": "npm run build && git add -A dist",

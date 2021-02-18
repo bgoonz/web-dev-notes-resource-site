@@ -129,8 +129,8 @@ class TemperatureInput extends React.Component {
     const temperature = this.state.temperature;
     // ...  </code></pre>
 <p>However, we want these two inputs to be in sync with each other. When we update the Celsius input, the Fahrenheit input should reflect the converted temperature, and vice versa.</p>
-<p>In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the <code>TemperatureInput</code> and move it into the <code>Calculator</code> instead.</p>
-<p>If the <code>Calculator</code> owns the shared state, it becomes the “source of truth” for the current temperature in both inputs. It can instruct them both to have values that are consistent with each other. Since the props of both <code>TemperatureInput</code> components are coming from the same parent <code>Calculator</code> component, the two inputs will always be in sync.</p>
+<p>In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called "lifting state up". We will remove the local state from the <code>TemperatureInput</code> and move it into the <code>Calculator</code> instead.</p>
+<p>If the <code>Calculator</code> owns the shared state, it becomes the "source of truth" for the current temperature in both inputs. It can instruct them both to have values that are consistent with each other. Since the props of both <code>TemperatureInput</code> components are coming from the same parent <code>Calculator</code> component, the two inputs will always be in sync.</p>
 <p>Let's see how this works step by step.</p>
 <p>First, we will replace <code>this.state.temperature</code> with <code>this.props.temperature</code> in the
     <code>TemperatureInput</code> component. For now, let's pretend <code>this.props.temperature</code> already exists,
@@ -140,7 +140,7 @@ class TemperatureInput extends React.Component {
     const temperature = this.props.temperature;
     // ...</code></pre>
 <p>We know that <a href="/docs/components-and-props.html#props-are-read-only">props are read-only</a>. When the <code>temperature</code> was in the local state, the <code>TemperatureInput</code> could just call <code>this.setState()</code> to change it. However, now that the <code>temperature</code> is coming from the parent as a prop, the <code>TemperatureInput</code> has no control over it.</p>
-<p>In React, this is usually solved by making a component “controlled”. Just like the DOM <code>&lt;input&gt;</code> accepts both a <code>value</code> and an <code>onChange</code> prop, so can the custom <code>TemperatureInput</code> accept both <code>temperature</code> and <code>onTemperatureChange</code> props from its parent <code>Calculator</code>.</p>
+<p>In React, this is usually solved by making a component "controlled". Just like the DOM <code>&lt;input&gt;</code> accepts both a <code>value</code> and an <code>onChange</code> prop, so can the custom <code>TemperatureInput</code> accept both <code>temperature</code> and <code>onTemperatureChange</code> props from its parent <code>Calculator</code>.</p>
 <p>Now, when the <code>TemperatureInput</code> wants to update its temperature, it calls <code>this.props.onTemperatureChange</code>:</p>
 <pre class="js{3}"><code>  handleChange(e) {
     // Before: this.setState({temperature: e.target.value});
@@ -180,7 +180,7 @@ class TemperatureInput extends React.Component {
 }</code></pre>
 <p>Now let's turn to the <code>Calculator</code> component.</p>
 <p>We will store the current input's <code>temperature</code> and <code>scale</code> in its local state. This is the
-    state we “lifted up” from the inputs, and it will serve as the “source of truth” for both of them. It is the minimal
+    state we "lifted up" from the inputs, and it will serve as the "source of truth" for both of them. It is the minimal
     representation of all the data we need to know in order to render both inputs.</p>
 <p>For example, if we enter 37 into the Celsius input, the state of the <code>Calculator</code> component will be:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="op">{</span></a>
@@ -253,8 +253,8 @@ class TemperatureInput extends React.Component {
 </ul>
 <p>Every update goes through the same steps so the inputs stay in sync.</p>
 <h2 id="lessons-learned">Lessons Learned</h2>
-<p>There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the <a href="/docs/state-and-lifecycle.html#the-data-flows-down">top-down data flow</a>.</p>
-<p>Lifting state involves writing more “boilerplate” code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.</p>
+<p>There should be a single "source of truth" for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the <a href="/docs/state-and-lifecycle.html#the-data-flows-down">top-down data flow</a>.</p>
+<p>Lifting state involves writing more "boilerplate" code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state "lives" in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.</p>
 <p>If something can be derived from either props or state, it probably shouldn't be in the state. For example, instead
     of storing both <code>celsiusValue</code> and <code>fahrenheitValue</code>, we store just the last edited
     <code>temperature</code> and its <code>scale</code>. The value of the other input can always be calculated from them

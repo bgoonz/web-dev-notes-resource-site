@@ -82,7 +82,7 @@ pg_ctl start | rotatelogs /var/log/pgsql_log 86400
    particularly with large log messages; it might truncate or drop messages
    just when you need them the most.  Also, on <span class="productname">Linux</span>,
    <span class="application">syslog</span> will flush each message to disk, yielding poor
-   performance.  (You can use a <span class="quote">“<span class="quote"><code class="literal">-</code></span>”</span> at the start of the file name
+   performance.  (You can use a <span class="quote">"<span class="quote"><code class="literal">-</code></span>"</span> at the start of the file name
    in the <span class="application">syslog</span> configuration file to disable syncing.)
   </p><p>
    Note that all the solutions described above take care of starting new

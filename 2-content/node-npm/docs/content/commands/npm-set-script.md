@@ -5,18 +5,18 @@ description: Set tasks in the scripts section of package.json
 ---
 
 ### Synopsis
+
 An npm command that lets you create a task in the scripts section of the package.json.
 
-```bash
+``` bash
 npm set-script [<script>] [<command>]
 ```
-
 
 **Example:**
 
 * `npm set-script start "http-server ."`
 
-```json
+``` json
 {
   "name": "my-project",
   "scripts": {

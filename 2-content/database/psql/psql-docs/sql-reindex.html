@@ -13,7 +13,7 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
       hardware failures.  <code class="command">REINDEX</code> provides a
       recovery method.
      </p></li><li class="listitem"><p>
-      An index has become <span class="quote">“<span class="quote">bloated</span>”</span>, that is it contains many
+      An index has become <span class="quote">"<span class="quote">bloated</span>"</span>, that is it contains many
       empty or nearly-empty pages.  This can occur with B-tree indexes in
       <span class="productname">PostgreSQL</span> under certain uncommon access
       patterns. <code class="command">REINDEX</code> provides a way to reduce
@@ -24,7 +24,7 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
       for an index, and wish to ensure that the change has taken full effect.
      </p></li><li class="listitem"><p>
       If an index build fails with the <code class="literal">CONCURRENTLY</code> option,
-      this index is left as <span class="quote">“<span class="quote">invalid</span>”</span>. Such indexes are useless
+      this index is left as <span class="quote">"<span class="quote">invalid</span>"</span>. Such indexes are useless
       but it can be convenient to use <code class="command">REINDEX</code> to rebuild
       them. Note that only <code class="command">REINDEX INDEX</code> is able
       to perform a concurrent build on an invalid index.
@@ -32,10 +32,10 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
       Recreate the specified index.
      </p></dd><dt><span class="term"><code class="literal">TABLE</code></span></dt><dd><p>
       Recreate all indexes of the specified table.  If the table has a
-      secondary <span class="quote">“<span class="quote">TOAST</span>”</span> table, that is reindexed as well.
+      secondary <span class="quote">"<span class="quote">TOAST</span>"</span> table, that is reindexed as well.
      </p></dd><dt><span class="term"><code class="literal">SCHEMA</code></span></dt><dd><p>
       Recreate all indexes of the specified schema.  If a table of this
-      schema has a secondary <span class="quote">“<span class="quote">TOAST</span>”</span> table, that is reindexed as
+      schema has a secondary <span class="quote">"<span class="quote">TOAST</span>"</span> table, that is reindexed as
       well. Indexes on shared system catalogs are also processed.
       This form of <code class="command">REINDEX</code> cannot be executed inside a
       transaction block.
@@ -169,7 +169,7 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
       </p></li><li class="listitem"><p>
        A first pass to build the index is done for each new index.  Once the
        index is built, its flag <code class="literal">pg_index.indisready</code> is
-       switched to <span class="quote">“<span class="quote">true</span>”</span> to make it ready for inserts, making it
+       switched to <span class="quote">"<span class="quote">true</span>"</span> to make it ready for inserts, making it
        visible to other sessions once the transaction that performed the build
        is finished.  This step is done in a separate transaction for each
        index.
@@ -181,12 +181,12 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
        All the constraints that refer to the index are changed to refer to the
        new index definition, and the names of the indexes are changed.  At
        this point, <code class="literal">pg_index.indisvalid</code> is switched to
-       <span class="quote">“<span class="quote">true</span>”</span> for the new index and to <span class="quote">“<span class="quote">false</span>”</span> for
+       <span class="quote">"<span class="quote">true</span>"</span> for the new index and to <span class="quote">"<span class="quote">false</span>"</span> for
        the old, and a cache invalidation is done causing all sessions that
        referenced the old index to be invalidated.
       </p></li><li class="listitem"><p>
        The old indexes have <code class="literal">pg_index.indisready</code> switched to
-       <span class="quote">“<span class="quote">false</span>”</span> to prevent any new tuple insertions, after waiting
+       <span class="quote">"<span class="quote">false</span>"</span> to prevent any new tuple insertions, after waiting
        for running queries that might reference the old index to complete.
       </p></li><li class="listitem"><p>
        The old indexes are dropped.  The <code class="literal">SHARE UPDATE
@@ -196,7 +196,7 @@ REINDEX [ ( VERBOSE ) ] { INDEX | TABLE | SCHEMA | DATABASE | SYSTEM } [ CONCURR
    </p><p>
     If a problem arises while rebuilding the indexes, such as a
     uniqueness violation in a unique index, the <code class="command">REINDEX</code>
-    command will fail but leave behind an <span class="quote">“<span class="quote">invalid</span>”</span> new index in addition to
+    command will fail but leave behind an <span class="quote">"<span class="quote">invalid</span>"</span> new index in addition to
     the pre-existing one. This index will be ignored for querying purposes
     because it might be incomplete; however it will still consume update
     overhead. The <span class="application">psql</span> <code class="command">\d</code> command will report

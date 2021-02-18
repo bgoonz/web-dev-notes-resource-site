@@ -28,7 +28,7 @@
 <p><a href="/docs/refs-and-the-dom.html#legacy-api-string-refs">String Refs is an old legacy API</a> which is discouraged and is going to be deprecated in the future:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="op">&lt;</span>Button ref<span class="op">=</span><span class="st">&quot;myRef&quot;</span> /&gt;</a></code></pre></div>
 <p>(Don't confuse String Refs with refs in general, which <strong>remain fully supported</strong>.)</p>
-<p>In the future, we will provide an automated script (a “codemod”) to migrate away from String Refs. However, some rare
+<p>In the future, we will provide an automated script (a "codemod") to migrate away from String Refs. However, some rare
     cases can't be migrated automatically. This release adds a new warning <strong>only for those cases</strong> in
     advance of the deprecation.</p>
 <p>For example, it will fire if you use String Refs together with the Render Prop pattern:</p>
@@ -75,7 +75,7 @@ class ClassParent extends React.Component {
 <blockquote>
 <p>Note</p>
 <p>To see this warning, you need to have the <a href="https://babeljs.io/docs/en/babel-plugin-transform-react-jsx-self">babel-plugin-transform-react-jsx-self</a> installed in your Babel plugins. It must <em>only</em> be enabled in development mode.</p>
-<p>If you use Create React App or have the “react” preset with Babel 7+, you already have this plugin installed by default.</p>
+<p>If you use Create React App or have the "react" preset with Babel 7+, you already have this plugin installed by default.</p>
 </blockquote>
 <h3 id="deprecating-reactcreatefactory">Deprecating <code>React.createFactory</code></h3>
 <p><a href="/docs/react-api.html#createfactory"><code>React.createFactory</code></a> is a legacy helper for creating React elements. This release adds a deprecation warning to the method. It will be removed in a future major version.</p>
@@ -91,12 +91,12 @@ class ClassParent extends React.Component {
     programs. This release adds component stacks to a number of development warnings that didn't previously have them.
     As an example, consider this hydration warning from the previous versions:</p>
 <figure>
-<img src="../images/blog/react-v16.13.0/hydration-warning-before.png" alt="A screenshot of the console warning, simply stating the nature of the hydration mismatch: “Warning: Expected server HTML to contain a matching div in div.”" /><figcaption>A screenshot of the console warning, simply stating the nature of the hydration mismatch: “Warning: Expected server HTML to contain a matching div in div.”</figcaption>
+<img src="../images/blog/react-v16.13.0/hydration-warning-before.png" alt="A screenshot of the console warning, simply stating the nature of the hydration mismatch: "Warning: Expected server HTML to contain a matching div in div."" /><figcaption>A screenshot of the console warning, simply stating the nature of the hydration mismatch: "Warning: Expected server HTML to contain a matching div in div."</figcaption>
 </figure>
 <p>While it's pointing out an error with the code, it's not clear where the error exists, and what to do next. This
     release adds a component stack to this warning, which makes it look like this:</p>
 <figure>
-<img src="../images/blog/react-v16.13.0/hydration-warning-after.png" alt="A screenshot of the console warning, stating the nature of the hydration mismatch, but also including a component stack : “Warning: Expected server HTML to contain a matching div in div, in div (at pages/index.js:4)…”" /><figcaption>A screenshot of the console warning, stating the nature of the hydration mismatch, but also including a component stack : “Warning: Expected server HTML to contain a matching div in div, in div (at pages/index.js:4)…”</figcaption>
+<img src="../images/blog/react-v16.13.0/hydration-warning-after.png" alt="A screenshot of the console warning, stating the nature of the hydration mismatch, but also including a component stack : "Warning: Expected server HTML to contain a matching div in div, in div (at pages/index.js:4)…"" /><figcaption>A screenshot of the console warning, stating the nature of the hydration mismatch, but also including a component stack : "Warning: Expected server HTML to contain a matching div in div, in div (at pages/index.js:4)…"</figcaption>
 </figure>
 <p>This makes it clear where the problem is, and lets you locate and fix the bug faster.</p>
 <h3 id="notable-bugfixes">Notable bugfixes</h3>

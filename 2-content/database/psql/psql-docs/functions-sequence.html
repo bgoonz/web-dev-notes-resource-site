@@ -45,9 +45,9 @@ nextval('foo')              <em class="lineannotation"><span class="lineannotati
     literal string, it becomes a constant of type <code class="type">regclass</code>.
     Since this is really just an OID, it will track the originally
     identified sequence despite later renaming, schema reassignment,
-    etc.  This <span class="quote">“<span class="quote">early binding</span>”</span> behavior is usually desirable for
+    etc.  This <span class="quote">"<span class="quote">early binding</span>"</span> behavior is usually desirable for
     sequence references in column defaults and views.  But sometimes you might
-    want <span class="quote">“<span class="quote">late binding</span>”</span> where the sequence reference is resolved
+    want <span class="quote">"<span class="quote">late binding</span>"</span> where the sequence reference is resolved
     at run time.  To get late-binding behavior, force the constant to be
     stored as a <code class="type">text</code> constant instead of <code class="type">regclass</code>:
 </p><pre class="programlisting">
@@ -85,9 +85,9 @@ nextval('foo'::text)      <em class="lineannotation"><span class="lineannotation
          tuple, including doing any required <code class="function">nextval</code>
          calls, before detecting any conflict that would cause it to follow
          the <code class="literal">ON CONFLICT</code> rule instead.  Such cases will leave
-         unused <span class="quote">“<span class="quote">holes</span>”</span> in the sequence of assigned values.
+         unused <span class="quote">"<span class="quote">holes</span>"</span> in the sequence of assigned values.
          Thus, <span class="productname">PostgreSQL</span> sequence objects <span class="emphasis"><em>cannot
-         be used to obtain <span class="quote">“<span class="quote">gapless</span>”</span> sequences</em></span>.
+         be used to obtain <span class="quote">"<span class="quote">gapless</span>"</span> sequences</em></span>.
         </p></div><p>
         This function requires <code class="literal">USAGE</code>
         or <code class="literal">UPDATE</code> privilege on the sequence.

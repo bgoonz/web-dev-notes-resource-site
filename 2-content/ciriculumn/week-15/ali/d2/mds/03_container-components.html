@@ -52,7 +52,10 @@
 </blockquote>
 <h2 id="determining-where-to-create-containers">Determining where to create containers</h2>
 <p>Not every component needs to be connected to the store. Generally, you’ll only want to create containers for the ‘big’ components in your app that represent sections of a page and contain smaller purely functional presentational components. These larger container components are responsible for interacting with the store and passing state and dispatch props down to all their presentational children.</p>
-<p>For the Fruit Stand application, a good starting point would be to create two container components, <code>FruitManagerContainer</code> and <code>FarmerManagerContainer</code>, to respectively render the presentational components for the “Fruit” and “Farmers” sections of the page. Here’s a visual representation of that component hierarchy:</p>
+<p>For the Fruit Stand application, a good starting point would be to create two container components,
+    <code>FruitManagerContainer</code> and <code>FarmerManagerContainer</code>, to respectively render the
+    presentational components for the “Fruit" and “Farmers" sections of the page. Here’s a visual representation of that
+    component hierarchy:</p>
 <pre><code>App
 ├── FruitManagerContainer
 │   └── FruitManager
@@ -65,7 +68,8 @@
         ├── FarmerList
         │   └── Farmer
         └── FarmerHire</code></pre>
-<p>Notice that the container component names are a combination of the name of the presentational component that they wrap and the suffix “Container”.</p>
+<p>Notice that the container component names are a combination of the name of the presentational component that they
+    wrap and the suffix “Container".</p>
 <p>In general, aim to have fewer containers rather than more. Most of the components you’ll write will be presentational, but you’ll need to generate a few containers to connect presentational components to the Redux store.</p>
 <h2 id="writing-a-container-component">Writing a container component</h2>
 <p>While you can write a container component from scratch, you can also refactor an existing React component that interacts with a Redux store into separate container and presentational components.</p>
@@ -104,7 +108,7 @@
 <a class="sourceLine" id="cb2-31" title="31"><span class="op">}</span></a>
 <a class="sourceLine" id="cb2-32" title="32"></a>
 <a class="sourceLine" id="cb2-33" title="33"><span class="im">export</span> <span class="im">default</span> FruitList<span class="op">;</span></a></code></pre></div>
-<p>The <code>FruitManager</code> component is responsible for rendering each of the fruit-related components (i.e. <code>FruitList</code>, <code>FruitSeller</code>, <code>FruitQuickAdd</code>, and <code>FruitBulkAdd</code>), so create a container component named <code>FruitManagerContainer</code> to handle all of the store interaction for the “Fruit” section of the page.</p>
+<p>The <code>FruitManager</code> component is responsible for rendering each of the fruit-related components (i.e. <code>FruitList</code>, <code>FruitSeller</code>, <code>FruitQuickAdd</code>, and <code>FruitBulkAdd</code>), so create a container component named <code>FruitManagerContainer</code> to handle all of the store interaction for the “Fruit" section of the page.</p>
 <p>To review, here’s what the component hierarchy will look like:</p>
 <pre><code>FruitManagerContainer
 └── FruitManager

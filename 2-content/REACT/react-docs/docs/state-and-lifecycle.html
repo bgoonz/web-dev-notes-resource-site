@@ -49,7 +49,7 @@ setInterval(tick, 1000);</code></pre>
   &lt;Clock /&gt;,
   document.getElementById(&#39;root&#39;)
 );</code></pre>
-<p>To implement this, we need to add “state” to the <code>Clock</code> component.</p>
+<p>To implement this, we need to add "state" to the <code>Clock</code> component.</p>
 <p>State is similar to props, but it is private and fully controlled by the component.</p>
 <h2 id="converting-a-function-to-a-class">Converting a Function to a Class</h2>
 <p>You can convert a function component like <code>Clock</code> to a class in five steps:</p>
@@ -146,8 +146,8 @@ ReactDOM.render(
 <h2 id="adding-lifecycle-methods-to-a-class">Adding Lifecycle Methods to a Class</h2>
 <p>In applications with many components, it's very important to free up resources taken by the components when they are
     destroyed.</p>
-<p>We want to <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval">set up a timer</a> whenever the <code>Clock</code> is rendered to the DOM for the first time. This is called “mounting” in React.</p>
-<p>We also want to <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval">clear that timer</a> whenever the DOM produced by the <code>Clock</code> is removed. This is called “unmounting” in React.</p>
+<p>We want to <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval">set up a timer</a> whenever the <code>Clock</code> is rendered to the DOM for the first time. This is called "mounting" in React.</p>
+<p>We also want to <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval">clear that timer</a> whenever the DOM produced by the <code>Clock</code> is removed. This is called "unmounting" in React.</p>
 <p>We can declare special methods on the component class to run some code when a component mounts and unmounts:</p>
 <pre class="js{7-9,11-13}"><code>class Clock extends React.Component {
   constructor(props) {
@@ -172,7 +172,7 @@ ReactDOM.render(
     );
   }
 }</code></pre>
-<p>These methods are called “lifecycle methods”.</p>
+<p>These methods are called "lifecycle methods".</p>
 <p>The <code>componentDidMount()</code> method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:</p>
 <pre class="js{2-5}"><code>  componentDidMount() {
     this.timerID = setInterval(
@@ -312,7 +312,7 @@ ReactDOM.render(
 <a class="sourceLine" id="cb22-2" title="2">  <span class="cf">return</span> <span class="op">&lt;</span>h2<span class="op">&gt;</span>It is <span class="op">{</span><span class="va">props</span>.<span class="va">date</span>.<span class="at">toLocaleTimeString</span>()<span class="op">}</span>.&lt;/h2<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb22-3" title="3"><span class="op">}</span></a></code></pre></div>
 <p><a href="https://codepen.io/gaearon/pen/zKRqNB?editors=0010"><strong>Try it on CodePen</strong></a></p>
-<p>This is commonly called a “top-down” or “unidirectional” data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components “below” them in the tree.</p>
+<p>This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.</p>
 <p>If you imagine a component tree as a waterfall of props, each component's state is like an additional water source
     that joins it at an arbitrary point but also flows down.</p>
 <p>To show that all components are truly isolated, we can create an <code>App</code> component that renders three <code>&lt;Clock&gt;</code>s:</p>

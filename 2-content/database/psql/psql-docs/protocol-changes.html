@@ -29,7 +29,7 @@ Note that the layout of DataRow has changed to make it easier to parse.
 Also, the representation of binary values has changed: it is no longer
 directly tied to the server's internal representation.
 </p><p>
-There is a new <span class="quote">“<span class="quote">extended query</span>”</span> sub-protocol, which adds the frontend
+There is a new <span class="quote">"<span class="quote">extended query</span>"</span> sub-protocol, which adds the frontend
 message types Parse, Bind, Execute, Describe, Close, Flush, and Sync, and the
 backend message types ParseComplete, BindComplete, PortalSuspended,
 ParameterDescription, NoData, and CloseComplete.  Existing clients do not
@@ -38,7 +38,7 @@ might allow improvements in performance or functionality.
 </p><p>
 <code class="command">COPY</code> data is now encapsulated into CopyData and CopyDone messages.  There
 is a well-defined way to recover from errors during <code class="command">COPY</code>.  The special
-<span class="quote">“<span class="quote"><code class="literal">\.</code></span>”</span> last line is not needed anymore, and is not sent
+<span class="quote">"<span class="quote"><code class="literal">\.</code></span>"</span> last line is not needed anymore, and is not sent
 during <code class="command">COPY OUT</code>.
 (It is still recognized as a terminator during <code class="command">COPY IN</code>, but its use is
 deprecated and will eventually be removed.)  Binary <code class="command">COPY</code> is supported.
@@ -65,7 +65,7 @@ The CursorResponse ('<code class="literal">P</code>') message is no longer gener
 the backend.
 </p><p>
 The NotificationResponse ('<code class="literal">A</code>') message has an additional string
-field, which can carry a <span class="quote">“<span class="quote">payload</span>”</span> string passed
+field, which can carry a <span class="quote">"<span class="quote">payload</span>"</span> string passed
 from the <code class="command">NOTIFY</code> event sender.
 </p><p>
 The EmptyQueryResponse ('<code class="literal">I</code>') message used to include an empty

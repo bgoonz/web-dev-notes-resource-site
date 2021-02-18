@@ -213,7 +213,11 @@
 <p>So far, the above example class component behaves exactly as its function component counterpart. This might leave you wondering why you’d want or need to create a class component.</p>
 <p><strong>One of the two reasons why you would use a Class component over a Function component is to add and manage local or internal state to your component. The second main reason to use a Class component is to use a component’s lifecycle methods.</strong> The following sections will focus on how to add and manage a component’s state. You’ll learn more about a component’s lifecycle (and the associated component lifecycle methods) later in a future reading.</p>
 <h3 id="what-is-state">What is state?</h3>
-<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to a component. State is owned by the component where it’s defined and used. That’s why we say it’s “internal” or “local” to that component. Whereas props are not to be changed by a component, state is intended to be updated or mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to determine how the component should behave and render.</p>
+<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to
+    a component. State is owned by the component where it’s defined and used. That’s why we say it’s "internal" or
+    "local" to that component. Whereas props are not to be changed by a component, state is intended to be updated or
+    mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to
+    determine how the component should behave and render.</p>
 <h3 id="when-to-use-state">When to use state</h3>
 <p>State should only be used when it’s absolutely necessary. If a bit of data is never going to change or if it is needed across the entire application, use props instead.</p>
 <p>When you’re just learning React, it can be challenging to know when it’s okay to use state and when it’s not. State is often used when creating components that retrieve data from APIs or render forms. You’ll see examples of those kinds of components later in this lesson. To start, we’ll look at simple, contrived example of using state in just a bit.</p>
@@ -279,7 +283,11 @@
 <p>Sometimes the same quote will be displayed more than once in a row. You’ll see in a bit how to fix that bug.</p>
 </blockquote>
 <h3 id="using-the-react-developer-tools-to-view-a-components-state">Using the React Developer Tools to view a component’s state</h3>
-<p>Assuming you have the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> installed, open up your browser’s developer tools and view the “Components” tab. On the left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.</p>
+<p>Assuming you have the <a
+        href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React
+        Developer Tools</a> installed, open up your browser’s developer tools and view the "Components" tab. On the
+    left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.
+</p>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/react-class-components-init-state.png" alt="init state" /><figcaption>init state</figcaption>
 </figure>
@@ -305,7 +313,7 @@
 <p>The <code>changeQuote</code> event handler calls the <code>this.getRandomInt</code> method to get a new random integer and then calls the <code>this.setState</code> method to update the component’s state. The <code>this.setState</code> method accepts an object literal containing the state properties to update.</p>
 <p>After updating the state, React re-renders the component and displays the new quote (provided that the current quote index actually changed). Because calling the <code>this.setState</code> method triggers a re-render, it should not be called from within the <code>render</code> method, as that would trigger an infinite loop.</p>
 <p>Notice that the object literal passed into the <code>this.setState</code> method only contains the state property that needs to be updated. The <code>this.setState</code> method merges state updates into the current state object, so you only need to provide the state properties that need to be updated.</p>
-<p>Now, instead of refreshing the page, you can click the “Change Quote” button to display a new random quote!</p>
+<p>Now, instead of refreshing the page, you can click the "Change Quote" button to display a new random quote!</p>
 <p>For your reference, here’s the updated <code>RandomQuote</code> component:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="co">// ./src/RandomQuote.js</span></a>
 <a class="sourceLine" id="cb18-2" title="2"></a>
@@ -405,7 +413,7 @@
 <a class="sourceLine" id="cb22-13" title="13">    <span class="op">};</span></a>
 <a class="sourceLine" id="cb22-14" title="14">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb22-15" title="15"><span class="op">}</span></a></code></pre></div>
-<p>Now, if you retest your application, clicking the “Change Quote” button will display a different random quote every time!</p>
+<p>Now, if you retest your application, clicking the "Change Quote" button will display a different random quote every time!</p>
 <h2 id="providing-default-values-for-props">Providing default values for props</h2>
 <p>Currently, the list of quotes doesn’t change once it’s initialized in the <code>constructor</code> method:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="at">constructor</span>() <span class="op">{</span></a>
@@ -572,7 +580,7 @@
 <a class="sourceLine" id="cb29-15" title="15"><span class="op">}</span></a>
 <a class="sourceLine" id="cb29-16" title="16"></a>
 <a class="sourceLine" id="cb29-17" title="17"><span class="im">export</span> <span class="im">default</span> AlertButton<span class="op">;</span></a></code></pre></div>
-<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the <code>window.alert</code> method to display the text “Button clicked!” within a browser alert dialog. The <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
+<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the <code>window.alert</code> method to display the text "Button clicked!" within a browser alert dialog. The <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
 <p>When adding event listeners, be sure to camelCase the event name (i.e. <code>onClick</code> instead of <code>onclick</code>) and pass a reference to the event handler method instead of calling it (i.e. <code>this.showAlert</code> instead of <code>this.showAlert()</code>).</p>
 <p>Also notice the slightly odd looking class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) that’s used to define the <code>showAlert</code> method. Using this experimental syntax for defining a class property in combination with an arrow function ensures that you can reliably use the <code>this</code> keyword within the event handler method. We’ll exam this issue in more detail in just a bit.</p>
 <blockquote>
@@ -603,7 +611,7 @@
 <a class="sourceLine" id="cb30-19" title="19"><span class="im">export</span> <span class="im">default</span> NoDefaultSubmitForm<span class="op">;</span></a></code></pre></div>
 <p>In this example, a <code>&lt;button&gt;</code> element without a <code>type</code> attribute is rendered within a <code>&lt;form&gt;</code> element. By default, this button will submit the form when clicked. This has the unintended consequence of reloading the page when the button is clicked, instead of allowing the <code>this.submitForm</code> event handler method to handle the form submission.</p>
 <blockquote>
-<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep this example as simple as possible, the <code>window.alert</code> method is used to display the text “Handling form submission…”.</p>
+<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep this example as simple as possible, the <code>window.alert</code> method is used to display the text "Handling form submission…".</p>
 </blockquote>
 <p>To keep the default form submission from occurring, the event handler method can be updated to this:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1">submitForm <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -615,7 +623,7 @@
 <p>The <code>e</code> parameter is a <code>SyntheticEvent</code> object type. You’ll learn more about this object type in just a bit.</p>
 </blockquote>
 <h2 id="using-this-in-event-handlers">Using <code>this</code> in event handlers</h2>
-<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the “happy path” and make things break.</p>
+<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the "happy path" and make things break.</p>
 <p>Here’s the example of a button click event handler again that correctly defines the <code>showAlert</code> event handler method:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" title="1"><span class="co">// ./src/AlertButton.js</span></a>
 <a class="sourceLine" id="cb32-2" title="2"></a>
@@ -674,7 +682,7 @@
 <a class="sourceLine" id="cb35-20" title="20"><span class="co">// to the class instance.</span></a>
 <a class="sourceLine" id="cb35-21" title="21"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="at">displayName</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb35-22" title="22"><span class="at">displayName</span>()<span class="op">;</span> <span class="co">// TypeError: Cannot read property &#39;name&#39; of undefined</span></a></code></pre></div>
-<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. “Jane Smith” is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
+<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. "Jane Smith" is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
 <p>The second time that the <code>displayName</code> method is called, a reference to the class method is stored in a variable and the method is called using the variable. This breaks the <code>this</code> keyword’s implicit binding to the instance of the class (i.e. <code>p</code>) resulting in the <code>TypeError</code> because <code>this</code> is <code>undefined</code>.</p>
 <p>The <code>bind</code> method can be used to <em>explicitly</em> bind the <code>displayName</code> class method to the <code>p</code> class instance. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>bind</code> method</a> returns a function that’s bound to the passed in object. Now the <code>displayName</code> variable can be successfully called to display the person’s name in the console:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="va">displayName</span>.<span class="at">bind</span>(p)<span class="op">;</span></a>
@@ -803,7 +811,7 @@ string type</code></pre>
 <li>Implement form validations.</li>
 </ul>
 <h2 id="creating-a-simple-form">Creating a simple form</h2>
-<p>To learn how to create an HTML form in React, you’ll create a <code>ContactUs</code> class component that’ll contain a simple “Contact Us” form. The form will initially contain just three fields:</p>
+<p>To learn how to create an HTML form in React, you’ll create a <code>ContactUs</code> class component that’ll contain a simple "Contact Us" form. The form will initially contain just three fields:</p>
 <ul>
 <li>Name - The name of the user filling out the form;</li>
 <li>Email - The user’s email; and</li>
@@ -909,7 +917,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb45-44" title="44"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <p>Next, when a form field element value is changed, the associated component state property needs to be updated. Adding or removing a character within an <code>&lt;input&gt;</code> element raises the <code>onChange</code> event, which makes it a natural choice for keeping the component state in sync:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="op">&lt;</span>input id<span class="op">=</span><span class="st">&#39;name&#39;</span> type<span class="op">=</span><span class="st">&#39;text&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">nameOnChange</span><span class="op">}</span> value<span class="op">={</span>name<span class="op">}</span> /&gt;</a></code></pre></div>
-<p>Remember that when an event is raised, the associated event handler method is called and passed an instance of React’s <code>SyntheticEvent</code> object type. Here’s the <code>nameOnChange</code> event handler method that’s associated with the above “Name” form field:</p>
+<p>Remember that when an event is raised, the associated event handler method is called and passed an instance of React’s <code>SyntheticEvent</code> object type. Here’s the <code>nameOnChange</code> event handler method that’s associated with the above "Name" form field:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb47-1" title="1">nameOnChange <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb47-2" title="2">  <span class="co">// `e` is a `SyntheticEvent` object.</span></a>
 <a class="sourceLine" id="cb47-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -926,7 +934,7 @@ string type</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb50-1" title="1">nameOnChange <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb50-2" title="2">  <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span> <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb50-3" title="3"><span class="op">}</span></a></code></pre></div>
-<p>Using the same approach to add an <code>onChange</code> event handler to the “Email” and “Phone” form fields gives you this:</p>
+<p>Using the same approach to add an <code>onChange</code> event handler to the "Email" and "Phone" form fields gives you this:</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb51-1" title="1"><span class="co">// ./src/ContactUs.js</span></a>
 <a class="sourceLine" id="cb51-2" title="2"></a>
 <a class="sourceLine" id="cb51-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -1133,11 +1141,11 @@ string type</code></pre>
 <a class="sourceLine" id="cb56-83" title="83"><span class="op">}</span></a>
 <a class="sourceLine" id="cb56-84" title="84"></a>
 <a class="sourceLine" id="cb56-85" title="85"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
-<p>If you run your application again and view the form in the browser, you can fill out each form field and click “Submit” to submit the form. Notice that the page doesn’t reload! And if you look in the developer tool’s console, you’ll see an object containing your contact us information.</p>
+<p>If you run your application again and view the form in the browser, you can fill out each form field and click "Submit" to submit the form. Notice that the page doesn’t reload! And if you look in the developer tool’s console, you’ll see an object containing your contact us information.</p>
 <h3 id="controlled-components">Controlled components</h3>
-<p>Congrats! You’ve completed your first simple React form! In doing so, you used what’s known as “controlled components”.</p>
-<p>HTML form elements naturally maintain their own state. For example, an <code>input</code> element will track the state of the value that’s typed within it (without any help from libraries like React). But a React class component uses <code>this.state</code> to track its internal state. To keep a component’s state as the “one source of truth”, <code>onChange</code> event handlers are used on form field elements to update the component’s state when a form element’s state has changed.</p>
-<p>This approach of making the component’s state the “one source of truth” is called “controlled components”.</p>
+<p>Congrats! You’ve completed your first simple React form! In doing so, you used what’s known as "controlled components".</p>
+<p>HTML form elements naturally maintain their own state. For example, an <code>input</code> element will track the state of the value that’s typed within it (without any help from libraries like React). But a React class component uses <code>this.state</code> to track its internal state. To keep a component’s state as the "one source of truth", <code>onChange</code> event handlers are used on form field elements to update the component’s state when a form element’s state has changed.</p>
+<p>This approach of making the component’s state the "one source of truth" is called "controlled components".</p>
 <p>To help understand how this works, here’s an overview of the flow:</p>
 <ul>
 <li>A user types a character within a form <code>&lt;input&gt;</code> element;</li>
@@ -1243,7 +1251,7 @@ string type</code></pre>
 <p>In a regular HTML form, the value for a <code>&lt;textarea&gt;</code> element is defined by its inner content:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb60-1" title="1"><span class="kw">&lt;textarea&gt;</span>This is the value for the text area element.<span class="kw">&lt;/textarea&gt;</span></a></code></pre></div>
 <p>The <code>&lt;textarea&gt;</code> element, in React, uses a <code>value</code> attribute instead of its inner content to define its value. This allows the <code>&lt;textarea&gt;</code> element to be handled in the same way as <code>&lt;input&gt;</code> elements.</p>
-<p>To see this in action, add a “Comments” field to the form:</p>
+<p>To see this in action, add a "Comments" field to the form:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb61-1" title="1"><span class="op">&lt;</span>div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb61-2" title="2">  <span class="op">&lt;</span>label htmlFor<span class="op">=</span><span class="st">&#39;comments&#39;</span><span class="op">&gt;</span>Comments<span class="op">:</span>&lt;/label<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb61-3" title="3">  <span class="op">&lt;</span>textarea id<span class="op">=</span><span class="st">&#39;comments&#39;</span> name<span class="op">=</span><span class="st">&#39;comments&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">onChange</span><span class="op">}</span> value<span class="op">={</span>comments<span class="op">}</span> /&gt;</a>
@@ -1335,7 +1343,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb62-84" title="84"></a>
 <a class="sourceLine" id="cb62-85" title="85"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <h2 id="adding-a-select-list">Adding a select list</h2>
-<p>To maintain symmetry across React form element types, the <code>&lt;select&gt;</code> element also uses a <code>value</code> attribute to get and set the element’s selected option. To see this in action, add a <code>&lt;select&gt;</code> element to the right of the <code>&lt;input&gt;</code> element for the “Phone” form field, to give the user a way to specify what type of phone number they’re providing:</p>
+<p>To maintain symmetry across React form element types, the <code>&lt;select&gt;</code> element also uses a <code>value</code> attribute to get and set the element’s selected option. To see this in action, add a <code>&lt;select&gt;</code> element to the right of the <code>&lt;input&gt;</code> element for the "Phone" form field, to give the user a way to specify what type of phone number they’re providing:</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb63-1" title="1"><span class="op">&lt;</span>div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb63-2" title="2">  <span class="op">&lt;</span>label htmlFor<span class="op">=</span><span class="st">&#39;phone&#39;</span><span class="op">&gt;</span>Phone<span class="op">:</span>&lt;/label<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb63-3" title="3">  <span class="op">&lt;</span>input id<span class="op">=</span><span class="st">&#39;phone&#39;</span> name<span class="op">=</span><span class="st">&#39;phone&#39;</span> type<span class="op">=</span><span class="st">&#39;text&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">onChange</span><span class="op">}</span> value<span class="op">={</span>phone<span class="op">}</span> /&gt;</a>
@@ -1367,8 +1375,8 @@ string type</code></pre>
 <a class="sourceLine" id="cb65-10" title="10">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb65-11" title="11">  &lt;/select<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb65-12" title="12">&lt;/div<span class="op">&gt;</span></a></code></pre></div>
-<p>Notice that you can leave the first “Select a phone type…” <code>&lt;option&gt;</code> element as a static element before rendering the dynamic <code>&lt;option&gt;</code> elements.</p>
-<p>To complete this new field, update the <code>constructor</code>, <code>onSubmit</code>, and <code>render</code> methods just like you did when adding the “Comments” form field:</p>
+<p>Notice that you can leave the first "Select a phone type…" <code>&lt;option&gt;</code> element as a static element before rendering the dynamic <code>&lt;option&gt;</code> elements.</p>
+<p>To complete this new field, update the <code>constructor</code>, <code>onSubmit</code>, and <code>render</code> methods just like you did when adding the "Comments" form field:</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb66-1" title="1"><span class="co">// ./src/ContactUs.js</span></a>
 <a class="sourceLine" id="cb66-2" title="2"></a>
 <a class="sourceLine" id="cb66-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -1480,7 +1488,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb66-109" title="109"></a>
 <a class="sourceLine" id="cb66-110" title="110"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <h2 id="implementing-validations">Implementing validations</h2>
-<p>One last feature needs to be added before the simple “Contact Us” form is done: form validation. Without validation, a user can submit the form without providing a single bit of data. To implement form validation, you’ll use vanilla JS to validate that the “Name” and “Email” form fields have values before allowing the form to be submitted.</p>
+<p>One last feature needs to be added before the simple "Contact Us" form is done: form validation. Without validation, a user can submit the form without providing a single bit of data. To implement form validation, you’ll use vanilla JS to validate that the "Name" and "Email" form fields have values before allowing the form to be submitted.</p>
 <p>To do that, add a method to your class component named <code>validate</code> that accepts <code>name</code> and <code>email</code> parameters. Use conditional statements to check the truthiness of the <code>name</code> and <code>email</code> parameters. If either parameter is <code>false</code>, add an appropriate validation error message to a <code>validationErrors</code> array and return the array from the method:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb67-1" title="1"><span class="at">validate</span>(name<span class="op">,</span> email) <span class="op">{</span></a>
 <a class="sourceLine" id="cb67-2" title="2">  <span class="kw">const</span> validationErrors <span class="op">=</span> []<span class="op">;</span></a>
@@ -1715,7 +1723,7 @@ string type</code></pre>
   * Please provide a valid Email</code></pre>
 <h3 id="client-side-vs-server-side-validation">Client-side vs server-side validation</h3>
 <p>As a reminder, client-side validation like the validations in the <code>ContactUs</code> class component, are optional to implement; <strong>server-side validation is not optional</strong>. This is because client side validations can be disabled or manipulated by savvy users.</p>
-<p>Sometimes the “best” approach is to skip implementing validations on the client-side and rely completely on the server-side validation. Using this approach, you’d simply call the API when the form is submitted and if the request returns a <code>400 BAD REQUEST</code> response, you’d display the validation error messages returned from the server.</p>
+<p>Sometimes the "best" approach is to skip implementing validations on the client-side and rely completely on the server-side validation. Using this approach, you’d simply call the API when the form is submitted and if the request returns a <code>400 BAD REQUEST</code> response, you’d display the validation error messages returned from the server.</p>
 <p>If you do decide to implement client-side validations, do it with the end goal of improving your application’s overall user experience, not as your only means of validating user provided data.</p>
 <h2 id="what-you-learned-3">What you learned</h2>
 <p>In this article, you learned how to:</p>
@@ -1772,7 +1780,7 @@ string type</code></pre>
 <p>To see a visual depiction of the above processes, check out this interactive <a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">lifecycle diagram</a>.</p>
 </blockquote>
 <h3 id="avoiding-the-legacy-lifecycle-methods">Avoiding the legacy lifecycle methods</h3>
-<p>In earlier versions of React, there were additional lifecycle methods that you could use. These methods are now deprecated and are marked as “unsafe” to use (because they’ll eventually be removed from React’s API).</p>
+<p>In earlier versions of React, there were additional lifecycle methods that you could use. These methods are now deprecated and are marked as "unsafe" to use (because they’ll eventually be removed from React’s API).</p>
 <p>The legacy lifecycle methods are:</p>
 <ul>
 <li><a href="https://reactjs.org/docs/react-component.html#unsafe_componentwillmount"><code>UNSAFE_componentWillMount</code></a></li>
@@ -1872,7 +1880,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb79-10" title="10">  &lt;/<span class="va">React</span>.<span class="at">StrictMode</span><span class="op">&gt;,</span></a>
 <a class="sourceLine" id="cb79-11" title="11">  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>)</a>
 <a class="sourceLine" id="cb79-12" title="12">)<span class="op">;</span></a></code></pre></div>
-<p>Then run your application (<code>npm start</code>) and open the developer tools console in your browser. Here’s the application just after clicking the “Load Component” button. Notice that execution is paused within the <code>LifecycleMethods</code> component’s <code>componentDidMount</code> lifecycle method!</p>
+<p>Then run your application (<code>npm start</code>) and open the developer tools console in your browser. Here’s the application just after clicking the "Load Component" button. Notice that execution is paused within the <code>LifecycleMethods</code> component’s <code>componentDidMount</code> lifecycle method!</p>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/component-lifecycle-demo.png" alt="component lifecycle demo" /><figcaption>component lifecycle demo</figcaption>
 </figure>
@@ -1957,7 +1965,7 @@ string type</code></pre>
 <h2 id="reinforcing-your-new-skills">Reinforcing your new skills</h2>
 <p>The <a href="https://reactjs.org/docs/hello-world.html">Main Concepts</a> section of the official documentation is a great series of articles that cover the basics of React. If you’re in the mood for a step-by-step tutorial, be sure to check out the <a href="https://reactjs.org/tutorial/tutorial.html">Intro to React</a> tutorial.</p>
 <h2 id="extending-your-knowledge">Extending your knowledge</h2>
-<p>Once you’re feeling confident with the basics of React development, you can extend your knowledge by reviewing the following topics listed under the “Advanced Guides” section of the official documentation:</p>
+<p>Once you’re feeling confident with the basics of React development, you can extend your knowledge by reviewing the following topics listed under the "Advanced Guides" section of the official documentation:</p>
 <ul>
 <li><a href="https://reactjs.org/docs/jsx-in-depth.html">JSX In Depth</a></li>
 <li><a href="https://reactjs.org/docs/reconciliation.html">Reconciliation</a></li>
@@ -2035,7 +2043,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb86-16" title="16"><span class="op">}</span></a>
 <a class="sourceLine" id="cb86-17" title="17"></a>
 <a class="sourceLine" id="cb86-18" title="18"><span class="im">export</span> <span class="im">default</span> Calculator<span class="op">;</span></a></code></pre></div>
-<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the <code>&lt;h1&gt;</code> element. Make sure “Calculator” still shows up in the browser, this time with “Time for math!” from your <code>Calculator</code> component.</p>
+<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the <code>&lt;h1&gt;</code> element. Make sure "Calculator" still shows up in the browser, this time with "Time for math!" from your <code>Calculator</code> component.</p>
 <h3 id="state">State</h3>
 <p>Now let’s initialize the <code>state</code> of your <code>Calculator</code> component! The state of your component is just a JavaScript object. For the calculator, it will contain three keys: the result and two numbers from user input.</p>
 <p>Within the <code>constructor()</code> method of your <code>Calculator</code> component, define <code>this.state</code> with default values for the result and two numbers. The <code>result</code> should have a default value of <code>0</code>. You actually want the two numbers to start out blank, so give <code>num1</code> and <code>num2</code> a default value of an empty string:</p>
@@ -2061,8 +2069,8 @@ string type</code></pre>
 <a class="sourceLine" id="cb89-3" title="3"><span class="op">};</span></a></code></pre></div>
 <p>Add an <code>&lt;input&gt;</code> element underneath your rendered <code>result</code>. Assign the <code>onChange</code> prop to a <code>handleFirstNum()</code> callback like so:</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb90-1" title="1"><span class="op">&lt;</span>input onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">handleFirstNum</span><span class="op">}</span> placeholder<span class="op">=</span><span class="st">&quot;First number&quot;</span> /&gt;</a></code></pre></div>
-<p>Try typing in your “First number” input field and seeing what is logged in your developer tools console from the <em>change</em> event. As a reminder, event objects from your event listeners have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the <code>&lt;input&gt;</code> element.</p>
-<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code> to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> (“Not a Number”) output. Also make note that you need to use <a href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s state and re-render the component with the updated state.</p>
+<p>Try typing in your "First number" input field and seeing what is logged in your developer tools console from the <em>change</em> event. As a reminder, event objects from your event listeners have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the <code>&lt;input&gt;</code> element.</p>
+<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code> to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> ("Not a Number") output. Also make note that you need to use <a href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s state and re-render the component with the updated state.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb91-1" title="1">handleFirstNum <span class="op">=</span> e <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb91-2" title="2">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Parse value</span></a>
 <a class="sourceLine" id="cb91-3" title="3">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Set state</span></a>
@@ -2070,7 +2078,7 @@ string type</code></pre>
 <p>You also want your input fields to always reflect the current version of the state and properly update when you trigger a re-render by changing the state, so make sure to include <code>value={this.state.num1}</code> in the input tag.</p>
 <p>That’s one of the inputs! Create a second <code>&lt;input&gt;</code> element and a <code>handleSecondNum()</code> callback. It should look very similar.</p>
 <h2 id="phase-5-creating-calculator-buttons">Phase 5: Creating calculator buttons</h2>
-<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a “+” button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
+<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a "+" button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
 <p>The current values for <code>num1</code> and <code>num2</code> should be properly updated and stored within the state of your component. Create four methods to handle adding, subtracting, multiplying, and dividing. Remember to use <code>setState()</code> to set <code>this.state.result</code> to the correct result.</p>
 <h3 id="clear">Clear</h3>
 <p>It’d also be nice to be able to clear out the input fields. Make a button that resets the state to its initial values. You can add an <code>onClick</code> listener to this button to invoke a <code>clearInput</code> method to reset the state, and therefore clear each input field’s <code>value</code>.</p>
@@ -2098,7 +2106,7 @@ string type</code></pre>
 <li>Be able to add basic styling to React components.</li>
 </ul>
 <h2 id="phase-1-setup-1">Phase 1: Setup</h2>
-<p>Generate a new React application called “Widgets” with <a href="https://github.com/facebook/create-react-app">create-react-app</a> by running <code>npx create-react-app widgets --template @appacademy/simple</code>. Note how you are using a custom template to generate your React application.</p>
+<p>Generate a new React application called "Widgets" with <a href="https://github.com/facebook/create-react-app">create-react-app</a> by running <code>npx create-react-app widgets --template @appacademy/simple</code>. Note how you are using a custom template to generate your React application.</p>
 <p>Once your project has been initialized, in the <code>index.js</code> file you’ll see that <code>ReactDOM</code> is rendering a <code>&lt;React.StrictMode&gt;</code> component. <a href="https://reactjs.org/docs/strict-mode.html">StrictMode</a> simply means that additional checks and warnings will be made in development mode. It’s a helpful tool that highlights potential problems.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb93-1" title="1"><span class="co">// index.js</span></a>
 <a class="sourceLine" id="cb93-2" title="2"><span class="va">ReactDOM</span>.<span class="at">render</span>(</a>
@@ -2120,7 +2128,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb94-9" title="9"><span class="im">export</span> <span class="im">default</span> Root<span class="op">;</span></a></code></pre></div>
 <h2 id="phase-2-clock-widget">Phase 2: Clock Widget</h2>
 <p>The clock component should display the current date and time, updating every second. Start by creating a new file <code>Clock.js</code> in your <code>src</code> folder importing <code>React</code> into the file. Define your <code>Clock</code> class to extend from <code>React.Component</code> and remember to export the class. You will import your <code>Clock</code> component into your <code>Root.js</code> file and incorporate it into the return value of your <code>Root</code>. This is the pattern you will follow for all the widgets.</p>
-<p>Now it’s time to create a render method! Have your clock render a “Clock” title in an <code>&lt;h1&gt;</code> element and check that this renders correctly on the page.</p>
+<p>Now it’s time to create a render method! Have your clock render a "Clock" title in an <code>&lt;h1&gt;</code> element and check that this renders correctly on the page.</p>
 <p>In the constructor, set the initial state for the time of your clock using <code>new Date()</code> like so:</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb95-1" title="1"><span class="kw">this</span>.<span class="at">state</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb95-2" title="2">  <span class="dt">time</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()</a>
@@ -2175,7 +2183,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb97-37" title="37">button<span class="op">,</span> input<span class="ex">[type</span><span class="op">=</span><span class="st">&quot;submit&quot;</span><span class="ex">]</span> {</a>
 <a class="sourceLine" id="cb97-38" title="38">  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb97-39" title="39">}</a></code></pre></div>
-<p>Now go to <a href="https://fonts.google.com/">Google Fonts</a> and select a nice font for your clock. In the <code>public/index.html</code> file, update your page to have a <code>title</code> of “Widgets”. Now take the font embed code and paste it into the <code>&lt;head&gt;</code> of your page.</p>
+<p>Now go to <a href="https://fonts.google.com/">Google Fonts</a> and select a nice font for your clock. In the <code>public/index.html</code> file, update your page to have a <code>title</code> of "Widgets". Now take the font embed code and paste it into the <code>&lt;head&gt;</code> of your page.</p>
 <p>Your <code>index.html</code> file should look something like this:</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb98-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
 <a class="sourceLine" id="cb98-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
@@ -2204,7 +2212,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb100-4" title="4">  <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;three&#39;</span><span class="op">,</span> <span class="dt">content</span><span class="op">:</span> <span class="st">&#39;Third folder here&#39;</span><span class="op">}</span></a>
 <a class="sourceLine" id="cb100-5" title="5">]<span class="op">;</span></a></code></pre></div>
 <p>Keep track of the selected tab’s index in your <code>Folder</code> component’s state. Set the <code>Folder</code> component’s default <code>currentTab</code> state to zero.</p>
-<p>In the render method, return an <code>&lt;h1&gt;</code> element with the title of “Folder”. You’ll begin by rendering one folder’s content, using the <code>currentTab</code> state to select which folder content to render.</p>
+<p>In the render method, return an <code>&lt;h1&gt;</code> element with the title of "Folder". You’ll begin by rendering one folder’s content, using the <code>currentTab</code> state to select which folder content to render.</p>
 <p>Render a <code>&lt;div&gt;</code> element with two child elements: a header to render folder titles (you’ll make a <code>&lt;Header&gt;</code> subcomponent) and a <code>&lt;div&gt;</code> element to render the selected tab’s content. Define a <code>folder</code> variable by indexing into your <code>folders</code> prop with your <code>currentTab</code> state. This way you can reference your selected folder’s content with clean code!</p>
 <p>At this point, your component’s <code>render()</code> method should look something like this:</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb101-1" title="1"><span class="at">render</span>() <span class="op">{</span></a>
@@ -2231,7 +2239,7 @@ string type</code></pre>
 <p>Let’s move forward with rendering the folder titles!</p>
 <h3 id="creating-a-subcomponent">Creating a subcomponent</h3>
 <p>Let’s create a <code>Headers</code> subcomponent to render your folder titles! Within your <code>Folder.js</code> file, create a subcomponent above your <code>Folder</code> class. This subcomponent will take care of rendering an unordered list of list items containing clickable tabs.</p>
-<p>Plan what information you want to pass as props from your <code>Folder</code> component into your <code>Headers</code>. You’ll want to render each tab’s title, so you’ll probably want to thread a <code>titles</code> prop from your <code>Folder</code> component. Map over your array of <code>folders</code> to define a <code>titles</code> array of folder titles. Now thread your <code>titles</code> array as a prop to the <code>Headers</code> subcomponent. As a reminder, “threading props” simply refers to passing props from one component to another.</p>
+<p>Plan what information you want to pass as props from your <code>Folder</code> component into your <code>Headers</code>. You’ll want to render each tab’s title, so you’ll probably want to thread a <code>titles</code> prop from your <code>Folder</code> component. Map over your array of <code>folders</code> to define a <code>titles</code> array of folder titles. Now thread your <code>titles</code> array as a prop to the <code>Headers</code> subcomponent. As a reminder, "threading props" simply refers to passing props from one component to another.</p>
 <p>You also want to pass the <code>currentTab</code> state so that the <code>Headers</code> component can know which tab to render with different CSS as selected or active.</p>
 <p>Lastly, you’ll want your <code>Headers</code> component to be able to use the <code>selectTab()</code> method you have defined in order to update the tab’s <code>currentTab</code> state.</p>
 <p>Your <code>Folder</code> component should render the <code>Headers</code> subcomponent below:</p>
@@ -2256,7 +2264,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb105-5" title="5">    &lt;/ul<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb105-6" title="6">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb105-7" title="7"><span class="op">}</span></a></code></pre></div>
-<p>Now map your folder <code>titles</code> to list item elements that render each folder’s <code>title</code>. You’ll need to pass a <a href="https://reactjs.org/docs/reconciliation.html#keys">unique <code>key</code> property</a> to each <code>&lt;li&gt;</code> or React will grumble to all your console-reading users about its unfair working conditions. “How is one supposed to efficiently diff the DOM when one doesn’t even know which list items match up with which!?”</p>
+<p>Now map your folder <code>titles</code> to list item elements that render each folder’s <code>title</code>. You’ll need to pass a <a href="https://reactjs.org/docs/reconciliation.html#keys">unique <code>key</code> property</a> to each <code>&lt;li&gt;</code> or React will grumble to all your console-reading users about its unfair working conditions. "How is one supposed to efficiently diff the DOM when one doesn’t even know which list items match up with which!?"</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb106-1" title="1"><span class="kw">const</span> Headers <span class="op">=</span> (<span class="op">{</span> titles<span class="op">,</span> currentTab<span class="op">,</span> selectTab <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb106-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb106-3" title="3">    <span class="op">&lt;</span>ul className<span class="op">=</span><span class="st">&#39;tab-header&#39;</span><span class="op">&gt;</span></a>
@@ -2401,7 +2409,7 @@ string type</code></pre>
 <p>Begin by invoking the <code>getCurrentPosition()</code> method in your <code>Weather</code> component’s <code>componentDidMount()</code> method. Upon successfully retrieving your browser’s location, you’ll invoke a success callback to query the weather API.</p>
 <p>Let’s create your success callback! Create a <code>pollWeather()</code> method to take in your received <code>location</code> result from <code>navigator.geolocation.getCurrentPosition()</code>. You’ll use the <code>latitude</code> and <code>longitude</code> of your location to make a fetch call to the weather API. Think of how to extract the <code>latitude</code> and <code>longitude</code> properties from your <code>GeolocationPosition</code> object. Also think of how you might structure your fetch URL to include the query parameter for your geographic coordinates.</p>
 <p>Navigate to the <code>By geographic coordinates</code> section in the <a href="http://openweathermap.org/current">OpenWeatherMap API</a> documentation. You’ll see an example of an API query string using latitude and longitude coordinates (<code>api.openweathermap.org/data/2.5/weather?lat=35&amp;lon=139</code>). You’ll also see an example JSON response below.</p>
-<p>You can define a <code>toQueryString()</code> helper method to format your query parameters into a fetch call URL. To think of scaling your “Widgets” project, you can move this helper function into a <code>utils.js</code> file so that it can be used for other APIs you might incorporate! Have the function take in a <code>params</code> object. You’ll then iterate through the object to sanitize each query value with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent()</a>. You can then return a query string like <code>lat=35&amp;lon=139</code> to build an example API query string above.</p>
+<p>You can define a <code>toQueryString()</code> helper method to format your query parameters into a fetch call URL. To think of scaling your "Widgets" project, you can move this helper function into a <code>utils.js</code> file so that it can be used for other APIs you might incorporate! Have the function take in a <code>params</code> object. You’ll then iterate through the object to sanitize each query value with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent()</a>. You can then return a query string like <code>lat=35&amp;lon=139</code> to build an example API query string above.</p>
 <p>In your <code>pollWeather()</code> method, use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Fetch API</a> to make a fetch call to the OpenWeatherMap API. Remember to parse your response as JSON before updating the <code>weather</code> state. Upon a successful fetch, update your component’s <code>weather</code> state with the <code>weather</code> property of your JSON response! Use your component’s state to render the current city and temperature on the page.</p>
 <p>By default, the OpenWeatherMap API will return the temperature in Standard units (Kelvin). Convert to Fahrenheit <strong>OR</strong> peruse the API docs for a way to request the weather in Imperial units (Fahrenheit)! Give the weather box a nice border and make sure the elements inside are spaced evenly.</p>
 <p>Great work! Now you have three widgets. One that displays the time, another that allows you navigate folder tabs, and another that displays the weather. You used the <code>navigator.geolocation</code> API to get your current location, which you then passed to your fetch request to get the weather from the OpenWeatherMap API.</p>
@@ -2412,9 +2420,9 @@ string type</code></pre>
 <p>When a user types something into the input, use an <code>onChange</code> event handler to update the widget’s state. Create a <code>handleInput()</code> event handler method to update the state of <code>inputVal</code> with the typed input value.</p>
 <p>Also add an <code>onClick</code> handler to the unordered list. The role of this click handler is to update the widget’s search string (the <code>inputVal</code> state) upon a user’s click of the <code>&lt;li&gt;</code> element you’ve created for each name. You will need to turn your <code>&lt;input&gt;</code> into a <a href="https://facebook.github.io/react/docs/forms.html#controlled-components">controlled component</a> for this to work. Would you access the event’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a>? Remember to use <code>setState()</code> to update the widget’s search string.</p>
 <p>Now you’ll want to find the names that match your user’s search input. Define a <code>matches()</code> method to generate an array of name <code>matches</code> based on the <code>inputVal</code> state. Since you’re taking in user input, think of how you could use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a> to match the character combinations between your user’s input string and the list of searchable names. If the input is empty, return the original, full list of names so that your user can see all the searchable names!</p>
-<p>Now let’s generate the name matches! Iterate through each name. You’ll use the length of <code>inputVal</code> to slice a segment of each name. Compare the name segment with the input value. Take into consideration that some users might type “barney” instead of searching for “Barney”.</p>
-<p>For example, compare the name segment to the input value in order to match a search input of “bar” to the “bar” segment of “Barney”. Then you could add the name, “Barney”, to your <code>matches</code> array. On the next iteration, the “bar” input would also match to “Barbara” so that you could add “Barbara” to the <code>matches</code> array.</p>
-<p>If you have no matches, you can add a “No matches” string to your <code>matches</code> array so that when <code>matches</code> is returned and rendered, your user will be notified upon searching for a name without matches.</p>
+<p>Now let’s generate the name matches! Iterate through each name. You’ll use the length of <code>inputVal</code> to slice a segment of each name. Compare the name segment with the input value. Take into consideration that some users might type "barney" instead of searching for "Barney".</p>
+<p>For example, compare the name segment to the input value in order to match a search input of "bar" to the "bar" segment of "Barney". Then you could add the name, "Barney", to your <code>matches</code> array. On the next iteration, the "bar" input would also match to "Barbara" so that you could add "Barbara" to the <code>matches</code> array.</p>
+<p>If you have no matches, you can add a "No matches" string to your <code>matches</code> array so that when <code>matches</code> is returned and rendered, your user will be notified upon searching for a name without matches.</p>
 <h3 id="styling-2">Styling</h3>
 <p>Give your component a border and make sure all the <code>&lt;li&gt;</code> elements are nicely padded inside the box. Change the <code>cursor</code> property to display a pointer when hovering over one of the <code>&lt;li&gt;</code> elements. Center all your widgets using flexboxes. Which <code>justify-content</code> property would you use for this?</p>
 <p>Great job! The autocomplete widget uses an event handler to update the state of the component when letters are typed into the input field. Once the autocomplete widget is sufficiently styled, move on to the bonus phase to make your widgets even better.</p>
@@ -2459,11 +2467,11 @@ string type</code></pre>
 <p><code>.result-exit.result-exit-active</code>: Specifies the final state of an element that has left the screen. This is where you also specify the <code>transition</code> property.</p>
 <p>Play around with the CSS file. What kind of interesting transitions can you create?</p>
 <h2 id="bonus-phase-resolving-strictmode-warnings">Bonus Phase: Resolving StrictMode Warnings</h2>
-<p>Check out your new transition in the browser. Open up your developer tools and type something in the “Autocomplete” search input. Your transitions are working, but wait - you have a warning in the console!</p>
+<p>Check out your new transition in the browser. Open up your developer tools and type something in the "Autocomplete" search input. Your transitions are working, but wait - you have a warning in the console!</p>
 <blockquote>
 <p>Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of CSSTransitionGroupChild which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://fb.me/react-strict-mode-find-node</p>
 </blockquote>
 <p>This is an example of how <a href="https://reactjs.org/docs/strict-mode.html">StrictMode</a> is a helpful tool that highlights potential problems. In this case, <code>StrictMode</code> is giving you helpful information about the <a href="https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage">deprecation of <code>findDOMNode</code></a>, which is used under the hood. You are also given a clickable link to the official React documentation!</p>
-<p>According to the documentation, <code>findDOMNode</code> is used “to search the tree for a DOM node given a class instance.” Now is your chance to practice going through the official React documentation and learning from reading a <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> in the official <a href="https://github.com/reactjs/react-transition-group/">react-transition-group repository</a>! Take a moment to read through the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> to see real-life discussion about implementing the <code>nodeRef</code> feature as an alternative to having React use <code>findDOMNode</code> under the hood.</p>
+<p>According to the documentation, <code>findDOMNode</code> is used "to search the tree for a DOM node given a class instance." Now is your chance to practice going through the official React documentation and learning from reading a <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> in the official <a href="https://github.com/reactjs/react-transition-group/">react-transition-group repository</a>! Take a moment to read through the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> to see real-life discussion about implementing the <code>nodeRef</code> feature as an alternative to having React use <code>findDOMNode</code> under the hood.</p>
 <p>In your constructor method, create a ref with <a href="https://reactjs.org/docs/refs-and-the-dom.html"><code>React.createRef()</code></a> and use the ref to assign a <code>nodeRef</code> prop to the <code>&lt;CSSTransition&gt;</code> that wraps your result items. Doing this will allow React to reference the <code>&lt;CSSTransition&gt;</code> component, without using the deprecated <code>findDOMNode</code> method to search through the tree for the component. Since React is no longer using <code>findDOMNode</code> under the hood, using a <code>nodeRef</code> will remove the warning in the developer tools console.</p>
 <p>Congratulations! You have just read through official documentation. In the future, you may contribute to an open-source or community managed project, just like how the use for the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> did! Don’t be discouraged by reading live discussion in GitHub issues and pull requests. You’ll continue building your foundation of React knowledge and before you know it, you might even be contributing to projects yourself!</p>

@@ -17,8 +17,8 @@
 <h3 id="composition">Composition</h3>
 <p>The key feature of React is composition of components. Components written by different people should work well together. It is important to us that you can add functionality to a component without causing rippling changes throughout the codebase.</p>
 <p>For example, it should be possible to introduce some local state into a component without changing any of the components using it. Similarly, it should be possible to add some initialization and teardown code to any component when necessary.</p>
-<p>There is nothing “bad” about using state or lifecycle methods in components. Like any powerful feature, they should be used in moderation, but we have no intention to remove them. On the contrary, we think they are integral parts of what makes React useful. We might enable <a href="https://github.com/reactjs/react-future/tree/master/07%20-%20Returning%20State">more functional patterns</a> in the future, but both local state and lifecycle methods will be a part of that model.</p>
-<p>Components are often described as “just functions” but in our view they need to be more than that to be useful. In React, components describe any composable behavior, and this includes rendering, lifecycle, and state. Some external libraries like <a href="https://facebook.github.io/relay/">Relay</a> augment components with other responsibilities such as describing data dependencies. It is possible that those ideas might make it back into React too in some form.</p>
+<p>There is nothing "bad" about using state or lifecycle methods in components. Like any powerful feature, they should be used in moderation, but we have no intention to remove them. On the contrary, we think they are integral parts of what makes React useful. We might enable <a href="https://github.com/reactjs/react-future/tree/master/07%20-%20Returning%20State">more functional patterns</a> in the future, but both local state and lifecycle methods will be a part of that model.</p>
+<p>Components are often described as "just functions" but in our view they need to be more than that to be useful. In React, components describe any composable behavior, and this includes rendering, lifecycle, and state. Some external libraries like <a href="https://facebook.github.io/relay/">Relay</a> augment components with other responsibilities such as describing data dependencies. It is possible that those ideas might make it back into React too in some form.</p>
 <h3 id="common-abstraction">Common Abstraction</h3>
 <p>In general we <a href="https://www.youtube.com/watch?v=4anAwXYqLG8">resist adding features</a> that can be
     implemented in userland. We don't want to bloat your apps with useless library code. However, there are exceptions
@@ -30,7 +30,7 @@
     in incompatible or inefficient ways, we might prefer to bake it into React. We don't do it lightly. When we do it,
     it's because we are confident that raising the abstraction level benefits the whole ecosystem. State, lifecycle
     methods, cross-browser event normalization are good examples of this.</p>
-<p>We always discuss such improvement proposals with the community. You can find some of those discussions by the <a href="https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22">“big picture”</a> label on the React issue tracker.</p>
+<p>We always discuss such improvement proposals with the community. You can find some of those discussions by the <a href="https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22">"big picture"</a> label on the React issue tracker.</p>
 <h3 id="escape-hatches">Escape Hatches</h3>
 <p>React is pragmatic. It is driven by the needs of the products written at Facebook. While it is influenced by some paradigms that are not yet fully mainstream such as functional programming, staying accessible to a wide range of developers with different skills and experience levels is an explicit goal of the project.</p>
 <p>If we want to deprecate a pattern that we don't like, it is our responsibility to consider all existing use cases for
@@ -42,7 +42,7 @@
     improvements.</p>
 <h3 id="stability">Stability</h3>
 <p>We value API stability. At Facebook, we have more than 50 thousand components using React. Many other companies, including <a href="https://twitter.com/">Twitter</a> and <a href="https://www.airbnb.com/">Airbnb</a>, are also heavy users of React. This is why we are usually reluctant to change public APIs or behavior.</p>
-<p>However we think stability in the sense of “nothing changes” is overrated. It quickly turns into stagnation. Instead, we prefer the stability in the sense of “It is heavily used in production, and when something changes, there is a clear (and preferably automated) migration path.”</p>
+<p>However we think stability in the sense of "nothing changes" is overrated. It quickly turns into stagnation. Instead, we prefer the stability in the sense of "It is heavily used in production, and when something changes, there is a clear (and preferably automated) migration path."</p>
 <p>When we deprecate a pattern, we study its internal usage at Facebook and add deprecation warnings. They let us assess the impact of the change. Sometimes we back out if we see that it is too early, and we need to think more strategically about getting the codebases to the point where they are ready for this change.</p>
 <p>If we are confident that the change is not too disruptive and the migration strategy is viable for all use cases, we release the deprecation warning to the open source community. We are closely in touch with many users of React outside of Facebook, and we monitor popular open source projects and guide them in fixing those deprecations.</p>
 <p>Given the sheer size of the Facebook React codebase, successful internal migration is often a good indicator that
@@ -63,20 +63,20 @@
         href="/blog/2015/12/18/react-components-elements-and-instances.html#elements-describe-the-tree">description of
         what needs to be rendered</a>, and that description may include both user-written components like
     <code>&lt;LikeButton&gt;</code> and platform-specific components like <code>&lt;div&gt;</code>. It is up to React to
-    “unroll” <code>&lt;LikeButton&gt;</code> at some point in the future and actually apply changes to the UI tree
+    "unroll" <code>&lt;LikeButton&gt;</code> at some point in the future and actually apply changes to the UI tree
     according to the render results of the components recursively.</p>
 <p>This is a subtle distinction but a powerful one. Since you don't call that component function but let React call it,
     it means React has the power to delay calling it if necessary. In its current implementation React walks the tree
     recursively and calls render functions of the whole updated tree during a single tick. However in the future it
     might start <a href="https://github.com/facebook/react/issues/6170">delaying some updates to avoid dropping
         frames</a>.</p>
-<p>This is a common theme in React design. Some popular libraries implement the “push” approach where computations are performed when the new data is available. React, however, sticks to the “pull” approach where computations can be delayed until necessary.</p>
+<p>This is a common theme in React design. Some popular libraries implement the "push" approach where computations are performed when the new data is available. React, however, sticks to the "pull" approach where computations can be delayed until necessary.</p>
 <p>React is not a generic data processing library. It is a library for building user interfaces. We think that it is uniquely positioned in an app to know which computations are relevant right now and which are not.</p>
 <p>If something is offscreen, we can delay any logic related to it. If data is arriving faster than the frame rate, we can coalesce and batch updates. We can prioritize work coming from user interactions (such as an animation caused by a button click) over less important background work (such as rendering new content just loaded from the network) to avoid dropping frames.</p>
-<p>To be clear, we are not taking advantage of this right now. However the freedom to do something like this is why we prefer to have control over scheduling, and why <code>setState()</code> is asynchronous. Conceptually, we think of it as “scheduling an update”.</p>
-<p>The control over scheduling would be harder for us to gain if we let the user directly compose views with a “push” based paradigm common in some variations of <a href="https://en.wikipedia.org/wiki/Functional_reactive_programming">Functional Reactive Programming</a>. We want to own the “glue” code.</p>
+<p>To be clear, we are not taking advantage of this right now. However the freedom to do something like this is why we prefer to have control over scheduling, and why <code>setState()</code> is asynchronous. Conceptually, we think of it as "scheduling an update".</p>
+<p>The control over scheduling would be harder for us to gain if we let the user directly compose views with a "push" based paradigm common in some variations of <a href="https://en.wikipedia.org/wiki/Functional_reactive_programming">Functional Reactive Programming</a>. We want to own the "glue" code.</p>
 <p>It is a key goal for React that the amount of the user code that executes before yielding back into React is minimal. This ensures that React retains the capability to schedule and split work in chunks according to what it knows about the UI.</p>
-<p>There is an internal joke in the team that React should have been called “Schedule” because React does not want to be fully “reactive”.</p>
+<p>There is an internal joke in the team that React should have been called "Schedule" because React does not want to be fully "reactive".</p>
 <h3 id="developer-experience">Developer Experience</h3>
 <p>Providing a good developer experience is important to us.</p>
 <p>For example, we maintain <a href="https://github.com/facebook/react/tree/master/packages/react-devtools">React DevTools</a> which let you inspect the React component tree in Chrome and Firefox. We have heard that it brings a big productivity boost both to the Facebook engineers and to the community.</p>
@@ -93,8 +93,8 @@
     <code>render()</code> function, or some function that is called by <code>render()</code>. The problem is isolated.
 </p>
 <p>If the state is wrong, you know that the problem is caused by one of the <code>setState()</code> calls in this file. This, too, is relatively simple to locate and fix because usually there are only a few <code>setState()</code> calls in a single file.</p>
-<p>If the props are wrong, you can traverse the tree up in the inspector, looking for the component that first “poisoned the well” by passing bad props down.</p>
-<p>This ability to trace any UI to the data that produced it in the form of current props and state is very important to React. It is an explicit design goal that state is not “trapped” in closures and combinators, and is available to React directly.</p>
+<p>If the props are wrong, you can traverse the tree up in the inspector, looking for the component that first "poisoned the well" by passing bad props down.</p>
+<p>This ability to trace any UI to the data that produced it in the form of current props and state is very important to React. It is an explicit design goal that state is not "trapped" in closures and combinators, and is available to React directly.</p>
 <p>While the UI is dynamic, we believe that synchronous <code>render()</code> functions of props and state turn debugging from guesswork into a boring but finite procedure. We would like to preserve this constraint in React even though it makes some use cases, like complex animations, harder.</p>
 <h3 id="configuration">Configuration</h3>
 <p>We find global runtime configuration options to be problematic.</p>
@@ -137,7 +137,7 @@
     focusing on making them happy brings a positive net effect. That's exactly what we did with React, and so far
     solving the problems encountered by Facebook product teams has translated well to the open source community.</p>
 <p>The downside of this approach is that sometimes we fail to give enough focus to the things that Facebook teams don't
-    have to deal with, such as the “getting started” experience. We are acutely aware of this, and we are thinking of
+    have to deal with, such as the "getting started" experience. We are acutely aware of this, and we are thinking of
     how to improve in a way that would benefit everyone in the community without making the same mistakes we did with
     open source projects before.</p>
 </body></html>

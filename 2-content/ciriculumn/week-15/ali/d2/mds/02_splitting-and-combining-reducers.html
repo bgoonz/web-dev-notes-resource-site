@@ -193,7 +193,9 @@
 <a class="sourceLine" id="cb8-19" title="19"><span class="op">};</span></a></code></pre></div>
 <p>Notice that the <code>state</code> parameter is duplicated to the <code>nextState</code> variable using the <code>Object.assign</code> method:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">let</span> nextState <span class="op">=</span> <span class="va">Object</span>.<span class="at">assign</span>(<span class="op">{},</span> state)<span class="op">;</span></a></code></pre></div>
-<p>While this code correctly creates a duplicate of the <code>state</code> object, <code>nextState</code> is only a shallow duplicate as only the top-level object is duplicated. Each “farmer” object that the <code>state</code> object refers to are still the <em>same</em> objects.</p>
+<p>While this code correctly creates a duplicate of the <code>state</code> object, <code>nextState</code> is only a
+    shallow duplicate as only the top-level object is duplicated. Each “farmer" object that the <code>state</code>
+    object refers to are still the <em>same</em> objects.</p>
 <p>In the <code>PAY_FARMER</code> case clause, the farmer object is mutated by setting the <code>paid</code> property to a new value:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="cf">case</span> PAY_FARMER<span class="op">:</span></a>
 <a class="sourceLine" id="cb10-2" title="2">  <span class="kw">const</span> farmerToPay <span class="op">=</span> nextState[<span class="va">action</span>.<span class="at">id</span>]<span class="op">;</span></a>

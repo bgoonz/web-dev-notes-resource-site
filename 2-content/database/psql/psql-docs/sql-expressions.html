@@ -97,7 +97,7 @@ CREATE FUNCTION dept(text) RETURNS dept
 </p><pre class="synopsis">
 <em class="replaceable"><code>expression</code></em>[<em class="replaceable"><code>subscript</code></em>]
 </pre><p>
-    or multiple adjacent elements (an <span class="quote">“<span class="quote">array slice</span>”</span>) can be extracted
+    or multiple adjacent elements (an <span class="quote">"<span class="quote">array slice</span>"</span>) can be extracted
     by writing
 </p><pre class="synopsis">
 <em class="replaceable"><code>expression</code></em>[<em class="replaceable"><code>lower_subscript</code></em>:<em class="replaceable"><code>upper_subscript</code></em>]
@@ -205,7 +205,7 @@ sqrt(2)
      notations <code class="literal">col(table)</code> and <code class="literal">table.col</code> are
      interchangeable.  This behavior is not SQL-standard but is provided
      in <span class="productname">PostgreSQL</span> because it allows use of functions to
-     emulate <span class="quote">“<span class="quote">computed fields</span>”</span>.  For more information see
+     emulate <span class="quote">"<span class="quote">computed fields</span>"</span>.  For more information see
      <a class="xref" href="rowtypes.html#ROWTYPES-USAGE" title="8.16.5. Using Composite Types in Queries">Section 8.16.5</a>.
     </p></div></div><div class="sect2" id="SYNTAX-AGGREGATES"><div class="titlepage"><div><div><h3 class="title">4.2.7. Aggregate Expressions</h3></div></div></div><a id="id-1.5.3.6.15.2" class="indexterm"></a><a id="id-1.5.3.6.15.3" class="indexterm"></a><a id="id-1.5.3.6.15.4" class="indexterm"></a><a id="id-1.5.3.6.15.5" class="indexterm"></a><p>
     An <em class="firstterm">aggregate expression</em> represents the
@@ -518,7 +518,7 @@ EXCLUDE NO OTHERS
        '1 day' PRECEDING AND '10 days' FOLLOWING</code>.
        The <em class="replaceable"><code>offset</code></em> is still required to be
        non-null and non-negative, though the meaning
-       of <span class="quote">“<span class="quote">non-negative</span>”</span> depends on its data type.
+       of <span class="quote">"<span class="quote">non-negative</span>"</span> depends on its data type.
       </p></li></ul></div><p>
     In any case, the distance to the end of the frame is limited by the
     distance to the end of the partition, so that for rows near the partition
@@ -528,7 +528,7 @@ EXCLUDE NO OTHERS
     mode, <code class="literal">0 PRECEDING</code> and <code class="literal">0 FOLLOWING</code>
     are equivalent to <code class="literal">CURRENT ROW</code>.  This normally holds
     in <code class="literal">RANGE</code> mode as well, for an appropriate
-    data-type-specific meaning of <span class="quote">“<span class="quote">zero</span>”</span>.
+    data-type-specific meaning of <span class="quote">"<span class="quote">zero</span>"</span>.
    </p><p>
     The <em class="replaceable"><code>frame_exclusion</code></em> option allows rows around
     the current row to be excluded from the frame, even if they would be
@@ -615,7 +615,7 @@ CAST ( <em class="replaceable"><code>expression</code></em> AS <em class="replac
     to the type that a value expression must produce (for example, when it is
     assigned to a table column); the system will automatically apply a
     type cast in such cases.  However, automatic casting is only done for
-    casts that are marked <span class="quote">“<span class="quote">OK to apply implicitly</span>”</span>
+    casts that are marked <span class="quote">"<span class="quote">OK to apply implicitly</span>"</span>
     in the system catalogs.  Other casts must be invoked with
     explicit casting syntax.  This restriction is intended to prevent
     surprising conversions from being applied silently.
@@ -638,8 +638,8 @@ CAST ( <em class="replaceable"><code>expression</code></em> AS <em class="replac
      one of the two standard cast syntaxes is used to do a run-time
      conversion, it will internally invoke a registered function to
      perform the conversion.  By convention, these conversion functions
-     have the same name as their output type, and thus the <span class="quote">“<span class="quote">function-like
-     syntax</span>”</span> is nothing more than a direct invocation of the underlying
+     have the same name as their output type, and thus the <span class="quote">"<span class="quote">function-like
+     syntax</span>"</span> is nothing more than a direct invocation of the underlying
      conversion function.  Obviously, this is not something that a portable
      application should rely on.  For further details see
      <a class="xref" href="sql-createcast.html" title="CREATE CAST"><span class="refentrytitle">CREATE CAST</span></a>.
@@ -923,7 +923,7 @@ SELECT true OR somefunc();
 SELECT somefunc() OR true;
 </pre><p>
     Note that this is not the same as the left-to-right
-    <span class="quote">“<span class="quote">short-circuiting</span>”</span> of Boolean operators that is found
+    <span class="quote">"<span class="quote">short-circuiting</span>"</span> of Boolean operators that is found
     in some programming languages.
    </p><p>
     As a consequence, it is unwise to use functions with side effects

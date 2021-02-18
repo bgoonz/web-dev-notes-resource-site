@@ -185,7 +185,9 @@
 <li><p>Create the <code>/spin</code> route, wich should respond with nothing but keep on being open for connections.</p></li>
 <li><p>Create the <code>/hangup</code> route, which should set the status to 200 and then close the connection.</p></li>
 <li><p>Create the <code>/head</code> route, which should should respond with 204.</p></li>
-<li><p>Create the <code>/hello</code> route, which should should respond with 200 and text body of “Hello”.</p></li>
+<li>
+    <p>Create the <code>/hello</code> route, which should should respond with 200 and text body of “Hello".</p>
+</li>
 <li><p>Create the <code>/echo?message=xyz</code> route, which should respond with 200 and the message as the body. For this one, to help you out, you should start by console-logging the <code>req</code> object to find out how to pull out the message. Again, don’t hesitate to check the <a href="#hints">hints</a> if you get stuck.</p></li>
 <li><p>Create the <code>/error</code> route, which should should respond with 500.</p></li>
 <li><p>Create the <code>/time.json</code> route, which should should respond with 200, body with Content-Type of <code>application/json</code> and <code>{ "now": "Sat Feb 15 2020 14:29:20 GMT-0800" }</code> where it’s the current time of the response.</p></li>

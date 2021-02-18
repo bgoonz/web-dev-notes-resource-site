@@ -17,7 +17,7 @@
     because <code class="command">ANALYZE</code>'s statistics are random samples rather
     than exact, and because costs are inherently somewhat platform-dependent.
    </p><p>
-    The examples use <code class="command">EXPLAIN</code>'s default <span class="quote">“<span class="quote">text</span>”</span> output
+    The examples use <code class="command">EXPLAIN</code>'s default <span class="quote">"<span class="quote">text</span>"</span> output
     format, which is compact and convenient for humans to read.
     If you want to feed <code class="command">EXPLAIN</code>'s output to a program for further
     analysis, you should use one of its machine-readable output formats
@@ -134,7 +134,7 @@ EXPLAIN SELECT * FROM tenk1 WHERE unique1 &lt; 7000;
 </pre><p>
 
     Notice that the <code class="command">EXPLAIN</code> output shows the <code class="literal">WHERE</code>
-    clause being applied as a <span class="quote">“<span class="quote">filter</span>”</span> condition attached to the Seq
+    clause being applied as a <span class="quote">"<span class="quote">filter</span>"</span> condition attached to the Seq
     Scan plan node.  This means that
     the plan node checks the condition for each row it scans, and outputs
     only the ones that pass the condition.
@@ -173,7 +173,7 @@ EXPLAIN SELECT * FROM tenk1 WHERE unique1 &lt; 100;
     scan.  (The reason for using two plan levels is that the upper plan
     node sorts the row locations identified by the index into physical order
     before reading them, to minimize the cost of separate fetches.
-    The <span class="quote">“<span class="quote">bitmap</span>”</span> mentioned in the node names is the mechanism that
+    The <span class="quote">"<span class="quote">bitmap</span>"</span> mentioned in the node names is the mechanism that
     does the sorting.)
    </p><p>
     Now let's add another condition to the <code class="literal">WHERE</code> clause:
@@ -198,7 +198,7 @@ EXPLAIN SELECT * FROM tenk1 WHERE unique1 &lt; 100 AND stringu1 = 'xxx';
     the rows retrieved by the index.  Thus the cost has actually gone up
     slightly to reflect this extra checking.
    </p><p>
-    In some cases the planner will prefer a <span class="quote">“<span class="quote">simple</span>”</span> index scan plan:
+    In some cases the planner will prefer a <span class="quote">"<span class="quote">simple</span>"</span> index scan plan:
 
 </p><pre class="screen">
 EXPLAIN SELECT * FROM tenk1 WHERE unique1 = 42;
@@ -284,7 +284,7 @@ WHERE t1.unique1 &lt; 10 AND t1.unique2 = t2.unique2;
    </p><p>
     In this plan, we have a nested-loop join node with two table scans as
     inputs, or children.  The indentation of the node summary lines reflects
-    the plan tree structure.  The join's first, or <span class="quote">“<span class="quote">outer</span>”</span>, child
+    the plan tree structure.  The join's first, or <span class="quote">"<span class="quote">outer</span>"</span>, child
     is a bitmap scan similar to those we saw before.  Its cost and row count
     are the same as we'd get from <code class="literal">SELECT ... WHERE unique1 &lt; 10</code>
     because we are
@@ -293,7 +293,7 @@ WHERE t1.unique1 &lt; 10 AND t1.unique2 = t2.unique2;
     The <code class="literal">t1.unique2 = t2.unique2</code> clause is not relevant yet,
     so it doesn't affect the row count of the outer scan.  The nested-loop
     join node will run its second,
-    or <span class="quote">“<span class="quote">inner</span>”</span> child once for each row obtained from the outer child.
+    or <span class="quote">"<span class="quote">inner</span>"</span> child once for each row obtained from the outer child.
     Column values from the current outer row can be plugged into the inner
     scan; here, the <code class="literal">t1.unique2</code> value from the outer row is available,
     so we get a plan and costs similar to what we saw above for a simple
@@ -334,7 +334,7 @@ WHERE t1.unique1 &lt; 10 AND t2.unique2 &lt; 10 AND t1.hundred &lt; t2.hundred;
     join node.  This reduces the estimated output row count of the join node,
     but does not change either input scan.
    </p><p>
-    Notice that here the planner has chosen to <span class="quote">“<span class="quote">materialize</span>”</span> the inner
+    Notice that here the planner has chosen to <span class="quote">"<span class="quote">materialize</span>"</span> the inner
     relation of the join, by putting a Materialize plan node atop it.  This
     means that the <code class="literal">t2</code> index scan will be done just once, even
     though the nested-loop join node needs to read that data ten times, once
@@ -343,7 +343,7 @@ WHERE t1.unique1 &lt; 10 AND t2.unique2 &lt; 10 AND t1.hundred &lt; t2.hundred;
     subsequent pass.
    </p><p>
     When dealing with outer joins, you might see join plan nodes with both
-    <span class="quote">“<span class="quote">Join Filter</span>”</span> and plain <span class="quote">“<span class="quote">Filter</span>”</span> conditions attached.
+    <span class="quote">"<span class="quote">Join Filter</span>"</span> and plain <span class="quote">"<span class="quote">Filter</span>"</span> conditions attached.
     Join Filter conditions come from the outer join's <code class="literal">ON</code> clause,
     so a row that fails the Join Filter condition could still get emitted as
     a null-extended row.  But a plain Filter condition is applied after the
@@ -459,7 +459,7 @@ WHERE t1.unique1 &lt; 10 AND t1.unique2 = t2.unique2;
  Execution time: 0.501 ms
 </pre><p>
 
-    Note that the <span class="quote">“<span class="quote">actual time</span>”</span> values are in milliseconds of
+    Note that the <span class="quote">"<span class="quote">actual time</span>"</span> values are in milliseconds of
     real time, whereas the <code class="literal">cost</code> estimates are expressed in
     arbitrary units; so they are unlikely to match up.
     The thing that's usually most important to look for is whether the
@@ -527,11 +527,11 @@ EXPLAIN ANALYZE SELECT * FROM tenk1 WHERE ten &lt; 7;
 </pre><p>
 
     These counts can be particularly valuable for filter conditions applied at
-    join nodes.  The <span class="quote">“<span class="quote">Rows Removed</span>”</span> line only appears when at least
+    join nodes.  The <span class="quote">"<span class="quote">Rows Removed</span>"</span> line only appears when at least
     one scanned row, or potential join pair in the case of a join node,
     is rejected by the filter condition.
    </p><p>
-    A case similar to filter conditions occurs with <span class="quote">“<span class="quote">lossy</span>”</span>
+    A case similar to filter conditions occurs with <span class="quote">"<span class="quote">lossy</span>"</span>
     index scans.  For example, consider this search for polygons containing a
     specific point:
 
@@ -568,7 +568,7 @@ EXPLAIN ANALYZE SELECT * FROM polygon_tbl WHERE f1 @&gt; polygon '(0.5,2.0)';
 
     Here we can see that the index returned one candidate row, which was
     then rejected by a recheck of the index condition.  This happens because a
-    GiST index is <span class="quote">“<span class="quote">lossy</span>”</span> for polygon containment tests: it actually
+    GiST index is <span class="quote">"<span class="quote">lossy</span>"</span> for polygon containment tests: it actually
     returns the rows with polygons that overlap the target, and then we have
     to do the exact containment test on those rows.
    </p><p>

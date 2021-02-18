@@ -33,7 +33,7 @@
     and tune application performance (e.g. <code>React.memo</code>). But we haven't been as opinionated about the
     <em>high-level patterns</em> that make the difference between fast, fluid apps and slow, janky ones. We always want
     to ensure that React remains approachable to new users and supports a variety of use-cases – not every app has to be
-    “blazing” fast. But as a community we can and should aim high. <strong>We should make it as easy as possible to
+    "blazing" fast. But as a community we can and should aim high. <strong>We should make it as easy as possible to
         build apps that start fast and stay fast,</strong> even as they grow in complexity, for users on varying devices
     and networks around the world.</p>
 <p><a href="/docs/concurrent-mode-intro.html">Concurrent Mode</a> and <a
@@ -63,14 +63,14 @@
     performance only goes so far – our apps still shouldn't take forever to fetch all of their code, data, images, and
     other assets.</p>
 <p>The traditional approach to loading data in React apps involves what we refer to as <a
-        href="/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense">“fetch-on-render”</a>.
+        href="/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense">"fetch-on-render"</a>.
     First we render a component with a spinner, then fetch data on mount (<code>componentDidMount</code> or
     <code>useEffect</code>), and finally update to render the resulting data. It's certainly <em>possible</em> to use
-    this pattern with Suspense: instead of initially rendering a placeholder itself, a component can “suspend” –
+    this pattern with Suspense: instead of initially rendering a placeholder itself, a component can "suspend" –
     indicate to React that it isn't ready yet. This will tell React to find the nearest ancestor <code>&lt;Suspense
         fallback={&lt;Placeholder/&gt;}&gt;</code>, and render its fallback instead. If you watched earlier Suspense
     demos this example may feel familiar – it's how we originally imagined using Suspense for data-fetching.</p>
-<p>It turns out that this approach has some limitations. Consider a page that shows a social media post by a user, along with comments on that post. That might be structured as a <code>&lt;Post&gt;</code> component that renders both the post body and a <code>&lt;CommentList&gt;</code> to show the comments. Using the fetch-on-render approach described above to implement this could cause sequential round trips (sometimes referred to as a “waterfall”). First the data for the <code>&lt;Post&gt;</code> component would be fetched and then the data for <code>&lt;CommentList&gt;</code> would be fetched, increasing the time it takes to show the full page.</p>
+<p>It turns out that this approach has some limitations. Consider a page that shows a social media post by a user, along with comments on that post. That might be structured as a <code>&lt;Post&gt;</code> component that renders both the post body and a <code>&lt;CommentList&gt;</code> to show the comments. Using the fetch-on-render approach described above to implement this could cause sequential round trips (sometimes referred to as a "waterfall"). First the data for the <code>&lt;Post&gt;</code> component would be fetched and then the data for <code>&lt;CommentList&gt;</code> would be fetched, increasing the time it takes to show the full page.</p>
 <p>There's also another often-overlooked downside to this approach. If <code>&lt;Post&gt;</code> eagerly requires (or
     imports) the <code>&lt;CommentList&gt;</code> component, our app will have to wait to show the post <em>body</em>
     while the code for the <em>comments</em> is downloading. We could lazily load <code>&lt;CommentList&gt;</code>, but
@@ -259,7 +259,7 @@
 <p>But there's one thing that's still missing. We've shown how to preload <em>data</em> for a route – but what about
     code? The example above cheated a bit and used <code>React.lazy</code>. However, <code>React.lazy</code> is, as the
     name implies, <em>lazy</em>. It won't start downloading code until the lazy component is actually rendered – it's
-    “fetch-on-render” for code!</p>
+    "fetch-on-render" for code!</p>
 <p>To solve this, the React team is considering APIs that would allow bundle splitting and eager preloading for code as well. That would allow a user to pass some form of lazy component to a router, and for the router to trigger loading the code alongside its data as early as possible.</p>
 <h2 id="putting-it-all-together">Putting It All Together</h2>
 <p>To recap, achieving a great loading experience means that we need to <strong>start loading code and data as early as possible, but without waiting for all of it to be ready</strong>. Parallel data and view trees allow us to load the data for a view in parallel with loading the view (code) itself. Fetching in an event handler means we can start loading data as early as possible, and even optimistically preload a view when we have enough confidence that a user will navigate to it. Loading data incrementally allows us to load important data earlier without delaying the fetching of less important data. And treating code as data – and preloading it with similar APIs – allows us to load it earlier too.</p>

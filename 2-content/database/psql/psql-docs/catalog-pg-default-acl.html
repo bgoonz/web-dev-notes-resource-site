@@ -15,8 +15,8 @@
       </td></tr></tbody></table></div></div><br class="table-break" /><p>
    A <code class="structname">pg_default_acl</code> entry shows the initial privileges to
    be assigned to an object belonging to the indicated user.  There are
-   currently two types of entry: <span class="quote">“<span class="quote">global</span>”</span> entries with
-   <code class="structfield">defaclnamespace</code> = 0, and <span class="quote">“<span class="quote">per-schema</span>”</span> entries
+   currently two types of entry: <span class="quote">"<span class="quote">global</span>"</span> entries with
+   <code class="structfield">defaclnamespace</code> = 0, and <span class="quote">"<span class="quote">per-schema</span>"</span> entries
    that reference a particular schema.  If a global entry is present then
    it <span class="emphasis"><em>overrides</em></span> the normal hard-wired default privileges
    for the object type.  A per-schema entry, if present, represents privileges

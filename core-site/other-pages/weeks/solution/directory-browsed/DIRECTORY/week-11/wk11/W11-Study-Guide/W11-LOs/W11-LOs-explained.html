@@ -24,7 +24,7 @@
 <li>Pug Docs: http://pugjs.org/</li>
 <li>csurf Docs: https://github.com/expressjs/csurf#readme</li>
 <li>Sequelize Docs: https://sequelize.org/</li>
-<li>Sequelize “Cheatsheet”</li>
+<li>Sequelize "Cheatsheet"</li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -179,7 +179,7 @@
    |           |            |            |        |
 scheme     authority       path        query   fragment</code></pre>
 <ul>
-<li><code>Scheme</code>: Formerly known as “protocol”, tells the browser what kind of connection you are making. Examples would include <code>http</code>, <code>https</code>, <code>file</code>, <code>ws</code>, etc.</li>
+<li><code>Scheme</code>: Formerly known as "protocol", tells the browser what kind of connection you are making. Examples would include <code>http</code>, <code>https</code>, <code>file</code>, <code>ws</code>, etc.</li>
 <li><code>Authority</code>: Normally the domain name, but may include the port, such as <code>localhost:3000</code></li>
 <li><code>Path</code>: The first part of an HTTP request, they indicate the location within the application. <code>https://google.com/images</code> has a path of <code>/images</code>. If no path is specified in the URL, it is assumed to be <code>/</code></li>
 <li><code>Query</code>: Extra information sent to the browser for processing the request. They are URL encoded key-value pairs, with an <code>=</code> between key and value, and pairs concatenated by <code>&amp;</code>. Special characters are replaed with ASCII Code value, such as <code>$</code> being replaced with <code>%24</code>.</li>
@@ -227,7 +227,7 @@ scheme     authority       path        query   fragment</code></pre>
 <a class="sourceLine" id="cb11-9" title="9"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div></li>
 <li><p>access and read the stream of content for requests that have a body</p>
 <ul>
-<li>The body of a request comes in to the server in pieces, or “chunks”. We'll see this a lot when we make a <code>POST</code> request with a form. We can wait for the body to arrive and build it back up:</li>
+<li>The body of a request comes in to the server in pieces, or "chunks". We'll see this a lot when we make a <code>POST</code> request with a form. We can wait for the body to arrive and build it back up:</li>
 </ul>
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="cf">if</span> (<span class="va">req</span>.<span class="at">method</span> <span class="op">===</span> <span class="st">&#39;POST&#39;</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">let</span> bodyContent <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span></a>
@@ -579,7 +579,7 @@ if (time &gt; 17)
 <li>no URL - form will be sent to the same page(url) the form is present on</li>
 </ul></li>
 </ul></li>
-<li>The <code>method</code> attribute defines the HTTP verb that will be used with the request (‘GET' or ‘POST')
+<li>The <code>method</code> attribute defines the HTTP verb that will be used with the request ('GET' or 'POST')
 <ul>
 <li>If the <code>POST</code> method is used, form data is appended to the body of the HTTP request.</li>
 <li>Only the <code>GET</code> and <code>POST</code> methods may be specified on the form. In order to do <code>PUT</code>, <code>DELETE</code>, or other methods, we must use <code>AJAX</code> requests using the <code>fetch</code> API, for example.</li>
@@ -627,7 +627,7 @@ if (time &gt; 17)
 <li>Use express to handle a form's POST request</li>
 </ol>
 <ul>
-<li>In the ‘POST' route, we can check that our user's input passes all of our data validation checks, then, if successful, create a new record for that user within our database. (In the project for today we just added an object into an array to simulate this process.)</li>
+<li>In the 'POST' route, we can check that our user's input passes all of our data validation checks, then, if successful, create a new record for that user within our database. (In the project for today we just added an object into an array to simulate this process.)</li>
 <li>After we create our new record, we can redirect the user to another page. In this example, we are redirecting to our root page, but we could have redirected to a user page, an index, a welcome page, etc.</li>
 </ul>
 <div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" title="1"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;/create&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -688,7 +688,7 @@ if (time &gt; 17)
 <li>Even though you could add add validations on the client side, client-side validations are not as secure and can be circumvented. We could send a postman request to our server's routes, for example, and not utilize our client-side application at all.</li>
 <li>Because client-side validations can be circumvented, it's necessary to implement server-side data validations as well.</li>
 <li>Handling bad request data in our route handlers allows us to return 400 level messages with appropriate messaging to allow the user to correct their bad request.</li>
-<li>If we didn't have data validations on our server and allowed the bad data to go all the way to the database, the system would return a the generic “500: Internal Server Error”, which is not helpful for the user.</li>
+<li>If we didn't have data validations on our server and allowed the bad data to go all the way to the database, the system would return a the generic "500: Internal Server Error", which is not helpful for the user.</li>
 </ul>
 <ol start="6" type="1">
 <li>Validate user-provided data from within an Express route handler function</li>
@@ -819,7 +819,7 @@ if (time &gt; 17)
 <li>Creating the middleware function is not enough to implement csrf protection. Anywhere that requires us to create or submit forms we need to utilize the middleware within the route. We do this by passing it as an argument to our <code>app.get</code> or <code>app.post</code> function calls.</li>
 <li>When creating our forms, we want to be able to provide a <code>_csrf</code> input field, hidden from the user.</li>
 <li>The value that we supply to this field is obtained from invoking our <code>req.csrfToken()</code> function that was created for us from the middleware.</li>
-<li>The middleware is also supplied to the ‘POST' routes that respond to these submissions in order to check that the token was actually created by our application.</li>
+<li>The middleware is also supplied to the 'POST' routes that respond to these submissions in order to check that the token was actually created by our application.</li>
 </ul>
 <div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">const</span> express <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;express&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb46-2" title="2"><span class="kw">const</span> cookieParser <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;cookie-parser&#39;</span>)<span class="op">;</span></a>

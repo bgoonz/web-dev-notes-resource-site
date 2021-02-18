@@ -6,8 +6,8 @@
    </p><div class="simplesect" id="id-1.10.6.4.3"><div class="titlepage"><div><div><h3 class="title">What Goes Where</h3></div></div></div><p>
     The primary message should be short, factual, and avoid reference to
     implementation details such as specific function names.
-    <span class="quote">“<span class="quote">Short</span>”</span> means <span class="quote">“<span class="quote">should fit on one line under normal
-    conditions</span>”</span>.  Use a detail message if needed to keep the primary
+    <span class="quote">"<span class="quote">Short</span>"</span> means <span class="quote">"<span class="quote">should fit on one line under normal
+    conditions</span>"</span>.  Use a detail message if needed to keep the primary
     message short, or if you feel a need to mention implementation details
     such as the particular system call that failed. Both primary and detail
     messages should be factual.  Use a hint message for suggestions about what
@@ -103,9 +103,9 @@ Hint:       the addendum
     way, since some messages are complete sentences and some not.
    </p></div><div class="simplesect" id="id-1.10.6.4.9"><div class="titlepage"><div><div><h3 class="title">Avoid Passive Voice</h3></div></div></div><p>
     Use the active voice.  Use complete sentences when there is an acting
-    subject (<span class="quote">“<span class="quote">A could not do B</span>”</span>).  Use telegram style without
+    subject (<span class="quote">"<span class="quote">A could not do B</span>"</span>).  Use telegram style without
     subject if the subject would be the program itself; do not use
-    <span class="quote">“<span class="quote">I</span>”</span> for the program.
+    <span class="quote">"<span class="quote">I</span>"</span> for the program.
    </p><p>
     Rationale: The program is not human.  Don't pretend otherwise.
    </p></div><div class="simplesect" id="id-1.10.6.4.10"><div class="titlepage"><div><div><h3 class="title">Present vs. Past Tense</h3></div></div></div><p>
@@ -122,8 +122,8 @@ and:
 cannot open file "%s"
 </pre><p>
     The first one means that the attempt to open the file failed.  The
-    message should give a reason, such as <span class="quote">“<span class="quote">disk full</span>”</span> or
-    <span class="quote">“<span class="quote">file doesn't exist</span>”</span>.  The past tense is appropriate because
+    message should give a reason, such as <span class="quote">"<span class="quote">disk full</span>"</span> or
+    <span class="quote">"<span class="quote">file doesn't exist</span>"</span>.  The past tense is appropriate because
     next time the disk might not be full anymore or the file in question might
     exist.
    </p><p>
@@ -138,7 +138,7 @@ cannot open file "%s"
    </p></div><div class="simplesect" id="id-1.10.6.4.11"><div class="titlepage"><div><div><h3 class="title">Type of the Object</h3></div></div></div><p>
     When citing the name of an object, state what kind of object it is.
    </p><p>
-    Rationale: Otherwise no one will know what <span class="quote">“<span class="quote">foo.bar.baz</span>”</span>
+    Rationale: Otherwise no one will know what <span class="quote">"<span class="quote">foo.bar.baz</span>"</span>
     refers to.
    </p></div><div class="simplesect" id="id-1.10.6.4.12"><div class="titlepage"><div><div><h3 class="title">Brackets</h3></div></div></div><p>
     Square brackets are only to be used (1) in command synopses to denote
@@ -188,19 +188,19 @@ BETTER: could not open file %s: %m
    </p><p>
     Rationale: Users don't know what all those functions do.
    </p></div><div class="simplesect" id="id-1.10.6.4.16"><div class="titlepage"><div><div><h3 class="title">Tricky Words to Avoid</h3></div></div></div><p><strong>Unable. </strong>
-    <span class="quote">“<span class="quote">Unable</span>”</span> is nearly the passive voice.  Better use
-    <span class="quote">“<span class="quote">cannot</span>”</span> or <span class="quote">“<span class="quote">could not</span>”</span>, as appropriate.
+    <span class="quote">"<span class="quote">Unable</span>"</span> is nearly the passive voice.  Better use
+    <span class="quote">"<span class="quote">cannot</span>"</span> or <span class="quote">"<span class="quote">could not</span>"</span>, as appropriate.
    </p><p><strong>Bad. </strong>
-    Error messages like <span class="quote">“<span class="quote">bad result</span>”</span> are really hard to interpret
-    intelligently.  It's better to write why the result is <span class="quote">“<span class="quote">bad</span>”</span>,
-    e.g., <span class="quote">“<span class="quote">invalid format</span>”</span>.
+    Error messages like <span class="quote">"<span class="quote">bad result</span>"</span> are really hard to interpret
+    intelligently.  It's better to write why the result is <span class="quote">"<span class="quote">bad</span>"</span>,
+    e.g., <span class="quote">"<span class="quote">invalid format</span>"</span>.
    </p><p><strong>Illegal. </strong>
-    <span class="quote">“<span class="quote">Illegal</span>”</span> stands for a violation of the law, the rest is
-    <span class="quote">“<span class="quote">invalid</span>”</span>. Better yet, say why it's invalid.
+    <span class="quote">"<span class="quote">Illegal</span>"</span> stands for a violation of the law, the rest is
+    <span class="quote">"<span class="quote">invalid</span>"</span>. Better yet, say why it's invalid.
    </p><p><strong>Unknown. </strong>
-    Try to avoid <span class="quote">“<span class="quote">unknown</span>”</span>.  Consider <span class="quote">“<span class="quote">error: unknown
-    response</span>”</span>.  If you don't know what the response is, how do you know
-    it's erroneous? <span class="quote">“<span class="quote">Unrecognized</span>”</span> is often a better choice.
+    Try to avoid <span class="quote">"<span class="quote">unknown</span>"</span>.  Consider <span class="quote">"<span class="quote">error: unknown
+    response</span>"</span>.  If you don't know what the response is, how do you know
+    it's erroneous? <span class="quote">"<span class="quote">Unrecognized</span>"</span> is often a better choice.
     Also, be sure to include the value being complained of.
 </p><pre class="programlisting">
 BAD:    unknown node type
@@ -209,20 +209,20 @@ BETTER: unrecognized node type: 42
    </p><p><strong>Find vs. Exists. </strong>
     If the program uses a nontrivial algorithm to locate a resource (e.g., a
     path search) and that algorithm fails, it is fair to say that the program
-    couldn't <span class="quote">“<span class="quote">find</span>”</span> the resource.  If, on the other hand, the
+    couldn't <span class="quote">"<span class="quote">find</span>"</span> the resource.  If, on the other hand, the
     expected location of the resource is known but the program cannot access
-    it there then say that the resource doesn't <span class="quote">“<span class="quote">exist</span>”</span>.  Using
-    <span class="quote">“<span class="quote">find</span>”</span> in this case sounds weak and confuses the issue.
+    it there then say that the resource doesn't <span class="quote">"<span class="quote">exist</span>"</span>.  Using
+    <span class="quote">"<span class="quote">find</span>"</span> in this case sounds weak and confuses the issue.
    </p><p><strong>May vs. Can vs. Might. </strong>
-    <span class="quote">“<span class="quote">May</span>”</span> suggests permission (e.g., "You may borrow my rake."),
+    <span class="quote">"<span class="quote">May</span>"</span> suggests permission (e.g., "You may borrow my rake."),
     and has little use in documentation or error messages.
-    <span class="quote">“<span class="quote">Can</span>”</span> suggests ability (e.g., "I can lift that log."),
-    and <span class="quote">“<span class="quote">might</span>”</span> suggests possibility (e.g., "It might rain
+    <span class="quote">"<span class="quote">Can</span>"</span> suggests ability (e.g., "I can lift that log."),
+    and <span class="quote">"<span class="quote">might</span>"</span> suggests possibility (e.g., "It might rain
     today.").  Using the proper word clarifies meaning and assists
     translation.
    </p><p><strong>Contractions. </strong>
-    Avoid contractions, like <span class="quote">“<span class="quote">can't</span>”</span>;  use
-    <span class="quote">“<span class="quote">cannot</span>”</span> instead.
+    Avoid contractions, like <span class="quote">"<span class="quote">can't</span>"</span>;  use
+    <span class="quote">"<span class="quote">cannot</span>"</span> instead.
    </p></div><div class="simplesect" id="id-1.10.6.4.17"><div class="titlepage"><div><div><h3 class="title">Proper Spelling</h3></div></div></div><p>
     Spell out words in full.  For instance, avoid:
   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>

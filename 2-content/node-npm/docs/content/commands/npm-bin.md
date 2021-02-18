@@ -6,13 +6,13 @@ description: Display npm bin folder
 
 ### Synopsis
 
-```bash
+``` bash
 npm bin [-g|--global]
 ```
 
 ### Description
 
-Print the folder where npm will install executables.
+Print the
 
 ### See Also
 

@@ -72,7 +72,7 @@ CREATE INDEX <em class="replaceable"><code>name</code></em> ON <em class="replac
    classes are available in the <code class="literal">contrib</code> collection or as separate
    projects.  For more information see <a class="xref" href="gist.html" title="Chapter 64. GiST Indexes">Chapter 64</a>.
   </p><p>
-   GiST indexes are also capable of optimizing <span class="quote">“<span class="quote">nearest-neighbor</span>”</span>
+   GiST indexes are also capable of optimizing <span class="quote">"<span class="quote">nearest-neighbor</span>"</span>
    searches, such as
 </p><pre class="programlisting">
 SELECT * FROM places ORDER BY location &lt;-&gt; point '(101,456)' LIMIT 10;
@@ -81,7 +81,7 @@ SELECT * FROM places ORDER BY location &lt;-&gt; point '(101,456)' LIMIT 10;
    which finds the ten places closest to a given target point.  The ability
    to do this is again dependent on the particular operator class being used.
    In <a class="xref" href="gist-builtin-opclasses.html#GIST-BUILTIN-OPCLASSES-TABLE" title="Table 64.1. Built-in GiST Operator Classes">Table 64.1</a>, operators that can be
-   used in this way are listed in the column <span class="quote">“<span class="quote">Ordering Operators</span>”</span>.
+   used in this way are listed in the column <span class="quote">"<span class="quote">Ordering Operators</span>"</span>.
   </p><p>
    <a id="id-1.5.10.5.9.1" class="indexterm"></a>
    <a id="id-1.5.10.5.9.2" class="indexterm"></a>
@@ -101,14 +101,14 @@ SELECT * FROM places ORDER BY location &lt;-&gt; point '(101,456)' LIMIT 10;
    documented in <a class="xref" href="spgist-builtin-opclasses.html#SPGIST-BUILTIN-OPCLASSES-TABLE" title="Table 65.1. Built-in SP-GiST Operator Classes">Table 65.1</a>.
    For more information see <a class="xref" href="spgist.html" title="Chapter 65. SP-GiST Indexes">Chapter 65</a>.
   </p><p>
-   Like GiST, SP-GiST supports <span class="quote">“<span class="quote">nearest-neighbor</span>”</span> searches.
+   Like GiST, SP-GiST supports <span class="quote">"<span class="quote">nearest-neighbor</span>"</span> searches.
    For SP-GiST operator classes that support distance ordering, the
-   corresponding operator is specified in the <span class="quote">“<span class="quote">Ordering Operators</span>”</span>
+   corresponding operator is specified in the <span class="quote">"<span class="quote">Ordering Operators</span>"</span>
    column in <a class="xref" href="spgist-builtin-opclasses.html#SPGIST-BUILTIN-OPCLASSES-TABLE" title="Table 65.1. Built-in SP-GiST Operator Classes">Table 65.1</a>.
   </p><p>
    <a id="id-1.5.10.5.11.1" class="indexterm"></a>
    <a id="id-1.5.10.5.11.2" class="indexterm"></a>
-   GIN indexes are <span class="quote">“<span class="quote">inverted indexes</span>”</span> which are appropriate for
+   GIN indexes are <span class="quote">"<span class="quote">inverted indexes</span>"</span> which are appropriate for
    data values that contain multiple component values, such as arrays.  An
    inverted index contains a separate entry for each component value, and
    can efficiently handle queries that test for the presence of specific

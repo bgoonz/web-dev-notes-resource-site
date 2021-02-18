@@ -6,7 +6,13 @@
 <h2 id="phase-0-setup">Phase 0: Setup</h2>
 <p>Begin by creating a new React project:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npx</span> create-react-app rainbow-routes --template @appacademy/simple</a></code></pre></div>
-<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code> directory to build the application architecture from scratch! After you have deleted all your files within the directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the <code>html:5</code> emmet shortcut to generate an HTML template. Title your page “Rainbow Routes” and create a <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element. Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create your entry file!</p>
+<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code>
+    directory to build the application architecture from scratch! After you have deleted all your files within the
+    directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the
+    <code>html:5</code> emmet shortcut to generate an HTML template. Title your page "Rainbow Routes" and create a
+    <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element.
+    Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create
+    your entry file!</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb2-1" title="1">h4 {</a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="kw">color</span>: <span class="cn">darkblue</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></a>
@@ -148,7 +154,8 @@
 <a class="sourceLine" id="cb10-7" title="7">)<span class="op">;</span></a>
 <a class="sourceLine" id="cb10-8" title="8"></a>
 <a class="sourceLine" id="cb10-9" title="9"><span class="im">export</span> <span class="im">default</span> Color<span class="op">;</span></a></code></pre></div>
-<p>Now start your server and verify you can see the “Rainbow Router!” header from your <code>Rainbow</code> component. Currently there is no functionality. Let’s fix that!</p>
+<p>Now start your server and verify you can see the "Rainbow Router!" header from your <code>Rainbow</code> component.
+    Currently there is no functionality. Let’s fix that!</p>
 <h2 id="phase-1-routes">Phase 1: Routes</h2>
 <p>As a reminder, wrapping the <code>Rainbow</code> component in <code>&lt;BrowserRouter&gt;</code> tags makes the router available to all descendent React Router components. Now open the <code>Rainbow.js</code> file. You’re going to render some of your color components from here. Ultimately you want your routes to look like this.</p>
 <table>

@@ -2,18 +2,18 @@
 
 > Learn more about the world of open source and get ready to launch your own project.
 
-[](#the-what-and-why-of-open-source)The “what” and “why” of open source
+[](#the-what-and-why-of-open-source)The "what" and "why" of open source
 -----------------------------------------------------------------------
 
 So you're thinking about getting started with open source? Congratulations! The world appreciates your contribution. Let's talk about what open source is and why people do it.
 
-### [](#what-does-open-source-mean)What does “open source” mean?
+### [](#what-does-open-source-mean)What does "open source" mean?
 
 When a project is open source, that means **anybody is free to use, study, modify, and distribute your project for any purpose.** These permissions are enforced through [an open source license](https://opensource.org/licenses).
 
 Open source is powerful because it lowers the barriers to adoption and collaboration, allowing people to spread and improve projects quickly. Also because it gives users a potential to control their own computing, relative to closed source. For example, a business using open source software has the option to hire someone to make custom improvements to the software, rather than relying exclusively on a closed source vendor's product decisions.
 
-_Free software_ refers to the same set of projects as _open source_. Sometimes you'll also see [these terms](https://en.wikipedia.org/wiki/Free_and_open-source_software) combined as “free and open source software” (FOSS) or “free, libre, and open source software” (FLOSS). _Free_ and _libre_ refer to freedom, [not price](#does-open-source-mean-free-of-charge).
+_Free software_ refers to the same set of projects as _open source_. Sometimes you'll also see [these terms](https://en.wikipedia.org/wiki/Free_and_open-source_software) combined as "free and open source software" (FOSS) or "free, libre, and open source software" (FLOSS). _Free_ and _libre_ refer to freedom, [not price](#does-open-source-mean-free-of-charge).
 
 ### [](#why-do-people-open-source-their-work)Why do people open source their work?
 
@@ -28,13 +28,13 @@ _Free software_ refers to the same set of projects as _open source_. Sometimes y
 
 Open source isn't just for software, either. You can open source everything from data sets to books. Check out [GitHub Explore](https://github.com/explore) for ideas on what else you can open source.
 
-### [](#does-open-source-mean-free-of-charge)Does open source mean “free of charge”?
+### [](#does-open-source-mean-free-of-charge)Does open source mean "free of charge"?
 
-One of open source's biggest draws is that it does not cost money. “Free of charge”, however, is a byproduct of open source's overall value.
+One of open source's biggest draws is that it does not cost money. "Free of charge", however, is a byproduct of open source's overall value.
 
 Because [an open source license requires](https://opensource.org/osd-annotated) that anyone can use, modify, and share your project for nearly any purpose, projects themselves tend to be free of charge. If the project cost money to use, anyone could legally make a copy and use the free version instead.
 
-As a result, most open source projects are free, but “free of charge” is not part of the open source definition. There are ways to charge for open source projects indirectly through dual licensing or limited features, while still complying with the official definition of open source.
+As a result, most open source projects are free, but "free of charge" is not part of the open source definition. There are ways to charge for open source projects indirectly through dual licensing or limited features, while still complying with the official definition of open source.
 
 [](#should-i-launch-my-own-open-source-project)Should I launch my own open source project?
 ------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ You can use your README to answer other questions, like how you handle contribut
 
 Sometimes, people avoid writing a README because they feel like the project is unfinished, or they don't want contributions. These are all very good reasons to write one.
 
-For more inspiration, try using [@dguo](https://github.com/dguo)'s [“Make a README” guide](https://www.makeareadme.com/) or [@PurpleBooth](https://github.com/PurpleBooth)'s [README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) to write a complete README.
+For more inspiration, try using [@dguo](https://github.com/dguo)'s ["Make a README" guide](https://www.makeareadme.com/) or [@PurpleBooth](https://github.com/PurpleBooth)'s [README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) to write a complete README.
 
 When you include a README file in the root directory, GitHub will automatically display it on the repository homepage.
 
@@ -144,7 +144,7 @@ In the earliest stages of your project, your CONTRIBUTING file can be simple. Yo
 
 Over time, you might add other frequently asked questions to your CONTRIBUTING file. Writing down this information means fewer people will ask you the same questions over and over again.
 
-For more help with writing your CONTRIBUTING file, check out [@nayafia](https://github.com/nayafia)'s [contributing guide template](https://github.com/nayafia/contributing-template/blob/HEAD/CONTRIBUTING-template.md) or [@mozilla](https://github.com/mozilla)'s [“How to Build a CONTRIBUTING.md”](https://mozillascience.github.io/working-open-workshop/contributing/).
+For more help with writing your CONTRIBUTING file, check out [@nayafia](https://github.com/nayafia)'s [contributing guide template](https://github.com/nayafia/contributing-template/blob/HEAD/CONTRIBUTING-template.md) or [@mozilla](https://github.com/mozilla)'s ["How to Build a CONTRIBUTING.md"](https://mozillascience.github.io/working-open-workshop/contributing/).
 
 Link to your CONTRIBUTING file from your README, so more people see it. If you [place the CONTRIBUTING file in your project's repository](https://help.github.com/articles/setting-guidelines-for-repository-contributors/), GitHub will automatically link to your file when a contributor creates an issue or opens a pull request.
 
@@ -196,7 +196,7 @@ Throughout the life of your project, you'll do a lot of writing: READMEs, tutori
 
 Whether it's official documentation or a casual email, your writing style is part of your project's brand. Consider how you might come across to your audience and whether that is the tone you wish to convey.
 
-Using warm, inclusive language (such as “them”, even when referring to the single person) can go a long way in making your project feel welcoming to new contributors. Stick to simple language, as many of your readers may not be native English speakers.
+Using warm, inclusive language (such as "them", even when referring to the single person) can go a long way in making your project feel welcoming to new contributors. Stick to simple language, as many of your readers may not be native English speakers.
 
 Beyond how you write words, your coding style may also become part of your project's brand. [Angular](https://angular.io/guide/styleguide) and [jQuery](https://contribute.jquery.org/style-guide/js/) are two examples of projects with rigorous coding styles and guidelines.
 
@@ -205,7 +205,7 @@ It isn't necessary to write a style guide for your project when you're just star
 [](#your-pre-launch-checklist)Your pre-launch checklist
 -------------------------------------------------------
 
-Ready to open source your project? Here's a checklist to help. Check all the boxes? You're ready to go! [Click “publish”](https://help.github.com/articles/making-a-private-repository-public/) and pat yourself on the back.
+Ready to open source your project? Here's a checklist to help. Check all the boxes? You're ready to go! [Click "publish"](https://help.github.com/articles/making-a-private-repository-public/) and pat yourself on the back.
 
 **Documentation**
 

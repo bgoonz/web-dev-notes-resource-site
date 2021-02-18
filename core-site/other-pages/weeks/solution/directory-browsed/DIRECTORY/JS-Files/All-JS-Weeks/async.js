@@ -237,7 +237,7 @@ module.exports = function resolve(x, options, callback) {
 
                     if (pkg && pkg.main) {
                         if (typeof pkg.main !== 'string') {
-                            var mainError = new TypeError('package “' + pkg.name + '” `main` must be a string');
+                            var mainError = new TypeError( 'package "' + pkg.name + '" `main` must be a string' );
                             mainError.code = 'INVALID_PACKAGE_MAIN';
                             return cb(mainError);
                         }

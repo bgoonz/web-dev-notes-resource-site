@@ -16,7 +16,7 @@
      <code class="function">pgstattuple(regclass) returns record</code>
     </span></dt><dd><p>
       <code class="function">pgstattuple</code> returns a relation's physical length,
-      percentage of <span class="quote">“<span class="quote">dead</span>”</span> tuples, and other info. This may help users
+      percentage of <span class="quote">"<span class="quote">dead</span>"</span> tuples, and other info. This may help users
       to determine whether vacuum is necessary or not.  The argument is the
       target relation's name (optionally schema-qualified) or OID.
       For example:
@@ -45,7 +45,7 @@ free_percent       | 1.95
      relation. So the results do not reflect an instantaneous snapshot;
      concurrent updates will affect them.
     </p><p>
-     <code class="function">pgstattuple</code> judges a tuple is <span class="quote">“<span class="quote">dead</span>”</span> if
+     <code class="function">pgstattuple</code> judges a tuple is <span class="quote">"<span class="quote">dead</span>"</span> if
      <code class="function">HeapTupleSatisfiesDirty</code> returns false.
     </p></dd><dt><span class="term">
      <code class="function">pgstattuple(text) returns record</code>
@@ -77,7 +77,7 @@ leaf_fragmentation | 0
      </p><p>
      The output columns are:
 
-    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code class="structfield">version</code></td><td><code class="type">integer</code></td><td>B-tree version number</td></tr><tr><td><code class="structfield">tree_level</code></td><td><code class="type">integer</code></td><td>Tree level of the root page</td></tr><tr><td><code class="structfield">index_size</code></td><td><code class="type">bigint</code></td><td>Total index size in bytes</td></tr><tr><td><code class="structfield">root_block_no</code></td><td><code class="type">bigint</code></td><td>Location of root page (zero if none)</td></tr><tr><td><code class="structfield">internal_pages</code></td><td><code class="type">bigint</code></td><td>Number of <span class="quote">“<span class="quote">internal</span>”</span> (upper-level) pages</td></tr><tr><td><code class="structfield">leaf_pages</code></td><td><code class="type">bigint</code></td><td>Number of leaf pages</td></tr><tr><td><code class="structfield">empty_pages</code></td><td><code class="type">bigint</code></td><td>Number of empty pages</td></tr><tr><td><code class="structfield">deleted_pages</code></td><td><code class="type">bigint</code></td><td>Number of deleted pages</td></tr><tr><td><code class="structfield">avg_leaf_density</code></td><td><code class="type">float8</code></td><td>Average density of leaf pages</td></tr><tr><td><code class="structfield">leaf_fragmentation</code></td><td><code class="type">float8</code></td><td>Leaf page fragmentation</td></tr></tbody></table></div><p>
+    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Column</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code class="structfield">version</code></td><td><code class="type">integer</code></td><td>B-tree version number</td></tr><tr><td><code class="structfield">tree_level</code></td><td><code class="type">integer</code></td><td>Tree level of the root page</td></tr><tr><td><code class="structfield">index_size</code></td><td><code class="type">bigint</code></td><td>Total index size in bytes</td></tr><tr><td><code class="structfield">root_block_no</code></td><td><code class="type">bigint</code></td><td>Location of root page (zero if none)</td></tr><tr><td><code class="structfield">internal_pages</code></td><td><code class="type">bigint</code></td><td>Number of <span class="quote">"<span class="quote">internal</span>"</span> (upper-level) pages</td></tr><tr><td><code class="structfield">leaf_pages</code></td><td><code class="type">bigint</code></td><td>Number of leaf pages</td></tr><tr><td><code class="structfield">empty_pages</code></td><td><code class="type">bigint</code></td><td>Number of empty pages</td></tr><tr><td><code class="structfield">deleted_pages</code></td><td><code class="type">bigint</code></td><td>Number of deleted pages</td></tr><tr><td><code class="structfield">avg_leaf_density</code></td><td><code class="type">float8</code></td><td>Average density of leaf pages</td></tr><tr><td><code class="structfield">leaf_fragmentation</code></td><td><code class="type">float8</code></td><td>Leaf page fragmentation</td></tr></tbody></table></div><p>
     </p><p>
      The reported <code class="literal">index_size</code> will normally correspond to one more
      page than is accounted for by <code class="literal">internal_pages + leaf_pages +

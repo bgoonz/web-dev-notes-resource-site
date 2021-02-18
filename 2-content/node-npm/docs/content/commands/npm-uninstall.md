@@ -6,7 +6,7 @@ description: Remove a package
 
 ### Synopsis
 
-```bash
+``` bash
 npm uninstall [<@scope>/]<pkg>[@<version>]... [-S|--save|-D|--save-dev|-O|--save-optional|--no-save]
 
 aliases: remove, rm, r, un, unlink
@@ -19,11 +19,11 @@ on its behalf.
 
 Example:
 
-```bash
+``` bash
 npm uninstall sax
 ```
 
-In global mode (ie, with `-g` or `--global` appended to the command),
+In global mode (ie, with `-g` or `--global` appended to the command), 
 it uninstalls the current package context as a global package.
 
 `npm uninstall` takes 3 exclusive, optional flags which save or update
@@ -40,10 +40,11 @@ the package version in your main package.json:
 Further, if you have an `npm-shrinkwrap.json` then it will be updated as
 well.
 
-Scope is optional and follows the usual rules for [`scope`](/using-npm/scope).
+Scope is optional and follows the usual rules for [ `scope` ](/using-npm/scope).
 
 Examples:
-```bash
+
+``` bash
 npm uninstall sax --save
 npm uninstall @myorg/privatepackage --save
 npm uninstall node-tap --save-dev

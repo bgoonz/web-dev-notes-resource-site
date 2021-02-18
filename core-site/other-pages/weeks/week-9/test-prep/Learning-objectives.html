@@ -115,7 +115,7 @@
 <a class="sourceLine" id="cb7-3" title="3">}</a></code></pre>
 </div>
 <ol start="4" type="1">
-    <li>Write “combinators” to create compound selector statements to target specific elements</li>
+    <li>Write "combinators" to create compound selector statements to target specific elements</li>
 </ol>
 <ul>
 <li><em>Direct child selector</em>: the carrot, <code>&gt;</code> means a <strong>direct</strong> child. It will not
@@ -147,7 +147,7 @@
 <a class="sourceLine" id="cb8-12" title="12"><span class="kw">&lt;/ul&gt;</span></a></code></pre>
 </div>
 <ul>
-<li>Using <code>ul &gt; li</code> will apply styles to the li with “First” and “Second”, but not the nested lis.</li>
+<li>Using <code>ul &gt; li</code> will apply styles to the li with "First" and "Second", but not the nested lis.</li>
 <li>Using <code>ul li</code> will apply styles to all four lis because it will target all descendents, not just direct
     children.</li>
 <li><em>Multiple items selection</em>: <code>comma</code> deliniated selectors. We can apply the same styles to multiple
@@ -250,7 +250,7 @@
     group of two digits representing the 0-255 range for red, green, and blue.</li>
 <li><code>rgb()</code> - takes in 3 integer values denoting levels of <code>red, green and blue</code>, with ranges of
     0-255 each.</li>
-<li><code>rgba()</code> - Same as above but with additional argument (the ‘a', or ‘alpha' value) which represents how
+<li><code>rgba()</code> - Same as above but with additional argument (the 'a', or 'alpha' value) which represents how
     <strong>transparent</strong> the color will be (on a scale of 0-1, with 0 being completely transparent and 1 being
     opaque).</li>
 </ul>
@@ -260,7 +260,7 @@
 <li>The <code>border</code> property takes in three arguments:
     <ol type="1">
 <li>thickness: typically in pixels, how wide should the border be?</li>
-<li>line style: possible values include ‘solid', ‘dotted', ‘dashed', etc.</li>
+<li>line style: possible values include 'solid', 'dotted', 'dashed', etc.</li>
 <li>line color: what color the line should be, using any of the notations above</li>
 </ol>
 </li>
@@ -270,11 +270,11 @@
 <ul>
 <li>Can be of two types, text or box.</li>
 <li>The first two required arguments are the horizontal and vertical offset</li>
-<li>An optional ‘blur' argument to specify a radius for fading the shadow</li>
-<li>An optional ‘spread' argument (for box shadows) for adjusting the size of the shadow (positive makes the shadow
+<li>An optional 'blur' argument to specify a radius for fading the shadow</li>
+<li>An optional 'spread' argument (for box shadows) for adjusting the size of the shadow (positive makes the shadow
     larger, negative makes it smaller)</li>
-<li>An optional ‘color' argument for changing the color</li>
-<li>An optional flag to make the shadow ‘inset' instead of the default outset</li>
+<li>An optional 'color' argument for changing the color</li>
+<li>An optional flag to make the shadow 'inset' instead of the default outset</li>
 </ul>
 </li>
 <li>Opacity (transparency)
@@ -316,18 +316,18 @@
 </li>
 </ul>
 <ol start="8" type="1">
-    <li>Explain the generic font names “serif”, “sans-serif”, and “monospace” and correctly identify examples of each
+    <li>Explain the generic font names "serif", "sans-serif", and "monospace" and correctly identify examples of each
     </li>
 </ol>
 <ul>
 <li>These generic font names tell the browser and OS what generic category of font should be use without being as
     specific as one particular font. This can help to ensure that the basic style of the site is maintained across
     different platforms if we don't need to specify an exact font that we want to use.</li>
-<li>“Serif” fonts have the widenings at the end of the letters. A classic example is Times New Roman.</li>
-<li>“Sans-serif” fonts do not have serifs. The ends of the letters end with straight edges. This could be desirable in
+<li>"Serif" fonts have the widenings at the end of the letters. A classic example is Times New Roman.</li>
+<li>"Sans-serif" fonts do not have serifs. The ends of the letters end with straight edges. This could be desirable in
     computing because small details like serifs could potentially be lost or display differently based on different
     screen sizes. Helvetica is an example of a sans-serif font.</li>
-<li>“Monospace” fonts have all characters taking up the exact same width. Sometimes referred to as typewriter fonts
+<li>"Monospace" fonts have all characters taking up the exact same width. Sometimes referred to as typewriter fonts
     because each character stamped with a typewriter had to line up exactly (since the page moved a set amount for each
     character). Courier is an example of a monospaced font.</li>
 </ul>
@@ -536,8 +536,8 @@
 <li><code>speech</code> - for use with speech synthesizers</li>
 </ul>
 <ol start="2" type="1">
-    <li>Explain how the media features (and prefixed subfeatures) of “aspect ratio”, “height”, “orientation”, and
-        “width” are applied</li>
+    <li>Explain how the media features (and prefixed subfeatures) of "aspect ratio", "height", "orientation", and
+        "width" are applied</li>
 </ol>
 <ul>
 <li>We can specify the media features that we want to trigger our styles being applied. They can be thought of as
@@ -748,7 +748,7 @@
 </li>
 </ul>
 <ol start="5" type="1">
-    <li>Identify which HTML elements have a default “inline” display value</li>
+    <li>Identify which HTML elements have a default "inline" display value</li>
 </ol>
 <ul>
 <li>Common elements that default to <code>inline</code> include <code>span</code>, <code>a</code>, <code>input</code>,
@@ -763,7 +763,7 @@
     pushed down.</li>
 </ul>
 <ol start="6" type="1">
-    <li>Identify which HTML elements have a default “block” display value</li>
+    <li>Identify which HTML elements have a default "block" display value</li>
 </ol>
 <ul>
 <li>Common elements that default to <code>block</code> include <code>div</code>, <code>p</code>, headers like
@@ -818,7 +818,7 @@
 <li><code>flex-basis</code> :
 <ul>
 <li>The initial main size of the element.</li>
-<li>The default value is ‘auto', meaning it will use the width of the element.</li>
+<li>The default value is 'auto', meaning it will use the width of the element.</li>
 <li>We can specify specific absolute lengths, like 20px, percentages, like 25%, or use automatic sizing keywords like
     <code>content</code> to assign the size required to fit all of the element's content.</li>
 </ul>
@@ -950,19 +950,19 @@
 </div>
 <ol start="4" type="1">
     <li>Use <code>column-gap</code>, <code>row-gap</code>, and <code>gap</code> (previously
-        <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code>) to set the “gutter” areas
+        <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code>) to set the "gutter" areas
         between elements in a grid layout</li>
 </ol>
 <ul>
 <li>The <code>gap</code> properties can be used to define space that we want to maintain between our rows and columns.
 </li>
 <li>By default, our rows and columns are all directly next to each other, but giving these properties values creates a
-    “gutter” between the sections.</li>
+    "gutter" between the sections.</li>
 </ul>
 <ol start="5" type="1">
     <li>Use <code>grid-column-start</code>/<code>grid-column-end</code> and
         <code>grid-row-start</code>/<code>grid-row-end</code> to create spans across multiple columns and rows with
-        positive integers, negative integers, and in conjunction with the “span” operator</li>
+        positive integers, negative integers, and in conjunction with the "span" operator</li>
 </ol>
 <ul>
 <li>When we are assigning an item to be placed in the grid, we can indicate in our CSS what row/column we want the
@@ -1004,7 +1004,7 @@
     placement.</li>
 </ul>
 <ol start="8" type="1">
-    <li>Explain and use the “fr” unit of measure</li>
+    <li>Explain and use the "fr" unit of measure</li>
 </ol>
 <ul>
 <li><code>fr</code> indicates the fraction of available space</li>
@@ -1038,7 +1038,7 @@
 <h2 id="interactivity-and-bem-w09d4---learning-objectives">Interactivity and BEM (W09D4) - Learning Objectives</h2>
 <h3 id="interactivity">Interactivity</h3>
 <ol type="1">
-    <li>Use the “hover” pseudo-class to be able to make changes to elements when the device pointer is over an element
+    <li>Use the "hover" pseudo-class to be able to make changes to elements when the device pointer is over an element
     </li>
 </ol>
 <ul>
@@ -1117,7 +1117,7 @@
 <li>Describe what Block means in BEM.</li>
 </ol>
 <ul>
-<li>“A standalone entity that is meaningful on its own.”</li>
+<li>"A standalone entity that is meaningful on its own."</li>
 <li>Typically this means a group of elements that form some sort of unit/feature together, but could also be applied to
     a single element if it has enough significance and stand-alone meaning.</li>
 </ul>
@@ -1125,7 +1125,7 @@
 <li>Describe what Element means in BEM.</li>
 </ol>
 <ul>
-<li>“Part of a block and has no standalone meaning.”</li>
+<li>"Part of a block and has no standalone meaning."</li>
 <li>If a component wouldn't mean anything or its meaning would be lost/changed if it was moved to another location, it
     generally means that it is an element of some larger block.</li>
 </ul>
@@ -1133,9 +1133,9 @@
 <li>Describe what Modifier means in BEM.</li>
 </ol>
 <ul>
-<li>“A flag on blocks or elements. Use them to change appearance, behavior or state.”</li>
+<li>"A flag on blocks or elements. Use them to change appearance, behavior or state."</li>
 <li>These classes are typically added in our JavaScript in order to modify the standard styling.</li>
-<li>If the user clicks on a “Dark Mode” button and we want to change the background color of an element, we could have a
+<li>If the user clicks on a "Dark Mode" button and we want to change the background color of an element, we could have a
     <code>.block__elem--dark-mode</code> class that is added in response to that click that alters the color.</li>
 <li>If we are only allowed to have eight elements in our bag, we can have a <code>.bag__add-btn--disabled</code> class
     that gets added to our button on the eighth addition that sets our cursor property to <code>not-allowed</code>,

@@ -45,7 +45,7 @@
 <li><a href="#reactforwardref"><code>React.forwardRef</code></a></li>
 </ul>
 <h3 id="suspense">Suspense</h3>
-<p>Suspense lets components “wait” for something before rendering. Today, Suspense only supports one use case: <a href="/docs/code-splitting.html#reactlazy">loading components dynamically with <code>React.lazy</code></a>. In the future, it will support other use cases like data fetching.</p>
+<p>Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: <a href="/docs/code-splitting.html#reactlazy">loading components dynamically with <code>React.lazy</code></a>. In the future, it will support other use cases like data fetching.</p>
 <ul>
 <li><a href="#reactlazy"><code>React.lazy</code></a></li>
 <li><a href="#reactsuspense"><code>React.Suspense</code></a></li>
@@ -97,7 +97,7 @@
     have changed. Or, consider using <a href="https://facebook.github.io/immutable-js/">immutable objects</a> to
     facilitate fast comparisons of nested data.</p>
 <p>Furthermore, <code>React.PureComponent</code>'s <code>shouldComponentUpdate()</code> skips prop updates for the whole
-    component subtree. Make sure all the children components are also “pure”.</p>
+    component subtree. Make sure all the children components are also "pure".</p>
 </blockquote>
 <hr />
 <h3 id="reactmemo"><code>React.memo</code></h3>
@@ -119,7 +119,7 @@
 <a class="sourceLine" id="cb3-9" title="9"><span class="co">  */</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="op">}</span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="im">export</span> <span class="im">default</span> <span class="va">React</span>.<span class="at">memo</span>(MyComponent<span class="op">,</span> areEqual)<span class="op">;</span></a></code></pre></div>
-<p>This method only exists as a <strong><a href="/docs/optimizing-performance.html">performance optimization</a>.</strong> Do not rely on it to “prevent” a render, as this can lead to bugs.</p>
+<p>This method only exists as a <strong><a href="/docs/optimizing-performance.html">performance optimization</a>.</strong> Do not rely on it to "prevent" a render, as this can lead to bugs.</p>
 <blockquote>
 <p>Note</p>
 <p>Unlike the <a href="/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a> method on class components, the <code>areEqual</code> function returns <code>true</code> if the props are equal and <code>false</code> if the props are not equal. This is the inverse from <code>shouldComponentUpdate</code>.</p>

@@ -1,6 +1,5 @@
 ---
-title: npmrc
-section: 5
+title: npmrcsection: 5
 description: The npm config files
 ---
 
@@ -24,10 +23,11 @@ The four relevant files are:
 * npm builtin config file (/path/to/npm/npmrc)
 
 All npm config files are an ini-formatted list of `key = value`
-parameters.  Environment variables can be replaced using
-`${VARIABLE_NAME}`. For example:
 
-```bash
+parameters.  Environment variables can be replaced using
+`${VARIABLE_NAME}` . For example:
+
+``` bash
 prefix = ${HOME}/.npm-packages
 ```
 
@@ -38,7 +38,7 @@ override the setting in the globalconfig file.
 Array values are specified by adding "[]" after the key name. For
 example:
 
-```bash
+``` bash
 key[] = "first value"
 key[] = "second value"
 ```
@@ -49,7 +49,7 @@ Lines in `.npmrc` files are interpreted as comments when they begin with a `;` o
 
 For example:
 
-```bash
+``` bash
 # last modified: 01 Jan 2016
 ; Set a new registry for a scoped package
 @myscope:registry=https://mycustomregistry.example.org
@@ -58,7 +58,7 @@ For example:
 #### Per-project config file
 
 When working locally in a project, a `.npmrc` file in the root of the
-project (ie, a sibling of `node_modules` and `package.json`) will set
+project (ie, a sibling of `node_modules` and `package.json` ) will set
 config values specific to this project.
 
 Note that this only applies to the root of the project that you're
@@ -67,7 +67,7 @@ example, you can't publish a module that forces itself to install
 globally, or in a different location.
 
 Additionally, this file is not read in global mode, such as when running
-`npm install -g`.
+`npm install -g` .
 
 #### Per-user config file
 
@@ -82,10 +82,11 @@ Environment variables can be replaced as above.
 
 #### Built-in config file
 
-`path/to/npm/itself/npmrc`
+ `path/to/npm/itself/npmrc`
 
 This is an unchangeable "builtin" configuration file that npm keeps
 consistent across updates.  Set fields in here using the `./configure`
+
 script that comes with npm.  This is primarily for distribution
 maintainers to override default configs in a standard and consistent
 manner.

@@ -77,8 +77,8 @@
 <li>Think aloud about the likely bounds on efficiency for your solution.
 <ul>
 <li>This is an easy way to score points.</li>
-<li>“What’s sure is I’ll have to iterate through all the points, so it’s at least linear time.”</li>
-<li>“The problem is trivial when the set is sorted. So it can definitely be done in nLOGn time. Let’s see if we can do better than n Log n.”</li>
+<li>"What’s sure is I’ll have to iterate through all the points, so it’s at least linear time."</li>
+<li>"The problem is trivial when the set is sorted. So it can definitely be done in nLOGn time. Let’s see if we can do better than n Log n."</li>
 </ul></li>
 </ul>
 <h2 id="pseudocode">Pseudocode</h2>
@@ -92,7 +92,7 @@
 <p>At this point, you should have spent at least 60% of your time. If you sprinted to coding, you most likely didn’t spend enough time planning and will struggle here. If planned properly, this section should be the easiest part.</p>
 <ul>
 <li>The nice thing about white boards is you and the interviewer are facing the same direction.</li>
-<li>Convince yourself that you are solving the problem together. Say “we” instead of “I”.</li>
+<li>Convince yourself that you are solving the problem together. Say "we" instead of "I".</li>
 <li>Don’t stop until they tell you to.</li>
 </ul>
 <p>Your style definitely makes an impact. Here are tips to how to handle your bearing.</p>
@@ -100,7 +100,7 @@
 <li>Be confident; even if you don’t know the answer, try to engage the problem, don’t give up. If you keep telling an interviewer you don’t know how to do something, they’ll start to believe you.</li>
 <li>Talk through the problem; they want to see the process going on in your head. If you don’t talk, the interviewer doesn’t learn how you break-down and analyze a problem. If you can write and talk at the same time, great! If not, tell the interviewer what you’re about to write, write it, and explain what you wrote.</li>
 <li>The interviewer may give you hints. They will ask questions to keep you on track. Don’t be flustered or think you’re failing; this is normal.</li>
-<li>If they ask you “does this work”, take a moment to think. Walk through the steps; out loud is fine. If you say yes, say it like you believe it; interviewers don’t like to think people are just praying they’ll get the answer right.</li>
+<li>If they ask you "does this work", take a moment to think. Walk through the steps; out loud is fine. If you say yes, say it like you believe it; interviewers don’t like to think people are just praying they’ll get the answer right.</li>
 <li>Listen to the interviewer. They are trying to help you. No one likes someone who doesn’t listen.</li>
 </ul>
 <h2 id="walk-through-an-example-input">Walk through an example input</h2>
@@ -125,7 +125,7 @@
 <ul>
 <li>Ex: Sort an array of 100,000 integers that are all in the range 1-100</li>
 </ul></li>
-<li>Dynamic programming, or “divide and conquer”: Divide into smaller and smaller but equal subproblems.
+<li>Dynamic programming, or "divide and conquer": Divide into smaller and smaller but equal subproblems.
 <ul>
 <li>Ex: See <a href="http://www.careercup.com/question?id=19286747">this solution</a> for a Google interview question.</li>
 </ul></li>
@@ -161,7 +161,7 @@
 </ul></li>
 <li>For efficiency, use binary search instead of incrementation. Esp. good for implementing math operators.
 <ul>
-<li>Ex: Implement division without using “/”, in less than O(n) time.</li>
+<li>Ex: Implement division without using "/", in less than O(n) time.</li>
 </ul></li>
 </ol>
 <h2 id="dont-be-sly">Don’t be Sly</h2>
@@ -171,7 +171,7 @@
 <p>Furthermore, you won’t necessarily perform better on a question you’ve seen. You’ll probably solve it faster, but speed is overrated. On the other hand, it’s much harder to show your interviewer how you think when you’re really just recalling a solution. Note that the easiest parts of a problem are also the hardest to remember. So even if you confound your interviewer, they’ll be left wondering why you breezed through the hardest part of the problem while stumbling on the rest. That’s a failure to demonstrate how you think, which is the real purpose of a whiteboard problem.</p>
 <hr />
 <h1 id="white-boarding-exercises">White Boarding Exercises</h1>
-<p>Work together to “white board” answers to the following problems. Your pair will present one of them at the end of the day.</p>
+<p>Work together to "white board" answers to the following problems. Your pair will present one of them at the end of the day.</p>
 <p>You may not have real white boards on which to draw. If not, use the Zoom white board or just pen and paper. Talk through the answers. Determine if you are right.</p>
 <p>When white boarding, you don’t have to necessarily draw images. You can write code or pseudocode or draw circles and arrows. Just something to indicate that you understand the problem and what it would take to solve it.</p>
 <h2 id="mirror-image-trees">Mirror image trees</h2>
@@ -244,13 +244,13 @@
 </figure>
 <p>For now, you can ignore the blue coloring. Notice how the graphs above vary greatly in their structure. A graph is indeed a very broad, overarching category. In fact, linked lists and trees are both considered subclasses of graphs. We’ll cover algorithms that operate on a general graph structure later, but for now we want to focus on what graphs are trees and what graphs are not. It’s worth mentioning that a single node with no edges (image 1) is considered a graph. The empty graph (a graph with 0 nodes and 0 edges, not pictured :)) is also still a graph. This line of thinking will help us later when we design graph algorithms.</p>
 <h3 id="what-is-a-tree">What is a Tree?</h3>
-<p>A <strong>Tree</strong> is a <strong>Graph</strong> that does not contain any cycles. A cycle is is defined as a path through edges that begins and ends at the same node. This seems straightforward, but the definition becomes a bit muddled as Mathematicians and Computer Scientists use the term “tree” in slightly different ways. Lets break it down:</p>
+<p>A <strong>Tree</strong> is a <strong>Graph</strong> that does not contain any cycles. A cycle is is defined as a path through edges that begins and ends at the same node. This seems straightforward, but the definition becomes a bit muddled as Mathematicians and Computer Scientists use the term "tree" in slightly different ways. Lets break it down:</p>
 <ul>
 <li>To a Mathematician, graphs 1, 2, 3, and 4 in the above image are trees.</li>
 <li>To a Computer Scientist, only graphs 1 ,2, and 3 are trees.</li>
 </ul>
-<p>Well, at least both camps agree that graph 5 is most certainly not a tree! This is because of the obvious cycle that spans all three nodes. However, why is there disagreement over graph 4? The reason is this: In computer science, we use to the term “tree” to really refer to a “rooted tree.” A “rooted tree” is a “tree” where there exists a special node from which every other node is accessible; we call this special node the “root”. Think of the root as ultimate ancestor, the single node that all other nodes inherit from. Above we have colored all roots in blue. Like you’d probably suspect, in this course we’ll subscribe to the Computer Scientist’s interpretation. That is, we won’t consider graph 4 a tree because there is no such root we can label.</p>
-<p>You’ve probably heard the term “root” throughout your software engineering career: root directory, root user, etc.. All of these concepts branch† from the humble tree data structure!</p>
+<p>Well, at least both camps agree that graph 5 is most certainly not a tree! This is because of the obvious cycle that spans all three nodes. However, why is there disagreement over graph 4? The reason is this: In computer science, we use to the term "tree" to really refer to a "rooted tree." A "rooted tree" is a "tree" where there exists a special node from which every other node is accessible; we call this special node the "root". Think of the root as ultimate ancestor, the single node that all other nodes inherit from. Above we have colored all roots in blue. Like you’d probably suspect, in this course we’ll subscribe to the Computer Scientist’s interpretation. That is, we won’t consider graph 4 a tree because there is no such root we can label.</p>
+<p>You’ve probably heard the term "root" throughout your software engineering career: root directory, root user, etc.. All of these concepts branch† from the humble tree data structure!</p>
 <h3 id="what-is-a-binary-tree">What is a Binary Tree?</h3>
 <p>A <strong>Binary Tree</strong> is a <strong>Tree</strong> where nodes have <strong>at most 2 children</strong>. This means graphs 1, 2, and 3 are all Binary Trees. There exist ternary trees (at most 3 children) and n-ary trees (at most n children), but you’ll likely encounter binary trees in your job hunt, so we’ll focus on them in this course. Based on our final definition for a binary tree, here is some food for thought:</p>
 <ul>
@@ -310,21 +310,21 @@
 <img src="images/Sorted_binary_tree_ALL.svg" alt="depth-first tree traversal" /><figcaption>depth-first tree traversal</figcaption>
 </figure>
 <h4 id="pre-order-traversal">Pre-order traversal</h4>
-<p>In the above image, the pre-order is noted by when the dotted line touches the red dot and yields F, B, A, D, C, E, G, I, H. The algorithm is as follows and is “pre-order” because you access the value of the node before recursively descending.</p>
+<p>In the above image, the pre-order is noted by when the dotted line touches the red dot and yields F, B, A, D, C, E, G, I, H. The algorithm is as follows and is "pre-order" because you access the value of the node before recursively descending.</p>
 <ul>
 <li>Access the data of the current node</li>
 <li>Recursively visit the left sub tree</li>
 <li>Recursively visit the right sub tree</li>
 </ul>
 <h4 id="in-order-traversal">In-order traversal</h4>
-<p>In the above image, the in-order is noted by when the dotted line touches the yellow dot and yields A, B, C, D, E, F, G, H, I. The algorithm is as follows and is “in-order” because you access the value of the node after descending to the left but before descending to the right.</p>
+<p>In the above image, the in-order is noted by when the dotted line touches the yellow dot and yields A, B, C, D, E, F, G, H, I. The algorithm is as follows and is "in-order" because you access the value of the node after descending to the left but before descending to the right.</p>
 <ul>
 <li>Recursively visit the left sub tree</li>
 <li>Access the data of the current node</li>
 <li>Recursively visit the right sub tree</li>
 </ul>
 <h4 id="post-order-traversal">Post-order traversal</h4>
-<p>In the above image, the post-order is noted by when the dotted line touches the green dot and yields A, C, E, D, B, H, I, G, F. The algorithm is as follows and is “post-order” because you access the value of the node after descending to both branches.</p>
+<p>In the above image, the post-order is noted by when the dotted line touches the green dot and yields A, C, E, D, B, H, I, G, F. The algorithm is as follows and is "post-order" because you access the value of the node after descending to both branches.</p>
 <ul>
 <li>Recursively visit the left sub tree</li>
 <li>Recursively visit the right sub tree</li>
@@ -389,7 +389,7 @@ BST 3: 1, 5, 7, 10, 16, 16</code></pre>
 <figure>
 <img src="images/good_bad_bst.png" alt="good_bad_bst" /><figcaption>good_bad_bst</figcaption>
 </figure>
-<p>Are you cringing at <code>tree2</code>? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our <code>BST</code> implementation as <strong>naive</strong>. Both of these trees are Binary Search Trees, however not all BSTs are created equal. A worst case BST degenerates into a linked list. The “best” BSTs are <strong>height balanced</strong>, we’ll explore this concept soon™.</p>
+<p>Are you cringing at <code>tree2</code>? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our <code>BST</code> implementation as <strong>naive</strong>. Both of these trees are Binary Search Trees, however not all BSTs are created equal. A worst case BST degenerates into a linked list. The "best" BSTs are <strong>height balanced</strong>, we’ll explore this concept soon™.</p>
 <h2 id="a-special-traversal-case">A special traversal case</h2>
 <p>In a binary search tree, in-order traversal retrieves the keys in <strong>ascending sorted order</strong>. Please review the image that you saw before about tree traversal.</p>
 <figure>
@@ -485,8 +485,8 @@ end procedure post order array</code></pre>
 </figure>
 <p>Here are some highlights:</p>
 <ul>
-<li><code>Graph 1</code> lacks a root. This means there is no single node that can access all other nodes in a path through edges. This is important because we previously referenced “entire” trees by referring to the ultimate root. We can no longer do that in a graph. If we provide just <code>T</code>, you can’t access <code>U</code>. If we provide just <code>U</code>, you can’t access <code>T</code>. If we provide just <code>V</code>, you can’t access <code>T</code> or <code>U</code>.</li>
-<li><code>Graph 2</code> has a cycle. This means there is no longer a parent-child relationship. Choose any node in <code>Graph 2</code>, its grandchild will also be its parent. Wait - what? From now on we’ll have to use less specific language such as “<code>X</code> is a neighbor of <code>Y</code>.” Perhaps even more deadly, imagine we ran a “simple” Depth-First traversal on this graph. We could get trapped in an infinite loop if we are not careful.</li>
+<li><code>Graph 1</code> lacks a root. This means there is no single node that can access all other nodes in a path through edges. This is important because we previously referenced "entire" trees by referring to the ultimate root. We can no longer do that in a graph. If we provide just <code>T</code>, you can’t access <code>U</code>. If we provide just <code>U</code>, you can’t access <code>T</code>. If we provide just <code>V</code>, you can’t access <code>T</code> or <code>U</code>.</li>
+<li><code>Graph 2</code> has a cycle. This means there is no longer a parent-child relationship. Choose any node in <code>Graph 2</code>, its grandchild will also be its parent. Wait - what? From now on we’ll have to use less specific language such as "<code>X</code> is a neighbor of <code>Y</code>." Perhaps even more deadly, imagine we ran a "simple" Depth-First traversal on this graph. We could get trapped in an infinite loop if we are not careful.</li>
 <li><code>Graph 3</code> features nodes that have more than 2 edges. Anarchy!</li>
 </ul>
 <h2 id="graph-implementations">Graph Implementations</h2>
@@ -569,7 +569,7 @@ end procedure post order array</code></pre>
 <a class="sourceLine" id="cb12-15" title="15"><span class="va">c</span>.<span class="at">neighbors</span> <span class="op">=</span> [b<span class="op">,</span> d]<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-16" title="16"><span class="va">e</span>.<span class="at">neighbors</span> <span class="op">=</span> [a]<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-17" title="17"><span class="va">f</span>.<span class="at">neighbors</span> <span class="op">=</span> [e]<span class="op">;</span></a></code></pre></div>
-<p>One thing we’ll have to decide on is what node to begin our traversal. Depending on the structure of the graph, there may not be a suitable starting point. Remember that a graph may not have a “root”. However in our candidate, <code>F</code> is like a root. It is the only valid choice because it is the only node that may access all other nodes through some path of edges. We admit, the choice of <code>F</code> is somewhat contrived and in a practical setting you may not have a nice starting point like this. We’ll cover how to overcome this obstacle soon. For now we’ll take <code>F</code>.</p>
+<p>One thing we’ll have to decide on is what node to begin our traversal. Depending on the structure of the graph, there may not be a suitable starting point. Remember that a graph may not have a "root". However in our candidate, <code>F</code> is like a root. It is the only valid choice because it is the only node that may access all other nodes through some path of edges. We admit, the choice of <code>F</code> is somewhat contrived and in a practical setting you may not have a nice starting point like this. We’ll cover how to overcome this obstacle soon. For now we’ll take <code>F</code>.</p>
 <p>We want to build a recursive <code>depthFirstRecur</code> function that accepts a node and performs a Depth-First traversal through the graph. Let’s begin with a baseline solution, although it is not yet complete to handle all graphs:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="co">// broken</span></a>
 <a class="sourceLine" id="cb13-2" title="2"><span class="kw">function</span> <span class="at">depthFirstRecur</span>(node) <span class="op">{</span></a>
@@ -671,8 +671,8 @@ end procedure post order array</code></pre>
 <a class="sourceLine" id="cb18-18" title="18"><span class="op">}</span></a>
 <a class="sourceLine" id="cb18-19" title="19"></a>
 <a class="sourceLine" id="cb18-20" title="20"><span class="at">depthFirst</span>(graph)<span class="op">;</span></a></code></pre></div>
-<p>Notice that our main function <code>depthFirst</code> is iterative and accepts the entire Adjacency List as an Argo. Our helper <code>_depthFirstRecur</code> is recursive. <code>_depthFirstRecur</code> serves the same job as before, it will explore a full connected region in a graph. The main <code>depthFirst</code> method will allow us to “bridge” the gap between connection regions.</p>
-<p>Still fuzzy? Imagine we had the following graph. Before you ask, these are not two separate graphs. This is a <strong>single</strong> graph that contains two connected components. Another term for a graph of this structure is a “Forest” because it contains multiple “Trees”, ha:</p>
+<p>Notice that our main function <code>depthFirst</code> is iterative and accepts the entire Adjacency List as an Argo. Our helper <code>_depthFirstRecur</code> is recursive. <code>_depthFirstRecur</code> serves the same job as before, it will explore a full connected region in a graph. The main <code>depthFirst</code> method will allow us to "bridge" the gap between connection regions.</p>
+<p>Still fuzzy? Imagine we had the following graph. Before you ask, these are not two separate graphs. This is a <strong>single</strong> graph that contains two connected components. Another term for a graph of this structure is a "Forest" because it contains multiple "Trees", ha:</p>
 <figure>
 <img src="images/forest.png" alt="forest" /><figcaption>forest</figcaption>
 </figure>
@@ -688,12 +688,12 @@ end procedure post order array</code></pre>
 <a class="sourceLine" id="cb19-9" title="9"></a>
 <a class="sourceLine" id="cb19-10" title="10"><span class="at">depthFirst</span>(graph)<span class="op">;</span></a>
 <a class="sourceLine" id="cb19-11" title="11"><span class="co">// prints h, i, j, k, l, m</span></a></code></pre></div>
-<p>Here’s the description for how <code>depthFirst</code> operates above. We enter <code>depthFirst</code> and the for loop begins on <code>h</code>. This means we enter our <code>_depthFirstRecur</code>, which will continue to explore the “local” region as far as possible. When this recursion ends, we would have explored the entire connected region of <code>h, i, j, k</code> (note that we add these nodes to visited as well). Our recursive call then returns to the main <code>depthFirst</code> function, where we continue the for loop. We iterate it until we hit an unvisited node (<code>l</code>) and then explore it’s local region as far as possible using <code>_depthFirstRecur</code>, hitting the last node <code>m</code>.</p>
+<p>Here’s the description for how <code>depthFirst</code> operates above. We enter <code>depthFirst</code> and the for loop begins on <code>h</code>. This means we enter our <code>_depthFirstRecur</code>, which will continue to explore the "local" region as far as possible. When this recursion ends, we would have explored the entire connected region of <code>h, i, j, k</code> (note that we add these nodes to visited as well). Our recursive call then returns to the main <code>depthFirst</code> function, where we continue the for loop. We iterate it until we hit an unvisited node (<code>l</code>) and then explore it’s local region as far as possible using <code>_depthFirstRecur</code>, hitting the last node <code>m</code>.</p>
 <hr />
 <h1 id="graph-project">Graph Project</h1>
 <p>This project contains a skeleton for you to implement some graph functionality. This is a test-driven project. Run the tests and read the top-most error. If it’s not clear what is failing, open the <strong>test/test.js</strong> file to figure out what the test is expecting. Make the top-most test pass.</p>
 <p>Keep making the top-most test pass until all tests pass.</p>
-<p>After the instructions, there is an in-depth explanation of the “friends of” problem.</p>
+<p>After the instructions, there is an in-depth explanation of the "friends of" problem.</p>
 <h2 id="instructions-2">Instructions</h2>
 <ul>
 <li>Clone the project from https://github.com/-starters/data-structures-graph-starter.</li>
@@ -890,7 +890,7 @@ end procedure post order array</code></pre>
 <h2 id="a-layered-approach">A layered approach</h2>
 <p>Remember that when TCP/IP was first being crafted, researchers felt it was too large and separated the <em>Transmission Control Protocol</em> from the <em>Internet Protocol</em>. This separation was a boon; it made the protocols easier to implement individually and led to the Internet we know and love today!</p>
 <p>We sometimes refer to this approach as <em>separation of concerns</em>. We divide up complex processes so that many connected concepts can work independently. This makes it easier to consider each concept in detail on its own and means each concept can grow at its own unique pace.</p>
-<p>The developers of TCP/IP took this separation even farther in 1989 when they published <a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">RFC 1122</a>. This spec, also titled “Requirements for Internet Hosts – Communication Layers”, provided a new way of thinking about the whole TCP/IP process. According to the RFC, we can separate the connection out into four distinct <em>layers</em>, or separate areas of interest. These are:</p>
+<p>The developers of TCP/IP took this separation even farther in 1989 when they published <a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">RFC 1122</a>. This spec, also titled "Requirements for Internet Hosts – Communication Layers", provided a new way of thinking about the whole TCP/IP process. According to the RFC, we can separate the connection out into four distinct <em>layers</em>, or separate areas of interest. These are:</p>
 <ul>
 <li><em>Application</em></li>
 <li><em>Transport</em></li>
@@ -915,10 +915,10 @@ end procedure post order array</code></pre>
 <p>The <em>Link Layer</em> includes our lower-level communication standards. Link Layer protocols aren’t concerned with the type of data being transported, but instead focus on getting data from one local network resource to another. We jump up to the Internet layer when dealing with resources on other networks.</p>
 <blockquote>
 <h3 id="fifth-layer">Fifth layer?</h3>
-<p>Despite the RFC specifying four layers for the TCP/IP model, you may encounter resources detailing a five layer model for TCP/IP instead! The “fifth layer” is usually the <em>Physical</em> layer. This helps us separate electrical concepts like transmission across wires from data-oriented concepts like MAC addresses, but isn’t an official reference model from the IETF. TCP/IP doesn’t explicitly include any physical mediums, so thinking of this as a fifth layer can be helpful.</p>
+<p>Despite the RFC specifying four layers for the TCP/IP model, you may encounter resources detailing a five layer model for TCP/IP instead! The "fifth layer" is usually the <em>Physical</em> layer. This helps us separate electrical concepts like transmission across wires from data-oriented concepts like MAC addresses, but isn’t an official reference model from the IETF. TCP/IP doesn’t explicitly include any physical mediums, so thinking of this as a fifth layer can be helpful.</p>
 </blockquote>
 <h2 id="translating-layers-to-data">Translating layers to data</h2>
-<p>Layers provide a mental model we can use to think about how interactions across networks occur. It’s important to remember that these are “best fit” models, though: they translate loosely to our actual data. Some protocols may cross layers, and some companies will adjust these models to fit their own internal implementations. Ultimately, these layers provide a form of shared communication between professionals. You can count on another engineer understanding what an “Application Layer issue” means, even if your own definitions differ slightly!</p>
+<p>Layers provide a mental model we can use to think about how interactions across networks occur. It’s important to remember that these are "best fit" models, though: they translate loosely to our actual data. Some protocols may cross layers, and some companies will adjust these models to fit their own internal implementations. Ultimately, these layers provide a form of shared communication between professionals. You can count on another engineer understanding what an "Application Layer issue" means, even if your own definitions differ slightly!</p>
 <p>We often refer to <em>encapsulation</em> when describing how layers map to our data. This means higher layers are <em>encapsulated</em>, or wrapped, in lower layers. For example, a Transport Layer <em>segment</em> includes Application Layer data in its payload, and a Link Layer <em>frame</em> includes the whole stack! Here’s an example:</p>
 <p>
 <img src="images/image-network-models-encapsulation.svg" style="width: 100%;
@@ -926,7 +926,7 @@ end procedure post order array</code></pre>
 </p>
 <p>As we’ll see, alternative networking reference models may define layers as beginning/ending at different points in our data. However, the general idea is shared across models: lower layer data units include data for higher layers in their payloads.</p>
 <h2 id="what-weve-learned-1">What we’ve learned</h2>
-<p>When it comes to technical concepts, it’s <a href="https://tools.ietf.org/html/rfc793.html#page-23">“reference models all the way down”</a>! These new ways of thinking about topics we’ve already explored will help you communicate the concepts more clearly, and help you navigate problems that may be deeper than your own code.</p>
+<p>When it comes to technical concepts, it’s <a href="https://tools.ietf.org/html/rfc793.html#page-23">"reference models all the way down"</a>! These new ways of thinking about topics we’ve already explored will help you communicate the concepts more clearly, and help you navigate problems that may be deeper than your own code.</p>
 <p>You should feel confident:</p>
 <ul>
 <li>naming each of the four canonical TCP/IP reference model layers,</li>
@@ -1192,10 +1192,10 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>Binary and hexadecimal are often used in computing because computers are fundamentally base 2. As you move closer to the hardware, you encounter these more and more often. In networking, you will see them used for IP Addresses and MAC Addresses. We’ll learn more about that when we look next at how IP Networking works in the next section.</p>
 <hr />
 <h1 id="internet-protocol">Internet Protocol</h1>
-<p>As we dive deeper into understanding how computers communicate, a common question keeps coming up: what is “the Internet”, exactly? To answer this, let’s discuss the <em>Internet Protocol</em>, also known as <em>IP</em>.</p>
+<p>As we dive deeper into understanding how computers communicate, a common question keeps coming up: what is "the Internet", exactly? To answer this, let’s discuss the <em>Internet Protocol</em>, also known as <em>IP</em>.</p>
 <p>We’ll cover: - What IP is and why it matters to us, - different protocol versions and when to use them, - and how to identify IP data by its formatting.</p>
 <h2 id="history-of-ip">History of IP</h2>
-<p>To understand where we are today, we need to look back to where we came from. Picture yourself in the United States in the late 1960s. The country is nearing the end of the “space race” and technology is booming. There are numerous technical teams and physical networks created as a result of recent research, but communication between them is limited. There’s also a rise of different proprietary standards which are hampering growth: not every team can afford a separate terminal of each available type! How can we facilitate better collaboration with less investment required?</p>
+<p>To understand where we are today, we need to look back to where we came from. Picture yourself in the United States in the late 1960s. The country is nearing the end of the "space race" and technology is booming. There are numerous technical teams and physical networks created as a result of recent research, but communication between them is limited. There’s also a rise of different proprietary standards which are hampering growth: not every team can afford a separate terminal of each available type! How can we facilitate better collaboration with less investment required?</p>
 <p>By 1974, two researchers working for <a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">DARPA</a> think they have the answer. They propose something called the <em>Transmission Control Program</em>. It’s a complex process that defines exactly how multiple networks can communicate with each other. This protocol stands out because it is:</p>
 <ul>
 <li><em>fault tolerant</em>: data transmitted between networks can be cached and re-sent if it fails the first time.</li>
@@ -1206,25 +1206,25 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>It became quickly apparent that that Transmission Control Program was too dense. The process was complicated and involved many moving parts, and other engineers raised concerns that it should be extracted into separate parts. Soon, the Transmission Control Program was divided into two separate sections: <em>Transmission Control Protocol (TCP)</em>, which was responsible for the fault-tolerance of joined networks, and <em>Internet Protocol (IP)</em>, which was responsible for the end-to-end nature of joined networks.</p>
 <p>The protocols we use today have been improved over time, but still carry those names and general purposes. It’s amazing to think that modern social media, video gaming, and streaming content is all dependent on 50+ year old technology!</p>
 <h2 id="so-what-is-the-internet-exactly">So what is the Internet, exactly?</h2>
-<p>The Internet can be loosely defined as “a series of <em>internetworked</em> systems”. Here’s a practical example of what we mean by that:</p>
+<p>The Internet can be loosely defined as "a series of <em>internetworked</em> systems". Here’s a practical example of what we mean by that:</p>
 <blockquote>
-<p>Imagine every building in your town has a parking garage. Each garage is owned by a different company and uses custom entry sensors. These sensors prefer certain vehicle types: one garage for luxury sports cars only, another that will only allow motorcycles. You may need to park in the garage for the vehicle you own, then walk a lot. Otherwise, you’d have to own a different vehicle for each garage! Oh no! We’d consider this an “isolated” model: each garage works fine by itself, but patrons of one garage may not park elsewhere, and none of the garages are really meeting their full potential.</p>
-<p>Now imagine the garages remove their sensors. Suddenly you can park anywhere you’d like. Your motorcycle and your neighbor’s school bus can exist harmoniously in any garage, and you can travel from garage to garage in any vehicle you’d like. We’d consider this an “internetworked” model: each garage’s patrons may travel to any other garage and while the particular entrance/exit policies may differ, drivers can rest assured knowing they’ll fit anywhere.</p>
+<p>Imagine every building in your town has a parking garage. Each garage is owned by a different company and uses custom entry sensors. These sensors prefer certain vehicle types: one garage for luxury sports cars only, another that will only allow motorcycles. You may need to park in the garage for the vehicle you own, then walk a lot. Otherwise, you’d have to own a different vehicle for each garage! Oh no! We’d consider this an "isolated" model: each garage works fine by itself, but patrons of one garage may not park elsewhere, and none of the garages are really meeting their full potential.</p>
+<p>Now imagine the garages remove their sensors. Suddenly you can park anywhere you’d like. Your motorcycle and your neighbor’s school bus can exist harmoniously in any garage, and you can travel from garage to garage in any vehicle you’d like. We’d consider this an "internetworked" model: each garage’s patrons may travel to any other garage and while the particular entrance/exit policies may differ, drivers can rest assured knowing they’ll fit anywhere.</p>
 </blockquote>
 <p>The Internet Protocol opened the door for this internetworked model in computing. Now a network in New York City using one vendor’s computers could seamlessly communicate with a network in London from a different vendor! This connectivity led to the birth of the Internet, which is itself <em>a series of interconnected networks sharing data</em>.</p>
 <h2 id="packet-switching">Packet-Switching</h2>
 <p>IP data is transmitted in a format known as a <em>packet</em>. A packet uses a data format we’ve seen before: metadata in <em>headers</em>, and a <em>body</em> with content. The headers are used to get the packet to its destination, while the body contains the information we’d like to transfer.</p>
-<p>We refer to IP’s communication style as <em>packet-switching</em>. This is when a message is split up into separate “packets”, delivered to a destination, and reassembled as appropriate. Remember that IP’s primary responsibility as part of the Internet’s “double threat”, TCP/IP, is maintaining an <em>end-to-end</em> state. For this reason, IP isn’t concerned about whether packets are received by the client in sequential order, and may sometimes even lose packets altogether while in transit!</p>
+<p>We refer to IP’s communication style as <em>packet-switching</em>. This is when a message is split up into separate "packets", delivered to a destination, and reassembled as appropriate. Remember that IP’s primary responsibility as part of the Internet’s "double threat", TCP/IP, is maintaining an <em>end-to-end</em> state. For this reason, IP isn’t concerned about whether packets are received by the client in sequential order, and may sometimes even lose packets altogether while in transit!</p>
 <blockquote>
 <h3 id="a-crash-course-in-bits-bytes">A crash course in bits &amp; bytes</h3>
 <p>Most of the protocols we’ll cover measure their data in <em>bits</em>. We represent a bit as a single binary digit, either 1 or 0. Since data gets long, we have some larger units available as well! We’ll sometimes describe data sizes in <em>bytes</em>. A byte is eight bits.</p>
-<p>For example, “01001” is five bits, and a piece of data that’s 32 bits long could also be described as “4 bytes”.</p>
+<p>For example, "01001" is five bits, and a piece of data that’s 32 bits long could also be described as "4 bytes".</p>
 </blockquote>
 <h2 id="ip-versions">IP Versions</h2>
 <p>The Internet Protocol has evolved over time, but two versions stand out as the most used &amp; important to us: version 4 and version 6. We often refer to these as <em>IPvX</em>, where <em>X</em>, is the version number.</p>
 <h3 id="ipv4">IPv4</h3>
 <p>The best known version of the Internet Protocol is <em>IPv4</em>. This version was used when TCP/IP was finalized by DARPA in 1983, and it’s still the most-used protocol version online.</p>
-<p>An IPv4 packet’s header consists of at least 13 <em>fields</em>, or sequences of binary bits. These fields start with a version identifier (<code>0100</code>, or “4” in binary), continue with 10 sequences that define things like the length of the header and protocol type contained in the body, and wrap up with source and destination addresses for the packet. IPv4 also includes an allowance for a 14th optional header field called “Options” that can contain extra metadata about the packet’s content, but it’s not often used. An IPv4 header without options will be 20 bytes (160 bits).</p>
+<p>An IPv4 packet’s header consists of at least 13 <em>fields</em>, or sequences of binary bits. These fields start with a version identifier (<code>0100</code>, or "4" in binary), continue with 10 sequences that define things like the length of the header and protocol type contained in the body, and wrap up with source and destination addresses for the packet. IPv4 also includes an allowance for a 14th optional header field called "Options" that can contain extra metadata about the packet’s content, but it’s not often used. An IPv4 header without options will be 20 bytes (160 bits).</p>
 <p>It’s hard to visualize a header since it’s essentially just a long string of 1s and 0s. Instead of trying to cram it all into one line to study, we can split it into specified widths and stack them. Here’s a stacked diagram of the IPv4 header:</p>
 <p>
 <img src="images/image-ip-ipv4-headers.svg" style="width: 100%; height: auto;">
@@ -1234,8 +1234,8 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <pre><code>192.18.1.1</code></pre>
 <p>This is the same as <code>11000000.00010010.00000001.00000001</code> in binary notation, but that’s a lot harder to read! IPv4 supports around 4 billion unique addresses.</p>
 <h3 id="ipv6">IPv6</h3>
-<p>The “4 billion unique address” limit seemed almost infinite in the earliest days of the Internet, but today it’s easy to see how we might use up that few addresses! Seeing this <em>address exhaustion</em> on the horizon, Internet researchers began concocting a new protocol version, one that would allow more addresses, in the mid 1990’s. By 2017, the new protocol was an official standard: <em>IPv6</em>.</p>
-<p>IPv6 uses a totally different packet header format than IPv4, though they share a few fields. It only uses 8 header fields, and supports optional “extension headers” that come after these 8 fields, as opposed to IPv4’s large “Options” block.</p>
+<p>The "4 billion unique address" limit seemed almost infinite in the earliest days of the Internet, but today it’s easy to see how we might use up that few addresses! Seeing this <em>address exhaustion</em> on the horizon, Internet researchers began concocting a new protocol version, one that would allow more addresses, in the mid 1990’s. By 2017, the new protocol was an official standard: <em>IPv6</em>.</p>
+<p>IPv6 uses a totally different packet header format than IPv4, though they share a few fields. It only uses 8 header fields, and supports optional "extension headers" that come after these 8 fields, as opposed to IPv4’s large "Options" block.</p>
 <p>The 8 fields IPv6 uses, in order, are:</p>
 <p>
 <img src="images/image-ip-ipv6-headers.svg" style="width: 100%; height: auto;">
@@ -1243,7 +1243,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <ul>
 <li><em>Version</em>
 <ul>
-<li><code>0110</code>, or “6” in binary notation</li>
+<li><code>0110</code>, or "6" in binary notation</li>
 </ul></li>
 <li><em>Traffic Class</em>
 <ul>
@@ -1281,7 +1281,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>IPv6 supports <strong>~350 undecillion (3.5×10<sup>38</sup>)</strong> addresses.</p>
 <p>That’s a billion times a billion more addresses! It’s even more addresses than grains of sand in all the world’s beaches &amp; deserts (7.5x10<sup>18</sup>, according to <a href="https://tools.ietf.org/html/rfc793.html#page-23">the University of Hawaii</a>).</p>
 <p>It handles this by quadrupling the number of bits in an address. IPv4 uses 32 bits, while IPv6 uses 128 bits. Remember that these bits are binary, so adding additional bits exponentially increases the number of permutations.</p>
-<p>This new address space also required a new notation. Instead of the “four dotted decimal” notation of IPv4, IPv6 uses “eight colon-ed hexadecimal”. Here’s an example IPv6 address:</p>
+<p>This new address space also required a new notation. Instead of the "four dotted decimal" notation of IPv4, IPv6 uses "eight colon-ed hexadecimal". Here’s an example IPv6 address:</p>
 <pre><code>2600:6c5e:157f:d48c:138f:e0ba:6fa7:d859</code></pre>
 <p>The same address in binary is:</p>
 <pre><code>0010011000000000:0110110001011110:0001010101111111:1101010010001100:0001001110001111:1110000010111010:0110111110100111:1101100001011001</code></pre>
@@ -1289,9 +1289,9 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <h3 id="special-addresses">Special addresses</h3>
 <p>Both popular versions of the Internet Protocol include space for some special addresses that you should quickly recognize. The main one you’ll encounter is called the <em>loopback</em> address. This is the identifier for your current machine. You’ll see it repeatedly while developing because you’ll navigate your browser there to access your own servers! You may also hear this referred to as <em>localhost</em>.</p>
 <p>In IPv4 the loopback address is <code>127.0.0.1</code>. In IPv6, the loopback is <code>::1</code>.</p>
-<p>There’s also an <em>“all interfaces”</em> address. This address is used to catch any incoming requests regardless of intended destination. It’s only used by the local machine: you would never send a packet to the “all interfaces” address, but a server that is listening on that address would see all incoming packets.</p>
-<p>For IPv4, the “all interfaces” address is <code>0.0.0.0</code>. For IPv6, it’s simply <code>::</code>.</p>
-<p>Remember that the loopback and “all interfaces” address are not interchangeable! This is a common misconception you may encounter in tutorials online, and might be a trick question during a technical interview. If you’re ever asked to connect to <code>localhost</code>, make sure you use the loopback.</p>
+<p>There’s also an <em>"all interfaces"</em> address. This address is used to catch any incoming requests regardless of intended destination. It’s only used by the local machine: you would never send a packet to the "all interfaces" address, but a server that is listening on that address would see all incoming packets.</p>
+<p>For IPv4, the "all interfaces" address is <code>0.0.0.0</code>. For IPv6, it’s simply <code>::</code>.</p>
+<p>Remember that the loopback and "all interfaces" address are not interchangeable! This is a common misconception you may encounter in tutorials online, and might be a trick question during a technical interview. If you’re ever asked to connect to <code>localhost</code>, make sure you use the loopback.</p>
 <h2 id="what-weve-learned-2">What we’ve learned</h2>
 <p>Whew! The Internet Protocol is a dense topic, but a little familiarity will go a long way when you’re debugging server connections. After reading this lesson, you should be able to:</p>
 <ul>
@@ -1312,19 +1312,19 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <h2 id="what-exactly-are-we-transporting">What exactly are we transporting?</h2>
 <p>We’ve already briefly mentioned the <em>Transmission Control Protocol (TCP)</em> when discussing the history of the <em>Internet Protocol (IP)</em>. Both TCP &amp; IP made up the original <em>Transmission Control Program</em> developed at DARPA in the 1970s. We’ve dug deep into IP now, and we have some understanding of HTTP. Why do we need more protocols?</p>
 <p>Let’s provide a practical example. Think about the process of delivering a package. Floor pickers take your package from a warehouse onto the back of a truck, and a dispatcher sends that truck to your house. There’s a place on your porch just waiting for that package. How, then, does your package make it across the very last leg of its journey? Whoops - we forgot the delivery person!</p>
-<p>Transport protocols act as our “delivery person”. IP is concerned with machine-to-machine communication, and HTTP is designed for application-to-application communication. Transport protocols bridge the gap and help our data cover the last mile between the network and software.</p>
+<p>Transport protocols act as our "delivery person". IP is concerned with machine-to-machine communication, and HTTP is designed for application-to-application communication. Transport protocols bridge the gap and help our data cover the last mile between the network and software.</p>
 <h3 id="ports">Ports</h3>
 <p>Like every other part of the internetworking process, transport protocols use their own unique form of addressing. We call these <em>ports</em>. Ports are virtual interfaces that allow a single device to host lots of different applications &amp; services. By lots, we mean a whole bunch - there are 65536 separate ports available to each transport protocol!</p>
 <p>Ports are represented by numbers: <code>port 80</code>, <code>port 51234</code>, etc. If we know both the IP address and port we’d like to connect to, we can use a special notation where both are joined by a colon:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" title="1"><span class="ex">192.168.1.1</span>:8080</a></code></pre></div>
 <p>This would point to port <code>8080</code> on a network interface with an IP address of <code>192.168.1.1</code>. We refer to an IP address &amp; port written together in this way as a <em>socket</em>.</p>
 <h2 id="tcp">TCP</h2>
-<p>The most common transport protocol used is <em>TCP</em>. TCP is a connection-oriented protocol, meaning it establishes a connection between two sockets. This connection acts as safeguard from other error-prone protocols underneath it, including <em>IP</em> and <em>Ethernet</em>. Pieces of data sent via TCP (referred to as <em>segments</em>) respect a strict order and verify when they have been received. This means that data can’t be “lost” across a TCP connection: if a segment is received out of order, the receiver will ask the transmitter to re-send the missing segment. This behavior makes TCP a <em>reliable</em> protocol.</p>
-<p>We’ll dive deeper into exactly how TCP verifies data &amp; forms connections in a future lesson. For now, remember that “TCP == reliability”. Any time it’s critical that data arrives ordered and in full, TCP’s the way to go! You’ll see TCP used as the underlying connection for HTTP, file transfers, and media streaming. In all of these cases, missing data would result in corrupt files and unreadable data.</p>
-<p>Because of everything TCP offers us, it’s a relatively “heavy” protocol to use. Messages may take a bit longer to transfer than they would via other protocols, but you can be confident that your message has been received the way you intended it. This inherent slowness means applications using TCP may <em>buffer</em> data, or wait until a certain amount has been received before passing it to the user. You’ve probably seen this happen on your favorite video sharing sites!</p>
+<p>The most common transport protocol used is <em>TCP</em>. TCP is a connection-oriented protocol, meaning it establishes a connection between two sockets. This connection acts as safeguard from other error-prone protocols underneath it, including <em>IP</em> and <em>Ethernet</em>. Pieces of data sent via TCP (referred to as <em>segments</em>) respect a strict order and verify when they have been received. This means that data can’t be "lost" across a TCP connection: if a segment is received out of order, the receiver will ask the transmitter to re-send the missing segment. This behavior makes TCP a <em>reliable</em> protocol.</p>
+<p>We’ll dive deeper into exactly how TCP verifies data &amp; forms connections in a future lesson. For now, remember that "TCP == reliability". Any time it’s critical that data arrives ordered and in full, TCP’s the way to go! You’ll see TCP used as the underlying connection for HTTP, file transfers, and media streaming. In all of these cases, missing data would result in corrupt files and unreadable data.</p>
+<p>Because of everything TCP offers us, it’s a relatively "heavy" protocol to use. Messages may take a bit longer to transfer than they would via other protocols, but you can be confident that your message has been received the way you intended it. This inherent slowness means applications using TCP may <em>buffer</em> data, or wait until a certain amount has been received before passing it to the user. You’ve probably seen this happen on your favorite video sharing sites!</p>
 <h2 id="udp">UDP</h2>
 <p>The <em>User Datagram Protocol (UDP)</em> arrived on the scene a few years after TCP. Scientists working with TCP found that they sometimes didn’t need all the order and reliability that TCP provided, and they were willing to trade that for raw speed. UDP is connection-less and provides no verification for whether data is received. Because of this, we refer to it as an <em>unreliable</em> protocol.</p>
-<p>Hold on, though! By “unreliable”, we certainly don’t mean “useless”. UDP is used in lots of familiar places: real-time video sharing, voice-over-IP phone calls, and DNS all rely on UDP as their transport protocol of choice. These services prioritize speed over reliability, so it makes sense that they would forego TCP’s additional lag. If some data is lost along the way, that’s okay - for example, you might just see lower-quality video for a moment.</p>
+<p>Hold on, though! By "unreliable", we certainly don’t mean "useless". UDP is used in lots of familiar places: real-time video sharing, voice-over-IP phone calls, and DNS all rely on UDP as their transport protocol of choice. These services prioritize speed over reliability, so it makes sense that they would forego TCP’s additional lag. If some data is lost along the way, that’s okay - for example, you might just see lower-quality video for a moment.</p>
 <p>Unreliable systems are valuable outside the world of transport protocols as well! Consider the postal service: most letters are sent without any sort of delivery confirmation or guarantee of arrival. It’s up to the sender and/or recipient to manage expectations of when a letter ought to have arrived. This is similar to UDP. Data will be transmitted, and most will arrive, but if either side needs more reliability than that they will have to implement it themselves.</p>
 <h2 id="what-weve-learned-3">What we’ve learned</h2>
 <p>Transport protocols fill a gap in our current understanding of networks. They help us get data up from the network to our applications, and they give us a few options for fault-tolerance versus performance.</p>
@@ -1344,7 +1344,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>By the 1980’s, it was clear that one organization wasn’t enough to manage the growing Internet. The Domain Name System was invented as a way to distribute the work to numerous organizations, lightening the load and allowing much more rapid growth. The first DNS name server was written in 1984, and the rest is history!</p>
 <p>DNS is one of the most important parts of allowing the Internet to grow so rapidly. It’s perfect for quick scaling because it is both simple (relying on specifically-formatted text files) and distributed (redundant across numerous servers).</p>
 <h3 id="domains">Domains?</h3>
-<p>We’ve mentioned domains before today, but without much detail. Let’s dive a little deeper into that term. A website’s <em>domain</em> refers to the “friendly” name for the website’s <em>host</em>, or the server providing the site’s content. A domain differs from a URL in that the domain is only the server’s identifier, not other application or protocol-related data in the URL.</p>
+<p>We’ve mentioned domains before today, but without much detail. Let’s dive a little deeper into that term. A website’s <em>domain</em> refers to the "friendly" name for the website’s <em>host</em>, or the server providing the site’s content. A domain differs from a URL in that the domain is only the server’s identifier, not other application or protocol-related data in the URL.</p>
 <p>Here’s a breakdown of an average URL. We’ve highlighted the domain in green and labelled each part of the URL underneath:</p>
 <p>
 <img src="images/image-ip-dns-domain.svg" style="width: 100%; height: auto;">
@@ -1352,7 +1352,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>A <em>domain name</em> can be split into a few parts:</p>
 <ul>
 <li><p>The <em>top-level domain (TLD)</em> is the last part of the domain, appearing just before the URL begins pointing at application routes (usually indicated with <code>/</code>’s) or query parameters (indicated with a <code>?</code> and <code>&amp;</code>’s). The best known TLDs are <code>.com</code>, <code>.net</code>, and <code>.org</code>. TLDs are managed by special organizations that have demonstrated the ability to handle the immense workload involved, often known as <em>domain registries</em>. These registries may be government entities (for example, <code>.gov</code> is managed by the <a href="https://tools.ietf.org/html/rfc793.html#page-23">General Services Agency</a>) or private companies that were awarded the privilege by <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Protocol_operation">ICANN</a>.</p></li>
-<li><p>To the left of the TLD, separated by a dot, is the <em>second-level domain</em>. You’ll often hear the TLD &amp; second-level domain lumped together as “the domain”. This is the name most people associate with the website. Through <em>domain registrars</em>, consumers can purchase second-level domains. The registrar maintains a listing of each purchase.</p></li>
+<li><p>To the left of the TLD, separated by a dot, is the <em>second-level domain</em>. You’ll often hear the TLD &amp; second-level domain lumped together as "the domain". This is the name most people associate with the website. Through <em>domain registrars</em>, consumers can purchase second-level domains. The registrar maintains a listing of each purchase.</p></li>
 <li><p>Some websites will have additional domains to the left of the second-level domain. These can be referred to by their formal names (<em>third-level domain</em>, <em>fourth-level domain</em>, etc.) but are often informally referred to as <em>subdomains</em>. The best-known subdomain is <code>www</code>, though this is less-used on newer sites. Subdomains can usually be freely created by the consumer.</p></li>
 </ul>
 <h2 id="how-the-magic-happens">How The Magic Happens</h2>
@@ -1388,14 +1388,14 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <h3 id="cname"><code>CNAME</code></h3>
 <p>The <em>CNAME</em> record acts as an alias, linking one domain to another. In our example above, we’re saying that <code>www.my-site.com</code> should point at the same resource as <code>my-site.com</code>. Notice that the <code>www</code> doesn’t have a <code>.</code> after it. This means it’s a <em>relative</em> reference, and the additional parts of the domain for this zone (<code>my-site.com.</code>) are implied. When a domain in zone file ends in a <code>.</code> we can treat it as an <em>absolute</em> reference with no unwritten subdomains.</p>
 <h3 id="mx"><code>MX</code></h3>
-<p>DNS: It’s not <strong>just</strong> for websites! <em>MX</em> records, short for <strong>M</strong>ail E<strong>x</strong>changer, are used by e-mail clients to direct messages to the appropriate mail servers. These records let you send messages to “friend@gmail.com” instead of having to remember “friend@123.45.67.89”!</p>
+<p>DNS: It’s not <strong>just</strong> for websites! <em>MX</em> records, short for <strong>M</strong>ail E<strong>x</strong>changer, are used by e-mail clients to direct messages to the appropriate mail servers. These records let you send messages to "friend@gmail.com" instead of having to remember "friend@123.45.67.89"!</p>
 <h3 id="metadata">Metadata</h3>
 <p>There’s one piece we’ve overlooked in our example zone file above: the first line. <code>$TTL 299</code> refers to the <em>Time to Live (TTL)</em> for our records. This is a measure of how long a record should be <em>cached</em> by a DNS name server.</p>
 <p>We cache DNS queries because reading from a file can be slow! When a query comes in for a particular domain, the name server will cache the result in memory so that subsequent requests are much faster. However, this in-memory copy won’t be updated if the zone file changes - yikes! The TTL lets us set how often a cached record should be discarded and read from the zone file again. This is especially important if we are pointing at a service where the IP might change frequently, like a local development environment or shared hosting service.</p>
 <p>In our example, we’ve set the TTL for all records in the zone file to 299 seconds. This means that if your current web host goes offline and you have to point your domain at a new server, the downtime won’t last more than approximately five minutes. This <strong>also</strong> means that you’ll be re-checking your zone file for that domain at least once every five minutes. If you’re confident in your hosting and aren’t making infrastructure changes, longer TTLs can result in slightly increased performance.</p>
 <h2 id="what-weve-learned-4">What we’ve learned</h2>
 <p>The Domain Name System is a great example of a simple process (linking names to locations) evolving over time to support greater and greater needs. It’s frightening to think of how difficult navigating around the Internet would be if we didn’t have DNS to make websites easily accessible!</p>
-<p>Before we move on, here’s a quick tip: <strong>DNS questions are popular fodder for technical interviews.</strong> You may be asked to define a particular record type or to walk through a rough outline of what happens when you type a URL into your browser and click “Go”. Try thinking through this process with your new knowledge!</p>
+<p>Before we move on, here’s a quick tip: <strong>DNS questions are popular fodder for technical interviews.</strong> You may be asked to define a particular record type or to walk through a rough outline of what happens when you type a URL into your browser and click "Go". Try thinking through this process with your new knowledge!</p>
 <p>After reading this lesson, you should have a better understanding of:</p>
 <ul>
 <li>the history and intent of DNS,</li>
@@ -1412,15 +1412,15 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <li>and specialized cases with integrated devices</li>
 </ul>
 <h2 id="three-levels-of-control">Three levels of control</h2>
-<p>Network protocols mean very little if we don’t have a physical way of connecting computers together! Whether it’s via copper cables, fiber optics, or wireless networks, we need ways of managing communications to put those protocols into action. A quick search for “networking hardware” will yield a slew of results, but don’t get overwhelmed! We can boil many of these devices down to three types: <em>hubs</em>, <em>switches</em>, and <em>routers</em>.</p>
+<p>Network protocols mean very little if we don’t have a physical way of connecting computers together! Whether it’s via copper cables, fiber optics, or wireless networks, we need ways of managing communications to put those protocols into action. A quick search for "networking hardware" will yield a slew of results, but don’t get overwhelmed! We can boil many of these devices down to three types: <em>hubs</em>, <em>switches</em>, and <em>routers</em>.</p>
 <h3 id="hubs-keeping-it-simple">Hubs: keeping it simple</h3>
 <p>
 <img src="images/image-ip-networking-hub.svg" style="width: 100%; height: auto;">
 </p>
-<p>A <em>hub</em> is the simplest networking device you’re likely to find in service. It performs no network management and might be better known as a “signal splitter”. When a hub receives data, it duplicates that data and broadcasts it to all connected devices. That’s it!</p>
+<p>A <em>hub</em> is the simplest networking device you’re likely to find in service. It performs no network management and might be better known as a "signal splitter". When a hub receives data, it duplicates that data and broadcasts it to all connected devices. That’s it!</p>
 <p>Hubs tend to be cheap and are often found in older networks. They are usually small metal boxes with a handful of physical connectors. You can get hubs with lots of connectors, but they’re usually a little smaller - think 5 or 10 instead of 30 or 40. This is due to the natural limitations a hub possesses.</p>
 <blockquote>
-<p>Heads up! We’ll refer to the physical sockets that cables plug into as <em>connectors</em>, but you’ll often hear them called <em>ports</em> instead. This can get <strong>very</strong> confusing, so be sure you’re clear about the difference between virtual ports used by transport protocols and physical ports used by hardware. When in doubt, use a clearer term, like “connector” or “jack”.</p>
+<p>Heads up! We’ll refer to the physical sockets that cables plug into as <em>connectors</em>, but you’ll often hear them called <em>ports</em> instead. This can get <strong>very</strong> confusing, so be sure you’re clear about the difference between virtual ports used by transport protocols and physical ports used by hardware. When in doubt, use a clearer term, like "connector" or "jack".</p>
 </blockquote>
 <p>For one, a hub can’t do any sort of filtering. This means every single data packet is sent to every single device, all the time. This creates a lot of unnecessary load on the network. Imagine if every time you called a friend, all of your other friends’ phones rang too. Yikes! Additionally, hubs share bandwidth across devices, so heavy traffic can result in lower speeds. We’ll sometimes see this problem on overloaded networks with other devices, but on a hub it’s guaranteed.</p>
 <p>Hubs were a helpful and necessary piece of hardware for a long time, but today there’s little reason to use them. They may still be slightly cheaper than a switch, but the limitations outweigh most cost concerns. The best use for a hub now is as a temporary replacement while replacing a broken device.</p>
@@ -1429,7 +1429,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <img src="images/image-ip-networking-switch.svg" style="width: 100%; height:
   auto;">
 </p>
-<p>A step up from the hub, we find a network <em>switch</em>. Switches are “intelligent” hubs: they track devices connected to them, help manage network load, and can manage separate internal networks with ease! The biggest thing that separates a switch from a hub is the <em>MAC address table</em>.</p>
+<p>A step up from the hub, we find a network <em>switch</em>. Switches are "intelligent" hubs: they track devices connected to them, help manage network load, and can manage separate internal networks with ease! The biggest thing that separates a switch from a hub is the <em>MAC address table</em>.</p>
 <p>A network switch maintains an internal address book containing the MAC addresses of the devices connected to it. Remember that data frames contain both a source and destination MAC address? This is how the switch stays up to date! It uses this data to perform one of three actions with each piece of data it receives:</p>
 <ul>
 <li><p><em>flood</em>: When a destination address is unknown, the switch will <em>flood</em> received data out to all connected devices <strong>except where the data came from</strong>. When the intended recipient responds, the switch will update its MAC address table accordingly. This is how switches learn about connected devices, and it’s significantly more efficient than a hub’s behavior of flooding all the time!</p></li>
@@ -1459,14 +1459,14 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <h2 id="integrated-devices">Integrated devices</h2>
 <p>It’s easiest to think of these three classes of hardware as separate, distinct devices. However, this won’t always be the case. Let’s discuss some situations where these devices exist in unfamiliar packages.</p>
 <p>When you set up Internet at a new home, you usually get a modem from your ISP. Years ago, this modem was dead simple: one inbound connection for your phone line or cable, and one outbound connection for your home PC. Today, however, our homes have multiple devices! Consumers became increasingly frustrated with getting a modem from one company but still needing a router and/or switch to connect all their computers.</p>
-<p>In response, ISPs upped their game by integrating extra devices in their “modems”. The average home gateway today includes:</p>
+<p>In response, ISPs upped their game by integrating extra devices in their "modems". The average home gateway today includes:</p>
 <ul>
 <li>a modem to translate the physical signal from the cable/phone line,</li>
 <li>a router to manage your internal and external IP addresses,</li>
 <li>a wireless antenna for wi-fi connections,</li>
 <li>and a 5-connector switch for wired connections.</li>
 </ul>
-<p>Woah! That’s a lot of hardware in one device. This behavior has blurred the lines between types of hardware and made communication about networked devices more difficult. Your ISP might call that single device a “modem”, a “router”, a “gateway”, or an “access point”. All of these are true!</p>
+<p>Woah! That’s a lot of hardware in one device. This behavior has blurred the lines between types of hardware and made communication about networked devices more difficult. Your ISP might call that single device a "modem", a "router", a "gateway", or an "access point". All of these are true!</p>
 <p>Before making decisions about a network you’re investigating, make sure you understand what each device is doing. Does that router include a switch? Is the modem a simple modem or does it include a hub as well? As always, make sure you’re using the right tool for the job.</p>
 <h2 id="what-weve-learned-5">What we’ve learned</h2>
 <p>There are lots of different types of network hardware out there, but most of them fall into three separate categories. Hopefully, the next time you see inside a messy server closet, you’ll be curious about which parts you can identify!</p>
@@ -1483,7 +1483,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p>Let’s deep-dive into TCP! We’ll cover:</p>
 <ul>
 <li>TCP segments what information they carry,</li>
-<li>“control bits” that manage the TCP lifecycle,</li>
+<li>"control bits" that manage the TCP lifecycle,</li>
 <li>and the process of forming &amp; discarding connections.</li>
 </ul>
 <h2 id="segments">Segments</h2>
@@ -1498,11 +1498,11 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <ul>
 <li><p><strong>Source / Destination Port:</strong> The first two fields indicate which port the request originated on and which port it’s directed to. This will be used, along with the IP address in the IP wrapper containing the segment, to determine which <em>sockets</em> to use for the TCP connection.</p></li>
 <li><p><strong>Sequence Number:</strong> This number is used to establish the correct ordering of data. At the start of a connection, TCP sets an <em>Initial Sequence Number (ISN)</em> that’s sufficiently large enough to avoid conflicts. Each byte of data transferred is then counted, beginning at the ISN, and used to calculate the sequence number for the segment. Sequence numbers go hand-in-hand with the …</p></li>
-<li><p><strong>Acknowledgement Number:</strong> This number lets the sender know which sequence is expected next. Acknowledgement numbers are cumulative, which is how TCP maintains proper ordering of segments. The receiver will send an acknowledgement number that’s one higher than the last sequence number plus the length of the last data received. For example: if the last sequence number received was <code>10</code>, and the accompanying data was 4 bits long, the response will include an acknowledgement number of <code>15</code> - meaning “I’m ready for sequence number 15!”.</p></li>
+<li><p><strong>Acknowledgement Number:</strong> This number lets the sender know which sequence is expected next. Acknowledgement numbers are cumulative, which is how TCP maintains proper ordering of segments. The receiver will send an acknowledgement number that’s one higher than the last sequence number plus the length of the last data received. For example: if the last sequence number received was <code>10</code>, and the accompanying data was 4 bits long, the response will include an acknowledgement number of <code>15</code> - meaning "I’m ready for sequence number 15!".</p></li>
 <li><p><strong>Data Offset:</strong> Defines how long the segment header is. This lets us know if there are options later on in the header or not.</p></li>
 <li><p><strong>Reserved:</strong> A short range of three bits, held over for later use. These will always be <code>0</code>.</p></li>
 <li><p><strong>Control Flags:</strong> These nine bits drive the TCP connection process. We’ll break them down in more detail soon.</p></li>
-<li><p><strong>Window Size:</strong> This field is used to let the sender know how much data the receiver can accept. This helps maintain the reliability of a connection: if a receiver is getting overloaded, they can lower the window size as a way of saying “slow down!”. If a slow connection can move faster, a larger window size is a way of saying “bring it on!”.</p></li>
+<li><p><strong>Window Size:</strong> This field is used to let the sender know how much data the receiver can accept. This helps maintain the reliability of a connection: if a receiver is getting overloaded, they can lower the window size as a way of saying "slow down!". If a slow connection can move faster, a larger window size is a way of saying "bring it on!".</p></li>
 <li><p><strong>Checksum:</strong> The <em>checksum</em> is an error-checking mechanism. Checksums are used to check the validity of a particular segment, not the whole series of segment (as with sequence/acknowledgement). The TCP client can use the checksum to ensure the segment has been received correctly. If it doesn’t match expectations, the segment will be discarded &amp; ignored.</p></li>
 <li><p><strong>Urgent Pointer:</strong> TCP allows for data to be marked as <em>urgent</em>. This means it should be processed right away, regardless of sequence, interrupting any other transfer in process. This is useful when trying to terminate a long transfer, as we’d like to kill the connection without waiting for it to complete. This field indicates how much urgent data to expect, if there is any.</p></li>
 <li><p><strong>Options:</strong> Like most other protocols, the TCP segment header includes a range for <em>options</em> at its end. There may be no options, or there may be a handful! We can verify whether there are options be comparing the length of the header so far to the <em>data offset</em> field. TCP header options are mostly used for flow control and may even include <em>padding</em> to fill out the expected length of the header with empty data.</p></li>
@@ -1517,18 +1517,18 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
   auto;">
 </p>
 <ul>
-<li><p><strong>URG:</strong> The “<strong>urg</strong>ent” bit. Lets us know if this segment contains urgent data.</p></li>
-<li><p><strong>ACK:</strong> The “<strong>ack</strong>nowledgement” bit. Setting this bit means a message has been received successfully.</p></li>
-<li><p><strong>PSH:</strong> The “<strong>p</strong>u<strong>sh</strong>” bit. This bit is used to indicate that buffered data should be passed on to the connected application.</p></li>
-<li><p><strong>RST:</strong> The “<strong>r</strong>e<strong>s</strong>e<strong>t</strong>” bit. This bit means we should reset the connection. Receivers will send an RST segment when they receive unexpected data, either to a port that’s not listening or dramatically out-of-sequence.</p></li>
-<li><p><strong>SYN:</strong> The “<strong>syn</strong>chronize” bit. This flag is set on the the first segment from each side of the connection, and should include an ISN for the socket to begin sequencing from.</p></li>
-<li><p><strong>FIN:</strong> The “<strong>fin</strong>ished” bit. This bit lets each side know that transmission is done and the connection may be closed.</p></li>
+<li><p><strong>URG:</strong> The "<strong>urg</strong>ent" bit. Lets us know if this segment contains urgent data.</p></li>
+<li><p><strong>ACK:</strong> The "<strong>ack</strong>nowledgement" bit. Setting this bit means a message has been received successfully.</p></li>
+<li><p><strong>PSH:</strong> The "<strong>p</strong>u<strong>sh</strong>" bit. This bit is used to indicate that buffered data should be passed on to the connected application.</p></li>
+<li><p><strong>RST:</strong> The "<strong>r</strong>e<strong>s</strong>e<strong>t</strong>" bit. This bit means we should reset the connection. Receivers will send an RST segment when they receive unexpected data, either to a port that’s not listening or dramatically out-of-sequence.</p></li>
+<li><p><strong>SYN:</strong> The "<strong>syn</strong>chronize" bit. This flag is set on the the first segment from each side of the connection, and should include an ISN for the socket to begin sequencing from.</p></li>
+<li><p><strong>FIN:</strong> The "<strong>fin</strong>ished" bit. This bit lets each side know that transmission is done and the connection may be closed.</p></li>
 </ul>
 <blockquote>
-<p>Note that we mention all twelve bits here as “control bits” even though the first three are unassigned. While they are currently unused, protocols evolve frequently! The <a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">TCP specification</a> lists “six reserved bits, six control bits”, but newer specs have claimed some of those. For this reason, you should think of the remaining three reserved bits as “control flags still under development”.</p>
+<p>Note that we mention all twelve bits here as "control bits" even though the first three are unassigned. While they are currently unused, protocols evolve frequently! The <a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">TCP specification</a> lists "six reserved bits, six control bits", but newer specs have claimed some of those. For this reason, you should think of the remaining three reserved bits as "control flags still under development".</p>
 </blockquote>
 <h3 id="getting-to-know-each-other-the-three-way-handshake">Getting to know each other: the three-way handshake</h3>
-<p>TCP connections begin with a process called a <em>three-way-handshake</em>, also sometimes referred to as <em>SYN-SYN-ACK</em>. This name comes from the three interactions before the connection is officially “open”:</p>
+<p>TCP connections begin with a process called a <em>three-way-handshake</em>, also sometimes referred to as <em>SYN-SYN-ACK</em>. This name comes from the three interactions before the connection is officially "open":</p>
 <ul>
 <li>The client notifies the server that data is incoming with a <code>SYN</code> segment.</li>
 <li>The server acknowledges that data and sends its own segment, including both an <code>ACK</code> and its own <code>SYN</code>.</li>
@@ -1578,10 +1578,10 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <li>it waits a moment to ensure there are no remaining data segments inbound,</li>
 <li>and then it sends a corresponding <code>FIN</code> segment to let the client know it’s shutting down.</li>
 </ul>
-<p>The client will <code>ACK</code>nowledge immediately, but may also wait a bit before truly closing, just in case. With all the handshaking and waiting around, you might call TCP a “considerate” protocol as well!</p>
+<p>The client will <code>ACK</code>nowledge immediately, but may also wait a bit before truly closing, just in case. With all the handshaking and waiting around, you might call TCP a "considerate" protocol as well!</p>
 <h3 id="the-tcp-socket-state-lifecycle">The TCP Socket State Lifecycle</h3>
 <p>Remember that a TCP connection is between two <em>sockets</em>, or joint IP address/port pairs. As the connection progresses, these sockets change <em>state</em>. For example, during the process of data transfer, both sockets are considered to be in the <code>ESTABLISHED</code> state, while before a connection is established a server’s open socket would be in the <code>LISTEN</code> state.</p>
-<p>It’s important to remember that this flow isn’t identical for the client &amp; server, too: after the client sends its <code>SYN</code>, it enters a <code>SYN SENT</code> state while the server enters a <code>SYN RCVD</code> (or “<code>SYN</code> Received”) state of its own.</p>
+<p>It’s important to remember that this flow isn’t identical for the client &amp; server, too: after the client sends its <code>SYN</code>, it enters a <code>SYN SENT</code> state while the server enters a <code>SYN RCVD</code> (or "<code>SYN</code> Received") state of its own.</p>
 <p>Here’s a diagram of a simple data transfer from start to finish. Notice that we’ve added the socket states for each side of the connection outside the diagram. These may be noted by network tools and can be helpful to reference if you find yourself debugging a TCP connection problem:</p>
 <p>
 <img src="images/image-ip-tcp-socket-states.svg" style="width: 100%; height:
@@ -1599,7 +1599,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 </ul>
 <hr />
 <h1 id="following-the-trail-with-traceroute">Following The Trail With <code>traceroute</code></h1>
-<p>Remember that the Internet is a “network of networks”<a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">1</a>. This can make it tough to <em>debug</em> problems between networks: how do we identify the culprit? Enter <em>traceroute</em>! Let’s explore this utility and learn how to find problems with inter-network connections.</p>
+<p>Remember that the Internet is a "network of networks"<a href="https://www.encyclopedia.com/computing/news-wires-white-papers-and-books/network-networks">1</a>. This can make it tough to <em>debug</em> problems between networks: how do we identify the culprit? Enter <em>traceroute</em>! Let’s explore this utility and learn how to find problems with inter-network connections.</p>
 <p>We’ll cover: - what <code>traceroute</code> is and when to use it, - how to read <code>traceroute</code> output, - and how to use <code>traceroute</code> to solve problems.</p>
 <h2 id="where-are-we-going">Where are we going?</h2>
 <p>When we create connections between networks, they’re rarely direct. We’ve already discussed how the IP protocol works to connect devices across multiple intermediaries. While the theory and addressing makes sense, it raises a new challenge: how do we solve problems when we can’t get access to the other networks involved?</p>
@@ -1608,7 +1608,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <p><code>traceroute</code> vs. <code>tracert</code></p>
 <p>If you do some research of your own, you may find <code>traceroute</code> referred to as <code>tracert</code>. These utilities work slightly differently. <code>tracert</code> is included with the Windows operating system, and uses <em>ICMP</em> (an alternative protocol also used by the <code>ping</code> utility) to trace data. <code>traceroute</code> is on Unix-based operating systems, including macOS, and uses UDP. We’ll prefer <code>traceroute</code> here, but the output of both utilities is almost identical! If you find yourself investigating network problems on a Windows computer, the skills covered here will translate seamlessly.</p>
 </blockquote>
-<p>You’ll sometimes hear using <code>traceroute</code> referred to as “running a trace”. Running a trace of your own is easy - enter the following on your command line:</p>
+<p>You’ll sometimes hear using <code>traceroute</code> referred to as "running a trace". Running a trace of your own is easy - enter the following on your command line:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" title="1"><span class="op">&gt;</span> <span class="ex">traceroute</span> .io</a></code></pre></div>
 <p>Boom! Your first trace! So what does all that gibberish mean? Let’s break it down.</p>
 <h2 id="reading-a-trace">Reading a trace</h2>
@@ -1618,8 +1618,8 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
   auto;">
 </p>
 <h3 id="metadata-1">Metadata</h3>
-<p>First, let’s look at the overall breakdown. At the top of the trace, you’ll see some general info. There’s a warning about “multiple addresses”, meaning that <code>.io</code> resolves to more than one IP address. This is common for popular websites that use multiple servers to reduce traffic and keep speeds high. Next, you’ll see the true beginning of the trace, including the domain we’re tracing to, the IP address it resolved to, and a maximum number of <em>hops</em> (“64”) and <em>packet size</em> “(52 byte”).</p>
-<p>We mentioned <em>hops</em> when discussing networking protocols, but here’s a quick review: a “hop” is one connection to another server. Think of the houses on your street or apartments on your hall. A single hop would walking to your next door neighbor’s home. Three hops would be walking three doors down. When we run <code>traceroute</code>, it tracks the location of each hop, but it limits the number of hops to make sure we’re not searching for an unavailable address forever! Our <code>traceroute</code> won’t go more than 64 hops, though this default may differ across systems.</p>
+<p>First, let’s look at the overall breakdown. At the top of the trace, you’ll see some general info. There’s a warning about "multiple addresses", meaning that <code>.io</code> resolves to more than one IP address. This is common for popular websites that use multiple servers to reduce traffic and keep speeds high. Next, you’ll see the true beginning of the trace, including the domain we’re tracing to, the IP address it resolved to, and a maximum number of <em>hops</em> ("64") and <em>packet size</em> "(52 byte").</p>
+<p>We mentioned <em>hops</em> when discussing networking protocols, but here’s a quick review: a "hop" is one connection to another server. Think of the houses on your street or apartments on your hall. A single hop would walking to your next door neighbor’s home. Three hops would be walking three doors down. When we run <code>traceroute</code>, it tracks the location of each hop, but it limits the number of hops to make sure we’re not searching for an unavailable address forever! Our <code>traceroute</code> won’t go more than 64 hops, though this default may differ across systems.</p>
 <p>Below the general info, we see a numbered list of addresses. Each line represents one hop, and includes some important info about that destination. Let’s check it out!</p>
 <h3 id="the-hop">The Hop</h3>
 <p>Here’s our first hop:</p>
@@ -1629,7 +1629,7 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 </p>
 <p>We know it’s the first because of the <code>1</code> on the left side. Each hop is preceded by a number indicating how many hops it took to get there.</p>
 <p>Next, we see two IP addresses. These identify the network location our trace has reached. In this case, the location has no resolvable DNS name so we just see the IP address. If you look ahead a bit, you can see that addresses with a resolvable name will show that name first instead.</p>
-<p>Finally, we see three numbers. These are time intervals, (indicated by the “ms”, short for “milliseconds”) that let us know how long it took us to reach this location from our system. When we run a trace, <code>traceroute</code> attempts each hop three times. This is because UDP (and the Internet beneath it!) is inherently unreliable. Testing the hop three times ensures we get truly representative data and not a false reading due to a dropped packet or network congestion. Each of the three numbers we see is the response time from one of those attempts. They’ll always vary slightly, but we can get a good idea of the average response time. In this case, the numbers are <strong>very</strong> small: two tenths of a millisecond! Wow!.</p>
+<p>Finally, we see three numbers. These are time intervals, (indicated by the "ms", short for "milliseconds") that let us know how long it took us to reach this location from our system. When we run a trace, <code>traceroute</code> attempts each hop three times. This is because UDP (and the Internet beneath it!) is inherently unreliable. Testing the hop three times ensures we get truly representative data and not a false reading due to a dropped packet or network congestion. Each of the three numbers we see is the response time from one of those attempts. They’ll always vary slightly, but we can get a good idea of the average response time. In this case, the numbers are <strong>very</strong> small: two tenths of a millisecond! Wow!.</p>
 <blockquote>
 <p>This first hop is my home internet router! We can tell this not only because it’s the first device reached beyond my own computer, but also because the IP address is within one of IPv4’s <em>reserved ranges</em>, meant for private networks inside homes and businesses. It’s unlikely you’ll see reserved addresses outside of your current network.</p>
 </blockquote>
@@ -1670,11 +1670,11 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <img src="images/wireshark-01.png" alt="capturing 1" /><figcaption>capturing 1</figcaption>
 </figure>
 <p>As soon as you click the interface’s name, you’ll see the packets start to appear in real time. Wireshark captures each packet sent to or from your system.</p>
-<p>If you have promiscuous mode enabled—it’s enabled by default—you’ll also see all the other packets on the network instead of only packets addressed to your network adapter. To check if promiscuous mode is enabled, click Capture &gt; Options and verify the “Enable promiscuous mode on all interfaces” checkbox is activated at the bottom of this window.</p>
+<p>If you have promiscuous mode enabled—it’s enabled by default—you’ll also see all the other packets on the network instead of only packets addressed to your network adapter. To check if promiscuous mode is enabled, click Capture &gt; Options and verify the "Enable promiscuous mode on all interfaces" checkbox is activated at the bottom of this window.</p>
 <figure>
 <img src="images/wireshark-02.png" alt="capturing 2" /><figcaption>capturing 2</figcaption>
 </figure>
-<p>Click the red “Stop” button near the top left corner of the window when you want to stop capturing traffic.</p>
+<p>Click the red "Stop" button near the top left corner of the window when you want to stop capturing traffic.</p>
 <figure>
 <img src="images/wireshark-03.png" alt="capturing 3" /><figcaption>capturing 3</figcaption>
 </figure>
@@ -1698,12 +1698,12 @@ decimal:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15</code></pre>
 <ul>
 <li><a href="https://wiki.wireshark.org/SampleCaptures?action=AttachFile&amp;do=get&amp;target=http.cap">http.cap</a> A simple HTTP request and response</li>
 <li><a href="https://wiki.wireshark.org/SampleCaptures?action=AttachFile&amp;do=get&amp;target=dns.cap">dns.cap</a> Various DNS lookups</li>
-<li><a href="https://wiki.wireshark.org/SampleCaptures?action=AttachFile&amp;do=get&amp;target=wpa-Induction.pcap">wpa.cap</a> 802.11 capture with WPA data encrypted using the password “Induction”</li>
+<li><a href="https://wiki.wireshark.org/SampleCaptures?action=AttachFile&amp;do=get&amp;target=wpa-Induction.pcap">wpa.cap</a> 802.11 capture with WPA data encrypted using the password "Induction"</li>
 </ul>
 <p>You can also save your own captures in Wireshark and open them later. Click the File &gt; Save to save your captured packets.</p>
 <h2 id="filtering-packets">Filtering packets</h2>
 <p>If you’re trying to inspect something specific, such as the traffic a program sends when phoning home, it helps to close down all other applications using the network so you can narrow down the traffic. Still, you’ll likely have a large amount of packets to sift through. That’s where Wireshark’s filters come in.</p>
-<p>The most basic way to apply a filter is by typing it into the filter box at the top of the window and clicking Apply (or pressing Enter). For example, type “dns” and you’ll see only DNS packets. When you start typing, Wireshark will help you autocomplete your filter.</p>
+<p>The most basic way to apply a filter is by typing it into the filter box at the top of the window and clicking Apply (or pressing Enter). For example, type "dns" and you’ll see only DNS packets. When you start typing, Wireshark will help you autocomplete your filter.</p>
 <figure>
 <img src="images/wireshark-04.png" alt="capturing 4" /><figcaption>capturing 4</figcaption>
 </figure>

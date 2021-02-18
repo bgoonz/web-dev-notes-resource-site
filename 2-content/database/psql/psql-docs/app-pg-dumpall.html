@@ -51,7 +51,7 @@
       <h2>Description</h2>
       <p>
         <span class="application">pg_dumpall</span> is a utility for writing out
-        (<span class="quote">“<span class="quote">dumping</span>”</span>) all <span
+        (<span class="quote">"<span class="quote">dumping</span>"</span>) all <span
           class="productname">PostgreSQL</span> databases
         of a cluster into one script file. The script file contains
         <acronym class="acronym">SQL</acronym> commands that can be used as input to <a class="xref"
@@ -637,7 +637,7 @@
         The dump script should not be expected to run completely without errors.
         In particular, because the script will issue <code class="command">CREATE ROLE</code>
         for every role existing in the source cluster, it is certain to get a
-        <span class="quote">“<span class="quote">role already exists</span>”</span> error for the bootstrap superuser,
+        <span class="quote">"<span class="quote">role already exists</span>"</span> error for the bootstrap superuser,
         unless the destination cluster was initialized with a different bootstrap
         superuser name. This error is harmless and should be ignored. Use of
         the <code class="option">--clean</code> option is likely to produce additional

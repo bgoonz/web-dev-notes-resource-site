@@ -3,7 +3,7 @@
    SQL input consists of a sequence of
    <em class="firstterm">commands</em>.  A command is composed of a
    sequence of <em class="firstterm">tokens</em>, terminated by a
-   semicolon (<span class="quote">“<span class="quote">;</span>”</span>).  The end of the input stream also
+   semicolon (<span class="quote">"<span class="quote">;</span>"</span>).  The end of the input stream also
    terminates a command.  Which tokens are valid depends on the syntax
    of the particular command.
   </p><p>
@@ -32,8 +32,8 @@ INSERT INTO MY_TABLE VALUES (3, 'hi there');
    The SQL syntax is not very consistent regarding what tokens
    identify commands and which are operands or parameters.  The first
    few tokens are generally the command name, so in the above example
-   we would usually speak of a <span class="quote">“<span class="quote">SELECT</span>”</span>, an
-   <span class="quote">“<span class="quote">UPDATE</span>”</span>, and an <span class="quote">“<span class="quote">INSERT</span>”</span> command.  But
+   we would usually speak of a <span class="quote">"<span class="quote">SELECT</span>"</span>, an
+   <span class="quote">"<span class="quote">UPDATE</span>"</span>, and an <span class="quote">"<span class="quote">INSERT</span>"</span> command.  But
    for instance the <code class="command">UPDATE</code> command always requires
    a <code class="token">SET</code> token to appear in a certain position, and
    this particular variation of <code class="command">INSERT</code> also
@@ -48,7 +48,7 @@ INSERT INTO MY_TABLE VALUES (3, 'hi there');
     <em class="firstterm">identifiers</em>.  They identify names of
     tables, columns, or other database objects, depending on the
     command they are used in.  Therefore they are sometimes simply
-    called <span class="quote">“<span class="quote">names</span>”</span>.  Key words and identifiers have the
+    called <span class="quote">"<span class="quote">names</span>"</span>.  Key words and identifiers have the
     same lexical structure, meaning that one cannot know whether a
     token is an identifier or a key word without knowing the language.
     A complete list of key words can be found in <a class="xref" href="sql-keywords-appendix.html" title="Appendix C. SQL Key Words">Appendix C</a>.
@@ -99,7 +99,7 @@ UPDATE my_table SET a = 5;
     (<code class="literal">"</code>).  A delimited
     identifier is always an identifier, never a key word.  So
     <code class="literal">"select"</code> could be used to refer to a column or
-    table named <span class="quote">“<span class="quote">select</span>”</span>, whereas an unquoted
+    table named <span class="quote">"<span class="quote">select</span>"</span>, whereas an unquoted
     <code class="literal">select</code> would be taken as a key word and
     would therefore provoke a parse error when used where a table or
     column name is expected.  The example can be written with quoted
@@ -132,7 +132,7 @@ UPDATE "my_table" SET "a" = 5;
 U&amp;"d\0061t\+000061"
 </pre><p>
     The following less trivial example writes the Russian
-    word <span class="quote">“<span class="quote">slon</span>”</span> (elephant) in Cyrillic letters:
+    word <span class="quote">"<span class="quote">slon</span>"</span> (elephant) in Cyrillic letters:
 </p><pre class="programlisting">
 U&amp;"\0441\043B\043E\043D"
 </pre><p>
@@ -215,7 +215,7 @@ SELECT 'foo'      'bar';
      by <acronym class="acronym">SQL</acronym>; <span class="productname">PostgreSQL</span> is
      following the standard.)
     </p></div><div class="sect3" id="SQL-SYNTAX-STRINGS-ESCAPE"><div class="titlepage"><div><div><h4 class="title">4.1.2.2. String Constants with C-Style Escapes</h4></div></div></div><a id="id-1.5.3.5.9.5.2" class="indexterm"></a><a id="id-1.5.3.5.9.5.3" class="indexterm"></a><p>
-     <span class="productname">PostgreSQL</span> also accepts <span class="quote">“<span class="quote">escape</span>”</span>
+     <span class="productname">PostgreSQL</span> also accepts <span class="quote">"<span class="quote">escape</span>"</span>
      string constants, which are an extension to the SQL standard.
      An escape string constant is specified by writing the letter
      <code class="literal">E</code> (upper or lower case) just before the opening single
@@ -304,7 +304,7 @@ SELECT 'foo'      'bar';
 U&amp;'d\0061t\+000061'
 </pre><p>
      The following less trivial example writes the Russian
-     word <span class="quote">“<span class="quote">slon</span>”</span> (elephant) in Cyrillic letters:
+     word <span class="quote">"<span class="quote">slon</span>"</span> (elephant) in Cyrillic letters:
 </p><pre class="programlisting">
 U&amp;'\0441\043B\043E\043D'
 </pre><p>
@@ -348,14 +348,14 @@ U&amp;'d!0061t!+000061' UESCAPE '!'
      contains many single quotes or backslashes, since each of those must
      be doubled. To allow more readable queries in such situations,
      <span class="productname">PostgreSQL</span> provides another way, called
-     <span class="quote">“<span class="quote">dollar quoting</span>”</span>, to write string constants.
+     <span class="quote">"<span class="quote">dollar quoting</span>"</span>, to write string constants.
      A dollar-quoted string constant
      consists of a dollar sign (<code class="literal">$</code>), an optional
-     <span class="quote">“<span class="quote">tag</span>”</span> of zero or more characters, another dollar
+     <span class="quote">"<span class="quote">tag</span>"</span> of zero or more characters, another dollar
      sign, an arbitrary sequence of characters that makes up the
      string content, a dollar sign, the same tag that began this
      dollar quote, and a dollar sign. For example, here are two
-     different ways to specify the string <span class="quote">“<span class="quote">Dianne's horse</span>”</span>
+     different ways to specify the string <span class="quote">"<span class="quote">Dianne's horse</span>"</span>
      using dollar quoting:
 </p><pre class="programlisting">
 $$Dianne's horse$$
@@ -579,7 +579,7 @@ CAST ( '<em class="replaceable"><code>string</code></em>' AS <em class="replacea
       string constant or quoted identifier.
      </p></li><li class="listitem"><p>
       The colon (<code class="literal">:</code>) is used to select
-      <span class="quote">“<span class="quote">slices</span>”</span> from arrays. (See <a class="xref" href="arrays.html" title="8.15. Arrays">Section 8.15</a>.)  In certain SQL dialects (such as Embedded
+      <span class="quote">"<span class="quote">slices</span>"</span> from arrays. (See <a class="xref" href="arrays.html" title="8.15. Arrays">Section 8.15</a>.)  In certain SQL dialects (such as Embedded
       SQL), the colon is used to prefix variable names.
      </p></li><li class="listitem"><p>
       The asterisk (<code class="literal">*</code>) is used in some contexts to denote
@@ -644,8 +644,8 @@ SELECT (5 !) - 6;
     Note that the operator precedence rules also apply to user-defined
     operators that have the same names as the built-in operators
     mentioned above.  For example, if you define a
-    <span class="quote">“<span class="quote">+</span>”</span> operator for some custom data type it will have
-    the same precedence as the built-in <span class="quote">“<span class="quote">+</span>”</span> operator, no
+    <span class="quote">"<span class="quote">+</span>"</span> operator for some custom data type it will have
+    the same precedence as the built-in <span class="quote">"<span class="quote">+</span>"</span> operator, no
     matter what yours does.
    </p><p>
     When a schema-qualified operator name is used in the
@@ -655,7 +655,7 @@ SELECT 3 OPERATOR(pg_catalog.+) 4;
 </pre><p>
     the <code class="literal">OPERATOR</code> construct is taken to have the default precedence
     shown in <a class="xref" href="sql-syntax-lexical.html#SQL-PRECEDENCE-TABLE" title="Table 4.2. Operator Precedence (highest to lowest)">Table 4.2</a> for
-    <span class="quote">“<span class="quote">any other operator</span>”</span>.  This is true no matter
+    <span class="quote">"<span class="quote">any other operator</span>"</span>.  This is true no matter
     which specific operator appears inside <code class="literal">OPERATOR()</code>.
    </p><div class="note"><h3 class="title">Note</h3><p>
      <span class="productname">PostgreSQL</span> versions before 9.5 used slightly different
@@ -668,7 +668,7 @@ SELECT 3 OPERATOR(pg_catalog.+) 4;
      compliance with the SQL standard and to reduce confusion from
      inconsistent treatment of logically equivalent constructs.  In most
      cases, these changes will result in no behavioral change, or perhaps
-     in <span class="quote">“<span class="quote">no such operator</span>”</span> failures which can be resolved by adding
+     in <span class="quote">"<span class="quote">no such operator</span>"</span> failures which can be resolved by adding
      parentheses.  However there are corner cases in which a query might
      change behavior without any parsing error being reported.  If you are
      concerned about whether these changes have silently broken something,

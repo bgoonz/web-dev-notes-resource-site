@@ -3,7 +3,7 @@
  *
  * Group arguments.
  * By default, ArgumentParser groups command-line arguments
- * into “positional arguments” and “optional arguments”
+ * into "positional arguments" and "optional arguments"
  * when displaying help messages. When there is a better
  * conceptual grouping of arguments than this default one,
  * appropriate groups can be created using the addArgumentGroup() method
@@ -72,4 +72,3 @@ ArgumentGroup.prototype._removeAction = function (action) {
     this._groupActions.splice(actionIndex, 1);
   }
 };
-

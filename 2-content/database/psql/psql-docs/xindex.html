@@ -55,17 +55,17 @@
    entity and must be defined separately.
   </p></div><div class="sect2" id="XINDEX-STRATEGIES"><div class="titlepage"><div><div><h3 class="title">37.16.2. Index Method Strategies</h3></div></div></div><p>
    The operators associated with an operator class are identified by
-   <span class="quote">“<span class="quote">strategy numbers</span>”</span>, which serve to identify the semantics of
+   <span class="quote">"<span class="quote">strategy numbers</span>"</span>, which serve to identify the semantics of
    each operator within the context of its operator class.
    For example, B-trees impose a strict ordering on keys, lesser to greater,
-   and so operators like <span class="quote">“<span class="quote">less than</span>”</span> and <span class="quote">“<span class="quote">greater than or equal
-   to</span>”</span> are interesting with respect to a B-tree.
+   and so operators like <span class="quote">"<span class="quote">less than</span>"</span> and <span class="quote">"<span class="quote">greater than or equal
+   to</span>"</span> are interesting with respect to a B-tree.
    Because
    <span class="productname">PostgreSQL</span> allows the user to define operators,
    <span class="productname">PostgreSQL</span> cannot look at the name of an operator
    (e.g., <code class="literal">&lt;</code> or <code class="literal">&gt;=</code>) and tell what kind of
    comparison it is.  Instead, the index method defines a set of
-   <span class="quote">“<span class="quote">strategies</span>”</span>, which can be thought of as generalized operators.
+   <span class="quote">"<span class="quote">strategies</span>"</span>, which can be thought of as generalized operators.
    Each operator class specifies which actual operator corresponds to each
    strategy for a particular data type and interpretation of the index
    semantics.
@@ -76,16 +76,16 @@
    strategy, shown in <a class="xref" href="xindex.html#XINDEX-HASH-STRAT-TABLE" title="Table 37.3. Hash Strategies">Table 37.3</a>.
   </p><div class="table" id="XINDEX-HASH-STRAT-TABLE"><p class="title"><strong>Table 37.3. Hash Strategies</strong></p><div class="table-contents"><table class="table" summary="Hash Strategies" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Operation</th><th>Strategy Number</th></tr></thead><tbody><tr><td>equal</td><td>1</td></tr></tbody></table></div></div><br class="table-break" /><p>
    GiST indexes are more flexible: they do not have a fixed set of
-   strategies at all.  Instead, the <span class="quote">“<span class="quote">consistency</span>”</span> support routine
+   strategies at all.  Instead, the <span class="quote">"<span class="quote">consistency</span>"</span> support routine
    of each particular GiST operator class interprets the strategy numbers
    however it likes.  As an example, several of the built-in GiST index
    operator classes index two-dimensional geometric objects, providing
-   the <span class="quote">“<span class="quote">R-tree</span>”</span> strategies shown in
-   <a class="xref" href="xindex.html#XINDEX-RTREE-STRAT-TABLE" title="Table 37.4. GiST Two-Dimensional “R-tree” Strategies">Table 37.4</a>.  Four of these are true
+   the <span class="quote">"<span class="quote">R-tree</span>"</span> strategies shown in
+   <a class="xref" href="xindex.html#XINDEX-RTREE-STRAT-TABLE" title="Table 37.4. GiST Two-Dimensional "R-tree" Strategies">Table 37.4</a>.  Four of these are true
    two-dimensional tests (overlaps, same, contains, contained by);
    four of them consider only the X direction; and the other four
    provide the same tests in the Y direction.
-  </p><div class="table" id="XINDEX-RTREE-STRAT-TABLE"><p class="title"><strong>Table 37.4. GiST Two-Dimensional <span class="quote">“<span class="quote">R-tree</span>”</span> Strategies</strong></p><div class="table-contents"><table class="table" summary="GiST Two-Dimensional R-tree Strategies" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Operation</th><th>Strategy Number</th></tr></thead><tbody><tr><td>strictly left of</td><td>1</td></tr><tr><td>does not extend to right of</td><td>2</td></tr><tr><td>overlaps</td><td>3</td></tr><tr><td>does not extend to left of</td><td>4</td></tr><tr><td>strictly right of</td><td>5</td></tr><tr><td>same</td><td>6</td></tr><tr><td>contains</td><td>7</td></tr><tr><td>contained by</td><td>8</td></tr><tr><td>does not extend above</td><td>9</td></tr><tr><td>strictly below</td><td>10</td></tr><tr><td>strictly above</td><td>11</td></tr><tr><td>does not extend below</td><td>12</td></tr></tbody></table></div></div><br class="table-break" /><p>
+  </p><div class="table" id="XINDEX-RTREE-STRAT-TABLE"><p class="title"><strong>Table 37.4. GiST Two-Dimensional <span class="quote">"<span class="quote">R-tree</span>"</span> Strategies</strong></p><div class="table-contents"><table class="table" summary="GiST Two-Dimensional R-tree Strategies" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Operation</th><th>Strategy Number</th></tr></thead><tbody><tr><td>strictly left of</td><td>1</td></tr><tr><td>does not extend to right of</td><td>2</td></tr><tr><td>overlaps</td><td>3</td></tr><tr><td>does not extend to left of</td><td>4</td></tr><tr><td>strictly right of</td><td>5</td></tr><tr><td>same</td><td>6</td></tr><tr><td>contains</td><td>7</td></tr><tr><td>contained by</td><td>8</td></tr><tr><td>does not extend above</td><td>9</td></tr><tr><td>strictly below</td><td>10</td></tr><tr><td>strictly above</td><td>11</td></tr><tr><td>does not extend below</td><td>12</td></tr></tbody></table></div></div><br class="table-break" /><p>
    SP-GiST indexes are similar to GiST indexes in flexibility: they don't have
    a fixed set of strategies. Instead the support routines of each operator
    class interpret the strategy numbers according to the operator class's
@@ -128,7 +128,7 @@
    functions should play each of these roles for a given data type and
    semantic interpretation.  The index method defines the set
    of functions it needs, and the operator class identifies the correct
-   functions to use by assigning them to the <span class="quote">“<span class="quote">support function numbers</span>”</span>
+   functions to use by assigning them to the <span class="quote">"<span class="quote">support function numbers</span>"</span>
    specified by the index method.
   </p><p>
    B-trees require a comparison support function,
@@ -372,7 +372,7 @@ CREATE OPERATOR CLASS complex_abs_ops
    An operator family contains one or more operator classes, and can also
    contain indexable operators and corresponding support functions that
    belong to the family as a whole but not to any single class within the
-   family.  We say that such operators and functions are <span class="quote">“<span class="quote">loose</span>”</span>
+   family.  We say that such operators and functions are <span class="quote">"<span class="quote">loose</span>"</span>
    within the family, as opposed to being bound into a specific class.
    Typically each operator class contains single-data-type operators
    while cross-data-type operators are loose in the family.
@@ -499,7 +499,7 @@ ALTER OPERATOR FAMILY integer_ops USING btree ADD
 
 </pre><p>
 
-   Notice that this definition <span class="quote">“<span class="quote">overloads</span>”</span> the operator strategy and
+   Notice that this definition <span class="quote">"<span class="quote">overloads</span>"</span> the operator strategy and
    support function numbers: each number occurs multiple times within the
    family.  This is allowed so long as each instance of a
    particular number has distinct input data types.  The instances that have
@@ -561,7 +561,7 @@ ALTER OPERATOR FAMILY integer_ops USING btree ADD
    <code class="literal">DISTINCT</code> that require comparison and sorting of values.
    To implement these features on a user-defined data type,
    <span class="productname">PostgreSQL</span> looks for the default B-tree operator
-   class for the data type.  The <span class="quote">“<span class="quote">equals</span>”</span> member of this operator
+   class for the data type.  The <span class="quote">"<span class="quote">equals</span>"</span> member of this operator
    class defines the system's notion of equality of values for
    <code class="literal">GROUP BY</code> and <code class="literal">DISTINCT</code>, and the sort ordering
    imposed by the operator class defines the default <code class="literal">ORDER BY</code>
@@ -573,7 +573,7 @@ ALTER OPERATOR FAMILY integer_ops USING btree ADD
    not sorting.
   </p><p>
    When there is no default operator class for a data type, you will get
-   errors like <span class="quote">“<span class="quote">could not identify an ordering operator</span>”</span> if you
+   errors like <span class="quote">"<span class="quote">could not identify an ordering operator</span>"</span> if you
    try to use these SQL features with the data type.
   </p><div class="note"><h3 class="title">Note</h3><p>
      In <span class="productname">PostgreSQL</span> versions before 7.4,
@@ -606,8 +606,8 @@ SELECT sum(x) OVER (ORDER BY x RANGE BETWEEN 5 PRECEDING AND 10 FOLLOWING)
   FROM mytable;
 </pre><p>
    it is not sufficient to know how to order by <code class="literal">x</code>;
-   the database must also understand how to <span class="quote">“<span class="quote">subtract 5</span>”</span> or
-   <span class="quote">“<span class="quote">add 10</span>”</span> to the current row's value of <code class="literal">x</code>
+   the database must also understand how to <span class="quote">"<span class="quote">subtract 5</span>"</span> or
+   <span class="quote">"<span class="quote">add 10</span>"</span> to the current row's value of <code class="literal">x</code>
    to identify the bounds of the current window frame.  Comparing the
    resulting bounds to other rows' values of <code class="literal">x</code> is
    possible using the comparison operators provided by the B-tree operator
@@ -698,7 +698,7 @@ SELECT * FROM table WHERE integer_column &lt; 4;
    polygons.  Yet we could use the index to find objects whose bounding
    box overlaps the bounding box of the target object, and then do the
    exact overlap test only on the objects found by the index.  If this
-   scenario applies, the index is said to be <span class="quote">“<span class="quote">lossy</span>”</span> for the
+   scenario applies, the index is said to be <span class="quote">"<span class="quote">lossy</span>"</span> for the
    operator.  Lossy index searches are implemented by having the index
    method return a <em class="firstterm">recheck</em> flag when a row might or might
    not really satisfy the query condition.  The core system will then
@@ -730,7 +730,7 @@ CREATE OPERATOR CLASS polygon_ops
    The GiST <code class="function">compress</code> and <code class="function">decompress</code> support
    routines must deal with data-type conversion when <code class="literal">STORAGE</code>
    is used.  In GIN, the <code class="literal">STORAGE</code> type identifies the type of
-   the <span class="quote">“<span class="quote">key</span>”</span> values, which normally is different from the type
+   the <span class="quote">"<span class="quote">key</span>"</span> values, which normally is different from the type
    of the indexed column — for example, an operator class for
    integer-array columns might have keys that are just integers.  The
    GIN <code class="function">extractValue</code> and <code class="function">extractQuery</code> support

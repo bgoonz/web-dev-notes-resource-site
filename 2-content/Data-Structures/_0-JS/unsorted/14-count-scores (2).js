@@ -27,21 +27,21 @@ let peeps = [
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
-function countScores(people) {
-  let scoresObj = {};
+function countScores ( people ) {
+    let scoresObj = {};
 
-  for (let i = 0; i < people.length; i += 1) {
-    let personObj = people[i];
-    let name = personObj.name;
-    let score = personObj.score;
+    for ( let i = 0; i < people.length; i += 1 ) {
+        let personObj = people[ i ];
+        let name = personObj.name;
+        let score = personObj.score;
 
-    if (scoresObj[name]) {
-      scoresObj[name] += score;
-    } else {
-      scoresObj[name] = score;
+        if ( scoresObj[ name ] ) {
+            scoresObj[ name ] += score;
+        } else {
+            scoresObj[ name ] = score;
+        }
     }
-  }
-  return scoresObj;
+    return scoresObj;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

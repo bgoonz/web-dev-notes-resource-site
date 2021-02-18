@@ -18,7 +18,7 @@
 <p>The <code>activeTab</code> permission is used to unlock access to the page upon clicking the menu item, so that the <code>info.targetElementId</code> becomes available and <code>tabs.executeScript</code> can be used to run a content script in a specific frame in the tab.</p>
 <p>The <code>menus.getTargetElement</code> API and <code>info.targetElementId</code> were introduced in Firefox 63.</p>
 <h2 id="polyfill">Polyfill</h2>
-<p>In browsers that do not support this API, an extension has to register a content script that listens to the “contextmenu” event, as shown in <code>menusGetTargetElementPolyfill.js</code>.</p>
+<p>In browsers that do not support this API, an extension has to register a content script that listens to the "contextmenu" event, as shown in <code>menusGetTargetElementPolyfill.js</code>.</p>
 <p>This example includes the polyfill to demonstrate how one can create an extension that is compatible with browsers that do not support a new API. If you are not interested in supporting browsers that lack the <code>browser.menus.getTargetElement</code> API, modify the example as follows:</p>
 <ul>
 <li>Remove <code>menusGetTargetElementPolyfill.js</code></li>

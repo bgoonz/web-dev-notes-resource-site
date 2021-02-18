@@ -133,10 +133,10 @@
 </ul>
 <h4 id="q12.-how-do-you-access-the-value-for-the-field-name-in-structure-s">Q12. How do you access the value for the field <code>name</code> in structure S?</h4>
 <ul>
-<li>[ ] S[‘name’]</li>
+<li>[ ] S['name’]</li>
 <li>[x] S.name</li>
-<li>[ ] S(‘name’)</li>
-<li>[ ] S{‘name’}</li>
+<li>[ ] S('name’)</li>
+<li>[ ] S{'name’}</li>
 </ul>
 <h4 id="q13.-what-built-in-definition-does-i-have">Q13. What built-in definition does i have?</h4>
 <ul>
@@ -350,10 +350,10 @@
 <a class="sourceLine" id="cb38-2" title="2"></a>
 <a class="sourceLine" id="cb38-3" title="3">    {[&quot;hello world&quot;]}    {<span class="fl">1</span>×<span class="fl">1</span> cell}    {[&quot;goodbye&quot;]}    {<span class="fl">1</span>×<span class="fl">3</span> double}</a></code></pre></div>
 <ul>
-<li>[ ] c = {“hello world” {“hello”} “goodbye” [1 2 ]};</li>
-<li>[ ] c = {“hello world” {“hello”} “goodbye” {[1 2 3]}};</li>
-<li>[x] c = {“hello world” {“hello”} “goodbye” [1 2 3]};</li>
-<li>[ ] c = {“hello world” {“hello” “hello”} “goodbye” {[1 2 3]}};</li>
+<li>[ ] c = {"hello world" {"hello"} "goodbye" [1 2 ]};</li>
+<li>[ ] c = {"hello world" {"hello"} "goodbye" {[1 2 3]}};</li>
+<li>[x] c = {"hello world" {"hello"} "goodbye" [1 2 3]};</li>
+<li>[ ] c = {"hello world" {"hello" "hello"} "goodbye" {[1 2 3]}};</li>
 </ul>
 <h4 id="q26.-which-choice-adds-b-to-each-row-of-a">Q26. Which choice adds <code>b</code> to each row of <code>a</code>?</h4>
 <div class="sourceCode" id="cb39"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb39-1" title="1">a = ones(<span class="fl">4</span>, <span class="fl">4</span>);</a>
@@ -409,13 +409,13 @@
 <li>[ ] sim_height = randn(std(height), mean(height), [100, 1]);</li>
 <li>[ ] sim_height = randn(mean(height), std(height), [100, 1]);</li>
 </ul>
-<h4 id="q31.-which-statement-returns-a-cell-array-of-the-strings-containing-burger-from-menu">Q31. Which statement returns a cell array of the strings containing ‘<code>burger</code>’ from <code>menu</code>?</h4>
+<h4 id="q31.-which-statement-returns-a-cell-array-of-the-strings-containing-burger-from-menu">Q31. Which statement returns a cell array of the strings containing '<code>burger</code>’ from <code>menu</code>?</h4>
 <div class="sourceCode" id="cb44"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb44-1" title="1">menu = {<span class="st">&#39;hot dog&#39;</span> <span class="st">&#39;corn dog&#39;</span> <span class="st">&#39;regular burger&#39;</span> <span class="st">&#39;cheeseburger&#39;</span> <span class="st">&#39;veggie burger&#39;</span>}</a></code></pre></div>
 <ul>
-<li>[ ] menu{strfind(menu, ‘burger’)}</li>
-<li>[ ] menu(strfind(menu, ‘burger’))</li>
-<li>[ ] menu{contains(menu, ‘burger’)}</li>
-<li>[x] menu(contains(menu, ‘burger’))</li>
+<li>[ ] menu{strfind(menu, 'burger’)}</li>
+<li>[ ] menu(strfind(menu, 'burger’))</li>
+<li>[ ] menu{contains(menu, 'burger’)}</li>
+<li>[x] menu(contains(menu, 'burger’))</li>
 </ul>
 <h4 id="q32.-what-is-the-set-of-possible-values-that-a-may-contain">Q32. What is the set of possible values that <code>a</code> may contain?</h4>
 <div class="sourceCode" id="cb45"><pre class="sourceCode matlab"><code class="sourceCode matlab"><a class="sourceLine" id="cb45-1" title="1">a      = randi(<span class="fl">10</span>, [<span class="fl">1</span>, <span class="fl">10</span>]);</a>
@@ -454,7 +454,7 @@
 <a class="sourceLine" id="cb47-9" title="9">     veggie burger&#39;</a></code></pre></div>
 <ul>
 <li>[x] menu_string = cell2mat(join(menu, newline))</li>
-<li>[ ] menu_string = cell2mat(join(menu, ‘’))</li>
+<li>[ ] menu_string = cell2mat(join(menu, '’))</li>
 <li>[ ] menu_string = join(menu, newline)</li>
 <li>[ ] menu_string = cell2mat(pad(menu))</li>
 </ul>
@@ -597,8 +597,8 @@
 <a class="sourceLine" id="cb69-2" title="2">D = {<span class="st">&#39;cow&#39;</span> <span class="st">&#39;piranha&#39;</span> <span class="st">&#39;mouse&#39;</span>}</a>
 <a class="sourceLine" id="cb69-3" title="3">E = setdiff(C,D)</a></code></pre></div>
 <ul>
-<li>[x] E = {‘cat’} {‘dog’}</li>
-<li>[ ] E = {‘mouse’}</li>
-<li>[ ] E = {‘cat’} {‘cow’} {‘dog’} {‘piranha’}</li>
+<li>[x] E = {'cat’} {'dog’}</li>
+<li>[ ] E = {'mouse’}</li>
+<li>[ ] E = {'cat’} {'cow’} {'dog’} {'piranha’}</li>
 <li>[ ] E =</li>
 </ul>

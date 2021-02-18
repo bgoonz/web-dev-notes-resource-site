@@ -38,7 +38,7 @@ For example, if we switch from one page to another, and none of the code or data
   - [Default: Receded → Skeleton → Complete](#default-receded-skeleton-complete)
   - [Preferred: Pending → Skeleton → Complete](#preferred-pending-skeleton-complete)
   - [Wrap Lazy Features in `<Suspense>`](#wrap-lazy-features-in-suspense)
-  - [Suspense Reveal “Train”](#suspense-reveal-train)
+  - [Suspense Reveal "Train"](#suspense-reveal-train)
   - [Delaying a Pending Indicator](#delaying-a-pending-indicator)
   - [Recap](#recap)
 - [Other Patterns](#other-patterns)

@@ -6,7 +6,7 @@ description: Search for packages
 
 ### Synopsis
 
-```bash
+``` bash
 npm search [-l|--long] [--json] [--parseable] [--no-description] [search terms ...]
 
 aliases: s, se, find
@@ -15,6 +15,7 @@ aliases: s, se, find
 ### Description
 
 Search the registry for packages matching the search terms. `npm search`
+
 performs a linear, incremental, lexically-ordered search through package
 metadata for all files in the registry. If color is enabled, it will further
 highlight the matches in the results.
@@ -27,9 +28,9 @@ fine-grained filtering. Additionally, both of these can be added to `.npmrc` for
 default search filtering behavior.
 
 Search also allows targeting of maintainers in search results, by prefixing
-their npm username with `=`.
+their npm username with `=` .
 
-If a term starts with `/`, then it's interpreted as a regular expression and
+If a term starts with `/` , then it's interpreted as a regular expression and
 supports standard JavaScript RegExp syntax. A trailing `/` will be ignored in
 this case. (Note that many regular expression characters must be escaped or
 quoted in most shells.)
@@ -43,7 +44,7 @@ quoted in most shells.)
 * Default: true
 * Type: Boolean
 
-Used as `--no-description`, disables search matching in package descriptions and
+Used as `--no-description` , disables search matching in package descriptions and
 suppresses display of that field in results.
 
 #### json

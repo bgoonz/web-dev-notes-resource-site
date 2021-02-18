@@ -71,7 +71,7 @@ ambulkdelete (IndexVacuumInfo *info,
               IndexBulkDeleteCallback callback,
               void *callback_state);
 </pre><p>
-   Delete tuple(s) from the index.  This is a <span class="quote">“<span class="quote">bulk delete</span>”</span> operation
+   Delete tuple(s) from the index.  This is a <span class="quote">"<span class="quote">bulk delete</span>"</span> operation
    that is intended to be implemented by scanning the whole index and checking
    each entry to see if it should be deleted.
    The passed-in <code class="literal">callback</code> function must be called, in the style
@@ -235,8 +235,8 @@ amvalidate (Oid opclassoid);
    an indexable <code class="literal">WHERE</code> condition, often called a
    <em class="firstterm">qualifier</em> or <em class="firstterm">scan key</em>.  The semantics of
    index scanning are described more fully in <a class="xref" href="index-scanning.html" title="61.3. Index Scanning">Section 61.3</a>,
-   below.  An index access method can support <span class="quote">“<span class="quote">plain</span>”</span> index scans,
-   <span class="quote">“<span class="quote">bitmap</span>”</span> index scans, or both.  The scan-related functions that an
+   below.  An index access method can support <span class="quote">"<span class="quote">plain</span>"</span> index scans,
+   <span class="quote">"<span class="quote">bitmap</span>"</span> index scans, or both.  The scan-related functions that an
    index access method must or may provide are:
   </p><p>
 </p><pre class="programlisting">
@@ -283,14 +283,14 @@ amgettuple (IndexScanDesc scan,
    direction (forward or backward in the index).  Returns true if a tuple was
    obtained, false if no matching tuples remain.  In the true case the tuple
    TID is stored into the <code class="literal">scan</code> structure.  Note that
-   <span class="quote">“<span class="quote">success</span>”</span> means only that the index contains an entry that matches
+   <span class="quote">"<span class="quote">success</span>"</span> means only that the index contains an entry that matches
    the scan keys, not that the tuple necessarily still exists in the heap or
    will pass the caller's snapshot test.  On success, <code class="function">amgettuple</code>
    must also set <code class="literal">scan-&gt;xs_recheck</code> to true or false.
    False means it is certain that the index entry matches the scan keys.
    True means this is not certain, and the conditions represented by the
    scan keys must be rechecked against the heap tuple after fetching it.
-   This provision supports <span class="quote">“<span class="quote">lossy</span>”</span> index operators.
+   This provision supports <span class="quote">"<span class="quote">lossy</span>"</span> index operators.
    Note that rechecking will extend only to the scan conditions; a partial
    index predicate (if any) is never rechecked by <code class="function">amgettuple</code>
    callers.
@@ -312,7 +312,7 @@ amgettuple (IndexScanDesc scan,
    call for the scan.
   </p><p>
    The <code class="function">amgettuple</code> function need only be provided if the access
-   method supports <span class="quote">“<span class="quote">plain</span>”</span> index scans.  If it doesn't, the
+   method supports <span class="quote">"<span class="quote">plain</span>"</span> index scans.  If it doesn't, the
    <code class="structfield">amgettuple</code> field in its <code class="structname">IndexAmRoutine</code>
    struct must be set to NULL.
   </p><p>
@@ -339,7 +339,7 @@ amgetbitmap (IndexScanDesc scan,
    in <a class="xref" href="index-scanning.html" title="61.3. Index Scanning">Section 61.3</a>.
   </p><p>
    The <code class="function">amgetbitmap</code> function need only be provided if the access
-   method supports <span class="quote">“<span class="quote">bitmap</span>”</span> index scans.  If it doesn't, the
+   method supports <span class="quote">"<span class="quote">bitmap</span>"</span> index scans.  If it doesn't, the
    <code class="structfield">amgetbitmap</code> field in its <code class="structname">IndexAmRoutine</code>
    struct must be set to NULL.
   </p><p>

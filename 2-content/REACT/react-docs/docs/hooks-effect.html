@@ -30,7 +30,7 @@ function Example() {
 }</code></pre>
 <p>This snippet is based on the <a href="/docs/hooks-state.html">counter example from the previous page</a>, but we added a new feature to it: we set the document title to a custom message including the number of clicks.</p>
 <p>Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side
-    effects. Whether or not you're used to calling these operations “side effects” (or just “effects”), you've likely
+    effects. Whether or not you're used to calling these operations "side effects" (or just "effects"), you've likely
     performed them in your components before.</p>
 <blockquote>
 <p>Tip</p>
@@ -102,14 +102,14 @@ function Example() {
   );
 }</code></pre>
 <p><strong>What does <code>useEffect</code> do?</strong> By using this Hook, you tell React that your component needs to
-    do something after render. React will remember the function you passed (we'll refer to it as our “effect”), and call
+    do something after render. React will remember the function you passed (we'll refer to it as our "effect"), and call
     it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data
     fetching or call some other imperative API.</p>
 <p><strong>Why is <code>useEffect</code> called inside a component?</strong> Placing <code>useEffect</code> inside the
     component lets us access the <code>count</code> state variable (or any props) right from the effect. We don't need a
     special API to read it – it's already in the function scope. Hooks embrace JavaScript closures and avoid introducing
     React-specific APIs where JavaScript already provides a solution.</p>
-<p><strong>Does <code>useEffect</code> run after every render?</strong> Yes! By default, it runs both after the first render <em>and</em> after every update. (We will later talk about <a href="#tip-optimizing-performance-by-skipping-effects">how to customize this</a>.) Instead of thinking in terms of “mounting” and “updating”, you might find it easier to think that effects happen “after render”. React guarantees the DOM has been updated by the time it runs the effects.</p>
+<p><strong>Does <code>useEffect</code> run after every render?</strong> Yes! By default, it runs both after the first render <em>and</em> after every update. (We will later talk about <a href="#tip-optimizing-performance-by-skipping-effects">how to customize this</a>.) Instead of thinking in terms of "mounting" and "updating", you might find it easier to think that effects happen "after render". React guarantees the DOM has been updated by the time it runs the effects.</p>
 <h3 id="detailed-explanation">Detailed Explanation</h3>
 <p>Now that we know more about effects, these lines should make sense:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span> <span class="at">Example</span>() <span class="op">{</span></a>
@@ -124,7 +124,7 @@ function Example() {
     document title using the <code>document.title</code> browser API. We can read the latest <code>count</code> inside
     the effect because it's in the scope of our function. When React renders our component, it will remember the effect
     we used, and then run our effect after updating the DOM. This happens for every render, including the first one.</p>
-<p>Experienced JavaScript developers might notice that the function passed to <code>useEffect</code> is going to be different on every render. This is intentional. In fact, this is what lets us read the <code>count</code> value from inside the effect without worrying about it getting stale. Every time we re-render, we schedule a <em>different</em> effect, replacing the previous one. In a way, this makes the effects behave more like a part of the render result – each effect “belongs” to a particular render. We will see more clearly why this is useful <a href="#explanation-why-effects-run-on-each-update">later on this page</a>.</p>
+<p>Experienced JavaScript developers might notice that the function passed to <code>useEffect</code> is going to be different on every render. This is intentional. In fact, this is what lets us read the <code>count</code> value from inside the effect without worrying about it getting stale. Every time we re-render, we schedule a <em>different</em> effect, replacing the previous one. In a way, this makes the effects behave more like a part of the render result – each effect "belongs" to a particular render. We will see more clearly why this is useful <a href="#explanation-why-effects-run-on-each-update">later on this page</a>.</p>
 <blockquote>
 <p>Tip</p>
 <p>Unlike <code>componentDidMount</code> or <code>componentDidUpdate</code>, effects scheduled with
@@ -437,7 +437,7 @@ function FriendStatus(props) {
     helps us avoid bugs. We've also seen how we can separate effects by their purpose, which is something we couldn't do
     in classes at all.</p>
 <p>At this point you might be questioning how Hooks work. How can React know which <code>useState</code> call
-    corresponds to which state variable between re-renders? How does React “match up” previous and next effects on every
+    corresponds to which state variable between re-renders? How does React "match up" previous and next effects on every
     update? <strong>On the next page we will learn about the <a href="/docs/hooks-rules.html">Rules of Hooks</a> –
         they're essential to making Hooks work.</strong></p>
 </body></html>

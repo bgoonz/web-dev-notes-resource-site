@@ -42,8 +42,8 @@ than one such function matches a call, the one appearing earliest in the
 search path is used.  If there are two or more such functions in the same
 schema with identical parameter types in the non-defaulted positions (which is
 possible if they have different sets of defaultable parameters), the system
-will not be able to determine which to prefer, and so an <span class="quote">“<span class="quote">ambiguous
-function call</span>”</span> error will result if no better match to the call can be
+will not be able to determine which to prefer, and so an <span class="quote">"<span class="quote">ambiguous
+function call</span>"</span> error will result if no better match to the call can be
 found.
 </p><p>
 This creates an availability hazard when calling, via qualified
@@ -118,7 +118,7 @@ candidates can accept that type at the <code class="type">unknown</code>-argumen
 positions.  If exactly one candidate passes this test, use it.
 Otherwise, fail.
 </p></li></ol></li></ol></div><p>
-Note that the <span class="quote">“<span class="quote">best match</span>”</span> rules are identical for operator and
+Note that the <span class="quote">"<span class="quote">best match</span>"</span> rules are identical for operator and
 function type resolution.
 Some examples follow.
 </p><div class="example" id="id-1.5.9.8.6"><p class="title"><strong>Example 10.6. Rounding Function Argument Type Resolution</strong></p><div class="example-contents"><p>

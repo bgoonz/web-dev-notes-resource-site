@@ -218,7 +218,14 @@ return (
   - &gt; ./src/App.js</code></pre></li>
 </ul></li>
 </ul></li>
-<li><p>CamelCase is supported in React for CSS styles. - Using <strong>class</strong> instead of <strong>className</strong> gives warning. - If any inline style property is used as <strong>two words</strong> like <strong>background-color</strong>, you will encounter an error. This is because these styles are not in a .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what’s in these braces will be pure JavaScript.” <code>style={}</code>. Then inside is a JS object <code>{backgroundColor: “red”}</code>.</p>
+<li>
+    <p>CamelCase is supported in React for CSS styles. - Using <strong>class</strong> instead of
+        <strong>className</strong> gives warning. - If any inline style property is used as <strong>two words</strong>
+        like <strong>background-color</strong>, you will encounter an error. This is because these styles are not in a
+        .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse
+        dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what’s in
+        these braces will be pure JavaScript." <code>style={}</code>. Then inside is a JS object <code>{backgroundColor:
+            “red"}</code>.</p>
 <pre><code>  - &gt; **Incorrect Way** - ``` &lt;button style={{background-color:&quot;red&quot; }}&gt; ```
   - &gt; **Correct Way** -   ``` &lt;button style={{backgroundColor:&quot;red&quot;}} &gt; ```</code></pre></li>
 </ul>

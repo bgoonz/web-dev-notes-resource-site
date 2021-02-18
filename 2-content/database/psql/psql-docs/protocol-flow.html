@@ -446,7 +446,7 @@ SELCT 1/0;
     Once a portal exists, it can be executed using an Execute message.
     The Execute message specifies the portal name (empty string denotes the
     unnamed portal) and
-    a maximum result-row count (zero meaning <span class="quote">“<span class="quote">fetch all rows</span>”</span>).
+    a maximum result-row count (zero meaning <span class="quote">"<span class="quote">fetch all rows</span>"</span>).
     The result-row count is only meaningful for portals
     containing commands that return row sets; in other cases the command is
     always executed to completion, and the row count is ignored.
@@ -469,7 +469,7 @@ SELCT 1/0;
     At completion of each series of extended-query messages, the frontend
     should issue a Sync message.  This parameterless message causes the
     backend to close the current transaction if it's not inside a
-    <code class="command">BEGIN</code>/<code class="command">COMMIT</code> transaction block (<span class="quote">“<span class="quote">close</span>”</span>
+    <code class="command">BEGIN</code>/<code class="command">COMMIT</code> transaction block (<span class="quote">"<span class="quote">close</span>"</span>
     meaning to commit if no error, or roll back if error).  Then a
     ReadyForQuery response is issued.  The purpose of Sync is to provide
     a resynchronization point for error recovery.  When an error is detected
@@ -662,7 +662,7 @@ SELCT 1/0;
    </p><p>
     It is possible for NoticeResponse messages to be generated due to
     outside activity; for example, if the database administrator commands
-    a <span class="quote">“<span class="quote">fast</span>”</span> database shutdown, the backend will send a NoticeResponse
+    a <span class="quote">"<span class="quote">fast</span>"</span> database shutdown, the backend will send a NoticeResponse
     indicating this fact before closing the connection.  Accordingly,
     frontends should always be prepared to accept and display NoticeResponse
     messages, even when the connection is nominally idle.

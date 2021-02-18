@@ -181,7 +181,9 @@
 <p>Follow the guidelines below to use an HTTP server and import JavaScript files with ES6 module syntax:</p>
 <ol type="1">
 <li>Create a folder with an <code>index.html</code> file. Fill in the file with the contents below. Note the use of the <code>type="module"</code> attribute in the <code>&lt;script&gt;</code> tag. You must include the <code>.js</code> file extension in the name of the module (<code>./program.js</code>). The browser needs to know the entire name of the JavaScript file it will be loading from a server. <code>html  &lt;html&gt;  &lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;    &lt;title&gt;Browser&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;button id="button"&gt;Start Game&lt;/button&gt;    &lt;div id="message"&gt;&lt;/div&gt;    &lt;script type="module" src="./program.js"&gt;&lt;/script&gt;  &lt;/body&gt;  &lt;/html&gt;</code></li>
-<li><p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() { this.gameStartMessage = “Hello! Do you want to play a game?”; }</p>
+<li>
+    <p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() {
+        this.gameStartMessage = "Hello! Do you want to play a game?"; }</p>
 start() { document .getElementById(‘button’) .addEventListener(‘click’, () =&gt; { const messageContainer = document.getElementById(‘message’); messageContainer.innerText = this.gameStartMessage; }); } } ```</li>
 <li><p>Create a <code>program.js</code> file with the contents below: ```js import { Game } from ‘./game.js’;</p>
 window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game(); game.start(); }); ```</li>

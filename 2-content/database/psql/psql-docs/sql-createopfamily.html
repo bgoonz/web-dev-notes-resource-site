@@ -8,7 +8,7 @@ CREATE OPERATOR FAMILY <em class="replaceable"><code>name</code></em> USING <em 
    compatible with these operator classes but not essential for the
    functioning of any individual index.  (Operators and functions that
    are essential to indexes should be grouped within the relevant operator
-   class, rather than being <span class="quote">“<span class="quote">loose</span>”</span> in the operator family.
+   class, rather than being <span class="quote">"<span class="quote">loose</span>"</span> in the operator family.
    Typically, single-data-type operators are bound to operator classes,
    while cross-data-type operators can be loose in an operator family
    containing operator classes for both data types.)
@@ -16,7 +16,7 @@ CREATE OPERATOR FAMILY <em class="replaceable"><code>name</code></em> USING <em 
    The new operator family is initially empty.  It should be populated
    by issuing subsequent <code class="command">CREATE OPERATOR CLASS</code> commands
    to add contained operator classes, and optionally
-   <code class="command">ALTER OPERATOR FAMILY</code> commands to add <span class="quote">“<span class="quote">loose</span>”</span>
+   <code class="command">ALTER OPERATOR FAMILY</code> commands to add <span class="quote">"<span class="quote">loose</span>"</span>
    operators and their corresponding support functions.
   </p><p>
    If a schema name is given then the operator family is created in the

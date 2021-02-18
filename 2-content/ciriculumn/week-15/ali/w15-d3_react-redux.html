@@ -262,7 +262,8 @@
 <a class="sourceLine" id="cb8-39" title="39"></a>
 <a class="sourceLine" id="cb8-40" title="40"><span class="im">export</span> <span class="im">default</span> connect<span class="op">;</span></a></code></pre></div>
 <p>The <code>connect</code> function is a higher-order component that returns a function. That function returns an anonymous class component that wraps the component passed in via the <code>WrappedComponent</code> parameter.</p>
-<p>The anonymous class component is a “generic” container component that <em>connects</em> <code>WrappedComponent</code> to the Redux store by:</p>
+<p>The anonymous class component is a "generic" container component that <em>connects</em> <code>WrappedComponent</code>
+    to the Redux store by:</p>
 <ul>
 <li>Defining the <code>componentDidMount</code> and <code>componentWillUnmount</code> lifecycle method implementations necessary for managing the subscription to the store to render <code>WrappedComponent</code> when state is updated; and</li>
 <li>Passing slices of state and functions to dispatch actions down to <code>WrappedComponent</code> using props.</li>
@@ -1293,7 +1294,13 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <p>To use Redux in this application, you need to install it and the connector between Redux and React. You will also want to use asynchronous actions with the Redux store, so you’ll want a middleware, one like <a href="https://github.com/reduxjs/redux-thunk">Redux Thunk</a>.</p>
 <pre><code>npm install react-redux redux redux-thunk</code></pre>
 <p>There are more than one asynchronous action-handling middleware out there in the world. Redux Thunk happens to be one of the oldest and widely used.</p>
-<p>Whenever you consider installing a library or framework, you should make sure that your existing application meets the expectations. For example, as of the time of this writing, to <a href="https://github.com/supasate/connected-react-router/blob/master/FAQ.md#how-to-navigate-with-redux-action">install “react-redux”</a>, your application needs to support <strong>React 16.8.3</strong> or later. Take a look in the <strong>package.json</strong> file to make sure that an acceptable version of React is listed in there. If not, you will need to upgrade the version of React used by this project by running something like <code>npm upgrade</code>.</p>
+<p>Whenever you consider installing a library or framework, you should make sure that your existing application meets
+    the expectations. For example, as of the time of this writing, to <a
+        href="https://github.com/supasate/connected-react-router/blob/master/FAQ.md#how-to-navigate-with-redux-action">install
+        "react-redux"</a>, your application needs to support <strong>React 16.8.3</strong> or later. Take a look in the
+    <strong>package.json</strong> file to make sure that an acceptable version of React is listed in there. If not, you
+    will need to upgrade the version of React used by this project by running something like <code>npm upgrade</code>.
+</p>
 <h2 id="setting-up-the-store">Setting up the store</h2>
 <p>The <em>store</em> is the object (and supporting objects and functions) that will contain the state of the application. This centralizes the state so that, presumably, you can better reason about it.</p>
 <p>There are a couple of ways to organize your state management code, each with their own benefits. Redux has a list of different articles about <a href="https://redux.js.org/faq/code-structure/">this very topic</a>. You should choose to organize your code in a way that makes sense to your team (or follow any conventions that already exist). This walk-through will follow the <a href="https://github.com/erikras/ducks-modular-redux">Ducks</a> approach of layout.</p>
@@ -1332,14 +1339,14 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <a class="sourceLine" id="cb76-2" title="2"><span class="im">import</span> configureStore <span class="im">from</span> <span class="st">&#39;./store/configureStore&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>Those two lines import a Context Provider from React Redux and the function you just created above. Now, under those lines and before the <code>ReactDOM.render</code> statement, create a store.</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb77-1" title="1"><span class="kw">const</span> store <span class="op">=</span> <span class="at">configureStore</span>()<span class="op">;</span></a></code></pre></div>
-<p>Finally, wrap the <code>App</code> component in a <code>Provider</code> component that has a “store” property assigned the value of <code>store</code> that you created in the previous code snippet, just as you saw in the <em>Passing the Store</em> section of the <em>Usage with React</em> article you read in the homework preparing you for these topics.</p>
-<p>If everything works, you should be able to view the Redux DevTools in your browser’s DevTools environment as a new tab. You should see the “@<span class="citation" data-cites="INIT">@INIT</span>” action that was run and an empty state.</p>
+<p>Finally, wrap the <code>App</code> component in a <code>Provider</code> component that has a "store" property assigned the value of <code>store</code> that you created in the previous code snippet, just as you saw in the <em>Passing the Store</em> section of the <em>Usage with React</em> article you read in the homework preparing you for these topics.</p>
+<p>If everything works, you should be able to view the Redux DevTools in your browser’s DevTools environment as a new tab. You should see the "@<span class="citation" data-cites="INIT">@INIT</span>" action that was run and an empty state.</p>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/aggregates/pokedex/redux-based/assets/redux-initial-state-devtools.png" alt="Redux DevTools initialization" /><figcaption>Redux DevTools initialization</figcaption>
 </figure>
 <h2 id="your-first-action-workflow">Your first action workflow</h2>
 <p>Now, you will refactor the <code>LoginPanel</code> component to put the token it receives from the AJAX call into the Redux store. The rest of the application will remain the same, for now.</p>
-<p>Open <code>LoginPanel</code> and review it. There are two “interesting” portions of this code, the <code>render</code> function which will redirect to the path “/” when a token exists (and show the login form if it does not), and the <code>handleSubmit</code> method that makes the actual AJAX call to get the token. These are the things that you will modify to make this work. It’s going to seem like a lot of code replacing just a few lines, but this will make your application easier to understand because all of the state changes will be encapsulated in their own area under the <strong>store</strong> directory. You won’t have to search through a bunch of components to figure out why the application as a whole is not working.</p>
+<p>Open <code>LoginPanel</code> and review it. There are two "interesting" portions of this code, the <code>render</code> function which will redirect to the path "/" when a token exists (and show the login form if it does not), and the <code>handleSubmit</code> method that makes the actual AJAX call to get the token. These are the things that you will modify to make this work. It’s going to seem like a lot of code replacing just a few lines, but this will make your application easier to understand because all of the state changes will be encapsulated in their own area under the <strong>store</strong> directory. You won’t have to search through a bunch of components to figure out why the application as a whole is not working.</p>
 <p>The first step is to make <code>LoginPanel</code> a <em>connected component</em>, that is, connect it to the Redux store’s pipeline. To do this, follow these steps:</p>
 <ol type="1">
 <li>Import <code>connect</code> from <code>react-redux</code> in the import section of the <code>LoginPanel</code>.</li>
@@ -1392,23 +1399,23 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <a class="sourceLine" id="cb80-4" title="4">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb80-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>Once you get used to the double (or triple) <code>=&gt;</code> signs, it becomes second nature to write functions that return functions, that way.</p>
-<p>Inside the login method, make a <code>fetch</code> call to the API using the same <code>fetch</code> call found in <code>LoginPanel</code>’s <code>handleSubmit</code> method. You’ll need to import <code>baseUrl</code> from the <strong>src/config.js</strong> module. You don’t have access to the state of the object, just the <code>email</code> and <code>password</code> that they’re passing in through your method call, so change the “body” parameter of the <code>fetch</code> from <code>JSON.stringify(this.state),</code> to <code>JSON.stringify({ email, password }),</code>.</p>
+<p>Inside the login method, make a <code>fetch</code> call to the API using the same <code>fetch</code> call found in <code>LoginPanel</code>’s <code>handleSubmit</code> method. You’ll need to import <code>baseUrl</code> from the <strong>src/config.js</strong> module. You don’t have access to the state of the object, just the <code>email</code> and <code>password</code> that they’re passing in through your method call, so change the "body" parameter of the <code>fetch</code> from <code>JSON.stringify(this.state),</code> to <code>JSON.stringify({ email, password }),</code>.</p>
 <p>For now, if the response from the fetch is ok, just get the token out of the response object and log it to the console.</p>
-<p>Now, to hook up this thunk to your component, open <strong>src/LoginPanel.js</strong> and import the <code>login</code> thunk that you just created. At the bottom in the <code>mapDispatchToProps</code> function, add a “login” key that is a function that takes an email and password, and then dispatches the <code>login</code> thunk with those values.</p>
+<p>Now, to hook up this thunk to your component, open <strong>src/LoginPanel.js</strong> and import the <code>login</code> thunk that you just created. At the bottom in the <code>mapDispatchToProps</code> function, add a "login" key that is a function that takes an email and password, and then dispatches the <code>login</code> thunk with those values.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb81-1" title="1"><span class="cf">return</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb81-2" title="2">  <span class="dt">login</span><span class="op">:</span> (email<span class="op">,</span> password) <span class="kw">=&gt;</span> <span class="at">dispatch</span>(<span class="at">login</span>(email<span class="op">,</span> password))</a>
 <a class="sourceLine" id="cb81-3" title="3"><span class="op">};</span></a></code></pre></div>
-<p>Now, there’s a “login” property on the <code>props</code> handed to the <code>LoginPanel</code> component. The value of the “login” property is a function that takes an <em>email</em> and a <em>password</em>. Those then get handed to the <code>login</code> thunk which returns a function to the <code>dispatch</code> function of Redux. It’s functions all the way down.</p>
-<p>Now, delete everything from the <code>handleSubmit</code> method <em>except</em> the line that prevents the default action. Replace it with a call to the function in the “login” property of the <code>props</code> like this.</p>
+<p>Now, there’s a "login" property on the <code>props</code> handed to the <code>LoginPanel</code> component. The value of the "login" property is a function that takes an <em>email</em> and a <em>password</em>. Those then get handed to the <code>login</code> thunk which returns a function to the <code>dispatch</code> function of Redux. It’s functions all the way down.</p>
+<p>Now, delete everything from the <code>handleSubmit</code> method <em>except</em> the line that prevents the default action. Replace it with a call to the function in the "login" property of the <code>props</code> like this.</p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb82-1" title="1"><span class="kw">this</span>.<span class="va">props</span>.<span class="at">login</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="at">email</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">state</span>.<span class="at">password</span>)<span class="op">;</span></a></code></pre></div>
 <p>After the application refreshes, you should be able to click the <em>Login</em> button on the screen and see token appear after the AJAX call completes.</p>
 <p>Now that you have the token, you need to dispatch another action, one that isn’t created yet, to set the token in the state so it can be used elsewhere. Remove the <code>console.log</code> statement in your <code>login</code> thunk and replace it with an invocation of the <code>dispatch</code> method that your thunk gets, dispatching an action creator named <code>setToken</code> with the token as its argument.</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb83-1" title="1"><span class="at">dispatch</span>(<span class="at">setToken</span>(token))</a></code></pre></div>
 <p>Now, it’s time to create that action.</p>
 <h3 id="the-action">The action</h3>
-<p>Actions are just plain objects that have, at a minimum, a “type” property. Action creators are just plain functions that return actions.</p>
+<p>Actions are just plain objects that have, at a minimum, a "type" property. Action creators are just plain functions that return actions.</p>
 <p>Below your import section and above the <code>login</code> thunk of your code in <strong>src/store/authentication.js</strong>, create a constant named <code>SET_TOKEN</code> and set it equal to the string <code>'pokedex/authentication/SET_TOKEN'</code>. You could make this string <em>anything</em>, it just needs to be unique within your application. This is merely the <a href="https://github.com/erikras/ducks-modular-redux">Ducks</a> convention.</p>
-<p>Now, create a function <code>setToken</code> that takes a token as its one parameter, and returns an object that has a “type” property set to the <code>SET_TOKEN</code> constant and a “token” property set to the value passed into the parameter. Export the <code>setToken</code> function.</p>
+<p>Now, create a function <code>setToken</code> that takes a token as its one parameter, and returns an object that has a "type" property set to the <code>SET_TOKEN</code> constant and a "token" property set to the value passed into the parameter. Export the <code>setToken</code> function.</p>
 <p>If you’ve done everything correctly to this point, when you click the <em>Login</em> button, you should now see an action appear in the Redux DevTools with the string that you set the <code>SET_TOKEN</code> constant to.</p>
 <figure>
 <img src="images/redux-set-token-action-devtools.png" alt="Redux DevTools with SET_TOKEN action" /><figcaption>Redux DevTools with SET_TOKEN action</figcaption>
@@ -1419,7 +1426,7 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <div class="sourceCode" id="cb84"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb84-1" title="1"><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="at">reducer</span>(state <span class="op">=</span> <span class="op">{},</span> action) <span class="op">{</span></a>
 <a class="sourceLine" id="cb84-2" title="2">  <span class="co">// Your code in here.</span></a>
 <a class="sourceLine" id="cb84-3" title="3"><span class="op">}</span></a></code></pre></div>
-<p>In that reducer, you want to check if the “type” property of <code>action</code> is equal to the <code>SET_TOKEN</code> constant. Every reducer is called with every action, so you have to do this check. If it is, then you should return an object with the token in it. If it doesn’t, then just return the state unaltered. Idiomatic Redux usually uses a <code>switch</code> statement to do this with each <code>case</code> statement handling a different action type.</p>
+<p>In that reducer, you want to check if the "type" property of <code>action</code> is equal to the <code>SET_TOKEN</code> constant. Every reducer is called with every action, so you have to do this check. If it is, then you should return an object with the token in it. If it doesn’t, then just return the state unaltered. Idiomatic Redux usually uses a <code>switch</code> statement to do this with each <code>case</code> statement handling a different action type.</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb85-1" title="1"><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="at">reducer</span>(state <span class="op">=</span> <span class="op">{},</span> action) <span class="op">{</span></a>
 <a class="sourceLine" id="cb85-2" title="2">  <span class="cf">switch</span> (<span class="va">action</span>.<span class="at">type</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb85-3" title="3">    <span class="cf">case</span> <span class="dt">SET_TOKEN</span><span class="op">:</span> <span class="op">{</span></a>
@@ -1442,13 +1449,13 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <p>After the page reloads, when you click the <em>Login</em> button, you should now see the authentication and token appear in the right pane of the Redux DevTools. (You may need to select the action in the left pane.)</p>
 <h2 id="using-the-token">Using the token</h2>
 <p>Now, you’ve come full circle. You’re going to use the token in the store to inform the <code>LoginPanel</code> that it needs to close. In the <code>render</code> function, the code uses <code>this.state.token</code> to determine whether or not to redirect. You want that to use <code>this.props.token</code>, now, so change it to that.</p>
-<p>To get the token value from the state of the Redux store into the <code>props</code>, you use <code>mapStateToProps</code> function that you created below. Change it to read like this, now, which takes the value of the token stored in the state and puts it into the “token” property of what will be passed to <code>LoginPanel</code> in its <code>props</code>.</p>
+<p>To get the token value from the state of the Redux store into the <code>props</code>, you use <code>mapStateToProps</code> function that you created below. Change it to read like this, now, which takes the value of the token stored in the state and puts it into the "token" property of what will be passed to <code>LoginPanel</code> in its <code>props</code>.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb88-1" title="1"><span class="kw">const</span> mapStateToProps <span class="op">=</span> state <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb88-2" title="2">  <span class="cf">return</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb88-3" title="3">    <span class="dt">token</span><span class="op">:</span> <span class="va">state</span>.<span class="va">authentication</span>.<span class="at">token</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb88-4" title="4">  <span class="op">};</span></a>
 <a class="sourceLine" id="cb88-5" title="5"><span class="op">};</span></a></code></pre></div>
-<p>Now, when you click the <em>Login</em> button, it redirects the application back to “/”. However, because <code>App</code> relies on its own state to get updated from a call to its <code>updateToken</code> method, it goes into an recursive loop of redirecting back and forth between the <code>App</code> component and the <code>LoginPanel</code>. You’ll fix that in the next section.</p>
+<p>Now, when you click the <em>Login</em> button, it redirects the application back to "/". However, because <code>App</code> relies on its own state to get updated from a call to its <code>updateToken</code> method, it goes into an recursive loop of redirecting back and forth between the <code>App</code> component and the <code>LoginPanel</code>. You’ll fix that in the next section.</p>
 <hr />
 <h1 id="more-state-moving">More State Moving</h1>
 <p>The application is cleaner, but now has that bug of infinite redirecting. You will first fix that.</p>
@@ -1458,22 +1465,22 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <p>When you have that done, you may notice that the route that shows the <code>LoginPanel</code> looks like this.</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb89-1" title="1"><span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/login&quot;</span></a>
 <a class="sourceLine" id="cb89-2" title="2">  render<span class="op">={</span>props <span class="kw">=&gt;</span> <span class="op">&lt;</span>LoginPanel <span class="op">{</span>...<span class="at">props</span><span class="op">}</span> /&gt;<span class="op">}</span> /&gt;</a></code></pre></div>
-<p>That is rendering <code>LoginPanel</code> and passing its props to it. That’s just like using the “component” property of the <code>Route</code> component, so change it to use that instead of the more expensive “render” property.</p>
+<p>That is rendering <code>LoginPanel</code> and passing its props to it. That’s just like using the "component" property of the <code>Route</code> component, so change it to use that instead of the more expensive "render" property.</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb90-1" title="1"><span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/login&quot;</span> component<span class="op">={</span>LoginPanel<span class="op">}</span> /&gt;</a></code></pre></div>
 <p>You’re still in a render loop, so that hasn’t fixed it. Time to connect <code>App</code> to the Redux store.</p>
 <ol type="1">
-<li>Like you did in <code>LoginPanel</code>, import the <code>connect</code> function from the “react-redux” module.</li>
+<li>Like you did in <code>LoginPanel</code>, import the <code>connect</code> function from the "react-redux" module.</li>
 <li>Then, just like you did in <code>LoginPanel</code>, declare <code>mapStateToProps</code> and <code>mapDispatchToProps</code> functions after the component.</li>
 </ol>
 <ul>
-<li>In the <code>mapStateToProps</code> function, map the token to a property named “token” identically to the way it is done in <code>LoginPanel</code>.</li>
+<li>In the <code>mapStateToProps</code> function, map the token to a property named "token" identically to the way it is done in <code>LoginPanel</code>.</li>
 <li>You have no actions, right now, so leave <code>mapDispatchToProps</code> just returning an empty object.</li>
 </ul>
 <ol start="3" type="1">
 <li>Finally, connect <code>App</code> to the Redux store using those functions.</li>
 </ol>
 <p>That puts the value of the token into the props. In the actual <code>App</code> component, now find everywhere that uses <code>this.state.token</code> and replace it with <code>this.props.token</code>.</p>
-<p>Try logging in, again. Still doesn’t work. That’s because <code>App</code> relies on another setting in its state named “needLogin” which is just a Boolean value that is basically the opposite of whether the token has a value. If there is a token, there is no need to login. If there is no token, there is a need to login. You can figure that out in the <code>mapStateToProps</code> function! Create another property, one named “needLogin”, in the object returned from the function. If there <em>is</em> a value in <code>state.authentication.token</code>, then set it to <code>false</code>. If there is <em>no</em> value (or an empty string) in <code>state.authentication.token</code>, then set “needLogin” to <code>true</code>. Once you have that, find every use of <code>this.state.needLogin</code> and replace it with <code>this.props.needLogin</code>.</p>
+<p>Try logging in, again. Still doesn’t work. That’s because <code>App</code> relies on another setting in its state named "needLogin" which is just a Boolean value that is basically the opposite of whether the token has a value. If there is a token, there is no need to login. If there is no token, there is a need to login. You can figure that out in the <code>mapStateToProps</code> function! Create another property, one named "needLogin", in the object returned from the function. If there <em>is</em> a value in <code>state.authentication.token</code>, then set it to <code>false</code>. If there is <em>no</em> value (or an empty string) in <code>state.authentication.token</code>, then set "needLogin" to <code>true</code>. Once you have that, find every use of <code>this.state.needLogin</code> and replace it with <code>this.props.needLogin</code>.</p>
 <p>You have now fixed the problem with the infinite redirects! And, once you log into the application, you can check that the <code>App</code> component <em>is</em> rendering the <code>PokemonBrowser</code> component. However, it is not showing anything. That’s because the <code>App</code> component calls its <code>loadPokemon</code> method in the <code>componentDidMount</code> method. There’s no token at that time in its state because the token now comes from Redux.</p>
 <p>What would be great is if, after logging in, the <code>login</code> action loaded the Pokemon for you, put them in the store, and <code>PokemonBrowser</code> could just use them directly.</p>
 <p>Oh, that’s what you’ll do next.</p>
@@ -1482,26 +1489,26 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <ul>
 <li>An action type named <code>LOAD</code> with a value of ‘pokedex/pokemon/LOAD’</li>
 <li>An action creator named <code>load</code> that takes in a list of Pokemon and creates an action with the type of <code>LOAD</code> and the list of Pokemon in it</li>
-<li>A reducer that checks for the “LOAD” action and adds the list of Pokemon to the state (and returns just the state if the action is not “LOAD”)</li>
+<li>A reducer that checks for the "LOAD" action and adds the list of Pokemon to the state (and returns just the state if the action is not "LOAD")</li>
 <li>Make sure the reducer has a default value for its <code>state</code> parameter</li>
 </ul>
-<p>Now, you need to make a thunk that will make the AJAX call. Call your think “getPokemon”. The thunk needs the token from the state to make its API call. The function that gets the “dispatch” parameter can also get a second parameter, a function conventionally called “getState”. Your thunk could look like this.</p>
+<p>Now, you need to make a thunk that will make the AJAX call. Call your think "getPokemon". The thunk needs the token from the state to make its API call. The function that gets the "dispatch" parameter can also get a second parameter, a function conventionally called "getState". Your thunk could look like this.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb91-1" title="1"><span class="im">export</span> <span class="kw">const</span> getPokemon <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="kw">async</span> (dispatch<span class="op">,</span> getState) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb91-2" title="2">  <span class="kw">const</span> <span class="op">{</span> <span class="dt">authentication</span><span class="op">:</span> <span class="op">{</span> token <span class="op">}</span> <span class="op">}</span> <span class="op">=</span> <span class="at">getState</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb91-3" title="3">  <span class="co">// AJAX call</span></a>
 <a class="sourceLine" id="cb91-4" title="4">  <span class="co">// Handle response</span></a>
 <a class="sourceLine" id="cb91-5" title="5"><span class="op">};</span></a></code></pre></div>
-<p>Then, in <strong>configureStore.js</strong>, import the default reducer and add it to the <code>combineReducers</code> argument as the “pokemon” property next to “authentication”.</p>
+<p>Then, in <strong>configureStore.js</strong>, import the default reducer and add it to the <code>combineReducers</code> argument as the "pokemon" property next to "authentication".</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb92-1" title="1"><span class="kw">const</span> reducer <span class="op">=</span> <span class="at">combineReducers</span>(<span class="op">{</span></a>
 <a class="sourceLine" id="cb92-2" title="2">  authentication<span class="op">,</span></a>
 <a class="sourceLine" id="cb92-3" title="3">  pokemon<span class="op">,</span></a>
 <a class="sourceLine" id="cb92-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Now, you just need to kick off that AJAX call. It seems only reasonable that the component that actually needs it kicks it off, the <code>PokemonBrowser</code> component. In <code>PokemonBrowser</code>, do the following:</p>
 <ul>
-<li>Import the <code>connect</code> function from “react-redux”</li>
+<li>Import the <code>connect</code> function from "react-redux"</li>
 <li>Import the <code>getPokemon</code> thunk you just created</li>
-<li>Create a <code>mapStateToProps</code> function that maps the list of Pokemon from <code>state.pokemon.list</code> (or whatever you called your property in the reducer) to a property named “pokemon”</li>
-<li>Create a <code>mapDispatchToProps</code> function that returns an object with a property named “getPokemon” that dispatches the <code>getPokemon</code> thunk you imported</li>
+<li>Create a <code>mapStateToProps</code> function that maps the list of Pokemon from <code>state.pokemon.list</code> (or whatever you called your property in the reducer) to a property named "pokemon"</li>
+<li>Create a <code>mapDispatchToProps</code> function that returns an object with a property named "getPokemon" that dispatches the <code>getPokemon</code> thunk you imported</li>
 <li>Connect your component to the Redux store using <code>connect</code>, <code>mapStateToProps</code>, and <code>mapDispatchToProps</code></li>
 <li>Add a <code>componentDidMount</code> method to the <code>PokemonBrowser</code> component and call <code>this.props.getPokemon()</code> from it</li>
 </ul>
@@ -1511,8 +1518,8 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 </figure>
 <p>More importantly, you should see the list of Pokemon in the <code>PokemonBrowser</code> actually appear in the browser.</p>
 <h2 id="clean-up-the-app-component">Clean up the App component</h2>
-<p>Previously, all of the fetching logic for the list of Pokemon was handled by the <code>App</code> component. You can now get rid of the <code>loadPokemon</code> method and clean up any calls to it. Also, anywhere that refers to <code>this.state.pokemon</code> or using <code>setState</code> to update the “pokemon” property, you should get rid of all of that. This makes the <code>handleCreated</code> method empty, so get rid of that and all references to it, too, in the <code>App</code> component.</p>
-<p>Because the <code>App</code> component doesn’t make any AJAX calls, anymore, it doesn’t need the token from the state. Remove the “token” property in <code>mapStateToProps</code> and everywhere <code>token</code> is used in the <code>App</code> component. Include the call to local storage, too, in the deleting of things. You can remove the import of <code>baseUrl</code>, too, because there are no AJAX calls in the file.</p>
+<p>Previously, all of the fetching logic for the list of Pokemon was handled by the <code>App</code> component. You can now get rid of the <code>loadPokemon</code> method and clean up any calls to it. Also, anywhere that refers to <code>this.state.pokemon</code> or using <code>setState</code> to update the "pokemon" property, you should get rid of all of that. This makes the <code>handleCreated</code> method empty, so get rid of that and all references to it, too, in the <code>App</code> component.</p>
+<p>Because the <code>App</code> component doesn’t make any AJAX calls, anymore, it doesn’t need the token from the state. Remove the "token" property in <code>mapStateToProps</code> and everywhere <code>token</code> is used in the <code>App</code> component. Include the call to local storage, too, in the deleting of things. You can remove the import of <code>baseUrl</code>, too, because there are no AJAX calls in the file.</p>
 <p>Now, because <code>cProps</code> in the <code>render</code> method is empty, delete it and its uses in the <code>PrivateRoute</code> components below it. Now that the code is not using <code>cProps</code>, you can delete the parameter and its use from the <code>PrivateRoute</code> component on line 8 (or so) of the <strong>src/App.js</strong> file.</p>
 <h2 id="storing-the-token-in-local-storage">Storing the token in local storage</h2>
 <p>Actions that use outside resources like AJAX calls and local storage <em>must</em> be created in thunks. Back in the <strong>src/store/authentication.js</strong> module, do two things:</p>
@@ -1521,7 +1528,7 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <li>In the <code>login</code> thunk, between getting the token from the response and dispatching the <code>setToken</code> action, write the token to local storage using the constant <code>TOKEN_KEY</code></li>
 </ul>
 <h2 id="reading-the-token-out-of-local-storage">Reading the token out of local storage</h2>
-<p>You need a new thunk to do this. Create a thunk named <code>loadToken</code> that takes no parameters, and returns a function that accepts a “dispatch” parameter. Then, implement it to read the value from local storage using the <code>TOKEN_KEY</code> constant. If a value comes back, have it dispatch the <code>setToken</code> action.</p>
+<p>You need a new thunk to do this. Create a thunk named <code>loadToken</code> that takes no parameters, and returns a function that accepts a "dispatch" parameter. Then, implement it to read the value from local storage using the <code>TOKEN_KEY</code> constant. If a value comes back, have it dispatch the <code>setToken</code> action.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb93-1" title="1"><span class="im">export</span> <span class="kw">const</span> loadToken <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="kw">async</span> dispatch <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb93-2" title="2">  <span class="co">// Read the token from local</span></a>
 <a class="sourceLine" id="cb93-3" title="3"><span class="op">};</span></a></code></pre></div>
@@ -1546,22 +1553,22 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <p>When you have that done, you may notice that the route that shows the <code>LoginPanel</code> looks like this.</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb96-1" title="1"><span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/login&quot;</span></a>
 <a class="sourceLine" id="cb96-2" title="2">  render<span class="op">={</span>props <span class="kw">=&gt;</span> <span class="op">&lt;</span>LoginPanel <span class="op">{</span>...<span class="at">props</span><span class="op">}</span> /&gt;<span class="op">}</span> /&gt;</a></code></pre></div>
-<p>That is rendering <code>LoginPanel</code> and passing its props to it. That’s just like using the “component” property of the <code>Route</code> component, so change it to use that instead of the more expensive “render” property.</p>
+<p>That is rendering <code>LoginPanel</code> and passing its props to it. That’s just like using the "component" property of the <code>Route</code> component, so change it to use that instead of the more expensive "render" property.</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb97-1" title="1"><span class="op">&lt;</span>Route path<span class="op">=</span><span class="st">&quot;/login&quot;</span> component<span class="op">={</span>LoginPanel<span class="op">}</span> /&gt;</a></code></pre></div>
 <p>You’re still in a render loop, so that hasn’t fixed it. Time to connect <code>App</code> to the Redux store.</p>
 <ol type="1">
-<li>Like you did in <code>LoginPanel</code>, import the <code>connect</code> function from the “react-redux” module.</li>
+<li>Like you did in <code>LoginPanel</code>, import the <code>connect</code> function from the "react-redux" module.</li>
 <li>Then, just like you did in <code>LoginPanel</code>, declare <code>mapStateToProps</code> and <code>mapDispatchToProps</code> functions after the component.</li>
 </ol>
 <ul>
-<li>In the <code>mapStateToProps</code> function, map the token to a property named “token” identically to the way it is done in <code>LoginPanel</code>.</li>
+<li>In the <code>mapStateToProps</code> function, map the token to a property named "token" identically to the way it is done in <code>LoginPanel</code>.</li>
 <li>You have no actions, right now, so leave <code>mapDispatchToProps</code> just returning an empty object.</li>
 </ul>
 <ol start="3" type="1">
 <li>Finally, connect <code>App</code> to the Redux store using those functions.</li>
 </ol>
 <p>That puts the value of the token into the props. In the actual <code>App</code> component, now find everywhere that uses <code>this.state.token</code> and replace it with <code>this.props.token</code>.</p>
-<p>Try logging in, again. Still doesn’t work. That’s because <code>App</code> relies on another setting in its state named “needLogin” which is just a Boolean value that is basically the opposite of whether the token has a value. If there is a token, there is no need to login. If there is no token, there is a need to login. You can figure that out in the <code>mapStateToProps</code> function! Create another property, one named “needLogin”, in the object returned from the function. If there <em>is</em> a value in <code>state.authentication.token</code>, then set it to <code>false</code>. If there is <em>no</em> value (or an empty string) in <code>state.authentication.token</code>, then set “needLogin” to <code>true</code>. Once you have that, find every use of <code>this.state.needLogin</code> and replace it with <code>this.props.needLogin</code>.</p>
+<p>Try logging in, again. Still doesn’t work. That’s because <code>App</code> relies on another setting in its state named "needLogin" which is just a Boolean value that is basically the opposite of whether the token has a value. If there is a token, there is no need to login. If there is no token, there is a need to login. You can figure that out in the <code>mapStateToProps</code> function! Create another property, one named "needLogin", in the object returned from the function. If there <em>is</em> a value in <code>state.authentication.token</code>, then set it to <code>false</code>. If there is <em>no</em> value (or an empty string) in <code>state.authentication.token</code>, then set "needLogin" to <code>true</code>. Once you have that, find every use of <code>this.state.needLogin</code> and replace it with <code>this.props.needLogin</code>.</p>
 <p>You have now fixed the problem with the infinite redirects! And, once you log into the application, you can check that the <code>App</code> component <em>is</em> rendering the <code>PokemonBrowser</code> component. However, it is not showing anything. That’s because the <code>App</code> component calls its <code>loadPokemon</code> method in the <code>componentDidMount</code> method. There’s no token at that time in its state because the token now comes from Redux.</p>
 <p>What would be great is if, after logging in, the <code>login</code> action loaded the Pokemon for you, put them in the store, and <code>PokemonBrowser</code> could just use them directly.</p>
 <p>Oh, that’s what you’ll do next.</p>
@@ -1570,26 +1577,26 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <ul>
 <li>An action type named <code>LOAD</code> with a value of ‘pokedex/pokemon/LOAD’</li>
 <li>An action creator named <code>load</code> that takes in a list of Pokemon and creates an action with the type of <code>LOAD</code> and the list of Pokemon in it</li>
-<li>A reducer that checks for the “LOAD” action and adds the list of Pokemon to the state (and returns just the state if the action is not “LOAD”)</li>
+<li>A reducer that checks for the "LOAD" action and adds the list of Pokemon to the state (and returns just the state if the action is not "LOAD")</li>
 <li>Make sure the reducer has a default value for its <code>state</code> parameter</li>
 </ul>
-<p>Now, you need to make a thunk that will make the AJAX call. Call your think “getPokemon”. The thunk needs the token from the state to make its API call. The function that gets the “dispatch” parameter can also get a second parameter, a function conventionally called “getState”. Your thunk could look like this.</p>
+<p>Now, you need to make a thunk that will make the AJAX call. Call your think "getPokemon". The thunk needs the token from the state to make its API call. The function that gets the "dispatch" parameter can also get a second parameter, a function conventionally called "getState". Your thunk could look like this.</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb98-1" title="1"><span class="im">export</span> <span class="kw">const</span> getPokemon <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="kw">async</span> (dispatch<span class="op">,</span> getState) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb98-2" title="2">  <span class="kw">const</span> <span class="op">{</span> <span class="dt">authentication</span><span class="op">:</span> <span class="op">{</span> token <span class="op">}</span> <span class="op">}</span> <span class="op">=</span> <span class="at">getState</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb98-3" title="3">  <span class="co">// AJAX call</span></a>
 <a class="sourceLine" id="cb98-4" title="4">  <span class="co">// Handle response</span></a>
 <a class="sourceLine" id="cb98-5" title="5"><span class="op">};</span></a></code></pre></div>
-<p>Then, in <strong>configureStore.js</strong>, import the default reducer and add it to the <code>combineReducers</code> argument as the “pokemon” property next to “authentication”.</p>
+<p>Then, in <strong>configureStore.js</strong>, import the default reducer and add it to the <code>combineReducers</code> argument as the "pokemon" property next to "authentication".</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">const</span> reducer <span class="op">=</span> <span class="at">combineReducers</span>(<span class="op">{</span></a>
 <a class="sourceLine" id="cb99-2" title="2">  authentication<span class="op">,</span></a>
 <a class="sourceLine" id="cb99-3" title="3">  pokemon<span class="op">,</span></a>
 <a class="sourceLine" id="cb99-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Now, you just need to kick off that AJAX call. It seems only reasonable that the component that actually needs it kicks it off, the <code>PokemonBrowser</code> component. In <code>PokemonBrowser</code>, do the following:</p>
 <ul>
-<li>Import the <code>connect</code> function from “react-redux”</li>
+<li>Import the <code>connect</code> function from "react-redux"</li>
 <li>Import the <code>getPokemon</code> thunk you just created</li>
-<li>Create a <code>mapStateToProps</code> function that maps the list of Pokemon from <code>state.pokemon.list</code> (or whatever you called your property in the reducer) to a property named “pokemon”</li>
-<li>Create a <code>mapDispatchToProps</code> function that returns an object with a property named “getPokemon” that dispatches the <code>getPokemon</code> thunk you imported</li>
+<li>Create a <code>mapStateToProps</code> function that maps the list of Pokemon from <code>state.pokemon.list</code> (or whatever you called your property in the reducer) to a property named "pokemon"</li>
+<li>Create a <code>mapDispatchToProps</code> function that returns an object with a property named "getPokemon" that dispatches the <code>getPokemon</code> thunk you imported</li>
 <li>Connect your component to the Redux store using <code>connect</code>, <code>mapStateToProps</code>, and <code>mapDispatchToProps</code></li>
 <li>Add a <code>componentDidMount</code> method to the <code>PokemonBrowser</code> component and call <code>this.props.getPokemon()</code> from it</li>
 </ul>
@@ -1599,8 +1606,8 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 </figure>
 <p>More importantly, you should see the list of Pokemon in the <code>PokemonBrowser</code> actually appear in the browser.</p>
 <h2 id="clean-up-the-app-component-1">Clean up the App component</h2>
-<p>Previously, all of the fetching logic for the list of Pokemon was handled by the <code>App</code> component. You can now get rid of the <code>loadPokemon</code> method and clean up any calls to it. Also, anywhere that refers to <code>this.state.pokemon</code> or using <code>setState</code> to update the “pokemon” property, you should get rid of all of that. This makes the <code>handleCreated</code> method empty, so get rid of that and all references to it, too, in the <code>App</code> component.</p>
-<p>Because the <code>App</code> component doesn’t make any AJAX calls, anymore, it doesn’t need the token from the state. Remove the “token” property in <code>mapStateToProps</code> and everywhere <code>token</code> is used in the <code>App</code> component. Include the call to local storage, too, in the deleting of things. You can remove the import of <code>baseUrl</code>, too, because there are no AJAX calls in the file.</p>
+<p>Previously, all of the fetching logic for the list of Pokemon was handled by the <code>App</code> component. You can now get rid of the <code>loadPokemon</code> method and clean up any calls to it. Also, anywhere that refers to <code>this.state.pokemon</code> or using <code>setState</code> to update the "pokemon" property, you should get rid of all of that. This makes the <code>handleCreated</code> method empty, so get rid of that and all references to it, too, in the <code>App</code> component.</p>
+<p>Because the <code>App</code> component doesn’t make any AJAX calls, anymore, it doesn’t need the token from the state. Remove the "token" property in <code>mapStateToProps</code> and everywhere <code>token</code> is used in the <code>App</code> component. Include the call to local storage, too, in the deleting of things. You can remove the import of <code>baseUrl</code>, too, because there are no AJAX calls in the file.</p>
 <p>Now, because <code>cProps</code> in the <code>render</code> method is empty, delete it and its uses in the <code>PrivateRoute</code> components below it. Now that the code is not using <code>cProps</code>, you can delete the parameter and its use from the <code>PrivateRoute</code> component on line 8 (or so) of the <strong>src/App.js</strong> file.</p>
 <h2 id="storing-the-token-in-local-storage-1">Storing the token in local storage</h2>
 <p>Actions that use outside resources like AJAX calls and local storage <em>must</em> be created in thunks. Back in the <strong>src/store/authentication.js</strong> module, do two things:</p>
@@ -1609,7 +1616,7 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <li>In the <code>login</code> thunk, between getting the token from the response and dispatching the <code>setToken</code> action, write the token to local storage using the constant <code>TOKEN_KEY</code></li>
 </ul>
 <h2 id="reading-the-token-out-of-local-storage-1">Reading the token out of local storage</h2>
-<p>You need a new thunk to do this. Create a thunk named <code>loadToken</code> that takes no parameters, and returns a function that accepts a “dispatch” parameter. Then, implement it to read the value from local storage using the <code>TOKEN_KEY</code> constant. If a value comes back, have it dispatch the <code>setToken</code> action.</p>
+<p>You need a new thunk to do this. Create a thunk named <code>loadToken</code> that takes no parameters, and returns a function that accepts a "dispatch" parameter. Then, implement it to read the value from local storage using the <code>TOKEN_KEY</code> constant. If a value comes back, have it dispatch the <code>setToken</code> action.</p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb100-1" title="1"><span class="im">export</span> <span class="kw">const</span> loadToken <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="kw">async</span> dispatch <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb100-2" title="2">  <span class="co">// Read the token from local</span></a>
 <a class="sourceLine" id="cb100-3" title="3"><span class="op">};</span></a></code></pre></div>
@@ -1636,12 +1643,12 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <li>The thunk makes the AJAX call to logout</li>
 <li>If that AJAX call succeeds, remove the token from local storage and dispatch an action to remove the token from the store</li>
 <li>Redux will invoke a reducer that removes the token from the store</li>
-<li>The <code>LogoutButton</code> will redirect the application back to “/login”</li>
+<li>The <code>LogoutButton</code> will redirect the application back to "/login"</li>
 </ol>
 <p>In <strong>src/store/authentication.js</strong>:</p>
 <ul>
 <li>Create a new action type named <code>REMOVE_TOKEN</code></li>
-<li>Create a new action creator that returns an action with just the “type” property set to the value of <code>REMOVE_TOKEN</code></li>
+<li>Create a new action creator that returns an action with just the "type" property set to the value of <code>REMOVE_TOKEN</code></li>
 <li>Create a thunk named <code>logout</code> that
 <ul>
 <li>makes an AJAX call to the API to <code>DELETE /api/session</code> (using the token in the state)</li>
@@ -1651,7 +1658,7 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <li>dispatches the <code>removeToken</code> action</li>
 </ul></li>
 </ul></li>
-<li><p>Handles the <code>REMOVE_TOKEN</code> action type in the reducer by creating a new object that does <em>not</em> have the “token” key in it and returning that.</p>
+<li><p>Handles the <code>REMOVE_TOKEN</code> action type in the reducer by creating a new object that does <em>not</em> have the "token" key in it and returning that.</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb103-1" title="1"><span class="cf">case</span> REMOVE_TOKEN<span class="op">:</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb103-2" title="2">  <span class="kw">const</span> newState <span class="op">=</span> <span class="op">{</span> ...<span class="at">state</span> <span class="op">};</span></a>
 <a class="sourceLine" id="cb103-3" title="3">  <span class="kw">delete</span> <span class="va">newState</span>.<span class="at">token</span><span class="op">;</span></a>
@@ -1662,17 +1669,17 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <p>In <strong>src/LogoutButton.js</strong>:</p>
 <p>(If you make a mistake with this and get into an inconsistent state, just delete all of the contents of your local storage and refresh your browser.)</p>
 <ul>
-<li>Import <code>connect</code> from “react-redux”</li>
+<li>Import <code>connect</code> from "react-redux"</li>
 <li>Import the <code>logout</code> thunk you just created</li>
 <li>Create the <code>mapStateToProps</code> and set a property named <code>loggedOut</code> to <code>true</code> if the token in the state is empty, and <code>false</code> if there is a value for the token in the state</li>
-<li>Create the <code>mapDispatchToProps</code> and set the “logout” property equal to a function that dispatches the result of the <code>logout</code> thunk you imported</li>
-<li>In the <code>LogoutButton</code>’s method named “logout”, instead of making an AJAX call, have it call <code>this.props.logout()</code>, instead</li>
+<li>Create the <code>mapDispatchToProps</code> and set the "logout" property equal to a function that dispatches the result of the <code>logout</code> thunk you imported</li>
+<li>In the <code>LogoutButton</code>’s method named "logout", instead of making an AJAX call, have it call <code>this.props.logout()</code>, instead</li>
 <li>Get rid of the</li>
 <li>Get rid of initializing the state in the constructor</li>
 <li>Change the use of <code>this.state.loggedOut</code> to <code>this.props.loggedOut</code></li>
 <li>Remove any unused imports</li>
 </ul>
-<p>If you check the console, now, you’ll see that Babel is reporting a “useless” constructor. Sure enough, it is. <code>LogoutButton</code> no longer has any state, so there’s no reason to leave it as a class-based component. Convert it to a function-based component. If you’ve followed these instructions, your <code>LogoutButton</code> should end up looking something like this.</p>
+<p>If you check the console, now, you’ll see that Babel is reporting a "useless" constructor. Sure enough, it is. <code>LogoutButton</code> no longer has any state, so there’s no reason to leave it as a class-based component. Convert it to a function-based component. If you’ve followed these instructions, your <code>LogoutButton</code> should end up looking something like this.</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb104-1" title="1"><span class="kw">const</span> LogoutButton <span class="op">=</span> props <span class="kw">=&gt;</span></a>
 <a class="sourceLine" id="cb104-2" title="2">  <span class="va">props</span>.<span class="at">loggedOut</span> <span class="op">?</span></a>
 <a class="sourceLine" id="cb104-3" title="3">    <span class="op">&lt;</span>Redirect to<span class="op">=</span><span class="st">&quot;/login&quot;</span> /&gt; :</a>
@@ -1682,7 +1689,7 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <a class="sourceLine" id="cb104-7" title="7"><span class="op">;</span></a></code></pre></div>
 <hr />
 <h1 id="the-rest-of-it">The Rest Of It</h1>
-<p>You have now been given instructions on how to refactor components from managing global application state to putting it in Redux. There are two more pieces left, the “select the current Pokemon” functionality and the “create a new Pokemon” functionality. Refactor the application so those are Redux-supported, as well.</p>
+<p>You have now been given instructions on how to refactor components from managing global application state to putting it in Redux. There are two more pieces left, the "select the current Pokemon" functionality and the "create a new Pokemon" functionality. Refactor the application so those are Redux-supported, as well.</p>
 <h2 id="select-the-current-pokemon">Select the current Pokemon</h2>
 <p>The place to start, here, is to determine how the click of the navigation item on the left gets handled. It’s a <code>NavLink</code>, so the <code>BrowserRouter</code> in the <code>App</code> component handles that by routing to the <code>PokemonBrowser</code> with the route parameters. The <code>PokemonBrowser</code> then routes to the <code>PokemonDetail</code> with a <code>Route</code> component. In the <code>PokemonDetail</code> component, if the value of the <code>this.props.match.params.id</code> changes, then the <code>loadPokemon</code> method is called which, in turn, makes an AJAX call. And, there it is! The AJAX call.</p>
 <p>This is like everything else, create a thunk, an action type, yada yada yada.</p>
@@ -1691,13 +1698,13 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <ul>
 <li>accepts an id</li>
 <li>loads the Pokemon from an AJAX call</li>
-<li>dispatches a “set current Pokemon” action</li>
+<li>dispatches a "set current Pokemon" action</li>
 </ul></li>
-<li>Create a reducer that handles the “set current Pokemon” action by adding it to the state</li>
+<li>Create a reducer that handles the "set current Pokemon" action by adding it to the state</li>
 <li>Connect the <code>PokemonDetail</code> to the Redux store by
 <ul>
 <li>mapping the current Pokemon information in the state to its props, and</li>
-<li>mapping the “load the current Pokemon” thunk to its props with a <code>dispatch</code> call (don’t forget the id parameter)</li>
+<li>mapping the "load the current Pokemon" thunk to its props with a <code>dispatch</code> call (don’t forget the id parameter)</li>
 </ul></li>
 </ul>
 <h2 id="creating-a-new-pokemon">Creating a new Pokemon</h2>
@@ -1706,12 +1713,12 @@ const ConnectedComponent = connect(mapStateToProps)(MyComponent);</code></pre>
 <li>the <code>componentDidMount</code> method call a thunk to load the Pokemon types</li>
 <li>the <code>handleSubmit</code> method call a thunk to post the form information to the API</li>
 </ul>
-<p>In moving the Pokemon type fetching from the state to the props, you may end up getting an error that there is no method “map” of undefined. If that’s the case, in the reducer in your <strong>src/store/pokemon.js</strong> file, have the default state include an array for the “types” property.</p>
+<p>In moving the Pokemon type fetching from the state to the props, you may end up getting an error that there is no method "map" of undefined. If that’s the case, in the reducer in your <strong>src/store/pokemon.js</strong> file, have the default state include an array for the "types" property.</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb105-1" title="1"><span class="co">// CODE SNIPPET</span></a>
 <a class="sourceLine" id="cb105-2" title="2"><span class="im">export</span> <span class="im">default</span> <span class="kw">function</span> <span class="at">reducer</span>(state <span class="op">=</span> <span class="op">{</span> <span class="dt">types</span><span class="op">:</span> [] <span class="op">},</span> action) <span class="op">{</span></a></code></pre></div>
 <p>That’s the power of default parameters and initial state!</p>
-<p>The action types, action creators, and thunk created to do this should go into the <strong>src/store/pokemon.js</strong> module. When the AJAX call succeeds to create the new Pokemon, have it <em>then</em> dispatch the <code>getPokemon</code> thunk to get a new list of Pokemon. Redux and React will add a new Pokemon to the end of the list. That’s why you have to provide the “key” property in lists of things, so that React will efficiently determine if something in the list needs to get changed, added, or deleted.</p>
-<p>The only “new” part, here, is the coordination between <code>PokemonForm</code> and <code>PokemonBrowser</code> to determine if it should show a form. This is up to you to decide, if showing the create form is part of the global application state (and should exist in the Redux store), or if it is part of the “local” state between the two components and be managed by <code>PokemonForm</code> invoking a function passed to it by <code>PokemonBrowser</code>. The solution choose the former solution.</p>
+<p>The action types, action creators, and thunk created to do this should go into the <strong>src/store/pokemon.js</strong> module. When the AJAX call succeeds to create the new Pokemon, have it <em>then</em> dispatch the <code>getPokemon</code> thunk to get a new list of Pokemon. Redux and React will add a new Pokemon to the end of the list. That’s why you have to provide the "key" property in lists of things, so that React will efficiently determine if something in the list needs to get changed, added, or deleted.</p>
+<p>The only "new" part, here, is the coordination between <code>PokemonForm</code> and <code>PokemonBrowser</code> to determine if it should show a form. This is up to you to decide, if showing the create form is part of the global application state (and should exist in the Redux store), or if it is part of the "local" state between the two components and be managed by <code>PokemonForm</code> invoking a function passed to it by <code>PokemonBrowser</code>. The solution choose the former solution.</p>
 <h2 id="bonus-extend-the-functionality">Bonus: Extend the functionality</h2>
 <p>Think about adding</p>
 <ul>

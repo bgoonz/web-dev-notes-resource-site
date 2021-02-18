@@ -39,7 +39,7 @@ Web Development and Design agency like <a href="https://seesparkbox.com/">SparkB
 </ul>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ul>
-<li><strong>“My CSS styles never have conflicts since I utilize ID’s most often to style my elements”</strong><br />
+<li><strong>“My CSS styles never have conflicts since I utilize ID’s most often to style my elements"</strong><br />
 UsingID’scandefinitelyhelpyouavoidanykindofspecificityconflicts,sincetheyhaveapriorityoverclassesandtags,butthatwouldmean,yourstylesarenotreusableandyoudon’tfollowtheDRY(Don’tRepeatYourself)principle.Newstylesneedtobewrittenforeveryelementevenifsomeofthemshareafewcommonfeatures(Eg:buttons,alerts,navigationlinks,inputgroupsetc).</li>
 </ul>
 <p>For example even the most popular front-end component library <a href="https://getbootstrap.com/docs/4.4/components/alerts/">Bootstrap</a> uses this technique , where similar components share few common classes instead of syling them simply by using ID’s to avoid conflicts.</p>
@@ -49,7 +49,9 @@ UsingID’scandefinitelyhelpyouavoidanykindofspecificityconflicts,sincetheyhavea
 <p>Note: You must have prior knowledge of CSS and HTML to understand what BEM is and how to make use of it.</p>
 </blockquote>
 <p><strong>1.What is BEM?:</strong></p>
-<p>BEM is a naming methodology/principle which stand for “Block”, “Element”, “Modifier” to describe and differentiate, the different components of your webpage in a way that is easy to understand,maintain and scale as and when required.</p>
+<p>BEM is a naming methodology/principle which stand for “Block", “Element", “Modifier" to describe and differentiate,
+    the different components of your webpage in a way that is easy to understand,maintain and scale as and when
+    required.</p>
 <p>In BEM methodology the important point to note is that each and every HTML element will be accessed using a class only, we don’t use ID’s or tags to style them.</p>
 <p>This is to keep the specificity of all elements uniform across the entire project, which will have the value of (0,1,0) referencing to (ID’s, Classes, Tags).</p>
 <ul>

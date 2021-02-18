@@ -6,7 +6,7 @@ description: Log out of the registry
 
 ### Synopsis
 
-```bash
+``` bash
 npm logout [--registry=<url>] [--scope=<@scope>]
 ```
 
@@ -29,16 +29,16 @@ connected to that scope, if set.
 
 Default: https://registry.npmjs.org/
 
-The base URL of the npm package registry. If `scope` is also specified,
+The base URL of the npm package registry. If `scope` is also specified, 
 it takes precedence.
 
 #### scope
 
 Default: The scope of your current project, if any, otherwise none.
 
-If specified, you will be logged out of the specified scope. See [`scope`](/using-npm/scope).
+If specified, you will be logged out of the specified scope. See [ `scope` ](/using-npm/scope).
 
-```bash
+``` bash
 npm logout --scope=@myco
 ```
 

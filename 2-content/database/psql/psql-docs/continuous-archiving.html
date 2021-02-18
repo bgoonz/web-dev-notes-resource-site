@@ -5,7 +5,7 @@
    subdirectory of the cluster's data directory. The log records
    every change made to the database's data files.  This log exists
    primarily for crash-safety purposes: if the system crashes, the
-   database can be restored to consistency by <span class="quote">“<span class="quote">replaying</span>”</span> the
+   database can be restored to consistency by <span class="quote">"<span class="quote">replaying</span>"</span> the
    log entries made since the last checkpoint.  However, the existence
    of the log makes it possible to use a third strategy for backing up
    databases: we can combine a file-system-level backup with backup of
@@ -54,7 +54,7 @@
    many situations where high reliability is needed.
   </p><p>
    To recover successfully using continuous archiving (also called
-   <span class="quote">“<span class="quote">online backup</span>”</span> by many database vendors), you need a continuous
+   <span class="quote">"<span class="quote">online backup</span>"</span> by many database vendors), you need a continuous
    sequence of archived WAL files that extends back at least as far as the
    start time of your backup.  So to get started, you should set up and test
    your procedure for archiving WAL files <span class="emphasis"><em>before</em></span> you take your
@@ -69,7 +69,7 @@
     files are given numeric names that reflect their position in the
     abstract WAL sequence.  When not using WAL archiving, the system
     normally creates just a few segment files and then
-    <span class="quote">“<span class="quote">recycles</span>”</span> them by renaming no-longer-needed segment files
+    <span class="quote">"<span class="quote">recycles</span>"</span> them by renaming no-longer-needed segment files
     to higher segment numbers.  It's assumed that segment files whose
     contents precede the last checkpoint are no longer of
     interest and can be recycled.
@@ -77,8 +77,8 @@
     When archiving WAL data, we need to capture the contents of each segment
     file once it is filled, and save that data somewhere before the segment
     file is recycled for reuse.  Depending on the application and the
-    available hardware, there could be many different ways of <span class="quote">“<span class="quote">saving
-    the data somewhere</span>”</span>: we could copy the segment files to an NFS-mounted
+    available hardware, there could be many different ways of <span class="quote">"<span class="quote">saving
+    the data somewhere</span>"</span>: we could copy the segment files to an NFS-mounted
     directory on another machine, write them onto a tape drive (ensuring that
     you have a way of identifying the original name of each file), or batch
     them together and burn them onto CDs, or something else entirely.  To
@@ -483,7 +483,7 @@ SELECT pg_stop_backup();
     and not an error.  However, you need to ensure that you can distinguish
     complaints of this sort from real errors.  For example, some versions
     of <span class="application">rsync</span> return a separate exit code for
-    <span class="quote">“<span class="quote">vanished source files</span>”</span>, and you can write a driver script to
+    <span class="quote">"<span class="quote">vanished source files</span>"</span>, and you can write a driver script to
     accept this exit code as a non-error case.  Also, some versions of
     GNU <span class="application">tar</span> return an error code indistinguishable from
     a fatal error if a file was truncated while <span class="application">tar</span> was
@@ -661,7 +661,7 @@ restore_command = 'cp /mnt/server/archivedir/%f %p'
     Normally, recovery will proceed through all available WAL segments,
     thereby restoring the database to the current point in time (or as
     close as possible given the available WAL segments).  Therefore, a normal
-    recovery will end with a <span class="quote">“<span class="quote">file not found</span>”</span> message, the exact text
+    recovery will end with a <span class="quote">"<span class="quote">file not found</span>"</span> message, the exact text
     of the error message depending upon your choice of
     <code class="varname">restore_command</code>.  You may also see an error message
     at the start of recovery for a file named something like
@@ -672,7 +672,7 @@ restore_command = 'cp /mnt/server/archivedir/%f %p'
     If you want to recover to some previous point in time (say, right before
     the junior DBA dropped your main transaction table), just specify the
     required <a class="link" href="runtime-config-wal.html#RUNTIME-CONFIG-WAL-RECOVERY-TARGET" title="19.5.5. Recovery Target">stopping point</a>.  You can specify
-    the stop point, known as the <span class="quote">“<span class="quote">recovery target</span>”</span>, either by
+    the stop point, known as the <span class="quote">"<span class="quote">recovery target</span>"</span>, either by
     date/time, named restore point or by completion of a specific transaction
     ID.  As of this writing only the date/time and named restore point options
     are very usable, since there are no tools to help you identify with any
@@ -687,7 +687,7 @@ restore_command = 'cp /mnt/server/archivedir/%f %p'
     If recovery finds corrupted WAL data, recovery will
     halt at that point and the server will not start. In such a case the
     recovery process could be re-run from the beginning, specifying a
-    <span class="quote">“<span class="quote">recovery target</span>”</span> before the point of corruption so that recovery
+    <span class="quote">"<span class="quote">recovery target</span>"</span> before the point of corruption so that recovery
     can complete normally.
     If recovery fails for an external reason, such as a system crash or
     if the WAL archive has become inaccessible, then the recovery can simply
@@ -730,7 +730,7 @@ restore_command = 'cp /mnt/server/archivedir/%f %p'
     states in timeline branches that you abandoned earlier.
    </p><p>
     Every time a new timeline is created, <span class="productname">PostgreSQL</span> creates
-    a <span class="quote">“<span class="quote">timeline history</span>”</span> file that shows which timeline it branched
+    a <span class="quote">"<span class="quote">timeline history</span>"</span> file that shows which timeline it branched
     off from and when.  These history files are necessary to allow the system
     to pick the right WAL segment files when recovering from an archive that
     contains multiple timelines.  Therefore, they are archived into the WAL

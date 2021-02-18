@@ -24,17 +24,17 @@ Example 3:
   console.log(threeCoins(10)); // prints [ 25, 5, 10 ]
 
 ***********************************************************************/
-function coinCollector(numCoins) {
-  let coins = [];
-  const _collect = (coin) => {
-    coins.push(coin);
-    if (coins.length >= numCoins) {
-      return coins;
-    } else {
-      return _collect;
-    }
-  };
-  return _collect;
+function coinCollector ( numCoins ) {
+    let coins = [];
+    const _collect = ( coin ) => {
+        coins.push( coin );
+        if ( coins.length >= numCoins ) {
+            return coins;
+        } else {
+            return _collect;
+        }
+    };
+    return _collect;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

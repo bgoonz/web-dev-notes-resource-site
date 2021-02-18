@@ -141,7 +141,7 @@ DELETE ... RETURNING <em class="replaceable"><code>expressions</code></em> INTO 
      If <code class="literal">STRICT</code> is not specified in the <code class="literal">INTO</code>
      clause, then <em class="replaceable"><code>target</code></em> will be set to the first
      row returned by the query, or to nulls if the query returned no rows.
-     (Note that <span class="quote">“<span class="quote">the first row</span>”</span> is not
+     (Note that <span class="quote">"<span class="quote">the first row</span>"</span> is not
      well-defined unless you've used <code class="literal">ORDER BY</code>.)  Any result rows
      after the first row are discarded.
      You can check the special <code class="literal">FOUND</code> variable (see

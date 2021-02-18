@@ -1,5 +1,5 @@
 <h2 id="bash-assessment">Bash Assessment</h2>
-<h4 id="q1.-which-of-the-three-methods-will-copy-the-directory-named-photo-dir-recursively-from-the-users-home-directory-to-backups">Q1. Which of the three methods will copy the directory named “photo dir” recursively from the user’s home directory to /backups?</h4>
+<h4 id="q1.-which-of-the-three-methods-will-copy-the-directory-named-photo-dir-recursively-from-the-users-home-directory-to-backups">Q1. Which of the three methods will copy the directory named "photo dir" recursively from the user’s home directory to /backups?</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">cp</span> -R <span class="st">&quot;~/photo dir&quot;</span> /backups <span class="co">#method1</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="fu">cp</span> -R ~<span class="st">&quot;/photo dir&quot;</span> /backups <span class="co">#method2</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="fu">cp</span> -R ~/<span class="st">&quot;photo dir&quot;</span> /backups <span class="co">#method3</span></a></code></pre></div>
@@ -33,7 +33,7 @@
 <li>[ ] <code>{ command; }</code></li>
 <li>[ ] <code>(( command ))</code></li>
 </ul>
-<h4 id="q4.-using-awk-what-would-the-output-of-this-command-string-be">Q4. Using “awk”, what would the output of this command string be?</h4>
+<h4 id="q4.-using-awk-what-would-the-output-of-this-command-string-be">Q4. Using "awk", what would the output of this command string be?</h4>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="bu">echo</span> <span class="st">&quot;1 2 3&quot;</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{for (i=1; i&lt;=NF; i++) s=s+$i};END {print s}&#39;</span></a></code></pre></div>
 <ul>
 <li>[x] 6</li>
@@ -41,7 +41,7 @@
 <li>[ ] 3</li>
 <li>[ ] 600</li>
 </ul>
-<h4 id="q5.-the-command-below-will-search-the-root-filesystem-for-files-named-finance.db.-in-this-context-what-information-is-being-sent-to-devnull">Q5. The command below will search the root filesystem for files named “finance.db”. In this context, what information is being sent to /dev/null?</h4>
+<h4 id="q5.-the-command-below-will-search-the-root-filesystem-for-files-named-finance.db.-in-this-context-what-information-is-being-sent-to-devnull">Q5. The command below will search the root filesystem for files named "finance.db". In this context, what information is being sent to /dev/null?</h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">find</span> / -name <span class="st">&quot;finance.db&quot;</span> <span class="op">1&gt;</span>results.txt <span class="op">2&gt;</span>/dev/null</a></code></pre></div>
 <ul>
 <li>[ ] the names of files that do not match finance.db</li>
@@ -119,10 +119,10 @@
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" title="1"><span class="va">txt=</span>Penguins</a>
 <a class="sourceLine" id="cb8-2" title="2"><span class="kw">[[</span> <span class="va">$txt</span> =~ [a-z]<span class="dt">{8}</span><span class="kw"> ]]</span>; <span class="bu">echo</span> <span class="va">$?</span></a></code></pre></div>
 <ul>
-<li>[ ] 0, representing ‘true’, because the variable “txt” contains eight letters</li>
-<li>[ ] 0, representing ‘true’, because everybody loves penguins!</li>
-<li>[ ] 1, representing ‘false’, because the variable “txt” is longer than eight characters</li>
-<li>[x] 1, representing ‘false’, because the variable “txt” does not contain eight lowercase letters between a and z</li>
+<li>[ ] 0, representing 'true’, because the variable "txt" contains eight letters</li>
+<li>[ ] 0, representing 'true’, because everybody loves penguins!</li>
+<li>[ ] 1, representing 'false’, because the variable "txt" is longer than eight characters</li>
+<li>[x] 1, representing 'false’, because the variable "txt" does not contain eight lowercase letters between a and z</li>
 </ul>
 <h4 id="q16.-how-would-you-change-your-bash-shell-prompt-to-the-following">Q16. How would you change your Bash shell prompt to the following?</h4>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1"><span class="ex">HAL</span><span class="op">&gt;</span></a></code></pre></div>
@@ -397,7 +397,7 @@
 <li>[x] <code>Nothing, out.txt will be empty.</code></li>
 <li>[ ] <code>It will be the contents of nonexistentfile.</code></li>
 </ul>
-<h4 id="q41.-for-the-script-to-print-is-numeric-on-screen-what-would-the-user-have-to-enter-when-prompted">Q41. For the script to print “Is numeric” on screen, what would the user have to enter when prompted?</h4>
+<h4 id="q41.-for-the-script-to-print-is-numeric-on-screen-what-would-the-user-have-to-enter-when-prompted">Q41. For the script to print "Is numeric" on screen, what would the user have to enter when prompted?</h4>
 <div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" title="1"><span class="co">#!/bin/bash</span></a>
 <a class="sourceLine" id="cb29-2" title="2"><span class="bu">read</span> -p <span class="st">&quot;Enter text &quot;</span> <span class="va">var</span></a>
 <a class="sourceLine" id="cb29-3" title="3"><span class="kw">if [[</span> <span class="st">&quot;</span><span class="va">$var</span><span class="st">&quot;</span> =~ <span class="st">&quot;^[0-9]+$&quot;</span><span class="kw"> ]]</span>;<span class="kw">then</span></a>
@@ -407,9 +407,9 @@
 <a class="sourceLine" id="cb29-7" title="7"><span class="kw">fi</span></a></code></pre></div>
 <ul>
 <li>[x] Any sequence of characters that includes an integer</li>
-<li>[ ] The user would have to enter the character sequence of <code>^[0-9]]+$</code> Only this will prove to be true and “Is numeric” would be printed on the screen due to incorrect syntax. By encapsulating the regular expression in double quotes every match will fail except the text string <code>^[0-9]+$</code></li>
+<li>[ ] The user would have to enter the character sequence of <code>^[0-9]]+$</code> Only this will prove to be true and "Is numeric" would be printed on the screen due to incorrect syntax. By encapsulating the regular expression in double quotes every match will fail except the text string <code>^[0-9]+$</code></li>
 <li>[ ] One or more characters that only includes integers</li>
-<li>[ ] Due to a syntax error it is impossible to get the script to print “Is numeric”</li>
+<li>[ ] Due to a syntax error it is impossible to get the script to print "Is numeric"</li>
 </ul>
 <h4 id="q42.-what-will-be-the-difference-between-the-output-on-the-screen-and-the-contents-of-out.txt">Q42. What will be the difference between the output on the screen and the contents of out.txt</h4>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" title="1"><span class="ex">mysql</span> <span class="op">&lt;</span> file.sql <span class="op">&gt;</span> out.txt</a></code></pre></div>
@@ -517,10 +517,10 @@
 <h4 id="q1.-what-does-this-command-do">Q1. What does this command do?</h4>
 <div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" title="1"><span class="fu">cat</span> <span class="op">&gt;</span> notes -</a></code></pre></div>
 <ul>
-<li>[x] Accepts text from standard input and places it in “notes”</li>
-<li>[ ] Creates “notes” and exits</li>
+<li>[x] Accepts text from standard input and places it in "notes"</li>
+<li>[ ] Creates "notes" and exits</li>
 <li>[ ] Outputs the content of notes and deletes it</li>
-<li>[ ] Appends text to the existing “notes”</li>
+<li>[ ] Appends text to the existing "notes"</li>
 </ul>
 <h4 id="q2.-what-is-the-output-of">Q2. What is the output of:</h4>
 <div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" title="1"><span class="va">VAR=</span><span class="st">&quot;This old man came rolling&quot;</span></a>

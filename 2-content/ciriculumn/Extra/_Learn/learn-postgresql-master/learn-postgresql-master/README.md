@@ -360,7 +360,7 @@ col_name only require if only some of the cols are being filled out
 `ALTER TABLE table_name
   ADD COLUMN column_name data_type`
 
-- To find the number of instances where the word “Day” is present in the title of a table
+- To find the number of instances where the word “Day" is present in the title of a table
 `SELECT count(title) FROM table_name WHERE title LIKE '%Day%’;`
 
 - To delete a row in a table

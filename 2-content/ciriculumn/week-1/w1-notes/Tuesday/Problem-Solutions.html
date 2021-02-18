@@ -6,7 +6,7 @@
 <a class="sourceLine" id="cb1-3" title="3"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="whisper-recall"><strong>Whisper Recall</strong></h2>
-<p>Write a function whisper that takes in a string and returns a “whispered” version of that string.</p>
+<p>Write a function whisper that takes in a string and returns a "whispered" version of that string.</p>
 <p>HINT: try using the .toLowerCase() function on a string to see what it does!</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span> <span class="at">whisper</span>(str) <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="cf">return</span> <span class="st">&quot;...&quot;</span> <span class="op">+</span> <span class="va">str</span>.<span class="at">toLowerCase</span>() <span class="op">+</span> <span class="st">&quot;...&quot;</span></a>
@@ -99,7 +99,8 @@
 <a class="sourceLine" id="cb11-7" title="7"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="vowel-counter"><strong>Vowel Counter</strong></h2>
-<p>Write a function, countVowels(word), that takes in a string word and returns the number of vowels in the word. Vowels are the letters “a”, “e”, “i”, “o”, “u”.</p>
+<p>Write a function, countVowels(word), that takes in a string word and returns the number of vowels in the word. Vowels
+    are the letters "a", "e", "i", "o", "u".</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">function</span> <span class="at">countVowels</span>(word) <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">const</span> VOWEL <span class="op">=</span> <span class="st">&quot;aeiou&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb12-3" title="3">  <span class="kw">let</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></a>
@@ -139,7 +140,7 @@
 <a class="sourceLine" id="cb15-3" title="3"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="echo-recall"><strong>Echo Recall</strong></h2>
-<p>Write a function echo that takes in a string and console.logs that string “echo-ized”.</p>
+<p>Write a function echo that takes in a string and console.logs that string "echo-ized".</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">function</span> <span class="at">echo</span>(string) <span class="op">{</span></a>
 <a class="sourceLine" id="cb16-2" title="2">  <span class="va">console</span>.<span class="at">log</span> <span class="va">string</span>.<span class="at">toUpperCase</span>() <span class="op">+</span> <span class="st">&quot; ... &quot;</span> <span class="op">+</span> string <span class="op">+</span> <span class="st">&quot; ... &quot;</span> <span class="op">+</span> <span class="va">string</span>.<span class="at">toLowerCase</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb16-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -151,7 +152,7 @@
 <a class="sourceLine" id="cb17-3" title="3"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="pig-latin"><strong>Pig Latin</strong></h2>
-<p>Pig Latin is a fun take on the English language where you move any consonant cluster from the start of the word to the end of the word; when words begin on a vowel, you simply add “-yay”. Vowels are “aeiou”.</p>
+<p>Pig Latin is a fun take on the English language where you move any consonant cluster from the start of the word to the end of the word; when words begin on a vowel, you simply add "-yay". Vowels are "aeiou".</p>
 <p>Write a function pigLatinWord that takes in a word string and translates the word into Pig Latin. For this problem use the String#slice method. The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.</p>
 <p>Hint: Remember the String#includes method!</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">function</span> <span class="at">pigLatinWord</span>(word) <span class="op">{</span></a>

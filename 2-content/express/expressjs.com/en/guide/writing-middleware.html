@@ -223,7 +223,7 @@ FAQ
 </table>
 <p>Starting with Express 5, middleware functions that return a Promise will call <code>next(value)</code> when they reject or throw an error. <code>next</code> will be called with either the rejected value or the thrown Error.</p>
 <h2>Example</h2>
-<p>Here is an example of a simple “Hello World” Express application.
+<p>Here is an example of a simple "Hello World" Express application.
 The remainder of this article will define and add three middleware functions to the application:
 one called <code>myLogger</code> that prints a simple log message, one called <code>requestTime</code> that
 displays the timestamp of the HTTP request, and one called <code>validateCookies</code> that validates incoming cookies.</p>
@@ -237,7 +237,7 @@ app.get('/', function (req, res) {
 app.listen(3000)
 </code></pre>
 <h3>Middleware function myLogger</h3>
-<p>Here is a simple example of a middleware function called “myLogger”. This function just prints “LOGGED” when a request to the app passes through it. The middleware function is assigned to a variable named <code>myLogger</code>.</p>
+<p>Here is a simple example of a middleware function called "myLogger". This function just prints "LOGGED" when a request to the app passes through it. The middleware function is assigned to a variable named <code>myLogger</code>.</p>
 <pre><code class="language-js">var myLogger = function (req, res, next) {
   console.log('LOGGED')
   next()
@@ -245,7 +245,7 @@ app.listen(3000)
 </code></pre>
 <div class="doc-box doc-notice">
 <p>Notice the call above to <code>next()</code>. Calling this function invokes the next middleware function in the app.
-The <code>next()</code> function is not a part of the Node.js or Express API, but is the third argument that is passed to the middleware function. The <code>next()</code> function could be named anything, but by convention it is always named “next”.
+The <code>next()</code> function is not a part of the Node.js or Express API, but is the third argument that is passed to the middleware function. The <code>next()</code> function could be named anything, but by convention it is always named "next".
 To avoid confusion, always use this convention.</p>
 </div>
 <p>To load the middleware function, call <code>app.use()</code>, specifying the middleware function.
@@ -266,12 +266,12 @@ app.get('/', function (req, res) {
 
 app.listen(3000)
 </code></pre>
-<p>Every time the app receives a request, it prints the message “LOGGED” to the terminal.</p>
+<p>Every time the app receives a request, it prints the message "LOGGED" to the terminal.</p>
 <p>The order of middleware loading is important: middleware functions that are loaded first are also executed first.</p>
-<p>If <code>myLogger</code> is loaded after the route to the root path, the request never reaches it and the app doesn’t print “LOGGED”, because the route handler of the root path terminates the request-response cycle.</p>
+<p>If <code>myLogger</code> is loaded after the route to the root path, the request never reaches it and the app doesn’t print "LOGGED", because the route handler of the root path terminates the request-response cycle.</p>
 <p>The middleware function <code>myLogger</code> simply prints a message, then passes on the request to the next middleware function in the stack by calling the <code>next()</code> function.</p>
 <h3>Middleware function requestTime</h3>
-<p>Next, we’ll create a middleware function called “requestTime” and add a property called <code>requestTime</code>
+<p>Next, we’ll create a middleware function called "requestTime" and add a property called <code>requestTime</code>
 to the request object.</p>
 <pre><code class="language-js">var requestTime = function (req, res, next) {
   req.requestTime = Date.now()

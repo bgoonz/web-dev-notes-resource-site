@@ -7,7 +7,7 @@ description: A manifestation of the manifest
 ### Description
 
 `package-lock.json` is automatically generated for any operations where npm
-modifies either the `node_modules` tree, or `package.json`. It describes the
+modifies either the `node_modules` tree, or `package.json` . It describes the
 exact tree that was generated, such that subsequent installs are able to
 generate identical trees, regardless of intermediate dependency updates.
 
@@ -31,31 +31,30 @@ otherwise using the publication process for producing production packages.
 If both `package-lock.json` and `npm-shrinkwrap.json` are present in the root of
 a package, `package-lock.json` will be completely ignored.
 
-
 ### File Format
 
 #### name
 
 The name of the package this is a package-lock for. This must match what's in
-`package.json`.
+`package.json` .
 
 #### version
 
 The version of the package this is a package-lock for. This must match what's in
-`package.json`.
+`package.json` .
 
 #### lockfileVersion
 
 An integer version, starting at `1` with the version number of this document
-whose semantics were used when generating this `package-lock.json`.
+whose semantics were used when generating this `package-lock.json` .
 
 #### packageIntegrity
 
 This is a [subresource
 integrity](https://w3c.github.io/webappsec/specs/subresourceintegrity/) value
-created from the `package.json`. No preprocessing of the `package.json` should
+created from the `package.json` . No preprocessing of the `package.json` should
 be done. Subresource integrity strings can be produced by modules like
-[`ssri`](https://www.npmjs.com/package/ssri).
+[ `ssri` ](https://www.npmjs.com/package/ssri).
 
 #### preserveSymlinks
 
@@ -74,9 +73,9 @@ This is a specifier that uniquely identifies this package and should be
 usable in fetching a new copy of it.
 
 * bundled dependencies: Regardless of source, this is a version number that is purely for informational purposes.
-* registry sources: This is a version number. (eg, `1.2.3`)
-* git sources: This is a git specifier with resolved committish. (eg, `git+https://example.com/foo/bar#115311855adb0789a0466714ed48a1499ffea97e`)
-* http tarball sources: This is the URL of the tarball. (eg, `https://example.com/example-1.3.0.tgz`)
+* registry sources: This is a version number. (eg,     `1.2.3`)
+* git sources: This is a git specifier with resolved committish. (eg,     `git+https://example.com/foo/bar#115311855adb0789a0466714ed48a1499ffea97e`)
+* http tarball sources: This is the URL of the tarball. (eg,     `https://example.com/example-1.3.0.tgz`)
 * local tarball sources: This is the file URL of the tarball. (eg `file:///opt/storage/example-1.3.0.tgz`)
 * local link sources: This is the file URL of the link. (eg `file:libs/our-module`)
 
@@ -90,13 +89,16 @@ resource.
 * For registry sources, this is the `integrity` that the registry provided, or if one wasn't provided the SHA1 in `shasum`.
 * For git sources this is the specific commit hash we cloned from.
 * For remote tarball sources this is an integrity based on a SHA512 of
+
   the file.
+
 * For local tarball sources: This is an integrity field based on the SHA512 of the file.
 
 ##### resolved
 
 * For bundled dependencies this is not included, regardless of source.
 * For registry sources this is path of the tarball relative to the registry
+
   URL.  If the tarball URL isn't on the same server as the registry URL then
   this is a complete URL.
 
@@ -123,14 +125,12 @@ transitive dependency of a non-optional dependency of the top level.
 All optional dependencies should be included even if they're uninstallable
 on the current platform.
 
-
 ##### requires
 
 This is a mapping of module name to version.  This is a list of everything
 this module requires, regardless of where it will be installed.  The version
 should match via normal matching rules a dependency either in our
 `dependencies` or in a level higher than us.
-
 
 ##### dependencies
 

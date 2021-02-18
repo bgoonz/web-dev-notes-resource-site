@@ -12,7 +12,10 @@
 <h2 id="prepare">Prepare</h2>
 <p>Before starting to change code on a new-to-you project, it is helpful to become familiar with what’s already been done. In this case, the original developer used create-react-app as the starting point, then added a few of components to display a product list. They determined that the product data will come into the view through a prop named <code>products</code>. (It does not matter where that data comes from as that will be managed outside the component.) Additionally, they finished the layouts in the UI with a box, image and button for each product as well as a panel on the right side.</p>
 <p>When you run the application (<code>npm install</code> followed by <code>npm start</code>), you’ll see these UI elements display, but clicking does not do anything. That’s where you come in!</p>
-<p>When you look at the code in <code>ProductView</code>, you’ll find <code>console.log</code> statements in the <code>onClick</code> event handlers. That’s a clue some work is needed there. Additionally, you’ll find a comment that starts with “TODO”. While that might not be the only work required, these will be elements you need to modify.</p>
+<p>When you look at the code in <code>ProductView</code>, you’ll find <code>console.log</code> statements in the
+    <code>onClick</code> event handlers. That’s a clue some work is needed there. Additionally, you’ll find a comment
+    that starts with “TODO". While that might not be the only work required, these will be elements you need to modify.
+</p>
 <p>An astute developer may also notice there are some props on other components that aren’t in use yet. The extra effort to find them while you’re coming up to speed may save you some time later since you may be able to leverage them to accomplish your tasks.</p>
 <p>Next, you need to pick somewhere to start. The panel toggle seems good since it has a <code>TODO</code> comment.</p>
 <h2 id="phase-1-toggle-side-panel">Phase 1: Toggle side panel</h2>
@@ -30,7 +33,9 @@
 <p>After replacing the <code>console.log</code> you will likely have code that looks something like this.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&lt;</span>div className<span class="op">=</span><span class="st">&quot;product-side-panel-toggle&quot;</span></a>
 <a class="sourceLine" id="cb2-2" title="2">     onClick<span class="op">={</span>() <span class="kw">=&gt;</span> <span class="at">setSideOpen</span>(<span class="op">!</span>sideOpen)<span class="op">}&gt;</span></a></code></pre></div>
-<p>If all the changes are correct, you will be able to click the “&gt;” tab on the side panel to close it. Study the code and see if you can find where it switches to “&lt;”. It is common practice in <strong>React</strong> to use a state variable in multiple UI updates.</p>
+<p>If all the changes are correct, you will be able to click the “&gt;" tab on the side panel to close it. Study the
+    code and see if you can find where it switches to “&lt;". It is common practice in <strong>React</strong> to use a
+    state variable in multiple UI updates.</p>
 <h2 id="phase-2-track-selected-item">Phase 2: Track selected item</h2>
 <p>Now, you will add a second state variable on your own. This one will track the <code>selectedProduct</code>.</p>
 <blockquote>
@@ -44,7 +49,7 @@
 <p>What would help the user experience is to also highlight the box in the list for the item whose details are showing. Again, the previous developer thought of this and created a prop to change the style, <code>isSelected</code>.</p>
 <p>Think about the condition for showing the selection and put that into the JSX.</p>
 <blockquote>
-<p>HINT: Both <code>item</code> and <code>selectedProduct</code> are objects that have “id” attributes.</p>
+<p>HINT: Both <code>item</code> and <code>selectedProduct</code> are objects that have “id" attributes.</p>
 </blockquote>
 <p>Finally, you can run the application again to see both the highlight on list and the side panel both update.</p>
 <h2 id="phase-3-enhance-the-user-experience">Phase 3: Enhance the user experience</h2>
@@ -75,7 +80,7 @@
 <p>Refresh your browser, try to close the side panel. One of three things will happen</p>
 <ol type="1">
 <li>If all worked as expected, congratulations! You are ready to continue with the next phase.</li>
-<li>If the highlight in the list disappears, and the side panel resets to “Our Products…” while remaining open, that’s okay. Continue to the next phase to do some debugging, and you can solve this bug in the process.</li>
+<li>If the highlight in the list disappears, and the side panel resets to “Our Products…" while remaining open, that’s okay. Continue to the next phase to do some debugging, and you can solve this bug in the process.</li>
 <li>If the list did not clear or other errors occurred, please check your code. You can take a peek at the next phase to see if debugging state change will solve your issues. Good developers know when to reach out for help, if necessary, before continuing.</li>
 </ol>
 <h2 id="phase-4-debug-re-rendering">Phase 4: Debug re-rendering</h2>
@@ -129,7 +134,7 @@ ProductView.js:27 sideOpen CHANGED TO true</code></pre>
 <h2 id="bonus-phase-remember-state-using-local-storage">Bonus Phase: Remember state using local storage</h2>
 <p>There are times when it would benefit your users if the application remembered some of the settings on refresh or between sessions. The <code>useEffect</code> hook is one way (probably the best way) to put the value of a state variable into <code>localStorage</code>. Likewise, the <code>useState</code> definition is often the best time to get the value back out.</p>
 <p>Remember that there will be no value in <code>localStorage</code> the first time a user visits your application, so you’ll need to check for that and provide an appropriate default.</p>
-<p>In this bonus phase, store the state of the side panel (whether opened or closed) in local storage. You can view (and edit or delete) local storage in the JavaScript tools in your browser by going to the “Application” tab and looking for “Local Storage” under “Storage” on the left.</p>
+<p>In this bonus phase, store the state of the side panel (whether opened or closed) in local storage. You can view (and edit or delete) local storage in the JavaScript tools in your browser by going to the “Application" tab and looking for “Local Storage" under “Storage" on the left.</p>
 <blockquote>
-<p>HINT: If you get stuck trying to figure out how to determine if the boolean <code>false</code> has been put into <code>localStorage</code>, consider storing it as a string because any non-empty string (including “false”) is considered <strong>truthy</strong>.</p>
+<p>HINT: If you get stuck trying to figure out how to determine if the boolean <code>false</code> has been put into <code>localStorage</code>, consider storing it as a string because any non-empty string (including “false") is considered <strong>truthy</strong>.</p>
 </blockquote>

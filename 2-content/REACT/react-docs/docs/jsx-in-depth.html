@@ -137,7 +137,7 @@ function Story(props) {
 <a class="sourceLine" id="cb14-2" title="2"></a>
 <a class="sourceLine" id="cb14-3" title="3"><span class="op">&lt;</span>MyComponent message<span class="op">={</span><span class="st">&#39;&lt;3&#39;</span><span class="op">}</span> /&gt;</a></code></pre></div>
 <p>This behavior is usually not relevant. It's only mentioned here for completeness.</p>
-<h3 id="props-default-to-true">Props Default to “True”</h3>
+<h3 id="props-default-to-true">Props Default to "True"</h3>
 <p>If you pass no value for a prop, it defaults to <code>true</code>. These two JSX expressions are equivalent:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="op">&lt;</span>MyTextBox autocomplete /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb15-2" title="2"></a>
@@ -147,7 +147,7 @@ function Story(props) {
         object shorthand</a> <code>{foo}</code> which is short for <code>{foo: foo}</code> rather than <code>{foo:
         true}</code>. This behavior is just there so that it matches the behavior of HTML.</p>
 <h3 id="spread-attributes">Spread Attributes</h3>
-<p>If you already have <code>props</code> as an object, and you want to pass it in JSX, you can use <code>...</code> as a “spread” operator to pass the whole props object. These two components are equivalent:</p>
+<p>If you already have <code>props</code> as an object, and you want to pass it in JSX, you can use <code>...</code> as a "spread" operator to pass the whole props object. These two components are equivalent:</p>
 <pre class="js{7}"><code>function App1() {
   return &lt;Greeting firstName=&quot;Ben&quot; lastName=&quot;Hector&quot; /&gt;;
 }
@@ -282,7 +282,7 @@ function ListOfTenThings() {
   {showHeader &amp;&amp; &lt;Header /&gt;}
   &lt;Content /&gt;
 &lt;/div&gt;</code></pre>
-<p>One caveat is that some <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">“falsy” values</a>, such as the <code>0</code> number, are still rendered by React. For example, this code will not behave as you might expect because <code>0</code> will be printed when <code>props.messages</code> is an empty array:</p>
+<p>One caveat is that some <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">"falsy" values</a>, such as the <code>0</code> number, are still rendered by React. For example, this code will not behave as you might expect because <code>0</code> will be printed when <code>props.messages</code> is an empty array:</p>
 <pre class="js{2}"><code>&lt;div&gt;
   {props.messages.length &amp;&amp;
     &lt;MessageList messages={props.messages} /&gt;

@@ -26,14 +26,14 @@ let result4 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str)
 console.log(result4); // 0
 *******************************************************************************/
 
-function count(array, cb) {
-  let numTrue = 0;
-  array.forEach(function(el) {
-    if (cb(el)) {
-      numTrue++;
-    }
-  });
-  return numTrue;
+function count ( array, cb ) {
+    let numTrue = 0;
+    array.forEach( function ( el ) {
+        if ( cb( el ) ) {
+            numTrue++;
+        }
+    } );
+    return numTrue;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

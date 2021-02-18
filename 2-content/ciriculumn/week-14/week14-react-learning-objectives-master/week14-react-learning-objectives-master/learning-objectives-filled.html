@@ -3,7 +3,7 @@
 <li><p><strong>Explain how React uses a tree data structure called the virtual DOM to model the DOM</strong><br/> The virtual DOM is a copy of the actual DOM tree. Updates in React are made to the virtual DOM. React uses a diffing algorithm to reconcile the changes and send the to the DOM to commit and paint.</p></li>
 <li><p><strong>Create virtual DOM nodes using JSX</strong><br/> To create a React virtual DOM node using JSX, define HTML syntax in a JavaScript file.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> hello <span class="op">=</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello World<span class="op">!</span>&lt;/h1<span class="op">&gt;;</span></a></code></pre></div>
-<p>Here, the JavaScript hello variable is set to a React virtual DOM h1 element with the text “Hello World!”.</p>
+<p>Here, the JavaScript hello variable is set to a React virtual DOM h1 element with the text "Hello World!".</p>
 <p>You can also nest virtual DOM nodes in each other just like how you do it in HTML with the real DOM.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> navBar <span class="op">=</span> (</a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="op">&lt;</span>nav<span class="op">&gt;</span></a>
@@ -56,7 +56,8 @@
 <a class="sourceLine" id="cb7-7" title="7">    &lt;/nav<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb7-8" title="8">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-9" title="9"><span class="op">}</span></a></code></pre></div>
-<p>You can also interpolate values into JSX. Set a variable to the string, “world”, and replace the string of “world” in the NavLinks JSX element with the variable wrapped in curly braces:</p>
+<p>You can also interpolate values into JSX. Set a variable to the string, "world", and replace the string of "world" in
+    the NavLinks JSX element with the variable wrapped in curly braces:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">function</span> <span class="at">NavBar</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="kw">const</span> world <span class="op">=</span> <span class="st">&#39;world&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb8-3" title="3">  <span class="cf">return</span> (</a>
@@ -211,7 +212,7 @@ const handleClick = () =&gt; history.push(&#39;/some/url&#39;);
 <a class="sourceLine" id="cb19-11" title="11">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb19-12" title="12"><span class="op">}</span></a></code></pre></div></li>
 <li><p><strong>Use the useEffect hook to trigger an operation as a result of a side effect.</strong><br/> useEffect is a function that takes two arguments, a callback function and a dependency array. The callback function is the ‘effect’. The dependency array delegates when the useEffect function will be invoked based on state and/or props.</p>
-<p>By using the useEffect Hook, you tell React that your component needs to do something <strong>after</strong> render. React will remember the function you passed (referred to as “the effect”), and call it later after performing the DOM updates.</p>
+<p>By using the useEffect Hook, you tell React that your component needs to do something <strong>after</strong> render. React will remember the function you passed (referred to as "the effect"), and call it later after performing the DOM updates.</p>
 <p>We use useEffect to control our side-effects. Side effects include, manually touching the DOM, timers, data fetching, subscriptions, etc.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1"><span class="im">import</span> <span class="op">{</span> useEffect <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb20-2" title="2"></a>
@@ -400,7 +401,7 @@ const handleClick = () =&gt; history.push(&#39;/some/url&#39;);
 <a class="sourceLine" id="cb28-10" title="10">    &lt;/div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb28-11" title="11">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb28-12" title="12"><span class="op">}</span></a></code></pre></div></li>
-<li><p><strong>Describe the relationships between provider, consumer, and context</strong><br/> Context allows “global” data in a React application and stores a single value. A context’s Provider is used to wrap a React application to enable all components in the application to access the context’s value. A Consumer is a React component that reads a context’s value.</p></li>
+<li><p><strong>Describe the relationships between provider, consumer, and context</strong><br/> Context allows "global" data in a React application and stores a single value. A context’s Provider is used to wrap a React application to enable all components in the application to access the context’s value. A Consumer is a React component that reads a context’s value.</p></li>
 </ol>
 <h3 id="links">LINKS</h3>
 <ol type="1">

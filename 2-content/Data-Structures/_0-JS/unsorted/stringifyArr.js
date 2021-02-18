@@ -1,4 +1,4 @@
-function stringifyArr( numArr ) {
+function stringifyArr ( numArr ) {
     /*String: StringConstructor Allows manipulation and formatting of text strings and determination and location of substrings within strings.*/
     return numArr.map( String )
 }

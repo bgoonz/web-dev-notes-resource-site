@@ -2,16 +2,16 @@
 We are asked to design an efficient data structure
 that allows us to add and search for words.
 The search can be a literal word or regular expression
-containing “.”, where “.” can be any letter.
+containing ".", where "." can be any letter.
 
 Example:
-addWord(“bad”)
-addWord(“dad”)
-addWord(“mad”)
-search(“pad”) -> false
-search(“bad”) -> true
-search(“.ad”) -> true
-search(“b..”) -> true
+addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -> false
+search("bad") -> true
+search(".ad") -> true
+search("b..") -> true
 """
 import collections
 

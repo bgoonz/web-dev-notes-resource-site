@@ -13,7 +13,7 @@ This document is a clarification of the acceptable behavior outlined in the
 this document should be interpreted to contradict any aspect of the npm Code of
 Conduct.
 
-### TL;DR
+### TL; DR
 
 1. Get the author email with `npm owner ls <pkgname>`
 2. Email the author, CC <support@npmjs.com>
@@ -23,39 +23,51 @@ Don't squat on package names.  Publish code or move out of the way.
 
 ### Description
 
-There sometimes arise cases where a user publishes a module, and then later,
+There sometimes arise cases where a user publishes a module, and then later, 
 some other user wants to use that name. Here are some common ways that happens
 (each of these is based on actual events.)
 
 1. Alice writes a JavaScript module `foo`, which is not node-specific. Alice
+
    doesn't use node at all. Yusuf wants to use `foo` in node, so he wraps it in
    an npm module. Some time later, Alice starts using node, and wants to take
    over management of her program.
+
 2. Yusuf writes an npm module `foo`, and publishes it. Perhaps much later, Alice
-   finds a bug in `foo`, and fixes it. She sends a pull request to Yusuf, but
+
+   finds a bug in `foo` , and fixes it. She sends a pull request to Yusuf, but
    Yusuf doesn't have the time to deal with it, because he has a new job and a
    new baby and is focused on his new Erlang project, and kind of not involved
-   with node any more. Alice would like to publish a new `foo`, but can't,
+   with node any more. Alice would like to publish a new `foo` , but can't, 
    because the name is taken.
+
 3. Yusuf writes a 10-line flow-control library, and calls it `foo`, and
+
    publishes it to the npm registry. Being a simple little thing, it never
    really has to be updated. Alice works for Foo Inc, the makers of the
    critically acclaimed and widely-marketed `foo` JavaScript toolkit framework.
-   They publish it to npm as `foojs`, but people are routinely confused when
-   `npm install foo` is some different thing.
+   They publish it to npm as `foojs` , but people are routinely confused when
+`npm install foo` is some different thing.
+
 4. Yusuf writes a parser for the widely-known `foo` file format, because he
+
    needs it for work. Then, he gets a new job, and never updates the prototype.
-   Later on, Alice writes a much more complete `foo` parser, but can't publish,
+   Later on, Alice writes a much more complete `foo` parser, but can't publish, 
    because Yusuf's `foo` is in the way.
 
 1. `npm owner ls foo`. This will tell Alice the email address of the owner
+
    (Yusuf).
+
 2. Alice emails Yusuf, explaining the situation **as respectfully as possible**,
+
    and what she would like to do with the module name. She adds the npm support
    staff <support@npmjs.com> to the CC list of the email. Mention in the email
    that Yusuf can run npm owner `add alice foo` to add Alice as an owner of the
    foo package.
+
 3. After a reasonable amount of time, if Yusuf has not responded, or if Yusuf
+
    and Alice can't come to any sort of resolution, email support
    <support@npmjs.com> and we'll sort it out. ("Reasonable" is usually at least
    4 weeks.)
@@ -79,21 +91,32 @@ brought to the attention of the npm registry admins, including but not limited
 to:
 
 1. Malware (that is, a package designed to exploit or harm the machine on which
+
    it is installed).
+
 2. Violations of copyright or licenses (for example, cloning an MIT-licensed
+
    program, and then removing or changing the copyright and license statement).
+
 3. Illegal content.
 4. "Squatting" on a package name that you plan to use, but aren't actually
+
    using. Sorry, I don't care how great the name is, or how perfect a fit it is
-   for the thing that someday might happen. If someone wants to use it today,
+   for the thing that someday might happen. If someone wants to use it today, 
    and you're just taking up space with an empty tarball, you're going to be
    evicted.
+
 5. Putting empty packages in the registry. Packages must have SOME
+
    functionality. It can be silly, but it can't be nothing. (See also:
    squatting.)
+
 6. Doing weird things with the registry, like using it as your own personal
+
    application database or otherwise putting non-packagey things into it.
+
 7. Other things forbidden by the npm
+
    [Code of Conduct](https://www.npmjs.com/policies/conduct) such as hateful
    language, pornographic content, or harassment.
 
@@ -121,7 +144,6 @@ the [git history for this document](https://github.com/npm/cli/commits/latest/do
 to view the changes.
 
 ### License
-
 
 This document may be reused under a Creative Commons Attribution-ShareAlike
 License.

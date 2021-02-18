@@ -54,9 +54,9 @@
 <p>Ideally, though, we could begin fetching data as soon as the native code had loaded - in parallel with the JS context initialization. By the time your JS code was ready to run, the data-fetching would already be under way. To do this we would need a way to determine <em>statically</em> - at build time - what query an application would send.</p>
 <p>The key is that GraphQL is already static - we just need to fully embrace this fact. More on this later.</p>
 <h2 id="developer-experience">Developer Experience</h2>
-<p>Next, we've paid attention to the community's feedback and know that, to put it simply, Relay could be “easier” to
-    use (and “simpler” too). This isn't entirely surprising to us - Relay was originally designed as a routing library
-    and gradually morphed into a data-fetching library. Concepts like Relay “routes”, for example, no longer serve as
+<p>Next, we've paid attention to the community's feedback and know that, to put it simply, Relay could be "easier" to
+    use (and "simpler" too). This isn't entirely surprising to us - Relay was originally designed as a routing library
+    and gradually morphed into a data-fetching library. Concepts like Relay "routes", for example, no longer serve as
     critical a role and are just one more concept that developers have to learn about. Another example is mutations:
     while writes <em>are</em> inherently more complex than reads, our API doesn't make the simple things simple enough.
 </p>
@@ -86,7 +86,7 @@
     ahead of time means that we can generate optimized code for handling query responses, for example, or for reading
     query data from an offline cache.</li>
 <li><strong>Expressive Mutations</strong>: We'll continue to support a higher-level mutation API for common cases, but
-    will also provide a lower-level API that allows “raw” data access where necessary. If you need to order a list of
+    will also provide a lower-level API that allows "raw" data access where necessary. If you need to order a list of
     cached elements, for example, there will be a way to <code>sort()</code> it.</li>
 <li><strong>Route-less Relay</strong>: Routes will be gone in open source. Instead of a route with multiple query
     definitions, you'll just provide a single query with as many root fields as you want.</li>
@@ -103,7 +103,7 @@
 <p>If you made it this far, congrats and thanks for reading! We'll be sharing more information about these changes in
     some upcoming talks:</p>
 <ul>
-<li><a href="https://github.com/wincent">Greg Hurrell</a> will presenting a Relay “Deep Dive” at the <a href="http://www.meetup.com/Silicon-Valley-ReactJS-Meetup/events/232236845/">Silicon Valley ReactJS Meetup</a> on August 17th.</li>
+<li><a href="https://github.com/wincent">Greg Hurrell</a> will presenting a Relay "Deep Dive" at the <a href="http://www.meetup.com/Silicon-Valley-ReactJS-Meetup/events/232236845/">Silicon Valley ReactJS Meetup</a> on August 17th.</li>
 <li>I (<span class="citation" data-cites="josephsavona">[@josephsavona]</span>(https://github.com/josephsavona)) will be speaking about Relay at <a href="http://www.reactrally.com">React Rally</a> on August 25th.</li>
 </ul>
 <p>We can't wait to share the new code with you and are working as fast as we can to do so!</p>

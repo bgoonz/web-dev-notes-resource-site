@@ -403,7 +403,7 @@ char *PQresultVerboseErrorMessage(const PGresult *res,
         verbosity settings had been in effect for the connection when the
         given <code class="structname">PGresult</code> was generated.  If
         the <code class="structname">PGresult</code> is not an error result,
-        <span class="quote">“<span class="quote">PGresult is not an error result</span>”</span> is reported instead.
+        <span class="quote">"<span class="quote">PGresult is not an error result</span>"</span> is reported instead.
         The returned string includes a trailing newline.
        </p><p>
         Unlike most other functions for extracting data from
@@ -708,7 +708,7 @@ int PQfmod(const PGresult *res,
       </p><p>
        The interpretation of modifier values is type-specific; they
        typically indicate precision or size limits.  The value -1 is
-       used to indicate <span class="quote">“<span class="quote">no information available</span>”</span>.  Most data
+       used to indicate <span class="quote">"<span class="quote">no information available</span>"</span>.  Most data
        types do not use modifiers, in which case the value is always
        -1.
       </p></dd><dt id="LIBPQ-PQFSIZE"><span class="term">
@@ -967,7 +967,7 @@ char *PQescapeLiteral(PGconn *conn, const char *str, size_t length);
        It is especially important to do proper escaping when handling
        strings that were received from an untrustworthy source.
        Otherwise there is a security risk: you are vulnerable to
-       <span class="quote">“<span class="quote">SQL injection</span>”</span> attacks wherein unwanted SQL commands are
+       <span class="quote">"<span class="quote">SQL injection</span>"</span> attacks wherein unwanted SQL commands are
        fed to your database.
       </p></div><p>
       Note that it is neither necessary nor correct to do escaping when a data
@@ -1068,7 +1068,7 @@ size_t PQescapeString (char *to, const char *from, size_t length);
       <code class="function">PQescapeString</code> can be used safely in
       client programs that work with only one <span class="productname">PostgreSQL</span>
       connection at a time (in this case it can find out what it needs to
-      know <span class="quote">“<span class="quote">behind the scenes</span>”</span>).  In other contexts it is a security
+      know <span class="quote">"<span class="quote">behind the scenes</span>"</span>).  In other contexts it is a security
       hazard and should be avoided in favor of
       <code class="function">PQescapeStringConn</code>.
      </p></dd><dt id="LIBPQ-PQESCAPEBYTEACONN"><span class="term">
@@ -1130,8 +1130,8 @@ unsigned char *PQescapeBytea(const unsigned char *from,
        parameter.  Because of this, <code class="function">PQescapeBytea</code> can
        only be used safely in client programs that use a single
        <span class="productname">PostgreSQL</span> connection at a time (in this case
-       it can find out what it needs to know <span class="quote">“<span class="quote">behind the
-       scenes</span>”</span>).  It <span class="emphasis"><em>might give the wrong results</em></span> if
+       it can find out what it needs to know <span class="quote">"<span class="quote">behind the
+       scenes</span>"</span>).  It <span class="emphasis"><em>might give the wrong results</em></span> if
        used in programs that use multiple database connections (use
        <code class="function">PQescapeByteaConn</code> in such cases).
       </p></dd><dt id="LIBPQ-PQUNESCAPEBYTEA"><span class="term">
@@ -1158,7 +1158,7 @@ unsigned char *PQunescapeBytea(const unsigned char *from, size_t *to_length);
       </p><p>
        This conversion is not exactly the inverse of
        <code class="function">PQescapeBytea</code>, because the string is not expected
-       to be <span class="quote">“<span class="quote">escaped</span>”</span> when received from <code class="function">PQgetvalue</code>.
+       to be <span class="quote">"<span class="quote">escaped</span>"</span> when received from <code class="function">PQgetvalue</code>.
        In particular this means there is no need for string quoting considerations,
        and so no need for a <code class="structname">PGconn</code> parameter.
       </p></dd></dl></div></div></div><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="libpq-status.html" title="33.2. Connection Status Functions">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="libpq.html" title="Chapter 33. libpq - C Library">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="libpq-async.html" title="33.4. Asynchronous Command Processing">Next</a></td></tr><tr><td width="40%" align="left" valign="top">33.2. Connection Status Functions </td><td width="20%" align="center"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="40%" align="right" valign="top"> 33.4. Asynchronous Command Processing</td></tr></table></div></body></html>

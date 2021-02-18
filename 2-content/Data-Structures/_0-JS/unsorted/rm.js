@@ -12,22 +12,22 @@
  * If everything succeeds, don't print anything.
  */
 
-const fs = require('fs');
+const fs = require( 'fs' );
 
-const filesToRemove = process.argv.slice(2);
+const filesToRemove = process.argv.slice( 2 );
 
-if (filesToRemove.length === 0) {
-  console.log("USAGE: ./rm.js path[, path[, path...]]");
-  process.exit();
+if ( filesToRemove.length === 0 ) {
+    console.log( "USAGE: ./rm.js path[, path[, path...]]" );
+    process.exit();
 }
 
-function removeFiles([head, ...tail]) {
-  if (head === undefined && tail.length === 0) return;
-  if (head === undefined) removeFiles(tail);
-  fs.unlink(head, err => {
-    if (err) throw err;
-    removeFiles(tail);
-  });
+function removeFiles ( [ head, ...tail ] ) {
+    if ( head === undefined && tail.length === 0 ) return;
+    if ( head === undefined ) removeFiles( tail );
+    fs.unlink( head, err => {
+        if ( err ) throw err;
+        removeFiles( tail );
+    } );
 }
 
-removeFiles(filesToRemove);
+removeFiles( filesToRemove );

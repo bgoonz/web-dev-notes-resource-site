@@ -62,7 +62,7 @@ function FriendListItem(props) {
     components to the tree.</p>
 <h2 id="extracting-a-custom-hook">Extracting a Custom Hook</h2>
 <p>When we want to share logic between two JavaScript functions, we extract it to a third function. Both components and Hooks are functions, so this works for them too!</p>
-<p><strong>A custom Hook is a JavaScript function whose name starts with “<code>use</code>” and that may call other Hooks.</strong> For example, <code>useFriendStatus</code> below is our first custom Hook:</p>
+<p><strong>A custom Hook is a JavaScript function whose name starts with "<code>use</code>" and that may call other Hooks.</strong> For example, <code>useFriendStatus</code> below is our first custom Hook:</p>
 <pre class="js{3}"><code>import { useState, useEffect } from &#39;react&#39;;
 
 function useFriendStatus(friendID) {
@@ -121,7 +121,7 @@ function useFriendStatus(friendID) {
     closely, you'll notice we didn't make any changes to the behavior. All we did was to extract some common code
     between two functions into a separate function. <strong>Custom Hooks are a convention that naturally follows from
         the design of Hooks, rather than a React feature.</strong></p>
-<p><strong>Do I have to name my custom Hooks starting with “<code>use</code>”?</strong> Please do. This convention is
+<p><strong>Do I have to name my custom Hooks starting with "<code>use</code>"?</strong> Please do. This convention is
     very important. Without it, we wouldn't be able to automatically check for violations of <a
         href="/docs/hooks-rules.html">rules of Hooks</a> because we couldn't tell if a certain function contains calls
     to Hooks inside of it.</p>

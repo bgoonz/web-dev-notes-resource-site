@@ -31,7 +31,7 @@ We recommend to put the test files (or `__tests__` folders) next to the code the
 
 When you run `npm test`, Jest will launch in watch mode<sup>\*</sup>. Every time you save a file, it will re-run the tests, like how `npm start` recompiles the code.
 
-The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
+The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the "Watch Usage" note that the watcher prints after every run:
 
 ![Jest watch mode](https://jestjs.io/img/blog/15-watch.gif)
 
@@ -62,11 +62,11 @@ it('sums numbers', () => {
 
 All `expect()` matchers supported by Jest are [extensively documented here](https://jestjs.io/docs/en/expect.html#content).
 
-You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](https://jestjs.io/docs/en/expect.html#tohavebeencalled) to create “spies” or mock functions.
+You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](https://jestjs.io/docs/en/expect.html#tohavebeencalled) to create "spies" or mock functions.
 
 ## Testing Components
 
-There is a broad spectrum of component testing techniques. They range from a “smoke test” verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
+There is a broad spectrum of component testing techniques. They range from a "smoke test" verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
 
 Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven't decided on a testing strategy yet, we recommend that you start with creating basic smoke tests for your components:
 

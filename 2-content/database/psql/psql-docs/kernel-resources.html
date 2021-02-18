@@ -9,13 +9,13 @@
     <span class="productname">PostgreSQL</span> requires the operating system to provide
     inter-process communication (<acronym class="acronym">IPC</acronym>) features, specifically
     shared memory and semaphores.  Unix-derived systems typically provide
-    <span class="quote">“<span class="quote"><span class="systemitem">System V</span></span>”</span> <acronym class="acronym">IPC</acronym>,
-    <span class="quote">“<span class="quote"><span class="systemitem">POSIX</span></span>”</span> <acronym class="acronym">IPC</acronym>, or both.
+    <span class="quote">"<span class="quote"><span class="systemitem">System V</span></span>"</span> <acronym class="acronym">IPC</acronym>,
+    <span class="quote">"<span class="quote"><span class="systemitem">POSIX</span></span>"</span> <acronym class="acronym">IPC</acronym>, or both.
     <span class="systemitem">Windows</span> has its own implementation of
     these features and is not discussed here.
    </p><p>
     The complete lack of these facilities is usually manifested by an
-    <span class="quote">“<span class="quote"><span class="errorname">Illegal system call</span></span>”</span> error upon server
+    <span class="quote">"<span class="quote"><span class="errorname">Illegal system call</span></span>"</span> error upon server
     start.  In that case there is no alternative but to reconfigure your
     kernel.  <span class="productname">PostgreSQL</span> won't work without them.
     This situation is rare, however, among modern operating systems.
@@ -70,8 +70,8 @@
     (<a class="xref" href="runtime-config-autovacuum.html#GUC-AUTOVACUUM-MAX-WORKERS">autovacuum_max_workers</a>) and allowed background
     process (<a class="xref" href="runtime-config-resource.html#GUC-MAX-WORKER-PROCESSES">max_worker_processes</a>), in sets of 16.
     Each such set will
-    also contain a 17th semaphore which contains a <span class="quote">“<span class="quote">magic
-    number</span>”</span>, to detect collision with semaphore sets used by
+    also contain a 17th semaphore which contains a <span class="quote">"<span class="quote">magic
+    number</span>"</span>, to detect collision with semaphore sets used by
     other applications. The maximum number of semaphores in the system
     is set by <code class="varname">SEMMNS</code>, which consequently must be at least
     as high as <code class="varname">max_connections</code> plus
@@ -83,8 +83,8 @@
     least <code class="literal">ceil((max_connections + autovacuum_max_workers + max_wal_senders + max_worker_processes + 5) / 16)</code>.
     Lowering the number
     of allowed connections is a temporary workaround for failures,
-    which are usually confusingly worded <span class="quote">“<span class="quote">No space
-    left on device</span>”</span>, from the function <code class="function">semget</code>.
+    which are usually confusingly worded <span class="quote">"<span class="quote">No space
+    left on device</span>"</span>, from the function <code class="function">semget</code>.
    </p><p>
     In some cases it might also be necessary to increase
     <code class="varname">SEMMAP</code> to be at least on the order of
@@ -98,7 +98,7 @@
     space could over time lead to fewer available semaphores than there
     should be.
    </p><p>
-    Various other settings related to <span class="quote">“<span class="quote">semaphore undo</span>”</span>, such as
+    Various other settings related to <span class="quote">"<span class="quote">semaphore undo</span>"</span>, such as
     <code class="varname">SEMMNU</code> and <code class="varname">SEMUME</code>, do not affect
     <span class="productname">PostgreSQL</span>.
    </p><p>
@@ -242,7 +242,7 @@ option        SEMMNU=256
         The default maximum segment size is 32 MB, and the
         default maximum total size is 2097152
         pages.  A page is almost always 4096 bytes except in unusual
-        kernel configurations with <span class="quote">“<span class="quote">huge pages</span>”</span>
+        kernel configurations with <span class="quote">"<span class="quote">huge pages</span>"</span>
         (use <code class="literal">getconf PAGE_SIZE</code> to verify).
        </p><p>
         The shared memory size settings can be changed via the
@@ -393,12 +393,12 @@ WARNING:  could not remove shared memory segment "/PostgreSQL.1450751626": No su
     resources are not removed in the same way as others.  But it is not
     advisable to rely on these subtle differences.
    </p><p>
-    A <span class="quote">“<span class="quote">user logging out</span>”</span> might happen as part of a maintenance
+    A <span class="quote">"<span class="quote">user logging out</span>"</span> might happen as part of a maintenance
     job or manually when an administrator logs in as
     the <code class="literal">postgres</code> user or something similar, so it is hard
     to prevent in general.
    </p><p>
-    What is a <span class="quote">“<span class="quote">system user</span>”</span> is determined
+    What is a <span class="quote">"<span class="quote">system user</span>"</span> is determined
     at <span class="productname">systemd</span> compile time from
     the <code class="symbol">SYS_UID_MAX</code> setting
     in <code class="filename">/etc/login.defs</code>.
@@ -424,8 +424,8 @@ RemoveIPC=no
     <span class="productname">PostgreSQL</span> server. Of particular
     importance are limits on the number of processes per user, the
     number of open files per process, and the amount of memory available
-    to each process. Each of these have a <span class="quote">“<span class="quote">hard</span>”</span> and a
-    <span class="quote">“<span class="quote">soft</span>”</span> limit. The soft limit is what actually counts
+    to each process. Each of these have a <span class="quote">"<span class="quote">hard</span>"</span> and a
+    <span class="quote">"<span class="quote">soft</span>"</span> limit. The soft limit is what actually counts
     but it can be changed by the user up to the hard limit. The hard
     limit can only be changed by the root user. The system call
     <code class="function">setrlimit</code> is responsible for setting these
@@ -469,7 +469,7 @@ default:\
     several servers on one machine things might get tight.
    </p><p>
     The factory default limit on open files is often set to
-    <span class="quote">“<span class="quote">socially friendly</span>”</span> values that allow many users to
+    <span class="quote">"<span class="quote">socially friendly</span>"</span> values that allow many users to
     coexist on a machine without using an inappropriate fraction of
     the system resources.  If you run many servers on a machine this
     is perhaps what you want, but on dedicated servers you might want to
@@ -522,7 +522,7 @@ Out of Memory: Killed process 12345 (postgres).
     and instead make use of external connection-pooling software.
    </p><p>
     On Linux 2.6 and later, it is possible to modify the
-    kernel's behavior so that it will not <span class="quote">“<span class="quote">overcommit</span>”</span> memory.
+    kernel's behavior so that it will not <span class="quote">"<span class="quote">overcommit</span>"</span> memory.
     Although this setting will not prevent the <a class="ulink" href="https://lwn.net/Articles/104179/" target="_top">OOM killer</a> from being invoked
     altogether, it will lower the chances significantly and will therefore
     lead to more robust system behavior.  This is done by selecting strict

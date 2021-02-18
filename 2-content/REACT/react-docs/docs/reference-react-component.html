@@ -25,7 +25,7 @@
         href="/docs/react-without-es6.html">Using React without ES6</a> to learn more.</p>
 </blockquote>
 <h3 id="the-component-lifecycle">The Component Lifecycle</h3>
-<p>Each component has several “lifecycle methods” that you can override to run code at particular times in the process. <strong>You can use <a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">this lifecycle diagram</a> as a cheat sheet.</strong> In the list below, commonly used lifecycle methods are marked as <strong>bold</strong>. The rest of them exist for relatively rare use cases.</p>
+<p>Each component has several "lifecycle methods" that you can override to run code at particular times in the process. <strong>You can use <a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">this lifecycle diagram</a> as a cheat sheet.</strong> In the list below, commonly used lifecycle methods are marked as <strong>bold</strong>. The rest of them exist for relatively rare use cases.</p>
 <h4 id="mounting">Mounting</h4>
 <p>These methods are called in the following order when an instance of a component is being created and inserted into the DOM:</p>
 <ul>
@@ -140,7 +140,7 @@
 <a class="sourceLine" id="cb5-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>The problem is that it's both unnecessary (you can use <code>this.props.color</code> directly instead), and creates
     bugs (updates to the <code>color</code> prop won't be reflected in the state).</p>
-<p><strong>Only use this pattern if you intentionally want to ignore prop updates.</strong> In that case, it makes sense to rename the prop to be called <code>initialColor</code> or <code>defaultColor</code>. You can then force a component to “reset” its internal state by <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">changing its <code>key</code></a> when necessary.</p>
+<p><strong>Only use this pattern if you intentionally want to ignore prop updates.</strong> In that case, it makes sense to rename the prop to be called <code>initialColor</code> or <code>defaultColor</code>. You can then force a component to "reset" its internal state by <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">changing its <code>key</code></a> when necessary.</p>
 <p>Read our <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">blog post on avoiding derived state</a> to learn about what to do if you think you need some state to depend on the props.</p>
 </blockquote>
 <hr />
@@ -169,10 +169,10 @@
 <p>You <strong>may call <code>setState()</code> immediately</strong> in <code>componentDidUpdate()</code> but note that
     <strong>it must be wrapped in a condition</strong> like in the example above, or you'll cause an infinite loop. It
     would also cause an extra re-rendering which, while not visible to the user, can affect the component performance.
-    If you're trying to “mirror” some state to a prop coming from above, consider using the prop directly instead. Read
+    If you're trying to "mirror" some state to a prop coming from above, consider using the prop directly instead. Read
     more about <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">why copying props into state causes
         bugs</a>.</p>
-<p>If your component implements the <code>getSnapshotBeforeUpdate()</code> lifecycle (which is rare), the value it returns will be passed as a third “snapshot” parameter to <code>componentDidUpdate()</code>. Otherwise this parameter will be undefined.</p>
+<p>If your component implements the <code>getSnapshotBeforeUpdate()</code> lifecycle (which is rare), the value it returns will be passed as a third "snapshot" parameter to <code>componentDidUpdate()</code>. Otherwise this parameter will be undefined.</p>
 <blockquote>
 <p>Note</p>
 <p><code>componentDidUpdate()</code> will not be invoked if <a href="#shouldcomponentupdate"><code>shouldComponentUpdate()</code></a> returns false.</p>
@@ -187,7 +187,7 @@
 <p>The methods in this section correspond to uncommon use cases. They're handy once in a while, but most of your
     components probably don't need any of them. <strong>You can see most of the methods below on <a
             href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">this lifecycle diagram</a> if you
-        click the “Show less common lifecycles” checkbox at the top of it.</strong></p>
+        click the "Show less common lifecycles" checkbox at the top of it.</strong></p>
 <h3 id="shouldcomponentupdate"><code>shouldComponentUpdate()</code></h3>
 <div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="at">shouldComponentUpdate</span>(nextProps<span class="op">,</span> nextState)</a></code></pre></div>
 <p>Use <code>shouldComponentUpdate()</code> to let React know if a component's output is not affected by the current
@@ -195,7 +195,7 @@
     cases you should rely on the default behavior.</p>
 <p><code>shouldComponentUpdate()</code> is invoked before rendering when new props or state are being received. Defaults to <code>true</code>. This method is not called for the initial render or when <code>forceUpdate()</code> is used.</p>
 <p>This method only exists as a <strong><a href="/docs/optimizing-performance.html">performance
-            optimization</a>.</strong> Do not rely on it to “prevent” a rendering, as this can lead to bugs.
+            optimization</a>.</strong> Do not rely on it to "prevent" a rendering, as this can lead to bugs.
     <strong>Consider using the built-in <a
             href="/docs/react-api.html#reactpurecomponent"><code>PureComponent</code></a></strong> instead of writing
     <code>shouldComponentUpdate()</code> by hand. <code>PureComponent</code> performs a shallow comparison of props and
@@ -214,7 +214,7 @@
 <ul>
 <li><p>If you need to <strong>perform a side effect</strong> (for example, data fetching or an animation) in response to a change in props, use <a href="#componentdidupdate"><code>componentDidUpdate</code></a> lifecycle instead.</p></li>
 <li><p>If you want to <strong>re-compute some data only when a prop changes</strong>, <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization">use a memoization helper instead</a>.</p></li>
-<li><p>If you want to <strong>“reset” some state when a prop changes</strong>, consider either making a component <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component">fully controlled</a> or <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">fully uncontrolled with a <code>key</code></a> instead.</p></li>
+<li><p>If you want to <strong>"reset" some state when a prop changes</strong>, consider either making a component <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component">fully controlled</a> or <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">fully uncontrolled with a <code>key</code></a> instead.</p></li>
 </ul>
 <p>This method doesn't have access to the component instance. If you'd like, you can reuse some code between
     <code>getDerivedStateFromProps()</code> and the other class methods by extracting pure functions of the component
@@ -228,7 +228,7 @@
 <p>A snapshot value (or <code>null</code>) should be returned.</p>
 <p>For example:</p>
 <p><code>embed:react-component-reference/get-snapshot-before-update.js</code></p>
-<p>In the above examples, it is important to read the <code>scrollHeight</code> property in <code>getSnapshotBeforeUpdate</code> because there may be delays between “render” phase lifecycles (like <code>render</code>) and “commit” phase lifecycles (like <code>getSnapshotBeforeUpdate</code> and <code>componentDidUpdate</code>).</p>
+<p>In the above examples, it is important to read the <code>scrollHeight</code> property in <code>getSnapshotBeforeUpdate</code> because there may be delays between "render" phase lifecycles (like <code>render</code>) and "commit" phase lifecycles (like <code>getSnapshotBeforeUpdate</code> and <code>componentDidUpdate</code>).</p>
 <hr />
 <h3 id="error-boundaries">Error boundaries</h3>
 <p><a href="/docs/error-boundaries.html">Error boundaries</a> are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.</p>
@@ -266,7 +266,7 @@
 }</code></pre>
 <blockquote>
 <p>Note</p>
-<p><code>getDerivedStateFromError()</code> is called during the “render” phase, so side-effects are not permitted. For those use cases, use <code>componentDidCatch()</code> instead.</p>
+<p><code>getDerivedStateFromError()</code> is called during the "render" phase, so side-effects are not permitted. For those use cases, use <code>componentDidCatch()</code> instead.</p>
 </blockquote>
 <hr />
 <h3 id="componentdidcatch"><code>componentDidCatch()</code></h3>
@@ -276,7 +276,7 @@
 <li><code>error</code> - The error that was thrown.</li>
 <li><code>info</code> - An object with a <code>componentStack</code> key containing <a href="/docs/error-boundaries.html#component-stack-traces">information about which component threw the error</a>.</li>
 </ol>
-<p><code>componentDidCatch()</code> is called during the “commit” phase, so side-effects are permitted. It should be used for things like logging errors:</p>
+<p><code>componentDidCatch()</code> is called during the "commit" phase, so side-effects are permitted. It should be used for things like logging errors:</p>
 <pre class="js{12-19}"><code>class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -315,7 +315,7 @@
 </blockquote>
 <hr />
 <h3 id="legacy-lifecycle-methods">Legacy Lifecycle Methods</h3>
-<p>The lifecycle methods below are marked as “legacy”. They still work, but we don't recommend using them in the new
+<p>The lifecycle methods below are marked as "legacy". They still work, but we don't recommend using them in the new
     code. You can learn more about migrating away from legacy lifecycle methods in <a
         href="/blog/2018/03/27/update-on-async-rendering.html">this blog post</a>.</p>
 <h3 id="unsafe_componentwillmount"><code>UNSAFE_componentWillMount()</code></h3>
@@ -340,7 +340,7 @@
 <ul>
 <li>If you need to <strong>perform a side effect</strong> (for example, data fetching or an animation) in response to a change in props, use <a href="#componentdidupdate"><code>componentDidUpdate</code></a> lifecycle instead.</li>
 <li>If you used <code>componentWillReceiveProps</code> for <strong>re-computing some data only when a prop changes</strong>, <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#what-about-memoization">use a memoization helper instead</a>.</li>
-<li>If you used <code>componentWillReceiveProps</code> to <strong>“reset” some state when a prop changes</strong>, consider either making a component <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component">fully controlled</a> or <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">fully uncontrolled with a <code>key</code></a> instead.</li>
+<li>If you used <code>componentWillReceiveProps</code> to <strong>"reset" some state when a prop changes</strong>, consider either making a component <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component">fully controlled</a> or <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key">fully uncontrolled with a <code>key</code></a> instead.</li>
 </ul>
 <p>For other use cases, <a href="/blog/2018/06/07/you-probably-dont-need-derived-state.html">follow the recommendations in this blog post about derived state</a>.</p>
 </blockquote>

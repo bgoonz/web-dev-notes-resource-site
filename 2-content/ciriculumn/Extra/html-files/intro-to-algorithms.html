@@ -40,7 +40,9 @@
 </ul>
 <h3 id="lesson">Lesson</h3>
 <h4 id="changing-constraints">Changing Constraints</h4>
-<p>An algorithm is kind of like the second half of a cooking recipe. The first half lists the ingredients, and the second half will list what to do with them. Algorithms are a set of procedures. There isn’t always a “correct” algorithm; your algorithm choice depends a little on the context of the question.</p>
+<p>An algorithm is kind of like the second half of a cooking recipe. The first half lists the ingredients, and the
+    second half will list what to do with them. Algorithms are a set of procedures. There isn’t always a “correct"
+    algorithm; your algorithm choice depends a little on the context of the question.</p>
 <p>Let’s say you’re making a sandwich. You might start with two slices of bread, take a knife and dip it in peanut butter and paint one slice with that. Then you clean your knife, then dip it in jelly, then paint the other slice. Then you clean your knife again, and put it away. Now you put the bread together and enjoy. It took you 30 seconds.</p>
 <p>But what if you’re making 10 sandwiches for you and your best friends? You could do the above 10 times, but you’ll find yourself cleaning your knife a lot and it would take you 5 minutes (30 seconds * 10), so instead you put out 20 slices of bread, paint half of them with peanut butter, then clean your knife, then paint the other half with jelly. Then you clean your knife and put it away. Then you put all the breads together and enjoy, and you find it took you half the time of 2 minutes 30 seconds! So efficient, and your friends are all impressed.</p>
 <p>That might make sense, but maybe you live in a tiny San Francisco apartment and you only have a small amount of space to work with. The second solution made sense given infinite prep space, but now the constraints of the problem have changed, and you actually do have to do the first method 10 times. It still takes 5 minutes, life is suffering but you work with what you got.</p>
@@ -54,12 +56,17 @@ n=1000 t=250</code></pre>
 <pre><code>sandwiches = time_in_minutes / 4</code></pre>
 <p>When graphed, this looks like a linear line. In computer science, we have a notation for something that takes linear-time, and call it Big-O notation. It looks like this:</p>
 <pre><code>O(n)</code></pre>
-<p>Let’s say you have a magic genie who will grant you any wish. You already used your first two wishes on stupid stuff, so now you want to make a wish for a lot of sandwiches. Only deal is you have to type out how many sandwiches you want on a calculator, and you can only press a button on the calculator once every minute. So you start out… you press “100”… you’re about to get nearly 100 sandwiches, but it took you 3 minutes to press that. One minute later “1000”… One minute later “10000”… every minute that goes by you get 10 times as many sandwiches. It’s like your sandwiches are increasing exponentially. In Big-O it looks like this:</p>
+<p>Let’s say you have a magic genie who will grant you any wish. You already used your first two wishes on stupid stuff,
+    so now you want to make a wish for a lot of sandwiches. Only deal is you have to type out how many sandwiches you
+    want on a calculator, and you can only press a button on the calculator once every minute. So you start out… you
+    press “100"… you’re about to get nearly 100 sandwiches, but it took you 3 minutes to press that. One minute later
+    “1000"… One minute later “10000"… every minute that goes by you get 10 times as many sandwiches. It’s like your
+    sandwiches are increasing exponentially. In Big-O it looks like this:</p>
 <pre><code>O(n^10)</code></pre>
-<p>Typically you will usually see O(n^2) because computers tend to do things in binary, and because <code>if</code> statements tend to make binary choices of “do this or do that”.</p>
-<p>So now the genie gets annoyed. He’s like just say what you want, nevermind the calculator. So you say “I would like ten billion sandwiches”. You get it. Cool, you solved world hunger. You could have said any number, and it takes just as much time. We call this “constant time”, and you’ll see this referred to as</p>
+<p>Typically you will usually see O(n^2) because computers tend to do things in binary, and because <code>if</code> statements tend to make binary choices of “do this or do that".</p>
+<p>So now the genie gets annoyed. He’s like just say what you want, nevermind the calculator. So you say “I would like ten billion sandwiches". You get it. Cool, you solved world hunger. You could have said any number, and it takes just as much time. We call this “constant time", and you’ll see this referred to as</p>
 <pre><code>O(1)</code></pre>
-<p>The “1” here could be 20, or 50. It’s still 1, because there are no units and no scale.</p>
+<p>The “1" here could be 20, or 50. It’s still 1, because there are no units and no scale.</p>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ul>
 <li><p>There is always a best algorithm for any problem</p>

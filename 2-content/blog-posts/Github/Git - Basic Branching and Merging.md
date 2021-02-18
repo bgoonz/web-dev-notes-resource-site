@@ -85,7 +85,7 @@ You can run your tests, make sure the hotfix is what you want, and finally merge
      index.html | 2 ++
      1 file changed, 2 insertions(+)
 
-You’ll notice the phrase “fast-forward” in that merge. Because the commit `C4` pointed to by the branch `hotfix` you merged in was directly ahead of the commit `C2` you’re on, Git simply moves the pointer forward. To phrase that another way, when you try to merge one commit with a commit that can be reached by following the first commit’s history, Git simplifies things by moving the pointer forward because there is no divergent work to merge together — this is called a “fast-forward.”
+You’ll notice the phrase “fast-forward" in that merge. Because the commit `C4` pointed to by the branch `hotfix` you merged in was directly ahead of the commit `C2` you’re on, Git simply moves the pointer forward. To phrase that another way, when you try to merge one commit with a commit that can be reached by following the first commit’s history, Git simplifies things by moving the pointer forward because there is no divergent work to merge together — this is called a “fast-forward."
 
 Your change is now in the snapshot of the commit pointed to by the `master` branch, and you can deploy the fix.
 
@@ -195,7 +195,7 @@ If you want to use a graphical tool to resolve these issues, you can run `git me
       {remote}: modified file
     Hit return to start merge resolution tool (opendiff):
 
-If you want to use a merge tool other than the default (Git chose `opendiff` in this case because the command was run on a Mac), you can see all the supported tools listed at the top after “one of the following tools.” Just type the name of the tool you’d rather use.
+If you want to use a merge tool other than the default (Git chose `opendiff` in this case because the command was run on a Mac), you can see all the supported tools listed at the top after “one of the following tools." Just type the name of the tool you’d rather use.
 
 <table><tbody><tr><td><p>Note</p></td><td><p>If you need more advanced tools for resolving tricky merge conflicts, we cover more on merging in <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/ch00/_advanced_merging">Advanced Merging</a>.</p></td></tr></tbody></table>
 

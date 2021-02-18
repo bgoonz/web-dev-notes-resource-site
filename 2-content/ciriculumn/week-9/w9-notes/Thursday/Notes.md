@@ -288,17 +288,17 @@
 
 ```css
 .item-1 {
-  grid-row-start: row2-start; /* Item starts at row line named “row2-start” */
+  grid-row-start: row2-start; /* Item starts at row line named "row2-start" */
   grid-row-end: 5; /* Item ends at row line 5 */
   grid-column-start: 1; /* Item starts at column line 1 */
-  grid-column-end: three; /* Item ends at column line named “three” */
+  grid-column-end: three; /* Item ends at column line named "three" */
 }
 
 .item-2 {
   grid-row-start: 1; /* Item starts at row line 1 */
   grid-row-end: span 2; /* Item spans two rows and ends at row line 3 */
   grid-column-start: 3; /* Item starts at column line 3 */
-  grid-column-end: span col5-start; /* Item spans and ends at line named “col5-start” */
+  grid-column-end: span col5-start; /* Item spans and ends at line named "col5-start" */
 }
 ```
 

@@ -11,7 +11,7 @@ follows the usual rules for package names (URL-safe characters, no leading dots
 or underscores). When used in package names, scopes are preceded by an `@` symbol
 and followed by a slash, e.g.
 
-```bash
+``` bash
 @somescope/somepackagename
 ```
 
@@ -25,46 +25,46 @@ for organizations.
 
 Scoped packages can be published and installed as of `npm@2` and are supported
 by the primary npm registry. Unscoped packages can depend on scoped packages and
-vice versa. The npm client is backwards-compatible with unscoped registries,
+vice versa. The npm client is backwards-compatible with unscoped registries, 
 so it can be used to work with scoped and unscoped registries at the same time.
 
 ### Installing scoped packages
 
 Scoped packages are installed to a sub-folder of the regular installation
-folder, e.g. if your other packages are installed in `node_modules/packagename`,
-scoped modules will be installed in `node_modules/@myorg/packagename`. The scope
-folder (`@myorg`) is simply the name of the scope preceded by an `@` symbol, and can
+folder, e.g. if your other packages are installed in `node_modules/packagename` , 
+scoped modules will be installed in `node_modules/@myorg/packagename` . The scope
+folder ( `@myorg` ) is simply the name of the scope preceded by an `@` symbol, and can
 contain any number of scoped packages.
 
 A scoped package is installed by referencing it by name, preceded by an
-`@` symbol, in `npm install`:
+`@` symbol, in `npm install` :
 
-```bash
+``` bash
 npm install @myorg/mypackage
 ```
 
-Or in `package.json`:
+Or in `package.json` :
 
-```json
+``` json
 "dependencies": {
   "@myorg/mypackage": "^1.3.0"
 }
 ```
 
 Note that if the `@` symbol is omitted, in either case, npm will instead attempt to
-install from GitHub; see [`npm install`](/commands/npm-install).
+install from GitHub; see [ `npm install` ](/commands/npm-install).
 
 ### Requiring scoped packages
 
 Because scoped packages are installed into a scope folder, you have to
 include the name of the scope when requiring them in your code, e.g.
 
-```javascript
+``` javascript
 require('@myorg/mypackage')
 ```
 
 There is nothing special about the way Node treats scope folders. This
-simply requires the `mypackage` module in the folder named `@myorg`.
+simply requires the `mypackage` module in the folder named `@myorg` .
 
 ### Publishing scoped packages
 
@@ -102,16 +102,16 @@ private registries, such as npm Enterprise.
 
 You can associate a scope with a registry at login, e.g.
 
-```bash
+``` bash
 npm login --registry=http://reg.example.com --scope=@myco
 ```
 
 Scopes have a many-to-one relationship with registries: one registry can
 host multiple scopes, but a scope only ever points to one registry.
 
-You can also associate a scope with a registry using `npm config`:
+You can also associate a scope with a registry using `npm config` :
 
-```bash
+``` bash
 npm config set @myco:registry http://reg.example.com
 ```
 

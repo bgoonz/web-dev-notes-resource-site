@@ -368,10 +368,10 @@ COPY <em class="replaceable"><code>count</code></em>
     or vice versa).
    </p><p>
     <code class="command">COPY TO</code> will terminate each row with a Unix-style
-    newline (<span class="quote">“<span class="quote"><code class="literal">\n</code></span>”</span>).  Servers running on Microsoft Windows instead
-    output carriage return/newline (<span class="quote">“<span class="quote"><code class="literal">\r\n</code></span>”</span>), but only for
+    newline (<span class="quote">"<span class="quote"><code class="literal">\n</code></span>"</span>).  Servers running on Microsoft Windows instead
+    output carriage return/newline (<span class="quote">"<span class="quote"><code class="literal">\r\n</code></span>"</span>), but only for
     <code class="command">COPY</code> to a server file; for consistency across platforms,
-    <code class="command">COPY TO STDOUT</code> always sends <span class="quote">“<span class="quote"><code class="literal">\n</code></span>”</span>
+    <code class="command">COPY TO STDOUT</code> always sends <span class="quote">"<span class="quote"><code class="literal">\n</code></span>"</span>
     regardless of server platform.
     <code class="command">COPY FROM</code> can handle lines ending with newlines,
     carriage returns, or carriage return/newlines.  To reduce the risk of

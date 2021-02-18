@@ -19,13 +19,13 @@
  </p><p>
    So if you index, say, an image collection with a
    <span class="productname">PostgreSQL</span> B-tree, you can only issue queries
-   such as <span class="quote">“<span class="quote">is imagex equal to imagey</span>”</span>, <span class="quote">“<span class="quote">is imagex less
-   than imagey</span>”</span> and <span class="quote">“<span class="quote">is imagex greater than imagey</span>”</span>.
-   Depending on how you define <span class="quote">“<span class="quote">equals</span>”</span>, <span class="quote">“<span class="quote">less than</span>”</span>
-   and <span class="quote">“<span class="quote">greater than</span>”</span> in this context, this could be useful.
+   such as <span class="quote">"<span class="quote">is imagex equal to imagey</span>"</span>, <span class="quote">"<span class="quote">is imagex less
+   than imagey</span>"</span> and <span class="quote">"<span class="quote">is imagex greater than imagey</span>"</span>.
+   Depending on how you define <span class="quote">"<span class="quote">equals</span>"</span>, <span class="quote">"<span class="quote">less than</span>"</span>
+   and <span class="quote">"<span class="quote">greater than</span>"</span> in this context, this could be useful.
    However, by using a <acronym class="acronym">GiST</acronym> based index, you could create
-   ways to ask domain-specific questions, perhaps <span class="quote">“<span class="quote">find all images of
-   horses</span>”</span> or <span class="quote">“<span class="quote">find all over-exposed images</span>”</span>.
+   ways to ask domain-specific questions, perhaps <span class="quote">"<span class="quote">find all images of
+   horses</span>"</span> or <span class="quote">"<span class="quote">find all over-exposed images</span>"</span>.
  </p><p>
    All it takes to get a <acronym class="acronym">GiST</acronym> access method up and running
    is to implement several user-defined methods, which define the behavior of
@@ -58,9 +58,9 @@
  </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="function">consistent</code></span></dt><dd><p>
        Given an index entry <code class="literal">p</code> and a query value <code class="literal">q</code>,
        this function determines whether the index entry is
-       <span class="quote">“<span class="quote">consistent</span>”</span> with the query; that is, could the predicate
-       <span class="quote">“<span class="quote"><em class="replaceable"><code>indexed_column</code></em>
-       <em class="replaceable"><code>indexable_operator</code></em> <code class="literal">q</code></span>”</span> be true for
+       <span class="quote">"<span class="quote">consistent</span>"</span> with the query; that is, could the predicate
+       <span class="quote">"<span class="quote"><em class="replaceable"><code>indexed_column</code></em>
+       <em class="replaceable"><code>indexable_operator</code></em> <code class="literal">q</code></span>"</span> be true for
        any row represented by the index entry?  For a leaf index entry this is
        equivalent to testing the indexable condition, while for an internal
        tree node this determines whether it is necessary to scan the subtree
@@ -291,7 +291,7 @@ my_decompress(PG_FUNCTION_ARGS)
         is needed.  (But, of course, omitting the method altogether is even
         easier, and is recommended in such cases.)
       </p></dd><dt><span class="term"><code class="function">penalty</code></span></dt><dd><p>
-       Returns a value indicating the <span class="quote">“<span class="quote">cost</span>”</span> of inserting the new
+       Returns a value indicating the <span class="quote">"<span class="quote">cost</span>"</span> of inserting the new
        entry into a particular branch of the tree.  Items will be inserted
        down the path of least <code class="function">penalty</code> in the tree.
        Values returned by <code class="function">penalty</code> should be non-negative.
@@ -439,7 +439,7 @@ my_picksplit(PG_FUNCTION_ARGS)
         <acronym class="acronym">GiST</acronym> indexes lies.
       </p></dd><dt><span class="term"><code class="function">same</code></span></dt><dd><p>
        Returns true if two index entries are identical, false otherwise.
-       (An <span class="quote">“<span class="quote">index entry</span>”</span> is a value of the index's storage type,
+       (An <span class="quote">"<span class="quote">index entry</span>"</span> is a value of the index's storage type,
        not necessarily the original indexed column's type.)
       </p><p>
         The <acronym class="acronym">SQL</acronym> declaration of the function must look like this:
@@ -476,10 +476,10 @@ my_same(PG_FUNCTION_ARGS)
       </p></dd><dt><span class="term"><code class="function">distance</code></span></dt><dd><p>
        Given an index entry <code class="literal">p</code> and a query value <code class="literal">q</code>,
        this function determines the index entry's
-       <span class="quote">“<span class="quote">distance</span>”</span> from the query value.  This function must be
+       <span class="quote">"<span class="quote">distance</span>"</span> from the query value.  This function must be
        supplied if the operator class contains any ordering operators.
        A query using the ordering operator will be implemented by returning
-       index entries with the smallest <span class="quote">“<span class="quote">distance</span>”</span> values first,
+       index entries with the smallest <span class="quote">"<span class="quote">distance</span>"</span> values first,
        so the results must be consistent with the operator's semantics.
        For a leaf index entry the result just represents the distance to
        the index entry; for an internal tree node, the result must be the

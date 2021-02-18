@@ -35,8 +35,13 @@
 <h3 id="what-is-ajax">What is AJAX ?</h3>
 <p>AJAX stands for Asynchronous JavaScript and XML. It is a <strong>technique</strong> by which the front-end gets data by making <em>asynchronous</em> calls either to the project’s API in the back-end, or a 3rd-party API. Because AJAX is <em>asynchronous</em>, you must pass in a callback function to handle the received data. Making an AJAX request without any callback function will not have any effect on your application.</p>
 <h3 id="what-does-ajax-do">What does AJAX do?</h3>
-<p>Let’s say this website that the end user is visiting is an e-commerce site. The end user is browsing a list of products, sees a product they want to buy, and clicks the “Buy” button. This action (clicking the “Buy” button) triggers the request/response steps listed above, this time for the purpose of putting the product in the shopping cart.</p>
-<p>Before AJAX, the request/response cycle could only happen with the web page <em>as a whole</em>. The end user, by clicking the “Buy” button, would cause the backend server to generate a completely new set of HTML and JavaScript, and the browser would reload and render it as an entirely new page.</p>
+<p>Let’s say this website that the end user is visiting is an e-commerce site. The end user is browsing a list of
+    products, sees a product they want to buy, and clicks the “Buy" button. This action (clicking the “Buy" button)
+    triggers the request/response steps listed above, this time for the purpose of putting the product in the shopping
+    cart.</p>
+<p>Before AJAX, the request/response cycle could only happen with the web page <em>as a whole</em>. The end user, by
+    clicking the “Buy" button, would cause the backend server to generate a completely new set of HTML and JavaScript,
+    and the browser would reload and render it as an entirely new page.</p>
 <p>AJAX, however, enabled the browser to make requests and only re-render <em>parts</em> of a webpage. This was beneficial performance-wise, because smaller strings of HTML, rather than all the HTML for the entire page, was all that was needed to be sent by the server and rendered by the browser. This also made the end user’s browsing experience smoother: interactions with the webpage resulted in changes on screen without being interrupted by a reload.</p>
 <h3 id="full-page-load-vs-ajax">Full Page Load vs AJAX</h3>
 <blockquote>

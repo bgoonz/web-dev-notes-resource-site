@@ -1,5 +1,6 @@
 <html><head>
 <title>npm-install</title>
+
 <style>
 body {
     background-color: #ffffff;
@@ -12,8 +13,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 #rainbar {
-    height: 10px;
-    background-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);
+    height: 10px;    background-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);
 }
 
 a {
@@ -23,7 +23,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
 pre {
     margin: 1em 0px;
     padding: 1em;
@@ -182,7 +181,7 @@ following order of precedence:</p>
 <a href="../using-npm/registry.html"><code>registry</code></a>) with (c)</li>
 <li>e) a <code>&lt;name&gt;@&lt;tag&gt;</code> (see <a href="../commands/npm-dist-tag.html"><code>npm dist-tag</code></a>) that
 points to (d)</li>
-<li>f) a <code>&lt;name&gt;</code> that has a “latest” tag satisfying (e)</li>
+<li>f) a <code>&lt;name&gt;</code> that has a "latest" tag satisfying (e)</li>
 <li>g) a <code>&lt;git remote url&gt;</code> that resolves to (a)</li>
 </ul>
 <p>Even if you never publish your package, you can still get a lot of benefits
@@ -238,14 +237,14 @@ when installing the package (an equivalent of <code>tar x --strip-components=1</
 <li>
 <p><code>npm install &lt;tarball url&gt;</code>:</p>
 <p>Fetch the tarball url, and then install it.  In order to distinguish between
-this and other options, the argument must start with “http://” or “https://”</p>
+this and other options, the argument must start with "http://" or "https://"</p>
 <p>Example:</p>
 <pre lang="bash"><code>npm install https://github.com/indexzero/forever/tarball/v0.5.6
 </code></pre>
 </li>
 <li>
 <p><code>npm install [&lt;@scope&gt;/]&lt;name&gt;</code>:</p>
-<p>Do a <code>&lt;name&gt;@&lt;tag&gt;</code> install, where <code>&lt;tag&gt;</code> is the “tag” config. (See
+<p>Do a <code>&lt;name&gt;@&lt;tag&gt;</code> install, where <code>&lt;tag&gt;</code> is the "tag" config. (See
 <a href="../using-npm/config.html"><code>config</code></a>. The config's default value is <code>latest</code>.)</p>
 <p>In most cases, this will install the version of the modules tagged as
 <code>latest</code> on the npm registry.</p>

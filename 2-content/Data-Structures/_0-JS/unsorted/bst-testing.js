@@ -1,16 +1,16 @@
 const {
-  TreeNode,
-  BST
+    TreeNode,
+    BST
 } = require( "./binary-search-tree.js" );
 const {
-  findMin
+    findMin
 } = require( "./findMin.js" );
 const {
-  getHeight
+    getHeight
 } = require( "./getHeight.js" );
 let tree = new BST();
 tree.insert( 10 );
-console.log( tree.root instanceof( TreeNode ) ) //expect true
+console.log( tree.root instanceof ( TreeNode ) ) //expect true
 console.log( tree.root.value === 10 ) //expect ture
 tree.insert( 5 );
 tree.insert( 16 );

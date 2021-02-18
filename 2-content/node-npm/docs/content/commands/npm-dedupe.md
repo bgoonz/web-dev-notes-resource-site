@@ -1,50 +1,53 @@
 ---
-title: npm-dedupe
+title: npm-dedup
 section: 1
-description: Reduce duplication
+  description: Reduce duplication
 ---
 
 ### Synopsis
 
-```bash
+``` bash
 npm dedupe
 npm ddp
-
 aliases: find-dupes, ddp
 ```
 
 ### Description
 
 Searches the local package tree and attempts to simplify the overall
-structure by moving dependencies further up the tree, where they can
+cture by moving dependencies further up the tree, where they can
 be more effectively shared by multiple dependent packages.
 
 For example, consider this dependency graph:
 
-```
+``` 
+
 a
-+-- b <-- depends on c@1.0.x
-|   `-- c@1.0.3
+
++-- b <-- de|   `-- c@1.0.3
+
 `-- d <-- depends on c@~1.0.9
     `-- c@1.0.10
 ```
-
+        
 In this case, `npm dedupe` will transform the tree to:
 
-```bash
+``` bash
 a
 +-- b
-+-- d
-`-- c@1.0.10
++--     d <div
+  `-- c@1.0.10
 ```
 
-Because of the hierarchical nature of node's module lookup, b and d
+Because of the hierarchical nature of nod
+e's module lookup, b and d
 will both get their dependency met by the single c package at the root
 level of the tree.
 
 In some cases, you may have a dependency graph like this:
 
-```
+``` 
+
 a
 +-- b <-- depends on c@1.0.x
 +-- c@1.0.3
@@ -53,8 +56,8 @@ a
 ```
 
 During the installation process, the `c@1.0.3` dependency for `b` was
-placed in the root of the tree.  Though `d`'s dependency on `c@1.x` could
-have been satisfied by `c@1.0.3`, the newer `c@1.9.0` dependency was used,
+placed in the root of the tree.  Though `d` 's dependency on `c@1.x` could
+have been satisfied by `c@1.0.3` , the newer `c@1.9.0` dependency was used, 
 because npm favors updates by default, even when doing so causes
 duplication.
 
@@ -63,10 +66,10 @@ re-evaluate, deleting the nested `c` module, because the one in the root is
 sufficient.
 
 To prefer deduplication over novelty during the installation process, run
-`npm install --prefer-dedupe` or `npm config set prefer-dedupe true`.
+`npm install --prefer-dedupe` or `npm config set prefer-dedupe true` .
 
 Arguments are ignored. Dedupe always acts on the entire tree.
-
+    
 Note that this operation transforms the dependency tree, but will never
 result in new modules being installed.
 

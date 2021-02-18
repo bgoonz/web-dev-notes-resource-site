@@ -6,7 +6,7 @@ description: Ping npm registry
 
 ### Synopsis
 
-```bash
+``` bash
 npm ping [--registry <registry>]
 ```
 
@@ -15,11 +15,13 @@ npm ping [--registry <registry>]
 Ping the configured or given npm registry and verify authentication.
 If it works it will output something like:
 
-```bash
+``` bash
 Ping success: {*Details about registry*}
 ```
+
 otherwise you will get:
-```bash
+
+``` bash
 Ping error: {*Detail about error}
 ```
 

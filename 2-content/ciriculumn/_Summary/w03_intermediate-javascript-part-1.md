@@ -3116,7 +3116,7 @@ this sports-based phenomenon as a metaphor for product development in the 1986
 article "The New New Product Development Game".
 
 > The ... "relay race" approach to product development ... may conflict with the
-> goals of maximum speed and flexibility. Instead a holistic or “rugby”
+> goals of maximum speed and flexibility. Instead a holistic or "rugby"
 > approach—where a team tries to go the distance as a unit, passing the ball
 > back and forth—may better serve today’s competitive requirements.
 
@@ -3327,7 +3327,7 @@ done.
 Once the Scrum team finishes sprint planning and determines the features that it
 will complete in the next sprint, the development team, guided by the Scrum
 master’s coaching, performs all of the task-level work necessary to get the
-features done. “Done” means that the software developers have performed tasks to
+features done. "Done" means that the software developers have performed tasks to
 ensure the highest quality of software, and that the product owner has approved
 each feature's completion.
 
@@ -3492,7 +3492,7 @@ stakeholders and team learn exactly what remains to be done to deliver the
 entire feature.
 
 Timeboxing helps _avoid unnecessary perfectionism_. At one time or another
-people spend too much time trying to get something “perfect” when “good enough”
+people spend too much time trying to get something "perfect" when "good enough"
 would suffice. Timeboxing forces an end to potentially unbounded work by
 establishing a fixed end date for the sprint by which a good solution must be
 done.
@@ -3582,7 +3582,7 @@ predictable rhythm or heartbeat to a Scrum development effort. A steady, healthy
 heartbeat allows the Scrum team and the organization to acquire an important
 rhythmic familiarity with when things need to happen to achieve the fast,
 flexible flow of business value. Having a regular cadence to sprints enables
-people to “get into the zone,” “be on a roll,” or “get into a groove.”
+people to "get into the zone," "be on a roll," or "get into a groove."
 
 Having a short sprint cadence also tends to level out the intensity of work.
 Unlike a traditional sequential project where we see a steep increase in
@@ -3617,8 +3617,8 @@ focus, such as:
 * Load and curate new geophysical data
 * Integrate a new billing process into the application
 
-There are times when a sprint goal might be multifaceted, for example, “Get
-large-screen support working and support search by customer name.”
+There are times when a sprint goal might be multifaceted, for example, "Get
+large-screen support working and support search by customer name."
 
 During sprint planning, the development team should help refine and agree to the
 sprint goal and use it to determine the product backlog items that it can
@@ -3809,7 +3809,7 @@ types of testing included in the definition of done?
 Keep in mind that if you don’t do an important type of testing every sprint
 (say, performance testing), you’ll have to do it sometime. Are you going to have
 some specialized sprint in the future where the only thing you do is performance
-testing? If so, and performance testing is essential to being“done,” you really
+testing? If so, and performance testing is essential to being"done," you really
 don’t have a usable product each sprint. And even worse, when you actually do
 the performance testing at a later time and it doesn’t go quite as planned, not
 only will you discover a critical problem very late in the process, but you will
@@ -3843,7 +3843,7 @@ over time as organizational impediments are removed.
 
 ### Done and "done done"
 
-Some teams have adopted the concept of “done” versus “done done.” Somehow done-
+Some teams have adopted the concept of "done" versus "done done." Somehow done-
 done is supposed to be more done than done! Teams that are unaccustomed to
 really getting things done early and often are more likely to use "done done" as
 a crutch. For them, using "done done" makes the point that being done (doing as
@@ -3944,7 +3944,7 @@ communication that can spark ideas about problems and opportunities. Those are
 discussions that would not likely arise from reading a document.
 
 Conversation, however, is just a tool. It doesn’t replace all documents. In
-Scrum, the product backlog is a “living document,” available at all times during
+Scrum, the product backlog is a "living document," available at all times during
 product development. Those who still want or must have a requirements
 specification document can create one at any time, simply by collecting the
 product backlog items and all of their associated details into a document
@@ -4002,7 +4002,7 @@ stories directly on 3 × 5-inch index cards or sticky notes.
 A common template format for writing user stories uses the "Conextra format"
 known as the "as a-I want-so that" format. That format specifies a class of
 users (the user role), what that class of users wants to achieve (the goal), and
-why the users want to achieve the goal (the benefit). The “so that” part of a
+why the users want to achieve the goal (the benefit). The "so that" part of a
 user story is optional, but unless the purpose of the story is completely
 obvious to everyone, it should be included with every user story.
 
@@ -4140,11 +4140,11 @@ the stakeholders, and the team to negotiate the details.
 
 This negotiability helps everyone involved avoid the us-versus-them, finger-
 pointing mentality that is commonplace with detailed up-front requirements docu-
-ments. When stories are negotiable, developers can’t really say, “Hey, if you
-wanted it, you should have put it in the document,” because the details are
+ments. When stories are negotiable, developers can’t really say, "Hey, if you
+wanted it, you should have put it in the document," because the details are
 going to be negoti- ated with the developers. And the business people can’t
-really say, “Hey, you obviously didn’t understand the requirements document
-because you built the wrong thing,” because the business people will be in
+really say, "Hey, you obviously didn’t understand the requirements document
+because you built the wrong thing," because the business people will be in
 frequent dialogue with the developers to make sure there is shared clarity.
 Writing negotiable stories avoids the problems associated with up-front detailed
 requirements by making it clear that a dialogue is necessary.
@@ -4158,7 +4158,7 @@ There are times, however, when how something is built is actually important to
 the product owner. For example, there might be a regulatory obligation to
 develop a feature in a particular way, or there might be a business constraint
 directing the use of a specific technology. In such cases the stories will be a
-bit less negotiable because some aspect of the “how” is required. That’s OK; not
+bit less negotiable because some aspect of the "how" is required. That’s OK; not
 all stories are fully negotiable, but most stories should be.
 
 ### Valuable for everyone
@@ -4174,7 +4174,7 @@ value to the customers or users? Is it OK to have **technical stories**.
 > the latest version of ReactJS so that we are not operating on a stale version
 > of the UI library and get stuck in an expensive upgrade later.
 
-In the case of the “Migrate to New Version of ReactJS" story, the product owner
+In the case of the "Migrate to New Version of ReactJS" story, the product owner
 might not initially understand why it is valuable to change databases. However,
 once the team explains the risks of continuing to develop on an unsupported
 version of a database, the product owner might decide that migrating databases
@@ -4232,7 +4232,7 @@ applying this criterion.
 Stories should be testable in a binary way: they either pass or fail their
 associated tests. Being testable means having good acceptance criteria (related
 to the conditions of satisfaction) associated with the story, which is the
-“confirmation” aspect of a user story.
+"confirmation" aspect of a user story.
 
 It may not always be necessary or possible to test a story. For example,
 epic-size stories probably don’t have tests associated with them, nor do they
@@ -4240,8 +4240,8 @@ need them because you don’t directly build the epics.
 
 Also, on occasion there might be a story that the product owner deems valuable,
 yet there might not be a practical way to test it. These are more likely to be
-so-called **nonfunctional requirements**, such as “As a user, I want the system
-to have 99.999% uptime.” Although the acceptance criteria might be clear, there
+so-called **nonfunctional requirements**, such as "As a user, I want the system
+to have 99.999% uptime." Although the acceptance criteria might be clear, there
 may be no set of tests that can be run when the system is put into production
 that can prove that this level of uptime has been met, but the requirement is
 still valuable as it will drive the design.
@@ -7212,7 +7212,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given a code snippet of a unassigned variable, predict its value.
-2. Explain why functions are “First Class Objects” in JavaScript
+2. Explain why functions are "First Class Objects" in JavaScript
 3. Define what IIFEs are and explain their use case
 4. (Whiteboarding) Implement a closure
 5. Identify JavaScript’s falsey values
@@ -7227,7 +7227,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given a code snippet of a unassigned variable, predict its value.
-2. Explain why functions are “First Class Objects” in JavaScript
+2. Explain why functions are "First Class Objects" in JavaScript
 3. Define what IIFEs are and explain their use case
 4. (Whiteboarding) Implement a closure
 5. Identify JavaScript’s falsey values
@@ -7243,7 +7243,7 @@ ________________________________________________________________________________
 It's time to learn about some built in JavaScript functionality that will allow
 you to define an anonymous function and then immediately run that function as
 soon as it has been defined. In JavaScript we call this an Immediately-Invoked
-Function Expression or IIFE (pronounced as “iffy”).
+Function Expression or IIFE (pronounced as "iffy").
 
 When you finish this reading you should be able to identify an
 Immediately-Invoked Function Expression, as well as write your own.

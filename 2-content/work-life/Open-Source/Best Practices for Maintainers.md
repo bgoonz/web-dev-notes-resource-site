@@ -28,7 +28,7 @@ Remember to keep your documentation up-to-date. If you're not able to always do 
 
 Start by writing down the goals of your project. Add them to your README, or create a separate file called VISION. If there are other artifacts that could help, like a project roadmap, make those public as well.
 
-Having a clear, documented vision keeps you focused and helps you avoid “scope creep” from others' contributions.
+Having a clear, documented vision keeps you focused and helps you avoid "scope creep" from others' contributions.
 
 For example, [@lord](https://github.com/lord) discovered that having a project vision helped him figure out which requests to spend time on. As a new maintainer, he regretted not sticking to his project's scope when he got his first feature request for [Slate](https://github.com/lord/slate).
 
@@ -48,8 +48,8 @@ Here are a few rules that are worth writing down:
 
 *   How a contribution is reviewed and accepted (_Do they need tests? An issue template?_)
 *   The types of contributions you'll accept (_Do you only want help with a certain part of your code?_)
-*   When it's appropriate to follow up (_for example, “You can expect a response from a maintainer within 7 days. If you haven't heard anything by then, feel free to ping the thread.”_)
-*   How much time you spend on the project (_for example, “We only spend about 5 hours per week on this project”_)
+*   When it's appropriate to follow up (_for example, "You can expect a response from a maintainer within 7 days. If you haven't heard anything by then, feel free to ping the thread."_)
+*   How much time you spend on the project (_for example, "We only spend about 5 hours per week on this project"_)
 
 [Jekyll](https://github.com/jekyll/jekyll/tree/master/docs), [CocoaPods](https://github.com/CocoaPods/CocoaPods/wiki/Communication-&-Design-Rules), and [Homebrew](https://github.com/Homebrew/brew/blob/bbed7246bc5c5b7acb8c1d427d10b43e090dfd39/docs/Maintainers-Avoiding-Burnout.md) are several examples of projects with ground rules for maintainers and contributors.
 
@@ -68,7 +68,7 @@ You've written things down. Ideally, everybody would read your documentation, bu
 
 Having everything written down, however, helps depersonalize situations when you do need to enforce your rules.
 
-Saying no isn't fun, but _“Your contribution doesn't match this project's criteria”_ feels less personal than _“I don't like your contribution”_.
+Saying no isn't fun, but _"Your contribution doesn't match this project's criteria"_ feels less personal than _"I don't like your contribution"_.
 
 Saying no applies to many situations you'll come across as a maintainer: feature requests that don't fit the scope, someone derailing a discussion, doing unnecessary work for others.
 
@@ -101,9 +101,9 @@ You shouldn't need more than 1-2 sentences to respond. For example, when a user 
 
 If the thought of saying no terrifies you, you're not alone. As [@jessfraz](https://github.com/jessfraz) [put it](https://blog.jessfraz.com/post/the-art-of-closing/):
 
-> I've talked to maintainers from several different open source projects, Mesos, Kubernetes, Chromium, and they all agree one of the hardest parts of being a maintainer is saying “No” to patches you don't want.
+> I've talked to maintainers from several different open source projects, Mesos, Kubernetes, Chromium, and they all agree one of the hardest parts of being a maintainer is saying "No" to patches you don't want.
 
-Don't feel guilty about not wanting to accept someone's contribution. The first rule of open source, [according to](https://twitter.com/solomonstre/status/715277134978113536) [@shykes](https://github.com/shykes): _“No is temporary, yes is forever.”_ While empathizing with another person's enthusiasm is a good thing, rejecting a contribution is not the same as rejecting the person behind it.
+Don't feel guilty about not wanting to accept someone's contribution. The first rule of open source, [according to](https://twitter.com/solomonstre/status/715277134978113536) [@shykes](https://github.com/shykes): _"No is temporary, yes is forever."_ While empathizing with another person's enthusiasm is a good thing, rejecting a contribution is not the same as rejecting the person behind it.
 
 Ultimately, if a contribution isn't good enough, you're under no obligation to accept it. Be kind and responsive when people contribute to your project, but only accept changes that you truly believe will make your project better. The more often you practice saying no, the easier it becomes. Promise.
 
@@ -126,7 +126,7 @@ Sometimes, when you say no, your potential contributor may get upset or criticiz
 
 Maybe someone in your community regularly submits contributions that don't meet your project's standards. It can be frustrating for both parties to repeatedly go through rejections.
 
-If you see that someone is enthusiastic about your project, but needs a bit of polish, be patient. Explain clearly in each situation why their contributions don't meet the expectations of the project. Try pointing them to an easier or less ambiguous task, like an issue marked _“good first issue,”_ to get their feet wet. If you have time, consider mentoring them through their first contribution, or find someone else in your community who might be willing to mentor them.
+If you see that someone is enthusiastic about your project, but needs a bit of polish, be patient. Explain clearly in each situation why their contributions don't meet the expectations of the project. Try pointing them to an easier or less ambiguous task, like an issue marked _"good first issue,"_ to get their feet wet. If you have time, consider mentoring them through their first contribution, or find someone else in your community who might be willing to mentor them.
 
 You don't have to do everything yourself. Your project's community exists for a reason! Even if you don't yet have an active contributor community, if you have a lot of users, put them to work.
 
@@ -152,9 +152,9 @@ If a potential contributor has a different opinion on what your project should d
 
 Forking a project doesn't have to be a bad thing. Being able to copy and modify projects is one of the best things about open source. Encouraging your community members to work on their own fork can provide the creative outlet they need, without conflicting with your project's vision.
 
-The same applies to a user who really wants a solution that you simply don't have the bandwidth to build. Offering APIs and customization hooks can help others meet their own needs, without having to modify the source directly. [@orta](https://github.com/orta) [found that](https://artsy.github.io/blog/2016/07/03/handling-big-projects/) encouraging plugins for CocoaPods led to “some of the most interesting ideas”:
+The same applies to a user who really wants a solution that you simply don't have the bandwidth to build. Offering APIs and customization hooks can help others meet their own needs, without having to modify the source directly. [@orta](https://github.com/orta) [found that](https://artsy.github.io/blog/2016/07/03/handling-big-projects/) encouraging plugins for CocoaPods led to "some of the most interesting ideas":
 
-> It's almost inevitable that once a project becomes big, maintainers have to become a lot more conservative about how they introduce new code. You become good at saying “no”, but a lot of people have legitimate needs. So, instead you end up converting your tool into a platform.
+> It's almost inevitable that once a project becomes big, maintainers have to become a lot more conservative about how they introduce new code. You become good at saying "no", but a lot of people have legitimate needs. So, instead you end up converting your tool into a platform.
 
 [](#bring-in-the-robots)Bring in the robots
 -------------------------------------------

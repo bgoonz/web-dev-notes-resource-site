@@ -102,7 +102,7 @@ SELECT DISTINCT ON (<em class="replaceable"><code>expression</code></em> [<span 
     expression that is evaluated for all rows.  A set of rows for
     which all the expressions are equal are considered duplicates, and
     only the first row of the set is kept in the output.  Note that
-    the <span class="quote">“<span class="quote">first row</span>”</span> of a set is unpredictable unless the
+    the <span class="quote">"<span class="quote">first row</span>"</span> of a set is unpredictable unless the
     query is sorted on enough columns to guarantee a unique ordering
     of the rows arriving at the <code class="literal">DISTINCT</code> filter.
     (<code class="literal">DISTINCT ON</code> processing occurs after <code class="literal">ORDER

@@ -129,8 +129,8 @@
    defined so that they give the same answer for all peer rows.
   </p><p>
    Note that <code class="function">first_value</code>, <code class="function">last_value</code>, and
-   <code class="function">nth_value</code> consider only the rows within the <span class="quote">“<span class="quote">window
-   frame</span>”</span>, which by default contains the rows from the start of the
+   <code class="function">nth_value</code> consider only the rows within the <span class="quote">"<span class="quote">window
+   frame</span>"</span>, which by default contains the rows from the start of the
    partition through the last peer of the current row.  This is
    likely to give unhelpful results for <code class="function">last_value</code> and
    sometimes also <code class="function">nth_value</code>.  You can redefine the frame by
@@ -143,7 +143,7 @@
    When an aggregate function is used as a window function, it aggregates
    over the rows within the current row's window frame.
    An aggregate used with <code class="literal">ORDER BY</code> and the default window frame
-   definition produces a <span class="quote">“<span class="quote">running sum</span>”</span> type of behavior, which may or
+   definition produces a <span class="quote">"<span class="quote">running sum</span>"</span> type of behavior, which may or
    may not be what's wanted.  To obtain
    aggregation over the whole partition, omit <code class="literal">ORDER BY</code> or use
    <code class="literal">ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING</code>.

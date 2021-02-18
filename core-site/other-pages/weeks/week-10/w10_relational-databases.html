@@ -47,8 +47,8 @@
         href="#using-join-to-retrieve-rows-from-multiple-tables">Using JOIN to retrieve rows from multiple tables</a> -
     <a href="#helpful-links">Helpful links:</a> - <a href="#writing-and-running-a-seed-file-in-psql"><strong>Writing And
             Running A Seed File In PSQL</strong></a> - <a href="#creating-a-seed-file">Creating a seed file</a> - <a
-        href="#populating-a-database-via-left-caret">Populating a database via &lt; (“left caret”)</a> - <a
-        href="#populating-the-database-via-pipe">Populating the database via | (“pipe”)</a> - <a
+        href="#populating-a-database-via-left-caret">Populating a database via &lt; ("left caret")</a> - <a
+        href="#populating-the-database-via-pipe">Populating the database via | ("pipe")</a> - <a
         href="#create-and-seed-a-database-project"><em>Create And Seed A Database Project</em></a> - <a
         href="#solving-the-sql-menagerie-project"><em>Solving The SQL Menagerie Project</em></a> - <a
         href="#creating-a-schema-for-relational-database-design"><strong>Creating A Schema For Relational Database
@@ -229,7 +229,7 @@
     <li>Colors in Palette</li>
     <li>Contrast ratio of the main text and it's background (<a href="https://webaim.org/resources/contrastchecker/">Use
             the contrast checker</a>)</li>
-    <li>The size of padding/margins compared to a lowercase ‘a'</li>
+    <li>The size of padding/margins compared to a lowercase 'a'</li>
     <li>The maximum number of lines in a row center-justified anywhere on the site</li>
     <li>Load Time</li>
     <li>Theme or style based on (Bootstrap, Material, etc.)</li>
@@ -274,7 +274,7 @@
     create databases and retrieve information stored in a database to display in a Web app is a foundational development
     skill.</p>
 <p>The most popular kind of database is called a <em>relational database</em>. That's what you'll primarily use in this
-    course. There are other databases called “document databases”, “non-relational databases”, or “NoSQL databases” that
+    course. There are other databases called "document databases", "non-relational databases", or "NoSQL databases" that
     have become popular since the mid-2000s. They serve a different purpose that relational databases by storing data in
     ways that are different than the way relational databases store their data.</p>
 <p>In this reading, you will learn about <strong>relational database management systems</strong>. Then, you will install
@@ -284,30 +284,30 @@
     databases for us. Here's an important difference for you to understand.</p>
 <p>The <strong>RDBMS</strong> is a software application that you run that your programs can connect to that they can
     store, modify, and retrieve data. The RDBS that you will use in this course is called <a
-        href="https://www.postgresql.org/">PostgreSQL</a>, often shortened to just “postgres”, pronounced like it's
-    spelled. It is an “open-source” RDBMS which means that you can go read the source code for it, copy it, modify it,
-    and make your own specialized version of an RDBMS. Often, developers will talk about the “database server”. That is
+        href="https://www.postgresql.org/">PostgreSQL</a>, often shortened to just "postgres", pronounced like it's
+    spelled. It is an "open-source" RDBMS which means that you can go read the source code for it, copy it, modify it,
+    and make your own specialized version of an RDBMS. Often, developers will talk about the "database server". That is
     the computer on which the RDBMS is running.</p>
 <p>A <strong>database</strong> (or more properly <strong>relational database</strong>) is a collection of structured
     data that the RDBMS manages for you. A single running RDBMS can have hundreds of databases in it that it manages.
 </p>
-<p>Software developers will often use the term “database” to refer to the RDBMS. They will also say that “the data is in
-    postgres” or “the data is in Oracle” which is terribly ambiguous because those are the names of the RDBMSes, not a
-    database where the data is stored. That'd be like asking someone their address and them replying “Chicago”.</p>
+<p>Software developers will often use the term "database" to refer to the RDBMS. They will also say that "the data is in
+    postgres" or "the data is in Oracle" which is terribly ambiguous because those are the names of the RDBMSes, not a
+    database where the data is stored. That'd be like asking someone their address and them replying "Chicago".</p>
 <p>Just be aware that the language around these terms is loose.</p>
 <h2 id="what-is-postgresql">What is PostgreSQL?</h2>
 <p>Again, PostgreSQL is software. Specifically, it is an open-source, relational database management system. It is
-    derived from the POSTGRES package written at UC Berkeley. The specific name “PostgreSQL” was coined in 1996, after
+    derived from the POSTGRES package written at UC Berkeley. The specific name "PostgreSQL" was coined in 1996, after
     SQL was implemented as its core query language. PostgreSQL provided a new program (new for 1996) for interactive SQL
     queries called <code>[psql]</code>, which is terminal-based front-end to PostgreSQL that lets you to type in queries
     interactively, issue them to PostgreSQL, and see the query results.</p>
-<p>You install PostgreSQL onto a computer. It then runs as a “service”, that is, a program that runs in the background
+<p>You install PostgreSQL onto a computer. It then runs as a "service", that is, a program that runs in the background
     that should not stop until the machine does. You will install it on your computer. It will quietly run in the
     background, eagerly awaiting for you to connect to it and interact with it from the command line, from a GUI tool,
     or from your application.</p>
 <p>When you do connect with it, you will interact with it through a small set of its own commands and SQL.</p>
 <h2 id="what-is-sql">What is SQL?</h2>
-<p>SQL (pronounced “sequel” or “s-q-l”) stands for “Structured Query Language”. It is not a programming language like
+<p>SQL (pronounced "sequel" or "s-q-l") stands for "Structured Query Language". It is not a programming language like
     JavaScript. JavaScript, as you well know, has <em>control flow</em>, with <code>for</code> loops and <code>if</code>
     statements. Most SQL that you write doesn't have all that. Instead, it is a <em>declarative</em> programming
     language. You tell the database what computation you want it to do, and it does it. In that way, SQL is more like
@@ -364,7 +364,7 @@
     on your Windows installation. Then, you will install <code>psql</code> in your Ubuntu installation. Then you will
     also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better
     than just using the command line tool <code>psql</code>.</p>
-<p>When you read “installation”, that means the actual OS that's running on your machine. So, you have a Windows
+<p>When you read "installation", that means the actual OS that's running on your machine. So, you have a Windows
     installation, Windows 10, that's running when you boot your computer. Then, when you start the Ubuntu installation,
     it's as if there's a completely separate computer running inside your computer. It's like having two completely
     different laptops.</p>
@@ -416,7 +416,7 @@
 <p>If prompted for your password, type it.</p>
 <pre
     class="shell"><code>echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; | sudo tee  /etc/apt/sources.list.d/pgdg.list</code></pre>
-<p>The last line of output of those two commands running should read “OK”. If it does not, try copying and pasting them
+<p>The last line of output of those two commands running should read "OK". If it does not, try copying and pasting them
     one at a time.</p>
 <p>Now that you've registered the PostgreSQL repositories as a source to look for PostgreSQL, you need to update the
     <code>apt</code> registry. You should do this before you install <em>any</em> software on Ubuntu.</p>
@@ -424,7 +424,7 @@
 <p>Once that's finished running, the new entries for PostgreSQL 12 should be in the repository. Now, you can install
     them with the following command.</p>
 <pre class="shell"><code>sudo apt install postgresql-client-12 postgresql-common</code></pre>
-<p>If it asks you if you want to install them, please tell it “Y”.</p>
+<p>If it asks you if you want to install them, please tell it "Y".</p>
 <p>Test that it installed by typing <code>psql --version</code>. You should see it print out information about the
     version of the installed tools. If it tells you that it can't find the command, try these instructions over.</p>
 <h2 id="configuring-the-client-tools">Configuring the client tools</h2>
@@ -438,14 +438,14 @@
     that one exists, that's the one you will add the alias to. If it tells you that there is no file named that, then
     type <code>ls .profile</code>. If it shows you that one exists, that's the one you will add the alias to. If it
     shows you that it does not exist, then use the file name <code>.bashrc</code> in the following section.</p>
-<p>Now that you know which profile file to use, type <code>code «profile file name»</code> where “profile file name” is
+<p>Now that you know which profile file to use, type <code>code «profile file name»</code> where "profile file name" is
     the name of the file you determined from the last section. Once Visual Studio Code starts up with your file, at the
     end of it (or if you've already added aliases, in that section), type the following.</p>
 <pre class="shell"><code>alias psql=&quot;psql -h localhost&quot;</code></pre>
 <p>When you run <code>psql</code> from the command line, it will now always add the part about wanting to connect to
     <em>localhost</em> every time. You would have to type that each time, otherwise.</p>
 <p>To make sure that you set that up correctly, type <code>psql -U postgres postgres</code>. This tells the
-    <code>psql</code> client that you want to connect as the user “postgres” (<code>-U postgres</code>) to the database
+    <code>psql</code> client that you want to connect as the user "postgres" (<code>-U postgres</code>) to the database
     postgres (<code>postgres</code> at the end), which is the default database created when PostgreSQL is installed. It
     will prompt you for a password. Type the password that you used when you installed PostgrSQL, earlier. If the alias
     works correctly and you type the correct password, then you should see something like the following output.</p>
@@ -462,7 +462,7 @@ postgres=#</code></pre>
 <pre
     class="shell"><code>psql -U postgres -c &quot;CREATE USER `whoami` WITH PASSWORD &#39;password&#39; SUPERUSER&quot;</code></pre>
 <p>It should prompt you for a password. Type the password that you created when you installed PostgreSQL. Once you type
-    the correct password, you should see “CREATE ROLE”.</p>
+    the correct password, you should see "CREATE ROLE".</p>
 <p>Now you will create your PostgreSQL password file. Type the following into your Ubuntu shell to open Visual Studio
     Code and create a new file.</p>
 <pre class="shell"><code>code ~/.pgpass</code></pre>
@@ -482,14 +482,14 @@ postgres=#</code></pre>
     file permissions so only you can read and write to it. You did this once upon a time. Here's the command.</p>
 <pre class="shell"><code>chmod go-rw ~/.pgpass</code></pre>
 <p>You can confirm that only you have read/write permission by typing <code>ls -al ~/.pgpass</code>. That should return
-    output that looks like this, <strong>with your Ubuntu user name instead of “appacademy”.</strong></p>
+    output that looks like this, <strong>with your Ubuntu user name instead of "appacademy".</strong></p>
 <pre class="shell"><code>-rw------- 1 appacademy appacademy 37 Mar 28 21:20 /home/appacademy/.pgpass</code></pre>
 <p>Now, try connecting to PostreSQL by typing <code>psql postgres</code>. Because you added the alias to your startup
     script, and because you created your <strong>.pgpass</strong> file, it should now connect without prompting you for
     any credentials! Type <code>\q</code> and press Enter to exit the PostgreSQL command line client.</p>
 <h2 id="installing-postbird">Installing Postbird</h2>
 <p>Head over to the <a href="https://github.com/Paxa/postbird/releases">Postbird releases page on GitHub</a>. Click the
-    installer for Windows which you can recognize because it's the only file in the list that ends with “.exe”.</p>
+    installer for Windows which you can recognize because it's the only file in the list that ends with ".exe".</p>
 <figure>
     <img src="images/download-postbird.png" alt="Download Postbird" />
     <figcaption>Download Postbird</figcaption>
@@ -504,13 +504,13 @@ postgres=#</code></pre>
 <p>You should get used to seeing this because many open-source applications aren't signed with the Microsoft Store for
     monetary and philosophical reasons.</p>
 <p>Otherwise, if you trust Paxa like App Academy and tens of thousands of other developers do, then click the link that
-    reads “More info” and the “Run anyway” button.</p>
+    reads "More info" and the "Run anyway" button.</p>
 <figure>
     <img src="images/postbird-installation-run-anyway.png" alt="Postbird run anyway" />
     <figcaption>Postbird run anyway</figcaption>
 </figure>
-<p>When it's done installing, it will launch itself. Test it out by typing the “postgres” into the “Username” field and
-    the password from your installation in the “Password” field. Click the Connect button. It should properly connect to
+<p>When it's done installing, it will launch itself. Test it out by typing the "postgres" into the "Username" field and
+    the password from your installation in the "Password" field. Click the Connect button. It should properly connect to
     the running</p>
 <p>You can close it for now. It also installed an icon on your desktop. You can launch it from there or your Start Menu
     at any time.</p>
@@ -528,7 +528,7 @@ postgres=#</code></pre>
 <p>First, update your Homebrew installation. You should do this before each thing that you install using Homebrew.</p>
 <pre class="shell"><code>brew update</code></pre>
 <p>Now, make sure that you have the correct Homebrew recipe. Type the following and make sure that the first line of the
-    output contains some version of “12”.</p>
+    output contains some version of "12".</p>
 <pre class="shell"><code>brew info postgresql</code></pre>
 <p>You should see something like this in the output.</p>
 <pre><code>postgresql: stable 12.2 (bottled), HEAD</code></pre>
@@ -552,11 +552,11 @@ Or, if you don&#39;t want/need a background service you can just run:
 <p>That should report that PostgreSQL is now started.</p>
 <h2 id="connecting-to-postgresql">Connecting to PostgreSQL</h2>
 <p>To make sure your client tools are configured properly, type the following in a Terminal. This tells the
-    <code>psql</code> client that you want to connect to the “postgres” database, which is the default database created
+    <code>psql</code> client that you want to connect to the "postgres" database, which is the default database created
     when PostgreSQL is installed.</p>
 <pre class="shell"><code>psql postgres</code></pre>
-<p>That will connect to the “postgres” database as your user that you're logged in as, which the installer configured
-    for you during the installation. It's the same as specifying your user name by using the “-U” command line parameter
+<p>That will connect to the "postgres" database as your user that you're logged in as, which the installer configured
+    for you during the installation. It's the same as specifying your user name by using the "-U" command line parameter
     and typing.</p>
 <pre><code>psql -U «your user name» postgres</code></pre>
 <p>When you successfully log in, it should show you the following output.</p>
@@ -572,11 +572,11 @@ postgres=#</code></pre>
 <pre><code>==&gt; Casks
 postbird</code></pre>
 <p>That means it could find it. Since it's a <strong>Cask</strong>, that means it's an application that is meant to be
-    used as a graphical user interface rather than on the command line. To install it, you need to include “cask” in the
+    used as a graphical user interface rather than on the command line. To install it, you need to include "cask" in the
     command.</p>
 <pre class="shell"><code>brew cask install postbird</code></pre>
 <p>Once it installs, try starting it. It's in your Applications directory. You can use Spotlight to launch it by
-    pressing Command+Space. In the Spotlight window, type “postbird”. It should show you the recently-installed
+    pressing Command+Space. In the Spotlight window, type "postbird". It should show you the recently-installed
     application's logo in the list as a white circle with a blue elephant. Select that and press Enter (or click it, if
     you're the touchpad/mouse kind of person).</p>
 <p>The first time it starts, you may get this error.</p>
@@ -585,7 +585,7 @@ postbird</code></pre>
     <figcaption>Postbird unidentified developer</figcaption>
 </figure>
 <p>You should get used to seeing this because many open-source applications aren't signed with an Apple Developer
-    Certificate yet. Click “Cancel”. We will need to tell macOS we would like to run this application despite it not
+    Certificate yet. Click "Cancel". We will need to tell macOS we would like to run this application despite it not
     being signed.</p>
 <p>Open up your Applications directory by clicking on the shortcut in the left bar of Finder.</p>
 <figure>
@@ -594,20 +594,20 @@ postbird</code></pre>
 </figure>
 <p>Find the Postbird application in there. Hold down the Option key and left-click the icon. (If you're using the
     touchpad, this probably means two-finger tap.) Once the context menu shows up, you can let go of the Option key.
-    Then, click the “Open” menu item. You will now see a new version of the popup from before with an extra button.</p>
+    Then, click the "Open" menu item. You will now see a new version of the popup from before with an extra button.</p>
 <figure>
     <img src="images/postbird-installation-open-confirmation.png" alt="Postbird open confirmation" />
     <figcaption>Postbird open confirmation</figcaption>
 </figure>
-<p>Click the “Open” button. That will let Postbird run. Now that you've done that once, you won't have to do it again
+<p>Click the "Open" button. That will let Postbird run. Now that you've done that once, you won't have to do it again
     for Postbird. This is valuable knowledge about how to run open-source software on macOS that isn't signed by the
     developers. However, it is a good security practice to only run applications from developers that you trust. The
     Postbird application is used by tens of thousands of software developers and is something that you can trust.</p>
-<p>In fact, the developer of Postbird has an <a href="https://github.com/Paxa/postbird/issues/16">‘issue' on github</a>
+<p>In fact, the developer of Postbird has an <a href="https://github.com/Paxa/postbird/issues/16">'issue' on github</a>
     about this very thing. So hopefully they will get the signing of the app fixed in a future version.</p>
-<p>When Postbird starts, type “postgres” into the database field. Then, click the “Connect” button. It should open a new
+<p>When Postbird starts, type "postgres" into the database field. Then, click the "Connect" button. It should open a new
     tab and show you basically a blank page. That means everything worked! Exit Postbird by pressing Command+Q or
-    selecting Postbird &gt; “Quit Postbird” from the menu.</p>
+    selecting Postbird &gt; "Quit Postbird" from the menu.</p>
 <h2 id="what-you-did-1">What you did</h2>
 <p>You installed and configured PosgreSQL 12, a relational database management system, and tools to use it! Well done!
 </p>
@@ -624,7 +624,7 @@ postbird</code></pre>
 <p>It's good practice to create a different database user for each application that you will have connect to an RDBMS.
     This prevents applications from reading and changing data in <em>other</em> databases that they should not have
     access to.</p>
-<p>The “User” in PostgreSQL is a <strong>database entity</strong> that represents a person or system that will connect
+<p>The "User" in PostgreSQL is a <strong>database entity</strong> that represents a person or system that will connect
     to the RDBMS and access data from one or more databases. This is the first entity that you will create, modify, and
     destroy.</p>
 <p>All user management is beyond the scope of the ANSI SQL standard. That means each relational database management
@@ -653,12 +653,12 @@ postbird</code></pre>
 <p>On Windows, open your Ubuntu shell. On macOS, open your Terminal. Start the PostgreSQL command line client with the
     command <code>psql postgres</code>.</p>
 <p>You should see some information about the version of the database and the command line tool, plus a helpful hint to
-    type “help” if you need help. Then, you will see the <code>psql</code> prompt:</p>
+    type "help" if you need help. Then, you will see the <code>psql</code> prompt:</p>
 <pre><code>postgres=#</code></pre>
-<p>The value “postgres” means that you're currently connected to the “postgres” database. More on that in the next
+<p>The value "postgres" means that you're currently connected to the "postgres" database. More on that in the next
     article.</p>
-<p>To create a user in PostgreSQL you will use the following command. It creates a user with the name “test_superuser”
-    and the password “test”. <em>Type</em> that command (please don't copy and paste it) and run it by hitting Enter (or
+<p>To create a user in PostgreSQL you will use the following command. It creates a user with the name "test_superuser"
+    and the password "test". <em>Type</em> that command (please don't copy and paste it) and run it by hitting Enter (or
     Return).</p>
 <div class="sourceCode" id="cb25">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">CREATE</span> <span class="fu">USER</span> test_superuser</a>
@@ -680,12 +680,12 @@ postbird</code></pre>
     super user, when a person or application uses that login, they can do whatever they want. You will test out that
     fact, now.</p>
 <p>Quit your current session by typing <code>\q</code> and hitting Enter (or Return). Now type the following command to
-    connect to PostgreSQL with the newly-created user. It instructs the client to connect as the user “test_superuser”
-    (<code>-U test_superuser</code>) to the database named “postgres” (<code>postgres</code>) and prompt for the
+    connect to PostgreSQL with the newly-created user. It instructs the client to connect as the user "test_superuser"
+    (<code>-U test_superuser</code>) to the database named "postgres" (<code>postgres</code>) and prompt for the
     password (<code>-W</code>) for the user.</p>
 <pre class="shell"><code>psql -W -U test_superuser postgres</code></pre>
 <p>At the prompt, type the password <em>test</em> that you used when you created the user. If everything went well, then
-    you will find yourself at the SQL prompt just like before. To prove to you that you're now the “test_superuser”,
+    you will find yourself at the SQL prompt just like before. To prove to you that you're now the "test_superuser",
     type the following command.</p>
 <div class="sourceCode" id="cb28">
     <pre
@@ -722,7 +722,7 @@ postbird</code></pre>
 <p>Connect again as just you, the OG super user. (Once again, that's with the command <code>psql postgres</code>.)</p>
 <p>Drop the normal user with the command</p>
 <pre><code>DROP USER test_normal_user;</code></pre>
-<p>Then, drop the user with the name “test_superuser”. You should receive the message “DROP ROLE” for each of your
+<p>Then, drop the user with the name "test_superuser". You should receive the message "DROP ROLE" for each of your
     commands.</p>
 <h2 id="case-sensitivity">Case sensitivity</h2>
 <p>Unlike JavaScript, the keywords in SQL are case insensitive. that means you can type any of the following and they'll
@@ -753,12 +753,12 @@ postbird</code></pre>
     <li>Create a database for your user,</li>
     <li>Create databases for other users,</li>
     <li>Apply security to the databases to prevent access,</li>
-    <li>See the first example of “relational data” in the RDBMS, and,</li>
+    <li>See the first example of "relational data" in the RDBMS, and,</li>
     <li>Create other databases and apply security to them.</li>
 </ul>
 <p>Now that you can create users for each of your applications, it's time for you to be able to create a
     <strong>database</strong>. The database is where you will store the data for your application.</p>
-<p>You've been using the following command to log in as your superuser to the “postgres” database. This works because if
+<p>You've been using the following command to log in as your superuser to the "postgres" database. This works because if
     you don't specify a user with the <code>-U</code> command line parameter, it just uses the name of the currently
     logged in user, your user name.</p>
 <div class="sourceCode" id="cb34">
@@ -795,7 +795,7 @@ postbird</code></pre>
     </li>
 </ul>
 <h2 id="creating-a-database-for-your-user">Creating a database for your user</h2>
-<p>So that you don't have to type “postgres” every time you want to connect on the command line, you can create a
+<p>So that you don't have to type "postgres" every time you want to connect on the command line, you can create a
     database with your user name so that one will exist. To determine your user name, type the following command at your
     shell, <em>not</em> in PostgreSQL.</p>
 <pre class="shell"><code>whoami</code></pre>
@@ -803,7 +803,7 @@ postbird</code></pre>
     superuser.</p>
 <pre class="shell"><code>psql postgres</code></pre>
 <p>That should result in the <code>psql</code> command prompt of <code>postgres=#</code>. Again, that means that you are
-    currently connected to the “postgres” database.</p>
+    currently connected to the "postgres" database.</p>
 <p>Once you're greeted by the <code>postgres=#</code> command prompt, you can create a database for your user by typing
     the following command. Don't copy and paste, here. Type it out.</p>
 <div class="sourceCode" id="cb39">
@@ -811,12 +811,12 @@ postbird</code></pre>
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">CREATE</span> <span class="kw">DATABASE</span> «your <span class="fu">user</span> name» <span class="kw">WITH</span> OWNER «your <span class="fu">user</span> name»;</a></code></pre>
 </div>
 <p>By making yourself the owner of that database, then your user can do anything with it.</p>
-<p>For the examples in these articles, the user name is “appacademy”, so the authors typed</p>
+<p>For the examples in these articles, the user name is "appacademy", so the authors typed</p>
 <div class="sourceCode" id="cb40">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb40-1" title="1"><span class="kw">CREATE</span> <span class="kw">DATABASE</span> appacademy <span class="kw">WITH</span> OWNER appacademy;</a></code></pre>
 </div>
-<p>If the command succeeds, you will see the message “CREATE DATABASE”. Now, quit the client using <code>\q</code>. Now,
+<p>If the command succeeds, you will see the message "CREATE DATABASE". Now, quit the client using <code>\q</code>. Now,
     connect, again, to PostgreSQL by just typing the following.</p>
 <pre class="shell"><code>psql</code></pre>
 <p>Now, when you log in, you will be greeted by a command prompt that reads</p>
@@ -853,52 +853,52 @@ postbird</code></pre>
 </div>
 <p>Now that you have new users and databases for them, it's time to test out that you can connect to PostgreSQL with
     those users. Quit your current session by typing <code>\q</code> and pressing Enter (or Return). Then, start a new
-    session for “ada” by using the following <code>psql</code> command that will prompt for the user's password
+    session for "ada" by using the following <code>psql</code> command that will prompt for the user's password
     (<code>-W</code>) and connect as the specified user (<code>-U ada</code>).</p>
 <pre class="shell"><code>psql -W -U ada</code></pre>
 <p><strong>Note</strong>: Those command line parameters can come in any order, usually. The above statement can also be
     written as <code>psql -U ada -W</code>, for example.</p>
-<p>When you enter that and type the password for “ada” which is “ada1234” from the table above, you should see that you
-    are now connected to the “ada” database in the prompt.</p>
+<p>When you enter that and type the password for "ada" which is "ada1234" from the table above, you should see that you
+    are now connected to the "ada" database in the prompt.</p>
 <pre><code>ada=&gt;</code></pre>
-<p>Notice that the character at the end is now a “&gt;” rather than the “#” that you're used to seeing. That's because
-    “ada” is a normal user. Normal user prompts end with “&gt;”. Your user, the one tied to your user name, is a super
-    user. That results in a “#”</p>
-<p>Quit this session and connect as the “odo” user, now. You will notice that because “odo” is a normal user, that you
+<p>Notice that the character at the end is now a "&gt;" rather than the "#" that you're used to seeing. That's because
+    "ada" is a normal user. Normal user prompts end with "&gt;". Your user, the one tied to your user name, is a super
+    user. That results in a "#"</p>
+<p>Quit this session and connect as the "odo" user, now. You will notice that because "odo" is a normal user, that you
     will see this prompt, too.</p>
 <pre><code>odo=&gt;</code></pre>
 <h2 id="applying-security-to-databases">Applying security to databases</h2>
-<p>You've created a database for “odo”. Type the following command which will try to connect as the user “ada” (<code>-U
-        ada</code>) to the database “odo” (<code>odo</code>).</p>
+<p>You've created a database for "odo". Type the following command which will try to connect as the user "ada" (<code>-U
+        ada</code>) to the database "odo" (<code>odo</code>).</p>
 <pre class="shell"><code>psql -W -U ada odo</code></pre>
-<p>After you type the password, you may be surprised to find out that “ada” can connect to the database “odo” that's
-    owned by the user “odo”! That's because all databases, when they're created, by default allow access to what is
-    known as the “PUBLIC” schema, a kind of group that everyone belongs to. You sure don't want that if you want to
-    prevent the user “ada” from messing up the data in the database “odo”, and the user “odo” from messing up the data
-    in the database “ada”.</p>
-<p>To do that, you have to revoke connection privileges to “PUBLIC”. That's like putting a biometric lock on a bank
+<p>After you type the password, you may be surprised to find out that "ada" can connect to the database "odo" that's
+    owned by the user "odo"! That's because all databases, when they're created, by default allow access to what is
+    known as the "PUBLIC" schema, a kind of group that everyone belongs to. You sure don't want that if you want to
+    prevent the user "ada" from messing up the data in the database "odo", and the user "odo" from messing up the data
+    in the database "ada".</p>
+<p>To do that, you have to revoke connection privileges to "PUBLIC". That's like putting a biometric lock on a bank
     safety deposit box so that only the owner of that deposit box (and bank officials) can get into it and do stuff with
     its contents.</p>
 <p>To do that, quit the current <code>psql</code> session if you're in one. Connect to PostgreSQL as your user, a
     superuser. Again, now that you have your own database, you can just type <code>psql</code> at your macOS Terminal
     command line or Ubuntu shell command line. Once you have your prompt</p>
 <pre><code>«your user name»=#</code></pre>
-<p>you want to type a command that will revoke all privileges from the databases named “odo” and “ada” the connection
-    privileges of the entire “PUBLIC” group. To do that, you write the command with the form:</p>
+<p>you want to type a command that will revoke all privileges from the databases named "odo" and "ada" the connection
+    privileges of the entire "PUBLIC" group. To do that, you write the command with the form:</p>
 <div class="sourceCode" id="cb49">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">REVOKE</span> <span class="kw">CONNECT</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> «database name» <span class="kw">FROM</span> <span class="kw">PUBLIC</span>;</a></code></pre>
 </div>
-<p>Do that for both databases. Each time you run it, you should see the message “REVOKE” showing that it worked.</p>
-<p>Now, quit your session (<code>\q</code>). With the connection privilege revoked, “ada” can no longer connect to
-    database “odo” and vice versa. Try typing the following.</p>
+<p>Do that for both databases. Each time you run it, you should see the message "REVOKE" showing that it worked.</p>
+<p>Now, quit your session (<code>\q</code>). With the connection privilege revoked, "ada" can no longer connect to
+    database "odo" and vice versa. Try typing the following.</p>
 <pre class="shell"><code>psql -W -U ada odo</code></pre>
 <p>You should see an error message similar to the following.</p>
 <pre><code>psql: error: could not connect to server:
       FATAL:  permission denied for database &quot;odo&quot;
 DETAIL:  User does not have CONNECT privilege.</code></pre>
-<p>Try connecting with the user “odo” to the database named “ada”. You should see the same error message except with the
-    database named “ada” in it.</p>
+<p>Try connecting with the user "odo" to the database named "ada". You should see the same error message except with the
+    database named "ada" in it.</p>
 <p>But, your superuser status will not be thwarted! You can still connect to either of those because of your superuser
     privileges. Neither of the following commands should fail.</p>
 <pre class="shell"><code># Connect to the database &quot;odo&quot; as your superuser
@@ -906,10 +906,10 @@ psql odo</code></pre>
 <pre class="shell"><code># Connect to the database &quot;ada&quot; as your superuser
 psql ada</code></pre>
 <p>Superusers can connect to any and all databases. Because <em>superuser</em>!</p>
-<p>Remember you created a database for your user? Now, revoke connection privileges from it for “PUBLIC”, too.</p>
+<p>Remember you created a database for your user? Now, revoke connection privileges from it for "PUBLIC", too.</p>
 <h2 id="listing-databases-and-granting-privileges">Listing databases and granting privileges</h2>
-<p>Now, say the user “ada” needs another database, one that will contain data that “ada” wants to keep separate from the
-    data in the database “ada”. Connect to PostgreSQL as your user. Create a new database without specifying the owner.
+<p>Now, say the user "ada" needs another database, one that will contain data that "ada" wants to keep separate from the
+    data in the database "ada". Connect to PostgreSQL as your user. Create a new database without specifying the owner.
 </p>
 <div class="sourceCode" id="cb54">
     <pre
@@ -920,8 +920,8 @@ psql ada</code></pre>
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb55-1" title="1">\<span class="kw">list</span></a></code></pre>
 </div>
-<p>You will see something akin to the following. The entries in the “Collate”, “Cypte”, and “Access privileges” columns
-    may differ. That's fine and can be ignored. Also, where you see “appacademy”, you'll probably see your user name.
+<p>You will see something akin to the following. The entries in the "Collate", "Cypte", and "Access privileges" columns
+    may differ. That's fine and can be ignored. Also, where you see "appacademy", you'll probably see your user name.
 </p>
 <table>
     <thead>
@@ -1025,41 +1025,41 @@ psql ada</code></pre>
         </tr>
     </tbody>
 </table>
-<p>You will see that for the database that you just created, “hr_data”, that the owner is you. Go ahead and revoke all
-    access to it from “PUBLIC” like you did in the last section. Once you've done that, no one but you (and other
-    superusers) can connect to the “hr_data” database. (You may want to exit the <code>psql</code> shell and try
-    connecting with the credentials for the “ada” user just to make sure. If you do that, reconnect as your user so you
+<p>You will see that for the database that you just created, "hr_data", that the owner is you. Go ahead and revoke all
+    access to it from "PUBLIC" like you did in the last section. Once you've done that, no one but you (and other
+    superusers) can connect to the "hr_data" database. (You may want to exit the <code>psql</code> shell and try
+    connecting with the credentials for the "ada" user just to make sure. If you do that, reconnect as your user so you
     can continue with the security management.)</p>
-<p>Now, you need to add “ada” back to it so that user can connect to the database. The opposite of <code>REVOKE ... FROM
+<p>Now, you need to add "ada" back to it so that user can connect to the database. The opposite of <code>REVOKE ... FROM
         ...</code> is <code>GRANT ... TO ...</code>. So, you will type the following:</p>
 <div class="sourceCode" id="cb56">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">GRANT</span> <span class="kw">CONNECT</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> hr_data <span class="kw">TO</span> ada;</a></code></pre>
 </div>
-<p>Now, if you exit the <code>psql</code> shell and connect as “ada”, you will see that user can connect. Make sure
+<p>Now, if you exit the <code>psql</code> shell and connect as "ada", you will see that user can connect. Make sure
     that's true.</p>
 <pre class="shell"><code>psql -U ada hr_data</code></pre>
-<p>Once you have confirmed that “ada” can connect, make sure that user “odo” cannot connect.</p>
+<p>Once you have confirmed that "ada" can connect, make sure that user "odo" cannot connect.</p>
 <pre class="shell"><code>psql -U odo hr_data</code></pre>
-<p>That command should return the error message that reads that the user “does not have CONNECT privilege.”</p>
+<p>That command should return the error message that reads that the user "does not have CONNECT privilege."</p>
 <h2 id="time-to-clean-up">Time to clean up</h2>
 <p>Time to clean up the entities that you've created in this walk-through. You already know how to delete a user by
-    using the <code>DROP USER</code> statement. Log in as your superuser and try to drop the “ada” user. You should see
+    using the <code>DROP USER</code> statement. Log in as your superuser and try to drop the "ada" user. You should see
     an error message similar to the following.</p>
 <pre><code>ERROR:  role &quot;ada&quot; cannot be dropped because some objects depend on it
 DETAIL:  owner of database ada
 privileges for database hr_data</code></pre>
 <p>This tells you that you can't drop that user because database objects in the system rely on the existence of the user
-    “ada”. This is the first example that you've seen of <em>relational data</em>. The database “ada” is related to the
-    user “ada” because user “ada” owns the database “ada”. The database “hr_data” is related to the user “ada” because
-    the user “ada” has access privileges for the database “hr_data”.</p>
+    "ada". This is the first example that you've seen of <em>relational data</em>. The database "ada" is related to the
+    user "ada" because user "ada" owns the database "ada". The database "hr_data" is related to the user "ada" because
+    the user "ada" has access privileges for the database "hr_data".</p>
 <p>This is one of the primary reasons that relational databases provide such an important role in application design and
     development. If you or your application puts data into the database that relates to other data, you can't just
     remove it without removing <em>all of the related data, too</em>!</p>
-<p>To remove the related data from user “ada”, you need to revoke the connect privilege on “hr_data” for user “ada”.
-    Then, you need to delete the database “ada” that user “ada” owns. You've seen some <code>REVOKE</code> statements in
-    this article that revoke the connect privilege from “PUBLIC”. It's the same for an individual user, too, just
-    replace “PUBLIC” with the name of the user.</p>
+<p>To remove the related data from user "ada", you need to revoke the connect privilege on "hr_data" for user "ada".
+    Then, you need to delete the database "ada" that user "ada" owns. You've seen some <code>REVOKE</code> statements in
+    this article that revoke the connect privilege from "PUBLIC". It's the same for an individual user, too, just
+    replace "PUBLIC" with the name of the user.</p>
 <p>Then, the opposite of <code>CREATE DATABASE</code> is <code>DROP DATABASE</code> just like the opposite of
     <code>CREATE USER</code> is <code>DROP USER</code>.</p>
 <p>Putting together those two hints, you can type commands like this to get the job done.</p>
@@ -1069,10 +1069,10 @@ privileges for database hr_data</code></pre>
 <a class="sourceLine" id="cb60-2" title="2"><span class="kw">DROP</span> <span class="kw">DATABASE</span> ada;</a>
 <a class="sourceLine" id="cb60-3" title="3"><span class="kw">DROP</span> <span class="fu">USER</span> ada;</a></code></pre>
 </div>
-<p>Run in that order, the first two statements remove the data <em>related</em> to the user “ada”. Once that's gone, you
-    can finally remove the user “ada” itself.</p>
-<p>Do the same for the user “odo”, deleting the related data, first. Remember, you can run the <code>DROP</code>
-    statement for the user “odo” to see what data relates to that user.</p>
+<p>Run in that order, the first two statements remove the data <em>related</em> to the user "ada". Once that's gone, you
+    can finally remove the user "ada" itself.</p>
+<p>Do the same for the user "odo", deleting the related data, first. Remember, you can run the <code>DROP</code>
+    statement for the user "odo" to see what data relates to that user.</p>
 <p><strong>Note</strong>: When you run a statement in PostgreSQL that results in an error message, do not worry! You
     have not corrupted anything! These are helpful statements to let you know that the state of the database won't allow
     you to perform the requested operation. These kinds of error statements are guideposts for you to follow to get to
@@ -1097,12 +1097,12 @@ privileges for database hr_data</code></pre>
     and secure them so only certain users can connect to them. Now, it's time to get into the part where you define the
     entities that actually hold the data: <strong>tables</strong>!</p>
 <h2 id="what-is-a-table">What is a table?</h2>
-<p>A table is a “logical” structure that defines how data is stored and contains that data that meets the definition.
+<p>A table is a "logical" structure that defines how data is stored and contains that data that meets the definition.
     Most people think about tables like spreadsheets that have a specific number of columns and rows that contain the
     data.</p>
-<p>It is called a “logical” structure because we reason about it in terms of columns and rows; however, the RDMBS is in
+<p>It is called a "logical" structure because we reason about it in terms of columns and rows; however, the RDMBS is in
     charge of how the data is actually stored on disk and, quite often, for performance reasons, it does <em>not</em>
-    look like rows and columns. The way it is stored on disk is called the “physical” structure because that's what is
+    look like rows and columns. The way it is stored on disk is called the "physical" structure because that's what is
     the actual physical representation of it. We do not cover physical structures because they vary by RDBMS. If you
     become a <strong>database administrator</strong> in the future, you may have to learn such things.</p>
 <p>Here is a spreadsheet that contains some data about puppies.</p>
@@ -1151,8 +1151,8 @@ privileges for database hr_data</code></pre>
         </tr>
     </tbody>
 </table>
-<p>In table definitions, you have to be more specific, unfortunately. This is so the database can know things like “the
-    maximum length of the string” or “will the number have decimal points”? This is important information so that
+<p>In table definitions, you have to be more specific, unfortunately. This is so the database can know things like "the
+    maximum length of the string" or "will the number have decimal points"? This is important information so that
     database can know how to store it most efficiently. The following table shows you the corresponding ANSI SQL data
     types for the JavaScript types from before.</p>
 <table>
@@ -1197,10 +1197,10 @@ privileges for database hr_data</code></pre>
         </tr>
     </tbody>
 </table>
-<p>You can see that “string” values map to something called a “VARCHAR” with a maximum length.</p>
-<p>You can see that “number” values map to something called a “NUMERIC” with some numbers, or an INTEGER which is just a
+<p>You can see that "string" values map to something called a "VARCHAR" with a maximum length.</p>
+<p>You can see that "number" values map to something called a "NUMERIC" with some numbers, or an INTEGER which is just a
     whole number.</p>
-<p>You can see that “Boolean” values map to something called a “BOOLEAN” which is nice because that's convenient.</p>
+<p>You can see that "Boolean" values map to something called a "BOOLEAN" which is nice because that's convenient.</p>
 <h2 id="defining-tables">Defining tables</h2>
 <p>To define a table, you need to know what the different pieces of related data it will store. Then, you need to know
     what kind each of those pieces are. Once you have that, you can create a table with an ANSI SQL statement.</p>
@@ -1210,12 +1210,12 @@ privileges for database hr_data</code></pre>
 <p>The most commonly used type is known as the <strong>CHARACTER VARYING</strong> type. It means that it can contain
     text of varying lengths up to a specified maximum. That maximum is provided when you define the table. Instead of
     having to type <em>CHARACTER VARYING</em> all the time, you can use its weirdly named alias
-    <strong>VARCHAR</strong>, (pronounced “var-car” or “var-char” where each part rhymes with “car”). So, to specify
+    <strong>VARCHAR</strong>, (pronounced "var-car" or "var-char" where each part rhymes with "car"). So, to specify
     that a column can hold up to 50 characters, you would write <code>VARCHAR(50)</code> in the table definition.
     (Remember, SQL is case insensitive for its keywords. You can also write <code>varchar(50)</code> or
     <code>VarChar(50)</code> if you so desired. Just be consistent.)</p>
-<p>Another commonly used type is known simply as <strong>TEXT</strong>. This is a column that can contain an “unlimited”
-    number of characters. You may ask yourself, “Why don't I just always use TEXT, then?” Performance is the reason.
+<p>Another commonly used type is known simply as <strong>TEXT</strong>. This is a column that can contain an "unlimited"
+    number of characters. You may ask yourself, "Why don't I just always use TEXT, then?" Performance is the reason.
     Columns with the <em>TEXT</em> type are notoriously slower than those with other string types. Use them judiciously.
 </p>
 <p>Purposefully left out from this discussion is a type named <strong>CHARACTER</strong> or <strong>CHAR</strong>. It is
@@ -1292,7 +1292,7 @@ privileges for database hr_data</code></pre>
 <p>Another thing to note is that the last column specification <em>cannot</em> have a comma after it. In JavaScript, we
     can have commas after the last entry in an array or in a literal object definition. Not so in SQL. Again, the RDBMS
     will tell you that there is a syntax error. Just delete that last comma.</p>
-<p>Here's the table that contains the column definitions for the “puppies” spreadsheet from before.</p>
+<p>Here's the table that contains the column definitions for the "puppies" spreadsheet from before.</p>
 <table>
     <thead>
         <tr class="header">
@@ -1348,11 +1348,11 @@ privileges for database hr_data</code></pre>
 </div>
 <p>Log into your database, if you're not already. (Make sure you're in <em>your</em> database by looking at the prompt.
     It should read <code>«your user name»=#</code>.) Type in the SQL statement from above. If you do it correctly,
-    PostgreSQL will return the message “CREATE TABLE”.</p>
+    PostgreSQL will return the message "CREATE TABLE".</p>
 <h2 id="listing-tables-and-table-definitions">Listing tables and table definitions</h2>
 <p>You can see the tables in your database by typing <code>\dt</code> at the <code>psql</code> shell prompt. The
-    <code>\dt</code> command means “describe tables”. If you do that now, assuming that you've only created the
-    “puppies” table, you should see the following with your user name, of course.</p>
+    <code>\dt</code> command means "describe tables". If you do that now, assuming that you've only created the
+    "puppies" table, you should see the following with your user name, of course.</p>
 <pre><code>           List of relations
  Schema |  Name   | Type  |   Owner
 --------+---------+-------+------------
@@ -1376,23 +1376,23 @@ privileges for database hr_data</code></pre>
  breed        | character varying(100) |           |          |
  weight_lbs   | integer                |           |          |
  microchipped | boolean                |           |          |</code></pre>
-<p>For now, ignore the “Collation”, “Nullable”, and “Default” columns in that output. The next article will address
-    “Nullable” and “Default”.</p>
+<p>For now, ignore the "Collation", "Nullable", and "Default" columns in that output. The next article will address
+    "Nullable" and "Default".</p>
 <p>You can see that the data types that you provided have been translated into their ANSI SQL full name equivalents.</p>
-<p>Now, connect to the “postgres” database using the <code>\c postgres</code> command. It should give you a message that
-    you're now connected to the “postgres” database as your user. The prompt should change from one that has your name
-    to <code>postgres=#</code>. Now, type <code>\dt</code> to list the tables in the “postgres” database. If you haven't
-    created any tables there, it will read “Did not find any relations.” If you type <code>\d puppies</code>, it will
-    report that it can't find a relation named “puppies”.</p>
-<p>This is because you're in a different database than the one in which you created the “puppies” table. You just don't
-    see the “puppies” table, here, because it doesn't exit. That table is in another database, your user database.
+<p>Now, connect to the "postgres" database using the <code>\c postgres</code> command. It should give you a message that
+    you're now connected to the "postgres" database as your user. The prompt should change from one that has your name
+    to <code>postgres=#</code>. Now, type <code>\dt</code> to list the tables in the "postgres" database. If you haven't
+    created any tables there, it will read "Did not find any relations." If you type <code>\d puppies</code>, it will
+    report that it can't find a relation named "puppies".</p>
+<p>This is because you're in a different database than the one in which you created the "puppies" table. You just don't
+    see the "puppies" table, here, because it doesn't exit. That table is in another database, your user database.
     That's how databases work: they provide an area where you can create tables in which you'll store data. Different
     databases have different tables. You can't easily get at tables in another database from the one that you're
     currently in. And, really, you don't want to. Databases provide the storage and security boundaries for data.</p>
 <p>Change back to your user database by executing the command <code>\c «your user name»</code>.</p>
 <h2 id="deleting-a-table">Deleting a table</h2>
 <p>In the same way that you can delete users and databases by using the <code>DROP</code> command, you can do the same
-    for tables. To get rid of the “puppies” table, execute the following SQL command.</p>
+    for tables. To get rid of the "puppies" table, execute the following SQL command.</p>
 <div class="sourceCode" id="cb65">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb65-1" title="1"><span class="kw">DROP</span> <span class="kw">TABLE</span> puppies;</a></code></pre>
@@ -1400,7 +1400,7 @@ privileges for database hr_data</code></pre>
 <p>It should tell you that it dropped the table. You can confirm that it is no longer there by executing the
     <code>\dt</code> command.</p>
 <h2 id="what-youve-done-1">What you've done</h2>
-<p>In this section, you learned the basics about creating database entities called “tables” and their ownership. You
+<p>In this section, you learned the basics about creating database entities called "tables" and their ownership. You
     learned that tables are where you store data. You discovered that the data that you store is defined by the columns
     and their data types. You can now write SQL to create and drop tables.</p>
 <p>Next up, you will learn about special kinds of columns, column constraints, and building relations between tables.
@@ -1416,7 +1416,7 @@ privileges for database hr_data</code></pre>
     <li>Learn about primary keys, and,</li>
     <li>Learn about relating tables through foreign keys to maintain data and referential integrity.</li>
 </ul>
-<p>Here is the “puppies” spreadsheet, table definition, and the SQL to create it from the last article.</p>
+<p>Here is the "puppies" spreadsheet, table definition, and the SQL to create it from the last article.</p>
 <figure>
     <img src="images/tables-puppies-spreadsheet.png" alt="Puppies spreadsheet" />
     <figcaption>Puppies spreadsheet</figcaption>
@@ -1482,7 +1482,7 @@ privileges for database hr_data</code></pre>
     row is <code>NULL</code>, that means that it didn't get entered. Many database administrators, experts in databases
     and the models of data in them, detest the value <code>NULL</code> for one reason: it adds a weird state.</p>
 <p>Think about a Boolean value in JavaScript. It can one of two values: <code>true</code> or <code>false</code>. In
-    databases, a “nullable” <code>BOOLEAN</code> column, that is a <code>BOOLEAN</code> column that can hold
+    databases, a "nullable" <code>BOOLEAN</code> column, that is a <code>BOOLEAN</code> column that can hold
     <code>NULL</code> values, can have <em>three</em> values in it: <code>TRUE</code>, <code>FALSE</code>, and
     <code>NULL</code>. What does that mean to you as a software developer? It is this weird third state that leads to a
     strange offshoot of mathematics named <a href="https://en.wikipedia.org/wiki/Three-valued_logic">three-valued
@@ -1497,9 +1497,9 @@ privileges for database hr_data</code></pre>
 <a class="sourceLine" id="cb67-6" title="6">  microchipped <span class="dt">BOOLEAN</span> <span class="kw">NOT</span> <span class="kw">NULL</span></a>
 <a class="sourceLine" id="cb67-7" title="7">);</a></code></pre>
 </div>
-<p>Type that SQL into your <code>psql</code> shell and execute it. (If you already have a “puppies” table, drop the
-    existing one first.) Then, run <code>\d puppies</code>. You will see, now, that the column “Nullable” reads “not
-    null” for every single one.</p>
+<p>Type that SQL into your <code>psql</code> shell and execute it. (If you already have a "puppies" table, drop the
+    existing one first.) Then, run <code>\d puppies</code>. You will see, now, that the column "Nullable" reads "not
+    null" for every single one.</p>
 <pre><code>                         Table &quot;public.puppies&quot;
     Column    |          Type          | Collation | Nullable | Default
 --------------+------------------------+-----------+----------+---------
@@ -1510,12 +1510,12 @@ privileges for database hr_data</code></pre>
  microchipped | boolean                |           | not null |</code></pre>
 <p>Now, when someone tries to add data to the table, they must provide a value for every single column.</p>
 <p><strong>Note</strong>: An empty string is <em>not</em> a <code>NULL</code> value. It is still possible for someone to
-    insert the string "" into the “name” column, for example. There are ways to prevent that, but you should check it in
+    insert the string "" into the "name" column, for example. There are ways to prevent that, but you should check it in
     your JavaScript code before actually inserting the data.</p>
 <h2 id="default-values">Default values</h2>
 <p>Sometimes, you just want a column to have a default value. When there is a default value, the applications that
     insert data into the table can just rely on the default value and not have to specify it.</p>
-<p>For the “puppies” table, a reasonable default value for the “microchipped” column would be <code>FALSE</code>. You
+<p>For the "puppies" table, a reasonable default value for the "microchipped" column would be <code>FALSE</code>. You
     can add that to your SQL using the <code>DEFAULT</code> keyword.</p>
 <div class="sourceCode" id="cb69">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb69-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> puppies (</a>
@@ -1526,7 +1526,7 @@ privileges for database hr_data</code></pre>
 <a class="sourceLine" id="cb69-6" title="6">  microchipped <span class="dt">BOOLEAN</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> <span class="kw">FALSE</span></a>
 <a class="sourceLine" id="cb69-7" title="7">);</a></code></pre>
 </div>
-<p>Drop the existing “puppies” table and type in that SQL. Then, run <code>\d puppies</code> to see how it shows up in
+<p>Drop the existing "puppies" table and type in that SQL. Then, run <code>\d puppies</code> to see how it shows up in
     the table definition.</p>
 <h2 id="primary-keys">Primary keys</h2>
 <p>Being able to identify a single row in a table is <em>very</em> important. Here's the screenshot of the spreadsheet,
@@ -1535,37 +1535,37 @@ privileges for database hr_data</code></pre>
     <img src="images/tables-puppies-spreadsheet.png" alt="Puppies spreadsheet" />
     <figcaption>Puppies spreadsheet</figcaption>
 </figure>
-<p>Let's say that the puppy named “Max” gains a couple of pounds. You want to update the spreadsheet. You scan through
+<p>Let's say that the puppy named "Max" gains a couple of pounds. You want to update the spreadsheet. You scan through
     the list of names and find it on row 11. Then, you update the weight to be 69 pounds.</p>
 <p>Now, what happens when you are tracking 300 dogs in the spreadsheet? What happens when your spreadsheet has 17 dogs
-    named “Max”? It is helpful to have some way to uniquely identify a row in the spreadsheet. This is the idea behind a
+    named "Max"? It is helpful to have some way to uniquely identify a row in the spreadsheet. This is the idea behind a
     <strong>primary key</strong>. You can specify a column to be the primary key with the keywords <code>PRIMARY
         KEY</code>. A column that acts as a primary key cannot be <code>NULL</code>, so that is implied.</p>
-<p>Here's the spreadsheet with a new column in it named “id” that just contains numbers to uniquely identify each row.
+<p>Here's the spreadsheet with a new column in it named "id" that just contains numbers to uniquely identify each row.
 </p>
 <figure>
     <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/spreadsheet-puppies-with-primary-key.png"
         alt="Puppies spreadsheet with primary key" />
     <figcaption>Puppies spreadsheet with primary key</figcaption>
 </figure>
-<p>You may ask yourself, “Why can't I just use the row number as each row's identifier?” That's a very valid question!
-    Here is the reason why. You can see that “Max” has an “id” of 10 on row 11. What happens if you wanted to look at
+<p>You may ask yourself, "Why can't I just use the row number as each row's identifier?" That's a very valid question!
+    Here is the reason why. You can see that "Max" has an "id" of 10 on row 11. What happens if you wanted to look at
     the data differently, say sorted by name? Here's what that spreadsheet looks like.</p>
 <figure>
     <img src="images/spreadsheet-puppies-with-primary-key-sorted-by-name.png"
         alt="Puppies spreadsheet with primary key sorted by name" />
     <figcaption>Puppies spreadsheet with primary key sorted by name</figcaption>
 </figure>
-<p>You can see that when you sort them by name, if you relied on row number, “Max” now lives on row 10 rather than row
-    11. That changes the unique identifer of “Max” based on the way that you view the data. You want the unique
+<p>You can see that when you sort them by name, if you relied on row number, "Max" now lives on row 10 rather than row
+    11. That changes the unique identifer of "Max" based on the way that you view the data. You want the unique
     identifier to <em>be part of the row definition</em> so that the number always stays with the row no matter how
-    you've sorted the data. You will always know that the row with “id” value of 10 is “Max”.</p>
+    you've sorted the data. You will always know that the row with "id" value of 10 is "Max".</p>
 <p>Keeping track of what the next number would be in that column could cause you a lot or headaches. What if two people
-    (or applications) were entering data at the same time? Who would get the correct “next id” and still have it be
+    (or applications) were entering data at the same time? Who would get the correct "next id" and still have it be
     unique? The answer to that is to let the database handle it. All databases have some way of specifying that you want
     to set the column to a special data type that will auto-assign and auto-increment an integer value for the column.
     In PostgreSQL, that special data type is called <code>SERIAL</code>.</p>
-<p>Putting that all together, you would add a new column definition to your table with the name of “id” and the type
+<p>Putting that all together, you would add a new column definition to your table with the name of "id" and the type
     <code>SERIAL</code>. Then, to specify that it is the primary key, you can do it one of two ways. The following
     example shows it as part of the column definition.</p>
 <div class="sourceCode" id="cb70">
@@ -1603,15 +1603,15 @@ privileges for database hr_data</code></pre>
  microchipped | boolean                |           | not null | false
 Indexes:
     &quot;puppies_pkey&quot; PRIMARY KEY, btree (id)</code></pre>
-<p>First, you'll notice that there is a weird default value for the “id” column. That's the way that PostgreSQL
+<p>First, you'll notice that there is a weird default value for the "id" column. That's the way that PostgreSQL
     populates it with a new integer value every time you add a new row.</p>
-<p>You will also see that that there is a section named “Indexes” after the column specifications. This shows that there
-    is a thing named “puppies_pkey” which is the primary key on the column “id”.</p>
+<p>You will also see that that there is a section named "Indexes" after the column specifications. This shows that there
+    is a thing named "puppies_pkey" which is the primary key on the column "id".</p>
 <h2 id="unique-values">Unique values</h2>
 <p>Sometimes, you want all of the data in a column to be unique. For example, if you a table of people records. You want
     to collect their email address for them to sign up for your Web site. In general, people don't share email addresses
     (although it has been known to happen). You can put a constraint on a column by putting <code>UNIQUE</code> in the
-    column's definition. For example, here's a sample “people” table with a unique constraint on the email column.</p>
+    column's definition. For example, here's a sample "people" table with a unique constraint on the email column.</p>
 <div class="sourceCode" id="cb73">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb73-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> people (</a>
 <a class="sourceLine" id="cb73-2" title="2">  <span class="kw">id</span> SERIAL,</a>
@@ -1633,15 +1633,15 @@ Indexes:
     &quot;people_pkey&quot; PRIMARY KEY, btree (id)
     &quot;people_email_key&quot; UNIQUE CONSTRAINT, btree (email)</code></pre>
 <p>Down there at the bottom, you see that PostgreSQL has added a <code>UNIQUE CONSTRAINT</code> to the list of indexes
-    for the “email” field. Now, if someone tried to put an email address into the table that someone had previously
+    for the "email" field. Now, if someone tried to put an email address into the table that someone had previously
     used, then the database would return an error.</p>
 <pre><code>ERROR:  duplicate key value violates unique constraint &quot;people_email_key&quot;
 DETAIL:  Key (email)=(a) already exists.</code></pre>
 <h2 id="refactor-for-data-integrity">Refactor for data integrity</h2>
 <p>Now is the time for thinking about the nature of the data. When you create database tables, you need to ask yourself
-    about the data that you're going to store in them. One of the first questions that you should ask yourself is, “Do
-    any of the columns have values that come from a list?” Or, another way to ask that is, “Do any of the columns come
-    from a set of predefined values?” If you look at this data, does anything seem like it comes from a list, or that
+    about the data that you're going to store in them. One of the first questions that you should ask yourself is, "Do
+    any of the columns have values that come from a list?" Or, another way to ask that is, "Do any of the columns come
+    from a set of predefined values?" If you look at this data, does anything seem like it comes from a list, or that
     the data could repeat itself?</p>
 <p>Take a look, again, at the spreadsheet. Does anything jump out at you?</p>
 <figure>
@@ -1649,13 +1649,13 @@ DETAIL:  Key (email)=(a) already exists.</code></pre>
         alt="Puppies spreadsheet with primary key sorted by name" />
     <figcaption>Puppies spreadsheet with primary key sorted by name</figcaption>
 </figure>
-<p>If you looked at it and answered “the breed column”, that's the ticket! The values that go into the breed column is
-    finite. You don't want one person typing “Corgi” and another person typing “CORGI” and another “corgi” because, as
+<p>If you looked at it and answered "the breed column", that's the ticket! The values that go into the breed column is
+    finite. You don't want one person typing "Corgi" and another person typing "CORGI" and another "corgi" because, as
     you know, those are <em>three different values</em>! You want them all to be the same value! Supporting this is the
     primary reason that relational databases exist.</p>
 <p>Instead of having just one table, you could have two tables. One that contains the puppy information and another that
     contains the breed information. Then, using the magic of relational databases, you can create a relation between the
-    two tables so that the “puppies” table will reference entries in the “breeds” table.</p>
+    two tables so that the "puppies" table will reference entries in the "breeds" table.</p>
 <p>This process is called <strong>normalization</strong>. It's a <em>really big deal</em> in database communities. And,
     it's a really big deal for application developers to maintain the integrity of the data. Bad data leads to bad
     applications.</p>
@@ -1663,20 +1663,20 @@ DETAIL:  Key (email)=(a) already exists.</code></pre>
 <ol type="1">
     <li>Figure out what related data repeats itself. In this case, it is only the single column that contains the
         <strong>breed</strong> names.</li>
-    <li>Create a new table to hold that data. Make sure it has a primary key. In this case, you can create a “breeds”
-        table that contains an “id” the name of the breed.</li>
+    <li>Create a new table to hold that data. Make sure it has a primary key. In this case, you can create a "breeds"
+        table that contains an "id" the name of the breed.</li>
     <li>Replace all of the columns in the original table that you extracted with a single value that will contain the
-        corresponding “id” value from the new table. In this case, you will replace the “breed” column with a column
-        named “breed_id” because it will have the id of the specific breed from the “breeds” table.</li>
+        corresponding "id" value from the new table. In this case, you will replace the "breed" column with a column
+        named "breed_id" because it will have the id of the specific breed from the "breeds" table.</li>
 </ol>
 <p>Here's what that would look like with two spreadsheets.</p>
 <p>[Puppies and breed spreadsheets normalized]</p>
-<p>You might think to yourself, “That's not simpler! That's … that's harder!” From a human perspective looking at the
-    two separate tables and associating the id in the “breed_id” column with the value in the “id” column of the
-    “breeds” table to lookup the name of the breed <em>is</em> harder. But, SQL provides tools to make this <em>very
+<p>You might think to yourself, "That's not simpler! That's … that's harder!" From a human perspective looking at the
+    two separate tables and associating the id in the "breed_id" column with the value in the "id" column of the
+    "breeds" table to lookup the name of the breed <em>is</em> harder. But, SQL provides tools to make this <em>very
         easy</em>. You will learn about that in the homework, tonight, and in all of the database work that you'll be
     doing from here on out. Eventually, thinking this way about data will become second nature.</p>
-<p>To represent this in SQL, you will need two SQL statements. The first one, the one for the “breeds” table, you should
+<p>To represent this in SQL, you will need two SQL statements. The first one, the one for the "breeds" table, you should
     be able to construct that already with the knowledge that you have. It would look like this. Type this into your
     <code>plsql</code> shell.</p>
 <div class="sourceCode" id="cb76">
@@ -1686,12 +1686,12 @@ DETAIL:  Key (email)=(a) already exists.</code></pre>
 <a class="sourceLine" id="cb76-4" title="4">  <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (<span class="kw">id</span>)</a>
 <a class="sourceLine" id="cb76-5" title="5">);</a></code></pre>
 </div>
-<p>Now, here's the new thing. You want the database to make sure that the value in the “breed_id” column of the
-    “puppies” table references the value in the “id” table of the “breeds” table. This reference is called a
+<p>Now, here's the new thing. You want the database to make sure that the value in the "breed_id" column of the
+    "puppies" table references the value in the "id" table of the "breeds" table. This reference is called a
     <strong>foreign key</strong>. That means that the value in the column <em>must exist</em> as the value of a primary
     key in the table that it references. This <strong>referential integrity</strong> is the backbone of relational
     databases. It prevents bad data from getting put into those foreign key columns.</p>
-<p>Here's what the new “puppies” SQL looks like. Drop the old “puppies” table and type this SQL in there.</p>
+<p>Here's what the new "puppies" SQL looks like. Drop the old "puppies" table and type this SQL in there.</p>
 <div class="sourceCode" id="cb77">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb77-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> puppies (</a>
 <a class="sourceLine" id="cb77-2" title="2">  <span class="kw">id</span> SERIAL,</a>
@@ -1711,28 +1711,28 @@ DETAIL:  Key (email)=(a) already exists.</code></pre>
 <a class="sourceLine" id="cb78-2" title="2">  <span class="kw">REFERENCES</span> «other <span class="kw">table</span> name»(«primary <span class="kw">key</span> <span class="kw">column</span> <span class="kw">in</span> other table»)</a></code></pre>
 </div>
 <p>Looking at the spreadsheets, again, the presence of the foreign key would make it <em>impossible</em> for someone to
-    enter a value in the “breed_id” column that did not exist in the “id” column of the “breeds” table.</p>
+    enter a value in the "breed_id" column that did not exist in the "id" column of the "breeds" table.</p>
 <p>[Puppies and breed spreadsheets normalized]</p>
-<p>You can see that the puppies with ids of 1 and 9, “Cooper” and “Leinni”, both have the “breed_id” of 8. That means
-    they're both “Miniature Schnauzers”. What if, originally, someone had misspelled “Schnauzers”? If it was still just
-    a text column in the “puppies” sheet, you'd have to go find and replace every single instance of the misspelling.
+<p>You can see that the puppies with ids of 1 and 9, "Cooper" and "Leinni", both have the "breed_id" of 8. That means
+    they're both "Miniature Schnauzers". What if, originally, someone had misspelled "Schnauzers"? If it was still just
+    a text column in the "puppies" sheet, you'd have to go find and replace every single instance of the misspelling.
     Now, because it's only spelled once and then <em>referenced</em>, you would only need to update the misspelling in
     one place!</p>
 <h2 id="order-of-table-declarations">Order of table declarations</h2>
-<p>The order of running these table definitions is important. Because “puppies” now relies on “breeds” to exist for that
-    foreign key relationship, you <em>must</em> create the “breeds” table first. If you had tried to create the
-    “puppies” table first, you would see the following error message.</p>
+<p>The order of running these table definitions is important. Because "puppies" now relies on "breeds" to exist for that
+    foreign key relationship, you <em>must</em> create the "breeds" table first. If you had tried to create the
+    "puppies" table first, you would see the following error message.</p>
 <pre><code>ERROR: relation &quot;breeds&quot; does not exist</code></pre>
 <p>Now that you have both of those tables in your database, what do you think would happen if you tried to drop the
-    “breeds” table? Another table depends on it. When you tried to drop a user that owned a database, you got an error
+    "breeds" table? Another table depends on it. When you tried to drop a user that owned a database, you got an error
     because that database object depended on that user existing, the same things happens now.</p>
-<p>Type the SQL to drop the “breeds” table from the database. You should see the following error message.</p>
+<p>Type the SQL to drop the "breeds" table from the database. You should see the following error message.</p>
 <pre><code>ERROR:  cannot drop table breeds because other objects depend on it
 DETAIL:  constraint puppies_breed_id_fkey on table puppies depends on table breeds
 HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
-<p>You can see that PostgreSQL has told you that other things depend on the “breeds” table and, specifically, a thing
-    called “puppies_breed_id_fkey” depends on it. That is the auto-generated name for the foreign key that you created
-    in the “puppies” table. It took the name of the table, the name of the column, and the string “fkey” and joined them
+<p>You can see that PostgreSQL has told you that other things depend on the "breeds" table and, specifically, a thing
+    called "puppies_breed_id_fkey" depends on it. That is the auto-generated name for the foreign key that you created
+    in the "puppies" table. It took the name of the table, the name of the column, and the string "fkey" and joined them
     all together with underscores.</p>
 <p>In the homework for tomorrow, you will see how to <em>join</em> together two tables into one virtual table so that
     the breed names are right there along with the puppies data.</p>
@@ -1741,7 +1741,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
 <ul>
     <li>Learned about nullable columns and how to control that behavior by writing <code>NOT NULL</code> in your column
         specifications</li>
-    <li>Learned that <code>NULL</code> means an “absence of a value” which makes database administrators groan with
+    <li>Learned that <code>NULL</code> means an "absence of a value" which makes database administrators groan with
         displeasure</li>
     <li>Learned about how to specify default values for a column</li>
     <li>Learned the purpose of and how to declare integer-valued primary keys for a table using the <code>PRIMARY
@@ -1751,8 +1751,8 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
         another table</li>
 </ul>
 <p>[Puppies and breed spreadsheets normalized]:
-    images/spreadsheet-puppies-and-breeds-normalized.pngimages/spreadsheet-puppies-and-breeds-normalized.pngort “[TOC]”
-    {cmd=“toc” depthFrom=2 depthTo=6 orderedList=false} –&gt;
+    images/spreadsheet-puppies-and-breeds-normalized.pngimages/spreadsheet-puppies-and-breeds-normalized.pngort "[TOC]"
+    {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} –&gt;
     ________________________________________________________________________________</p>
 <p><strong>This is a walk-through</strong>: Please type along as you read what's going on in this article.</p>
 <p>In this walk-through, you will</p>
@@ -1763,7 +1763,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
     <li>Learn about primary keys, and,</li>
     <li>Learn about relating tables through foreign keys to maintain data and referential integrity.</li>
 </ul>
-<p>Here is the “puppies” spreadsheet, table definition, and the SQL to create it from the last article.</p>
+<p>Here is the "puppies" spreadsheet, table definition, and the SQL to create it from the last article.</p>
 <figure>
     <img src="images/tables-puppies-spreadsheet.png" alt="Puppies spreadsheet" />
     <figcaption>Puppies spreadsheet</figcaption>
@@ -1863,7 +1863,7 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
     <li>Explain what and why someone would use <code>EXPLAIN</code></li>
     <li>Demonstrate how to install and use the <strong>node-postgres</strong> library and its <code>Pool</code> class to
         query a PostgreSQL-managed database</li>
-    <li>Explain how to write prepared statements with placeholders for parameters of the form “$1”, “$2”, and so on</li>
+    <li>Explain how to write prepared statements with placeholders for parameters of the form "$1", "$2", and so on</li>
 </ul>
 <hr />
 <h1 id="retrieving-rows-from-a-table-using-select">Retrieving Rows From A Table Using SELECT</h1>
@@ -1964,8 +1964,8 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
 <p>As we covered in the first reading, psql allows us to access the PostgreSQL server and make queries via the terminal.
     Open up the terminal on your machine, and connect to the PostgreSQL server by using the following psql command:</p>
 <pre class="shell"><code>psql -U postgres</code></pre>
-<p>The above command lets you access the PostgreSQL server as the user ‘postgres' (<code>-U</code> stands for user).
-    After you enter this command, you'll be prompted for the password that you set for the ‘postgres' user during
+<p>The above command lets you access the PostgreSQL server as the user 'postgres' (<code>-U</code> stands for user).
+    After you enter this command, you'll be prompted for the password that you set for the 'postgres' user during
     installation. Type it in, and hit Enter. Once you've successfully logged in, you should see the following in the
     terminal:</p>
 <pre class="shell"><code>Password for user postgres:
@@ -2037,24 +2037,24 @@ postgres=#</code></pre>
             <td>false</td>
         </tr>
         <tr class="even">
-            <td>‘t'</td>
-            <td>‘f'</td>
+            <td>'t'</td>
+            <td>'f'</td>
         </tr>
         <tr class="odd">
-            <td>‘true'</td>
-            <td>‘false'</td>
+            <td>'true'</td>
+            <td>'false'</td>
         </tr>
         <tr class="even">
-            <td>‘yes'</td>
-            <td>‘no'</td>
+            <td>'yes'</td>
+            <td>'no'</td>
         </tr>
         <tr class="odd">
-            <td>‘y'</td>
-            <td>‘n'</td>
+            <td>'y'</td>
+            <td>'n'</td>
         </tr>
         <tr class="even">
-            <td>‘1'</td>
-            <td>‘0'</td>
+            <td>'1'</td>
+            <td>'0'</td>
         </tr>
     </tbody>
 </table>
@@ -2283,7 +2283,7 @@ postgres=#</code></pre>
 <a class="sourceLine" id="cb88-2" title="2"><span class="kw">FROM</span>   puppies;</a></code></pre>
 </div>
 <p>That works for short lists. But some tables have hundreds of columns. That gets long.</p>
-<p>Some developers like what you saw earlier, the “each column name on its own line with the comma at the front”.</p>
+<p>Some developers like what you saw earlier, the "each column name on its own line with the comma at the front".</p>
 <div class="sourceCode" id="cb89">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb89-1" title="1"><span class="kw">SELECT</span> name</a>
 <a class="sourceLine" id="cb89-2" title="2">     , age_yrs</a>
@@ -2404,7 +2404,7 @@ postgres=#</code></pre>
 </table>
 <h3 id="where-clause-for-a-single-value">WHERE clause for a single value</h3>
 <p>The simplest WHERE clause finds a row by a single column value. See the example below, which finds the rows where the
-    breed equals ‘Corgi':</p>
+    breed equals 'Corgi':</p>
 <pre class="shell"><code>SELECT name, breed FROM puppies
   WHERE breed = &#39;Corgi&#39;;</code></pre>
 <p><code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> are capitalized. Notice that the string must use
@@ -2413,7 +2413,7 @@ postgres=#</code></pre>
     <code>foo</code>, and <code>create table "Bar"()</code> will create a table called <code>Bar</code>. If you use
     double quotation marks in the query above, you'll get an error that says <code>column "Corgi" does not exist</code>
     because it thinks you're searching for the capitalized column name <code>Corgi</code>.</p>
-<p>Use the command <code>psql -U postgres</code> in the terminal, and type in your ‘postgres' user password to connect
+<p>Use the command <code>psql -U postgres</code> in the terminal, and type in your 'postgres' user password to connect
     to the PostgreSQL server. You should have a puppies table in your postgres database from the last reading. Once
     you're in psql, enter the query above into the terminal and press Enter. You should get back one result for Callie
     the Corgi.</p>
@@ -2526,7 +2526,7 @@ postgres=#</code></pre>
         </tr>
         <tr class="odd">
             <td>LIKE</td>
-            <td>TRUE if the operand matches a pattern (accepts “wildcards”).</td>
+            <td>TRUE if the operand matches a pattern (accepts "wildcards").</td>
         </tr>
         <tr class="even">
             <td>NOT</td>
@@ -2553,10 +2553,10 @@ postgres=#</code></pre>
     <thead>
         <tr class="header">
             <th><code>LIKE</code></th>
-            <th>Matches “dog”</th>
-            <th>Matches “hotdog”</th>
-            <th>Matches “dog-tired”</th>
-            <th>Matches “ordogordo”</th>
+            <th>Matches "dog"</th>
+            <th>Matches "hotdog"</th>
+            <th>Matches "dog-tired"</th>
+            <th>Matches "ordogordo"</th>
         </tr>
     </thead>
     <tbody>
@@ -2601,7 +2601,7 @@ postgres=#</code></pre>
     two Shepherds. We started with ten puppies in the table, so we're left with four table rows. There are two puppies
     who are Shepherd breeds: an Australian Shepherd and a German Shepherd. We used the <code>LIKE</code> operator to
     filter these. In <code>'%Shepherd</code>, the <code>%</code> matches any substring value before the substring
-    ‘Shepherd'.</p>
+    'Shepherd'.</p>
 <h3 id="arithmetic-operators">Arithmetic operators</h3>
 <table>
     <thead>
@@ -2726,7 +2726,7 @@ postgres=#</code></pre>
     end of our application. All relational database data is stored in tables, so it's important to learn how to create
     tables and successfully query them.</p>
 <p>Of the four data manipulation statements, <code>INSERT</code> is the easiest.</p>
-<p>Create a new database named “folks”. Now, create a new table named “friends” with the following column
+<p>Create a new database named "folks". Now, create a new table named "friends" with the following column
     specifications.</p>
 <table>
     <thead>
@@ -2759,7 +2759,7 @@ postgres=#</code></pre>
 <pre class="shell"><code>INSERT INTO table_name
 VALUES
   (column1_value, colum2_value, column3_value);</code></pre>
-<p>Let's fill out our “friends” table with information about five friends. In psql, enter the following to add new table
+<p>Let's fill out our "friends" table with information about five friends. In psql, enter the following to add new table
     rows. <em>Note the use of single quotation marks for string values. Also note that, since we used the <a
             href="https://www.postgresql.org/docs/9.1/sql-createindex.html"><code>SERIAL</code> pseudo-type</a> to
         auto-increment the ID values, we can simply write <code>DEFAULT</code> for the ID values when inserting new
@@ -2769,7 +2769,7 @@ VALUES
   (DEFAULT, &#39;Amy&#39;, &#39;Pond&#39;);</code></pre>
 <p>You can also completely omit the <code>DEFAULT</code> keyword if you specify the names of the columns that you want
     to insert into.</p>
-<p>You can also use the “multiple values” insert. This prevents you from having to write <code>INSERT</code> with every
+<p>You can also use the "multiple values" insert. This prevents you from having to write <code>INSERT</code> with every
     statement. Even better, if one fails, they all fail. That can help protect your data integrity.</p>
 <pre><code>INSERT INTO friends (first_name, last_name)
 VALUES
@@ -2777,7 +2777,7 @@ VALUES
 (&#39;Martha&#39;, &#39;Jones&#39;),
 (&#39;Donna&#39;, &#39;Noble&#39;),
 (&#39;River&#39;, &#39;Song&#39;);</code></pre>
-<p>Use <code>SELECT * FROM friends;</code> to verify that there are rows in the “friends” table:</p>
+<p>Use <code>SELECT * FROM friends;</code> to verify that there are rows in the "friends" table:</p>
 <pre class="shell"><code>appacademy=# SELECT * FROM friends;
  id | first_name | last_name
 ----+------------+-----------
@@ -2809,7 +2809,7 @@ DETAIL:  Key (id)=(5) already exists.</code></pre>
         keys</em> and <em>primary keys</em>.</p>
 <p>You've learned about primary and foreign keys. Now, it's time to put them to use.</p>
 <h2 id="setting-up-the-database">Setting up the database</h2>
-<p>Create a new database called “learn_joins”. Connect to that database. Run the following SQL statements to create
+<p>Create a new database called "learn_joins". Connect to that database. Run the following SQL statements to create
     tables and the data in them.</p>
 <div class="sourceCode" id="cb113">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb113-1" title="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> breeds (</a>
@@ -2859,7 +2859,7 @@ DETAIL:  Key (id)=(5) already exists.</code></pre>
 <a class="sourceLine" id="cb116-12" title="12">(<span class="st">&#39;Max&#39;</span>, <span class="fl">1.6</span>, <span class="dv">5</span>, <span class="dv">65</span>, <span class="kw">false</span>);</a></code></pre>
 </div>
 <h2 id="using-join-to-retrieve-rows-from-multiple-tables">Using JOIN to retrieve rows from multiple tables</h2>
-<p>Now that we've set up an association between the “puppies” table and the “friends” table, we can access data from
+<p>Now that we've set up an association between the "puppies" table and the "friends" table, we can access data from
     both tables. We can do so by using a <a href="https://www.postgresql.org/docs/9.1/indexes.html">JOIN operation</a>
     in our SELECT query. Type the following into psql:</p>
 <div class="sourceCode" id="cb117">
@@ -2867,7 +2867,7 @@ DETAIL:  Key (id)=(5) already exists.</code></pre>
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> puppies</a>
 <a class="sourceLine" id="cb117-2" title="2"><span class="kw">INNER</span> <span class="kw">JOIN</span> breeds <span class="kw">ON</span> (puppies.breed_id <span class="op">=</span> breeds.<span class="kw">id</span>);</a></code></pre>
 </div>
-<p>The <code>JOIN</code> operation above is joining the “puppies” table with the “breeds” table together into a single
+<p>The <code>JOIN</code> operation above is joining the "puppies" table with the "breeds" table together into a single
     table using the foreign key/primary key shared between the two tables: <code>breed_id</code>.</p>
 <p>You should get all rows back containing all information for the puppies and breeds with matching
     <code>breed_id</code> values:</p>
@@ -2984,16 +2984,16 @@ DETAIL:  Key (id)=(5) already exists.</code></pre>
 <a class="sourceLine" id="cb119-57" title="57"></a>
 <a class="sourceLine" id="cb119-58" title="58"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> pies;</a></code></pre>
 </div>
-<h2 id="populating-a-database-via-left-caret">Populating a database via &lt; (“left caret”)</h2>
+<h2 id="populating-a-database-via-left-caret">Populating a database via &lt; ("left caret")</h2>
 <p>Now that you have a seed file, you can insert it into a database with a simple command.</p>
-<p>Create a database named “bakery”.</p>
+<p>Create a database named "bakery".</p>
 <p>The syntax is <code>psql -d [database] &lt; [path_to_file/file.sql]</code>. The left caret (<code>&lt;</code>) takes
     the standard input from the file on the right (your seed file) and inputs it into the program on the left
     (<code>psql</code>).</p>
 <p>Open up your terminal, and enter the following command. Make sure to replace <code>path_to_my_file</code> with the
     actual file path.</p>
 <pre class="shell"><code>psql -d bakery &lt; path_to_my_file/seed-data.sql</code></pre>
-<p>In the terminal, you should see a bunch of <code>INSERT</code> statements and the entire “pies” table printed out
+<p>In the terminal, you should see a bunch of <code>INSERT</code> statements and the entire "pies" table printed out
     (from the <code>SELECT *</code> query in the seed file).</p>
 <p>You can log into psql and use <code>\dt</code> to verify that your new table has been added to the database:</p>
 <pre class="shell"><code>postgres=# \dt
@@ -3002,12 +3002,12 @@ List of relations
  public | breeds       | table | appacademy
  public | pies         | table | appacademy
  public | puppies      | table | appacademy</code></pre>
-<h2 id="populating-the-database-via-pipe">Populating the database via | (“pipe”)</h2>
-<p>You could also use the “pipe” (<code>|</code>) to populate the database with your seed file.</p>
-<p>The syntax is <code>cat [path_to_file/file.sql] | psql -d [database]</code>. ‘cat' is a standard Unix utility that
-    reads files sequentially, writing them to standard output. The “pipe” (<code>|</code>) takes the standard output of
+<h2 id="populating-the-database-via-pipe">Populating the database via | ("pipe")</h2>
+<p>You could also use the "pipe" (<code>|</code>) to populate the database with your seed file.</p>
+<p>The syntax is <code>cat [path_to_file/file.sql] | psql -d [database]</code>. 'cat' is a standard Unix utility that
+    reads files sequentially, writing them to standard output. The "pipe" (<code>|</code>) takes the standard output of
     the command on the left and pipes it as standard input to the command on the right.</p>
-<p>Try out this method in your terminal. If you have an existing “pies” table, you'll need to drop this table before you
+<p>Try out this method in your terminal. If you have an existing "pies" table, you'll need to drop this table before you
     can add it again:</p>
 <div class="sourceCode" id="cb122">
     <pre
@@ -3015,7 +3015,7 @@ List of relations
 </div>
 <p>Then, enter the following. Make sure to replace <code>path_to_my_file</code> with the actual file path.</p>
 <pre class="shell"><code>cat path_to_my_file/seed-data.sql | psql -d postgres</code></pre>
-<p>Again, you should see a bunch of <code>INSERT</code> statements and the entire “pies” table printed out (from the
+<p>Again, you should see a bunch of <code>INSERT</code> statements and the entire "pies" table printed out (from the
     <code>SELECT *</code> query in the seed file).</p>
 <p>You can log into psql and use <code>\dt</code> to verify that your new table has been added to the database:</p>
 <pre class="shell"><code>postgres=# \dt
@@ -3054,8 +3054,8 @@ List of relations
 <p><em>Note:</em> You can check to make sure you've created a new database by viewing the list of databases with
     <code>\l</code>.</p>
 <h2 id="phase-2-create-a-seeds-seed-file">Phase 2: Create a seeds seed file</h2>
-<p>Create a seed file full of seeds! Set up a SQL file with seed data that will produce two tables: an “edible_seeds”
-    with 40 rows and a “flower_seeds” table with 20 rows.</p>
+<p>Create a seed file full of seeds! Set up a SQL file with seed data that will produce two tables: an "edible_seeds"
+    with 40 rows and a "flower_seeds" table with 20 rows.</p>
 <p><strong>Edible Seeds</strong></p>
 <table>
     <thead>
@@ -3350,7 +3350,7 @@ List of relations
         </tr>
     </tbody>
 </table>
-<p>Use the following data types for your “edible_seeds” columns:</p>
+<p>Use the following data types for your "edible_seeds" columns:</p>
 <ul>
     <li>id - SERIAL</li>
     <li>name - VARCHAR that accepts 255 characters</li>
@@ -3533,7 +3533,7 @@ List of relations
         </tr>
     </tbody>
 </table>
-<p>Use the following data types for your “flower_seeds” columns:</p>
+<p>Use the following data types for your "flower_seeds" columns:</p>
 <ul>
     <li>id - SERIAL</li>
     <li>name - VARCHAR that accepts 300 characters</li>
@@ -3546,7 +3546,7 @@ List of relations
     next phase!</p>
 <h2 id="phase-3-pipe-your-seed-file-into-your-new-database">Phase 3: Pipe your seed file into your new database</h2>
 <p>After you've saved your seed file, use the caret and pipe methods to seed your <code>farm</code> database with the
-    data from the “edible_seeds” table. (<em>Note: Make sure you've quit <code>psql</code> first with
+    data from the "edible_seeds" table. (<em>Note: Make sure you've quit <code>psql</code> first with
         <code>\q</code>.</em>)</p>
 <p>There are two ways to seed your database:</p>
 <h3 id="method-1.-seed-your-database-via-caret-method">Method 1. Seed your database via caret method</h3>
@@ -3578,8 +3578,8 @@ List of relations
 <ul>
     <li>Log into <code>psql</code> again.</li>
     <li>Connect to the <code>farm</code> database (syntax: <code>\c [database]</code>).</li>
-    <li>Make sure your “edible_seeds” table is filled with seeds: <code>SELECT * FROM «table name»;</code></li>
-    <li>Make sure your “flower_seeds” table is filled with seeds: <code>SELECT * FROM «table name»;</code></li>
+    <li>Make sure your "edible_seeds" table is filled with seeds: <code>SELECT * FROM «table name»;</code></li>
+    <li>Make sure your "flower_seeds" table is filled with seeds: <code>SELECT * FROM «table name»;</code></li>
 </ul>
 <hr />
 <h1 id="solving-the-sql-menagerie-project">Solving The SQL Menagerie Project</h1>
@@ -3602,24 +3602,24 @@ List of relations
 <h2 id="phase-1-pipe-in-a-seed-file-to-create-new-database-tables">Phase 1: Pipe in a seed file to create new database
     tables</h2>
 <p>We've set up a seed file for you to use in this project called _<strong>cities_and_airports.sql_</strong> that will
-    create two tables: a “cities” table and an “airports” table. These tables show the top 25 most populous U.S. cities
+    create two tables: a "cities" table and an "airports" table. These tables show the top 25 most populous U.S. cities
     and their airports, respectively. Pipe this file into your database, and use these tables for the rest of the
     project phases.</p>
 <p>Go through the following steps:</p>
 <ol type="1">
     <li>Log into <code>psql</code>.</li>
-    <li>Create a new database called “travel”.</li>
-    <li>Pipe the <em>cities_and_airports.sql</em> seed file into the “travel” database.</li>
-    <li>Check that there's data in both the “cities” and “airports” tables.</li>
+    <li>Create a new database called "travel".</li>
+    <li>Pipe the <em>cities_and_airports.sql</em> seed file into the "travel" database.</li>
+    <li>Check that there's data in both the "cities" and "airports" tables.</li>
 </ol>
 <h2 id="phase-2-write-basic-select-statements">Phase 2: Write basic SELECT statements</h2>
 <p>Retrieve rows from a table using <code>SELECT</code> FROM SQL statements.</p>
 <ol type="1">
     <li>
-        <p>Write a SQL query that returns the city, state, and estimated population in 2018 from the “cities” table.</p>
+        <p>Write a SQL query that returns the city, state, and estimated population in 2018 from the "cities" table.</p>
     </li>
     <li>
-        <p>Write a SQL query that returns all of the airport names contained in the “airports” table.</p>
+        <p>Write a SQL query that returns all of the airport names contained in the "airports" table.</p>
     </li>
 </ol>
 <h2 id="phase-3-add-where-clauses">Phase 3: Add WHERE clauses</h2>
@@ -3639,7 +3639,7 @@ List of relations
     <li>Write a SQL query that uses a <code>WHERE</code> clause to get the city, state, and estimated population in 2018
         of cities that are NOT in the following states: New York, California, Texas.</li>
     <li>Write a SQL query that uses a <code>WHERE</code> clause with the <code>LIKE</code> operator to get the city,
-        state, and estimated population in 2018 of cities that start with the letter “S”. (<em>Note: See the PostgreSQL
+        state, and estimated population in 2018 of cities that start with the letter "S". (<em>Note: See the PostgreSQL
             doc on <a href="https://www.postgresql.org/docs/9.1/sql-createindex.html">Pattern Matching</a> for more
             information.</em>)</li>
     <li>Write a SQL query that uses a <code>WHERE</code> clause to find the cities with either a land area of over 400
@@ -3654,12 +3654,12 @@ List of relations
 </ol>
 <h2 id="phase-4-use-a-join-operation">Phase 4: Use a JOIN operation</h2>
 <p>Retrieve rows from multiple tables joining on a foreign key.</p>
-<p>The “airports” table has a foreign key called <code>city_id</code> that references the <code>id</code> column in the
-    “cities” table.</p>
+<p>The "airports" table has a foreign key called <code>city_id</code> that references the <code>id</code> column in the
+    "cities" table.</p>
 <ol type="1">
-    <li>Write a SQL query using an INNER JOIN to join data from the “cities” table with data from the “airports” table
+    <li>Write a SQL query using an INNER JOIN to join data from the "cities" table with data from the "airports" table
         using the <code>city_id</code> foreign key. Show the airport names and city names only.</li>
-    <li>Write a SQL query using an INNER JOIN to join data from the “cities” table with data from the “airports” table
+    <li>Write a SQL query using an INNER JOIN to join data from the "cities" table with data from the "airports" table
         to find out how many airports are in New York City using the city name. (<em>Note: Use the <a
                 href="https://www.postgresql.org/docs/9.1/using-explain.html">aggregate function</a> COUNT() to count
             the number of matching rows.</em>)</li>
@@ -3668,7 +3668,7 @@ List of relations
 <ol type="1">
     <li><strong>Apostrophe:</strong> Write a SQL query to get all three ID codes (<em>the Federal Aviation
             Administration (FAA) ID, the International Air Transport Association (IATA) ID, and the International Civil
-            Aviation Organization (ICAO) ID</em>) from the “airports” table for Chicago O'Hare International Airport.
+            Aviation Organization (ICAO) ID</em>) from the "airports" table for Chicago O'Hare International Airport.
         (<em>Note: You'll need to escape the quotation mark in O'Hare. See <a
                 href="https://www.postgresql.org/docs/9.1/indexes.html">How to include a single quote in a SQL
                 query</a>.</em>)</li>
@@ -3679,7 +3679,7 @@ List of relations
                     Functions</a></em>)</p>
         <ul>
             <li>Phase 2, Query #1: Write a SQL query that returns the city, state, and estimated population in 2018 from
-                the “cities” table.</li>
+                the "cities" table.</li>
         </ul>
     </li>
     <li>
@@ -3717,8 +3717,8 @@ List of relations
     database table relationships.</p>
 <h2 id="what-is-relational-database-design">What is Relational Database Design?</h2>
 <p>According to Technopedia, <a href="https://www.postgresql.org/docs/9.1/sql-createindex.html">Relational Database
-        Design</a> (or RDD) differs from other databases in terms of data organization and transactions: “In an RDD, the
-    data are organized into tables and all types of data access are carried out via controlled transactions.”</p>
+        Design</a> (or RDD) differs from other databases in terms of data organization and transactions: "In an RDD, the
+    data are organized into tables and all types of data access are carried out via controlled transactions."</p>
 <p>In previous readings, we created relational database tables and accessed data from these tables through PostgreSQL
     queries. These tables (a.k.a. <em>entities</em>) contain rows (a.k.a. <em>records</em>) and columns (a.k.a.
     <em>fields</em>). We also learned how to uniquely identify table records by adding a <code>PRIMARY KEY</code> and
@@ -3774,7 +3774,7 @@ List of relations
     <img src="images/products-erd-one-to-one.svg" alt="products-erd-one-to-one.svg" />
     <figcaption>products-erd-one-to-one.svg</figcaption>
 </figure>
-<p>The above schema depicts two tables: a “products” table and a “product_details” table. A <code>product_details</code>
+<p>The above schema depicts two tables: a "products" table and a "product_details" table. A <code>product_details</code>
     record belongs to only one product record. We've used an arrow to indicate the one-to-one relationship between the
     tables. Both tables have the same primary key – <code>product_id</code> – which we can use in a <a
         href="https://www.postgresql.org/docs/9.1/using-explain.html"><code>JOIN</code></a> operation to get data from
@@ -3838,8 +3838,8 @@ List of relations
         </tr>
     </tbody>
 </table>
-<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that the “Metallic
-    Coffee Mug” is a “Fun coffee mug that comes in various metallic colors.”</p>
+<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that the "Metallic
+    Coffee Mug" is a "Fun coffee mug that comes in various metallic colors."</p>
 <p><strong>One-to-many relationship</strong></p>
 <p>In a one-to-many relationship, each record in Table A is associated with multiple records in Table B. Each record in
     Table B is associated with only one record in Table A.</p>
@@ -3847,9 +3847,9 @@ List of relations
     <img src="images/orders-erd-one-to-many.svg" alt="orders-erd-one-to-many.svg" />
     <figcaption>orders-erd-one-to-many.svg</figcaption>
 </figure>
-<p>The above schema depicts a one-to-many relationship between the “users” table and the <code>orders</code> table: One
-    user can create multiple orders. The primary key of the “orders” table (<code>id</code>) is a foreign key in the
-    “users” table (<code>order_id</code>). We can use this foreign key in a <code>JOIN</code> operation to get data from
+<p>The above schema depicts a one-to-many relationship between the "users" table and the <code>orders</code> table: One
+    user can create multiple orders. The primary key of the "orders" table (<code>id</code>) is a foreign key in the
+    "users" table (<code>order_id</code>). We can use this foreign key in a <code>JOIN</code> operation to get data from
     both tables.</p>
 <p>This table relationship would produce the following example data (note that not all columns are shown below):</p>
 <p><strong>Users</strong></p>
@@ -3894,8 +3894,8 @@ List of relations
         </tr>
     </tbody>
 </table>
-<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that “Alice” has
-    made two orders and “Bob” has made one order.</p>
+<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that "Alice" has
+    made two orders and "Bob" has made one order.</p>
 <p><strong>Many-to-many relationship</strong></p>
 <p>In a many-to-many relationship, multiple records in Table A are associated with multiple records in Table B. You
     would normally create a third table for this relationship called a <em><strong>join table</strong></em>, which
@@ -4016,13 +4016,13 @@ List of relations
         </tr>
     </tbody>
 </table>
-<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that “Alice” has
-    two orders. One order containing a “Smart Coffee Mug” and another order containing both a “Glass Coffee Mug” and
-    “Metallic Coffee Mug”.</p>
+<p>Take a moment to analyze the data above. Using the foreign keys, you should be able to reason out that "Alice" has
+    two orders. One order containing a "Smart Coffee Mug" and another order containing both a "Glass Coffee Mug" and
+    "Metallic Coffee Mug".</p>
 <h3 id="apply-normalization-rules">4. Apply normalization rules</h3>
 <p>The fourth stage in RDD is <em><strong>normalization</strong></em>. Normalization is the process of optimizing the
     database structure so that redundancy and confusion are eliminated.</p>
-<p>The rules of normalization are called “normal forms” and are as follows:</p>
+<p>The rules of normalization are called "normal forms" and are as follows:</p>
 <ol type="1">
     <li>First normal form</li>
     <li>Second normal form</li>
@@ -4047,12 +4047,12 @@ List of relations
     <li>Eliminate fields that do not depend on the table's key.</li>
 </ul>
 <p><em>Note: For examples of how to apply these forms, read <a
-            href="https://www.postgresql.org/docs/9.1/indexes.html">“Description of the database normalization
-            basics”</a> from Microsoft.</em></p>
+            href="https://www.postgresql.org/docs/9.1/indexes.html">"Description of the database normalization
+            basics"</a> from Microsoft.</em></p>
 <h2 id="schema-design-tools">Schema design tools</h2>
 <p>Many people draw their relational database design schema with good ol' pen and paper, or on a whiteboard. However,
     there are also lots of online tools created for this purpose if you'd like to use something easily
-    exportable/shareable. Feel free to check out the ERD (short for “Entity Relationship Diagram”) tools below.</p>
+    exportable/shareable. Feel free to check out the ERD (short for "Entity Relationship Diagram") tools below.</p>
 <p>Free Database Diagram (ERD) Design Tools:</p>
 <ul>
     <li><a href="https://www.postgresql.org/docs/8.1/performance-tips.html">Lucidchart</a></li>
@@ -4076,7 +4076,7 @@ List of relations
 <h2 id="what-is-a-transaction">What is a transaction?</h2>
 <p>A transaction is a single unit of work, which can contain multiple operations, performed on a database. According to
     the <a href="https://www.postgresql.org/docs/9.1/sql-createindex.html">PostgreSQL docs</a>, the important thing to
-    note about a transaction is that “it bundles multiple steps into a single, all-or-nothing operation”. If any
+    note about a transaction is that "it bundles multiple steps into a single, all-or-nothing operation". If any
     operation within the transaction fails, then the entire transaction fails. If all the operations succeed, then the
     entire transaction succeeds.</p>
 <h2 id="implicit-vs.-explicit-transactions">Implicit vs. explicit transactions</h2>
@@ -4241,13 +4241,13 @@ List of relations
 <p>Transactions help you deal with crashes, failures, data consistency, and error handling. The ability to create
     savepoints and roll back to earlier points is tremendously helpful when doing multiple updates and helps maintain
     data integrity.</p>
-<p>Another benefit of transactions is the <em><strong>atomic</strong></em>, or “all-or-nothing”, nature of their
+<p>Another benefit of transactions is the <em><strong>atomic</strong></em>, or "all-or-nothing", nature of their
     operations. Because all of the operations in a transaction must succeed or else be aborted, partial or incomplete
     updates to the database will not be made. End-users will see only the final result of the transaction.</p>
 <h2 id="transaction-properties-acid">Transaction properties: ACID</h2>
-<p>A SQL transaction has four properties known collectively as “ACID” – which is an acronym for <em>Atomic, Consistent,
-        Isolated, and Durable</em>. The following descriptions come from the IBM doc “<a
-        href="https://www.postgresql.org/docs/9.1/using-explain.html">ACID properties of transactions</a>”:</p>
+<p>A SQL transaction has four properties known collectively as "ACID" – which is an acronym for <em>Atomic, Consistent,
+        Isolated, and Durable</em>. The following descriptions come from the IBM doc "<a
+        href="https://www.postgresql.org/docs/9.1/using-explain.html">ACID properties of transactions</a>":</p>
 <p><strong>Atomicity</strong> – All changes to data are performed as if they are a single operation. That is, all the
     changes are performed, or none of them are.</p>
 <p>For example, in an application that transfers funds from one account to another, the atomicity property ensures that,
@@ -4311,11 +4311,11 @@ List of relations
 <p>We briefly looked at the <code>JOIN</code> operation after we created foreign keys in a previous reading. The <a
         href="https://www.postgresql.org/docs/9.1/sql-createindex.html">JOIN operation</a> allows us to retrieve rows
     from multiple tables.</p>
-<p>To review, we had two tables: a “breeds” table and a “puppies” table. The two tables shared information through a
-    foreign key. The foreign key <code>breed_id</code> lives on the “puppies” table and is related to the primary key
-    <code>id</code> of the “breeds” table.</p>
-<p>We wrote the following <code>INNER JOIN</code> operation to get only the rows from the “puppies” table with a
-    matching <code>breed_id</code> in the “friends” table:</p>
+<p>To review, we had two tables: a "breeds" table and a "puppies" table. The two tables shared information through a
+    foreign key. The foreign key <code>breed_id</code> lives on the "puppies" table and is related to the primary key
+    <code>id</code> of the "breeds" table.</p>
+<p>We wrote the following <code>INNER JOIN</code> operation to get only the rows from the "puppies" table with a
+    matching <code>breed_id</code> in the "friends" table:</p>
 <div class="sourceCode" id="cb137">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb137-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> puppies</a>
@@ -4327,9 +4327,9 @@ List of relations
     <img src="images/inner-join-venn-diagram.png" alt="inner-join-venn-diagram" />
     <figcaption>inner-join-venn-diagram</figcaption>
 </figure>
-<p>We got the following table rows back from our <code>INNER JOIN</code> on the “puppies” table. These rows represent
-    the center overlapping area of the two circles. We can see that the data from “puppies” appears first, followed by
-    the joined data from the “friends” table.</p>
+<p>We got the following table rows back from our <code>INNER JOIN</code> on the "puppies" table. These rows represent
+    the center overlapping area of the two circles. We can see that the data from "puppies" appears first, followed by
+    the joined data from the "friends" table.</p>
 <div class="sourceCode" id="cb138">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb138-1" title="1"> <span class="kw">id</span> |   name   | age_yrs | breed_id | weight_lbs | microchipped | <span class="kw">id</span> |        name</a>
@@ -4363,9 +4363,9 @@ List of relations
         more information on the different <code>JOIN</code> operations.</em>)</p>
 <h2 id="what-is-a-subquery">What is a subquery?</h2>
 <p>A subquery is essentially a <code>SELECT</code> statement nested inside another <code>SELECT</code> statement. A
-    subquery can return a single (“scalar”) value or multiple rows.</p>
+    subquery can return a single ("scalar") value or multiple rows.</p>
 <h3 id="single-value-subquery">Single-value subquery</h3>
-<p>Let's see an example of how to use a subquery to return a single value. Take the “puppies” table from before. We had
+<p>Let's see an example of how to use a subquery to return a single value. Take the "puppies" table from before. We had
     a column called <code>age_yrs</code> in that table (see below).</p>
 <div class="sourceCode" id="cb139">
     <pre
@@ -4392,9 +4392,9 @@ List of relations
 <a class="sourceLine" id="cb140-3" title="3"><span class="kw">FROM</span></a>
 <a class="sourceLine" id="cb140-4" title="4">  puppies;</a></code></pre>
 </div>
-<p>Assuming our previous “puppies” table still exists in our database, if we entered the above statement into psql we'd
+<p>Assuming our previous "puppies" table still exists in our database, if we entered the above statement into psql we'd
     get an <em><strong>average age of 0.9</strong></em>. (<em>Note: Try it out yourself in psql! Refer to the reading
-        “Retrieving Rows From A Table Using SELECT” if you need help remembering how we set up the “puppies”
+        "Retrieving Rows From A Table Using SELECT" if you need help remembering how we set up the "puppies"
         table.</em>)</p>
 <p>Let's say that we wanted to find all of the puppies that are older than the average age of 0.9. We could write the
     following query:</p>
@@ -4438,10 +4438,10 @@ List of relations
  Max     |     1.6 | German Shepherd</code></pre>
 <h3 id="multiple-row-subquery">Multiple-row subquery</h3>
 <p>We could also write a subquery that returns multiple rows.</p>
-<p>In the reading “Creating A Table In An Existing PostgreSQL Database”, we created a “friends” table. In “Foreign Keys
-    And The JOIN Operation”, we set up a primary key in the “puppies” table that is a foreign key in the “friends” table
+<p>In the reading "Creating A Table In An Existing PostgreSQL Database", we created a "friends" table. In "Foreign Keys
+    And The JOIN Operation", we set up a primary key in the "puppies" table that is a foreign key in the "friends" table
     – <code>puppy_id</code>. We'll use this ID in our subquery and outer query.</p>
-<p><strong>“friends” table</strong></p>
+<p><strong>"friends" table</strong></p>
 <pre class="shell"><code>id | first_name | last_name | puppy_id
 ----+------------+-----------+----------
   1 | Amy        | Pond      |        4
@@ -4465,7 +4465,7 @@ List of relations
 (2 rows)</code></pre>
 <p>Now we want to use the above statement as a subquery (inside parentheses) in another query. You'll notice we're using
     a <code>WHERE</code> clause with the <a href="https://devcenter.heroku.com/articles/postgresql-indexes">IN</a>
-    operator to check if the <code>puppy_id</code> from the “friends” table meets the conditions in the subquery.</p>
+    operator to check if the <code>puppy_id</code> from the "friends" table meets the conditions in the subquery.</p>
 <div class="sourceCode" id="cb147">
     <pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb147-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span></a>
 <a class="sourceLine" id="cb147-2" title="2"><span class="kw">FROM</span> friends</a>
@@ -4511,7 +4511,7 @@ List of relations
 <a class="sourceLine" id="cb151-5" title="5">  puppies.age_yrs <span class="op">&lt;</span> <span class="fl">0.6</span>;</a></code></pre>
 </div>
 <p>Again, we'd get back one result, but because we used an <code>INNER JOIN</code> we have information from both the
-    “puppies” and “friends” tables.</p>
+    "puppies" and "friends" tables.</p>
 <pre class="shell"><code>id | first_name | last_name | puppy_id |  name  | age_yrs | breed  | weight_lbs | microchipped | puppy_id
 ----+------------+-----------+----------+--------+---------+--------+------------+--------------+----------
   5 | River      | Song      |        8 | Jaxson |     0.4 | Beagle |         19 | t            |        8
@@ -4589,8 +4589,8 @@ List of relations
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb153-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> addresses <span class="kw">WHERE</span> phone_number <span class="op">=</span> <span class="st">&#39;5556667777&#39;</span>;</a></code></pre>
 </div>
-<p>The above query would scan every row of the “addresses” table to find matching rows based on the given phone number.
-    If “addresses” is a large table (let's say with millions of entries), and we only expect to get a small number of
+<p>The above query would scan every row of the "addresses" table to find matching rows based on the given phone number.
+    If "addresses" is a large table (let's say with millions of entries), and we only expect to get a small number of
     results back (one row, or a few rows), then such a query would be an inefficient way to retrieve data. Instead of
     scanning every row, we could create an index for the phone column for faster data retrieval.</p>
 <h2 id="how-to-create-an-index">How to create an index</h2>
@@ -4600,7 +4600,7 @@ List of relations
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb154-1" title="1"><span class="kw">CREATE</span> <span class="kw">INDEX</span> index_name <span class="kw">ON</span> table_name (column_name);</a></code></pre>
 </div>
-<p>We can create a phone number index for the above “addresses” table with the following:</p>
+<p>We can create a phone number index for the above "addresses" table with the following:</p>
 <div class="sourceCode" id="cb155">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb155-1" title="1"><span class="kw">CREATE</span> <span class="kw">INDEX</span> addresses_phone_index <span class="kw">ON</span> addresses (phone_number);</a></code></pre>
@@ -4678,7 +4678,7 @@ List of relations
 <a class="sourceLine" id="cb163-5" title="5"> Seq <span class="kw">Scan</span> <span class="kw">on</span> tenk1  (<span class="kw">cost</span><span class="op">=</span><span class="dv">0</span>.<span class="dv">00</span><span class="op">..</span><span class="fl">458.00</span> <span class="kw">rows</span><span class="op">=</span><span class="dv">10000</span> width<span class="op">=</span><span class="dv">244</span>)</a></code></pre>
 </div>
 <p>In the QUERY PLAN above, we can see that a sequential table scan (<code>Seq Scan</code>) was performed on the table
-    called “tenk1”. In parentheses, we see performance information:</p>
+    called "tenk1". In parentheses, we see performance information:</p>
 <ul>
     <li>Estimated start-up cost (or time expended before the scan can start): 0.00</li>
     <li>Estimated total cost: 458.00</li>
@@ -4732,7 +4732,7 @@ List of relations
 <h2 id="connecting">Connecting</h2>
 <p>The <strong>node-postgres</strong> library provides two ways to connect to it. You can use a single
     <code>Client</code> object, or you can use a <code>Pool</code> of <code>Client</code> objects. Normally, you want to
-    use a <code>Pool</code> because creating and opening single connections to any database server is a “costly”
+    use a <code>Pool</code> because creating and opening single connections to any database server is a "costly"
     operation in terms of CPU and network resources. A <code>Pool</code> creates a group of those <code>Client</code>
     connections and lets your code use them whenever it needs to.</p>
 <p>To use a <code>Pool</code>, you specify any specific portions of the following connection parameters that you need.
@@ -4801,7 +4801,7 @@ List of relations
 <a class="sourceLine" id="cb166-5" title="5"></a>
 <a class="sourceLine" id="cb166-6" title="6"><span class="va">console</span>.<span class="at">log</span>(results)<span class="op">;</span></a></code></pre>
 </div>
-<p>When this runs, you will get an object that contains a property named “rows”. The value of “rows” will be an array of
+<p>When this runs, you will get an object that contains a property named "rows". The value of "rows" will be an array of
     the rows that match the statement. Here's an example output from the code above.</p>
 <pre><code>{
   rows:
@@ -4816,10 +4816,10 @@ List of relations
       { id: 9, name: &#39;Leinni&#39;, age_yrs: &#39;1.0&#39; },
       { id: 10, name: &#39;Max&#39;, age_yrs: &#39;1.6&#39; } ],
 }</code></pre>
-<p>You can see that the “rows” property contains an array of objects. Each object represents a row in the “puppies”
+<p>You can see that the "rows" property contains an array of objects. Each object represents a row in the "puppies"
     table that matches the query. Each object has a property named after the column selected in the <code>SELECT</code>
-    statement. The query read <code>SELECT id, name, age_yrs</code> and each object has an “id”, “name”, and an
-    “age_yrs” property.</p>
+    statement. The query read <code>SELECT id, name, age_yrs</code> and each object has an "id", "name", and an
+    "age_yrs" property.</p>
 <p>You can then use that array to loop over and do things with it. For example, you could print them to the console like
     this:</p>
 <div class="sourceCode" id="cb168">
@@ -4855,9 +4855,9 @@ List of relations
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb171-1" title="1"><span class="kw">INSERT</span> <span class="kw">INTO</span> puppies (name, age_yrs, breed, weight_lbs, microchipped)</a>
 <a class="sourceLine" id="cb171-2" title="2"><span class="kw">VALUES</span> ($<span class="dv">1</span>, $<span class="dv">2</span>, $<span class="dv">3</span>, $<span class="dv">4</span>, $<span class="dv">5</span>);</a></code></pre>
 </div>
-<p>Each of the “$” placeholders is a positional argument for the parameters that you pass in. That means, the value that
-    pass in for the first parameter will be put where the “$1” placeholder is, which is the value for the “name” of the
-    puppy. The “$2” corresponds to the “age_yrs” column, so it should contain the age of the puppy. This continues for
+<p>Each of the "$" placeholders is a positional argument for the parameters that you pass in. That means, the value that
+    pass in for the first parameter will be put where the "$1" placeholder is, which is the value for the "name" of the
+    puppy. The "$2" corresponds to the "age_yrs" column, so it should contain the age of the puppy. This continues for
     the third, fourth, and fifth parameters, as well.</p>
 <p>Assume that in your code, you have the variables <code>name</code>, <code>age</code>, <code>breedName</code>,
     <code>weight</code>, and <code>isMicrochipped</code> containing the values that the user provided for the new puppy.
@@ -4871,8 +4871,8 @@ List of relations
 <a class="sourceLine" id="cb172-4" title="4"><span class="vs">`</span><span class="op">,</span> [name<span class="op">,</span> age<span class="op">,</span> breedName<span class="op">,</span> weight<span class="op">,</span> isMicrochipped])<span class="op">;</span></a></code></pre>
 </div>
 <p>You can see that the variable <code>name</code> is in the first position of the array, so it will be substituted into
-    the placeholder “$1”. The <code>age</code> variable is in the second position of the array, so it will be
-    substituted into the “$2” placeholder.</p>
+    the placeholder "$1". The <code>age</code> variable is in the second position of the array, so it will be
+    substituted into the "$2" placeholder.</p>
 <p>The full documentation for how to use queries with <strong>node-postgres</strong> can be found on the <a
         href="https://node-postgres.com/features/queries">Queries</a> documentation page on their Web site.</p>
 <h2 id="try-it-out-for-yourself">Try it out for yourself</h2>
@@ -4902,21 +4902,21 @@ List of relations
 <a class="sourceLine" id="cb173-20" title="20">(<span class="st">&#39;Leinni&#39;</span>, <span class="dv">1</span>, <span class="st">&#39;Miniature Schnauzer&#39;</span>, <span class="dv">25</span>, <span class="st">&#39;yes&#39;</span> ),</a>
 <a class="sourceLine" id="cb173-21" title="21">(<span class="st">&#39;Max&#39;</span>, <span class="fl">1.6</span>, <span class="st">&#39;German Shepherd&#39;</span>, <span class="dv">65</span>, <span class="st">&#39;no&#39;</span>);</a></code></pre>
 </div>
-<p>Now that you have ten rows in the “puppies” table of a database, you can create a simple Node.js project to access
+<p>Now that you have ten rows in the "puppies" table of a database, you can create a simple Node.js project to access
     it.</p>
 <p>Create a new directory somewhere that's not part of an existing project. Run <code>npm init -y</code> to initialize
     the <strong>package.json</strong> file. Then, run <code>npm install pg</code> to install the library from this
-    section. (Why is the name of the library “node-postgres” but you install “pg”? Dunno.) Finally, open Visual Studio
+    section. (Why is the name of the library "node-postgres" but you install "pg"? Dunno.) Finally, open Visual Studio
     Code for the current directory with <code>code .</code>.</p>
 <p>Create a new file named <strong>sql-test.js</strong>.</p>
 <p>The first thing you need to do is import the <code>Pool</code> class from the <strong>node-postgres</strong> library.
-    The name of the library in the <strong>node_modules</strong> directory is “pg”. That line of code looks like this
+    The name of the library in the <strong>node_modules</strong> directory is "pg". That line of code looks like this
     and can be found all over the <a href="https://node-postgres.com">node-postgres</a> documentation.</p>
 <div class="sourceCode" id="cb174">
     <pre
         class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb174-1" title="1"><span class="kw">const</span> <span class="op">{</span> Pool <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;pg&#39;</span>)<span class="op">;</span></a></code></pre>
 </div>
-<p>Now, write some SQL that will select all of the records from the “puppies” table. (This is assuming you want to
+<p>Now, write some SQL that will select all of the records from the "puppies" table. (This is assuming you want to
     select puppies. If you're using a different table with different data, write the appropriate SQL here.)</p>
 <div class="sourceCode" id="cb175">
     <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb175-1" title="1"><span class="kw">const</span> <span class="op">{</span> Pool <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;pg&#39;</span>)<span class="op">;</span></a>
@@ -4927,7 +4927,7 @@ List of relations
 <a class="sourceLine" id="cb175-6" title="6"><span class="vs">`</span><span class="op">;</span></a></code></pre>
 </div>
 <p>You will now use that with a new <code>Pool</code> object. You will need to know the name of the database that the
-    “puppies” table is in (or whatever database you want to connect to).</p>
+    "puppies" table is in (or whatever database you want to connect to).</p>
 <div class="sourceCode" id="cb176">
     <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb176-1" title="1"><span class="kw">const</span> <span class="op">{</span> Pool <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;pg&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb176-2" title="2"></a>
@@ -4940,10 +4940,10 @@ List of relations
 <a class="sourceLine" id="cb176-9" title="9">  <span class="dt">database</span><span class="op">:</span> <span class="st">&#39;«database name»&#39;</span></a>
 <a class="sourceLine" id="cb176-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre>
 </div>
-<p>Of course, replace “«database name»” with the name of your database. Otherwise, when you run it, you will see this
+<p>Of course, replace "«database name»" with the name of your database. Otherwise, when you run it, you will see this
     error message.</p>
 <pre><code>UnhandledPromiseRejectionWarning: error: database &quot;«database name»&quot; does not exist</code></pre>
-<p>This will, by default, connect to “localhost” on port “5432” with your user credentials because you did not specify
+<p>This will, by default, connect to "localhost" on port "5432" with your user credentials because you did not specify
     any other parameters.</p>
 <p>Once you have the pool, you can execute the query that you have in <code>allPuppies</code>. Remember that the
     <code>query</code> method returns a Promise. This code wraps the call to <code>query</code> in an <code>async
@@ -5036,15 +5036,15 @@ List of relations
     breed: &#39;Korean Jindo&#39;,
     weight_lbs: 32,
     microchipped: true } ]</code></pre>
-<p>That's because the number that you type on the command line is being substituted in for the “$1” in the parameterized
-    query. That means, when you pass in “4”, It's like the RDMBS takes the parameterized query</p>
+<p>That's because the number that you type on the command line is being substituted in for the "$1" in the parameterized
+    query. That means, when you pass in "4", It's like the RDMBS takes the parameterized query</p>
 <div class="sourceCode" id="cb184">
     <pre
         class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb184-1" title="1"><span class="kw">SELECT</span> <span class="kw">id</span>, name, age_yrs, breed, weight_lbs, microchipped</a>
 <a class="sourceLine" id="cb184-2" title="2"><span class="kw">FROM</span> puppies</a>
 <a class="sourceLine" id="cb184-3" title="3"><span class="kw">WHERE</span> <span class="kw">ID</span> <span class="op">=</span> $<span class="dv">1</span>;</a></code></pre>
 </div>
-<p>and your value “4”</p>
+<p>and your value "4"</p>
 <p>and mushes them together to make</p>
 <div class="sourceCode" id="cb185">
     <pre
@@ -5072,7 +5072,7 @@ List of relations
 <p>PostgreSQL is smart enough to see that you've only provided one parameter value but it needs <em>two</em> positional
     parameters. It gives you the error message</p>
 <pre><code>error: bind message supplies 1 parameters, but prepared statement &quot;&quot; requires 2</code></pre>
-<p>In this error message, the term “bind message” is the kind of message that the <code>query</code> method sends to
+<p>In this error message, the term "bind message" is the kind of message that the <code>query</code> method sends to
     PostgreSQL when you provide parameters to it.</p>
 <p>Change the query back to how it was. Now, add an extra parameter to the invocation of the <code>query</code> method.
     What do you think will</p>
@@ -5085,7 +5085,7 @@ List of relations
 <pre><code>error: bind message supplies 2 parameters, but prepared statement &quot;&quot; requires 1</code></pre>
 <h2 id="what-youve-learned">What you've learned</h2>
 <p>Here, you've seen how to connect to a PostgreSQL database using the <strong>node-postgres</strong> library named
-    “pg”. You saw how to run simple SQL statements against it and handle the results. You also saw how to create
+    "pg". You saw how to run simple SQL statements against it and handle the results. You also saw how to create
     parameterized queries so that you can pass in values to be substituted.</p>
 <p>If you are using the <strong>node-postgres</strong> library and running your own handcrafted SQL, you will most often
     use parameterized queries. It's good to get familiar with them.</p>
@@ -5114,8 +5114,8 @@ List of relations
     <li>The date/time that it was entered into the recipe box, and</li>
     <li>The date/time it was last updated in the recipe box.</li>
 </ul>
-<p>These are good pieces of data to have so that you can show them “most recent” for example.</p>
-<p>Ingredients themselves are complex data types and need their own structure. They “belong” to a recipe. That means
+<p>These are good pieces of data to have so that you can show them "most recent" for example.</p>
+<p>Ingredients themselves are complex data types and need their own structure. They "belong" to a recipe. That means
     they'll need to reference that recipe. That means an ingredient is made up of:</p>
 <ul>
     <li>An amount (optional),</li>
@@ -5125,7 +5125,7 @@ List of relations
 </ul>
 <p>That unit of measure is a good candidate for normalization, don't you think? It's a predefined list of options that
     should not change and that you don't want people just typing whatever they want in there, not if you want to
-    maintain data integrity. Otherwise, you'll end up with “C”, “c”, “cup”, “CUP”, “Cup”, and all the other
+    maintain data integrity. Otherwise, you'll end up with "C", "c", "cup", "CUP", "Cup", and all the other
     permutations, each of which is a distinct value but means the same thing.</p>
 <p>Instructions are also complex objects, but not by looking at them. Initially, one might only see text that comprises
     an instruction. But, very importantly, instructions have <em>order</em>. They also <em>belong</em> to the recipe.
@@ -5161,7 +5161,7 @@ List of relations
 <p><strong>Warning</strong>: running the seed files will destroy all data that you have in the database.</p>
 <h2 id="your-sql">Your SQL</h2>
 <p>When you write the SQL, they will mostly be parameterized queries. The first couple of files will show you how it
-    needs to be done, where you will place the parameter placeholders “$1”, “$2”, and so on. If you need to, refer to
+    needs to be done, where you will place the parameter placeholders "$1", "$2", and so on. If you need to, refer to
     the <a href="https://node-postgres.com/features/queries#Parameterized%20query">Parameterized query</a> section of
     the documentation for <strong>node-postgres</strong>.</p>
 <p>In each of the following files in the <strong>data-access-layer</strong>, you will find one or more lines with the
@@ -5182,7 +5182,7 @@ List of relations
     with command, <code>npm run seed</code>.</p>
 <h3 id="home-page">Home Page</h3>
 <p>Start the server by running <code>npm run dev</code>. Then go to <code>localhost:3000</code> you should see the home
-    page with “Latest Recipes”. To show the latest recipes properly, complete the
+    page with "Latest Recipes". To show the latest recipes properly, complete the
     <code>01-get-ten-most-recent-recipes.sql</code> file.</p>
 <p>After completing the file, make sure you correctly defined the sql query so that the first recipe listed is the most
     recently updated recipe.</p>
@@ -5238,7 +5238,7 @@ List of relations
 <h2 id="what-is-an-orm">What Is An ORM?</h2>
 <p>An <em>Object Relational Mapping</em> is a library that allows you to access data stored in a SQL database through
     object-oriented, non-SQL code (such as JavaScript). You will write <em>object-oriented</em> code that accesses data
-    stored in a <em>relational</em> SQL database like Postgres. The ORM is the <em>mapping</em> that will “translate”
+    stored in a <em>relational</em> SQL database like Postgres. The ORM is the <em>mapping</em> that will "translate"
     your object-oriented code into SQL code that the database can run. The ORM will automatically generate SQL code for
     common tasks like fetching and storing data.</p>
 <p>You will learn how to use the <a href="https://sequelize.org/v5/">Sequelize ORM</a>. Sequelize is the most widely
@@ -5276,11 +5276,11 @@ List of relations
 </blockquote>
 <p>Having run <code>npx sequelize init</code>, we must write our database login information into
     <code>config/config.json</code>.</p>
-<p>By default this file contains different sections we call “environments”. In a typical company you will have different
+<p>By default this file contains different sections we call "environments". In a typical company you will have different
     database servers and configuration depending on where you app is running. Development is usually where you do your
     development work. In our case this is our local computer. But test might be and environment where you run tests, and
     production is the environment where real users are interacting with your application.</p>
-<p>Since we are doing development, we can just modify the “development” section to look like this:</p>
+<p>Since we are doing development, we can just modify the "development" section to look like this:</p>
 <div class="sourceCode" id="cb193">
     <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb193-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb193-2" title="2">  <span class="dt">&quot;development&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -5337,7 +5337,7 @@ List of relations
     Sequelize methods as if they were synchronous. This helps reduce code complexity significantly.</p>
 <p>Note that I call <code>sequelize.close()</code>. This closes the connection to the database. A Node.js JavaScript
     program will not terminate until all open files and database connections are closed. Thus, to make sure the Node.js
-    program doesn't “hang” at the end, we close the database connection. Otherwise we will be forced to kill the Node.js
+    program doesn't "hang" at the end, we close the database connection. Otherwise we will be forced to kill the Node.js
     program with <code>CTRL-C</code>, which is somewhat annoying.</p>
 <h2 id="our-preexisting-database-schema">Our Preexisting Database Schema</h2>
 <p>We are assuming that we are working with a preexisting SQL database. Our <code>catsdb</code> has a single table:
@@ -5484,7 +5484,7 @@ Indexes:
 <p>We use the <code>Cat.findByPk</code> static class method to fetch a single cat: the one with <code>id</code> equal to
     1. This static method exists because our <code>Cat</code> model class <em>extends</em> <code>Sequelize.Model</code>.
 </p>
-<p>“Pk” stands for <em>primary key</em>; the <code>id</code> field is the primary key for the <code>Cats</code> table.
+<p>"Pk" stands for <em>primary key</em>; the <code>id</code> field is the primary key for the <code>Cats</code> table.
     <code>findByPk</code> returns a <code>Promise</code>, so we must <code>await</code> the result. The result is an
     instance of the <code>Cat</code> model class.</p>
 <p>The cleanest way to log a fetched database record is to first call the <code>toJSON</code> method.
@@ -5501,7 +5501,7 @@ Indexes:
 <p>Note that Sequelize has logged the SQL query it ran to fetch Markov's information. This logging information is often
     helpful when trying to figure out what Sequelize is doing.</p>
 <p>You'll also notice that Sequelize puts double quotes around the table and field names. So if you are trying to look
-    at your “Cats” table from the <code>psql</code> command you will need to quote them there as well. This is because
+    at your "Cats" table from the <code>psql</code> command you will need to quote them there as well. This is because
     PostgreSQL lowercases all identifiers like table and fields names before the query is run if they aren't quoted.</p>
 <h2 id="reading-and-changing-record-attributes">Reading And Changing Record Attributes</h2>
 <p>While <code>toJSON</code> is useful for logging a <code>Cat</code> object, it is not the simplest way to access
@@ -5578,7 +5578,7 @@ Indexes:
 <h1 id="using-database-migrations">Using Database Migrations</h1>
 <p>We've seen how to use an ORM like Sequelize to fetch and store data in a SQL database using JavaScript classes and
     methods. Sequelize also lets you write JavaScript code that creates, modifies, or drops SQL tables. The JavaScript
-    code that does this is called a <em>migration</em>. A migration “moves” the database from an old schema to a new
+    code that does this is called a <em>migration</em>. A migration "moves" the database from an old schema to a new
     schema.</p>
 <p>When you finish this reading you will be able to:</p>
 <ul>
@@ -5635,7 +5635,7 @@ Indexes:
 <a class="sourceLine" id="cb205-32" title="32"><span class="op">};</span></a></code></pre>
 </div>
 <p>The migration file exports two functions: <code>up</code> and <code>down</code>. The <code>up</code> function tells
-    Sequelize how to create a <code>Cats</code> table. The <code>down</code> function tells Sequelize how to “undo” the
+    Sequelize how to create a <code>Cats</code> table. The <code>down</code> function tells Sequelize how to "undo" the
     <code>up</code> function. The <code>down</code> function drops the <code>Cats</code> table.</p>
 <p>We will examine these functions more closely, but let's first see how to use a migration.</p>
 <blockquote>
@@ -5656,7 +5656,7 @@ Indexes:
     migrations. To run a migration, Sequelize will call the <code>up</code> method defined in the migration file. The
     <code>up</code> method will run the necessary <code>CREATE TABLE ...</code> SQL command for us. Sequelize will
     record (in a special <code>catsdb</code> table called <code>SequelizeMeta</code>) that the migration has been run.
-    The next time we call <code>npx sequelize db:migrate</code>, Sequelize will not try to “redo” this already performed
+    The next time we call <code>npx sequelize db:migrate</code>, Sequelize will not try to "redo" this already performed
     migration. It will do nothing the second time.</p>
 <p>Having run the migration, we can verify that the <code>Cats</code> table looks like it should (with the exception of
     the <code>age</code> column):</p>
@@ -5677,7 +5677,7 @@ Indexes:
 </p>
 <p>One way to fix this is to generate a <em>second</em> migration that adds the forgotten <code>age</code> column. If we
     have already pushed our migration code to a remote git server, we should opt for this option.</p>
-<p>If the migration has not yet been pushed, we can fix the migration directly. We will “undo” (AKA <em>rollback</em>)
+<p>If the migration has not yet been pushed, we can fix the migration directly. We will "undo" (AKA <em>rollback</em>)
     the migration that created the <code>Cats</code> table (dropping the table), fix the <code>up</code> method so that
     the <code>age</code> column is included, and finally rerun the migration.</p>
 <blockquote>
@@ -5766,7 +5766,7 @@ Indexes:
 </div>
 <p>Adding the <code>age</code> column to the migration is a lot like how we added <code>age</code> to our model file.
 </p>
-<p>Having fixed our migration, we may now “rerun” it the same way we ran it the first time:</p>
+<p>Having fixed our migration, we may now "rerun" it the same way we ran it the first time:</p>
 <div class="sourceCode" id="cb211">
     <pre
         class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb211-1" title="1"><span class="ex">npx</span> sequelize db:migrate</a></code></pre>
@@ -5821,7 +5821,7 @@ Indexes:
 <a class="sourceLine" id="cb214-13" title="13"><span class="op">};</span></a></code></pre>
 </div>
 <h2 id="writing-a-down-method">Writing A <code>down</code> Method</h2>
-<p>A <code>down</code> method is written just like an <code>up</code> method. In the <code>down</code> method we “undo”
+<p>A <code>down</code> method is written just like an <code>up</code> method. In the <code>down</code> method we "undo"
     what has been performed by the <code>up</code> method. We call <code>QueryInterface</code>'s <code>dropTable</code>
     method to drop the <code>Cats</code> table we created in <code>up</code>:</p>
 <div class="sourceCode" id="cb215">
@@ -5967,7 +5967,7 @@ Indexes:
   updatedAt: 2020-02-11T19:04:23.116Z
 }</code></pre>
 <p>Fetching a record by primary key is the most common form of read operation from a database. In another reading we
-    will learn other ways to fetch data. For instance: we will learn how to fetch all cats named “Markov” (there may be
+    will learn other ways to fetch data. For instance: we will learn how to fetch all cats named "Markov" (there may be
     many).</p>
 <h2 id="updating-a-record">Updating A Record</h2>
 <p>Let's tweak our reading code to change (<em>update</em>) an attribute of Markov:</p>
@@ -6245,7 +6245,7 @@ Executing (default): DELETE FROM &quot;Cats&quot; WHERE &quot;id&quot; = 1</code
 <h2 id="using-findall-to-find-objects-not-matching-a-criterion">Using <code>findAll</code> To Find Objects Not Matching
     A Criterion</h2>
 <p>We can also find all the <code>Cats</code> whose names are <strong>NOT</strong> Markov, but we will need to require
-    in the <code>Op</code> object from Sequelize so we can use the “not equal” operator from it:</p>
+    in the <code>Op</code> object from Sequelize so we can use the "not equal" operator from it:</p>
 <div class="sourceCode" id="cb234">
     <pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb234-1" title="1"><span class="kw">const</span> <span class="op">{</span> Op <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;sequelize&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb234-2" title="2"><span class="kw">const</span> <span class="op">{</span> sequelize<span class="op">,</span> Cat <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;./db/models&quot;</span>)<span class="op">;</span></a>
@@ -6280,7 +6280,7 @@ Executing (default): DELETE FROM &quot;Cats&quot; WHERE &quot;id&quot; = 1</code
 ]</code></pre>
 <p>This is our first example of a Sequelize <a
         href="https://sequelize.org/v5/manual/querying.html#operators"><em>operator</em></a>: <code>Op.ne</code>.
-    <code>ne</code> stands for “not equal.” Instead of mapping <code>firstName</code> to a single value like
+    <code>ne</code> stands for "not equal." Instead of mapping <code>firstName</code> to a single value like
     <code>"Markov"</code> or an array of values like <code>["Markov", "Curie"]</code>, we have mapped it to:</p>
 <div class="sourceCode" id="cb236">
     <pre
@@ -6301,7 +6301,7 @@ Executing (default): DELETE FROM &quot;Cats&quot; WHERE &quot;id&quot; = 1</code
 </div>
 <p>This perhaps makes it clearer how Sequelize understands what we want. Sequelize is being passed an <em>object</em> as
     the <code>firstName</code> value. The object is specifying that we want to do a <code>!=</code> SQL operation by
-    using the <code>"ne"</code> (“not equal”) key. The value to “not equal” is specified as <code>"Markov"</code>.</p>
+    using the <code>"ne"</code> ("not equal") key. The value to "not equal" is specified as <code>"Markov"</code>.</p>
 <h2 id="combining-criteria-with-op.and">Combining Criteria with <code>Op.and</code></h2>
 <p>We've seen one way to do an <code>OR</code> operation above (by mapping a column name to an array of values). Let's
     see how to do an <code>AND</code> operation:</p>
@@ -6338,7 +6338,7 @@ Executing (default): DELETE FROM &quot;Cats&quot; WHERE &quot;id&quot; = 1</code
     &quot;updatedAt&quot;: &quot;2020-02-11T23:03:25.398Z&quot;
   }
 ]</code></pre>
-<p>Simply by listing more key/value pairs in the <code>where</code> object, we ask Sequelize to “AND” together multiple
+<p>Simply by listing more key/value pairs in the <code>where</code> object, we ask Sequelize to "AND" together multiple
     criteria.</p>
 <p>Another way to do the same thing is like so:</p>
 <div class="sourceCode" id="cb240">
@@ -6407,7 +6407,7 @@ Executing (default): DELETE FROM &quot;Cats&quot; WHERE &quot;id&quot; = 1</code
     &quot;updatedAt&quot;: &quot;2020-02-11T23:03:25.398Z&quot;
   }
 ]</code></pre>
-<p>Our query is to find all cats whose names are “Markov” and whose age is 4. Therefore both cats are returned: Markov
+<p>Our query is to find all cats whose names are "Markov" and whose age is 4. Therefore both cats are returned: Markov
     and Curie (whose age is 4).</p>
 <h2 id="querying-with-comparisons">Querying With Comparisons</h2>
 <p>We can use operators like <code>Op.gt</code> (greater than) and <code>Op.lt</code> (less than) to select by comparing
@@ -6583,7 +6583,7 @@ null</code></pre>
 <hr />
 <h1 id="model-validations-with-sequelize">Model Validations With Sequelize</h1>
 <p>It's important to make sure that data stored to a database is not erroneous or incomplete. Imagine the following
-    forms of “garbage data:”</p>
+    forms of "garbage data:"</p>
 <ul>
     <li>A <code>Cats</code> record with <code>firstName</code> set to <code>NULL</code>. All <code>Cats</code> ought to
         have a name.</li>
@@ -6947,7 +6947,7 @@ Save success!
 <pre><code>Save failed!
 * firstName must not be more than eight letters long</code></pre>
 <p>The <code>len</code> validation gets a <code>msg</code> attribute as usual. We also configure <code>args: [0,
-        8]</code>. These are the “arguments” to the <code>len</code> validation. We are telling Sequelize to trigger a
+        8]</code>. These are the "arguments" to the <code>len</code> validation. We are telling Sequelize to trigger a
     validation error if the <code>firstName</code> property has a length less than zero (impossible) or greater than
     eight.</p>
 <p>Note that even though the <code>len</code> validation is not triggered for a length of zero, the
@@ -7062,7 +7062,7 @@ Save success!
     <li>How to write code that is resilient to SQL operation failures,</li>
     <li>How to group multiple operations into a database transaction using Sequelize (the
         <code>sequelize.transaction</code> method),</li>
-    <li>How to prevent “race conditions” using transactions.</li>
+    <li>How to prevent "race conditions" using transactions.</li>
 </ol>
 <h2 id="the-problem-database-updates-can-fail">The Problem: Database Updates Can Fail</h2>
 <p>Imagine a scenario with a banking database. Markov wants to transfer $7,500 to Curie. To perform the transfer, we
@@ -7091,17 +7091,17 @@ Save success!
         constraint that an account balance must never be less than zero. Any update that asks the database to reduce an
         account balance to less than zero will be rejected and therefore fail.</li>
 </ol>
-<p>Only this last scenario is “our fault.” The fact is that database updates can fail <strong>through no fault of our
+<p>Only this last scenario is "our fault." The fact is that database updates can fail <strong>through no fault of our
         own</strong>. With regard to our example: our first SQL request to reduce Markov's account balance may succeed,
     but the database may then crash before we have sent the request to increase Curie's balance. Through no fault of our
     own, the bank has stolen money from Markov without giving it to Curie.</p>
 <p>How can we write code that avoids this fundamental problem?</p>
 <h2 id="the-solution-database-transactions">The Solution: Database Transactions</h2>
-<p>One way to solve the problem is to “group” or “pair” the two update operations somehow. We want to tell the database
-    “Reduce Markov's balance AND increment Curie's balance.” We want to tell the database: “If for any reason you cannot
-    perform <strong>both</strong> operations, make sure not to perform <strong>either</strong>.” We want to tell the
-    database: “If you crash after reducing Markov's balance, make sure to either (a) increase Curie's balance when you
-    restart, or (b) undo the increase to Markov's balance when you restart.”</p>
+<p>One way to solve the problem is to "group" or "pair" the two update operations somehow. We want to tell the database
+    "Reduce Markov's balance AND increment Curie's balance." We want to tell the database: "If for any reason you cannot
+    perform <strong>both</strong> operations, make sure not to perform <strong>either</strong>." We want to tell the
+    database: "If you crash after reducing Markov's balance, make sure to either (a) increase Curie's balance when you
+    restart, or (b) undo the increase to Markov's balance when you restart."</p>
 <p>We want to ask the database to treat the pair of updates as one <em>atomic</em> (meaning
     <strong>indivisible</strong>) unit. SQL lets you do this using a feature called <em>transactions</em>.</p>
 <p>You've previously seen how to use SQL transactions:</p>
@@ -7116,7 +7116,7 @@ Save success!
 </div>
 <p>SQL guarantees to you that everything between <code>START TRANSACTION</code> and <code>COMMIT TRANSACTION</code> will
     be processed <em>atomically</em>. If any update operation fails, none of the updates will be performed. The
-    transaction is “all-or-nothing.”</p>
+    transaction is "all-or-nothing."</p>
 <p>In this reading you will learn how to use SQL transactions with the Sequelize ORM.</p>
 <h2 id="the-bankaccounts-schema">The <code>BankAccounts</code> Schema</h2>
 <p>For our example in this reading, I will use a single table with two accounts.</p>
@@ -7230,7 +7230,7 @@ Markov: balance must not be less than zero</code></pre>
   1 | Markov     |    5000 | ...
   2 | Curie      |   17500 | ...
 (2 rows)</code></pre>
-<p>The bank has given free money to Curie! We should have “rolledback” the increase of Curie's balance. We will learn
+<p>The bank has given free money to Curie! We should have "rolledback" the increase of Curie's balance. We will learn
     how to do that!</p>
 <h2 id="incorrect-solutions">Incorrect Solutions</h2>
 <p>One may suggest a fix: make sure to decrement Markov's account balance before incrementing Curie's balance! If
@@ -7353,10 +7353,10 @@ Markov: balance must not be less than zero</code></pre>
 <p>What is the mysterious <code>tx</code> that is passed by <code>sequelize.transaction</code> to our callback? It is
     basically just a unique ID. In this case, the ID is: <code>208b3951-9ab9-489b-97f0-afb49aaff807</code>. You can see
     this ID in the logs above.</p>
-<p>When we say <code>curieAccount.save({ transaction: tx })</code>, we are telling Sequelize: “update Curie's account as
-    part of transaction number <code>208b3951-9ab9-489b-97f0-afb49aaff807</code>.”</p>
+<p>When we say <code>curieAccount.save({ transaction: tx })</code>, we are telling Sequelize: "update Curie's account as
+    part of transaction number <code>208b3951-9ab9-489b-97f0-afb49aaff807</code>."</p>
 <p>Sequelize needs transaction IDs because it can be running many SQL transactions <em>concurrently</em> (loosely
-    speaking: “in parallel”). One part of the application could be transferring money from Markov to Curie at the same
+    speaking: "in parallel"). One part of the application could be transferring money from Markov to Curie at the same
     time another part of the application is transferring money from Kate to Ned.</p>
 <p>If Sequelize did not keep track of transaction IDs, it would not know that <code>curieAccount.save()</code> should be
     a part of the Markov/Curie transaction rather than the Kate/Ned transaction.</p>
@@ -7407,7 +7407,7 @@ Markov: balance must not be less than zero</code></pre>
 <a class="sourceLine" id="cb283-40" title="40"></a>
 <a class="sourceLine" id="cb283-41" title="41"><span class="at">main</span>()<span class="op">;</span></a></code></pre>
 </div>
-<p>Because another program can “race in between” (1) the reading of the account balances and (2) the updating of the
+<p>Because another program can "race in between" (1) the reading of the account balances and (2) the updating of the
     balances, we call this potential problem a <em>race condition</em>. The easiest way to fix the race condition is to
     prohibit anyone else from modifying Markov's account balance in between (1) and (2).</p>
 <p>Luckily, the solution is simple. Any data used in a transaction will be <em>locked</em> until the transaction
@@ -7517,8 +7517,8 @@ Executing (76321a03-93c5-47c0-861a-cf24c3e6f3bf): COMMIT;</code></pre>
     <li>The date/time that it was entered into the recipe box, and</li>
     <li>The date/time it was last updated in the recipe box.</li>
 </ul>
-<p>These are good pieces of data to have so that you can show them “most recent” for example.</p>
-<p>Ingredients themselves are complex data types and need their own structure. They “belong” to a recipe. That means
+<p>These are good pieces of data to have so that you can show them "most recent" for example.</p>
+<p>Ingredients themselves are complex data types and need their own structure. They "belong" to a recipe. That means
     they'll need to reference that recipe. That means an ingredient is made up of:</p>
 <ul>
     <li>An amount (optional),</li>
@@ -7528,7 +7528,7 @@ Executing (76321a03-93c5-47c0-861a-cf24c3e6f3bf): COMMIT;</code></pre>
 </ul>
 <p>That unit of measure is a good candidate for normalization, don't you think? It's a predefined list of options that
     should not change and that you don't want people just typing whatever they want in there, not if you want to
-    maintain data integrity. Otherwise, you'll end up with “C”, “c”, “cup”, “CUP”, “Cup”, and all the other
+    maintain data integrity. Otherwise, you'll end up with "C", "c", "cup", "CUP", "Cup", and all the other
     permutations, each of which is a distinct value but means the same thing.</p>
 <p>Instructions are also complex objects, but not by looking at them. Initially, one might only see text that comprises
     an instruction. But, very importantly, instructions have <em>order</em>. They also <em>belong</em> to the recipe.
@@ -7568,18 +7568,18 @@ Executing (76321a03-93c5-47c0-861a-cf24c3e6f3bf): COMMIT;</code></pre>
     tools.</p>
 <h2 id="phase-2-create-a-database-user-for-the-project">Phase 2: Create a database user for the project</h2>
 <p>Using a PostgreSQL client like <code>psql</code> or Postbird, create a new user for this application named
-    “sequelize_recipe_box_app” with the password “HfKfK79k” <em>and</em> the ability to create a database. Here's the <a
+    "sequelize_recipe_box_app" with the password "HfKfK79k" <em>and</em> the ability to create a database. Here's the <a
         href="https://www.postgresql.org/docs/current/sql-createuser.html">link to the CREATE USER documentation</a> so
     that you can determine which options to give.</p>
 <h2 id="phase-2-change-the-connection-configuration">Phase 2: Change the connection configuration</h2>
 <p>The project contains a directory named <strong>config</strong>. Inside there, you will find a file named
     <strong>config.json</strong>. You need to make some configuration changes.</p>
 <ul>
-    <li>Change all the “user” and “password” values to the information for the user that you created in Phase 2.</li>
-    <li>Change the “database” values to be “recipe_box_development”, “recipe_box_test”, and “recipe_box_production”.
+    <li>Change all the "user" and "password" values to the information for the user that you created in Phase 2.</li>
+    <li>Change the "database" values to be "recipe_box_development", "recipe_box_test", and "recipe_box_production".
     </li>
-    <li>Change all of the “dialect” values from “mysql” to “postgres”.</li>
-    <li>Delete all of the “operatorAliases” entries. It's to support earlier versions of the Sequelize library. Make
+    <li>Change all of the "dialect" values from "mysql" to "postgres".</li>
+    <li>Delete all of the "operatorAliases" entries. It's to support earlier versions of the Sequelize library. Make
         sure to remove the comma from the preceding line so that it's valid JSON.</li>
     <li>Because you'll be using seed data in this project, add <code>"seederStorage": "sequelize"</code> to each of the
         different blocks so that Sequelize CLI won't run a seeder more than once causing duplicate entries in the
@@ -7590,7 +7590,7 @@ Executing (76321a03-93c5-47c0-861a-cf24c3e6f3bf): COMMIT;</code></pre>
 <p>Rather than writing SQL to do this, you will use the tools. Run</p>
 <pre><code>npx sequelize-cli db:create</code></pre>
 <p>That runs the Sequelize CLI with the command <code>db:create</code>.</p>
-<p>When you run this, it will default to the “development” setting and read the information from the configuration file
+<p>When you run this, it will default to the "development" setting and read the information from the configuration file
     to create your database for you! It should print out something like</p>
 <pre><code>Sequelize CLI [Node: 10.19.0, CLI: 5.5.1, ORM: 5.21.5]
 
@@ -7600,7 +7600,7 @@ Database recipe_box_development created.</code></pre>
 <p>You can also drop the database by typing … you guessed it! The Sequelize CLI with the command <code>db:drop</code>!
 </p>
 <pre><code>npx sequelize-cli db:drop</code></pre>
-<p>If you run that, run the “create” command, again, so the database exists.</p>
+<p>If you run that, run the "create" command, again, so the database exists.</p>
 <h2 id="phase-4-the-units-of-measurement-data">Phase 4: The units of measurement data</h2>
 <p>Just as a review, here is the specification for the table that holds units of measurement.</p>
 <table>
@@ -7624,16 +7624,16 @@ Database recipe_box_development created.</code></pre>
         </tr>
     </tbody>
 </table>
-<p>Luckily, the Sequelize models and migrations take care of the “id” property for you without you having to do
-    anything. So, you can just focus on that “name” property.</p>
+<p>Luckily, the Sequelize models and migrations take care of the "id" property for you without you having to do
+    anything. So, you can just focus on that "name" property.</p>
 <h3 id="create-a-migration">Create a migration</h3>
 <p>It's time to create the first migration, the one that defines the table that will hold units of measure. You can use
     the Sequelize CLI to generate the migration for you. You can <em>also</em> tell it to create a model for you, and it
     will create a migration along <em>with</em> the model. You should do that to get the biggest return on investment
     for the characters that you will type.</p>
-<p>The command is <code>model:generate</code> and it takes a couple of arguments, “–name” which contains the name of the
-    model (as a singular noun) to generate, and “–attributes” which has a comma-separated list of
-    “property-name:data-type” pairs.</p>
+<p>The command is <code>model:generate</code> and it takes a couple of arguments, "–name" which contains the name of the
+    model (as a singular noun) to generate, and "–attributes" which has a comma-separated list of
+    "property-name:data-type" pairs.</p>
 <p><strong>Learning Tip</strong>: It is <em>so very important</em> that you don't copy and paste this. Type these things
     out so it has a better chance of creating durable knowledge.</p>
 <pre><code>npx sequelize-cli model:generate \
@@ -7649,13 +7649,13 @@ New migration was created at migrations/20200101012349-MeasurementUnit.js</code>
     build the database. Unlike those schema and seed files that you had in the SQL version of this project which
     destroyed <em>everything</em> when run, migrations are designed to change your database as your application grows.
     This is a much better strategy so that existing data in the databases that other people use aren't damaged.</p>
-<p>Because the data model requires the “name” column to be both non-null <em>and</em> unique, you have to add some
-    information to the migration file. Open it and, for the “name” property, make non-nullable by looking at how the
-    other properties are configured. Then, add the “unique” property set to <code>true</code> to the “name”
+<p>Because the data model requires the "name" column to be both non-null <em>and</em> unique, you have to add some
+    information to the migration file. Open it and, for the "name" property, make non-nullable by looking at how the
+    other properties are configured. Then, add the "unique" property set to <code>true</code> to the "name"
     configuration, as well. That should be enough for Sequelize to create the table for you.</p>
-<p>The last thing to do is to change the length of the “name” property. By default, Sequelize will make it 255
+<p>The last thing to do is to change the length of the "name" property. By default, Sequelize will make it 255
     characters long. The specification for the table says it should really only be 20 characters. To tell the migration
-    that, change the type for “name” from <code>Sequelize.STRING</code> to <code>Sequelize.STRING(20)</code>.</p>
+    that, change the type for "name" from <code>Sequelize.STRING</code> to <code>Sequelize.STRING(20)</code>.</p>
 <h2 id="run-your-migration">Run your migration</h2>
 <p>If you now run your migration with the Sequelize CLI, it will create the table for you.</p>
 <pre><code>npx sequelize-cli db:migrate</code></pre>
@@ -7664,9 +7664,9 @@ New migration was created at migrations/20200101012349-MeasurementUnit.js</code>
 Using environment &quot;development&quot;.
 == 20200101012349-create-measurement-unit: migrating =======
 == 20200101012349-create-measurement-unit: migrated (0.021s)</code></pre>
-<p>You can confirm that the table “MeasurementUnits” is created by using your PostgreSQL client. You'll also see that
-    another table is created, “SequelizeMeta”, which contains information about which migration has most recently been
-    run. It contains a single column, “name”. Each row contains an entry of which migration file has run. Now that
+<p>You can confirm that the table "MeasurementUnits" is created by using your PostgreSQL client. You'll also see that
+    another table is created, "SequelizeMeta", which contains information about which migration has most recently been
+    run. It contains a single column, "name". Each row contains an entry of which migration file has run. Now that
     you've run your migration file, the table contains one entry, the name of your migration file. When you run more
     migrations, you will see more rows, each containing the name of the file that you've run.</p>
 <p><strong>psql Note</strong>: If you are using <code>psql</code> as you PostgreSQL command, be aware that it will
@@ -7700,29 +7700,29 @@ Using environment &quot;development&quot;.
         order,</strong> or when we get to the seed data for the other tables it won't work. (We've supplied you with
     files for the seed data for the other tables because there is a lot of it)</p>
 <ul>
-    <li>“fluid ounces”</li>
-    <li>“gallons”</li>
-    <li>“grams”</li>
-    <li>“liters”</li>
-    <li>“milliliters”</li>
-    <li>“ounces”</li>
-    <li>“pinch”</li>
-    <li>“pints”</li>
-    <li>“pounds”</li>
-    <li>“quarts”</li>
-    <li>“tablespoons”</li>
-    <li>“teaspoons”</li>
+    <li>"fluid ounces"</li>
+    <li>"gallons"</li>
+    <li>"grams"</li>
+    <li>"liters"</li>
+    <li>"milliliters"</li>
+    <li>"ounces"</li>
+    <li>"pinch"</li>
+    <li>"pints"</li>
+    <li>"pounds"</li>
+    <li>"quarts"</li>
+    <li>"tablespoons"</li>
+    <li>"teaspoons"</li>
     <li>""</li>
-    <li>“cans”</li>
-    <li>“slices”</li>
-    <li>“splash”</li>
+    <li>"cans"</li>
+    <li>"slices"</li>
+    <li>"splash"</li>
 </ul>
 <p>Now, run the Sequelize CLI with the command <code>db:seed:all</code>.</p>
-<p>After you get that done, you can confirm that all of the records (rows) were created in the “MeasurementUnits” table.
+<p>After you get that done, you can confirm that all of the records (rows) were created in the "MeasurementUnits" table.
 </p>
 <h2 id="phase-5-the-recipe-table-model">Phase 5: The recipe table model</h2>
 <p>This will go much like the last one, except there's no seed data. Just to refresh your memory, here's the
-    specification for the “recipes” table.</p>
+    specification for the "recipes" table.</p>
 <table>
     <thead>
         <tr class="header">
@@ -7754,15 +7754,15 @@ Using environment &quot;development&quot;.
         </tr>
     </tbody>
 </table>
-<p>As you've discovered, Sequelize takes care of the “id” for you <em>and</em> the columns to track when the recipe has
+<p>As you've discovered, Sequelize takes care of the "id" for you <em>and</em> the columns to track when the recipe has
     been created and updated! Your job is to</p>
 <ul>
-    <li>Generate a model for the “recipe”</li>
-    <li>Customize the migration so the “title” column is not nullable</li>
+    <li>Generate a model for the "recipe"</li>
+    <li>Customize the migration so the "title" column is not nullable</li>
 </ul>
 <p>Run your migration and confirm that you defined it correctly by checking the attributes in the description of the
-    table. The important parts to check are that the “title” column is a VARCHAR(200) and is non-nullable. (The
-    “Collation” column has been removed for brevity.)</p>
+    table. The important parts to check are that the "title" column is a VARCHAR(200) and is non-nullable. (The
+    "Collation" column has been removed for brevity.)</p>
 <pre><code>                  Table &quot;public.Recipes&quot;
   Column   |           Type           | Nullable |  Default
 -----------+--------------------------+----------+------------
@@ -7774,7 +7774,7 @@ Indexes:
     &quot;Recipes_pkey&quot; PRIMARY KEY, btree (id)</code></pre>
 <h2 id="phase-6-the-instruction-table-model">Phase 6: The instruction table model</h2>
 <p>Now, things get a little trickier because this model will reference the recipe model. Here's the specification for
-    the “instructions” table.</p>
+    the "instructions" table.</p>
 <table>
     <thead>
         <tr class="header">
@@ -7806,12 +7806,12 @@ Indexes:
         </tr>
     </tbody>
 </table>
-<p>When you type out your migration generation command, the “–attributes” parameter will look like this:</p>
+<p>When you type out your migration generation command, the "–attributes" parameter will look like this:</p>
 <pre><code>--attributes column1:type1,column2:type2,column3:type3</code></pre>
-<p>Instead of using “string” for the “specification” column of the table, use “text” to generate a TEXT column.</p>
+<p>Instead of using "string" for the "specification" column of the table, use "text" to generate a TEXT column.</p>
 <p>After it generates the migration file, modify each of the column descriptors in the migration so that the columns are
-    not nullable. Then, add a new property to the one for “recipeId” called “references” that is an object that contains
-    a “model” property set to “Recipes”. It should look like this.</p>
+    not nullable. Then, add a new property to the one for "recipeId" called "references" that is an object that contains
+    a "model" property set to "Recipes". It should look like this.</p>
 <div class="sourceCode" id="cb297">
     <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb297-1" title="1">recipeId<span class="op">:</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb297-2" title="2">  <span class="dt">allowNull</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></a>
@@ -7834,7 +7834,7 @@ Indexes:
 Foreign-key constraints:
     &quot;Instructions_recipeId_fkey&quot; FOREIGN KEY (&quot;recipeId&quot;)
                                  REFERENCES &quot;Recipes&quot;(id)</code></pre>
-<p>You should see all non-null columns and a foreign key between the “Instructions” table and the “Recipes” table.</p>
+<p>You should see all non-null columns and a foreign key between the "Instructions" table and the "Recipes" table.</p>
 <h2 id="phase-7-the-ingredients-model">Phase 7: The ingredients model</h2>
 <p>The model for ingredients has <em>two</em> foreign keys. Create the model and migration for it. Here's the table
     specification.</p>
@@ -7875,7 +7875,7 @@ Foreign-key constraints:
     </tbody>
 </table>
 <p>After you modify and run your migration, you should have a table in your database that looks like this, with two
-    foreign keys, one to the “Recipes” table and the other to the “MeasurementUnits” table.</p>
+    foreign keys, one to the "Recipes" table and the other to the "MeasurementUnits" table.</p>
 <pre><code>                       Table &quot;public.Ingredients&quot;
       Column       |           Type           | Nullable |      Default
 -------------------+--------------------------+----------+-----------------
@@ -7909,9 +7909,9 @@ Foreign-key constraints:
     <img src="images/sql-recipe-box-data-model.png" alt="recipe box data model" />
     <figcaption>recipe box data model</figcaption>
 </figure>
-<p>You can see that the Instructions depends on Recipes because it has the foreign key “recipeId” to the Recipes table.
+<p>You can see that the Instructions depends on Recipes because it has the foreign key "recipeId" to the Recipes table.
     You can also see that the Ingredients table has dependencies on the Recipes and MeasurementUnits tables because of
-    its foreign keys “measurementUnitId” and “recipeId”. (You've already seeded the MeasurementUnits table in Phase 4,
+    its foreign keys "measurementUnitId" and "recipeId". (You've already seeded the MeasurementUnits table in Phase 4,
     so that data exists for use by the Ingredients table.) Recipes does not have any foreign keys. You need to seed
     Recipes, first, because it does not have any foreign keys and, therefore, does not have any data dependencies. Then,
     you can seed the Instructions and Ingredients tables in either order because their data dependencies will have been
@@ -7950,7 +7950,7 @@ Foreign-key constraints:
         class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb302-1" title="1"><span class="va">Recipe</span>.<span class="at">hasMany</span>(<span class="va">models</span>.<span class="at">Instruction</span><span class="op">,</span> <span class="op">{</span> <span class="dt">foreignKey</span><span class="op">:</span> <span class="st">&#39;recipeId&#39;</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre>
 </div>
 <p>This instructs Sequelize that Recipe should have a collection of Instruction objects associated with it. To insure
-    that Sequelize uses the foreign key column that you created on the “Instructions” table in your migration, you must
+    that Sequelize uses the foreign key column that you created on the "Instructions" table in your migration, you must
     specify it as part of the collection definition.</p>
 <p>In the file <strong>models/instruction.js</strong>, replace the comment with the following to define the other side
     of the relationship.</p>
@@ -7960,7 +7960,7 @@ Foreign-key constraints:
 </div>
 <p>This instructs Sequelize that Instruction has a single Recipe object associated with it. Again, because of
     inconsistent naming conventions used by Sequelize, you must specify the foreign key column name in the
-    “Instructions” table.</p>
+    "Instructions" table.</p>
 <p>Think about the many-to-one and one-to-many relationships between Ingredient, MeasurementUnit, and Recipe. Then,
     modify those model files accordingly with the <code>hasMany</code> and <code>belongsTo</code> associations, always
     specifying the name of the foreign key column that binds the two tables together.</p>
@@ -7986,7 +7986,7 @@ Foreign-key constraints:
     that <code>listOrder</code> is greater than 0, for example. You can do that with <a
         href="https://sequelize.org/master/manual/validations-and-constraints.html#per-attribute-validations">per-attribute
         validations</a>.</p>
-<p>For example, you can change the above code to the following to make sure that the “specification” property won't get
+<p>For example, you can change the above code to the following to make sure that the "specification" property won't get
     set to an empty string when someone tries to save the object.</p>
 <div class="sourceCode" id="cb305">
     <pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb305-1" title="1"><span class="st">&#39;use strict&#39;</span><span class="op">;</span></a>
@@ -8010,7 +8010,7 @@ Foreign-key constraints:
 <p>Make sure all of the other string properties in the models won't allow the empty string to be set on them.</p>
 <h2 id="phase-11-cascade-delete-for-recipes">Phase 11: Cascade delete for recipes</h2>
 <p>The Recipe model has dependencies: the Instruction and the Ingredient both have <em>belongs to</em> relationships.
-    This means that the row in the “Recipes” table must exist to have records in the “Ingredients” and “Instructions”
+    This means that the row in the "Recipes" table must exist to have records in the "Ingredients" and "Instructions"
     table. If you try to delete a Recipe row from the database that has either Instructions or Ingredients, it won't
     work due to referential integrity. You would have to delete all of the Ingredients and Instructions <em>before</em>
     being able to delete the Recipe.</p>
@@ -8032,7 +8032,7 @@ Foreign-key constraints:
     changed JavaScript that you're writing. To that end, you will use a different command while developing.</p>
 <pre><code>npm run dev</code></pre>
 <p>This runs a special script that will reload the JavaScript in the data access layer every time you make a change. You
-    can see what's run in the <strong>package.json</strong> file in this project in the “scripts” section for the “dev”
+    can see what's run in the <strong>package.json</strong> file in this project in the "scripts" section for the "dev"
     property.</p>
 <p>You will work in the three files named</p>
 <ul>

@@ -341,7 +341,7 @@ v2.1.2 is a maintenance release including various bug fixes.
   - [#6000](https://github.com/facebook/create-react-app/pull/6000) Make links to docs consistent in README. ([@iansu](https://github.com/iansu))
   - [#5900](https://github.com/facebook/create-react-app/pull/5900) Add production build section to docs. ([@ianschmitz](https://github.com/ianschmitz))
   - [#5985](https://github.com/facebook/create-react-app/pull/5985) Use https for linked images to fix mixed content warnings. ([@iansu](https://github.com/iansu))
-  - [#5919](https://github.com/facebook/create-react-app/pull/5919) Docs: update localStorage mock in “Running Tests”. ([@phacks](https://github.com/phacks))
+  - [#5919](https://github.com/facebook/create-react-app/pull/5919) Docs: update localStorage mock in "Running Tests". ([@phacks](https://github.com/phacks))
   - [#5917](https://github.com/facebook/create-react-app/pull/5917) Add SASS_PATH instructions to Sass stylesheet docs. ([@jayantbh](https://github.com/jayantbh))
   - [#5823](https://github.com/facebook/create-react-app/pull/5823) Add default values to `file_ext` note. ([@alaycock](https://github.com/alaycock))
   - [#5907](https://github.com/facebook/create-react-app/pull/5907) Update README.md with updated link about PWAs. ([@wuweiweiwu](https://github.com/wuweiweiwu))

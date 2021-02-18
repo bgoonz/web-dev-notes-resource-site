@@ -4,7 +4,7 @@
 <hr />
 <h2 id="functions-as-first-class-objects"><strong>Functions as first-class objects</strong></h2>
 <ul>
-<li><p><strong>First-class objects</strong> : a fancy term that indicates we can treat functions as “normal” values which can be stored inside variables.</p>
+<li><p><strong>First-class objects</strong> : a fancy term that indicates we can treat functions as "normal" values which can be stored inside variables.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">let</span> calculateAverage <span class="op">=</span> <span class="kw">function</span> (a<span class="op">,</span> b) <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="cf">return</span> (a <span class="op">+</span> b) / <span class="dv">2</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="op">};</span></a>
@@ -65,7 +65,7 @@
 <hr />
 <p><strong>When is a 2D array practical?</strong></p>
 <ul>
-<li>Just keep in mind 2D arrays will be very useful for “grids”</li>
+<li>Just keep in mind 2D arrays will be very useful for "grids"</li>
 <li>Think: Tic-Tac-Toe, Chess, Sudoku, Excel</li>
 </ul>
 <hr />
@@ -137,8 +137,8 @@
 <a class="sourceLine" id="cb9-4" title="4"><span class="va">console</span>.<span class="at">log</span>(colors)<span class="op">;</span> <span class="co">// [ &#39;red&#39;, &#39;yellow&#39;, &#39;brown&#39;, &#39;gray&#39; ]</span></a>
 <a class="sourceLine" id="cb9-5" title="5"><span class="va">console</span>.<span class="at">log</span>(returnVal)<span class="op">;</span> <span class="co">// [ &#39;blue&#39;, &#39;green&#39;, &#39;orange&#39; ]</span></a></code></pre></div>
 <ul>
-<li>If we only populate the first two parameters, we simply just ‘slice' out a portion of our array.</li>
-<li>If we assign a variable to our slice method we can store the ‘sliced' out data.</li>
+<li>If we only populate the first two parameters, we simply just 'slice' out a portion of our array.</li>
+<li>If we assign a variable to our slice method we can store the 'sliced' out data.</li>
 </ul>
 <p><strong>Using splice to insert</strong></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">let</span> colors <span class="op">=</span> [<span class="st">&quot;red&quot;</span><span class="op">,</span> <span class="st">&quot;yellow&quot;</span><span class="op">,</span> <span class="st">&quot;blue&quot;</span>]<span class="op">;</span></a>
@@ -152,7 +152,7 @@
 <hr />
 <h2 id="split-and-join-methods"><strong>Split and Join Methods</strong></h2>
 <p><strong>String.split</strong></p>
-<p>Method that can be called on a string and uses a “separator” string as an argument.</p>
+<p>Method that can be called on a string and uses a "separator" string as an argument.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">let</span> sentence <span class="op">=</span> <span class="st">&quot;follow the yellow brick road&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb11-2" title="2"></a>
 <a class="sourceLine" id="cb11-3" title="3"><span class="va">console</span>.<span class="at">log</span>(<span class="va">sentence</span>.<span class="at">split</span>(<span class="st">&quot; &quot;</span>))<span class="op">;</span> <span class="co">// [ &#39;follow&#39;, &#39;the&#39;, &#39;yellow&#39;, &#39;brick&#39;, &#39;road&#39; ]</span></a>
@@ -161,11 +161,11 @@
 <a class="sourceLine" id="cb11-6" title="6"></a>
 <a class="sourceLine" id="cb11-7" title="7"><span class="va">console</span>.<span class="at">log</span>(<span class="va">sentence</span>.<span class="at">split</span>(<span class="st">&quot;o&quot;</span>))<span class="op">;</span> <span class="co">// [ &#39;f&#39;, &#39;ll&#39;, &#39;w the yell&#39;, &#39;w brick r&#39;, &#39;ad&#39; ]</span></a></code></pre></div>
 <ul>
-<li>The argument for this method indicates what character(s) to split our string on. In the above example you can see our string being split on spaces, “the”, and “o”.</li>
+<li>The argument for this method indicates what character(s) to split our string on. In the above example you can see our string being split on spaces, "the", and "o".</li>
 <li>Pro Tip: Good for removing certain repeated words from data.</li>
 </ul>
 <p><strong>Array.join</strong></p>
-<p>Method that can be called on an array and uses a “joiner” string as as argument.</p>
+<p>Method that can be called on an array and uses a "joiner" string as as argument.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">let</span> words <span class="op">=</span> [<span class="st">&quot;run&quot;</span><span class="op">,</span> <span class="st">&quot;around&quot;</span><span class="op">,</span> <span class="st">&quot;the&quot;</span><span class="op">,</span> <span class="st">&quot;block&quot;</span>]<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="kw">let</span> sentence <span class="op">=</span> <span class="va">words</span>.<span class="at">join</span>(<span class="st">&quot; &quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-3" title="3"><span class="va">console</span>.<span class="at">log</span>(sentence)<span class="op">;</span> <span class="co">// &#39;run around the block&#39;</span></a>

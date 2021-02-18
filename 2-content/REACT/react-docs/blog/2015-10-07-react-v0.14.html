@@ -154,7 +154,7 @@ The add-ons have moved to separate packages as well:
 <h3 id="new-deprecations-introduced-with-a-warning">New deprecations, introduced with a warning</h3>
 <p>Each of these changes will continue to work as before with a new warning until the release of 0.15 so you can upgrade your code gradually.</p>
 <ul>
-<li><p>Due to the DOM node refs change mentioned above, <code>this.getDOMNode()</code> is now deprecated and <code>ReactDOM.findDOMNode(this)</code> can be used instead. Note that in most cases, calling <code>findDOMNode</code> is now unnecessary – see the example above in the “DOM node refs” section.</p>
+<li><p>Due to the DOM node refs change mentioned above, <code>this.getDOMNode()</code> is now deprecated and <code>ReactDOM.findDOMNode(this)</code> can be used instead. Note that in most cases, calling <code>findDOMNode</code> is now unnecessary – see the example above in the "DOM node refs" section.</p>
 <p>With each returned DOM node, we've added a <code>getDOMNode</code> method for backwards compatibility that will work
     with a warning until 0.15. If you have a large codebase, you can use our <a
         href="https://github.com/reactjs/react-codemod/blob/master/README.md">automated codemod script</a> to change
@@ -169,7 +169,7 @@ The add-ons have moved to separate packages as well:
 <h3 id="notable-enhancements">Notable enhancements</h3>
 <ul>
 <li>Added <code>React.Children.toArray</code> which takes a nested children object and returns a flat array with keys assigned to each child. This helper makes it easier to manipulate collections of children in your <code>render</code> methods, especially if you want to reorder or slice <code>this.props.children</code> before passing it down. In addition, <code>React.Children.map</code> now returns plain arrays too.</li>
-<li>React uses <code>console.error</code> instead of <code>console.warn</code> for warnings so that browsers show a full stack trace in the console. (Our warnings appear when you use patterns that will break in future releases and for code that is likely to behave unexpectedly, so we do consider our warnings to be “must-fix” errors.)</li>
+<li>React uses <code>console.error</code> instead of <code>console.warn</code> for warnings so that browsers show a full stack trace in the console. (Our warnings appear when you use patterns that will break in future releases and for code that is likely to behave unexpectedly, so we do consider our warnings to be "must-fix" errors.)</li>
 <li>Previously, including untrusted objects as React children <a
         href="http://danlec.com/blog/xss-via-a-spoofed-react-element">could result in an XSS security vulnerability</a>.
     This problem should be avoided by properly validating input at the application layer and by never passing untrusted
@@ -203,7 +203,7 @@ The add-ons have moved to separate packages as well:
 <li>React DOM now renders <code>&lt;option&gt;</code> elements with multiple text children properly and renders <code>&lt;select&gt;</code> elements on the server with the correct option selected.</li>
 <li>When two separate copies of React add nodes to the same document (including when a browser extension uses React), React DOM tries harder not to throw exceptions during event handling.</li>
 <li>Using non-lowercase HTML tag names in React DOM (e.g., <code>React.createElement('DIV')</code>) no longer causes problems, though we continue to recommend lowercase for consistency with the JSX tag name convention (lowercase names refer to built-in components, capitalized names refer to custom components).</li>
-<li>React DOM understands that these CSS properties are unitless and does not append “px” to their values: <code>animationIterationCount</code>, <code>boxOrdinalGroup</code>, <code>flexOrder</code>, <code>tabSize</code>, <code>stopOpacity</code>.</li>
+<li>React DOM understands that these CSS properties are unitless and does not append "px" to their values: <code>animationIterationCount</code>, <code>boxOrdinalGroup</code>, <code>flexOrder</code>, <code>tabSize</code>, <code>stopOpacity</code>.</li>
 <li>Add-Ons: When using the test utils, <code>Simulate.mouseEnter</code> and <code>Simulate.mouseLeave</code> now work.</li>
 <li>Add-Ons: ReactTransitionGroup now correctly handles multiple nodes being removed simultaneously.</li>
 </ul>

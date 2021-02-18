@@ -94,7 +94,7 @@
          The default is <code class="filename"><em class="replaceable"><code>DATAROOTDIR</code></em>/man</code>.
         </p></dd><dt><span class="term"><code class="option">--docdir=<em class="replaceable"><code>DIRECTORY</code></em></code></span></dt><dd><p>
          Sets the root directory for installing documentation files,
-         except <span class="quote">“<span class="quote">man</span>”</span> pages.  This only sets the default for
+         except <span class="quote">"<span class="quote">man</span>"</span> pages.  This only sets the default for
          the following options.  The default value for this option is
          <code class="filename"><em class="replaceable"><code>DATAROOTDIR</code></em>/doc/postgresql</code>.
         </p></dd><dt><span class="term"><code class="option">--htmldir=<em class="replaceable"><code>DIRECTORY</code></em></code></span></dt><dd><p>
@@ -109,12 +109,12 @@
        <span class="productname">PostgreSQL</span> into shared installation locations
        (such as <code class="filename">/usr/local/include</code>) without
        interfering with the namespace of the rest of the system. First,
-       the string <span class="quote">“<span class="quote"><code class="literal">/postgresql</code></span>”</span> is
+       the string <span class="quote">"<span class="quote"><code class="literal">/postgresql</code></span>"</span> is
        automatically appended to <code class="varname">datadir</code>,
        <code class="varname">sysconfdir</code>, and <code class="varname">docdir</code>,
        unless the fully expanded directory name already contains the
-       string <span class="quote">“<span class="quote"><code class="literal">postgres</code></span>”</span> or
-       <span class="quote">“<span class="quote"><code class="literal">pgsql</code></span>”</span>. For example, if you choose
+       string <span class="quote">"<span class="quote"><code class="literal">postgres</code></span>"</span> or
+       <span class="quote">"<span class="quote"><code class="literal">pgsql</code></span>"</span>. For example, if you choose
        <code class="filename">/usr/local</code> as prefix, the documentation will
        be installed in <code class="filename">/usr/local/doc/postgresql</code>,
        but if the prefix is <code class="filename">/opt/postgres</code>, then it
@@ -344,21 +344,21 @@
          module.  <span class="application">xml2</span> relies on this library
          to perform XSL transformations of XML.
         </p></dd><dt><span class="term"><code class="option">--disable-float4-byval</code></span></dt><dd><p>
-         Disable passing float4 values <span class="quote">“<span class="quote">by value</span>”</span>, causing them
-         to be passed <span class="quote">“<span class="quote">by reference</span>”</span> instead.  This option costs
+         Disable passing float4 values <span class="quote">"<span class="quote">by value</span>"</span>, causing them
+         to be passed <span class="quote">"<span class="quote">by reference</span>"</span> instead.  This option costs
          performance, but may be needed for compatibility with old
          user-defined functions that are written in C and use the
-         <span class="quote">“<span class="quote">version 0</span>”</span> calling convention.  A better long-term
+         <span class="quote">"<span class="quote">version 0</span>"</span> calling convention.  A better long-term
          solution is to update any such functions to use the
-         <span class="quote">“<span class="quote">version 1</span>”</span> calling convention.
+         <span class="quote">"<span class="quote">version 1</span>"</span> calling convention.
         </p></dd><dt><span class="term"><code class="option">--disable-float8-byval</code></span></dt><dd><p>
-         Disable passing float8 values <span class="quote">“<span class="quote">by value</span>”</span>, causing them
-         to be passed <span class="quote">“<span class="quote">by reference</span>”</span> instead.  This option costs
+         Disable passing float8 values <span class="quote">"<span class="quote">by value</span>"</span>, causing them
+         to be passed <span class="quote">"<span class="quote">by reference</span>"</span> instead.  This option costs
          performance, but may be needed for compatibility with old
          user-defined functions that are written in C and use the
-         <span class="quote">“<span class="quote">version 0</span>”</span> calling convention.  A better long-term
+         <span class="quote">"<span class="quote">version 0</span>"</span> calling convention.  A better long-term
          solution is to update any such functions to use the
-         <span class="quote">“<span class="quote">version 1</span>”</span> calling convention.
+         <span class="quote">"<span class="quote">version 1</span>"</span> calling convention.
          Note that this option affects not only float8, but also int8 and some
          related types such as timestamp.
          On 32-bit platforms, <code class="option">--disable-float8-byval</code> is the default
@@ -369,7 +369,7 @@
          to the segment size.  This avoids problems with file size limits
          that exist on many platforms.  The default segment size, 1 gigabyte,
          is safe on all supported platforms.  If your operating system has
-         <span class="quote">“<span class="quote">largefile</span>”</span> support (which most do, nowadays), you can use
+         <span class="quote">"<span class="quote">largefile</span>"</span> support (which most do, nowadays), you can use
          a larger segment size.  This can be helpful to reduce the number of
          file descriptors consumed when working with very large tables.
          But be careful not to select a value larger than is supported
@@ -467,7 +467,7 @@
          This option is for use only with GCC and when doing development work.
         </p></dd><dt><span class="term"><code class="option">--enable-cassert</code></span></dt><dd><p>
          Enables <em class="firstterm">assertion</em> checks in the server, which test for
-         many <span class="quote">“<span class="quote">cannot happen</span>”</span> conditions.  This is invaluable for
+         many <span class="quote">"<span class="quote">cannot happen</span>"</span> conditions.  This is invaluable for
          code development purposes, but the tests can slow down the
          server significantly.
          Also, having the tests turned on won't necessarily enhance the

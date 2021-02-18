@@ -16,7 +16,7 @@
        or zero if the function does not have a variadic parameter</td></tr><tr><td><code class="structfield">prosupport</code></td><td><code class="type">regproc</code></td><td><code class="literal"><a class="link" href="catalog-pg-proc.html" title="51.39. pg_proc"><code class="structname">pg_proc</code></a>.oid</code></td><td>Optional planner support function for this function
        (see <a class="xref" href="xfunc-optimization.html" title="37.11. Function Optimization Information">Section 37.11</a>)</td></tr><tr><td><code class="structfield">prokind</code></td><td><code class="type">char</code></td><td> </td><td><code class="literal">f</code> for a normal function, <code class="literal">p</code>
       for a procedure, <code class="literal">a</code> for an aggregate function, or
-      <code class="literal">w</code> for a window function</td></tr><tr><td><code class="structfield">prosecdef</code></td><td><code class="type">bool</code></td><td> </td><td>Function is a security definer (i.e., a <span class="quote">“<span class="quote">setuid</span>”</span>
+      <code class="literal">w</code> for a window function</td></tr><tr><td><code class="structfield">prosecdef</code></td><td><code class="type">bool</code></td><td> </td><td>Function is a security definer (i.e., a <span class="quote">"<span class="quote">setuid</span>"</span>
       function)</td></tr><tr><td><code class="structfield">proleakproof</code></td><td><code class="type">bool</code></td><td> </td><td>
        The function has no side effects.  No information about the
        arguments is conveyed except via the return value.  Any function
@@ -25,18 +25,18 @@
       </td></tr><tr><td><code class="structfield">proisstrict</code></td><td><code class="type">bool</code></td><td> </td><td>
        Function returns null if any call argument is null.  In that
        case the function won't actually be called at all.  Functions
-       that are not <span class="quote">“<span class="quote">strict</span>”</span> must be prepared to handle
+       that are not <span class="quote">"<span class="quote">strict</span>"</span> must be prepared to handle
        null inputs.
       </td></tr><tr><td><code class="structfield">proretset</code></td><td><code class="type">bool</code></td><td> </td><td>Function returns a set (i.e., multiple values of the specified
       data type)</td></tr><tr><td><code class="structfield">provolatile</code></td><td><code class="type">char</code></td><td> </td><td>
        <code class="structfield">provolatile</code> tells whether the function's
        result depends only on its input arguments, or is affected by outside
        factors.
-       It is <code class="literal">i</code> for <span class="quote">“<span class="quote">immutable</span>”</span> functions,
+       It is <code class="literal">i</code> for <span class="quote">"<span class="quote">immutable</span>"</span> functions,
        which always deliver the same result for the same inputs.
-       It is <code class="literal">s</code> for <span class="quote">“<span class="quote">stable</span>”</span> functions,
+       It is <code class="literal">s</code> for <span class="quote">"<span class="quote">stable</span>"</span> functions,
        whose results (for fixed inputs) do not change within a scan.
-       It is <code class="literal">v</code> for <span class="quote">“<span class="quote">volatile</span>”</span> functions,
+       It is <code class="literal">v</code> for <span class="quote">"<span class="quote">volatile</span>"</span> functions,
        whose results might change at any time.  (Use <code class="literal">v</code> also
        for functions with side-effects, so that calls to them cannot get
        optimized away.)

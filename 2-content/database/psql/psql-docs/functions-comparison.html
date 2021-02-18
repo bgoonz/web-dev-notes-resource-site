@@ -45,7 +45,7 @@
    </p><p>
     <a id="id-1.5.8.7.10.1" class="indexterm"></a>
     <a id="id-1.5.8.7.10.2" class="indexterm"></a>
-    Ordinary comparison operators yield null (signifying <span class="quote">“<span class="quote">unknown</span>”</span>),
+    Ordinary comparison operators yield null (signifying <span class="quote">"<span class="quote">unknown</span>"</span>),
     not true or false, when either input is null.  For example,
     <code class="literal">7 = NULL</code> yields null, as does <code class="literal">7 &lt;&gt; NULL</code>.  When
     this behavior is not suitable, use the
@@ -61,7 +61,7 @@
     FROM</code> is identical to <code class="literal">=</code> for non-null
     inputs, but it returns true when both inputs are null, and false when only
     one input is null. Thus, these predicates effectively act as though null
-    were a normal data value, rather than <span class="quote">“<span class="quote">unknown</span>”</span>.
+    were a normal data value, rather than <span class="quote">"<span class="quote">unknown</span>"</span>.
    </p><p>
     <a id="id-1.5.8.7.11.1" class="indexterm"></a>
     <a id="id-1.5.8.7.11.2" class="indexterm"></a>
@@ -81,7 +81,7 @@
    </p><p>
     Do <span class="emphasis"><em>not</em></span> write
     <code class="literal"><em class="replaceable"><code>expression</code></em> = NULL</code>
-    because <code class="literal">NULL</code> is not <span class="quote">“<span class="quote">equal to</span>”</span>
+    because <code class="literal">NULL</code> is not <span class="quote">"<span class="quote">equal to</span>"</span>
     <code class="literal">NULL</code>.  (The null value represents an unknown value,
     and it is not known whether two unknown values are equal.)
    </p><div class="tip"><h3 class="title">Tip</h3><p>
@@ -126,7 +126,7 @@
 </pre><p>
     These will always return true or false, never a null value, even when the
     operand is null.
-    A null input is treated as the logical value <span class="quote">“<span class="quote">unknown</span>”</span>.
+    A null input is treated as the logical value <span class="quote">"<span class="quote">unknown</span>"</span>.
     Notice that <code class="literal">IS UNKNOWN</code> and <code class="literal">IS NOT UNKNOWN</code> are
     effectively the same as <code class="literal">IS NULL</code> and
     <code class="literal">IS NOT NULL</code>, respectively, except that the input

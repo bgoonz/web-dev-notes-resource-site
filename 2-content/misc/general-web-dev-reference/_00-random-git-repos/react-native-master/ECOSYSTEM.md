@@ -25,7 +25,7 @@ In terms of open source work, pull requests from partners are commonly prioritiz
 
 ## Core Contributors
 
-Core contributors are individuals who contribute to the React Native project. A core contributor is somebody who displayed a lasting commitment to the evolution and maintenance of React Native. The work done by core contributors includes responsibilities mentioned in the “Partners” section above, and concretely means that they:
+Core contributors are individuals who contribute to the React Native project. A core contributor is somebody who displayed a lasting commitment to the evolution and maintenance of React Native. The work done by core contributors includes responsibilities mentioned in the "Partners" section above, and concretely means that they:
 
 * Consistently contribute high quality changes, fixes and improvements
 * Actively review changes and provide quality feedback to contributors

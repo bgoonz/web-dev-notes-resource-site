@@ -1,7 +1,7 @@
 "use strict";
 
-var fs = require("fs");
-var path = require("path");
+var fs = require( "fs" );
+var path = require( "path" );
 
 /*
  
@@ -57,19 +57,19 @@ var path = require("path");
 --> ::       @api public
  */
 
-module.exports = function detect(filepath, options) {
-  if (!filepath || typeof filepath !== "string") {
-    return null;
-  }
-  if (fs.existsSync(filepath)) {
-    return path.resolve(filepath);
-  }
+module.exports = function detect ( filepath, options ) {
+    if ( !filepath || typeof filepath !== "string" ) {
+        return null;
+    }
+    if ( fs.existsSync( filepath ) ) {
+        return path.resolve( filepath );
+    }
 
-  options = options || {};
-  if (options.nocase === true) {
-    return nocase(filepath);
-  }
-  return null;
+    options = options || {};
+    if ( options.nocase === true ) {
+        return nocase( filepath );
+    }
+    return null;
 };
 
 /**
@@ -80,38 +80,38 @@ module.exports = function detect(filepath, options) {
  * @return {String} Returns found filepath if exists, otherwise null.
  */
 
-function nocase(filepath) {
-  filepath = path.resolve(filepath);
-  var res = tryReaddir(filepath);
-  if (res === null) {
+function nocase ( filepath ) {
+    filepath = path.resolve( filepath );
+    var res = tryReaddir( filepath );
+    if ( res === null ) {
+        return null;
+    }
+
+    // "filepath" is a directory, an error would be
+    // thrown if it doesn't exist. if we're here, it exists
+    if ( res.path === filepath ) {
+        return res.path;
+    }
+
+    // "filepath" is not a directory
+    // compare against upper case later
+    // see https://nodejs.org/en/docs/guides/working-with-different-filesystems/
+    var upper = filepath.toUpperCase();
+    var len = res.files.length;
+    var idx = -1;
+
+    while ( ++idx < len ) {
+        var fp = path.resolve( res.path, res.files[ idx ] );
+        if ( filepath === fp || upper === fp ) {
+            return fp;
+        }
+        var fpUpper = fp.toUpperCase();
+        if ( filepath === fpUpper || upper === fpUpper ) {
+            return fp;
+        }
+    }
+
     return null;
-  }
-
-  // "filepath" is a directory, an error would be
-  // thrown if it doesn't exist. if we're here, it exists
-  if (res.path === filepath) {
-    return res.path;
-  }
-
-  // "filepath" is not a directory
-  // compare against upper case later
-  // see https://nodejs.org/en/docs/guides/working-with-different-filesystems/
-  var upper = filepath.toUpperCase();
-  var len = res.files.length;
-  var idx = -1;
-
-  while (++idx < len) {
-    var fp = path.resolve(res.path, res.files[idx]);
-    if (filepath === fp || upper === fp) {
-      return fp;
-    }
-    var fpUpper = fp.toUpperCase();
-    if (filepath === fpUpper || upper === fpUpper) {
-      return fp;
-    }
-  }
-
-  return null;
 }
 
 /**
@@ -121,16 +121,16 @@ function nocase(filepath) {
  * @return {Object} Object containing `path` and `files` if succesful. Otherwise, null.
  */
 
-function tryReaddir(filepath) {
-  var ctx = { path: filepath, files: [] };
-  try {
-    ctx.files = fs.readdirSync(filepath);
-    return ctx;
-  } catch (err) {}
-  try {
-    ctx.path = path.dirname(filepath);
-    ctx.files = fs.readdirSync(ctx.path);
-    return ctx;
-  } catch (err) {}
-  return null;
+function tryReaddir ( filepath ) {
+    var ctx = { path: filepath, files: [] };
+    try {
+        ctx.files = fs.readdirSync( filepath );
+        return ctx;
+    } catch ( err ) { }
+    try {
+        ctx.path = path.dirname( filepath );
+        ctx.files = fs.readdirSync( ctx.path );
+        return ctx;
+    } catch ( err ) { }
+    return null;
 }

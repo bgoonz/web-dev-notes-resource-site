@@ -18,14 +18,14 @@ let hasA = function(s) {
 console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth', 'height' ]
 *******************************************************************************/
 
-function reject(array, cb) {
-  let items = [];
-  array.forEach(function(el, i) {
-    if (cb(el) === false) {
-      items.push(el);
-    }
-  });
-  return items;
+function reject ( array, cb ) {
+    let items = [];
+    array.forEach( function ( el, i ) {
+        if ( cb( el ) === false ) {
+            items.push( el );
+        }
+    } );
+    return items;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

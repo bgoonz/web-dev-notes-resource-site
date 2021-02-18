@@ -51,7 +51,7 @@ div {
 }
 ```
 
-- **Class selectors** -- matches elements by class name (e.g. `<button class=“active”>`)
+- **Class selectors** -- matches elements by class name (e.g. `<button class="active">`)
 ```css
 .active {
   background-color: red;
@@ -65,7 +65,7 @@ button.active {
 }
 ```
 
-- **ID selectors** -- matches elements by ID name (e.g. `<div id=”list-1”>`)
+- **ID selectors** -- matches elements by ID name (e.g. `<div id="list-1">`)
 ```css
 #list-1 {
   background-color: red;

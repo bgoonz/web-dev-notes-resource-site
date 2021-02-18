@@ -27,9 +27,9 @@ With just a couple of extra characters, Markdown makes rich document formatting 
 Why do Writers Love Markdown so Much?
 -------------------------------------
 
-“Is that it?” - I hear you ask - “I could just click on a few formatting buttons in most editors and achieve the same thing!”
+"Is that it?" - I hear you ask - "I could just click on a few formatting buttons in most editors and achieve the same thing!"
 
-Very true! But we’re only just getting started. The range of formatting tools has come a very long way since Markdown’s inception in 2004, so you’d be forgiven for wondering what advantages it holds over, say, the “Bold” button in Microsoft Word.
+Very true! But we’re only just getting started. The range of formatting tools has come a very long way since Markdown’s inception in 2004, so you’d be forgiven for wondering what advantages it holds over, say, the "Bold" button in Microsoft Word.
 
 While most novice users do indeed find buttons a bit easier to use, advanced writers often swear by Markdown and nothing else. Why? The biggest reason is _writing flow_.
 
@@ -258,4 +258,3 @@ Writing Markdown is pretty quick right out of the box, but you can speed it up e
 *   Tap Ctrl + H multiple times for the most common **H2** and **H3**
 
 There are lots more included in the _Markdown Help_ overlay in the editor. Regardless of which app you use to write, it's work figuring out the Markdown keyboard shortcuts available to speed up your workflow.
-

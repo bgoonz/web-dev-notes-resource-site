@@ -154,15 +154,15 @@
 <p>Because the new JSX transform will automatically import the necessary <code>react/jsx-runtime</code> functions, React
     will no longer need to be in scope when you use JSX. This might lead to unused React imports in your code. It
     doesn't hurt to keep them, but if you'd like to remove them, we recommend running a <a
-        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">“codemod”</a> script to remove them
+        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">"codemod"</a> script to remove them
     automatically:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" title="1"><span class="bu">cd</span> your_project</a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="ex">npx</span> react-codemod update-react-imports</a></code></pre></div>
 <blockquote>
 <p>Note</p>
 <p>If you're getting errors when running the codemod, try specifying a different JavaScript dialect when <code>npx
-        react-codemod update-react-imports</code> asks you to choose one. In particular, at this moment the “JavaScript
-    with Flow” setting supports newer syntax than the “JavaScript” setting even if you don't use Flow. <a
+        react-codemod update-react-imports</code> asks you to choose one. In particular, at this moment the "JavaScript
+    with Flow" setting supports newer syntax than the "JavaScript" setting even if you don't use Flow. <a
         href="https://github.com/reactjs/react-codemod/issues">File an issue</a> if you run into problems.</p>
 <p>Keep in mind that the codemod output will not always match your project's coding style, so you might want to run <a
         href="https://prettier.io/">Prettier</a> after the codemod finishes for consistent formatting.</p>

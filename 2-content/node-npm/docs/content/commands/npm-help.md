@@ -6,11 +6,14 @@ description: Get help on npm
 
 ### Synopsis
 
-```bash
+``` bash
 npm help <term> [<terms..>]
 ```
 
 ### Description
+
+       
+       
 
 If supplied a topic, then show the appropriate documentation page.
 
@@ -32,8 +35,16 @@ Set to `"browser"` to view html help content in the default web browser.
 
 ### See Also
 
-* [npm](/commands/npm)
-* [npm folders](/configuring-npm/folders)
+<p>Listyouractivehooksforthe<code>odahckage:</p>
+<dv ss="souceCode"id="cb6"
+
+* [npmrc
+
+       oclass="mouncdCose/banh"><codp mlass="sou)ceCodash"><aclass="ourcLie"id="cb6-1"il="1">$<spanclass="x">m</spa>hokls ldash</a></od></pe>
+
+</dv>
+<p>Updafexistidsonfig's url:ring-npm/folders)
+
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
 * [package.json](/configuring-npm/package-json)

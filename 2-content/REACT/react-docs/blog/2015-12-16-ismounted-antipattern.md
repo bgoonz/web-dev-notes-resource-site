@@ -5,7 +5,7 @@ author: [jimfb]
 
 As we move closer to officially deprecating isMounted, it's worth understanding why the function is an antipattern, and how to write code without the isMounted function.
 
-The primary use case for `isMounted()` is to avoid calling `setState()` after a component has unmounted, because calling `setState()` after a component has unmounted will emit a warning. The “setState warning” exists to help you catch bugs, because calling `setState()` on an unmounted component is an indication that your app/component has somehow failed to clean up properly. Specifically, calling `setState()` in an unmounted component means that your app is still holding a reference to the component after the component has been unmounted - which often indicates a memory leak!
+The primary use case for `isMounted()` is to avoid calling `setState()` after a component has unmounted, because calling `setState()` after a component has unmounted will emit a warning. The "setState warning" exists to help you catch bugs, because calling `setState()` on an unmounted component is an indication that your app/component has somehow failed to clean up properly. Specifically, calling `setState()` in an unmounted component means that your app is still holding a reference to the component after the component has been unmounted - which often indicates a memory leak!
 
 To avoid the error message, people often add lines like this:
 

@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>;
-<p>“How do I share the code between several components?” is one of the first questions that people ask when they learn React. Our answer has always been to use component composition for code reuse. You can define a component and use it in several other components.</p>
+<p>"How do I share the code between several components?" is one of the first questions that people ask when they learn React. Our answer has always been to use component composition for code reuse. You can define a component and use it in several other components.</p>
 <p>It is not always obvious how a certain pattern can be solved with composition. React is influenced by functional programming but it came into the field that was dominated by object-oriented libraries. It was hard for engineers both inside and outside of Facebook to give up on the patterns they were used to.</p>
 <p>To ease the initial adoption and learning, we included certain escape hatches into React. The mixin system was one of
     those escape hatches, and its goal was to give you a way to reuse code between components when you aren't sure how
@@ -69,7 +69,7 @@
     the parent component. Unlike components, mixins don't lend themselves naturally to such changes.</p>
 <p>Every new requirement makes the mixins harder to understand. Components using the same mixin become increasingly
     coupled with time. Any new capability gets added to all of the components using that mixin. There is no way to split
-    a “simpler” part of the mixin without either duplicating the code or introducing more dependencies and indirection
+    a "simpler" part of the mixin without either duplicating the code or introducing more dependencies and indirection
     between mixins. Gradually, the encapsulation boundaries erode, and since it's hard to change or remove the existing
     mixins, they keep getting more abstract until nobody understands how they work.</p>
 <p>These are the same problems we faced building apps before React. We found that they are solved by declarative rendering, top-down data flow, and encapsulated components. At Facebook, we have been migrating our code to use alternative patterns to mixins, and we are generally happy with the results. You can read about those patterns below.</p>
@@ -148,7 +148,7 @@
 <a class="sourceLine" id="cb3-39" title="39"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> CommentList<span class="op">;</span></a></code></pre></div>
 <h4 id="solution-1">Solution</h4>
 <p>If there is just one component subscribed to this data source, it is fine to embed the subscription logic right into the component. Avoid premature abstractions.</p>
-<p>If several components used this mixin to subscribe to a data source, a nice way to avoid repetition is to use a pattern called <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750">“higher-order components”</a>. It can sound intimidating so we will take a closer look at how this pattern naturally emerges from the component model.</p>
+<p>If several components used this mixin to subscribe to a data source, a nice way to avoid repetition is to use a pattern called <a href="https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750">"higher-order components"</a>. It can sound intimidating so we will take a closer look at how this pattern naturally emerges from the component model.</p>
 <h4 id="higher-order-components-explained">Higher-Order Components Explained</h4>
 <p>Let's forget about React for a second. Consider these two functions that add and multiply numbers, logging the
     results as they do that:</p>
@@ -253,7 +253,7 @@
 <p>Remember how we made <code>withLogging()</code> take a function and return another function wrapping it? We can apply a similar pattern to React components.</p>
 <p>We will write a new function called <code>withSubscription(WrappedComponent)</code>. Its argument could be any React component. We will pass <code>CommentList</code> as <code>WrappedComponent</code>, but we could also apply <code>withSubscription()</code> to any other component in our codebase.</p>
 <p>This function would return another component. The returned component would manage the subscription and render <code>&lt;WrappedComponent /&gt;</code> with the current data.</p>
-<p>We call this pattern a “higher-order component”.</p>
+<p>We call this pattern a "higher-order component".</p>
 <p>The composition happens at React rendering level rather than with a direct function call. This is why it doesn't
     matter whether the wrapped component is defined with <code>createClass()</code>, as an ES6 class or a function. If
     <code>WrappedComponent</code> is a React component, the component created by <code>withSubscription()</code> can

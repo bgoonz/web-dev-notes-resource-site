@@ -61,7 +61,7 @@ DO 'elog(WARNING, join ", ", sort keys %INC)' LANGUAGE plperl;
         follows any initialization done by <code class="literal">plperl.on_init</code>.
         The SPI functions are not available when this code is executed.
         The Perl code in <code class="literal">plperl.on_plperl_init</code> is executed after
-        <span class="quote">“<span class="quote">locking down</span>”</span> the interpreter, and thus it can only perform
+        <span class="quote">"<span class="quote">locking down</span>"</span> the interpreter, and thus it can only perform
         trusted operations.
        </p><p>
         If the code fails with an error it will abort the initialization and

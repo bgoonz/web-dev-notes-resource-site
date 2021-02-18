@@ -224,10 +224,10 @@ UPDATE 1
 </pre><p>
    All of the policies constructed thus far have been permissive policies,
    meaning that when multiple policies are applied they are combined using
-   the <span class="quote">“<span class="quote">OR</span>”</span> Boolean operator.  While permissive policies can be constructed
+   the <span class="quote">"<span class="quote">OR</span>"</span> Boolean operator.  While permissive policies can be constructed
    to only allow access to rows in the intended cases, it can be simpler to
    combine permissive policies with restrictive policies (which the records
-   must pass and which are combined using the <span class="quote">“<span class="quote">AND</span>”</span> Boolean operator).
+   must pass and which are combined using the <span class="quote">"<span class="quote">AND</span>"</span> Boolean operator).
    Building on the example above, we add a restrictive policy to require
    the administrator to be connected over a local Unix socket to access the
    records of the <code class="literal">passwd</code> table:
@@ -267,7 +267,7 @@ UPDATE 0
    Referential integrity checks, such as unique or primary key constraints
    and foreign key references, always bypass row security to ensure that
    data integrity is maintained.  Care must be taken when developing
-   schemas and row level policies to avoid <span class="quote">“<span class="quote">covert channel</span>”</span> leaks of
+   schemas and row level policies to avoid <span class="quote">"<span class="quote">covert channel</span>"</span> leaks of
    information through such referential integrity checks.
   </p><p>
    In some contexts it is important to be sure that row security is
@@ -335,8 +335,8 @@ CREATE POLICY fp_u ON information FOR UPDATE
 -- we rely only on RLS to protect the information table
 GRANT ALL ON information TO public;
 </pre><p>
-   Now suppose that <code class="literal">alice</code> wishes to change the <span class="quote">“<span class="quote">slightly
-   secret</span>”</span> information, but decides that <code class="literal">mallory</code> should not
+   Now suppose that <code class="literal">alice</code> wishes to change the <span class="quote">"<span class="quote">slightly
+   secret</span>"</span> information, but decides that <code class="literal">mallory</code> should not
    be trusted with the new content of that row, so she does:
   </p><pre class="programlisting">
 BEGIN;
@@ -345,14 +345,14 @@ UPDATE information SET info = 'secret from mallory' WHERE group_id = 2;
 COMMIT;
 </pre><p>
    That looks safe; there is no window wherein <code class="literal">mallory</code> should be
-   able to see the <span class="quote">“<span class="quote">secret from mallory</span>”</span> string.  However, there is
+   able to see the <span class="quote">"<span class="quote">secret from mallory</span>"</span> string.  However, there is
    a race condition here.  If <code class="literal">mallory</code> is concurrently doing,
    say,
 </p><pre class="programlisting">
 SELECT * FROM information WHERE group_id = 2 FOR UPDATE;
 </pre><p>
    and her transaction is in <code class="literal">READ COMMITTED</code> mode, it is possible
-   for her to see <span class="quote">“<span class="quote">secret from mallory</span>”</span>.  That happens if her
+   for her to see <span class="quote">"<span class="quote">secret from mallory</span>"</span>.  That happens if her
    transaction reaches the <code class="structname">information</code> row just
    after <code class="literal">alice</code>'s does.  It blocks waiting
    for <code class="literal">alice</code>'s transaction to commit, then fetches the updated

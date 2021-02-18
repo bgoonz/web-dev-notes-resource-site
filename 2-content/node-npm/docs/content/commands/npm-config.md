@@ -6,7 +6,7 @@ description: Manage the npm configuration files
 
 ### Synopsis
 
-```bash
+``` bash
 npm config set <key>=<value> [<key>=<value> ...]
 npm config get [<key> [<key> ...]]
 npm config delete <key> [<key> ...]
@@ -38,7 +38,7 @@ Config supports the following sub-commands:
 
 #### set
 
-```bash
+``` bash
 npm config set key=value [key=value...]
 npm set key=value [key=value...]
 ```
@@ -48,11 +48,11 @@ Sets each of the config keys to the value provided.
 If value is omitted, then it sets it to an empty string.
 
 Note: for backwards compatibility, `npm config set key value` is supported
-as an alias for `npm config set key=value`.
+as an alias for `npm config set key=value` .
 
 #### get
 
-```bash
+``` bash
 npm config get [key ...]
 npm get [key ...]
 ```
@@ -67,16 +67,17 @@ list`.
 
 #### list
 
-```bash
+``` bash
 npm config list
 ```
 
 Show all the config settings. Use `-l` to also show defaults. Use `--json`
+
 to show the settings in json format.
 
 #### delete
 
-```bash
+``` bash
 npm config delete key [key ...]
 ```
 
@@ -84,7 +85,7 @@ Deletes the specified keys from all configuration files.
 
 #### edit
 
-```bash
+``` bash
 npm config edit
 ```
 

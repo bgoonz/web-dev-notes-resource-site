@@ -90,7 +90,7 @@ None
 ### Common Mistakes / Misconceptions
 
 - **Sales people are born with it**
-  You won’t succeed in sales based on your innate gifts or high demand of the product alone. Salespeople are successful because they are experts in the product or service they’re selling, work hard at relationship building and excel at understanding and meeting a client’s needs. So if you want to work in sales, but are afraid you weren’t “born” with the necessary skills, it’s time to stop holding back!
+  You won’t succeed in sales based on your innate gifts or high demand of the product alone. Salespeople are successful because they are experts in the product or service they’re selling, work hard at relationship building and excel at understanding and meeting a client’s needs. So if you want to work in sales, but are afraid you weren’t “born" with the necessary skills, it’s time to stop holding back!
 
 ### Guided Practice
 

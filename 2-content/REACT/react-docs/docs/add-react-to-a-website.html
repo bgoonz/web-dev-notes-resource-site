@@ -7,7 +7,7 @@
 </head>
 <body>;
 <p>Use as little or as much React as you need.</p>
-<p>React has been designed from the start for gradual adoption, and <strong>you can use as little or as much React as you need</strong>. Perhaps you only want to add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.</p>
+<p>React has been designed from the start for gradual adoption, and <strong>you can use as little or as much React as you need</strong>. Perhaps you only want to add some "sprinkles of interactivity" to an existing page. React components are a great way to do that.</p>
 <p>The majority of websites aren't, and don't need to be, single-page apps. With <strong>a few lines of code and no
         build tooling</strong>, try React in a small part of your website. You can then either gradually expand its
     presence, or keep it contained to a few dynamic widgets.</p>
@@ -30,7 +30,7 @@
 <p>We gave this <code>&lt;div&gt;</code> a unique <code>id</code> HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.</p>
 <blockquote>
 <p>Tip</p>
-<p>You can place a “container” <code>&lt;div&gt;</code> like this <strong>anywhere</strong> inside the <code>&lt;body&gt;</code> tag. You may have as many independent DOM containers on one page as you need. They are usually empty – React will replace any existing content inside DOM containers.</p>
+<p>You can place a "container" <code>&lt;div&gt;</code> like this <strong>anywhere</strong> inside the <code>&lt;body&gt;</code> tag. You may have as many independent DOM containers on one page as you need. They are usually empty – React will replace any existing content inside DOM containers.</p>
 </blockquote>
 <h3 id="step-2-add-the-script-tags">Step 2: Add the Script Tags</h3>
 <p>Next, add three <code>&lt;script&gt;</code> tags to the HTML page right before the closing <code>&lt;/body&gt;</code> tag:</p>
@@ -60,14 +60,14 @@
 
 const domContainer = document.querySelector(&#39;#like_button_container&#39;);
 ReactDOM.render(e(LikeButton), domContainer);</code></pre>
-<p>These two lines of code find the <code>&lt;div&gt;</code> we added to our HTML in the first step, and then display our “Like” button React component inside of it.</p>
+<p>These two lines of code find the <code>&lt;div&gt;</code> we added to our HTML in the first step, and then display our "Like" button React component inside of it.</p>
 <h3 id="thats-it">That's It!</h3>
 <p>There is no step four. <strong>You have just added the first React component to your website.</strong></p>
 <p>Check out the next sections for more tips on integrating React.</p>
 <p><strong><a href="https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605">View the full example source code</a></strong></p>
 <p><strong><a href="https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip">Download the full example (2KB zipped)</a></strong></p>
 <h3 id="tip-reuse-a-component">Tip: Reuse a Component</h3>
-<p>Commonly, you might want to display React components in multiple places on the HTML page. Here is an example that displays the “Like” button three times and passes some data to it:</p>
+<p>Commonly, you might want to display React components in multiple places on the HTML page. Here is an example that displays the "Like" button three times and passes some data to it:</p>
 <p><a href="https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda">View the full example source code</a></p>
 <p><a href="https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip">Download the full example (2KB zipped)</a></p>
 <blockquote>
@@ -134,7 +134,7 @@ ReactDOM.render(e(LikeButton), domContainer);</code></pre>
 <p><code>npx</code> is not a typo – it's a <a
         href="https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b">package runner tool that
         comes with npm 5.2+</a>.</p>
-<p>If you see an error message saying “You have mistakenly installed the <code>babel</code> package”, you might have missed <a href="#add-jsx-to-a-project">the previous step</a>. Perform it in the same folder, and then try again.</p>
+<p>If you see an error message saying "You have mistakenly installed the <code>babel</code> package", you might have missed <a href="#add-jsx-to-a-project">the previous step</a>. Perform it in the same folder, and then try again.</p>
 </blockquote>
 <p>Don't wait for it to finish – this command starts an automated watcher for JSX.</p>
 <p>If you now create a file called <code>src/like_button.js</code> with this <strong><a href="https://gist.github.com/gaearon/c8e112dc74ac44aac4f673f2c39d19d1/raw/09b951c86c1bf1116af741fa4664511f2f179f0a/like_button.js">JSX starter code</a></strong>, the watcher will create a preprocessed <code>like_button.js</code> with the plain JavaScript code suitable for the browser. When you edit the source file with JSX, the transform will re-run automatically.</p>

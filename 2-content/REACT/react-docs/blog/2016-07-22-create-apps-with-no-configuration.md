@@ -103,9 +103,9 @@ All the build settings are preconfigured and can't be changed. Some features, su
 
 We first saw this feature in [Enclave](https://github.com/eanplatter/enclave), and we loved it. We talked to [Ean](https://twitter.com/EanPlatter), and he was excited to collaborate with us. He already sent a few pull requests!
 
-“Ejecting” lets you leave the comfort of Create React App setup at any time. You run a single command, and all the build dependencies, configs, and scripts are moved right into your project. At this point you can customize everything you want, but effectively you are forking our configuration and going your own way. If you're experienced with build tooling and prefer to fine-tune everything to your taste, this lets you use Create React App as a boilerplate generator.
+"Ejecting" lets you leave the comfort of Create React App setup at any time. You run a single command, and all the build dependencies, configs, and scripts are moved right into your project. At this point you can customize everything you want, but effectively you are forking our configuration and going your own way. If you're experienced with build tooling and prefer to fine-tune everything to your taste, this lets you use Create React App as a boilerplate generator.
 
-We expect that at early stages, many people will “eject” for one reason or another, but as we learn from them, we will make the default setup more and more compelling while still providing no configuration.
+We expect that at early stages, many people will "eject" for one reason or another, but as we learn from them, we will make the default setup more and more compelling while still providing no configuration.
 
 ## Try It Out! {#try-it-out}
 
@@ -119,7 +119,7 @@ We welcome you to participate in this experiment. Help us build the React toolin
 
 React was one of the first libraries to embrace transpiling JavaScript. As a result, even though you can [learn React without any tooling](https://github.com/facebook/react/blob/3fd582643ef3d222a00a0c756292c15b88f9f83c/examples/basic-jsx/index.html), the React ecosystem has commonly become associated with an overwhelming explosion of tools.
 
-Eric Clemmons called this phenomenon the “[JavaScript Fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4)”:
+Eric Clemmons called this phenomenon the "[JavaScript Fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4)":
 
 >Ultimately, the problem is that by choosing React (and inherently JSX), you've unwittingly opted into a confusing nest of build tools, boilerplate, linters, & time-sinks to deal with before you ever get to create anything.
 
@@ -147,15 +147,15 @@ The React community is very important to us. We knew that we couldn't fix the pr
 
 ## The Quest for a React <abbr title="Command Line Interface">CLI</abbr> {#the-quest-for-a-react-abbr-titlecommand-line-interfacecliabbr}
 
-Having just attended [EmberCamp](http://embercamp.com/) a week ago, I was excited about [Ember CLI](https://ember-cli.com/). Ember users have a great “getting started” experience thanks to a curated set of tools united under a single command-line interface. I have heard similar feedback about [Elm Reactor](https://github.com/elm-lang/elm-reactor).
+Having just attended [EmberCamp](http://embercamp.com/) a week ago, I was excited about [Ember CLI](https://ember-cli.com/). Ember users have a great "getting started" experience thanks to a curated set of tools united under a single command-line interface. I have heard similar feedback about [Elm Reactor](https://github.com/elm-lang/elm-reactor).
 
 Providing a cohesive curated experience is valuable by itself, even if the user could in theory assemble those parts themselves. Kathy Sierra [explains it best](http://seriouspony.com/blog/2013/7/24/your-app-makes-me-fat):
 
->If your UX asks the user to make *choices*, for example, even if those choices are both clear and useful, the act of *deciding* is a cognitive drain. And not just *while* they're deciding... even *after* we choose, an unconscious cognitive background thread is slowly consuming/leaking resources, “Was *that* the right choice?”
+>If your UX asks the user to make *choices*, for example, even if those choices are both clear and useful, the act of *deciding* is a cognitive drain. And not just *while* they're deciding... even *after* we choose, an unconscious cognitive background thread is slowly consuming/leaking resources, "Was *that* the right choice?"
 
 I never tried to write a command-line tool for React apps, and neither has [Christopher](https://twitter.com/vjeux). We were chatting on Messenger about this idea, and we decided to work together on it for a week as a hackathon project.
 
-We knew that such projects traditionally haven't been very successful in the React ecosystem. Christopher told me that multiple “React CLI” projects have started and failed at Facebook. The community tools with similar goals also exist, but so far they have not yet gained enough traction.
+We knew that such projects traditionally haven't been very successful in the React ecosystem. Christopher told me that multiple "React CLI" projects have started and failed at Facebook. The community tools with similar goals also exist, but so far they have not yet gained enough traction.
 
 Still, we decided it was worth another shot. Christopher and I created a very rough proof of concept on the weekend, and [Kevin](https://twitter.com/lacker) soon joined us.
 

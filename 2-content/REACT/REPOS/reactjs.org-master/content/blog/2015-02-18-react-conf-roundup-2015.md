@@ -120,7 +120,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28‚Ä
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-hype"></a>Hype! <a class="hash-link" href="#talk-hype">#</a></h3>
     <p>
-      <strong>Ryan Florence</strong> showed us how easy it is to transition from a career selling life insurance, to a burgeoning one as a software developer. All you have to do is to learn how to say ‚Äúyes.‚Äù
+      <strong>Ryan Florence</strong> showed us how easy it is to transition from a career selling life insurance, to a burgeoning one as a software developer. All you have to do is to learn how to say "yes."
     </p>
   </div>
   <div class="skinny-col">
@@ -212,7 +212,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28‚Ä
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-communication"></a>Component communication <a class="hash-link" href="#talk-communication">#</a></h3>
     <p>
-      <strong>Bonnie Eisenman</strong> led us through the ‚Äòadapter' approach to inter-component communication taken by her team at Codecademy.
+      <strong>Bonnie Eisenman</strong> led us through the 'adapter' approach to inter-component communication taken by her team at Codecademy.
   </div>
   <div class="skinny-col">
     <iframe width="650" height="171" src="https://www.youtube-nocookie.com/embed/ZM6wXoFTY3o" frameborder="0" allowfullscreen></iframe>

@@ -22,7 +22,7 @@ function Example() {
     &lt;/div&gt;
   );
 }</code></pre>
-<p>This new function <code>useState</code> is the first “Hook” we'll learn about, but this example is just a teaser.
+<p>This new function <code>useState</code> is the first "Hook" we'll learn about, but this example is just a teaser.
     Don't worry if it doesn't make sense yet!</p>
 <p><strong>You can start learning Hooks <a href="/docs/hooks-overview.html">on the next page</a>.</strong> On this page,
     we'll continue by explaining why we're adding Hooks to React and how they can help you write great applications.</p>
@@ -58,12 +58,12 @@ function Example() {
     writing and maintaining tens of thousands of components. Whether you're learning React, use it daily, or even prefer
     a different library with a similar component model, you might recognize some of these problems.</p>
 <h3 id="its-hard-to-reuse-stateful-logic-between-components">It's hard to reuse stateful logic between components</h3>
-<p>React doesn't offer a way to “attach” reusable behavior to a component (for example, connecting it to a store). If
+<p>React doesn't offer a way to "attach" reusable behavior to a component (for example, connecting it to a store). If
     you've worked with React for a while, you may be familiar with patterns like <a
         href="/docs/render-props.html">render props</a> and <a href="/docs/higher-order-components.html">higher-order
         components</a> that try to solve this. But these patterns require you to restructure your components when you
     use them, which can be cumbersome and make code harder to follow. If you look at a typical React application in
-    React DevTools, you will likely find a “wrapper hell” of components surrounded by layers of providers, consumers,
+    React DevTools, you will likely find a "wrapper hell" of components surrounded by layers of providers, consumers,
     higher-order components, render props, and other abstractions. While we could <a
         href="https://github.com/facebook/react-devtools/pull/503">filter them out in DevTools</a>, this points to a
     deeper underlying problem: React needs a better primitive for sharing stateful logic.</p>
@@ -122,8 +122,8 @@ function Example() {
     considering learning or adopting them.</p>
 <p>We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a <a href="https://github.com/reactjs/rfcs/pull/68">detailed RFC</a> that dives into motivation with more details, and provides extra perspective on the specific design decisions and related prior art.</p>
 <p><strong>Crucially, Hooks work side-by-side with existing code so you can adopt them gradually.</strong> There is no
-    rush to migrate to Hooks. We recommend avoiding any “big rewrites”, especially for existing, complex class
-    components. It takes a bit of a mindshift to start “thinking in Hooks”. In our experience, it's best to practice
+    rush to migrate to Hooks. We recommend avoiding any "big rewrites", especially for existing, complex class
+    components. It takes a bit of a mindshift to start "thinking in Hooks". In our experience, it's best to practice
     using Hooks in new and non-critical components first, and ensure that everybody on your team feels comfortable with
     them. After you give Hooks a try, please feel free to <a href="https://github.com/facebook/react/issues/new">send us
         feedback</a>, positive or negative.</p>

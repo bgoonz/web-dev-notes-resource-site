@@ -133,7 +133,7 @@ SELECT * FROM x, y, a, b, c WHERE something AND somethingelse;
   </p><p>
    <a class="xref" href="runtime-config-query.html#GUC-FROM-COLLAPSE-LIMIT">from_collapse_limit</a> and <a class="xref" href="runtime-config-query.html#GUC-JOIN-COLLAPSE-LIMIT">join_collapse_limit</a>
    are similarly named because they do almost the same thing: one controls
-   when the planner will <span class="quote">“<span class="quote">flatten out</span>”</span> subqueries, and the
+   when the planner will <span class="quote">"<span class="quote">flatten out</span>"</span> subqueries, and the
    other controls when it will flatten out explicit joins.  Typically
    you would either set <code class="varname">join_collapse_limit</code> equal to
    <code class="varname">from_collapse_limit</code> (so that explicit joins and subqueries

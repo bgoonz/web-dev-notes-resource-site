@@ -140,7 +140,11 @@
 <pre class="jsx"><code>&lt;Route path=&quot;/users/:userId&quot;
        render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;} /&gt;</code></pre>
 <p>The router would break down the full <code>/users/:userId/photos</code> path to two parts: <code>/users</code>, <code>:userId</code>.</p>
-<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into the component if you want it to know about the “match” parameters.</p>
+<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the
+    <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter
+    information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you
+    are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into
+    the component if you want it to know about the "match" parameters.</p>
 <pre class="jsx"><code>// Route&#39;s `render` prop allows you to pass the `users`
 // prop and spread the router `props`.
 render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}

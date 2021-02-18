@@ -9,7 +9,7 @@ In the past, JavaScript errors inside components used to corrupt React's interna
 
 ## Introducing Error Boundaries {#introducing-error-boundaries}
 
-A JavaScript error in a part of the UI shouldn't break the whole app. To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
+A JavaScript error in a part of the UI shouldn't break the whole app. To solve this problem for React users, React 16 introduces a new concept of an "error boundary".
 
 Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
 
@@ -71,7 +71,7 @@ Check out [this example of declaring and using an error boundary](https://codepe
 
 ## Where to Place Error Boundaries {#where-to-place-error-boundaries}
 
-The granularity of error boundaries is up to you. You may wrap top-level route components to display a “Something went wrong” message to the user, just like server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
+The granularity of error boundaries is up to you. You may wrap top-level route components to display a "Something went wrong" message to the user, just like server-side frameworks often handle crashes. You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
 
 
 ## New Behavior for Uncaught Errors {#new-behavior-for-uncaught-errors}

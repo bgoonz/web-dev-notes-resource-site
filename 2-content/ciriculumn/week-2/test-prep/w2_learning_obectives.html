@@ -105,17 +105,24 @@
 <ul>
 <li><code>let { oldkeyname: newkeyname } = object</code></li>
 </ul></li>
-<li>rule of thumb—only destructure values from objects that are two levels deep ```javascript let obj = { name: “Wilfred”, appearance: [“short”, “mustache”], favorites: { color: “mauve”, food: “spaghetti squash”, number: 3 } } // with variable names that match keys let { name, appearance } = obj; console.log(name); // “Wilfred” console.log(appearance); // [“short”, “mustache”]</li>
+<li>rule of thumb—only destructure values from objects that are two levels deep ```javascript let obj = { name:
+    "Wilfred", appearance: ["short", "mustache"], favorites: { color: "mauve", food: "spaghetti squash", number: 3 } }
+    // with variable names that match keys let { name, appearance } = obj; console.log(name); // "Wilfred"
+    console.log(appearance); // ["short", "mustache"]</li>
 </ul></li>
 </ul>
 <p>// with new variable names (aliasing) let {name: myName, appearance: myAppearance} = obj;</p>
-<p>console.log(myName); // “Wilfred” console.log(myAppearance); // [“short”, “mustache”]</p>
-<p>// in a function call let sayHello = function({name}) { console.log(“Hello,” + name); // “Hello Wilfred” }</p>
-<p>// nested objects + aliasing let { favorites: {color, food: vegetable} } = obj; console.log(color, vegetable); //=&gt; mauve spaghetti squash <code>- Write a function that accepts a array as an argument and returns an object representing the count of each character in the array</code>javascript // let elementCounts = function(array) { let obj = {}; array.forEach( function(el) { if (el in obj) obj[el] += 1; else obj[el] = 1; }) return obj; } console.log(elementCounts([“e”, “f”, “g”, “f”])); // =&gt; Object {e: 1, f: 2, g: 1} ```</p>
+<p>console.log(myName); // "Wilfred" console.log(myAppearance); // ["short", "mustache"]</p>
+<p>// in a function call let sayHello = function({name}) { console.log("Hello," + name); // "Hello Wilfred" }</p>
+<p>// nested objects + aliasing let { favorites: {color, food: vegetable} } = obj; console.log(color, vegetable);
+    //=&gt; mauve spaghetti squash <code>- Write a function that accepts a array as an argument and returns an object
+        representing the count of each character in the array</code>javascript // let elementCounts = function(array) {
+    let obj = {}; array.forEach( function(el) { if (el in obj) obj[el] += 1; else obj[el] = 1; }) return obj; }
+    console.log(elementCounts(["e", "f", "g", "f"])); // =&gt; Object {e: 1, f: 2, g: 1} ```</p>
 <h2 id="pair-programming-lesson-learning-objectives">Pair Programming Lesson Learning Objectives</h2>
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ul>
-<li>Differentiate between the “Driver” and “Navigator” roles in a pair programming session.
+<li>Differentiate between the "Driver" and "Navigator" roles in a pair programming session.
 <ul>
 <li>driver is typing, according to navigator’s directions</li>
 <li>navigator is planning what gets typed and watching for errors</li>
@@ -123,13 +130,13 @@
 <li>Describe at least three benefits of effective pair programming.
 <ul>
 <li>can be more efficient—not the programming itself, but the debugging</li>
-<li>less “lonely”—not just good emotionally, but unlikely to get bogged down or stuck</li>
+<li>less "lonely"—not just good emotionally, but unlikely to get bogged down or stuck</li>
 <li>pair programmers are good communicators—can be useful in any teamwork context, as well as in interviews</li>
 </ul></li>
-<li>Demonstrate empathetic communication and be able to explain the meaning of “You are not your code”.
+<li>Demonstrate empathetic communication and be able to explain the meaning of "You are not your code".
 <ul>
 <li>apply criticism to the code—specifically what’s happening, what’s not working, rather than to what the person did wrong</li>
-<li>“code-centric” focuses on outcomes and looks toward improvement, instead of assigning blame and enumerating negative consequences</li>
+<li>"code-centric" focuses on outcomes and looks toward improvement, instead of assigning blame and enumerating negative consequences</li>
 <li>emphasizes the team-based nature of success and failure</li>
 </ul></li>
 <li>Identify negative interactions during a pair programming session.</li>
@@ -169,7 +176,7 @@
 </ul>
 <h2 id="callbacks-lesson-learning-objectives">Callbacks Lesson Learning Objectives</h2>
 <ul>
-<li>Given multiple plausible reasons, identify why functions are called “First Class Objects” in JavaScript.
+<li>Given multiple plausible reasons, identify why functions are called "First Class Objects" in JavaScript.
 <ul>
 <li>they can be stored in variables, passed as arguments to other functions, and serve as return value for a function</li>
 <li>supports same basic operations as other types (strings, bools, numbers)</li>
@@ -257,9 +264,9 @@
 </ul></li>
 <li>Explain the difference between <code>const</code>, <code>let</code>, and <code>var</code> declarations
 <ul>
-<li><code>var</code> is function scoped—so if you declare it anywhere in a function, the declaration (but not assignment) is “hoisted”
+<li><code>var</code> is function scoped—so if you declare it anywhere in a function, the declaration (but not assignment) is "hoisted"
 <ul>
-<li>so it will exist in memory as “undefined” which is bad and unpredictable</li>
+<li>so it will exist in memory as "undefined" which is bad and unpredictable</li>
 </ul></li>
 <li><code>var</code> will also allow you to redeclare a variable, while <code>let</code> or <code>const</code> will raise a syntax error. you shouldn’t be able to do that!</li>
 <li><code>const</code> won’t let you reassign a variable, but if it points to a mutable object, you will still be able to change the value by mutating the object</li>
@@ -315,23 +322,23 @@
 <li>arrow functions are automatically bound to the context they were declared in</li>
 <li>unlike regular function which use the context they are invoked in (unless they have been bound using <code>Function#bind</code>)</li>
 <li>if you implement an arrow function as a method in an object the context it will be bound to is NOT the object itself, but the global context</li>
-<li>so you can’t use an arrow function to define a method directly ```javascript let obj = { name: “my object”, unboundFunc: function () { return this.name; // this function will be able to be called on different objects },</li>
+<li>so you can’t use an arrow function to define a method directly ```javascript let obj = { name: "my object", unboundFunc: function () { return this.name; // this function will be able to be called on different objects },</li>
 </ul>
 <p>boundToGlobal: () =&gt; { return this.name; // this function, no matter how you call it, will be called // on the global object, and it cannot be rebound // this is because it was defined using arrow syntax },</p>
 <p>makeFuncBoundToObj: function () { return () =&gt; { return this.name; } // this function will return a function that will be bound // to the object where we call the outer method // because the arrow syntax is nested inside one of this // function’s methods, it cannot be rebound },</p>
 <p>makeUnboundFunc: function () { return function () { return this.name; } //this function will return a function that will still be unbound },</p>
 <p>immediatelyInvokedFunc: function () { return this.name; }(), // this property will be set to the return value of this anonymous function, // which is invoked during the object definition; // basically, it’s a way to check the context inside of an object, at this moment</p>
-<p>innerObj: { name: “inner object”, innerArrowFunc: () =&gt; { return this.name; } // the context inside a nested object is not the parent, it’s still // the global object. entering an object definition doesn’t change the context },</p></li>
+<p>innerObj: { name: "inner object", innerArrowFunc: () =&gt; { return this.name; } // the context inside a nested object is not the parent, it’s still // the global object. entering an object definition doesn’t change the context },</p></li>
 </ul>
 <p>}</p>
-<p>let otherObj = { name: “my other object” }</p>
-<p>// call unboundFunc on obj, we get “my object” console.log(“unboundFunc:”, obj.unboundFunc()); // =&gt; “my object” // assign unboundFunc to a variable and call it let newFunc = obj.unboundFunc; // this newFunc will default to being called on global object console.log(“newFunc:”,newFunc()); // =&gt; undefined // but you could bind it directly to a different object if you wanted console.log(“newFunc:”, newFunc.bind(otherObj)()); // “my other object”</p>
-<p>// meanwhile, obj.boundToGlobal will only ever be called on global object console.log(“boundToGlobal:”, obj.boundToGlobal()); //=&gt; undefined let newBoundFunc = obj.boundToGlobal; console.log(“newBoundFunc:”, newBoundFunc()); // =&gt; undefined // even if you try to directly bind to another object, it won’t work! console.log(“newBoundFunc:”, newBoundFunc.bind(otherObj)()); // =&gt; undefined</p>
-<p>// let’s make a new function that will always be bound to the context // where we call our function maker let boundFunc = obj.makeFuncBoundToObj();// note that we’re invoking, not just assigning console.log(“boundFunc:”, boundFunc()); // =&gt; “my object” // we can’t rebind this function console.log(“boundFunc:”, boundFunc.bind(otherObj)()) // =&gt;“my object”</p>
-<p>// but if I call makeFuncBoundToObj on another context // the new bound function is stuck with that other context let boundToOther = obj.makeFuncBoundToObj.bind(otherObj)(); console.log(“boundToOther:”, boundToOther()); // =&gt; “my other object” console.log(“boundToOther:”, boundToOther.bind(obj)()) // “my other object”</p>
-<p>// the return value of my immediately invoked function // shows that the context inside of the object is the // global object, not the object itself // context only changes inside a function that is called // on an object console.log(“immediatelyInvokedFunc:”, obj.immediatelyInvokedFunc); // =&gt; undefined</p>
-<p>// even though we’re inside a nested object, the context is // still the same as it was outside the outer object // in this case, the global object console.log(“innerArrowFunc:”, obj.innerObj.innerArrowFunc()); // =&gt; undefined</p>
-<p>``` - Implement a closure and explain how the closure effects scope - a closure is “the combination of a function and the lexical environment within which that function was declared” - alternatively, “when an inner function uses or changes variables in an outer function” - closures have access to any variables within their own scope + scope of outer functions + global scope — the set of all these available variables is “lexical environemnt” - closure keeps reference to all variables <strong>even if the outer function has returned</strong> - each function has a private mutable state that cannot be accessed externally - the inner function will maintain a reference to the scope in which it was declared. so it has access to variables that were initialized in any outer scope—even if that scope - if a variable exists in the scope of what could have been accessed by a function (e.g. global scope, outer function, etc), does that variable wind up in the closure even if it never got accessed? - if you change the value of a variable (e.g. i++) you will change the value of that variable in the scope that it was declared in</p>
+<p>let otherObj = { name: "my other object" }</p>
+<p>// call unboundFunc on obj, we get "my object" console.log("unboundFunc:", obj.unboundFunc()); // =&gt; "my object" // assign unboundFunc to a variable and call it let newFunc = obj.unboundFunc; // this newFunc will default to being called on global object console.log("newFunc:",newFunc()); // =&gt; undefined // but you could bind it directly to a different object if you wanted console.log("newFunc:", newFunc.bind(otherObj)()); // "my other object"</p>
+<p>// meanwhile, obj.boundToGlobal will only ever be called on global object console.log("boundToGlobal:", obj.boundToGlobal()); //=&gt; undefined let newBoundFunc = obj.boundToGlobal; console.log("newBoundFunc:", newBoundFunc()); // =&gt; undefined // even if you try to directly bind to another object, it won’t work! console.log("newBoundFunc:", newBoundFunc.bind(otherObj)()); // =&gt; undefined</p>
+<p>// let’s make a new function that will always be bound to the context // where we call our function maker let boundFunc = obj.makeFuncBoundToObj();// note that we’re invoking, not just assigning console.log("boundFunc:", boundFunc()); // =&gt; "my object" // we can’t rebind this function console.log("boundFunc:", boundFunc.bind(otherObj)()) // =&gt;"my object"</p>
+<p>// but if I call makeFuncBoundToObj on another context // the new bound function is stuck with that other context let boundToOther = obj.makeFuncBoundToObj.bind(otherObj)(); console.log("boundToOther:", boundToOther()); // =&gt; "my other object" console.log("boundToOther:", boundToOther.bind(obj)()) // "my other object"</p>
+<p>// the return value of my immediately invoked function // shows that the context inside of the object is the // global object, not the object itself // context only changes inside a function that is called // on an object console.log("immediatelyInvokedFunc:", obj.immediatelyInvokedFunc); // =&gt; undefined</p>
+<p>// even though we’re inside a nested object, the context is // still the same as it was outside the outer object // in this case, the global object console.log("innerArrowFunc:", obj.innerObj.innerArrowFunc()); // =&gt; undefined</p>
+<p>``` - Implement a closure and explain how the closure effects scope - a closure is "the combination of a function and the lexical environment within which that function was declared" - alternatively, "when an inner function uses or changes variables in an outer function" - closures have access to any variables within their own scope + scope of outer functions + global scope — the set of all these available variables is "lexical environemnt" - closure keeps reference to all variables <strong>even if the outer function has returned</strong> - each function has a private mutable state that cannot be accessed externally - the inner function will maintain a reference to the scope in which it was declared. so it has access to variables that were initialized in any outer scope—even if that scope - if a variable exists in the scope of what could have been accessed by a function (e.g. global scope, outer function, etc), does that variable wind up in the closure even if it never got accessed? - if you change the value of a variable (e.g. i++) you will change the value of that variable in the scope that it was declared in</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">function</span> <span class="at">createCounter</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb11-2" title="2">   <span class="co">// this function starts a counter at 0, then returns a</span></a>
 <a class="sourceLine" id="cb11-3" title="3">   <span class="co">// new function that can access and change that counter</span></a>
@@ -395,13 +402,13 @@
 </ul></li>
 <li>Utilize the built in <code>Function#bind</code> on a callback to maintain the context of this
 <ul>
-<li>when we call bind on a function, we get an exotic function back—so the context will always be the same for that new function ```javascript let cat = { purr: function () { console.log(“meow”); }, purrMore: function () { this.purr(); }, };</li>
+<li>when we call bind on a function, we get an exotic function back—so the context will always be the same for that new function ```javascript let cat = { purr: function () { console.log("meow"); }, purrMore: function () { this.purr(); }, };</li>
 </ul></li>
 </ul>
 <p>let sayMeow = cat.purrMore; console.log(sayMeow()); // TypeError: this.purr is not a function</p>
 <p>// we can use the built in Function.bind to ensure our context, our <code>this</code>, // is the cat object let boundCat = sayMeow.bind(cat);</p>
-<p>boundCat(); // prints “meow” <code>- `bind` can also work with arguments, so you can have a version of a function with particular arguments and a particular context. the first arg will be the context aka the `this` you want it to use. the next arguments will be the functions arguments that you are binding       - if you just want to bind it to those arguments in particular, you can use `null` as the first argument, so the context won't be bound, just the arguments - Given a code snippet, identify what `this` refers to    - important to recognize the difference between scope and context       - scope works like a dictionary that has all the variables that are available within a given block, plus a pointer back the next outer scope (which itself has pointers to new scopes until you reach the global scope. so you can think about a whole given block's scope as a kind of linked list of dictionaries) (also, this is not to say that scope is actually implemented in this way, that is just the schema that i can use to understand it)       - context refers to the value of the `this` keyword    - the keyword `this` exists in every function and it evaluates to the object that is currently invoking that function    - so the context is fairly straightforward when we talk about methods being called on specific objects    - you could, however, call an object's method on something other than that object, and then this would refer to the context where/how it was called, e.g.</code>javascript let dog = { name: “Bowser”, changeName: function () { this.name = “Layla”; }, };</p>
+<p>boundCat(); // prints "meow" <code>- `bind` can also work with arguments, so you can have a version of a function with particular arguments and a particular context. the first arg will be the context aka the `this` you want it to use. the next arguments will be the functions arguments that you are binding       - if you just want to bind it to those arguments in particular, you can use `null` as the first argument, so the context won't be bound, just the arguments - Given a code snippet, identify what `this` refers to    - important to recognize the difference between scope and context       - scope works like a dictionary that has all the variables that are available within a given block, plus a pointer back the next outer scope (which itself has pointers to new scopes until you reach the global scope. so you can think about a whole given block's scope as a kind of linked list of dictionaries) (also, this is not to say that scope is actually implemented in this way, that is just the schema that i can use to understand it)       - context refers to the value of the `this` keyword    - the keyword `this` exists in every function and it evaluates to the object that is currently invoking that function    - so the context is fairly straightforward when we talk about methods being called on specific objects    - you could, however, call an object's method on something other than that object, and then this would refer to the context where/how it was called, e.g.</code>javascript let dog = { name: "Bowser", changeName: function () { this.name = "Layla"; }, };</p>
 <p>// note this is <strong>not invoked</strong> - we are assigning the function itself let change = dog.changeName; console.log(change()); // undefined</p>
 <p>// our dog still has the same name console.log(dog); // { name: ‘Bowser’, changeName: [Function: changeName] }</p>
-<p>// instead of changing the dog we changed the global name!!! console.log(this); // Object [global] {etc, etc, etc, name: ‘Layla’} <code>- CALLING SOMETHING IN THE WRONG CONTEXT CAN MESS YOU UP!       - could throw an error if it expects this to have some other method or whatever that doesn't exist       - you could also overwrite values or assign values to exist in a space where they should not exist    - if you call a function as a callback, it will set `this` to be the outer function itself, even if the function you were calling is a method that was called on a particular object</code>javascript let cat = { purr: function () { console.log(“meow”); }, purrMore: function () { this.purr(); }, };</p>
-<p>global.setTimeout(cat.purrMore, 5000); // 5 seconds later: TypeError: this.purr is not a function ``<code>- we can use strict mode with</code>“use strict”;<code>this will prevent you from accessing the global object with</code>this<code>in functions, so if you try to call</code>this` in the global context and change a value, you will get a type error, and the things you try to access will be undefined</p>
+<p>// instead of changing the dog we changed the global name!!! console.log(this); // Object [global] {etc, etc, etc, name: ‘Layla’} <code>- CALLING SOMETHING IN THE WRONG CONTEXT CAN MESS YOU UP!       - could throw an error if it expects this to have some other method or whatever that doesn't exist       - you could also overwrite values or assign values to exist in a space where they should not exist    - if you call a function as a callback, it will set `this` to be the outer function itself, even if the function you were calling is a method that was called on a particular object</code>javascript let cat = { purr: function () { console.log("meow"); }, purrMore: function () { this.purr(); }, };</p>
+<p>global.setTimeout(cat.purrMore, 5000); // 5 seconds later: TypeError: this.purr is not a function ``<code>- we can use strict mode with</code>"use strict";<code>this will prevent you from accessing the global object with</code>this<code>in functions, so if you try to call</code>this` in the global context and change a value, you will get a type error, and the things you try to access will be undefined</p>

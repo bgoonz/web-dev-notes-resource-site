@@ -1,4 +1,4 @@
-function arrFrom12N( n ) {
+function arrFrom12N ( n ) {
     return Array.from( Array( n ).keys() );
 }
 let numArrN = arrFrom12N( 100 );
@@ -7,7 +7,7 @@ console.log( 'numArrN: ', numArrN );
 
 // ********************************************************************************* ********************************************************************************* *********************************************************************************//
 
-function stringifyArr( numArr ) {
+function stringifyArr ( numArr ) {
     /*String: StringConstructor Allows manipulation and formatting of text strings and determination and location of substrings within strings.*/
     return numArr.map( String )
 }
@@ -19,7 +19,7 @@ console.log( 'numStrArr : ', numStrArr );
 
 let consoleTableArgObj = {};
 class Table {
-    constructor( col1, col2 ) {
+    constructor ( col1, col2 ) {
         this.col1 = col1;
         this.col2 = col2;
     }

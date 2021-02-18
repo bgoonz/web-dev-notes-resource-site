@@ -43,8 +43,8 @@ SELECT v, octet_length(v) FROM vv;
 What has really happened here is that the two unknown literals are resolved
 to <code class="type">text</code> by default, allowing the <code class="literal">||</code> operator
 to be resolved as <code class="type">text</code> concatenation.  Then the <code class="type">text</code>
-result of the operator is converted to <code class="type">bpchar</code> (<span class="quote">“<span class="quote">blank-padded
-char</span>”</span>, the internal name of the <code class="type">character</code> data type) to match the target
+result of the operator is converted to <code class="type">bpchar</code> (<span class="quote">"<span class="quote">blank-padded
+char</span>"</span>, the internal name of the <code class="type">character</code> data type) to match the target
 column type.  (Since the conversion from <code class="type">text</code> to
 <code class="type">bpchar</code> is binary-coercible, this conversion does
 not insert any real function call.)  Finally, the sizing function

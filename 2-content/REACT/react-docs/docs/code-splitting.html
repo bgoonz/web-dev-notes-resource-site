@@ -7,7 +7,7 @@
 </head>
 <body>;
 <h2 id="bundling">Bundling</h2>
-<p>Most React apps will have their files “bundled” using tools like <a href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/">Rollup</a> or <a href="http://browserify.org/">Browserify</a>. Bundling is the process of following imported files and merging them into a single file: a “bundle”. This bundle can then be included on a webpage to load an entire app at once.</p>
+<p>Most React apps will have their files "bundled" using tools like <a href="https://webpack.js.org/">Webpack</a>, <a href="https://rollupjs.org/">Rollup</a> or <a href="http://browserify.org/">Browserify</a>. Bundling is the process of following imported files and merging them into a single file: a "bundle". This bundle can then be included on a webpage to load an entire app at once.</p>
 <h4 id="example">Example</h4>
 <p><strong>App:</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// app.js</span></a>
@@ -38,13 +38,13 @@
 <p>Bundling is great, but as your app grows, your bundle will grow too. Especially if you are including large
     third-party libraries. You need to keep an eye on the code you are including in your bundle so that you don't
     accidentally make it so large that your app takes a long time to load.</p>
-<p>To avoid winding up with a large bundle, it's good to get ahead of the problem and start “splitting” your bundle.
+<p>To avoid winding up with a large bundle, it's good to get ahead of the problem and start "splitting" your bundle.
     Code-Splitting is a feature supported by bundlers like <a
         href="https://webpack.js.org/guides/code-splitting/">Webpack</a>, <a
         href="https://rollupjs.org/guide/en/#code-splitting">Rollup</a> and Browserify (via <a
         href="https://github.com/browserify/factor-bundle">factor-bundle</a>) which can create multiple bundles that can
     be dynamically loaded at runtime.</p>
-<p>Code-splitting your app can help you “lazy-load” just the things that are currently needed by the user, which can
+<p>Code-splitting your app can help you "lazy-load" just the things that are currently needed by the user, which can
     dramatically improve the performance of your app. While you haven't reduced the overall amount of code in your app,
     you've avoided loading code that the user may never need, and reduced the amount of code needed during the initial
     load.</p>

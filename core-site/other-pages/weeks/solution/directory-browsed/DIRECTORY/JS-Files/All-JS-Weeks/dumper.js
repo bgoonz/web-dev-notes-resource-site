@@ -211,7 +211,7 @@ function isPlainSafeFirst(c) {
   return isPrintable(c) && c !== 0xFEFF
     && !isWhitespace(c) // - s-white
     // - (c-indicator ::=
-    // “-” | “?” | “:” | “,” | “[” | “]” | “{” | “}”
+    // "-" | "?" | ":" | "," | "[" | "]" | "{" | "}"
     && c !== CHAR_MINUS
     && c !== CHAR_QUESTION
     && c !== CHAR_COLON
@@ -220,7 +220,7 @@ function isPlainSafeFirst(c) {
     && c !== CHAR_RIGHT_SQUARE_BRACKET
     && c !== CHAR_LEFT_CURLY_BRACKET
     && c !== CHAR_RIGHT_CURLY_BRACKET
-    // | “#” | “&” | “*” | “!” | “|” | “>” | “'” | “"”
+    // | "#" | "&" | "*" | "!" | "|" | ">" | "'" | """
     && c !== CHAR_SHARP
     && c !== CHAR_AMPERSAND
     && c !== CHAR_ASTERISK
@@ -229,7 +229,7 @@ function isPlainSafeFirst(c) {
     && c !== CHAR_GREATER_THAN
     && c !== CHAR_SINGLE_QUOTE
     && c !== CHAR_DOUBLE_QUOTE
-    // | “%” | “@” | “`”)
+    // | "%" | "@" | "`")
     && c !== CHAR_PERCENT
     && c !== CHAR_COMMERCIAL_AT
     && c !== CHAR_GRAVE_ACCENT;

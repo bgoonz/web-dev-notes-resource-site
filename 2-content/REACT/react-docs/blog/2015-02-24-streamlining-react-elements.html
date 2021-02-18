@@ -67,14 +67,14 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">var</span> element1 <span class="op">=</span> <span class="op">&lt;</span>Foo /<span class="op">&gt;;</span> <span class="co">// extra prop is optional</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">var</span> element2 <span class="op">=</span> <span class="va">React</span>.<span class="va">addons</span>.<span class="at">cloneWithProps</span>(element1<span class="op">,</span> <span class="op">{</span> <span class="dt">extra</span><span class="op">:</span> <span class="st">&#39;prop&#39;</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <h2 id="owner">Owner</h2>
-<p>In React each child has both a “parent” and an “owner”. The owner is the component that created a ReactElement. I.e. the render method which contains the JSX or createElement callsite.</p>
+<p>In React each child has both a "parent" and an "owner". The owner is the component that created a ReactElement. I.e. the render method which contains the JSX or createElement callsite.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">class</span> Foo <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-3" title="3">    <span class="cf">return</span> <span class="op">&lt;</span>div<span class="op">&gt;&lt;</span>span /<span class="op">&gt;</span>&lt;/div<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb7-4" title="4">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb7-5" title="5"><span class="op">}</span></a></code></pre></div>
 <p>In this example, the owner of the <code>span</code> is <code>Foo</code> but the parent is the <code>div</code>.</p>
-<p>There is also an undocumented feature called “context” that also relies on the concept of an “owner” to pass hidden props down the tree.</p>
+<p>There is also an undocumented feature called "context" that also relies on the concept of an "owner" to pass hidden props down the tree.</p>
 <h3 id="problem-the-semantics-are-opaque-and-confusing">Problem: The Semantics are Opaque and Confusing</h3>
 <p>The problem is that these are hidden artifacts attached to the ReactElement. In fact, you probably didn't even know
     about it. It silently changes semantics. Take this for example:</p>
@@ -101,9 +101,9 @@
 <h3 id="problem-it-couples-jsx-to-react">Problem: It Couples JSX to React</h3>
 <p>Have you wondered why JSX depends on React? Couldn't the transpiler have that built-in to its runtime? The reason you
     need to have <code>React.createElement</code> in scope is because we depend on internal state of React to capture
-    the current “owner”. Without this, you wouldn't need to have React in scope.</p>
+    the current "owner". Without this, you wouldn't need to have React in scope.</p>
 <h3 id="solution-make-context-parent-based-instead-of-owner-based">Solution: Make Context Parent-Based Instead of Owner-Based</h3>
-<p>The first thing we're doing is warning you if you're using the “owner” feature in a way that relies on it propagating
+<p>The first thing we're doing is warning you if you're using the "owner" feature in a way that relies on it propagating
     through owners. Instead, we're planning on propagating it through parents to its children. In almost all cases, this
     shouldn't matter. In fact, parent-based contexts is simply a superset.</p>
 <h3 id="solution-remove-the-semantic-implications-of-owner">Solution: Remove the Semantic Implications of Owner</h3>
@@ -111,7 +111,7 @@
     precaution, we'll warn you if it turns out that the owner is important to determine state. In almost every case this
     shouldn't matter. Unless you're doing some weird optimizations, you shouldn't see this warning.</p>
 <h3 id="pending-change-the-refs-semantics">Pending: Change the refs Semantics</h3>
-<p>Refs are still based on “owner”. We haven't fully solved this special case just yet.</p>
+<p>Refs are still based on "owner". We haven't fully solved this special case just yet.</p>
 <p>In 0.13 we introduced a new callback-refs API that doesn't suffer from these problems but we'll keep on a nice
     declarative alternative to the current semantics for refs. As always, we won't deprecate something until we're sure
     that you'll have a nice upgrade path.</p>

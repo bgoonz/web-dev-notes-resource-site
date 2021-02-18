@@ -134,7 +134,11 @@
 <h4 id="using-import">Using <code>import</code></h4>
 <p>As such, it’s not possible to use <code>import</code> in Node directly. Now, as stated above, we can circumvent this by creating a simple <code>package.json</code> file to set an environment that will allow us to use <code>import</code>.</p>
 <h5 id="creating-a-package.json-file">creating a <code>package.json</code> file</h5>
-<p>Without going to much into the details of what is a <code>package.json</code> file and why we use it, let’s keep things simple and say that this file is like a blueprint of what your app will need to run properly. It can contain many things, depending on the app specificity. When you want to “activate” the blueprint, you simply run <code>npm install</code>, and then you should see a file called <code>package-lock.json</code> appear. This file contains details on the installation you have just made, and you can disregard it for now.</p>
+<p>Without going to much into the details of what is a <code>package.json</code> file and why we use it, let’s keep
+    things simple and say that this file is like a blueprint of what your app will need to run properly. It can contain
+    many things, depending on the app specificity. When you want to “activate" the blueprint, you simply run <code>npm
+        install</code>, and then you should see a file called <code>package-lock.json</code> appear. This file contains
+    details on the installation you have just made, and you can disregard it for now.</p>
 <p>Don’t worry if this seems a bit confusing as we just need to use this in order to set the environment and use <code>import</code> with a <code>.js</code> file.</p>
 <p>First, create a file named <code>my-module-for-import.js</code> and enter the following code:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="im">export</span> <span class="kw">const</span> firstMessage <span class="op">=</span> <span class="st">&quot;This is a the first message!&quot;</span><span class="op">;</span></a>
@@ -184,7 +188,10 @@
 <li><p><a href="https://medium.com/@pencilflip/the-three-differences-between-require-and-import-in-node-js-f54f78f5936f">The three differences between require and import in Node.js | by Matt Lim | Medium</a></p></li>
 <li><p><a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/">What is require? | Node.js</a></p></li>
 <li><p><a href="https://thecodebarbarian.com/nodejs-12-imports">What’s New in Node.js 12: ESM Imports | www.thecodebarbarian.com</a></p></li>
-<li><p><a href="https://stackoverflow.com/questions/46677752/the-difference-between-requirex-and-import-x">node.js - The difference between “require(x)” and “import x” - Stack Overflow</a></p></li>
+<li>
+    <p><a href="https://stackoverflow.com/questions/46677752/the-difference-between-requirex-and-import-x">node.js - The
+            difference between “require(x)" and “import x" - Stack Overflow</a></p>
+</li>
 <li><p><a href="https://www.sitepoint.com/understanding-es6-modules/">Understanding ES6 Modules</a></p></li>
 <li><p><a href="https://masteringjs.io/tutorials/node/import-vs-require">Import vs Require in Node.js - Mastering JS</a></p></li>
 </ul>

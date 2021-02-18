@@ -17,7 +17,7 @@
     constant.  The collation of a more complex expression is derived
     from the collations of its inputs, as described below.
    </p><p>
-    The collation of an expression can be the <span class="quote">“<span class="quote">default</span>”</span>
+    The collation of an expression can be the <span class="quote">"<span class="quote">default</span>"</span>
     collation, which means the locale settings defined for the
     database.  It is also possible for an expression's collation to be
     indeterminate.  In such cases, ordering operations and other
@@ -165,7 +165,7 @@ SELECT * FROM test1 ORDER BY a || b COLLATE "fr_FR";
    </p><p>
     A collation object provided by <code class="literal">icu</code> maps to a named
     collator provided by the ICU library.  ICU does not support
-    separate <span class="quote">“<span class="quote">collate</span>”</span> and <span class="quote">“<span class="quote">ctype</span>”</span> settings, so
+    separate <span class="quote">"<span class="quote">collate</span>"</span> and <span class="quote">"<span class="quote">ctype</span>"</span> settings, so
     they are always the same.  Also, ICU collations are independent of the
     encoding, so there is always only one ICU collation of a given name in
     a database.
@@ -176,8 +176,8 @@ SELECT * FROM test1 ORDER BY a || b COLLATE "fr_FR";
     The <code class="literal">default</code> collation selects the <code class="symbol">LC_COLLATE</code>
     and <code class="symbol">LC_CTYPE</code> values specified at database creation time.
     The <code class="literal">C</code> and <code class="literal">POSIX</code> collations both specify
-    <span class="quote">“<span class="quote">traditional C</span>”</span> behavior, in which only the ASCII letters
-    <span class="quote">“<span class="quote"><code class="literal">A</code></span>”</span> through <span class="quote">“<span class="quote"><code class="literal">Z</code></span>”</span>
+    <span class="quote">"<span class="quote">traditional C</span>"</span> behavior, in which only the ASCII letters
+    <span class="quote">"<span class="quote"><code class="literal">A</code></span>"</span> through <span class="quote">"<span class="quote"><code class="literal">Z</code></span>"</span>
     are treated as letters, and sorting is done strictly by character
     code byte values.
    </p><p>
@@ -248,7 +248,7 @@ SELECT a COLLATE "C" &lt; b COLLATE "POSIX" FROM test1;
     <code class="command">initdb</code> uses the ICU APIs to extract a set of distinct
     locales to populate the initial set of collations.  Collations provided by
     ICU are created in the SQL environment with names in BCP 47 language tag
-    format, with a <span class="quote">“<span class="quote">private use</span>”</span>
+    format, with a <span class="quote">"<span class="quote">private use</span>"</span>
     extension <code class="literal">-x-icu</code> appended, to distinguish them from
     libc locales.
    </p><p>
@@ -258,16 +258,16 @@ SELECT a COLLATE "C" &lt; b COLLATE "POSIX" FROM test1;
         (There are also, say, <code class="literal">de-DE-x-icu</code>
         or <code class="literal">de-CH-x-icu</code>, but as of this writing, they are
         equivalent to <code class="literal">de-x-icu</code>.)
-       </p></dd><dt><span class="term"><code class="literal">und-x-icu</code> (for <span class="quote">“<span class="quote">undefined</span>”</span>)</span></dt><dd><p>
-        ICU <span class="quote">“<span class="quote">root</span>”</span> collation.  Use this to get a reasonable
+       </p></dd><dt><span class="term"><code class="literal">und-x-icu</code> (for <span class="quote">"<span class="quote">undefined</span>"</span>)</span></dt><dd><p>
+        ICU <span class="quote">"<span class="quote">root</span>"</span> collation.  Use this to get a reasonable
         language-agnostic sort order.
        </p></dd></dl></div><p>
    </p><p>
     Some (less frequently used) encodings are not supported by ICU.  When the
     database encoding is one of these, ICU collation entries
     in <code class="literal">pg_collation</code> are ignored.  Attempting to use one
-    will draw an error along the lines of <span class="quote">“<span class="quote">collation "de-x-icu" for
-    encoding "WIN874" does not exist</span>”</span>.
+    will draw an error along the lines of <span class="quote">"<span class="quote">collation "de-x-icu" for
+    encoding "WIN874" does not exist</span>"</span>.
    </p></div></div><div class="sect3" id="COLLATION-CREATE"><div class="titlepage"><div><div><h4 class="title">23.2.2.3. Creating New Collation Objects</h4></div></div></div><p>
     If the standard and predefined collations are not sufficient, users can
     create their own collation objects using the SQL
@@ -306,8 +306,8 @@ CREATE COLLATION german (provider = libc, locale = 'de_DE');
     Here are some examples:
 
     </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">CREATE COLLATION "de-u-co-phonebk-x-icu" (provider = icu, locale = 'de-u-co-phonebk');</code><br /></span><span class="term"><code class="literal">CREATE COLLATION "de-u-co-phonebk-x-icu" (provider = icu, locale = 'de@collation=phonebook');</code></span></dt><dd><p>German collation with phone book collation type</p><p>
-        The first example selects the ICU locale using a <span class="quote">“<span class="quote">language
-        tag</span>”</span> per BCP 47.  The second example uses the traditional
+        The first example selects the ICU locale using a <span class="quote">"<span class="quote">language
+        tag</span>"</span> per BCP 47.  The second example uses the traditional
         ICU-specific locale syntax.  The first style is preferred going
         forward, but it is not supported by older ICU versions.
        </p><p>
@@ -345,8 +345,8 @@ CREATE COLLATION german (provider = libc, locale = 'de_DE');
     definition.  The examples using the <code class="literal">k*</code> subtags require
     at least ICU version 54.
    </p><p>
-    Note that while this system allows creating collations that <span class="quote">“<span class="quote">ignore
-    case</span>”</span> or <span class="quote">“<span class="quote">ignore accents</span>”</span> or similar (using the
+    Note that while this system allows creating collations that <span class="quote">"<span class="quote">ignore
+    case</span>"</span> or <span class="quote">"<span class="quote">ignore accents</span>"</span> or similar (using the
     <code class="literal">ks</code> key), in order for such collations to act in a
     truly case- or accent-insensitive manner, they also need to be declared as not
     <em class="firstterm">deterministic</em> in <code class="command">CREATE COLLATION</code>;
@@ -403,7 +403,7 @@ CREATE COLLATION ignore_accents (provider = icu, locale = 'und-u-ks-level1-kc-tr
     </p><p>
      All standard and predefined collations are deterministic, all
      user-defined collations are deterministic by default.  While
-     nondeterministic collations give a more <span class="quote">“<span class="quote">correct</span>”</span> behavior,
+     nondeterministic collations give a more <span class="quote">"<span class="quote">correct</span>"</span> behavior,
      especially when considering the full power of Unicode and its many
      special cases, they also have some drawbacks.  Foremost, their use leads
      to a performance penalty.  Also, certain operations are not possible with

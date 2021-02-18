@@ -131,7 +131,7 @@ postgres$ <strong class="userinput"><code>initdb -D /usr/local/pgsql/data</code>
    different operating system, or an operating system upgrade.
   </p><div class="sect2" id="CREATING-CLUSTER-MOUNT-POINTS"><div class="titlepage"><div><div><h3 class="title">18.2.1. Use of Secondary File Systems</h3></div></div></div><a id="id-1.6.5.4.16.2" class="indexterm"></a><p>
     Many installations create their database clusters on file systems
-    (volumes) other than the machine's <span class="quote">“<span class="quote">root</span>”</span> volume.  If you
+    (volumes) other than the machine's <span class="quote">"<span class="quote">root</span>"</span> volume.  If you
     choose to do this, it is not advisable to try to use the secondary
     volume's topmost directory (mount point) as the data directory.
     Best practice is to create a directory within the mount-point
@@ -160,7 +160,7 @@ postgres$ <strong class="userinput"><code>initdb -D /usr/local/pgsql/data</code>
      The only firm requirement for using <acronym class="acronym">NFS</acronym> with
      <span class="productname">PostgreSQL</span> is that the file system is mounted
      using the <code class="literal">hard</code> option.  With the
-     <code class="literal">hard</code> option, processes can <span class="quote">“<span class="quote">hang</span>”</span>
+     <code class="literal">hard</code> option, processes can <span class="quote">"<span class="quote">hang</span>"</span>
      indefinitely if there are network problems, so this configuration will
      require a careful monitoring setup.  The <code class="literal">soft</code> option
      will interrupt system calls in case of network problems, but

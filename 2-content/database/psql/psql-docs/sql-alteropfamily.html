@@ -28,7 +28,7 @@ ALTER OPERATOR FAMILY <em class="replaceable"><code>name</code></em> USING <em c
   </p><p>
    When operators and support functions are added to a family with
    <code class="command">ALTER OPERATOR FAMILY</code>, they are not part of any
-   specific operator class within the family, but are just <span class="quote">“<span class="quote">loose</span>”</span>
+   specific operator class within the family, but are just <span class="quote">"<span class="quote">loose</span>"</span>
    within the family.  This indicates that these operators and functions
    are compatible with the family's semantics, but are not required for
    correct functioning of any specific index.  (Operators and functions
@@ -109,7 +109,7 @@ ALTER OPERATOR FAMILY <em class="replaceable"><code>name</code></em> USING <em c
    The <code class="literal">OPERATOR</code> and <code class="literal">FUNCTION</code>
    clauses can appear in any order.
   </p></div><div class="refsect1" id="id-1.9.3.22.7"><h2>Notes</h2><p>
-   Notice that the <code class="literal">DROP</code> syntax only specifies the <span class="quote">“<span class="quote">slot</span>”</span>
+   Notice that the <code class="literal">DROP</code> syntax only specifies the <span class="quote">"<span class="quote">slot</span>"</span>
    in the operator family, by strategy or support number and input data
    type(s).  The name of the operator or function occupying the slot is not
    mentioned.  Also, for <code class="literal">DROP FUNCTION</code> the type(s) to specify
@@ -129,7 +129,7 @@ ALTER OPERATOR FAMILY <em class="replaceable"><code>name</code></em> USING <em c
   </p><p>
    Before <span class="productname">PostgreSQL</span> 8.4, the <code class="literal">OPERATOR</code>
    clause could include a <code class="literal">RECHECK</code> option.  This is no longer
-   supported because whether an index operator is <span class="quote">“<span class="quote">lossy</span>”</span> is now
+   supported because whether an index operator is <span class="quote">"<span class="quote">lossy</span>"</span> is now
    determined on-the-fly at run time.  This allows efficient handling of
    cases where an operator might or might not be lossy.
   </p></div><div class="refsect1" id="id-1.9.3.22.8"><h2>Examples</h2><p>

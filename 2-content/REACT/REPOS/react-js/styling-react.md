@@ -227,7 +227,7 @@ To Differentiate we will add background color simple padding and dividing **pare
       	- > ./src/App.js
       ```
 
-- CamelCase is supported in React for CSS styles. - Using **class** instead of **className** gives warning. - If any inline style property is used as **two words** like **background-color**, you will encounter an error. This is because these styles are not in a .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse dashes. Also note the double curly-braces. The outer set of braces means “now instead of React JSX, what's in these braces will be pure JavaScript.” `style={}`. Then inside is a JS object `{backgroundColor: “red”}`.
+- CamelCase is supported in React for CSS styles. - Using **class** instead of **className** gives warning. - If any inline style property is used as **two words** like **background-color**, you will encounter an error. This is because these styles are not in a .css file. They are in JSX (Javascript extension for React), so it is actually a JS object; and JS cannot parse dashes. Also note the double curly-braces. The outer set of braces means "now instead of React JSX, what's in these braces will be pure JavaScript." `style={}`. Then inside is a JS object `{backgroundColor: "red"}`.
 
       	- > **Incorrect Way** - ``` <button style={{background-color:"red" }}> ```
       	- > **Correct Way** -   ``` <button style={{backgroundColor:"red"}} > ```

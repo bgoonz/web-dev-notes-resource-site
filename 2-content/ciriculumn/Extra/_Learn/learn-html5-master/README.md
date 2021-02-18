@@ -468,7 +468,7 @@ The coolest thing about the <button> tag is that you can put useful HTML element
 "Buttons created with the  **BUTTON** element function just like buttons created with the **INPUT** element,
 but they offer richer rendering possibilities: the **BUTTON** tag may have content.
 For example:
-a  **BUTTON** element that contains an image functions like and may resemble an **INPUT** element whose type is set to “image”,
+a  **BUTTON** element that contains an image functions like and may resemble an **INPUT** element whose type is set to “image",
 but the  **BUTTON** element type allows content." W3
 ```html
 <div class="buttons">
@@ -550,4 +550,3 @@ Replace the default modifier classes with the *.btn-outline-* ones to remove all
 ###  Great resources to learn HTML5
 
   https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-  

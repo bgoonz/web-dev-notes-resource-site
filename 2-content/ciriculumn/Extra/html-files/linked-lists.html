@@ -32,7 +32,7 @@
 <li>Linked lists in different versions of JavaScript.</li>
 </ul>
 <h3 id="lesson">Lesson</h3>
-<p>Create a file named “node.js” and create a Node class like the one below but give each Node a ‘text’ attribute.</p>
+<p>Create a file named “node.js" and create a Node class like the one below but give each Node a ‘text’ attribute.</p>
 <p><code> // Declare a Node() function that we will use to instantiate new Node objects. function Node(data) { this.data = data; this.next = null; }</p>
 <p>// Declare a SinglyLinkedList() function that we will use as a basis for our singly-linked list. function SinglyLinkedList() { this._length = 0; this.head = null; }</p>
 <p>// Use JavaScript prototyping to give the SinglyLinkedList class new public methods. SinglyLinkedList.prototype.add = function(value) { let node = new Node(value), currentNode = this.head;</p>
@@ -120,9 +120,10 @@ return deletedNode;</code></pre>
 <li>How to remove Nodes</li>
 </ul>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
-<p>While traversing a singly-linked list, it is imperative that you stop BEFORE the actual node that you want to remove, as there is no going backwards to the “previous” node.</p>
+<p>While traversing a singly-linked list, it is imperative that you stop BEFORE the actual node that you want to remove,
+    as there is no going backwards to the “previous" node.</p>
 <p>Adding/removing items is usually faster than more complex data structures.</p>
-<p>Searching/iteration can be slower/cumbersome since every node only references the “next” node in the list.</p>
+<p>Searching/iteration can be slower/cumbersome since every node only references the “next" node in the list.</p>
 <p>The DOM is a kind of Linked List. Our HTML elements are contained within parent elements and there is a last and first element to every HTML document.</p>
 <p>Other (tradeoffs when using linked lists)[https://en.wikipedia.org/wiki/Linked_list#Tradeoffs] as detailed by Wikipedia.</p>
 <h3 id="guided-practice">Guided Practice</h3>
@@ -131,7 +132,7 @@ return deletedNode;</code></pre>
 <p>Create a method to add a new node after the node with the text attribute matching the given string.</p>
 <h3 id="challenge">Challenge</h3>
 <p>See <a href="../testing-and-tdd/testing-and-tdd.md">Testing and TDD</a> for a refresher on how to use Mocha and Chai to write tests.</p>
-<p>Create a file called “LinkedList_test.js” and write tests for each of your methods using Mocha and Chai be sure to include: <code> const LinkedList = require(‘./linkedlist.js’); </code></p>
+<p>Create a file called “LinkedList_test.js" and write tests for each of your methods using Mocha and Chai be sure to include: <code> const LinkedList = require(‘./linkedlist.js’); </code></p>
 <h3 id="check-for-understanding">Check for Understanding</h3>
 <p>Form small groups in the cohort and discuss:</p>
 <ul>

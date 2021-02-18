@@ -84,8 +84,8 @@ FROM empsalary;
     <code class="function">rank</code> needs no explicit parameter, because its behavior
     is entirely determined by the <code class="literal">OVER</code> clause.
    </p><p>
-    The rows considered by a window function are those of the <span class="quote">“<span class="quote">virtual
-    table</span>”</span> produced by the query's <code class="literal">FROM</code> clause as filtered by its
+    The rows considered by a window function are those of the <span class="quote">"<span class="quote">virtual
+    table</span>"</span> produced by the query's <code class="literal">FROM</code> clause as filtered by its
     <code class="literal">WHERE</code>, <code class="literal">GROUP BY</code>, and <code class="literal">HAVING</code> clauses
     if any.  For example, a row removed because it does not meet the
     <code class="literal">WHERE</code> condition is not seen by any window function.

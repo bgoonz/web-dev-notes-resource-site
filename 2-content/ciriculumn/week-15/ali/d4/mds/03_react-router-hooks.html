@@ -232,7 +232,7 @@
 <li><code>/REPORT</code> or <code>/REPORT/SOMETHING/ADVANCED</code> or any other variation starting with REPORT in all caps will redirect to the same url in lowercase</li>
 <li><code>/report</code> or <code>/report/advanced</code> will show a few buttons</li>
 <li><code>/report/all</code> will show a different title than <code>/report/something-else</code> (with or without the next option)</li>
-<li>any url ending in <code>/advanced</code> will show “Advanced Controls”</li>
+<li>any url ending in <code>/advanced</code> will show “Advanced Controls"</li>
 </ul>
 <h2 id="what-youve-learned">What you’ve learned</h2>
 <p>The <code>react-router-dom</code> package comes with hooks you can use to simplify the code in your <strong>React</strong> applications. For example, utilizing <code>const { id } = useParams()</code> within a component displayed in the path <code>/user/:id</code> give you access to the value that replaces the <code>:id</code> parameter. Navigating can be accomplished with <code>const history = useHistory()</code> followed by <code>history.push('/a/new/path')</code>, and you can even include a <code>state</code> object as a second parameter. Additionally, <code>useLocation</code> can help you connect to tracking services, and <code>useRouteMatch</code> might come in handy once in while for pattern matching on the path itself. In short, the handling of RESTful paths in React is enhanced when you embrace the hooks available in React Router.</p>

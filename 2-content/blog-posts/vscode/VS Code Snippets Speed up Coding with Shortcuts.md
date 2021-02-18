@@ -26,7 +26,7 @@ Finding VS Code Snippets
 
 Before you can begin building your own snippets (which you will), it’s important to learn how to find the built-in snippets available to you.
 
-You can find all snippets in the menu interface. The menu interface allows you to review and to use snippets. To access the menu, you can either press _F1 or Ctrl-Shift-P_, type “snippet” and press _Enter_. You will see a menu pop up similar to what you see below.
+You can find all snippets in the menu interface. The menu interface allows you to review and to use snippets. To access the menu, you can either press _F1 or Ctrl-Shift-P_, type “snippet" and press _Enter_. You will see a menu pop up similar to what you see below.
 
 ![VS Code snippet list](https://adamtheautomator.com/wp-content/uploads/2020/06/what-you-see-below..png)
 
@@ -161,7 +161,7 @@ The body contains the code that will be expanded when the snippet is called. Thi
 
 *   Each line needs to be in double-quotes
 *   Each line needs to end with a comma
-*   All the lines need to in square brackets (“\[” and “\]”)
+*   All the lines need to in square brackets (“\[" and “\]")
 
 You can see an example of what the example snippet body looks like below.
 

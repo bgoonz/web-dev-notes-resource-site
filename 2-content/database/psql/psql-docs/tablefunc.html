@@ -10,18 +10,18 @@
   </p><div class="table" id="TABLEFUNC-FUNCTIONS"><p class="title"><strong>Table F.30. <code class="filename">tablefunc</code> Functions</strong></p><div class="table-contents"><table class="table" summary="tablefunc Functions" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Function</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code class="function">normal_rand(int numvals, float8 mean, float8 stddev)</code></td><td><code class="type">setof float8</code></td><td>
        Produces a set of normally distributed random values
       </td></tr><tr><td><code class="function">crosstab(text sql)</code></td><td><code class="type">setof record</code></td><td>
-       Produces a <span class="quote">“<span class="quote">pivot table</span>”</span> containing
+       Produces a <span class="quote">"<span class="quote">pivot table</span>"</span> containing
        row names plus <em class="replaceable"><code>N</code></em> value columns, where
        <em class="replaceable"><code>N</code></em> is determined by the row type specified in the calling
        query
       </td></tr><tr><td><code class="function">crosstab<em class="replaceable"><code>N</code></em>(text sql)</code></td><td><code class="type">setof table_crosstab_<em class="replaceable"><code>N</code></em></code></td><td>
-       Produces a <span class="quote">“<span class="quote">pivot table</span>”</span> containing
+       Produces a <span class="quote">"<span class="quote">pivot table</span>"</span> containing
        row names plus <em class="replaceable"><code>N</code></em> value columns.
        <code class="function">crosstab2</code>, <code class="function">crosstab3</code>, and
        <code class="function">crosstab4</code> are predefined, but you can create additional
        <code class="function">crosstab<em class="replaceable"><code>N</code></em></code> functions as described below
       </td></tr><tr><td><code class="function">crosstab(text source_sql, text category_sql)</code></td><td><code class="type">setof record</code></td><td>
-       Produces a <span class="quote">“<span class="quote">pivot table</span>”</span>
+       Produces a <span class="quote">"<span class="quote">pivot table</span>"</span>
        with the value columns specified by a second query
       </td></tr><tr><td><code class="function">crosstab(text sql, int N)</code></td><td><code class="type">setof record</code></td><td>
        <p>Obsolete version of <code class="function">crosstab(text)</code>.
@@ -70,7 +70,7 @@ test=# SELECT * FROM normal_rand(1000, 5, 3);
 crosstab(text sql)
 crosstab(text sql, int N)
 </pre><p>
-    The <code class="function">crosstab</code> function is used to produce <span class="quote">“<span class="quote">pivot</span>”</span>
+    The <code class="function">crosstab</code> function is used to produce <span class="quote">"<span class="quote">pivot</span>"</span>
     displays, wherein data is listed across the page rather than down.
     For example, we might have data like
 </p><pre class="programlisting">
@@ -291,13 +291,13 @@ crosstab(text source_sql, text category_sql)
     <code class="structfield">row_name</code> column, one
     <code class="structfield">category</code> column, and one
     <code class="structfield">value</code> column. It may also have one or more
-    <span class="quote">“<span class="quote">extra</span>”</span> columns.
+    <span class="quote">"<span class="quote">extra</span>"</span> columns.
     The <code class="structfield">row_name</code> column must be first. The
     <code class="structfield">category</code> and <code class="structfield">value</code>
     columns must be the last two columns, in that order.  Any columns between
     <code class="structfield">row_name</code> and
-    <code class="structfield">category</code> are treated as <span class="quote">“<span class="quote">extra</span>”</span>.
-    The <span class="quote">“<span class="quote">extra</span>”</span> columns are expected to be the same for all rows
+    <code class="structfield">category</code> are treated as <span class="quote">"<span class="quote">extra</span>"</span>.
+    The <span class="quote">"<span class="quote">extra</span>"</span> columns are expected to be the same for all rows
     with the same <code class="structfield">row_name</code> value.
    </p><p>
     For example, <em class="parameter"><code>source_sql</code></em> might produce a set
@@ -363,7 +363,7 @@ row_name   extra   cat1   cat2   cat3   cat4
     The <code class="function">crosstab</code> function produces one output row for each
     consecutive group of input rows with the same
     <code class="structfield">row_name</code> value.  The output
-    <code class="structfield">row_name</code> column, plus any <span class="quote">“<span class="quote">extra</span>”</span>
+    <code class="structfield">row_name</code> column, plus any <span class="quote">"<span class="quote">extra</span>"</span>
     columns, are copied from the first row of the group.  The output
     <code class="structfield">value</code> columns are filled with the
     <code class="structfield">value</code> fields from rows having matching
@@ -486,7 +486,7 @@ SELECT * FROM connectby('connectby_tree', 'keyid', 'parent_keyid', 'pos', 'row2'
      parameter was given, the last output column is a serial number, and must
      be of type <code class="type">integer</code>.
     </p><p>
-     The <span class="quote">“<span class="quote">branch</span>”</span> output column shows the path of keys taken to
+     The <span class="quote">"<span class="quote">branch</span>"</span> output column shows the path of keys taken to
      reach the current row.  The keys are separated by the specified
      <em class="parameter"><code>branch_delim</code></em> string.  If no branch display is
      wanted, omit both the <em class="parameter"><code>branch_delim</code></em> parameter

@@ -70,15 +70,15 @@
 <p>A user should be able to:</p>
 <ul>
 <li>Add items (via text input field)</li>
-<li>Press a button ‘All done' which will clear all todo items, and a message on the top will say ‘Good job!'</li>
-<li>Press a button ‘Clear all' which will clear all todo items</li>
-<li>When there are more than 5 items on the list, there should be a status message on the top that says ‘Try to complete
+<li>Press a button 'All done' which will clear all todo items, and a message on the top will say 'Good job!'</li>
+<li>Press a button 'Clear all' which will clear all todo items</li>
+<li>When there are more than 5 items on the list, there should be a status message on the top that says 'Try to complete
     current tasks before adding new ones!' This will walk through one possible approach to solving this using React
     hooks. Note that there is no one right answer or one right approach!</li>
 </ul>
 <p>Please fork <a href="https://codesandbox.io/s/techtonicatodotemplate-conbd">this template</a> and follow along with this tutorial.</p>
 <ol start="0" type="1">
-<li><strong>What should the component look like?</strong> We can start with a ‘sketch' of what our component might look
+<li><strong>What should the component look like?</strong> We can start with a 'sketch' of what our component might look
     like. This does not need UI or styling. We start with an outline so that we can think about what information and
     functionality this component will need.</li>
 </ol>
@@ -112,8 +112,8 @@
 <ol start="2" type="1">
 <li><strong>What information do we need? (aka what states do we need?)</strong></li>
 </ol>
-<p>We want to store a list of todos and a status message. We need to store the ‘new item' value that the user is typing
-    into the ‘Add todo' input field</p>
+<p>We want to store a list of todos and a status message. We need to store the 'new item' value that the user is typing
+    into the 'Add todo' input field</p>
 <p>At the top of the component we can use <code>useState</code> to do so:</p>
 <pre><code>const TodoApp = () =&gt; {
   const [items, setItems] = useState([])
@@ -133,11 +133,11 @@
 </ul>
 <p><em>Clearing Todos</em></p>
 <ul>
-<li>When a user presses ‘all done', <code>items</code> should be reset (set to <code>[]</code>), and <code>status</code>
+<li>When a user presses 'all done', <code>items</code> should be reset (set to <code>[]</code>), and <code>status</code>
     should be updated to be <code>Good Job!</code></li>
-<li>When the user presses ‘clear all', <code>items</code> should be reset (set to <code>[]</code>)</li>
+<li>When the user presses 'clear all', <code>items</code> should be reset (set to <code>[]</code>)</li>
 </ul>
-<p><em>Too many items</em> When <code>items.length</code> is more than 5, the message should update to ‘Try to complete
+<p><em>Too many items</em> When <code>items.length</code> is more than 5, the message should update to 'Try to complete
     current tasks before adding new ones!'</p>
 <p>This could look like:</p>
 <pre><code>const TodoApp = () =&gt; {
@@ -201,14 +201,14 @@
 };</code></pre>
 <p><strong>Are there side effects of any actions? We can use <code>useEffect</code> for this</strong> Yes! In this
     example, every time an item is added we want to check the length of <code>items</code>. If there are more than 5
-    items, we want to update <code>status</code> to ‘Try to complete current tasks before adding new ones!'</p>
+    items, we want to update <code>status</code> to 'Try to complete current tasks before adding new ones!'</p>
 <pre><code>useEffect(()=&gt;{
     if (items.length &gt; 5){
       setStatus(&#39;Try to complete current tasks before adding new ones!&#39;)
     }
   }, [items])</code></pre>
 <p>Note the second argument is an optional array. This means that we only want the effect to run when <code>items</code> changes. This is because the status does not care about when other states update, such as <code>newTodo</code> .</p>
-<p>Bonus: Notice that after we press ‘All done', the ‘Good Job!' status will remain until we change it to ‘Try to
+<p>Bonus: Notice that after we press 'All done', the 'Good Job!' status will remain until we change it to 'Try to
     complete current tasks before adding new ones!' (and vise versa). This UI could be confusing for the user. Why would
     this be confusing, and how could we fix it? Discuss with a partner.</p>
 <p>A sample completed component is <a href="https://codesandbox.io/s/techtonicaexercisecompleted-f08z1">here</a>.</p>
@@ -223,8 +223,8 @@ getRestaurants(city)
 <h3 id="independent-practice">Independent Practice</h3>
 <p><strong><em>Book name generator</em></strong> Goal: A user should be able to enter a phrase, and below will see the
     Harry Potter title generated from that phrase. We want the title to be <code>"Harry Potter and the
-        PHRASE_HERE"</code>. For example, if I enter ‘Goblet of Code' into the Phrase input, I should see “The National
-    best selling book is called: Harry Potter and the Goblet of Code”</p>
+        PHRASE_HERE"</code>. For example, if I enter 'Goblet of Code' into the Phrase input, I should see "The National
+    best selling book is called: Harry Potter and the Goblet of Code"</p>
 <ol type="1">
 <li>Fork <a href="https://codesandbox.io/s/techtonicahpexercise-ezflq">this sandbox</a>.</li>
 <li>Look at the <code>App</code> component, but do <em>not</em> modify it. Look at what props are passed to the <code>TitleGenerator</code> component.</li>

@@ -14843,7 +14843,7 @@ defineMacro("\\kaBlue", "\\textcolor{##314453}{#1}");
 defineMacro("\\kaGreen", "\\textcolor{##71B307}{#1}");
 
 /**
- * This file contains the “gullet” where macros are expanded
+ * This file contains the "gullet" where macros are expanded
  * until only non-macro tokens remain.
  */
 // List of commands that act like macros but aren't defined as a macro,

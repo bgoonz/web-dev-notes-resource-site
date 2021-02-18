@@ -64,8 +64,8 @@ ________________________________________________________________________________
   - [Helpful links:](#helpful-links)
 - [**Writing And Running A Seed File In PSQL**](#writing-and-running-a-seed-file-in-psql)
   - [Creating a seed file](#creating-a-seed-file)
-  - [Populating a database via < (“left caret”)](#populating-a-database-via-left-caret)
-  - [Populating the database via | (“pipe”)](#populating-the-database-via-pipe)
+  - [Populating a database via < ("left caret")](#populating-a-database-via-left-caret)
+  - [Populating the database via | ("pipe")](#populating-the-database-via-pipe)
 - [*Create And Seed A Database Project*](#create-and-seed-a-database-project)
 - [*Solving The SQL Menagerie Project*](#solving-the-sql-menagerie-project)
 - [**Creating A Schema For Relational Database Design**](#creating-a-schema-for-relational-database-design)
@@ -404,7 +404,7 @@ Just be aware that the language around these terms is loose.
 
 Again, PostgreSQL is software. Specifically, it is an open-source, relational
 database management system. It is derived from the POSTGRES package written at
-UC Berkeley. The specific name “PostgreSQL” was coined in 1996, after SQL was
+UC Berkeley. The specific name "PostgreSQL" was coined in 1996, after SQL was
 implemented as its core query language. PostgreSQL provided a new program (new
 for 1996) for interactive SQL queries called `[psql]`, which is terminal-based
 front-end to PostgreSQL that lets you to type in queries interactively, issue
@@ -2909,7 +2909,7 @@ VALUES
   (column1_value, colum2_value, column3_value);
 ```
 
-Let’s fill out our “friends” table with information about five friends. In
+Let’s fill out our "friends" table with information about five friends. In
 psql, enter the following to add new table rows. _Note the use of single
 quotation marks for string values. Also note that, since we used the [`SERIAL`
 pseudo-type][1] to auto-increment the ID values, we can simply write `DEFAULT`
@@ -2937,7 +2937,7 @@ VALUES
 ('River', 'Song');
 ```
 
-Use `SELECT * FROM friends;` to verify that there are rows in the “friends”
+Use `SELECT * FROM friends;` to verify that there are rows in the "friends"
 table:
 
 ```shell
@@ -3047,8 +3047,8 @@ VALUES
 
 ## Using JOIN to retrieve rows from multiple tables
 
-Now that we’ve set up an association between the “puppies” table and the
-“friends” table, we can access data from both tables. We can do so by using a
+Now that we’ve set up an association between the "puppies" table and the
+"friends" table, we can access data from both tables. We can do so by using a
 [JOIN operation][3] in our SELECT query. Type the following into psql:
 
 ```sql
@@ -3188,7 +3188,7 @@ INSERT INTO pies VALUES('Milk Bar', 46.00);
 SELECT * FROM pies;
 ```
 
-## Populating a database via < (“left caret”)
+## Populating a database via < ("left caret")
 
 Now that you have a seed file, you can insert it into a database with a
 simple command.
@@ -3207,7 +3207,7 @@ psql -d bakery < path_to_my_file/seed-data.sql
 ```
 
 In the terminal, you should see a bunch of `INSERT` statements and the entire
-“pies” table printed out (from the `SELECT *` query in the seed file).
+"pies" table printed out (from the `SELECT *` query in the seed file).
 
 You can log into psql and use `\dt` to verify that your new table has been
 added to the database:
@@ -3221,17 +3221,17 @@ List of relations
  public | puppies      | table | 
 ```
 
-## Populating the database via | (“pipe”)
+## Populating the database via | ("pipe")
 
-You could also use the “pipe” (`|`) to populate the database with your seed
+You could also use the "pipe" (`|`) to populate the database with your seed
 file.
 
 The syntax is `cat [path_to_file/file.sql] | psql -d [database]`. ‘cat’ is a
 standard Unix utility that reads files sequentially, writing them to standard
-output. The “pipe” (`|`) takes the standard output of the command on the left
+output. The "pipe" (`|`) takes the standard output of the command on the left
 and pipes it as standard input to the command on the right.
 
-Try out this method in your terminal. If you have an existing “pies” table,
+Try out this method in your terminal. If you have an existing "pies" table,
 you’ll need to drop this table before you can add it again:
 
 ```sql
@@ -3245,7 +3245,7 @@ actual file path.
 cat path_to_my_file/seed-data.sql | psql -d postgres
 ```
 
-Again, you should see a bunch of `INSERT` statements and the entire “pies”
+Again, you should see a bunch of `INSERT` statements and the entire "pies"
 table printed out (from the `SELECT *` query in the seed file).
 
 You can log into psql and use `\dt` to verify that your new table has been
@@ -3608,9 +3608,9 @@ and how to create schema that depicts database table relationships.
 ## What is Relational Database Design?
 
 According to Technopedia, [Relational Database Design][1] (or RDD) differs from
-other databases in terms of data organization and transactions: “In an RDD, the
+other databases in terms of data organization and transactions: "In an RDD, the
 data are organized into tables and all types of data access are carried out via
-controlled transactions.”
+controlled transactions."
 
 In previous readings, we created relational database tables and accessed data
 from these tables through PostgreSQL queries. These tables (a.k.a. _entities_)
@@ -3680,7 +3680,7 @@ some less-used data separate from the main `products` table.
 
 ![products-erd-one-to-one.svg]
 
-The above schema depicts two tables: a “products” table and a “product_details”
+The above schema depicts two tables: a "products" table and a "product_details"
 table. A `product_details` record belongs to only one product record. We've used
 an arrow to indicate the one-to-one relationship between the tables. Both tables
 have the same primary key -- `product_id` -- which we can use in a [`JOIN`][2]
@@ -3717,9 +3717,9 @@ record in Table A.
 
 ![orders-erd-one-to-many.svg]
 
-The above schema depicts a one-to-many relationship between the “users” table
+The above schema depicts a one-to-many relationship between the "users" table
 and the `orders` table: One user can create multiple orders. The primary key of
-the “orders” table (`id`) is a foreign key in the “users” table (`order_id`). We
+the "orders" table (`id`) is a foreign key in the "users" table (`order_id`). We
 can use this foreign key in a `JOIN` operation to get data from both tables.
 
 This table relationship would produce the following example data (note that not
@@ -3807,7 +3807,7 @@ The fourth stage in RDD is _**normalization**_. Normalization is the process of
 optimizing the database structure so that redundancy and confusion are
 eliminated.
 
-The rules of normalization are called “normal forms” and are as follows:
+The rules of normalization are called "normal forms" and are as follows:
 
 1. First normal form
 2. Second normal form
@@ -3833,15 +3833,15 @@ are less often used.
 
 - Eliminate fields that do not depend on the table’s key.
 
-_Note: For examples of how to apply these forms, read [“Description of the
-database normalization basics”][3] from Microsoft._
+_Note: For examples of how to apply these forms, read ["Description of the
+database normalization basics"][3] from Microsoft._
 
 ## Schema design tools
 
 Many people draw their relational database design schema with good ol’ pen and
 paper, or on a whiteboard. However, there are also lots of online tools created
 for this purpose if you’d like to use something easily exportable/shareable.
-Feel free to check out the ERD (short for “Entity Relationship Diagram”) tools
+Feel free to check out the ERD (short for "Entity Relationship Diagram") tools
 below.
 
 Free Database Diagram (ERD) Design Tools:
@@ -3885,8 +3885,8 @@ well as how to write explicit transactions.
 
 A transaction is a single unit of work, which can contain multiple operations,
 performed on a database. According to the [PostgreSQL docs][1], the important
-thing to note about a transaction is that “it bundles multiple steps into a
-single, all-or-nothing operation”. If any operation within the transaction
+thing to note about a transaction is that "it bundles multiple steps into a
+single, all-or-nothing operation". If any operation within the transaction
 fails, then the entire transaction fails. If all the operations succeed, then
 the entire transaction succeeds.
 
@@ -4032,14 +4032,14 @@ handling. The ability to create savepoints and roll back to earlier points is
 tremendously helpful when doing multiple updates and helps maintain data
 integrity.
 
-Another benefit of transactions is the _**atomic**_, or “all-or-nothing”, nature
+Another benefit of transactions is the _**atomic**_, or "all-or-nothing", nature
 of their operations. Because all of the operations in a transaction must succeed
 or else be aborted, partial or incomplete updates to the database will not be
 made. End-users will see only the final result of the transaction.
 
 ## Transaction properties: ACID
 
-A SQL transaction has four properties known collectively as “ACID” -- which is an acronym for _Atomic, Consistent, Isolated, and Durable_. The following descriptions come from the IBM doc “[ACID properties of transactions][2]”:
+A SQL transaction has four properties known collectively as "ACID" -- which is an acronym for _Atomic, Consistent, Isolated, and Durable_. The following descriptions come from the IBM doc "[ACID properties of transactions][2]":
 
 **Atomicity**
 -- All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.
@@ -4148,7 +4148,7 @@ lives on the "puppies" table and is related to the primary key `id` of the
 "breeds" table.
 
 We wrote the following `INNER JOIN` operation to get only the rows from the
-“puppies” table with a matching `breed_id` in the “friends” table:
+"puppies" table with a matching `breed_id` in the "friends" table:
 
 ```sql
 SELECT * FROM puppies
@@ -4203,7 +4203,7 @@ different `JOIN` operations._)
 ## What is a subquery?
 
 A subquery is essentially a `SELECT` statement nested inside another `SELECT`
-statement. A subquery can return a single (“scalar”) value or multiple rows.
+statement. A subquery can return a single ("scalar") value or multiple rows.
 
 ### Single-value subquery
 
@@ -4238,10 +4238,10 @@ FROM
   puppies;
 ```
 
-Assuming our previous “puppies” table still exists in our database, if we
+Assuming our previous "puppies" table still exists in our database, if we
 entered the above statement into psql we’d get an _**average age of 0.9**_.
 (_Note: Try it out yourself in psql! Refer to the reading "Retrieving Rows From
-A Table Using SELECT" if you need help remembering how we set up the “puppies”
+A Table Using SELECT" if you need help remembering how we set up the "puppies"
 table._)
 
 Let's say that we wanted to find all of the puppies that are older than the
@@ -4299,8 +4299,8 @@ than 9 months:
 We could also write a subquery that returns multiple rows.
 
 In the reading "Creating A Table In An Existing PostgreSQL Database", we
-created a “friends” table. In "Foreign Keys And The JOIN Operation", we set up a
-primary key in the “puppies” table that is a foreign key in the “friends” table
+created a "friends" table. In "Foreign Keys And The JOIN Operation", we set up a
+primary key in the "puppies" table that is a foreign key in the "friends" table
 -- `puppy_id`. We’ll use this ID in our subquery and outer query.
 
 **"friends" table**
@@ -4335,7 +4335,7 @@ puppy_id
 
 Now we want to use the above statement as a subquery (inside parentheses) in
 another query. You’ll notice we’re using a `WHERE` clause with the [IN][5]
-operator to check if the `puppy_id` from the “friends” table meets the
+operator to check if the `puppy_id` from the "friends" table meets the
 conditions in the subquery.
 
 ```sql
@@ -4398,7 +4398,7 @@ WHERE
 ```
 
 Again, we’d get back one result, but because we used an `INNER JOIN` we have
-information from both the “puppies” and “friends” tables.
+information from both the "puppies" and "friends" tables.
 
 ```shell
 id | first_name | last_name | puppy_id |  name  | age_yrs | breed  | weight_lbs | microchipped | puppy_id

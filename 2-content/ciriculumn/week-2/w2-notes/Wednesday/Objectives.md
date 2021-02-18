@@ -2,7 +2,7 @@
 
 ## **Callbacks**
 
-Given multiple plausible reasons, identify why functions are called “First Class Objects” in JavaScript.
+Given multiple plausible reasons, identify why functions are called "First Class Objects" in JavaScript.
 Given a code snippet containing an anonymous callback, a named callback, and multiple console.logs, predict what will be printed
 Write a function that takes in a value and two callbacks. The function should return the result of the callback that is greater.
 Write a function, myMap, that takes in an array and a callback as arguments. The function should mimic the behavior of Array#map.

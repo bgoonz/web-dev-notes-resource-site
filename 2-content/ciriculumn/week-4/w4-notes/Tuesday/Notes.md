@@ -15,21 +15,21 @@
 - **`document.getElementById`** : used to reference a single html element via an id.
 
   ```js
-  <div id="”catch-me-if-you-can”">HI!</div>
+  <div id=""catch-me-if-you-can"">HI!</div>
 
-  const divOfInterest = document.getElementById(“catch-me-if-you-can”)
+  const divOfInterest = document.getElementById("catch-me-if-you-can")
   ```
 
 - **`document.querySelectorAll`** : used to reference multiple html elements via a class.
 
   ```js
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
-  <span class="“cloudy”"></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
+  <span class=""cloudy""></span>
 
   const cloudySpans = document.querySelectorAll("span.cloudy");
   ```

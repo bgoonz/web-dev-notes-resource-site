@@ -1,17 +1,17 @@
-function isValid(str) {
-   if (/^[^\\\/\:\*\?\"\<\>\|\.]+(\.[^\\\/\:\*\?\"\<\>\|\.]+)+$/.test(str)) {
-     return "valid file name";
-   }
-   else {
-     return "this file name is invalid"
-   }
+function isValid ( str ) {
+    if ( /^[^\\\/\:\*\?\"\<\>\|\.]+(\.[^\\\/\:\*\?\"\<\>\|\.]+)+$/.test( str ) ) {
+        return "valid file name";
+    }
+    else {
+        return "this file name is invalid"
+    }
 }
 
-isValid('nameFromPath.js');
-console.log("isValid('nameFromPath.js'): ", isValid('nameFromPath.js'));
+isValid( 'nameFromPath.js' );
+console.log( "isValid('nameFromPath.js'): ", isValid( 'nameFromPath.js' ) );
 //isValid('nameFromPath.js'):  true
-isValid('you just lost the game');
-console.log("isValid('you just lost the game'): ", isValid('com'));
+isValid( 'you just lost the game' );
+console.log( "isValid('you just lost the game'): ", isValid( 'com' ) );
 
 /*
 node vaid-filename.js

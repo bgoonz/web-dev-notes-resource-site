@@ -59,11 +59,18 @@
 <p><strong>Note</strong>: All your data added via the UI (lists of users, events, etc) will be deleted when you refresh the page, because the data is just stored locally in the memory of your browser tab. In later weeks you’ll learn how to save your data in databases instead of browser memory.</p>
 <p>Steps:</p>
 <ol type="1">
-<li><p><strong>Display all users</strong>: In your <code>jQuery-scripts.js</code> file, write code to loop through all users in your <code>eventRecommender</code> and display them under “All Users” on your HTML page. Since you don’t have any users in the system yet, I recommend “hardcoding” some users into your <code>jQuery-scripts.js</code> file so you’ll have something to display at first.</p></li>
+<li>
+    <p><strong>Display all users</strong>: In your <code>jQuery-scripts.js</code> file, write code to loop through all
+        users in your <code>eventRecommender</code> and display them under “All Users" on your HTML page. Since you
+        don’t have any users in the system yet, I recommend “hardcoding" some users into your
+        <code>jQuery-scripts.js</code> file so you’ll have something to display at first.</p>
+</li>
 <li><p><strong>Add a user</strong>:</p>
 <ol type="1">
-<li>Update the HTML form under “Add User” to accept all properties you defined on the User object.</li>
-<li><p>Use jQuery to make it so that when someone fills out the form and presses “Submit”, a new user is created and added to the <code>EventRecommender</code> <code>users</code> array.</p>
+<li>Update the HTML form under “Add User" to accept all properties you defined on the User object.</li>
+<li>
+    <p>Use jQuery to make it so that when someone fills out the form and presses “Submit", a new user is created and
+        added to the <code>EventRecommender</code> <code>users</code> array.</p>
 <p>Here are a few hints:</p>
 <ul>
 <li>You can use <code>$("#element-id").val()</code> to get the text currently entered in a text field. To get the value from other type of form inputs, you can read <a href="https://medium.com/@bruce.sarah.a/getting-form-values-with-jquery-7d456cb82080">this blog post</a>.</li>
@@ -84,7 +91,7 @@
 <h4 id="challenges">Challenges</h4>
 <p>Try to do at least one of these challenges to improve your site:</p>
 <ul>
-<li>Add a variable to save which user is currently “logged in”, so saving an event for a user doesn’t require typing in the user’s ID every time.</li>
+<li>Add a variable to save which user is currently “logged in", so saving an event for a user doesn’t require typing in the user’s ID every time.</li>
 <li>Use localStorage to store your data so it doesn’t get deleted every time the page is refreshed. Learn about localStorage from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">MDN localStorage docs</a></li>
 <li>Change the UI. Draw up a design for how you’d like your app to look and then code your site to match. The changes could involve breaking the UI into multiple pages, adding more CSS, using a styling library such as Bootstrap, and/or adding more JS. Look at websites that have successful UIs for creating, retrieving, updating, deleting, and filtering data for inspiration. Consider designing a desktop and a mobile version and create a responsive UI.</li>
 </ul>

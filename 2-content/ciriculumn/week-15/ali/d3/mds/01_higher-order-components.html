@@ -245,7 +245,8 @@
 <a class="sourceLine" id="cb8-39" title="39"></a>
 <a class="sourceLine" id="cb8-40" title="40"><span class="im">export</span> <span class="im">default</span> connect<span class="op">;</span></a></code></pre></div>
 <p>The <code>connect</code> function is a higher-order component that returns a function. That function returns an anonymous class component that wraps the component passed in via the <code>WrappedComponent</code> parameter.</p>
-<p>The anonymous class component is a “generic” container component that <em>connects</em> <code>WrappedComponent</code> to the Redux store by:</p>
+<p>The anonymous class component is a “generic" container component that <em>connects</em> <code>WrappedComponent</code>
+    to the Redux store by:</p>
 <ul>
 <li>Defining the <code>componentDidMount</code> and <code>componentWillUnmount</code> lifecycle method implementations necessary for managing the subscription to the store to render <code>WrappedComponent</code> when state is updated; and</li>
 <li>Passing slices of state and functions to dispatch actions down to <code>WrappedComponent</code> using props.</li>

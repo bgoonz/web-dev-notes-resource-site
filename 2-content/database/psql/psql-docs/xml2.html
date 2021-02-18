@@ -125,7 +125,7 @@ xpath_table(text key, text document, text relation, text xpaths, text criteria) 
    <a class="xref" href="xml2.html#XML2-XPATH-TABLE-PARAMETERS" title="Table F.35. xpath_table Parameters">Table F.35</a>.
   </p><div class="table" id="XML2-XPATH-TABLE-PARAMETERS"><p class="title"><strong>Table F.35. <code class="function">xpath_table</code> Parameters</strong></p><div class="table-contents"><table class="table" summary="xpath_table Parameters" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><em class="parameter"><code>key</code></em></td><td>
        <p>
-        the name of the <span class="quote">“<span class="quote">key</span>”</span> field — this is just a field to be used as
+        the name of the <span class="quote">"<span class="quote">key</span>"</span> field — this is just a field to be used as
         the first column of the output table, i.e., it identifies the record from
         which each output row came (see note below about multiple values)
        </p>
@@ -174,7 +174,7 @@ xpath_table('article_id',
 AS t(article_id integer, author text, page_count integer, title text);
 </pre><p>
    The <code class="literal">AS</code> clause defines the names and types of the columns in the
-   output table.  The first is the <span class="quote">“<span class="quote">key</span>”</span> field and the rest correspond
+   output table.  The first is the <span class="quote">"<span class="quote">key</span>"</span> field and the rest correspond
    to the XPath queries.
    If there are more XPath queries than result columns,
    the extra queries will be ignored. If there are more result columns

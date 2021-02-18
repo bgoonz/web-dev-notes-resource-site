@@ -13,8 +13,8 @@
       deferred triggers within index expressions and materialized view
       queries (Noah Misch)
      </p><p>
-      This is essentially a leak in the <span class="quote">“<span class="quote">security restricted
-      operation</span>”</span> sandbox mechanism.  An attacker having permission
+      This is essentially a leak in the <span class="quote">"<span class="quote">security restricted
+      operation</span>"</span> sandbox mechanism.  An attacker having permission
       to create non-temporary SQL objects could parlay this leak to
       execute arbitrary SQL code as a superuser.
      </p><p>
@@ -33,7 +33,7 @@
       of <span class="application">pg_dump</span>
       and <span class="application">pg_restore</span>, or
       the <code class="option">--maintenance-db</code> parameter of the other
-      programs mentioned, can be a <span class="quote">“<span class="quote">connection string</span>”</span>
+      programs mentioned, can be a <span class="quote">"<span class="quote">connection string</span>"</span>
       containing multiple connection parameters rather than just a
       database name.  In cases where these programs need to initiate
       additional connections, such as parallel processing or processing of
@@ -80,9 +80,9 @@
       Prevent possible data loss from concurrent truncations of SLRU logs
       (Noah Misch)
      </p><p>
-      This rare problem would manifest in later <span class="quote">“<span class="quote">apparent
-      wraparound</span>”</span> or <span class="quote">“<span class="quote">could not access status of
-      transaction</span>”</span> errors.
+      This rare problem would manifest in later <span class="quote">"<span class="quote">apparent
+      wraparound</span>"</span> or <span class="quote">"<span class="quote">could not access status of
+      transaction</span>"</span> errors.
      </p></li><li class="listitem"><p>
       Ensure that SLRU directories are properly fsync'd during checkpoints
       (Thomas Munro)
@@ -170,7 +170,7 @@
       and <code class="function">to_timestamp()</code> (Dar Alathar-Yemen, Tom Lane)
      </p><p>
       Also, arrange for the combination of a negative year and an
-      explicit <span class="quote">“<span class="quote">BC</span>”</span> marker to cancel out and produce AD.
+      explicit <span class="quote">"<span class="quote">BC</span>"</span> marker to cancel out and produce AD.
      </p></li><li class="listitem"><p>
       Ensure that standby servers will archive WAL timeline history files
       when <code class="varname">archive_mode</code> is set
@@ -179,7 +179,7 @@
       This oversight could lead to failure of subsequent PITR recovery
       attempts.
      </p></li><li class="listitem"><p>
-      Fix <span class="quote">“<span class="quote">cache lookup failed for relation 0</span>”</span>
+      Fix <span class="quote">"<span class="quote">cache lookup failed for relation 0</span>"</span>
       failures in logical replication workers (Tom Lane)
      </p><p>
       The real-world impact is small, since the failure is unlikely, and
@@ -188,7 +188,7 @@
       Prevent logical replication workers from sending redundant ping
       requests (Tom Lane)
      </p></li><li class="listitem"><p>
-      During <span class="quote">“<span class="quote">smart</span>”</span> shutdown, don't terminate background
+      During <span class="quote">"<span class="quote">smart</span>"</span> shutdown, don't terminate background
       processes until all client (foreground) sessions are done (Tom Lane)
      </p><p>
       The previous behavior broke parallel query processing, since the
@@ -214,7 +214,7 @@
       Avoid misoptimization of subquery qualifications that reference
       apparently-constant grouping columns (Tom Lane)
      </p><p>
-      A <span class="quote">“<span class="quote">constant</span>”</span> subquery output column isn't really
+      A <span class="quote">"<span class="quote">constant</span>"</span> subquery output column isn't really
       constant if it is a grouping column that appears in only some of the
       grouping sets.
      </p></li><li class="listitem"><p>
@@ -228,8 +228,8 @@
       new HOT chains due to concurrent updates
       (Anastasia Lubennikova, Álvaro Herrera)
      </p><p>
-      This oversight could lead to <span class="quote">“<span class="quote">failed to find parent tuple for
-      heap-only tuple</span>”</span> errors.
+      This oversight could lead to <span class="quote">"<span class="quote">failed to find parent tuple for
+      heap-only tuple</span>"</span> errors.
      </p></li><li class="listitem"><p>
       Fix failure of parallel B-tree index scans when the index condition
       is unsatisfiable (James Hunter)
@@ -239,7 +239,7 @@
      </p><p>
       Index entries are not supposed to contain out-of-line TOAST
       pointers, but BRIN didn't get that memo.  This could lead to errors
-      like <span class="quote">“<span class="quote">missing chunk number 0 for toast value NNN</span>”</span>.
+      like <span class="quote">"<span class="quote">missing chunk number 0 for toast value NNN</span>"</span>.
       (If you are faced with such an error from an existing
       index, <code class="command">REINDEX</code> should be enough to fix it.)
      </p></li><li class="listitem"><p>
@@ -250,7 +250,7 @@
       an index scan might falsely raise an error indicating index
       corruption.
      </p></li><li class="listitem"><p>
-      Fix rare <span class="quote">“<span class="quote">lost saved point in index</span>”</span> errors in scans of
+      Fix rare <span class="quote">"<span class="quote">lost saved point in index</span>"</span> errors in scans of
       multicolumn GIN indexes (Tom Lane)
      </p></li><li class="listitem"><p>
       Fix buffered GiST index builds to work when the index has included
@@ -272,14 +272,14 @@
       Rorthais)
      </p></li><li class="listitem"><p>
       Avoid failures when a <code class="literal">BEFORE ROW UPDATE</code> trigger
-      returns the <span class="quote">“<span class="quote">old</span>”</span> row of a table having dropped
-      or <span class="quote">“<span class="quote">missing</span>”</span> columns (Amit Langote, Tom Lane)
+      returns the <span class="quote">"<span class="quote">old</span>"</span> row of a table having dropped
+      or <span class="quote">"<span class="quote">missing</span>"</span> columns (Amit Langote, Tom Lane)
      </p><p>
       This method of suppressing an update could result in crashes,
       unexpected <code class="literal">CHECK</code> constraint failures, or
       incorrect <code class="literal">RETURNING</code> output,
-      because <span class="quote">“<span class="quote">missing</span>”</span> columns would read as NULLs for those
-      purposes.  (A column is <span class="quote">“<span class="quote">missing</span>”</span> for this purpose if
+      because <span class="quote">"<span class="quote">missing</span>"</span> columns would read as NULLs for those
+      purposes.  (A column is <span class="quote">"<span class="quote">missing</span>"</span> for this purpose if
       it was added by <code class="command">ALTER TABLE ADD COLUMN</code> with a
       non-NULL, but constant, default value.)  Dropped columns could cause
       trouble as well.
@@ -381,9 +381,9 @@
       (Tom Lane)
      </p><p>
       This absorbs upstream's change of <span class="application">zic</span>'s
-      default output option from <span class="quote">“<span class="quote">fat</span>”</span>
-      to <span class="quote">“<span class="quote">slim</span>”</span>.  That's just cosmetic for our purposes, as
-      we continue to select the <span class="quote">“<span class="quote">fat</span>”</span> mode in pre-v13
+      default output option from <span class="quote">"<span class="quote">fat</span>"</span>
+      to <span class="quote">"<span class="quote">slim</span>"</span>.  That's just cosmetic for our purposes, as
+      we continue to select the <span class="quote">"<span class="quote">fat</span>"</span> mode in pre-v13
       branches.  This change also ensures
       that <code class="function">strftime()</code> does not
       change <code class="varname">errno</code> unless it fails.
