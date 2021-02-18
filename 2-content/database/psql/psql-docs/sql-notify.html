@@ -3,7 +3,7 @@
 NOTIFY <em class="replaceable"><code>channel</code></em> [ , <em class="replaceable"><code>payload</code></em> ]
 </pre></div><div class="refsect1" id="id-1.9.3.157.5"><h2>Description</h2><p>
    The <code class="command">NOTIFY</code> command sends a notification event together
-   with an optional <span class="quote">“<span class="quote">payload</span>”</span> string to each client application that
+   with an optional <span class="quote">"<span class="quote">payload</span>"</span> string to each client application that
    has previously executed
    <code class="command">LISTEN <em class="replaceable"><code>channel</code></em></code>
    for the specified channel name in the current database.
@@ -24,8 +24,8 @@ NOTIFY <em class="replaceable"><code>channel</code></em> [ , <em class="replacea
    It is up to the database designer to define the channel names that will
    be used in a given database and what each one means.
    Commonly, the channel name is the same as the name of some table in
-   the database, and the notify event essentially means, <span class="quote">“<span class="quote">I changed this table,
-   take a look at it to see what's new</span>”</span>.  But no such association is enforced by
+   the database, and the notify event essentially means, <span class="quote">"<span class="quote">I changed this table,
+   take a look at it to see what's new</span>"</span>.  But no such association is enforced by
    the <code class="command">NOTIFY</code> and <code class="command">LISTEN</code> commands.  For
    example, a database designer could use several different channel names
    to signal different sorts of changes to a single table.  Alternatively,
@@ -50,7 +50,7 @@ NOTIFY <em class="replaceable"><code>channel</code></em> [ , <em class="replacea
    reasoning is that if a notification were delivered within a transaction that was
    later aborted, one would want the notification to be undone somehow —
    but
-   the server cannot <span class="quote">“<span class="quote">take back</span>”</span> a notification once it has sent it to the client.
+   the server cannot <span class="quote">"<span class="quote">take back</span>"</span> a notification once it has sent it to the client.
    So notification events are only delivered between transactions.  The upshot of this
    is that applications using <code class="command">NOTIFY</code> for real-time signaling
    should try to keep their transactions short.
@@ -82,7 +82,7 @@ NOTIFY <em class="replaceable"><code>channel</code></em> [ , <em class="replacea
   </p></div><div class="refsect1" id="id-1.9.3.157.6"><h2>Parameters</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>channel</code></em></span></dt><dd><p>
       Name of the notification channel to be signaled (any identifier).
      </p></dd><dt><span class="term"><em class="replaceable"><code>payload</code></em></span></dt><dd><p>
-      The <span class="quote">“<span class="quote">payload</span>”</span> string to be communicated along with the
+      The <span class="quote">"<span class="quote">payload</span>"</span> string to be communicated along with the
       notification.  This must be specified as a simple string literal.
       In the default configuration it must be shorter than 8000 bytes.
       (If binary data or large amounts of information need to be communicated,

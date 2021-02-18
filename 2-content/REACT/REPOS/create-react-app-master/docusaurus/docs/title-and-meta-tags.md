@@ -6,7 +6,7 @@ sidebar_label: Title & Meta Tags
 
 ## Changing the title tag
 
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React App” to anything else.
+You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from "React App" to anything else.
 
 Note that normally you wouldn't edit files in the `public` folder very often. For example, [adding a stylesheet](adding-a-stylesheet.md) is done without touching the HTML.
 

@@ -58,9 +58,9 @@
 <a class="sourceLine" id="cb3-2" title="2">  <span class="op">&lt;</span>ProfilePhoto /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="op">&lt;</span>ProfileDetails /<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb3-4" title="4">&lt;/Suspense<span class="op">&gt;</span></a></code></pre></div>
-<p><code>Suspense</code> lets your components “wait” for something before they can render, showing a fallback while waiting.</p>
+<p><code>Suspense</code> lets your components "wait" for something before they can render, showing a fallback while waiting.</p>
 <p>In this example, <code>ProfileDetails</code> is waiting for an asynchronous API call to fetch some data. While we wait for <code>ProfileDetails</code> and <code>ProfilePhoto</code>, we will show the <code>Loading...</code> fallback instead. It is important to note that until all children inside <code>&lt;Suspense&gt;</code> has loaded, we will continue to show the fallback.</p>
-<p><code>Suspense</code> takes two props: * <strong>fallback</strong> takes a loading indicator. The fallback is shown until all of the children of the <code>Suspense</code> component have finished rendering. * <strong>unstable_avoidThisFallback</strong> takes a boolean. It tells React whether to “skip” revealing this boundary during the initial load. This API will likely be removed in a future release.</p>
+<p><code>Suspense</code> takes two props: * <strong>fallback</strong> takes a loading indicator. The fallback is shown until all of the children of the <code>Suspense</code> component have finished rendering. * <strong>unstable_avoidThisFallback</strong> takes a boolean. It tells React whether to "skip" revealing this boundary during the initial load. This API will likely be removed in a future release.</p>
 <h3 id="suspenselist"><code>&lt;SuspenseList&gt;</code></h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&lt;</span>SuspenseList revealOrder<span class="op">=</span><span class="st">&quot;forwards&quot;</span><span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="op">&lt;</span>Suspense fallback<span class="op">={</span><span class="st">&#39;Loading...&#39;</span><span class="op">}&gt;</span></a>
@@ -128,7 +128,7 @@
 <p><strong>Note: We recommend that you share Suspense Config between different modules.</strong></p>
 <h3 id="usedeferredvalue"><code>useDeferredValue</code></h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">const</span> deferredValue <span class="op">=</span> <span class="at">useDeferredValue</span>(value<span class="op">,</span> <span class="op">{</span> <span class="dt">timeoutMs</span><span class="op">:</span> <span class="dv">2000</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Returns a deferred version of the value that may “lag behind” it for at most <code>timeoutMs</code>.</p>
+<p>Returns a deferred version of the value that may "lag behind" it for at most <code>timeoutMs</code>.</p>
 <p>This is commonly used to keep the interface responsive when you have something that renders immediately based on user input and something that needs to wait for a data fetch.</p>
 <p>A good example of this is a text input.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">function</span> <span class="at">App</span>() <span class="op">{</span></a>
@@ -145,7 +145,7 @@
 <a class="sourceLine" id="cb9-12" title="12">    &lt;/div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb9-13" title="13">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb9-14" title="14"> <span class="op">}</span></a></code></pre></div>
-<p>This allows us to start showing the new text for the <code>input</code> immediately, which allows the webpage to feel responsive. Meanwhile, <code>MySlowList</code> “lags behind” for up to 2 seconds according to the <code>timeoutMs</code> before updating, allowing it to render with the current text in the background.</p>
+<p>This allows us to start showing the new text for the <code>input</code> immediately, which allows the webpage to feel responsive. Meanwhile, <code>MySlowList</code> "lags behind" for up to 2 seconds according to the <code>timeoutMs</code> before updating, allowing it to render with the current text in the background.</p>
 <p><strong>For an in-depth look at deferring values, you can read <a href="/docs/concurrent-mode-patterns.html#deferring-a-value">Concurrent UI Patterns</a>.</strong></p>
 <h4 id="usedeferredvalue-config">useDeferredValue Config</h4>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">const</span> SUSPENSE_CONFIG <span class="op">=</span> <span class="op">{</span> <span class="dt">timeoutMs</span><span class="op">:</span> <span class="dv">2000</span> <span class="op">};</span></a></code></pre></div>

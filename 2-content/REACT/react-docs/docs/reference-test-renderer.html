@@ -132,7 +132,7 @@
     function component because they don't have instances.</p>
 <h3 id="testrendererroot"><code>testRenderer.root</code></h3>
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="va">testRenderer</span>.<span class="at">root</span></a></code></pre></div>
-<p>Returns the root “test instance” object that is useful for making assertions about specific nodes in the tree. You can use it to find other “test instances” deeper below.</p>
+<p>Returns the root "test instance" object that is useful for making assertions about specific nodes in the tree. You can use it to find other "test instances" deeper below.</p>
 <h3 id="testinstancefind"><code>testInstance.find()</code></h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="va">testInstance</span>.<span class="at">find</span>(test)</a></code></pre></div>
 <p>Find a single descendant test instance for which <code>test(testInstance)</code> returns <code>true</code>. If <code>test(testInstance)</code> does not return <code>true</code> for exactly one test instance, it will throw an error.</p>

@@ -14,8 +14,8 @@
          file or on the server command line.
        </p><p>
         If <span class="systemitem">csvlog</span> is included in <code class="varname">log_destination</code>,
-        log entries are output in <span class="quote">“<span class="quote">comma separated
-        value</span>”</span> (<acronym class="acronym">CSV</acronym>) format, which is convenient for
+        log entries are output in <span class="quote">"<span class="quote">comma separated
+        value</span>"</span> (<acronym class="acronym">CSV</acronym>) format, which is convenient for
         loading logs into programs.
         See <a class="xref" href="runtime-config-logging.html#RUNTIME-CONFIG-LOGGING-CSVLOG" title="19.8.4. Using CSV-Format Log Output">Section 19.8.4</a> for details.
         <a class="xref" href="runtime-config-logging.html#GUC-LOGGING-COLLECTOR">logging_collector</a> must be enabled to generate
@@ -217,7 +217,7 @@ local0.*    /var/log/postgresql
       </span></dt><dd><p>
         When logging to <span class="application">syslog</span> is enabled, this parameter
         determines the <span class="application">syslog</span>
-        <span class="quote">“<span class="quote">facility</span>”</span> to be used.  You can choose
+        <span class="quote">"<span class="quote">facility</span>"</span> to be used.  You can choose
         from <code class="literal">LOCAL0</code>, <code class="literal">LOCAL1</code>,
         <code class="literal">LOCAL2</code>, <code class="literal">LOCAL3</code>, <code class="literal">LOCAL4</code>,
         <code class="literal">LOCAL5</code>, <code class="literal">LOCAL6</code>, <code class="literal">LOCAL7</code>;
@@ -242,7 +242,7 @@ local0.*    /var/log/postgresql
          When logging to <span class="application">syslog</span> and this is on (the
          default), then each message will be prefixed by an increasing
          sequence number (such as <code class="literal">[2]</code>).  This circumvents
-         the <span class="quote">“<span class="quote">--- last message repeated N times ---</span>”</span> suppression
+         the <span class="quote">"<span class="quote">--- last message repeated N times ---</span>"</span> suppression
          that many syslog implementations perform by default.  In more modern
          syslog implementations, repeated message suppression can be configured
          (for example, <code class="literal">$RepeatedMsgReduction</code>
@@ -407,7 +407,7 @@ local0.*    /var/log/postgresql
         produced by <code class="varname">debug_print_parse</code>,
         <code class="varname">debug_print_rewritten</code>, or
         <code class="varname">debug_print_plan</code>.  This results in more readable
-        but much longer output than the <span class="quote">“<span class="quote">compact</span>”</span> format used when
+        but much longer output than the <span class="quote">"<span class="quote">compact</span>"</span> format used when
         it is off.  It is on by default.
        </p></dd><dt id="GUC-LOG-CHECKPOINTS"><span class="term"><code class="varname">log_checkpoints</code> (<code class="type">boolean</code>)
       <a id="id-1.6.6.11.5.2.4.1.3" class="indexterm"></a>
@@ -428,7 +428,7 @@ local0.*    /var/log/postgresql
        </p><div class="note"><h3 class="title">Note</h3><p>
          Some client programs, like <span class="application">psql</span>, attempt
          to connect twice while determining if a password is required, so
-         duplicate <span class="quote">“<span class="quote">connection received</span>”</span> messages do not
+         duplicate <span class="quote">"<span class="quote">connection received</span>"</span> messages do not
          necessarily indicate a problem.
         </p></div></dd><dt id="GUC-LOG-DISCONNECTIONS"><span class="term"><code class="varname">log_disconnections</code> (<code class="type">boolean</code>)
       <a id="id-1.6.6.11.5.2.6.1.3" class="indexterm"></a>
@@ -485,7 +485,7 @@ local0.*    /var/log/postgresql
       </span></dt><dd><p>
          This is a <code class="function">printf</code>-style string that is output at the
          beginning of each log line.
-         <code class="literal">%</code> characters begin <span class="quote">“<span class="quote">escape sequences</span>”</span>
+         <code class="literal">%</code> characters begin <span class="quote">"<span class="quote">escape sequences</span>"</span>
          that are replaced with status information as outlined below.
          Unrecognized escapes are ignored. Other
          characters are copied straight to the log line. Some escapes are

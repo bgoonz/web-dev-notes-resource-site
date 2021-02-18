@@ -366,7 +366,7 @@ TABLE [ ONLY ] <em class="replaceable"><code>table_name</code></em> [ * ]
         none of these clauses can appear.
        </p><p>
         A <code class="literal">JOIN</code> clause combines two <code class="literal">FROM</code>
-        items, which for convenience we will refer to as <span class="quote">“<span class="quote">tables</span>”</span>,
+        items, which for convenience we will refer to as <span class="quote">"<span class="quote">tables</span>"</span>,
         though in reality they can be any type of <code class="literal">FROM</code> item.
         Use parentheses if necessary to determine the order of nesting.
         In the absence of parentheses, <code class="literal">JOIN</code>s nest
@@ -512,7 +512,7 @@ GROUP BY <em class="replaceable"><code>grouping_element</code></em> [, ...]
     the table containing the ungrouped column.
    </p><p>
     Keep in mind that all aggregate functions are evaluated before
-    evaluating any <span class="quote">“<span class="quote">scalar</span>”</span> expressions in the <code class="literal">HAVING</code>
+    evaluating any <span class="quote">"<span class="quote">scalar</span>"</span> expressions in the <code class="literal">HAVING</code>
     clause or <code class="literal">SELECT</code> list.  This means that, for example,
     a <code class="literal">CASE</code> expression cannot be used to skip evaluation of
     an aggregate function; see <a class="xref" href="sql-expressions.html#SYNTAX-EXPRESS-EVAL" title="4.2.14. Expression Evaluation Rules">Section 4.2.14</a>.
@@ -793,8 +793,8 @@ EXCLUDE NO OTHERS
     keeps only the first row of each set of rows where the given
     expressions evaluate to equal.  The <code class="literal">DISTINCT ON</code>
     expressions are interpreted using the same rules as for
-    <code class="literal">ORDER BY</code> (see above).  Note that the <span class="quote">“<span class="quote">first
-    row</span>”</span> of each set is unpredictable unless <code class="literal">ORDER
+    <code class="literal">ORDER BY</code> (see above).  Note that the <span class="quote">"<span class="quote">first
+    row</span>"</span> of each set is unpredictable unless <code class="literal">ORDER
     BY</code> is used to ensure that the desired row appears first.  For
     example:
 </p><pre class="programlisting">

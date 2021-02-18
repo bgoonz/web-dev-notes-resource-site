@@ -29,7 +29,7 @@
 <li><a href="#declarative-programming">Declarative programming</a></li>
 <li><a href="#reusability">Reusability</a></li>
 <li><a href="#one-flow-of-data">One-flow of data</a></li>
-<li><a href="#the-virtual-dom">The “virtual DOM”</a></li>
+<li><a href="#the-virtual-dom">The "virtual DOM"</a></li>
 <li><a href="#speed">Speed</a></li>
 </ul></li>
 <li><a href="#intro-to-es6-modules"><strong>Intro to ES6 Modules</strong></a>
@@ -71,7 +71,7 @@
 <li>[YUI]: (2006) A full framework that provided dynamic loading of scripts, events, visual components, data binding, and a philosophy on how to build client-side applications.</li>
 <li>[Knockout]: (2010) This is a standalone JavaScript implementation of the [Model-View-ViewModel] pattern used to build very fast dynamic components for client-side applications. It is the progenitor of many other libraries, include React.</li>
 <li>[AngularJS]: (2011) This framework from Google built on the success of Knockout and introduced a full set of utilities and philosophies to build modular client-side applications. (The current version has been branded [Angular].) In the rewrite of Angular to make the idea of a component a first-order concept, many developers left and joined the React community.</li>
-<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your front-end application in Elm. Then, you “compile” it. The Elm “compiler” translates all of the source code written in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that your front-end code will have “no runtime exceptions” which is a bold (and mostly true) claim.</li>
+<li>[Elm]: (2012) This is an entirely new <em>language</em> used to build front-end applications. You write your front-end application in Elm. Then, you "compile" it. The Elm "compiler" translates all of the source code written in Elm to highly-tuned JavaScript so that it runs really fast in your Web browser. It claims that by using Elm that your front-end code will have "no runtime exceptions" which is a bold (and mostly true) claim.</li>
 </ul>
 <h2 id="react-2013">React (2013)</h2>
 <p>In an effort to make its own Web front-end more maintainable, Facebook decided to build its own JavaScript-based library to create fast and functional front-end Web applications. Thus, React was born.</p>
@@ -108,12 +108,12 @@ fetch(&#39;https://example.com/api/people&#39;)
     const props = { people };
     ReactDOM.render(&lt;PeopleList props={props}/&gt;, peopleListElement);
   });</code></pre>
-<p>In this “simple” example, you may think, “Well, that’s like twice the code! Why would I do that?” Great question! When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into their own files and <em>organize</em> the code so you know where everything is.</p>
+<p>In this "simple" example, you may think, "Well, that’s like twice the code! Why would I do that?" Great question! When you start building <em>lots of components</em>, lots of different pieces of visual widgets to put together to manage a complex graphical human interface, it becomes really nice to put each of those functions (or classes) into their own files and <em>organize</em> the code so you know where everything is.</p>
 <h2 id="using-tools-with-react">Using tools with React</h2>
 <p>Oh, and the tools! Because software developers constantly look for ways to make things easier, the tools that have grown up around React are amazing. You’ll install React DevTools, a new tab in the Developer Tools that lets you see how React actually works in the browser, much like the <em>Elements</em> tab does for just HTML elements.</p>
 <p>[React DevTools]</p>
 <p>There is <code>create-react-app</code>, an extensible command-line tool that helps you generate standard React applications. We’ll show you how to use it with custom templates, too, to help remove some of the over-engineered stuff that comes with the standard template.</p>
-<p>Because browsers only understand JavaScript and not JSX, there is an extra “build step” involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called <a href="https://webpack.js.org/">Webpack</a>. Later this week, you’ll get into some of the details about how that works.</p>
+<p>Because browsers only understand JavaScript and not JSX, there is an extra "build step" involved with creating React-based front-end applications. There are a variety of tools that software developers use to make this happen. The most popular, right now, is to use a tool called <a href="https://webpack.js.org/">Webpack</a>. Later this week, you’ll get into some of the details about how that works.</p>
 <p>[Webpack.js]</p>
 <p>A really popular feature of modern React development is the concept of <em>hot module replacement</em> (HMR). When you make changes to your source code, right now, you must refresh your browser to see the changes. HMR sense what has changed and send the change to the browser without you having to refresh it. The changes are delivered in <em>real-time</em>, updating the UI for you as you make changes to the source code. It is almost magic what happens.</p>
 <p>After using React on their own massively complex Web interface, React developers decided they did need to have an opinion about how to architect the state of their application, that is, how to allow discretely different parts of their Web page to consume and modify data received from back-end APIs. This introduced the <em>Flux architecture</em> which you will learn about next week.</p>
@@ -127,7 +127,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <h2 id="modularity">Modularity</h2>
 <p>Unlike the mess of code that you can create with event listeners and template strings in your JavaScript code to manipulate the DOM by adding, updating, and removing elements from it, React provides modularity from the ground up. If you see modularity, understanding where code is that’s running, then React is for you.</p>
 <h2 id="easy-to-start">Easy to start</h2>
-<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the <code>createElement</code> method that React provides to define reusable “components” for what appears in the browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
+<p>You don’t need any special tools to use basic React. You can just import some files and get to work using the <code>createElement</code> method that React provides to define reusable "components" for what appears in the browser. They can be as simple as a really cool button, or as complex as Facebook’s Web UI.</p>
 <p>For more complex applications, there are may tools available to you to get a fully-functioning React application running from a single command on the command line, tools such as <em>Create React App</em>. This handy tools will create a full React application with live reload, testing, and support for things like advanced CSS manipulation.</p>
 <h2 id="declarative-programming">Declarative programming</h2>
 <p>In the same way that you use HTML to <em>declare</em> what the user interface should look like, React provides the same mechanism in its element-based programming API, either through the <code>createElement</code> method or the higher-level language known as JSX.</p>
@@ -135,7 +135,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <p>React encourages you to think in terms of reusability as you construct the user interface from elements and components that you create. It works best when you think of the page as pieces of UI working in harmony with one another. When you make a list or a button or a product card, you can then reuse those components to show different data that your UI demands to show.</p>
 <h2 id="one-flow-of-data">One-flow of data</h2>
 <p>React applications are built as a combination of parent and child components. As the names suggest, each child component has a parent and a parent component will have one or more child components. Components receive data via an argument traditionally named <code>props</code>. Parent components can decide the data that its children should show by passing only a subset of what it has to its children. Data is never passed up from the child to the parent. Because you always know which way data flows, you can more easily debug your application to determine where the data display or event handling code is.</p>
-<h2 id="the-virtual-dom">The “virtual DOM”</h2>
+<h2 id="the-virtual-dom">The "virtual DOM"</h2>
 <p>You may have come to the conclusion that writing things like</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="va">el</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="vs">  &lt;table&gt;</span></a>
@@ -156,7 +156,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <li>React follows the declarative programming style</li>
 <li>React encourages reusability in your code</li>
 <li>React has one way that data flows, which makes it much easier to reason about the code</li>
-<li>React uses a “virtual DOM” to make changes to the real DOM very fast and efficient</li>
+<li>React uses a "virtual DOM" to make changes to the real DOM very fast and efficient</li>
 </ul>
 <hr />
 <h1 id="intro-to-es6-modules">Intro to ES6 Modules</h1>
@@ -325,7 +325,7 @@ fetch(&#39;https://example.com/api/people&#39;)
 <p>Follow the guidelines below to use an HTTP server and import JavaScript files with ES6 module syntax:</p>
 <ol type="1">
 <li>Create a folder with an <code>index.html</code> file. Fill in the file with the contents below. Note the use of the <code>type="module"</code> attribute in the <code>&lt;script&gt;</code> tag. You must include the <code>.js</code> file extension in the name of the module (<code>./program.js</code>). The browser needs to know the entire name of the JavaScript file it will be loading from a server. <code>html  &lt;html&gt;  &lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;    &lt;title&gt;Browser&lt;/title&gt;  &lt;/head&gt;  &lt;body&gt;    &lt;button id="button"&gt;Start Game&lt;/button&gt;    &lt;div id="message"&gt;&lt;/div&gt;    &lt;script type="module" src="./program.js"&gt;&lt;/script&gt;  &lt;/body&gt;  &lt;/html&gt;</code></li>
-<li><p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() { this.gameStartMessage = “Hello! Do you want to play a game?”; }</p>
+<li><p>Create a <code>game.js</code> file with the contents below: ```js export class Game { constructor() { this.gameStartMessage = "Hello! Do you want to play a game?"; }</p>
 start() { document .getElementById(‘button’) .addEventListener(‘click’, () =&gt; { const messageContainer = document.getElementById(‘message’); messageContainer.innerText = this.gameStartMessage; }); } } ```</li>
 <li><p>Create a <code>program.js</code> file with the contents below: ```js import { Game } from ‘./game.js’;</p>
 window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game(); game.start(); }); ```</li>
@@ -351,7 +351,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <h1 id="basic-react-learning-objectives">Basic React Learning Objectives</h1>
 <p>Learning React can seem daunting. The documentation available on the main site is geared toward people who have a lot of experience creating front-end applications. The basic React objectives gets you over that hump. At the end of the lessons, you should be able to:</p>
 <ul>
-<li>Explain how React uses a tree data structure called the “virtual DOM” to model the DOM</li>
+<li>Explain how React uses a tree data structure called the "virtual DOM" to model the DOM</li>
 <li>Use <code>React.createElement</code> to create virtual DOM nodes</li>
 <li>Use <code>ReactDOM.render</code> to have React render your virtual DOM nodes into the actual Web page</li>
 <li>Use JSX to create virtual DOM nodes</li>
@@ -363,9 +363,9 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>The path from JavaScript to actual DOM elements appearing in your HTML document is not complex thanks to React. However, it is worth reviewing so that there is no mystery about it.</p>
 <p>In this article, you will review how to use <code>React.createElement</code> to get what you want into React’s virtual DOM so that React will convert into real DOM. There are three steps:</p>
 <ul>
-<li>Invoking <code>createElement</code> to build the “element tree”</li>
+<li>Invoking <code>createElement</code> to build the "element tree"</li>
 <li>Invoking <code>render</code> to let React build its virtual DOM</li>
-<li>“Waiting” for React to convert its virtual DOM into real DOM</li>
+<li>"Waiting" for React to convert its virtual DOM into real DOM</li>
 </ul>
 <p>This article’s goal is for React to create the following HTML in the DOM.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">&lt;ul&gt;</span></a>
@@ -398,14 +398,14 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 </ul>
 <p>Three of those tags have attributes that you want to have appear in the DOM:</p>
 <ul>
-<li>One <code>li</code> element has a “class” attribute (which you <em>must</em> translate to “className” when using in React)</li>
-<li>Both <code>a</code> elements have “href” attributes</li>
+<li>One <code>li</code> element has a "class" attribute (which you <em>must</em> translate to "className" when using in React)</li>
+<li>Both <code>a</code> elements have "href" attributes</li>
 </ul>
 <p>Finally, there is a parent-child relationship between the elements.</p>
 <ul>
 <li>The <code>ul</code> element is the parent of both <code>li</code> elements</li>
 <li>Both <code>li</code> elements have a single <code>a</code> element child</li>
-<li>Both <code>a</code> elements have “child” text content</li>
+<li>Both <code>a</code> elements have "child" text content</li>
 </ul>
 <p>To summarize, here are the elements and how you would translate them to their respective arguments for <code>React.createElement</code>.</p>
 <table>
@@ -475,7 +475,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb22-8" title="8">  )<span class="op">,</span></a>
 <a class="sourceLine" id="cb22-9" title="9">  <span class="co">// Second li child,</span></a>
 <a class="sourceLine" id="cb22-10" title="10">)<span class="op">;</span></a></code></pre></div>
-<p>The anchor element for “Pets” has only one text child. Its call to <code>React.createElement</code> will have its arguments on one line:</p>
+<p>The anchor element for "Pets" has only one text child. Its call to <code>React.createElement</code> will have its arguments on one line:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="va">React</span>.<span class="at">createElement</span>(</a>
 <a class="sourceLine" id="cb23-2" title="2">  <span class="st">&#39;ul&#39;</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb23-3" title="3">  <span class="kw">null</span><span class="op">,</span></a>
@@ -501,7 +501,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb24-12" title="12">    <span class="co">// a child</span></a>
 <a class="sourceLine" id="cb24-13" title="13">  )<span class="op">,</span></a>
 <a class="sourceLine" id="cb24-14" title="14">)<span class="op">;</span></a></code></pre></div>
-<p>The other anchor element, the one for “Owners” has only one text child. Its call to <code>React.createElement</code> will have its arguments on one line:</p>
+<p>The other anchor element, the one for "Owners" has only one text child. Its call to <code>React.createElement</code> will have its arguments on one line:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1"><span class="va">React</span>.<span class="at">createElement</span>(</a>
 <a class="sourceLine" id="cb25-2" title="2">  <span class="st">&#39;ul&#39;</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb25-3" title="3">  <span class="kw">null</span><span class="op">,</span></a>
@@ -516,7 +516,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb25-12" title="12">    <span class="va">React</span>.<span class="at">createElement</span>(<span class="st">&#39;a&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">href</span><span class="op">:</span> <span class="st">&#39;/owners&#39;</span><span class="op">},</span> <span class="st">&#39;Owners&#39;</span>)<span class="op">,</span></a>
 <a class="sourceLine" id="cb25-13" title="13">  )<span class="op">,</span></a>
 <a class="sourceLine" id="cb25-14" title="14">)<span class="op">;</span></a></code></pre></div>
-<p>That’s how you translate what you want from simple HTML into well-formatted calls to <code>React.createElement</code>. That will build the “element tree” for React to use.</p>
+<p>That’s how you translate what you want from simple HTML into well-formatted calls to <code>React.createElement</code>. That will build the "element tree" for React to use.</p>
 <h2 id="converting-to-virtual-dom">Converting to virtual DOM</h2>
 <p>To tell React to start the conversion process, you have to use the <code>React.render</code> method which takes a value returned from <code>React.createElement</code> and a DOM node in the actual document where React will insert the result of the conversion into real DOM.</p>
 <p>If you wanted to insert what was created in the last section into the <code>main</code> tag, the most forward way of doing that is like this.</p>
@@ -552,7 +552,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>It takes that real DOM and inserts it as the content of the target that you gave it which, in this case, is the <code>main</code> element in the body of the document.</p>
 <h2 id="updates">Updates</h2>
 <p>When you call <code>React.render</code> again for the same component and target, React takes the existing virtual DOM it knows about last time it rendered the element tree, compares it to whatever new thing you want to render, and determines which (if any) of the living DOM needs to change.</p>
-<p>For example, let’s say you constructed the same element tree but left off the “selected” class for the first list element. Then, when you rendered it, again, by calling <code>React.render</code>, React would compare the new element tree with the old element tree, figure out that one class was missing on that one <code>li</code> element, and remove that and only that from the real DOM.</p>
+<p>For example, let’s say you constructed the same element tree but left off the "selected" class for the first list element. Then, when you rendered it, again, by calling <code>React.render</code>, React would compare the new element tree with the old element tree, figure out that one class was missing on that one <code>li</code> element, and remove that and only that from the real DOM.</p>
 <figure>
 <embed src="images/react-example-virtual-dom-diff.svgimages/react-example-virtual-dom-diff.svg%20orderedList=false%7D%20--%3E" /><figcaption>Virtual DOM diff</figcaption>
 </figure>
@@ -577,7 +577,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>Because browsers don’t understand JSX, you have to use some tools to translate JSX into just plain old JavaScript. The main tool that you will use in almost every case is one called <a href="https://babeljs.io/">Babel</a>. It is a tool that can convert versions of modern JavaScript into old version of JavaScript. It can convert <em>future</em> features of JavaScript into modern JavaScript. It can convert JSX into modern (or old) JavaScript.</p>
 <p>However, using Babel by itself is like building a house with just a hammer. It’d be nice to have fancier tools to help you build that house. That’s where tools like <a href="https://github.com/facebook/create-react-app">Create React App</a> come into play. <strong>Create React App</strong> uses Babel underneath and, then, adds a whole lot more. You’ll see more of **Create React App* as you progress through the course.</p>
 <h2 id="jsx-syntax">JSX Syntax</h2>
-<p>Here’s a function-based component using <code>React.createElement</code> that has an <code>h1</code> element with the content “Hello!”, a placeholder image, and a link to some search engine passed in through props.</p>
+<p>Here’s a function-based component using <code>React.createElement</code> that has an <code>h1</code> element with the content "Hello!", a placeholder image, and a link to some search engine passed in through props.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">const</span> ExampleComponent <span class="op">=</span> props <span class="kw">=&gt;</span> <span class="va">React</span>.<span class="at">createElement</span>(</a>
 <a class="sourceLine" id="cb27-2" title="2">  <span class="va">React</span>.<span class="at">Fragment</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb27-3" title="3">  <span class="kw">null</span><span class="op">,</span></a>
@@ -596,7 +596,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>You can see Babel in action converting that JSX code above. Here’s a <a href="https://babeljs.io/en/repl#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;spec=false&amp;loose=false&amp;code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=false&amp;fileSize=false&amp;timeTravel=false&amp;sourceType=module&amp;lineWrap=true&amp;presets=es2015%2Creact%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=7.4.3">link to Babel</a> already configured for you. Copy and paste that code above to see it transform back into <code>React.createElement</code> invocations.</p>
 <h3 id="html-like-tags-but">HTML-like tags, but…</h3>
 <p>The <code>React.Fragment</code> element <em>contains</em> the <code>h1</code>, <code>img</code>, and <code>a</code>, just like it does in the <code>React.createElement</code> version, except instead of using a method call to do it, it uses more familiar HTML-like tags. There’s one super big difference between the HTML that you know and what JSX expects. Can you see it?</p>
-<p>Look at the end of the <code>img</code> tag. See that “/” before the closing angle bracket? You <em>must</em> include that if the tag that you’re using doesn’t have a close tag. If you want to use those HTML element in your JSX, then you have to put the slash. The following table shows some common tags that you’d use and their JSX equivalent.</p>
+<p>Look at the end of the <code>img</code> tag. See that "/" before the closing angle bracket? You <em>must</em> include that if the tag that you’re using doesn’t have a close tag. If you want to use those HTML element in your JSX, then you have to put the slash. The following table shows some common tags that you’d use and their JSX equivalent.</p>
 <table>
 <thead>
 <tr class="header">
@@ -676,13 +676,13 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
     &lt;/div&gt;
   );
 }</code></pre>
-<p>You’ll see that the JSX block is wrapped in parentheses. This is due to the way that JavaScript handles something called <a href="https://www.ecma-international.org/ecma-262/#sec-rules-of-automatic-semicolon-insertion">“automatic semicolon insertion”</a>. Here’s a simple example. What do you think the function returns? (Yes, this <em>is</em> a “trick question”.)</p>
+<p>You’ll see that the JSX block is wrapped in parentheses. This is due to the way that JavaScript handles something called <a href="https://www.ecma-international.org/ecma-262/#sec-rules-of-automatic-semicolon-insertion">"automatic semicolon insertion"</a>. Here’s a simple example. What do you think the function returns? (Yes, this <em>is</em> a "trick question".)</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">function</span> <span class="at">sum</span>(i<span class="op">,</span> j) <span class="op">{</span></a>
 <a class="sourceLine" id="cb36-2" title="2">  <span class="cf">return</span></a>
 <a class="sourceLine" id="cb36-3" title="3">    i <span class="op">+</span> j<span class="op">;</span></a>
 <a class="sourceLine" id="cb36-4" title="4"><span class="op">}</span></a></code></pre></div>
 <p>If the answer isn’t obvious, start Node on the command line, type it in exactly the way it is there, and try calling it with <code>sum(1, 2)</code>.</p>
-<p>You may be surprised to see that it returns <code>undefined</code>. Here’s why: when JavaScript reads your source code, it tries to be “helpful”. When it reads the lines of your code, it asks, is each line a “complete” line? Is it and the following lines valid JavaScript expressions? If the answer is “yes”, then it will add a semicolon at the end of the line <em>for you</em>. When it reads the above “sum” function, the JavaScript runner “thinks” to itself:</p>
+<p>You may be surprised to see that it returns <code>undefined</code>. Here’s why: when JavaScript reads your source code, it tries to be "helpful". When it reads the lines of your code, it asks, is each line a "complete" line? Is it and the following lines valid JavaScript expressions? If the answer is "yes", then it will add a semicolon at the end of the line <em>for you</em>. When it reads the above "sum" function, the JavaScript runner "thinks" to itself:</p>
 <ul>
 <li>Ok, I have two lines:
 <ul>
@@ -701,14 +701,14 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb37-2" title="2">  <span class="cf">return</span><span class="op">;</span> <span class="co">// &lt;- There&#39;s a new semicolon!</span></a>
 <a class="sourceLine" id="cb37-3" title="3">    i <span class="op">+</span> j<span class="op">;</span></a>
 <a class="sourceLine" id="cb37-4" title="4"><span class="op">}</span></a></code></pre></div>
-<p>That function never gets to <code>i + j</code> because it always returns “no value” on the first line. Yikes!</p>
-<p>To get around that, you can add parentheses to tell JavaScript that “more is coming”.</p>
+<p>That function never gets to <code>i + j</code> because it always returns "no value" on the first line. Yikes!</p>
+<p>To get around that, you can add parentheses to tell JavaScript that "more is coming".</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">function</span> <span class="at">sum</span>(i<span class="op">,</span> j) <span class="op">{</span></a>
 <a class="sourceLine" id="cb38-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb38-3" title="3">    i <span class="op">+</span> j</a>
 <a class="sourceLine" id="cb38-4" title="4">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb38-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>Now, when JavaScript reads the line <code>return (</code>, it “thinks” to itself, “Well, that’s not a complete expression. There must be more coming. I will <em>not</em> put a semicolon there.”</p>
+<p>Now, when JavaScript reads the line <code>return (</code>, it "thinks" to itself, "Well, that’s not a complete expression. There must be more coming. I will <em>not</em> put a semicolon there."</p>
 <p>The same is true for functions containing JSX. The above code</p>
 <pre class="jsx"><code>function App() {
   return (
@@ -730,7 +730,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb40-9" title="9">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb40-10" title="10"><span class="op">}</span></a></code></pre></div>
 <p>Without the parentheses starting right after the <code>return</code> keyword and ending after the outer call of <code>React.createElement</code>, JavaScript would just stick a semicolon after the <code>return</code> keyword and all of the fancy React stuff would get ignored.</p>
-<p>The message is clear: if you use the <code>return</code> keyword in a function to “return some JSX”, then make sure you wrap the JSX in parentheses.</p>
+<p>The message is clear: if you use the <code>return</code> keyword in a function to "return some JSX", then make sure you wrap the JSX in parentheses.</p>
 <h2 id="what-youve-learned-2">What you’ve learned</h2>
 <p>That’s really all there is to JSX. You combine your knowledge of HTML and your knowledge of <code>React.createElement</code> to allow the Babel tool to turn your code into plain old JavaScript for you. Specifically, you have seen the following conversions:</p>
 <table>
@@ -765,7 +765,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 </tbody>
 </table>
 <p>You’ve also read about the special property names that React supports.</p>
-<p>Finally, you learned about the frustrating side effect of “automatic semicolon insertion” and, if you do use the <code>return</code> keyword in your functions, that you should wrap the JSX in parentheses to prevent JavaScript from <em>not</em> returning your code.</p>
+<p>Finally, you learned about the frustrating side effect of "automatic semicolon insertion" and, if you do use the <code>return</code> keyword in your functions, that you should wrap the JSX in parentheses to prevent JavaScript from <em>not</em> returning your code.</p>
 <hr />
 <h1 id="walk-through-creating-elements-in-react">Walk-Through: Creating Elements In React</h1>
 <p>To start your React journey, you will build your foundational knowledge by starting out with the basic <code>React.createElement</code> and <code>ReactDOM.render</code>. One of the compelling features of this type of solution is that you do not need <em>any</em> extra tools to get your app running in the browser. In the next walk-through, you will have to <em>install</em> a ton of packages just to get React to properly work. This project will walk you through how to use a pure JavaScript version of React. Everything will work right out of the box.</p>
@@ -777,7 +777,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>Create a new directory to contain this new project. In that directory, create two files: an <strong>index.html</strong> file and an <strong>app.js</strong> file. In the <strong>index.html</strong> file, create a standard HTML 5 document. In the HTML <code>body</code> (in this order), create a <code>main</code> element and a <code>script</code> element for your <strong>app.js</strong> file with <code>type="module"</code> so you can use ES6 modules.</p>
 <p>Serve your files with a local Python server by running the <code>python3 -m http.server</code> command in your terminal. Make sure you are running the command from within your project directory. You should be able to open http://localhost:8000 to see the page, empty as it is.</p>
 <h2 id="test-that-things-are-working">Test that things are working</h2>
-<p>Get ready! You’re going to do the first React thing! You’re going to create a React element that will display “Hello, programmers!”. You will then have React render it to the DOM.</p>
+<p>Get ready! You’re going to do the first React thing! You’re going to create a React element that will display "Hello, programmers!". You will then have React render it to the DOM.</p>
 <p>Copy and paste the following JavaScript code into your <strong>app.js</strong>, refresh your page, look at the code to get a feel for what it does, try to come up with explanations on your own, and then continue reading.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb41-1" title="1"><span class="im">import</span> <span class="st">&#39;https://unpkg.com/react@16/umd/react.development.js&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb41-2" title="2"><span class="im">import</span> <span class="st">&#39;https://unpkg.com/react-dom@16/umd/react-dom.development.js&#39;</span><span class="op">;</span></a>
@@ -791,7 +791,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb41-10" title="10"><span class="kw">const</span> target <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;main&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb41-11" title="11"><span class="kw">const</span> app <span class="op">=</span> <span class="va">React</span>.<span class="at">createElement</span>(HelloWorld<span class="op">,</span> <span class="kw">null</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb41-12" title="12"><span class="va">ReactDOM</span>.<span class="at">render</span>(app<span class="op">,</span> target)<span class="op">;</span></a></code></pre></div>
-<p><strong>Note</strong>: You may want to turn on “Disable cache” on the <em>Network</em> tab of your DevTools and keep the DevTools open while you’re doing this to make sure you always have the newest version of the files.</p>
+<p><strong>Note</strong>: You may want to turn on "Disable cache" on the <em>Network</em> tab of your DevTools and keep the DevTools open while you’re doing this to make sure you always have the newest version of the files.</p>
 <p>You should now have <em>Components</em> and <em>Profiler</em> tabs in your DevTools. If you click on the <code>HelloWorld</code> component in the <em>Components</em> tab, you can see that it has no <em>props</em>. You’ll learn much more about props later. For now, just remember that the React DevTools extension is a helpful tool for you to view information about your components and their props.</p>
 <h2 id="walking-through-the-code">Walking through the code</h2>
 <p>Even though there are only five statements in that code block, a lot is going on. This section carefully walks through each of the statements to help you get a deeper understanding.</p>
@@ -807,7 +807,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>to</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb43-1" title="1"><span class="im">import</span> <span class="st">&#39;https://unpkg.com/react@16/umd/react.production.min.js&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb43-2" title="2"><span class="im">import</span> <span class="st">&#39;https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js&#39;</span><span class="op">;</span></a></code></pre></div>
-<p>Those files contain the minified “production” version of the code, which is just a smaller version of the “development” versions. If you open up the links to the <a href="https://unpkg.com/react@16/umd/react.development.js">react.development.js</a> and <a href="https://unpkg.com/react@16/umd/react.production.min.js">react-production.min.js</a> files in your browser, you’ll see JavaScript in both files. Notice how the non-minified version (<a href="https://unpkg.com/react@16/umd/react.development.js">react.development.js</a>) includes plain JavaScript you’re used to seeing. The minified version simply compresses that JavaScript.</p>
+<p>Those files contain the minified "production" version of the code, which is just a smaller version of the "development" versions. If you open up the links to the <a href="https://unpkg.com/react@16/umd/react.development.js">react.development.js</a> and <a href="https://unpkg.com/react@16/umd/react.production.min.js">react-production.min.js</a> files in your browser, you’ll see JavaScript in both files. Notice how the non-minified version (<a href="https://unpkg.com/react@16/umd/react.development.js">react.development.js</a>) includes plain JavaScript you’re used to seeing. The minified version simply compresses that JavaScript.</p>
 <h3 id="the-odd-looking-function">The odd-looking function</h3>
 <p>Turn your attention to this statement.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">const</span> HelloWorld <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="va">React</span>.<span class="at">createElement</span>(</a>
@@ -854,7 +854,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <a class="sourceLine" id="cb47-3" title="3"><span class="va">ReactDOM</span>.<span class="at">render</span>(app<span class="op">,</span> target)<span class="op">;</span></a></code></pre></div>
 <p>The first line is something you should be really familiar with. You are selecting the <code>&lt;main&gt;</code> element and referencing it as <code>target</code>.</p>
 <p>The second line is using <code>React.createElement</code> to create an element from the <code>HelloWorld</code> function-based component discussed in the last section. It has <code>null</code> properties.</p>
-<p>The third line <em>renders</em> the component into the actual Web page, the component specified by the first argument, which is the one created from the <code>HelloWorld</code> component. Remember that you can open your DevTools, find the <em>Components</em> tab, and click it to see the React DevTools show you the “HelloWorld” component rendered by React.</p>
+<p>The third line <em>renders</em> the component into the actual Web page, the component specified by the first argument, which is the one created from the <code>HelloWorld</code> component. Remember that you can open your DevTools, find the <em>Components</em> tab, and click it to see the React DevTools show you the "HelloWorld" component rendered by React.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/react-hello-programmers-create-element-with-react-tools.png" alt="Hello programmers with dev tools" /><figcaption>Hello programmers with dev tools</figcaption>
 </figure>
@@ -909,14 +909,14 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <p>Look at what gets produced in the <em>Elements</em> tab of your DevTools. Look at what gets produced in the <em>Components</em> tab of your DevTools for all three of your components. Play around with it: change tags, replace some of those <code>null</code> second arguments with objects to see what gets presented. Give it a whirl. From this point on, you’ll be working with JavaScript code known as <strong>JSX</strong> in your React projects. JSX is just syntactic sugar that translates to creating React element objects. Although you won’t be creating full-scale projects with <code>React.createElement</code>, it’s important to remember that React is actually using <code>React.createElement</code> under the hood.</p>
 <hr />
 <h1 id="thinking-in-components">Thinking In Components</h1>
-<p>For the next couple of walk through articles, you will be reproducing a page from Petrack. Please go to <a href="https://polar-beach-08187.herokuapp.com/">Petrack</a> and click around it so you can see how it works. Pay special attention to the detail page for the pets. This article will analyze it so that it can introduce you into how to “think in React”.</p>
+<p>For the next couple of walk through articles, you will be reproducing a page from Petrack. Please go to <a href="https://polar-beach-08187.herokuapp.com/">Petrack</a> and click around it so you can see how it works. Pay special attention to the detail page for the pets. This article will analyze it so that it can introduce you into how to "think in React".</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/pettrack-pet-detail.png" alt="Petrack pet detail page" /><figcaption>Petrack pet detail page</figcaption>
 </figure>
-<p>When you “think in React”, you are supposed to “think in components”. A component in React is usually a JavaScript function or a class that returns a special React object called an “element”. There is a <em>very</em> vocal community that believes that function-based components are far superior than class-based components because they’re easier to understand. You will have the opportunity to use both in this class and make up your mind which you like better.</p>
-<p>In this article, you will gain insight into how to break a UI down into portions of functionality that React calls “components”. The way this article presents the components is only one way to do it. Other developers may choose to do it differently. There is usually no wrong way to do it.</p>
+<p>When you "think in React", you are supposed to "think in components". A component in React is usually a JavaScript function or a class that returns a special React object called an "element". There is a <em>very</em> vocal community that believes that function-based components are far superior than class-based components because they’re easier to understand. You will have the opportunity to use both in this class and make up your mind which you like better.</p>
+<p>In this article, you will gain insight into how to break a UI down into portions of functionality that React calls "components". The way this article presents the components is only one way to do it. Other developers may choose to do it differently. There is usually no wrong way to do it.</p>
 <h2 id="components">Components</h2>
-<p>In React-speak, a “component” is a chunk of the user interface that can (or should) be treated as a unit because it may (or likely will) be used more than once or used to structure a page. That’s not a very satisfying definition. This article will walk you through breaking down the page using the practical example of the Petrack pet detail page.</p>
+<p>In React-speak, a "component" is a chunk of the user interface that can (or should) be treated as a unit because it may (or likely will) be used more than once or used to structure a page. That’s not a very satisfying definition. This article will walk you through breaking down the page using the practical example of the Petrack pet detail page.</p>
 <p>When you think of components, it’s good to think in terms of the Single Responsibility Principle. Remember that? It’s good to have a component do one thing and one thing well. In this analysis, it will identify how it fits (or doesn’t fit) in with the Single Responsibility Principle.</p>
 <p>If you think in terms of Pug, then a component is kind of like an <code>include</code>, a big or small amount of code that you could use over and over in your UI. The main difference is that React is <em>in the browser</em> and handles user events and HTML generation for you so that you’re not creating template strings and adding them via the <code>innerHTML</code> property or <code>appendChild</code> method. Pug is just on the server generating HTML.</p>
 <h2 id="the-navigation-component">The navigation component</h2>
@@ -926,7 +926,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 </figure>
 <p>If you were working in Pug, that would be in your <strong>layout.pug</strong> because you would want it to appear in every page. In React, you will create a reusable component, maybe call it <code>Navigation</code>, and use it on all of your React-enabled pages.</p>
 <p>This does one thing and one thing well: it shows the static content of the navigation. There’s nothing else it needs to do. Good job, <code>Navigation</code> component!</p>
-<p>What this means is that the code that will create the heading “Petrack”, the links “Pets” and “Owners”, and the “Back” link will all be in their own component, which is just a JavaScript function or class. It could look something like this, but with real code where it reads “some cool React code here”. This is the skeleton of the code.</p>
+<p>What this means is that the code that will create the heading "Petrack", the links "Pets" and "Owners", and the "Back" link will all be in their own component, which is just a JavaScript function or class. It could look something like this, but with real code where it reads "some cool React code here". This is the skeleton of the code.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb49-1" title="1"><span class="co">// Navigation.js</span></a>
 <a class="sourceLine" id="cb49-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb49-3" title="3"></a>
@@ -943,7 +943,7 @@ window.addEventListener(‘DOMContentLoaded’, () =&gt; { const game = new Game
 <figure>
 <img src="images/pettrack-pet-detail-component.png" alt="Petrack detail" /><figcaption>Petrack detail</figcaption>
 </figure>
-<p>This could be another component. It would create the “Details” headline, show the individual details of the pet, create the “Owners” headline, and then create the links to the owners. It could look something like this.</p>
+<p>This could be another component. It would create the "Details" headline, show the individual details of the pet, create the "Owners" headline, and then create the links to the owners. It could look something like this.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb50-1" title="1"><span class="co">// PetDetail.js</span></a>
 <a class="sourceLine" id="cb50-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb50-3" title="3"></a>
@@ -1012,7 +1012,7 @@ block content
 <figure>
 <img src="images/pettrack-pet-detail-owners-list-component.png" alt="Petrack owners list" /><figcaption>Petrack owners list</figcaption>
 </figure>
-<p>It’s single responsibility is to manage creating the “Owners” header and the unordered list. It will use the <code>OwnerLink</code> component to do that! Again, this is called <em>component composition</em>.</p>
+<p>It’s single responsibility is to manage creating the "Owners" header and the unordered list. It will use the <code>OwnerLink</code> component to do that! Again, this is called <em>component composition</em>.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb54-1" title="1"><span class="co">// OwnersList.js</span></a>
 <a class="sourceLine" id="cb54-2" title="2"><span class="im">import</span> OwnerLink <span class="im">from</span> <span class="st">&#39;./OwnerLink&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb54-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -1044,7 +1044,7 @@ block content
 <a class="sourceLine" id="cb55-14" title="14"></a>
 <a class="sourceLine" id="cb55-15" title="15"><span class="im">export</span> <span class="im">default</span> PetDetail<span class="op">;</span></a></code></pre></div>
 <h2 id="putting-it-all-together">Putting it all together</h2>
-<p>Once you have all of those components, you would create one more component, the top-level “page” component, that would render the <code>Navigation</code> and <code>PetDetail</code> components.</p>
+<p>Once you have all of those components, you would create one more component, the top-level "page" component, that would render the <code>Navigation</code> and <code>PetDetail</code> components.</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb56-1" title="1"><span class="co">// PetDetailPage.js</span></a>
 <a class="sourceLine" id="cb56-2" title="2"><span class="im">import</span> Navigation <span class="im">from</span> <span class="st">&#39;./Navigation&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb56-3" title="3"><span class="im">import</span> PetDetail <span class="im">from</span> <span class="st">&#39;./PetDetail&#39;</span><span class="op">;</span></a>
@@ -1060,17 +1060,17 @@ block content
 <a class="sourceLine" id="cb56-13" title="13"><span class="op">}</span></a>
 <a class="sourceLine" id="cb56-14" title="14"></a>
 <a class="sourceLine" id="cb56-15" title="15"><span class="im">export</span> <span class="im">default</span> PetDetailPage<span class="op">;</span></a></code></pre></div>
-<p>The final analysis in this breakdown of “components” to “think in React” looks like this.</p>
+<p>The final analysis in this breakdown of "components" to "think in React" looks like this.</p>
 <figure>
 <img src="images/pettrack-pet-detail-all-components.png" alt="Petrack final analysis" /><figcaption>Petrack final analysis</figcaption>
 </figure>
 <p>You can see each of the components that were described in this article. You can also see how the <code>PetInformationItem</code> and <code>OwnerLink</code> components get used multiple times on the page.</p>
 <h2 id="there-is-probably-more">There is probably more</h2>
-<p>Take a look at this, again, and think about if there is any “missing” component before continuing.</p>
+<p>Take a look at this, again, and think about if there is any "missing" component before continuing.</p>
 <figure>
 <img src="images/pettrack-pet-detail-all-components.png" alt="Petrack final analysis" /><figcaption>Petrack final analysis</figcaption>
 </figure>
-<p>You could also create a <code>PetDetailList</code> component, if you want, that would manage the “Details” header and the definition list. That would reflect the same structure that the <code>OwnersList</code> has, a component responsible for generating a header and a list. In the following walk through articles, the <code>PetDetailList</code> component will also be included in the development.</p>
+<p>You could also create a <code>PetDetailList</code> component, if you want, that would manage the "Details" header and the definition list. That would reflect the same structure that the <code>OwnersList</code> has, a component responsible for generating a header and a list. In the following walk through articles, the <code>PetDetailList</code> component will also be included in the development.</p>
 <h2 id="what-youve-seen">What you’ve seen</h2>
 <p>This is thinking in React. Looking at a Web page and deciding what parts of it belong in sections, what parts are repeated, and how to group them all together. The React documentation calls this <a href="https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy">breaking the UI into a component hierarchy</a>. That link is to a section in the React documentation entitled <em>Thinking in React</em>. That section performs the same exercise that this article performed, but with a lot fewer words and pictures.</p>
 <p>In the upcoming exercises, you will create these components in a couple of ways. The first way is the hard way, but shows you how React works under the covers. The second way uses the fancy JSX language to make it easier for you.</p>
@@ -1196,7 +1196,7 @@ export default Navigation;</code></pre>
 <img src="images/pettrack-pet-detail-all-components-with-details-list.png" alt="Petrack component analysis" /><figcaption>Petrack component analysis</figcaption>
 </figure>
 <h2 id="getting-some-data">Getting some data</h2>
-<p>Open the <strong>src/index.js</strong> file. In it, after the call to <code>ReactDOM.render</code>, create a fetch call for the RESTful endpoint https://polar-beach-08187.herokuapp.com/api/pets/2. (You can click on the link to see the data. That’s “Mog”, the cat. She is forgetful.) Do all of the normal stuff that you would do with <code>async</code> functions and what not.</p>
+<p>Open the <strong>src/index.js</strong> file. In it, after the call to <code>ReactDOM.render</code>, create a fetch call for the RESTful endpoint https://polar-beach-08187.herokuapp.com/api/pets/2. (You can click on the link to see the data. That’s "Mog", the cat. She is forgetful.) Do all of the normal stuff that you would do with <code>async</code> functions and what not.</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb63-1" title="1">(<span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb63-2" title="2">  <span class="kw">const</span> url <span class="op">=</span> <span class="st">&#39;https://polar-beach-08187.herokuapp.com/api/pets/2&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb63-3" title="3">  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="at">fetch</span>(url)<span class="op">;</span></a>
@@ -1225,7 +1225,7 @@ export default Navigation;</code></pre>
 <a class="sourceLine" id="cb64-14" title="14">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb64-15" title="15"><span class="op">}</span>)()<span class="op">;</span></a></code></pre></div>
 <p>This has changed everything! You don’t see it, yet, but once the AJAX call completes, go look at the <em>Components</em> tab of your DevTools. Click on the <code>App</code> component and look at the values in the right pane. React now knows about the data that you passed in!</p>
-<p>Now, you need to pass that to the <code>PetDetailPage</code> component. In the <strong>src/App.js</strong> file, change the function’s parameter list to have a single parameter named “props”. Then, pass the value of <code>props.pet</code> into the pet attribute of the <code>PetDetailPage</code> component, similar to what you did in <strong>src/index.js</strong> for the <code>App</code> component. You should be able to see the props in the <em>Components</em> tab for both the <code>App</code> and <code>PetDetailPage</code> components.</p>
+<p>Now, you need to pass that to the <code>PetDetailPage</code> component. In the <strong>src/App.js</strong> file, change the function’s parameter list to have a single parameter named "props". Then, pass the value of <code>props.pet</code> into the pet attribute of the <code>PetDetailPage</code> component, similar to what you did in <strong>src/index.js</strong> for the <code>App</code> component. You should be able to see the props in the <em>Components</em> tab for both the <code>App</code> and <code>PetDetailPage</code> components.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/create-react-app-passing-data-into-pet-detail-page.gif" alt="Data passed down to PetDetailPage" /><figcaption>Data passed down to PetDetailPage</figcaption>
 </figure>
@@ -1297,12 +1297,12 @@ export default PetDetailList;</code></pre>
 <a class="sourceLine" id="cb70-6" title="6"><span class="op">;</span></a>
 <a class="sourceLine" id="cb70-7" title="7"></a>
 <a class="sourceLine" id="cb70-8" title="8"><span class="im">export</span> <span class="im">default</span> PetDetails<span class="op">;</span></a></code></pre></div>
-<p>Refresh your page. You should now see the <code>PetDetailList</code> in the <em>Components</em> tab. It’s props should have all of data for the pet on it. You should also see the “Details” headline in the rendered HTML, too.</p>
+<p>Refresh your page. You should now see the <code>PetDetailList</code> in the <em>Components</em> tab. It’s props should have all of data for the pet on it. You should also see the "Details" headline in the rendered HTML, too.</p>
 <p>The next step is to create the <code>PetInformationItem</code> component to fill out that <code>dl</code> just yearning for content in the <code>PetDetailList</code> component.</p>
 <h2 id="the-pet-information-item-component-1">The pet information item component</h2>
 <p><strong>Note</strong>: The following steps will introduce an error that you will fix. This is so you can get a feel for what kind of errors you will see when working with React.</p>
 <p><strong>Mira’s Note</strong>: The following will not actually introduce an error for the reason provided, because there is no missing pass-down of props in the chain of nested components if you follow the instructions. The error described after it, however, will show.</p>
-<p>Create a new file, <strong>src/PetInformationItem.js</strong>. It will contain a function-based component that needs data to render, so stub out the function with the “props” parameter. Don’t forget to import the React. Then, it needs to render two elements, the <code>dt</code> element and the <code>dd</code> element. Do that by wrapping a fragment around them.</p>
+<p>Create a new file, <strong>src/PetInformationItem.js</strong>. It will contain a function-based component that needs data to render, so stub out the function with the "props" parameter. Don’t forget to import the React. Then, it needs to render two elements, the <code>dt</code> element and the <code>dd</code> element. Do that by wrapping a fragment around them.</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb71-1" title="1"><span class="kw">&lt;dt&gt;</span>Name of property<span class="kw">&lt;/dt&gt;</span></a>
 <a class="sourceLine" id="cb71-2" title="2"><span class="kw">&lt;dd&gt;</span>Value of property<span class="kw">&lt;/dd&gt;</span></a></code></pre></div>
 <p>So, the code will look something like this.</p>
@@ -1317,7 +1317,7 @@ const PetInformationItem = props =&gt;
 
 export default PetInformationItem;</code></pre>
 <p>Replace the comment with a <code>dd</code> JSX element that has <code>props.value</code> as its content, similar to how the <code>dt</code> has <code>props.name</code> as its content.</p>
-<p>That implies an expectation that this component <em>needs</em> a property named “name” that will be used to render the <code>dt</code> element, and it <em>needs</em> a property named “value” to render the <code>dd</code> element.</p>
+<p>That implies an expectation that this component <em>needs</em> a property named "name" that will be used to render the <code>dt</code> element, and it <em>needs</em> a property named "value" to render the <code>dd</code> element.</p>
 <p>Once you have that done, it’s time to use it in the <code>PetDetailList</code> components. Go back to <strong>src/PetDetailList.js</strong>. Import the <code>PetInformationItem</code> component. You will use it three times, to show the name, age, and pet type of the pet. Here’s the first one. Just put it in there and save it because you have to investigate an error.</p>
 <div class="sourceCode" id="cb73"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb73-1" title="1"><span class="kw">const</span> PetDetailList <span class="op">=</span> props <span class="kw">=&gt;</span></a>
 <a class="sourceLine" id="cb73-2" title="2">  <span class="op">&lt;&gt;</span></a>
@@ -1327,13 +1327,13 @@ export default PetInformationItem;</code></pre>
 <a class="sourceLine" id="cb73-6" title="6">    &lt;/dl<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb73-7" title="7">  &lt;/<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb73-8" title="8"><span class="op">;</span></a></code></pre></div>
-<p>This shows that <code>PetDetailList</code> now has an expectation that <code>props</code> will have a “name” property, an “age” property, and a “PetType” property that will have a “type” property on it! That’s a lot of expectations…</p>
+<p>This shows that <code>PetDetailList</code> now has an expectation that <code>props</code> will have a "name" property, an "age" property, and a "PetType" property that will have a "type" property on it! That’s a lot of expectations…</p>
 <p>If you refresh your page, an error might occur.</p>
 <figure>
 <img src="images/create-react-app-with-property-error.png" alt="Petrack PetDetails with error" /><figcaption>Petrack PetDetails with error</figcaption>
 </figure>
 <p>The <em>Create React App</em> reports the error for you in the browser’s main window. This is nice so that you don’t have to go mucking about the console to try to determine what went wrong.</p>
-<p>In the above screen shot, it complains that it cannot get the “property ‘name’ of undefined”. If you get this error, make sure you are passing down the <code>pet</code> prop from the <code>App</code> component all the way down to the <code>PetDetailList</code> component. You can see all the props for each component in the Chrome dev tools Component tab.</p>
+<p>In the above screen shot, it complains that it cannot get the "property ‘name’ of undefined". If you get this error, make sure you are passing down the <code>pet</code> prop from the <code>App</code> component all the way down to the <code>PetDetailList</code> component. You can see all the props for each component in the Chrome dev tools Component tab.</p>
 <p>The following conditions trigger that same error but for a different reason.</p>
 <p>In the <code>src/index.js</code> file, you render <code>App</code> twice. Once before the fetch call, and once after the fetch response comes back. <strong>NOTE: This is NOT the normal way to render the App after a fetch call. You will be learning a better way to use fetch calls with React tomorrow.</strong></p>
 <p>Your <code>src/index.js</code> should now look like this:</p>
@@ -1364,13 +1364,13 @@ export default PetInformationItem;</code></pre>
 </figure>
 <p>Can you see where that’s happening in the <strong>PetDetailList.js</strong> file? Take a moment to figure out where the error is being thrown.</p>
 <p>If you identified the expression <code>props.pet.name</code>, then you got it! Remember that when the React first renders the virtual DOM, it has <em>no data</em>. That doesn’t come until later, after the AJAX call completes. There are <em>so many</em> ways to fix this but <strong>only one</strong> is idiomatic React. That is the use of <code>defaultProps</code>.</p>
-<p>Recall that the <code>PetDetailList</code> component has an expectation that the <code>props</code> value should have a “pet” property that is an object. You can specify a default value for the “pet” property for the <code>PetDetails</code> component by putting the following code <em>after</em> the function declaration.</p>
+<p>Recall that the <code>PetDetailList</code> component has an expectation that the <code>props</code> value should have a "pet" property that is an object. You can specify a default value for the "pet" property for the <code>PetDetails</code> component by putting the following code <em>after</em> the function declaration.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb75-1" title="1"><span class="va">PetDetailList</span>.<span class="at">defaultProps</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb75-2" title="2">  <span class="dt">pet</span><span class="op">:</span> <span class="op">{},</span></a>
 <a class="sourceLine" id="cb75-3" title="3"><span class="op">};</span></a></code></pre></div>
-<p>This tells React that, when the <code>PetDetailList</code> renders, if the “pet” property of <code>props</code> is undefined, then it should use the default value specified in the assignment. This is a built-in React feature and fixes the problem.</p>
-<p>Refresh the page. You should now see the page render and, when the AJAX call completes, the name “Mog” to appear.</p>
-<p>Now, add the other two <code>PetInformationItem</code> calls. One should have the name “Age” and the value of <code>props.pet.age</code>. The second should have the name “Type” and the value of <code>props.pet.PetType.type</code>. That will cause another error, so take care of it in the <code>defaultProps</code>.</p>
+<p>This tells React that, when the <code>PetDetailList</code> renders, if the "pet" property of <code>props</code> is undefined, then it should use the default value specified in the assignment. This is a built-in React feature and fixes the problem.</p>
+<p>Refresh the page. You should now see the page render and, when the AJAX call completes, the name "Mog" to appear.</p>
+<p>Now, add the other two <code>PetInformationItem</code> calls. One should have the name "Age" and the value of <code>props.pet.age</code>. The second should have the name "Type" and the value of <code>props.pet.PetType.type</code>. That will cause another error, so take care of it in the <code>defaultProps</code>.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/react-information-data-load.gif" alt="Petrack PetDetails before and after load" /><figcaption>Petrack PetDetails before and after load</figcaption>
 </figure>
@@ -1390,7 +1390,7 @@ export default PetInformationItem;</code></pre>
 <a class="sourceLine" id="cb76-13" title="13"><span class="co">//     );</span></a>
 <a class="sourceLine" id="cb76-14" title="14"><span class="co">//   }</span></a>
 <a class="sourceLine" id="cb76-15" title="15"><span class="co">// })();</span></a></code></pre></div>
-<p>If you want that yucky bumpy load to not happen, consider creating a default value for the “value” property in <code>PetInformationItem</code>. In the following screenshot, you can see what happens when you set a default value of “loading…” for the “value” property in <code>PetInformationItem</code>.</p>
+<p>If you want that yucky bumpy load to not happen, consider creating a default value for the "value" property in <code>PetInformationItem</code>. In the following screenshot, you can see what happens when you set a default value of "loading…" for the "value" property in <code>PetInformationItem</code>.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/react-information-with-loading-message-data-load.gif" alt="Petrack PetDetails with loading message" /><figcaption>Petrack PetDetails with loading message</figcaption>
 </figure>
@@ -1399,7 +1399,7 @@ export default PetInformationItem;</code></pre>
 <ul>
 <li>Passed data from an AJAX call (or really wherever) into a React component</li>
 <li>Accessed data using the conventionally-named <code>props</code> parameter in your function-based components</li>
-<li>Passed data from a “parent” component to a “child” component</li>
+<li>Passed data from a "parent" component to a "child" component</li>
 <li>Used default values to prevent errors and improve the aesthetic experience of using your application</li>
 </ul>
 <p>Just one more step and you’re done!</p>
@@ -1426,8 +1426,8 @@ export default PetInformationItem;</code></pre>
 <ul>
 <li>Import the React object</li>
 <li>Create the function-based component named <code>OwnersList</code> with a <code>props</code> argument that uses a <code>React.Fragment</code> as its element</li>
-<li>Add a child that is an ‘h2’ with the content “Owners”</li>
-<li>Using <code>defaultProps</code>, add a default property value for “owners” and set it to an empty array because this component will expect an array of owner data</li>
+<li>Add a child that is an ‘h2’ with the content "Owners"</li>
+<li>Using <code>defaultProps</code>, add a default property value for "owners" and set it to an empty array because this component will expect an array of owner data</li>
 <li>Export the <code>OwnersList</code> as the default export</li>
 </ul></li>
 <li>In the <strong>PetDetails.js</strong> file,
@@ -1435,8 +1435,8 @@ export default PetInformationItem;</code></pre>
 <li>Import the <code>OwnersList</code> component</li>
 <li>Add it as another child element of the <code>PetDetailPage</code> component after the <code>PetDetailList</code></li>
 <li>Wrap both the <code>PetDetailList</code> and <code>OwnersList</code> in a <code>Fragment</code>.</li>
-<li>Pass in the owners to the <code>OwnersList</code> component in a property named “owners” like this <code>{props.pet.Owners}</code> which will pass in the array of owners for the pet</li>
-<li>Fix the error with a default value for the “pet” property</li>
+<li>Pass in the owners to the <code>OwnersList</code> component in a property named "owners" like this <code>{props.pet.Owners}</code> which will pass in the array of owners for the pet</li>
+<li>Fix the error with a default value for the "pet" property</li>
 </ul></li>
 </ul>
 <pre class="jsx"><code>// src/PetDetails.js
@@ -1478,7 +1478,7 @@ export default PetDetails;</code></pre>
 <pre class="jsx"><code>{ props.owners.map(owner =&gt;
   &lt;li&gt;{owner.firstName}&lt;/li&gt;
 )}</code></pre>
-<p>Refresh the page. What happens? You should now see “Human” for each of the list items. That’s great! In the console, there’s an error. That’s sad!</p>
+<p>Refresh the page. What happens? You should now see "Human" for each of the list items. That’s great! In the console, there’s an error. That’s sad!</p>
 <figure>
 <embed src="images/react-pet-detail-owners-list-with-key-error.pngimages/react-pet-detail-owners-list-with-key-error.png=6%20orderedList=false%7D%20--%3E" /><figcaption>Petrack with owners list and key error</figcaption>
 </figure>
@@ -1505,8 +1505,8 @@ export default PetDetails;</code></pre>
     &lt;/ul&gt;
   &lt;/&gt;
 ;</code></pre>
-<p>in that, you have created an <em>array</em> of objects. Recall that when you call the <code>map</code> function on an array, it returns <em>another array</em>. React doesn’t care about this, but it would like a little help in tracking each of those entries in the virtual DOM that it builds. That’s what the error message is about, giving React a little help by providing a “key” property for each of the elements that you’re creating in the array. The value of the “key” property must be unique and stable, that is, for a given object (like an owner named “Human One” with an id of 7), the value returned must always be the same. Luckily, because you have the id of the owner, you can use that because that id value is tied to a primary key, somewhere, and should never change for this object. The name can change, of course. But, the id will likely never change.</p>
-<p>Add a “key” property to the <code>li</code> element and set it equal to the id of the owner object, like this.</p>
+<p>in that, you have created an <em>array</em> of objects. Recall that when you call the <code>map</code> function on an array, it returns <em>another array</em>. React doesn’t care about this, but it would like a little help in tracking each of those entries in the virtual DOM that it builds. That’s what the error message is about, giving React a little help by providing a "key" property for each of the elements that you’re creating in the array. The value of the "key" property must be unique and stable, that is, for a given object (like an owner named "Human One" with an id of 7), the value returned must always be the same. Luckily, because you have the id of the owner, you can use that because that id value is tied to a primary key, somewhere, and should never change for this object. The name can change, of course. But, the id will likely never change.</p>
+<p>Add a "key" property to the <code>li</code> element and set it equal to the id of the owner object, like this.</p>
 <pre class="jsx"><code>&lt;li key={owner.id}&gt;{owner.firstName}&lt;/li&gt;</code></pre>
 <p>Now, the error in the console goes away.</p>
 <p>Back to the <code>OwnersList</code> component, look at the formatting, the indentation that you see in the code.</p>
@@ -1524,24 +1524,24 @@ export default PetDetails;</code></pre>
 ;</code></pre>
 <p>That, too, is idiomatic React, the <em>React</em> way of doing things. You’ll see that kind of code all over the React world.</p>
 <h2 id="the-owner-link-component-1">The owner link component</h2>
-<p>While it’s nice, and all, to see the owner’s first name in the list, the actual page has a link to the owner page with the format “last name, first name”. Time to create the (last!) component of this walk-through.</p>
+<p>While it’s nice, and all, to see the owner’s first name in the list, the actual page has a link to the owner page with the format "last name, first name". Time to create the (last!) component of this walk-through.</p>
 <p>Create a new file named <strong>src/OwnerLink.js</strong>. In it, do the following:</p>
 <ul>
 <li>Import the React object</li>
 <li>Create a new function-based component named <code>OwnerLink</code> that accepts data that has
 <ul>
 <li><code>a</code> as its element</li>
-<li>An object literal with the property name “href” and the value of the “href” property passed in through the <code>props</code></li>
+<li>An object literal with the property name "href" and the value of the "href" property passed in through the <code>props</code></li>
 <li>A string as its child which contains the last name and the first name</li>
 </ul></li>
 <li>Export the component as the default export</li>
 </ul>
 <p>Once you have that, import the <code>OwnerLink</code> component into the <strong>src/OwnersList.js</strong> file. Now, replace this line in <code>OwnersList</code></p>
 <pre class="jsx"><code>{owner.firstName}</code></pre>
-<p>with an <code>OwnerLink</code> component with <em>three</em> attributes: “href”, “firstName”, and “lastName”. Those are the three properties expected inside the component. Use the curly brace syntax to pass in the appropriate values of the <code>owner</code>. This is something you haven’t done, yet. Try to think through the problem of how to pass in <em>multiple</em> property values. If you get stuck and can’t get it after about ten minutes, ask for help!</p>
+<p>with an <code>OwnerLink</code> component with <em>three</em> attributes: "href", "firstName", and "lastName". Those are the three properties expected inside the component. Use the curly brace syntax to pass in the appropriate values of the <code>owner</code>. This is something you haven’t done, yet. Try to think through the problem of how to pass in <em>multiple</em> property values. If you get stuck and can’t get it after about ten minutes, ask for help!</p>
 <p>Refresh the page. If everything works, you’re done!</p>
 <h2 id="what-youve-done-here">What you’ve done, here</h2>
-<p>In this part of the walk-through, you used a collection to render a collection of React elements. You found out that using a collection like that requires you to provide a “key” property that has a stable, unique value. Once you had that, React would gladly manage that collection of objects in its virtual DOM.</p>
+<p>In this part of the walk-through, you used a collection to render a collection of React elements. You found out that using a collection like that requires you to provide a "key" property that has a stable, unique value. Once you had that, React would gladly manage that collection of objects in its virtual DOM.</p>
 <h2 id="what-youve-done-overall">What you’ve done, overall</h2>
 <p>You have used JSX to do some amazing things, here.</p>
 <ul>
@@ -1780,7 +1780,7 @@ export default PetDetails;</code></pre>
 <p>So far, the above example class component behaves exactly as its function component counterpart. This might leave you wondering why you’d want or need to create a class component.</p>
 <p><strong>One of the two reasons why you would use a Class component over a Function component is to add and manage local or internal state to your component. The second main reason to use a Class component is to use a component’s lifecycle methods.</strong> The following sections will focus on how to add and manage a component’s state. You’ll learn more about a component’s lifecycle (and the associated component lifecycle methods) later in a future reading.</p>
 <h3 id="what-is-state">What is state?</h3>
-<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to a component. State is owned by the component where it’s defined and used. That’s why we say it’s “internal” or “local” to that component. Whereas props are not to be changed by a component, state is intended to be updated or mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to determine how the component should behave and render.</p>
+<p>In contrast to props which are provided by the consumer or caller of the component, state is data that’s internal to a component. State is owned by the component where it’s defined and used. That’s why we say it’s "internal" or "local" to that component. Whereas props are not to be changed by a component, state is intended to be updated or mutated (you’ll see how to update state in just a bit). Together, props and state represent the data that’s used to determine how the component should behave and render.</p>
 <h3 id="when-to-use-state">When to use state</h3>
 <p>State should only be used when it’s absolutely necessary. If a bit of data is never going to change or if it is needed across the entire application, use props instead.</p>
 <p>When you’re just learning React, it can be challenging to know when it’s okay to use state and when it’s not. State is often used when creating components that retrieve data from APIs or render forms. You’ll see examples of those kinds of components later in this lesson. To start, we’ll look at simple, contrived example of using state in just a bit.</p>
@@ -1846,7 +1846,7 @@ export default PetDetails;</code></pre>
 <p>Sometimes the same quote will be displayed more than once in a row. You’ll see in a bit how to fix that bug.</p>
 </blockquote>
 <h3 id="using-the-react-developer-tools-to-view-a-components-state">Using the React Developer Tools to view a component’s state</h3>
-<p>Assuming you have the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> installed, open up your browser’s developer tools and view the “Components” tab. On the left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.</p>
+<p>Assuming you have the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> installed, open up your browser’s developer tools and view the "Components" tab. On the left, you can select the <code>RandomQuote</code> component to view its current props and state values on the right.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/react-class-components-init-state.png" alt="init state" /><figcaption>init state</figcaption>
 </figure>
@@ -1872,7 +1872,7 @@ export default PetDetails;</code></pre>
 <p>The <code>changeQuote</code> event handler calls the <code>this.getRandomInt</code> method to get a new random integer and then calls the <code>this.setState</code> method to update the component’s state. The <code>this.setState</code> method accepts an object literal containing the state properties to update.</p>
 <p>After updating the state, React re-renders the component and displays the new quote (provided that the current quote index actually changed). Because calling the <code>this.setState</code> method triggers a re-render, it should not be called from within the <code>render</code> method, as that would trigger an infinite loop.</p>
 <p>Notice that the object literal passed into the <code>this.setState</code> method only contains the state property that needs to be updated. The <code>this.setState</code> method merges state updates into the current state object, so you only need to provide the state properties that need to be updated.</p>
-<p>Now, instead of refreshing the page, you can click the “Change Quote” button to display a new random quote!</p>
+<p>Now, instead of refreshing the page, you can click the "Change Quote" button to display a new random quote!</p>
 <p>For your reference, here’s the updated <code>RandomQuote</code> component:</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb102-1" title="1"><span class="co">// ./src/RandomQuote.js</span></a>
 <a class="sourceLine" id="cb102-2" title="2"></a>
@@ -1972,7 +1972,7 @@ export default PetDetails;</code></pre>
 <a class="sourceLine" id="cb106-13" title="13">    <span class="op">};</span></a>
 <a class="sourceLine" id="cb106-14" title="14">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb106-15" title="15"><span class="op">}</span></a></code></pre></div>
-<p>Now, if you retest your application, clicking the “Change Quote” button will display a different random quote every time!</p>
+<p>Now, if you retest your application, clicking the "Change Quote" button will display a different random quote every time!</p>
 <h2 id="providing-default-values-for-props">Providing default values for props</h2>
 <p>Currently, the list of quotes doesn’t change once it’s initialized in the <code>constructor</code> method:</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb107-1" title="1"><span class="at">constructor</span>() <span class="op">{</span></a>
@@ -2139,7 +2139,7 @@ export default PetDetails;</code></pre>
 <a class="sourceLine" id="cb113-15" title="15"><span class="op">}</span></a>
 <a class="sourceLine" id="cb113-16" title="16"></a>
 <a class="sourceLine" id="cb113-17" title="17"><span class="im">export</span> <span class="im">default</span> AlertButton<span class="op">;</span></a></code></pre></div>
-<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the <code>window.alert</code> method to display the text “Button clicked!” within a browser alert dialog. The <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
+<p>In the above example, the <code>showAlert</code> method is the event handler, which simply calls the <code>window.alert</code> method to display the text "Button clicked!" within a browser alert dialog. The <code>showAlert</code> event handler is added as a listener for the <code>&lt;button&gt;</code> element’s click event using the <code>onClick</code> attribute (i.e. <code>onClick={this.showAlert}</code>).</p>
 <p>When adding event listeners, be sure to camelCase the event name (i.e. <code>onClick</code> instead of <code>onclick</code>) and pass a reference to the event handler method instead of calling it (i.e. <code>this.showAlert</code> instead of <code>this.showAlert()</code>).</p>
 <p>Also notice the slightly odd looking class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) that’s used to define the <code>showAlert</code> method. Using this experimental syntax for defining a class property in combination with an arrow function ensures that you can reliably use the <code>this</code> keyword within the event handler method. We’ll exam this issue in more detail in just a bit.</p>
 <blockquote>
@@ -2170,7 +2170,7 @@ export default PetDetails;</code></pre>
 <a class="sourceLine" id="cb114-19" title="19"><span class="im">export</span> <span class="im">default</span> NoDefaultSubmitForm<span class="op">;</span></a></code></pre></div>
 <p>In this example, a <code>&lt;button&gt;</code> element without a <code>type</code> attribute is rendered within a <code>&lt;form&gt;</code> element. By default, this button will submit the form when clicked. This has the unintended consequence of reloading the page when the button is clicked, instead of allowing the <code>this.submitForm</code> event handler method to handle the form submission.</p>
 <blockquote>
-<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep this example as simple as possible, the <code>window.alert</code> method is used to display the text “Handling form submission…”.</p>
+<p>In an actual React application, the <code>this.submitForm</code> event handler method would likely use the browser’s Fetch API to send a <code>POST</code> or <code>PUT</code> request to a REST API when the form is submitted. To keep this example as simple as possible, the <code>window.alert</code> method is used to display the text "Handling form submission…".</p>
 </blockquote>
 <p>To keep the default form submission from occurring, the event handler method can be updated to this:</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb115-1" title="1">submitForm <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -2182,7 +2182,7 @@ export default PetDetails;</code></pre>
 <p>The <code>e</code> parameter is a <code>SyntheticEvent</code> object type. You’ll learn more about this object type in just a bit.</p>
 </blockquote>
 <h2 id="using-this-in-event-handlers">Using <code>this</code> in event handlers</h2>
-<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the “happy path” and make things break.</p>
+<p>Earlier, it was mentioned that the class property syntax (i.e. <code>showAlert = () =&gt; { ... }</code>) was being used in combination with an arrow function so that the <code>this</code> keyword could be reliably used within an event handler method. To understand why this coding pattern is needed, let’s stray from the "happy path" and make things break.</p>
 <p>Here’s the example of a button click event handler again that correctly defines the <code>showAlert</code> event handler method:</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb116-1" title="1"><span class="co">// ./src/AlertButton.js</span></a>
 <a class="sourceLine" id="cb116-2" title="2"></a>
@@ -2241,7 +2241,7 @@ export default PetDetails;</code></pre>
 <a class="sourceLine" id="cb119-20" title="20"><span class="co">// to the class instance.</span></a>
 <a class="sourceLine" id="cb119-21" title="21"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="at">displayName</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb119-22" title="22"><span class="at">displayName</span>()<span class="op">;</span> <span class="co">// TypeError: Cannot read property &#39;name&#39; of undefined</span></a></code></pre></div>
-<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. “Jane Smith” is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
+<p>The first time that the <code>displayName</code> method is called, it’s called directly on <code>p</code>, the instance of the <code>Person</code> class. "Jane Smith" is printed to the console because the <code>this</code> keyword is implicitly bound to the instance of the class allowing the <code>name</code> property on the instance to be found and passed to the <code>console.log</code> method.</p>
 <p>The second time that the <code>displayName</code> method is called, a reference to the class method is stored in a variable and the method is called using the variable. This breaks the <code>this</code> keyword’s implicit binding to the instance of the class (i.e. <code>p</code>) resulting in the <code>TypeError</code> because <code>this</code> is <code>undefined</code>.</p>
 <p>The <code>bind</code> method can be used to <em>explicitly</em> bind the <code>displayName</code> class method to the <code>p</code> class instance. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>bind</code> method</a> returns a function that’s bound to the passed in object. Now the <code>displayName</code> variable can be successfully called to display the person’s name in the console:</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb120-1" title="1"><span class="kw">const</span> displayName <span class="op">=</span> <span class="va">p</span>.<span class="va">displayName</span>.<span class="at">bind</span>(p)<span class="op">;</span></a>
@@ -2370,7 +2370,7 @@ string type</code></pre>
 <li>Implement form validations.</li>
 </ul>
 <h2 id="creating-a-simple-form">Creating a simple form</h2>
-<p>To learn how to create an HTML form in React, you’ll create a <code>ContactUs</code> class component that’ll contain a simple “Contact Us” form. The form will initially contain just three fields:</p>
+<p>To learn how to create an HTML form in React, you’ll create a <code>ContactUs</code> class component that’ll contain a simple "Contact Us" form. The form will initially contain just three fields:</p>
 <ul>
 <li>Name - The name of the user filling out the form;</li>
 <li>Email - The user’s email; and</li>
@@ -2476,7 +2476,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb129-44" title="44"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <p>Next, when a form field element value is changed, the associated component state property needs to be updated. Adding or removing a character within an <code>&lt;input&gt;</code> element raises the <code>onChange</code> event, which makes it a natural choice for keeping the component state in sync:</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb130-1" title="1"><span class="op">&lt;</span>input id<span class="op">=</span><span class="st">&#39;name&#39;</span> type<span class="op">=</span><span class="st">&#39;text&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">nameOnChange</span><span class="op">}</span> value<span class="op">={</span>name<span class="op">}</span> /&gt;</a></code></pre></div>
-<p>Remember that when an event is raised, the associated event handler method is called and passed an instance of React’s <code>SyntheticEvent</code> object type. Here’s the <code>nameOnChange</code> event handler method that’s associated with the above “Name” form field:</p>
+<p>Remember that when an event is raised, the associated event handler method is called and passed an instance of React’s <code>SyntheticEvent</code> object type. Here’s the <code>nameOnChange</code> event handler method that’s associated with the above "Name" form field:</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb131-1" title="1">nameOnChange <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb131-2" title="2">  <span class="co">// `e` is a `SyntheticEvent` object.</span></a>
 <a class="sourceLine" id="cb131-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -2493,7 +2493,7 @@ string type</code></pre>
 <div class="sourceCode" id="cb134"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb134-1" title="1">nameOnChange <span class="op">=</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb134-2" title="2">  <span class="kw">this</span>.<span class="at">setState</span>(<span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="va">e</span>.<span class="va">target</span>.<span class="at">value</span> <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb134-3" title="3"><span class="op">}</span></a></code></pre></div>
-<p>Using the same approach to add an <code>onChange</code> event handler to the “Email” and “Phone” form fields gives you this:</p>
+<p>Using the same approach to add an <code>onChange</code> event handler to the "Email" and "Phone" form fields gives you this:</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb135-1" title="1"><span class="co">// ./src/ContactUs.js</span></a>
 <a class="sourceLine" id="cb135-2" title="2"></a>
 <a class="sourceLine" id="cb135-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -2700,11 +2700,11 @@ string type</code></pre>
 <a class="sourceLine" id="cb140-83" title="83"><span class="op">}</span></a>
 <a class="sourceLine" id="cb140-84" title="84"></a>
 <a class="sourceLine" id="cb140-85" title="85"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
-<p>If you run your application again and view the form in the browser, you can fill out each form field and click “Submit” to submit the form. Notice that the page doesn’t reload! And if you look in the developer tool’s console, you’ll see an object containing your contact us information.</p>
+<p>If you run your application again and view the form in the browser, you can fill out each form field and click "Submit" to submit the form. Notice that the page doesn’t reload! And if you look in the developer tool’s console, you’ll see an object containing your contact us information.</p>
 <h3 id="controlled-components">Controlled components</h3>
-<p>Congrats! You’ve completed your first simple React form! In doing so, you used what’s known as “controlled components”.</p>
-<p>HTML form elements naturally maintain their own state. For example, an <code>input</code> element will track the state of the value that’s typed within it (without any help from libraries like React). But a React class component uses <code>this.state</code> to track its internal state. To keep a component’s state as the “one source of truth”, <code>onChange</code> event handlers are used on form field elements to update the component’s state when a form element’s state has changed.</p>
-<p>This approach of making the component’s state the “one source of truth” is called “controlled components”.</p>
+<p>Congrats! You’ve completed your first simple React form! In doing so, you used what’s known as "controlled components".</p>
+<p>HTML form elements naturally maintain their own state. For example, an <code>input</code> element will track the state of the value that’s typed within it (without any help from libraries like React). But a React class component uses <code>this.state</code> to track its internal state. To keep a component’s state as the "one source of truth", <code>onChange</code> event handlers are used on form field elements to update the component’s state when a form element’s state has changed.</p>
+<p>This approach of making the component’s state the "one source of truth" is called "controlled components".</p>
 <p>To help understand how this works, here’s an overview of the flow:</p>
 <ul>
 <li>A user types a character within a form <code>&lt;input&gt;</code> element;</li>
@@ -2810,7 +2810,7 @@ string type</code></pre>
 <p>In a regular HTML form, the value for a <code>&lt;textarea&gt;</code> element is defined by its inner content:</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">&lt;textarea&gt;</span>This is the value for the text area element.<span class="kw">&lt;/textarea&gt;</span></a></code></pre></div>
 <p>The <code>&lt;textarea&gt;</code> element, in React, uses a <code>value</code> attribute instead of its inner content to define its value. This allows the <code>&lt;textarea&gt;</code> element to be handled in the same way as <code>&lt;input&gt;</code> elements.</p>
-<p>To see this in action, add a “Comments” field to the form:</p>
+<p>To see this in action, add a "Comments" field to the form:</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb145-1" title="1"><span class="op">&lt;</span>div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb145-2" title="2">  <span class="op">&lt;</span>label htmlFor<span class="op">=</span><span class="st">&#39;comments&#39;</span><span class="op">&gt;</span>Comments<span class="op">:</span>&lt;/label<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb145-3" title="3">  <span class="op">&lt;</span>textarea id<span class="op">=</span><span class="st">&#39;comments&#39;</span> name<span class="op">=</span><span class="st">&#39;comments&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">onChange</span><span class="op">}</span> value<span class="op">={</span>comments<span class="op">}</span> /&gt;</a>
@@ -2902,7 +2902,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb146-84" title="84"></a>
 <a class="sourceLine" id="cb146-85" title="85"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <h2 id="adding-a-select-list">Adding a select list</h2>
-<p>To maintain symmetry across React form element types, the <code>&lt;select&gt;</code> element also uses a <code>value</code> attribute to get and set the element’s selected option. To see this in action, add a <code>&lt;select&gt;</code> element to the right of the <code>&lt;input&gt;</code> element for the “Phone” form field, to give the user a way to specify what type of phone number they’re providing:</p>
+<p>To maintain symmetry across React form element types, the <code>&lt;select&gt;</code> element also uses a <code>value</code> attribute to get and set the element’s selected option. To see this in action, add a <code>&lt;select&gt;</code> element to the right of the <code>&lt;input&gt;</code> element for the "Phone" form field, to give the user a way to specify what type of phone number they’re providing:</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb147-1" title="1"><span class="op">&lt;</span>div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb147-2" title="2">  <span class="op">&lt;</span>label htmlFor<span class="op">=</span><span class="st">&#39;phone&#39;</span><span class="op">&gt;</span>Phone<span class="op">:</span>&lt;/label<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb147-3" title="3">  <span class="op">&lt;</span>input id<span class="op">=</span><span class="st">&#39;phone&#39;</span> name<span class="op">=</span><span class="st">&#39;phone&#39;</span> type<span class="op">=</span><span class="st">&#39;text&#39;</span> onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">onChange</span><span class="op">}</span> value<span class="op">={</span>phone<span class="op">}</span> /&gt;</a>
@@ -2934,8 +2934,8 @@ string type</code></pre>
 <a class="sourceLine" id="cb149-10" title="10">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb149-11" title="11">  &lt;/select<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb149-12" title="12">&lt;/div<span class="op">&gt;</span></a></code></pre></div>
-<p>Notice that you can leave the first “Select a phone type…” <code>&lt;option&gt;</code> element as a static element before rendering the dynamic <code>&lt;option&gt;</code> elements.</p>
-<p>To complete this new field, update the <code>constructor</code>, <code>onSubmit</code>, and <code>render</code> methods just like you did when adding the “Comments” form field:</p>
+<p>Notice that you can leave the first "Select a phone type…" <code>&lt;option&gt;</code> element as a static element before rendering the dynamic <code>&lt;option&gt;</code> elements.</p>
+<p>To complete this new field, update the <code>constructor</code>, <code>onSubmit</code>, and <code>render</code> methods just like you did when adding the "Comments" form field:</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb150-1" title="1"><span class="co">// ./src/ContactUs.js</span></a>
 <a class="sourceLine" id="cb150-2" title="2"></a>
 <a class="sourceLine" id="cb150-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -3047,7 +3047,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb150-109" title="109"></a>
 <a class="sourceLine" id="cb150-110" title="110"><span class="im">export</span> <span class="im">default</span> ContactUs<span class="op">;</span></a></code></pre></div>
 <h2 id="implementing-validations">Implementing validations</h2>
-<p>One last feature needs to be added before the simple “Contact Us” form is done: form validation. Without validation, a user can submit the form without providing a single bit of data. To implement form validation, you’ll use vanilla JS to validate that the “Name” and “Email” form fields have values before allowing the form to be submitted.</p>
+<p>One last feature needs to be added before the simple "Contact Us" form is done: form validation. Without validation, a user can submit the form without providing a single bit of data. To implement form validation, you’ll use vanilla JS to validate that the "Name" and "Email" form fields have values before allowing the form to be submitted.</p>
 <p>To do that, add a method to your class component named <code>validate</code> that accepts <code>name</code> and <code>email</code> parameters. Use conditional statements to check the truthiness of the <code>name</code> and <code>email</code> parameters. If either parameter is <code>false</code>, add an appropriate validation error message to a <code>validationErrors</code> array and return the array from the method:</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb151-1" title="1"><span class="at">validate</span>(name<span class="op">,</span> email) <span class="op">{</span></a>
 <a class="sourceLine" id="cb151-2" title="2">  <span class="kw">const</span> validationErrors <span class="op">=</span> []<span class="op">;</span></a>
@@ -3282,7 +3282,7 @@ string type</code></pre>
   * Please provide a valid Email</code></pre>
 <h3 id="client-side-vs-server-side-validation">Client-side vs server-side validation</h3>
 <p>As a reminder, client-side validation like the validations in the <code>ContactUs</code> class component, are optional to implement; <strong>server-side validation is not optional</strong>. This is because client side validations can be disabled or manipulated by savvy users.</p>
-<p>Sometimes the “best” approach is to skip implementing validations on the client-side and rely completely on the server-side validation. Using this approach, you’d simply call the API when the form is submitted and if the request returns a <code>400 BAD REQUEST</code> response, you’d display the validation error messages returned from the server.</p>
+<p>Sometimes the "best" approach is to skip implementing validations on the client-side and rely completely on the server-side validation. Using this approach, you’d simply call the API when the form is submitted and if the request returns a <code>400 BAD REQUEST</code> response, you’d display the validation error messages returned from the server.</p>
 <p>If you do decide to implement client-side validations, do it with the end goal of improving your application’s overall user experience, not as your only means of validating user provided data.</p>
 <h2 id="what-you-learned-4">What you learned</h2>
 <p>In this article, you learned how to:</p>
@@ -3339,7 +3339,7 @@ string type</code></pre>
 <p>To see a visual depiction of the above processes, check out this interactive <a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">lifecycle diagram</a>.</p>
 </blockquote>
 <h3 id="avoiding-the-legacy-lifecycle-methods">Avoiding the legacy lifecycle methods</h3>
-<p>In earlier versions of React, there were additional lifecycle methods that you could use. These methods are now deprecated and are marked as “unsafe” to use (because they’ll eventually be removed from React’s API).</p>
+<p>In earlier versions of React, there were additional lifecycle methods that you could use. These methods are now deprecated and are marked as "unsafe" to use (because they’ll eventually be removed from React’s API).</p>
 <p>The legacy lifecycle methods are:</p>
 <ul>
 <li><a href="https://reactjs.org/docs/react-component.html#unsafe_componentwillmount"><code>UNSAFE_componentWillMount</code></a></li>
@@ -3439,7 +3439,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb163-10" title="10">  &lt;/<span class="va">React</span>.<span class="at">StrictMode</span><span class="op">&gt;,</span></a>
 <a class="sourceLine" id="cb163-11" title="11">  <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;root&#39;</span>)</a>
 <a class="sourceLine" id="cb163-12" title="12">)<span class="op">;</span></a></code></pre></div>
-<p>Then run your application (<code>npm start</code>) and open the developer tools console in your browser. Here’s the application just after clicking the “Load Component” button. Notice that execution is paused within the <code>LifecycleMethods</code> component’s <code>componentDidMount</code> lifecycle method!</p>
+<p>Then run your application (<code>npm start</code>) and open the developer tools console in your browser. Here’s the application just after clicking the "Load Component" button. Notice that execution is paused within the <code>LifecycleMethods</code> component’s <code>componentDidMount</code> lifecycle method!</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/component-lifecycle-demo.png" alt="component lifecycle demo" /><figcaption>component lifecycle demo</figcaption>
 </figure>
@@ -3524,7 +3524,7 @@ string type</code></pre>
 <h2 id="reinforcing-your-new-skills">Reinforcing your new skills</h2>
 <p>The <a href="https://reactjs.org/docs/hello-world.html">Main Concepts</a> section of the official documentation is a great series of articles that cover the basics of React. If you’re in the mood for a step-by-step tutorial, be sure to check out the <a href="https://reactjs.org/tutorial/tutorial.html">Intro to React</a> tutorial.</p>
 <h2 id="extending-your-knowledge">Extending your knowledge</h2>
-<p>Once you’re feeling confident with the basics of React development, you can extend your knowledge by reviewing the following topics listed under the “Advanced Guides” section of the official documentation:</p>
+<p>Once you’re feeling confident with the basics of React development, you can extend your knowledge by reviewing the following topics listed under the "Advanced Guides" section of the official documentation:</p>
 <ul>
 <li><a href="https://reactjs.org/docs/jsx-in-depth.html">JSX In Depth</a></li>
 <li><a href="https://reactjs.org/docs/reconciliation.html">Reconciliation</a></li>
@@ -3602,7 +3602,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb170-16" title="16"><span class="op">}</span></a>
 <a class="sourceLine" id="cb170-17" title="17"></a>
 <a class="sourceLine" id="cb170-18" title="18"><span class="im">export</span> <span class="im">default</span> Calculator<span class="op">;</span></a></code></pre></div>
-<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the <code>&lt;h1&gt;</code> element. Make sure “Calculator” still shows up in the browser, this time with “Time for math!” from your <code>Calculator</code> component.</p>
+<p>In your <code>App.js</code> file, import the <code>Calculator</code> component and set it to render underneath the <code>&lt;h1&gt;</code> element. Make sure "Calculator" still shows up in the browser, this time with "Time for math!" from your <code>Calculator</code> component.</p>
 <h3 id="state">State</h3>
 <p>Now let’s initialize the <code>state</code> of your <code>Calculator</code> component! The state of your component is just a JavaScript object. For the calculator, it will contain three keys: the result and two numbers from user input.</p>
 <p>Within the <code>constructor()</code> method of your <code>Calculator</code> component, define <code>this.state</code> with default values for the result and two numbers. The <code>result</code> should have a default value of <code>0</code>. You actually want the two numbers to start out blank, so give <code>num1</code> and <code>num2</code> a default value of an empty string:</p>
@@ -3628,8 +3628,8 @@ string type</code></pre>
 <a class="sourceLine" id="cb173-3" title="3"><span class="op">};</span></a></code></pre></div>
 <p>Add an <code>&lt;input&gt;</code> element underneath your rendered <code>result</code>. Assign the <code>onChange</code> prop to a <code>handleFirstNum()</code> callback like so:</p>
 <div class="sourceCode" id="cb174"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb174-1" title="1"><span class="op">&lt;</span>input onChange<span class="op">={</span><span class="kw">this</span>.<span class="at">handleFirstNum</span><span class="op">}</span> placeholder<span class="op">=</span><span class="st">&quot;First number&quot;</span> /&gt;</a></code></pre></div>
-<p>Try typing in your “First number” input field and seeing what is logged in your developer tools console from the <em>change</em> event. As a reminder, event objects from your event listeners have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the <code>&lt;input&gt;</code> element.</p>
-<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code> to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> (“Not a Number”) output. Also make note that you need to use <a href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s state and re-render the component with the updated state.</p>
+<p>Try typing in your "First number" input field and seeing what is logged in your developer tools console from the <em>change</em> event. As a reminder, event objects from your event listeners have <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> elements. In this case, both the <code>event.target</code> and <code>event.currentTarget</code> refer to the <code>&lt;input&gt;</code> element.</p>
+<p>Update your <code>handleFirstNum</code> method to use the parsed <code>value</code> of your <code>event.target</code> to set the <code>num1</code> state. As a reminder, parsing non-numeric strings results in a <code>NaN</code> ("Not a Number") output. Also make note that you need to use <a href="https://reactjs.org/docs/react-component.html#setstate">this.setState()</a> in order to set a component’s state and re-render the component with the updated state.</p>
 <div class="sourceCode" id="cb175"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb175-1" title="1">handleFirstNum <span class="op">=</span> e <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb175-2" title="2">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Parse value</span></a>
 <a class="sourceLine" id="cb175-3" title="3">  <span class="co">// </span><span class="al">TODO</span><span class="co">: Set state</span></a>
@@ -3637,7 +3637,7 @@ string type</code></pre>
 <p>You also want your input fields to always reflect the current version of the state and properly update when you trigger a re-render by changing the state, so make sure to include <code>value={this.state.num1}</code> in the input tag.</p>
 <p>That’s one of the inputs! Create a second <code>&lt;input&gt;</code> element and a <code>handleSecondNum()</code> callback. It should look very similar.</p>
 <h2 id="phase-5-creating-calculator-buttons">Phase 5: Creating calculator buttons</h2>
-<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a “+” button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
+<p>Time to write the operations. Each one of these is a button, with an <code>onClick</code> callback set that carries out the operation and sets the state of the result to the answer. For example, you can create a "+" button with an <code>onClick</code> listener to invoke an <code>add()</code> method with <code>num1</code> and <code>num2</code> to update the <code>result</code> state.</p>
 <p>The current values for <code>num1</code> and <code>num2</code> should be properly updated and stored within the state of your component. Create four methods to handle adding, subtracting, multiplying, and dividing. Remember to use <code>setState()</code> to set <code>this.state.result</code> to the correct result.</p>
 <h3 id="clear">Clear</h3>
 <p>It’d also be nice to be able to clear out the input fields. Make a button that resets the state to its initial values. You can add an <code>onClick</code> listener to this button to invoke a <code>clearInput</code> method to reset the state, and therefore clear each input field’s <code>value</code>.</p>
@@ -3665,7 +3665,7 @@ string type</code></pre>
 <li>Be able to add basic styling to React components.</li>
 </ul>
 <h2 id="phase-1-setup-1">Phase 1: Setup</h2>
-<p>Generate a new React application called “Widgets” with <a href="https://github.com/facebook/create-react-app">create-react-app</a> by running <code>npx create-react-app widgets --template @/simple</code>. Note how you are using a custom template to generate your React application.</p>
+<p>Generate a new React application called "Widgets" with <a href="https://github.com/facebook/create-react-app">create-react-app</a> by running <code>npx create-react-app widgets --template @/simple</code>. Note how you are using a custom template to generate your React application.</p>
 <p>Once your project has been initialized, in the <code>index.js</code> file you’ll see that <code>ReactDOM</code> is rendering a <code>&lt;React.StrictMode&gt;</code> component. <a href="https://reactjs.org/docs/strict-mode.html">StrictMode</a> simply means that additional checks and warnings will be made in development mode. It’s a helpful tool that highlights potential problems.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb177-1" title="1"><span class="co">// index.js</span></a>
 <a class="sourceLine" id="cb177-2" title="2"><span class="va">ReactDOM</span>.<span class="at">render</span>(</a>
@@ -3687,7 +3687,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb178-9" title="9"><span class="im">export</span> <span class="im">default</span> Root<span class="op">;</span></a></code></pre></div>
 <h2 id="phase-2-clock-widget">Phase 2: Clock Widget</h2>
 <p>The clock component should display the current date and time, updating every second. Start by creating a new file <code>Clock.js</code> in your <code>src</code> folder importing <code>React</code> into the file. Define your <code>Clock</code> class to extend from <code>React.Component</code> and remember to export the class. You will import your <code>Clock</code> component into your <code>Root.js</code> file and incorporate it into the return value of your <code>Root</code>. This is the pattern you will follow for all the widgets.</p>
-<p>Now it’s time to create a render method! Have your clock render a “Clock” title in an <code>&lt;h1&gt;</code> element and check that this renders correctly on the page.</p>
+<p>Now it’s time to create a render method! Have your clock render a "Clock" title in an <code>&lt;h1&gt;</code> element and check that this renders correctly on the page.</p>
 <p>In the constructor, set the initial state for the time of your clock using <code>new Date()</code> like so:</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb179-1" title="1"><span class="kw">this</span>.<span class="at">state</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb179-2" title="2">  <span class="dt">time</span><span class="op">:</span> <span class="kw">new</span> <span class="at">Date</span>()</a>
@@ -3742,7 +3742,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb181-37" title="37">button<span class="op">,</span> input<span class="ex">[type</span><span class="op">=</span><span class="st">&quot;submit&quot;</span><span class="ex">]</span> {</a>
 <a class="sourceLine" id="cb181-38" title="38">  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb181-39" title="39">}</a></code></pre></div>
-<p>Now go to <a href="https://fonts.google.com/">Google Fonts</a> and select a nice font for your clock. In the <code>public/index.html</code> file, update your page to have a <code>title</code> of “Widgets”. Now take the font embed code and paste it into the <code>&lt;head&gt;</code> of your page.</p>
+<p>Now go to <a href="https://fonts.google.com/">Google Fonts</a> and select a nice font for your clock. In the <code>public/index.html</code> file, update your page to have a <code>title</code> of "Widgets". Now take the font embed code and paste it into the <code>&lt;head&gt;</code> of your page.</p>
 <p>Your <code>index.html</code> file should look something like this:</p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb182-1" title="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
 <a class="sourceLine" id="cb182-2" title="2"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></a>
@@ -3771,7 +3771,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb184-4" title="4">  <span class="op">{</span><span class="dt">title</span><span class="op">:</span> <span class="st">&#39;three&#39;</span><span class="op">,</span> <span class="dt">content</span><span class="op">:</span> <span class="st">&#39;Third folder here&#39;</span><span class="op">}</span></a>
 <a class="sourceLine" id="cb184-5" title="5">]<span class="op">;</span></a></code></pre></div>
 <p>Keep track of the selected tab’s index in your <code>Folder</code> component’s state. Set the <code>Folder</code> component’s default <code>currentTab</code> state to zero.</p>
-<p>In the render method, return an <code>&lt;h1&gt;</code> element with the title of “Folder”. You’ll begin by rendering one folder’s content, using the <code>currentTab</code> state to select which folder content to render.</p>
+<p>In the render method, return an <code>&lt;h1&gt;</code> element with the title of "Folder". You’ll begin by rendering one folder’s content, using the <code>currentTab</code> state to select which folder content to render.</p>
 <p>Render a <code>&lt;div&gt;</code> element with two child elements: a header to render folder titles (you’ll make a <code>&lt;Header&gt;</code> subcomponent) and a <code>&lt;div&gt;</code> element to render the selected tab’s content. Define a <code>folder</code> variable by indexing into your <code>folders</code> prop with your <code>currentTab</code> state. This way you can reference your selected folder’s content with clean code!</p>
 <p>At this point, your component’s <code>render()</code> method should look something like this:</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb185-1" title="1"><span class="at">render</span>() <span class="op">{</span></a>
@@ -3798,7 +3798,7 @@ string type</code></pre>
 <p>Let’s move forward with rendering the folder titles!</p>
 <h3 id="creating-a-subcomponent">Creating a subcomponent</h3>
 <p>Let’s create a <code>Headers</code> subcomponent to render your folder titles! Within your <code>Folder.js</code> file, create a subcomponent above your <code>Folder</code> class. This subcomponent will take care of rendering an unordered list of list items containing clickable tabs.</p>
-<p>Plan what information you want to pass as props from your <code>Folder</code> component into your <code>Headers</code>. You’ll want to render each tab’s title, so you’ll probably want to thread a <code>titles</code> prop from your <code>Folder</code> component. Map over your array of <code>folders</code> to define a <code>titles</code> array of folder titles. Now thread your <code>titles</code> array as a prop to the <code>Headers</code> subcomponent. As a reminder, “threading props” simply refers to passing props from one component to another.</p>
+<p>Plan what information you want to pass as props from your <code>Folder</code> component into your <code>Headers</code>. You’ll want to render each tab’s title, so you’ll probably want to thread a <code>titles</code> prop from your <code>Folder</code> component. Map over your array of <code>folders</code> to define a <code>titles</code> array of folder titles. Now thread your <code>titles</code> array as a prop to the <code>Headers</code> subcomponent. As a reminder, "threading props" simply refers to passing props from one component to another.</p>
 <p>You also want to pass the <code>currentTab</code> state so that the <code>Headers</code> component can know which tab to render with different CSS as selected or active.</p>
 <p>Lastly, you’ll want your <code>Headers</code> component to be able to use the <code>selectTab()</code> method you have defined in order to update the tab’s <code>currentTab</code> state.</p>
 <p>Your <code>Folder</code> component should render the <code>Headers</code> subcomponent below:</p>
@@ -3823,7 +3823,7 @@ string type</code></pre>
 <a class="sourceLine" id="cb189-5" title="5">    &lt;/ul<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb189-6" title="6">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb189-7" title="7"><span class="op">}</span></a></code></pre></div>
-<p>Now map your folder <code>titles</code> to list item elements that render each folder’s <code>title</code>. You’ll need to pass a <a href="https://reactjs.org/docs/reconciliation.html#keys">unique <code>key</code> property</a> to each <code>&lt;li&gt;</code> or React will grumble to all your console-reading users about its unfair working conditions. “How is one supposed to efficiently diff the DOM when one doesn’t even know which list items match up with which!?”</p>
+<p>Now map your folder <code>titles</code> to list item elements that render each folder’s <code>title</code>. You’ll need to pass a <a href="https://reactjs.org/docs/reconciliation.html#keys">unique <code>key</code> property</a> to each <code>&lt;li&gt;</code> or React will grumble to all your console-reading users about its unfair working conditions. "How is one supposed to efficiently diff the DOM when one doesn’t even know which list items match up with which!?"</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">const</span> Headers <span class="op">=</span> (<span class="op">{</span> titles<span class="op">,</span> currentTab<span class="op">,</span> selectTab <span class="op">}</span>) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb190-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb190-3" title="3">    <span class="op">&lt;</span>ul className<span class="op">=</span><span class="st">&#39;tab-header&#39;</span><span class="op">&gt;</span></a>
@@ -3968,7 +3968,7 @@ string type</code></pre>
 <p>Begin by invoking the <code>getCurrentPosition()</code> method in your <code>Weather</code> component’s <code>componentDidMount()</code> method. Upon successfully retrieving your browser’s location, you’ll invoke a success callback to query the weather API.</p>
 <p>Let’s create your success callback! Create a <code>pollWeather()</code> method to take in your received <code>location</code> result from <code>navigator.geolocation.getCurrentPosition()</code>. You’ll use the <code>latitude</code> and <code>longitude</code> of your location to make a fetch call to the weather API. Think of how to extract the <code>latitude</code> and <code>longitude</code> properties from your <code>GeolocationPosition</code> object. Also think of how you might structure your fetch URL to include the query parameter for your geographic coordinates.</p>
 <p>Navigate to the <code>By geographic coordinates</code> section in the <a href="http://openweathermap.org/current">OpenWeatherMap API</a> documentation. You’ll see an example of an API query string using latitude and longitude coordinates (<code>api.openweathermap.org/data/2.5/weather?lat=35&amp;lon=139</code>). You’ll also see an example JSON response below.</p>
-<p>You can define a <code>toQueryString()</code> helper method to format your query parameters into a fetch call URL. To think of scaling your “Widgets” project, you can move this helper function into a <code>utils.js</code> file so that it can be used for other APIs you might incorporate! Have the function take in a <code>params</code> object. You’ll then iterate through the object to sanitize each query value with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent()</a>. You can then return a query string like <code>lat=35&amp;lon=139</code> to build an example API query string above.</p>
+<p>You can define a <code>toQueryString()</code> helper method to format your query parameters into a fetch call URL. To think of scaling your "Widgets" project, you can move this helper function into a <code>utils.js</code> file so that it can be used for other APIs you might incorporate! Have the function take in a <code>params</code> object. You’ll then iterate through the object to sanitize each query value with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encodeURIComponent()</a>. You can then return a query string like <code>lat=35&amp;lon=139</code> to build an example API query string above.</p>
 <p>In your <code>pollWeather()</code> method, use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Fetch API</a> to make a fetch call to the OpenWeatherMap API. Remember to parse your response as JSON before updating the <code>weather</code> state. Upon a successful fetch, update your component’s <code>weather</code> state with the <code>weather</code> property of your JSON response! Use your component’s state to render the current city and temperature on the page.</p>
 <p>By default, the OpenWeatherMap API will return the temperature in Standard units (Kelvin). Convert to Fahrenheit <strong>OR</strong> peruse the API docs for a way to request the weather in Imperial units (Fahrenheit)! Give the weather box a nice border and make sure the elements inside are spaced evenly.</p>
 <p>Great work! Now you have three widgets. One that displays the time, another that allows you navigate folder tabs, and another that displays the weather. You used the <code>navigator.geolocation</code> API to get your current location, which you then passed to your fetch request to get the weather from the OpenWeatherMap API.</p>
@@ -3979,9 +3979,9 @@ string type</code></pre>
 <p>When a user types something into the input, use an <code>onChange</code> event handler to update the widget’s state. Create a <code>handleInput()</code> event handler method to update the state of <code>inputVal</code> with the typed input value.</p>
 <p>Also add an <code>onClick</code> handler to the unordered list. The role of this click handler is to update the widget’s search string (the <code>inputVal</code> state) upon a user’s click of the <code>&lt;li&gt;</code> element you’ve created for each name. You will need to turn your <code>&lt;input&gt;</code> into a <a href="https://reactjs.org/docs/forms.html#controlled-components">controlled component</a> for this to work. Would you access the event’s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">currentTarget</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a>? Remember to use <code>setState()</code> to update the widget’s search string.</p>
 <p>Now you’ll want to find the names that match your user’s search input. Define a <code>matches()</code> method to generate an array of name <code>matches</code> based on the <code>inputVal</code> state. Since you’re taking in user input, think of how you could use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expressions</a> to match the character combinations between your user’s input string and the list of searchable names. If the input is empty, return the original, full list of names so that your user can see all the searchable names!</p>
-<p>Now let’s generate the name matches! Iterate through each name. You’ll use the length of <code>inputVal</code> to slice a segment of each name. Compare the name segment with the input value. Take into consideration that some users might type “barney” instead of searching for “Barney”.</p>
-<p>For example, compare the name segment to the input value in order to match a search input of “bar” to the “bar” segment of “Barney”. Then you could add the name, “Barney”, to your <code>matches</code> array. On the next iteration, the “bar” input would also match to “Barbara” so that you could add “Barbara” to the <code>matches</code> array.</p>
-<p>If you have no matches, you can add a “No matches” string to your <code>matches</code> array so that when <code>matches</code> is returned and rendered, your user will be notified upon searching for a name without matches.</p>
+<p>Now let’s generate the name matches! Iterate through each name. You’ll use the length of <code>inputVal</code> to slice a segment of each name. Compare the name segment with the input value. Take into consideration that some users might type "barney" instead of searching for "Barney".</p>
+<p>For example, compare the name segment to the input value in order to match a search input of "bar" to the "bar" segment of "Barney". Then you could add the name, "Barney", to your <code>matches</code> array. On the next iteration, the "bar" input would also match to "Barbara" so that you could add "Barbara" to the <code>matches</code> array.</p>
+<p>If you have no matches, you can add a "No matches" string to your <code>matches</code> array so that when <code>matches</code> is returned and rendered, your user will be notified upon searching for a name without matches.</p>
 <h3 id="styling-2">Styling</h3>
 <p>Give your component a border and make sure all the <code>&lt;li&gt;</code> elements are nicely padded inside the box. Change the <code>cursor</code> property to display a pointer when hovering over one of the <code>&lt;li&gt;</code> elements. Center all your widgets using flexboxes. Which <code>justify-content</code> property would you use for this?</p>
 <p>Great job! The autocomplete widget uses an event handler to update the state of the component when letters are typed into the input field. Once the autocomplete widget is sufficiently styled, move on to the bonus phase to make your widgets even better.</p>
@@ -4026,12 +4026,12 @@ string type</code></pre>
 <p><code>.result-exit.result-exit-active</code>: Specifies the final state of an element that has left the screen. This is where you also specify the <code>transition</code> property.</p>
 <p>Play around with the CSS file. What kind of interesting transitions can you create?</p>
 <h2 id="bonus-phase-resolving-strictmode-warnings">Bonus Phase: Resolving StrictMode Warnings</h2>
-<p>Check out your new transition in the browser. Open up your developer tools and type something in the “Autocomplete” search input. Your transitions are working, but wait - you have a warning in the console!</p>
+<p>Check out your new transition in the browser. Open up your developer tools and type something in the "Autocomplete" search input. Your transitions are working, but wait - you have a warning in the console!</p>
 <blockquote>
 <p>Warning: findDOMNode is deprecated in StrictMode. findDOMNode was passed an instance of CSSTransitionGroupChild which is inside StrictMode. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://fb.me/react-strict-mode-find-node</p>
 </blockquote>
 <p>This is an example of how <a href="https://reactjs.org/docs/strict-mode.html">StrictMode</a> is a helpful tool that highlights potential problems. In this case, <code>StrictMode</code> is giving you helpful information about the <a href="https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage">deprecation of <code>findDOMNode</code></a>, which is used under the hood. You are also given a clickable link to the official React documentation!</p>
-<p>According to the documentation, <code>findDOMNode</code> is used “to search the tree for a DOM node given a class instance.” Now is your chance to practice going through the official React documentation and learning from reading a <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> in the official <a href="https://github.com/reactjs/react-transition-group/">react-transition-group repository</a>! Take a moment to read through the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> to see real-life discussion about implementing the <code>nodeRef</code> feature as an alternative to having React use <code>findDOMNode</code> under the hood.</p>
+<p>According to the documentation, <code>findDOMNode</code> is used "to search the tree for a DOM node given a class instance." Now is your chance to practice going through the official React documentation and learning from reading a <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> in the official <a href="https://github.com/reactjs/react-transition-group/">react-transition-group repository</a>! Take a moment to read through the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> to see real-life discussion about implementing the <code>nodeRef</code> feature as an alternative to having React use <code>findDOMNode</code> under the hood.</p>
 <p>In your constructor method, create a ref with <a href="https://reactjs.org/docs/refs-and-the-dom.html"><code>React.createRef()</code></a> and use the ref to assign a <code>nodeRef</code> prop to the <code>&lt;CSSTransition&gt;</code> that wraps your result items. Doing this will allow React to reference the <code>&lt;CSSTransition&gt;</code> component, without using the deprecated <code>findDOMNode</code> method to search through the tree for the component. Since React is no longer using <code>findDOMNode</code> under the hood, using a <code>nodeRef</code> will remove the warning in the developer tools console.</p>
 <p>Congratulations! You have just read through official documentation. In the future, you may contribute to an open-source or community managed project, just like how the use for the <a href="https://github.com/reactjs/react-transition-group/pull/559">merged PR</a> did! Don’t be discouraged by reading live discussion in GitHub issues and pull requests. You’ll continue building your foundation of React knowledge and before you know it, you might even be contributing to projects yourself!</p>
 <hr />
@@ -4198,7 +4198,7 @@ string type</code></pre>
 <pre class="jsx"><code>&lt;Route path=&quot;/users/:userId&quot;
        render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;} /&gt;</code></pre>
 <p>The router would break down the full <code>/users/:userId/photos</code> path to two parts: <code>/users</code>, <code>:userId</code>.</p>
-<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into the component if you want it to know about the “match” parameters.</p>
+<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into the component if you want it to know about the "match" parameters.</p>
 <pre class="jsx"><code>// Route&#39;s `render` prop allows you to pass the `users`
 // prop and spread the router `props`.
 render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
@@ -4279,7 +4279,7 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <p>Now that you know how to create front-end routes with React Router, you’ll need to implement a way for your users to navigate the routes! This is what using React Router’s <code>Link</code>, <code>NavLink</code>, <code>Redirect</code>, and <code>history</code> prop can help you do.</p>
 <p>In this article, you’ll be working off of the demo project you built in the React Router Intro reading. When you finish this article, you should be able to use the following components from the <code>react-router-dom</code> library:</p>
 <ul>
-<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your application (like “/users/1”); and,</li>
+<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your application (like "/users/1"); and,</li>
 <li><code>&lt;Redirect&gt;</code> to redirect a user to another path (i.e. a login page when the user is not logged in); and</li>
 <li>React Router’s <code>history</code> prop to update a browser’s URL programmatically.</li>
 </ul>
@@ -4305,7 +4305,7 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <p>The <code>&lt;NavLink&gt;</code> works just like a <code>&lt;Link&gt;</code>, but with a little extra functionality. It has the ability to add extra styling when the path it links to matches the current path. This makes it an ideal choice for a navigation bar, hence the name. This styling can be controlled by three extra props: <code>activeClassName</code>, <code>activeStyle</code>, and <code>exact</code>. To begin using <code>NavLink</code>, update your imports from the <code>react-router-dom</code> package:</p>
 <div class="sourceCode" id="cb224"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb224-1" title="1"><span class="im">import</span> <span class="op">{</span> BrowserRouter<span class="op">,</span> Route<span class="op">,</span> NavLink <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-dom&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>The <code>activeClassName</code> prop of the <code>NavLink</code> component allows you to set a CSS class name for styling the <code>NavLink</code> when its route is active. By default, the <code>activeClassName</code> is already set to <code>active</code>. This means that you simply need to add an <code>.active</code> class to your CSS file to add active styling to your link. A <code>NavLink</code> will be active if its <code>to</code> prop path matches the current URL.</p>
-<p>Let’s change your “Users”, “Hello”, and “Andrew’s Profile” links to be different colors and have a larger font size when active.</p>
+<p>Let’s change your "Users", "Hello", and "Andrew’s Profile" links to be different colors and have a larger font size when active.</p>
 <pre class="jsx"><code>&lt;NavLink to=&quot;/&quot;&gt;App&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;red&quot; to=&quot;/users&quot;&gt;Users&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;blue&quot; to=&quot;/hello&quot;&gt;Hello&lt;/NavLink&gt;
@@ -4494,7 +4494,7 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 </ul>
 <hr />
 <h1 id="react-builds">React Builds</h1>
-<p>A “build” is the process of converting code into something that can actually execute or run on the target platform. A “front-end build” is a process of preparing a front-end or client-side application for the browser.</p>
+<p>A "build" is the process of converting code into something that can actually execute or run on the target platform. A "front-end build" is a process of preparing a front-end or client-side application for the browser.</p>
 <p>With React applications, that means (at a minimum) converting JSX to something that browsers can actually understand. When using Create React App, the build process is automatically configured to do that and a lot more.</p>
 <p>When you finish this article, you should be able to:</p>
 <ul>
@@ -4540,11 +4540,11 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <li>A file watcher is started to watch your files, waiting for changes.</li>
 </ul>
 <h3 id="ejecting">Ejecting</h3>
-<p>Create React App provides a script that you can run to “eject” your application from the Create React App tooling. When you eject your application, all of the hidden stuff is exposed so that you can review and customize it.</p>
+<p>Create React App provides a script that you can run to "eject" your application from the Create React App tooling. When you eject your application, all of the hidden stuff is exposed so that you can review and customize it.</p>
 <blockquote>
 <p>The need to customize Create React App rarely happens. Also, don’t eject an actual project as it’s a one-way trip! Once a Create React App project has been ejected, there’s no going back (though you could always undo the ejection process by reverting to an earlier commit if you’re using source control).</p>
 </blockquote>
-<p>To eject your application from Create React App, run the command <code>npm run eject</code>. You’ll be prompted if you want to continue; type “y” to continue with the ejection process. Once the ejection process has completed, you can review the files that were previously hidden from you.</p>
+<p>To eject your application from Create React App, run the command <code>npm run eject</code>. You’ll be prompted if you want to continue; type "y" to continue with the ejection process. Once the ejection process has completed, you can review the files that were previously hidden from you.</p>
 <p>In the <code>package.json</code> file, you’ll see the following npm scripts:</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb240-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb240-2" title="2">  <span class="dt">&quot;scripts&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -4631,7 +4631,7 @@ REACT_APP_BAR: another value</code></pre>
 <h2 id="phase-0-setup">Phase 0: Setup</h2>
 <p>Begin by creating a new React project:</p>
 <div class="sourceCode" id="cb245"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb245-1" title="1"><span class="ex">npx</span> create-react-app rainbow-routes --template @/simple</a></code></pre></div>
-<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code> directory to build the application architecture from scratch! After you have deleted all your files within the directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the <code>html:5</code> emmet shortcut to generate an HTML template. Title your page “Rainbow Routes” and create a <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element. Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create your entry file!</p>
+<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code> directory to build the application architecture from scratch! After you have deleted all your files within the directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the <code>html:5</code> emmet shortcut to generate an HTML template. Title your page "Rainbow Routes" and create a <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element. Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create your entry file!</p>
 <div class="sourceCode" id="cb246"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb246-1" title="1">h4 {</a>
 <a class="sourceLine" id="cb246-2" title="2">  <span class="kw">color</span>: <span class="cn">darkblue</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb246-3" title="3">  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></a>
@@ -4773,7 +4773,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb254-7" title="7">)<span class="op">;</span></a>
 <a class="sourceLine" id="cb254-8" title="8"></a>
 <a class="sourceLine" id="cb254-9" title="9"><span class="im">export</span> <span class="im">default</span> Color<span class="op">;</span></a></code></pre></div>
-<p>Now start your server and verify you can see the “Rainbow Router!” header from your <code>Rainbow</code> component. Currently there is no functionality. Let’s fix that!</p>
+<p>Now start your server and verify you can see the "Rainbow Router!" header from your <code>Rainbow</code> component. Currently there is no functionality. Let’s fix that!</p>
 <h2 id="phase-1-routes">Phase 1: Routes</h2>
 <p>As a reminder, wrapping the <code>Rainbow</code> component in <code>&lt;BrowserRouter&gt;</code> tags makes the router available to all descendent React Router components. Now open the <code>Rainbow.js</code> file. You’re going to render some of your color components from here. Ultimately you want your routes to look like this.</p>
 <table>
@@ -4861,7 +4861,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Update the <code>App</code> component:</p>
 <ul>
 <li>Wrap the <code>&lt;h1&gt;</code> element with a <code>&lt;div&gt;</code> element; and</li>
-<li>Change the <code>&lt;h1&gt;</code> element content to something like “Exploring React Builds”.</li>
+<li>Change the <code>&lt;h1&gt;</code> element content to something like "Exploring React Builds".</li>
 </ul>
 <div class="sourceCode" id="cb261"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb261-1" title="1"><span class="co">// ./src/App.js</span></a>
 <a class="sourceLine" id="cb261-2" title="2"></a>
@@ -4951,7 +4951,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb267-13" title="13"><span class="op">}</span></a>
 <a class="sourceLine" id="cb267-14" title="14"></a>
 <a class="sourceLine" id="cb267-15" title="15"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Then run your application (<code>npm start</code>) to see “Heading A” and “Heading B” displayed respectively in green and red. If you use the browser’s developer tools to inspect “Heading A”, you’ll see that the <code>.heading</code> class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
+<p>Then run your application (<code>npm start</code>) to see "Heading A" and "Heading B" displayed respectively in green and red. If you use the browser’s developer tools to inspect "Heading A", you’ll see that the <code>.heading</code> class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
 <figure>
 <img src="images/react-builds-css-modules.png" alt="react builds css modules" /><figcaption>react builds css modules</figcaption>
 </figure>
@@ -5001,7 +5001,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb269-17" title="17"><span class="op">}</span></a>
 <a class="sourceLine" id="cb269-18" title="18"></a>
 <a class="sourceLine" id="cb269-19" title="19"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the “Sources” for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
+<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the "Sources" for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
 <figure>
 <img src="images/react-builds-dev-tools-image.png" alt="react builds dev tools image" /><figcaption>react builds dev tools image</figcaption>
 </figure>
@@ -5088,7 +5088,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb274-19" title="19"><span class="op">}</span></a>
 <a class="sourceLine" id="cb274-20" title="20"></a>
 <a class="sourceLine" id="cb274-21" title="21"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for “Class Component”. Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
+<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for "Class Component". Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
 <div class="sourceCode" id="cb275"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb275-1" title="1"><span class="kw">class</span> ClassComponent <span class="kw">extends</span> <span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb275-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb275-3" title="3">    <span class="cf">return</span> <span class="co">/*#__PURE__*/</span><span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">createElement</span>(<span class="st">&quot;h1&quot;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -5105,7 +5105,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Have you wondered yet why you need to use the developer tools to view the bundles generated by Create React App? Remember that when you run <code>npm start</code>, Create React App builds your application using <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a>. To keep things as performant as possible, the bundles generated by <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a> are stored in memory instead of writing them to the file system.</p>
 </blockquote>
 <p>The JSX in the component’s <code>render</code> method has been converted to JavaScript but the <code>ClassComponent</code> ES2015 class is left alone. This makes sense though as JSX isn’t natively supported by any browser while ES2015 classes have been natively supported by browsers for awhile now.</p>
-<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">“Can I use…”</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
+<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">"Can I use…"</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
 <p>Change the <code>browserslist.development</code> property in the <code>package.json</code> file to this:</p>
 <div class="sourceCode" id="cb276"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb276-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb276-2" title="2">  <span class="dt">&quot;browserslist&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -5202,7 +5202,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb281-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;root&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb281-9" title="9">  <span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb281-10" title="10"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
-<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
+<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
 <figure>
 <img src="images/react-builds-index-html.png" alt="react builds index html" /><figcaption>react builds index html</figcaption>
 </figure>
@@ -5340,7 +5340,7 @@ REACT_APP_BAR: another value</code></pre>
 </ul>
 <p>Now add a folder named <code>public</code> to the root of your Express project. Copy the files from the <code>build</code> folder in your Create React App project to the <code>public</code> folder in the Express application project. Then run your application using the command <code>node app.js</code>.</p>
 <p>Open a browser and browse to the URL <code>http://localhost:9000/</code>. You should see your React application served from your Express application! Be sure to click the navigation links to verify that all of your configured routes work as expected.</p>
-<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can “deep link” to any of your React application’s routes:</p>
+<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can "deep link" to any of your React application’s routes:</p>
 <ul>
 <li><a href="http://localhost:9000/image">http://localhost:9000/image</a></li>
 <li><a href="http://localhost:9000/class-component">http://localhost:9000/class-component</a></li>
@@ -5359,7 +5359,7 @@ REACT_APP_BAR: another value</code></pre>
 <hr />
 <h1 id="react-context">React Context</h1>
 <p>At this point, you know how to manage a component’s state and pass information down an application’s component tree by threading props from parent components to child components. Think of how tedious it could be to pass down information, like current user data or a UI theme, to every component in an application. Instead of threading the information as props from a parent component to its children and grandchildren, you can share information with any of your application’s components by using React Context!</p>
-<p><a href="https://reactjs.org/docs/context.html">React Context</a> gives you a way to pass data through the component tree without having to manually thread props. Context gives developers a convenient way to share and update “global” data across a React application. Now it’s time to dive into application-wide data management!</p>
+<p><a href="https://reactjs.org/docs/context.html">React Context</a> gives you a way to pass data through the component tree without having to manually thread props. Context gives developers a convenient way to share and update "global" data across a React application. Now it’s time to dive into application-wide data management!</p>
 <p>When you finish this article, you should be able to:</p>
 <ul>
 <li>Use React Context to pass down global information</li>
@@ -5524,7 +5524,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb298-37" title="37">    )<span class="op">;</span></a>
 <a class="sourceLine" id="cb298-38" title="38">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb298-39" title="39"><span class="op">}</span></a></code></pre></div>
-<p>As you can see, the <code>PupForm</code> has a default <code>selectedPup</code> state that will set the default select option to be “Select a pup!”. There is also an <code>updateSelection</code> method that listens for change events in the dropdown menu to update the <code>selectedPup</code> slice of state. Now that you have a basic dropdown menu set up, it’s time to create a consumer wrapper so that the <code>PupForm</code> component can have access to the <code>PupContext</code>!</p>
+<p>As you can see, the <code>PupForm</code> has a default <code>selectedPup</code> state that will set the default select option to be "Select a pup!". There is also an <code>updateSelection</code> method that listens for change events in the dropdown menu to update the <code>selectedPup</code> slice of state. Now that you have a basic dropdown menu set up, it’s time to create a consumer wrapper so that the <code>PupForm</code> component can have access to the <code>PupContext</code>!</p>
 <p>You’ll want to use a <a href="https://reactjs.org/docs/context.html#contextconsumer">Context.Consumer</a> component to wrap your <code>PupForm</code> component, this way the wrapped component can subscribe to context changes. Note that the <code>Context.Consumer</code> component expects a function as a child:</p>
 <pre class="jsx"><code>&lt;MyContext.Consumer&gt;
   {(value) =&gt; &lt;Component value={value} /&gt;}
@@ -5641,7 +5641,7 @@ REACT_APP_BAR: another value</code></pre>
 <hr />
 <h1 id="react-context-to-do-list-project">React Context To-do List Project</h1>
 <p>Today you’ll be building a to-do list application with React and local storage. Instead of threading props from a parent to its children and grandchildren, you’ll use Context to share information with any of your application’s components!</p>
-<p>As a reminder, Context gives you a convenient way to pass data through the component tree without having to manually thread props. This project will also give you a better understanding of how to share and update “global” data across a React application.</p>
+<p>As a reminder, Context gives you a convenient way to pass data through the component tree without having to manually thread props. This project will also give you a better understanding of how to share and update "global" data across a React application.</p>
 <p>In this project, you will:</p>
 <ul>
 <li>Create and use a <code>TodoContext</code> to share global information</li>
@@ -5749,7 +5749,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb318-38" title="38">)<span class="op">;</span></a>
 <a class="sourceLine" id="cb318-39" title="39"></a>
 <a class="sourceLine" id="cb318-40" title="40"><span class="im">export</span> <span class="im">default</span> TodoFormWithContext<span class="op">;</span></a></code></pre></div>
-<p>Now you’ll update your <code>App</code> component to render the <code>TodoForm</code> and <code>TodoList</code> components, along with a “To-do List” header.</p>
+<p>Now you’ll update your <code>App</code> component to render the <code>TodoForm</code> and <code>TodoList</code> components, along with a "To-do List" header.</p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb319-1" title="1"><span class="co">// ./src/App.js</span></a>
 <a class="sourceLine" id="cb319-2" title="2"></a>
 <a class="sourceLine" id="cb319-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -5848,7 +5848,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb325-12" title="12">    <span class="dt">comments </span><span class="op">:</span> [<span class="st">&quot;comment3&quot;</span><span class="op">,</span> <span class="st">&quot;comment4&quot;</span><span class="op">,</span> <span class="st">&quot;comment5&quot;</span>]</a>
 <a class="sourceLine" id="cb325-13" title="13">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb325-14" title="14"><span class="op">},</span></a></code></pre></div>
-<p>In the future, you’ll be working with Redux and will manage much more data. Feel free to view the <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/#normalizing-state-shape">nested state shape with an array</a> and read more about how using normalized state shape is an improvement. The documentation explains how “compared to the original nested format, this is an improvement in several ways.”</p>
+<p>In the future, you’ll be working with Redux and will manage much more data. Feel free to view the <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/#normalizing-state-shape">nested state shape with an array</a> and read more about how using normalized state shape is an improvement. The documentation explains how "compared to the original nested format, this is an improvement in several ways."</p>
 <p>After generating a <code>newTask</code> object, you’ll want to update the <code>tasks</code> state with the new object and then update the tasks stored in local storage. First, let’s take a closer look at the <code>updateLocalStorageTasks</code> method. You’ll see that it takes care of logging the tasks to your DevTools console, converting the JavaScript <code>tasks</code> object into a JSON string, and then storing the tasks in local storage, under the name <code>tasks</code>.</p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb326-1" title="1">updateLocalStorageTasks <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb326-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="at">tasks</span>)<span class="op">;</span></a>
@@ -5901,7 +5901,7 @@ REACT_APP_BAR: another value</code></pre>
 </figure>
 <p>Access the <code>tasks</code> and <code>deleteTask</code> method stored within the context value. Map over each of the <code>tasks</code> and render a <code>Task</code> component for each task. Since your tasks are currently formatted as an object, you’ll need to convert the object to an iterable array before mapping over them. You can use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values">Object.values</a> method to access an array containing the object’s property values.</p>
 <p>You’ll want to set a task ID <code>key</code> for each of the tasks, as well as pass the task as a prop for each <code>Task</code> component rendered. In order to keep the <code>Task</code> component as a function component, you’ll pass the <code>deleteTask</code> method from context as a prop into each rendered <code>Task</code> as well. As a reminder, the <code>static contextType</code> property can only be used in class components.</p>
-<p>Now have the <code>Task</code> component take in the props. Then update the click handler to invoke the <code>deleteTask</code> prop with the task’s ID. You’ll also want to replace the “Hi, I’m a task in your to-do list!” message with the task’s message.</p>
+<p>Now have the <code>Task</code> component take in the props. Then update the click handler to invoke the <code>deleteTask</code> prop with the task’s ID. You’ll also want to replace the "Hi, I’m a task in your to-do list!" message with the task’s message.</p>
 <p>Congratulations! You have just built a to-do list application with React Context! You used a context provider to set a global context value, used a context consumer to pass render props into a consuming component, and used the <code>static contextType</code> property to give a class component access to the context value. In the next Context project, you’ll work on using Context to store a user’s login session information.</p>
 <hr />
 <h1 id="react-twitter-lite-project">React Twitter Lite Project</h1>
@@ -5982,7 +5982,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb339-19" title="19"><span class="op">}</span></a>
 <a class="sourceLine" id="cb339-20" title="20"></a>
 <a class="sourceLine" id="cb339-21" title="21"><span class="im">export</span> <span class="im">default</span> RegistrationForm<span class="op">;</span></a></code></pre></div>
-<p>Take a moment to update your <code>App.js</code> file so that it renders your <code>RegistrationForm</code> with a “Twitter Lite” title:</p>
+<p>Take a moment to update your <code>App.js</code> file so that it renders your <code>RegistrationForm</code> with a "Twitter Lite" title:</p>
 <div class="sourceCode" id="cb340"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb340-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb340-2" title="2"><span class="im">import</span> RegistrationForm <span class="im">from</span> <span class="st">&#39;./components/session/RegistrationForm&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb340-3" title="3"></a>
@@ -5998,8 +5998,8 @@ REACT_APP_BAR: another value</code></pre>
 <p>Instead of using scripts to handle your sign up requests, you’ll define an <code>onChange</code> event handler method to set your component’s <code>state</code> to the value of user input fields. Then you’ll create a <code>registerUser</code> method that will house the logic to use your <code>state</code> and make a POST request to create a user with the Fetch API.</p>
 <p>Begin by setting your <code>RegistrationForm</code> component’s default <code>username</code>, <code>email</code>, and <code>password</code> state to empty strings. Now let’s move forward to rendering the form!</p>
 <h3 id="rendering-the-form">Rendering the form</h3>
-<p>Return a <code>&lt;form&gt;</code> element within your <code>render()</code> method. Within the form, render an <code>&lt;h2&gt;</code> with the content “Register”, three input fields, and a submit button. You’ll want to create a <code>text</code> type field for your user to input a username. Set the <code>name</code> of this field to be “username” and the <code>placeholder</code> to be “Enter Username”. You’ll also want to set the <code>value</code> of this field to be your component’s <code>username</code> state.</p>
-<p>If you try to type in your “username” field right now, you’ll notice that you are unable to. This is because you are setting the value of the field to be <code>this.state.username</code>, which will always be an empty string unless you update that slice of state. Note that you can have your render method destructure the state into all the variables you need before you return the JSX:</p>
+<p>Return a <code>&lt;form&gt;</code> element within your <code>render()</code> method. Within the form, render an <code>&lt;h2&gt;</code> with the content "Register", three input fields, and a submit button. You’ll want to create a <code>text</code> type field for your user to input a username. Set the <code>name</code> of this field to be "username" and the <code>placeholder</code> to be "Enter Username". You’ll also want to set the <code>value</code> of this field to be your component’s <code>username</code> state.</p>
+<p>If you try to type in your "username" field right now, you’ll notice that you are unable to. This is because you are setting the value of the field to be <code>this.state.username</code>, which will always be an empty string unless you update that slice of state. Note that you can have your render method destructure the state into all the variables you need before you return the JSX:</p>
 <div class="sourceCode" id="cb341"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb341-1" title="1"><span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb341-2" title="2">  <span class="kw">const</span> <span class="op">{</span> username<span class="op">,</span> email<span class="op">,</span> password <span class="op">}</span> <span class="op">=</span> <span class="kw">this</span>.<span class="at">state</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb341-3" title="3">  <span class="cf">return</span> (</a>
@@ -6141,7 +6141,7 @@ REACT_APP_BAR: another value</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Now that you have your routes set up, take a moment to create a <code>&lt;nav&gt;</code> bar to render your “Register”, “Login”, and “Home” navigation links. Note that you won’t be creating a link for the current user’s profile <em>yet</em>. Use <code>&lt;NavLink&gt;</code> components to create your links so that you can style active links. Create an <code>.active</code> class in your <code>index.css</code> file to style your active links to be bold.</p>
+<p>Now that you have your routes set up, take a moment to create a <code>&lt;nav&gt;</code> bar to render your "Register", "Login", and "Home" navigation links. Note that you won’t be creating a link for the current user’s profile <em>yet</em>. Use <code>&lt;NavLink&gt;</code> components to create your links so that you can style active links. Create an <code>.active</code> class in your <code>index.css</code> file to style your active links to be bold.</p>
 <p>Now you’re going to create a <code>ProtectedRoute</code> as a higher order component (a component that takes in another component as an argument) to ensure that only logged users can view the <code>Profile</code> and <code>Home</code> pages. Your <code>&lt;ProtectedRoute&gt;</code> will use your current user context to determine whether your user is logged in. If the user is not logged in, the route will render a <code>&lt;Redirect&gt;</code> component to redirect the user to the login page.</p>
 <p>You’ll use a <code>currentUserId</code> prop to determine whether a route’s component or a <code>&lt;Redirect&gt;</code> is rendered. In the next phase, you’ll create a <code>UserContext</code> that will pass the <code>currentUserId</code> information as a prop into your <code>App</code> component. Then you can check whether the <code>currentUserId</code> is <em>truthy</em> or <em>falsey</em> to determine whether your <code>ProtectedRoute</code> renders a protected component (i.e. <code>Home</code>) or redirects users to the <code>/login</code> path.</p>
 <p>Make a new <code>Routes.js</code> file in your <code>src</code> directory. Think of what you’ll need to import to create routes with redirection. Just like how you can use <code>window.location.href</code> into redirect a user upon an unsuccessful login, you can use a <code>&lt;ProtectedRoute&gt;</code> component to wrap your <code>&lt;Route&gt;</code> components to redirect users.</p>
@@ -6301,7 +6301,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Since your routes need access to the updated <code>currentUserId</code>, pass the <code>currentUserId</code> state (from your <code>AppWithContext</code> wrapper component) as a prop to your <code>App</code> component. This way your routes can simply reference <code>props.currentUserId</code> to know whether there is a <em>truthy</em> or <em>falsey</em> current user! Lastly, update your rendered routes to take in a <code>currentUserId</code> prop set to the value of the <code>App</code> component’s <code>currentUserId</code> prop.</p>
 <p>Now you can navigate to http://localhost:3000/register and create a new user. Upon successfully creating a user, you should receive a <code>201</code> status response in your backend terminal and be redirected to the home page!</p>
 <h2 id="phase-5-user-login-form">Phase 5: User login form</h2>
-<p>Creating your login form will be very similar to creating your registration form. You’ll want to render a <code>&lt;form&gt;</code> with a <code>&lt;h2&gt;</code> title of “Log In”, two input fields (email and password), and a <code>&lt;submit&gt;</code> button. You’ll also want to define the default <code>email</code> and <code>password</code> slices of state and create <code>onChange</code> handlers to set the state with input value from your login form. As a reminder, you can destructure your state into the <code>email</code> and <code>password</code> variables you need in the <code>render()</code> method:</p>
+<p>Creating your login form will be very similar to creating your registration form. You’ll want to render a <code>&lt;form&gt;</code> with a <code>&lt;h2&gt;</code> title of "Log In", two input fields (email and password), and a <code>&lt;submit&gt;</code> button. You’ll also want to define the default <code>email</code> and <code>password</code> slices of state and create <code>onChange</code> handlers to set the state with input value from your login form. As a reminder, you can destructure your state into the <code>email</code> and <code>password</code> variables you need in the <code>render()</code> method:</p>
 <div class="sourceCode" id="cb369"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb369-1" title="1"><span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb369-2" title="2">  <span class="kw">const</span> <span class="op">{</span> email<span class="op">,</span> password <span class="op">}</span> <span class="op">=</span> <span class="kw">this</span>.<span class="at">state</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb369-3" title="3">  <span class="cf">return</span>(</a>
@@ -6402,7 +6402,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb375-17" title="17"><span class="op">}</span></a></code></pre></div>
 <p>Think of how you would handle errors for unsuccessful fetch responses. Remember that you’ll need to manually throw responses, as the Fetch API does not throw errors of unsuccessful requests. For now, you can use <code>console.error()</code> to log any error responses. Think of what you might return in your <code>fetchTweets</code> method’s <code>catch</code> block to indicate that there were no tweets fetched.</p>
 <h3 id="logging-out-a-user">Logging out a user</h3>
-<p>Now it’s time to render a logout button! Have your application render a <code>&lt;button&gt;</code> underneath the “Home Page” header. Add an <code>onClick</code> event listener to the button. Upon a user’s click, your component should invoke the <code>this.context.logout</code> method.</p>
+<p>Now it’s time to render a logout button! Have your application render a <code>&lt;button&gt;</code> underneath the "Home Page" header. Add an <code>onClick</code> event listener to the button. Upon a user’s click, your component should invoke the <code>this.context.logout</code> method.</p>
 <p>Once you have a logout button set up, test your application’s user login and logout flow! Once you are logged in, you should see an list of fetched tweets. Take a moment to also notice how your application does not allow you to browse to the <code>/login</code> and <code>/register</code> routes when you are logged in. This is due to the <code>AuthRoute</code> components you created to wrap those routes!</p>
 <h2 id="phase-7-user-profile-page">Phase 7: User profile page</h2>
 <p>In the profile page, you’ll want to see a user’s username as well as tweets they have written. Since you’ll be fetching information to render within a component, you’ll want to use <code>state</code>. Set a default <code>user</code> state to an empty object literal and a default <code>tweets</code> state to an empty array. Now create a wrapper component for your <code>Profile</code> component to access the <code>UserContext</code>. Make a fetch request to <code>/users/:userId/tweets</code> to fetch a specific user’s tweets. Since you’ll need authorization to make successful fetch requests for a current user and their tweets, pass the <code>authToken</code> and <code>currentUserId</code> from your context as props.</p>
@@ -6419,7 +6419,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Great! Now after successfully fetching your current user’s tweets, you can render the tweets in an unordered list like in your <code>Home</code> component. But what about creating and deleting tweets?</p>
 <p>Create a method to make <code>createTweet</code> requests from your <code>Home</code> component. Below your home page’s navigation bar, render a form create a tweet. Think how what headers you might need to set to create tweets (hint: you’ll need not one, but two headers). The endpoint for creating a tweet is <code>/tweets</code>.</p>
 <p>After implementing tweet creation, create a method to make <code>deleteTweet</code> requests from your <code>Profile</code> component. Have your <code>Profile</code> component render a delete <code>&lt;button&gt;</code> for each tweet rendered. The endpoint for deleting a tweet is <code>/tweets/:tweetId</code>.</p>
-<p>Think of how you might update your <code>tweets</code> state upon tweet creation and deletion. What might you render if a home page or profile has no fetched tweets? After you have rendered your user profile, add a navigation link titled “My Profile” to the <code>/users/${currentUserId}</code> path. Only have the navigation link render if there is a valid current user logged in!</p>
+<p>Think of how you might update your <code>tweets</code> state upon tweet creation and deletion. What might you render if a home page or profile has no fetched tweets? After you have rendered your user profile, add a navigation link titled "My Profile" to the <code>/users/${currentUserId}</code> path. Only have the navigation link render if there is a valid current user logged in!</p>
 <p>Now test your tweet creation and deletion. The update to your <code>tweets</code> slice of state should be rendered to the <code>Profile</code> page without a manual browser refresh.</p>
 <h2 id="bonus-higher-order-components">Bonus: Higher order components</h2>
 <p>As a brief introduction, <a href="https://reactjs.org/docs/higher-order-components.html">higher order components (HOC)</a> are a pattern for reusing component logic. Ultimately, higher order components allow you to dynamically generate wrapper components. Your <code>ProtectedRoute</code> and <code>AuthRoute</code> components are higher order components that used a function to return a new wrapped <code>Route</code> component. A higher order component is just a component that takes another component as an argument.</p>

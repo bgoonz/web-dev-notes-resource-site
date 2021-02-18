@@ -203,7 +203,7 @@ React will ask `Button` what it renders to. The `Button` will return this elemen
 
 React will repeat this process until it knows the underlying DOM tag elements for every component on the page.
 
-React is like a child asking “what is Y” for every “X is Y” you explain to them until they figure out every little thing in the world.
+React is like a child asking "what is Y" for every "X is Y" you explain to them until they figure out every little thing in the world.
 
 Remember the `Form` example above? It can be written in React as follows[^1]:
 
@@ -314,7 +314,7 @@ ReactDOM.render({
 }, document.getElementById('root'));
 ```
 
-React will ask the `Form` component what element tree it returns, given those `props`. It will gradually “refine” its understanding of your component tree in terms of simpler primitives:
+React will ask the `Form` component what element tree it returns, given those `props`. It will gradually "refine" its understanding of your component tree in terms of simpler primitives:
 
 ```js
 // React: You told me this...
@@ -352,7 +352,7 @@ React will ask the `Form` component what element tree it returns, given those `p
 
 This is a part of the process that React calls [reconciliation](/docs/reconciliation.html) which starts when you call [`ReactDOM.render()`](/docs/top-level-api.html#reactdom.render) or [`setState()`](/docs/component-api.html#setstate). By the end of the reconciliation, React knows the resulting DOM tree, and a renderer like `react-dom` or `react-native` applies the minimal set of changes necessary to update the DOM nodes (or the platform-specific views in case of React Native).
 
-This gradual refining process is also the reason React apps are easy to optimize. If some parts of your component tree become too large for React to visit efficiently, you can tell it to [skip this “refining” and diffing certain parts of the tree if the relevant props have not changed](/docs/advanced-performance.html). It is very fast to calculate whether the props have changed if they are immutable, so React and immutability work great together, and can provide great optimizations with the minimal effort.
+This gradual refining process is also the reason React apps are easy to optimize. If some parts of your component tree become too large for React to visit efficiently, you can tell it to [skip this "refining" and diffing certain parts of the tree if the relevant props have not changed](/docs/advanced-performance.html). It is very fast to calculate whether the props have changed if they are immutable, so React and immutability work great together, and can provide great optimizations with the minimal effort.
 
 You might have noticed that this blog entry talks a lot about components and elements, and not so much about the instances. The truth is, instances have much less importance in React than in most object-oriented UI frameworks.
 

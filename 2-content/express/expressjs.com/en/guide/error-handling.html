@@ -385,7 +385,7 @@ error information to <code>stderr</code>, for example:</p>
 }
 </code></pre>
 <p>Also in this example, <code>clientErrorHandler</code> is defined as follows; in this case, the error is explicitly passed along to the next one.</p>
-<p>Notice that when <em>not</em> calling “next” in an error-handling function, you are responsible for writing (and ending) the response. Otherwise those requests will “hang” and will not be eligible for garbage collection.</p>
+<p>Notice that when <em>not</em> calling "next" in an error-handling function, you are responsible for writing (and ending) the response. Otherwise those requests will "hang" and will not be eligible for garbage collection.</p>
 <pre><code class="language-js">function clientErrorHandler (err, req, res, next) {
   if (req.xhr) {
     res.status(500).send({ error: 'Something failed!' })
@@ -394,7 +394,7 @@ error information to <code>stderr</code>, for example:</p>
   }
 }
 </code></pre>
-<p>Implement the “catch-all” <code>errorHandler</code> function as follows (for example):</p>
+<p>Implement the "catch-all" <code>errorHandler</code> function as follows (for example):</p>
 <pre><code class="language-js">function errorHandler (err, req, res, next) {
   res.status(500)
   res.render('error', { error: err })

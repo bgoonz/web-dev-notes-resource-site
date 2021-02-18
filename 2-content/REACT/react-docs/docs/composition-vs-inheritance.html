@@ -10,7 +10,7 @@
 <p>In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.</p>
 <h2 id="containment">Containment</h2>
 <p>Some components don't know their children ahead of time. This is especially common for components like
-    <code>Sidebar</code> or <code>Dialog</code> that represent generic “boxes”.</p>
+    <code>Sidebar</code> or <code>Dialog</code> that represent generic "boxes".</p>
 <p>We recommend that such components use the special <code>children</code> prop to pass children elements directly into their output:</p>
 <pre class="js{4}"><code>function FancyBorder(props) {
   return (
@@ -34,7 +34,7 @@
 }</code></pre>
 <p><strong><a href="https://codepen.io/gaearon/pen/ozqNOV?editors=0010">Try it on CodePen</a></strong></p>
 <p>Anything inside the <code>&lt;FancyBorder&gt;</code> JSX tag gets passed into the <code>FancyBorder</code> component as a <code>children</code> prop. Since <code>FancyBorder</code> renders <code>{props.children}</code> inside a <code>&lt;div&gt;</code>, the passed elements appear in the final output.</p>
-<p>While this is less common, sometimes you might need multiple “holes” in a component. In such cases you may come up with your own convention instead of using <code>children</code>:</p>
+<p>While this is less common, sometimes you might need multiple "holes" in a component. In such cases you may come up with your own convention instead of using <code>children</code>:</p>
 <pre class="js{5,8,18,21}"><code>function SplitPane(props) {
   return (
     &lt;div className=&quot;SplitPane&quot;&gt;
@@ -60,10 +60,10 @@ function App() {
   );
 }</code></pre>
 <p><a href="https://codepen.io/gaearon/pen/gwZOJp?editors=0010"><strong>Try it on CodePen</strong></a></p>
-<p>React elements like <code>&lt;Contacts /&gt;</code> and <code>&lt;Chat /&gt;</code> are just objects, so you can pass them as props like any other data. This approach may remind you of “slots” in other libraries but there are no limitations on what you can pass as props in React.</p>
+<p>React elements like <code>&lt;Contacts /&gt;</code> and <code>&lt;Chat /&gt;</code> are just objects, so you can pass them as props like any other data. This approach may remind you of "slots" in other libraries but there are no limitations on what you can pass as props in React.</p>
 <h2 id="specialization">Specialization</h2>
-<p>Sometimes we think about components as being “special cases” of other components. For example, we might say that a <code>WelcomeDialog</code> is a special case of <code>Dialog</code>.</p>
-<p>In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props:</p>
+<p>Sometimes we think about components as being "special cases" of other components. For example, we might say that a <code>WelcomeDialog</code> is a special case of <code>Dialog</code>.</p>
+<p>In React, this is also achieved by composition, where a more "specific" component renders a more "generic" one and configures it with props:</p>
 <pre class="js{5,8,16-18}"><code>function Dialog(props) {
   return (
     &lt;FancyBorder color=&quot;blue&quot;&gt;

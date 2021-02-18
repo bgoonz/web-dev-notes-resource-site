@@ -114,8 +114,8 @@ ALTER TYPE <em class="replaceable"><code>name</code></em> RENAME VALUE <em class
    usually only occur if <code class="literal">BEFORE</code> or <code class="literal">AFTER</code>
    is used to set the new value's sort position somewhere other than at the
    end of the list.  However, sometimes it will happen even though the new
-   value is added at the end (this occurs if the OID counter <span class="quote">“<span class="quote">wrapped
-   around</span>”</span> since the original creation of the enum type).  The slowdown is
+   value is added at the end (this occurs if the OID counter <span class="quote">"<span class="quote">wrapped
+   around</span>"</span> since the original creation of the enum type).  The slowdown is
    usually insignificant; but if it matters, optimal performance can be
    regained by dropping and recreating the enum type, or by dumping and
    reloading the database.

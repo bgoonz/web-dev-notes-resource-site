@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>36.25. enabled_roles</title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><link rev="made" href="pgsql-docs@lists.postgresql.org" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><link rel="prev" href="infoschema-element-types.html" title="36.24. element_types" /><link rel="next" href="infoschema-foreign-data-wrapper-options.html" title="36.26. foreign_data_wrapper_options" /></head><body><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="5" align="center">36.25. <code xmlns="http://www.w3.org/1999/xhtml" class="literal">enabled_roles</code></th></tr><tr><td width="10%" align="left"><a accesskey="p" href="infoschema-element-types.html" title="36.24. element_types">Prev</a> </td><td width="10%" align="left"><a accesskey="u" href="information-schema.html" title="Chapter 36. The Information Schema">Up</a></td><th width="60%" align="center">Chapter 36. The Information Schema</th><td width="10%" align="right"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="10%" align="right"> <a accesskey="n" href="infoschema-foreign-data-wrapper-options.html" title="36.26. foreign_data_wrapper_options">Next</a></td></tr></table><hr></hr></div><div class="sect1" id="INFOSCHEMA-ENABLED-ROLES"><div class="titlepage"><div><div><h2 class="title" style="clear: both">36.25. <code class="literal">enabled_roles</code></h2></div></div></div><p>
    The view <code class="literal">enabled_roles</code> identifies the currently
-   <span class="quote">“<span class="quote">enabled roles</span>”</span>.  The enabled roles are recursively
+   <span class="quote">"<span class="quote">enabled roles</span>"</span>.  The enabled roles are recursively
    defined as the current user together with all roles that have been
    granted to the enabled roles with automatic inheritance.  In other
    words, these are all roles that the current user has direct or
@@ -9,7 +9,7 @@
    <a id="id-1.7.6.29.2.3" class="indexterm"></a>
    <a id="id-1.7.6.29.2.4" class="indexterm"></a>
   </p><p>
-   For permission checking, the set of <span class="quote">“<span class="quote">applicable roles</span>”</span>
+   For permission checking, the set of <span class="quote">"<span class="quote">applicable roles</span>"</span>
    is applied, which can be broader than the set of enabled roles.  So
    generally, it is better to use the view
    <code class="literal">applicable_roles</code> instead of this one; See

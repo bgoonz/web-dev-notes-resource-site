@@ -60,8 +60,8 @@
    are done.  Otherwise, we schedule a recheck to occur when it is time to
    enforce the constraint.  If, at the time of the recheck, both the inserted
    tuple and some other tuple with the same key are live, then the error
-   must be reported.  (Note that for this purpose, <span class="quote">“<span class="quote">live</span>”</span> actually
-   means <span class="quote">“<span class="quote">any tuple in the index entry's HOT chain is live</span>”</span>.)
+   must be reported.  (Note that for this purpose, <span class="quote">"<span class="quote">live</span>"</span> actually
+   means <span class="quote">"<span class="quote">any tuple in the index entry's HOT chain is live</span>"</span>.)
    To implement this, the <code class="function">aminsert</code> function is passed a
    <code class="literal">checkUnique</code> parameter having one of the following values:
 

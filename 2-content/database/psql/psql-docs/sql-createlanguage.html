@@ -10,11 +10,11 @@ CREATE [ OR REPLACE ] [ TRUSTED ] [ PROCEDURAL ] LANGUAGE <em class="replaceable
    defined in this new language.
   </p><div class="note"><h3 class="title">Note</h3><p>
     As of <span class="productname">PostgreSQL</span> 9.1, most procedural
-    languages have been made into <span class="quote">“<span class="quote">extensions</span>”</span>, and should
+    languages have been made into <span class="quote">"<span class="quote">extensions</span>"</span>, and should
     therefore be installed with <a class="xref" href="sql-createextension.html" title="CREATE EXTENSION"><span class="refentrytitle">CREATE EXTENSION</span></a>
     not <code class="command">CREATE LANGUAGE</code>.  Direct use of
     <code class="command">CREATE LANGUAGE</code> should now be confined to
-    extension installation scripts.  If you have a <span class="quote">“<span class="quote">bare</span>”</span>
+    extension installation scripts.  If you have a <span class="quote">"<span class="quote">bare</span>"</span>
     language in your database, perhaps as a result of an upgrade,
     you can convert it to an extension using
     <code class="literal">CREATE EXTENSION <em class="replaceable"><code>langname</code></em> FROM

@@ -468,7 +468,7 @@ if (app.get('env') === 'production') {
 <section>
 <h3 id="app.use">app.use([path], function)</h3>
 <p>Use the given middleware <code>function</code>, with optional mount <code>path</code>,
-defaulting to “/”.</p>
+defaulting to "/".</p>
 <pre><code class="language-js">var express = require('express')
 var app = express()
 
@@ -485,12 +485,12 @@ app.use(function (req, res, next) {
 
 app.listen(3000)
 </code></pre>
-<p>The “mount” path is stripped and is <strong>not</strong> visible
+<p>The "mount" path is stripped and is <strong>not</strong> visible
 to the middleware <code>function</code>. The main effect of this feature is that
-mounted middleware may operate without code changes regardless of its “prefix”
+mounted middleware may operate without code changes regardless of its "prefix"
 pathname.</p>
 <div class="doc-box doc-notice">
-<p>A route will match any path that follows its path immediately with either a “<code>/</code>” or a “<code>.</code>”. For example: <code>app.use('/apple', ...)</code> will match <em>/apple</em>, <em>/apple/images</em>, <em>/apple/images/news</em>, <em>/apple.html</em>, <em>/apple.html.txt</em>, and so on.</p>
+<p>A route will match any path that follows its path immediately with either a "<code>/</code>" or a "<code>.</code>". For example: <code>app.use('/apple', ...)</code> will match <em>/apple</em>, <em>/apple/images</em>, <em>/apple/images/news</em>, <em>/apple.html</em>, <em>/apple.html.txt</em>, and so on.</p>
 </div>
 <p>Here’s a concrete example, take the typical use-case of serving files in ./public
 using the <code>express.static()</code> middleware:</p>
@@ -499,18 +499,18 @@ using the <code>express.static()</code> middleware:</p>
 // GET /favicon.ico
 app.use(express.static(path.join(__dirname, 'public')))
 </code></pre>
-<p>Say for example you wanted to prefix all static files with “/static”, you could
-use the “mounting” feature to support this. Mounted middleware functions are <em>not</em>
+<p>Say for example you wanted to prefix all static files with "/static", you could
+use the "mounting" feature to support this. Mounted middleware functions are <em>not</em>
 invoked unless the <code>req.url</code> contains this prefix, at which point
 it is stripped when the function is invoked. This affects this function only,
-subsequent middleware will see <code>req.url</code> with “/static” included
+subsequent middleware will see <code>req.url</code> with "/static" included
 unless they are mounted as well.</p>
 <pre><code class="language-js">// GET /static/javascripts/jquery.js
 // GET /static/style.css
 // GET /static/favicon.ico
 app.use('/static', express.static(path.join(__dirname, 'public')))
 </code></pre>
-<p>The order of which middleware are “defined” using <code>app.use()</code> is
+<p>The order of which middleware are "defined" using <code>app.use()</code> is
 very important, they are invoked sequentially, thus this defines middleware
 precedence. For example usually <code>express.logger()</code> is the very
 first middleware you would use, logging every request:</p>
@@ -530,7 +530,7 @@ app.use(function (req, res) {
 })
 </code></pre>
 <p>Another concrete example would be serving files from multiple directories,
-giving precedence to “./public” over the others:</p>
+giving precedence to "./public" over the others:</p>
 <pre><code class="language-js">app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'files')))
 app.use(express.static(path.join(__dirname, 'uploads')))
@@ -540,16 +540,16 @@ app.use(express.static(path.join(__dirname, 'uploads')))
 <h3 id="app-settings">settings</h3>
 <p>The following settings are provided to alter how Express will behave:</p>
 <ul>
-<li><code>env</code> Environment mode, defaults to process.env.NODE_ENV or “development”</li>
+<li><code>env</code> Environment mode, defaults to process.env.NODE_ENV or "development"</li>
 <li><code>trust proxy</code> Enables reverse proxy support, disabled by default</li>
 <li><code>jsonp callback name</code> Changes the default callback name of ?callback=</li>
 <li><code>json replacer</code> JSON replacer callback, null by default</li>
 <li><code>json spaces</code> JSON response spaces for formatting, defaults to 2 in development, 0 in production</li>
-<li><code>case sensitive routing</code> Enable case sensitivity, disabled by default, treating “/Foo” and “/foo” as the same</li>
-<li><code>strict routing</code> Enable strict routing, by default “/foo” and “/foo/” are treated the same by the router</li>
+<li><code>case sensitive routing</code> Enable case sensitivity, disabled by default, treating "/Foo" and "/foo" as the same</li>
+<li><code>strict routing</code> Enable strict routing, by default "/foo" and "/foo/" are treated the same by the router</li>
 <li><code>view cache</code> Enables view template compilation caching, enabled in production by default</li>
 <li><code>view engine</code> The default engine extension to use when omitted</li>
-<li><code>views</code> The view directory path, defaulting to “process.cwd() + ‘/views’”</li>
+<li><code>views</code> The view directory path, defaulting to "process.cwd() + ‘/views’"</li>
 </ul>
 </section>
 <section>
@@ -557,21 +557,21 @@ app.use(express.static(path.join(__dirname, 'uploads')))
 <p>Register the given template engine <code>callback</code> as <code>ext</code></p>
 <p>By default will <code>require()</code> the engine based on the
 file extension. For example if you try to render
-a “foo.jade” file Express will invoke the following internally,
+a "foo.jade" file Express will invoke the following internally,
 and cache the <code>require()</code> on subsequent calls to increase
 performance.</p>
 <pre><code class="language-js">app.engine('jade', require('jade').__express)
 </code></pre>
 <p>For engines that do not provide <code>.__express</code> out of the box -
-or if you wish to “map” a different extension to the template engine
+or if you wish to "map" a different extension to the template engine
 you may use this method. For example mapping the EJS template engine to
-“.html” files:</p>
+".html" files:</p>
 <pre><code class="language-js">app.engine('html', require('ejs').renderFile)
 </code></pre>
 <p>In this case EJS provides a <code>.renderFile()</code> method with
 the same signature that Express expects: <code>(path, options, callback)</code>,
 though note that it aliases this method as <code>ejs.__express</code> internally
-so if you’re using “.ejs” extensions you dont need to do anything.</p>
+so if you’re using ".ejs" extensions you dont need to do anything.</p>
 <p>Some template engines do not follow this convention, the
 <a href="https://github.com/visionmedia/consolidate.js">consolidate.js</a>
 library was created to map all of node’s popular template
@@ -612,7 +612,7 @@ For example the <a href="http://github.com/expressjs/express-params">express-par
 defines the following callback which allows you to restrict parameters to a given
 regular expression.</p>
 <p>This example is a bit more advanced, checking if the second argument is a regular
-expression, returning the callback which acts much like the “user” param example.</p>
+expression, returning the callback which acts much like the "user" param example.</p>
 <pre><code class="language-js">app.param(function (name, fn) {
   if (fn instanceof RegExp) {
     return function (req, res, next, val) {
@@ -655,15 +655,15 @@ on a route then pass control to subsequent routes when there is no reason to pro
 with the route matched.</p>
 <p>The following snippet illustrates the most simple route definition possible. Express
 translates the path strings to regular expressions, used internally to match incoming requests.
-Query strings are <em>not</em> considered when peforming these matches, for example “GET /”
-would match the following route, as would “GET /?name=tobi”.</p>
+Query strings are <em>not</em> considered when peforming these matches, for example "GET /"
+would match the following route, as would "GET /?name=tobi".</p>
 <pre><code class="language-js">app.get('/', function (req, res) {
   res.send('hello world')
 })
 </code></pre>
 <p>Regular expressions may also be used, and can be useful
 if you have very specific restraints, for example the following
-would match “GET /commits/71dbb9c” as well as “GET /commits/71dbb9c..4c084f9”.</p>
+would match "GET /commits/71dbb9c" as well as "GET /commits/71dbb9c..4c084f9".</p>
 <pre><code class="language-js">app.get(/^\/commits\/(\w+)(?:\.\.(\w+))?$/, function (req, res) {
   var from = req.params[0]
   var to = req.params[1] || 'HEAD'
@@ -694,7 +694,7 @@ app.post('/forum/:fid/thread/:tid', middleware, function () {
 <p>This method functions just like the <code>app.VERB()</code> methods,
 however it matches all HTTP verbs.</p>
 <p>This method is extremely useful for
-mapping “global” logic for specific path prefixes or arbitrary matches.
+mapping "global" logic for specific path prefixes or arbitrary matches.
 For example if you placed the following route at the top of all other
 route definitions, it would require that all routes from that point on
 would require authentication, and automatically load a user. Keep in mind
@@ -707,9 +707,9 @@ routes.</p>
 <pre><code class="language-js">app.all('*', requireAuthentication)
 app.all('*', loadUser)
 </code></pre>
-<p>Another great example of this is white-listed “global” functionality. Here
+<p>Another great example of this is white-listed "global" functionality. Here
 the example is much like before, however only restricting paths prefixed with
-“/api”:</p>
+"/api":</p>
 <pre><code class="language-js">app.all('/api/*', requireAuthentication)
 </code></pre>
 </section>
@@ -825,8 +825,8 @@ if you wish to use HTTPS or provide both, use the technique above.</p>
 and supports all <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage">built-in fields and methods</a>.</p>
 <section>
 <h3 id="req.params">req.params</h3>
-<p>This property is an array containing properties mapped to the named route “parameters”.
-For example if you have the route <code>/user/:name</code>, then the “name” property
+<p>This property is an array containing properties mapped to the named route "parameters".
+For example if you have the route <code>/user/:name</code>, then the "name" property
 is available to you as <code>req.params.name</code>. This object defaults to <code>{}</code>.</p>
 <pre><code class="language-js">// GET /user/tj
 console.dir(req.params.name)
@@ -884,7 +884,7 @@ console.log(req.body.name)
 is provided by the <code>bodyParser()</code> middleware, though other body
 parsing middleware may follow this convention as well. This property
 defaults to <code>{}</code> when <code>bodyParser()</code> is used.</p>
-<p>For example if a <strong>file</strong> field was named “image”,
+<p>For example if a <strong>file</strong> field was named "image",
 and a file was uploaded, <code>req.files.image</code> would contain
 the following <code>File</code> object:</p>
 <pre><code>{ size: 74643,
@@ -913,8 +913,8 @@ the following <code>File</code> object:</p>
 <a href="https://github.com/felixge/node-formidable">node-formidable</a>
 module internally, and accepts the same options. An example of this
 is the <code>keepExtensions</code> formidable option, defaulting to <strong>false</strong>
-which in this case gives you the filename “/tmp/8ef9c52abe857867fd0a4e9a819d1876” void of
-the “.png” extension. To enable this, and others you may pass them to <code>bodyParser()</code>:</p>
+which in this case gives you the filename "/tmp/8ef9c52abe857867fd0a4e9a819d1876" void of
+the ".png" extension. To enable this, and others you may pass them to <code>bodyParser()</code>:</p>
 <pre><code class="language-js">app.use(express.bodyParser({ keepExtensions: true, uploadDir: '/my/files' }))
 </code></pre>
 </section>
@@ -977,7 +977,7 @@ console.log(req.cookies.name)
 It contains signed cookies sent by the user-agent, unsigned and ready for use.
 Signed cookies reside in a different object to show developer intent; otherwise,
 a malicious attack could be placed on <code>req.cookie</code> values (which are easy to spoof).
-Note that signing a cookie does not make it “hidden” or encrypted; this simply
+Note that signing a cookie does not make it "hidden" or encrypted; this simply
 prevents tampering (because the secret used to sign is private). If no signed
 cookies are sent, it defaults to <code>{}</code>.</p>
 <pre><code class="language-js">// Cookie: user=tobi.CP7AWaXDfAKIRfH49dQzKJx7sKzzSoPq7/AcBBRVwlI3
@@ -987,7 +987,7 @@ console.dir(req.signedCookies.user)
 </section>
 <section>
 <h3 id="req.get">req.get(field)</h3>
-<p>Get the case-insensitive request header <code>field</code>. The “Referrer” and “Referer” fields are interchangeable.</p>
+<p>Get the case-insensitive request header <code>field</code>. The "Referrer" and "Referer" fields are interchangeable.</p>
 <pre><code class="language-js">req.get('Content-Type')
 // =&gt; "text/plain"
 
@@ -1003,10 +1003,10 @@ req.get('Something')
 <h3 id="req.accepts">req.accepts(types)</h3>
 <p>Check if the given <code>types</code> are acceptable, returning
 the best match when true, otherwise <code>undefined</code> - in which
-case you should respond with 406 “Not Acceptable”.</p>
+case you should respond with 406 "Not Acceptable".</p>
 <p>The <code>type</code> value may be a single mime type string
-such as “application/json”, the extension name
-such as “json”, a comma-delimited list or an array. When a list
+such as "application/json", the extension name
+such as "json", a comma-delimited list or an array. When a list
 or array is given the best match, if any is returned.</p>
 <pre><code class="language-js">// Accept: text/html
 req.accepts('html')
@@ -1048,7 +1048,7 @@ req.accepts('html, json')
 </section>
 <section>
 <h3 id="req.is">req.is(type)</h3>
-<p>Check if the incoming request contains the “Content-Type”
+<p>Check if the incoming request contains the "Content-Type"
 header field, and it matches the give mime <code>type</code>.</p>
 <pre><code class="language-js">// With Content-Type: text/html; charset=utf-8
 req.is('html')
@@ -1068,7 +1068,7 @@ req.is('html')
 </section>
 <section>
 <h3 id="req.ip">req.ip</h3>
-<p>Return the remote address, or when “trust proxy”
+<p>Return the remote address, or when "trust proxy"
 is enabled - the upstream address.</p>
 <pre><code class="language-js">console.dir(req.ip)
 // =&gt; '127.0.0.1'
@@ -1076,13 +1076,13 @@ is enabled - the upstream address.</p>
 </section>
 <section>
 <h3 id="req.ips">req.ips</h3>
-<p>When “trust proxy” is <code>true</code>, parse
-the “X-Forwarded-For” ip address list
+<p>When "trust proxy" is <code>true</code>, parse
+the "X-Forwarded-For" ip address list
 and return an array, otherwise an empty
 array is returned.</p>
-<p>For example if the value were “client, proxy1, proxy2”
+<p>For example if the value were "client, proxy1, proxy2"
 you would receive the array <code>["client", "proxy1", "proxy2"]</code>
-where “proxy2” is the furthest down-stream.</p>
+where "proxy2" is the furthest down-stream.</p>
 </section>
 <section>
 <h3 id="req.path">req.path</h3>
@@ -1094,7 +1094,7 @@ console.dir(req.path)
 </section>
 <section>
 <h3 id="req.host">req.host</h3>
-<p>Returns the hostname from the “Host” header field (void of portno).</p>
+<p>Returns the hostname from the "Host" header field (void of portno).</p>
 <pre><code class="language-js">// Host: "example.com:3000"
 console.dir(req.host)
 // =&gt; 'example.com'
@@ -1103,7 +1103,7 @@ console.dir(req.host)
 <section>
 <h3 id="req.fresh">req.fresh</h3>
 <p>Check if the request is fresh - aka Last-Modified and/or the ETag still match,
-indicating that the resource is “fresh”.</p>
+indicating that the resource is "fresh".</p>
 <pre><code class="language-js">console.dir(req.fresh)
 // =&gt; true
 </code></pre>
@@ -1111,24 +1111,24 @@ indicating that the resource is “fresh”.</p>
 <section>
 <h3 id="req.stale">req.stale</h3>
 <p>Check if the request is stale - aka Last-Modified and/or the ETag do not match,
-indicating that the resource is “stale”.</p>
+indicating that the resource is "stale".</p>
 <pre><code class="language-js">console.dir(req.stale)
 // =&gt; true
 </code></pre>
 </section>
 <section>
 <h3 id="req.xhr">req.xhr</h3>
-<p>Check if the request was issued with the “X-Requested-With”
-header field set to “XMLHttpRequest” (jQuery etc).</p>
+<p>Check if the request was issued with the "X-Requested-With"
+header field set to "XMLHttpRequest" (jQuery etc).</p>
 <pre><code class="language-js">console.dir(req.xhr)
 // =&gt; true
 </code></pre>
 </section>
 <section>
 <h3 id="req.protocol">req.protocol</h3>
-<p>Return the protocol string “http” or “https”
-when requested with TLS. When the “trust proxy”
-setting is enabled the “X-Forwarded-Proto” header
+<p>Return the protocol string "http" or "https"
+when requested with TLS. When the "trust proxy"
+setting is enabled the "X-Forwarded-Proto" header
 field will be trusted. If you’re running behind
 a reverse proxy that supplies https for you this
 may be enabled.</p>
@@ -1155,7 +1155,7 @@ console.dir(req.subdomains)
 <h3 id="req.originalUrl">req.originalUrl</h3>
 <p>This property is much like <code>req.url</code>, however it retains
 the original request url, allowing you to rewrite <code>req.url</code>
-freely for internal routing purposes. For example the “mounting” feature
+freely for internal routing purposes. For example the "mounting" feature
 of <a href="#app.use">app.use()</a> will rewrite <code>req.url</code> to
 strip the mount point.</p>
 <pre><code class="language-js">// GET /search?q=something
@@ -1217,11 +1217,11 @@ res.set({
 <section>
 <h3 id="res.cookie">res.cookie(name, value, [options])</h3>
 <p>Set cookie <code>name</code> to <code>value</code>, which may be a string or object converted to JSON. The <code>path</code>
-option defaults to “/”.</p>
+option defaults to "/".</p>
 <pre><code class="language-js">res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true })
 res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true })
 </code></pre>
-<p>The <code>maxAge</code> option is a convenience option for setting “expires”
+<p>The <code>maxAge</code> option is a convenience option for setting "expires"
 relative to the current time in milliseconds. The following is equivalent to
 the previous example.</p>
 <pre><code class="language-js">res.cookie('rememberme', '1', { maxAge: 900000, httpOnly: true })
@@ -1242,7 +1242,7 @@ object.</p>
 </section>
 <section>
 <h3 id="res.clearCookie">res.clearCookie(name, [options])</h3>
-<p>Clear cookie <code>name</code>. The <code>path</code> option defaults to “/”.</p>
+<p>Clear cookie <code>name</code>. The <code>path</code> option defaults to "/".</p>
 <pre><code class="language-js">res.cookie('name', 'tobi', { path: '/admin' })
 res.clearCookie('name', { path: '/admin' })
 </code></pre>
@@ -1250,7 +1250,7 @@ res.clearCookie('name', { path: '/admin' })
 <section>
 <h3 id="res.redirect">res.redirect([status], url)</h3>
 <p>Redirect to the given <code>url</code> with optional <code>status</code> code
-defaulting to 302 “Found”.</p>
+defaulting to 302 "Found".</p>
 <pre><code class="language-js">res.redirect('/foo/bar')
 res.redirect('http://example.com')
 res.redirect(301, 'http://example.com')
@@ -1300,7 +1300,7 @@ the following would set the <code>location</code> header to
 </section>
 <section>
 <h3 id="res.charset">res.charset</h3>
-<p>Assign the charset. Defaults to “utf-8”.</p>
+<p>Assign the charset. Defaults to "utf-8".</p>
 <pre><code class="language-js">res.charset = 'value'
 res.send('&lt;p&gt;some html&lt;/p&gt;')
 // =&gt; Content-Type: text/html; charset=value
@@ -1322,13 +1322,13 @@ as automatically assigning the Content-Length unless
 previously defined and providing automatic <em>HEAD</em> and
 HTTP cache freshness support.</p>
 <p>When a <code>Buffer</code> is given
-the Content-Type is set to “application/octet-stream”
+the Content-Type is set to "application/octet-stream"
 unless previously defined as shown below:</p>
 <pre><code class="language-js">res.set('Content-Type', 'text/html')
 res.send(Buffer.from('&lt;p&gt;some html&lt;/p&gt;'))
 </code></pre>
 <p>When a <code>String</code> is given the
-Content-Type is set defaulted to “text/html”:</p>
+Content-Type is set defaulted to "text/html":</p>
 <pre><code class="language-js">res.send('&lt;p&gt;some html&lt;/p&gt;')
 </code></pre>
 <p>When an <code>Array</code> or <code>Object</code> is
@@ -1339,7 +1339,7 @@ res.send([1, 2, 3])
 <p>Finally when a <code>Number</code> is given without
 any of the previously mentioned bodies, then a response
 body string is assigned for you. For example 200 will
-respond will the text “OK”, and 404 “Not Found” and so on.</p>
+respond will the text "OK", and 404 "Not Found" and so on.</p>
 <pre><code class="language-js">res.send(200)
 res.send(404)
 res.send(500)
@@ -1389,7 +1389,7 @@ res.jsonp(500, { error: 'message' })
 <section>
 <h3 id="res.type">res.type(type)</h3>
 <p>Sets the Content-Type to the mime lookup of <code>type</code>,
-or when “/” is present the Content-Type is simply set to this
+or when "/" is present the Content-Type is simply set to this
 literal value.</p>
 <pre><code class="language-js">res.type('.html')
 res.type('html')
@@ -1405,14 +1405,14 @@ res.type('png')
 field when present. This method uses <code>req.accepted</code>, an array of
 acceptable types ordered by their quality values, otherwise the
 first callback is invoked. When no match is performed the server
-responds with 406 “Not Acceptable”, or invokes the <code>default</code>
+responds with 406 "Not Acceptable", or invokes the <code>default</code>
 callback.</p>
 <p>The Content-Type is set for you when a callback is selected,
 however you may alter this within the callback using <code>res.set()</code>
 or <code>res.type()</code> etcetera.</p>
 <p>The following example would respond with <code>{ "message": "hey" }</code>
-when the Accept header field is set to “application/json” or “<em>/json”,
-however if “</em>/*” is given then “hey” will be the response.</p>
+when the Accept header field is set to "application/json" or "<em>/json",
+however if "</em>/*" is given then "hey" will be the response.</p>
 <pre><code class="language-js">res.format({
   'text/plain': function () {
     res.send('hey')
@@ -1447,10 +1447,10 @@ less verbose implementation:</p>
 </section>
 <section>
 <h3 id="res.attachment">res.attachment([filename])</h3>
-<p>Sets the Content-Disposition header field to “attachment”. If
+<p>Sets the Content-Disposition header field to "attachment". If
 a <code>filename</code> is given then the Content-Type will be
 automatically set based on the extname via <code>res.type()</code>,
-and the Content-Disposition’s “filename=” parameter will be set.</p>
+and the Content-Disposition’s "filename=" parameter will be set.</p>
 <pre><code class="language-js">res.attachment()
 // Content-Disposition: attachment
 
@@ -1488,9 +1488,9 @@ as illustrated in the following example:</p>
 </section>
 <section>
 <h3 id="res.download">res.download(path, [filename], [fn])</h3>
-<p>Transfer the file at <code>path</code> as an “attachment”,
+<p>Transfer the file at <code>path</code> as an "attachment",
 typically browsers will prompt the user for download. The
-Content-Disposition “filename=” parameter, aka the one
+Content-Disposition "filename=" parameter, aka the one
 that will appear in the brower dialog is set to <code>path</code>
 by default, however you may provide an override <code>filename</code>.</p>
 <p>When an error has ocurred or transfer is complete the optional
@@ -1512,7 +1512,7 @@ res.download('/report-12345.pdf', 'report.pdf', function (err) {
 </section>
 <section>
 <h3 id="res.links">res.links(links)</h3>
-<p>Join the given <code>links</code> to populate the “Link” response header field.</p>
+<p>Join the given <code>links</code> to populate the "Link" response header field.</p>
 <pre><code class="language-js">res.links({
   next: 'http://api.example.com/users?page=2',
   last: 'http://api.example.com/users?page=5'
@@ -1597,7 +1597,7 @@ app.use(express.urlencoded())
 <section>
 <h3 id="compress">compress()</h3>
 <p>Compress response data with gzip / deflate. This middleware
-should be placed “high” within the stack to ensure all
+should be placed "high" within the stack to ensure all
 responses may be compressed.</p>
 <pre><code class="language-js">app.use(express.logger())
 app.use(express.compress())
@@ -1622,7 +1622,7 @@ This middleware takes the following options:</p>
 <li><code>key</code> cookie name defaulting to <code>connect.sess</code></li>
 <li><code>secret</code> prevents cookie tampering</li>
 <li><code>cookie</code> session cookie settings, defaulting to <code>{ path: '/', httpOnly: true, maxAge: null }</code></li>
-<li><code>proxy</code> trust the reverse proxy when setting secure cookies (via “x-forwarded-proto”)</li>
+<li><code>proxy</code> trust the reverse proxy when setting secure cookies (via "x-forwarded-proto")</li>
 </ul>
 <pre><code class="language-js">app.use(express.cookieSession())
 </code></pre>
@@ -1633,13 +1633,13 @@ This middleware takes the following options:</p>
 <section>
 <h3 id="csrf">csrf()</h3>
 <p>CSRF protection middleware.</p>
-<p>By default this middleware generates a token named “_csrf”
+<p>By default this middleware generates a token named "_csrf"
 which should be added to requests which mutate
 state, within a hidden form field, query-string etc. This
 token is validated against <code>req.csrfToken()</code>.</p>
 <p>The default <code>value</code> function checks <code>req.body</code> generated
 by the <code>bodyParser()</code> middleware, <code>req.query</code> generated
-by <code>query()</code>, and the “X-CSRF-Token” header field.</p>
+by <code>query()</code>, and the "X-CSRF-Token" header field.</p>
 <p>This middleware requires session support, thus should be added
 somewhere below <code>session()</code>.</p>
 </section>

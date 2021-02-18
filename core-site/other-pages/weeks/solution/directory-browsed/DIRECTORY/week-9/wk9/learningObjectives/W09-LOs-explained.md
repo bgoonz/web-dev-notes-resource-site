@@ -605,15 +605,15 @@ html {
 
 ### Block, Element, Modifier (BEM)
 1. Describe what Block means in BEM.
-- “A standalone entity that is meaningful on its own.”
+- "A standalone entity that is meaningful on its own."
 - Typically this means a group of elements that form some sort of unit/feature together, but could also be applied to a single element if it has enough significance and stand-alone meaning.
 
 2. Describe what Element means in BEM.
-- “Part of a block and has no standalone meaning.”
+- "Part of a block and has no standalone meaning."
 - If a component wouldn't mean anything or its meaning would be lost/changed if it was moved to another location, it generally means that it is an element of some larger block.
 
 3. Describe what Modifier means in BEM.
-- “A flag on blocks or elements. Use them to change appearance, behavior or state.”
+- "A flag on blocks or elements. Use them to change appearance, behavior or state."
 - These classes are typically added in our JavaScript in order to modify the standard styling.
 - If the user clicks on a "Dark Mode" button and we want to change the background color of an element, we could have a `.block__elem--dark-mode` class that is added in response to that click that alters the color.
 - If we are only allowed to have eight elements in our bag, we can have a `.bag__add-btn--disabled` class that gets added to our button on the eighth addition that sets our cursor property to `not-allowed`, helping the user understand they should not click the button any more.

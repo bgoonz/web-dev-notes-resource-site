@@ -33,7 +33,7 @@
 <h3 id="onchange">onChange</h3>
 <p>The <code>onChange</code> event behaves as you would expect it to: whenever a form field is changed, this event is fired. We intentionally do not use the existing browser behavior because <code>onChange</code> is a misnomer for its behavior and React relies on this event to handle user input in real time.</p>
 <h3 id="selected">selected</h3>
-<p>If you want to mark an <code>&lt;option&gt;</code> as selected, reference the value of that option in the <code>value</code> of its <code>&lt;select&gt;</code> instead. Check out <a href="/docs/forms.html#the-select-tag">“The select Tag”</a> for detailed instructions.</p>
+<p>If you want to mark an <code>&lt;option&gt;</code> as selected, reference the value of that option in the <code>value</code> of its <code>&lt;select&gt;</code> instead. Check out <a href="/docs/forms.html#the-select-tag">"The select Tag"</a> for detailed instructions.</p>
 <h3 id="style">style</h3>
 <blockquote>
 <p>Note</p>
@@ -57,8 +57,8 @@
 <a class="sourceLine" id="cb3-6" title="6"><span class="kw">function</span> <span class="at">ComponentWithTransition</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-7" title="7">  <span class="cf">return</span> <span class="op">&lt;</span>div style<span class="op">={</span>divStyle<span class="op">}&gt;</span>This should work cross<span class="op">-</span>browser&lt;/div<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb3-8" title="8"><span class="op">}</span></a></code></pre></div>
-<p>Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes from JS (e.g. <code>node.style.backgroundImage</code>). Vendor prefixes <a href="https://www.andismith.com/blogs/2012/02/modernizr-prefixed/">other than <code>ms</code></a> should begin with a capital letter. This is why <code>WebkitTransition</code> has an uppercase “W”.</p>
-<p>React will automatically append a “px” suffix to certain numeric inline style properties. If you want to use units other than “px”, specify the value as a string with the desired unit. For example:</p>
+<p>Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes from JS (e.g. <code>node.style.backgroundImage</code>). Vendor prefixes <a href="https://www.andismith.com/blogs/2012/02/modernizr-prefixed/">other than <code>ms</code></a> should begin with a capital letter. This is why <code>WebkitTransition</code> has an uppercase "W".</p>
+<p>React will automatically append a "px" suffix to certain numeric inline style properties. If you want to use units other than "px", specify the value as a string with the desired unit. For example:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="co">// Result style: &#39;10px&#39;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="op">&lt;</span>div style<span class="op">={{</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">10</span> <span class="op">}}&gt;</span></a>
 <a class="sourceLine" id="cb4-3" title="3">  Hello World<span class="op">!</span></a>

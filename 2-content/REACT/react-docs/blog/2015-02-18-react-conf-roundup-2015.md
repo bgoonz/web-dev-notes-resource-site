@@ -120,7 +120,7 @@ It was a privilege to welcome the React community to Facebook HQ on January 28�
   <div class="skinny-col">
     <h3 style="margin-top:0"><a class="anchor" name="talk-hype"></a>Hype! <a class="hash-link" href="#talk-hype">#</a></h3>
     <p>
-      <strong>Ryan Florence</strong> showed us how easy it is to transition from a career selling life insurance, to a burgeoning one as a software developer. All you have to do is to learn how to say “yes.”
+      <strong>Ryan Florence</strong> showed us how easy it is to transition from a career selling life insurance, to a burgeoning one as a software developer. All you have to do is to learn how to say "yes."
     </p>
   </div>
   <div class="skinny-col">

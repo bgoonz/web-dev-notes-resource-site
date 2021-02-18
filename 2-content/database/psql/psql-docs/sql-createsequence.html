@@ -114,7 +114,7 @@ SELECT * FROM <em class="replaceable"><code>name</code></em>;
    (-9223372036854775808 to 9223372036854775807).
   </p><p>
    Because <code class="function">nextval</code> and <code class="function">setval</code> calls are never
-   rolled back, sequence objects cannot be used if <span class="quote">“<span class="quote">gapless</span>”</span>
+   rolled back, sequence objects cannot be used if <span class="quote">"<span class="quote">gapless</span>"</span>
    assignment of sequence numbers is needed.  It is possible to build
    gapless assignment by using exclusive locking of a table containing a
    counter; but this solution is much more expensive than sequence
@@ -130,7 +130,7 @@ SELECT * FROM <em class="replaceable"><code>name</code></em>;
    uses of <code class="function">nextval</code> within that session simply return the
    preallocated values without touching the sequence object.  So, any
    numbers allocated but not used within a session will be lost when
-   that session ends, resulting in <span class="quote">“<span class="quote">holes</span>”</span> in the
+   that session ends, resulting in <span class="quote">"<span class="quote">holes</span>"</span> in the
    sequence.
   </p><p>
    Furthermore, although multiple sessions are guaranteed to allocate

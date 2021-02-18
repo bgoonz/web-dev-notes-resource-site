@@ -35,7 +35,7 @@ Hello there!
 <p>Cheerio parses markup and provides an API for traversing/manipulating the resulting data structure. It does not interpret the result as a web browser does. Specifically, it does <em>not</em> produce a visual rendering, apply CSS, load external resources, or execute JavaScript. If your use case requires any of this functionality, you should consider projects like <a href="http://phantomjs.org/">PhantomJS</a> or <a href="https://github.com/tmpvar/jsdom">JSDom</a>.</p>
 <h2 id="api">API</h2>
 <h3 id="markup-example-well-be-using">Markup example we'll be using:</h3>
-<p>&lt;ul id=“fruits”&gt; &lt;li class=“apple”&gt;Apple&lt;/li&gt; &lt;li class=“orange”&gt;Orange&lt;/li&gt; &lt;li class=“pear”&gt;Pear&lt;/li&gt; &lt;/ul&gt;</p>
+<p>&lt;ul id="fruits”&gt; &lt;li class="apple”&gt;Apple&lt;/li&gt; &lt;li class="orange”&gt;Orange&lt;/li&gt; &lt;li class="pear”&gt;Pear&lt;/li&gt; &lt;/ul&gt;</p>
 <p>This is the HTML markup we will be using in all of the API examples.</p>
 <h3 id="loading">Loading</h3>
 <p>First you need to load in the HTML. This step in jQuery is implicit, since jQuery operates on the one, baked-in DOM. With Cheerio, we need to pass in the HTML document.</p>
@@ -87,7 +87,7 @@ const $ = cheerio.load('
 <p>The options in the <code>xml</code> object are taken directly from <a href="https://github.com/fb55/htmlparser2/wiki/Parser-options">htmlparser2</a>, therefore any options that can be used in <code>htmlparser2</code> are valid in cheerio as well. When <code>xml</code> is set, the default options are:</p>
 <p>{ xmlMode: true, decodeEntities: true, // Decode HTML entities. withStartIndices: false, // Add a `startIndex` property to nodes. withEndIndices: false, // Add an `endIndex` property to nodes. }</p>
 <p>For a full list of options and their effects, see <a href="https://github.com/fb55/DomHandler">this</a> and <a href="https://github.com/fb55/htmlparser2/wiki/Parser-options">htmlparser2's options</a>.</p>
-<p>Some users may wish to parse markup with the <code>htmlparser2</code> library, and traverse/manipulate the resulting structure with Cheerio. This may be the case for those upgrading from pre-1.0 releases of Cheerio (which relied on <code>htmlparser2</code>), for those dealing with invalid markup (because <code>htmlparser2</code> is more forgiving), or for those operating in performance-critical situations (because <code>htmlparser2</code> may be faster in some cases). Note that “more forgiving” means <code>htmlparser2</code> has error-correcting mechanisms that aren't always a match for the standards observed by web browsers. This behavior may be useful when parsing non-HTML content.</p>
+<p>Some users may wish to parse markup with the <code>htmlparser2</code> library, and traverse/manipulate the resulting structure with Cheerio. This may be the case for those upgrading from pre-1.0 releases of Cheerio (which relied on <code>htmlparser2</code>), for those dealing with invalid markup (because <code>htmlparser2</code> is more forgiving), or for those operating in performance-critical situations (because <code>htmlparser2</code> may be faster in some cases). Note that "more forgiving” means <code>htmlparser2</code> has error-correcting mechanisms that aren't always a match for the standards observed by web browsers. This behavior may be useful when parsing non-HTML content.</p>
 <p>To support these cases, <code>load</code> also accepts a <code>htmlparser2</code>-compatible data structure as its first argument. Users may install <code>htmlparser2</code>, use it to parse input, and pass the result to <code>load</code>:</p>
 <p>// Usage as of htmlparser2 version 3: const htmlparser2 = require(‘htmlparser2'); const dom = htmlparser2.parseDOM(document, options);</p>
 <p>const $ = cheerio.load(dom);</p>
@@ -102,7 +102,7 @@ const $ = cheerio.load('
 <h5 id="xml-namespaces">XML Namespaces</h5>
 <p>You can select with XML Namespaces but <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#attribute-selectors">due to the CSS specification</a>, the colon (<code>:</code>) needs to be escaped for the selector to be valid.</p>
 <h3 id="rendering">Rendering</h3>
-<p>When you're ready to render the document, you can call the <code>html</code> method on the “root” selection:</p>
+<p>When you're ready to render the document, you can call the <code>html</code> method on the "root” selection:</p>
 $.root().html(); //=&gt;
 <html>
 //
@@ -136,7 +136,7 @@ cheerio.html($(‘.pear')); //=&gt;
 Pear
 </li>
 <p>By default, <code>html</code> will leave some tags open. Sometimes you may instead want to render a valid XML document. For example, you might parse the following XML snippet:</p>
-<p>const $ = cheerio.load(‘&lt;media:thumbnail url=“http://www.foo.com/keyframe.jpg” width=“75” height=“50” time=“12:05:01.123”/&gt;');</p>
+<p>const $ = cheerio.load(‘&lt;media:thumbnail url="http://www.foo.com/keyframe.jpg” width="75” height="50” time="12:05:01.123”/&gt;');</p>
 <p>… and later want to render to XML. To do this, you can use the ‘xml' utility function:</p>
 <p>$.xml(); //=&gt; <media:thumbnail url="http://www.foo.com/keyframe.jpg" width="75" height="50" time="12:05:01.123"/></p>
 <p>You may also render the text content of a Cheerio object using the <code>text</code> static method:</p>
@@ -150,8 +150,8 @@ Hello, <b>world</b>!
 </body>
 </html>
 <p>'); $.prototype.logHtml = function () { console.log(this.html()); };</p>
-<p>$(‘body').logHtml(); // logs “Hello, <b>world</b>!” to the console</p>
-<h3 id="the-dom-node-object">The “DOM Node” object</h3>
+<p>$(‘body').logHtml(); // logs "Hello, <b>world</b>!” to the console</p>
+<h3 id="the-dom-node-object">The "DOM Node” object</h3>
 <p>Cheerio collections are made up of objects that bear some resemblance to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">browser-based DOM nodes</a>. You can expect them to define the following properties:</p>
 <ul>
 <li><code>tagName</code></li>
@@ -166,7 +166,7 @@ Hello, <b>world</b>!
 <h2 id="screencasts">Screencasts</h2>
 <p><a href="http://vimeo.com/31950192">http://vimeo.com/31950192</a></p>
 <blockquote>
-<p>This video tutorial is a follow-up to Nettut's “How to Scrape Web Pages with Node.js and jQuery”, using cheerio instead of JSDOM + jQuery. This video shows how easy it is to use cheerio and how much faster cheerio is than JSDOM + jQuery.</p>
+<p>This video tutorial is a follow-up to Nettut's "How to Scrape Web Pages with Node.js and jQuery”, using cheerio instead of JSDOM + jQuery. This video shows how easy it is to use cheerio and how much faster cheerio is than JSDOM + jQuery.</p>
 </blockquote>
 <h2 id="cheerio-in-the-real-world">Cheerio in the real world</h2>
 <p>Are you using cheerio in production? Add it to the <a href="https://github.com/cheeriojs/cheerio/wiki/Cheerio-in-Production">wiki</a>!</p>
@@ -183,7 +183,7 @@ Hello, <b>world</b>!
 <p>This library stands on the shoulders of some incredible developers. A special thanks to:</p>
 <p><strong>• <span class="citation" data-cites="FB55">@FB55</span> for node-htmlparser2 &amp; CSSSelect:</strong> Felix has a knack for writing speedy parsing engines. He completely re-wrote both <span class="citation" data-cites="tautologistic">@tautologistic</span>'s <code>node-htmlparser</code> and <span class="citation" data-cites="harry">@harry</span>'s <code>node-soupselect</code> from the ground up, making both of them much faster and more flexible. Cheerio would not be possible without his foundational work</p>
 <p><strong>• <span class="citation" data-cites="jQuery">@jQuery</span> team for jQuery:</strong> The core API is the best of its class and despite dealing with all the browser inconsistencies the code base is extremely clean and easy to follow. Much of cheerio's implementation and documentation is from jQuery. Thanks guys.</p>
-<p><strong>• <span class="citation" data-cites="visionmedia">@visionmedia</span>:</strong> The style, the structure, the open-source“-ness” of this library comes from studying TJ's style and using many of his libraries. This dude consistently pumps out high-quality libraries and has always been more than willing to help or answer questions. You rock TJ.</p>
+<p><strong>• <span class="citation" data-cites="visionmedia">@visionmedia</span>:</strong> The style, the structure, the open-source"-ness” of this library comes from studying TJ's style and using many of his libraries. This dude consistently pumps out high-quality libraries and has always been more than willing to help or answer questions. You rock TJ.</p>
 <h2 id="license">License</h2>
 <p>MIT</p>
 <p><a href="https://www.npmjs.com/package/cheerio">Source</a></p>

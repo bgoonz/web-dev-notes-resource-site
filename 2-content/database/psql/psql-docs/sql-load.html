@@ -7,7 +7,7 @@ LOAD '<em class="replaceable"><code>filename</code></em>'
    the command does nothing.  Shared library files that contain C functions
    are automatically loaded whenever one of their functions is called.
    Therefore, an explicit <code class="command">LOAD</code> is usually only needed to
-   load a library that modifies the server's behavior through <span class="quote">“<span class="quote">hooks</span>”</span>
+   load a library that modifies the server's behavior through <span class="quote">"<span class="quote">hooks</span>"</span>
    rather than providing a set of functions.
   </p><p>
    The library file name is typically given as just a bare file name,
@@ -21,7 +21,7 @@ LOAD '<em class="replaceable"><code>filename</code></em>'
    located in <code class="filename">$libdir/plugins/</code> — the specified
    <em class="replaceable"><code>filename</code></em> must begin
    with exactly that string.  (It is the database administrator's
-   responsibility to ensure that only <span class="quote">“<span class="quote">safe</span>”</span> libraries
+   responsibility to ensure that only <span class="quote">"<span class="quote">safe</span>"</span> libraries
    are installed there.)
   </p></div><div class="refsect1" id="SQL-LOAD-COMPAT"><h2>Compatibility</h2><p>
    <code class="command">LOAD</code> is a <span class="productname">PostgreSQL</span>

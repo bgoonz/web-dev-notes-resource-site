@@ -11,8 +11,8 @@ EXISTS (<em class="replaceable"><code>subquery</code></em>)
    or <em class="firstterm">subquery</em>.  The
    subquery is evaluated to determine whether it returns any rows.
    If it returns at least one row, the result of <code class="token">EXISTS</code> is
-   <span class="quote">“<span class="quote">true</span>”</span>; if the subquery returns no rows, the result of <code class="token">EXISTS</code>
-   is <span class="quote">“<span class="quote">false</span>”</span>.
+   <span class="quote">"<span class="quote">true</span>"</span>; if the subquery returns no rows, the result of <code class="token">EXISTS</code>
+   is <span class="quote">"<span class="quote">false</span>"</span>.
   </p><p>
    The subquery can refer to variables from the surrounding query,
    which will act as constants during any one evaluation of the subquery.
@@ -44,8 +44,8 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    The right-hand side is a parenthesized
    subquery, which must return exactly one column.  The left-hand expression
    is evaluated and compared to each row of the subquery result.
-   The result of <code class="token">IN</code> is <span class="quote">“<span class="quote">true</span>”</span> if any equal subquery row is found.
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if no equal row is found (including the
+   The result of <code class="token">IN</code> is <span class="quote">"<span class="quote">true</span>"</span> if any equal subquery row is found.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if no equal row is found (including the
    case where the subquery returns no rows).
   </p><p>
    Note that if the left-hand expression yields null, or if there are
@@ -65,8 +65,8 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    subquery, which must return exactly as many columns as there are
    expressions in the left-hand row.  The left-hand expressions are
    evaluated and compared row-wise to each row of the subquery result.
-   The result of <code class="token">IN</code> is <span class="quote">“<span class="quote">true</span>”</span> if any equal subquery row is found.
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if no equal row is found (including the
+   The result of <code class="token">IN</code> is <span class="quote">"<span class="quote">true</span>"</span> if any equal subquery row is found.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if no equal row is found (including the
    case where the subquery returns no rows).
   </p><p>
    As usual, null values in the rows are combined per
@@ -82,9 +82,9 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    The right-hand side is a parenthesized
    subquery, which must return exactly one column.  The left-hand expression
    is evaluated and compared to each row of the subquery result.
-   The result of <code class="token">NOT IN</code> is <span class="quote">“<span class="quote">true</span>”</span> if only unequal subquery rows
+   The result of <code class="token">NOT IN</code> is <span class="quote">"<span class="quote">true</span>"</span> if only unequal subquery rows
    are found (including the case where the subquery returns no rows).
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if any equal row is found.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if any equal row is found.
   </p><p>
    Note that if the left-hand expression yields null, or if there are
    no equal right-hand values and at least one right-hand row yields
@@ -103,9 +103,9 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    subquery, which must return exactly as many columns as there are
    expressions in the left-hand row.  The left-hand expressions are
    evaluated and compared row-wise to each row of the subquery result.
-   The result of <code class="token">NOT IN</code> is <span class="quote">“<span class="quote">true</span>”</span> if only unequal subquery rows
+   The result of <code class="token">NOT IN</code> is <span class="quote">"<span class="quote">true</span>"</span> if only unequal subquery rows
    are found (including the case where the subquery returns no rows).
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if any equal row is found.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if any equal row is found.
   </p><p>
    As usual, null values in the rows are combined per
    the normal rules of SQL Boolean expressions.  Two rows are considered
@@ -123,8 +123,8 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    is evaluated and compared to each row of the subquery result using the
    given <em class="replaceable"><code>operator</code></em>, which must yield a Boolean
    result.
-   The result of <code class="token">ANY</code> is <span class="quote">“<span class="quote">true</span>”</span> if any true result is obtained.
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if no true result is found (including the
+   The result of <code class="token">ANY</code> is <span class="quote">"<span class="quote">true</span>"</span> if any true result is obtained.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if no true result is found (including the
    case where the subquery returns no rows).
   </p><p>
    <code class="token">SOME</code> is a synonym for <code class="token">ANY</code>.
@@ -149,9 +149,9 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    expressions in the left-hand row.  The left-hand expressions are
    evaluated and compared row-wise to each row of the subquery result,
    using the given <em class="replaceable"><code>operator</code></em>.
-   The result of <code class="token">ANY</code> is <span class="quote">“<span class="quote">true</span>”</span> if the comparison
+   The result of <code class="token">ANY</code> is <span class="quote">"<span class="quote">true</span>"</span> if the comparison
    returns true for any subquery row.
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if the comparison returns false for every
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if the comparison returns false for every
    subquery row (including the case where the subquery returns no
    rows).
    The result is NULL if no comparison with a subquery row returns true,
@@ -167,9 +167,9 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    is evaluated and compared to each row of the subquery result using the
    given <em class="replaceable"><code>operator</code></em>, which must yield a Boolean
    result.
-   The result of <code class="token">ALL</code> is <span class="quote">“<span class="quote">true</span>”</span> if all rows yield true
+   The result of <code class="token">ALL</code> is <span class="quote">"<span class="quote">true</span>"</span> if all rows yield true
    (including the case where the subquery returns no rows).
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if any false result is found.
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if any false result is found.
    The result is NULL if no comparison with a subquery row returns false,
    and at least one comparison returns NULL.
   </p><p>
@@ -187,10 +187,10 @@ WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
    expressions in the left-hand row.  The left-hand expressions are
    evaluated and compared row-wise to each row of the subquery result,
    using the given <em class="replaceable"><code>operator</code></em>.
-   The result of <code class="token">ALL</code> is <span class="quote">“<span class="quote">true</span>”</span> if the comparison
+   The result of <code class="token">ALL</code> is <span class="quote">"<span class="quote">true</span>"</span> if the comparison
    returns true for all subquery rows (including the
    case where the subquery returns no rows).
-   The result is <span class="quote">“<span class="quote">false</span>”</span> if the comparison returns false for any
+   The result is <span class="quote">"<span class="quote">false</span>"</span> if the comparison returns false for any
    subquery row.
    The result is NULL if no comparison with a subquery row returns false,
    and at least one comparison returns NULL.

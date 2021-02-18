@@ -51,7 +51,7 @@ ereport(ERROR,
                 "You might need to add explicit typecasts."));
 </pre><p>
     This illustrates the use of format codes to embed run-time values into
-    a message text.  Also, an optional <span class="quote">“<span class="quote">hint</span>”</span> message is provided.
+    a message text.  Also, an optional <span class="quote">"<span class="quote">hint</span>"</span> message is provided.
     The auxiliary function calls can be written in any order, but
     conventionally <code class="function">errcode</code>
     and <code class="function">errmsg</code> appear first.
@@ -88,7 +88,7 @@ ereport(ERROR,
      <code class="function">errmsg_internal(const char *msg, ...)</code> is the same as
      <code class="function">errmsg</code>, except that the message string will not be
      translated nor included in the internationalization message dictionary.
-     This should be used for <span class="quote">“<span class="quote">cannot happen</span>”</span> cases that are probably
+     This should be used for <span class="quote">"<span class="quote">cannot happen</span>"</span> cases that are probably
      not worth expending translation effort on.
     </p></li><li class="listitem"><p>
      <code class="function">errmsg_plural(const char *fmt_singular, const char *fmt_plural,
@@ -102,7 +102,7 @@ ereport(ERROR,
      <a class="xref" href="nls-programmer.html#NLS-GUIDELINES" title="54.2.2. Message-Writing Guidelines">Section 54.2.2</a>.
     </p></li><li class="listitem"><p>
      <code class="function">errdetail(const char *msg, ...)</code> supplies an optional
-     <span class="quote">“<span class="quote">detail</span>”</span> message; this is to be used when there is additional
+     <span class="quote">"<span class="quote">detail</span>"</span> message; this is to be used when there is additional
      information that seems inappropriate to put in the primary message.
      The message string is processed in just the same way as for
      <code class="function">errmsg</code>.
@@ -135,7 +135,7 @@ ereport(ERROR,
      For more information see <a class="xref" href="nls-programmer.html#NLS-GUIDELINES" title="54.2.2. Message-Writing Guidelines">Section 54.2.2</a>.
     </p></li><li class="listitem"><p>
      <code class="function">errhint(const char *msg, ...)</code> supplies an optional
-     <span class="quote">“<span class="quote">hint</span>”</span> message; this is to be used when offering suggestions
+     <span class="quote">"<span class="quote">hint</span>"</span> message; this is to be used when offering suggestions
      about how to fix the problem, as opposed to factual details about
      what went wrong.
      The message string is processed in just the same way as for
@@ -230,7 +230,7 @@ ereport(level, errmsg_internal("format string", ...));
     Therefore, <code class="function">elog</code> should be used only for internal errors and
     low-level debug logging.  Any message that is likely to be of interest to
     ordinary users should go through <code class="function">ereport</code>.  Nonetheless,
-    there are enough internal <span class="quote">“<span class="quote">cannot happen</span>”</span> error checks in the
+    there are enough internal <span class="quote">"<span class="quote">cannot happen</span>"</span> error checks in the
     system that <code class="function">elog</code> is still widely used; it is preferred for
     those messages for its notational simplicity.
    </p><p>

@@ -145,10 +145,10 @@
       Reject time-of-day values greater than 24 hours (Tom Lane)
      </p><p>
       The intention of the datetime input code is to
-      allow <span class="quote">“<span class="quote">24:00:00</span>”</span> or
-      equivalently <span class="quote">“<span class="quote">23:59:60</span>”</span>, but no larger value.
+      allow <span class="quote">"<span class="quote">24:00:00</span>"</span> or
+      equivalently <span class="quote">"<span class="quote">23:59:60</span>"</span>, but no larger value.
       However, the range check was miscoded so that it would
-      accept <span class="quote">“<span class="quote">23:59:60.<em class="replaceable"><code>nnn</code></em></span>”</span> with
+      accept <span class="quote">"<span class="quote">23:59:60.<em class="replaceable"><code>nnn</code></em></span>"</span> with
       nonzero fractional-second <em class="replaceable"><code>nnn</code></em>.  In
       timestamp values this would result in wrapping into the first second
       of the next day.  In <code class="type">time</code> and <code class="type">timetz</code>
@@ -170,8 +170,8 @@
       contents (for example, due to change of a column's data type) and
       also needs to scan the table to re-validate foreign keys
       or <code class="literal">CHECK</code> constraints, it sometimes did things in
-      the wrong order, leading to odd errors such as <span class="quote">“<span class="quote">could not read
-      block 0 in file "base/nnnnn/nnnnn": read only 0 of 8192 bytes</span>”</span>.
+      the wrong order, leading to odd errors such as <span class="quote">"<span class="quote">could not read
+      block 0 in file "base/nnnnn/nnnnn": read only 0 of 8192 bytes</span>"</span>.
      </p></li><li class="listitem"><p>
       Fix <code class="command">REINDEX CONCURRENTLY</code> to preserve the index's
       replication identity flag (Michael Paquier)
@@ -220,13 +220,13 @@
       This primarily affected the planner's estimate of the number of
       groups that would be obtained by <code class="literal">GROUP BY</code>.
      </p></li><li class="listitem"><p>
-      Remove bogus warning about <span class="quote">“<span class="quote">leftover placeholder tuple</span>”</span>
+      Remove bogus warning about <span class="quote">"<span class="quote">leftover placeholder tuple</span>"</span>
       in BRIN index de-summarization (Álvaro Herrera)
      </p><p>
       The case can occur legitimately after a cancelled vacuum, so warning
       about it is overly noisy.
      </p></li><li class="listitem"><p>
-      Fix selection of tablespaces for <span class="quote">“<span class="quote">shared fileset</span>”</span>
+      Fix selection of tablespaces for <span class="quote">"<span class="quote">shared fileset</span>"</span>
       temporary files (Magnus Hagander, Tom Lane)
      </p><p>
       If <code class="varname">temp_tablespaces</code> is empty or explicitly names
@@ -290,8 +290,8 @@
      </p><p>
       These functions (which are undocumented and used only by ancient
       versions of the ODBC driver) contained coding errors that could
-      result in crashes, or in confusing error messages such as <span class="quote">“<span class="quote">could
-      not open file</span>”</span> when applied to a relation having no storage.
+      result in crashes, or in confusing error messages such as <span class="quote">"<span class="quote">could
+      not open file</span>"</span> when applied to a relation having no storage.
      </p></li><li class="listitem"><p>
       Avoid calling <code class="function">elog()</code>
       or <code class="function">palloc()</code> while holding a spinlock (Michael
@@ -333,8 +333,8 @@
       and <span class="application">pg_basebackup</span> (Justin Pryzby, Tom
       Lane, Álvaro Herrera)
      </p><p>
-      Some code paths could produce silly reports like <span class="quote">“<span class="quote">could not
-      write file: Success</span>”</span>.
+      Some code paths could produce silly reports like <span class="quote">"<span class="quote">could not
+      write file: Success</span>"</span>.
      </p></li><li class="listitem"><p>
       Make <span class="application">pg_restore</span> cope with
       data-offset-less custom-format archive files when it needs to
@@ -350,7 +350,7 @@
      </p><p>
       The table-level privilege grants have to be applied first, but a
       parallel restore did not reliably order them that way; this could
-      lead to <span class="quote">“<span class="quote">tuple concurrently updated</span>”</span> errors, or to
+      lead to <span class="quote">"<span class="quote">tuple concurrently updated</span>"</span> errors, or to
       disappearance of some per-column privilege grants.  The fix for this
       is to include dependency links between such entries in the archive
       file, meaning that a new dump has to be taken with a

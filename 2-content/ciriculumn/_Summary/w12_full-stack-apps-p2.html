@@ -71,7 +71,7 @@
 <p>Keep up the communication.</p>
 <p>Don’t let someone fail. This is a team effort.</p>
 <h2 id="evaluating-your-completion">Evaluating your completion</h2>
-<p>Full-stack projects will be evaluated against the following “Minimal Viable Product” features.</p>
+<p>Full-stack projects will be evaluated against the following "Minimal Viable Product" features.</p>
 <ol type="1">
 <li>New account creation, login, and guest/demo login</li>
 <li>A production README file for your GitHub repository containing
@@ -180,10 +180,10 @@
 <li><strong>Bonus</strong>: Profile</li>
 <li><strong>Bonus</strong>: Friends ________________________________________________________________________________ # Setting Up Your Group’s Project Repository</li>
 </ul>
-<p>Only <strong>one person</strong> on the team should do this, the “project lead”. Once the project is done, everyone should <em>fork</em> the repository to get their own local copies for future reference.</p>
+<p>Only <strong>one person</strong> on the team should do this, the "project lead". Once the project is done, everyone should <em>fork</em> the repository to get their own local copies for future reference.</p>
 <p>Your group will coordinate and collaborate around a GitHub repository. To do that, you’ll need to set it up so that everyone can contribute. These are the steps to get you on your way.</p>
 <h2 id="create-a-new-repository">Create a new repository</h2>
-<p>Go to GitHub. On your profile page, you should see a “New” button that allows you to create a new repository. Click it.</p>
+<p>Go to GitHub. On your profile page, you should see a "New" button that allows you to create a new repository. Click it.</p>
 <figure>
 <img src="images/group-project-repo-setup-new-repo.png" alt="new repository button" /><figcaption>new repository button</figcaption>
 </figure>
@@ -192,23 +192,23 @@
 <figure>
 <img src="images/group-project-repo-setup-repo-details.png" alt="new repository details" /><figcaption>new repository details</figcaption>
 </figure>
-<p>Click the “Create repository” button.</p>
+<p>Click the "Create repository" button.</p>
 <h2 id="give-access-to-your-teammates">Give access to your teammates</h2>
 <p>Now that you have a repository, you need to give some privileges to your teammates so they can use the repository, too.</p>
-<p>On your project page, click the “Settings” tab.</p>
+<p>On your project page, click the "Settings" tab.</p>
 <figure>
 <img src="images/group-project-repo-setup-settings-tab.png" alt="repository settings tab" /><figcaption>repository settings tab</figcaption>
 </figure>
-<p>Once on the Settings page, click the “Manage access” link.</p>
+<p>Once on the Settings page, click the "Manage access" link.</p>
 <figure>
 <img src="images/group-project-repo-setup-manage-access.png" alt="manage access link" /><figcaption>manage access link</figcaption>
 </figure>
 <p>You may have to confirm your password.</p>
-<p>Once you get there, click the “Invite teams or people”.</p>
+<p>Once you get there, click the "Invite teams or people".</p>
 <figure>
 <img src="images/group-project-repo-setup-invite-teams-or-people.png" alt="invite teams or people button" /><figcaption>invite teams or people button</figcaption>
 </figure>
-<p>For each person on your team, invite them to the repository and give them “Maintain” access.</p>
+<p>For each person on your team, invite them to the repository and give them "Maintain" access.</p>
 <figure>
 <img src="images/group-project-repo-setup-invite-member-at-level.png" alt="grant access to user" /><figcaption>grant access to user</figcaption>
 </figure>
@@ -222,7 +222,7 @@
 <ul>
 <li>Define the term <em>authentication</em></li>
 <li>Describe the difference between asymmetric and symmetric cryptographic algorithms</li>
-<li>Identify “strong” vs. “broken” hash functions</li>
+<li>Identify "strong" vs. "broken" hash functions</li>
 <li>Implement session-based authentication in an Express application</li>
 <li>Implement a strong hash function to securely store passwords</li>
 <li>Describe and use the different security options for cookies</li>
@@ -233,10 +233,10 @@
 <p>By the end of this article, you will be able to: * Understand what cryptography is and why it’s important; * Understand what hashing and encryption are and how they differ from each other; and * Use Bcrypt to hash stored user passwords.</p>
 <h2 id="what-is-cryptography">What is cryptography?</h2>
 <p>Cryptography is a way to use algorithms and secret keys to keep information secure. It is comprised of techniques for secure communication for adversaries. Adversaries are third-parties who could possibly fake a user’s identity to gain their secret values.</p>
-<p>In modern times, cryptography is synonymous with encryption. Take note that encoding and encrypting are two different processes. An example of an encoding technique is compression, where you would encode the string “aaabcccabbccc” into “a3bc3ab2c3”. This is a classic encoding scheme for highly repetitive data. If you know the encoding scheme, you are able to manually decipher the encoded data into it’s original form.</p>
+<p>In modern times, cryptography is synonymous with encryption. Take note that encoding and encrypting are two different processes. An example of an encoding technique is compression, where you would encode the string "aaabcccabbccc" into "a3bc3ab2c3". This is a classic encoding scheme for highly repetitive data. If you know the encoding scheme, you are able to manually decipher the encoded data into it’s original form.</p>
 <h3 id="what-is-encryption">What is encryption?</h3>
 <p>Encrypting is different from encoding. Encryption is the process of translating something that’s readable into something that looks like nonsense (i.e. not readable) and being able to translate it from a non-readable state back into something that’s readable.</p>
-<p>An example of an encryption technique is the <a href="https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/">Caesar Cipher</a> algorithm. Imagine that you are using a <code>caesarCipher</code> function below to transform the string “abcd”. The function uses its key of <code>2</code> to shift all its characters two characters to “the right” to have a final encrypted string of “cdef”.</p>
+<p>An example of an encryption technique is the <a href="https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/">Caesar Cipher</a> algorithm. Imagine that you are using a <code>caesarCipher</code> function below to transform the string "abcd". The function uses its key of <code>2</code> to shift all its characters two characters to "the right" to have a final encrypted string of "cdef".</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="at">caesarCipher</span>(<span class="st">&quot;abcd&quot;</span><span class="op">,</span> <span class="dv">2</span>) <span class="co">// returns &quot;cdef&quot;</span></a></code></pre></div>
 <p>A string is encrypted when we still don’t know for certain what the original input was even though if we understand the algorithm used (i.e. understanding Caesar Cipher, but not being able to read or determine its input from its output).</p>
 <h3 id="how-does-encryption-work">How does encryption work?</h3>
@@ -257,12 +257,12 @@
 <p>Hashing is the process of converting a message of any length into a short, fixed-length string. Hashed values cannot be translated back to their original input values. Hashing is deterministic, meaning that every time you hash the same input, you will receive the same output. This is why we use hashing to secure user credentials.</p>
 <h3 id="how-does-hashing-work">How does hashing work?</h3>
 <p>There are many different types of hashing functions. It’s important to use cryptographic hashing functions, as they minimize hash collisions (i.e. creating the same hashed value from different inputs). We’ll be focusing on using the BCrypt library which uses the Blowfish cipher, an encryption algorithm.</p>
-<h3 id="what-is-a-salt">What is a “salt”?</h3>
+<h3 id="what-is-a-salt">What is a "salt"?</h3>
 <p>Imagine if multiple users have the same password. This means that they would have the same password digest stored in the database. If one of the users has an exposed password, a hacker could find all the users with the same password digest and hack into all accounts with the exposed password. This is where salting comes into play. The basic idea behind salting is to begin by generating a small, random string or set of bits known as a <code>salt</code>. You would then append the <code>salt</code> to your the user’s password before hashing.</p>
 <p>If you create a new <code>salt</code> for each user, each time you hash a password for a different user, you are guaranteed to generate a unique password digest to store in the database. Instead of just storing a possibly generic password digest, the password and the unique <code>salt</code> generated for the user is stored.</p>
 <p>Now when you see a password digest, the digest is no longer the digest of a common password. It’s a secure digest of a common password concatenated with a salt to randomize the digest output.</p>
 <h3 id="when-is-it-appropriate-to-use-hashing">When is it appropriate to use hashing?</h3>
-<p>Hashing is a popular way of storing passwords. A hashed password is often referred to as a “password digest”. When a user creates an account, their password digest is saved to the database. This keeps the user credentials safe by ensuring that the user’s actual password is never stored in the database. You almost never need to convert user passwords back into something that’s human readable. You simply hash a provided password and compare the hash to the stored hash. If the hashes match, then the user has provided the correct password.</p>
+<p>Hashing is a popular way of storing passwords. A hashed password is often referred to as a "password digest". When a user creates an account, their password digest is saved to the database. This keeps the user credentials safe by ensuring that the user’s actual password is never stored in the database. You almost never need to convert user passwords back into something that’s human readable. You simply hash a provided password and compare the hash to the stored hash. If the hashes match, then the user has provided the correct password.</p>
 <p>Although the password digest is in the database, the user’s credentials are still safe even if user information is extracted via SQL injection because of how hashing is deterministic. If a hacker uses a user’s password digest in attempt to logging in, the password digest would get hashed into a new hashed value that would not equate to the user’s stored password digest.</p>
 <h2 id="using-bcrypt-to-hash-user-passwords">Using Bcrypt to hash user passwords</h2>
 <p>BCrypt is a password hashing function that’s widely used to hash user passwords. In this section, you’ll learn how to implement <a href="https://www.npmjs.com/package/bcrypt">BCrypt</a> into your application.</p>
@@ -337,9 +337,9 @@
 <p>Install the project’s dependencies and run it.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" title="1"><span class="ex">npm</span> install</a>
 <a class="sourceLine" id="cb11-2" title="2"><span class="ex">npm</span> start</a></code></pre></div>
-<p>The application is a simple website that contains three pages: “Home”, “About”, and “Contact”.</p>
+<p>The application is a simple website that contains three pages: "Home", "About", and "Contact".</p>
 <p>Currently, when you browse from page to page, the server doesn’t recognize or associate the page requests as being part of the same session.</p>
-<p>Open up your web developer tools to view cookies under the “Application” tab. Click on “Storage &gt; Cookies &gt; <code>http://localhost:8080</code>” to view the cookies for your <code>localhost</code> domain. Currently, you shouldn’t see any cookies listed.</p>
+<p>Open up your web developer tools to view cookies under the "Application" tab. Click on "Storage &gt; Cookies &gt; <code>http://localhost:8080</code>" to view the cookies for your <code>localhost</code> domain. Currently, you shouldn’t see any cookies listed.</p>
 <p>Let’s configure the application to use sessions!</p>
 <h3 id="installing-and-configuring-express-session">Installing and configuring <code>express-session</code></h3>
 <p>Install the <code>express-session</code> npm package.</p>
@@ -373,7 +373,7 @@
 <a class="sourceLine" id="cb14-5" title="5"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <p>Notice the following keys that configure your session creation:</p>
 <p><strong>secret</strong>: This is the secret used to sign the <strong>session ID</strong> cookie. The <code>secret</code> value above was generated using the <a href="https://www.npmjs.com/package/uuid">uuid npm package</a>. The <code>uuid</code> package allows you to generate universally unique identifiers (UUIDs) from random cryptographically-strong values, a timestamp, or a user-supplied string.</p>
-<p><strong>resave</strong>: This option forces the session to be saved into the session <em>store</em>, even if the session was never modified during the request. You would typically want to set this option as <code>false</code> to prevent overwriting sessions during race conditions, which are undesired parallel requests. However if your session store sets an expiration date on stored sessions, then you likely need to set “resave” as <code>true</code>.</p>
+<p><strong>resave</strong>: This option forces the session to be saved into the session <em>store</em>, even if the session was never modified during the request. You would typically want to set this option as <code>false</code> to prevent overwriting sessions during race conditions, which are undesired parallel requests. However if your session store sets an expiration date on stored sessions, then you likely need to set "resave" as <code>true</code>.</p>
 <p><strong>saveUninitialized</strong>: This forces an <em>uninitialized</em> session to be saved to the store. An uninitialized session is when a session is new but not modified. It’s useful to set this option as <code>false</code> when creating login sessions, reducing use of server storage, or complying with permission laws to set cookies. Setting the option as <code>false</code> also prevents race conditions when multiple requests are made without a session.</p>
 <p>Not setting the <code>resave</code> and <code>saveUninitialized</code> options results in the following warning in the console:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb15-1" title="1"><span class="ex">express-session</span> deprecated undefined resave option<span class="kw">;</span> <span class="ex">provide</span> resave option app.js:8:9</a>
@@ -433,7 +433,7 @@
 <embed src="images/configuring-sessions-devtools-2.pngimages/configuring-sessions-devtools-2.pngpthFrom=2%20depthTo=6%20orderedList=false%7D%20--%3E" /><figcaption>after-session-cookie-creation</figcaption>
 </figure>
 <p>Notice how the code accessed the <code>session</code> attribute of the <code>req</code> object. In order to store or access session data, you use the <code>req.session</code> property.</p>
-<p>In the example above, you attempted to get the <code>history</code> array from session. If the array was not already initialized, you created an array and assigned it to the “history” property of the <code>req.session</code> object.</p>
+<p>In the example above, you attempted to get the <code>history</code> array from session. If the array was not already initialized, you created an array and assigned it to the "history" property of the <code>req.session</code> object.</p>
 <p>Now you’ll want to update each of the route handlers to pass the <code>req.session.history</code> array to the views.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb17-2" title="2">  <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -589,7 +589,7 @@ expire: 2020-04-11 12:19:13</code></pre>
 <h3 id="what-is-authorization">What is authorization?</h3>
 <p>Authorization is the process of determining if the currently logged in user has access to an application’s data or features. Sometimes, data is associated directly with a user. For example, a table in the database for storing posts or comments would include a <code>userId</code> column. The <code>userId</code> column would have the primary key <code>id</code> value from the <code>Users</code> table.</p>
 <p>Relating data to specific users allows the application to retrieve just the user’s own records. Sometimes data should only be accessed by users that are assigned a specific user function or role.</p>
-<p>For example, a user might belong to an “Admin” role. Any user in the “Admin” role has permissions to add, update, or even delete other application users. “Admin” role users may also have additional access to certain application features. Don’t let that power go to your head!</p>
+<p>For example, a user might belong to an "Admin" role. Any user in the "Admin" role has permissions to add, update, or even delete other application users. "Admin" role users may also have additional access to certain application features. Don’t let that power go to your head!</p>
 <p>We’ll explore how role-based access control works in a future article.</p>
 <h2 id="supporting-user-self-registration">Supporting user self-registration</h2>
 <p>Before a user can login to an application or website, the application needs to know who that user is… they need to register!</p>
@@ -724,7 +724,7 @@ DB_HOST=localhost</code></pre>
 <a class="sourceLine" id="cb42-13" title="13">    <span class="st">&quot;Users_emailAddress_key&quot;</span> <span class="ex">UNIQUE</span> CONSTRAINT, btree (<span class="st">&quot;emailAddress&quot;</span>)</a></code></pre></div>
 <h3 id="adding-the-user-registration-form">Adding the user registration form</h3>
 <p>Now you’ll want to create a form that collects the required account information from the user.</p>
-<p>To start, now that the application will have two resources, “books” and “users”, let’s do a little refactoring! Create a <code>routes</code> folder in the root of the project and then rename the <code>routes.js</code> file as <code>book.js</code> and move the file into the <code>routes</code> folder.</p>
+<p>To start, now that the application will have two resources, "books" and "users", let’s do a little refactoring! Create a <code>routes</code> folder in the root of the project and then rename the <code>routes.js</code> file as <code>book.js</code> and move the file into the <code>routes</code> folder.</p>
 <p>Update the <code>routes</code> module reference in the <code>app.js</code> file:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">const</span> bookRoutes <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./routes/book&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb43-2" title="2"></a>
@@ -746,7 +746,7 @@ DB_HOST=localhost</code></pre>
 <a class="sourceLine" id="cb44-12" title="12"><span class="op">};</span></a></code></pre></div>
 <p>And update the <code>./routes/book.js</code> file to import those items from the <code>utils</code> module:</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">const</span> <span class="op">{</span> csrfProtection<span class="op">,</span> asyncHandler <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./utils&#39;</span>)<span class="op">;</span></a></code></pre></div>
-<p>Add a module named <code>user</code> to the <code>routes</code> folder containing the following code to define the routes for the “Register” page:</p>
+<p>Add a module named <code>user</code> to the <code>routes</code> folder containing the following code to define the routes for the "Register" page:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">const</span> express <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;express&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb46-2" title="2"><span class="kw">const</span> <span class="op">{</span> check<span class="op">,</span> validationResult <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;express-validator&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb46-3" title="3"></a>
@@ -825,7 +825,7 @@ block content
     div(class=&#39;py-4&#39;)
       button(type=&#39;submit&#39; class=&#39;btn btn-primary&#39;) Register
       a(href=&#39;/&#39; class=&#39;btn btn-warning ml-2&#39;) Cancel</code></pre>
-<p>Notice that there are two “password” fields: “Password” and “Confirm Password”. When using the <code>input</code> element with a <code>type</code> attribute of <code>password</code>, the field will replace typed characters with bullets to hide what has been typed into the field. This is a great protection from prying eyes, but you need a way for users to be able to confirm the password that they’re providing. Making them type their password twice is doing exactly that.</p>
+<p>Notice that there are two "password" fields: "Password" and "Confirm Password". When using the <code>input</code> element with a <code>type</code> attribute of <code>password</code>, the field will replace typed characters with bullets to hide what has been typed into the field. This is a great protection from prying eyes, but you need a way for users to be able to confirm the password that they’re providing. Making them type their password twice is doing exactly that.</p>
 <blockquote>
 <p><strong>Note:</strong> After renaming the <code>textField</code> mixin to <code>field</code>, be sure to update the <code>book-form-fields.pug</code> template to call the mixin using the new name!</p>
 </blockquote>
@@ -990,7 +990,7 @@ block content
 <h2 id="supporting-user-login">Supporting user login</h2>
 <p>Now that you have a way to support user registration, you need a way to allow existing users to log in using their email address and password.</p>
 <h3 id="adding-the-user-login-form">Adding the user login form</h3>
-<p>Start by adding the routes and validators for the “Login” page to the <code>./routes/user</code> module just below the existing routes for the “Register” page:</p>
+<p>Start by adding the routes and validators for the "Login" page to the <code>./routes/user</code> module just below the existing routes for the "Register" page:</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb58-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/user/login&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb58-2" title="2">  <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;user-login&#39;</span><span class="op">,</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb58-3" title="3">    <span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Login&#39;</span><span class="op">,</span></a>
@@ -1086,7 +1086,7 @@ block content
 <a class="sourceLine" id="cb62-14" title="14">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb62-15" title="15"><span class="op">}</span></a></code></pre></div>
 <blockquote>
-<p><strong>Note:</strong> We’ll implement a method to “login” the user in just a bit. For now, add a <code>TODO</code> comment as a placeholder for the actual method call.</p>
+<p><strong>Note:</strong> We’ll implement a method to "login" the user in just a bit. For now, add a <code>TODO</code> comment as a placeholder for the actual method call.</p>
 </blockquote>
 <ol start="4" type="1">
 <li>If a user wasn’t found in the database or the hashed passwords don’t match, then add a validation error message and render the <code>user-login</code> view to let the user know that the login process failed.</li>
@@ -1152,7 +1152,7 @@ block content
 <a class="sourceLine" id="cb64-39" title="39">    <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb64-40" title="40">  <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <h3 id="improving-the-user-navigation">Improving the user navigation</h3>
-<p>One small change to the <code>user-register</code> and <code>user-login</code> views before you test the user login form. As a convenience for the user, add links below the user registration and login forms that allow the user to easily navigate between the “Register” and “Login” pages:</p>
+<p>One small change to the <code>user-register</code> and <code>user-login</code> views before you test the user login form. As a convenience for the user, add links below the user registration and login forms that allow the user to easily navigate between the "Register" and "Login" pages:</p>
 <pre class="pug"><code>//- ./views/user-register.pug
 
 extends layout.pug
@@ -1207,7 +1207,7 @@ block content
 </ul></li>
 <li>Submit the form with an email address that’s associated with a user record in the database <strong>and with a correct password</strong>.
 <ul>
-<li>This time you should be redirected to the “Home” page.</li>
+<li>This time you should be redirected to the "Home" page.</li>
 </ul></li>
 </ul>
 <p>The login process succeeded, but a crucial piece is still missing: persisting the user’s login state.</p>
@@ -1400,8 +1400,8 @@ block content
 <a class="sourceLine" id="cb79-75" title="75">    <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb79-76" title="76">  <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <h3 id="testing-user-login-state-persistence">Testing user login state persistence</h3>
-<p>Run the application (if it’s not already running) and use the “Register” and “Login” pages to register a new user and login an existing user. Everything should work as it did before, but the user’s login state is being persisted in session.</p>
-<p>At this point in the project, there isn’t any visual indication if the user is logged in or not (that’s something that you’ll fix in a bit). If you open the DevTools in Chrome and view the “Application” tab, you can view the cookies for <code>http://localhost:8080</code>. After registering a new user or logging in an existing user, you should see a cookie named <code>reading-list.sid</code>. That’s the session cookie!</p>
+<p>Run the application (if it’s not already running) and use the "Register" and "Login" pages to register a new user and login an existing user. Everything should work as it did before, but the user’s login state is being persisted in session.</p>
+<p>At this point in the project, there isn’t any visual indication if the user is logged in or not (that’s something that you’ll fix in a bit). If you open the DevTools in Chrome and view the "Application" tab, you can view the cookies for <code>http://localhost:8080</code>. After registering a new user or logging in an existing user, you should see a cookie named <code>reading-list.sid</code>. That’s the session cookie!</p>
 <h2 id="restoring-the-authenticated-user-from-session">Restoring the authenticated user from session</h2>
 <p>Now that you’re persisting a user’s login state to session, you need to make that user’s information easily accessible to your application when it’s processing requests.</p>
 <p>In the <code>auth</code> module, define a middleware function named <code>restoreUser()</code> to retrieve the user’s information from the database if they’re authenticated:</p>
@@ -1511,8 +1511,8 @@ else
     a(class=&#39;btn btn-sm btn-dark mr-2&#39; href=&#39;/user/login&#39;) Login
     a(class=&#39;btn btn-sm btn-dark&#39; href=&#39;/user/register&#39;) Register</code></pre>
 <p>Notice that the view is using the <code>locals.authenticated</code> property to determine if the current user is logged in or not. <code>locals</code> within a view is the same object that’s available via <code>res.locals</code>. Remember that the <code>restoreUser</code> function defined in the <code>auth</code> module is responsible for determining if there’s an authenticated user stored in session and defining the initializing the <code>res.locals.authenticated</code> property to the appropriate value.</p>
-<p>If the current user isn’t logged in, then links (styled as buttons using Bootstrap CSS classes) are rendered to the “Login” and “Register” pages. If the current user is logged in, then a short, friendly “welcome” message is rendered along with a simple form that contains a single “Logout” submit button.</p>
-<p>Now if you run and test your application, you’ll see the current user’s login state displayed in the header! If you log in and click the “Logout” button in the header, you’ll receive a “Page Not Found” error. This is occurring because the <code>POST</code> <code>/user/logout</code> route doesn’t exist. Time to fix that!</p>
+<p>If the current user isn’t logged in, then links (styled as buttons using Bootstrap CSS classes) are rendered to the "Login" and "Register" pages. If the current user is logged in, then a short, friendly "welcome" message is rendered along with a simple form that contains a single "Logout" submit button.</p>
+<p>Now if you run and test your application, you’ll see the current user’s login state displayed in the header! If you log in and click the "Logout" button in the header, you’ll receive a "Page Not Found" error. This is occurring because the <code>POST</code> <code>/user/logout</code> route doesn’t exist. Time to fix that!</p>
 <h3 id="implementing-user-logout">Implementing user logout</h3>
 <p>Before adding the new route to logout a user, define and export a <code>logoutUser()</code> function in the <code>auth</code> module:</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">const</span> logoutUser <span class="op">=</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -1527,16 +1527,16 @@ else
 <a class="sourceLine" id="cb87-3" title="3">  <span class="va">res</span>.<span class="at">redirect</span>(<span class="st">&#39;/user/login&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb87-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Notice that the route doesn’t use the <code>csrfProtection</code> middleware. The <code>POST</code> <code>/user/logout</code> route isn’t modifying any of the user’s data in the database, so for simplicity’s sake the route isn’t requiring a valid CSRF token to be present on the request.</p>
-<p>After calling the <code>logoutUser()</code> function to logout the user, the user is redirected to the <code>/user/login</code> route. In some situations, it’d be more appropriate to redirect the user to the default route, but in just a bit you’re going to update the default route to only be visible if the current user is logged in. Given that, it’s a better option to redirect the user to the “Login” page.</p>
+<p>After calling the <code>logoutUser()</code> function to logout the user, the user is redirected to the <code>/user/login</code> route. In some situations, it’d be more appropriate to redirect the user to the default route, but in just a bit you’re going to update the default route to only be visible if the current user is logged in. Given that, it’s a better option to redirect the user to the "Login" page.</p>
 <h3 id="testing-the-latest-changes">Testing the latest changes</h3>
-<p>Run the application (if it’s not already running) and use the “Login” page to login an existing user. After logging into the website, you should now see the user’s first name displayed in the header.</p>
+<p>Run the application (if it’s not already running) and use the "Login" page to login an existing user. After logging into the website, you should now see the user’s first name displayed in the header.</p>
 <p>Remember that the <code>restoreUser()</code> function logs the <code>req.session</code> object to the console. After logging in, you should see something like this logged to the console:</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb88-1" title="1"><span class="ex">Session</span> {</a>
 <a class="sourceLine" id="cb88-2" title="2">  <span class="ex">cookie</span>: { path: <span class="st">&#39;/&#39;</span>, _expires: null, originalMaxAge: null, httpOnly: true },</a>
 <a class="sourceLine" id="cb88-3" title="3">  <span class="ex">auth</span>: { userId: 1 }</a>
 <a class="sourceLine" id="cb88-4" title="4">}</a></code></pre></div>
 <p>The <code>session.auth.userId</code> property value is the user ID of the currently logged in user.</p>
-<p>Now if you click the “Logout” button, you’ll be redirected to the “Login” page. In the console you’ll see that the <code>session.auth</code> property is no longer defined on the <code>session</code> object:</p>
+<p>Now if you click the "Logout" button, you’ll be redirected to the "Login" page. In the console you’ll see that the <code>session.auth</code> property is no longer defined on the <code>session</code> object:</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb89-1" title="1"><span class="ex">Session</span> {</a>
 <a class="sourceLine" id="cb89-2" title="2">  <span class="ex">cookie</span>: { path: <span class="st">&#39;/&#39;</span>, _expires: null, originalMaxAge: null, httpOnly: true }</a>
 <a class="sourceLine" id="cb89-3" title="3">}</a></code></pre></div>
@@ -1544,7 +1544,7 @@ else
 <p>Now that the Reading List application supports user self-registration and login, it’s time to restrict access to the routes that should only be accessible to authenticated users.</p>
 <p>For some applications, you might need to restrict access to one or two routes. For the Reading List application, you’ll restrict access to all of the routes in the <code>./routes/book</code> module so that the user needs to log in view their list of books (in just a bit you’ll update the <code>Book</code> model so that each book record will be associated with a user) or to add, update, or delete a book.</p>
 <h3 id="defining-a-middleware-function-to-require-an-authenticated-user">Defining a middleware function to require an authenticated user</h3>
-<p>Add a new function named <code>requireAuth()</code> to the <code>auth</code> module. Update the <code>requireAuth()</code> function to redirect the user to the “Login” page if the <code>res.locals.authenticated</code> property is set to <code>false</code>, otherwise pass control to the next middleware function by calling the <code>next()</code> method:</p>
+<p>Add a new function named <code>requireAuth()</code> to the <code>auth</code> module. Update the <code>requireAuth()</code> function to redirect the user to the "Login" page if the <code>res.locals.authenticated</code> property is set to <code>false</code>, otherwise pass control to the next middleware function by calling the <code>next()</code> method:</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb90-1" title="1"><span class="co">// ./auth.js</span></a>
 <a class="sourceLine" id="cb90-2" title="2"></a>
 <a class="sourceLine" id="cb90-3" title="3"><span class="kw">const</span> db <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./db/models&#39;</span>)<span class="op">;</span></a>
@@ -1626,7 +1626,7 @@ else
 <a class="sourceLine" id="cb92-47" title="47">  <span class="op">}</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb92-48" title="48"></a>
 <a class="sourceLine" id="cb92-49" title="49"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></a></code></pre></div>
-<p>Run the application (if it’s not already running) and browse to the default route (<code>/</code>). You’ll be redirected to the “Login” page. Go ahead and login using an existing account. After logging in, you’ll be redirected to the default route (<code>/</code>) to view your list of books.</p>
+<p>Run the application (if it’s not already running) and browse to the default route (<code>/</code>). You’ll be redirected to the "Login" page. Go ahead and login using an existing account. After logging in, you’ll be redirected to the default route (<code>/</code>) to view your list of books.</p>
 <h2 id="associating-data-with-a-user">Associating data with a user</h2>
 <p>Now that you’ve restricted access to all of the book related routes so that a logged or authenticated user is required, you can update the <code>Book</code> model so that each book record will be associated with a user.</p>
 <h3 id="defining-an-association">Defining an association</h3>
@@ -1742,7 +1742,7 @@ else
 <a class="sourceLine" id="cb99-53" title="53">    <span class="cf">return</span> <span class="va">queryInterface</span>.<span class="at">bulkDelete</span>(<span class="st">&#39;Users&#39;</span><span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="op">{}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb99-54" title="54">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb99-55" title="55"><span class="op">};</span></a></code></pre></div>
-<p>An additional call to the <code>queryInterface.bulkInsert()</code> method has been added to seed a test user, “John Smith”, into the <code>Users</code> database table. Notice that an object literal has been supplied to the <code>queryInterface.bulkInsert()</code> method to specify the <code>returning</code> option. The <code>returning</code> optional configures the bulk insert to return the newly inserted data. This gives you a way to set the <code>userId</code> foreign key column when bulk inserting the test data into the <code>Books</code> table.</p>
+<p>An additional call to the <code>queryInterface.bulkInsert()</code> method has been added to seed a test user, "John Smith", into the <code>Users</code> database table. Notice that an object literal has been supplied to the <code>queryInterface.bulkInsert()</code> method to specify the <code>returning</code> option. The <code>returning</code> optional configures the bulk insert to return the newly inserted data. This gives you a way to set the <code>userId</code> foreign key column when bulk inserting the test data into the <code>Books</code> table.</p>
 <p>To seed the database, run the following command:</p>
 <pre><code>npx dotenv sequelize db:seed:all</code></pre>
 <h3 id="updating-the-book-related-routes">Updating the book related routes</h3>
@@ -1962,11 +1962,11 @@ block content
 <a class="sourceLine" id="cb109-5" title="5"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <h2 id="phase-3-support-user-self-registration">Phase 3: Support user self-registration</h2>
 <p>Now it’s time to add the user registration form.</p>
-<p>Begin by creating a <code>./routes/user</code> module. Import <code>express</code> and instantiate a <code>router</code> with <code>express.Router()</code>. Import your <code>db</code> from your <code>../db/models</code> and create <code>GET</code> and <code>POST</code> routes for the “Register” page (<code>/user/register</code>). Make sure to use CSRF protection as well the <code>bcryptjs</code> npm package to hash user passwords. Lastly, don’t forget to export the router module you have just created.</p>
+<p>Begin by creating a <code>./routes/user</code> module. Import <code>express</code> and instantiate a <code>router</code> with <code>express.Router()</code>. Import your <code>db</code> from your <code>../db/models</code> and create <code>GET</code> and <code>POST</code> routes for the "Register" page (<code>/user/register</code>). Make sure to use CSRF protection as well the <code>bcryptjs</code> npm package to hash user passwords. Lastly, don’t forget to export the router module you have just created.</p>
 <p>Take note that you already have a <code>routes/utils.js</code> module that holds utility functions like the <code>csrfProtection</code> and <code>asyncHandler</code> methods you are familiar with. Import both of these methods into your <code>./routes/user</code> module with a require statement to the <code>./utils</code> module like so:</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">const</span> <span class="op">{</span> csrfProtection<span class="op">,</span> asyncHandler <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./utils&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <p>Now you can use your <code>csrfProtection</code> and <code>asyncHandler</code> in your <code>./routes/user</code> module!</p>
-<p>In your GET <code>/user/register</code> route, use <code>db.User.build()</code> to initialize a new user to pass into the <code>user-register</code> view. Make sure to also pass in a <code>title</code> for your “Register” page as well as a <code>csrfToken</code> (with a value of <code>req.csrfToken()</code>). Add <code>csrfProtection</code> to your route, and let’s create your <code>user-register</code> template.</p>
+<p>In your GET <code>/user/register</code> route, use <code>db.User.build()</code> to initialize a new user to pass into the <code>user-register</code> view. Make sure to also pass in a <code>title</code> for your "Register" page as well as a <code>csrfToken</code> (with a value of <code>req.csrfToken()</code>). Add <code>csrfProtection</code> to your route, and let’s create your <code>user-register</code> template.</p>
 <p>Render a template that extends the main layout and has a form within <code>block content</code>. Take note of the mixins in the <code>utils.pug</code> file that are available for you to use. The form should contain the following input fields:</p>
 <ul>
 <li>First Name</li>
@@ -2019,12 +2019,12 @@ block content
 </ul>
 <p>Now return to your POST route and wrap your asynchronous route function with your <code>asyncHandler</code> so that you can <code>await</code> certain processes in your route. Begin by destructuring the <code>emailAddress</code>, <code>firstName</code>, <code>lastName</code>, and <code>password</code> from your <code>req.body</code> object. Then use the <code>emailAddress</code>, <code>firstName</code>, and <code>lastName</code> variables (but not the <code>password</code> variable) to build a user with the <code>db.User.build()</code> method.</p>
 <p>At this point, generate your <code>validatorErrors</code> within your route by using the <code>validationResult</code> method from <code>express-validator</code>. If the <code>validatorErrors</code> are empty, <code>await</code> the generation of your <code>hashedPassword</code> created with <code>bcrypt.hash()</code>. Make sure import <code>bcrypt</code> by installing and requiring the <code>bcryptjs</code> package. Remember that the first argument of <code>bcrypt.hash()</code> is a password string. You can use use an integer for the second argument to auto-generate a salt that will be incorporated in the password hash process. After hashing the user password, set the <code>user.hashedPassword</code> property and <code>await</code> the save of your user instance. Lastly, redirect the user to the home page (<code>/</code>) upon successful registration.</p>
-<p>If the <code>validatorErrors</code> are NOT empty, use <code>array()</code> to transform the <code>validatorErrors</code> object into a mappable array. Map over each <code>error</code> object in the array and pluck out each error’s <code>msg</code> property to generate an array of error messages. Lastly, re-render your <code>user-register</code> form and pass in your <code>title</code> of “Register”, the <code>user</code> object, the <code>errors</code> array, and the <code>csrfToken</code>.</p>
+<p>If the <code>validatorErrors</code> are NOT empty, use <code>array()</code> to transform the <code>validatorErrors</code> object into a mappable array. Map over each <code>error</code> object in the array and pluck out each error’s <code>msg</code> property to generate an array of error messages. Lastly, re-render your <code>user-register</code> form and pass in your <code>title</code> of "Register", the <code>user</code> object, the <code>errors</code> array, and the <code>csrfToken</code>.</p>
 <p>Now run your application and test the <code>/user/register</code> route! Remember that you can test your route by registering a user through the form and using Postbird to confirm whether or not your user has been persisted to the database.</p>
 <h2 id="phase-4-support-user-login">Phase 4: Support user login</h2>
-<p>Now it’s time to add the user login form! Begin by updating the <code>./routes/user</code> module with <code>GET</code> and <code>POST</code> routes for the “Login” page (<code>/user/login</code>). Make sure to use CSRF protection for both routes.</p>
-<p>Render your <code>user-login</code> template in your GET <code>/user/login</code> route. Pass along a <code>title</code> for your “Login” page as well as a <code>csrfToken</code>. Now let’s create the view template for your login page!</p>
-<p>Create a <code>user-login.pug</code> template in your views directory. Think of how you can include and re-use mixins from your <code>utils.pug</code> file just like in your “Register” page. The “Login” form should contain an “Email Address” field, a “Password” field, a hidden <code>_csrf</code> field, and a submit button.</p>
+<p>Now it’s time to add the user login form! Begin by updating the <code>./routes/user</code> module with <code>GET</code> and <code>POST</code> routes for the "Login" page (<code>/user/login</code>). Make sure to use CSRF protection for both routes.</p>
+<p>Render your <code>user-login</code> template in your GET <code>/user/login</code> route. Pass along a <code>title</code> for your "Login" page as well as a <code>csrfToken</code>. Now let’s create the view template for your login page!</p>
+<p>Create a <code>user-login.pug</code> template in your views directory. Think of how you can include and re-use mixins from your <code>utils.pug</code> file just like in your "Register" page. The "Login" form should contain an "Email Address" field, a "Password" field, a hidden <code>_csrf</code> field, and a submit button.</p>
 <p>Now let’s revisit the POST <code>/user/login</code> route. You’ll want to validate your login form data, so take a moment to implement the following validation rules:</p>
 <ul>
 <li><code>emailAddress</code>
@@ -2038,8 +2038,8 @@ block content
 </ul>
 <p>After your <code>loginValidators</code> have been created, wrap your asynchronous route function within your <code>asyncHandler</code> function and destructure the <code>emailAddress</code> and <code>password</code> from your <code>req.body</code> object. Generate your <code>validatorErrors</code> by passing in the <code>req</code> body into the <code>validationResult</code> function. Also take a moment to initialize an <code>errors</code> array. You’ll manually <em>push</em> error messages to render into this array.</p>
 <p>If your validation errors are empty, try to find the user by their email address. You can <code>await</code> the database fetch of a <code>user</code> by using the <code>db.User.findOne()</code> function <code>where</code> the user has a matching <code>emailAddress</code>. If the user exists, use the <code>bcrypt.compare()</code> function to check whether the <code>user.hashedPassword</code> (parsed into string format) property matches the provided password from <code>req.body</code>. If there is a password match, log in the user (for now just leave yourself a <code>TODO</code> comment to log in the user) and redirect the user to the home page (<code>/</code>).</p>
-<p>If your validator errors are empty and the user was not found, or the password did not match the <code>hashedPassword</code>, display an error message to the user by pushing in a “Login failed for the provided email address and password” message into the <code>errors</code> array you initialized.</p>
-<p>If your validation errors are not empty, convert your <code>validatorErrors</code> object into an mappable <code>errors</code> array to pluck error messages and generate an array of error messages. Lastly, you need to render a <code>user-login</code> view for this route. Make sure to pass in the “Login” title, the <code>emailAddress</code> from <code>req.body</code>, the <code>errors</code> array, and a <code>csrfToken</code>.</p>
+<p>If your validator errors are empty and the user was not found, or the password did not match the <code>hashedPassword</code>, display an error message to the user by pushing in a "Login failed for the provided email address and password" message into the <code>errors</code> array you initialized.</p>
+<p>If your validation errors are not empty, convert your <code>validatorErrors</code> object into an mappable <code>errors</code> array to pluck error messages and generate an array of error messages. Lastly, you need to render a <code>user-login</code> view for this route. Make sure to pass in the "Login" title, the <code>emailAddress</code> from <code>req.body</code>, the <code>errors</code> array, and a <code>csrfToken</code>.</p>
 <h3 id="testing-user-login-1">Testing user login</h3>
 <p>Run the application and browse to the <code>/user/login</code> route. You can test the user login form with the following actions:</p>
 <ul>
@@ -2057,7 +2057,7 @@ block content
 </ul></li>
 <li>Submit the form with an email address that’s associated with a user record in the database <strong>and with a correct password</strong>.
 <ul>
-<li>This time you should be redirected to the “Home” page.</li>
+<li>This time you should be redirected to the "Home" page.</li>
 </ul></li>
 </ul>
 <h2 id="phase-5-persist-user-login-state">Phase 5: Persist user login state</h2>
@@ -2067,8 +2067,8 @@ block content
 <p>Update the <code>./routes/user</code> module to import the <code>loginUser()</code> function from the <code>auth</code> module. Then within the <code>POST</code> <code>/user/login</code> route handler add a call to the <code>loginUser()</code> function just before redirecting the user to the default route if the password matched.</p>
 <p>Also, after a new user has registered in the <code>POST</code> <code>/user/register</code> route handler, add a call to the <code>loginUser()</code> function after saving the user to the database but before redirecting then to the default route.</p>
 <h3 id="testing-user-login-state-persistence-1">Testing user login state persistence</h3>
-<p>Run the application (if it’s not already running) and use the “Register” and “Login” pages to register a new user and login an existing user. Everything should work as it did before, but the user’s login state is being persisted in session.</p>
-<p>At this point in the project, there isn’t any visual indication if the user is logged in or not (that’s something that you’ll fix in a bit). If you open your developer tools and view the “Application” tab, you can view the cookies for <code>http://localhost:8080</code>. After registering a new user or logging in an existing user, you should see a cookie named <code>reading-list.sid</code>. That’s the session cookie!</p>
+<p>Run the application (if it’s not already running) and use the "Register" and "Login" pages to register a new user and login an existing user. Everything should work as it did before, but the user’s login state is being persisted in session.</p>
+<p>At this point in the project, there isn’t any visual indication if the user is logged in or not (that’s something that you’ll fix in a bit). If you open your developer tools and view the "Application" tab, you can view the cookies for <code>http://localhost:8080</code>. After registering a new user or logging in an existing user, you should see a cookie named <code>reading-list.sid</code>. That’s the session cookie!</p>
 <h2 id="phase-6-restore-the-authenticated-user-from-session">Phase 6: Restore the authenticated user from session</h2>
 <p>Now that you’re persisting a user’s login state to session, you need to make that user’s information easily accessible to your application when it’s processing requests.</p>
 <p>In the <code>auth</code> module, define a middleware function named <code>restoreUser()</code> to retrieve the user’s information from the database if they’re authenticated.</p>
@@ -2091,27 +2091,27 @@ block content
 <p>Welcome «current user name»! | Logout</p>
 </blockquote>
 <p>To do that, update your <code>./views/layout.pug</code> template to use the <code>locals.authenticated</code> property to determine if the current user is logged in or not.</p>
-<p>If the current user is logged in, then render a short, friendly “welcome” message is along with a simple form that contains a single “Logout” submit button:</p>
+<p>If the current user is logged in, then render a short, friendly "welcome" message is along with a simple form that contains a single "Logout" submit button:</p>
 <pre class="pug"><code>span(class=&#39;navbar-text px-4&#39;) Welcome #{user.firstName}!
 form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;post&#39;)
   button(class=&#39;btn btn-sm btn-warning&#39; type=&#39;submit&#39;) Logout</code></pre>
-<p>If the current user isn’t logged in, then render links (styled as buttons using Bootstrap CSS classes) to the “Login” and “Register” pages.</p>
+<p>If the current user isn’t logged in, then render links (styled as buttons using Bootstrap CSS classes) to the "Login" and "Register" pages.</p>
 <pre class="pug"><code>span(class=&#39;navbar-text px-4&#39;)
   a(class=&#39;btn btn-sm btn-dark mr-2&#39; href=&#39;/user/login&#39;) Login
   a(class=&#39;btn btn-sm btn-dark&#39; href=&#39;/user/register&#39;) Register</code></pre>
-<p>Now if you run and test your application, you’ll see the current user’s login state displayed in the header! If you log in and click the “Logout” button in the header, you’ll receive a “Page Not Found” error. This is occurring because the <code>POST</code> <code>/user/logout</code> route doesn’t exist. Time to fix that!</p>
+<p>Now if you run and test your application, you’ll see the current user’s login state displayed in the header! If you log in and click the "Logout" button in the header, you’ll receive a "Page Not Found" error. This is occurring because the <code>POST</code> <code>/user/logout</code> route doesn’t exist. Time to fix that!</p>
 <h2 id="phase-8-implement-user-logout">Phase 8: Implement user logout</h2>
 <p>Define and export a <code>logoutUser()</code> function in the <code>auth</code> module that removes the <code>auth</code> property from the <code>req.session</code> object.</p>
 <p>Then add a <code>POST</code> <code>/user/logout</code> to the <code>./routes/user</code> module to process <code>POST</code> requests from the logout form. Import the <code>logoutUser()</code> function from the <code>auth</code> module and call it within the <code>POST</code> <code>/user/logout</code> route handler then redirect the user to the default route.</p>
 <p>The <code>POST</code> <code>/user/logout</code> route isn’t modifying any of the user’s data in the database so there’s no need to protect it from CSRF attacks.</p>
 <h3 id="testing-the-latest-changes-1">Testing the latest changes</h3>
-<p>Run the application and use the “Login” page to login an existing user. You should now see the user’s first name displayed in the header.</p>
+<p>Run the application and use the "Login" page to login an existing user. You should now see the user’s first name displayed in the header.</p>
 <p>After logging in, you should see something like this logged to the console:</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb113-1" title="1"><span class="ex">Session</span> {</a>
 <a class="sourceLine" id="cb113-2" title="2">  <span class="ex">cookie</span>: { path: <span class="st">&#39;/&#39;</span>, _expires: null, originalMaxAge: null, httpOnly: true },</a>
 <a class="sourceLine" id="cb113-3" title="3">  <span class="ex">auth</span>: { userId: 1 }</a>
 <a class="sourceLine" id="cb113-4" title="4">}</a></code></pre></div>
-<p>Now click the “Logout” button, and you should be redirected to the “Login” page. In the console you should see that the <code>session.auth</code> property is no longer defined on the <code>session</code> object:</p>
+<p>Now click the "Logout" button, and you should be redirected to the "Login" page. In the console you should see that the <code>session.auth</code> property is no longer defined on the <code>session</code> object:</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb114-1" title="1"><span class="ex">Session</span> {</a>
 <a class="sourceLine" id="cb114-2" title="2">  <span class="ex">cookie</span>: { path: <span class="st">&#39;/&#39;</span>, _expires: null, originalMaxAge: null, httpOnly: true }</a>
 <a class="sourceLine" id="cb114-3" title="3">}</a></code></pre></div>
@@ -2224,9 +2224,9 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <p>These model associations create a one-to-many relationship between the <code>Attraction</code> and <code>AttractionVisit</code> models and a one-to-many relationship between the <code>User</code> and <code>AttractionVisit</code> model. Alternatively, you can think of the relationship as a many-to-many between the <code>Attraction</code> and <code>User</code> models (i.e. an attraction can be visited by many users and a user can visit many attractions).</p>
 <p>Apply the migration when you’re ready.</p>
 <h3 id="update-the-attraction-detail-page">Update the Attraction Detail page</h3>
-<p>Update the Attraction Detail page to display a list of attraction visits. Display an “Add Visit” button (a hyperlink styled as a button using Bootstrap’s CSS classes) above the list of attraction visits that when clicked, navigates the user to the “Add Visit” page.</p>
+<p>Update the Attraction Detail page to display a list of attraction visits. Display an "Add Visit" button (a hyperlink styled as a button using Bootstrap’s CSS classes) above the list of attraction visits that when clicked, navigates the user to the "Add Visit" page.</p>
 <h3 id="add-the-add-visit-page">Add the Add Visit page</h3>
-<p>Add a <code>./routes/visit</code> module, then add the <code>GET</code> and <code>POST</code> routes for the “Add Visit” page:</p>
+<p>Add a <code>./routes/visit</code> module, then add the <code>GET</code> and <code>POST</code> routes for the "Add Visit" page:</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">const</span> visitValidators <span class="op">=</span> [</a>
 <a class="sourceLine" id="cb119-2" title="2">  <span class="co">// </span><span class="al">TODO</span><span class="co"> Define validators.</span></a>
 <a class="sourceLine" id="cb119-3" title="3">]<span class="op">;</span></a>
@@ -2262,8 +2262,8 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 </ul>
 <h3 id="require-a-logged-in-user">Require a logged in user</h3>
 <p>To add a new visit, the user needs to be logged into the website. Without a logged in user, you wouldn’t know who to add the visit for!</p>
-<p>Add a new function named <code>requireAuth()</code> to the <code>auth</code> module. Update the <code>requireAuth()</code> function to redirect the user to the “Login” page if the <code>res.locals.authenticated</code> property is set to <code>false</code>, otherwise pass control to the next middleware function by calling the <code>next()</code> method.</p>
-<p>Then import the <code>requireAuth()</code> function into the <code>./routes/visit</code> module and add it to the <code>GET</code> and <code>POST</code> routes for the “Add Visit” page:</p>
+<p>Add a new function named <code>requireAuth()</code> to the <code>auth</code> module. Update the <code>requireAuth()</code> function to redirect the user to the "Login" page if the <code>res.locals.authenticated</code> property is set to <code>false</code>, otherwise pass control to the next middleware function by calling the <code>next()</code> method.</p>
+<p>Then import the <code>requireAuth()</code> function into the <code>./routes/visit</code> module and add it to the <code>GET</code> and <code>POST</code> routes for the "Add Visit" page:</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb120-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/attraction/:attractionId(</span><span class="sc">\\</span><span class="st">d+)/visit/add&#39;</span><span class="op">,</span> requireAuth<span class="op">,</span> csrfProtection<span class="op">,</span></a>
 <a class="sourceLine" id="cb120-2" title="2">  <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb120-3" title="3">    <span class="co">// Code removed for brevity.</span></a>
@@ -2273,17 +2273,17 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <a class="sourceLine" id="cb120-7" title="7">  <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb120-8" title="8">    <span class="co">// Code removed for brevity.</span></a>
 <a class="sourceLine" id="cb120-9" title="9">  <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
-<p>Now, if the current user isn’t logged in, they’ll be redirected to the “Login” page if they attempt view the “Add Visit” page!</p>
+<p>Now, if the current user isn’t logged in, they’ll be redirected to the "Login" page if they attempt view the "Add Visit" page!</p>
 <h2 id="bonus-phase-1-adding-the-edit-visit-and-delete-visit-pages">Bonus Phase 1: Adding the Edit Visit and Delete Visit pages</h2>
 <ul>
 <li>Add the edit and delete attraction visit routes and views.</li>
-<li>Only display the “Edit” and “Delete” buttons on a visit if the visit’s user is the current user.</li>
+<li>Only display the "Edit" and "Delete" buttons on a visit if the visit’s user is the current user.</li>
 <li>Check that the current user is the owner of the visit before allowing them to edit or delete it.</li>
 </ul>
 <h2 id="bonus-phase-2-locking-down-parks-and-attractions">Bonus Phase 2: Locking down parks and attractions</h2>
 <ul>
-<li>Add an attribute to the <code>User</code> model that allows you to indicate which users are “Admin” users.</li>
-<li>Update the park and attraction CRUD routes to only allow authenticated “Admin” users.</li>
+<li>Add an attribute to the <code>User</code> model that allows you to indicate which users are "Admin" users.</li>
+<li>Update the park and attraction CRUD routes to only allow authenticated "Admin" users.</li>
 </ul>
 <hr />
 <h1 id="week-12-day-3-data-apis-with-express" data-ignore="true">WEEK-12 DAY-3<br><em>Data APIs With Express</em></h1>
@@ -2311,7 +2311,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <hr />
 <h1 id="getting-started-with-restful-endpoints">Getting Started With RESTful Endpoints</h1>
 <p>ReST stands for REpresentational State Transfer. The acronym doesn’t fit perfectly, but we’re developers and we can come up with whatever cool acronyms work for us! This may sound like a complex concept, but don’t let it scare you too much.</p>
-<p>In this reading, you will learn the definition of ReST and how to apply its design principles. You will learn about how it replaces another kind of interaction called “remote procedure calls”. Finally, you’ll get to a very practical way to implement ReST using the RESTful endpoint design convention.</p>
+<p>In this reading, you will learn the definition of ReST and how to apply its design principles. You will learn about how it replaces another kind of interaction called "remote procedure calls". Finally, you’ll get to a very practical way to implement ReST using the RESTful endpoint design convention.</p>
 <h2 id="rules-of-rest">Rules of ReST</h2>
 <p>ReST (Representational State Transfer) is an architecture style for designing networked applications. To be clear, ReST is not an official standard. Instead, it’s a set of rules/constraints. Though ReST is commonly associated with APIs, not every API actually follows RESTful conventions.</p>
 <p>ReST defines six architectural constraints, and in this reading, we’ll focus on three of them:</p>
@@ -2321,7 +2321,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <li><strong>Uniform interface</strong>: RESTful APIs are meant to be self-describing and uniform in their definition. Each operation is intended to be separated by a separate endpoint or URL. In practical real world terms, most RESTful APIs implement the classic CRUD (Create, Read, Update, Delete) operations against a resource that just happens to be in your data model. This uniformity allows developers to easily learn the usage pattern of each API.</li>
 </ol>
 <h2 id="what-does-a-restful-api-look-like">What does a RESTful API look like?</h2>
-<p>Because RESTful APIs are meant to be representational, you can start with the data model that the API is meant to represent. For example, if you’re building a Twitter clone application, you will most likely want to define API endpoints that manage the operations of your users “tweets”, such as “create a tweet” and “like a tweet.”</p>
+<p>Because RESTful APIs are meant to be representational, you can start with the data model that the API is meant to represent. For example, if you’re building a Twitter clone application, you will most likely want to define API endpoints that manage the operations of your users "tweets", such as "create a tweet" and "like a tweet."</p>
 <h3 id="urls">URLs</h3>
 <p>In RESTful APIs, you generally have two kinds of URLs, ones that points at <em>collections of resources</em> and ones that point at <em>single resources</em>. Using the Twitter application as an example, a path like <strong>/my/tweets</strong> would point to a collection of tweets made by you. A path like <strong>/my/tweets/17</strong> would point to a tweet made by you with the id of 17. Usually, those ids are the primary keys of rows in your database for the record that contains the information for that specific tweet.</p>
 <p>The naming scheme, again, is quite simple. A path that ends in a plural noun represents a collection of resources that your API provides for developers to interact with. The following examples are just naming schemes that <em>you would decide</em> as the person creating the paths that your application will handle.</p>
@@ -2332,9 +2332,9 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 </ul>
 <p>A path that combines a plural noun and a specific identifier represents a single resource in your application. Often, the identifier is a primary key from the database. However, if you have a unique column that also identifies a specific record, you could use that instead.</p>
 <ul>
-<li><strong>/invoices/PK-200201</strong> would represent the single invoice that has the the invoice number “PK-200201”</li>
+<li><strong>/invoices/PK-200201</strong> would represent the single invoice that has the the invoice number "PK-200201"</li>
 <li><strong>/people/10103</strong> would represent the single person with id 10103</li>
-<li><strong>/houses/bdfa5ef9-0c86-4810-bc13-10415250af09</strong> would represent the house with the specific globally unique identifier “bdfa5ef9-0c86-4810-bc13-10415250af09”</li>
+<li><strong>/houses/bdfa5ef9-0c86-4810-bc13-10415250af09</strong> would represent the house with the specific globally unique identifier "bdfa5ef9-0c86-4810-bc13-10415250af09"</li>
 </ul>
 <h3 id="ajax-urls-and-http-verbs">AJAX URLs and HTTP verbs</h3>
 <p>For collections of resources URLs, the following table describes what each HTTP verb means for interacting with that URL. The responses will almost invariably be formatted as JSON.</p>
@@ -2349,7 +2349,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <tbody>
 <tr class="odd">
 <td>GET</td>
-<td>Get “all” of the specified resources</td>
+<td>Get "all" of the specified resources</td>
 <td>Get all of your tweets</td>
 </tr>
 <tr class="even">
@@ -2417,8 +2417,8 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 </tbody>
 </table>
 <p>When dealing with these RESTful endpoints, the actions don’t necessarily mean that records <em>will</em> get created or destroyed in your database, or only one record will be affected.</p>
-<p>For example, you may decide to perform “soft deletes” on some of your data. This means that, instead of removing a record from a table, you mark the record “deleted”. (You can enable this with the <a href="https://sequelize.org/v5/manual/models-definition.html#configuration"><code>paranoid</code> configuration setting</a> in your Sequelize models.) This means that the HTTP DELETE request would cause a SQL UPDATE rather than DELETE. What is important is that the <em>concept</em> of a delete has been performed.</p>
-<p>In another example, consider the path that reads <strong>/weather/current</strong>. That doesn’t point to any static single record in the weather database. Instead, it would return the <em>most recent</em> record of weather in the database. The id of “current” would be treated special and initiate a lookup of the most recent record rather than a specific record like <strong>/weather/10392</strong>.</p>
+<p>For example, you may decide to perform "soft deletes" on some of your data. This means that, instead of removing a record from a table, you mark the record "deleted". (You can enable this with the <a href="https://sequelize.org/v5/manual/models-definition.html#configuration"><code>paranoid</code> configuration setting</a> in your Sequelize models.) This means that the HTTP DELETE request would cause a SQL UPDATE rather than DELETE. What is important is that the <em>concept</em> of a delete has been performed.</p>
+<p>In another example, consider the path that reads <strong>/weather/current</strong>. That doesn’t point to any static single record in the weather database. Instead, it would return the <em>most recent</em> record of weather in the database. The id of "current" would be treated special and initiate a lookup of the most recent record rather than a specific record like <strong>/weather/10392</strong>.</p>
 <h3 id="html-urls-and-http-verbs">HTML URLs and HTTP verbs</h3>
 <p>RESTful APIs don’t need to be just data APIs returning JSON. The URLs that return HTML can follow a RESTful concept, as well. What it means, though, is that you will be limited to just the verbs GET and POST. That’s all HTML-based views can generate. The following tables show the paths and HTTP verbs used to interact with HTML-based versions of a RESTful application.</p>
 <table>
@@ -2536,12 +2536,12 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <p>Defining HTTP APIs can come in many shapes and styles. The style you adopt may flow out of the problem that you are attempting to solve or it could just be your personal preference. In programming, there is usually more than one valid approach, and making HTTP based APIs is no exception. And while RESTful APIs are certainly one of the most popular styles for creating an API, it is not the only way.</p>
 <h3 id="a-remote-procedure-call">A remote procedure call</h3>
 <p>Remote procedure calls are like methods on objects rather than database operations. Clients make requests centered around specific operations. For example, with a RESTful API, you would see a GET request to this path to retrieve a specific tweet: <code>http://localhost/tweets/12</code>. In an RPC-based API, you could see a path similar to this <code>http://localhost/getTweetById?id=12</code>.</p>
-<p>Your route would then have an action to handle that specific “call”.</p>
+<p>Your route would then have an action to handle that specific "call".</p>
 <p>RPC style endpoints are notorious for specifying the method name in the URL.</p>
 <p>This can be convenient, because by looking up the URL you can immediately understand what it does and what you get in return, and it can offer a way to get around some of the more complicated nested paths mentioned earlier.</p>
 <p>The drawback is that you need comprehensive documentation to know all of the different methods available by an RPC-designed API. Contrast that to RESTful APIs where you need know only the resources; once you know the resources, you immediately know how to interact with them using the HTTP verbs.</p>
 <h3 id="which-is-better-rest-or-rpc">Which is better? ReST or RPC?</h3>
-<p>“Better” is very subjective. RESTful APIs are definitely more popular nowadays. Although Express is an un-opinionated framework, a typical Express setup is more conducive to following RESTful conventions. For example, routers and routes are organized in a way to match RESTful URLs, and routes are defined around the core HTTP verbs.</p>
+<p>"Better" is very subjective. RESTful APIs are definitely more popular nowadays. Although Express is an un-opinionated framework, a typical Express setup is more conducive to following RESTful conventions. For example, routers and routes are organized in a way to match RESTful URLs, and routes are defined around the core HTTP verbs.</p>
 <p>Generally speaking, in this course, you’ll want to use RESTful APIs, as it offers a predictable and systematic way of organizing your API.</p>
 <h2 id="what-you-learned">What you learned</h2>
 <p>In this article, you covered quite a bit. You learned that</p>
@@ -2578,12 +2578,12 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <h3 id="creating-the-database">Creating the database</h3>
 <p>Take a moment to create a database user and database:</p>
 <ul>
-<li>The login name that you must use is “task_list_app” (make sure to set a login password).</li>
+<li>The login name that you must use is "task_list_app" (make sure to set a login password).</li>
 <li>Your user must have the CREATEDB privilege so that you can run <code>npx dotenv sequelize-cli db:create</code>.</li>
-<li>The database name that you must use is “task_list_development”.</li>
+<li>The database name that you must use is "task_list_development".</li>
 </ul>
 <h3 id="connecting-sequelize-to-your-database">Connecting Sequelize to your database</h3>
-<p>Although the Sequelize CLI configuration files are already complete, Sequelize CLI still needs access to your database credentials. Remember to create a <code>.env</code> file based off of the <code>.env.example</code> file included in your project skeleton, and to then replace the values with the values you used when creating the database. For example, if you used “password1234” for your password, then set the <code>DB_PASSWORD</code> to be equal to <code>password1234</code> in your own <code>.env</code> file.</p>
+<p>Although the Sequelize CLI configuration files are already complete, Sequelize CLI still needs access to your database credentials. Remember to create a <code>.env</code> file based off of the <code>.env.example</code> file included in your project skeleton, and to then replace the values with the values you used when creating the database. For example, if you used "password1234" for your password, then set the <code>DB_PASSWORD</code> to be equal to <code>password1234</code> in your own <code>.env</code> file.</p>
 <h2 id="set-up-the-task-model">Set up the Task model</h2>
 <p>Generate and migrate your <code>Task</code> model with the following command:</p>
 <div class="sourceCode" id="cb123"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb123-1" title="1"><span class="ex">npx</span> sequelize model:generate --name Task --attributes <span class="st">&quot;name:string&quot;</span></a></code></pre></div>
@@ -2670,7 +2670,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <p>Since you are creating an API working with JSON data, you’ll want to update your <code>app.js</code> file to have your application <code>use</code> the <code>express.json()</code> middleware. The <code>express.json()</code> middleware is needed to parse request body content formatted in JSON so that it is available via the <code>req.body</code> property.</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb130-1" title="1"><span class="va">app</span>.<span class="at">use</span>(<span class="va">express</span>.<span class="at">json</span>())<span class="op">;</span></a></code></pre></div>
 <p>At this moment, you should notice that you have a route defined in the <code>app</code> module for the <code>/</code> path. Remove the GET route to <code>/</code> in your <code>app.js</code>.</p>
-<p>Lastly, in order to connect to the routes you have just created, import your <code>indexRouter</code> and your <code>tasksRouter</code>. In this demo, you will be using separate routers. Feel free to take a moment to review last Tuesday’s homework reading, “Using Separate Routers”.</p>
+<p>Lastly, in order to connect to the routes you have just created, import your <code>indexRouter</code> and your <code>tasksRouter</code>. In this demo, you will be using separate routers. Feel free to take a moment to review last Tuesday’s homework reading, "Using Separate Routers".</p>
 <p>Mount your <code>indexRouter</code> with a path of <code>/</code> and mount your <code>tasksRouter</code> with a path of <code>/tasks</code>. Your <code>app.js</code> should look something like this:</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb131-1" title="1"><span class="co">//- app.js</span></a>
 <a class="sourceLine" id="cb131-2" title="2"></a>
@@ -2871,7 +2871,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <figure>
 <img src="images/api-tasks-reading-postman-3a.png" alt="postman-test-read-task" /><figcaption>postman-test-read-task</figcaption>
 </figure>
-<p>However, what if you are querying for a task <code>id</code> that is not in your system? You’ll need to set up error handling to return a <code>404 Task not found.</code> error if the <code>id</code> is invalid. You’ll want to instantiate a new <code>Error</code> object with an error message about the invalid <code>id</code>. The <code>Error</code> object should have a <code>title</code> of “Task not found.” and a <code>status</code> of “404”.</p>
+<p>However, what if you are querying for a task <code>id</code> that is not in your system? You’ll need to set up error handling to return a <code>404 Task not found.</code> error if the <code>id</code> is invalid. You’ll want to instantiate a new <code>Error</code> object with an error message about the invalid <code>id</code>. The <code>Error</code> object should have a <code>title</code> of "Task not found." and a <code>status</code> of "404".</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb144-1" title="1"><span class="kw">const</span> taskNotFoundError <span class="op">=</span> (id) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb144-2" title="2">  <span class="kw">const</span> err <span class="op">=</span> <span class="at">Error</span>(<span class="vs">`Task with id of </span><span class="sc">${</span>id<span class="sc">}</span><span class="vs"> could not be found.`</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb144-3" title="3">  <span class="va">err</span>.<span class="at">title</span> <span class="op">=</span> <span class="st">&quot;Task not found.&quot;</span><span class="op">;</span></a>
@@ -2983,7 +2983,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <p>To see what this means, go ahead and run <code>npm install</code> and then start up the server by running <code>npm start</code>. Then, go to <code>localhost:4000/style.css</code> to see the server serving up the <code>style.css</code> file. So in essence, the <code>link(rel="stylesheet" type="text/css" href="style.css")</code> tag that you see in <code>layout.pug</code> is effectively the same as <code>link(rel="stylesheet" type="text/css" href="http://localhost:4000/style.css")</code>.</p>
 <p>This was a pretty high-level overview of the <code>express.static</code> middleware function, and you can read more about how this works in the <a href="https://expressjs.com/en/starter/static-files.html">Express documentation on serving static files</a>.</p>
 <h3 id="attempting-to-fetch-all-tasks">Attempting to fetch all tasks</h3>
-<p>Now, if you look inside of <code>index.pug</code>, there’s a script tag that’s importing the <code>public/js/index.js</code> JavaScript file. Confirm that this importing is working by navigating to <code>localhost:4000/</code>. There’s currently a <code>console.log</code> statement in <code>public/js/index.js</code>, so at this point, you should see a “Hello from index.js!” statement when you open the browser console.</p>
+<p>Now, if you look inside of <code>index.pug</code>, there’s a script tag that’s importing the <code>public/js/index.js</code> JavaScript file. Confirm that this importing is working by navigating to <code>localhost:4000/</code>. There’s currently a <code>console.log</code> statement in <code>public/js/index.js</code>, so at this point, you should see a "Hello from index.js!" statement when you open the browser console.</p>
 <p>Let’s replace that <code>console.log</code> with some code to fetch all the tasks from the API that you built in the previous reading. Be sure that the API is up and running on <code>localhost:8080</code>. Then, let’s use the Fetch API to make a GET request for all of the tasks.</p>
 <p>A few weeks ago, you went over a quick overview of the Fetch API. As a reminder, the Fetch API is used to make HTTP requests. It uses Promises to handle the asynchronous nature of HTTP requests and responses.</p>
 <p>You learned that the <code>fetch</code>’s first argument is the URL that you want to make a request to while the second argument is an optional <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Supplying_request_options">options</a> object.</p>
@@ -3009,7 +3009,7 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Express/readings/cors-error.png" alt="cors error" /><figcaption>cors error</figcaption>
 </figure>
 <h3 id="cors">CORS</h3>
-<p>The error message mentions that the request was blocked by “CORS policy”. Cross-Origin Resource Sharing means being able to access resources that are located at an origin different than the origin of the application that’s making the request. Simply put, in this case, the origin of this fetch request was made from <code>localhost:4000</code>, and the tasks resources are located at <code>localhost:8080</code>.</p>
+<p>The error message mentions that the request was blocked by "CORS policy". Cross-Origin Resource Sharing means being able to access resources that are located at an origin different than the origin of the application that’s making the request. Simply put, in this case, the origin of this fetch request was made from <code>localhost:4000</code>, and the tasks resources are located at <code>localhost:8080</code>.</p>
 <p>To clarify, being from the same origin means having the same protocol (http vs https), domain, and port number. In our current example, both the client and the API server are using the same protocol (http) and domain (localhost), but are served on different ports, which is why it’s considered a cross-origin request.</p>
 <p>By default, browsers prevent cross-origin requests from happening for security reasons. Although this might make life a little more difficult for developers, restricting this type of requests is a good thing that reduces the number of attack vectors against your applications.</p>
 <p>This cross-origin restriction is enforced by browsers, so if you were to make a server-side request to the API, there’s nothing preventing that by default.</p>
@@ -3036,14 +3036,14 @@ form(class=&#39;form-inline pr-4&#39; action=&#39;/user/logout&#39; method=&#39;
 <a class="sourceLine" id="cb151-16" title="16"></a>
 <a class="sourceLine" id="cb151-17" title="17"><span class="co">// REST OF CODE NOT SHOWN</span></a></code></pre></div>
 <p>Now, if you go back to <code>localhost:4000/</code> and refresh, the console should no longer show the CORS error. Instead, it should be showing the list of tasks from your API. Yay!</p>
-<p>Let’s do more than just console logging the tasks. In your <code>views/index.pug</code> (in the frontend project), add a div with a class name of “tasks-container”:</p>
+<p>Let’s do more than just console logging the tasks. In your <code>views/index.pug</code> (in the frontend project), add a div with a class name of "tasks-container":</p>
 <pre class="pug"><code>extends layout.pug
 
 block content
   h1 Hello World!
   div.tasks-container
   script(src=&quot;js/index.js&quot;)</code></pre>
-<p>Then, in <code>public/js/index.js</code>, manipulate the DOM to add the tasks to the “tasks-container” div. Feel free to use some Bootstrap class names to style the task items:</p>
+<p>Then, in <code>public/js/index.js</code>, manipulate the DOM to add the tasks to the "tasks-container" div. Feel free to use some Bootstrap class names to style the task items:</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb153-1" title="1"><span class="va">document</span>.<span class="at">addEventListener</span>(<span class="st">&quot;DOMContentLoaded&quot;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb153-2" title="2">  <span class="kw">const</span> res <span class="op">=</span> <span class="cf">await</span> <span class="at">fetch</span>(<span class="st">&quot;http://localhost:8080/tasks&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb153-3" title="3">  <span class="kw">const</span> <span class="op">{</span> tasks <span class="op">}</span> <span class="op">=</span> <span class="cf">await</span> <span class="va">res</span>.<span class="at">json</span>()<span class="op">;</span></a>
@@ -3062,7 +3062,7 @@ block content
 <a class="sourceLine" id="cb153-16" title="16"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Next, let’s set up a view for creating a task.</p>
 <h3 id="attempt-to-create-a-task">Attempt to create a task</h3>
-<p>First, in <code>views/index.pug</code>, add a link to the “/create” page. Also, go ahead and update the <code>h1</code> to say “Task List” instead:</p>
+<p>First, in <code>views/index.pug</code>, add a link to the "/create" page. Also, go ahead and update the <code>h1</code> to say "Task List" instead:</p>
 <pre class="pug"><code>extends layout.pug
 
 block content
@@ -3082,7 +3082,7 @@ block content
     button.btn.btn-primary(type=&#39;submit&#39;) Create Task
 
   script(src=&quot;js/create.js&quot;)</code></pre>
-<p>Notice how in the template above, it imports a new script at <code>js/create.js</code>. Create a new <code>public/js/create.js</code> file. In there, set up the JavaScript that would make a POST request to <code>localhost:8080/tasks</code> when the “Create Task” form is submitted:</p>
+<p>Notice how in the template above, it imports a new script at <code>js/create.js</code>. Create a new <code>public/js/create.js</code> file. In there, set up the JavaScript that would make a POST request to <code>localhost:8080/tasks</code> when the "Create Task" form is submitted:</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb156-1" title="1"><span class="kw">const</span> form <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&quot;.create-form&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb156-2" title="2"></a>
 <a class="sourceLine" id="cb156-3" title="3"><span class="va">form</span>.<span class="at">addEventListener</span>(<span class="st">&quot;submit&quot;</span><span class="op">,</span> <span class="kw">async</span> (e) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -3113,7 +3113,7 @@ block content
 <blockquote>
 <p><strong>Note:</strong> The API requests that you’ve added so far do not implement proper error handling because it’s more important to focus on the CORS-related code for now. In tomorrow’s project, you’ll get a more in-depth overview of how to properly handle fetch errors.</p>
 </blockquote>
-<p>At this point, you might be thinking to yourself, “Wait a second, this is <em>obviously</em> going to fail because we haven’t configured CORS for this specific route yet.” And you’re right! So let’s go ahead and add the <code>cors()</code> middleware function to <code>routes/tasks.js</code> in the API:</p>
+<p>At this point, you might be thinking to yourself, "Wait a second, this is <em>obviously</em> going to fail because we haven’t configured CORS for this specific route yet." And you’re right! So let’s go ahead and add the <code>cors()</code> middleware function to <code>routes/tasks.js</code> in the API:</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb158-1" title="1"><span class="co">// POST /tasks (Create)</span></a>
 <a class="sourceLine" id="cb158-2" title="2"><span class="va">router</span>.<span class="at">post</span>(</a>
 <a class="sourceLine" id="cb158-3" title="3">  <span class="st">&quot;/&quot;</span><span class="op">,</span></a>
@@ -3128,17 +3128,17 @@ block content
 <a class="sourceLine" id="cb158-12" title="12">)<span class="op">;</span></a></code></pre></div>
 <p>Great, let’s fill out a task name and then submit this form. And…it failed. It failed with the same CORS error that you previously saw. How frustrating!</p>
 <p>So what happened there? Well it turns out that when it comes to CORS, there are actually two types of requests: simple requests and not-so-simple requests.</p>
-<p>According to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">MDN docs on CORS</a>, in order to be considered a “simple” request, it must meet <strong>all</strong> of the following criteria:</p>
+<p>According to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">MDN docs on CORS</a>, in order to be considered a "simple" request, it must meet <strong>all</strong> of the following criteria:</p>
 <ol type="1">
 <li>It has to be one of these HTTP methods: <code>GET</code>, <code>HEAD</code>, or <code>POST</code>.</li>
-<li>It can only have “CORS-safelisted request-headers”. Essentially this means that if you manually set a header that’s not included on the <a href="https://fetch.spec.whatwg.org/#cors-safelisted-request-header">safelisted request headers list</a>, then the request is no longer a “simple” request.</li>
+<li>It can only have "CORS-safelisted request-headers". Essentially this means that if you manually set a header that’s not included on the <a href="https://fetch.spec.whatwg.org/#cors-safelisted-request-header">safelisted request headers list</a>, then the request is no longer a "simple" request.</li>
 <li>The <code>Content-Type</code> must be <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code>, or <code>text/plain</code>.</li>
 </ol>
 <p>In the case of the task creation form, it met the first criteria since it was a POST request. It also met the second criteria since the only request header you set was <code>Content-Type</code>, which is on the <a href="https://fetch.spec.whatwg.org/#cors-safelisted-request-header">safelisted request headers list</a>. Unfortunately, because the <code>Content-Type</code> was <code>application/json</code>, it failed the third criteria.</p>
 <h2 id="preflighted-requests">Preflighted requests</h2>
-<p>What happens when the request is not considered to be a “simple” request?</p>
+<p>What happens when the request is not considered to be a "simple" request?</p>
 <p>When the request does not meet all three criteria, then the browser takes some extra precaution and actually makes a preflighted <code>OPTIONS</code> request to the server before making the actual request.</p>
-<p>In other words, when it comes to a “not-so-simple” cross-origin request, there are actually two HTTP requests being made. First, a request is made with an <code>OPTIONS</code> method, and if the server responds successfully, then the actual request would go through:</p>
+<p>In other words, when it comes to a "not-so-simple" cross-origin request, there are actually two HTTP requests being made. First, a request is made with an <code>OPTIONS</code> method, and if the server responds successfully, then the actual request would go through:</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Express/readings/preflight.svg" alt="preflight" /><figcaption>preflight</figcaption>
 </figure>
@@ -3146,7 +3146,7 @@ block content
 <figure>
 <embed src="images/preflight-fail.svgimages/preflight-fail.svg____________________" /><figcaption>preflight failure</figcaption>
 </figure>
-<p>To resolve this, go back to <code>routes/tasks.js</code> and set up CORS for the <code>OPTIONS</code> route to “/tasks”. As a reminder, the entire <code>tasks</code> router is nested under <code>"/tasks"</code>, so you don’t need to define “/tasks” in the route handler path again:</p>
+<p>To resolve this, go back to <code>routes/tasks.js</code> and set up CORS for the <code>OPTIONS</code> route to "/tasks". As a reminder, the entire <code>tasks</code> router is nested under <code>"/tasks"</code>, so you don’t need to define "/tasks" in the route handler path again:</p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb159-1" title="1"><span class="co">// POST /tasks (Create)</span></a>
 <a class="sourceLine" id="cb159-2" title="2"><span class="va">router</span>.<span class="at">options</span>(<span class="st">&quot;/&quot;</span><span class="op">,</span> <span class="at">cors</span>())<span class="op">;</span></a>
 <a class="sourceLine" id="cb159-3" title="3"><span class="va">router</span>.<span class="at">post</span>(</a>
@@ -3230,7 +3230,7 @@ block content
 <li><a href="#what-is-hashing">What is hashing?</a>
 <ul>
 <li><a href="#how-does-hashing-work">How does hashing work?</a></li>
-<li><a href="#what-is-a-salt">What is a “salt”?</a></li>
+<li><a href="#what-is-a-salt">What is a "salt"?</a></li>
 <li><a href="#when-is-it-appropriate-to-use-hashing">When is it appropriate to use hashing?</a></li>
 </ul></li>
 <li><a href="#using-bcrypt-to-hash-user-passwords">Using Bcrypt to hash user passwords</a></li>
@@ -3454,11 +3454,11 @@ block content
 <p>Today you’ll begin building a lightweight Twitter API using Express, Sequelize, and Postbird! There will be two parts to this project: creating an API and creating a client-side application.</p>
 <p>When you have completed the first part of the project, your application should have the following features:</p>
 <ol type="1">
-<li>A default “/” GET route.</li>
-<li>A “/tweets” GET route to fetch an index of tweets.</li>
-<li>A “/tweets” POST route to create tweets.</li>
-<li>A “/tweets/:id” PUT route to update tweets.</li>
-<li>A “/tweets/:id” DELETE route to delete tweets.</li>
+<li>A default "/" GET route.</li>
+<li>A "/tweets" GET route to fetch an index of tweets.</li>
+<li>A "/tweets" POST route to create tweets.</li>
+<li>A "/tweets/:id" PUT route to update tweets.</li>
+<li>A "/tweets/:id" DELETE route to delete tweets.</li>
 <li>A backend API that connects to a simple frontend server.</li>
 <li>A Users model.</li>
 </ol>
@@ -3474,9 +3474,9 @@ block content
 <p>Before initializing the <code>Tweet</code> model, you’ll need to create a new database.</p>
 <p>Take a moment to create a database user and database:</p>
 <ul>
-<li>The login name that you must use is “twitter_lite_app” (make sure to set a login password).</li>
+<li>The login name that you must use is "twitter_lite_app" (make sure to set a login password).</li>
 <li>Your user must be granted the CREATEDB privilege so that you can run <code>npx dotenv sequelize-cli db:create</code>.</li>
-<li>The database name that you must use is “twitter_lite”.</li>
+<li>The database name that you must use is "twitter_lite".</li>
 </ul>
 <h2 id="phase-1-set-up-the-tweet-model">Phase 1: Set up the Tweet model</h2>
 <p>It’s time to generate and migrate your Tweet model with the following commands:</p>
@@ -3541,7 +3541,7 @@ block content
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Express/projects/api-tweets-project-postman-1.gif" alt="using-postman" /><figcaption>using-postman</figcaption>
 </figure>
-<p>When sending a GET request to <code>localhost:8080/</code>, you should see JSON with your “test index root” message in the body response. When sending a GET request to <code>localhost:8080/tweets</code>, you should see JSON with your “test tweets index” message in the body response.</p>
+<p>When sending a GET request to <code>localhost:8080/</code>, you should see JSON with your "test index root" message in the body response. When sending a GET request to <code>localhost:8080/tweets</code>, you should see JSON with your "test tweets index" message in the body response.</p>
 <p>Note that if you use your browser to navigate to <code>localhost:8080/</code> and <code>localhost:8080/tweets</code>, you’ll see the same response as in Postman.</p>
 <h2 id="phase-3-set-up-tweet-routes">Phase 3: Set up tweet routes</h2>
 <p>Now you’ll add your Tweet routes in your <code>./routes/tweets.js</code>. Begin by requiring your <code>db</code> from your <code>../db/models</code> directory:</p>
@@ -3574,7 +3574,7 @@ block content
 <a class="sourceLine" id="cb171-8" title="8">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb171-9" title="9"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Now let’s go back to your GET route for a single tweet. Now that you have written a database fetch for a tweet, you want to render errors for tweets that were not found. Make sure your asynchronous route function is taking in <code>next</code> as a parameter. If you have fetched a valid tweet, render the tweet in JSON. If you have not fetched a valid tweet, you can use a function to generate an error before invoking the <code>next</code> method.</p>
-<p>Let’s define your error generator function for tweets not found. In your tweet route module, define a <code>tweetNotFoundError</code> function that takes in a tweet ID. Generate a new <code>Error</code> object with a message stating that a tweet of the given ID could not be found. Assign the error to have a <code>title</code> property to be “Tweet not found.” and a <code>status</code> of <code>404</code>. At the end of the function, return the error.</p>
+<p>Let’s define your error generator function for tweets not found. In your tweet route module, define a <code>tweetNotFoundError</code> function that takes in a tweet ID. Generate a new <code>Error</code> object with a message stating that a tweet of the given ID could not be found. Assign the error to have a <code>title</code> property to be "Tweet not found." and a <code>status</code> of <code>404</code>. At the end of the function, return the error.</p>
 <p>Now that the <code>tweetNotFoundError</code> function is written to generate and return an <code>Error</code> object, you can pass the return value of the <code>tweetNotFoundError</code> function call into the <code>next</code> method to invoke the global error handler.</p>
 <p>Take a moment to test your route and error handling in Postman.</p>
 <h3 id="post-tweets">POST /tweets</h3>
@@ -3588,7 +3588,7 @@ block content
 <a class="sourceLine" id="cb172-4" title="4"><span class="op">};</span></a></code></pre></div>
 <p>If you do you have validation errors, use <code>array()</code> to transform your <code>validationErrors</code> object into a mappable array. Pluck out each error’s <code>msg</code> attribute to generate an <code>errors</code> array of error messages:</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb173-1" title="1"><span class="kw">const</span> errors <span class="op">=</span> <span class="va">validationErrors</span>.<span class="at">array</span>().<span class="at">map</span>((error) <span class="kw">=&gt;</span> <span class="va">error</span>.<span class="at">msg</span>)<span class="op">;</span></a></code></pre></div>
-<p>After generating the <code>errors</code> array, you’ll want to create a new <code>Error</code> object with a 400 <code>status</code> and title of “Bad request”:</p>
+<p>After generating the <code>errors</code> array, you’ll want to create a new <code>Error</code> object with a 400 <code>status</code> and title of "Bad request":</p>
 <div class="sourceCode" id="cb174"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb174-1" title="1"><span class="kw">const</span> err <span class="op">=</span> <span class="at">Error</span>(<span class="st">&quot;Bad request.&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb174-2" title="2"><span class="va">err</span>.<span class="at">errors</span> <span class="op">=</span> errors<span class="op">;</span></a>
 <a class="sourceLine" id="cb174-3" title="3"><span class="va">err</span>.<span class="at">status</span> <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></a>
@@ -3621,11 +3621,11 @@ block content
 <a class="sourceLine" id="cb176-8" title="8">    <span class="dt">stack</span><span class="op">:</span> isProduction <span class="op">?</span> <span class="kw">null</span> : <span class="va">err</span>.<span class="at">stack</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb176-9" title="9">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb176-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Now make sure the POST route is using your tweet validations and <code>handleValidationErrors</code> function as middleware. Test your new route in Postman. Don’t forget to set the “Content-Type” header to “application/json” and send raw JSON data through the request body. Feel free to review how to send a POST request through the image below.</p>
+<p>Now make sure the POST route is using your tweet validations and <code>handleValidationErrors</code> function as middleware. Test your new route in Postman. Don’t forget to set the "Content-Type" header to "application/json" and send raw JSON data through the request body. Feel free to review how to send a POST request through the image below.</p>
 <figure>
 <img src="https://-open-assets.s3-us-west-1.amazonaws.com/Module-Express/readings/api-tasks-reading-postman-2a.gif" alt="postman-post" /><figcaption>postman-post</figcaption>
 </figure>
-<p>Take a moment to also test your error handling. You should see an error response in JSON upon submitting bad data (i.e. an empty <code>message</code> field). Notice that your error response has the following properties: a <code>status</code> of “400”, a <code>title</code> of “Bad request.”, and an array of <code>errors</code>. Make sure that you see a <code>400 Bad Request</code> error if there are failing data validations.</p>
+<p>Take a moment to also test your error handling. You should see an error response in JSON upon submitting bad data (i.e. an empty <code>message</code> field). Notice that your error response has the following properties: a <code>status</code> of "400", a <code>title</code> of "Bad request.", and an array of <code>errors</code>. Make sure that you see a <code>400 Bad Request</code> error if there are failing data validations.</p>
 <h3 id="put-tweetsid">PUT /tweets/:id</h3>
 <p>Set up a PUT <code>/:id(\\d+)</code> route to update a tweet. Begin by parsing the tweet id within your <code>req.params</code> object and using the parsed <code>tweetId</code> to fetch the tweet to update. If you have a valid tweet, await the update and then render the updated tweet in JSON format.</p>
 <p>If you have not fetched a valid tweet, use the same <code>404</code> error handling that the <code>GET /tweets/:id</code> route used. Invoke your <code>tweetNotFoundError</code> function to generate a <code>404</code> error. Then pass the return value of the <code>tweetNotFoundError</code> function call into the <code>next</code> method.</p>
@@ -3633,7 +3633,7 @@ block content
 <p>Test your PUT route:</p>
 <ol type="1">
 <li>Use Postman to send a GET request to <code>localhost:8080/tweets/1</code> to view the data of your first database tweet.</li>
-<li>Configure your “Content-Type” header as “application/json”.</li>
+<li>Configure your "Content-Type" header as "application/json".</li>
 <li>Send a PUT request to <code>localhost:8080/tweets/1</code> with updated fields in the <code>raw</code> request body.</li>
 <li>View your updated tweet in Postbird.</li>
 <li>Send a PUT request to <code>localhost:8080/tweets/1</code> with invalid data to check the error handling.</li>
@@ -3644,13 +3644,13 @@ block content
 <p>Lastly, send a request with Postman to test your DELETE route and delete a tweet. Verify that the tweet was properly deleted by viewing your seeded objects with Postbird.</p>
 <h2 id="phase-4-render-tweets-in-the-frontend-application">Phase 4: Render tweets in the frontend application</h2>
 <p>Up to this point, you’ve set up a CRUD API for tweets. All users of your API have access to the following features: * Viewing all existing tweets * Viewing a tweet specific tweet * Creating a tweet * Updating a tweet * Deleting a tweet</p>
-<p>Now that you have a fully functioning API, you can create another Express application to serve the pages to render the client-side code for the Twitter Lite user interface. To review, the term “client-side” means that user triggered events (i.e. form submissions), the API request/response cycle, and rendering data is handled by JavaScript code running in the browser.</p>
-<p>This new Express application will use the Pug template engine to render HTML pages on the server-side or backend. Regardless, we’ll refer to this Express application as the “frontend” of the Twitter Lite project since the backend rendered pages are primarily used to deliver the client-side JavaScript to the browser.</p>
-<p>Here are all the things that you still need to do to make your project a lite version of Twitter: * Add an Express “frontend” application to deliver the client-side code to interact with the API; * Set up users and auth in the API; and * Set up users and auth in the frontend application.</p>
+<p>Now that you have a fully functioning API, you can create another Express application to serve the pages to render the client-side code for the Twitter Lite user interface. To review, the term "client-side" means that user triggered events (i.e. form submissions), the API request/response cycle, and rendering data is handled by JavaScript code running in the browser.</p>
+<p>This new Express application will use the Pug template engine to render HTML pages on the server-side or backend. Regardless, we’ll refer to this Express application as the "frontend" of the Twitter Lite project since the backend rendered pages are primarily used to deliver the client-side JavaScript to the browser.</p>
+<p>Here are all the things that you still need to do to make your project a lite version of Twitter: * Add an Express "frontend" application to deliver the client-side code to interact with the API; * Set up users and auth in the API; and * Set up users and auth in the frontend application.</p>
 <p>To add the frontend application, clone the repo below into a new folder that’s a sibling to the API project folder.</p>
 <pre><code>git clone https://github.com/-starters/express-apis-frontend.git</code></pre>
 <p>Move into your frontend <code>express-apis-frontend</code> directory and run <code>npm install</code>. Now you’ll want to start up the frontend server and the backend server in different terminal tabs or windows. Start your backend server from the first terminal window by running the <code>npm start</code> command from the root of the API project. Then open a second terminal to start your frontend server by running <code>npm start</code> from within the <code>express-apis-frontend</code> folder.</p>
-<p>Take a moment to navigate to your backend at <code>http://localhost:8080/</code>. You should see a JSON response of a “test index root” message. Now navigate to your frontend at <code>http://localhost:4000/</code>. Open up your developer tools and you should see an <code>h1</code> element with the content of “Hello World!”.</p>
+<p>Take a moment to navigate to your backend at <code>http://localhost:8080/</code>. You should see a JSON response of a "test index root" message. Now navigate to your frontend at <code>http://localhost:4000/</code>. Open up your developer tools and you should see an <code>h1</code> element with the content of "Hello World!".</p>
 <p>Open your <code>public/js/index.js</code> file and add an event listener script. This file is where you will fetch all tweets from <code>http://localhost:8080/tweets</code>. Start off by awaiting the fetch response (<code>res</code>) of all your API tweets. Parse your response into JSON and destructure the <code>tweets</code> property from your parsed response object. You’ll eventually use these <code>tweets</code> to render a list of each tweet message, but just console log all the tweets for now. Make sure to catch and <code>console.error</code> any errors. Your script function should look something like this:</p>
 <div class="sourceCode" id="cb178"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb178-1" title="1"><span class="va">document</span>.<span class="at">addEventListener</span>(<span class="st">&quot;DOMContentLoaded&quot;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb178-2" title="2">  <span class="cf">try</span> <span class="op">{</span></a>
@@ -3662,12 +3662,12 @@ block content
 <a class="sourceLine" id="cb178-8" title="8">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb178-9" title="9"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>As a reminder, your <code>index.js</code> script will run as soon as the DOM content in your browser loads for your frontend. Your API fetch call will fire after the DOM content has loaded and the <code>tweets</code> from your response will be logged in your developer tools console.</p>
-<p>If you navigate to <code>localhost:4000/</code> to view your frontend application, you should see a <code>Failed to fetch</code> error message. Let’s investigate! Instead of console logging your <code>tweets</code>, try console logging the response (<code>res</code>) to figure out more context around your error. If you look closer, your response has <code>type</code> of “cors” and that you have a success status code of <code>200 OK</code>. This indicates that your application has a CORS error!</p>
+<p>If you navigate to <code>localhost:4000/</code> to view your frontend application, you should see a <code>Failed to fetch</code> error message. Let’s investigate! Instead of console logging your <code>tweets</code>, try console logging the response (<code>res</code>) to figure out more context around your error. If you look closer, your response has <code>type</code> of "cors" and that you have a success status code of <code>200 OK</code>. This indicates that your application has a CORS error!</p>
 <p>Resolve this CORS issue back on the API side by installing the <code>cors</code> npm package. In <code>app.js</code>, require and configure the <code>cors</code> middleware function to allow requests from the origin <code>localhost:4000</code>:</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb179-1" title="1"><span class="va">app</span>.<span class="at">use</span>(<span class="at">cors</span>(<span class="op">{</span> <span class="dt">origin</span><span class="op">:</span> <span class="st">&quot;http://localhost:4000&quot;</span> <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
-<p>Go back to the frontend application and try to console log the tweets again. This time, all the existing tweets should console log! Now let’s actually display the tweets in HTML elements by updating the “DOMContentLoaded” event listener in <code>public/js/index.js</code>.</p>
+<p>Go back to the frontend application and try to console log the tweets again. This time, all the existing tweets should console log! Now let’s actually display the tweets in HTML elements by updating the "DOMContentLoaded" event listener in <code>public/js/index.js</code>.</p>
 <p>After your fetch call in the <code>try</code> block, redirect your user to the <code>/log-in</code> page and <code>return</code> out of the event listener function if your <code>res</code> has a status of <code>401</code>. If the response does not have a status of <code>401</code>, parse your response as JSON and destructure the <code>tweets</code> property from your JSON response.</p>
-<p>Take a moment to create a <code>div</code> element in your <code>index.pug</code> template before the load of your <code>index.js</code> script. Set the <code>div</code> with an ID of “tweets-container”. In your event listener, use the Vanilla JavaScript <code>querySelector()</code> method to find the <code>tweetsContainer</code>. Declare a <code>tweetsHtml</code> variable for an array of stringified HTML blocks that will render tweet messages. Map over your array of <code>tweets</code> to generate the array of stringified HTML blocks.</p>
+<p>Take a moment to create a <code>div</code> element in your <code>index.pug</code> template before the load of your <code>index.js</code> script. Set the <code>div</code> with an ID of "tweets-container". In your event listener, use the Vanilla JavaScript <code>querySelector()</code> method to find the <code>tweetsContainer</code>. Declare a <code>tweetsHtml</code> variable for an array of stringified HTML blocks that will render tweet messages. Map over your array of <code>tweets</code> to generate the array of stringified HTML blocks.</p>
 <p>You can use Bootstrap classes to style the tweets. For each message, render a <code>div.card</code> parent element with a <code>div.card-body</code> child element. Within the <code>div.card-body</code> element should live a <code>p.card-text</code> element that renders each tweet’s <code>message</code> with interpolation. You’ll want to join your <code>tweetsHtml</code> array by an empty string (<code>""</code>) to create a full stringified HTML block for all your tweet message blocks. Set the the <code>innerHTML</code> property of the <code>tweetsContainer</code> to be the joined <code>tweetsHtml</code>.</p>
 <p>Lastly, make sure that you are using <code>console.error</code> to log any caught errors. Your script should look something like this:</p>
 <div class="sourceCode" id="cb180"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb180-1" title="1"><span class="va">document</span>.<span class="at">addEventListener</span>(<span class="st">&quot;DOMContentLoaded&quot;</span><span class="op">,</span> <span class="kw">async</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -3842,7 +3842,7 @@ block content
 <li><code>null</code> options; and</li>
 <li>An asynchronous function that takes in an error and a <code>jwtPayload</code> (more steps below).</li>
 </ul>
-<p>Currently, your <code>restoreUser</code> function should look something like this. Notice if we don’t get a token in the request at all we set the “WWW-Authenticate” header to “Bearer” and return a “401 Unauthorized” status code.</p>
+<p>Currently, your <code>restoreUser</code> function should look something like this. Notice if we don’t get a token in the request at all we set the "WWW-Authenticate" header to "Bearer" and return a "401 Unauthorized" status code.</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb189-1" title="1"><span class="kw">const</span> restoreUser <span class="op">=</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb189-2" title="2">  <span class="kw">const</span> <span class="op">{</span> token <span class="op">}</span> <span class="op">=</span> req<span class="op">;</span></a>
 <a class="sourceLine" id="cb189-3" title="3"></a>
@@ -3867,7 +3867,7 @@ block content
 <a class="sourceLine" id="cb192-3" title="3"><span class="op">}</span> <span class="cf">catch</span> (e) <span class="op">{</span></a>
 <a class="sourceLine" id="cb192-4" title="4">  <span class="cf">return</span> <span class="at">next</span>(e)<span class="op">;</span></a>
 <a class="sourceLine" id="cb192-5" title="5"><span class="op">}</span></a></code></pre></div>
-<p>Now check to see whether the <code>req</code> object has an associated <code>user</code> property. If there isn’t a valid user, return a response that sets the “WWW-Authenticate” header with a value of “Bearer” and sends a “401 Unauthorized” status code before invoking the <code>next</code> function:</p>
+<p>Now check to see whether the <code>req</code> object has an associated <code>user</code> property. If there isn’t a valid user, return a response that sets the "WWW-Authenticate" header with a value of "Bearer" and sends a "401 Unauthorized" status code before invoking the <code>next</code> function:</p>
 <div class="sourceCode" id="cb193"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb193-1" title="1"><span class="cf">if</span> (<span class="op">!</span><span class="va">req</span>.<span class="at">user</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb193-2" title="2">  <span class="cf">return</span> <span class="va">res</span>.<span class="at">set</span>(<span class="st">&quot;WWW-Authenticate&quot;</span><span class="op">,</span> <span class="st">&quot;Bearer&quot;</span>).<span class="at">status</span>(<span class="dv">401</span>).<span class="at">end</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb193-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -3962,7 +3962,7 @@ block content
 <a class="sourceLine" id="cb202-3" title="3"><span class="kw">const</span> username <span class="op">=</span> <span class="co">// </span><span class="al">TODO</span><span class="co">: Get username</span></a>
 <a class="sourceLine" id="cb202-4" title="4"></a>
 <a class="sourceLine" id="cb202-5" title="5"><span class="kw">const</span> body <span class="op">=</span> <span class="op">{</span> email<span class="op">,</span> password<span class="op">,</span> username <span class="op">};</span></a></code></pre></div>
-<p>When a submit event happens, parse out the data from the form and then use a <code>fetch</code> call to make a POST request to <code>localhost:8080/users</code> to create the user in a <code>try</code> block. Set the <code>fetch</code> call’s <code>method</code> to be “POST” and the <code>body</code> to be a JSON string of the form fields (hint: use <code>JSON.stringify({ email, password, username })</code>). Lastly, set a <code>Content-Type</code> header of “application/json”.</p>
+<p>When a submit event happens, parse out the data from the form and then use a <code>fetch</code> call to make a POST request to <code>localhost:8080/users</code> to create the user in a <code>try</code> block. Set the <code>fetch</code> call’s <code>method</code> to be "POST" and the <code>body</code> to be a JSON string of the form fields (hint: use <code>JSON.stringify({ email, password, username })</code>). Lastly, set a <code>Content-Type</code> header of "application/json".</p>
 <p>Your fetch call should look something like this:</p>
 <div class="sourceCode" id="cb203"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb203-1" title="1"><span class="cf">try</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb203-2" title="2">  <span class="kw">const</span> res <span class="op">=</span> <span class="cf">await</span> <span class="at">fetch</span>(<span class="st">&quot;http://localhost:8080/users&quot;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -4007,7 +4007,7 @@ block content
 <a class="sourceLine" id="cb206-19" title="19">    <span class="co">// </span><span class="al">TODO</span><span class="co">: Alert user about bad internet connection</span></a>
 <a class="sourceLine" id="cb206-20" title="20">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb206-21" title="21"><span class="op">}</span></a></code></pre></div>
-<p>Like how you rendered your list of tweets when you first connected the frontend to your application, you’ll set the <code>innerHTML</code> of your <code>errorsContainer</code> to a stringified HTML block. Sometimes there might not be an errors array returned, and in those cases, go ahead and declare the <code>errorsHtml</code> array to display a generic “Something went wrong” message.</p>
+<p>Like how you rendered your list of tweets when you first connected the frontend to your application, you’ll set the <code>innerHTML</code> of your <code>errorsContainer</code> to a stringified HTML block. Sometimes there might not be an errors array returned, and in those cases, go ahead and declare the <code>errorsHtml</code> array to display a generic "Something went wrong" message.</p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb207-1" title="1"><span class="co">// errorsHtml block to alert user of error:</span></a>
 <a class="sourceLine" id="cb207-2" title="2"><span class="kw">let</span> errorsHtml <span class="op">=</span> [</a>
 <a class="sourceLine" id="cb207-3" title="3">  <span class="vs">`</span></a>
@@ -4106,7 +4106,7 @@ block content
 <a class="sourceLine" id="cb212-5" title="5">    )<span class="sc">}</span><span class="vs">`</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb212-6" title="6">  <span class="op">},</span></a>
 <a class="sourceLine" id="cb212-7" title="7"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Then, add the following code into your “DOMContentLoaded” event listener to redirect users to the log-in route if a user is not logged in. The next step is to implement the log-in route!</p>
+<p>Then, add the following code into your "DOMContentLoaded" event listener to redirect users to the log-in route if a user is not logged in. The next step is to implement the log-in route!</p>
 <div class="sourceCode" id="cb213"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb213-1" title="1"><span class="cf">if</span> (<span class="va">res</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">401</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb213-2" title="2">  <span class="va">window</span>.<span class="va">location</span>.<span class="at">href</span> <span class="op">=</span> <span class="st">&quot;/log-in&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb213-3" title="3">  <span class="cf">return</span><span class="op">;</span></a>
@@ -4264,7 +4264,7 @@ block content
 <a class="sourceLine" id="cb222-35" title="35">  <span class="op">},</span></a>
 <a class="sourceLine" id="cb222-36" title="36"><span class="op">};</span></a></code></pre></div>
 <p>However, there’s a problem right now. The <code>create-tweet</code> migration file was created first, and because of the timestamp in the first part of the file name, that specific migration will run first. The problem is that when we try to reference the Users table in the <code>references</code> definition part of the migration, the Users table has not actually been created yet. We’re going to take a <em>hacky</em> approach to resolve this issue and make the <code>create-user</code> migration run first.</p>
-<p>To be clear, this is absolutely not how you would want to handle migrations in production. This whole “undo all migrates and then switch up the order of migrations” is purely for learning purposes and to help you get a better of how migrations work. So, go ahead and rename the <code>create-tweet</code> migration file so that the timestamp comes later than the <code>create-user</code> migration file:</p>
+<p>To be clear, this is absolutely not how you would want to handle migrations in production. This whole "undo all migrates and then switch up the order of migrations" is purely for learning purposes and to help you get a better of how migrations work. So, go ahead and rename the <code>create-tweet</code> migration file so that the timestamp comes later than the <code>create-user</code> migration file:</p>
 <figure>
 <img src="images/api-tweets-project-migration-file-rename.png" alt="migration-file-rename" /><figcaption>migration-file-rename</figcaption>
 </figure>
@@ -4497,7 +4497,7 @@ block content
 <h2 id="bonus-phase-add-ability-to-delete-your-own-tweet">Bonus Phase: Add ability to delete your own tweet</h2>
 <p>Let’s add the ability to delete your own tweets, while not allowing anyone else to delete them!</p>
 <p>Update your <code>profile.js</code> script so that after you fetch your own tweets, each message can show a delete button. Then, after the HTML has been added to the DOM, select all of the delete buttons to add a click handler to each button. The click handler’s callback function should make a DELETE request to <code>http://localhost:8080/tweets/:id</code> in order to delete a tweet.</p>
-<p>To add click handlers for each delete button, here’s what you might want to write at the bottom of your “DOMContentLoaded” event listener in the <code>profile.js</code> file:</p>
+<p>To add click handlers for each delete button, here’s what you might want to write at the bottom of your "DOMContentLoaded" event listener in the <code>profile.js</code> file:</p>
 <div class="sourceCode" id="cb240"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb240-1" title="1"><span class="kw">const</span> deleteButtons <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelectorAll</span>(<span class="st">&quot;.delete-button&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb240-2" title="2"><span class="cf">if</span> (deleteButtons) <span class="op">{</span></a>
 <a class="sourceLine" id="cb240-3" title="3">  <span class="va">deleteButtons</span>.<span class="at">forEach</span>((button) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -4535,7 +4535,7 @@ block content
 <p>For example, let’s say you’re working on a website called MyMint<span>.com</span>, a simple site that lets people with multiple bank accounts access all of their accounts in one centralized place. In this example, Johnny wants to use your web app because he has an account with Chase and Bank of America, and he’s tired of having to go back and forth between chase<span>.com</span> and bankofamerica<span>.com</span> in order to check his financial transactions.</p>
 <p>So, Johnny signs up for MyMint<span>.com</span>, and you now need to be able to get Johnny’s transactions from chase<span>.com</span>.</p>
 <p>In the past, one way for you to access that information might have been for Johnny to directly give your application his password, and then your web app would go to chase<span>.com</span> to authenticate and then fetch the transactions. This was clearly not ideal from a security point of view.</p>
-<p>OAuth 2.0 is a standard that allows for you to access that information without Johnny giving you his passwords to his bank account logins. It is defined by <a href="https://tools.ietf.org/html/rfc6749">RFC 6749</a> “The OAuth 2.0 Authorization Framework”. OAuth 2.0 defines a very specific protocol for how your app (MyMint<span>.com</span>), Johnny, and chase<span>.com</span> should coordinate together so that you can securely get Johnny’s chase<span>.com</span> transactions.</p>
+<p>OAuth 2.0 is a standard that allows for you to access that information without Johnny giving you his passwords to his bank account logins. It is defined by <a href="https://tools.ietf.org/html/rfc6749">RFC 6749</a> "The OAuth 2.0 Authorization Framework". OAuth 2.0 defines a very specific protocol for how your app (MyMint<span>.com</span>), Johnny, and chase<span>.com</span> should coordinate together so that you can securely get Johnny’s chase<span>.com</span> transactions.</p>
 <p>This article will help you learn how to</p>
 <ul>
 <li>Get your application ready for OAuth 2.0</li>
@@ -4588,7 +4588,7 @@ block content
 <p>If Johnny authorizes MyMint<span>.com</span>, then Chase will issue an Authorization Grant to MyMint<span>.com</span>.</p>
 <p>There are actually multiple forms of an <strong>authorization grant</strong>. For this example, the type of authorization grant that we will focus on is the <strong>authorization code</strong>. chase<span>.com</span> will send an authorization code to MyMint<span>.com</span> so that MyMint<span>.com</span> can authenticate itself. chase<span>.com</span> sends this code when it redirects the user back to the callback URL that you provided. That redirect URL for Johnny would look something like this:</p>
 <pre class="plaintext"><code>https://mymint.com/callback-time?code=dlsie239084903j4092j340j</code></pre>
-<p>That random string of characters, “dlsie239084903j4092j340j”, that’s the authorization code that chase<span>.com</span> sends to your application. These types of codes are usually only valid for a short period of time. That greatly reduces the chances of a bad actor from being able to guess a valid authentication code.</p>
+<p>That random string of characters, "dlsie239084903j4092j340j", that’s the authorization code that chase<span>.com</span> sends to your application. These types of codes are usually only valid for a short period of time. That greatly reduces the chances of a bad actor from being able to guess a valid authentication code.</p>
 <p>Note that because he is interacting directly with chase<span>.com</span>, at no point in time would Johnny ever provide his chase<span>.com</span> credentials to your app, MyMint<span>.com</span>.</p>
 <h3 id="application-uses-the-authorization-grant">Application uses the authorization grant</h3>
 <p>Now that MyMint<span>.com</span> has received an authorization code, it’s ready to authenticate itself with chase<span>.com</span> so that it can start receiving Johnny’s financial transaction data.</p>
@@ -4669,7 +4669,7 @@ block content
 <p>So, you devise a genius way to send out tamper-proof invites. This invitation method requires:</p>
 <ol type="1">
 <li><strong>the guest’s email address</strong>: This is effectively a unique identifier for your guests, so for example let’s say you want to invite your friend Johnny Rocket, whose email address is <code>johnny@gmail.com</code>.</li>
-<li><strong>secret key/password that only you know</strong>: This is the only thing that you have to store on your end. You decide that your secret password will be “ILoveDogs”.</li>
+<li><strong>secret key/password that only you know</strong>: This is the only thing that you have to store on your end. You decide that your secret password will be "ILoveDogs".</li>
 <li><strong><a href="https://developer.mozilla.org/en-US/docs/Glossary/Cryptographic_hash_function">a hashing function</a></strong>: A hashing function is something that will take your guest’s email and your secret password as inputs and then output a specific string digest. Keep in mind, the same input email and secret password will always produce the same output string digest. A key feature of a good hashing function is that it is not invertible. In other words, there should be no way to figure out what the inputs were based on the output string digest other than just trying to brute force your way into it.</li>
 </ol>
 <blockquote>
@@ -4694,7 +4694,7 @@ My party is this Friday. Present this code at the door:
 <img src="images/hash2.png" alt="second hash" /><figcaption>second hash</figcaption>
 </figure>
 <p>Immediately, you know that Leroy has an invalid invite because the string digest output of the hashing function (<code>9ca5168290df6b05951af368d668ada58a56b12a</code>) was different than the one he presented.</p>
-<p>This concept of validating a “code” against the hashed output of a value and a secret password is essentially how a JSON Web Token (JWT) works.</p>
+<p>This concept of validating a "code" against the hashed output of a value and a secret password is essentially how a JSON Web Token (JWT) works.</p>
 <h3 id="anatomy-of-a-jwt">Anatomy of a JWT</h3>
 <p>JSON Web Token is actually an internet standard that defines how to create JSON-based access tokens.</p>
 <p>A JWT is composed of three parts: the header, the payload, and the signature.</p>
@@ -4831,7 +4831,7 @@ My party is this Friday. Present this code at the door:
 <a class="sourceLine" id="cb254-6" title="6"></a>
 <a class="sourceLine" id="cb254-7" title="7"><span class="co">// REST OF FILE NOT SHOWN</span></a></code></pre></div>
 <p>Then, you’ll also need to add some route-level validations to ensure that the client is passing in a valid email and password. Just like you did in the the tasks router, go ahead and use the <code>express-validator</code> library’s <code>check</code> function to define a series of middleware functions that will check the <code>email</code> and <code>password</code> params.</p>
-<p>Go ahead and define these validation middleware functions inside of a <code>validateEmailAndPassword</code> array. In a later section, you’ll be implementing a “log in” route that will require the same <code>email</code> and <code>password</code> validations, so this array of validations can be reused for that route!</p>
+<p>Go ahead and define these validation middleware functions inside of a <code>validateEmailAndPassword</code> array. In a later section, you’ll be implementing a "log in" route that will require the same <code>email</code> and <code>password</code> validations, so this array of validations can be reused for that route!</p>
 <p>Here are a few things you should check for:</p>
 <ol type="1">
 <li>check that <code>email</code> is a truthy value (i.e. not <code>undefined</code>, <code>null</code>, or an empty string)</li>
@@ -4889,10 +4889,10 @@ My party is this Friday. Present this code at the door:
 <a class="sourceLine" id="cb258-17" title="17">    <span class="co">// </span><span class="al">TODO</span><span class="co">: implement rest of route handler</span></a>
 <a class="sourceLine" id="cb258-18" title="18">  <span class="op">}</span>)</a>
 <a class="sourceLine" id="cb258-19" title="19">)<span class="op">;</span></a></code></pre></div>
-<p>At this point, you’ve set up a route that creates a user. The next section will cover how to generate an access token for the user so that the user can be “logged in” for subsequent requests.</p>
+<p>At this point, you’ve set up a route that creates a user. The next section will cover how to generate an access token for the user so that the user can be "logged in" for subsequent requests.</p>
 <h3 id="generate-an-access-token-for-the-client">Generate an access token for the client</h3>
 <p>Let’s finish up the rest of the route handler for <code>router.post("/")</code> in the users router!</p>
-<p>Back in the previous lesson when you were implementing session-based authentication, you “logged in” a user by storing the new user’s id in session and then storing the session id as a cookie on the client side.</p>
+<p>Back in the previous lesson when you were implementing session-based authentication, you "logged in" a user by storing the new user’s id in session and then storing the session id as a cookie on the client side.</p>
 <p>With token-based authentication, you’ll now instead generate an access token that holds identifying information in its payload, such as user id and email. Then, you’ll return this token to the client, and the client will include this token in all subsequent requests.</p>
 <p>The access token will be a JWT, and you’ll use the <a href="https://www.npmjs.com/package/jsonwebtoken">jsonwebtoken</a> package to handle JWT generation and decoding. Go ahead and run <code>npm install jsonwebtoken</code>.</p>
 <p>Here’s the game plan for generating this token:</p>
@@ -4913,7 +4913,7 @@ My party is this Friday. Present this code at the door:
 <p>Then add the following fields to your <code>.env</code>:</p>
 <div class="sourceCode" id="cb260"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb260-1" title="1">JWT_SECRET=&lt;&lt;YOUR GENERATED RANDOM STRING&gt;&gt;</a>
 <a class="sourceLine" id="cb260-2" title="2">JWT_EXPIRES_IN=604800</a></code></pre></div>
-<p>“604800” was set as the <code>JWT_EXPIRES_IN</code> value because there are 604800 seconds in a week.</p>
+<p>"604800" was set as the <code>JWT_EXPIRES_IN</code> value because there are 604800 seconds in a week.</p>
 <p>Next, set up your ‘config/index.js’ so that those newly added environment variables are accessible in your app:</p>
 <div class="sourceCode" id="cb261"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb261-1" title="1"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb261-2" title="2">  <span class="dt">environment</span><span class="op">:</span> <span class="va">process</span>.<span class="va">env</span>.<span class="at">NODE_ENV</span> <span class="op">||</span> <span class="st">&quot;development&quot;</span><span class="op">,</span></a>

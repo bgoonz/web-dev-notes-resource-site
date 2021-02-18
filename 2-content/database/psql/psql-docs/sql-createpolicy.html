@@ -52,7 +52,7 @@ CREATE POLICY <em class="replaceable"><code>name</code></em> ON <em class="repla
    added (<code class="literal">WITH CHECK</code> case).
   </p><p>
    If row-level security is enabled for a table, but no applicable policies
-   exist, a <span class="quote">“<span class="quote">default deny</span>”</span> policy is assumed, so that no rows will
+   exist, a <span class="quote">"<span class="quote">default deny</span>"</span> policy is assumed, so that no rows will
    be visible or updatable.
   </p></div><div class="refsect1" id="id-1.9.3.75.6"><h2>Parameters</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>name</code></em></span></dt><dd><p>
       The name of the policy to be created.  This must be distinct from the
@@ -63,13 +63,13 @@ CREATE POLICY <em class="replaceable"><code>name</code></em> ON <em class="repla
      </p></dd><dt><span class="term"><code class="literal">PERMISSIVE</code></span></dt><dd><p>
       Specify that the policy is to be created as a permissive policy.
       All permissive policies which are applicable to a given query will
-      be combined together using the Boolean <span class="quote">“<span class="quote">OR</span>”</span> operator.  By creating
+      be combined together using the Boolean <span class="quote">"<span class="quote">OR</span>"</span> operator.  By creating
       permissive policies, administrators can add to the set of records
       which can be accessed.  Policies are permissive by default.
      </p></dd><dt><span class="term"><code class="literal">RESTRICTIVE</code></span></dt><dd><p>
       Specify that the policy is to be created as a restrictive policy.
       All restrictive policies which are applicable to a given query will
-      be combined together using the Boolean <span class="quote">“<span class="quote">AND</span>”</span> operator.  By creating
+      be combined together using the Boolean <span class="quote">"<span class="quote">AND</span>"</span> operator.  By creating
       restrictive policies, administrators can reduce the set of records
       which can be accessed as all restrictive policies must be passed for
       each record.

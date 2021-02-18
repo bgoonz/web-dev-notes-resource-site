@@ -184,8 +184,8 @@ INSERT INTO <em class="replaceable"><code>table_name</code></em> [ AS <em class=
     <code class="command">INSERT</code> or <code class="command">UPDATE</code> outcome;
     provided there is no independent error, one of those two outcomes
     is guaranteed, even under high concurrency.  This is also known as
-    <em class="firstterm">UPSERT</em> — <span class="quote">“<span class="quote">UPDATE or
-    INSERT</span>”</span>.
+    <em class="firstterm">UPSERT</em> — <span class="quote">"<span class="quote">UPDATE or
+    INSERT</span>"</span>.
    </p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>conflict_target</code></em></span></dt><dd><p>
         Specifies which conflicts <code class="literal">ON CONFLICT</code> takes
         the alternative action on by choosing <em class="firstterm">arbiter
@@ -270,7 +270,7 @@ INSERT INTO <em class="replaceable"><code>table_name</code></em> [ AS <em class=
     are supported as arbiters.
    </p><p>
     <code class="command">INSERT</code> with an <code class="literal">ON CONFLICT DO UPDATE</code>
-    clause is a <span class="quote">“<span class="quote">deterministic</span>”</span> statement.  This means
+    clause is a <span class="quote">"<span class="quote">deterministic</span>"</span> statement.  This means
     that the command will not be allowed to affect any single existing
     row more than once; a cardinality violation error will be raised
     when this situation arises.  Rows proposed for insertion should

@@ -30,7 +30,7 @@ REVOKE <em class="replaceable"><code>group_role</code></em> FROM <em class="repl
    The members of a group role can use the privileges of the role in two
    ways.  First, every member of a group can explicitly do
    <a class="xref" href="sql-set-role.html" title="SET ROLE"><span class="refentrytitle">SET ROLE</span></a> to
-   temporarily <span class="quote">“<span class="quote">become</span>”</span> the group role.  In this state, the
+   temporarily <span class="quote">"<span class="quote">become</span>"</span> the group role.  In this state, the
    database session has access to the privileges of the group role rather
    than the original login role, and any database objects created are
    considered owned by the group role not the login role.  Second, member
@@ -48,7 +48,7 @@ GRANT wheel TO admin;
    Immediately after connecting as role <code class="literal">joe</code>, a database
    session will have use of privileges granted directly to <code class="literal">joe</code>
    plus any privileges granted to <code class="literal">admin</code>, because <code class="literal">joe</code>
-   <span class="quote">“<span class="quote">inherits</span>”</span> <code class="literal">admin</code>'s privileges.  However, privileges
+   <span class="quote">"<span class="quote">inherits</span>"</span> <code class="literal">admin</code>'s privileges.  However, privileges
    granted to <code class="literal">wheel</code> are not available, because even though
    <code class="literal">joe</code> is indirectly a member of <code class="literal">wheel</code>, the
    membership is via <code class="literal">admin</code> which has the <code class="literal">NOINHERIT</code>

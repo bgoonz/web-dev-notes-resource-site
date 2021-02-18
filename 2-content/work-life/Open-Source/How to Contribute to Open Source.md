@@ -98,11 +98,11 @@ Even if you like to write code, other types of contributions are a great way to 
 
 ### [](#you-dont-just-have-to-work-on-software-projects)You don't just have to work on software projects!
 
-While “open source” often refers to software, you can collaborate on just about anything. There are books, recipes, lists, and classes that get developed as open source projects.
+While "open source" often refers to software, you can collaborate on just about anything. There are books, recipes, lists, and classes that get developed as open source projects.
 
 For example:
 
-*   [@sindresorhus](https://github.com/sindresorhus) curates a [list of “awesome” lists](https://github.com/sindresorhus/awesome)
+*   [@sindresorhus](https://github.com/sindresorhus) curates a [list of "awesome" lists](https://github.com/sindresorhus/awesome)
 *   [@h5bp](https://github.com/h5bp) maintains a [list of potential interview questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions) for front-end developer candidates
 *   [@stuartlynn](https://github.com/stuartlynn) and [@nicole-a-tesla](https://github.com/nicole-a-tesla) made a [collection of fun facts about puffins](https://github.com/stuartlynn/puffin_facts)
 
@@ -131,7 +131,7 @@ A typical open source project has the following types of people:
 *   **Contributors:** Everyone who has contributed something back to the project
 *   **Community Members:** People who use the project. They might be active in conversations or express their opinion on the project's direction
 
-Bigger projects may also have subcommittees or working groups focused on different tasks, such as tooling, triage, community moderation, and event organizing. Look on a project's website for a “team” page, or in the repository for governance documentation, to find this information.
+Bigger projects may also have subcommittees or working groups focused on different tasks, such as tooling, triage, community moderation, and event organizing. Look on a project's website for a "team" page, or in the repository for governance documentation, to find this information.
 
 A project also has documentation. These files are usually listed in the top level of a repository.
 
@@ -145,7 +145,7 @@ Finally, open source projects use the following tools to organize discussion. Re
 
 *   **Issue tracker:** Where people discuss issues related to the project.
 *   **Pull requests:** Where people discuss and review changes that are in progress.
-*   **Discussion forums or mailing lists:** Some projects may use these channels for conversational topics (for example, _“How do I…“_ or _“What do you think about…“_ instead of bug reports or feature requests). Others use the issue tracker for all conversations.
+*   **Discussion forums or mailing lists:** Some projects may use these channels for conversational topics (for example, _"How do I…"_ or _"What do you think about…"_ instead of bug reports or feature requests). Others use the issue tracker for all conversations.
 *   **Synchronous chat channel:** Some projects use chat channels (such as Slack or IRC) for casual conversation, collaboration, and quick exchanges.
 
 [](#finding-a-project-to-contribute-to)Finding a project to contribute to
@@ -153,7 +153,7 @@ Finally, open source projects use the following tools to organize discussion. Re
 
 Now that you've figured out how open source projects work, it's time to find a project to contribute to!
 
-If you've never contributed to open source before, take some advice from U.S. President John F. Kennedy, who once said, _“Ask not what your country can do for you - ask what you can do for your country.”_
+If you've never contributed to open source before, take some advice from U.S. President John F. Kennedy, who once said, _"Ask not what your country can do for you - ask what you can do for your country."_
 
 Contributing to open source happens at all levels, across projects. You don't need to overthink what exactly your first contribution will be, or how it will look.
 
@@ -161,7 +161,7 @@ Instead, start by thinking about the projects you already use, or want to use. T
 
 Within those projects, whenever you catch yourself thinking that something could be better or different, act on your instinct.
 
-Open source isn't an exclusive club; it's made by people just like you. “Open source” is just a fancy term for treating the world's problems as fixable.
+Open source isn't an exclusive club; it's made by people just like you. "Open source" is just a fancy term for treating the world's problems as fixable.
 
 You might scan a README and find a broken link or a typo. Or you're a new user and you noticed something is broken, or an issue that you think should really be in the documentation. Instead of ignoring it and moving on, or asking someone else to fix it, see whether you can help out by pitching in. That's what open source is all about!
 
@@ -250,39 +250,39 @@ Before you open an issue or pull request, or ask a question in chat, keep these 
 
 **Give context.** Help others get quickly up to speed. If you're running into an error, explain what you're trying to do and how to reproduce it. If you're suggesting a new idea, explain why you think it'd be useful to the project (not just to you!).
 
-> 😇 _“X doesn't happen when I do Y”_
+> 😇 _"X doesn't happen when I do Y"_
 > 
-> 😢 _“X is broken! Please fix it.”_
+> 😢 _"X is broken! Please fix it."_
 
 **Do your homework beforehand.** It's OK not to know things, but show that you tried. Before asking for help, be sure to check a project's README, documentation, issues (open or closed), mailing list, and search the internet for an answer. People will appreciate when you demonstrate that you're trying to learn.
 
-> 😇 _“I'm not sure how to implement X. I checked the help docs and didn't find any mentions.”_
+> 😇 _"I'm not sure how to implement X. I checked the help docs and didn't find any mentions."_
 > 
-> 😢 _“How do I X?”_
+> 😢 _"How do I X?"_
 
 **Keep requests short and direct.** Much like sending an email, every contribution, no matter how simple or helpful, requires someone else's review. Many projects have more incoming requests than people available to help. Be concise. You will increase the chance that someone will be able to help you.
 
-> 😇 _“I'd like to write an API tutorial.”_
+> 😇 _"I'd like to write an API tutorial."_
 > 
-> 😢 _“I was driving down the highway the other day and stopped for gas, and then I had this amazing idea for something we should be doing, but before I explain that, let me show you…“_
+> 😢 _"I was driving down the highway the other day and stopped for gas, and then I had this amazing idea for something we should be doing, but before I explain that, let me show you…"_
 
 **Keep all communication public.** Although it's tempting, don't reach out to maintainers privately unless you need to share sensitive information (such as a security issue or serious conduct violation). When you keep the conversation public, more people can learn and benefit from your exchange. Discussions can be, in themselves, contributions.
 
-> 😇 _(as a comment) “@-maintainer Hi there! How should we proceed on this PR?”_
+> 😇 _(as a comment) "@-maintainer Hi there! How should we proceed on this PR?"_
 > 
-> 😢 _(as an email) “Hey there, sorry to bother you over email, but I was wondering if you've had a chance to review my PR”_
+> 😢 _(as an email) "Hey there, sorry to bother you over email, but I was wondering if you've had a chance to review my PR"_
 
 **It's okay to ask questions (but be patient!).** Everybody was new to the project at some point, and even experienced contributors need to get up to speed when they look at a new project. By the same token, even longtime maintainers are not always familiar with every part of the project. Show them the same patience that you'd want them to show to you.
 
-> 😇 _“Thanks for looking into this error. I followed your suggestions. Here's the output.”_
+> 😇 _"Thanks for looking into this error. I followed your suggestions. Here's the output."_
 > 
-> 😢 _“Why can't you fix my problem? Isn't this your project?”_
+> 😢 _"Why can't you fix my problem? Isn't this your project?"_
 
 **Respect community decisions.** Your ideas may differ from the community's priorities or vision. They may offer feedback or decide not to pursue your idea. While you should discuss and look for compromise, maintainers have to live with your decision longer than you will. If you disagree with their direction, you can always work on your own fork or start your own project.
 
-> 😇 _“I'm disappointed you can't support my use case, but as you've explained it only affects a minor portion of users, I understand why. Thanks for listening.”_
+> 😇 _"I'm disappointed you can't support my use case, but as you've explained it only affects a minor portion of users, I understand why. Thanks for listening."_
 > 
-> 😢 _“Why won't you support my use case? This is unacceptable!”_
+> 😢 _"Why won't you support my use case? This is unacceptable!"_
 
 **Above all, keep it classy.** Open source is made up of collaborators from all over the world. Context gets lost across languages, cultures, geographies, and time zones. In addition, written communication makes it harder to convey a tone or mood. Assume good intentions in these conversations. It's fine to politely push back on an idea, ask for more context, or further clarify your position. Just try to leave the internet a better place than when you found it.
 
@@ -298,7 +298,7 @@ If you can't find your idea elsewhere, you're ready to make a move. If the proje
 
 Before you open an issue or pull request, check the project's contributing docs (usually a file called CONTRIBUTING, or in the README), to see whether you need to include anything specific. For example, they may ask that you follow a template, or require that you use tests.
 
-If you want to make a substantial contribution, open an issue to ask before working on it. It's helpful to watch the project for a while (on GitHub, [you can click “Watch”](https://help.github.com/articles/watching-repositories/) to be notified of all conversations), and get to know community members, before doing work that might not get accepted.
+If you want to make a substantial contribution, open an issue to ask before working on it. It's helpful to watch the project for a while (on GitHub, [you can click "Watch"](https://help.github.com/articles/watching-repositories/) to be notified of all conversations), and get to know community members, before doing work that might not get accepted.
 
 ### [](#opening-an-issue)Opening an issue
 
@@ -321,13 +321,13 @@ You should usually open a pull request in the following situations:
 *   Submit trivial fixes (for example, a typo, a broken link or an obvious error)
 *   Start work on a contribution that was already asked for, or that you've already discussed, in an issue
 
-A pull request doesn't have to represent finished work. It's usually better to open a pull request early on, so others can watch or give feedback on your progress. Just mark it as a “WIP” (Work in Progress) in the subject line. You can always add more commits later.
+A pull request doesn't have to represent finished work. It's usually better to open a pull request early on, so others can watch or give feedback on your progress. Just mark it as a "WIP" (Work in Progress) in the subject line. You can always add more commits later.
 
 If the project is on GitHub, here's how to submit a pull request:
 
-*   **[Fork the repository](https://guides.github.com/activities/forking/)** and clone it locally. Connect your local to the original “upstream” repository by adding it as a remote. Pull in changes from “upstream” often so that you stay up to date so that when you submit your pull request, merge conflicts will be less likely. (See more detailed instructions [here](https://help.github.com/articles/syncing-a-fork/).)
+*   **[Fork the repository](https://guides.github.com/activities/forking/)** and clone it locally. Connect your local to the original "upstream" repository by adding it as a remote. Pull in changes from "upstream" often so that you stay up to date so that when you submit your pull request, merge conflicts will be less likely. (See more detailed instructions [here](https://help.github.com/articles/syncing-a-fork/).)
 *   **[Create a branch](https://guides.github.com/introduction/flow/)** for your edits.
-*   **Reference any relevant issues** or supporting documentation in your PR (for example, “Closes #37.”)
+*   **Reference any relevant issues** or supporting documentation in your PR (for example, "Closes #37.")
 *   **Include screenshots of the before and after** if your changes include differences in HTML/CSS. Drag and drop the images into the body of your pull request.
 *   **Test your changes!** Run your changes against any existing tests if they exist and create new ones when needed. Whether tests exist or not, make sure your changes don't break the existing project.
 *   **Contribute in the style of the project** to the best of your abilities. This may mean using indents, semi-colons or comments differently than you would in your own repository, but makes it easier for the maintainer to merge, others to understand and maintain in the future.

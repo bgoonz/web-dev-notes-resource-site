@@ -25,7 +25,7 @@
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER “AS IS” AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -2552,7 +2552,7 @@ merge(Compressor.prototype, {
         if (!compressor.option("conditionals")) return self;
         // if condition can be statically determined, warn and drop
         // one of the blocks.  note, statically determined implies
-        // “has no side effects”; also it doesn't work for cases like
+        // "has no side effects"; also it doesn't work for cases like
         // `x && true`, though it probably should.
         var cond = self.condition.evaluate(compressor);
         if (cond !== self.condition) {

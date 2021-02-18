@@ -19,13 +19,13 @@
   <li><strong>relative to the input</strong>—If we were measuring our runtime directly,</li>
 </ol>
 <p>we could express our speed in seconds. Since we’re measuring <em>how quickly our runtime grows</em>, we need to
-  express our speed in terms of…something else. With Big O notation, we use the size of the input, which we call “n.” So
-  we can say things like the runtime grows “on the order of the size of the input” () or “on the order of the square of
+  express our speed in terms of…something else. With Big O notation, we use the size of the input, which we call "n.” So
+  we can say things like the runtime grows "on the order of the size of the input” () or "on the order of the square of
   the size of the input” (). 3. <strong>as the input gets arbitrarily large</strong>—</p>
 <p>Our algorithm may have steps that seem expensive when n is small but are eclipsed eventually by other steps as n gets
   huge. For big O analysis, we care most about the stuff that grows fastest as the input grows, because everything else
-  is quickly eclipsed as n gets very large. (If you know what an asymptote is, you might see why “big O analysis” is
-  sometimes called “asymptotic analysis.”)hy “big O analysis” is sometimes called “asymptotic analysis.”)</p>
+  is quickly eclipsed as n gets very large. (If you know what an asymptote is, you might see why "big O analysis” is
+  sometimes called "asymptotic analysis.”)hy "big O analysis” is sometimes called "asymptotic analysis.”)</p>
 <h2 id="section">——</h2>
 <h2 id="section-1">&lt;==(———————————————————————————————————————-)==&gt;</h2>
 <table style="width:10%;">
@@ -42,17 +42,17 @@
 <p>Stores things in order. Has quick lookups by index. <img src="arr1.png" /> <img src="array.png" /></p>
 <h2 id="linked-list">Linked List</h2>
 <p><img src="queue.gif" /></p>
-<p>Also stores things in order. Faster insertions and deletions than arrays, but slower lookups (you have to “walk down”
+<p>Also stores things in order. Faster insertions and deletions than arrays, but slower lookups (you have to "walk down”
   the whole list).</p>
 <p>!</p>
 <h2 id="queue">Queue</h2>
-<p>Like the line outside a busy restaurant. “First come, first served.” <a class="btn" href="linked-list.png"></a> <img
+<p>Like the line outside a busy restaurant. "First come, first served.” <a class="btn" href="linked-list.png"></a> <img
     src="queue.png" /></p>
 <h2 id="stack">Stack</h2>
 <p><img src="stack.gif" /> <img src="stack.png" /> Like a stack of dirty plates in the sink. The first one you take off
   the top is the last one you put down.</p>
 <h2 id="tree">Tree</h2>
-<p>Good for storing hierarchies. Each node can have “child” nodes. <img src="tree.png" /> <img
+<p>Good for storing hierarchies. Each node can have "child” nodes. <img src="tree.png" /> <img
     src="leaves-depth-height.png" /> <img src="traversals.png" /> <img src="dfs.png" /> <img
     src="pre-and-in-order-traversal.png" /> <img src="post-order.png" /></p>
 <h2 id="binary-search-tree">Binary Search Tree</h2>
@@ -159,7 +159,7 @@
 <ol start="2" type="1">
   <li><strong>The array is <em>uninterrupted</em> (contiguous) in memory</strong>. There can’t</li>
 </ol>
-<p>be any gaps in the array…like to “skip over” a memory slot Spotify was already using.</p>
+<p>be any gaps in the array…like to "skip over” a memory slot Spotify was already using.</p>
 <p>These things make our formula for finding the nth item <em>work</em> because they make our array
   <em>predictable</em>. We can <em>predict</em> exactly where in memory the nth element of our array will be.
   </p>
@@ -183,13 +183,13 @@
   to mark the end of the string within each array…</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__pointers_baby_names.svg?bust=209"
-    alt="Strings represented in RAM as arrays of 13 characters, with the end of the strings being denoted by a special “null” character. The last 8 rows are marked as wasted space because the name Bill (along with the null character) only takes up 5 out of 13 available characters."/>
+    alt="Strings represented in RAM as arrays of 13 characters, with the end of the strings being denoted by a special "null” character. The last 8 rows are marked as wasted space because the name Bill (along with the null character) only takes up 5 out of 13 available characters."/>
   <figcaption>Strings represented in RAM as arrays of 13 characters, with the end of the strings being denoted by a
-    special “null” character. The last 8 rows are marked as wasted space because the name Bill (along with the null
+    special "null” character. The last 8 rows are marked as wasted space because the name Bill (along with the null
     character) only takes up 5 out of 13 available characters.</figcaption>
 </figure>
-<p>“Wigglesworth” is a cute baby name, right?</p>
-<p>But look at all that wasted space after “Bill”. And what if we wanted to store a string that was <em>more</em> than
+<p>"Wigglesworth” is a cute baby name, right?</p>
+<p>But look at all that wasted space after "Bill”. And what if we wanted to store a string that was <em>more</em> than
   13 characters? We’d be out of luck.</p>
 <p>There’s a better way. Instead of storing the strings right inside our array, let’s just put the strings wherever we
   can fit them in memory. Then we’ll have each element in our array hold the <em>address in memory</em> of its
@@ -249,8 +249,8 @@
 </ol>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_sample.svg?bust=209"
-    alt="An example of a linked list storing the string “DEAR.” Each element of the linked list is an array composed of two items: a character and a pointer that points to the next element."/>
-  <figcaption>An example of a linked list storing the string “DEAR.” Each element of the linked list is an array
+    alt="An example of a linked list storing the string "DEAR.” Each element of the linked list is an array composed of two items: a character and a pointer that points to the next element."/>
+  <figcaption>An example of a linked list storing the string "DEAR.” Each element of the linked list is an array
     composed of two items: a character and a pointer that points to the next element.</figcaption>
 </figure>
 <p>We would call each of these two-item arrays a <strong>node</strong> and we’d call this series of nodes a
@@ -271,54 +271,54 @@
   <figcaption>The same linked list represented in RAM. This time the characters are stored out of order to show that the
     pointers still keep everything in place.</figcaption>
 </figure>
-<p>“But that’s not cache-friendly,” you may be thinking. Good point! We’ll get to that.</p>
+<p>"But that’s not cache-friendly,” you may be thinking. Good point! We’ll get to that.</p>
 <p>The first node of a linked list is called the <strong>head</strong>, and the last node is usually called the
   <strong>tail</strong>.
   </p>
-<p>Confusingly, some people prefer to use “tail” to refer to <em>everything after the head</em> of a linked list. In an
+<p>Confusingly, some people prefer to use "tail” to refer to <em>everything after the head</em> of a linked list. In an
   interview it’s fine to use either definition. Briefly say which definition you’re using, just to be clear.</p>
 <p>It’s important to have a pointer variable referencing the head of the list—otherwise we’d be unable to find our way
   back to the start of the list!</p>
 <p>We’ll also sometimes keep a pointer to the tail. That comes in handy when we want to add something new to the end of
   the linked list. In fact, let’s try that out:</p>
-<p>Suppose we had the string “LOG” stored in a linked list:</p>
+<p>Suppose we had the string "LOG” stored in a linked list:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOG.” The *head points to the first character “L,” and the tail points to the last letter “G.”"/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOG.” The *head points to the first character
-    “L,” and the tail points to the last letter “G.”</figcaption>
+    alt="A linked list with head and tail pointers storing the word "LOG.” The *head points to the first character "L,” and the tail points to the last letter "G.”"/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOG.” The *head points to the first character
+    "L,” and the tail points to the last letter "G.”</figcaption>
 </figure>
-<p>Suppose we wanted to add an “S” to the end, to make it “LOGS”. How would we do that?</p>
+<p>Suppose we wanted to add an "S” to the end, to make it "LOGS”. How would we do that?</p>
 <p>Easy. We just put it in a new node:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_add_node.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOG.” A new unconnected node storing the character “S” is added to the bottom and bolded."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOG.” A new unconnected node storing the
-    character “S” is added to the bottom and bolded.</figcaption>
+    alt="A linked list with head and tail pointers storing the word "LOG.” A new unconnected node storing the character "S” is added to the bottom and bolded."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOG.” A new unconnected node storing the
+    character "S” is added to the bottom and bolded.</figcaption>
 </figure>
 <p>And tweak some pointers:</p>
-<p>​1. Grab the last letter, which is “G”. Our tail pointer lets us do this in time.</p>
+<p>​1. Grab the last letter, which is "G”. Our tail pointer lets us do this in time.</p>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_logs_string_grab_last_letter.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOG.” The *tail pointer and the character “G” are bolded."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOG.” The *tail pointer and the character “G”
+    alt="A linked list with head and tail pointers storing the word "LOG.” The *tail pointer and the character "G” are bolded."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOG.” The *tail pointer and the character "G”
     are bolded.</figcaption>
 </figure>
-<p>​2. Point the last letter’s next to the letter we’re appending (“S”).</p>
+<p>​2. Point the last letter’s next to the letter we’re appending ("S”).</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_logs_string_point_next.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOG.” The “G”’s *next pointer is bolded and pointing to the appended “S”."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOG.” The “G”’s *next pointer is bolded and
-    pointing to the appended “S”.</figcaption>
+    alt="A linked list with head and tail pointers storing the word "LOG.” The "G”’s *next pointer is bolded and pointing to the appended "S”."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOG.” The "G”’s *next pointer is bolded and
+    pointing to the appended "S”.</figcaption>
 </figure>
-<p>​3. Update the tail pointer to point to our <em>new</em> last letter, “S”.</p>
+<p>​3. Update the tail pointer to point to our <em>new</em> last letter, "S”.</p>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_logs_string_tweak_pointers.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOGS.” The *tail pointer is now pointed to the new last letter: “S”."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOGS.” The *tail pointer is now pointed to the
-    new last letter: “S”.</figcaption>
+    alt="A linked list with head and tail pointers storing the word "LOGS.” The *tail pointer is now pointed to the new last letter: "S”."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOGS.” The *tail pointer is now pointed to the
+    new last letter: "S”.</figcaption>
 </figure>
 <p>That’s time.</p>
 <p>Why is it time? Because the runtime doesn’t get bigger if the string gets bigger. No matter how many characters are
@@ -328,8 +328,8 @@
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_doubled_array.svg?bust=209"
-    alt="A dynamic array containing the word “LOG” going through a doubling operation to make space for an appended letter."/>
-  <figcaption>A dynamic array containing the word “LOG” going through a doubling operation to make space for an appended
+    alt="A dynamic array containing the word "LOG” going through a doubling operation to make space for an appended letter."/>
+  <figcaption>A dynamic array containing the word "LOG” going through a doubling operation to make space for an appended
     letter.</figcaption>
 </figure>
 <p>So with a dynamic array, our append would have a <em>worst-case</em> time cost of .</p>
@@ -337,25 +337,25 @@
     arrays.</strong></p>
 <p>That <em>worst-case</em> part is important. The <em>average case</em> runtime for appends to linked lists and dynamic
   arrays is the same: .</p>
-<p>Now, what if we wanted to <em>pre</em>pend something to our string? Let’s say we wanted to put a “B” at the
+<p>Now, what if we wanted to <em>pre</em>pend something to our string? Let’s say we wanted to put a "B” at the
   beginning.</p>
 <p>For our linked list, it’s just as easy as appending. Create the node:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_logs_string_add_node.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOGS.” A new unconnected node storing the character “B” is added to the top and bolded."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOGS.” A new unconnected node storing the
-    character “B” is added to the top and bolded.</figcaption>
+    alt="A linked list with head and tail pointers storing the word "LOGS.” A new unconnected node storing the character "B” is added to the top and bolded."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOGS.” A new unconnected node storing the
+    character "B” is added to the top and bolded.</figcaption>
 </figure>
 <p>And tweak some pointers:</p>
 <ol type="1">
-  <li>Point “B”’s next to “L”. 2. Point the head to “B”.</li>
+  <li>Point "B”’s next to "L”. 2. Point the head to "B”.</li>
 </ol>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_blogs_string_tweak_pointers.svg?bust=209"
-    alt="A linked list with head and tail pointers storing the word “LOGS.” The “B”’s next pointer is bolded and pointing to the letter “L,” and the head pointer is bolded and pointing to the prepended letter “B”."/>
-  <figcaption>A linked list with head and tail pointers storing the word “LOGS.” The “B”’s <em>next pointer is bolded
-      and pointing to the letter “L,” and the </em>head pointer is bolded and pointing to the prepended letter “B”.
+    alt="A linked list with head and tail pointers storing the word "LOGS.” The "B”’s next pointer is bolded and pointing to the letter "L,” and the head pointer is bolded and pointing to the prepended letter "B”."/>
+  <figcaption>A linked list with head and tail pointers storing the word "LOGS.” The "B”’s <em>next pointer is bolded
+      and pointing to the letter "L,” and the </em>head pointer is bolded and pointing to the prepended letter "B”.
   </figcaption>
 </figure>
 <p>Bam. time again.</p>
@@ -363,59 +363,59 @@
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS.”"/>
-  <figcaption>A dynamic array storing the string “LOGS.”</figcaption>
+    alt="A dynamic array storing the string "LOGS.”"/>
+  <figcaption>A dynamic array storing the string "LOGS.”</figcaption>
 </figure>
-<p>And we wanted to add in that “B”:</p>
+<p>And we wanted to add in that "B”:</p>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_add_b.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS.” A bolded “B” is added above the array."/>
-  <figcaption>A dynamic array storing the string “LOGS.” A bolded “B” is added above the array.</figcaption>
+    alt="A dynamic array storing the string "LOGS.” A bolded "B” is added above the array."/>
+  <figcaption>A dynamic array storing the string "LOGS.” A bolded "B” is added above the array.</figcaption>
 </figure>
-<p>Eep. We have to <em>make room</em> for the “B”!</p>
+<p>Eep. We have to <em>make room</em> for the "B”!</p>
 <p>We have to move <em>each character</em> one space down:</p>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_move_s.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS” with the letter “B” floating above. The “S” is bolded with an arrow attached showing how the character is being moved one index up."/>
-  <figcaption>A dynamic array storing the string “LOGS” with the letter “B” floating above. The “S” is bolded with an
+    alt="A dynamic array storing the string "LOGS” with the letter "B” floating above. The "S” is bolded with an arrow attached showing how the character is being moved one index up."/>
+  <figcaption>A dynamic array storing the string "LOGS” with the letter "B” floating above. The "S” is bolded with an
     arrow attached showing how the character is being moved one index up.</figcaption>
 </figure>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_move_g.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS” with the letter “B” floating above. The “G” is bolded with an arrow attached showing how the character is being moved one index up."/>
-  <figcaption>A dynamic array storing the string “LOGS” with the letter “B” floating above. The “G” is bolded with an
+    alt="A dynamic array storing the string "LOGS” with the letter "B” floating above. The "G” is bolded with an arrow attached showing how the character is being moved one index up."/>
+  <figcaption>A dynamic array storing the string "LOGS” with the letter "B” floating above. The "G” is bolded with an
     arrow attached showing how the character is being moved one index up.</figcaption>
 </figure>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_move_o.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS” with the letter “B” floating above. The “O” is bolded with an arrow attached showing how the character is being moved one index up."/>
-  <figcaption>A dynamic array storing the string “LOGS” with the letter “B” floating above. The “O” is bolded with an
+    alt="A dynamic array storing the string "LOGS” with the letter "B” floating above. The "O” is bolded with an arrow attached showing how the character is being moved one index up."/>
+  <figcaption>A dynamic array storing the string "LOGS” with the letter "B” floating above. The "O” is bolded with an
     arrow attached showing how the character is being moved one index up.</figcaption>
 </figure>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_move_l.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS” with the letter “B” floating above. The “L” is bolded with an arrow attached showing how the character is being moved one index up."/>
-  <figcaption>A dynamic array storing the string “LOGS” with the letter “B” floating above. The “L” is bolded with an
+    alt="A dynamic array storing the string "LOGS” with the letter "B” floating above. The "L” is bolded with an arrow attached showing how the character is being moved one index up."/>
+  <figcaption>A dynamic array storing the string "LOGS” with the letter "B” floating above. The "L” is bolded with an
     arrow attached showing how the character is being moved one index up.</figcaption>
 </figure>
-<p><em>Now</em> we can drop the “B” in there:</p>
+<p><em>Now</em> we can drop the "B” in there:</p>
 <figure>
   <img
     src="https://www.interviewcake.com/images/svgs/cs_for_hackers__linked_lists_log_string_dynamic_array_chars_moved.svg?bust=209"
-    alt="A dynamic array storing the string “LOGS” with the letter “B” floating above. The “B” is bolded with an arrow attached showing how the character is now being placed in the first index."/>
-  <figcaption>A dynamic array storing the string “LOGS” with the letter “B” floating above. The “B” is bolded with an
+    alt="A dynamic array storing the string "LOGS” with the letter "B” floating above. The "B” is bolded with an arrow attached showing how the character is now being placed in the first index."/>
+  <figcaption>A dynamic array storing the string "LOGS” with the letter "B” floating above. The "B” is bolded with an
     arrow attached showing how the character is now being placed in the first index.</figcaption>
 </figure>
 <p>What’s our time cost here?</p>
 <p>It’s all in the step where we made room for the first letter. We had to move <em>all n</em> characters in our string.
   One at a time. That’s time.</p>
 <p><strong>So linked lists have faster <em>pre</em>pends ( time) than dynamic arrays ( time).</strong></p>
-<p>No “worst case” caveat this time—prepends for dynamic arrays are <em>always</em> time. And prepends for linked lists
+<p>No "worst case” caveat this time—prepends for dynamic arrays are <em>always</em> time. And prepends for linked lists
   are <em>always</em> time.</p>
 <p>These quick appends and prepends for linked lists come from the fact that linked list nodes can go anywhere in
   memory. They don’t have to sit right next to each other the way items in an array do.</p>
@@ -425,7 +425,7 @@
   </p>
 <p>Lookups with a linked list are more of a process, because we have no way of knowing where the ith node is in memory.
   So we have to walk through the linked list node by node, counting as we go, until we hit the ith item.</p>
-<p>def get_ith_item_in_linked_list(head, i): if i &lt; 0: raise ValueError(“i can’t be negative: %d” % i) current_node =
+<p>def get_ith_item_in_linked_list(head, i): if i &lt; 0: raise ValueError("i can’t be negative: %d” % i) current_node =
   head current_position = 0 while current_node: if current_position == i: # Found it! return current_node # Move on to
   the next node current_node = current_node.next current_position += 1 raise ValueError(‘List has fewer than i + 1 (%d)
   nodes’ % (i + 1))</p>
@@ -445,11 +445,11 @@
 <p>In a <strong>doubly linked list</strong>, items have pointers to the next <em>and the previous</em> nodes.</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/linked_list__doubly_linked_nodes_and_pointers.svg?bust=209"
-    alt="A doubly-linked list with 3 nodes. The first node has value 5 with a “next” arrow pointing ahead to the second node and a “previous” arrow pointing back to “None.” The second node has value 1 with a “next” arrow pointing ahead to the third node and a “previous” arrow pointing back to the first node. The third node has value 9 with a “next” arrow pointing ahead to “None” and a “previous” arrow pointing back to the second node."/>
-  <figcaption>A doubly-linked list with 3 nodes. The first node has value 5 with a “next” arrow pointing ahead to the
-    second node and a “previous” arrow pointing back to “None.” The second node has value 1 with a “next” arrow pointing
-    ahead to the third node and a “previous” arrow pointing back to the first node. The third node has value 9 with a
-    “next” arrow pointing ahead to “None” and a “previous” arrow pointing back to the second node.</figcaption>
+    alt="A doubly-linked list with 3 nodes. The first node has value 5 with a "next” arrow pointing ahead to the second node and a "previous” arrow pointing back to "None.” The second node has value 1 with a "next” arrow pointing ahead to the third node and a "previous” arrow pointing back to the first node. The third node has value 9 with a "next” arrow pointing ahead to "None” and a "previous” arrow pointing back to the second node."/>
+  <figcaption>A doubly-linked list with 3 nodes. The first node has value 5 with a "next” arrow pointing ahead to the
+    second node and a "previous” arrow pointing back to "None.” The second node has value 1 with a "next” arrow pointing
+    ahead to the third node and a "previous” arrow pointing back to the first node. The third node has value 9 with a
+    "next” arrow pointing ahead to "None” and a "previous” arrow pointing back to the second node.</figcaption>
 </figure>
 <p>Doubly linked lists allow us to traverse our list <em>backwards</em>. In a <em>singly</em> linked list, if you just
   had a pointer to a node in the <em>middle</em> of a list, there would be <em>no way</em> to know what nodes came
@@ -495,8 +495,8 @@
   translate a <em>word</em> (a string) into an array index…</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__hash_tables_lies_key_unlabeled.svg?bust=209"
-    alt="A blank array except for the value 20 stored at index 9. To the left the array is the word “lies” with an arrow pointing to the right at diamond with a question mark in the middle. The diamond points to the 9th index of the array."/>
-  <figcaption>A blank array except for the value 20 stored at index 9. To the left the array is the word “lies” with an
+    alt="A blank array except for the value 20 stored at index 9. To the left the array is the word "lies” with an arrow pointing to the right at diamond with a question mark in the middle. The diamond points to the 9th index of the array."/>
+  <figcaption>A blank array except for the value 20 stored at index 9. To the left the array is the word "lies” with an
     arrow pointing to the right at diamond with a question mark in the middle. The diamond points to the 9th index of
     the array.</figcaption>
 </figure>
@@ -504,8 +504,8 @@
 <p>Grab the number value for each character and add those up.</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__hash_tables_lies_chars.svg?bust=209"
-    alt="The word “lies” in quotes. Arrows point from each character down to their corresponding number values, which are separated by plus signs and shown in sum to equal 429."/>
-  <figcaption>The word “lies” in quotes. Arrows point from each character down to their corresponding number values,
+    alt="The word "lies” in quotes. Arrows point from each character down to their corresponding number values, which are separated by plus signs and shown in sum to equal 429."/>
+  <figcaption>The word "lies” in quotes. Arrows point from each character down to their corresponding number values,
     which are separated by plus signs and shown in sum to equal 429.</figcaption>
 </figure>
 <p>The result is 429. But what if we only have <em>30</em> slots in our array? We’ll use a common trick for forcing a
@@ -514,13 +514,13 @@
 <p>429 \: \% \: 30 = 9</p>
 <p>Bam. That’ll get us from a word (or any string) to an array index.</p>
 <p>This data structure is called a <strong>hash table</strong> or <strong>hash map</strong>. In our hash table, the
-  <em>counts</em> are the <strong>values</strong> and the <em>words</em> (“lies,” etc.) are the <strong>keys</strong>
+  <em>counts</em> are the <strong>values</strong> and the <em>words</em> ("lies,” etc.) are the <strong>keys</strong>
   (analogous to the <em>indices</em> in an array). The process we used to translate a key into an array index is called
   a <strong>hashing function</strong>.
   </p>
 <p>![A blank array except for a 20, labeled as the value, stored at index</p>
 <ol start="9" type="1">
-  <li>To the left the array is the word “lies,” labeled as the key, with an</li>
+  <li>To the left the array is the word "lies,” labeled as the key, with an</li>
 </ol>
 <p>arrow pointing to the right at diamond with a question mark in the middle, labeled as the hashing function. The
   diamond points to the 9th index of the
@@ -530,16 +530,16 @@
   to get the key for a given value is to walk through all the values and keys.</p>
 <p>Same thing with arrays—we can quickly look up the value at a given index, but the only way to figure out the index
   for a given value is to walk through the whole array.</p>
-<p>One problem—what if two keys hash to the same index in our array? Look at “lies” and “foes”:</p>
+<p>One problem—what if two keys hash to the same index in our array? Look at "lies” and "foes”:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__hash_tables_lies_and_foes_addition.svg?bust=209"
-    alt="The word “lies” in quotes and the word “foes” in quotes. Arrows point from the characters of each word to their corresponding number values. The sum of the characters of both words is shown to equal 429."/>
-  <figcaption>The word “lies” in quotes and the word “foes” in quotes. Arrows point from the characters of each word to
+    alt="The word "lies” in quotes and the word "foes” in quotes. Arrows point from the characters of each word to their corresponding number values. The sum of the characters of both words is shown to equal 429."/>
+  <figcaption>The word "lies” in quotes and the word "foes” in quotes. Arrows point from the characters of each word to
     their corresponding number values. The sum of the characters of both words is shown to equal 429.</figcaption>
 </figure>
 <p>They both sum up to 429! So of course they’ll have the same answer when we mod by 30:</p>
 <p>429 \: \% \: 30 = 9</p>
-<p>So our hashing function gives us the same answer for “lies” and “foes.” This is called a <strong>hash
+<p>So our hashing function gives us the same answer for "lies” and "foes.” This is called a <strong>hash
     collision</strong>. There are a few different strategies for dealing with them.</p>
 <p>Here’s a common one: instead of storing the actual values in our array, let’s have each array slot hold a
   <em>pointer</em> to a <em>linked list</em> holding the counts for all the words that hash to that index:
@@ -550,7 +550,7 @@
   <figcaption>An array storing pointers. Three of the pointers have arrows pointing to linked lists to the right of the
     array.</figcaption>
 </figure>
-<p>One problem—how do we know which count is for “lies” and which is for “foes”? To fix this, we’ll store the
+<p>One problem—how do we know which count is for "lies” and which is for "foes”? To fix this, we’ll store the
   <em>word</em> as well as the count in each linked list node:
   </p>
 <figure>
@@ -559,7 +559,7 @@
   <figcaption>An array storing pointers. The pointer at index 9 has an arrow pointing to a linked list to the right of
     the array. Each linked list node now stores the word as well as its count and a pointer.</figcaption>
 </figure>
-<p>“But wait!” you may be thinking, “Now lookups in our hash table take time in the worst case, since we have to walk
+<p>"But wait!” you may be thinking, "Now lookups in our hash table take time in the worst case, since we have to walk
   down a linked list.” That’s true! You could even say that in the worst case <em>every</em> key creates a hash
   collision, so our whole hash table <em>degrades to a linked list</em>.</p>
 <p>In industry though, we usually wave our hands and say <strong>collisions are rare enough that on <em>average</em>
@@ -573,7 +573,7 @@
 </h1>
 <p><strong>Breadth-first search</strong> (BFS) is a method for exploring a tree or graph. In a BFS, you first explore
   all the nodes one step away, then all the nodes two steps away, etc.</p>
-<p>Breadth-first search is like throwing a stone in the center of a pond. The nodes you explore “ripple out” from the
+<p>Breadth-first search is like throwing a stone in the center of a pond. The nodes you explore "ripple out” from the
   starting point.</p>
 <p>Here’s a how a BFS would traverse this tree, starting with the root:</p>
 <figure>
@@ -634,10 +634,10 @@
     below it. Each of those children connect to 2 children below them, which all connect to their own 2 children, which
     all connect to their own 2 children.</figcaption>
 </figure>
-<p>That particular example is special because every level of the tree is completely full. There are no “gaps.” We call
-  this kind of tree “<strong>perfect</strong>.”</p>
+<p>That particular example is special because every level of the tree is completely full. There are no "gaps.” We call
+  this kind of tree "<strong>perfect</strong>.”</p>
 <p>Binary trees have a few interesting properties when they’re perfect:</p>
-<p><strong>Property 1: the number of total nodes on each “level” doubles as we move down the tree.</strong></p>
+<p><strong>Property 1: the number of total nodes on each "level” doubles as we move down the tree.</strong></p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/binary_tree__depth_5_with_number_of_nodes_labelled.svg?bust=209"
     alt="A binary tree with 5 rows of nodes. The root node is on top, and every node has 2 children in the row below. Each row is labelled with the number of nodes in the row, which doubles from the top down: 1, 2, 4, 8, 16."/>
@@ -649,7 +649,7 @@
     levels (plus 1).</strong> In other words, about <em>half</em> of our nodes are on the last level.</p>
 <p>&lt;==(<em><strong>Let’s call the number of nodes n,</strong></em>)==&gt;</p>
 <p>&lt;==(<strong><em><strong>and the height of the tree h. </strong></em></strong>)==&gt;</p>
-<p><strong>h can also be thought of as the “number of levels.”</strong></p>
+<p><strong>h can also be thought of as the "number of levels.”</strong></p>
 <p>If we had h, how could we calculate n?</p>
 <p>Let’s just add up the number of nodes on each level!</p>
 <p>If we zero-index the levels, the number of nodes on the xth level is exactly 2^x.</p>
@@ -682,7 +682,7 @@
 <p>Notice that we <strong>started counting our levels at 0.</strong></p>
 <ul>
   <li>So if we have h levels in total,</li>
-  <li>the last level is actually the “h-1”-th level.</li>
+  <li>the last level is actually the "h-1”-th level.</li>
   <li>That means the number of nodes on the last level is 2^{h-1}.</li>
 </ul>
 <p>But we can simplify.</p>
@@ -705,7 +705,7 @@
 <p>First, some quick review.</p>
 <p>&lt;==(log_{10} (100) )==&gt;</p>
 <p>simply means,</p>
-<p><strong>“What power must you raise 10 to in order to get 100?”</strong>.</p>
+<p><strong>"What power must you raise 10 to in order to get 100?”</strong>.</p>
 <p>Which is 2,</p>
 <p>because .</p>
 <p>&lt;==(10^2 = 100 )==&gt;</p>
@@ -718,21 +718,21 @@
 <p>But computers don’t have digits with ten possible values. They have <em>bits</em> with <em>two</em> possible values.
   So they use <strong>base 2</strong> numbers.</p>
 <p>Base 10 is also called <strong>decimal</strong>. Base 2 is also called <strong>binary</strong>.</p>
-<p>To understand binary, let’s take a closer look at how decimal numbers work. Take the number “101” in decimal:</p>
+<p>To understand binary, let’s take a closer look at how decimal numbers work. Take the number "101” in decimal:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__binary_numbers_base_10_101.svg?bust=209"
     alt="In base 10, the digits 101 represent 1 hundred, 0 tens, and 1 one."/>
   <figcaption>In base 10, the digits 101 represent 1 hundred, 0 tens, and 1 one.</figcaption>
 </figure>
-<p>Notice we have two “1”s here, but they don’t <em>mean</em> the same thing. The leftmost “1” <em>means</em> 100, and
-  the rightmost “1” <em>means</em> 1. That’s because the leftmost “1” is in the hundreds place, while the rightmost “1”
-  is in the ones place. And the “0” between them is in the tens place.</p>
+<p>Notice we have two "1”s here, but they don’t <em>mean</em> the same thing. The leftmost "1” <em>means</em> 100, and
+  the rightmost "1” <em>means</em> 1. That’s because the leftmost "1” is in the hundreds place, while the rightmost "1”
+  is in the ones place. And the "0” between them is in the tens place.</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__binary_numbers_base_10_digits.svg?bust=209"
     alt="In base 10, the digits 101 represent 1 hundred, 0 tens, and 1 one."/>
   <figcaption>In base 10, the digits 101 represent 1 hundred, 0 tens, and 1 one.</figcaption>
 </figure>
-<p><strong>So this “101” in base 10 is telling us we have “1 hundred, 0 tens, and 1 one.”</strong></p>
+<p><strong>So this "101” in base 10 is telling us we have "1 hundred, 0 tens, and 1 one.”</strong></p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__binary_numbers_base_10.svg?bust=209"
     alt="In base 10, the digits 101 represent 1 hundred, 0 tens, and 1 one, which add to give the value one hundred and one."/>
@@ -748,7 +748,7 @@
 <ul>
   <li>2^0=1 * 2^1=2 * 2^2=4 * 2^3=8 * etc.</li>
 </ul>
-<p>So let’s take that same “101” but this time let’s read it as a <em>binary</em> number:</p>
+<p>So let’s take that same "101” but this time let’s read it as a <em>binary</em> number:</p>
 <figure>
   <img src="https://www.interviewcake.com/images/svgs/cs_for_hackers__binary_numbers_base_2_digits.svg?bust=209"
     alt="In base 2, the digits 101 represent 1 four, 0 twos, and 1 one."/>

@@ -56,7 +56,7 @@ pgbench -i [<span class="optional"> <em class="replaceable"><code>other-options<
     Be very careful to use another database if you have tables having these
     names!
    </p></div><p>
-   At the default <span class="quote">“<span class="quote">scale factor</span>”</span> of 1, the tables initially
+   At the default <span class="quote">"<span class="quote">scale factor</span>"</span> of 1, the tables initially
    contain this many rows:
 </p><pre class="screen">
 table                   # of rows
@@ -375,7 +375,7 @@ pgbench [<span class="optional"> <em class="replaceable"><code>options</code></e
    This utility, like most other <span class="productname">PostgreSQL</span> utilities,
    uses the environment variables supported by <span class="application">libpq</span>
    (see <a class="xref" href="libpq-envars.html" title="33.14. Environment Variables">Section 33.14</a>).
-  </p></div><div class="refsect1" id="id-1.9.4.10.9"><h2>Notes</h2><div class="refsect2" id="id-1.9.4.10.9.2"><h3>What Is the <span class="quote">“<span class="quote">Transaction</span>”</span> Actually Performed in <span class="application">pgbench</span>?</h3><p>
+  </p></div><div class="refsect1" id="id-1.9.4.10.9"><h2>Notes</h2><div class="refsect2" id="id-1.9.4.10.9.2"><h3>What Is the <span class="quote">"<span class="quote">Transaction</span>"</span> Actually Performed in <span class="application">pgbench</span>?</h3><p>
    <span class="application">pgbench</span> executes test scripts chosen randomly
    from a specified list.
    They include built-in scripts with <code class="option">-b</code> and
@@ -402,13 +402,13 @@ pgbench [<span class="optional"> <em class="replaceable"><code>options</code></e
    <span class="application">pgbench</span> has support for running custom
    benchmark scenarios by replacing the default transaction script
    (described above) with a transaction script read from a file
-   (<code class="option">-f</code> option).  In this case a <span class="quote">“<span class="quote">transaction</span>”</span>
+   (<code class="option">-f</code> option).  In this case a <span class="quote">"<span class="quote">transaction</span>"</span>
    counts as one execution of a script file.
   </p><p>
    A script file contains one or more SQL commands terminated by
    semicolons.  Empty lines and lines beginning with
    <code class="literal">--</code> are ignored.  Script files can also contain
-   <span class="quote">“<span class="quote">meta commands</span>”</span>, which are interpreted by <span class="application">pgbench</span>
+   <span class="quote">"<span class="quote">meta commands</span>"</span>, which are interpreted by <span class="application">pgbench</span>
    itself, as described below.
   </p><div class="note"><h3 class="title">Note</h3><p>
     Before <span class="productname">PostgreSQL</span> 9.6, SQL commands in script files

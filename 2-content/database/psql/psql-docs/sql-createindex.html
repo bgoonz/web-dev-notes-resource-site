@@ -47,7 +47,7 @@ CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [ IF NOT EXISTS ] <em class="replacea
     The same restrictions apply to index fields that are expressions.
   </p><p>
    All functions and operators used in an index definition must be
-   <span class="quote">“<span class="quote">immutable</span>”</span>, that is, their results must depend only on
+   <span class="quote">"<span class="quote">immutable</span>"</span>, that is, their results must depend only on
    their arguments and never on any outside influence (such as
    the contents of another table or the current time).  This restriction
    ensures that the behavior of the index is well-defined.  To use a
@@ -272,7 +272,7 @@ CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [ IF NOT EXISTS ] <em class="replacea
    </p><p>
     If a problem arises while scanning the table, such as a deadlock or a
     uniqueness violation in a unique index, the <code class="command">CREATE INDEX</code>
-    command will fail but leave behind an <span class="quote">“<span class="quote">invalid</span>”</span> index. This index
+    command will fail but leave behind an <span class="quote">"<span class="quote">invalid</span>"</span> index. This index
     will be ignored for querying purposes because it might be incomplete;
     however it will still consume update overhead. The <span class="application">psql</span>
     <code class="command">\d</code> command will report such an index as <code class="literal">INVALID</code>:
@@ -297,7 +297,7 @@ Indexes:
     when the second table scan begins.  This means that constraint violations
     could be reported in other queries prior to the index becoming available
     for use, or even in cases where the index build eventually fails.  Also,
-    if a failure does occur in the second scan, the <span class="quote">“<span class="quote">invalid</span>”</span> index
+    if a failure does occur in the second scan, the <span class="quote">"<span class="quote">invalid</span>"</span> index
     continues to enforce its uniqueness constraint afterwards.
    </p><p>
     Concurrent builds of expression indexes and partial indexes are supported.
@@ -373,8 +373,8 @@ Indexes:
    multicolumn indexes can be created that match the sort ordering requested
    by a mixed-ordering query, such as <code class="literal">SELECT ... ORDER BY x ASC, y
    DESC</code>.  The <code class="literal">NULLS</code> options are useful if you need to support
-   <span class="quote">“<span class="quote">nulls sort low</span>”</span> behavior, rather than the default <span class="quote">“<span class="quote">nulls
-   sort high</span>”</span>, in queries that depend on indexes to avoid sorting steps.
+   <span class="quote">"<span class="quote">nulls sort low</span>"</span> behavior, rather than the default <span class="quote">"<span class="quote">nulls
+   sort high</span>"</span>, in queries that depend on indexes to avoid sorting steps.
   </p><p>
    For most index methods, the speed of creating an index is
    dependent on the setting of <a class="xref" href="runtime-config-resource.html#GUC-MAINTENANCE-WORK-MEM">maintenance_work_mem</a>.

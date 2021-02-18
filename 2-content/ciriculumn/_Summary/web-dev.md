@@ -1631,7 +1631,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 1. Given a working REPL interface, write and execute a statement that will print
-   “hello world” using console.log
+   "hello world" using console.log
 2. Identify that strings are a list of characters defined by using double or
    single quotes
 3. Given an arithmetic expression using +, -, \*, /, %, compute its value
@@ -1650,7 +1650,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 1. Given a working REPL interface, write and execute a statement that will print
-   “hello world” using console.log
+   "hello world" using console.log
 2. Identify that strings are a list of characters defined by using double or
    single quotes
 3. Given an arithmetic expression using +, -, \*, /, %, compute its value
@@ -6130,8 +6130,8 @@ Below is a complete list of the terminal learning objectives for this lesson.
 When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
-1. Given multiple plausible reasons, identify why functions are called “First
-   Class Objects” in JavaScript.
+1. Given multiple plausible reasons, identify why functions are called "First
+   Class Objects" in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed
 3. Write a function that takes in a value and two callbacks. The function should
@@ -6145,8 +6145,8 @@ assessment for this lesson.
 When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
-1. Given multiple plausible reasons, identify why functions are called “First
-   Class Objects” in JavaScript.
+1. Given multiple plausible reasons, identify why functions are called "First
+   Class Objects" in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed
 3. Write a function that takes in a value and two callbacks. The function should
@@ -9995,7 +9995,7 @@ to gain possession of the ball. An article in the _Harvard Business Review_ used
 this sports-based phenomenon as a metaphor for product development in the 1986
 article "The New New Product Development Game".
 > The ... "relay race" approach to product development ... may conflict with the
-> goals of maximum speed and flexibility. Instead a holistic or “rugby”
+> goals of maximum speed and flexibility. Instead a holistic or "rugby"
 > approach—where a team tries to go the distance as a unit, passing the ball
 > back and forth—may better serve today’s competitive requirements.
 This article inspired Jeff Sutherland to invent the "Scrum process" in 1993 for
@@ -10167,7 +10167,7 @@ done.
 Once the Scrum team finishes sprint planning and determines the features that it
 will complete in the next sprint, the development team, guided by the Scrum
 master’s coaching, performs all of the task-level work necessary to get the
-features done. “Done” means that the software developers have performed tasks to
+features done. "Done" means that the software developers have performed tasks to
 ensure the highest quality of software, and that the product owner has approved
 each feature's completion.
 Nobody tells the development team in what order or how to do the task-level work
@@ -10300,7 +10300,7 @@ valuable, measurable progress is being made each sprint. It also helps the
 stakeholders and team learn exactly what remains to be done to deliver the
 entire feature.
 Timeboxing helps _avoid unnecessary perfectionism_. At one time or another
-people spend too much time trying to get something “perfect” when “good enough”
+people spend too much time trying to get something "perfect" when "good enough"
 would suffice. Timeboxing forces an end to potentially unbounded work by
 establishing a fixed end date for the sprint by which a good solution must be
 done.
@@ -10374,7 +10374,7 @@ predictable rhythm or heartbeat to a Scrum development effort. A steady, healthy
 heartbeat allows the Scrum team and the organization to acquire an important
 rhythmic familiarity with when things need to happen to achieve the fast,
 flexible flow of business value. Having a regular cadence to sprints enables
-people to “get into the zone,” “be on a roll,” or “get into a groove.”
+people to "get into the zone," "be on a roll," or "get into a groove."
 Having a short sprint cadence also tends to level out the intensity of work.
 Unlike a traditional sequential project where we see a steep increase in
 intensity in the latter phases, each sprint has a similar intensity to that of
@@ -10401,8 +10401,8 @@ focus, such as:
 * Support customer service with new tooling
 * Load and curate new geophysical data
 * Integrate a new billing process into the application
-There are times when a sprint goal might be multifaceted, for example, “Get
-large-screen support working and support search by customer name.”
+There are times when a sprint goal might be multifaceted, for example, "Get
+large-screen support working and support search by customer name."
 During sprint planning, the development team should help refine and agree to the
 sprint goal and use it to determine the product backlog items that it can
 complete by the end of the sprint. These product backlog items serve to further
@@ -10558,7 +10558,7 @@ types of testing included in the definition of done?
 Keep in mind that if you don’t do an important type of testing every sprint
 (say, performance testing), you’ll have to do it sometime. Are you going to have
 some specialized sprint in the future where the only thing you do is performance
-testing? If so, and performance testing is essential to being“done,” you really
+testing? If so, and performance testing is essential to being"done," you really
 don’t have a usable product each sprint. And even worse, when you actually do
 the performance testing at a later time and it doesn’t go quite as planned, not
 only will you discover a critical problem very late in the process, but you will
@@ -10585,7 +10585,7 @@ at the start of development, even though it is the ultimate goal. As a result,
 they might start with a lesser end state and let their definition of done evolve
 over time as organizational impediments are removed.
 ###  211.2. <a name='Doneanddonedone'></a>Done and "done done"
-Some teams have adopted the concept of “done” versus “done done.” Somehow done-
+Some teams have adopted the concept of "done" versus "done done." Somehow done-
 done is supposed to be more done than done! Teams that are unaccustomed to
 really getting things done early and often are more likely to use "done done" as
 a crutch. For them, using "done done" makes the point that being done (doing as
@@ -10669,7 +10669,7 @@ to gain a shared understanding. In addition, conversations enable bidirectional
 communication that can spark ideas about problems and opportunities. Those are
 discussions that would not likely arise from reading a document.
 Conversation, however, is just a tool. It doesn’t replace all documents. In
-Scrum, the product backlog is a “living document,” available at all times during
+Scrum, the product backlog is a "living document," available at all times during
 product development. Those who still want or must have a requirements
 specification document can create one at any time, simply by collecting the
 product backlog items and all of their associated details into a document
@@ -10715,7 +10715,7 @@ stories directly on 3 × 5-inch index cards or sticky notes.
 A common template format for writing user stories uses the "Conextra format"
 known as the "as a-I want-so that" format. That format specifies a class of
 users (the user role), what that class of users wants to achieve (the goal), and
-why the users want to achieve the goal (the benefit). The “so that” part of a
+why the users want to achieve the goal (the benefit). The "so that" part of a
 user story is optional, but unless the purpose of the story is completely
 obvious to everyone, it should be included with every user story.
 > **As a** typical member, **I want** to see unbiased reviews of a restaurant
@@ -10821,11 +10821,11 @@ desired and why it is desired. However, they leave room for the product owner,
 the stakeholders, and the team to negotiate the details.
 This negotiability helps everyone involved avoid the us-versus-them, finger-
 pointing mentality that is commonplace with detailed up-front requirements docu-
-ments. When stories are negotiable, developers can’t really say, “Hey, if you
-wanted it, you should have put it in the document,” because the details are
+ments. When stories are negotiable, developers can’t really say, "Hey, if you
+wanted it, you should have put it in the document," because the details are
 going to be negoti- ated with the developers. And the business people can’t
-really say, “Hey, you obviously didn’t understand the requirements document
-because you built the wrong thing,” because the business people will be in
+really say, "Hey, you obviously didn’t understand the requirements document
+because you built the wrong thing," because the business people will be in
 frequent dialogue with the developers to make sure there is shared clarity.
 Writing negotiable stories avoids the problems associated with up-front detailed
 requirements by making it clear that a dialogue is necessary.
@@ -10837,7 +10837,7 @@ There are times, however, when how something is built is actually important to
 the product owner. For example, there might be a regulatory obligation to
 develop a feature in a particular way, or there might be a business constraint
 directing the use of a specific technology. In such cases the stories will be a
-bit less negotiable because some aspect of the “how” is required. That’s OK; not
+bit less negotiable because some aspect of the "how" is required. That’s OK; not
 all stories are fully negotiable, but most stories should be.
 ###  217.3. <a name='Valuableforeveryone'></a>Valuable for everyone
 Stories need to be valuable to a customer, user, or both. Customers (or
@@ -10848,7 +10848,7 @@ value to the customers or users? Is it OK to have **technical stories**.
 > **Technical story**: As a developer, I want to migrate the system to work on
 > the latest version of ReactJS so that we are not operating on a stale version
 > of the UI library and get stuck in an expensive upgrade later.
-In the case of the “Migrate to New Version of ReactJS" story, the product owner
+In the case of the "Migrate to New Version of ReactJS" story, the product owner
 might not initially understand why it is valuable to change databases. However,
 once the team explains the risks of continuing to develop on an unsupported
 version of a database, the product owner might decide that migrating databases
@@ -10896,14 +10896,14 @@ applying this criterion.
 Stories should be testable in a binary way: they either pass or fail their
 associated tests. Being testable means having good acceptance criteria (related
 to the conditions of satisfaction) associated with the story, which is the
-“confirmation” aspect of a user story.
+"confirmation" aspect of a user story.
 It may not always be necessary or possible to test a story. For example,
 epic-size stories probably don’t have tests associated with them, nor do they
 need them because you don’t directly build the epics.
 Also, on occasion there might be a story that the product owner deems valuable,
 yet there might not be a practical way to test it. These are more likely to be
-so-called **nonfunctional requirements**, such as “As a user, I want the system
-to have 99.999% uptime.” Although the acceptance criteria might be clear, there
+so-called **nonfunctional requirements**, such as "As a user, I want the system
+to have 99.999% uptime." Although the acceptance criteria might be clear, there
 may be no set of tests that can be run when the system is put into production
 that can prove that this level of uptime has been met, but the requirement is
 still valuable as it will drive the design.
@@ -13145,7 +13145,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 1. Given a code snippet of a unassigned variable, predict its value.
-2. Explain why functions are “First Class Objects” in JavaScript
+2. Explain why functions are "First Class Objects" in JavaScript
 3. Define what IIFEs are and explain their use case
 4. (Whiteboarding) Implement a closure
 5. Identify JavaScript’s falsey values
@@ -13159,7 +13159,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 1. Given a code snippet of a unassigned variable, predict its value.
-2. Explain why functions are “First Class Objects” in JavaScript
+2. Explain why functions are "First Class Objects" in JavaScript
 3. Define what IIFEs are and explain their use case
 4. (Whiteboarding) Implement a closure
 5. Identify JavaScript’s falsey values
@@ -13174,7 +13174,7 @@ ________________________________________________________________________________
 It's time to learn about some built in JavaScript functionality that will allow
 you to define an anonymous function and then immediately run that function as
 soon as it has been defined. In JavaScript we call this an Immediately-Invoked
-Function Expression or IIFE (pronounced as “iffy”).
+Function Expression or IIFE (pronounced as "iffy").
 When you finish this reading you should be able to identify an
 Immediately-Invoked Function Expression, as well as write your own.
 ##  265. <a name='Quickreviewoffunctionexpressions'></a>Quick review of function expressions
@@ -14005,7 +14005,7 @@ console like usual). Play around with different scroll values. Pretty neat, huh?
 ##  291. <a name='Contextscopeandanonymousfunctions'></a>Context, scope, and anonymous functions
 Two important terms to understand when you’re developing in Javascript are
 **context** and **scope**. Ryan Morr has a great write-up about the differences
-between the two here: [“Understanding Scope and Context in Javascript”][4].
+between the two here: ["Understanding Scope and Context in Javascript"][4].
 The important things to note about **context** are:
 1. Every function has a context (as well as a scope).
 2. Context refers to the object that _owns_ the function (i.e. the value of
@@ -14034,7 +14034,7 @@ When you open your console in the browser and run this code, you should see the
 `window` object printed. When a function is called in the global scope, `this`
 defaults to the global context, or in the case of running code in the browser,
 the `window` object.
-Refer to [“Understanding Scope and Context in Javascript”][4] for more about the
+Refer to ["Understanding Scope and Context in Javascript"][4] for more about the
 scope chain, closures, and using `.call()` and `.apply()` on functions.
 ##  292. <a name='RunningascriptonDOMContentLoaded'></a>Running a script on DOMContentLoaded
 Now you will learn how to run a script on `DOMContentLoaded`, when the
@@ -14280,13 +14280,13 @@ Below is a complete list of the terminal learning objectives for this lesson.
 When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
-1. Given HTML that includes `<div id=”catch-me-if-you-can”>HI!</div>`, write a
+1. Given HTML that includes `<div id="catch-me-if-you-can">HI!</div>`, write a
    JavaScript statement that stores a reference to the HTMLDivElement with the
-   id “catch-me-if-you-can” in a variable named “divOfInterest”.
-2. Given HTML that includes seven SPAN elements each with the class “cloudy”,
+   id "catch-me-if-you-can" in a variable named "divOfInterest".
+2. Given HTML that includes seven SPAN elements each with the class "cloudy",
    write a JavaScript statement that stores a reference to a NodeList filled
    with references to the seven HTMLSpanElements in a variable named
-   “cloudySpans”.
+   "cloudySpans".
 3. Given an HTML file with HTML, HEAD, TITLE, and BODY elements, create and
    reference a JS file that in which the JavaScript will create and attach to
    the BODY element an H1 element with the id "sleeping-giant" with the content
@@ -14314,13 +14314,13 @@ assessment for this lesson.
 When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
-1. Given HTML that includes `<div id=”catch-me-if-you-can”>HI!</div>`, write a
+1. Given HTML that includes `<div id="catch-me-if-you-can">HI!</div>`, write a
    JavaScript statement that stores a reference to the HTMLDivElement with the
-   id “catch-me-if-you-can” in a variable named “divOfInterest”.
-2. Given HTML that includes seven SPAN elements each with the class “cloudy”,
+   id "catch-me-if-you-can" in a variable named "divOfInterest".
+2. Given HTML that includes seven SPAN elements each with the class "cloudy",
    write a JavaScript statement that stores a reference to a NodeList filled
    with references to the seven HTMLSpanElements in a variable named
-   “cloudySpans”.
+   "cloudySpans".
 3. Given an HTML file with HTML, HEAD, TITLE, and BODY elements, create and
    reference a JS file that in which the JavaScript will create and attach to
    the BODY element an H1 element with the id "sleeping-giant" with the content
@@ -14373,7 +14373,7 @@ how to reference a DOM element in Javascript.
 Let’s assume we have an HTML file that includes the following `div`:
 **HTML**
 ```html
-<div id="”catch-me-if-you-can”">HI!</div>
+<div id=""catch-me-if-you-can"">HI!</div>
 ```
 Because we've added the element to our HTML file, that element is available in
 the DOM for us to reference and manipulate. Using JavaScript, we can reference
@@ -14381,19 +14381,19 @@ this element by scanning the document and finding the element by its id with the
 method document.getElementById(). We then assign the reference to a variable.
 **Javascript**
 ```js
-const divOfInterest = document.getElementById(“catch-me-if-you-can”)
+const divOfInterest = document.getElementById("catch-me-if-you-can")
 ```
 Now let’s say that our HTML file contains seven `span` elements that share a
 class name of `cloudy`, like below:
 **HTML**
 ```html
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
-<span class="“cloudy”"></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
+<span class=""cloudy""></span>
 ```
 In Javascript, we can reference all seven of these elements and store them in a
 single variable.
@@ -14402,7 +14402,7 @@ single variable.
 const cloudySpans = document.querySelectorAll("span.cloudy");
 ```
 While `getElementById` allows us to reference a single element,
-`querySelectorAll` references all elements with the class name “cloudy” as a
+`querySelectorAll` references all elements with the class name "cloudy" as a
 static `NodeList` (_static_ meaning that any changes in the DOM do not affect
 the content of the collection). Note that a NodeList is different from an array,
 but it is possible to iterate over a NodeList as with an array using
@@ -14456,7 +14456,7 @@ window.onload = addElement;
 ```
 If we open up our HTML file in a browser, we should now see the words
 `Jell-O Burled!` on our page. If we use the browser tools to inspect the page
-(right-click on the page and select “inspect”, or hotkeys fn + f12), we notice
+(right-click on the page and select "inspect", or hotkeys fn + f12), we notice
 the new `h1` with the id we gave it.
 ________________________________________________________________________________
 # Hello, World DOMination: Inserting Elements in JS File and Script Block
@@ -14765,7 +14765,7 @@ In your HTML file, add a link to an external Javascript file in your project
 directory called `myProfile.js`. Test that your Javascript file is linked
 correctly by printing something you can read in the browser console. Example:
 ```js
-console.log(“This is my profile page!”)
+console.log("This is my profile page!")
 ```
 ##  317. <a name='Phase2:Populatingyourprofile'></a>Phase 2: Populating your profile
 Again, don’t hard-code any content in your HTML file. Instead, construct the
@@ -14851,7 +14851,7 @@ section. You can use `Element.setAttribute` to set the class name to your `ul`.
 Here’s an example:
 ```js
 const myDetails = document.createElement("ul");
-myDetails.setAttribute(“class”, “my-details”);
+myDetails.setAttribute("class", "my-details");
 ```
 Now that you know how to set an element’s class name, practice setting
 attributes by adding class names to the other elements you created.
@@ -14893,7 +14893,7 @@ Objectives:
 - Insert the current time into a DOM element
 You just created a live clock, and it’s _time_ for congratulations! (Har har.)
 Can you go the extra mile? Figure out how to insert your clock into a new list
-item under your personal details that says “I live in City, State, and it’s
+item under your personal details that says "I live in City, State, and it’s
 currently `[CLOCK]` here.
 ##  320. <a name='Bonus:Youresoextra'></a>Bonus: You’re so extra!
 Congratulations! You’ve created a basic profile page by manipulating the DOM and
@@ -14904,8 +14904,8 @@ Using Javascript, create new elements and:
 - Insert an image into your profile under your name. _Hint:_ You could insert a
   new `img`, or you could add a `div` and set the background image using a CSS
   class.
-- Insert more sections to your profile. Examples: “Likes” list and “Dislikes”
-  list, “Favorite Restaurants”, “My Activities”, etc.
+- Insert more sections to your profile. Examples: "Likes" list and "Dislikes"
+  list, "Favorite Restaurants", "My Activities", etc.
 ###  320.2. <a name='BonusB:UseotherElementmethods'></a>Bonus B: Use other Element methods
 Check the MDN documentation for more
 [Element methods](https://developer.mozilla.org/en-US/docs/Web/API/Element) you
@@ -14953,7 +14953,7 @@ assessment for this lesson.
    JavaScript that will change the background color of the page to cyan five
    seconds after a page loads unless the field input#stopper contains only the
    text "STOP".
-4. Given an HTML page with that includes `<input type=”text” id=”fancypants”>`,
+4. Given an HTML page with that includes `<input type="text" id="fancypants">`,
    write JavaScript that changes the background color of the textbox to #E8F5E9
    when the caret is in the textbox and turns it back to its normal color when
    focus is elsewhere.
@@ -14983,7 +14983,7 @@ assessment for this lesson.
    JavaScript that will change the background color of the page to cyan five
    seconds after a page loads unless the field input#stopper contains only the
    text "STOP".
-4. Given an HTML page with that includes `<input type=”text” id=”fancypants”>`,
+4. Given an HTML page with that includes `<input type="text" id="fancypants">`,
    write JavaScript that changes the background color of the textbox to #E8F5E9
    when the caret is in the textbox and turns it back to its normal color when
    focus is elsewhere.
@@ -15832,8 +15832,8 @@ another example that demonstrates bubbling.
 </html>
 ```
 If you save this HTML file, open it in a browser, and click on the `<p>`, three
-different messages should appear in the console: first “P”, second “DIV”, and
-third “MAIN”. The click event bubbled upwards from the `<p>` element to the
+different messages should appear in the console: first "P", second "DIV", and
+third "MAIN". The click event bubbled upwards from the `<p>` element to the
 `<div>` and finally to the `<main>`.
 We could think of this succession of events as bubbles popping. The innermost
 bubble (the `<p>` element) _popped_ (i.e. displayed an alert), which caused its
@@ -16420,7 +16420,7 @@ storage.
 ##  361. <a name='Storingdatainlocalstorage'></a>Storing data in local storage
 Web Storage exists in the window as an object, and we can access it by using
 [Window.localStorage][2]. As we previously reviewed, with window properties we
-can omit the _”window”_ part and simply use the property name, `localStorage`.
+can omit the _"window"_ part and simply use the property name, `localStorage`.
 We can set a key-value pair in local storage with a single line of code. Here
 are a few examples:
 ```js
@@ -16558,7 +16558,7 @@ items from their cart. In order to do this, you might want to add to or amend
 the function you wrote in Phase 2.
 Insert **Remove** buttons next to each cart item you inserted on the page. Then,
 write a function that does the following:
-* Listen for a click event on the “Remove” buttons
+* Listen for a click event on the "Remove" buttons
 * Remove the corresponding item from `localStorage`
 * Remove the item from the `shopping-cart` DIV
 _Hint: We can use [Storage.removeItem()][4] to remove an item from
@@ -16577,12 +16577,12 @@ After you’ve written your JS, test that the page functions as it should. A use
 should be able to add an item with a given quantity to the cart. You should be
 able to see this item in `localStorage` in your browser’s Developer Tools, and
 it should show up in the Shopping Cart section of the page.
-When a user removes an item by clicking the “Remove” button, that item should
+When a user removes an item by clicking the "Remove" button, that item should
 be removed from `localStorage` as well as the page.
 When you refresh the page, or close and reopen the browser, the cart items that
 have not been removed should still appear on the page.
 ##  370. <a name='BonusA:Updatecartitemquantitiesandresetvalues'></a>Bonus A: Update cart item quantities and reset values
-Instead of displaying text values of the item quantities (e.g. “1”, “5”, “12”)
+Instead of displaying text values of the item quantities (e.g. "1", "5", "12")
 on the page, replace those with an [HTML5 number spinner][9]. What’s that, you
 ask? It’s really just a fancy way to say an input field that lets you increment
 and decrement a number value. We’ve actually already used one on the page.
@@ -22473,7 +22473,7 @@ opening tag (also called the start tag) and the closing tag (also called the end
 tag).
 Tags usually come in pairs, and the difference between an opening tag and a
 closing tag is that the first symbol inside the brackets of a closing tag is a
-slash “/“ symbol.
+slash "/" symbol.
 For example, here’s a pair of h1 tags (used to identify heading text), with some
 content in-between:
 ```html
@@ -22561,7 +22561,7 @@ World Wide Web.)
 ###  497.3. <a name='Thesethingscalledattributes'></a>These things called "attributes"
 Attributes are used to define additional information about an element. They are
 located inside the opening tag, and usually come in name/value pairs (name=
-“value”).
+"value").
 All HTML elements can have attributes, but for most elements, we only use them
 when we need to. Attributes common to _all_ HTML elements are the _class_ and
 _id_ attributes that you can use to categorize and identify HTML elements in
@@ -26798,21 +26798,21 @@ manage version control and collaborate on projects, but in this module we are
 going to discuss how to harness the power of GitHub to your advantage.
 Aside from your actual code repositories, there are several other sections that
 represent who you are as a developer.
-* **Followers and Following**: Think of this as your “friends’ list on GitHub.
+* **Followers and Following**: Think of this as your "friends’ list on GitHub.
   If you see a social media profile of a person with two friends, what are you
   going to think? Though you’re not expected to have hundreds of followers on
   GitHub, you should follow your peers and encourage them to follow you to show
   industry engineers that there are people who would vouch for your skillset.
-* **Stars**: These are the “likes” on your GitHub profile. Similar to
-  encouraging others to follow you and following them, you should also “star”
+* **Stars**: These are the "likes" on your GitHub profile. Similar to
+  encouraging others to follow you and following them, you should also "star"
   their popular repositories. By the end of the curriculum, you should have
   several stars on each of your portfolio projects.
-* **Green Gardens**: This is birds-eye view of your “newsfeed” if your newsfeed
+* **Green Gardens**: This is birds-eye view of your "newsfeed" if your newsfeed
   reflected the number of commits that you were making. If you are very active
-  on GitHub, your activity squares, AKA “green gardens” will be verdant and
+  on GitHub, your activity squares, AKA "green gardens" will be verdant and
   green. This tells anyone who views your profile that you are actively coding
-  and engaged with your identity as a software engineer. However, if your “green
-  gardens” are not green, this suggests that you are not actively coding and
+  and engaged with your identity as a software engineer. However, if your "green
+  gardens" are not green, this suggests that you are not actively coding and
   therefore perhaps not the best candidates for a development job.
 * **Photo and brief intro**: This is fairly straight-forward and should mirror
   the photo from you LinkedIn. Choose a professional photo and brief description
@@ -26831,8 +26831,8 @@ documents, explanation of technologies used and insight into what your repo
 contains will live.
 Wikis are created at the beginning of any significant project and should be
 updated as your project evolves.
-To create or update your repository’s Wiki, click on the “Wiki” tab in your repo
-header and click “Edit” to update your home page and “New Page” to add a new
+To create or update your repository’s Wiki, click on the "Wiki" tab in your repo
+header and click "Edit" to update your home page and "New Page" to add a new
 section.
 ![Wiki tab on GitHub](images/github-repo-menu-bar-wiki.png)
 Best practices for Wiki creation:
@@ -26844,8 +26844,8 @@ for now  just know that you will spend time creating a solid Wiki in order to
 facilitate a smooth development process. One of the most important aspects of
 your Wiki will be the outline of your project’s features and the **minimum
 viable product** (MVP).
-As you begin any project, you will consider what constitutes a “final product”
-and break down features into bite-sized “minimum viable products.” For example,
+As you begin any project, you will consider what constitutes a "final product"
+and break down features into bite-sized "minimum viable products." For example,
 if you intend to create an a/A version of Twitter, your list of MVPs may
 include:
 * Users are able to log into application
@@ -26866,10 +26866,10 @@ are created and completed when you are ready to roll your application into
 production. READMEs should contain information about two impressive features
 that you implemented in your project, the technologies used, how to install the
 program, and anything else that makes you stand out as a software developer.
-Think of READMEs as the “first impression” that prospective employers,
+Think of READMEs as the "first impression" that prospective employers,
 colleagues, and peers will have of you as a developer. You want their first
-impression to be “wow, this person is thorough and this project sounds
-interesting,” not “oh no, typos, missing instructions, and snores-galore.”
+impression to be "wow, this person is thorough and this project sounds
+interesting," not "oh no, typos, missing instructions, and snores-galore."
 When it is time to create your README, you should allocate about three hours to
 guarantee you have enough time to make your project shine.
 README.md files are written using markdown syntax (.md) which makes them appear
@@ -30338,21 +30338,21 @@ manage version control and collaborate on projects, but in this module we are
 going to discuss how to harness the power of GitHub to your advantage.
 Aside from your actual code repositories, there are several other sections that
 represent who you are as a developer.
-* **Followers and Following**: Think of this as your “friends’ list on GitHub.
+* **Followers and Following**: Think of this as your "friends’ list on GitHub.
   If you see a social media profile of a person with two friends, what are you
   going to think? Though you’re not expected to have hundreds of followers on
   GitHub, you should follow your peers and encourage them to follow you to show
   industry engineers that there are people who would vouch for your skillset.
-* **Stars**: These are the “likes” on your GitHub profile. Similar to
-  encouraging others to follow you and following them, you should also “star”
+* **Stars**: These are the "likes" on your GitHub profile. Similar to
+  encouraging others to follow you and following them, you should also "star"
   their popular repositories. By the end of the curriculum, you should have
   several stars on each of your portfolio projects.
-* **Green Gardens**: This is birds-eye view of your “newsfeed” if your newsfeed
+* **Green Gardens**: This is birds-eye view of your "newsfeed" if your newsfeed
   reflected the number of commits that you were making. If you are very active
-  on GitHub, your activity squares, AKA “green gardens” will be verdant and
+  on GitHub, your activity squares, AKA "green gardens" will be verdant and
   green. This tells anyone who views your profile that you are actively coding
-  and engaged with your identity as a software engineer. However, if your “green
-  gardens” are not green, this suggests that you are not actively coding and
+  and engaged with your identity as a software engineer. However, if your "green
+  gardens" are not green, this suggests that you are not actively coding and
   therefore perhaps not the best candidates for a development job.
 * **Photo and brief intro**: This is fairly straight-forward and should mirror
   the photo from you LinkedIn. Choose a professional photo and brief description
@@ -30371,8 +30371,8 @@ documents, explanation of technologies used and insight into what your repo
 contains will live.
 Wikis are created at the beginning of any significant project and should be
 updated as your project evolves.
-To create or update your repository’s Wiki, click on the “Wiki” tab in your repo
-header and click “Edit” to update your home page and “New Page” to add a new
+To create or update your repository’s Wiki, click on the "Wiki" tab in your repo
+header and click "Edit" to update your home page and "New Page" to add a new
 section.
 ![Wiki tab on GitHub](images/github-repo-menu-bar-wiki.png)
 Best practices for Wiki creation:
@@ -30384,8 +30384,8 @@ for now  just know that you will spend time creating a solid Wiki in order to
 facilitate a smooth development process. One of the most important aspects of
 your Wiki will be the outline of your project’s features and the **minimum
 viable product** (MVP).
-As you begin any project, you will consider what constitutes a “final product”
-and break down features into bite-sized “minimum viable products.” For example,
+As you begin any project, you will consider what constitutes a "final product"
+and break down features into bite-sized "minimum viable products." For example,
 if you intend to create an a/A version of Twitter, your list of MVPs may
 include:
 * Users are able to log into application
@@ -30406,10 +30406,10 @@ are created and completed when you are ready to roll your application into
 production. READMEs should contain information about two impressive features
 that you implemented in your project, the technologies used, how to install the
 program, and anything else that makes you stand out as a software developer.
-Think of READMEs as the “first impression” that prospective employers,
+Think of READMEs as the "first impression" that prospective employers,
 colleagues, and peers will have of you as a developer. You want their first
-impression to be “wow, this person is thorough and this project sounds
-interesting,” not “oh no, typos, missing instructions, and snores-galore.”
+impression to be "wow, this person is thorough and this project sounds
+interesting," not "oh no, typos, missing instructions, and snores-galore."
 When it is time to create your README, you should allocate about three hours to
 guarantee you have enough time to make your project shine.
 README.md files are written using markdown syntax (.md) which makes them appear
@@ -33880,21 +33880,21 @@ manage version control and collaborate on projects, but in this module we are
 going to discuss how to harness the power of GitHub to your advantage.
 Aside from your actual code repositories, there are several other sections that
 represent who you are as a developer.
-* **Followers and Following**: Think of this as your “friends’ list on GitHub.
+* **Followers and Following**: Think of this as your "friends’ list on GitHub.
   If you see a social media profile of a person with two friends, what are you
   going to think? Though you’re not expected to have hundreds of followers on
   GitHub, you should follow your peers and encourage them to follow you to show
   industry engineers that there are people who would vouch for your skillset.
-* **Stars**: These are the “likes” on your GitHub profile. Similar to
-  encouraging others to follow you and following them, you should also “star”
+* **Stars**: These are the "likes" on your GitHub profile. Similar to
+  encouraging others to follow you and following them, you should also "star"
   their popular repositories. By the end of the curriculum, you should have
   several stars on each of your portfolio projects.
-* **Green Gardens**: This is birds-eye view of your “newsfeed” if your newsfeed
+* **Green Gardens**: This is birds-eye view of your "newsfeed" if your newsfeed
   reflected the number of commits that you were making. If you are very active
-  on GitHub, your activity squares, AKA “green gardens” will be verdant and
+  on GitHub, your activity squares, AKA "green gardens" will be verdant and
   green. This tells anyone who views your profile that you are actively coding
-  and engaged with your identity as a software engineer. However, if your “green
-  gardens” are not green, this suggests that you are not actively coding and
+  and engaged with your identity as a software engineer. However, if your "green
+  gardens" are not green, this suggests that you are not actively coding and
   therefore perhaps not the best candidates for a development job.
 * **Photo and brief intro**: This is fairly straight-forward and should mirror
   the photo from you LinkedIn. Choose a professional photo and brief description
@@ -33913,8 +33913,8 @@ documents, explanation of technologies used and insight into what your repo
 contains will live.
 Wikis are created at the beginning of any significant project and should be
 updated as your project evolves.
-To create or update your repository’s Wiki, click on the “Wiki” tab in your repo
-header and click “Edit” to update your home page and “New Page” to add a new
+To create or update your repository’s Wiki, click on the "Wiki" tab in your repo
+header and click "Edit" to update your home page and "New Page" to add a new
 section.
 ![Wiki tab on GitHub](images/github-repo-menu-bar-wiki.png)
 Best practices for Wiki creation:
@@ -33926,8 +33926,8 @@ for now  just know that you will spend time creating a solid Wiki in order to
 facilitate a smooth development process. One of the most important aspects of
 your Wiki will be the outline of your project’s features and the **minimum
 viable product** (MVP).
-As you begin any project, you will consider what constitutes a “final product”
-and break down features into bite-sized “minimum viable products.” For example,
+As you begin any project, you will consider what constitutes a "final product"
+and break down features into bite-sized "minimum viable products." For example,
 if you intend to create an a/A version of Twitter, your list of MVPs may
 include:
 * Users are able to log into application
@@ -33948,10 +33948,10 @@ are created and completed when you are ready to roll your application into
 production. READMEs should contain information about two impressive features
 that you implemented in your project, the technologies used, how to install the
 program, and anything else that makes you stand out as a software developer.
-Think of READMEs as the “first impression” that prospective employers,
+Think of READMEs as the "first impression" that prospective employers,
 colleagues, and peers will have of you as a developer. You want their first
-impression to be “wow, this person is thorough and this project sounds
-interesting,” not “oh no, typos, missing instructions, and snores-galore.”
+impression to be "wow, this person is thorough and this project sounds
+interesting," not "oh no, typos, missing instructions, and snores-galore."
 When it is time to create your README, you should allocate about three hours to
 guarantee you have enough time to make your project shine.
 README.md files are written using markdown syntax (.md) which makes them appear
@@ -37422,21 +37422,21 @@ manage version control and collaborate on projects, but in this module we are
 going to discuss how to harness the power of GitHub to your advantage.
 Aside from your actual code repositories, there are several other sections that
 represent who you are as a developer.
-* **Followers and Following**: Think of this as your “friends’ list on GitHub.
+* **Followers and Following**: Think of this as your "friends’ list on GitHub.
   If you see a social media profile of a person with two friends, what are you
   going to think? Though you’re not expected to have hundreds of followers on
   GitHub, you should follow your peers and encourage them to follow you to show
   industry engineers that there are people who would vouch for your skillset.
-* **Stars**: These are the “likes” on your GitHub profile. Similar to
-  encouraging others to follow you and following them, you should also “star”
+* **Stars**: These are the "likes" on your GitHub profile. Similar to
+  encouraging others to follow you and following them, you should also "star"
   their popular repositories. By the end of the curriculum, you should have
   several stars on each of your portfolio projects.
-* **Green Gardens**: This is birds-eye view of your “newsfeed” if your newsfeed
+* **Green Gardens**: This is birds-eye view of your "newsfeed" if your newsfeed
   reflected the number of commits that you were making. If you are very active
-  on GitHub, your activity squares, AKA “green gardens” will be verdant and
+  on GitHub, your activity squares, AKA "green gardens" will be verdant and
   green. This tells anyone who views your profile that you are actively coding
-  and engaged with your identity as a software engineer. However, if your “green
-  gardens” are not green, this suggests that you are not actively coding and
+  and engaged with your identity as a software engineer. However, if your "green
+  gardens" are not green, this suggests that you are not actively coding and
   therefore perhaps not the best candidates for a development job.
 * **Photo and brief intro**: This is fairly straight-forward and should mirror
   the photo from you LinkedIn. Choose a professional photo and brief description
@@ -37455,8 +37455,8 @@ documents, explanation of technologies used and insight into what your repo
 contains will live.
 Wikis are created at the beginning of any significant project and should be
 updated as your project evolves.
-To create or update your repository’s Wiki, click on the “Wiki” tab in your repo
-header and click “Edit” to update your home page and “New Page” to add a new
+To create or update your repository’s Wiki, click on the "Wiki" tab in your repo
+header and click "Edit" to update your home page and "New Page" to add a new
 section.
 ![Wiki tab on GitHub](images/github-repo-menu-bar-wiki.png)
 Best practices for Wiki creation:
@@ -37468,8 +37468,8 @@ for now  just know that you will spend time creating a solid Wiki in order to
 facilitate a smooth development process. One of the most important aspects of
 your Wiki will be the outline of your project’s features and the **minimum
 viable product** (MVP).
-As you begin any project, you will consider what constitutes a “final product”
-and break down features into bite-sized “minimum viable products.” For example,
+As you begin any project, you will consider what constitutes a "final product"
+and break down features into bite-sized "minimum viable products." For example,
 if you intend to create an a/A version of Twitter, your list of MVPs may
 include:
 * Users are able to log into application
@@ -37490,10 +37490,10 @@ are created and completed when you are ready to roll your application into
 production. READMEs should contain information about two impressive features
 that you implemented in your project, the technologies used, how to install the
 program, and anything else that makes you stand out as a software developer.
-Think of READMEs as the “first impression” that prospective employers,
+Think of READMEs as the "first impression" that prospective employers,
 colleagues, and peers will have of you as a developer. You want their first
-impression to be “wow, this person is thorough and this project sounds
-interesting,” not “oh no, typos, missing instructions, and snores-galore.”
+impression to be "wow, this person is thorough and this project sounds
+interesting," not "oh no, typos, missing instructions, and snores-galore."
 When it is time to create your README, you should allocate about three hours to
 guarantee you have enough time to make your project shine.
 README.md files are written using markdown syntax (.md) which makes them appear

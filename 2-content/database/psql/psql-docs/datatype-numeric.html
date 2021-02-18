@@ -94,13 +94,13 @@ NUMERIC
     </p><a id="id-1.5.7.9.7.11" class="indexterm"></a><a id="id-1.5.7.9.7.12" class="indexterm"></a><p>
      In addition to ordinary numeric values, the <code class="type">numeric</code>
      type allows the special value <code class="literal">NaN</code>, meaning
-     <span class="quote">“<span class="quote">not-a-number</span>”</span>.  Any operation on <code class="literal">NaN</code>
+     <span class="quote">"<span class="quote">not-a-number</span>"</span>.  Any operation on <code class="literal">NaN</code>
      yields another <code class="literal">NaN</code>.  When writing this value
      as a constant in an SQL command, you must put quotes around it,
      for example <code class="literal">UPDATE table SET x = 'NaN'</code>.  On input,
      the string <code class="literal">NaN</code> is recognized in a case-insensitive manner.
     </p><div class="note"><h3 class="title">Note</h3><p>
-      In most implementations of the <span class="quote">“<span class="quote">not-a-number</span>”</span> concept,
+      In most implementations of the <span class="quote">"<span class="quote">not-a-number</span>"</span> concept,
       <code class="literal">NaN</code> is not considered equal to any other numeric
       value (including <code class="literal">NaN</code>).  In order to allow
       <code class="type">numeric</code> values to be sorted and used in tree-based
@@ -209,8 +209,8 @@ FROM generate_series(-3.5, 3.5, 1) as x;
 <code class="literal">NaN</code><br />
 </p></div><p>
      These represent the IEEE 754 special values
-     <span class="quote">“<span class="quote">infinity</span>”</span>, <span class="quote">“<span class="quote">negative infinity</span>”</span>, and
-     <span class="quote">“<span class="quote">not-a-number</span>”</span>, respectively. When writing these values
+     <span class="quote">"<span class="quote">infinity</span>"</span>, <span class="quote">"<span class="quote">negative infinity</span>"</span>, and
+     <span class="quote">"<span class="quote">not-a-number</span>"</span>, respectively. When writing these values
      as constants in an SQL command, you must put quotes around them,
      for example <code class="literal">UPDATE table SET x = '-Infinity'</code>.  On input,
      these strings are recognized in a case-insensitive manner.
@@ -269,7 +269,7 @@ ALTER SEQUENCE <em class="replaceable"><code>tablename</code></em>_<em class="re
      inserted.  (In most cases you would also want to attach a
      <code class="literal">UNIQUE</code> or <code class="literal">PRIMARY KEY</code> constraint to prevent
      duplicate values from being inserted by accident, but this is
-     not automatic.)  Lastly, the sequence is marked as <span class="quote">“<span class="quote">owned by</span>”</span>
+     not automatic.)  Lastly, the sequence is marked as <span class="quote">"<span class="quote">owned by</span>"</span>
      the column, so that it will be dropped if the column or table is dropped.
     </p><div class="note"><h3 class="title">Note</h3><p>
         Because <code class="type">smallserial</code>, <code class="type">serial</code> and

@@ -7,13 +7,13 @@
 </head>
 <body>;
 <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a <a href="/docs/react-component.html">detailed component API reference here</a>.</p>
-<p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.</p>
+<p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.</p>
 <h2 id="function-and-class-components">Function and Class Components</h2>
 <p>The simplest way to define a component is to write a JavaScript function:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">function</span> <span class="at">Welcome</span>(props) <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="cf">return</span> <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello<span class="op">,</span> <span class="op">{</span><span class="va">props</span>.<span class="at">name</span><span class="op">}</span>&lt;/h1<span class="op">&gt;;</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="op">}</span></a></code></pre></div>
-<p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.</p>
+<p>This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.</p>
 <p>You can also use an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">ES6 class</a> to define a component:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">class</span> Welcome <span class="kw">extends</span> <span class="va">React</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
@@ -27,8 +27,8 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>div /<span class="op">&gt;;</span></a></code></pre></div>
 <p>However, elements can also represent user-defined components:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">const</span> element <span class="op">=</span> <span class="op">&lt;</span>Welcome name<span class="op">=</span><span class="st">&quot;Sara&quot;</span> /&gt;<span class="op">;</span></a></code></pre></div>
-<p>When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.</p>
-<p>For example, this code renders “Hello, Sara” on the page:</p>
+<p>When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".</p>
+<p>For example, this code renders "Hello, Sara" on the page:</p>
 <pre class="js{1,5}"><code>function Welcome(props) {
   return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
 }
@@ -167,12 +167,12 @@ ReactDOM.render(
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">function</span> <span class="at">sum</span>(a<span class="op">,</span> b) <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-3" title="3"><span class="op">}</span></a></code></pre></div>
-<p>Such functions are called <a href="https://en.wikipedia.org/wiki/Pure_function">“pure”</a> because they do not attempt to change their inputs, and always return the same result for the same inputs.</p>
+<p>Such functions are called <a href="https://en.wikipedia.org/wiki/Pure_function">"pure"</a> because they do not attempt to change their inputs, and always return the same result for the same inputs.</p>
 <p>In contrast, this function is impure because it changes its own input:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">function</span> <span class="at">withdraw</span>(account<span class="op">,</span> amount) <span class="op">{</span></a>
 <a class="sourceLine" id="cb13-2" title="2">  <span class="va">account</span>.<span class="at">total</span> <span class="op">-=</span> amount<span class="op">;</span></a>
 <a class="sourceLine" id="cb13-3" title="3"><span class="op">}</span></a></code></pre></div>
 <p>React is pretty flexible but it has a single strict rule:</p>
 <p><strong>All React components must act like pure functions with respect to their props.</strong></p>
-<p>Of course, application UIs are dynamic and change over time. In the <a href="/docs/state-and-lifecycle.html">next section</a>, we will introduce a new concept of “state”. State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.</p>
+<p>Of course, application UIs are dynamic and change over time. In the <a href="/docs/state-and-lifecycle.html">next section</a>, we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.</p>
 </body></html>

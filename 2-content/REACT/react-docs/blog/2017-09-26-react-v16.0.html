@@ -62,10 +62,10 @@
 <p>Core team member Sasha Aickin wrote a <a
         href="https://medium.com/@aickin/whats-new-with-server-side-rendering-in-react-16-9b0d78585d67">great article
         describing React 16's SSR improvements</a>. According to Sasha's synthetic benchmarks, server rendering in React
-    16 is roughly <strong>three times faster</strong> than React 15. “When comparing against React 15 with
+    16 is roughly <strong>three times faster</strong> than React 15. "When comparing against React 15 with
     <code>process.env</code> compiled out, there's about a 2.4x improvement in Node 4, about a 3x performance
     improvement in Node 6, and a full 3.8x improvement in the new Node 8.4 release. And if you compare against React 15
-    without compilation, React 16 has a full order of magnitude gain in SSR in the latest version of Node!” (As Sasha
+    without compilation, React 16 has a full order of magnitude gain in SSR in the latest version of Node!" (As Sasha
     points out, please be aware that these numbers are based on synthetic benchmarks and may not reflect real-world
     performance.)</p>
 <p>In addition, React 16 is better at hydrating server-rendered HTML once it reaches the client. It no longer requires
@@ -97,7 +97,7 @@
         missed it</a>, React 16 is available under the MIT license. We've also published React 15.6.2 under MIT, for
     those who are unable to upgrade immediately.</p>
 <h3 id="new-core-architecture">New core architecture</h3>
-<p>React 16 is the first version of React built on top of a new core architecture, codenamed “Fiber.” You can read all
+<p>React 16 is the first version of React built on top of a new core architecture, codenamed "Fiber." You can read all
     about this project over on <a
         href="https://code.facebook.com/posts/1716776591680069/react-16-a-look-inside-an-api-compatible-rewrite-of-our-frontend-ui-library/">Facebook's
         engineering blog</a>. (Spoiler: we rewrote React!)</p>
@@ -108,7 +108,7 @@
 <p>This demo provides an early peek at the types of problems async rendering can solve:</p>
 <blockquote class="twitter-tweet" data-lang="en">
 <p lang="en" dir="ltr">
-Ever wonder what “async rendering” means? Here's a demo of how to coordinate an async React tree with non-React work <a href="https://t.co/3snoahB3uV">https://t.co/3snoahB3uV</a> <a href="https://t.co/egQ988gBjR">pic.twitter.com/egQ988gBjR</a>
+Ever wonder what "async rendering" means? Here's a demo of how to coordinate an async React tree with non-React work <a href="https://t.co/3snoahB3uV">https://t.co/3snoahB3uV</a> <a href="https://t.co/egQ988gBjR">pic.twitter.com/egQ988gBjR</a>
 </p>
 — Andrew Clark (<span class="citation" data-cites="acdlite">@acdlite</span>) <a href="https://twitter.com/acdlite/status/909926793536094209">September 18, 2017</a>
 </blockquote>
@@ -170,7 +170,7 @@ Ever wonder what “async rendering” means? Here's a demo of how to coordinate
 <h3 id="packaging">Packaging</h3>
 <ul>
 <li>There is no <code>react/lib/*</code> and <code>react-dom/lib/*</code> anymore. Even in CommonJS environments, React
-    and ReactDOM are precompiled to single files (“flat bundles”). If you previously relied on undocumented React
+    and ReactDOM are precompiled to single files ("flat bundles"). If you previously relied on undocumented React
     internals, and they don't work anymore, let us know about your specific case in a new issue, and we'll try to figure
     out a migration strategy for you.</li>
 <li>There is no <code>react-with-addons.js</code> build anymore. All compatible addons are published separately on npm, and have single-file browser versions if you need them.</li>

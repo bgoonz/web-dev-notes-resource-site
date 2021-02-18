@@ -24,7 +24,7 @@ For example, if I wanted to use the flag `i` and wanted to also search for the 
 
 `/iii/i`
 
-The singular `i` at the end of that regex means “insensitive” and it refers to the case of the text matching the pattern. The `iii` is the actual pattern searched in the text, and because we use the “case insensitive” flag, it's going to match all variations of triple `i`‘s: `iii`, `iiI`, `iII` , `III`, `IiI`, `Iii`, and so on.
+The singular `i` at the end of that regex means "insensitive" and it refers to the case of the text matching the pattern. The `iii` is the actual pattern searched in the text, and because we use the "case insensitive" flag, it's going to match all variations of triple `i`‘s: `iii`, `iiI`, `iII` , `III`, `IiI`, `Iii`, and so on.
 
 Note
 ----
@@ -58,7 +58,7 @@ Most of the special characters will not work alone and will result in error.
 
 #### The caret (`^`)
 
-This specific symbol has two meanings. In short, when added as the first character in a regex pattern, it means “**the beginning** of the searched string”, however, if it's used between square brackets, it means “**everything but**“. Both of these are explained later because they need more context.
+This specific symbol has two meanings. In short, when added as the first character in a regex pattern, it means "**the beginning** of the searched string", however, if it's used between square brackets, it means "**everything but**". Both of these are explained later because they need more context.
 
 Given the string: `Alice asked Bob a question.`
 
@@ -68,11 +68,11 @@ Given the string: `Alice asked Bob a question.`
 
 On the other hand, using the same given string:
 
-`/[^a-z]/i` will match the first space in the string, because `[a-z]` means all letters from a to z, the `i` flag at the end makes `a-z` match `A-Z` too, and the `^` inside square brackets changes the meaning to “everything but letters from a-z”.
+`/[^a-z]/i` will match the first space in the string, because `[a-z]` means all letters from a to z, the `i` flag at the end makes `a-z` match `A-Z` too, and the `^` inside square brackets changes the meaning to "everything but letters from a-z".
 
 #### **The dollar sign (`$`)**
 
-This means “**the end** of the searched string”.
+This means "**the end** of the searched string".
 
 Give: `Alice and Bob`
 
@@ -92,7 +92,7 @@ You would use it as such: `/./s` or `/./g`
 
 #### The vertical bar or pipe (`|`)
 
-This means “**or**” and it's used only in combination with other identifiers.
+This means "**or**" and it's used only in combination with other identifiers.
 
 Given: `Alice is the only one in the sentence.`
 
@@ -108,7 +108,7 @@ Given: `Bob is before Alice in this sentence.`
 
 This is a repetition symbol, stating that the instruction to the left of it might exist 0 or multiple times.
 
-It's often used in combination with the dot symbol to mean “there might be something here, but I don't know how long or short or if at all.”
+It's often used in combination with the dot symbol to mean "there might be something here, but I don't know how long or short or if at all."
 
 In our first example, where we wanted to get the title of web page, we used as example:
 
@@ -124,15 +124,15 @@ This is basically the same as the star symbol, with the only difference that it 
 
 #### The question mark (`?`)
 
-This symbol means “**optional**” or “the pattern to my left might or might not exists”.
+This symbol means "**optional**" or "the pattern to my left might or might not exists".
 
 `/colou?r/` would match both `color` and `colour` in a given string because `?` makes `u` optional.
 
-It also has another meaning. If placed before another set of instructions, it will make it less “greedy”.
+It also has another meaning. If placed before another set of instructions, it will make it less "greedy".
 
 Given: `I have an apple & an orange.`
 
-`/I have an.* [a-z]/` might look like it's going to match `I have an a` but, in fact, it will match `I have an apple & an o` because `.*` means “anything that repeats 0 or more times” and the pattern stops in a letter from a to z, but by default, it will stop in the last letter, not the first.
+`/I have an.* [a-z]/` might look like it's going to match `I have an a` but, in fact, it will match `I have an apple & an o` because `.*` means "anything that repeats 0 or more times" and the pattern stops in a letter from a to z, but by default, it will stop in the last letter, not the first.
 
 However, adding `?` after `.*` will specify that it shouldn't stop in the last occurrence of the rest of the pattern, but the first.
 
@@ -140,7 +140,7 @@ However, adding `?` after `.*` will specify that it shouldn't stop in the last o
 
 #### The parentheses (`(` and `)`)
 
-They're used in combination to signify a “group.”
+They're used in combination to signify a "group."
 
 To select that part of the regex separately from the given string.
 
@@ -237,7 +237,7 @@ There are a few pre-defined shorthands for commonly-used classes.
 
 `/\d/` is an alias of `/[0-9]/` and it matches a digit.
 
-`/\w/` is an alias of `/[a-zA-Z0-9_]/` and it matches a “word character”.
+`/\w/` is an alias of `/[a-zA-Z0-9_]/` and it matches a "word character".
 
 `/\s/` is an alias of `/[ \t\r\n\f]/` and it matches any type of space, including new lines.
 
@@ -251,7 +251,7 @@ We also have available their counterparts that select the opposite characters as
 
 `/\S/` is the same thing as `/[^\s]/` and it matches anything but a space character.
 
-Because, if you remember, the `^` means “anything but”.
+Because, if you remember, the `^` means "anything but".
 
 ### Word Boundary
 
@@ -265,7 +265,7 @@ For example, if you wanted to remove the word pie from the following sentence:
 
 `Take this sharpie and draw a pie chart.`
 
-You'd be tempted to replace `/pie/` with something else, but there is a problem with that approach, because the word sharpie also contains “pie” and it would match that pattern too, hence you'd end up with a very surprinsing result.
+You'd be tempted to replace `/pie/` with something else, but there is a problem with that approach, because the word sharpie also contains "pie" and it would match that pattern too, hence you'd end up with a very surprinsing result.
 
 To fix it, you can use the word boundary anchor, `\b` as such:
 
@@ -365,13 +365,13 @@ Checks to see if something **is** present **after** the pattern.
 
 Checks to see if something **is not** present **before** the pattern.
 
-`/(?<!Solar )System/` matches `System` only when it's not preceded by “Solar “.
+`/(?<!Solar )System/` matches `System` only when it's not preceded by "Solar ".
 
 ### Positive Lookbehind `(?<=)`
 
 Checks to see if something **is** present **before** the pattern.
 
-`/(?<=Solar )System/` matches `System` only when is preceded by “Solar “, and returns `System` as the outcome, because the positive lookbehind, just like the other three types of lookarounds, is only an assertion.
+`/(?<=Solar )System/` matches `System` only when is preceded by "Solar ", and returns `System` as the outcome, because the positive lookbehind, just like the other three types of lookarounds, is only an assertion.
 
 Conditionals
 ------------

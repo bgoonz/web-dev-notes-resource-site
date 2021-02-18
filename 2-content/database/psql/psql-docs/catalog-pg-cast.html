@@ -53,7 +53,7 @@
       cannot be deduced from some generic rule. For example, casting between a
       domain and its base type is not explicitly represented in
       <code class="structname">pg_cast</code>. Another important exception is that
-      <span class="quote">“<span class="quote">automatic I/O conversion casts</span>”</span>, those performed using a
+      <span class="quote">"<span class="quote">automatic I/O conversion casts</span>"</span>, those performed using a
       data
       type's own I/O functions to convert to or from <code class="type">text</code> or other
       string types, are not explicitly represented in
@@ -157,7 +157,7 @@
       It is legitimate to create a <code class="structname">pg_cast</code> entry
       in which the source and target types are the same, if the associated
       function takes more than one argument. Such entries represent
-      <span class="quote">“<span class="quote">length coercion functions</span>”</span> that coerce values of the type
+      <span class="quote">"<span class="quote">length coercion functions</span>"</span> that coerce values of the type
       to be legal for a particular type modifier value.
     </p>
     <p>

@@ -6,14 +6,14 @@
   <title>Document</title>
 </head>
 <body>;
-<p>The <code>Profiler</code> measures how often a React application renders and what the “cost” of rendering is. Its purpose is to help identify parts of an application that are slow and may benefit from <a href="/docs/hooks-faq.html#how-to-memoize-calculations">optimizations such as memoization</a>.</p>
+<p>The <code>Profiler</code> measures how often a React application renders and what the "cost" of rendering is. Its purpose is to help identify parts of an application that are slow and may benefit from <a href="/docs/hooks-faq.html#how-to-memoize-calculations">optimizations such as memoization</a>.</p>
 <blockquote>
 <p>Note:</p>
 <p>Profiling adds some additional overhead, so <strong>it is disabled in <a href="/docs/optimizing-performance.html#use-the-production-build">the production build</a></strong>.</p>
 <p>To opt into production profiling, React provides a special production build with profiling enabled. Read more about how to use this build at <a href="https://fb.me/react-profiling">fb.me/react-profiling</a></p>
 </blockquote>
 <h2 id="usage">Usage</h2>
-<p>A <code>Profiler</code> can be added anywhere in a React tree to measure the cost of rendering that part of the tree. It requires two props: an <code>id</code> (string) and an <code>onRender</code> callback (function) which React calls any time a component within the tree “commits” an update.</p>
+<p>A <code>Profiler</code> can be added anywhere in a React tree to measure the cost of rendering that part of the tree. It requires two props: an <code>id</code> (string) and an <code>onRender</code> callback (function) which React calls any time a component within the tree "commits" an update.</p>
 <p>For example, to profile a <code>Navigation</code> component and its descendants:</p>
 <pre class="js{3}"><code>render(
   &lt;App&gt;
@@ -54,7 +54,7 @@
 <p>Although <code>Profiler</code> is a light-weight component, it should be used only when necessary; each use adds some CPU and memory overhead to an application.</p>
 </blockquote>
 <h2 id="onrender-callback"><code>onRender</code> Callback</h2>
-<p>The <code>Profiler</code> requires an <code>onRender</code> function as a prop. React calls this function any time a component within the profiled tree “commits” an update. It receives parameters describing what was rendered and how long it took.</p>
+<p>The <code>Profiler</code> requires an <code>onRender</code> function as a prop. React calls this function any time a component within the profiled tree "commits" an update. It receives parameters describing what was rendered and how long it took.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span> <span class="at">onRenderCallback</span>(</a>
 <a class="sourceLine" id="cb4-2" title="2">  id<span class="op">,</span> <span class="co">// the &quot;id&quot; prop of the Profiler tree that has just committed</span></a>
 <a class="sourceLine" id="cb4-3" title="3">  phase<span class="op">,</span> <span class="co">// either &quot;mount&quot; (if the tree just mounted) or &quot;update&quot; (if it re-rendered)</span></a>
@@ -74,7 +74,7 @@
 <li><strong><code>baseDuration: number</code></strong> - Duration of the most recent <code>render</code> time for each individual component within the <code>Profiler</code> tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree with no memoization).</li>
 <li><strong><code>startTime: number</code></strong> - Timestamp when React began rendering the current update.</li>
 <li><strong><code>commitTime: number</code></strong> - Timestamp when React committed the current update. This value is shared between all profilers in a commit, enabling them to be grouped if desirable.</li>
-<li><strong><code>interactions: Set</code></strong> - Set of <a href="https://fb.me/react-interaction-tracing">“interactions”</a> that were being traced when the update was scheduled (e.g. when <code>render</code> or <code>setState</code> were called).</li>
+<li><strong><code>interactions: Set</code></strong> - Set of <a href="https://fb.me/react-interaction-tracing">"interactions"</a> that were being traced when the update was scheduled (e.g. when <code>render</code> or <code>setState</code> were called).</li>
 </ul>
 <blockquote>
 <p>Note</p>

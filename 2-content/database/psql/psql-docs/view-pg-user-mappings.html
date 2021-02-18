@@ -11,7 +11,7 @@
       </td></tr><tr><td><code class="structfield">srvname</code></td><td><code class="type">name</code></td><td><code class="literal"><a class="link" href="catalog-pg-foreign-server.html" title="51.24. pg_foreign_server"><code class="structname">pg_foreign_server</code></a>.srvname</code></td><td>
        Name of the foreign server
       </td></tr><tr><td><code class="structfield">umuser</code></td><td><code class="type">oid</code></td><td><code class="literal"><a class="link" href="catalog-pg-authid.html" title="51.8. pg_authid"><code class="structname">pg_authid</code></a>.oid</code></td><td>OID of the local role being mapped, 0 if the user mapping is public</td></tr><tr><td><code class="structfield">usename</code></td><td><code class="type">name</code></td><td> </td><td>Name of the local user to be mapped</td></tr><tr><td><code class="structfield">umoptions</code></td><td><code class="type">text[]</code></td><td> </td><td>
-       User mapping specific options, as <span class="quote">“<span class="quote">keyword=value</span>”</span> strings
+       User mapping specific options, as <span class="quote">"<span class="quote">keyword=value</span>"</span> strings
       </td></tr></tbody></table></div></div><br class="table-break" /><p>
    To protect password information stored as a user mapping option,
    the <code class="structfield">umoptions</code> column will read as null

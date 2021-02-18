@@ -21,7 +21,7 @@
    <code class="structname">pg_depend</code>).  Also, the right to extend a
    relation is represented as a separate lockable object, as is the right to
    update <code class="structname">pg_database</code>.<code class="structfield">datfrozenxid</code>.
-   Also, <span class="quote">“<span class="quote">advisory</span>”</span> locks can be taken on numbers that have
+   Also, <span class="quote">"<span class="quote">advisory</span>"</span> locks can be taken on numbers that have
    user-defined meanings.
   </p><div class="table" id="id-1.10.4.76.6"><p class="title"><strong>Table 51.75. <code class="structname">pg_locks</code> Columns</strong></p><div class="table-contents"><table class="table" summary="pg_locks Columns" border="1"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Name</th><th>Type</th><th>References</th><th>Description</th></tr></thead><tbody><tr><td><code class="structfield">locktype</code></td><td><code class="type">text</code></td><td> </td><td>
        Type of the lockable object:

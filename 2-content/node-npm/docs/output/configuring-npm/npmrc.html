@@ -201,7 +201,7 @@
             <p>Each of these files is loaded, and config options are resolved in
                 priority order. For example, a setting in the userconfig file would
                 override the setting in the globalconfig file.</p>
-            <p>Array values are specified by adding “[]” after the key name. For
+            <p>Array values are specified by adding "[]" after the key name. For
                 example:</p>
             <pre lang="bash"><code>key[] = "first value"
 key[] = "second value"
@@ -236,7 +236,7 @@ key[] = "second value"
                 Environment variables can be replaced as above.</p>
             <h4 id="built-in-config-file">Built-in config file</h4>
             <p><code>path/to/npm/itself/npmrc</code></p>
-            <p>This is an unchangeable “builtin” configuration file that npm keeps
+            <p>This is an unchangeable "builtin" configuration file that npm keeps
                 consistent across updates. Set fields in here using the <code>./configure</code>
                 script that comes with npm. This is primarily for distribution
                 maintainers to override default configs in a standard and consistent

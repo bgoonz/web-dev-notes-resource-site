@@ -37,7 +37,7 @@
       This case would lead to <code class="command">VACUUM</code> failing until the
       old transaction terminates.
      </p></li><li class="listitem"><p>
-      Fix <span class="quote">“<span class="quote">wrong type of slot</span>”</span> error when trying
+      Fix <span class="quote">"<span class="quote">wrong type of slot</span>"</span> error when trying
       to <code class="command">CLUSTER</code> on an expression index (Andres Freund)
      </p></li><li class="listitem"><p>
       <code class="command">SET CONSTRAINTS ... DEFERRED</code> failed on
@@ -66,8 +66,8 @@
       (Amit Langote)
      </p><p>
       This oversight could lead either to failure to use a feasible
-      partition-wise join plan, or to a <span class="quote">“<span class="quote">could not find pathkey item
-      to sort</span>”</span> planner failure.
+      partition-wise join plan, or to a <span class="quote">"<span class="quote">could not find pathkey item
+      to sort</span>"</span> planner failure.
      </p></li><li class="listitem"><p>
       Ensure that offset expressions in <code class="literal">WINDOW</code> clauses
       are processed when a query's expressions are manipulated (Andrew Gierth)
@@ -84,7 +84,7 @@
       Fix crash triggered by an EvalPlanQual recheck on a table with
       a <code class="literal">BEFORE UPDATE</code> trigger (Andres Freund)
      </p></li><li class="listitem"><p>
-      Fix <span class="quote">“<span class="quote">unexpected relkind</span>”</span> error when a query tries to
+      Fix <span class="quote">"<span class="quote">unexpected relkind</span>"</span> error when a query tries to
       access a TOAST table (John Hsu, Michael Paquier, Tom Lane)
      </p><p>
       The error should say that permission is denied, but this case got
@@ -97,7 +97,7 @@
       that are opened read/write (Andres Freund, Michael Paquier)
      </p><p>
       Some code paths tried to do this after opening a file read-only,
-      but on some platforms that causes <span class="quote">“<span class="quote">bad file descriptor</span>”</span>
+      but on some platforms that causes <span class="quote">"<span class="quote">bad file descriptor</span>"</span>
       or similar errors.
      </p></li><li class="listitem"><p>
       Allow encoding conversion to succeed on longer strings than before
@@ -141,7 +141,7 @@
      </p><p>
       Declaring a column as part of the replica identity on the
       subscriber, when it does not exist at all on the publisher, led
-      to <span class="quote">“<span class="quote">negative bitmapset member not allowed</span>”</span> errors.
+      to <span class="quote">"<span class="quote">negative bitmapset member not allowed</span>"</span> errors.
      </p></li><li class="listitem"><p>
       Avoid unwanted delay during shutdown of a logical replication
       walsender (Craig Ringer, Álvaro Herrera)
@@ -204,8 +204,8 @@ UPDATE mytab SET bitcol = ~(~bitcol) WHERE bitcol != ~(~bitcol);
      </p></li><li class="listitem"><p>
       Avoid memory leak while vacuuming a GiST index (Dilip Kumar)
      </p></li><li class="listitem"><p>
-      On Windows, recognize additional spellings of the <span class="quote">“<span class="quote">Norwegian
-      (Bokmål)</span>”</span> locale name (Tom Lane)
+      On Windows, recognize additional spellings of the <span class="quote">"<span class="quote">Norwegian
+      (Bokmål)</span>"</span> locale name (Tom Lane)
      </p></li><li class="listitem"><p>
       Fix <span class="application">libpq</span> to allow trailing whitespace in
       the string values of integer parameters (Michael Paquier)

@@ -141,7 +141,7 @@ January 8 04:05:06 1999 PST
       The <acronym class="acronym">SQL</acronym> standard differentiates
       <code class="type">timestamp without time zone</code>
       and <code class="type">timestamp with time zone</code> literals by the presence of a
-      <span class="quote">“<span class="quote">+</span>”</span> or <span class="quote">“<span class="quote">-</span>”</span> symbol and time zone offset after
+      <span class="quote">"<span class="quote">+</span>"</span> or <span class="quote">"<span class="quote">-</span>"</span> symbol and time zone offset after
       the time.  Hence, according to the standard,
 
       </p><pre class="programlisting">TIMESTAMP '2004-10-19 10:23:54'</pre><p>
@@ -225,7 +225,7 @@ January 8 04:05:06 1999 PST
      German.  The default
      is the <acronym class="acronym">ISO</acronym> format.  (The
      <acronym class="acronym">SQL</acronym> standard requires the use of the ISO 8601
-     format.  The name of the <span class="quote">“<span class="quote">SQL</span>”</span> output format is a
+     format.  The name of the <span class="quote">"<span class="quote">SQL</span>"</span> output format is a
      historical accident.)  <a class="xref" href="datatype-datetime.html#DATATYPE-DATETIME-OUTPUT-TABLE" title="Table 8.14. Date/Time Output Styles">Table 8.14</a> shows examples of each
      output style.  The output of the <code class="type">date</code> and
      <code class="type">time</code> types is generally only the date or time part
@@ -408,8 +408,8 @@ January 8 04:05:06 1999 PST
      <code class="varname">IntervalStyle</code> is set to <code class="literal">sql_standard</code>.)
     </p><p>
      Interval values can also be written as ISO 8601 time intervals, using
-     either the <span class="quote">“<span class="quote">format with designators</span>”</span> of the standard's section
-     4.4.3.2 or the <span class="quote">“<span class="quote">alternative format</span>”</span> of section 4.4.3.3.  The
+     either the <span class="quote">"<span class="quote">format with designators</span>"</span> of the standard's section
+     4.4.3.2 or the <span class="quote">"<span class="quote">alternative format</span>"</span> of section 4.4.3.3.  The
      format with designators looks like this:
 </p><pre class="synopsis">
 P <em class="replaceable"><code>quantity</code></em> <em class="replaceable"><code>unit</code></em> [<span class="optional"> <em class="replaceable"><code>quantity</code></em> <em class="replaceable"><code>unit</code></em> ...</span>] [<span class="optional"> T [<span class="optional"> <em class="replaceable"><code>quantity</code></em> <em class="replaceable"><code>unit</code></em> ...</span>]</span>]
@@ -436,7 +436,7 @@ P [<span class="optional"> <em class="replaceable"><code>years</code></em>-<em c
      unmarked quantities depends on the <em class="replaceable"><code>fields</code></em>.  For
      example <code class="literal">INTERVAL '1' YEAR</code> is read as 1 year, whereas
      <code class="literal">INTERVAL '1'</code> means 1 second.  Also, field values
-     <span class="quote">“<span class="quote">to the right</span>”</span> of the least significant field allowed by the
+     <span class="quote">"<span class="quote">to the right</span>"</span> of the least significant field allowed by the
      <em class="replaceable"><code>fields</code></em> specification are silently discarded.  For
      example, writing <code class="literal">INTERVAL '1 day 2:03:04' HOUR TO MINUTE</code>
      results in dropping the seconds field, but not the day field.
@@ -467,7 +467,7 @@ P [<span class="optional"> <em class="replaceable"><code>years</code></em>-<em c
     </p><p>
      <a class="xref" href="datatype-datetime.html#DATATYPE-INTERVAL-INPUT-EXAMPLES" title="Table 8.17. Interval Input">Table 8.17</a> shows some examples
      of valid <code class="type">interval</code> input.
-    </p><div class="table" id="DATATYPE-INTERVAL-INPUT-EXAMPLES"><p class="title"><strong>Table 8.17. Interval Input</strong></p><div class="table-contents"><table class="table" summary="Interval Input" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>1-2</td><td>SQL standard format: 1 year 2 months</td></tr><tr><td>3 4:05:06</td><td>SQL standard format: 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td>1 year 2 months 3 days 4 hours 5 minutes 6 seconds</td><td>Traditional Postgres format: 1 year 2 months 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td>P1Y2M3DT4H5M6S</td><td>ISO 8601 <span class="quote">“<span class="quote">format with designators</span>”</span>: same meaning as above</td></tr><tr><td>P0001-02-03T04:05:06</td><td>ISO 8601 <span class="quote">“<span class="quote">alternative format</span>”</span>: same meaning as above</td></tr></tbody></table></div></div><br class="table-break" /><p>
+    </p><div class="table" id="DATATYPE-INTERVAL-INPUT-EXAMPLES"><p class="title"><strong>Table 8.17. Interval Input</strong></p><div class="table-contents"><table class="table" summary="Interval Input" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>1-2</td><td>SQL standard format: 1 year 2 months</td></tr><tr><td>3 4:05:06</td><td>SQL standard format: 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td>1 year 2 months 3 days 4 hours 5 minutes 6 seconds</td><td>Traditional Postgres format: 1 year 2 months 3 days 4 hours 5 minutes 6 seconds</td></tr><tr><td>P1Y2M3DT4H5M6S</td><td>ISO 8601 <span class="quote">"<span class="quote">format with designators</span>"</span>: same meaning as above</td></tr><tr><td>P0001-02-03T04:05:06</td><td>ISO 8601 <span class="quote">"<span class="quote">alternative format</span>"</span>: same meaning as above</td></tr></tbody></table></div></div><br class="table-break" /><p>
      Internally <code class="type">interval</code> values are stored as months, days,
      and seconds. This is done because the number of days in a month
      varies, and a day can have 23 or 25 hours if a daylight savings
@@ -517,7 +517,7 @@ SELECT EXTRACT(days from '80 hours'::interval);
      <span class="productname">PostgreSQL</span> releases prior to 8.4 when the
      <code class="varname">DateStyle</code> parameter was set to non-<code class="literal">ISO</code> output.
     </p><p>
-     The output of the <code class="literal">iso_8601</code> style matches the <span class="quote">“<span class="quote">format
-     with designators</span>”</span> described in section 4.4.3.2 of the
+     The output of the <code class="literal">iso_8601</code> style matches the <span class="quote">"<span class="quote">format
+     with designators</span>"</span> described in section 4.4.3.2 of the
      ISO 8601 standard.
     </p><div class="table" id="INTERVAL-STYLE-OUTPUT-TABLE"><p class="title"><strong>Table 8.18. Interval Output Style Examples</strong></p><div class="table-contents"><table class="table" summary="Interval Output Style Examples" border="1"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Style Specification</th><th>Year-Month Interval</th><th>Day-Time Interval</th><th>Mixed Interval</th></tr></thead><tbody><tr><td><code class="literal">sql_standard</code></td><td>1-2</td><td>3 4:05:06</td><td>-1-2 +3 -4:05:06</td></tr><tr><td><code class="literal">postgres</code></td><td>1 year 2 mons</td><td>3 days 04:05:06</td><td>-1 year -2 mons +3 days -04:05:06</td></tr><tr><td><code class="literal">postgres_verbose</code></td><td>@ 1 year 2 mons</td><td>@ 3 days 4 hours 5 mins 6 secs</td><td>@ 1 year 2 mons -3 days 4 hours 5 mins 6 secs ago</td></tr><tr><td><code class="literal">iso_8601</code></td><td>P1Y2M</td><td>P3DT4H5M6S</td><td>P-1Y-2M3DT-4H-5M-6S</td></tr></tbody></table></div></div><br class="table-break" /></div></div><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="datatype-binary.html" title="8.4. Binary Data Types">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="datatype.html" title="Chapter 8. Data Types">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="datatype-boolean.html" title="8.6. Boolean Type">Next</a></td></tr><tr><td width="40%" align="left" valign="top">8.4. Binary Data Types </td><td width="20%" align="center"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="40%" align="right" valign="top"> 8.6. Boolean Type</td></tr></table></div></body></html>

@@ -311,7 +311,7 @@ information about routes, see <a href="/en/4x/api.html#router"><code>Router()</c
 <p>The other feature that helps to organize routes is a new class,
 <code>express.Router</code>, that you can use to create modular mountable
 route handlers. A <code>Router</code> instance is a complete middleware and
-routing system; for this reason it is often referred to as a “mini-app”.</p>
+routing system; for this reason it is often referred to as a "mini-app".</p>
 <p>The following example creates a router as a module, loads middleware in
 it, defines some routes, and mounts it on a path on the main app.</p>
 <p>For example, create a router file named <code>birds.js</code> in the app directory,
@@ -681,7 +681,7 @@ in this case.</p>
 file is mandatory for creating an Express app or starting the app. They are
 just suggestions made by the generator, so feel free to modify them to suit your
 needs.</p>
-<p>To get rid of the <code>www</code> directory and keep things the “Express 3 way”,
+<p>To get rid of the <code>www</code> directory and keep things the "Express 3 way",
 delete the line that says <code>module.exports = app;</code> at the end of the
 <code>app.js</code> file, then paste the following code in its place:</p>
 <pre><code class="language-js">app.set('port', process.env.PORT || 3000)

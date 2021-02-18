@@ -39,7 +39,7 @@
      following forms of partitioning:
 
      </p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Range Partitioning</span></dt><dd><p>
-         The table is partitioned into <span class="quote">“<span class="quote">ranges</span>”</span> defined
+         The table is partitioned into <span class="quote">"<span class="quote">ranges</span>"</span> defined
          by a key column or set of columns, with no overlap between
          the ranges of values assigned to different partitions.  For
          example, one might partition by date ranges, or by ranges of
@@ -430,15 +430,15 @@ ALTER INDEX measurement_city_id_logdate_key
       the following steps:
 
       </p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p>
-         Create the <span class="quote">“<span class="quote">master</span>”</span> table, from which all of the
-         <span class="quote">“<span class="quote">child</span>”</span> tables will inherit.  This table will contain no data.  Do not
+         Create the <span class="quote">"<span class="quote">master</span>"</span> table, from which all of the
+         <span class="quote">"<span class="quote">child</span>"</span> tables will inherit.  This table will contain no data.  Do not
          define any check constraints on this table, unless you intend them
          to be applied equally to all child tables.  There is no point in
          defining any indexes or unique constraints on it, either.  For our
          example, the master table is the <code class="structname">measurement</code>
          table as originally defined.
         </p></li><li class="listitem"><p>
-         Create several <span class="quote">“<span class="quote">child</span>”</span> tables that each inherit from
+         Create several <span class="quote">"<span class="quote">child</span>"</span> tables that each inherit from
          the master table.  Normally, these tables will not add any columns
          to the set inherited from the master.  Just as with declarative
          partitioning, these tables are in every way normal
@@ -782,7 +782,7 @@ EXPLAIN SELECT count(*) FROM measurement WHERE logdate &gt;= DATE '2008-01-01';
        <code class="command">EXPLAIN</code> or <code class="command">EXPLAIN ANALYZE</code>.
        It is possible to determine the number of partitions which were
        removed during this phase by observing the
-       <span class="quote">“<span class="quote">Subplans Removed</span>”</span> property in the
+       <span class="quote">"<span class="quote">Subplans Removed</span>"</span> property in the
        <code class="command">EXPLAIN</code> output.
       </p></li><li class="listitem"><p>
        During actual execution of the query plan.  Partition pruning may

@@ -10,7 +10,7 @@
 <h2 id="phase-0-familiarize-yourself-with-the-code">Phase 0: Familiarize yourself with the code</h2>
 <p>Clone the starter repository at [INSERT REPO HERE].</p>
 <p>Run <code>npm install</code> then <code>npm start</code> to start the development server.</p>
-<p>Navigate to <a href="http://localhost:3000">http://localhost:3000</a>. You should see the text “Grocery Store”. If you click on the “Checkout” button in the navigation bar, it should open a side menu. Right now, there are no produce listed so you cannot add items to the shopping cart yet.</p>
+<p>Navigate to <a href="http://localhost:3000">http://localhost:3000</a>. You should see the text "Grocery Store". If you click on the "Checkout" button in the navigation bar, it should open a side menu. Right now, there are no produce listed so you cannot add items to the shopping cart yet.</p>
 <p>The <code>Cart</code>, <code>ProduceList</code> and <code>ProduceDetails</code> are the components you need to connect to the Redux store. Take a look at the code there to familiarize yourself with it.</p>
 <p>The <code>src/mockData/produce.json</code> is the mock data that you will use to populate the Redux store with. The file has a JSON array of objects. Each object has the following structure:</p>
 <pre class="plaintext"><code>{
@@ -108,7 +108,7 @@
 <h3 id="test-your-setup">Test your setup</h3>
 <p>Let’s test your setup!</p>
 <p>Navigate to <a href="http://localhost:3000">http://localhost:3000</a> and open up the browser’s dev tools. In the console, you should see a message about an invalid reducer. That’s because the <code>rootReducer</code> isn’t combining any reducers yet. Ignore this warning for now.</p>
-<p>Open the “Redux” tab in your browser’s dev tools. You should not see the message “No store found”.</p>
+<p>Open the "Redux" tab in your browser’s dev tools. You should not see the message "No store found".</p>
 <p>In your entry file, expose the <code>store</code> variable on the <code>window</code> <strong>only in development</strong> for testing purposes.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="co">// ./src/index.js</span></a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="co">// ...</span></a>
@@ -231,16 +231,16 @@
 <a class="sourceLine" id="cb16-11" title="11">  <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb16-12" title="12"><span class="op">}</span></a></code></pre></div>
 <p>Reload <a href="http://localhost:3000">http://localhost:3000</a>. You should see the Redux store state updated automatically with the populate produce action!</p>
-<p>You may have noticed a warning in the React server logs or in the browser’s console. “React Hook useEffect has a missing dependency: ‘dispatch’.” Add <code>dispatch</code> into <code>useEffect</code>’s dependency array. The <code>dispatch</code> function should never change across re-renders so <code>useEffect</code> should only dispatch the action once.</p>
+<p>You may have noticed a warning in the React server logs or in the browser’s console. "React Hook useEffect has a missing dependency: ‘dispatch’." Add <code>dispatch</code> into <code>useEffect</code>’s dependency array. The <code>dispatch</code> function should never change across re-renders so <code>useEffect</code> should only dispatch the action once.</p>
 <h3 id="display-the-produce-in-a-list">Display the produce in a list</h3>
 <p>So far, you added the produce mock data into the Redux store state. But this didn’t change anything on your actual React application. To display the produce, you need the <code>ProduceList</code> component to access the produce slice of state from the Redux store.</p>
 <p>In the <code>ProduceList</code> component file, import <code>useSelector</code> from <code>react-redux</code>. <code>useSelector</code> accepts a function as a parameter. <code>useSelector</code> will pass the updated state into the function whenever the state gets updated. The return value of the function will be the return of the <code>useSelector</code> function. In the component, set the <code>produce</code> variable to the return of <code>useSelector</code> and pass in a function that will return the <code>produce</code> slice of state from the updated state.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">const</span> produce <span class="op">=</span> <span class="at">useSelector</span>(state <span class="kw">=&gt;</span> <span class="va">state</span>.<span class="at">produce</span>)<span class="op">;</span></a></code></pre></div>
 <p>The <code>ProduceList</code> component will turn the products into an array of <code>ProduceDetails</code> components to be rendered.</p>
-<p>If you refresh the <a href="http://localhost:3000">http://localhost:3000</a> now, the produce should be displayed under “All Produce”!</p>
+<p>If you refresh the <a href="http://localhost:3000">http://localhost:3000</a> now, the produce should be displayed under "All Produce"!</p>
 <p>Commit your code!</p>
 <h2 id="phase-3-add-produce-to-the-cart">Phase 3: Add produce to the cart</h2>
-<p>When the “Checkout” button in the navigation bar is clicked, the side bar containing the shopping cart should open. Let’s try adding produce to the shopping cart.</p>
+<p>When the "Checkout" button in the navigation bar is clicked, the side bar containing the shopping cart should open. Let’s try adding produce to the shopping cart.</p>
 <p>The shopping cart is a separate entity from the produce list. The shopping cart needs to know which produce and how much of it was added to the cart. You need a cart slice of state that will hold an object with produce id’s as its keys and objects with a <code>count</code> property as its values.</p>
 <h3 id="cart-reducer">Cart Reducer</h3>
 <p>Create a <code>cart.js</code> file in <code>src/store</code> and define and export a <code>cartReducer</code> from this file. Add the <code>cart</code> slice of state with this as the reducer in the store file (<code>src/store/index.js</code>). Use the <code>produceReducer</code> as an example if you get stuck. Test the reducer in the same way as the way you tested the <code>produceReducer</code>.</p>
@@ -274,9 +274,9 @@
 <a class="sourceLine" id="cb20-4" title="4"><span class="op">};</span></a></code></pre></div>
 <p>Test the action creator in the same way that you tested the <code>populateProduce</code> action.</p>
 <h3 id="connect-the-plus-button-to-the-add-to-cart-action">Connect the plus button to the add to cart action</h3>
-<p>In the <code>ProduceList</code> component, all the produce in the Redux store is mapped to a array of <code>ProduceDetails</code> components. The <code>ProduceDetails</code> component has a button element with a <code>className</code> of “plus-button”. When that button is clicked, dispatch the add to cart action with the id of the produce in that component.</p>
+<p>In the <code>ProduceList</code> component, all the produce in the Redux store is mapped to a array of <code>ProduceDetails</code> components. The <code>ProduceDetails</code> component has a button element with a <code>className</code> of "plus-button". When that button is clicked, dispatch the add to cart action with the id of the produce in that component.</p>
 <p>Test this out by navigating to <a href="http://localhost:3000">http://localhost:3000</a> and clicking the plus button on any of the produce in the list. Check to see if the new Redux store state has that produce in the cart slice of state.</p>
-<p>Note: If you open the cart by clicking the “Checkout” button right now, you will not see the produce that you added in there. That’s because you didn’t connect the cart to read the cart slice of state yet.</p>
+<p>Note: If you open the cart by clicking the "Checkout" button right now, you will not see the produce that you added in there. That’s because you didn’t connect the cart to read the cart slice of state yet.</p>
 <h3 id="display-the-cart-items">Display the cart items</h3>
 <p>Display the produce in the cart slice of state in the cart side bar.</p>
 <p>The <code>Cart</code> component renders the list of items in the cart side bar. Set the <code>cart</code> variable to the extracted cart slice of state in the Redux store state (take a look at the <code>ProduceList</code> component to refresh yourself on how to access information from the Redux store).</p>
@@ -293,14 +293,14 @@
 <p>Now if you refresh the page, you should see the cart items with names!</p>
 <p>This is a good time to commit! Every time you finish a phase, or a chunk of working code, commit!</p>
 <h2 id="phase-4-remove-produce-from-the-cart">Phase 4: Remove produce from the cart</h2>
-<p>Add the functionality to remove produce from the cart when the “Remove” button is clicked.</p>
+<p>Add the functionality to remove produce from the cart when the "Remove" button is clicked.</p>
 <h2 id="phase-5-update-the-number-of-a-produce-in-the-cart">Phase 5: Update the number of a produce in the cart</h2>
 <p>When the plus button next to a cart item is clicked, increment the count of the cart item by 1. When the minus button next to a cart item is clicked, decrement the count of the cart item by 1.</p>
 <p>When the number in the input field next to a cart item is changed and clicked off of, it should update the count for that cart item in the Redux store state.</p>
 <p>If clicking the minus button or changing the number in the input field ever updates to a count lower than 1, remove the cart item.</p>
 <p>When the plus button next to a produce in the produce list is clicked, the item should be added to the cart if it’s not in the cart. If it is already in the cart, increment the count of the respective cart item by 1.</p>
 <h2 id="phase-6-purchase-produce">Phase 6: Purchase produce</h2>
-<p>When the “Purchase” button is clicked in the cart, it should empty the cart.</p>
+<p>When the "Purchase" button is clicked in the cart, it should empty the cart.</p>
 <h2 id="phase-7-likeunlike-a-produce">Phase 7: Like/Unlike a Produce</h2>
 <p>When the like button next to a produce in the produce list is clicked, then the boolean of <code>liked</code> on the produce in the Redux store produce slice of state should be toggled to <code>true</code>/<code>false</code>.</p>
 <h2 id="phase-8-redux-selectors">Phase 8: Redux selectors</h2>

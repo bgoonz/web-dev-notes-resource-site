@@ -15,7 +15,7 @@
     a lot of easy-to-forget boilerplate that Backbone (by design) doesn't automate. Libraries like Backbone.Marionette
     offer more abstractions to make view nesting easier, but they're all limited by the fact that Backbone delegates how
     and went view-document attachment occurs to the application code.</p>
-<p>React, on the other hand, manages the DOM and only exposes real nodes at select points in its API. The “elements” you code in React are actually objects which wrap DOM nodes, not the actual objects which get inserted into the DOM. Internally, React converts those abstractions into actual DOMElements and fills out the document accordingly. […]</p>
+<p>React, on the other hand, manages the DOM and only exposes real nodes at select points in its API. The "elements" you code in React are actually objects which wrap DOM nodes, not the actual objects which get inserted into the DOM. Internally, React converts those abstractions into actual DOMElements and fills out the document accordingly. […]</p>
 <p>We moved about 20 different Backbone view classes to React over the past few weeks, including the live-preview pane
     that you see in our little iOS demo. Most importantly, it's allowed us to put energy into making each component work
     great on its own, instead of spending extra cycles to ensure they function in unison. For that reason, we think

@@ -65,7 +65,7 @@ SELECT a,
    expressions must be convertible to a single output type.
    See <a class="xref" href="typeconv-union-case.html" title="10.5. UNION, CASE, and Related Constructs">Section 10.5</a> for more details.
   </p><p>
-   There is a <span class="quote">“<span class="quote">simple</span>”</span> form of <code class="token">CASE</code> expression
+   There is a <span class="quote">"<span class="quote">simple</span>"</span> form of <code class="token">CASE</code> expression
    that is a variant of the general form above:
 
 </p><pre class="synopsis">
@@ -110,8 +110,8 @@ SELECT ... WHERE CASE WHEN x &lt;&gt; 0 THEN y/x &gt; 1.5 ELSE false END;
    </p><div class="note"><h3 class="title">Note</h3><p>
      As described in <a class="xref" href="sql-expressions.html#SYNTAX-EXPRESS-EVAL" title="4.2.14. Expression Evaluation Rules">Section 4.2.14</a>, there are various
      situations in which subexpressions of an expression are evaluated at
-     different times, so that the principle that <span class="quote">“<span class="quote"><code class="token">CASE</code>
-     evaluates only necessary subexpressions</span>”</span> is not ironclad.  For
+     different times, so that the principle that <span class="quote">"<span class="quote"><code class="token">CASE</code>
+     evaluates only necessary subexpressions</span>"</span> is not ironclad.  For
      example a constant <code class="literal">1/0</code> subexpression will usually result in
      a division-by-zero failure at planning time, even if it's within
      a <code class="token">CASE</code> arm that would never be entered at run time.

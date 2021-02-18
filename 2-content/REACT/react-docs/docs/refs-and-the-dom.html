@@ -18,7 +18,7 @@
 <p>Avoid using refs for anything that can be done declaratively.</p>
 <p>For example, instead of exposing <code>open()</code> and <code>close()</code> methods on a <code>Dialog</code> component, pass an <code>isOpen</code> prop to it.</p>
 <h3 id="dont-overuse-refs">Don't Overuse Refs</h3>
-<p>Your first inclination may be to use refs to “make things happen” in your app. If this is the case, take a moment and think more critically about where state should be owned in the component hierarchy. Often, it becomes clear that the proper place to “own” that state is at a higher level in the hierarchy. See the <a href="/docs/lifting-state-up.html">Lifting State Up</a> guide for examples of this.</p>
+<p>Your first inclination may be to use refs to "make things happen" in your app. If this is the case, take a moment and think more critically about where state should be owned in the component hierarchy. Often, it becomes clear that the proper place to "own" that state is at a higher level in the hierarchy. See the <a href="/docs/lifting-state-up.html">Lifting State Up</a> guide for examples of this.</p>
 <blockquote>
 <p>Note</p>
 <p>The examples below have been updated to use the <code>React.createRef()</code> API introduced in React 16.3. If you are using an earlier release of React, we recommend using <a href="#callback-refs">callback refs</a> instead.</p>
@@ -157,7 +157,7 @@ class Parent extends React.Component {
 <p>If you use React 16.2 or lower, or if you need more flexibility than provided by ref forwarding, you can use <a href="https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509">this alternative approach</a> and explicitly pass a ref as a differently named prop.</p>
 <p>When possible, we advise against exposing DOM nodes, but it can be a useful escape hatch. Note that this approach requires you to add some code to the child component. If you have absolutely no control over the child component implementation, your last option is to use <a href="/docs/react-dom.html#finddomnode"><code>findDOMNode()</code></a>, but it is discouraged and deprecated in <a href="/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage"><code>StrictMode</code></a>.</p>
 <h3 id="callback-refs">Callback Refs</h3>
-<p>React also supports another way to set refs called “callback refs”, which gives more fine-grain control over when refs are set and unset.</p>
+<p>React also supports another way to set refs called "callback refs", which gives more fine-grain control over when refs are set and unset.</p>
 <p>Instead of passing a <code>ref</code> attribute created by <code>createRef()</code>, you pass a function. The function receives the React component instance or HTML DOM element as its argument, which can be stored and accessed elsewhere.</p>
 <p>The example below implements a common pattern: using the <code>ref</code> callback to store a reference to a DOM node in an instance property.</p>
 <pre class="javascript{5,7-9,11-14,19,29,34}"><code>class CustomTextInput extends React.Component {

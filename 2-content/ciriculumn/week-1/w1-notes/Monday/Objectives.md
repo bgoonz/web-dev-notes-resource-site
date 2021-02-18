@@ -2,7 +2,7 @@
 
 ## **Expressions and Intro to Functions**
 
-- **Given a working REPL interface, write and execute a statement that will print “hello world” using console.log**
+- **Given a working REPL interface, write and execute a statement that will print "hello world” using console.log**
   - `console.log("hello world!");`
 
 * Identify that strings are a list of characters defined by using double or single quotes\*\*

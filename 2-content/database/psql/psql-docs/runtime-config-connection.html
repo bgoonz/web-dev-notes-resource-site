@@ -13,7 +13,7 @@
          at all, in which case only Unix-domain sockets can be used to connect
          to it.
          The default value is <span class="systemitem">localhost</span>,
-         which allows only local TCP/IP <span class="quote">“<span class="quote">loopback</span>”</span> connections to be
+         which allows only local TCP/IP <span class="quote">"<span class="quote">loopback</span>"</span> connections to be
          made.  While client authentication (<a class="xref" href="client-authentication.html" title="Chapter 20. Client Authentication">Chapter 20</a>) allows fine-grained control
          over who can access the server, <code class="varname">listen_addresses</code>
          controls which interfaces accept connection attempts, which
@@ -42,7 +42,7 @@
       (<code class="type">integer</code>)
       <a id="id-1.6.6.6.2.2.4.1.3" class="indexterm"></a>
       </span></dt><dd><p>
-        Determines the number of connection <span class="quote">“<span class="quote">slots</span>”</span> that
+        Determines the number of connection <span class="quote">"<span class="quote">slots</span>"</span> that
         are reserved for connections by <span class="productname">PostgreSQL</span>
         superusers.  At most <a class="xref" href="runtime-config-connection.html#GUC-MAX-CONNECTIONS">max_connections</a>
         connections can ever be active simultaneously.  Whenever the

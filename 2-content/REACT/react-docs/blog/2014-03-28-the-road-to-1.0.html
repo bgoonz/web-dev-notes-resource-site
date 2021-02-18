@@ -16,7 +16,7 @@
     to do that, we want to clean up bad patterns we've seen in use and really help enable developers write good code.
 </p>
 <h2 id="descriptors">Descriptors</h2>
-<p>The first part of this is what we're calling “descriptors”. I talked about this briefly in our <a
+<p>The first part of this is what we're calling "descriptors". I talked about this briefly in our <a
         href="/react/blog/2014/03/21/react-v0.10.html">v0.10 announcements</a>. The goal here is to separate our virtual
     DOM representation from our use of it. Simply, this means the return value of a component
     (e.g. <code>React.DOM.div()</code>, <code>MyComponent()</code>) will be a simple object containing the information
@@ -46,11 +46,11 @@
     again, so we want to make this as easy as possible. Its use has performance tradeoffs, and there are known
     weaknesses in our implementation, so we want to make sure this is a solid feature.</p>
 <h2 id="addons">Addons</h2>
-<p>As you may know, we ship a separate build of React with some extra features we called “addons”. While this has served
+<p>As you may know, we ship a separate build of React with some extra features we called "addons". While this has served
     us fine, it's not great for our users. It's made testing harder, but also results in more cache misses for people
-    using a CDN. The problem we face is that many of these “addons” need access to parts of React that we don't expose
+    using a CDN. The problem we face is that many of these "addons" need access to parts of React that we don't expose
     publicly. Our goal is to ship each addon on its own and let each hook into React as needed. This would also allow
-    others to write and distribute “addons”.</p>
+    others to write and distribute "addons".</p>
 <h2 id="browser-support">Browser Support</h2>
 <p>As much as we'd all like to stop supporting older browsers, it's not always possible. Facebook still supports IE8.
     While React won't support IE8 forever, our goal is to have 1.0 support IE8. Hopefully we can continue to abstract

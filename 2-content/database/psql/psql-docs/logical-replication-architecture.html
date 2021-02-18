@@ -9,7 +9,7 @@
   </p><p>
    Logical replication is built with an architecture similar to physical
    streaming replication (see <a class="xref" href="warm-standby.html#STREAMING-REPLICATION" title="26.2.5. Streaming Replication">Section 26.2.5</a>).  It is
-   implemented by <span class="quote">“<span class="quote">walsender</span>”</span> and <span class="quote">“<span class="quote">apply</span>”</span>
+   implemented by <span class="quote">"<span class="quote">walsender</span>"</span> and <span class="quote">"<span class="quote">apply</span>"</span>
    processes.  The walsender process starts logical decoding (described
    in <a class="xref" href="logicaldecoding.html" title="Chapter 48. Logical Decoding">Chapter 48</a>) of the WAL and loads the standard
    logical decoding plugin (pgoutput).  The plugin transforms the changes read

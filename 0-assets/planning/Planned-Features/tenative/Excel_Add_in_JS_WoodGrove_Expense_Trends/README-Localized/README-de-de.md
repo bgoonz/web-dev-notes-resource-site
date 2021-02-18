@@ -30,7 +30,7 @@ Sie benötigen Folgendes:
 
 1. Kopieren Sie das Projekt in einem lokalen Ordner. Stellen Sie sicher, dass der Pfad nicht zu lang ist, andernfalls können in Visual Studio bei beim Installieren der für das Projekt erforderlichen NuGet-Pakete Fehler auftreten. 
 2. Öffnen Sie dann `WoodGrove Expense Trends.sln` in Visual Studio. 
-3. Drücken Sie F5, um das Beispiel-Add-In zu erstellen und bereitzustellen. Excel wird gestartet, und je nach Version von Excel 2016, lädt das Add-In entweder eine benutzerdefinierte Registerkarte „WoodGrove“ im Menüband, oder es wird in einem Aufgabenbereich rechts neben dem Arbeitsblatt geöffnet, wie in der folgenden Abbildung gezeigt.
+3. Drücken Sie F5, um das Beispiel-Add-In zu erstellen und bereitzustellen. Excel wird gestartet, und je nach Version von Excel 2016, lädt das Add-In entweder eine benutzerdefinierte Registerkarte „WoodGrove" im Menüband, oder es wird in einem Aufgabenbereich rechts neben dem Arbeitsblatt geöffnet, wie in der folgenden Abbildung gezeigt.
 
 ![WoodGrove Bank Expense Trends Add-in - Initial taskpane] (../images/woodgrove_taskpane_ribbon.PNG)
 

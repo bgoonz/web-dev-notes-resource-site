@@ -182,7 +182,7 @@
                 <li>c) a url that resolves to (b)</li>
                 <li>d) a <code>&lt;name&gt;@&lt;version&gt;</code> that is published on the registry with (c)</li>
                 <li>e) a <code>&lt;name&gt;@&lt;tag&gt;</code> that points to (d)</li>
-                <li>f) a <code>&lt;name&gt;</code> that has a “latest” tag satisfying (e)</li>
+                <li>f) a <code>&lt;name&gt;</code> that has a "latest" tag satisfying (e)</li>
                 <li>g) a <code>git</code> url that, when cloned, results in (a).</li>
             </ul>
             <p>Even if you never publish your package, you can still get a lot of
@@ -207,7 +207,7 @@ git+https://user@hostname/project/blah.git#commit-ish
                 <li>
                     <p>name: This should be a string that identifies your project. Please do
                         not use the name to specify that it runs on node, or is in JavaScript.
-                        You can use the “engines” field to explicitly state the versions of node
+                        You can use the "engines" field to explicitly state the versions of node
                         (or whatever else) that your program requires, and it's pretty well
                         assumed that it's JavaScript.</p>
                     <p>It does not necessarily need to match your github repository name.</p>
@@ -228,18 +228,18 @@ git+https://user@hostname/project/blah.git#commit-ish
                 <li>
                     <p>scripts: If you have a special compilation or installation script, then
                         you should put it in the <code>scripts</code> object. You should definitely have at
-                        least a basic smoke-test command as the “scripts.test” field. See
+                        least a basic smoke-test command as the "scripts.test" field. See
                         <a href="../using-npm/scripts.html">scripts</a>.
                     </p>
                 </li>
                 <li>
                     <p>main: If you have a single module that serves as the entry point to your
-                        program (like what the “foo” package gives you at require(“foo”)), then
-                        you need to specify that in the “main” field.</p>
+                        program (like what the "foo" package gives you at require("foo")), then
+                        you need to specify that in the "main" field.</p>
                 </li>
                 <li>
                     <p>directories: This is an object mapping names to folders. The best ones
-                        to include are “lib” and “doc”, but if you use “man” to specify a folder
+                        to include are "lib" and "doc", but if you use "man" to specify a folder
                         full of man pages, they'll get installed just like these ones.</p>
                 </li>
             </ul>
@@ -331,7 +331,7 @@ git+https://user@hostname/project/blah.git#commit-ish
 npm install ../my-package
 </code></pre>
             <p>to install it locally into the node_modules folder in that other place.</p>
-            <p>Then go into the node-repl, and try using require(“my-thing”) to
+            <p>Then go into the node-repl, and try using require("my-thing") to
                 bring in your module's main module.</p>
             <h3 id="create-a-user-account">Create a User Account</h3>
             <p>Create a user with the adduser command. It works like this:</p>

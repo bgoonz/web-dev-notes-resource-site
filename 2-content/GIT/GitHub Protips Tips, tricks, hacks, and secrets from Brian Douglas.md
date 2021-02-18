@@ -23,7 +23,7 @@ Approaching open source can be ambiguous, especially when lacking person-to-pers
 
 Consider following the project’s public Twitter and joining their Discord. Ultimately, be sure to build rapport and community.
 
-### Finding contributions using “/contribute”[](#finding-contributions-using-contribute)
+### Finding contributions using "/contribute"[](#finding-contributions-using-contribute)
 
 The [good-first-issue](https://github.blog/2020-01-22-how-we-built-good-first-issues/) label is a feature that’s somewhat known among contributors to find their next contribution. These labels are applied by maintainers to draw the attention of individuals looking for new contributions, but what if I told you there’s an easier way to find issues like these?
 

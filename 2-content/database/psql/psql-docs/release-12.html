@@ -248,15 +248,15 @@
       adrelid)</code>.
      </p></li><li class="listitem"><p>
       Mark table columns of type <a class="link" href="datatype-character.html#DATATYPE-CHARACTER-SPECIAL-TABLE" title="Table 8.5. Special Character Types">name</a> as having
-      <span class="quote">“<span class="quote">C</span>”</span> collation by default (Tom Lane, Daniel Vérité)
+      <span class="quote">"<span class="quote">C</span>"</span> collation by default (Tom Lane, Daniel Vérité)
      </p><p>
       The comparison operators for data type <code class="type">name</code> can now use
-      any collation, rather than always using <span class="quote">“<span class="quote">C</span>”</span> collation.
+      any collation, rather than always using <span class="quote">"<span class="quote">C</span>"</span> collation.
       To preserve the previous semantics of queries, columns of
       type <code class="type">name</code> are now explicitly marked as
-      having <span class="quote">“<span class="quote">C</span>”</span> collation.  A side effect of this is that
+      having <span class="quote">"<span class="quote">C</span>"</span> collation.  A side effect of this is that
       regular-expression operators on <code class="type">name</code> columns will now
-      use the <span class="quote">“<span class="quote">C</span>”</span> collation by default, not the database
+      use the <span class="quote">"<span class="quote">C</span>"</span> collation by default, not the database
       collation, to determine the behavior of locale-dependent regular
       expression patterns (such as <code class="literal">\w</code>).  If you want
       non-C behavior for a regular expression on a <code class="type">name</code>
@@ -285,9 +285,9 @@
 </p><pre class="programlisting">
 SELECT ... FROM information_schema.tables WHERE table_name &lt; 'foo';
 </pre><p>
-      will now use <span class="quote">“<span class="quote">C</span>”</span>-locale comparison semantics by
+      will now use <span class="quote">"<span class="quote">C</span>"</span>-locale comparison semantics by
       default, rather than the database's default collation as before.
-      Sorting on these columns will also follow <span class="quote">“<span class="quote">C</span>”</span> ordering
+      Sorting on these columns will also follow <span class="quote">"<span class="quote">C</span>"</span> ordering
       rules.  The previous behavior (and inefficiency) can be enforced by
       adding a <code class="literal">COLLATE "default"</code> clause.
      </p></li><li class="listitem"><p>
@@ -596,7 +596,7 @@ SELECT ... FROM information_schema.tables WHERE table_name &lt; 'foo';
         At server start, emit a log message including the server
         version number (Christoph Berg)
        </p></li><li class="listitem"><p>
-        Prevent logging <span class="quote">“<span class="quote">incomplete startup packet</span>”</span> if a new
+        Prevent logging <span class="quote">"<span class="quote">incomplete startup packet</span>"</span> if a new
         connection is immediately closed (Tom Lane)
        </p><p>
         This avoids log spam from certain forms of monitoring.
@@ -838,7 +838,7 @@ SELECT ... FROM information_schema.tables WHERE table_name &lt; 'foo';
        string equality for strings that are not bit-wise equal (Peter
        Eisentraut)
       </p><p>
-       This feature supports <span class="quote">“<span class="quote">nondeterministic</span>”</span> collations
+       This feature supports <span class="quote">"<span class="quote">nondeterministic</span>"</span> collations
        that can define case- and accent-agnostic equality comparisons.
        Thus, for example, a case-insensitive uniqueness constraint on a
        text column can be made more easily than before.  This is only
@@ -855,7 +855,7 @@ SELECT ... FROM information_schema.tables WHERE table_name &lt; 'foo';
        to more seamlessly be compared to other text types (Tom Lane)
       </p><p>
        Type <code class="type">name</code> now behaves much like a domain over
-       type <code class="type">text</code> that has default collation <span class="quote">“<span class="quote">C</span>”</span>.
+       type <code class="type">text</code> that has default collation <span class="quote">"<span class="quote">C</span>"</span>.
        This allows cross-type comparisons to be processed more efficiently.
       </p></li></ul></div></div><div class="sect3" id="id-1.11.6.10.5.7"><div class="titlepage"><div><div><h4 class="title">E.6.3.5. Functions</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
        Add support for the <acronym class="acronym">SQL/JSON</acronym> <a class="link" href="functions-json.html#FUNCTIONS-SQLJSON-PATH" title="9.15.2. The SQL/JSON Path Language">path</a> language

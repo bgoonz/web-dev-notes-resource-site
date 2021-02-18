@@ -18,13 +18,13 @@
 <li><code>componentWillReceiveProps</code></li>
 <li><code>componentWillUpdate</code></li>
 </ul>
-<p>These lifecycle methods have often been misunderstood and subtly misused; furthermore, we anticipate that their potential misuse may be more problematic with async rendering. Because of this, we will be adding an “UNSAFE_” prefix to these lifecycles in an upcoming release. (Here, “unsafe” refers not to security but instead conveys that code using these lifecycles will be more likely to have bugs in future versions of React, especially once async rendering is enabled.)</p>
+<p>These lifecycle methods have often been misunderstood and subtly misused; furthermore, we anticipate that their potential misuse may be more problematic with async rendering. Because of this, we will be adding an "UNSAFE_" prefix to these lifecycles in an upcoming release. (Here, "unsafe" refers not to security but instead conveys that code using these lifecycles will be more likely to have bugs in future versions of React, especially once async rendering is enabled.)</p>
 <h2 id="gradual-migration-path">Gradual Migration Path</h2>
 <p><a href="/blog/2016/02/19/new-versioning-scheme.html">React follows semantic versioning</a>, so this change will be gradual. Our current plan is:</p>
 <ul>
 <li><strong>16.3</strong>: Introduce aliases for the unsafe lifecycles, <code>UNSAFE_componentWillMount</code>, <code>UNSAFE_componentWillReceiveProps</code>, and <code>UNSAFE_componentWillUpdate</code>. (Both the old lifecycle names and the new aliases will work in this release.)</li>
 <li><strong>A future 16.x release</strong>: Enable deprecation warning for <code>componentWillMount</code>, <code>componentWillReceiveProps</code>, and <code>componentWillUpdate</code>. (Both the old lifecycle names and the new aliases will work in this release, but the old names will log a DEV-mode warning.)</li>
-<li><strong>17.0</strong>: Remove <code>componentWillMount</code>, <code>componentWillReceiveProps</code>, and <code>componentWillUpdate</code> . (Only the new “UNSAFE_” lifecycle names will work from this point forward.)</li>
+<li><strong>17.0</strong>: Remove <code>componentWillMount</code>, <code>componentWillReceiveProps</code>, and <code>componentWillUpdate</code> . (Only the new "UNSAFE_" lifecycle names will work from this point forward.)</li>
 </ul>
 <p><strong>Note that if you're a React application developer, you don't have to do anything about the legacy methods
         yet. The primary purpose of the upcoming version 16.3 release is to enable open source project maintainers to
@@ -34,7 +34,7 @@
     understand that migrations take time. We will take the gradual migration path along with everyone in the React
     community.</p>
 <p>If you don't have the time to migrate or test these components, we recommend running a <a
-        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">“codemod”</a> script that renames
+        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">"codemod"</a> script that renames
     them automatically:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> your_project</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="ex">npx</span> react-codemod rename-unsafe-lifecycles</a></code></pre></div>
@@ -43,7 +43,7 @@
 <h2 id="migrating-from-legacy-lifecycles">Migrating from Legacy Lifecycles</h2>
 <p>If you'd like to start using the new component APIs introduced in React 16.3 (or if you're a maintainer looking to
     update your library in advance) here are a few examples that we hope will help you to start thinking about
-    components a bit differently. Over time, we plan to add additional “recipes” to our documentation that show how to
+    components a bit differently. Over time, we plan to add additional "recipes" to our documentation that show how to
     perform common tasks in a way that avoids the problematic lifecycles.</p>
 <p>Before we begin, here's a quick overview of the lifecycle changes planned for version 16.3: * We are <strong>adding
         the following lifecycle aliases</strong>: <code>UNSAFE_componentWillMount</code>,
@@ -94,7 +94,7 @@
 <blockquote>
 <p>Note</p>
 <p>Some advanced use-cases (e.g. libraries like Relay) may want to experiment with eagerly prefetching async data. An example of how this can be done is available <a href="https://gist.github.com/bvaughn/89700e525ff423a75ffb63b1b1e30a8f">here</a>.</p>
-<p>In the longer term, the canonical way to fetch data in React components will likely be based on the “suspense” API <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">introduced at JSConf Iceland</a>. Both simple data fetching solutions and libraries like Apollo and Relay will be able to use it under the hood. It is significantly less verbose than either of the above solutions, but will not be finalized in time for the 16.3 release.</p>
+<p>In the longer term, the canonical way to fetch data in React components will likely be based on the "suspense" API <a href="/blog/2018/03/01/sneak-peek-beyond-react-16.html">introduced at JSConf Iceland</a>. Both simple data fetching solutions and libraries like Apollo and Relay will be able to use it under the hood. It is significantly less verbose than either of the above solutions, but will not be finalized in time for the 16.3 release.</p>
 <p>When supporting server rendering, it's currently necessary to provide the data synchronously –
     <code>componentWillMount</code> was often used for this purpose but the constructor can be used as a replacement.
     The upcoming suspense APIs will make async data fetching cleanly possible for both client and server rendering.</p>
@@ -140,7 +140,7 @@
 </blockquote>
 <h3 id="invoking-external-callbacks">Invoking external callbacks</h3>
 <p>Here is an example of a component that calls an external function when its internal state changes: <code>embed:update-on-async-rendering/invoking-external-callbacks-before.js</code></p>
-<p>Sometimes people use <code>componentWillUpdate</code> out of a misplaced fear that by the time <code>componentDidUpdate</code> fires, it is “too late” to update the state of other components. This is not the case. React ensures that any <code>setState</code> calls that happen during <code>componentDidMount</code> and <code>componentDidUpdate</code> are flushed before the user sees the updated UI. In general, it is better to avoid cascading updates like this, but in some cases they are necessary (for example, if you need to position a tooltip after measuring the rendered DOM element).</p>
+<p>Sometimes people use <code>componentWillUpdate</code> out of a misplaced fear that by the time <code>componentDidUpdate</code> fires, it is "too late" to update the state of other components. This is not the case. React ensures that any <code>setState</code> calls that happen during <code>componentDidMount</code> and <code>componentDidUpdate</code> are flushed before the user sees the updated UI. In general, it is better to avoid cascading updates like this, but in some cases they are necessary (for example, if you need to position a tooltip after measuring the rendered DOM element).</p>
 <p>Either way, it is unsafe to use <code>componentWillUpdate</code> for this purpose in async mode, because the external callback might get called multiple times for a single update. Instead, the <code>componentDidUpdate</code> lifecycle should be used since it is guaranteed to be invoked only once per update: <code>embed:update-on-async-rendering/invoking-external-callbacks-after.js</code></p>
 <h3 id="side-effects-on-props-change">Side effects on props change</h3>
 <p>Similar to the <a href="#invoking-external-callbacks">example above</a>, sometimes components have side effects when <code>props</code> change.</p>
@@ -159,8 +159,8 @@
 </blockquote>
 <h3 id="reading-dom-properties-before-an-update">Reading DOM properties before an update</h3>
 <p>Here is an example of a component that reads a property from the DOM before an update in order to maintain scroll position within a list: <code>embed:update-on-async-rendering/react-dom-properties-before-update-before.js</code></p>
-<p>In the above example, <code>componentWillUpdate</code> is used to read the DOM property. However with async rendering, there may be delays between “render” phase lifecycles (like <code>componentWillUpdate</code> and <code>render</code>) and “commit” phase lifecycles (like <code>componentDidUpdate</code>). If the user does something like resize the window during this time, the <code>scrollHeight</code> value read from <code>componentWillUpdate</code> will be stale.</p>
-<p>The solution to this problem is to use the new “commit” phase lifecycle, <code>getSnapshotBeforeUpdate</code>. This method gets called <em>immediately before</em> mutations are made (e.g. before the DOM is updated). It can return a value for React to pass as a parameter to <code>componentDidUpdate</code>, which gets called <em>immediately after</em> mutations.</p>
+<p>In the above example, <code>componentWillUpdate</code> is used to read the DOM property. However with async rendering, there may be delays between "render" phase lifecycles (like <code>componentWillUpdate</code> and <code>render</code>) and "commit" phase lifecycles (like <code>componentDidUpdate</code>). If the user does something like resize the window during this time, the <code>scrollHeight</code> value read from <code>componentWillUpdate</code> will be stale.</p>
+<p>The solution to this problem is to use the new "commit" phase lifecycle, <code>getSnapshotBeforeUpdate</code>. This method gets called <em>immediately before</em> mutations are made (e.g. before the DOM is updated). It can return a value for React to pass as a parameter to <code>componentDidUpdate</code>, which gets called <em>immediately after</em> mutations.</p>
 <p>The two lifecycles can be used together like this:</p>
 <p><code>embed:update-on-async-rendering/react-dom-properties-before-update-after.js</code></p>
 <blockquote>

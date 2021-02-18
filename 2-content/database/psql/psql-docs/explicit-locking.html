@@ -23,7 +23,7 @@
     of these locks explicitly with the command <a class="xref" href="sql-lock.html" title="LOCK"><span class="refentrytitle">LOCK</span></a>.
     Remember that all of these lock modes are table-level locks,
     even if the name contains the word
-    <span class="quote">“<span class="quote">row</span>”</span>; the names of the lock modes are historical.
+    <span class="quote">"<span class="quote">row</span>"</span>; the names of the lock modes are historical.
     To some extent the names reflect the typical usage of each lock
     mode — but the semantics are all the same.  The only real difference
     between one lock mode and another is the set of lock modes with
@@ -321,7 +321,7 @@ UPDATE accounts SET balance = balance - 100.00 WHERE acctnum = 22222;
      correctly.  Advisory locks can be useful for locking strategies
      that are an awkward fit for the MVCC model.
      For example, a common use of advisory locks is to emulate pessimistic
-     locking strategies typical of so-called <span class="quote">“<span class="quote">flat file</span>”</span> data
+     locking strategies typical of so-called <span class="quote">"<span class="quote">flat file</span>"</span> data
      management systems.
      While a flag stored in a table could be used for the same purpose,
      advisory locks are faster, avoid table bloat, and are automatically

@@ -18,21 +18,21 @@
     prefixed and one space suffixed when determining the set
     of trigrams contained in the string.
     For example, the set of trigrams in the string
-    <span class="quote">“<span class="quote"><code class="literal">cat</code></span>”</span> is
-    <span class="quote">“<span class="quote"><code class="literal">  c</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal"> ca</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal">cat</code></span>”</span>, and
-    <span class="quote">“<span class="quote"><code class="literal">at </code></span>”</span>.
+    <span class="quote">"<span class="quote"><code class="literal">cat</code></span>"</span> is
+    <span class="quote">"<span class="quote"><code class="literal">  c</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal"> ca</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal">cat</code></span>"</span>, and
+    <span class="quote">"<span class="quote"><code class="literal">at </code></span>"</span>.
     The set of trigrams in the string
-    <span class="quote">“<span class="quote"><code class="literal">foo|bar</code></span>”</span> is
-    <span class="quote">“<span class="quote"><code class="literal">  f</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal"> fo</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal">foo</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal">oo </code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal">  b</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal"> ba</code></span>”</span>,
-    <span class="quote">“<span class="quote"><code class="literal">bar</code></span>”</span>, and
-    <span class="quote">“<span class="quote"><code class="literal">ar </code></span>”</span>.
+    <span class="quote">"<span class="quote"><code class="literal">foo|bar</code></span>"</span> is
+    <span class="quote">"<span class="quote"><code class="literal">  f</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal"> fo</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal">foo</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal">oo </code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal">  b</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal"> ba</code></span>"</span>,
+    <span class="quote">"<span class="quote"><code class="literal">bar</code></span>"</span>, and
+    <span class="quote">"<span class="quote"><code class="literal">ar </code></span>"</span>.
    </p></div></div><div class="sect2" id="id-1.11.7.40.5"><div class="titlepage"><div><div><h3 class="title">F.31.2. Functions and Operators</h3></div></div></div><p>
    The functions provided by the <code class="filename">pg_trgm</code> module
    are shown in <a class="xref" href="pgtrgm.html#PGTRGM-FUNC-TABLE" title="Table F.24. pg_trgm Functions">Table F.24</a>, the operators
@@ -136,12 +136,12 @@
       </td></tr><tr><td><code class="type">text</code> <code class="literal">%&gt;&gt;</code> <code class="type">text</code></td><td><code class="type">boolean</code></td><td>
        Commutator of the <code class="literal">&lt;&lt;%</code> operator.
       </td></tr><tr><td><code class="type">text</code> <code class="literal">&lt;-&gt;</code> <code class="type">text</code></td><td><code class="type">real</code></td><td>
-       Returns the <span class="quote">“<span class="quote">distance</span>”</span> between the arguments, that is
+       Returns the <span class="quote">"<span class="quote">distance</span>"</span> between the arguments, that is
        one minus the <code class="function">similarity()</code> value.
       </td></tr><tr><td>
        <code class="type">text</code> <code class="literal">&lt;&lt;-&gt;</code> <code class="type">text</code>
       </td><td><code class="type">real</code></td><td>
-       Returns the <span class="quote">“<span class="quote">distance</span>”</span> between the arguments, that is
+       Returns the <span class="quote">"<span class="quote">distance</span>"</span> between the arguments, that is
        one minus the <code class="function">word_similarity()</code> value.
       </td></tr><tr><td>
        <code class="type">text</code> <code class="literal">&lt;-&gt;&gt;</code> <code class="type">text</code>
@@ -150,7 +150,7 @@
       </td></tr><tr><td>
        <code class="type">text</code> <code class="literal">&lt;&lt;&lt;-&gt;</code> <code class="type">text</code>
       </td><td><code class="type">real</code></td><td>
-       Returns the <span class="quote">“<span class="quote">distance</span>”</span> between the arguments, that is
+       Returns the <span class="quote">"<span class="quote">distance</span>"</span> between the arguments, that is
        one minus the <code class="function">strict_word_similarity()</code> value.
       </td></tr><tr><td>
        <code class="type">text</code> <code class="literal">&lt;-&gt;&gt;&gt;</code> <code class="type">text</code>

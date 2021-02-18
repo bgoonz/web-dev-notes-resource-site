@@ -637,7 +637,7 @@ $ <strong class="userinput"><code>psql postgresql://dbmaster:5433/mydb?sslmode=r
         <p>
           If both standard input and standard output are a
           terminal, then <span class="application">psql</span> sets the client
-          encoding to <span class="quote">“<span class="quote">auto</span>”</span>, which will detect the
+          encoding to <span class="quote">"<span class="quote">auto</span>"</span>, which will detect the
           appropriate client encoding from the locale settings
           (<code class="envar">LC_CTYPE</code> environment variable on Unix systems).
           If this doesn't work out as expected, the client encoding can be
@@ -873,7 +873,7 @@ testdb=&gt;
                 Sets the title of any tables being printed as the result of a
                 query or unset any such title. This command is equivalent to
                 <code class="literal">\pset title <em class="replaceable"><code>title</code></em></code>. (The name of
-                this command derives from <span class="quote">“<span class="quote">caption</span>”</span>, as it was
+                this command derives from <span class="quote">"<span class="quote">caption</span>"</span>, as it was
                 previously only used to set the caption in an
                 <acronym class="acronym">HTML</acronym> table.)
               </p>
@@ -1073,7 +1073,7 @@ testdb=&gt;
                 Associated indexes, constraints, rules, and triggers are
                 also shown. For foreign tables, the associated foreign
                 server is shown as well.
-                (<span class="quote">“<span class="quote">Matching the pattern</span>”</span> is defined in
+                (<span class="quote">"<span class="quote">Matching the pattern</span>"</span> is defined in
                 <a class="xref" href="app-psql.html#APP-PSQL-PATTERNS" title="Patterns">Patterns</a>
                 below.)
               </p>
@@ -1269,8 +1269,8 @@ testdb=&gt;
                 ]</code></span></dt>
             <dd>
               <p>
-                Lists foreign servers (mnemonic: <span class="quote">“<span class="quote">external
-                    servers</span>”</span>).
+                Lists foreign servers (mnemonic: <span class="quote">"<span class="quote">external
+                    servers</span>"</span>).
                 If <em class="replaceable"><code>pattern</code></em> is
                 specified, only those servers whose name matches the pattern
                 are listed. If the form <code class="literal">\des+</code> is used, a
@@ -1283,8 +1283,8 @@ testdb=&gt;
                 ]</code></span></dt>
             <dd>
               <p>
-                Lists foreign tables (mnemonic: <span class="quote">“<span class="quote">external
-                    tables</span>”</span>).
+                Lists foreign tables (mnemonic: <span class="quote">"<span class="quote">external
+                    tables</span>"</span>).
                 If <em class="replaceable"><code>pattern</code></em> is
                 specified, only entries whose table name or schema name matches
                 the pattern are listed. If the form <code class="literal">\det+</code>
@@ -1297,8 +1297,8 @@ testdb=&gt;
                 ]</code></span></dt>
             <dd>
               <p>
-                Lists user mappings (mnemonic: <span class="quote">“<span class="quote">external
-                    users</span>”</span>).
+                Lists user mappings (mnemonic: <span class="quote">"<span class="quote">external
+                    users</span>"</span>).
                 If <em class="replaceable"><code>pattern</code></em> is
                 specified, only those mappings whose user names match the
                 pattern are listed. If the form <code class="literal">\deu+</code> is
@@ -1318,8 +1318,8 @@ testdb=&gt;
                 ]</code></span></dt>
             <dd>
               <p>
-                Lists foreign-data wrappers (mnemonic: <span class="quote">“<span class="quote">external
-                    wrappers</span>”</span>).
+                Lists foreign-data wrappers (mnemonic: <span class="quote">"<span class="quote">external
+                    wrappers</span>"</span>).
                 If <em class="replaceable"><code>pattern</code></em> is
                 specified, only those foreign-data wrappers whose name matches
                 the pattern are listed. If the form <code class="literal">\dew+</code>
@@ -1333,12 +1333,12 @@ testdb=&gt;
             <dd>
               <p>
                 Lists functions, together with their result data types, argument data
-                types, and function types, which are classified as <span class="quote">“<span
-                    class="quote">agg</span>”</span>
-                (aggregate), <span class="quote">“<span class="quote">normal</span>”</span>, <span class="quote">“<span
-                    class="quote">procedure</span>”</span>, <span class="quote">“<span
-                    class="quote">trigger</span>”</span>, or <span class="quote">“<span
-                    class="quote">window</span>”</span>.
+                types, and function types, which are classified as <span class="quote">"<span
+                    class="quote">agg</span>"</span>
+                (aggregate), <span class="quote">"<span class="quote">normal</span>"</span>, <span class="quote">"<span
+                    class="quote">procedure</span>"</span>, <span class="quote">"<span
+                    class="quote">trigger</span>"</span>, or <span class="quote">"<span
+                    class="quote">window</span>"</span>.
                 To display only functions
                 of specific type(s), add the corresponding letters <code class="literal">a</code>,
                 <code class="literal">n</code>, <code class="literal">p</code>, <code class="literal">t</code>, or <code
@@ -1419,9 +1419,9 @@ testdb=&gt;
             <dd>
               <p>
                 Lists database roles.
-                (Since the concepts of <span class="quote">“<span class="quote">users</span>”</span> and <span
-                  class="quote">“<span class="quote">groups</span>”</span> have been
-                unified into <span class="quote">“<span class="quote">roles</span>”</span>, this command is now
+                (Since the concepts of <span class="quote">"<span class="quote">users</span>"</span> and <span
+                  class="quote">"<span class="quote">groups</span>"</span> have been
+                unified into <span class="quote">"<span class="quote">roles</span>"</span>, this command is now
                 equivalent to
                 <code class="literal">\du</code>.)
                 By default, only user-created roles are shown; supply the
@@ -1534,8 +1534,8 @@ testdb=&gt;
                 listed.
               </p>
               <p>
-                If the modifier <code class="literal">n</code> (<span class="quote">“<span
-                    class="quote">nested</span>”</span>) is used,
+                If the modifier <code class="literal">n</code> (<span class="quote">"<span
+                    class="quote">nested</span>"</span>) is used,
                 or a pattern is specified, then non-root partitioned relations are
                 included, and a column is shown displaying the parent of each
                 partitioned relation.
@@ -1621,9 +1621,9 @@ testdb=&gt;
             <dd>
               <p>
                 Lists database roles.
-                (Since the concepts of <span class="quote">“<span class="quote">users</span>”</span> and <span
-                  class="quote">“<span class="quote">groups</span>”</span> have been
-                unified into <span class="quote">“<span class="quote">roles</span>”</span>, this command is now
+                (Since the concepts of <span class="quote">"<span class="quote">users</span>"</span> and <span
+                  class="quote">"<span class="quote">groups</span>"</span> have been
+                unified into <span class="quote">"<span class="quote">roles</span>"</span>, this command is now
                 equivalent to
                 <code class="literal">\dg</code>.)
                 By default, only user-created roles are shown; supply the
@@ -1846,8 +1846,8 @@ Tue Oct 26 21:40:57 CEST 1999
                 If the current query buffer is empty, the most recently sent query is
                 re-executed instead. Except for that behavior, <code class="literal">\g</code>
                 without an argument is essentially equivalent to a semicolon.
-                A <code class="literal">\g</code> with argument is a <span class="quote">“<span
-                    class="quote">one-shot</span>”</span>
+                A <code class="literal">\g</code> with argument is a <span class="quote">"<span
+                    class="quote">one-shot</span>"</span>
                 alternative to the <code class="command">\o</code> command.
               </p>
               <p>
@@ -2232,7 +2232,7 @@ lo_import 152801
                 the shell.
               </p>
               <p>
-                <span class="quote">“<span class="quote">Query results</span>”</span> includes all tables, command
+                <span class="quote">"<span class="quote">Query results</span>"</span> includes all tables, command
                 responses, and notices obtained from the database server, as
                 well as output of various backslash commands that query the
                 database (such as <code class="command">\d</code>); but not error
@@ -2360,7 +2360,7 @@ lo_import 152801
                       is enabled, query results are displayed in two columns, with the
                       column name on the left and the data on the right. This mode is
                       useful if the data wouldn't fit on the screen in the
-                      normal <span class="quote">“<span class="quote">horizontal</span>”</span> mode. In the auto
+                      normal <span class="quote">"<span class="quote">horizontal</span>"</span> mode. In the auto
                       setting, the
                       expanded mode is used whenever the query output has more than one
                       column and is wider than the screen; otherwise, the regular mode is
@@ -2896,8 +2896,8 @@ testdb=&gt; <strong class="userinput"><code>\setenv LESS -imx4F</code></strong>
                 pattern are listed.
               </p>
               <p>
-                This is an alias for <code class="command">\dp</code> (<span class="quote">“<span class="quote">display
-                    privileges</span>”</span>).
+                This is an alias for <code class="command">\dp</code> (<span class="quote">"<span class="quote">display
+                    privileges</span>"</span>).
               </p>
             </dd>
             <dt><span class="term"><code class="literal">\! [ <em class="replaceable"><code>command</code></em>
@@ -3102,8 +3102,8 @@ bar
               The arguments of <code class="command">\set</code> are subject to the same
               substitution rules as with other commands. Thus you can construct
               interesting references such as <code class="literal">\set :foo
-    'something'</code> and get <span class="quote">“<span class="quote">soft links</span>”</span> or
-              <span class="quote">“<span class="quote">variable variables</span>”</span> of <span
+    'something'</code> and get <span class="quote">"<span class="quote">soft links</span>"</span> or
+              <span class="quote">"<span class="quote">variable variables</span>"</span> of <span
                 class="productname">Perl</span>
               or <span class="productname"><acronym class="acronym">PHP</acronym></span> fame,
               respectively. Unfortunately (or fortunately?), there is no way to do
@@ -3543,7 +3543,7 @@ bar
           <h4><acronym class="acronym">SQL</acronym> Interpolation</h4>
           <p>
             A key feature of <span class="application">psql</span>
-            variables is that you can substitute (<span class="quote">“<span class="quote">interpolate</span>”</span>)
+            variables is that you can substitute (<span class="quote">"<span class="quote">interpolate</span>"</span>)
             them into regular <acronym class="acronym">SQL</acronym> statements, as well as the
             arguments of meta-commands. Furthermore,
             <span class="application">psql</span> provides facilities for
@@ -3760,7 +3760,7 @@ testdb=&gt; <strong class="userinput"><code>INSERT INTO my_table VALUES (:'conte
               <dd>
                 <p>
                   The output of <em class="replaceable"><code>command</code></em>, similar to ordinary
-                  <span class="quote">“<span class="quote">back-tick</span>”</span> substitution.
+                  <span class="quote">"<span class="quote">back-tick</span>"</span> substitution.
                 </p>
               </dd>
               <dt><span class="term"><code class="literal">%[</code> ... <code class="literal">%]</code></span></dt>
@@ -3967,7 +3967,7 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '
             </p>
             <p>
               The system-wide startup file is named <code class="filename">psqlrc</code> and is
-              sought in the installation's <span class="quote">“<span class="quote">system configuration</span>”</span>
+              sought in the installation's <span class="quote">"<span class="quote">system configuration</span>"</span>
               directory,
               which is most reliably identified by running <code class="literal">pg_config
      --sysconfdir</code>. By default this directory will be <code class="filename">../etc/</code>
@@ -4058,8 +4058,8 @@ PSQL_EDITOR_LINENUMBER_ARG='--line '
     <div class="refsect1" id="id-1.9.4.18.12">
       <h2>Notes for Windows Users</h2>
       <p>
-        <span class="application">psql</span> is built as a <span class="quote">“<span class="quote">console
-            application</span>”</span>. Since the Windows console windows use a different
+        <span class="application">psql</span> is built as a <span class="quote">"<span class="quote">console
+            application</span>"</span>. Since the Windows console windows use a different
         encoding than the rest of the system, you must take special care
         when using 8-bit characters within <span class="application">psql</span>.
         If <span class="application">psql</span> detects a problematic

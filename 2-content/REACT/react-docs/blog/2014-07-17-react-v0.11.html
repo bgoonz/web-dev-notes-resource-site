@@ -35,9 +35,9 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.11.0.m
 <h2 id="getdefaultprops"><code>getDefaultProps</code></h2>
 <p>Starting in React 0.11, <code>getDefaultProps()</code> is called only once when <code>React.createClass()</code> is called, instead of each time a component is rendered. This means that <code>getDefaultProps()</code> can no longer vary its return value based on <code>this.props</code> and any objects will be shared across all instances. This change improves performance and will make it possible in the future to do PropTypes checks earlier in the rendering process, allowing us to give better error messages.</p>
 <h2 id="rendering-to-null">Rendering to <code>null</code></h2>
-<p>Since React's release, people have been using work arounds to “render nothing”. Usually this means returning an empty
+<p>Since React's release, people have been using work arounds to "render nothing". Usually this means returning an empty
     <code>&lt;div/&gt;</code> or <code>&lt;span/&gt;</code>. Some people even got clever and started returning
-    <code>&lt;noscript/&gt;</code> to avoid extraneous DOM nodes. We finally provided a “blessed” solution that allows
+    <code>&lt;noscript/&gt;</code> to avoid extraneous DOM nodes. We finally provided a "blessed" solution that allows
     developers to write meaningful code. Returning <code>null</code> is an explicit indication to React that you do not
     want anything rendered. Behind the scenes we make this work with a <code>&lt;noscript&gt;</code> element, though in
     the future we hope to not put anything in the document. In the mean time, <code>&lt;noscript&gt;</code> elements do
@@ -128,12 +128,12 @@ Minified build for production: <a href="https://fb.me/react-with-addons-0.11.0.m
 </ul></li>
 <li>CSS property names with vendor prefixes (<code>Webkit</code>, <code>ms</code>, <code>Moz</code>, <code>O</code>) are now handled properly</li>
 <li>Duplicate keys no longer cause a hard error; now a warning is logged (and only one of the children with the same key is shown)</li>
-<li><code>img</code> event listeners are now unbound properly, preventing the error “Two valid but unequal nodes with the same <code>data-reactid</code>”</li>
+<li><code>img</code> event listeners are now unbound properly, preventing the error "Two valid but unequal nodes with the same <code>data-reactid</code>"</li>
 <li>Added explicit warning when missing polyfills</li>
 </ul>
 <h3 id="react-with-addons">React With Addons</h3>
 <ul>
-<li>PureRenderMixin: a mixin which helps optimize “pure” components</li>
+<li>PureRenderMixin: a mixin which helps optimize "pure" components</li>
 <li>Perf: a new set of tools to help with performance analysis</li>
 <li>Update: New <code>$apply</code> command to transform values</li>
 <li>TransitionGroup bug fixes with null elements, Android</li>

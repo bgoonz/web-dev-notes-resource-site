@@ -30,8 +30,8 @@
 <p>The reconciler will check if <code>App</code> is a class or a function.</p>
 <p>If <code>App</code> is a function, the reconciler will call <code>App(props)</code> to get the rendered element.</p>
 <p>If <code>App</code> is a class, the reconciler will instantiate an <code>App</code> with <code>new App(props)</code>, call the <code>componentWillMount()</code> lifecycle method, and then will call the <code>render()</code> method to get the rendered element.</p>
-<p>Either way, the reconciler will learn the element <code>App</code> “rendered to”.</p>
-<p>This process is recursive. <code>App</code> may render to a <code>&lt;Greeting /&gt;</code>, <code>Greeting</code> may render to a <code>&lt;Button /&gt;</code>, and so on. The reconciler will “drill down” through user-defined components recursively as it learns what each component renders to.</p>
+<p>Either way, the reconciler will learn the element <code>App</code> "rendered to".</p>
+<p>This process is recursive. <code>App</code> may render to a <code>&lt;Greeting /&gt;</code>, <code>Greeting</code> may render to a <code>&lt;Button /&gt;</code>, and so on. The reconciler will "drill down" through user-defined components recursively as it learns what each component renders to.</p>
 <p>You can imagine this process as a pseudocode:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">isClass</span>(type) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="co">// React.Component subclasses have this flag</span></a>
@@ -87,12 +87,12 @@
 <p>Let's recap a few key ideas in the example above:</p>
 <ul>
 <li>React elements are plain objects representing the component type (e.g. <code>App</code>) and the props.</li>
-<li>User-defined components (e.g. <code>App</code>) can be classes or functions but they all “render to” elements.</li>
-<li>“Mounting” is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. <code>&lt;App /&gt;</code>).</li>
+<li>User-defined components (e.g. <code>App</code>) can be classes or functions but they all "render to" elements.</li>
+<li>"Mounting" is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. <code>&lt;App /&gt;</code>).</li>
 </ul>
 <h3 id="mounting-host-elements">Mounting Host Elements</h3>
 <p>This process would be useless if we didn't render something to the screen as a result.</p>
-<p>In addition to user-defined (“composite”) components, React elements may also represent platform-specific (“host”) components. For example, <code>Button</code> might return a <code>&lt;div /&gt;</code> from its render method.</p>
+<p>In addition to user-defined ("composite") components, React elements may also represent platform-specific ("host") components. For example, <code>Button</code> might return a <code>&lt;div /&gt;</code> from its render method.</p>
 <p>If element's <code>type</code> property is a string, we are dealing with a host element:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="op">&lt;</span>div /<span class="op">&gt;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co">// { type: &#39;div&#39;, props: {} }</span></a></code></pre></div>
@@ -104,7 +104,7 @@
 <p>The DOM nodes produced by the child components will be appended to the parent DOM node, and recursively, the complete DOM structure will be assembled.</p>
 <blockquote>
 <p><strong>Note:</strong></p>
-<p>The reconciler itself is not tied to the DOM. The exact result of mounting (sometimes called “mount image” in the source code) depends on the renderer, and can be a DOM node (React DOM), a string (React DOM Server), or a number representing a native view (React Native).</p>
+<p>The reconciler itself is not tied to the DOM. The exact result of mounting (sometimes called "mount image" in the source code) depends on the renderer, and can be a DOM node (React DOM), a string (React DOM Server), or a number representing a native view (React Native).</p>
 </blockquote>
 <p>If we were to extend the code to handle host elements, it would look like this:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">function</span> <span class="at">isClass</span>(type) <span class="op">{</span></a>
@@ -266,8 +266,8 @@
 <a class="sourceLine" id="cb8-48" title="48"><span class="op">}</span></a></code></pre></div>
 <p>This is not much different from our previous <code>mountComposite()</code> implementation, but now we can save some information, such as <code>this.currentElement</code>, <code>this.renderedComponent</code>, and <code>this.publicInstance</code>, for use during updates.</p>
 <p>Note that an instance of <code>CompositeComponent</code> is not the same thing as an instance of the user-supplied <code>element.type</code>. <code>CompositeComponent</code> is an implementation detail of our reconciler, and is never exposed to the user. The user-defined class is the one we read from <code>element.type</code>, and <code>CompositeComponent</code> creates an instance of it.</p>
-<p>To avoid the confusion, we will call instances of <code>CompositeComponent</code> and <code>DOMComponent</code> “internal instances”. They exist so we can associate some long-lived data with them. Only the renderer and the reconciler are aware that they exist.</p>
-<p>In contrast, we call an instance of the user-defined class a “public instance”. The public instance is what you see as <code>this</code> in the <code>render()</code> and other methods of your custom components.</p>
+<p>To avoid the confusion, we will call instances of <code>CompositeComponent</code> and <code>DOMComponent</code> "internal instances". They exist so we can associate some long-lived data with them. Only the renderer and the reconciler are aware that they exist.</p>
+<p>In contrast, we call an instance of the user-defined class a "public instance". The public instance is what you see as <code>this</code> in the <code>render()</code> and other methods of your custom components.</p>
 <p>The <code>mountHost()</code> function, refactored to be a <code>mount()</code> method on <code>DOMComponent</code> class, also looks familiar:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">class</span> DOMComponent <span class="op">{</span></a>
 <a class="sourceLine" id="cb9-2" title="2">  <span class="at">constructor</span>(element) <span class="op">{</span></a>
@@ -454,7 +454,7 @@
 <a class="sourceLine" id="cb17-14" title="14">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb17-15" title="15"><span class="op">}</span></a></code></pre></div>
 <p>Its job is to do whatever is necessary to bring the component (and any of its children) up to date with the description provided by the <code>nextElement</code>.</p>
-<p>This is the part that is often described as “virtual DOM diffing” although what really happens is that we walk the internal tree recursively and let each internal instance receive an update.</p>
+<p>This is the part that is often described as "virtual DOM diffing" although what really happens is that we walk the internal tree recursively and let each internal instance receive an update.</p>
 <h3 id="updating-composite-components">Updating Composite Components</h3>
 <p>When a composite component receives a new element, we run the <code>componentWillUpdate()</code> lifecycle method.</p>
 <p>Then we re-render the component with the new props, and get the next rendered element:</p>
@@ -505,7 +505,7 @@
 <a class="sourceLine" id="cb19-9" title="9"></a>
 <a class="sourceLine" id="cb19-10" title="10">    <span class="co">// ...</span></a></code></pre></div>
 <p>However, if the next rendered element has a different <code>type</code> than the previously rendered element, we
-    can't update the internal instance. A <code>&lt;button&gt;</code> can't “become” an <code>&lt;input&gt;</code>.</p>
+    can't update the internal instance. A <code>&lt;button&gt;</code> can't "become" an <code>&lt;input&gt;</code>.</p>
 <p>Instead, we have to unmount the existing internal instance and mount the new one corresponding to the rendered element type. For example, this is what happens when a component that previously rendered a <code>&lt;button /&gt;</code> renders an <code>&lt;input /&gt;</code>:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb20-1" title="1">    <span class="co">// ...</span></a>
 <a class="sourceLine" id="cb20-2" title="2"></a>
@@ -717,15 +717,15 @@
 <h3 id="what-we-left-out">What We Left Out</h3>
 <p>This document is simplified compared to the real codebase. There are a few important aspects we didn't address:</p>
 <ul>
-<li><p>Components can render <code>null</code>, and the reconciler can handle “empty slots” in arrays and rendered output.</p></li>
+<li><p>Components can render <code>null</code>, and the reconciler can handle "empty slots" in arrays and rendered output.</p></li>
 <li><p>The reconciler also reads <code>key</code> from the elements, and uses it to establish which internal instance corresponds to which element in an array. A bulk of complexity in the actual React implementation is related to that.</p></li>
-<li><p>In addition to composite and host internal instance classes, there are also classes for “text” and “empty” components. They represent text nodes and the “empty slots” you get by rendering <code>null</code>.</p></li>
+<li><p>In addition to composite and host internal instance classes, there are also classes for "text" and "empty" components. They represent text nodes and the "empty slots" you get by rendering <code>null</code>.</p></li>
 <li><p>Renderers use <a href="/docs/codebase-overview.html#dynamic-injection">injection</a> to pass the host internal class to the reconciler. For example, React DOM tells the reconciler to use <code>ReactDOMComponent</code> as the host internal instance implementation.</p></li>
 <li><p>The logic for updating the list of children is extracted into a mixin called <code>ReactMultiChild</code> which is used by the host internal instance class implementations both in React DOM and React Native.</p></li>
 <li><p>The reconciler also implements support for <code>setState()</code> in composite components. Multiple updates inside event handlers get batched into a single update.</p></li>
 <li><p>The reconciler also takes care of attaching and detaching refs to composite components and host nodes.</p></li>
-<li><p>Lifecycle methods that are called after the DOM is ready, such as <code>componentDidMount()</code> and <code>componentDidUpdate()</code>, get collected into “callback queues” and are executed in a single batch.</p></li>
-<li><p>React puts information about the current update into an internal object called “transaction”. Transactions are useful for keeping track of the queue of pending lifecycle methods, the current DOM nesting for the warnings, and anything else that is “global” to a specific update. Transactions also ensure React “cleans everything up” after updates. For example, the transaction class provided by React DOM restores the input selection after any update.</p></li>
+<li><p>Lifecycle methods that are called after the DOM is ready, such as <code>componentDidMount()</code> and <code>componentDidUpdate()</code>, get collected into "callback queues" and are executed in a single batch.</p></li>
+<li><p>React puts information about the current update into an internal object called "transaction". Transactions are useful for keeping track of the queue of pending lifecycle methods, the current DOM nesting for the warnings, and anything else that is "global" to a specific update. Transactions also ensure React "cleans everything up" after updates. For example, the transaction class provided by React DOM restores the input selection after any update.</p></li>
 </ul>
 <h3 id="jumping-into-the-code">Jumping into the Code</h3>
 <ul>

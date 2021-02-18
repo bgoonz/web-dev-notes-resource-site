@@ -32,7 +32,7 @@ In this guide, we will examine the building blocks of React apps: elements and c
 
 This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the "Main Concepts" guide chapters in the order they appear in the sidebar.** For example, ["Introducing JSX"](/docs/introducing-jsx.html) is the next chapter after this one.
 
 ## Knowledge Level Assumptions {#knowledge-level-assumptions}
 
@@ -46,5 +46,3 @@ React is a JavaScript library, and so we'll assume you have a basic understandin
 ## Let's Get Started! {#lets-get-started}
 
 Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
-
-

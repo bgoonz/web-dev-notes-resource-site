@@ -171,13 +171,13 @@ returns bool
       Before doing so, the function should check the sign
       of <em class="replaceable"><code>offset</code></em>: if it is less than zero, raise
       error <code class="literal">ERRCODE_INVALID_PRECEDING_OR_FOLLOWING_SIZE</code> (22013)
-      with error text like <span class="quote">“<span class="quote">invalid preceding or following size in window
-          function</span>”</span>. (This is required by the SQL standard, although
+      with error text like <span class="quote">"<span class="quote">invalid preceding or following size in window
+          function</span>"</span>. (This is required by the SQL standard, although
       nonstandard operator families might perhaps choose to ignore this
       restriction, since there seems to be little semantic necessity for it.)
       This requirement is delegated to the <code class="function">in_range</code>
-      function so that the core code needn't understand what <span class="quote">“<span class="quote">less than
-          zero</span>”</span> means for a particular data type.
+      function so that the core code needn't understand what <span class="quote">"<span class="quote">less than
+          zero</span>"</span> means for a particular data type.
     </p>
     <p>
       An additional expectation is that <code class="function">in_range</code> functions
@@ -188,8 +188,8 @@ returns bool
       <em class="replaceable"><code>offset</code></em> would overflow.
       The correct comparison result can be determined even if that value would
       be out of the data type's range. Note that if the data type includes
-      concepts such as <span class="quote">“<span class="quote">infinity</span>”</span> or <span class="quote">“<span
-          class="quote">NaN</span>”</span>, extra care
+      concepts such as <span class="quote">"<span class="quote">infinity</span>"</span> or <span class="quote">"<span
+          class="quote">NaN</span>"</span>, extra care
       may be needed to ensure that <code class="function">in_range</code>'s results agree
       with the normal sort order of the operator family.
     </p>

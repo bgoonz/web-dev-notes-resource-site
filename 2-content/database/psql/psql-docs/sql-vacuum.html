@@ -54,14 +54,14 @@ VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] [ ANALYZE ] [ <em class="replaceable"><co
    <span class="productname">PostgreSQL</span> 9.0;  the unparenthesized
    syntax is deprecated.
   </p></div><div class="refsect1" id="id-1.9.3.183.6"><h2>Parameters</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">FULL</code></span></dt><dd><p>
-      Selects <span class="quote">“<span class="quote">full</span>”</span> vacuum, which can reclaim more
+      Selects <span class="quote">"<span class="quote">full</span>"</span> vacuum, which can reclaim more
       space, but takes much longer and exclusively locks the table.
       This method also requires extra disk space, since it writes a
       new copy of the table and doesn't release the old copy until
       the operation is complete.  Usually this should only be used when a
       significant amount of space needs to be reclaimed from within the table.
      </p></dd><dt><span class="term"><code class="literal">FREEZE</code></span></dt><dd><p>
-      Selects aggressive <span class="quote">“<span class="quote">freezing</span>”</span> of tuples.
+      Selects aggressive <span class="quote">"<span class="quote">freezing</span>"</span> of tuples.
       Specifying <code class="literal">FREEZE</code> is equivalent to performing
       <code class="command">VACUUM</code> with the
       <a class="xref" href="runtime-config-client.html#GUC-VACUUM-FREEZE-MIN-AGE">vacuum_freeze_min_age</a> and
@@ -181,7 +181,7 @@ VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] [ ANALYZE ] [ <em class="replaceable"><co
     it is sometimes advisable to use the cost-based vacuum delay feature.
     See <a class="xref" href="runtime-config-resource.html#RUNTIME-CONFIG-RESOURCE-VACUUM-COST" title="19.4.4. Cost-based Vacuum Delay">Section 19.4.4</a> for details.
    </p><p>
-    <span class="productname">PostgreSQL</span> includes an <span class="quote">“<span class="quote">autovacuum</span>”</span>
+    <span class="productname">PostgreSQL</span> includes an <span class="quote">"<span class="quote">autovacuum</span>"</span>
     facility which can automate routine vacuum maintenance.  For more
     information about automatic and manual vacuuming, see
     <a class="xref" href="routine-vacuuming.html" title="24.1. Routine Vacuuming">Section 24.1</a>.

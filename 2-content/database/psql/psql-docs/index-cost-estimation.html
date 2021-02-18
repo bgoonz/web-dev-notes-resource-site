@@ -73,7 +73,7 @@ amcostestimate (PlannerInfo *root,
    scanning the index itself, but <span class="emphasis"><em>not</em></span> the costs of retrieving or
    processing the parent-table rows that are identified by the index.
   </p><p>
-   The <span class="quote">“<span class="quote">start-up cost</span>”</span> is the part of the total scan cost that
+   The <span class="quote">"<span class="quote">start-up cost</span>"</span> is the part of the total scan cost that
    must be expended before we can begin to fetch the first row.  For most
    indexes this can be taken as zero, but an index type with a high start-up
    cost might want to set it nonzero.

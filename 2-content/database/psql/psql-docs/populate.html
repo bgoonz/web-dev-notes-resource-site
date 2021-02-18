@@ -32,7 +32,7 @@
     <code class="command">EXECUTE</code> as many times as required.  This avoids
     some of the overhead of repeatedly parsing and planning
     <code class="command">INSERT</code>. Different interfaces provide this facility
-    in different ways; look for <span class="quote">“<span class="quote">prepared statements</span>”</span> in the interface
+    in different ways; look for <span class="quote">"<span class="quote">prepared statements</span>"</span> in the interface
     documentation.
    </p><p>
     Note that loading a large number of rows using
@@ -65,7 +65,7 @@
     missing.
    </p></div><div class="sect2" id="POPULATE-RM-FKEYS"><div class="titlepage"><div><div><h3 class="title">14.4.4. Remove Foreign Key Constraints</h3></div></div></div><p>
     Just as with indexes, a foreign key constraint can be checked
-    <span class="quote">“<span class="quote">in bulk</span>”</span> more efficiently than row-by-row.  So it might be
+    <span class="quote">"<span class="quote">in bulk</span>"</span> more efficiently than row-by-row.  So it might be
     useful to drop foreign key constraints, load data, and re-create
     the constraints.  Again, there is a trade-off between data load
     speed and loss of error checking while the constraint is missing.

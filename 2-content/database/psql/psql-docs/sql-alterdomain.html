@@ -97,7 +97,7 @@ ALTER DOMAIN <em class="replaceable"><code>name</code></em>
    </p></div><div class="refsect1" id="id-1.9.3.9.7"><h2>Notes</h2><p>
    Although <code class="command">ALTER DOMAIN ADD CONSTRAINT</code> attempts to verify
    that existing stored data satisfies the new constraint, this check is not
-   bulletproof, because the command cannot <span class="quote">“<span class="quote">see</span>”</span> table rows that
+   bulletproof, because the command cannot <span class="quote">"<span class="quote">see</span>"</span> table rows that
    are newly inserted or updated and not yet committed.  If there is a hazard
    that concurrent operations might insert bad data, the way to proceed is to
    add the constraint using the <code class="literal">NOT VALID</code> option, commit

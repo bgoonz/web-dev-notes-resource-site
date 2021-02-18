@@ -245,7 +245,7 @@ once           1.3.2    1.3.3    1.3.3  node_modules/once         dependent-pack
                     not, so <code>npm outdated</code> and <code>npm update</code> have to fetch Git repos to check.
                     This is why currently doing a reinstall of a Git dependency always forces
                     a new clone and install.</li>
-                <li><code>npm@3.5.2</code> is marked as “wanted”, but “latest” is <code>npm@3.5.1</code> because
+                <li><code>npm@3.5.2</code> is marked as "wanted", but "latest" is <code>npm@3.5.1</code> because
                     npm uses dist-tags to manage its <code>latest</code> and <code>next</code> release channels.
                     <code>npm update</code> will install the <em>newest</em> version, but <code>npm install npm</code>
                     (with no semver range) will install whatever's tagged as <code>latest</code>.

@@ -67,7 +67,7 @@ Areeb Malik investigates how React performs in a high stress situation, and how 
 
 ### Rethinking Best Practices {#rethinking-best-practices}
 
-Pete Hunt's talk at JSConf EU 2013 covers three topics: throwing out the notion of templates and building views with JavaScript, “re-rendering” your entire application when your data changes, and a lightweight implementation of the DOM and events - (2013 - 0h30m).
+Pete Hunt's talk at JSConf EU 2013 covers three topics: throwing out the notion of templates and building views with JavaScript, "re-rendering" your entire application when your data changes, and a lightweight implementation of the DOM and events - (2013 - 0h30m).
 <iframe title="Pete Hunt: React: Rethinking Best Practices - JSConf EU 2013" width="650" height="366" src="https://www.youtube-nocookie.com/embed/x7cQ3mrcKaY" frameborder="0" allowfullscreen></iframe>
 
 ### High Performance Functional DOM Programming {#high-performance-functional-dom-programming}

@@ -92,7 +92,7 @@ var element2 = React.addons.cloneWithProps(element1, { extra: 'prop' });
 
 ## Owner {#owner}
 
-In React each child has both a "parent" and an “owner”. The owner is the component that created a ReactElement. I.e. the render method which contains the JSX or createElement callsite.
+In React each child has both a "parent" and an "owner". The owner is the component that created a ReactElement. I.e. the render method which contains the JSX or createElement callsite.
 
 ```js
 class Foo {
@@ -104,7 +104,7 @@ class Foo {
 
 In this example, the owner of the `span` is `Foo` but the parent is the `div`.
 
-There is also an undocumented feature called "context" that also relies on the concept of an “owner” to pass hidden props down the tree.
+There is also an undocumented feature called "context" that also relies on the concept of an "owner" to pass hidden props down the tree.
 
 ### Problem: The Semantics are Opaque and Confusing {#problem-the-semantics-are-opaque-and-confusing}
 

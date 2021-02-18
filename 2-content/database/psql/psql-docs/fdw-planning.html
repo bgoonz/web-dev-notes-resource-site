@@ -120,7 +120,7 @@
      <em class="replaceable"><code>local_variable</code></em>.  Such clauses will not be found in
      <code class="literal">baserel-&gt;baserestrictinfo</code> but must be sought in the
      relation's join lists.  A path using such a clause is called a
-     <span class="quote">“<span class="quote">parameterized path</span>”</span>.  It must identify the other relations
+     <span class="quote">"<span class="quote">parameterized path</span>"</span>.  It must identify the other relations
      used in the selected join clause(s) with a suitable value of
      <code class="literal">param_info</code>; use <code class="function">get_baserel_parampathinfo</code>
      to compute that value.  In <code class="function">GetForeignPlan</code>, the

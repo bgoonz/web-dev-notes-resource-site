@@ -4,7 +4,7 @@ title: Adding a Stylesheet
 sidebar_label: Adding Stylesheets
 ---
 
-This project setup uses [webpack](https://webpack.js.org/) for handling all assets. webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
+This project setup uses [webpack](https://webpack.js.org/) for handling all assets. webpack offers a custom way of "extending" the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
 
 ## `Button.css`
 

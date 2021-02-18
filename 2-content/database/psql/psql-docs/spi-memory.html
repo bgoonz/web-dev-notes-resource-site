@@ -10,7 +10,7 @@
    to keep track of individual objects to avoid memory leaks; instead
    only a relatively small number of contexts have to be managed.
    <code class="function">palloc</code> and related functions allocate memory
-   from the <span class="quote">“<span class="quote">current</span>”</span> context.
+   from the <span class="quote">"<span class="quote">current</span>"</span> context.
   </p><p>
    <code class="function">SPI_connect</code> creates a new memory context and
    makes it current.  <code class="function">SPI_finish</code> restores the
@@ -27,7 +27,7 @@
    C function will not work reliably.  To solve this problem, use
    <code class="function">SPI_palloc</code> to allocate memory for your return
    object.  <code class="function">SPI_palloc</code> allocates memory in the
-   <span class="quote">“<span class="quote">upper executor context</span>”</span>, that is, the memory context
+   <span class="quote">"<span class="quote">upper executor context</span>"</span>, that is, the memory context
    that was current when <code class="function">SPI_connect</code> was called,
    which is precisely the right context for a value returned from your
    C function.  Several of the other utility functions described in

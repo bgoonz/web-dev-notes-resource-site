@@ -51,7 +51,7 @@ React.renderComponent(
 
 ## Thinking and Learning React {#thinking-and-learning-react}
 
-Josephine Hall, working at Icelab, used React to write a mobile-focused application. She wrote a blog post [“Thinking and Learning React.js”](http://icelab.com.au/articles/thinking-and-learning-reactjs/) to share her experience with elements they had to use. You'll learn about routing, event dispatch, touchable components, and basic animations.
+Josephine Hall, working at Icelab, used React to write a mobile-focused application. She wrote a blog post ["Thinking and Learning React.js"](http://icelab.com.au/articles/thinking-and-learning-reactjs/) to share her experience with elements they had to use. You'll learn about routing, event dispatch, touchable components, and basic animations.
 
 
 ## London React Meetup {#london-react-meetup}
@@ -65,7 +65,7 @@ If you missed the last [London React Meetup](http://www.meetup.com/London-React-
 
 <iframe width="650" height="315" src="//www.youtube-nocookie.com/embed/CP3lvm5Ppqo" frameborder="0" allowfullscreen></iframe>
 
-In related news, the next [React SF Meetup](http://www.meetup.com/ReactJS-San-Francisco/events/195518392/) will be from Prezi: [“Immediate Mode on the Web: How We Implemented the Prezi Viewer in JavaScript”](https://medium.com/prezi-engineering/how-and-why-prezi-turned-to-javascript-56e0ca57d135). While not in React, their tech is really awesome and shares a lot of React's design principles and perf optimizations.
+In related news, the next [React SF Meetup](http://www.meetup.com/ReactJS-San-Francisco/events/195518392/) will be from Prezi: ["Immediate Mode on the Web: How We Implemented the Prezi Viewer in JavaScript"](https://medium.com/prezi-engineering/how-and-why-prezi-turned-to-javascript-56e0ca57d135). While not in React, their tech is really awesome and shares a lot of React's design principles and perf optimizations.
 
 
 ## Using React and KendoUI Together {#using-react-and-kendoui-together}
@@ -111,4 +111,4 @@ var Foo = React.createClass({
 
 ## Random Tweet {#random-tweet}
 
-<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>“<a href="https://twitter.com/apphacker">@apphacker</a>: I take back the mean things I said about <a href="https://twitter.com/reactjs">@reactjs</a> I actually like it.” Summarizing the life of ReactJS in a single tweet.</p>&mdash; Jordan (@jordwalke) <a href="https://twitter.com/jordwalke/statuses/490747339607265280">July 20, 2014</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>"<a href="https://twitter.com/apphacker">@apphacker</a>: I take back the mean things I said about <a href="https://twitter.com/reactjs">@reactjs</a> I actually like it." Summarizing the life of ReactJS in a single tweet.</p>&mdash; Jordan (@jordwalke) <a href="https://twitter.com/jordwalke/statuses/490747339607265280">July 20, 2014</a></blockquote>

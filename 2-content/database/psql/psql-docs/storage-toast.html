@@ -9,7 +9,7 @@ not possible to store very large field values directly.  To overcome
 this limitation, large field values are compressed and/or broken up into
 multiple physical rows.  This happens transparently to the user, with only
 small impact on most of the backend code.  The technique is affectionately
-known as <acronym class="acronym">TOAST</acronym> (or <span class="quote">“<span class="quote">the best thing since sliced bread</span>”</span>).
+known as <acronym class="acronym">TOAST</acronym> (or <span class="quote">"<span class="quote">the best thing since sliced bread</span>"</span>).
 The <acronym class="acronym">TOAST</acronym> infrastructure is also used to improve handling of
 large data values in-memory.
 </p><p>
@@ -188,7 +188,7 @@ elements in order.  When the element type itself is variable-length, the
 only way to find the <em class="replaceable"><code>N</code></em>'th element is to scan through all the
 preceding elements.  This representation is appropriate for on-disk storage
 because of its compactness, but for computations with the array it's much
-nicer to have an <span class="quote">“<span class="quote">expanded</span>”</span> or <span class="quote">“<span class="quote">deconstructed</span>”</span>
+nicer to have an <span class="quote">"<span class="quote">expanded</span>"</span> or <span class="quote">"<span class="quote">deconstructed</span>"</span>
 representation in which all the element starting locations have been
 identified.  The <acronym class="acronym">TOAST</acronym> pointer mechanism supports this need by
 allowing a pass-by-reference Datum to point to either a standard varlena

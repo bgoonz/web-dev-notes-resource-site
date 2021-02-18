@@ -5,8 +5,8 @@
     <acronym class="acronym">SQL</acronym> <code class="function">LIKE</code> operator, the
     more recent <code class="function">SIMILAR TO</code> operator (added in
     SQL:1999), and <acronym class="acronym">POSIX</acronym>-style regular
-    expressions.  Aside from the basic <span class="quote">“<span class="quote">does this string match
-    this pattern?</span>”</span> operators, functions are available to extract
+    expressions.  Aside from the basic <span class="quote">"<span class="quote">does this string match
+    this pattern?</span>"</span> operators, functions are available to extract
     or replace matching substrings and to split a string at matching
     locations.
    </p><div class="tip"><h3 class="title">Tip</h3><p>
@@ -327,7 +327,7 @@ regexp_replace('foobarbaz', 'b(..)', 'X\1Y', 'g')
      parenthesized subexpressions, then the result is a text array
      whose <em class="replaceable"><code>n</code></em>'th element is the substring matching
      the <em class="replaceable"><code>n</code></em>'th parenthesized subexpression of
-     the <em class="replaceable"><code>pattern</code></em> (not counting <span class="quote">“<span class="quote">non-capturing</span>”</span>
+     the <em class="replaceable"><code>pattern</code></em> (not counting <span class="quote">"<span class="quote">non-capturing</span>"</span>
      parentheses; see below for details).
      The <em class="replaceable"><code>flags</code></em> parameter is an optional text string
      containing zero or more single-letter flags that change the function's
@@ -536,7 +536,7 @@ SELECT foo FROM regexp_split_to_table('the quick brown fox', '\s*') AS foo;
    </p><div class="table" id="POSIX-ATOMS-TABLE"><p class="title"><strong>Table 9.16. Regular Expression Atoms</strong></p><div class="table-contents"><table class="table" summary="Regular Expression Atoms" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Atom</th><th>Description</th></tr></thead><tbody><tr><td> <code class="literal">(</code><em class="replaceable"><code>re</code></em><code class="literal">)</code> </td><td> (where <em class="replaceable"><code>re</code></em> is any regular expression)
        matches a match for
        <em class="replaceable"><code>re</code></em>, with the match noted for possible reporting </td></tr><tr><td> <code class="literal">(?:</code><em class="replaceable"><code>re</code></em><code class="literal">)</code> </td><td> as above, but the match is not noted for reporting
-       (a <span class="quote">“<span class="quote">non-capturing</span>”</span> set of parentheses)
+       (a <span class="quote">"<span class="quote">non-capturing</span>"</span> set of parentheses)
        (AREs only) </td></tr><tr><td> <code class="literal">.</code> </td><td> matches any single character </td></tr><tr><td> <code class="literal">[</code><em class="replaceable"><code>chars</code></em><code class="literal">]</code> </td><td> a <em class="firstterm">bracket expression</em>,
        matching any one of the <em class="replaceable"><code>chars</code></em> (see
        <a class="xref" href="functions-matching.html#POSIX-BRACKET-EXPRESSIONS" title="9.7.3.2. Bracket Expressions">Section 9.7.3.2</a> for more detail) </td></tr><tr><td> <code class="literal">\</code><em class="replaceable"><code>k</code></em> </td><td> (where <em class="replaceable"><code>k</code></em> is a non-alphanumeric character)
@@ -830,8 +830,8 @@ SELECT foo FROM regexp_split_to_table('the quick brown fox', '\s*') AS foo;
    </p><div class="table" id="POSIX-EMBEDDED-OPTIONS-TABLE"><p class="title"><strong>Table 9.23. ARE Embedded-Option Letters</strong></p><div class="table-contents"><table class="table" summary="ARE Embedded-Option Letters" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr><td> <code class="literal">b</code> </td><td> rest of RE is a BRE </td></tr><tr><td> <code class="literal">c</code> </td><td> case-sensitive matching (overrides operator type) </td></tr><tr><td> <code class="literal">e</code> </td><td> rest of RE is an ERE </td></tr><tr><td> <code class="literal">i</code> </td><td> case-insensitive matching (see
        <a class="xref" href="functions-matching.html#POSIX-MATCHING-RULES" title="9.7.3.5. Regular Expression Matching Rules">Section 9.7.3.5</a>) (overrides operator type) </td></tr><tr><td> <code class="literal">m</code> </td><td> historical synonym for <code class="literal">n</code> </td></tr><tr><td> <code class="literal">n</code> </td><td> newline-sensitive matching (see
        <a class="xref" href="functions-matching.html#POSIX-MATCHING-RULES" title="9.7.3.5. Regular Expression Matching Rules">Section 9.7.3.5</a>) </td></tr><tr><td> <code class="literal">p</code> </td><td> partial newline-sensitive matching (see
-       <a class="xref" href="functions-matching.html#POSIX-MATCHING-RULES" title="9.7.3.5. Regular Expression Matching Rules">Section 9.7.3.5</a>) </td></tr><tr><td> <code class="literal">q</code> </td><td> rest of RE is a literal (<span class="quote">“<span class="quote">quoted</span>”</span>) string, all ordinary
-       characters </td></tr><tr><td> <code class="literal">s</code> </td><td> non-newline-sensitive matching (default) </td></tr><tr><td> <code class="literal">t</code> </td><td> tight syntax (default; see below) </td></tr><tr><td> <code class="literal">w</code> </td><td> inverse partial newline-sensitive (<span class="quote">“<span class="quote">weird</span>”</span>) matching
+       <a class="xref" href="functions-matching.html#POSIX-MATCHING-RULES" title="9.7.3.5. Regular Expression Matching Rules">Section 9.7.3.5</a>) </td></tr><tr><td> <code class="literal">q</code> </td><td> rest of RE is a literal (<span class="quote">"<span class="quote">quoted</span>"</span>) string, all ordinary
+       characters </td></tr><tr><td> <code class="literal">s</code> </td><td> non-newline-sensitive matching (default) </td></tr><tr><td> <code class="literal">t</code> </td><td> tight syntax (default; see below) </td></tr><tr><td> <code class="literal">w</code> </td><td> inverse partial newline-sensitive (<span class="quote">"<span class="quote">weird</span>"</span>) matching
        (see <a class="xref" href="functions-matching.html#POSIX-MATCHING-RULES" title="9.7.3.5. Regular Expression Matching Rules">Section 9.7.3.5</a>) </td></tr><tr><td> <code class="literal">x</code> </td><td> expanded syntax (see below) </td></tr></tbody></table></div></div><br class="table-break" /><p>
     Embedded options take effect at the <code class="literal">)</code> terminating the sequence.
     They can appear only at the start of an ARE (after the
@@ -944,7 +944,7 @@ SELECT SUBSTRING('XY1234Z', 'Y*?([0-9]{1,3})');
     the total match length is either as long as possible or as short as
     possible, according to the attribute assigned to the whole RE.  The
     attributes assigned to the subexpressions only affect how much of that
-    match they are allowed to <span class="quote">“<span class="quote">eat</span>”</span> relative to each other.
+    match they are allowed to <span class="quote">"<span class="quote">eat</span>"</span> relative to each other.
    </p><p>
     The quantifiers <code class="literal">{1,1}</code> and <code class="literal">{1,1}?</code>
     can be used to force greediness or non-greediness, respectively,
@@ -959,7 +959,7 @@ SELECT regexp_match('abc01234xyz', '(.*)(\d+)(.*)');
 <em class="lineannotation"><span class="lineannotation">Result: </span></em><code class="computeroutput">{abc0123,4,xyz}</code>
 </pre><p>
     That didn't work: the first <code class="literal">.*</code> is greedy so
-    it <span class="quote">“<span class="quote">eats</span>”</span> as much as it can, leaving the <code class="literal">\d+</code> to
+    it <span class="quote">"<span class="quote">eats</span>"</span> as much as it can, leaving the <code class="literal">\d+</code> to
     match at the last possible place, the last digit.  We might try to fix
     that by making it non-greedy:
 </p><pre class="screen">
@@ -1122,7 +1122,7 @@ SELECT regexp_match('abc01234xyz', '(?:(.*?)(\d+)(.*)){1,1}');
         a locale that follows the Unicode rules.
        </p></li><li class="listitem"><p>
         The SQL standard (not XQuery itself) attempts to cater for more
-        variants of <span class="quote">“<span class="quote">newline</span>”</span> than POSIX does.  The
+        variants of <span class="quote">"<span class="quote">newline</span>"</span> than POSIX does.  The
         newline-sensitive matching options described above consider only
         ASCII NL (<code class="literal">\n</code>) to be a newline, but SQL would have
         us treat CR (<code class="literal">\r</code>), CRLF (<code class="literal">\r\n</code>)

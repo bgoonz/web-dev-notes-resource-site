@@ -24,9 +24,9 @@
     tells you exactly where you need to put these methods.</p>
 <p>See these articles for an introduction to React performance tooling:</p>
 <ul>
-<li><a href="https://medium.com/code-life/how-to-benchmark-react-components-the-quick-and-dirty-guide-f595baf1014c">“How to Benchmark React Components”</a></li>
-<li><a href="https://benchling.engineering/performance-engineering-with-react-e03013e53285">“Performance Engineering with React”</a></li>
-<li><a href="https://benchling.engineering/a-deep-dive-into-react-perf-debugging-fd2063f5a667">“A Deep Dive into React Perf Debugging”</a></li>
+<li><a href="https://medium.com/code-life/how-to-benchmark-react-components-the-quick-and-dirty-guide-f595baf1014c">"How to Benchmark React Components"</a></li>
+<li><a href="https://benchling.engineering/performance-engineering-with-react-e03013e53285">"Performance Engineering with React"</a></li>
+<li><a href="https://benchling.engineering/a-deep-dive-into-react-perf-debugging-fd2063f5a667">"A Deep Dive into React Perf Debugging"</a></li>
 </ul>
 <h3 id="development-vs-production-builds">Development vs. Production Builds</h3>
 <p>If you're benchmarking or seeing performance problems in your React apps, make sure you're testing with the <a
@@ -76,20 +76,20 @@
 <hr />
 <h3 id="printexclusive"><code>printExclusive()</code></h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">Perf</span>.<span class="at">printExclusive</span>(measurements)</a></code></pre></div>
-<p>“Exclusive” times don't include the times taken to mount the components: processing props, calling
+<p>"Exclusive" times don't include the times taken to mount the components: processing props, calling
     <code>componentWillMount</code> and <code>componentDidMount</code>, etc.</p>
 <p><img src="../images/docs/perf-exclusive.png" /></p>
 <hr />
 <h3 id="printwasted"><code>printWasted()</code></h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="va">Perf</span>.<span class="at">printWasted</span>(measurements)</a></code></pre></div>
 <p><strong>The most useful part of the profiler</strong>.</p>
-<p>“Wasted” time is spent on components that didn't actually render anything, e.g. the render stayed the same, so the
+<p>"Wasted" time is spent on components that didn't actually render anything, e.g. the render stayed the same, so the
     DOM wasn't touched.</p>
 <p><img src="../images/docs/perf-wasted.png" /></p>
 <hr />
 <h3 id="printoperations"><code>printOperations()</code></h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="va">Perf</span>.<span class="at">printOperations</span>(measurements)</a></code></pre></div>
-<p>Prints the underlying DOM manipulations, e.g. “set innerHTML” and “remove”.</p>
+<p>Prints the underlying DOM manipulations, e.g. "set innerHTML" and "remove".</p>
 <p><img src="../images/docs/perf-dom.png" /></p>
 <hr />
 <h3 id="printdom"><code>printDOM()</code></h3>

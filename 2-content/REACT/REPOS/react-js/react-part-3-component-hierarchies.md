@@ -12,7 +12,7 @@
 
 ### Motivation
 
-React is a User Interface (UI) library. Building a React application involves breaking up your app into smaller pieces called “components.” This make your code more readabel, manageable and scalable, as an app grows it can become difficult to get a sense of your overall component hierarchy and how components relate to each other. Sometimes, we want these components to communicate with each other and pass data among with each other. For this we use props and states. Sometimes, we would have to use 3rd party components to improve the the functionality or customization capability of out project
+React is a User Interface (UI) library. Building a React application involves breaking up your app into smaller pieces called "components." This make your code more readabel, manageable and scalable, as an app grows it can become difficult to get a sense of your overall component hierarchy and how components relate to each other. Sometimes, we want these components to communicate with each other and pass data among with each other. For this we use props and states. Sometimes, we would have to use 3rd party components to improve the the functionality or customization capability of out project
 
 ### Objectives
 

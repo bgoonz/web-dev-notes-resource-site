@@ -2,8 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>32.1. Running the Tests</title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><link rev="made" href="pgsql-docs@lists.postgresql.org" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><link rel="prev" href="regress.html" title="Chapter 32. Regression Tests" /><link rel="next" href="regress-evaluation.html" title="32.2. Test Evaluation" /></head><body><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="5" align="center">32.1. Running the Tests</th></tr><tr><td width="10%" align="left"><a accesskey="p" href="regress.html" title="Chapter 32. Regression Tests">Prev</a> </td><td width="10%" align="left"><a accesskey="u" href="regress.html" title="Chapter 32. Regression Tests">Up</a></td><th width="60%" align="center">Chapter 32. Regression Tests</th><td width="10%" align="right"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="10%" align="right"> <a accesskey="n" href="regress-evaluation.html" title="32.2. Test Evaluation">Next</a></td></tr></table><hr></hr></div><div class="sect1" id="REGRESS-RUN"><div class="titlepage"><div><div><h2 class="title" style="clear: both">32.1. Running the Tests</h2></div></div></div><div class="toc"><dl class="toc"><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.3">32.1.1. Running the Tests Against a Temporary Installation</a></span></dt><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.4">32.1.2. Running the Tests Against an Existing Installation</a></span></dt><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.5">32.1.3. Additional Test Suites</a></span></dt><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.6">32.1.4. Locale and Encoding</a></span></dt><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.7">32.1.5. Extra Tests</a></span></dt><dt><span class="sect2"><a href="regress-run.html#id-1.6.19.5.8">32.1.6. Testing Hot Standby</a></span></dt></dl></div><p>
    The regression tests can be run against an already installed and
    running server, or using a temporary installation within the build
-   tree.  Furthermore, there is a <span class="quote">“<span class="quote">parallel</span>”</span> and a
-   <span class="quote">“<span class="quote">sequential</span>”</span> mode for running the tests.  The
+   tree.  Furthermore, there is a <span class="quote">"<span class="quote">parallel</span>"</span> and a
+   <span class="quote">"<span class="quote">sequential</span>"</span> mode for running the tests.  The
    sequential method runs each test script alone, while the
    parallel method starts up multiple server processes to run groups
    of tests in parallel.  Parallel testing adds confidence that
@@ -25,7 +25,7 @@ make check
 </code>
 </pre><p>
    or otherwise a note about which tests failed.  See <a class="xref" href="regress-evaluation.html" title="32.2. Test Evaluation">Section 32.2</a> below before assuming that a
-   <span class="quote">“<span class="quote">failure</span>”</span> represents a serious problem.
+   <span class="quote">"<span class="quote">failure</span>"</span> represents a serious problem.
   </p><p>
     Because this test method runs a temporary server, it will not work
     if you did the build as the root user, since the server will not start as
@@ -80,7 +80,7 @@ make installcheck-parallel
    any actual global objects named that way.
   </p></div><div class="sect2" id="id-1.6.19.5.5"><div class="titlepage"><div><div><h3 class="title">32.1.3. Additional Test Suites</h3></div></div></div><p>
    The <code class="literal">make check</code> and <code class="literal">make installcheck</code> commands
-   run only the <span class="quote">“<span class="quote">core</span>”</span> regression tests, which test built-in
+   run only the <span class="quote">"<span class="quote">core</span>"</span> regression tests, which test built-in
    functionality of the <span class="productname">PostgreSQL</span> server.  The source
    distribution contains many additional test suites, most of them having
    to do with add-on functionality such as optional procedural languages.

@@ -13,8 +13,8 @@
     <code>FancyButton</code> <strong>usually will not need to</strong> <a href="/docs/refs-and-the-dom.html">obtain a
         ref</a> to the inner <code>button</code> DOM element. This is good because it prevents components from relying
     on each other's DOM structure too much.</p>
-<p>Although such encapsulation is desirable for application-level components like <code>FeedStory</code> or <code>Comment</code>, it can be inconvenient for highly reusable “leaf” components like <code>FancyButton</code> or <code>MyTextInput</code>. These components tend to be used throughout the application in a similar manner as a regular DOM <code>button</code> and <code>input</code>, and accessing their DOM nodes may be unavoidable for managing focus, selection, or animations.</p>
-<p><strong>Ref forwarding is an opt-in feature that lets some components take a <code>ref</code> they receive, and pass it further down (in other words, “forward” it) to a child.</strong></p>
+<p>Although such encapsulation is desirable for application-level components like <code>FeedStory</code> or <code>Comment</code>, it can be inconvenient for highly reusable "leaf" components like <code>FancyButton</code> or <code>MyTextInput</code>. These components tend to be used throughout the application in a similar manner as a regular DOM <code>button</code> and <code>input</code>, and accessing their DOM nodes may be unavoidable for managing focus, selection, or animations.</p>
+<p><strong>Ref forwarding is an opt-in feature that lets some components take a <code>ref</code> they receive, and pass it further down (in other words, "forward" it) to a child.</strong></p>
 <p>In the example below, <code>FancyButton</code> uses <code>React.forwardRef</code> to obtain the <code>ref</code> passed to it, and then forward it to the DOM <code>button</code> that it renders:</p>
 <p><code>embed:forwarding-refs/fancy-button-simple-ref.js</code></p>
 <p>This way, components using <code>FancyButton</code> can get a ref to the underlying <code>button</code> DOM node and access it if necessary—just like if they used a DOM <code>button</code> directly.</p>
@@ -41,7 +41,7 @@
 <p>This technique can also be particularly useful with <a href="/docs/higher-order-components.html">higher-order
         components</a> (also known as HOCs). Let's start with an example HOC that logs component props to the console:
     <code>embed:forwarding-refs/log-props-before.js</code></p>
-<p>The “logProps” HOC passes all <code>props</code> through to the component it wraps, so the rendered output will be the same. For example, we can use this HOC to log all props that get passed to our “fancy button” component: <code>embed:forwarding-refs/fancy-button.js</code></p>
+<p>The "logProps" HOC passes all <code>props</code> through to the component it wraps, so the rendered output will be the same. For example, we can use this HOC to log all props that get passed to our "fancy button" component: <code>embed:forwarding-refs/fancy-button.js</code></p>
 <p>There is one caveat to the above example: refs will not get passed through. That's because <code>ref</code> is not a
     prop. Like <code>key</code>, it's handled differently by React. If you add a ref to a HOC, the ref will refer to the
     outermost container component, not the wrapped component.</p>
@@ -49,9 +49,9 @@
 <p>Fortunately, we can explicitly forward refs to the inner <code>FancyButton</code> component using the <code>React.forwardRef</code> API. <code>React.forwardRef</code> accepts a render function that receives <code>props</code> and <code>ref</code> parameters and returns a React node. For example: <code>embed:forwarding-refs/log-props-after.js</code></p>
 <h2 id="displaying-a-custom-name-in-devtools">Displaying a custom name in DevTools</h2>
 <p><code>React.forwardRef</code> accepts a render function. React DevTools uses this function to determine what to display for the ref forwarding component.</p>
-<p>For example, the following component will appear as “<em>ForwardRef</em>” in the DevTools:</p>
+<p>For example, the following component will appear as "<em>ForwardRef</em>" in the DevTools:</p>
 <p><code>embed:forwarding-refs/wrapped-component.js</code></p>
-<p>If you name the render function, DevTools will also include its name (e.g. “<em>ForwardRef(myFunction)</em>”):</p>
+<p>If you name the render function, DevTools will also include its name (e.g. "<em>ForwardRef(myFunction)</em>"):</p>
 <p><code>embed:forwarding-refs/wrapped-component-with-function-name.js</code></p>
 <p>You can even set the function's <code>displayName</code> property to include the component you're wrapping:</p>
 <p><code>embed:forwarding-refs/customized-display-name.js</code></p>

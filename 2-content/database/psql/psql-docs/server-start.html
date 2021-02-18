@@ -204,7 +204,7 @@ DETAIL:  Failed system call was semget(5440126, 17, 03600).
      (<a class="xref" href="runtime-config-connection.html#GUC-MAX-CONNECTIONS">max_connections</a>), but you'll eventually want to
      increase the kernel limit.
     </p><p>
-     If you get an <span class="quote">“<span class="quote">illegal system call</span>”</span> error, it is likely that
+     If you get an <span class="quote">"<span class="quote">illegal system call</span>"</span> error, it is likely that
      shared memory or semaphores are not supported in your kernel at
      all. In that case your only option is to reconfigure the kernel to
      enable these features.
@@ -223,8 +223,8 @@ psql: could not connect to server: Connection refused
         Is the server running on host "server.joe.com" and accepting
         TCP/IP connections on port 5432?
 </pre><p>
-     This is the generic <span class="quote">“<span class="quote">I couldn't find a server to talk
-     to</span>”</span> failure. It looks like the above when TCP/IP
+     This is the generic <span class="quote">"<span class="quote">I couldn't find a server to talk
+     to</span>"</span> failure. It looks like the above when TCP/IP
      communication is attempted. A common mistake is to forget to
      configure the server to allow TCP/IP connections.
     </p><p>

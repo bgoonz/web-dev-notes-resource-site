@@ -56,7 +56,7 @@
 <a class="sourceLine" id="cb3-9" title="9">    &lt;/<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb3-10" title="10">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="op">}</span></a></code></pre></div>
-<p>The “+” and “-” buttons use the functional form, because the updated value is based on the previous value. But the “Reset” button uses the normal form, because it always sets the count back to the initial value.</p>
+<p>The "+" and "-" buttons use the functional form, because the updated value is based on the previous value. But the "Reset" button uses the normal form, because it always sets the count back to the initial value.</p>
 <p>If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely.</p>
 <blockquote>
 <p>Note</p>
@@ -76,7 +76,7 @@
 <h4 id="bailing-out-of-a-state-update">Bailing out of a state update</h4>
 <p>If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects. (React uses the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description"><code>Object.is</code> comparison algorithm</a>.)</p>
 <p>Note that React may still need to render that specific component again before bailing out. That shouldn't be a
-    concern because React won't unnecessarily go “deeper” into the tree. If you're doing expensive calculations while
+    concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while
     rendering, you can optimize them with <code>useMemo</code>.</p>
 <h3 id="useeffect"><code>useEffect</code></h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="at">useEffect</span>(didUpdate)<span class="op">;</span></a></code></pre></div>
@@ -286,7 +286,7 @@ function Counter({initialCount}) {
 <h4 id="bailing-out-of-a-dispatch">Bailing out of a dispatch</h4>
 <p>If you return the same value from a Reducer Hook as the current state, React will bail out without rendering the children or firing effects. (React uses the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description"><code>Object.is</code> comparison algorithm</a>.)</p>
 <p>Note that React may still need to render that specific component again before bailing out. That shouldn't be a
-    concern because React won't unnecessarily go “deeper” into the tree. If you're doing expensive calculations while
+    concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while
     rendering, you can optimize them with <code>useMemo</code>.</p>
 <h3 id="usecallback"><code>useCallback</code></h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">const</span> memoizedCallback <span class="op">=</span> <span class="at">useCallback</span>(</a>
@@ -308,12 +308,12 @@ function Counter({initialCount}) {
 <h3 id="usememo"><code>useMemo</code></h3>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">const</span> memoizedValue <span class="op">=</span> <span class="at">useMemo</span>(() <span class="kw">=&gt;</span> <span class="at">computeExpensiveValue</span>(a<span class="op">,</span> b)<span class="op">,</span> [a<span class="op">,</span> b])<span class="op">;</span></a></code></pre></div>
 <p>Returns a <a href="https://en.wikipedia.org/wiki/Memoization">memoized</a> value.</p>
-<p>Pass a “create” function and an array of dependencies. <code>useMemo</code> will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.</p>
+<p>Pass a "create" function and an array of dependencies. <code>useMemo</code> will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.</p>
 <p>Remember that the function passed to <code>useMemo</code> runs during rendering. Don't do anything there that you
     wouldn't normally do while rendering. For example, side effects belong in <code>useEffect</code>, not
     <code>useMemo</code>.</p>
 <p>If no array is provided, a new value will be computed on every render.</p>
-<p><strong>You may rely on <code>useMemo</code> as a performance optimization, not as a semantic guarantee.</strong> In the future, React may choose to “forget” some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components. Write your code so that it still works without <code>useMemo</code> — and then add it to optimize performance.</p>
+<p><strong>You may rely on <code>useMemo</code> as a performance optimization, not as a semantic guarantee.</strong> In the future, React may choose to "forget" some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components. Write your code so that it still works without <code>useMemo</code> — and then add it to optimize performance.</p>
 <blockquote>
 <p>Note</p>
 <p>The array of dependencies is not passed as arguments to the function. Conceptually, though, that's what they
@@ -338,7 +338,7 @@ function Counter({initialCount}) {
 <a class="sourceLine" id="cb18-11" title="11">    &lt;/<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb18-12" title="12">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb18-13" title="13"><span class="op">}</span></a></code></pre></div>
-<p>Essentially, <code>useRef</code> is like a “box” that can hold a mutable value in its <code>.current</code> property.</p>
+<p>Essentially, <code>useRef</code> is like a "box" that can hold a mutable value in its <code>.current</code> property.</p>
 <p>You might be familiar with refs primarily as a way to <a href="/docs/refs-and-the-dom.html">access the DOM</a>. If you pass a ref object to React with <code>&lt;div ref={myRef} /&gt;</code>, React will set its <code>.current</code> property to the corresponding DOM node whenever that node changes.</p>
 <p>However, <code>useRef()</code> is useful for more than the <code>ref</code> attribute. It's <a
         href="/docs/hooks-faq.html#is-there-something-like-instance-variables">handy for keeping any mutable value
@@ -382,7 +382,7 @@ function Counter({initialCount}) {
 <h3 id="usedebugvalue"><code>useDebugValue</code></h3>
 <div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb21-1" title="1"><span class="at">useDebugValue</span>(value)</a></code></pre></div>
 <p><code>useDebugValue</code> can be used to display a label for custom hooks in React DevTools.</p>
-<p>For example, consider the <code>useFriendStatus</code> custom Hook described in <a href="/docs/hooks-custom.html">“Building Your Own Hooks”</a>:</p>
+<p>For example, consider the <code>useFriendStatus</code> custom Hook described in <a href="/docs/hooks-custom.html">"Building Your Own Hooks"</a>:</p>
 <pre class="js{6-8}"><code>function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
 

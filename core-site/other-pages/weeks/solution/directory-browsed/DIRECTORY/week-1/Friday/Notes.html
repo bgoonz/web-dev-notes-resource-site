@@ -26,7 +26,7 @@
 <a class="sourceLine" id="cb2-7" title="7"><span class="kw">let</span> f <span class="op">=</span> <span class="kw">function</span> () <span class="op">{};</span></a>
 <a class="sourceLine" id="cb2-8" title="8"><span class="va">Array</span>.<span class="at">isArray</span>(f)<span class="op">;</span> <span class="co">// false</span></a></code></pre></div>
 <ul>
-<li>Practical use in “real code” is if you believe that whoever is using your program will not respect your parameters.</li>
+<li>Practical use in "real code" is if you believe that whoever is using your program will not respect your parameters.</li>
 </ul>
 <hr />
 <h2 id="null-unidentified-types"><strong>Null &amp; Unidentified Types</strong></h2>
@@ -121,7 +121,7 @@
 <li>The first line in the Stack Trace indicate <em>where</em> the error occured.</li>
 </ul>
 <p><strong>How can I make my own Errors?</strong></p>
-<p>You can create your own “errors” by creating an error object paired with an error message.</p>
+<p>You can create your own "errors" by creating an error object paired with an error message.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="cf">throw</span> <span class="at">Error</span>(<span class="st">&quot;this happened because I wanted it to&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&quot;this happened because I wanted it to&quot;</span>)<span class="op">;</span></a></code></pre></div>
 <p><strong>How do I best use this?</strong></p>

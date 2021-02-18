@@ -8,7 +8,7 @@
         null values to be entered.  However, <span class="productname">PostgreSQL</span> versions
         before 8.2 did not support null values in arrays, and therefore would
         treat <code class="literal">NULL</code> as specifying a normal array element with
-        the string value <span class="quote">“<span class="quote">NULL</span>”</span>.  For backward compatibility with
+        the string value <span class="quote">"<span class="quote">NULL</span>"</span>.  For backward compatibility with
         applications that require the old behavior, this variable can be
         turned <code class="literal">off</code>.
        </p><p>
@@ -110,8 +110,8 @@
         This allows sequential scans of large tables to synchronize with each
         other, so that concurrent scans read the same block at about the
         same time and hence share the I/O workload.  When this is enabled,
-        a scan might start in the middle of the table and then <span class="quote">“<span class="quote">wrap
-        around</span>”</span> the end to cover all rows, so as to synchronize with the
+        a scan might start in the middle of the table and then <span class="quote">"<span class="quote">wrap
+        around</span>"</span> the end to cover all rows, so as to synchronize with the
         activity of scans already in progress.  This can result in
         unpredictable changes in the row ordering returned by queries that
         have no <code class="literal">ORDER BY</code> clause.  Setting this parameter to

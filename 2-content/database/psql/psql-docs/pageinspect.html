@@ -194,11 +194,11 @@ test=# SELECT * FROM bt_page_items('pg_cast_oid_index', 1);
      </p><p>
       Note that the first item on any non-rightmost page (any page with
       a non-zero value in the <code class="structfield">btpo_next</code> field) is the
-      page's <span class="quote">“<span class="quote">high key</span>”</span>, meaning its <code class="structfield">data</code>
+      page's <span class="quote">"<span class="quote">high key</span>"</span>, meaning its <code class="structfield">data</code>
       serves as an upper bound on all items appearing on the page, while
       its <code class="structfield">ctid</code> field is meaningless.  Also, on non-leaf
       pages, the first real data item (the first item that is not a high
-      key) is a <span class="quote">“<span class="quote">minus infinity</span>”</span> item, with no actual value
+      key) is a <span class="quote">"<span class="quote">minus infinity</span>"</span> item, with no actual value
       in its <code class="structfield">data</code> field.  Such an item does have a valid
       downlink in its <code class="structfield">ctid</code> field, however.
      </p></dd><dt><span class="term">

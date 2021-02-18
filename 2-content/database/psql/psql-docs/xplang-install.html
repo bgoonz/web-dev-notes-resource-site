@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>41.1. Installing Procedural Languages</title><link rel="stylesheet" type="text/css" href="stylesheet.css" /><link rev="made" href="pgsql-docs@lists.postgresql.org" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.1" /><link rel="prev" href="xplang.html" title="Chapter 41. Procedural Languages" /><link rel="next" href="plpgsql.html" title="Chapter 42. PL/pgSQL - SQL Procedural Language" /></head><body><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="5" align="center">41.1. Installing Procedural Languages</th></tr><tr><td width="10%" align="left"><a accesskey="p" href="xplang.html" title="Chapter 41. Procedural Languages">Prev</a> </td><td width="10%" align="left"><a accesskey="u" href="xplang.html" title="Chapter 41. Procedural Languages">Up</a></td><th width="60%" align="center">Chapter 41. Procedural Languages</th><td width="10%" align="right"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="10%" align="right"> <a accesskey="n" href="plpgsql.html" title="Chapter 42. PL/pgSQL - SQL Procedural Language">Next</a></td></tr></table><hr></hr></div><div class="sect1" id="XPLANG-INSTALL"><div class="titlepage"><div><div><h2 class="title" style="clear: both">41.1. Installing Procedural Languages</h2></div></div></div><p>
-    A procedural language must be <span class="quote">“<span class="quote">installed</span>”</span> into each
+    A procedural language must be <span class="quote">"<span class="quote">installed</span>"</span> into each
     database where it is to be used.  But procedural languages installed in
     the database <code class="literal">template1</code> are automatically available in all
     subsequently created databases, since their entries in
@@ -21,7 +21,7 @@
      A procedural language is installed in a database in five steps,
      which must be carried out by a database superuser.  In most cases
      the required SQL commands should be packaged as the installation script
-     of an <span class="quote">“<span class="quote">extension</span>”</span>, so that <code class="command">CREATE EXTENSION</code> can be
+     of an <span class="quote">"<span class="quote">extension</span>"</span>, so that <code class="command">CREATE EXTENSION</code> can be
      used to execute them.
     </p><ol class="procedure" type="1"><li class="step" id="XPLANG-INSTALL-CR1"><p>
       The shared object for the language handler must be compiled and
@@ -43,7 +43,7 @@ CREATE FUNCTION <em class="replaceable"><code>handler_function_name</code></em>(
       the defined <acronym class="acronym">SQL</acronym> data types and is not directly usable
       in <acronym class="acronym">SQL</acronym> statements.
      </p></li><li class="step" id="XPLANG-INSTALL-CR3"><p>
-      Optionally, the language handler can provide an <span class="quote">“<span class="quote">inline</span>”</span>
+      Optionally, the language handler can provide an <span class="quote">"<span class="quote">inline</span>"</span>
       handler function that executes anonymous code blocks
       (<a class="xref" href="sql-do.html" title="DO"><span class="refentrytitle">DO</span></a> commands)
       written in this language.  If an inline handler function
@@ -55,7 +55,7 @@ CREATE FUNCTION <em class="replaceable"><code>inline_function_name</code></em>(i
     LANGUAGE C;
 </pre><p>
      </p></li><li class="step" id="XPLANG-INSTALL-CR4"><p>
-      Optionally, the language handler can provide a <span class="quote">“<span class="quote">validator</span>”</span>
+      Optionally, the language handler can provide a <span class="quote">"<span class="quote">validator</span>"</span>
       function that checks a function definition for correctness without
       actually executing it.  The validator function is called by
       <code class="command">CREATE FUNCTION</code> if it exists.  If a validator function
@@ -130,7 +130,7 @@ CREATE TRUSTED LANGUAGE plperl
      </p></div></div><br class="example-break" /><p>
     In a default <span class="productname">PostgreSQL</span> installation,
     the handler for the <span class="application">PL/pgSQL</span> language
-    is built and installed into the <span class="quote">“<span class="quote">library</span>”</span>
+    is built and installed into the <span class="quote">"<span class="quote">library</span>"</span>
     directory; furthermore, the <span class="application">PL/pgSQL</span> language
     itself is installed in all databases.
     If <span class="application">Tcl</span> support is configured in, the handlers for

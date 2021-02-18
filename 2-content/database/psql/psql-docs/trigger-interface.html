@@ -8,11 +8,11 @@
     documentation of each procedural language explains how to write a
     trigger in that language.
    </p><p>
-    Trigger functions must use the <span class="quote">“<span class="quote">version 1</span>”</span> function manager
+    Trigger functions must use the <span class="quote">"<span class="quote">version 1</span>"</span> function manager
     interface.
    </p><p>
     When a function is called by the trigger manager, it is not passed
-    any normal arguments, but it is passed a <span class="quote">“<span class="quote">context</span>”</span>
+    any normal arguments, but it is passed a <span class="quote">"<span class="quote">context</span>"</span>
     pointer pointing to a <code class="structname">TriggerData</code> structure.  C
     functions can check whether they were called from the trigger
     manager or not by executing the macro:

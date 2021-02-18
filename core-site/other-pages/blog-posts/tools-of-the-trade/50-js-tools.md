@@ -47,7 +47,7 @@ Also, be sure to check out the following related posts:
     
     ![Script# - screen shot.](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/7214e594-2df0-42cf-9ba3-f3856b229853/04-script.jpg)
     
-*   Aptana Jaxer Aptana Jaxer is the first “AJAX server” that allows developers to use their AJAX, HTML, JavaScript and DOM knowledge to create fully featured server-side-powered Web applications. With Jaxer, you can even write database queries in JavaScript syntax. Jaxer integrates very well with popular JavaScript libraries such as jQuery, [Dojo](http://www.dojotoolkit.org/) and [Ext JS](http://extjs.com/).
+*   Aptana Jaxer Aptana Jaxer is the first "AJAX server" that allows developers to use their AJAX, HTML, JavaScript and DOM knowledge to create fully featured server-side-powered Web applications. With Jaxer, you can even write database queries in JavaScript syntax. Jaxer integrates very well with popular JavaScript libraries such as jQuery, [Dojo](http://www.dojotoolkit.org/) and [Ext JS](http://extjs.com/).
     
 *   JS Regex Generator JS Regex Generator helps JavaScript developers write [Regular Expressions](http://en.wikipedia.org/wiki/Regular_expression) for matching strings of text. This is commonly done for text-format validation, such as when checking if inputted text has the correct date and email format.
     

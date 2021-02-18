@@ -23,7 +23,7 @@
         href="/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles">better approaches</a>
     for each of the unsafe methods. However, maybe you don't have the time to migrate or test these components. In that
     case, we recommend running a <a
-        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">“codemod”</a> script that renames
+        href="https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb">"codemod"</a> script that renames
     them automatically:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="bu">cd</span> your_project</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="ex">npx</span> react-codemod rename-unsafe-lifecycles</a></code></pre></div>
@@ -50,8 +50,8 @@
 <a class="sourceLine" id="cb2-5" title="5"><span class="op">&lt;</span>a href<span class="op">={</span><span class="va">userProfile</span>.<span class="at">website</span><span class="op">}&gt;</span>Profile&lt;/a<span class="op">&gt;</span></a></code></pre></div>
 <p><strong>In React 16.9,</strong> this pattern continues to work, but it will log a warning. If you use <code>javascript:</code> URLs for logic, try to use React event handlers instead. (As a last resort, you can circumvent the protection with <a href="/docs/dom-elements.html#dangerouslysetinnerhtml"><code>dangerouslySetInnerHTML</code></a>, but it is highly discouraged and often leads to security holes.)</p>
 <p><strong>In a future major release,</strong> React will throw an error if it encounters a <code>javascript:</code> URL.</p>
-<h3 id="deprecating-factory-components">Deprecating “Factory” Components</h3>
-<p>Before compiling JavaScript classes with Babel became popular, React had support for a “factory” component that returns an object with a <code>render</code> method:</p>
+<h3 id="deprecating-factory-components">Deprecating "Factory" Components</h3>
+<p>Before compiling JavaScript classes with Babel became popular, React had support for a "factory" component that returns an object with a <code>render</code> method:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">FactoryComponent</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">  <span class="cf">return</span> <span class="op">{</span> <span class="at">render</span>() <span class="op">{</span> <span class="cf">return</span> <span class="op">&lt;</span>div /<span class="op">&gt;;</span> <span class="op">}</span> <span class="op">}</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="op">}</span></a></code></pre></div>
@@ -87,8 +87,8 @@
         adding a <em>programmatic</em> way to gather measurements</strong> called <code>&lt;React.Profiler&gt;</code>.
     We expect that most smaller apps won't use it, but it can be handy to track performance regressions over time in
     larger apps.</p>
-<p>The <code>&lt;Profiler&gt;</code> measures how often a React application renders and what the “cost” of rendering is. Its purpose is to help identify parts of an application that are slow and may benefit from <a href="/docs/hooks-faq.html#how-to-memoize-calculations">optimizations such as memoization</a>.</p>
-<p>A <code>&lt;Profiler&gt;</code> can be added anywhere in a React tree to measure the cost of rendering that part of the tree. It requires two props: an <code>id</code> (string) and an <a href="/docs/profiler.html#onrender-callback"><code>onRender</code> callback</a> (function) which React calls any time a component within the tree “commits” an update.</p>
+<p>The <code>&lt;Profiler&gt;</code> measures how often a React application renders and what the "cost" of rendering is. Its purpose is to help identify parts of an application that are slow and may benefit from <a href="/docs/hooks-faq.html#how-to-memoize-calculations">optimizations such as memoization</a>.</p>
+<p>A <code>&lt;Profiler&gt;</code> can be added anywhere in a React tree to measure the cost of rendering that part of the tree. It requires two props: an <code>id</code> (string) and an <a href="/docs/profiler.html#onrender-callback"><code>onRender</code> callback</a> (function) which React calls any time a component within the tree "commits" an update.</p>
 <pre class="js{2,7}"><code>render(
   &lt;Profiler id=&quot;application&quot; onRender={onRenderCallback}&gt;
     &lt;App&gt;
@@ -143,8 +143,8 @@
     to provide a 16.x release with opt-in support for them this year.</p>
 <h3 id="an-update-on-data-fetching">An Update on Data Fetching</h3>
 <p>While React is not opinionated about how you fetch data, the first release of Suspense for Data Fetching will likely focus on integrating with <em>opinionated data fetching libraries</em>. For example, at Facebook we are using upcoming Relay APIs that integrate with Suspense. We will document how other opinionated libraries like Apollo can support a similar integration.</p>
-<p>In the first release, we <em>don't</em> intend to focus on the ad-hoc “fire an HTTP request” solution we used in
-    earlier demos (also known as “React Cache”). However, we expect that both we and the React community will be
+<p>In the first release, we <em>don't</em> intend to focus on the ad-hoc "fire an HTTP request" solution we used in
+    earlier demos (also known as "React Cache"). However, we expect that both we and the React community will be
     exploring that space in the months after the initial release.</p>
 <h3 id="an-update-on-server-rendering">An Update on Server Rendering</h3>
 <p>We have started the work on the <a href="/blog/2018/11/27/react-16-roadmap.html#suspense-for-server-rendering">new
@@ -181,7 +181,7 @@
 <ul>
 <li>Deprecate old names for the <code>UNSAFE_*</code> lifecycle methods. (<span class="citation" data-cites="bvaughn">[@bvaughn]</span>(https://github.com/bvaughn) in <a href="https://github.com/facebook/react/pull/15186">#15186</a> and <span class="citation" data-cites="threepointone">[@threepointone]</span>(https://github.com/threepointone) in <a href="https://github.com/facebook/react/pull/16103">#16103</a>)</li>
 <li>Deprecate <code>javascript:</code> URLs as a common attack surface. (<span class="citation" data-cites="sebmarkbage">[@sebmarkbage]</span>(https://github.com/sebmarkbage) in <a href="https://github.com/facebook/react/pull/15047">#15047</a>)</li>
-<li>Deprecate uncommon “module pattern” (factory) components. (<span class="citation" data-cites="sebmarkbage">[@sebmarkbage]</span>(https://github.com/sebmarkbage) in <a href="https://github.com/facebook/react/pull/15145">#15145</a>)</li>
+<li>Deprecate uncommon "module pattern" (factory) components. (<span class="citation" data-cites="sebmarkbage">[@sebmarkbage]</span>(https://github.com/sebmarkbage) in <a href="https://github.com/facebook/react/pull/15145">#15145</a>)</li>
 <li>Add support for the <code>disablePictureInPicture</code> attribute on <code>&lt;video&gt;</code>. (<span class="citation" data-cites="eek">[@eek]</span>(https://github.com/eek) in <a href="https://github.com/facebook/react/pull/15334">#15334</a>)</li>
 <li>Add support for <code>onLoad</code> event for <code>&lt;embed&gt;</code>. (<span class="citation" data-cites="cherniavskii">[@cherniavskii]</span>(https://github.com/cherniavskii) in <a href="https://github.com/facebook/react/pull/15614">#15614</a>)</li>
 <li>Add support for editing <code>useState</code> state from DevTools. (<span class="citation" data-cites="bvaughn">[@bvaughn]</span>(https://github.com/bvaughn) in <a href="https://github.com/facebook/react/pull/14906">#14906</a>)</li>

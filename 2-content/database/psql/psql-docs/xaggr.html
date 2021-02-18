@@ -73,10 +73,10 @@ SELECT sum(a) FROM test_complex;
    the state variable and then start applying the transition function
    at the second nonnull input value.  <span class="productname">PostgreSQL</span>
    will do that automatically if the initial state value is null and
-   the transition function is marked <span class="quote">“<span class="quote">strict</span>”</span> (i.e., not to be called
+   the transition function is marked <span class="quote">"<span class="quote">strict</span>"</span> (i.e., not to be called
    for null inputs).
   </p><p>
-   Another bit of default behavior for a <span class="quote">“<span class="quote">strict</span>”</span> transition function
+   Another bit of default behavior for a <span class="quote">"<span class="quote">strict</span>"</span> transition function
    is that the previous state value is retained unchanged whenever a
    null input value is encountered.  Thus, null values are ignored.  If you
    need some other behavior for null inputs, do not declare your
@@ -123,7 +123,7 @@ CREATE AGGREGATE avg (float8)
    (See <a class="xref" href="tutorial-window.html" title="3.5. Window Functions">Section 3.5</a>
    and <a class="xref" href="sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS" title="4.2.8. Window Function Calls">Section 4.2.8</a> for information about use of
    aggregate functions as window functions.)
-   The basic idea is that in addition to a normal <span class="quote">“<span class="quote">forward</span>”</span>
+   The basic idea is that in addition to a normal <span class="quote">"<span class="quote">forward</span>"</span>
    transition function, the aggregate provides an <em class="firstterm">inverse
    transition function</em>, which allows rows to be removed from the
    aggregate's running state value when they exit the window frame.
@@ -177,7 +177,7 @@ CREATE AGGREGATE sum (complex)
    current frame starting position.  This convention allows moving-aggregate
    mode to be used in situations where there are some infrequent cases that
    are impractical to reverse out of the running state value.  The inverse
-   transition function can <span class="quote">“<span class="quote">punt</span>”</span> on these cases, and yet still come
+   transition function can <span class="quote">"<span class="quote">punt</span>"</span> on these cases, and yet still come
    out ahead so long as it can work for most cases.  As an example, an
    aggregate working with floating-point numbers might choose to punt when
    a <code class="literal">NaN</code> (not a number) input has to be removed from the running
@@ -280,7 +280,7 @@ SELECT attrelid::regclass, array_accum(atttypid::regtype)
    where the aggregate support functions are to be written in C and the
    state type should be declared as <code class="type">internal</code> because there is
    no SQL-level equivalent for it.  To address this case, it is possible to
-   declare the final function as taking extra <span class="quote">“<span class="quote">dummy</span>”</span> arguments
+   declare the final function as taking extra <span class="quote">"<span class="quote">dummy</span>"</span> arguments
    that match the input arguments of the aggregate.  Such dummy arguments
    are always passed as null values since no specific value is available when the
    final function is called.  Their only use is to allow a polymorphic
@@ -337,12 +337,12 @@ SELECT myaggregate(a, b, c ORDER BY a) FROM ...
     For the same reason, it's wise to think twice before creating aggregate
     functions with the same names and different numbers of regular arguments.
    </p></div></div><div class="sect2" id="XAGGR-ORDERED-SET-AGGREGATES"><div class="titlepage"><div><div><h3 class="title">37.12.3. Ordered-Set Aggregates</h3></div></div></div><a id="id-1.8.3.15.14.2" class="indexterm"></a><p>
-   The aggregates we have been describing so far are <span class="quote">“<span class="quote">normal</span>”</span>
+   The aggregates we have been describing so far are <span class="quote">"<span class="quote">normal</span>"</span>
    aggregates.  <span class="productname">PostgreSQL</span> also
    supports <em class="firstterm">ordered-set aggregates</em>, which differ from
    normal aggregates in two key ways.  First, in addition to ordinary
    aggregated arguments that are evaluated once per input row, an
-   ordered-set aggregate can have <span class="quote">“<span class="quote">direct</span>”</span> arguments that are
+   ordered-set aggregate can have <span class="quote">"<span class="quote">direct</span>"</span> arguments that are
    evaluated only once per aggregation operation.  Second, the syntax
    for the ordinary aggregated arguments specifies a sort ordering
    for them explicitly.  An ordered-set aggregate is usually
@@ -384,11 +384,11 @@ SELECT percentile_disc(0.5) WITHIN GROUP (ORDER BY income) FROM households;
    an ordered-set aggregate is <span class="emphasis"><em>not</em></span> done behind the scenes,
    but is the responsibility of the aggregate's support functions.
    The typical implementation approach is to keep a reference to
-   a <span class="quote">“<span class="quote">tuplesort</span>”</span> object in the aggregate's state value, feed the
+   a <span class="quote">"<span class="quote">tuplesort</span>"</span> object in the aggregate's state value, feed the
    incoming rows into that object, and then complete the sorting and
    read out the data in the final function.  This design allows the
    final function to perform special operations such as injecting
-   additional <span class="quote">“<span class="quote">hypothetical</span>”</span> rows into the data to be sorted.
+   additional <span class="quote">"<span class="quote">hypothetical</span>"</span> rows into the data to be sorted.
    While normal aggregates can often be implemented with support
    functions written in <span class="application">PL/pgSQL</span> or another
    PL language, ordered-set aggregates generally have to be written in
@@ -507,7 +507,7 @@ if (AggCheckCallContext(fcinfo, NULL))
   </p><p>
    The second argument of <code class="function">AggCheckCallContext</code> can be used to
    retrieve the memory context in which aggregate state values are being kept.
-   This is useful for transition functions that wish to use <span class="quote">“<span class="quote">expanded</span>”</span>
+   This is useful for transition functions that wish to use <span class="quote">"<span class="quote">expanded</span>"</span>
    objects (see <a class="xref" href="xtypes.html#XTYPES-TOAST" title="37.13.1. TOAST Considerations">Section 37.13.1</a>) as their state values.
    On first call, the transition function should return an expanded object
    whose memory context is a child of the aggregate state context, and then

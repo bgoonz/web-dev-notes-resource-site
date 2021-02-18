@@ -65,7 +65,7 @@ DECLARE <em class="replaceable"><code>name</code></em> [ BINARY ] [ INSENSITIVE 
    handle binary cursors and expect data to come back in the text
    format.
   </p><div class="note"><h3 class="title">Note</h3><p>
-    When the client application uses the <span class="quote">“<span class="quote">extended query</span>”</span> protocol
+    When the client application uses the <span class="quote">"<span class="quote">extended query</span>"</span> protocol
     to issue a <code class="command">FETCH</code> command, the Bind protocol message
     specifies whether data is to be retrieved in text or binary format.
     This choice overrides the way that the cursor is defined.  The concept
@@ -130,7 +130,7 @@ DECLARE <em class="replaceable"><code>name</code></em> [ BINARY ] [ INSENSITIVE 
     these options.
     In addition, the returned rows will be the most up-to-date versions;
     therefore these options provide the equivalent of what the SQL standard
-    calls a <span class="quote">“<span class="quote">sensitive cursor</span>”</span>.  (Specifying <code class="literal">INSENSITIVE</code>
+    calls a <span class="quote">"<span class="quote">sensitive cursor</span>"</span>.  (Specifying <code class="literal">INSENSITIVE</code>
     together with <code class="literal">FOR UPDATE</code> or <code class="literal">FOR SHARE</code> is an error.)
    </p><div class="caution"><h3 class="title">Caution</h3><p>
      It is generally recommended to use <code class="literal">FOR UPDATE</code> if the cursor
@@ -143,8 +143,8 @@ DECLARE <em class="replaceable"><code>name</code></em> [ BINARY ] [ INSENSITIVE 
     </p><p>
      Another reason to use <code class="literal">FOR UPDATE</code> is that without it, a
      subsequent <code class="literal">WHERE CURRENT OF</code> might fail if the cursor query
-     does not meet the SQL standard's rules for being <span class="quote">“<span class="quote">simply
-     updatable</span>”</span> (in particular, the cursor must reference just one table
+     does not meet the SQL standard's rules for being <span class="quote">"<span class="quote">simply
+     updatable</span>"</span> (in particular, the cursor must reference just one table
      and not use grouping or <code class="literal">ORDER BY</code>).  Cursors
      that are not simply updatable might work, or might not, depending on plan
      choice details; so in the worst case, an application might work in testing

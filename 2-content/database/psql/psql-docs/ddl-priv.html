@@ -40,9 +40,9 @@ GRANT UPDATE ON accounts TO joe;
    Writing <code class="literal">ALL</code> in place of a specific privilege grants all
    privileges that are relevant for the object type.
   </p><p>
-   The special <span class="quote">“<span class="quote">role</span>”</span> name <code class="literal">PUBLIC</code> can
+   The special <span class="quote">"<span class="quote">role</span>"</span> name <code class="literal">PUBLIC</code> can
    be used to grant a privilege to every role on the system.  Also,
-   <span class="quote">“<span class="quote">group</span>”</span> roles can be set up to help manage privileges when
+   <span class="quote">"<span class="quote">group</span>"</span> roles can be set up to help manage privileges when
    there are many users of a database — for details see
    <a class="xref" href="user-manag.html" title="Chapter 21. Database Roles">Chapter 21</a>.
   </p><p>
@@ -60,7 +60,7 @@ REVOKE ALL ON accounts FROM PUBLIC;
   </p><p>
    Ordinarily, only the object's owner (or a superuser) can grant or
    revoke privileges on an object.  However, it is possible to grant a
-   privilege <span class="quote">“<span class="quote">with grant option</span>”</span>, which gives the recipient
+   privilege <span class="quote">"<span class="quote">with grant option</span>"</span>, which gives the recipient
    the right to grant it in turn to others.  If the grant option is
    subsequently revoked then all who received the privilege from that
    recipient (directly or through a chain of grants) will lose the
@@ -142,7 +142,7 @@ REVOKE ALL ON accounts FROM PUBLIC;
       </p><p>
        For schemas, allows access to objects contained in the
        schema (assuming that the objects' own privilege requirements are
-       also met).  Essentially this allows the grantee to <span class="quote">“<span class="quote">look up</span>”</span>
+       also met).  Essentially this allows the grantee to <span class="quote">"<span class="quote">look up</span>"</span>
        objects within the schema.  Without this permission, it is still
        possible to see the object names, e.g., by querying system catalogs.
        Also, after revoking this permission, existing sessions might have
@@ -154,7 +154,7 @@ REVOKE ALL ON accounts FROM PUBLIC;
       </p><p>
        For types and domains, allows use of the type or domain in the
        creation of tables, functions, and other schema objects.  (Note that
-       this privilege does not control all <span class="quote">“<span class="quote">usage</span>”</span> of the
+       this privilege does not control all <span class="quote">"<span class="quote">usage</span>"</span> of the
        type, such as values of the type appearing in queries.  It only
        prevents objects from being created that depend on the type.  The
        main purpose of this privilege is controlling which users can create
@@ -203,12 +203,12 @@ REVOKE ALL ON accounts FROM PUBLIC;
    <em class="firstterm">ACL</em> (Access Control List) values.
    You will see these letters in the output of the <a class="xref" href="app-psql.html" title="psql"><span class="refentrytitle"><span class="application">psql</span></span></a>
    commands listed below, or when looking at ACL columns of system catalogs.
-  </p><div class="table" id="PRIVILEGE-ABBREVS-TABLE"><p class="title"><strong>Table 5.1. ACL Privilege Abbreviations</strong></p><div class="table-contents"><table class="table" summary="ACL Privilege Abbreviations" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Privilege</th><th>Abbreviation</th><th>Applicable Object Types</th></tr></thead><tbody><tr><td><code class="literal">SELECT</code></td><td><code class="literal">r</code> (<span class="quote">“<span class="quote">read</span>”</span>)</td><td>
+  </p><div class="table" id="PRIVILEGE-ABBREVS-TABLE"><p class="title"><strong>Table 5.1. ACL Privilege Abbreviations</strong></p><div class="table-contents"><table class="table" summary="ACL Privilege Abbreviations" border="1"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Privilege</th><th>Abbreviation</th><th>Applicable Object Types</th></tr></thead><tbody><tr><td><code class="literal">SELECT</code></td><td><code class="literal">r</code> (<span class="quote">"<span class="quote">read</span>"</span>)</td><td>
        <code class="literal">LARGE OBJECT</code>,
        <code class="literal">SEQUENCE</code>,
        <code class="literal">TABLE</code> (and table-like objects),
        table column
-      </td></tr><tr><td><code class="literal">INSERT</code></td><td><code class="literal">a</code> (<span class="quote">“<span class="quote">append</span>”</span>)</td><td><code class="literal">TABLE</code>, table column</td></tr><tr><td><code class="literal">UPDATE</code></td><td><code class="literal">w</code> (<span class="quote">“<span class="quote">write</span>”</span>)</td><td>
+      </td></tr><tr><td><code class="literal">INSERT</code></td><td><code class="literal">a</code> (<span class="quote">"<span class="quote">append</span>"</span>)</td><td><code class="literal">TABLE</code>, table column</td></tr><tr><td><code class="literal">UPDATE</code></td><td><code class="literal">w</code> (<span class="quote">"<span class="quote">write</span>"</span>)</td><td>
        <code class="literal">LARGE OBJECT</code>,
        <code class="literal">SEQUENCE</code>,
        <code class="literal">TABLE</code>,
@@ -268,7 +268,7 @@ GRANT SELECT (col1), UPDATE (col1) ON mytable TO miriam_rw;
 (1 row)
 </pre><p>
   </p><p>
-   If the <span class="quote">“<span class="quote">Access privileges</span>”</span> column is empty for a given
+   If the <span class="quote">"<span class="quote">Access privileges</span>"</span> column is empty for a given
    object, it means the object has default privileges (that is, its
    privileges entry in the relevant system catalog is null).  Default
    privileges always include all privileges for the owner, and can include
@@ -277,9 +277,9 @@ GRANT SELECT (col1), UPDATE (col1) ON mytable TO miriam_rw;
    or <code class="command">REVOKE</code> on an object will instantiate the default
    privileges (producing, for
    example, <code class="literal">miriam=arwdDxt/miriam</code>) and then modify them
-   per the specified request.  Similarly, entries are shown in <span class="quote">“<span class="quote">Column
-   privileges</span>”</span> only for columns with nondefault privileges.
-   (Note: for this purpose, <span class="quote">“<span class="quote">default privileges</span>”</span> always means
+   per the specified request.  Similarly, entries are shown in <span class="quote">"<span class="quote">Column
+   privileges</span>"</span> only for columns with nondefault privileges.
+   (Note: for this purpose, <span class="quote">"<span class="quote">default privileges</span>"</span> always means
    the built-in default privileges for the object's type.  An object whose
    privileges have been affected by an <code class="command">ALTER DEFAULT
    PRIVILEGES</code> command will always be shown with an explicit

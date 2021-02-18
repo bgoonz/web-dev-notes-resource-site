@@ -62,11 +62,11 @@
        </p><p>
         Note that this setting only affects the main shared memory area.
         Operating systems such as Linux, FreeBSD, and Illumos can also use
-        huge pages (also known as <span class="quote">“<span class="quote">super</span>”</span> pages or
-        <span class="quote">“<span class="quote">large</span>”</span> pages) automatically for normal memory
+        huge pages (also known as <span class="quote">"<span class="quote">super</span>"</span> pages or
+        <span class="quote">"<span class="quote">large</span>"</span> pages) automatically for normal memory
         allocation, without an explicit request from
         <span class="productname">PostgreSQL</span>. On Linux, this is called
-        <span class="quote">“<span class="quote">transparent huge pages</span>”</span><a id="id-1.6.6.7.2.2.2.2.5.5" class="indexterm"></a> (THP). That feature has been known to
+        <span class="quote">"<span class="quote">transparent huge pages</span>"</span><a id="id-1.6.6.7.2.2.2.2.5.5" class="indexterm"></a> (THP). That feature has been known to
         cause performance degradation with
         <span class="productname">PostgreSQL</span> for some users on some Linux
         versions, so its use is currently discouraged (unlike explicit use of
@@ -98,7 +98,7 @@
       <a id="id-1.6.6.7.2.2.4.1.3" class="indexterm"></a>
       </span></dt><dd><p>
         Sets the maximum number of transactions that can be in the
-        <span class="quote">“<span class="quote">prepared</span>”</span> state simultaneously (see <a class="xref" href="sql-prepare-transaction.html" title="PREPARE TRANSACTION"><span class="refentrytitle">PREPARE TRANSACTION</span></a>).
+        <span class="quote">"<span class="quote">prepared</span>"</span> state simultaneously (see <a class="xref" href="sql-prepare-transaction.html" title="PREPARE TRANSACTION"><span class="refentrytitle">PREPARE TRANSACTION</span></a>).
         Setting this parameter to zero (which is the default)
         disables the prepared-transaction feature.
         This parameter can only be set at server start.
@@ -241,8 +241,8 @@
         But on some platforms (notably, most BSD systems), the kernel will
         allow individual processes to open many more files than the system
         can actually support if many processes all try to open
-        that many files. If you find yourself seeing <span class="quote">“<span class="quote">Too many open
-        files</span>”</span> failures, try reducing this setting.
+        that many files. If you find yourself seeing <span class="quote">"<span class="quote">Too many open
+        files</span>"</span> failures, try reducing this setting.
         This parameter can only be set at server start.
        </p></dd></dl></div></div><div class="sect2" id="RUNTIME-CONFIG-RESOURCE-VACUUM-COST"><div class="titlepage"><div><div><h3 class="title">19.4.4. Cost-based Vacuum Delay</h3></div></div></div><p>
       During the execution of <a class="xref" href="sql-vacuum.html" title="VACUUM"><span class="refentrytitle">VACUUM</span></a>
@@ -328,7 +328,7 @@
       </p></div></div><div class="sect2" id="RUNTIME-CONFIG-RESOURCE-BACKGROUND-WRITER"><div class="titlepage"><div><div><h3 class="title">19.4.5. Background Writer</h3></div></div></div><p>
       There is a separate server
       process called the <em class="firstterm">background writer</em>, whose function
-      is to issue writes of <span class="quote">“<span class="quote">dirty</span>”</span> (new or modified) shared
+      is to issue writes of <span class="quote">"<span class="quote">dirty</span>"</span> (new or modified) shared
       buffers.  It writes shared buffers so server processes handling
       user queries seldom or never need to wait for a write to occur.
       However, the background writer does cause a net overall
@@ -377,7 +377,7 @@
          buffers are written until there are that many clean, reusable buffers
          available.  (However, no more than <code class="varname">bgwriter_lru_maxpages</code>
          buffers will be written per round.)
-         Thus, a setting of 1.0 represents a <span class="quote">“<span class="quote">just in time</span>”</span> policy
+         Thus, a setting of 1.0 represents a <span class="quote">"<span class="quote">just in time</span>"</span> policy
          of writing exactly the number of buffers predicted to be needed.
          Larger values provide some cushion against spikes in demand,
          while smaller values intentionally leave writes to be done by
@@ -552,7 +552,7 @@
        <a id="id-1.6.6.7.7.2.7.1.3" class="indexterm"></a>
        </span></dt><dd><p>
          Sets the minimum amount of time that a query snapshot can be used
-         without risk of a <span class="quote">“<span class="quote">snapshot too old</span>”</span> error occurring
+         without risk of a <span class="quote">"<span class="quote">snapshot too old</span>"</span> error occurring
          when using the snapshot.  Data that has been dead for longer than
          this threshold is allowed to be vacuumed away.  This can help
          prevent bloat in the face of snapshots which remain in use for a
@@ -576,7 +576,7 @@
         </p><p>
          When this feature is enabled, freed space at the end of a relation
          cannot be released to the operating system, since that could remove
-         information needed to detect the <span class="quote">“<span class="quote">snapshot too old</span>”</span>
+         information needed to detect the <span class="quote">"<span class="quote">snapshot too old</span>"</span>
          condition.  All space allocated to a relation remains associated with
          that relation for reuse only within that relation unless explicitly
          freed (for example, with <code class="command">VACUUM FULL</code>).
@@ -589,5 +589,5 @@
          Some tables cannot safely be vacuumed early, and so will not be
          affected by this setting, such as system catalogs.  For such tables
          this setting will neither reduce bloat nor create a possibility
-         of a <span class="quote">“<span class="quote">snapshot too old</span>”</span> error on scanning.
+         of a <span class="quote">"<span class="quote">snapshot too old</span>"</span> error on scanning.
         </p></dd></dl></div></div></div><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="runtime-config-connection.html" title="19.3. Connections and Authentication">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="runtime-config.html" title="Chapter 19. Server Configuration">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="runtime-config-wal.html" title="19.5. Write Ahead Log">Next</a></td></tr><tr><td width="40%" align="left" valign="top">19.3. Connections and Authentication </td><td width="20%" align="center"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="40%" align="right" valign="top"> 19.5. Write Ahead Log</td></tr></table></div></body></html>

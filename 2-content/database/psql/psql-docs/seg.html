@@ -121,9 +121,9 @@ test=&gt; select '6.25 .. 6.50'::seg as "pH";
   </p><div class="table" id="SEG-GIST-OPERATORS"><p class="title"><strong>Table F.28. Seg GiST Operators</strong></p><div class="table-contents"><table class="table" summary="Seg GiST Operators" border="1"><colgroup><col /><col /></colgroup><thead><tr><th>Operator</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">[a, b] &lt;&lt; [c, d]</code></td><td>[a, b] is entirely to the left of [c, d].  That is, [a,
        b] &lt;&lt; [c, d] is true if b &lt; c and false otherwise.</td></tr><tr><td><code class="literal">[a, b] &gt;&gt; [c, d]</code></td><td>[a, b] is entirely to the right of [c, d].  That is, [a,
        b] &gt;&gt; [c, d] is true if a &gt; d and false otherwise.</td></tr><tr><td><code class="literal">[a, b] &amp;&lt; [c, d]</code></td><td>Overlaps or is left of — This might be better read
-       as <span class="quote">“<span class="quote">does not extend to right of</span>”</span>.  It is true when
+       as <span class="quote">"<span class="quote">does not extend to right of</span>"</span>.  It is true when
        b &lt;= d.</td></tr><tr><td><code class="literal">[a, b] &amp;&gt; [c, d]</code></td><td>Overlaps or is right of — This might be better read
-       as <span class="quote">“<span class="quote">does not extend to left of</span>”</span>.  It is true when
+       as <span class="quote">"<span class="quote">does not extend to left of</span>"</span>.  It is true when
        a &gt;= c.</td></tr><tr><td><code class="literal">[a, b] = [c, d]</code></td><td>Same as — The segments [a, b] and [c, d] are
        identical, that is, a = c and b = d.</td></tr><tr><td><code class="literal">[a, b] &amp;&amp; [c, d]</code></td><td>The segments [a, b] and [c, d] overlap.</td></tr><tr><td><code class="literal">[a, b] @&gt; [c, d]</code></td><td>The segment [a, b] contains the segment [c, d], that is,
        a &lt;= c and b &gt;= d.</td></tr><tr><td><code class="literal">[a, b] &lt;@ [c, d]</code></td><td>The segment [a, b] is contained in [c, d], that is, a

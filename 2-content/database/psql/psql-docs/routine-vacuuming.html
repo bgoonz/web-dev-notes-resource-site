@@ -146,7 +146,7 @@
     changed sufficiently.  However, administrators might prefer to rely
     on manually-scheduled <code class="command">ANALYZE</code> operations, particularly
     if it is known that update activity on a table will not affect the
-    statistics of <span class="quote">“<span class="quote">interesting</span>”</span> columns.  The daemon schedules
+    statistics of <span class="quote">"<span class="quote">interesting</span>"</span> columns.  The daemon schedules
     <code class="command">ANALYZE</code> strictly as a function of the number of rows
     inserted or updated; it has no knowledge of whether that will lead
     to meaningful statistical changes.
@@ -218,7 +218,7 @@
     <a class="link" href="mvcc-intro.html" title="13.1. Introduction">MVCC</a> transaction semantics
     depend on being able to compare transaction ID (<acronym class="acronym">XID</acronym>)
     numbers: a row version with an insertion XID greater than the current
-    transaction's XID is <span class="quote">“<span class="quote">in the future</span>”</span> and should not be visible
+    transaction's XID is <span class="quote">"<span class="quote">in the future</span>"</span> and should not be visible
     to the current transaction.  But since transaction IDs have limited size
     (32 bits) a cluster that runs for a long time (more
     than 4 billion transactions) would suffer <em class="firstterm">transaction ID
@@ -237,10 +237,10 @@
     Normal XIDs are
     compared using modulo-2<sup>32</sup> arithmetic. This means
     that for every normal XID, there are two billion XIDs that are
-    <span class="quote">“<span class="quote">older</span>”</span> and two billion that are <span class="quote">“<span class="quote">newer</span>”</span>; another
+    <span class="quote">"<span class="quote">older</span>"</span> and two billion that are <span class="quote">"<span class="quote">newer</span>"</span>; another
     way to say it is that the normal XID space is circular with no
     endpoint. Therefore, once a row version has been created with a particular
-    normal XID, the row version will appear to be <span class="quote">“<span class="quote">in the past</span>”</span> for
+    normal XID, the row version will appear to be <span class="quote">"<span class="quote">in the past</span>"</span> for
     the next two billion transactions, no matter which normal XID we are
     talking about. If the row version still exists after more than two billion
     transactions, it will suddenly appear to be in the future. To
@@ -250,7 +250,7 @@
     than every normal XID.
     Frozen row versions are treated as if the inserting XID were
     <code class="literal">FrozenTransactionId</code>, so that they will appear to be
-    <span class="quote">“<span class="quote">in the past</span>”</span> to all normal transactions regardless of wraparound
+    <span class="quote">"<span class="quote">in the past</span>"</span> to all normal transactions regardless of wraparound
     issues, and so such row versions will be valid until deleted, no matter
     how long that is.
    </p><div class="note"><h3 class="title">Note</h3><p>
@@ -438,7 +438,7 @@ HINT:  Stop the postmaster and vacuum that database in single-user mode.
      <em class="firstterm">Multixact IDs</em> are used to support row locking by
      multiple transactions.  Since there is only limited space in a tuple
      header to store lock information, that information is encoded as
-     a <span class="quote">“<span class="quote">multiple transaction ID</span>”</span>, or multixact ID for short,
+     a <span class="quote">"<span class="quote">multiple transaction ID</span>"</span>, or multixact ID for short,
      whenever there is more than one transaction concurrently locking a
      row.  Information about which transaction IDs are included in any
      particular multixact ID is stored separately in
@@ -491,7 +491,7 @@ HINT:  Stop the postmaster and vacuum that database in single-user mode.
     In the default configuration, autovacuuming is enabled and the related
     configuration parameters are appropriately set.
    </p><p>
-    The <span class="quote">“<span class="quote">autovacuum daemon</span>”</span> actually consists of multiple processes.
+    The <span class="quote">"<span class="quote">autovacuum daemon</span>"</span> actually consists of multiple processes.
     There is a persistent daemon process, called the
     <em class="firstterm">autovacuum launcher</em>, which is in charge of starting
     <em class="firstterm">autovacuum worker</em> processes for all databases. The
@@ -524,7 +524,7 @@ HINT:  Stop the postmaster and vacuum that database in single-user mode.
     vacuumed (this also applies to those tables whose freeze max age has
     been modified via storage parameters; see below).  Otherwise, if the
     number of tuples obsoleted since the last
-    <code class="command">VACUUM</code> exceeds the <span class="quote">“<span class="quote">vacuum threshold</span>”</span>, the
+    <code class="command">VACUUM</code> exceeds the <span class="quote">"<span class="quote">vacuum threshold</span>"</span>, the
     table is vacuumed.  The vacuum threshold is defined as:
 </p><pre class="programlisting">
 vacuum threshold = vacuum base threshold + vacuum scale factor * number of tuples
@@ -567,7 +567,7 @@ analyze threshold = analyze base threshold + analyze scale factor * number of tu
    </p><p>
     When multiple workers are running, the autovacuum cost delay parameters
     (see <a class="xref" href="runtime-config-resource.html#RUNTIME-CONFIG-RESOURCE-VACUUM-COST" title="19.4.4. Cost-based Vacuum Delay">Section 19.4.4</a>) are
-    <span class="quote">“<span class="quote">balanced</span>”</span> among all the running workers, so that the
+    <span class="quote">"<span class="quote">balanced</span>"</span> among all the running workers, so that the
     total I/O impact on the system is the same regardless of the number
     of workers actually running.  However, any workers processing tables whose
     per-table <code class="literal">autovacuum_vacuum_cost_delay</code> or

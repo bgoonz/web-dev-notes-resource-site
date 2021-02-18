@@ -21,8 +21,8 @@
             &lt;pkg&gt; -- npm run &lt;stage&gt;</code>.
     </p>
     <h3 id="pre-post-scripts">Pre &amp; Post Scripts</h3>
-    <p>To create “pre” or “post” scripts for any scripts defined in the <code>"scripts"</code> section of the
-        <code>package.json</code>, simply create another script <em>with a matching name</em> and add “pre” or “post” to
+    <p>To create "pre" or "post" scripts for any scripts defined in the <code>"scripts"</code> section of the
+        <code>package.json</code>, simply create another script <em>with a matching name</em> and add "pre" or "post" to
         the beginning of them.
     </p>
     <div class="sourceCode" id="cb1">
@@ -36,7 +36,7 @@
     </div>
     <h3 id="life-cycle-scripts">Life Cycle Scripts</h3>
     <p>There are some special life cycle scripts that happen only in certain situations. These scripts happen in
-        addition to the “pre” and “post” script. * <code>prepare</code>, <code>prepublish</code>,
+        addition to the "pre" and "post" script. * <code>prepare</code>, <code>prepublish</code>,
         <code>prepublishOnly</code>, <code>prepack</code>, <code>postpack</code>
     </p>
     <p><strong>prepare</strong> (since <code>npm@4.0.0</code>) * Runs BEFORE the package is packed * Runs BEFORE the
@@ -48,10 +48,10 @@
     <p><strong>prepublish</strong> (DEPRECATED) * Same as <code>prepare</code></p>
     <p><strong>prepublishOnly</strong> * Runs BEFORE the package is prepared and packed, ONLY on <code>npm
             publish</code>.</p>
-    <p><strong>prepack</strong> * Runs BEFORE a tarball is packed (on “<code>npm pack</code>”, “<code>npm
-            publish</code>”, and when installing a git dependencies). * NOTE: “<code>npm run pack</code>” is NOT the
-        same as “<code>npm pack</code>”. “<code>npm run pack</code>” is an arbitrary user defined script name, where as,
-        “<code>npm pack</code>” is a CLI defined command.</p>
+    <p><strong>prepack</strong> * Runs BEFORE a tarball is packed (on "<code>npm pack</code>", "<code>npm
+            publish</code>", and when installing a git dependencies). * NOTE: "<code>npm run pack</code>" is NOT the
+        same as "<code>npm pack</code>". "<code>npm run pack</code>" is an arbitrary user defined script name, where as,
+        "<code>npm pack</code>" is a CLI defined command.</p>
     <p><strong>postpack</strong> * Runs AFTER the tarball has been generated and moved to its final destination.</p>
     <h4 id="prepare-and-prepublish">Prepare and Prepublish</h4>
     <p><strong>Deprecation Note: prepublish</strong></p>
@@ -159,16 +159,16 @@
     <h4 id="package.json-vars">package.json vars</h4>
     <p>The package.json fields are tacked onto the <code>npm_package_</code> prefix. So, for instance, if you had
         <code>{"name":"foo", "version":"1.2.5"}</code> in your package.json file, then your package scripts would have
-        the <code>npm_package_name</code> environment variable set to “foo”, and the <code>npm_package_version</code>
-        set to “1.2.5”. You can access these variables in your code with <code>process.env.npm_package_name</code> and
+        the <code>npm_package_name</code> environment variable set to "foo", and the <code>npm_package_version</code>
+        set to "1.2.5". You can access these variables in your code with <code>process.env.npm_package_name</code> and
         <code>process.env.npm_package_version</code>, and so on for other fields.
     </p>
     <h4 id="configuration">configuration</h4>
     <p>Configuration parameters are put in the environment with the <code>npm_config_</code> prefix. For instance, you
         can view the effective <code>root</code> config by checking the <code>npm_config_root</code> environment
         variable.</p>
-    <h4 id="special-package.json-config-object">Special: package.json “config” object</h4>
-    <p>The package.json “config” keys are overwritten in the environment if there is a config param of
+    <h4 id="special-package.json-config-object">Special: package.json "config" object</h4>
+    <p>The package.json "config" keys are overwritten in the environment if there is a config param of
         <code>&lt;name&gt;[@&lt;version&gt;]:&lt;key&gt;</code>. For example, if the package.json has this:
     </p>
     <div class="sourceCode" id="cb3">
@@ -253,7 +253,7 @@
             environment variable is set to <code>/home/user/bin</code>, then don’t try to install executables into
             <code>/usr/local/bin</code>. The user probably set it up that way for a reason.
         </li>
-        <li>Don’t prefix your script commands with “sudo”. If root permissions are required for some reason, then it’ll
+        <li>Don’t prefix your script commands with "sudo". If root permissions are required for some reason, then it’ll
             fail with that error, and the user will sudo the npm command in question.</li>
         <li>Don’t use <code>install</code>. Use a <code>.gyp</code> file for compilation, and <code>prepublish</code>
             for anything else. You should almost never have to explicitly set a preinstall or install script. If you are

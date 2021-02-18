@@ -4,8 +4,8 @@
   constructed over keys, where each key is an element of one or more indexed
   items (a member of an array, for example) and where each tuple in a leaf
   page contains either a pointer to a B-tree of heap pointers (a
-  <span class="quote">“<span class="quote">posting tree</span>”</span>), or a simple list of heap pointers (a <span class="quote">“<span class="quote">posting
-  list</span>”</span>) when the list is small enough to fit into a single index tuple along
+  <span class="quote">"<span class="quote">posting tree</span>"</span>), or a simple list of heap pointers (a <span class="quote">"<span class="quote">posting
+  list</span>"</span>) when the list is small enough to fit into a single index tuple along
   with the key value.  <a class="xref" href="gin-implementation.html#GIN-INTERNALS-FIGURE" title="Figure 66.1. GIN Internals">Figure 66.1</a> illustrates
   these components of a GIN index.
  </p><p>
@@ -39,7 +39,7 @@
    of pending entries in addition to searching the regular index, and so
    a large list of pending entries will slow searches significantly.
    Another disadvantage is that, while most updates are fast, an update
-   that causes the pending list to become <span class="quote">“<span class="quote">too large</span>”</span> will incur an
+   that causes the pending list to become <span class="quote">"<span class="quote">too large</span>"</span> will incur an
    immediate cleanup cycle and thus be much slower than other updates.
    Proper use of autovacuum can minimize both of these problems.
   </p><p>
@@ -49,7 +49,7 @@
    <acronym class="acronym">GIN</acronym> index.  See <a class="xref" href="sql-createindex.html" title="CREATE INDEX"><span class="refentrytitle">CREATE INDEX</span></a>
    for details.
   </p></div><div class="sect2" id="GIN-PARTIAL-MATCH"><div class="titlepage"><div><div><h3 class="title">66.4.2. Partial Match Algorithm</h3></div></div></div><p>
-   GIN can support <span class="quote">“<span class="quote">partial match</span>”</span> queries, in which the query
+   GIN can support <span class="quote">"<span class="quote">partial match</span>"</span> queries, in which the query
    does not determine an exact match for one or more keys, but the possible
    matches fall within a reasonably narrow range of key values (within the
    key sorting order determined by the <code class="function">compare</code> support method).

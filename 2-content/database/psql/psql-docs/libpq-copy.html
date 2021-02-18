@@ -309,7 +309,7 @@ int PQendcopy(PGconn *conn);
        to  the  server using <code class="function">PQputline</code> or when the
        last string has been  received  from  the  server using
        <code class="function">PQgetline</code>.  It must be issued or the server
-       will get <span class="quote">“<span class="quote">out of sync</span>”</span> with  the client.   Upon return
+       will get <span class="quote">"<span class="quote">out of sync</span>"</span> with  the client.   Upon return
        from this function, the server is ready to receive the next SQL
        command.  The return value is 0  on  successful  completion,
        nonzero otherwise.  (Use <code class="function">PQerrorMessage</code> to

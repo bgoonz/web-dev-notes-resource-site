@@ -37,8 +37,8 @@
     likely resets its state too frequently. Read on for more details.</li>
 </ul>
 <h2 id="common-bugs-when-using-derived-state">Common Bugs When Using Derived State</h2>
-<p>The terms <a href="/docs/forms.html#controlled-components">“controlled”</a> and <a
-        href="/docs/uncontrolled-components.html">“uncontrolled”</a> usually refer to form inputs, but they can also
+<p>The terms <a href="/docs/forms.html#controlled-components">"controlled"</a> and <a
+        href="/docs/uncontrolled-components.html">"uncontrolled"</a> usually refer to form inputs, but they can also
     describe where any component's data lives. Data passed in as props can be thought of as <strong>controlled</strong>
     (because the parent component <em>controls</em> that data). Data that exists only in internal state can be thought
     of as <strong>uncontrolled</strong> (because the parent can't directly change it).</p>
@@ -46,14 +46,14 @@
     <code>setState</code> calls, there isn't a single source of truth for the data. The <a
         href="/blog/2018/03/27/update-on-async-rendering.html#fetching-external-data-when-props-change">external data
         loading example</a> mentioned above may sound similar, but it's different in a few important ways. In the
-    loading example, there is a clear source of truth for both the “source” prop and the “loading” state. When the
+    loading example, there is a clear source of truth for both the "source" prop and the "loading" state. When the
     source prop changes, the loading state should <strong>always</strong> be overridden. Conversely, the state is
     overridden only when the prop <strong>changes</strong> and is otherwise managed by the component.</p>
 <p>Problems arise when any of these constraints are changed. This typically comes in two forms. Let's take a look at
     both.</p>
 <h3 id="anti-pattern-unconditionally-copying-props-to-state">Anti-pattern: Unconditionally copying props to state</h3>
-<p>A common misconception is that <code>getDerivedStateFromProps</code> and <code>componentWillReceiveProps</code> are only called when props “change”. These lifecycles are called any time a parent component rerenders, regardless of whether the props are “different” from before. Because of this, it has always been unsafe to <em>unconditionally</em> override state using either of these lifecycles. <strong>Doing so will cause state updates to be lost.</strong></p>
-<p>Let's consider an example to demonstrate the problem. Here is an <code>EmailInput</code> component that “mirrors” an
+<p>A common misconception is that <code>getDerivedStateFromProps</code> and <code>componentWillReceiveProps</code> are only called when props "change". These lifecycles are called any time a parent component rerenders, regardless of whether the props are "different" from before. Because of this, it has always been unsafe to <em>unconditionally</em> override state using either of these lifecycles. <strong>Doing so will cause state updates to be lost.</strong></p>
+<p>Let's consider an example to demonstrate the problem. Here is an <code>EmailInput</code> component that "mirrors" an
     email prop in state:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> EmailInput <span class="kw">extends</span> Component <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  state <span class="op">=</span> <span class="op">{</span> <span class="dt">email</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">email</span> <span class="op">};</span></a>
@@ -121,7 +121,7 @@
 <a class="sourceLine" id="cb3-3" title="3"><span class="op">}</span></a></code></pre></div>
 <p>This approach simplifies the implementation of our component, but if we still want to store a draft value, the parent form component will now need to do that manually. (<a href="https://codesandbox.io/s/7154w1l551">Click here to see a demo of this pattern.</a>)</p>
 <h3 id="recommendation-fully-uncontrolled-component-with-a-key">Recommendation: Fully uncontrolled component with a <code>key</code></h3>
-<p>Another alternative would be for our component to fully own the “draft” email state. In that case, our component could still accept a prop for the <em>initial</em> value, but it would ignore subsequent changes to that prop:</p>
+<p>Another alternative would be for our component to fully own the "draft" email state. In that case, our component could still accept a prop for the <em>initial</em> value, but it would ignore subsequent changes to that prop:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">class</span> EmailInput <span class="kw">extends</span> Component <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-2" title="2">  state <span class="op">=</span> <span class="op">{</span> <span class="dt">email</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">defaultEmail</span> <span class="op">};</span></a>
 <a class="sourceLine" id="cb4-3" title="3"></a>
@@ -150,7 +150,7 @@
 </blockquote>
 <h4 id="alternative-1-reset-uncontrolled-component-with-an-id-prop">Alternative 1: Reset uncontrolled component with an ID prop</h4>
 <p>If <code>key</code> doesn't work for some reason (perhaps the component is very expensive to initialize), a workable
-    but cumbersome solution would be to watch for changes to “userID” in <code>getDerivedStateFromProps</code>:</p>
+    but cumbersome solution would be to watch for changes to "userID" in <code>getDerivedStateFromProps</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">class</span> EmailInput <span class="kw">extends</span> Component <span class="op">{</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  state <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb6-3" title="3">    <span class="dt">email</span><span class="op">:</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">defaultEmail</span><span class="op">,</span></a>
@@ -198,9 +198,9 @@
 <hr />
 <h3 id="recap">Recap</h3>
 <p>To recap, when designing a component, it is important to decide whether its data will be controlled or uncontrolled.</p>
-<p>Instead of trying to <strong>“mirror” a prop value in state</strong>, make the component <strong>controlled</strong>,
+<p>Instead of trying to <strong>"mirror" a prop value in state</strong>, make the component <strong>controlled</strong>,
     and consolidate the two diverging values in the state of some parent component. For example, rather than a child
-    accepting a “committed” <code>props.value</code> and tracking a “draft” <code>state.value</code>, have the parent
+    accepting a "committed" <code>props.value</code> and tracking a "draft" <code>state.value</code>, have the parent
     manage both <code>state.draftValue</code> and <code>state.committedValue</code> and control the child's value
     directly. This makes the data flow more explicit and predictable.</p>
 <p>For <strong>uncontrolled</strong> components, if you're trying to reset state when a particular prop (usually an ID)

@@ -199,7 +199,7 @@ FAQ
 <h1 id="production-best-practices-performance-and-reliability">Production best practices: performance and reliability</h1>
 <h2 id="overview">Overview</h2>
 <p>This article discusses performance and reliability best practices for Express applications deployed to production.</p>
-<p>This topic clearly falls into the “devops” world, spanning both traditional development and operations. Accordingly, the information is divided into two parts:</p>
+<p>This topic clearly falls into the "devops" world, spanning both traditional development and operations. Accordingly, the information is divided into two parts:</p>
 <ul>
 <li>Things to do in your code (the dev part):
 <ul>
@@ -211,7 +211,7 @@ FAQ
 </li>
 <li>Things to do in your environment / setup (the ops part):
 <ul>
-<li><a href="#set-node_env-to-production">Set NODE_ENV to “production”</a></li>
+<li><a href="#set-node_env-to-production">Set NODE_ENV to "production"</a></li>
 <li><a href="#ensure-your-app-automatically-restarts">Ensure your app automatically restarts</a></li>
 <li><a href="#run-your-app-in-a-cluster">Run your app in a cluster</a></li>
 <li><a href="#cache-request-results">Cache request results</a></li>
@@ -253,7 +253,7 @@ app.use(compression())
 <li><a href="#use-try-catch">Use try-catch</a></li>
 <li><a href="#use-promises">Use promises</a></li>
 </ul>
-<p>Before diving into these topics, you should have a basic understanding of Node/Express error handling: using error-first callbacks, and propagating errors in middleware. Node uses an “error-first callback” convention for returning errors from asynchronous functions, where the first parameter to the callback function is the error object, followed by result data in succeeding parameters. To indicate no error, pass null as the first parameter. The callback function must correspondingly follow the error-first callback convention to meaningfully handle the error. And in Express, the best practice is to use the next() function to propagate errors through the middleware chain.</p>
+<p>Before diving into these topics, you should have a basic understanding of Node/Express error handling: using error-first callbacks, and propagating errors in middleware. Node uses an "error-first callback" convention for returning errors from asynchronous functions, where the first parameter to the callback function is the error object, followed by result data in succeeding parameters. To indicate no error, pass null as the first parameter. The callback function must correspondingly follow the error-first callback convention to meaningfully handle the error. And in Express, the best practice is to use the next() function to propagate errors through the middleware chain.</p>
 <p>For more on the fundamentals of error handling, see:</p>
 <ul>
 <li><a href="https://www.joyent.com/developers/node/design/errors">Error Handling in Node.js</a></li>
@@ -267,7 +267,7 @@ app.use(compression())
 <p>Try-catch is a JavaScript language construct that you can use to catch exceptions in synchronous code. Use try-catch, for example, to handle JSON parsing errors as shown below.</p>
 <p>Use a tool such as <a href="http://jshint.com/">JSHint</a> or <a href="http://www.jslint.com/">JSLint</a> to help you find implicit exceptions like <a href="http://www.jshint.com/docs/options/#undef">reference errors on undefined variables</a>.</p>
 <p>Here is an example of using try-catch to handle a potential process-crashing exception.
-This middleware function accepts a query field parameter named “params” that is a JSON object.</p>
+This middleware function accepts a query field parameter named "params" that is a JSON object.</p>
 <pre><code class="language-js">app.get('/search', function (req, res) {
   // Simulating async operation
   setImmediate(function () {
@@ -322,16 +322,16 @@ Error Handling in Express with Promises, Generators and ES7</a>.</p>
 <h2 id="in-environment">Things to do in your environment / setup</h2>
 <p>Here are some things you can do in your system environment to improve your app’s performance:</p>
 <ul>
-<li><a href="#set-node_env-to-production">Set NODE_ENV to “production”</a></li>
+<li><a href="#set-node_env-to-production">Set NODE_ENV to "production"</a></li>
 <li><a href="#ensure-your-app-automatically-restarts">Ensure your app automatically restarts</a></li>
 <li><a href="#run-your-app-in-a-cluster">Run your app in a cluster</a></li>
 <li><a href="#cache-request-results">Cache request results</a></li>
 <li><a href="#use-a-load-balancer">Use a load balancer</a></li>
 <li><a href="#use-a-reverse-proxy">Use a reverse proxy</a></li>
 </ul>
-<h3 id="set-node_env-to-production">Set NODE_ENV to “production”</h3>
-<p>The NODE_ENV environment variable specifies the environment in which an application is running (usually, development or production). One of the simplest things you can do to improve performance is to set NODE_ENV to “production.”</p>
-<p>Setting NODE_ENV to “production” makes Express:</p>
+<h3 id="set-node_env-to-production">Set NODE_ENV to "production"</h3>
+<p>The NODE_ENV environment variable specifies the environment in which an application is running (usually, development or production). One of the simplest things you can do to improve performance is to set NODE_ENV to "production."</p>
+<p>Setting NODE_ENV to "production" makes Express:</p>
 <ul>
 <li>Cache view templates.</li>
 <li>Cache CSS files generated from CSS extensions.</li>
@@ -358,7 +358,7 @@ Environment=NODE_ENV=production
 </ul>
 <p>Node applications crash if they encounter an uncaught exception. The foremost thing you need to do is to ensure your app is well-tested and handles all exceptions (see <a href="#handle-exceptions-properly">handle exceptions properly</a> for details). But as a fail-safe, put a mechanism in place to ensure that if and when your app crashes, it will automatically restart.</p>
 <h4 id="use-a-process-manager">Use a process manager</h4>
-<p>In development, you started your app simply from the command line with <code>node server.js</code> or something similar. But doing this in production is a recipe for disaster. If the app crashes, it will be offline until you restart it. To ensure your app restarts if it crashes, use a process manager. A process manager is a “container” for applications that facilitates deployment, provides high availability, and enables you to manage the application at runtime.</p>
+<p>In development, you started your app simply from the command line with <code>node server.js</code> or something similar. But doing this in production is a recipe for disaster. If the app crashes, it will be offline until you restart it. To ensure your app restarts if it crashes, use a process manager. A process manager is a "container" for applications that facilitates deployment, provides high availability, and enables you to manage the application at runtime.</p>
 <p>In addition to restarting your app when it crashes, a process manager can enable you to:</p>
 <ul>
 <li>Gain insights into runtime performance and resource consumption.</li>
@@ -433,7 +433,7 @@ WantedBy=multi-user.target
 <p>For more information, see <a href="https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHEL7+,Ubuntu15.04or15.10">Setting up a production host (StrongLoop documentation)</a>.</p>
 <h5 id="upstart">Upstart</h5>
 <p>Upstart is a system tool available on many Linux distributions for starting tasks and services during system startup, stopping them during shutdown, and supervising them. You can configure your Express app or process manager as a service and then Upstart will automatically restart it when it crashes.</p>
-<p>An Upstart service is defined in a job configuration file (also called a “job”) with filename ending in <code>.conf</code>. The following example shows how to create a job called “myapp” for an app named “myapp” with the main file located at <code>/projects/myapp/index.js</code>.</p>
+<p>An Upstart service is defined in a job configuration file (also called a "job") with filename ending in <code>.conf</code>. The following example shows how to create a job called "myapp" for an app named "myapp" with the main file located at <code>/projects/myapp/index.js</code>.</p>
 <p>Create a file named <code>myapp.conf</code> at <code>/etc/init/</code> with the following content (replace the bold text with values for your system and app):</p>
 <pre><code class="language-sh"># When to start the process
 start on runlevel [2345]

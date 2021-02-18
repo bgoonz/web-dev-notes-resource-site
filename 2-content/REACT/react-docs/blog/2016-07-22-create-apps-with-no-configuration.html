@@ -78,19 +78,19 @@
     point.</p>
 <h3 id="no-lock-in">No Lock-In</h3>
 <p>We first saw this feature in <a href="https://github.com/eanplatter/enclave">Enclave</a>, and we loved it. We talked to <a href="https://twitter.com/EanPlatter">Ean</a>, and he was excited to collaborate with us. He already sent a few pull requests!</p>
-<p>“Ejecting” lets you leave the comfort of Create React App setup at any time. You run a single command, and all the
+<p>"Ejecting" lets you leave the comfort of Create React App setup at any time. You run a single command, and all the
     build dependencies, configs, and scripts are moved right into your project. At this point you can customize
     everything you want, but effectively you are forking our configuration and going your own way. If you're experienced
     with build tooling and prefer to fine-tune everything to your taste, this lets you use Create React App as a
     boilerplate generator.</p>
-<p>We expect that at early stages, many people will “eject” for one reason or another, but as we learn from them, we will make the default setup more and more compelling while still providing no configuration.</p>
+<p>We expect that at early stages, many people will "eject" for one reason or another, but as we learn from them, we will make the default setup more and more compelling while still providing no configuration.</p>
 <h2 id="try-it-out">Try It Out!</h2>
 <p>You can find <a href="https://github.com/facebookincubator/create-react-app"><strong>Create React App</strong></a> with additional instructions on GitHub.</p>
 <p>This is an experiment, and only time will tell if it becomes a popular way of creating and building React apps, or fades into obscurity.</p>
 <p>We welcome you to participate in this experiment. Help us build the React tooling that more people can use. We are always <a href="https://github.com/facebookincubator/create-react-app/issues/11">open to feedback</a>.</p>
 <h2 id="the-backstory">The Backstory</h2>
 <p>React was one of the first libraries to embrace transpiling JavaScript. As a result, even though you can <a href="https://github.com/facebook/react/blob/3fd582643ef3d222a00a0c756292c15b88f9f83c/examples/basic-jsx/index.html">learn React without any tooling</a>, the React ecosystem has commonly become associated with an overwhelming explosion of tools.</p>
-<p>Eric Clemmons called this phenomenon the “<a href="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4">JavaScript Fatigue</a>”:</p>
+<p>Eric Clemmons called this phenomenon the "<a href="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4">JavaScript Fatigue</a>":</p>
 <blockquote>
 <p>Ultimately, the problem is that by choosing React (and inherently JSX), you've unwittingly opted into a confusing
     nest of build tools, boilerplate, linters, &amp; time-sinks to deal with before you ever get to create anything.</p>
@@ -102,7 +102,7 @@
 </p>
 <blockquote class="twitter-tweet" data-lang="en">
 <p lang="en" dir="ltr">
-Marc was almost ready to implement his “hello world” React app <a href="https://t.co/ptdg4yteF1">pic.twitter.com/ptdg4yteF1</a>
+Marc was almost ready to implement his "hello world" React app <a href="https://t.co/ptdg4yteF1">pic.twitter.com/ptdg4yteF1</a>
 </p>
 — Thomas Fuchs (<span class="citation" data-cites="thomasfuchs">@thomasfuchs</span>) <a href="https://twitter.com/thomasfuchs/status/708675139253174273">March 12, 2016</a>
 </blockquote>
@@ -120,17 +120,17 @@ Marc was almost ready to implement his “hello world” React app <a href="http
     source philosophy. This is why we decided to make an exception, and to ship something that we didn't use ourselves,
     but that we thought would be useful to the community.</p>
 <h2 id="the-quest-for-a-react-abbr-titlecommand-line-interfacecliabbr">The Quest for a React <abbr title="Command Line Interface">CLI</abbr></h2>
-<p>Having just attended <a href="http://embercamp.com/">EmberCamp</a> a week ago, I was excited about <a href="https://ember-cli.com/">Ember CLI</a>. Ember users have a great “getting started” experience thanks to a curated set of tools united under a single command-line interface. I have heard similar feedback about <a href="https://github.com/elm-lang/elm-reactor">Elm Reactor</a>.</p>
+<p>Having just attended <a href="http://embercamp.com/">EmberCamp</a> a week ago, I was excited about <a href="https://ember-cli.com/">Ember CLI</a>. Ember users have a great "getting started" experience thanks to a curated set of tools united under a single command-line interface. I have heard similar feedback about <a href="https://github.com/elm-lang/elm-reactor">Elm Reactor</a>.</p>
 <p>Providing a cohesive curated experience is valuable by itself, even if the user could in theory assemble those parts themselves. Kathy Sierra <a href="http://seriouspony.com/blog/2013/7/24/your-app-makes-me-fat">explains it best</a>:</p>
 <blockquote>
 <p>If your UX asks the user to make <em>choices</em>, for example, even if those choices are both clear and useful, the
     act of <em>deciding</em> is a cognitive drain. And not just <em>while</em> they're deciding… even <em>after</em> we
-    choose, an unconscious cognitive background thread is slowly consuming/leaking resources, “Was <em>that</em> the
-    right choice?”</p>
+    choose, an unconscious cognitive background thread is slowly consuming/leaking resources, "Was <em>that</em> the
+    right choice?"</p>
 </blockquote>
 <p>I never tried to write a command-line tool for React apps, and neither has <a href="https://twitter.com/vjeux">Christopher</a>. We were chatting on Messenger about this idea, and we decided to work together on it for a week as a hackathon project.</p>
 <p>We knew that such projects traditionally haven't been very successful in the React ecosystem. Christopher told me
-    that multiple “React CLI” projects have started and failed at Facebook. The community tools with similar goals also
+    that multiple "React CLI" projects have started and failed at Facebook. The community tools with similar goals also
     exist, but so far they have not yet gained enough traction.</p>
 <p>Still, we decided it was worth another shot. Christopher and I created a very rough proof of concept on the weekend, and <a href="https://twitter.com/lacker">Kevin</a> soon joined us.</p>
 <p>We invited some of the community members to collaborate with us, and we have spent this week working on this tool. We

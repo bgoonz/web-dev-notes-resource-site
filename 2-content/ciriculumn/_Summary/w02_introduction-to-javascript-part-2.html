@@ -65,14 +65,14 @@
 <h1 id="basic-terminal-navigation">Basic terminal navigation</h1>
 <p><strong>NOTE:</strong> <code>Unix</code> is a term we will be using a lot in the future. It refers to the parent operating system upon which Mac is built upon and Linux is inspired by. They have (nearly) identical commands and features and both use the Terminal. Windows is not Unix based and the commands are slightly different. For the rest of the course we will only support Unix/Linux and we will not give any additional Windows specific commands.</p>
 <h2 id="navigation-of-the-unix-file-system">Navigation of the Unix file system</h2>
-<p>Let’s get started! Search your computer for an Application named “Terminal”. Upon opening the application a new Terminal window will greet you with:</p>
+<p>Let’s get started! Search your computer for an Application named "Terminal". Upon opening the application a new Terminal window will greet you with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">~</span> $</a></code></pre></div>
 <h3 id="navigation-commands">Navigation commands</h3>
 <p>We’ll start by covering some basic commands that you will find yourself using all the time:</p>
 <ul>
 <li><code>ls</code> - lists all the files and subdirectories in the current directory</li>
-<li><code>cd [path]</code> - changes the current directory to the directory specified by the <code>path</code> argument. (i.e. <code>cd /cats</code> would enter a directory named “cats”).</li>
-<li><code>pwd</code> - short for “Print Working Directory”. The <code>pwd</code> command lists the path to your current location in your file system starting from the <em>root</em>.</li>
+<li><code>cd [path]</code> - changes the current directory to the directory specified by the <code>path</code> argument. (i.e. <code>cd /cats</code> would enter a directory named "cats").</li>
+<li><code>pwd</code> - short for "Print Working Directory". The <code>pwd</code> command lists the path to your current location in your file system starting from the <em>root</em>.</li>
 </ul>
 <blockquote>
 <p>When opening a fresh terminal window the default directory opened will be the <em>home</em> directory. Your home directory will be represented by a <code>~</code>. So for example, if your computer user’s name was <code>janedoe</code> then a fresh terminal would open to <code>~</code> and using the <code>pwd</code> command would print out your current location as <code>/Users/janedoe/</code>.</p>
@@ -130,23 +130,23 @@
 <h1 id="setup-installations-on-windows-10">Setup &amp; Installations on Windows 10</h1>
 <p>This reading is only applicable to Windows users. If you’re on macOS, please use the instructions in <strong>Setup &amp; Installations (macOS)</strong>.</p>
 <h2 id="windows-subsytem-for-linux-wsl-and-ubuntu">Windows Subsytem for Linux (WSL) and Ubuntu</h2>
-<p>Test if you have Ubuntu installed by typing “Ubuntu” in the search box in the bottom app bar that reads “Type here to search”. If you see a search result that reads “Ubuntu” with “App” under it, then you have it installed. Otherwise, follow these instructions to install the WSL and Ubuntu.</p>
+<p>Test if you have Ubuntu installed by typing "Ubuntu" in the search box in the bottom app bar that reads "Type here to search". If you see a search result that reads "Ubuntu" with "App" under it, then you have it installed. Otherwise, follow these instructions to install the WSL and Ubuntu.</p>
 <ol type="1">
-<li>In the application search box in the bottom bar, type “PowerShell” to find the application named “Windows PowerShell”</li>
-<li>Right-click on “Windows PowerShell” and choose “Run as administrator” from the popup menu</li>
+<li>In the application search box in the bottom bar, type "PowerShell" to find the application named "Windows PowerShell"</li>
+<li>Right-click on "Windows PowerShell" and choose "Run as administrator" from the popup menu</li>
 <li>In the blue PowerShell window, type the following: <code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></li>
 <li>Restart your computer</li>
-<li>In the application search box in the bottom bar, type “Store” to find the application named “Microsoft Store”</li>
-<li>Click “Microsoft Store”</li>
-<li>Click the “Search” button in the upper-right corner of the window</li>
-<li>Type in “Ubuntu”</li>
-<li>Click “Run Linux on Windows (Get the apps)”</li>
-<li>Click the orange tile labeled “Ubuntu”</li>
-<li>Click “Install”</li>
-<li>After it downloads, click “Launch”</li>
-<li>If you get the option, pin the application to the task bar. Otherwise, right-click on the orange Ubuntu icon in the task bar and choose “Pin to taskbar”</li>
+<li>In the application search box in the bottom bar, type "Store" to find the application named "Microsoft Store"</li>
+<li>Click "Microsoft Store"</li>
+<li>Click the "Search" button in the upper-right corner of the window</li>
+<li>Type in "Ubuntu"</li>
+<li>Click "Run Linux on Windows (Get the apps)"</li>
+<li>Click the orange tile labeled "Ubuntu"</li>
+<li>Click "Install"</li>
+<li>After it downloads, click "Launch"</li>
+<li>If you get the option, pin the application to the task bar. Otherwise, right-click on the orange Ubuntu icon in the task bar and choose "Pin to taskbar"</li>
 <li>Wait for it to install the local files</li>
-<li>When prompted to “Enter new UNIX username”, type your first name with no spaces</li>
+<li>When prompted to "Enter new UNIX username", type your first name with no spaces</li>
 <li>When prompted, enter and retype a password for this UNIX user (it can be the same as your Windows password)</li>
 <li>Confirm your installation by typing the command <code>whoami</code> followed by Enter at the prompt (it should print your first name)</li>
 <li>You need to update your packages, so type <code>sudo apt update</code> (if prompted for your password, enter it)</li>
@@ -156,24 +156,24 @@
 <p>Git comes with Ubuntu, so there’s nothing to install. However, you should configure it using the following instructions.</p>
 <ol type="1">
 <li>Open an Ubuntu terminal if you don’t have one open already.</li>
-<li>You need to configure Git, so type <code>git config --global user.name "Your Name"</code> with replacing “Your Name” with your real name.</li>
-<li>You need to configure Git, so type <code>git config --global user.email your@email.com</code> with replacing “your@email.com” with your real email.</li>
+<li>You need to configure Git, so type <code>git config --global user.name "Your Name"</code> with replacing "Your Name" with your real name.</li>
+<li>You need to configure Git, so type <code>git config --global user.email your@email.com</code> with replacing "your@email.com" with your real email.</li>
 </ol>
 <h2 id="google-chrome">Google Chrome</h2>
-<p>Test if you have Chrome installed by typing “Chrome” in the search box in the bottom app bar that reads “Type here to search”. If you see a search result that reads “Chrome” with “App” under it, then you have it installed. Otherwise, follow these instructions to install Google Chrome.</p>
+<p>Test if you have Chrome installed by typing "Chrome" in the search box in the bottom app bar that reads "Type here to search". If you see a search result that reads "Chrome" with "App" under it, then you have it installed. Otherwise, follow these instructions to install Google Chrome.</p>
 <ol type="1">
-<li>Open Microsoft Edge, the blue “e” in the task bar, and type in http://chrome.google.com. Click the “Download Chrome” button. Click the “Accept and Install” button after reading the terms of service. Click “Save” in the “What do you want to do with ChromeSetup.exe” dialog at the bottom of the window. When you have the option to “Run” it, do so. Answer the questions as you’d like. Set it as the default browser.</li>
-<li>Right-click on the Chrome icon in the task bar and choose “Pin to taskbar”</li>
+<li>Open Microsoft Edge, the blue "e" in the task bar, and type in http://chrome.google.com. Click the "Download Chrome" button. Click the "Accept and Install" button after reading the terms of service. Click "Save" in the "What do you want to do with ChromeSetup.exe" dialog at the bottom of the window. When you have the option to "Run" it, do so. Answer the questions as you’d like. Set it as the default browser.</li>
+<li>Right-click on the Chrome icon in the task bar and choose "Pin to taskbar"</li>
 </ol>
 <h2 id="node.js">Node.js</h2>
-<p>Test if you have Node.js installed by opening an Ubuntu terminal and typing <code>node --version</code>. If it reports “Command ‘node’ not found”, then you need to follow these directions.</p>
+<p>Test if you have Node.js installed by opening an Ubuntu terminal and typing <code>node --version</code>. If it reports "Command ‘node’ not found", then you need to follow these directions.</p>
 <ol type="1">
 <li>In the Ubuntu terminal, type <code>sudo apt update</code> and press Enter</li>
 <li>In the Ubuntu terminal, type <code>sudo apt install build-essential</code> and press Enter</li>
 <li>In the Ubuntu terminal, type <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash</code> and press Enter</li>
 <li>In the Ubuntu terminal, type <code>. ./.bashrc</code> and press Enter</li>
 <li>In the Ubuntu terminal, type <code>nvm install --lts</code> and press Enter</li>
-<li>Confirm that <strong>node</strong> is installed by typing <code>node --version</code> and seeing it print something that is not “Command not found”!</li>
+<li>Confirm that <strong>node</strong> is installed by typing <code>node --version</code> and seeing it print something that is not "Command not found"!</li>
 </ol>
 <h2 id="unzip">Unzip</h2>
 <p>For your projects you will often have to download a zip file and unzip it. It is easier to do this from the command line. So we need to install a linux unzip utility.</p>
@@ -207,7 +207,7 @@
 <p><strong>NOTE: If you are using a Linux machine you will not be able to install Xcode or homebrew.</strong></p>
 <p>Install the Xcode command line tools by running the following from the console.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" title="1">$ <span class="ex">xcode-select</span> --install</a></code></pre></div>
-<p>To conclude the installation you will need to agree to the Xcode license. Start the Xcode app, click “Agree”, and allow the installation to finish. Then you can go ahead and quit the Xcode app.</p>
+<p>To conclude the installation you will need to agree to the Xcode license. Start the Xcode app, click "Agree", and allow the installation to finish. Then you can go ahead and quit the Xcode app.</p>
 <h3 id="homebrew">Homebrew</h3>
 <p>Homebrew is kind of like a low-tech App Store. It allows us access to and the ability to install a wide variety of software and command line tools from the console. These are distinct from those hosted on the App Store and will need to be managed by Homebrew.</p>
 <p>Enter the following in your terminal to download and install Homebrew:</p>
@@ -321,7 +321,7 @@
 <a class="sourceLine" id="cb15-7" title="7"><span class="op">~</span> $</a></code></pre></div>
 <h3 id="using-javascript-files">Using JavaScript Files</h3>
 <p>The first thing you’ll need in order to run a JavaScript file is to create a file that will contain the code you will be running. A new file is like a blank canvas - just awaiting the chance to be made into art.</p>
-<p>If you don’t currently have a dedicated coding folder start off by creating a new folder somewhere accessible, like your <code>Desktop</code> folder. Then you can open that folder using VS Code. From there you can simply create a “New File”. In order to create a JavaScript file, make sure that you change the file name to one that ends in <code>.js</code>, for example <code>myFile.js</code>.</p>
+<p>If you don’t currently have a dedicated coding folder start off by creating a new folder somewhere accessible, like your <code>Desktop</code> folder. Then you can open that folder using VS Code. From there you can simply create a "New File". In order to create a JavaScript file, make sure that you change the file name to one that ends in <code>.js</code>, for example <code>myFile.js</code>.</p>
 <p>Now take a moment to enter some code into your new <code>.js</code> file like the following:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="co">// Work/myFile.js</span></a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;hello world!&quot;</span>)<span class="op">;</span></a></code></pre></div>
@@ -357,12 +357,12 @@
 <p>In this project we’ll be working VS Code to create new folders and files, Node to run JavaScript, and <code>mocha</code> to help us run tests.</p>
 <h2 id="phase-1-creating-files-and-folders">Phase 1: Creating files and folders</h2>
 <p>We’ll kick off this project by creating a folder for to contain the code you write. This would be a good time to create a folder for your work here at App Academy. Feel free to name the folder whatever you like - just make sure you remember where you put it (the Desktop is the ideal place)! Once you’ve created a folder for your work create a new folder within that folder. This folder will be representative of some of the work you do for this project, so name it <code>firstProject</code>.</p>
-<p>The first thing you’ll want to do with this <code>firstProject</code> folder is open it up in VS Code. Once you’ve entered VS Code you can go to “File” then “New File” to create a new file. Name this file <code>phaseOne.js</code>.</p>
+<p>The first thing you’ll want to do with this <code>firstProject</code> folder is open it up in VS Code. Once you’ve entered VS Code you can go to "File" then "New File" to create a new file. Name this file <code>phaseOne.js</code>.</p>
 <p>Now we’ll teach you a fun trick - in the Sidebar of VS Code you should see the folder named <code>firstProject</code> and if you click the arrow beside it you should see the file named <code>phaseOne.js</code>. Let’s create a second file in the <code>firstProject</code> directory but this time we’ll use a nifty VS code shortcut. If you click within the <code>firstProject</code> folder and type <code>a</code> then a new file will be automatically created and you will be able to quickly name this file. Here is a gif of us doing the same thing:</p>
 <figure>
 <img src="images/file-name-gif.gif" alt="gif" /><figcaption>gif</figcaption>
 </figure>
-<p>So you can use both the “New File” option or the above shortcut to create new files. Additionally, you create subdirectories within a directory by typing <code>Shift + a</code>. For now create new files and folders using whatever method is most comfortable.</p>
+<p>So you can use both the "New File" option or the above shortcut to create new files. Additionally, you create subdirectories within a directory by typing <code>Shift + a</code>. For now create new files and folders using whatever method is most comfortable.</p>
 <p>Name the second file you created above <code>phaseTwo.js</code> and let’s go run some JavaScript.</p>
 <h2 id="phase-2-using-node-to-run-javascript-files">Phase 2: Using Node to run JavaScript files</h2>
 <h3 id="phase-2a-using-the-node-repl">Phase 2A: Using the Node REPL</h3>
@@ -371,7 +371,7 @@
 <a class="sourceLine" id="cb18-2" title="2"><span class="op">&gt;</span></a></code></pre></div>
 <p>You should see your icon change to look like this: <code>&gt;</code>. Now do the following to get comfortable with using the Node REPL:</p>
 <ol type="1">
-<li>Write a <code>console.log</code> statement that will print “Hello Node!”</li>
+<li>Write a <code>console.log</code> statement that will print "Hello Node!"</li>
 <li>Write four mathematical expressions:
 <ul>
 <li>each using one of the following symbols: <code>+</code>, <code>-</code>, <code>*</code> and <code>%</code></li>
@@ -380,14 +380,14 @@
 </ol>
 <p>The Node REPL is an interactive code environment which allows you to test how JavaScript will react to simple expressions. Learning to use a REPL to test ideas and to ask your coding environment questions (as shown in the above simple and quick problems) is a great way to teach yourself, and become more self-sufficient as a programmer.</p>
 <h3 id="phase-2b-using-node-to-run-javascript-files">Phase 2B: Using Node to run JavaScript files</h3>
-<p>In the <code>phaseOne.js</code> file we previously created write a simple <code>console.log</code> statement that will print “Look at me go!” to the console. Next, open a window of the Terminal application on your computer and navigate to the <code>firstProject</code> directory. Once inside the directory run the code within the <code>phaseOne.js</code> file by using the following command:</p>
+<p>In the <code>phaseOne.js</code> file we previously created write a simple <code>console.log</code> statement that will print "Look at me go!" to the console. Next, open a window of the Terminal application on your computer and navigate to the <code>firstProject</code> directory. Once inside the directory run the code within the <code>phaseOne.js</code> file by using the following command:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb19-1" title="1"><span class="ex">~</span> <span class="ex">firstProject</span> $ node phaseOne.js</a></code></pre></div>
-<p>You should see “Look at me go!” printed to the console.</p>
+<p>You should see "Look at me go!" printed to the console.</p>
 <p>Congratulations, you’ve just run JavaScript on your computer using both the Node REPL and by running a <code>.js</code> file!</p>
-<p>Celebrate your victory by writing a new function in the <code>phaseTwo.js</code> file. Write a function named <code>helloNode</code> that when invoked will <code>return</code> the string “Hello Node”. Try invoking your function below where you defined it and use <code>node</code> to run the file:</p>
+<p>Celebrate your victory by writing a new function in the <code>phaseTwo.js</code> file. Write a function named <code>helloNode</code> that when invoked will <code>return</code> the string "Hello Node". Try invoking your function below where you defined it and use <code>node</code> to run the file:</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb20-1" title="1"><span class="ex">~</span> <span class="ex">firstProject</span> $ node phaseTwo.js</a>
 <a class="sourceLine" id="cb20-2" title="2"><span class="ex">~</span> <span class="ex">firstProject</span> $</a></code></pre></div>
-<p>Notice how you don’t see anything printed to the console! That is because we <code>return</code>ed the value but didn’t print it to the console. Now try wrapping your function call for <code>helloNode</code> in a <code>console.log</code> statement. Then run the <code>phaseTwo.js</code> file again using <code>node</code>. You should see “Hello Node” printed to the console.</p>
+<p>Notice how you don’t see anything printed to the console! That is because we <code>return</code>ed the value but didn’t print it to the console. Now try wrapping your function call for <code>helloNode</code> in a <code>console.log</code> statement. Then run the <code>phaseTwo.js</code> file again using <code>node</code>. You should see "Hello Node" printed to the console.</p>
 <p>Nice! You’ve now written and run a function using a <code>.js</code> file. For the rest of this course you will be utilizing VS Code and Node to write and run code.</p>
 <h2 id="phase-3-running-tests-using-mocha">Phase 3: Running tests using Mocha</h2>
 <p>At work, you will often be writing tests for your own code to ensure it works. Here at you will primarily be running tests we have written for you to guide your development. Now that you know how to write and run code in this environment let’s practice using <code>mocha</code> to <em>test</em> the output of functions. We’ll do a deep dive into testing practices soon - but for now know that <strong>testing</strong> is how we can ensure that functions work the way we expect them to. While you had previously used <code>console.log</code> to see if your functions gave the expected output when given a certain input, Mocha automates this process for you.</p>
@@ -485,15 +485,15 @@
 <h1 id="pair-programming-learning-objectives">Pair Programming Learning Objectives</h1>
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ol type="1">
-<li>Differentiate between the “Driver” and “Navigator” roles in a pair programming session.</li>
+<li>Differentiate between the "Driver" and "Navigator" roles in a pair programming session.</li>
 <li>Describe at least three benefits of effective pair programming.</li>
-<li>Demonstrate empathetic communication and be able to explain the meaning of “You are not your code”.</li>
+<li>Demonstrate empathetic communication and be able to explain the meaning of "You are not your code".</li>
 <li>Identify negative interactions during a pair programming session.</li>
 <li>Identify the exact steps of a/A’s pair programming process.</li>
 <li><p>Describe the importance of pair programming competency while interviewing for jobs.erminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p></li>
-<li>Differentiate between the “Driver” and “Navigator” roles in a pair programming session.</li>
+<li>Differentiate between the "Driver" and "Navigator" roles in a pair programming session.</li>
 <li>Describe at least three benefits of effective pair programming.</li>
-<li>Demonstrate empathetic communication and be able to explain the meaning of “You are not your code”.</li>
+<li>Demonstrate empathetic communication and be able to explain the meaning of "You are not your code".</li>
 <li>Identify negative interactions during a pair programming session.</li>
 <li>Identify the exact steps of a/A’s pair programming process.</li>
 <li><p>Describe the importance of pair programming competency while interviewing for jobs.</p></li>
@@ -547,7 +547,7 @@
 <a class="sourceLine" id="cb24-14" title="14"></a>
 <a class="sourceLine" id="cb24-15" title="15"><span class="op">&gt;</span> car</a>
 <a class="sourceLine" id="cb24-16" title="16"><span class="op">{</span><span class="dt">color</span><span class="op">:</span> <span class="st">&quot;Blue&quot;</span><span class="op">,</span> <span class="dt">seats</span><span class="op">:</span> <span class="dv">2</span><span class="op">}</span></a></code></pre></div>
-<p>When we enter <code>car["color"]</code>, we are using <code>"color"</code> as our <code>key</code>. You can think of <code>keys</code> and <code>values</code> in an object just like a lock and key in real life. The <code>"color"</code> key “unlocks” the corresponding value to give us our <code>car</code>’s color, <code>"Blue"</code>!</p>
+<p>When we enter <code>car["color"]</code>, we are using <code>"color"</code> as our <code>key</code>. You can think of <code>keys</code> and <code>values</code> in an object just like a lock and key in real life. The <code>"color"</code> key "unlocks" the corresponding value to give us our <code>car</code>’s color, <code>"Blue"</code>!</p>
 <h3 id="keys-without-values">Keys without values</h3>
 <p>What happens if we try to access a key that we have not yet assigned within an object?</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb25-1" title="1"><span class="op">&gt;</span> car</a>
@@ -1216,7 +1216,7 @@
 <a class="sourceLine" id="cb69-7" title="7"><span class="co">// prints out:</span></a>
 <a class="sourceLine" id="cb69-8" title="8"><span class="co">// &quot;apple&quot;</span></a>
 <a class="sourceLine" id="cb69-9" title="9"><span class="co">// [15, 3]</span></a></code></pre></div>
-<p>This coding pattern of saying “give me the <em>rest</em> of” can also be used when destructuring an array by prefixing the last variable with <code>...</code>. In this example, the <code>otherFoods</code> variable is prefixed with <code>...</code> to initialize the variable to an array containing the remaining array elements that weren’t explicitly destructured:</p>
+<p>This coding pattern of saying "give me the <em>rest</em> of" can also be used when destructuring an array by prefixing the last variable with <code>...</code>. In this example, the <code>otherFoods</code> variable is prefixed with <code>...</code> to initialize the variable to an array containing the remaining array elements that weren’t explicitly destructured:</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb70-1" title="1"><span class="kw">let</span> foods <span class="op">=</span> [<span class="st">&quot;pizza&quot;</span><span class="op">,</span> <span class="st">&quot;ramen&quot;</span><span class="op">,</span> <span class="st">&quot;sushi&quot;</span><span class="op">,</span> <span class="st">&quot;kale&quot;</span><span class="op">,</span> <span class="st">&quot;tacos&quot;</span>]<span class="op">;</span></a>
 <a class="sourceLine" id="cb70-2" title="2"></a>
 <a class="sourceLine" id="cb70-3" title="3"><span class="kw">let</span> [firstFood<span class="op">,</span> secondFood<span class="op">,</span> ...<span class="at">otherFoods</span>] <span class="op">=</span> foods<span class="op">;</span></a>
@@ -1276,7 +1276,7 @@
 <li>and benefits of learning this useful skill!</li>
 </ul>
 <h2 id="team-mentality">Team mentality</h2>
-<p>Despite what “hacker” personalities in movies might have you think, software development has never been a single-player game. Tracing back to the earliest days of computing, computer scientists have worked in pairs or teams to solve the biggest problems. Fred Brooks, in his popular software/project management guide “The Mythical Man Month” (published in 1975) even advocated for small <a href="https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/">“surgical teams”</a> to approach software development!</p>
+<p>Despite what "hacker" personalities in movies might have you think, software development has never been a single-player game. Tracing back to the earliest days of computing, computer scientists have worked in pairs or teams to solve the biggest problems. Fred Brooks, in his popular software/project management guide "The Mythical Man Month" (published in 1975) even advocated for small <a href="https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/">"surgical teams"</a> to approach software development!</p>
 <p>Even so, it’s easy to get focused on a problem and stop communicating with your teammates. To prevent this behavior, many teams practice <em>pair programming</em>, an approach in which two developers work together on a single computer. Pairing up ensures that both developers are engaged with each other and with the problem at hand, and it helps us share knowledge faster!</p>
 <p>Pair programming is by far the most popular approach, but there are other ways for small groups to collaborate! You may also hear about <em>mob programming</em>, where a group of 3+ individuals gather around a single screen to work through an issue, or <em>extreme programming (XP)</em>, a highly-structured approach to pair programming where the whole team rotates through projects. We’ll refer to all of these multi-developer approaches as <em>collaborative programming</em>.</p>
 <p>There are a few common concepts in all these approaches:</p>
@@ -1284,7 +1284,7 @@
 <li><p><strong>One shared device for coding:</strong> Keeping your code in sync with someone else is a bigger challenge than it’s worth, so collaborative programmers have found that coding only on one device keeps it simple. You can always share your code with each other once you’re done working on it.</p></li>
 <li><p><strong>Everyone has a job:</strong> Regardless of how many people you’re collaborating with, it’s important that each person has a role to play. This increases engagement and ensures that no one gets bored! If you find yourself in a group but without a clearly-defined role, there may be a better use of your time.</p></li>
 <li><p><strong>Everyone gets a turn:</strong> The best way to learn is by doing, so everyone should be able to work in all the roles on a collaborative programming team. This means developers may rotate into different roles on a timer, or change roles with each new session.</p></li>
-<li><p><strong>No one is “too good to pair”:</strong> It’s important to note that pairing should be a <strong>whole team</strong> process. One of the benefits of pair programming is that a more senior engineer can share knowledge with a junior engineer, skilling them up faster. No truly collaborative programming session excludes certain people because they’re outliers. It’s never too early (or too late!) to start pairing up.</p></li>
+<li><p><strong>No one is "too good to pair":</strong> It’s important to note that pairing should be a <strong>whole team</strong> process. One of the benefits of pair programming is that a more senior engineer can share knowledge with a junior engineer, skilling them up faster. No truly collaborative programming session excludes certain people because they’re outliers. It’s never too early (or too late!) to start pairing up.</p></li>
 </ul>
 <h2 id="pair-programming-roles">Pair Programming Roles</h2>
 <p>When we talk about pair programming specifically, there are two well-known roles: that of the <em>Driver</em> and that of the <em>Navigator</em>. Let’s break down their individual responsibilities.</p>
@@ -1298,7 +1298,7 @@
 <p>Both the driver and navigator should help keep each other on task as well. If you find yourself getting quiet or distracted, switch roles! The change of context should help you get your head back in the game.</p>
 <h2 id="why-pair-up">Why pair up?</h2>
 <p>This all sounds like a lot of work! If you’re already capable of coding alone, why might you want to pair up at all? Let’s look at some of the benefits.</p>
-<p>First, some statistics. A <a href="http://blogs.edweek.org/edweek/high_school_and_beyond/2018/08/good_speaking_tops_list_of_skills_employers_want_most.html">study from 2000</a> found that pair programming results in 15% slower development time. Yikes! That sounds a lot less scary when you recognize that we would theoretically expect it to result in 50% slower time, though. After all, we’re taking two people who could be working at “full speed” and assigning them to one task. Somehow, this process only causes them to move 15% slower - wow!</p>
+<p>First, some statistics. A <a href="http://blogs.edweek.org/edweek/high_school_and_beyond/2018/08/good_speaking_tops_list_of_skills_employers_want_most.html">study from 2000</a> found that pair programming results in 15% slower development time. Yikes! That sounds a lot less scary when you recognize that we would theoretically expect it to result in 50% slower time, though. After all, we’re taking two people who could be working at "full speed" and assigning them to one task. Somehow, this process only causes them to move 15% slower - wow!</p>
 <p>The same study notes the payback for that loss of velocity: the resulting code contains 15% fewer errors. If this sounds like an even trade, consider this: debugging, correcting, and redeploying that erroneous code could take from 15 to 60 times as long as the paltry 15% slowdown caused by pairing up! Spending a little extra time up front can make a world of difference later on.</p>
 <p>Pair programming is also a great way to fulfill your social needs. Coding alone can be a lonely endeavor, especially when you face new challenges and aren’t sure how to proceed. Instead of getting lost in a search engine, pairing partners can help each other navigate these challenges and celebrate each others’ successes.</p>
 <p>Lastly, a big motivator for being a practiced pair programmer is the job search. Many companies include pair programming in their interview process. You may be asked to code while some of the company’s engineers observe, or you might get to work directly with another engineer on a collaborative project! Practicing this skill now means you’ll be comfortable when the stakes are higher, and more likely to make a good impression on the interviewing team.</p>
@@ -1323,7 +1323,7 @@
 <h3 id="partner-up">Partner up</h3>
 <p>You can’t pair program without a pair of programmers! Your first step should be partnering up with another student. While it might be more comfortable to have the same partner each time, try challenging yourself to select a new partner for every session. This will broaden your perspective and let you share your unique approaches to software with each other.</p>
 <h3 id="check-in">Check-in</h3>
-<p>Before beginning, it’s a good idea to check in with each other. Take a quick “lay of the land”: what will you be pairing on? How long do you expect this session to last? Do you need to plan breaks for lunch or does one of you have obligations that will cut the session short? Get these details scheduled with each other ahead of time to reduce surprises &amp; distractions later on.</p>
+<p>Before beginning, it’s a good idea to check in with each other. Take a quick "lay of the land": what will you be pairing on? How long do you expect this session to last? Do you need to plan breaks for lunch or does one of you have obligations that will cut the session short? Get these details scheduled with each other ahead of time to reduce surprises &amp; distractions later on.</p>
 <p>This is a great time to assign roles as well. We encourage you to stick with the <em>Driver</em> and <em>Navigator</em> roles discussed previously. Over time, we’ve found that students who are more comfortable with the project being worked on prefer to act as Navigator first. This lets them establish the direction for the session and helps support the Driver. Of course, discuss this together before making a decision: your partner may have a different opinion!</p>
 <h3 id="get-coding">Get coding!</h3>
 <p>Once you’ve chosen initial roles, it’s time to dive in! Remember that you &amp; your partner should be working in a single editor, not two different ones. If you’re together in-person, this means one keyboard, one monitor, and two chairs. If you’re working remotely, this means one person is sharing their editor and the other is watching &amp; talking only.</p>
@@ -1332,12 +1332,12 @@
 <h3 id="hand-off">Hand off</h3>
 <p>We follow a 15 minute rule at . This means you should change roles after every 15 minutes of progress - no exceptions! Frequent role reversal ensures you’re both getting equal exposure to the whole workflow, and it forces you to stay engaged and communicate through the transition.</p>
 <p>When the timer is up, the driver should pass control to the navigator and begin navigating themselves. This will feel awkward at first, but remember that you’re building a new skill here: context switching while maintaining communication is <strong>crucial</strong> for being an effective developer.</p>
-<p>Stick to the timer as closely as possible. It can be tempting to finish your current line of code/task before handing off, but that “last piece” might drag on for another 15 minutes by itself! If you’re communicating effectively, you should be able to the hand off mid-sentence and have your pair pick up right where you left off.</p>
+<p>Stick to the timer as closely as possible. It can be tempting to finish your current line of code/task before handing off, but that "last piece" might drag on for another 15 minutes by itself! If you’re communicating effectively, you should be able to the hand off mid-sentence and have your pair pick up right where you left off.</p>
 <h3 id="follow-up">Follow-up</h3>
 <p>It has been a long, productive day. How should you wrap up your programming session? Take a little time to reflect! Before officially ending your session, take a couple minutes to recap. Discuss what you accomplished. Did you meet your goals? Take a moment to celebrate! Are there tasks left incomplete? Make a few notes so you can pick these up with someone else next time.</p>
 <p>The follow-up, like the check-in, helps commit your progress to memory. It’s also the perfect time to answer any lingering questions and provide/receive feedback on how the session went. Don’t skip this step because it feels superfluous; it’s just as important as the code you’ve written together!</p>
 <h2 id="modifying-the-routine">Modifying the routine</h2>
-<p>As you pair up more often, you’ll encounter days where the routine just isn’t working. Maybe your partner’s having a bad day - or maybe you’re having a bad day yourself! Maybe the day’s material hasn’t “clicked” for you yet, and you feel like your partner is speaking a totally different language. Yikes!</p>
+<p>As you pair up more often, you’ll encounter days where the routine just isn’t working. Maybe your partner’s having a bad day - or maybe you’re having a bad day yourself! Maybe the day’s material hasn’t "clicked" for you yet, and you feel like your partner is speaking a totally different language. Yikes!</p>
 <p>The most important thing to remember is that this is <strong>totally normal</strong>. We provide a strict pair programming routine to keep you on track, but we can’t plan for everything! Here are some things you can do to keep the routine fresh.</p>
 <ul>
 <li><p><strong>Step back &amp; discuss:</strong> If you’re feeling stuck, or having trouble keeping up with your partner, pause your timer and step away from the keyboard. This is a good signal that you need to discuss progress so far and make a plan for moving forward. You should always feel comfortable doing this if you’re unsure of something. Don’t worry about slowing your partner down; the goal of pair programming is that you both progress <strong>together</strong>.</p></li>
@@ -1374,18 +1374,18 @@
 <h3 id="applying-empathy-to-pair-programming">Applying empathy to pair programming</h3>
 <p>When working directly with a partner, the relationship is close so the stakes are high. It’s important to maintain that relationship, but it’s also important to hold each other to a high standard! We can do both these things with <em>empathetic communication</em>.</p>
 <p>Being <em>empathetic</em> means being considerate of the feelings of others. It’s not just about recognizing challenges - it’s important to relate those challenges to your own experiences and respond in a way that acknowledges them appropriately.</p>
-<p>A common phrase you’ll hear when discussing communication in software development is <strong>“You are not your code”</strong>. This is a simplification of the human- vs. code-centric communication styles we discussed. Keeping this separation between your partner (or yourself!) and the code you’re producing together can help you communicate in a way that improves outcomes for everyone.</p>
+<p>A common phrase you’ll hear when discussing communication in software development is <strong>"You are not your code"</strong>. This is a simplification of the human- vs. code-centric communication styles we discussed. Keeping this separation between your partner (or yourself!) and the code you’re producing together can help you communicate in a way that improves outcomes for everyone.</p>
 <p>Let’s look at another example. Imagine you’re acting as navigator during a pairing session and reviewing the code your partner has typed.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb75-1" title="1"><span class="co">// Human-centric</span></a>
 <a class="sourceLine" id="cb75-2" title="2"><span class="st">&quot;Why did you you write the function the wrong way?&quot;</span></a>
 <a class="sourceLine" id="cb75-3" title="3"></a>
 <a class="sourceLine" id="cb75-4" title="4"><span class="co">// Code-centric</span></a>
 <a class="sourceLine" id="cb75-5" title="5"><span class="st">&quot;Is this an alternative syntax for a function?&quot;</span></a></code></pre></div>
-<p>We’re not ignoring what might be a problem, but we are remaining open to a potential learning opportunity and drawing attention to it if needed. This difference in approach embodies the spirit of the “You are not your code” motto.</p>
-<p>The context of “You are not your code” is helpful when receiving criticism as well. Remember during pair programming or code review that we’re all on the same team: making better software! It can be tough to have your work critiqued, but it’s the best way to improve. If you find a particular note affects you personally, try rewriting it for yourself using code-centric language.</p>
+<p>We’re not ignoring what might be a problem, but we are remaining open to a potential learning opportunity and drawing attention to it if needed. This difference in approach embodies the spirit of the "You are not your code" motto.</p>
+<p>The context of "You are not your code" is helpful when receiving criticism as well. Remember during pair programming or code review that we’re all on the same team: making better software! It can be tough to have your work critiqued, but it’s the best way to improve. If you find a particular note affects you personally, try rewriting it for yourself using code-centric language.</p>
 <h3 id="when-empathy-goes-awry">When empathy goes awry</h3>
-<p>You may sometimes encounter other engineers who use “you are not your code” as a license to insult. The goal of this phrase is to encourage programmers to act with empathy. It’s <strong>never</strong> an excuse to belittle someone with the caveat of “You can’t be offended - I’m just talking about your code!”. Notice that even that defense uses human-centric, personally challenging language.</p>
-<p>Practice using “you are not your code” in a positive context whenever you can, and encourage others to do the same. Strive to treat the people around you in the same way you’d like to be treated. Remember that you’re working with humans from many different backgrounds and with unique experiences, and that you should place respect for those human experiences over code quality, words-per-minute, or browser preference. That’s true empathy.</p>
+<p>You may sometimes encounter other engineers who use "you are not your code" as a license to insult. The goal of this phrase is to encourage programmers to act with empathy. It’s <strong>never</strong> an excuse to belittle someone with the caveat of "You can’t be offended - I’m just talking about your code!". Notice that even that defense uses human-centric, personally challenging language.</p>
+<p>Practice using "you are not your code" in a positive context whenever you can, and encourage others to do the same. Strive to treat the people around you in the same way you’d like to be treated. Remember that you’re working with humans from many different backgrounds and with unique experiences, and that you should place respect for those human experiences over code quality, words-per-minute, or browser preference. That’s true empathy.</p>
 <h3 id="applying-empathy-to-your-code">Applying empathy to your code</h3>
 <p>Finally, remember that the code you’re writing will likely be read and used by other developers in the future. Just like practicing empathetic communication in-person helps build relationships, practicing empathetic coding helps build good software.</p>
 <p>Empathetic coding means thinking of those who will read or improve your code once you’ve moved on to other projects. Leaving clear comments and taking time to keep your code organized is one way to code with empathy. Another is working to use inclusive language in your test cases, or avoiding hard-to-understand single letter variable names.</p>
@@ -1399,7 +1399,7 @@
 <p>We hope you’re now able to:</p>
 <ul>
 <li>differentiate between human-centric and code-centric language,</li>
-<li>articulate the meaning of “You are not your code”,</li>
+<li>articulate the meaning of "You are not your code",</li>
 <li>and list the benefits of practicing empathetic communication.</li>
 </ul>
 <hr />
@@ -1415,13 +1415,13 @@
 <h1 id="callbacks-learning-objectives">Callbacks Learning Objectives</h1>
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ol type="1">
-<li>Given multiple plausible reasons, identify why functions are called “First Class Objects” in JavaScript.</li>
+<li>Given multiple plausible reasons, identify why functions are called "First Class Objects" in JavaScript.</li>
 <li>Given a code snippet containing an anonymous callback, a named callback, and multiple <code>console.log</code>s, predict what will be printed</li>
 <li>Write a function that takes in a value and two callbacks. The function should return the result of the callback that is greater.</li>
 <li>Write a function, myMap, that takes in an array and a callback as arguments. The function should mimic the behavior of <code>Array#map</code>.</li>
 <li>Write a function, myFilter, that takes in an array and a callback as arguments. The function should mimic the behavior of <code>Array#filter</code>.</li>
 <li><p>Write a function, myEvery, that takes in an array and a callback as arguments. The function should mimic the behavior of <code>Array#every</code> learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p></li>
-<li>Given multiple plausible reasons, identify why functions are called “First Class Objects” in JavaScript.</li>
+<li>Given multiple plausible reasons, identify why functions are called "First Class Objects" in JavaScript.</li>
 <li>Given a code snippet containing an anonymous callback, a named callback, and multiple <code>console.log</code>s, predict what will be printed</li>
 <li>Write a function that takes in a value and two callbacks. The function should return the result of the callback that is greater.</li>
 <li>Write a function, myMap, that takes in an array and a callback as arguments. The function should mimic the behavior of <code>Array#map</code>.</li>
@@ -1712,7 +1712,7 @@
 </ol>
 <p>For this course and for your programming career moving forward we recommend you <strong>always</strong> use <code>let</code> &amp; <code>const</code>. These two words allow us to be the most clear with our intentions for the variable we are creating.</p>
 <h2 id="hoisting-and-scoping-with-variables">Hoisting and scoping with variables</h2>
-<p>A wonderful definition of hoisting by Mabishi Wakio, “Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.”</p>
+<p>A wonderful definition of hoisting by Mabishi Wakio, "Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution."</p>
 <p>What this means is that when you run JavaScript code the variables and function declarations will be <em>hoisted</em> to the top of their particular scope. This is important because <code>const</code> and <code>let</code> are <strong>block-scoped</strong> while <code>var</code> is <strong>function-scoped</strong>.</p>
 <p>Let’s start by talking more about all <code>const</code>, <code>let</code>, and <code>var</code> before we dive into why the difference of scopes and hoisting is important.</p>
 <h3 id="function-scoped-variables">Function-scoped variables</h3>
@@ -1898,7 +1898,7 @@
 <hr />
 <h1 id="calculating-closures">Calculating Closures</h1>
 <p>What is a <em>closure</em>? This question is one of the <em>most frequent interview questions</em> where JavaScript is involved. If you answer this question quickly and knowledgeably you’ll look like a great candidate. We know you want to know it all so let’s dive right in!</p>
-<p>The official definition of a closure from MDN is, “A closure is the combination of a function and the lexical environment within which that function was declared.” The practicality of how a <em>closure</em> is used it simple: a <em>closure</em> is when an inner function uses, or changes, variables in an outer function. Closures in JavaScript are incredibly important in terms of the creativity, flexibility and security of your code.</p>
+<p>The official definition of a closure from MDN is, "A closure is the combination of a function and the lexical environment within which that function was declared." The practicality of how a <em>closure</em> is used it simple: a <em>closure</em> is when an inner function uses, or changes, variables in an outer function. Closures in JavaScript are incredibly important in terms of the creativity, flexibility and security of your code.</p>
 <p>When you finish this reading you should be able to implement a closure and explain how that closure effects scope.</p>
 <h2 id="closures-and-scope">Closures and scope</h2>
 <p>Let’s look at an example of a simple closure below:</p>
@@ -2097,7 +2097,7 @@
 <a class="sourceLine" id="cb118-4" title="4"></a>
 <a class="sourceLine" id="cb118-5" title="5"><span class="co">// global. is a method of the global object!</span></a>
 <a class="sourceLine" id="cb118-6" title="6"><span class="va">global</span>.<span class="at">setTimeout</span>(hello<span class="op">,</span> <span class="dv">5000</span>)<span class="op">;</span> <span class="co">// waits 5 seconds then prints &quot;hello!&quot;</span></a></code></pre></div>
-<p>Expanding on the <code>global.setTimeout</code> method now using our <code>cat</code> from before let’s say we wanted our <code>cat</code> to “meow” in 5 seconds instead of right now:</p>
+<p>Expanding on the <code>global.setTimeout</code> method now using our <code>cat</code> from before let’s say we wanted our <code>cat</code> to "meow" in 5 seconds instead of right now:</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">let</span> cat <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb119-2" title="2">  <span class="dt">purr</span><span class="op">:</span> <span class="kw">function</span> () <span class="op">{</span></a>
 <a class="sourceLine" id="cb119-3" title="3">    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;meow&quot;</span>)<span class="op">;</span></a>
@@ -2110,8 +2110,8 @@
 <a class="sourceLine" id="cb119-10" title="10"><span class="va">global</span>.<span class="at">setTimeout</span>(<span class="va">cat</span>.<span class="at">purrMore</span><span class="op">,</span> <span class="dv">5000</span>)<span class="op">;</span> <span class="co">// 5 seconds later: TypeError: this.purr is not a function</span></a></code></pre></div>
 <p>So what happened there? We called <code>cat.purrMore</code> so it should have the right context right? Noooooope. This is because <code>cat.purrMore</code> is a callback in the above code! Meaning that when the <code>global.setTimeout</code> function attempts to call the <code>purrMore</code> function all it has reference to is the function itself. Since <code>setTimeout</code> is on the global object that means that the global object will be the context for attempting to invoke the <code>cat.purrMore</code> function.</p>
 <h4 id="strictly-protecting-the-global-object">Strictly protecting the global object</h4>
-<p>The accidental mutation of the global object when invoking functions in unintended contexts is one of the reasons JavaScript released “strict” mode in ECMAScript version 5. We won’t dive too much into JavaScript’s strict mode here, but it’s important to know how strict mode can be used to protect the global object.</p>
-<p>Writing and running code in strict mode is easy and much like writing code in “sloppy mode” (jargon for the normal JavaScript environment). We can run JavaScript in strict mode simply by adding the string “use strict” at the top of our file:</p>
+<p>The accidental mutation of the global object when invoking functions in unintended contexts is one of the reasons JavaScript released "strict" mode in ECMAScript version 5. We won’t dive too much into JavaScript’s strict mode here, but it’s important to know how strict mode can be used to protect the global object.</p>
+<p>Writing and running code in strict mode is easy and much like writing code in "sloppy mode" (jargon for the normal JavaScript environment). We can run JavaScript in strict mode simply by adding the string "use strict" at the top of our file:</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb120-1" title="1"><span class="st">&quot;use strict&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb120-2" title="2"></a>
 <a class="sourceLine" id="cb120-3" title="3"><span class="kw">function</span> <span class="at">hello</span>() <span class="op">{</span></a>
@@ -2152,7 +2152,7 @@
 <p>If you’d like to learn more about strict mode we recommend checking out the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">documentation</a>.</p>
 <h2 id="changing-context-using-bind">Changing context using <code>bind</code></h2>
 <p>Good thing JavaScript has something that can solve this problem for us: what is known as the <strong>binding</strong> of a context to a function.</p>
-<p>From the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>Function.prototype.bind()</code></a>, “The simplest use of <code>bind()</code> is to make a function that, no matter how it is called, is called with a particular <code>this</code> value”.</p>
+<p>From the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code>Function.prototype.bind()</code></a>, "The simplest use of <code>bind()</code> is to make a function that, no matter how it is called, is called with a particular <code>this</code> value".</p>
 <p>Here is a preview of the syntax we use to <code>bind</code>:</p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb124-1" title="1"><span class="kw">let</span> aboundFunc <span class="op">=</span> <span class="va">func</span>.<span class="at">bind</span>(context)<span class="op">;</span></a></code></pre></div>
 <p>So when we call <code>bind</code> we are returned what is called an exotic function. Which essentially means a function with it’s <code>this</code> bound no matter where that function is invoked.</p>

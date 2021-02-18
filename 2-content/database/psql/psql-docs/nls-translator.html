@@ -37,9 +37,9 @@
     catalogs</em>, one for each program (although related
     programs can share a message catalog) and for each target
     language.  There are two file formats for message catalogs:  The
-    first is the <span class="quote">“<span class="quote">PO</span>”</span> file (for Portable Object), which
+    first is the <span class="quote">"<span class="quote">PO</span>"</span> file (for Portable Object), which
     is a plain text file with special syntax that translators edit.
-    The second is the <span class="quote">“<span class="quote">MO</span>”</span> file (for Machine Object),
+    The second is the <span class="quote">"<span class="quote">MO</span>"</span> file (for Machine Object),
     which is a binary file generated from the respective PO file and
     is used while the internationalized program is run.  Translators
     do not deal with MO files; in fact hardly anyone does.
@@ -100,7 +100,7 @@ msgstr "another translated"
     string with the same number and type of placeholders.  There are
     tools that can verify this, which key off the c-format flag.
    </p></div><div class="sect2" id="id-1.10.7.2.5"><div class="titlepage"><div><div><h3 class="title">54.1.3. Creating and Maintaining Message Catalogs</h3></div></div></div><p>
-    OK, so how does one create a <span class="quote">“<span class="quote">blank</span>”</span> message
+    OK, so how does one create a <span class="quote">"<span class="quote">blank</span>"</span> message
     catalog?  First, go into the directory that contains the program
     whose messages you want to translate.  If there is a file
     <code class="filename">nls.mk</code>, then this program has been prepared
@@ -132,8 +132,8 @@ make init-po
     This will create a file
     <code class="filename"><em class="replaceable"><code>progname</code></em>.pot</code>.
     (<code class="filename">.pot</code> to distinguish it from PO files that
-    are <span class="quote">“<span class="quote">in production</span>”</span>. The <code class="literal">T</code> stands for
-    <span class="quote">“<span class="quote">template</span>”</span>.)
+    are <span class="quote">"<span class="quote">in production</span>"</span>. The <code class="literal">T</code> stands for
+    <span class="quote">"<span class="quote">template</span>"</span>.)
     Copy this file to
     <code class="filename"><em class="replaceable"><code>language</code></em>.po</code> and
     edit it.  To make it known that the new language is available,
@@ -153,7 +153,7 @@ make update-po
     which will create a new blank message catalog file (the pot file
     you started with) and will merge it with the existing PO files.
     If the merge algorithm is not sure about a particular message it
-    marks it <span class="quote">“<span class="quote">fuzzy</span>”</span> as explained above.  The new PO file
+    marks it <span class="quote">"<span class="quote">fuzzy</span>"</span> as explained above.  The new PO file
     is saved with a <code class="filename">.po.new</code> extension.
    </p></div><div class="sect2" id="id-1.10.7.2.6"><div class="titlepage"><div><div><h3 class="title">54.1.4. Editing the PO Files</h3></div></div></div><p>
     The PO files can be edited with a regular text editor.  The

@@ -15,7 +15,7 @@ While this is more of a topic than a tip,  you’ll be hooked once you start bu
 
 ### Run your automation tool with Actions[](#run-your-automation-tool-with-actions)
 
-GitHub Actions is a runtime for “doing stuff” when things happen in your repository. It’s really that vague, because you can run whatever code you want in a virtual machine, run by GitHub. A standard example is CI, but I like to focus on the more interesting bits, like tweaking and improving your workflows with the help of robots. For example, my team uses [JasonEtco/create-an-issue](https://github.com/JasonEtco/create-an-issue) to create a weekly meeting notes issue every Monday morning. There are a ton of amazing GitHub Actions out there—and tools to help you build them. If you’re interested in building Actions, check out [actions-toolkit](https://github.com/JasonEtco/actions-toolkit), an opinionated toolkit that I created for building Actions. I’ve even used it to create a few different Actions like [is-sponsor-label-action](https://github.com/JasonEtco/is-sponsor-label-action) and [action-record](https://github.com/JasonEtco/action-record/).
+GitHub Actions is a runtime for "doing stuff" when things happen in your repository. It’s really that vague, because you can run whatever code you want in a virtual machine, run by GitHub. A standard example is CI, but I like to focus on the more interesting bits, like tweaking and improving your workflows with the help of robots. For example, my team uses [JasonEtco/create-an-issue](https://github.com/JasonEtco/create-an-issue) to create a weekly meeting notes issue every Monday morning. There are a ton of amazing GitHub Actions out there—and tools to help you build them. If you’re interested in building Actions, check out [actions-toolkit](https://github.com/JasonEtco/actions-toolkit), an opinionated toolkit that I created for building Actions. I’ve even used it to create a few different Actions like [is-sponsor-label-action](https://github.com/JasonEtco/is-sponsor-label-action) and [action-record](https://github.com/JasonEtco/action-record/).
 
 ![](https://i2.wp.com/user-images.githubusercontent.com/10660468/79356022-6fc8ff00-7f0c-11ea-8eab-85569d63ac51.png?ssl=1)
 
@@ -50,7 +50,7 @@ And you can do the same with pull requests—check out [this example](https://gi
 Pinned Gists are portals to Narnia[](#pinned-gists-are-portals-to-narnia)
 -------------------------------------------------------------------------
 
-Last year, we added support for pinning Gists to your user profile. And since Gists have an API, we can use that feature in really interesting ways to pin “dynamic” content to your profile. Using GitHub Actions, we can update a Gist on a schedule. Here are several examples:
+Last year, we added support for pinning Gists to your user profile. And since Gists have an API, we can use that feature in really interesting ways to pin "dynamic" content to your profile. Using GitHub Actions, we can update a Gist on a schedule. Here are several examples:
 
 *   [activity-box](https://github.com/JasonEtco/activity-box)
 *   [bird-box](https://github.com/matchai/bird-box)
@@ -69,7 +69,7 @@ Delete branches when they’re merged to master[](#delete-branches-when-theyre-m
 
 This isn’t a tip so much as a really great feature, but since it’s fairly new I want to highlight it. In your repository settings, you can enable **Automatically delete head branches**, which deletes the head branch of pull requests that are merged. Unless you rely on long-lived branches that also get merged in pull requests, this is a quick improvement. You can always restore the branch if you want, so there’s no risk. Personally, I always delete my branches right away, so why not automate it.
 
-Get “anything” through the GraphQL API[](#get-anything-through-the-graphql-api)
+Get "anything" through the GraphQL API[](#get-anything-through-the-graphql-api)
 -------------------------------------------------------------------------------
 
 This is a bit of a niche trick, but it can be extremely helpful when you’re building integrations on top of the GitHub API. If you have a URL to a resource (like a repository or an issue) then you can write one GraphQL query to return a bunch of information about it:

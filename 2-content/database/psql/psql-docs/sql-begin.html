@@ -13,7 +13,7 @@ BEGIN [ WORK | TRANSACTION ] [ <em class="replaceable"><code>transaction_mode</c
    executed in a single transaction until an explicit <a class="xref" href="sql-commit.html" title="COMMIT"><span class="refentrytitle">COMMIT</span></a> or <a class="xref" href="sql-rollback.html" title="ROLLBACK"><span class="refentrytitle">ROLLBACK</span></a> is given.
    By default (without <code class="command">BEGIN</code>),
    <span class="productname">PostgreSQL</span> executes
-   transactions in <span class="quote">“<span class="quote">autocommit</span>”</span> mode, that is, each
+   transactions in <span class="quote">"<span class="quote">autocommit</span>"</span> mode, that is, each
    statement is executed in its own transaction and a commit is
    implicitly performed at the end of the statement (if execution was
    successful, otherwise a rollback is done).

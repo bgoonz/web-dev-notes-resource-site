@@ -98,7 +98,7 @@ CREATE SCHEMA <em class="replaceable"><code>schema_name</code></em> AUTHORIZATIO
    </p></div><div class="sect2" id="DDL-SCHEMAS-PUBLIC"><div class="titlepage"><div><div><h3 class="title">5.9.2. The Public Schema</h3></div></div></div><a id="id-1.5.4.11.8.2" class="indexterm"></a><p>
     In the previous sections we created tables without specifying any
     schema names.  By default such tables (and other objects) are
-    automatically put into a schema named <span class="quote">“<span class="quote">public</span>”</span>.  Every new
+    automatically put into a schema named <span class="quote">"<span class="quote">public</span>"</span>.  Every new
     database contains such a schema.  Thus, the following are equivalent:
 </p><pre class="programlisting">
 CREATE TABLE products ( ... );
@@ -217,8 +217,8 @@ SELECT 3 OPERATOR(pg_catalog.+) 4;
 </p><pre class="programlisting">
 REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 </pre><p>
-    (The first <span class="quote">“<span class="quote">public</span>”</span> is the schema, the second
-    <span class="quote">“<span class="quote">public</span>”</span> means <span class="quote">“<span class="quote">every user</span>”</span>.  In the
+    (The first <span class="quote">"<span class="quote">public</span>"</span> is the schema, the second
+    <span class="quote">"<span class="quote">public</span>"</span> means <span class="quote">"<span class="quote">every user</span>"</span>.  In the
     first sense it is an identifier, in the second sense it is a
     key word, hence the different capitalization; recall the
     guidelines from <a class="xref" href="sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS" title="4.1.1. Identifiers and Key Words">Section 4.1.1</a>.)

@@ -315,7 +315,7 @@ SELECT shoe_ready.shoename, shoe_ready.sh_avail,
 </pre><p>
    </p><p>
     This might look inefficient, but the planner will collapse this into a
-    single-level query tree by <span class="quote">“<span class="quote">pulling up</span>”</span> the subqueries,
+    single-level query tree by <span class="quote">"<span class="quote">pulling up</span>"</span> the subqueries,
     and then it will plan the joins just as if we'd written them out
     manually.  So collapsing the query tree is an optimization that the
     rewrite system doesn't have to concern itself with.
@@ -444,7 +444,7 @@ SELECT t1.a, t2.b, t1.ctid FROM t1, t2 WHERE t1.a = t2.a;
     underlying base relation so that the <code class="command">INSERT</code>,
     <code class="command">UPDATE</code>, or <code class="command">DELETE</code> is applied to
     the base relation in the appropriate way.  Views that are
-    <span class="quote">“<span class="quote">simple enough</span>”</span> for this are called <em class="firstterm">automatically
+    <span class="quote">"<span class="quote">simple enough</span>"</span> for this are called <em class="firstterm">automatically
     updatable</em>.  For detailed information on the kinds of view that can
     be automatically updated, see <a class="xref" href="sql-createview.html" title="CREATE VIEW"><span class="refentrytitle">CREATE VIEW</span></a>.
 </p><p>
@@ -455,7 +455,7 @@ SELECT t1.a, t2.b, t1.ctid FROM t1, t2 WHERE t1.a = t2.a;
     nothing at all with the view, leaving it as the result relation
     for the query.  For <code class="command">UPDATE</code> and
     <code class="command">DELETE</code>, it's still necessary to expand the
-    view query to produce the <span class="quote">“<span class="quote">old</span>”</span> rows that the command will
+    view query to produce the <span class="quote">"<span class="quote">old</span>"</span> rows that the command will
     attempt to update or delete.  So the view is expanded as normal,
     but another unexpanded range-table entry is added to the query
     to represent the view in its capacity as the result relation.
@@ -470,7 +470,7 @@ SELECT t1.a, t2.b, t1.ctid FROM t1, t2 WHERE t1.a = t2.a;
     or <code class="command">DELETE</code> operation, a special <code class="literal">wholerow</code>
     entry is added to the target list, which expands to include all
     columns from the view. The executor uses this value to supply the
-    <span class="quote">“<span class="quote">old</span>”</span> row to the <code class="literal">INSTEAD OF</code> trigger.  It is
+    <span class="quote">"<span class="quote">old</span>"</span> row to the <code class="literal">INSTEAD OF</code> trigger.  It is
     up to the trigger to work out what to update based on the old and
     new row values.
 </p><p>

@@ -301,7 +301,7 @@ WITH ( MODULUS <em class="replaceable"><code>numeric_literal</code></em>, REMAIN
       the constraint name.  Otherwise the constraint will be named the same as
       the index.
      </p><p>
-      After this command is executed, the index is <span class="quote">“<span class="quote">owned</span>”</span> by the
+      After this command is executed, the index is <span class="quote">"<span class="quote">owned</span>"</span> by the
       constraint, in the same way as if the index had been built by
       a regular <code class="literal">ADD PRIMARY KEY</code> or <code class="literal">ADD UNIQUE</code>
       command.  In particular, dropping the constraint will make the index
@@ -346,9 +346,9 @@ WITH ( MODULUS <em class="replaceable"><code>numeric_literal</code></em>, REMAIN
      </p><p>
       The trigger firing mechanism is also affected by the configuration
       variable <a class="xref" href="runtime-config-client.html#GUC-SESSION-REPLICATION-ROLE">session_replication_role</a>. Simply enabled
-      triggers (the default) will fire when the replication role is <span class="quote">“<span class="quote">origin</span>”</span>
-      (the default) or <span class="quote">“<span class="quote">local</span>”</span>. Triggers configured as <code class="literal">ENABLE
-      REPLICA</code> will only fire if the session is in <span class="quote">“<span class="quote">replica</span>”</span>
+      triggers (the default) will fire when the replication role is <span class="quote">"<span class="quote">origin</span>"</span>
+      (the default) or <span class="quote">"<span class="quote">local</span>"</span>. Triggers configured as <code class="literal">ENABLE
+      REPLICA</code> will only fire if the session is in <span class="quote">"<span class="quote">replica</span>"</span>
       mode, and triggers configured as <code class="literal">ENABLE ALWAYS</code> will
       fire regardless of the current replication role.
      </p><p>

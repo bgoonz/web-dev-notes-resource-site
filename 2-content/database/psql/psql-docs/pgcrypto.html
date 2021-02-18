@@ -138,7 +138,7 @@ gen_salt(type text [, iter_count integer ]) returns text
       <code class="literal">crypt-bf</code> implementation in <code class="filename">pgcrypto</code>
       is the same one used in John the Ripper.)
      </p></li></ul></div><p>
-    Note that <span class="quote">“<span class="quote">try all combinations</span>”</span> is not a realistic exercise.
+    Note that <span class="quote">"<span class="quote">try all combinations</span>"</span> is not a realistic exercise.
     Usually password cracking is done with the help of dictionaries, which
     contain both regular words and various mutations of them.  So, even
     somewhat word-like passwords could be cracked much faster than the above
@@ -380,7 +380,7 @@ Applies to: pgp_sym_encrypt, pgp_pub_encrypt<br />
 gpg --gen-key
 </pre><p>
   </p><p>
-   The preferred key type is <span class="quote">“<span class="quote">DSA and Elgamal</span>”</span>.
+   The preferred key type is <span class="quote">"<span class="quote">DSA and Elgamal</span>"</span>.
   </p><p>
    For RSA encryption you must create either DSA or RSA sign-only key
    as master and then add an RSA encryption subkey with

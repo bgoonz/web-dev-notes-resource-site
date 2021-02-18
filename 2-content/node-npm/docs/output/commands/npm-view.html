@@ -184,7 +184,7 @@ aliases: info, show, v
                 this:</p>
             <pre lang="bash"><code>npm view connect
 </code></pre>
-            <p>The default version is “latest” if unspecified.</p>
+            <p>The default version is "latest" if unspecified.</p>
             <p>Field names can be specified after the package descriptor.
                 For example, to show the dependencies of the <code>ronn</code> package at version
                 0.3.5, you could do the following:</p>
@@ -202,7 +202,7 @@ aliases: info, show, v
 </code></pre>
             <p>For fields that are arrays, requesting a non-numeric field will return
                 all of the values from the objects in the list. For example, to get all
-                the contributor names for the “express” project, you can do this:</p>
+                the contributor names for the "express" project, you can do this:</p>
             <pre lang="bash"><code>npm view express contributors.email
 </code></pre>
             <p>You may also use numeric indices in square braces to specifically select
@@ -215,7 +215,7 @@ aliases: info, show, v
                 can do this:</p>
             <pre lang="bash"><code>npm view express contributors.name contributors.email
 </code></pre>
-            <p>“Person” fields are shown as a string if they would be shown as an
+            <p>"Person" fields are shown as a string if they would be shown as an
                 object. So, for example, this will show the list of npm contributors in
                 the shortened string format. (See <a
                     href="../configuring-npm/package.json.html"><code>package.json</code></a> for more on this.)</p>

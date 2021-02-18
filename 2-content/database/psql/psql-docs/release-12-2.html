@@ -98,8 +98,8 @@
       Ensure parallel plans are always shut down at the correct time
       (Kyotaro Horiguchi)
      </p><p>
-      This oversight is known to result in <span class="quote">“<span class="quote">temporary file
-      leak</span>”</span> warnings from multi-batch parallel hash joins.
+      This oversight is known to result in <span class="quote">"<span class="quote">temporary file
+      leak</span>"</span> warnings from multi-batch parallel hash joins.
      </p></li><li class="listitem"><p>
       Prevent premature shutdown of a Gather or GatherMerge plan node that
       is underneath a Limit node (Amit Kapila)
@@ -152,7 +152,7 @@
       added or changed in type earlier in the
       same <code class="command">ALTER</code> command (Tom Lane)
      </p></li><li class="listitem"><p>
-      Fix failure to insert default values for <span class="quote">“<span class="quote">missing</span>”</span>
+      Fix failure to insert default values for <span class="quote">"<span class="quote">missing</span>"</span>
       attributes during tuple conversion (Vik Fearing, Andrew Gierth)
      </p><p>
       This could result in values incorrectly reading as NULL, when
@@ -189,8 +189,8 @@
      </p></li><li class="listitem"><p>
       Ensure that the <code class="literal">&lt;&gt;</code> operator for
       type <code class="type">char</code> reports indeterminate-collation errors as
-      such, rather than as <span class="quote">“<span class="quote">cache lookup failed for collation
-      0</span>”</span> (Tom Lane)
+      such, rather than as <span class="quote">"<span class="quote">cache lookup failed for collation
+      0</span>"</span> (Tom Lane)
      </p></li><li class="listitem"><p>
       Avoid treating TID scans as sequential scans (Tatsuhito Kasahara)
      </p><p>
@@ -222,15 +222,15 @@
       Reduce spinlock contention when there are many active walsender
       processes (Pierre Ducroquet)
      </p></li><li class="listitem"><p>
-      Fix placement of <span class="quote">“<span class="quote">Subplans Removed</span>”</span> field
+      Fix placement of <span class="quote">"<span class="quote">Subplans Removed</span>"</span> field
       in <code class="command">EXPLAIN</code> output (Daniel Gustafsson, Tom Lane)
      </p><p>
       In non-text output formats, this field was emitted inside
-      the <span class="quote">“<span class="quote">Plans</span>”</span> sub-group, resulting in syntactically
+      the <span class="quote">"<span class="quote">Plans</span>"</span> sub-group, resulting in syntactically
       invalid output.  Attach it to the parent Append or MergeAppend plan
       node as intended.  This causes the field to change position in text
       output format too: if there are any InitPlans attached to the same
-      plan node, <span class="quote">“<span class="quote">Subplans Removed</span>”</span> will now appear before
+      plan node, <span class="quote">"<span class="quote">Subplans Removed</span>"</span> will now appear before
       those.
      </p></li><li class="listitem"><p>
       Fix <code class="command">EXPLAIN</code>'s <code class="literal">SETTINGS</code> option
@@ -256,11 +256,11 @@
       Fix planner errors induced by overly-aggressive collapsing of joins
       to single-row subqueries (Tom Lane)
      </p><p>
-      This mistake led to errors such as <span class="quote">“<span class="quote">failed to construct the
-      join relation</span>”</span>.
+      This mistake led to errors such as <span class="quote">"<span class="quote">failed to construct the
+      join relation</span>"</span>.
      </p></li><li class="listitem"><p>
-      Fix <span class="quote">“<span class="quote">no = operator for
-      opfamily <em class="replaceable"><code>NNNN</code></em></span>”</span> planner error when
+      Fix <span class="quote">"<span class="quote">no = operator for
+      opfamily <em class="replaceable"><code>NNNN</code></em></span>"</span> planner error when
       trying to match a <code class="literal">LIKE</code> or regex pattern-match
       operator to a binary-compatible index opclass (Tom Lane)
      </p></li><li class="listitem"><p>
@@ -274,13 +274,13 @@
       Ignore system columns when applying most-common-value
       extended statistics (Tomas Vondra)
      </p><p>
-      This prevents <span class="quote">“<span class="quote">negative bitmapset member not allowed</span>”</span>
+      This prevents <span class="quote">"<span class="quote">negative bitmapset member not allowed</span>"</span>
       planner errors for affected queries.
      </p></li><li class="listitem"><p>
       Fix BRIN index logic to support hypothetical BRIN indexes
       (Julien Rouhaud, Heikki Linnakangas)
      </p><p>
-      Previously, if an <span class="quote">“<span class="quote">index adviser</span>”</span> extension tried to
+      Previously, if an <span class="quote">"<span class="quote">index adviser</span>"</span> extension tried to
       get the planner to produce a plan involving a hypothetical BRIN
       index, that would fail, because the BRIN cost estimation code would
       always try to physically access the index's metapage.  Now it checks
@@ -339,7 +339,7 @@
      </p><p>
       These errors could result in dropping data (usually leading to
       subsequent wire-protocol-violation errors) or in
-      a <span class="quote">“<span class="quote">livelock</span>”</span> situation where a sending process goes to
+      a <span class="quote">"<span class="quote">livelock</span>"</span> situation where a sending process goes to
       sleep although not all its data has been sent.
       Moreover, <span class="application">libpq</span> failed to keep separate
       encryption state for each connection, creating the possibility for
@@ -388,8 +388,8 @@
       composite-type variable in more cases (Ashutosh Sharma, Tom Lane)
      </p><p>
       Dropping and re-creating the composite type referenced by a PL/pgSQL
-      variable could lead to <span class="quote">“<span class="quote">could not open relation with
-      OID <em class="replaceable"><code>NNNN</code></em></span>”</span> errors.
+      variable could lead to <span class="quote">"<span class="quote">could not open relation with
+      OID <em class="replaceable"><code>NNNN</code></em></span>"</span> errors.
      </p></li><li class="listitem"><p>
       Avoid crash in <code class="filename">postgres_fdw</code> when trying to
       send a command like <code class="literal">UPDATE remote_tab SET (x,y) = (SELECT
@@ -429,7 +429,7 @@
       <code class="literal">track_counts</code>, and
       <code class="literal">track_functions</code>.
      </p></li><li class="listitem"><p>
-      Avoid memory leak in sanity checks for <span class="quote">“<span class="quote">slab</span>”</span> memory
+      Avoid memory leak in sanity checks for <span class="quote">"<span class="quote">slab</span>"</span> memory
       contexts (Tomas Vondra)
      </p><p>
       This isn't an issue for production builds, since they wouldn't

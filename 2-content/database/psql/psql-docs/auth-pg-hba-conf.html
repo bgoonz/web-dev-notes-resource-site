@@ -73,8 +73,8 @@
       and the authentication method to be used for connections matching
       these parameters. The first record with a matching connection type,
       client address, requested database, and user name is used to perform
-      authentication. There is no <span class="quote">“<span class="quote">fall-through</span>”</span> or
-      <span class="quote">“<span class="quote">backup</span>”</span>: if one record is chosen and the authentication
+      authentication. There is no <span class="quote">"<span class="quote">fall-through</span>"</span> or
+      <span class="quote">"<span class="quote">backup</span>"</span>: if one record is chosen and the authentication
       fails, subsequent records are not considered. If no record matches,
       access is denied.
     </p>
@@ -220,8 +220,8 @@ hostnogssenc  <em class="replaceable"><code>database</code></em>  <em class="rep
             database user, or a group name preceded by <code class="literal">+</code>.
             (Recall that there is no real distinction between users and groups
             in <span class="productname">PostgreSQL</span>; a <code class="literal">+</code> mark really means
-            <span class="quote">“<span class="quote">match any of the roles that are directly or indirectly members
-                of this role</span>”</span>, while a name without a <code class="literal">+</code> mark matches
+            <span class="quote">"<span class="quote">match any of the roles that are directly or indirectly members
+                of this role</span>"</span>, while a name without a <code class="literal">+</code> mark matches
             only that specific role.) For this purpose, a superuser is only
             considered to be a member of a role if they are explicitly a member
             of the role, directly or indirectly, and not just by virtue of
@@ -386,7 +386,7 @@ hostnogssenc  <em class="replaceable"><code>database</code></em>  <em class="rep
               <dd>
                 <p>
                   Reject the connection unconditionally. This is useful for
-                  <span class="quote">“<span class="quote">filtering out</span>”</span> certain hosts from a group, for
+                  <span class="quote">"<span class="quote">filtering out</span>"</span> certain hosts from a group, for
                   example a
                   <code class="literal">reject</code> line could block a specific host from connecting,
                   while a later line allows the remaining hosts in a specific

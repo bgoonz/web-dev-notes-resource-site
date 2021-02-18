@@ -473,7 +473,7 @@ ERROR:  could not serialize access due to read/write dependencies among transact
        Don't put more into a single transaction than needed for integrity
        purposes.
       </p></li><li class="listitem"><p>
-       Don't leave connections dangling <span class="quote">“<span class="quote">idle in transaction</span>”</span>
+       Don't leave connections dangling <span class="quote">"<span class="quote">idle in transaction</span>"</span>
        longer than necessary.  The configuration parameter
        <a class="xref" href="runtime-config-client.html#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT">idle_in_transaction_session_timeout</a> may be used to
        automatically disconnect lingering sessions.

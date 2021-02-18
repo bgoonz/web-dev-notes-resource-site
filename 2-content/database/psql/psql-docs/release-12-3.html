@@ -66,8 +66,8 @@
       Fix error-case processing for <code class="command">CREATE ROLE ... IN
       ROLE</code> (Andrew Gierth)
      </p><p>
-      Some error cases would be reported as <span class="quote">“<span class="quote">unexpected node
-      type</span>”</span> or the like, instead of the intended message.
+      Some error cases would be reported as <span class="quote">"<span class="quote">unexpected node
+      type</span>"</span> or the like, instead of the intended message.
      </p></li><li class="listitem"><p>
       Ensure that when a partition is detached, any triggers cloned from
       its formerly-parent table are removed (Justin Pryzby)
@@ -131,7 +131,7 @@
       intended filtering at all, possibly returning too many values.
      </p></li><li class="listitem"><p>
       Allow input of type <code class="type">circle</code> to accept the format
-      <span class="quote">“<span class="quote"><code class="literal">(<em class="replaceable"><code>x</code></em>,<em class="replaceable"><code>y</code></em>),<em class="replaceable"><code>r</code></em></code></span>”</span>
+      <span class="quote">"<span class="quote"><code class="literal">(<em class="replaceable"><code>x</code></em>,<em class="replaceable"><code>y</code></em>),<em class="replaceable"><code>r</code></em></code></span>"</span>
       as the documentation says it does (David Zhang)
      </p></li><li class="listitem"><p>
       Make the <code class="function">get_bit()</code>
@@ -166,7 +166,7 @@
       connection is rejected because support is not compiled in, and the
       client then tries SSL instead (Andrew Gierth)
      </p><p>
-      This led to a bogus <span class="quote">“<span class="quote">unsupported frontend protocol</span>”</span>
+      This led to a bogus <span class="quote">"<span class="quote">unsupported frontend protocol</span>"</span>
       failure.
      </p></li><li class="listitem"><p>
       Fix memory leakage during GSSAPI encryption (Tom Lane)
@@ -213,13 +213,13 @@
       are reported in all code paths that read or write timeline history
       files (Masahiro Ikeda)
      </p></li><li class="listitem"><p>
-      Avoid possibly showing <span class="quote">“<span class="quote">waiting</span>”</span> twice in a process's
+      Avoid possibly showing <span class="quote">"<span class="quote">waiting</span>"</span> twice in a process's
       PS status (Masahiko Sawada)
      </p></li><li class="listitem"><p>
       Avoid race condition when <code class="command">ANALYZE</code> replaces the
       catalog tuple for extended statistics data (Dean Rasheed)
      </p></li><li class="listitem"><p>
-      Remove ill-considered skip of <span class="quote">“<span class="quote">redundant</span>”</span>
+      Remove ill-considered skip of <span class="quote">"<span class="quote">redundant</span>"</span>
       anti-wraparound vacuums (Michael Paquier)
      </p><p>
       This avoids a corner case where autovacuum could get into a loop of
@@ -259,8 +259,8 @@
       This can eliminate many attempts to fetch non-existent WAL files from
       archive storage, which is helpful if archive access is slow.
      </p></li><li class="listitem"><p>
-      Remove bogus <span class="quote">“<span class="quote">subtransaction logged without previous top-level
-      txn record</span>”</span> error check in logical decoding (Arseny Sher,
+      Remove bogus <span class="quote">"<span class="quote">subtransaction logged without previous top-level
+      txn record</span>"</span> error check in logical decoding (Arseny Sher,
       Amit Kapila)
      </p><p>
       This condition is legitimately reachable in various scenarios, so
@@ -301,8 +301,8 @@
       database connections during its lifetime.
      </p></li><li class="listitem"><p>
       Fix <span class="application">ecpg</span> to treat an argument of
-      just <span class="quote">“<span class="quote"><code class="literal">-</code></span>”</span> as meaning <span class="quote">“<span class="quote">read
-      from stdin</span>”</span> on all platforms (Tom Lane)
+      just <span class="quote">"<span class="quote"><code class="literal">-</code></span>"</span> as meaning <span class="quote">"<span class="quote">read
+      from stdin</span>"</span> on all platforms (Tom Lane)
      </p></li><li class="listitem"><p>
       Fix crash in <span class="application">psql</span> when attempting to
       re-establish a failed connection (Michael Paquier)

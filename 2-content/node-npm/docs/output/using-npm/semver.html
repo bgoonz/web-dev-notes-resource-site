@@ -239,7 +239,7 @@ Versions are printed in ascending order, so supplying
 multiple versions to the utility will just sort them.
 </code></pre>
             <h2 id="versions">Versions</h2>
-            <p>A “version” is described by the <code>v2.0.0</code> specification found at
+            <p>A "version" is described by the <code>v2.0.0</code> specification found at
                 <a href="https://semver.org/">https://semver.org/</a>.
                 </p>
             <p>A leading <code>"="</code> or <code>"v"</code> character is stripped off and ignored.</p>
@@ -283,8 +283,8 @@ multiple versions to the utility will just sort them.
                 prerelease tag.</p>
             <p>For example, the range <code>&gt;1.2.3-alpha.3</code> would be allowed to match the
                 version <code>1.2.3-alpha.7</code>, but it would <em>not</em> be satisfied by
-                <code>3.4.5-alpha.9</code>, even though <code>3.4.5-alpha.9</code> is technically “greater
-                than” <code>1.2.3-alpha.3</code> according to the SemVer sort rules. The version
+                <code>3.4.5-alpha.9</code>, even though <code>3.4.5-alpha.9</code> is technically "greater
+                than" <code>1.2.3-alpha.3</code> according to the SemVer sort rules. The version
                 range only accepts prerelease tags on the <code>1.2.3</code> version. The
                 version <code>3.4.5</code> <em>would</em> satisfy the range, because it does not have a
                 prerelease flag, and <code>3.4.5</code> is greater than <code>1.2.3-alpha.7</code>.
@@ -346,7 +346,7 @@ multiple versions to the utility will just sort them.
             </ul>
             <h4 id="x-ranges-12x-1x-12-">X-Ranges <code>1.2.x</code> <code>1.X</code> <code>1.2.*</code> <code>*</code>
             </h4>
-            <p>Any of <code>X</code>, <code>x</code>, or <code>*</code> may be used to “stand in” for one of the
+            <p>Any of <code>X</code>, <code>x</code>, or <code>*</code> may be used to "stand in" for one of the
                 numeric values in the <code>[major, minor, patch]</code> tuple.</p>
             <ul>
                 <li><code>*</code> := <code>&gt;=0.0.0</code> (Any version satisfies)</li>
@@ -391,7 +391,7 @@ multiple versions to the utility will just sort them.
                 versions <code>0.X &gt;=0.1.0</code>, and <em>no</em> updates for versions <code>0.0.X</code>.
                 </p>
             <p>Many authors treat a <code>0.x</code> version as if the <code>x</code> were the major
-                “breaking-change” indicator.</p>
+                "breaking-change" indicator.</p>
             <p>Caret ranges are ideal when an author may make breaking changes
                 between <code>0.2.4</code> and <code>0.3.0</code> releases, which is a common practice.
                 However, it presumes that there will <em>not</em> be breaking changes between

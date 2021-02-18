@@ -86,7 +86,7 @@ CREATE DATABASE <em class="replaceable"><code>name</code></em>
     <code class="command">CREATE DATABASE</code> cannot be executed inside a transaction
     block.
    </p><p>
-    Errors along the line of <span class="quote">“<span class="quote">could not initialize database directory</span>”</span>
+    Errors along the line of <span class="quote">"<span class="quote">could not initialize database directory</span>"</span>
     are most likely related to insufficient permissions on the data
     directory, a full disk, or other file system problems.
    </p><p>
@@ -100,7 +100,7 @@ CREATE DATABASE <em class="replaceable"><code>name</code></em>
    </p><p>
    Although it is possible to copy a database other than <code class="literal">template1</code>
    by specifying its name as the template, this is not (yet) intended as
-   a general-purpose <span class="quote">“<span class="quote"><code class="command">COPY DATABASE</code></span>”</span> facility.
+   a general-purpose <span class="quote">"<span class="quote"><code class="command">COPY DATABASE</code></span>"</span> facility.
    The principal limitation is that no other sessions can be connected to
    the template database while it is being copied.  <code class="command">CREATE
    DATABASE</code> will fail if any other connection exists when it starts;
@@ -131,7 +131,7 @@ CREATE DATABASE <em class="replaceable"><code>name</code></em>
   </p><p>
    The <code class="literal">CONNECTION LIMIT</code> option is only enforced approximately;
    if two new sessions start at about the same time when just one
-   connection <span class="quote">“<span class="quote">slot</span>”</span> remains for the database, it is possible that
+   connection <span class="quote">"<span class="quote">slot</span>"</span> remains for the database, it is possible that
    both will fail.  Also, the limit is not enforced against superusers or
    background worker processes.
   </p></div><div class="refsect1" id="id-1.9.3.61.8"><h2>Examples</h2><p>

@@ -34,7 +34,7 @@
    to realize that the first scan key is redundant and can be discarded.
    The extent of preprocessing needed during <code class="function">amrescan</code> will
    depend on the extent to which the index access method needs to reduce
-   the scan keys to a <span class="quote">“<span class="quote">normalized</span>”</span> form.
+   the scan keys to a <span class="quote">"<span class="quote">normalized</span>"</span> form.
   </p><p>
    Some access methods return index entries in a well-defined order, others
    do not.  There are actually two different ways that an access method can
@@ -70,7 +70,7 @@
    <code class="structfield">amcanbackward</code> is false, all subsequent
    calls will have the same direction as the first one.)
   </p><p>
-   Access methods that support ordered scans must support <span class="quote">“<span class="quote">marking</span>”</span> a
+   Access methods that support ordered scans must support <span class="quote">"<span class="quote">marking</span>"</span> a
    position in a scan and later returning to the marked position.  The same
    position might be restored multiple times.  However, only one position need
    be remembered per scan; a new <code class="function">ammarkpos</code> call overrides the

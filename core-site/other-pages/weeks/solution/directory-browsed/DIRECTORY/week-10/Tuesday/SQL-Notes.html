@@ -162,11 +162,11 @@
 <a class="sourceLine" id="cb13-11" title="11"><span class="kw">INSERT</span> <span class="kw">INTO</span> pies <span class="kw">VALUES</span>(<span class="st">&#39;Peach&#39;</span>, <span class="fl">20.45</span>);</a>
 <a class="sourceLine" id="cb13-12" title="12"><span class="kw">INSERT</span> <span class="kw">INTO</span> pies <span class="kw">VALUES</span>(<span class="st">&#39;Raspberry&#39;</span>, <span class="fl">20.99</span>);</a>
 <a class="sourceLine" id="cb13-13" title="13"><span class="kw">INSERT</span> <span class="kw">INTO</span> pies <span class="kw">VALUES</span>(<span class="st">&#39;Mixed Berry&#39;</span>, <span class="fl">21.45</span>);</a></code></pre></div>
-<p><strong>Populating a database via &lt; (“left caret”)</strong></p>
+<p><strong>Populating a database via &lt; ("left caret")</strong></p>
 <ul>
 <li>Syntax : <code>psql -d [database] &lt; [path_to_file/file.sql]</code> <code>psql -d bakery &lt; path_to_my_file/seed-data.sql</code></li>
 </ul>
-<p><strong>Populating the database via | (“pipe”)</strong></p>
+<p><strong>Populating the database via | ("pipe")</strong></p>
 <ul>
 <li>Syntax : <code>cat [path_to_file/file.sql] | psql -d [database]</code> <code>cat path_to_my_file/seed-data.sql | psql -d postgres</code></li>
 </ul>

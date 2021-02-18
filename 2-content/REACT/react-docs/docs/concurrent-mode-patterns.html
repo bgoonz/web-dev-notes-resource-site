@@ -41,7 +41,7 @@
 <li><a href="#default-receded-skeleton-complete">Default: Receded → Skeleton → Complete</a></li>
 <li><a href="#preferred-pending-skeleton-complete">Preferred: Pending → Skeleton → Complete</a></li>
 <li><a href="#wrap-lazy-features-in-suspense">Wrap Lazy Features in <code>&lt;Suspense&gt;</code></a></li>
-<li><a href="#suspense-reveal-train">Suspense Reveal “Train”</a></li>
+<li><a href="#suspense-reveal-train">Suspense Reveal "Train"</a></li>
 <li><a href="#delaying-a-pending-indicator">Delaying a Pending Indicator</a></li>
 <li><a href="#recap">Recap</a></li>
 </ul></li>
@@ -56,7 +56,7 @@
 <h2 id="transitions">Transitions</h2>
 <p>Let's revisit <a href="https://codesandbox.io/s/infallible-feather-xjtbu">this demo</a> from the previous page about
     <a href="/docs/concurrent-mode-suspense.html">Suspense for Data Fetching</a>.</p>
-<p>When we click the “Next” button to switch the active profile, the existing page data immediately disappears, and we see the loading indicator for the whole page again. We can call this an “undesirable” loading state. <strong>It would be nice if we could “skip” it and wait for some content to load before transitioning to the new screen.</strong></p>
+<p>When we click the "Next" button to switch the active profile, the existing page data immediately disappears, and we see the loading indicator for the whole page again. We can call this an "undesirable" loading state. <strong>It would be nice if we could "skip" it and wait for some content to load before transitioning to the new screen.</strong></p>
 <p>React offers a new built-in <code>useTransition()</code> Hook to help with this.</p>
 <p>We can use it in three steps.</p>
 <p>First, we'll make sure that we're actually using Concurrent Mode. We'll talk more about <a
@@ -85,10 +85,10 @@
 <p>We will use them right below.</p>
 <p>Note we passed a configuration object to <code>useTransition</code>. Its <code>timeoutMs</code> property specifies
     <strong>how long we're willing to wait for the transition to finish</strong>. By passing <code>{timeoutMs:
-        3000}</code>, we say “If the next profile takes more than 3 seconds to load, show the big spinner – but before
-    that timeout it's okay to keep showing the previous screen”.</p>
+        3000}</code>, we say "If the next profile takes more than 3 seconds to load, show the big spinner – but before
+    that timeout it's okay to keep showing the previous screen".</p>
 <h3 id="wrapping-setstate-in-a-transition">Wrapping setState in a Transition</h3>
-<p>Our “Next” button click handler sets the state that switches the current profile in the state:</p>
+<p>Our "Next" button click handler sets the state that switches the current profile in the state:</p>
 <pre class="js{4}"><code>&lt;button
   onClick={() =&gt; {
     const nextUserId = getNextId(resource.userId);
@@ -106,12 +106,12 @@
   }}
 &gt;</code></pre>
 <p><strong><a href="https://codesandbox.io/s/musing-driscoll-6nkie">Try it on CodeSandbox</a></strong></p>
-<p>Press “Next” a few times. Notice it already feels very different. <strong>Instead of immediately seeing an empty screen on click, we now keep seeing the previous page for a while.</strong> When the data has loaded, React transitions us to the new screen.</p>
-<p>If we make our API responses take 5 seconds, <a href="https://codesandbox.io/s/relaxed-greider-suewh">we can confirm</a> that now React “gives up” and transitions anyway to the next screen after 3 seconds. This is because we passed <code>{timeoutMs: 3000}</code> to <code>useTransition()</code>. For example, if we passed <code>{timeoutMs: 60000}</code> instead, it would wait a whole minute.</p>
+<p>Press "Next" a few times. Notice it already feels very different. <strong>Instead of immediately seeing an empty screen on click, we now keep seeing the previous page for a while.</strong> When the data has loaded, React transitions us to the new screen.</p>
+<p>If we make our API responses take 5 seconds, <a href="https://codesandbox.io/s/relaxed-greider-suewh">we can confirm</a> that now React "gives up" and transitions anyway to the next screen after 3 seconds. This is because we passed <code>{timeoutMs: 3000}</code> to <code>useTransition()</code>. For example, if we passed <code>{timeoutMs: 60000}</code> instead, it would wait a whole minute.</p>
 <h3 id="adding-a-pending-indicator">Adding a Pending Indicator</h3>
 <p>There's still something that feels broken about <a href="https://codesandbox.io/s/musing-driscoll-6nkie">our last
-        example</a>. Sure, it's nice not to see a “bad” loading state. <strong>But having no indication of progress at
-        all feels even worse!</strong> When we click “Next”, nothing happens and it feels like the app is broken.</p>
+        example</a>. Sure, it's nice not to see a "bad" loading state. <strong>But having no indication of progress at
+        all feels even worse!</strong> When we click "Next", nothing happens and it feels like the app is broken.</p>
 <p>Our <code>useTransition()</code> call returns two values: <code>startTransition</code> and <code>isPending</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1">  <span class="kw">const</span> [startTransition<span class="op">,</span> isPending] <span class="op">=</span> <span class="at">useTransition</span>(<span class="op">{</span> <span class="dt">timeoutMs</span><span class="op">:</span> <span class="dv">3000</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>We've already used <code>startTransition</code> to wrap the state update. Now we're going to use
@@ -136,7 +136,7 @@
 );</code></pre>
 <p><strong><a href="https://codesandbox.io/s/jovial-lalande-26yep">Try it on CodeSandbox</a></strong></p>
 <p>Now, this feels a lot better! When we click Next, it gets disabled because clicking it multiple times doesn't make
-    sense. And the new “Loading…” tells the user that the app didn't freeze.</p>
+    sense. And the new "Loading…" tells the user that the app didn't freeze.</p>
 <h3 id="reviewing-the-changes">Reviewing the Changes</h3>
 <p>Let's take another look at all the changes we've made since the <a
         href="https://codesandbox.io/s/infallible-feather-xjtbu">original example</a>:</p>
@@ -172,37 +172,37 @@
 <li>We're using <code>isPending</code> to communicate the state transition progress to the user and to disable the
     button.</li>
 </ul>
-<p>As a result, clicking “Next” doesn't perform an immediate state transition to an “undesirable” loading state, but
+<p>As a result, clicking "Next" doesn't perform an immediate state transition to an "undesirable" loading state, but
     instead stays on the previous screen and communicates progress there.</p>
 <h3 id="where-does-the-update-happen">Where Does the Update Happen?</h3>
 <p>This wasn't very difficult to implement. However, if you start thinking about how this could possibly work, it might
     become a little mindbending. If we set the state, how come we don't see the result right away? <em>Where</em> is the
     next <code>&lt;ProfilePage&gt;</code> rendering?</p>
-<p>Clearly, both “versions” of <code>&lt;ProfilePage&gt;</code> exist at the same time. We know the old one exists
+<p>Clearly, both "versions" of <code>&lt;ProfilePage&gt;</code> exist at the same time. We know the old one exists
     because we see it on the screen and even display a progress indicator on it. And we know the new version also exists
     <em>somewhere</em>, because it's the one that we're waiting for!</p>
 <p><strong>But how can two versions of the same component exist at the same time?</strong></p>
 <p>This gets at the root of what Concurrent Mode is. We've <a
         href="/docs/concurrent-mode-intro.html#intentional-loading-sequences">previously said</a> it's a bit like React
-    working on state update on a “branch”. Another way we can conceptualize is that wrapping a state update in
-    <code>startTransition</code> begins rendering it <em>“in a different universe”</em>, much like in science fiction
-    movies. We don't “see” that universe directly – but we can get a signal from it that tells us something is happening
-    (<code>isPending</code>). When the update is ready, our “universes” merge back together, and we see the result on
+    working on state update on a "branch". Another way we can conceptualize is that wrapping a state update in
+    <code>startTransition</code> begins rendering it <em>"in a different universe"</em>, much like in science fiction
+    movies. We don't "see" that universe directly – but we can get a signal from it that tells us something is happening
+    (<code>isPending</code>). When the update is ready, our "universes" merge back together, and we see the result on
     the screen!</p>
 <p>Play a bit more with the <a href="https://codesandbox.io/s/jovial-lalande-26yep">demo</a>, and try to imagine it happening.</p>
 <p>Of course, two versions of the tree rendering <em>at the same time</em> is an illusion, just like the idea that all
     programs run on your computer at the same time is an illusion. An operating system switches between different
     applications very fast. Similarly, React can switch between the version of the tree you see on the screen and the
-    version that it's “preparing” to show next.</p>
+    version that it's "preparing" to show next.</p>
 <p>An API like <code>useTransition</code> lets you focus on the desired user experience, and not think about the
     mechanics of how it's implemented. Still, it can be a helpful metaphor to imagine that updates wrapped in
-    <code>startTransition</code> happen “on a branch” or “in a different world”.</p>
+    <code>startTransition</code> happen "on a branch" or "in a different world".</p>
 <h3 id="transitions-are-everywhere">Transitions Are Everywhere</h3>
 <p>As we learned from the <a href="/docs/concurrent-mode-suspense.html">Suspense walkthrough</a>, any component can
-    “suspend” any time if some data it needs is not ready yet. We can strategically place <code>&lt;Suspense&gt;</code>
+    "suspend" any time if some data it needs is not ready yet. We can strategically place <code>&lt;Suspense&gt;</code>
     boundaries in different parts of the tree to handle this, but it won't always be enough.</p>
 <p>Let's get back to our <a href="https://codesandbox.io/s/frosty-hermann-bztrp">first Suspense demo</a> where there was
-    just one profile. Currently, it fetches the data only once. We'll add a “Refresh” button to check for server
+    just one profile. Currently, it fetches the data only once. We'll add a "Refresh" button to check for server
     updates.</p>
 <p>Our first attempt might look like this:</p>
 <pre class="js{6-8,13-15}"><code>const initialResource = fetchUserAndPosts();
@@ -227,10 +227,10 @@ function ProfilePage() {
   );
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/boring-shadow-100tf">Try it on CodeSandbox</a></strong></p>
-<p>In this example, we start data fetching at the load <em>and</em> every time you press “Refresh”. We put the result of calling <code>fetchUserAndPosts()</code> into state so that components below can start reading the new data from the request we just kicked off.</p>
-<p>We can see in <a href="https://codesandbox.io/s/boring-shadow-100tf">this example</a> that pressing “Refresh” works.
+<p>In this example, we start data fetching at the load <em>and</em> every time you press "Refresh". We put the result of calling <code>fetchUserAndPosts()</code> into state so that components below can start reading the new data from the request we just kicked off.</p>
+<p>We can see in <a href="https://codesandbox.io/s/boring-shadow-100tf">this example</a> that pressing "Refresh" works.
     The <code>&lt;ProfileDetails&gt;</code> and <code>&lt;ProfileTimeline&gt;</code> components receive a new
-    <code>resource</code> prop that represents the fresh data, they “suspend” because we don't have a response yet, and
+    <code>resource</code> prop that represents the fresh data, they "suspend" because we don't have a response yet, and
     we see the fallbacks. When the response loads, we can see the updated posts (our fake API adds them every 3
     seconds).</p>
 <p>However, the experience feels really jarring. We were browsing a page, but it got replaced by a loading state right
@@ -265,8 +265,8 @@ function ProfilePage() {
   );
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/sleepy-field-mohzb">Try it on CodeSandbox</a></strong></p>
-<p>This feels a lot better! Clicking “Refresh” doesn't pull us away from the page we're browsing anymore. We see
-    something is loading “inline”, and when the data is ready, it's displayed.</p>
+<p>This feels a lot better! Clicking "Refresh" doesn't pull us away from the page we're browsing anymore. We see
+    something is loading "inline", and when the data is ready, it's displayed.</p>
 <h3 id="baking-transitions-into-the-design-system">Baking Transitions Into the Design System</h3>
 <p>We can now see that the need for <code>useTransition</code> is <em>very</em> common. Pretty much any button click or interaction that can lead to a component suspending needs to be wrapped in <code>useTransition</code> to avoid accidentally hiding something the user is interacting with.</p>
 <p>This can lead to a lot of repetitive code across components. This is why <strong>we generally recommend to bake <code>useTransition</code> into the <em>design system</em> components of your app</strong>. For example, we can extract the transition logic into our own <code>&lt;Button&gt;</code> component:</p>
@@ -338,13 +338,13 @@ function ProfilePage() {
     some parts of it are still loading, we call that a <strong>Skeleton</strong> state.</p>
 <p>Finally, there are two primary ways that lead us to the Skeleton state. We will illustrate the difference between them with a concrete example.</p>
 <h3 id="default-receded-skeleton-complete">Default: Receded → Skeleton → Complete</h3>
-<p>Open <a href="https://codesandbox.io/s/prod-grass-g1lh5">this example</a> and click “Open Profile”. You will see several visual states one by one:</p>
+<p>Open <a href="https://codesandbox.io/s/prod-grass-g1lh5">this example</a> and click "Open Profile". You will see several visual states one by one:</p>
 <ul>
 <li><strong>Receded</strong>: For a second, you will see the <code>&lt;h1&gt;Loading the app...&lt;/h1&gt;</code> fallback.</li>
 <li><strong>Skeleton:</strong> You will see the <code>&lt;ProfilePage&gt;</code> component with <code>&lt;h2&gt;Loading posts...&lt;/h2&gt;</code> inside.</li>
 <li><strong>Complete:</strong> You will see the <code>&lt;ProfilePage&gt;</code> component with no fallbacks inside. Everything was fetched.</li>
 </ul>
-<p>How do we separate the Receded and the Skeleton states? The difference between them is that the <strong>Receded</strong> state feels like “taking a step back” to the user, while the <strong>Skeleton</strong> state feels like “taking a step forward” in our progress to show more content.</p>
+<p>How do we separate the Receded and the Skeleton states? The difference between them is that the <strong>Receded</strong> state feels like "taking a step back" to the user, while the <strong>Skeleton</strong> state feels like "taking a step forward" in our progress to show more content.</p>
 <p>In this example, we started our journey on the <code>&lt;HomePage&gt;</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&lt;</span>Suspense fallback<span class="op">={</span>...<span class="op">}&gt;</span></a>
 <a class="sourceLine" id="cb13-2" title="2">  <span class="op">{</span><span class="co">/* previous screen */</span><span class="op">}</span></a>
@@ -383,8 +383,8 @@ function ProfilePage() {
     &lt;/Suspense&gt;
   &lt;/ProfilePage&gt;
 &lt;/Suspense&gt;</code></pre>
-<p>This is why when we click the button, it feels like we've “taken a step back”. The <code>&lt;Suspense&gt;</code>
-    boundary which was previously showing useful content (<code>&lt;HomePage /&gt;</code>) had to “recede” to showing
+<p>This is why when we click the button, it feels like we've "taken a step back". The <code>&lt;Suspense&gt;</code>
+    boundary which was previously showing useful content (<code>&lt;HomePage /&gt;</code>) had to "recede" to showing
     the fallback (<code>&lt;h1&gt;Loading the app...&lt;/h1&gt;</code>). We call that a <strong>Receded</strong> state.
 </p>
 <p>As we load more data, React will retry rendering, and <code>&lt;ProfileDetails&gt;</code> can render successfully.
@@ -402,9 +402,9 @@ function ProfilePage() {
   &lt;/ProfilePage&gt;
 &lt;/Suspense&gt;</code></pre>
 <p>Eventually, they load too, and we get to the <strong>Complete</strong> state.</p>
-<p>This scenario (Receded → Skeleton → Complete) is the default one. However, the Receded state is not very pleasant because it “hides” existing information. This is why React lets us opt into a different sequence (<strong>Pending</strong> → Skeleton → Complete) with <code>useTransition</code>.</p>
+<p>This scenario (Receded → Skeleton → Complete) is the default one. However, the Receded state is not very pleasant because it "hides" existing information. This is why React lets us opt into a different sequence (<strong>Pending</strong> → Skeleton → Complete) with <code>useTransition</code>.</p>
 <h3 id="preferred-pending-skeleton-complete">Preferred: Pending → Skeleton → Complete</h3>
-<p>When we <code>useTransition</code>, React will let us “stay” on the previous screen – and show a progress indicator there. We call that a <strong>Pending</strong> state. It feels much better than the Receded state because none of our existing content disappears, and the page stays interactive.</p>
+<p>When we <code>useTransition</code>, React will let us "stay" on the previous screen – and show a progress indicator there. We call that a <strong>Pending</strong> state. It feels much better than the Receded state because none of our existing content disappears, and the page stays interactive.</p>
 <p>You can compare these two examples to feel the difference:</p>
 <ul>
 <li>Default: <a href="https://codesandbox.io/s/prod-grass-g1lh5">Receded → Skeleton → Complete</a></li>
@@ -441,14 +441,14 @@ function ProfileTrivia({ resource }) {
   );
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/focused-mountain-uhkzg">Try it on CodeSandbox</a></strong></p>
-<p>If you press “Open Profile” now, you can tell something is wrong. It takes a whole seven seconds to make the
+<p>If you press "Open Profile" now, you can tell something is wrong. It takes a whole seven seconds to make the
     transition now! This is because our trivia API is too slow. Let's say we can't make the API faster. How can we
     improve the user experience with this constraint?</p>
 <p>If we don't want to stay in the Pending state for too long, our first instinct might be to set <code>timeoutMs</code>
     in <code>useTransition</code> to something smaller, like <code>3000</code>. You can try this <a
         href="https://codesandbox.io/s/practical-kowalevski-kpjg4">here</a>. This lets us escape the prolonged Pending
     state, but we still don't have anything useful to show!</p>
-<p>There is a simpler way to solve this. <strong>Instead of making the transition shorter, we can “disconnect” the slow component from the transition</strong> by wrapping it into <code>&lt;Suspense&gt;</code>:</p>
+<p>There is a simpler way to solve this. <strong>Instead of making the transition shorter, we can "disconnect" the slow component from the transition</strong> by wrapping it into <code>&lt;Suspense&gt;</code>:</p>
 <pre class="js{8,10}"><code>function ProfilePage({ resource }) {
   return (
     &lt;&gt;
@@ -467,16 +467,16 @@ function ProfileTrivia({ resource }) {
 <p><strong>If some feature isn't a vital part of the next screen, wrap it in <code>&lt;Suspense&gt;</code> and let it
         load lazily.</strong> This ensures we can show the rest of the content as soon as possible. Conversely, if a
     screen is <em>not worth showing</em> without some component, such as <code>&lt;ProfileDetails&gt;</code> in our
-    example, do <em>not</em> wrap it in <code>&lt;Suspense&gt;</code>. Then the transitions will “wait” for it to be
+    example, do <em>not</em> wrap it in <code>&lt;Suspense&gt;</code>. Then the transitions will "wait" for it to be
     ready.</p>
-<h3 id="suspense-reveal-train">Suspense Reveal “Train”</h3>
-<p>When we're already on the next screen, sometimes the data needed to “unlock” different <code>&lt;Suspense&gt;</code>
+<h3 id="suspense-reveal-train">Suspense Reveal "Train"</h3>
+<p>When we're already on the next screen, sometimes the data needed to "unlock" different <code>&lt;Suspense&gt;</code>
     boundaries arrives in quick succession. For example, two different responses might arrive after 1000ms and 1050ms,
     respectively. If you've already waited for a second, waiting another 50ms is not going to be perceptible. This is
-    why React reveals <code>&lt;Suspense&gt;</code> boundaries on a schedule, like a “train” that arrives periodically.
+    why React reveals <code>&lt;Suspense&gt;</code> boundaries on a schedule, like a "train" that arrives periodically.
     This trades a small delay for reducing the layout thrashing and the number of visual changes presented to the user.
 </p>
-<p>You can see a demo of this <a href="https://codesandbox.io/s/admiring-mendeleev-y54mk">here</a>. The “posts” and “fun facts” responses come within 100ms of each other. But React coalesces them and “reveals” their Suspense boundaries together.</p>
+<p>You can see a demo of this <a href="https://codesandbox.io/s/admiring-mendeleev-y54mk">here</a>. The "posts" and "fun facts" responses come within 100ms of each other. But React coalesces them and "reveals" their Suspense boundaries together.</p>
 <h3 id="delaying-a-pending-indicator">Delaying a Pending Indicator</h3>
 <p>Our <code>Button</code> component will immediately show the Pending state indicator on click:</p>
 <pre class="js{2,13}"><code>function Button({ children, onClick }) {
@@ -525,7 +525,7 @@ return (
     passed. This may not seem like much of an improvement when the API responses are slow. But compare how it feels <a
         href="https://codesandbox.io/s/thirsty-liskov-1ygph">before</a> and <a
         href="https://codesandbox.io/s/hardcore-http-s18xr">after</a> when the API call is fast. Even though the rest of
-    the code hasn't changed, suppressing a “too fast” loading state improves the perceived performance by not calling
+    the code hasn't changed, suppressing a "too fast" loading state improves the perceived performance by not calling
     attention to the delay.</p>
 <h3 id="recap">Recap</h3>
 <p>The most important things we learned so far are:</p>
@@ -541,11 +541,11 @@ return (
 <p>Transitions are probably the most common Concurrent Mode pattern you'll encounter, but there are a few more patterns
     you might find useful.</p>
 <h3 id="splitting-high-and-low-priority-state">Splitting High and Low Priority State</h3>
-<p>When you design React components, it is usually best to find the “minimal representation” of state. For example,
+<p>When you design React components, it is usually best to find the "minimal representation" of state. For example,
     instead of keeping <code>firstName</code>, <code>lastName</code>, and <code>fullName</code> in state, it's usually
     better keep only <code>firstName</code> and <code>lastName</code>, and then calculate <code>fullName</code> during
     rendering. This lets us avoid mistakes where we update one state but forget the other state.</p>
-<p>However, in Concurrent Mode there are cases where you might <em>want</em> to “duplicate” some data in different state variables. Consider this tiny translation app:</p>
+<p>However, in Concurrent Mode there are cases where you might <em>want</em> to "duplicate" some data in different state variables. Consider this tiny translation app:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">const</span> initialQuery <span class="op">=</span> <span class="st">&quot;Hello, world&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb23-2" title="2"><span class="kw">const</span> initialResource <span class="op">=</span> <span class="at">fetchTranslation</span>(initialQuery)<span class="op">;</span></a>
 <a class="sourceLine" id="cb23-3" title="3"></a>
@@ -612,8 +612,8 @@ Refer to the documentation for useTransition to learn how to implement this patt
 <p><strong><a href="https://codesandbox.io/s/zen-keldysh-rifos">Try it on CodeSandbox</a></strong></p>
 <p>Try typing into the input now. Something's wrong! The input is updating very slowly.</p>
 <p>We've fixed the first problem (suspending outside of a transition). But now because of the transition, our state
-    doesn't update immediately, and it can't “drive” a controlled input!</p>
-<p>The answer to this problem <strong>is to split the state in two parts:</strong> a “high priority” part that updates immediately, and a “low priority” part that may wait for a transition.</p>
+    doesn't update immediately, and it can't "drive" a controlled input!</p>
+<p>The answer to this problem <strong>is to split the state in two parts:</strong> a "high priority" part that updates immediately, and a "low priority" part that may wait for a transition.</p>
 <p>In our example, we already have two state variables. The input text is in <code>query</code>, and we read the translation from <code>resource</code>. We want changes to the <code>query</code> state to happen immediately, but changes to the <code>resource</code> (i.e. fetching a new translation) should trigger a transition.</p>
 <p>So the correct fix is to put <code>setQuery</code> (which doesn't suspend) <em>outside</em> the transition, but
     <code>setResource</code> (which will suspend) <em>inside</em> of it.</p>
@@ -629,7 +629,7 @@ Refer to the documentation for useTransition to learn how to implement this patt
   });
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/lively-smoke-fdf93">Try it on CodeSandbox</a></strong></p>
-<p>With this change, it works as expected. We can type into the input immediately, and the translation later “catches up” to what we have typed.</p>
+<p>With this change, it works as expected. We can type into the input immediately, and the translation later "catches up" to what we have typed.</p>
 <h3 id="deferring-a-value">Deferring a Value</h3>
 <p>By default, React always renders a consistent UI. Consider code like this:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb27-1" title="1"><span class="op">&lt;&gt;</span></a>
@@ -641,16 +641,16 @@ Refer to the documentation for useTransition to learn how to implement this patt
     changing together. You can't ever record a screen and find a frame where they would show values from different
     <code>user</code>s. (If you ever run into a case like this, file a bug!)</p>
 <p>This makes sense in the vast majority of situations. Inconsistent UI is confusing and can mislead users. (For
-    example, it would be terrible if a messenger's Send button and the conversation picker pane “disagreed” about which
+    example, it would be terrible if a messenger's Send button and the conversation picker pane "disagreed" about which
     thread is currently selected.)</p>
-<p>However, sometimes it might be helpful to intentionally introduce an inconsistency. We could do it manually by “splitting” the state like above, but React also offers a built-in Hook for this:</p>
+<p>However, sometimes it might be helpful to intentionally introduce an inconsistency. We could do it manually by "splitting" the state like above, but React also offers a built-in Hook for this:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="im">import</span> <span class="op">{</span> useDeferredValue <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb28-2" title="2"></a>
 <a class="sourceLine" id="cb28-3" title="3"><span class="kw">const</span> deferredValue <span class="op">=</span> <span class="at">useDeferredValue</span>(value<span class="op">,</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb28-4" title="4">  <span class="dt">timeoutMs</span><span class="op">:</span> <span class="dv">5000</span></a>
 <a class="sourceLine" id="cb28-5" title="5"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>To demonstrate this feature, we'll use <a href="https://codesandbox.io/s/musing-ramanujan-bgw2o">the profile switcher
-        example</a>. Click the “Next” button and notice how it takes 1 second to do a transition.</p>
+        example</a>. Click the "Next" button and notice how it takes 1 second to do a transition.</p>
 <p>Let's say that fetching the user details is very fast and only takes 300 milliseconds. Currently, we're waiting a
     whole second because we need both user details and posts to display a consistent profile page. But what if we want
     to show the details faster?</p>
@@ -685,14 +685,14 @@ function ProfileTimeline({ isStale, resource }) {
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/vigorous-keller-3ed2b">Try it on CodeSandbox</a></strong></p>
 <p>The tradeoff we're making here is that <code>&lt;ProfileTimeline&gt;</code> will be inconsistent with other
-    components and potentially show an older item. Click “Next” a few times, and you'll notice it. But thanks to that,
+    components and potentially show an older item. Click "Next" a few times, and you'll notice it. But thanks to that,
     we were able to cut down the transition time from 1000ms to 300ms.</p>
 <p>Whether or not it's an appropriate tradeoff depends on the situation. But it's a handy tool, especially when the
     content doesn't change noticeably between items, and the user might not even realize they were looking at a stale
     version for a second.</p>
 <p>It's worth noting that <code>useDeferredValue</code> is not <em>only</em> useful for data fetching. It also helps
     when an expensive component tree causes an interaction (e.g. typing in an input) to be sluggish. Just like we can
-    “defer” a value that takes too long to fetch (and show its old value despite other components updating), we can do
+    "defer" a value that takes too long to fetch (and show its old value despite other components updating), we can do
     this with trees that take too long to render.</p>
 <p>For example, consider a filterable list like this:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">function</span> <span class="at">App</span>() <span class="op">{</span></a>
@@ -743,7 +743,7 @@ function ProfileTimeline({ isStale, resource }) {
 <p>Now typing has a lot less stutter – although we pay for this by showing the results with a lag.</p>
 <p>How is this different from debouncing? Our example has a fixed artificial delay (3ms for every one of 80 items), so
     there is always a delay, no matter how fast our computer is. However, the <code>useDeferredValue</code> value only
-    “lags behind” if the rendering takes a while. There is no minimal lag imposed by React. With a more realistic
+    "lags behind" if the rendering takes a while. There is no minimal lag imposed by React. With a more realistic
     workload, you can expect the lag to adjust to the user's device. On fast machines, the lag would be smaller or
     non-existent, and on slow machines, it would be more noticeable. In both cases, the app would remain responsive.
     That's the advantage of this mechanism over debouncing or throttling, which always impose a minimal delay and can't
@@ -769,7 +769,7 @@ function ProfileTimeline({ isStale, resource }) {
   );
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/proud-tree-exg5t">Try it on CodeSandbox</a></strong></p>
-<p>The API call duration in this example is randomized. If you keep refreshing it, you will notice that sometimes the posts arrive first, and sometimes the “fun facts” arrive first.</p>
+<p>The API call duration in this example is randomized. If you keep refreshing it, you will notice that sometimes the posts arrive first, and sometimes the "fun facts" arrive first.</p>
 <p>This presents a problem. If the response for fun facts arrives first, we'll see the fun facts below the
     <code>&lt;h2&gt;Loading posts...&lt;/h2&gt;</code> fallback for posts. We might start reading them, but then the
     <em>posts</em> response will come back, and shift all the facts down. This is jarring.</p>
@@ -785,7 +785,7 @@ function ProfileTimeline({ isStale, resource }) {
 <p>Other approaches to this, such as composing Promises in a special way, are increasingly difficult to pull off when the loading states are located in different components down the tree.</p>
 <p>To solve this, we will import <code>SuspenseList</code>:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb34-1" title="1"><span class="im">import</span> <span class="op">{</span> SuspenseList <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a></code></pre></div>
-<p><code>&lt;SuspenseList&gt;</code> coordinates the “reveal order” of the closest <code>&lt;Suspense&gt;</code> nodes below it:</p>
+<p><code>&lt;SuspenseList&gt;</code> coordinates the "reveal order" of the closest <code>&lt;Suspense&gt;</code> nodes below it:</p>
 <pre class="js{3,11}"><code>function ProfilePage({ resource }) {
   return (
     &lt;SuspenseList revealOrder=&quot;forwards&quot;&gt;
@@ -800,7 +800,7 @@ function ProfileTimeline({ isStale, resource }) {
   );
 }</code></pre>
 <p><strong><a href="https://codesandbox.io/s/black-wind-byilt">Try it on CodeSandbox</a></strong></p>
-<p>The <code>revealOrder="forwards"</code> option means that the closest <code>&lt;Suspense&gt;</code> nodes inside this list <strong>will only “reveal” their content in the order they appear in the tree – even if the data for them arrives in a different order</strong>. <code>&lt;SuspenseList&gt;</code> has other interesting modes: try changing <code>"forwards"</code> to <code>"backwards"</code> or <code>"together"</code> and see what happens.</p>
+<p>The <code>revealOrder="forwards"</code> option means that the closest <code>&lt;Suspense&gt;</code> nodes inside this list <strong>will only "reveal" their content in the order they appear in the tree – even if the data for them arrives in a different order</strong>. <code>&lt;SuspenseList&gt;</code> has other interesting modes: try changing <code>"forwards"</code> to <code>"backwards"</code> or <code>"together"</code> and see what happens.</p>
 <p>You can control how many loading states are visible at once with the <code>tail</code> prop. If we specify
     <code>tail="collapsed"</code>, we'll see <em>at most one</em> fallback at a time. You can play with it <a
         href="https://codesandbox.io/s/adoring-almeida-1zzjh">here</a>.</p>

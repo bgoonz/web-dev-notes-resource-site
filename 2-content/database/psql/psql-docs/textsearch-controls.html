@@ -320,7 +320,7 @@ SELECT websearch_to_tsquery('english', '""" )( dummy \\ query &lt;-&gt;');
         taken into consideration.
        </p><p>
         This function requires lexeme positional information to perform
-        its calculation.  Therefore, it ignores any <span class="quote">“<span class="quote">stripped</span>”</span>
+        its calculation.  Therefore, it ignores any <span class="quote">"<span class="quote">stripped</span>"</span>
         lexemes in the <code class="type">tsvector</code>.  If there are no unstripped
         lexemes in the input, the result will be zero.  (See <a class="xref" href="textsearch-features.html#TEXTSEARCH-MANIPULATE-TSVECTOR" title="12.4.1. Manipulating Documents">Section 12.4.1</a> for more information
         about the <code class="function">strip</code> function and positional information
@@ -480,13 +480,13 @@ ts_headline([<span class="optional"> <em class="replaceable"><code>config</code>
        <code class="literal">StartSel</code>, <code class="literal">StopSel</code> (strings):
        the strings with which to delimit query words appearing in the
        document, to distinguish them from other excerpted words.  The
-       default values are <span class="quote">“<span class="quote"><code class="literal">&lt;b&gt;</code></span>”</span> and
-       <span class="quote">“<span class="quote"><code class="literal">&lt;/b&gt;</code></span>”</span>, which can be suitable
+       default values are <span class="quote">"<span class="quote"><code class="literal">&lt;b&gt;</code></span>"</span> and
+       <span class="quote">"<span class="quote"><code class="literal">&lt;/b&gt;</code></span>"</span>, which can be suitable
        for HTML output.
       </p></li><li class="listitem" style="list-style-type: disc"><p>
        <code class="literal">FragmentDelimiter</code> (string): When more than one
        fragment is displayed, the fragments will be separated by this string.
-       The default is <span class="quote">“<span class="quote"><code class="literal"> ... </code></span>”</span>.
+       The default is <span class="quote">"<span class="quote"><code class="literal"> ... </code></span>"</span>.
       </p></li></ul></div><p>
 
     These option names are recognized case-insensitively.
@@ -499,9 +499,9 @@ ts_headline([<span class="optional"> <em class="replaceable"><code>config</code>
     within the allowed headline length.
     In fragment-based headline generation, <code class="function">ts_headline</code>
     locates the query matches and splits each match
-    into <span class="quote">“<span class="quote">fragments</span>”</span> of no more than <code class="literal">MaxWords</code>
+    into <span class="quote">"<span class="quote">fragments</span>"</span> of no more than <code class="literal">MaxWords</code>
     words each, preferring fragments with more query words, and when
-    possible <span class="quote">“<span class="quote">stretching</span>”</span> fragments to include surrounding
+    possible <span class="quote">"<span class="quote">stretching</span>"</span> fragments to include surrounding
     words.  The fragment-based mode is thus more useful when the query
     matches span large sections of the document, or when it's desirable to
     display multiple matches.

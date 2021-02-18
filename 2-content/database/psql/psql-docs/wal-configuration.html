@@ -219,7 +219,7 @@
    will consist only of sessions that reach the point where they need to
    flush their commit records during the window in which the previous
    flush operation (if any) is occurring.  At higher client counts a
-   <span class="quote">“<span class="quote">gangway effect</span>”</span> tends to occur, so that the effects of group
+   <span class="quote">"<span class="quote">gangway effect</span>"</span> tends to occur, so that the effects of group
    commit become significant even when <code class="varname">commit_delay</code> is
    zero, and thus explicitly setting <code class="varname">commit_delay</code> tends
    to help less.  Setting <code class="varname">commit_delay</code> can only help

@@ -107,7 +107,7 @@
        <code class="command">LISTEN</code>, <code class="command">NOTIFY</code>
       </p></li></ul></div><p>
    </p><p>
-    In normal operation, <span class="quote">“<span class="quote">read-only</span>”</span> transactions are allowed to
+    In normal operation, <span class="quote">"<span class="quote">read-only</span>"</span> transactions are allowed to
     use <code class="command">LISTEN</code> and <code class="command">NOTIFY</code>,
     so Hot Standby sessions operate under slightly tighter
     restrictions than ordinary read-only sessions.  It is possible that some
@@ -155,7 +155,7 @@
          to that database on the standby.
         </p></li><li class="listitem"><p>
          Application of a vacuum cleanup record from WAL conflicts with
-         standby transactions whose snapshots can still <span class="quote">“<span class="quote">see</span>”</span> any of
+         standby transactions whose snapshots can still <span class="quote">"<span class="quote">see</span>"</span> any of
          the rows to be removed.
         </p></li><li class="listitem"><p>
          Application of a vacuum cleanup record from WAL conflicts with
@@ -194,7 +194,7 @@
     once it has taken longer than the relevant delay setting to apply any
     newly-received WAL data.  There are two parameters so that different delay
     values can be specified for the case of reading WAL data from an archive
-    (i.e., initial recovery from a base backup or <span class="quote">“<span class="quote">catching up</span>”</span> a
+    (i.e., initial recovery from a base backup or <span class="quote">"<span class="quote">catching up</span>"</span> a
     standby server that has fallen far behind) versus reading WAL data via
     streaming replication.
    </p><p>
@@ -228,7 +228,7 @@
     as a result of being unable to keep up with a heavy update load.
    </p><p>
     The most common reason for conflict between standby queries and WAL replay
-    is <span class="quote">“<span class="quote">early cleanup</span>”</span>.  Normally, <span class="productname">PostgreSQL</span> allows
+    is <span class="quote">"<span class="quote">early cleanup</span>"</span>.  Normally, <span class="productname">PostgreSQL</span> allows
     cleanup of old row versions when there are no transactions that need to
     see them to ensure correct visibility of data according to MVCC rules.
     However, this rule can only be applied for transactions executing on the

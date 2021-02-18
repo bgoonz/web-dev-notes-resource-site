@@ -242,18 +242,18 @@ CREATE TYPE complex (
   Another feature that's enabled by <acronym class="acronym">TOAST</acronym> support is the
   possibility of having an <em class="firstterm">expanded</em> in-memory data
   representation that is more convenient to work with than the format that
-  is stored on disk.  The regular or <span class="quote">“<span class="quote">flat</span>”</span> varlena storage format
+  is stored on disk.  The regular or <span class="quote">"<span class="quote">flat</span>"</span> varlena storage format
   is ultimately just a blob of bytes; it cannot for example contain
   pointers, since it may get copied to other locations in memory.
   For complex data types, the flat format may be quite expensive to work
-  with, so <span class="productname">PostgreSQL</span> provides a way to <span class="quote">“<span class="quote">expand</span>”</span>
+  with, so <span class="productname">PostgreSQL</span> provides a way to <span class="quote">"<span class="quote">expand</span>"</span>
   the flat format into a representation that is more suited to computation,
   and then pass that format in-memory between functions of the data type.
  </p><p>
   To use expanded storage, a data type must define an expanded format that
   follows the rules given in <code class="filename">src/include/utils/expandeddatum.h</code>,
-  and provide functions to <span class="quote">“<span class="quote">expand</span>”</span> a flat varlena value into
-  expanded format and <span class="quote">“<span class="quote">flatten</span>”</span> the expanded format back to the
+  and provide functions to <span class="quote">"<span class="quote">expand</span>"</span> a flat varlena value into
+  expanded format and <span class="quote">"<span class="quote">flatten</span>"</span> the expanded format back to the
   regular varlena representation.  Then ensure that all C functions for
   the data type can accept either representation, possibly by converting
   one into the other immediately upon receipt.  This does not require fixing
@@ -283,7 +283,7 @@ CREATE TYPE complex (
  </p><p>
   The <acronym class="acronym">TOAST</acronym> infrastructure not only allows regular varlena
   values to be distinguished from expanded values, but also
-  distinguishes <span class="quote">“<span class="quote">read-write</span>”</span> and <span class="quote">“<span class="quote">read-only</span>”</span> pointers to
+  distinguishes <span class="quote">"<span class="quote">read-write</span>"</span> and <span class="quote">"<span class="quote">read-only</span>"</span> pointers to
   expanded values.  C functions that only need to examine an expanded
   value, or will only change it in safe and non-semantically-visible ways,
   need not care which type of pointer they receive.  C functions that

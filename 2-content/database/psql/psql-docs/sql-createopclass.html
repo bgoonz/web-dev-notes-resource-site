@@ -10,7 +10,7 @@ CREATE OPERATOR CLASS <em class="replaceable"><code>name</code></em> [ DEFAULT ]
    <code class="command">CREATE OPERATOR CLASS</code> creates a new operator class.
    An operator class defines how a particular data type can be used with
    an index.  The operator class specifies that certain operators will fill
-   particular roles or <span class="quote">“<span class="quote">strategies</span>”</span> for this data type and this
+   particular roles or <span class="quote">"<span class="quote">strategies</span>"</span> for this data type and this
    index method.  The operator class also specifies the support functions to
    be used by
    the index method when the operator class is selected for an
@@ -120,7 +120,7 @@ CREATE OPERATOR CLASS <em class="replaceable"><code>name</code></em> [ DEFAULT ]
   </p><p>
    Before <span class="productname">PostgreSQL</span> 8.4, the <code class="literal">OPERATOR</code>
    clause could include a <code class="literal">RECHECK</code> option.  This is no longer
-   supported because whether an index operator is <span class="quote">“<span class="quote">lossy</span>”</span> is now
+   supported because whether an index operator is <span class="quote">"<span class="quote">lossy</span>"</span> is now
    determined on-the-fly at run time.  This allows efficient handling of
    cases where an operator might or might not be lossy.
   </p></div><div class="refsect1" id="id-1.9.3.73.8"><h2>Examples</h2><p>

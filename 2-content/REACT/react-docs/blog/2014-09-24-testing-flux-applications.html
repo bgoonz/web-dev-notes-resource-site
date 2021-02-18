@@ -63,8 +63,8 @@
     property, and it allows us to examine how the method is being called during the test. A chronologically ordered list
     of calls to <code>register()</code> is available with the <code>calls</code> property of <code>mock</code>, and each
     of these calls has a list of the arguments that were used in each method call.</p>
-<p>So in this code, we are really saying, “Give me a reference to the first argument of the first call to MyDispatcher's
-    <code>register()</code> method.” That first argument is the store's callback, so now we have all we need to start
+<p>So in this code, we are really saying, "Give me a reference to the first argument of the first call to MyDispatcher's
+    <code>register()</code> method." That first argument is the store's callback, so now we have all we need to start
     testing. But first, we can save ourselves some semicolons and roll all of this into a single line:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1">callback <span class="op">=</span> <span class="va">MyDispatcher</span>.<span class="va">register</span>.<span class="va">mock</span>.<span class="at">calls</span>[<span class="dv">0</span>][<span class="dv">0</span>]<span class="op">;</span></a></code></pre></div>
 <p>We can invoke that callback whenever we like, independent of our application's dispatcher or action creators. We
@@ -179,7 +179,7 @@
     creating unit tests. We want to be able to write tests that read like a specification for our application's
     behavior, and when application logic slips into our view layer, this becomes more difficult.</p>
 <p>For example, when a user has marked each of their to-do items as complete, the TodoMVC specification dictates that we
-    should also change the status of the “Mark all as complete” checkbox automatically. To create that logic, we might
+    should also change the status of the "Mark all as complete" checkbox automatically. To create that logic, we might
     be tempted to write code like this in our MainSection's <code>render()</code> method:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">var</span> allTodos <span class="op">=</span> <span class="kw">this</span>.<span class="va">props</span>.<span class="at">allTodos</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb8-2" title="2"><span class="kw">var</span> allChecked <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></a>

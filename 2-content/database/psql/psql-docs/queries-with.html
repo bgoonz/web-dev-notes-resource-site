@@ -135,7 +135,7 @@ SELECT * FROM search_graph;
 </pre><p>
 
    This query will loop if the <code class="structfield">link</code> relationships contain
-   cycles.  Because we require a <span class="quote">“<span class="quote">depth</span>”</span> output, just changing
+   cycles.  Because we require a <span class="quote">"<span class="quote">depth</span>"</span> output, just changing
    <code class="literal">UNION ALL</code> to <code class="literal">UNION</code> would not eliminate the looping.
    Instead we need to recognize whether we have reached the same row again
    while following a particular path of links.  We add two columns
@@ -158,7 +158,7 @@ SELECT * FROM search_graph;
 </pre><p>
 
    Aside from preventing cycles, the array value is often useful in its own
-   right as representing the <span class="quote">“<span class="quote">path</span>”</span> taken to reach any particular row.
+   right as representing the <span class="quote">"<span class="quote">path</span>"</span> taken to reach any particular row.
   </p><p>
    In the general case where more than one field needs to be checked to
    recognize a cycle, use an array of rows.  For example, if we needed to
@@ -187,7 +187,7 @@ SELECT * FROM search_graph;
     The recursive query evaluation algorithm produces its output in
     breadth-first search order.  You can display the results in depth-first
     search order by making the outer query <code class="literal">ORDER BY</code> a
-    <span class="quote">“<span class="quote">path</span>”</span> column constructed in this way.
+    <span class="quote">"<span class="quote">path</span>"</span> column constructed in this way.
    </p></div><p>
    A helpful trick for testing queries
    when you are not certain if they might loop is to place a <code class="literal">LIMIT</code>
@@ -383,7 +383,7 @@ DELETE FROM parts
     statements in <code class="literal">WITH</code>, the order in which the specified updates
     actually happen is unpredictable.  All the statements are executed with
     the same <em class="firstterm">snapshot</em> (see <a class="xref" href="mvcc.html" title="Chapter 13. Concurrency Control">Chapter 13</a>), so they
-    cannot <span class="quote">“<span class="quote">see</span>”</span> one another's effects on the target tables.  This
+    cannot <span class="quote">"<span class="quote">see</span>"</span> one another's effects on the target tables.  This
     alleviates the effects of the unpredictability of the actual order of row
     updates, and means that <code class="literal">RETURNING</code> data is the only way to
     communicate changes between different <code class="literal">WITH</code> sub-statements and

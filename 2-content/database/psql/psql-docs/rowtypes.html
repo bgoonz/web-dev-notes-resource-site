@@ -154,7 +154,7 @@ SELECT (my_func(...)).field FROM ...
 
   Without the extra parentheses, this will generate a syntax error.
  </p><p>
-  The special field name <code class="literal">*</code> means <span class="quote">“<span class="quote">all fields</span>”</span>, as
+  The special field name <code class="literal">*</code> means <span class="quote">"<span class="quote">all fields</span>"</span>, as
   further explained in <a class="xref" href="rowtypes.html#ROWTYPES-USAGE" title="8.16.5. Using Composite Types in Queries">Section 8.16.5</a>.
  </p></div><div class="sect2" id="id-1.5.7.24.8"><div class="titlepage"><div><div><h3 class="title">8.16.4. Modifying Composite Types</h3></div></div></div><p>
   Here are some examples of the proper syntax for inserting and updating
@@ -274,7 +274,7 @@ SELECT m.* FROM some_table, LATERAL myfunc(x) AS m;
    a <a class="link" href="sql-expressions.html#SQL-SYNTAX-ROW-CONSTRUCTORS" title="4.2.13. Row Constructors">row constructor</a>.
    In all other contexts (including when nested inside one of those
    constructs), attaching <code class="literal">.*</code> to a composite value does not
-   change the value, since it means <span class="quote">“<span class="quote">all columns</span>”</span> and so the
+   change the value, since it means <span class="quote">"<span class="quote">all columns</span>"</span> and so the
    same composite value is produced again.  For example,
    if <code class="function">somefunc()</code> accepts a composite-valued argument,
    these queries are the same:
@@ -340,7 +340,7 @@ SELECT c.somefunc FROM inventory_item c;
   </p><p>
    This equivalence between functional notation and field notation
    makes it possible to use functions on composite types to implement
-   <span class="quote">“<span class="quote">computed fields</span>”</span>.
+   <span class="quote">"<span class="quote">computed fields</span>"</span>.
    <a id="id-1.5.7.24.9.10.2" class="indexterm"></a>
    <a id="id-1.5.7.24.9.10.3" class="indexterm"></a>
    An application using the last query above wouldn't need to be directly

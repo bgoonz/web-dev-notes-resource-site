@@ -163,7 +163,7 @@ SELECT '{"reading": 1.230e-5}'::json, '{"reading": 1.230e-5}'::jsonb;
    have a somewhat fixed structure.  The structure is typically
    unenforced (though enforcing some business rules declaratively is
    possible), but having a predictable structure makes it easier to write
-   queries that usefully summarize a set of <span class="quote">“<span class="quote">documents</span>”</span> (datums)
+   queries that usefully summarize a set of <span class="quote">"<span class="quote">documents</span>"</span> (datums)
    in a table.
   </p><p>
    JSON data is subject to the same concurrency-control
@@ -284,7 +284,7 @@ SELECT doc-&gt;'site_name' FROM websites
     GIN indexes can be used to efficiently search for
     keys or key/value pairs occurring within a large number of
     <code class="type">jsonb</code> documents (datums).
-    Two GIN <span class="quote">“<span class="quote">operator classes</span>”</span> are provided, offering different
+    Two GIN <span class="quote">"<span class="quote">operator classes</span>"</span> are provided, offering different
     performance and flexibility trade-offs.
   </p><p>
     The default GIN operator class for <code class="type">jsonb</code> supports queries with
@@ -625,7 +625,7 @@ SELECT jdoc-&gt;'guid', jdoc-&gt;'name' FROM api WHERE jdoc @&gt; '{"tags": ["qu
         Wildcard array element accessor that returns all array elements.
        </p>
       </td></tr></tbody></table></div></div><br class="table-break" /></div><div class="footnotes"><br /><hr style="width:100; text-align:left;margin-left: 0" /><div id="ftn.id-1.5.7.22.18.9.3" class="footnote"><p><a href="#id-1.5.7.22.18.9.3" class="para"><sup class="para">[6] </sup></a>
-      For this purpose, the term <span class="quote">“<span class="quote">value</span>”</span> includes array elements,
+      For this purpose, the term <span class="quote">"<span class="quote">value</span>"</span> includes array elements,
       though JSON terminology sometimes considers array elements distinct
       from values within objects.
      </p></div></div></div><div xmlns="http://www.w3.org/TR/xhtml1/transitional" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="datatype-xml.html" title="8.13. XML Type">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="datatype.html" title="Chapter 8. Data Types">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="arrays.html" title="8.15. Arrays">Next</a></td></tr><tr><td width="40%" align="left" valign="top">8.13. <acronym xmlns="http://www.w3.org/1999/xhtml" class="acronym">XML</acronym> Type </td><td width="20%" align="center"><a accesskey="h" href="index.html" title="PostgreSQL 12.5 Documentation">Home</a></td><td width="40%" align="right" valign="top"> 8.15. Arrays</td></tr></table></div></body></html>

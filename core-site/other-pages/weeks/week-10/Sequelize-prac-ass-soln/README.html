@@ -2,14 +2,14 @@
 <p>This is a practice assessment for using Sequelize.</p>
 <p>There is a picture of the data model in the images directory that you can use to refer to.</p>
 <p>The tests will check that models are correctly named by making assumptions about how they're used. Remember: <em>Models are capitalized singular nouns </em>Tables are capitalized plural nouns</p>
-<p>After each of the “modify migration file” or “modify seed data file” steps, you may want to run the associated Sequelize CLI commands, if applicable, to make sure that tables and data are what you expect them to be. When you type your commands on the command line, it should use the “development” database that you'll create.</p>
+<p>After each of the "modify migration file" or "modify seed data file" steps, you may want to run the associated Sequelize CLI commands, if applicable, to make sure that tables and data are what you expect them to be. When you type your commands on the command line, it should use the "development" database that you'll create.</p>
 <p>The tests will expect that you have created seeder files to insert the provided data. Before tests, it will run the equivalence of, in order: <em>db:seed:undo:all </em>db:migrate:undo:all <em>db:migrate </em>db:seed:all</p>
-<p>You must run the tests with “npm test”. It sets the proper environment variable for using the test database environment. The tests will use the “test” database that you will create.</p>
+<p>You must run the tests with "npm test". It sets the proper environment variable for using the test database environment. The tests will use the "test" database that you will create.</p>
 <p>Step 1: Set-up</p>
 <p>Using npm, install <em>sequelize </em>sequelize-cli *pg</p>
-<p>Create a database user named “enrollment_app” with password “86kRVBVnx92Fn5wG”.</p>
-<p>Create a database named “enrollment_development” with the owner “enrollment_app”. You can use this app during development to mess around with your model.</p>
-<p>Create a database named “enrollment_test” with the owner “enrollment_app”. This is the database that the mocha tests will use.</p>
+<p>Create a database user named "enrollment_app" with password "86kRVBVnx92Fn5wG".</p>
+<p>Create a database named "enrollment_development" with the owner "enrollment_app". You can use this app during development to mess around with your model.</p>
+<p>Create a database named "enrollment_test" with the owner "enrollment_app". This is the database that the mocha tests will use.</p>
 <p>Step 2: Person Model</p>
 <p>Use the Sequelize CLI to initialize your project. Begin by generating a Person model that has: <em>a firstName attribute that contains a string up to 50 characters long </em>a lastName attribute that contains a string up to 50 characters long *an email attribute that contains a string up to 255 characters long</p>
 <p>Update the migration file to make the associated columns for those properties non-nullable.</p>
@@ -53,7 +53,7 @@
 <p>A course belongs to a campus. Configure the Course model to belong to a Campus.</p>
 <p>A course belongs to a department. Configure the Course model to belong to a Department.</p>
 <p>Step 9: Queries</p>
-<p>Time to write some queries! Inside the “queries” directory, you will find a file called personLookup.js.</p>
+<p>Time to write some queries! Inside the "queries" directory, you will find a file called personLookup.js.</p>
 <p>Inside this file are three query functions, that will fetch a person (or people) in a variety of ways. Complete each query in order to get the final tests to pass.</p>
 <p>Step 10: Practice again!</p>
 <p>The tests should fully pass, now. Take a break and do another round of the practice assessment.</p>

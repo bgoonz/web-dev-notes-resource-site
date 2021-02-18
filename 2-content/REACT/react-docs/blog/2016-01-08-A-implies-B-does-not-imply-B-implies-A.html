@@ -6,10 +6,10 @@
   <title>Document</title>
 </head>
 <body>;
-<p>The documentation for <code>componentWillReceiveProps</code> states that <code>componentWillReceiveProps</code> will be invoked when the props change as the result of a rerender. Some people assume this means “if <code>componentWillReceiveProps</code> is called, then the props must have changed”, but that conclusion is logically incorrect.</p>
+<p>The documentation for <code>componentWillReceiveProps</code> states that <code>componentWillReceiveProps</code> will be invoked when the props change as the result of a rerender. Some people assume this means "if <code>componentWillReceiveProps</code> is called, then the props must have changed", but that conclusion is logically incorrect.</p>
 <p>The guiding principle is one of my favorites from formal logic/mathematics: &gt; A implies B does not imply B implies A</p>
-<p>Example: “If I eat moldy food, then I will get sick” does not imply “if I am sick, then I must have eaten moldy
-    food”. There are many other reasons I could be feeling sick. For instance, maybe the flu is circulating around the
+<p>Example: "If I eat moldy food, then I will get sick" does not imply "if I am sick, then I must have eaten moldy
+    food". There are many other reasons I could be feeling sick. For instance, maybe the flu is circulating around the
     office. Similarly, there are many reasons that <code>componentWillReceiveProps</code> might get called, even if the
     props didn't change.</p>
 <p>If you don't believe me, call <code>ReactDOM.render()</code> three times with the exact same props, and try to
@@ -29,8 +29,8 @@
 <a class="sourceLine" id="cb1-13" title="13"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>Component data<span class="op">={</span>mydata<span class="op">}</span> /&gt;<span class="op">,</span> container)<span class="op">;</span></a>
 <a class="sourceLine" id="cb1-14" title="14"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>Component data<span class="op">={</span>mydata<span class="op">}</span> /&gt;<span class="op">,</span> container)<span class="op">;</span></a>
 <a class="sourceLine" id="cb1-15" title="15"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>Component data<span class="op">={</span>mydata<span class="op">}</span> /&gt;<span class="op">,</span> container)<span class="op">;</span></a></code></pre></div>
-<p>In this case, the answer is “2”. React calls <code>componentWillReceiveProps</code> twice (once for each of the two
-    updates). Both times, the value of “drinks” is printed (ie. the props didn't change).</p>
+<p>In this case, the answer is "2". React calls <code>componentWillReceiveProps</code> twice (once for each of the two
+    updates). Both times, the value of "drinks" is printed (ie. the props didn't change).</p>
 <p>To understand why, we need to think about what <em>could</em> have happened. The data <em>could</em> have changed between the initial render and the two subsequent updates, if the code had performed a mutation like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">var</span> mydata <span class="op">=</span> <span class="op">{</span><span class="dt">bar</span><span class="op">:</span> <span class="st">&#39;drinks&#39;</span><span class="op">};</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="va">ReactDOM</span>.<span class="at">render</span>(<span class="op">&lt;</span>Component data<span class="op">={</span>mydata<span class="op">}</span> /&gt;<span class="op">,</span> container)<span class="op">;</span></a>

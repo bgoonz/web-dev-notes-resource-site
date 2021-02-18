@@ -77,7 +77,7 @@ React is only one-piece of your web application stack. [Mark Lussier](https://gi
 
 React is often compared with Angular. [Pete Hunt](http://skulbuny.com/2013/10/31/react-vs-angular/) wrote an opinionated post on the subject.
 
-> First of all I think it's important to evaluate technologies on objective rather than subjective features. “It feels nicer” or “it's cleaner” aren't valid reasons: performance, modularity, community size and ease of testing / integration with other tools are.
+> First of all I think it's important to evaluate technologies on objective rather than subjective features. "It feels nicer" or "it's cleaner" aren't valid reasons: performance, modularity, community size and ease of testing / integration with other tools are.
 >
 > I've done a lot of work benchmarking, building apps, and reading the code of Angular to try to come up with a reasonable comparison between their ways of doing things.
 >

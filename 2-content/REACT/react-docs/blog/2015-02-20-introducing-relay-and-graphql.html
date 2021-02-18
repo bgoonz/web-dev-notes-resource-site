@@ -31,7 +31,7 @@
     it in isolation; it's not necessary to consider the context where the component was rendered in order to understand
     it. Components can be moved anywhere in a render hierarchy without having to apply a cascade of modifications to
     parent components or to the server code which prepares the data payload.</p>
-<p>Co-location leads developers to fall into the “pit of success”, because they get exactly the data they asked for and
+<p>Co-location leads developers to fall into the "pit of success", because they get exactly the data they asked for and
     the data they asked for is explicitly defined right next to where it is used. This means that performance becomes
     the default (it becomes much harder to accidentally over-fetch), and components are more robust (under-fetching is
     also less likely for the same reason, so components won't try to render missing data and blow up at runtime).</p>
@@ -43,7 +43,7 @@
 <p>By handling all data-fetching via a single abstraction, we're able to handle a bunch of things that would otherwise
     have to be dealt with repeatedly and pervasively across the application:</p>
 <ul>
-<li><strong>Performance:</strong> All queries flow through the framework code, where things that would otherwise be inefficient, repeated query patterns get automatically collapsed and batched into efficient, minimal queries. Likewise, the framework knows which data have been previously requested, or for which requests are currently “in flight”, so queries can be automatically de-duplicated and the minimal queries can be produced.</li>
+<li><strong>Performance:</strong> All queries flow through the framework code, where things that would otherwise be inefficient, repeated query patterns get automatically collapsed and batched into efficient, minimal queries. Likewise, the framework knows which data have been previously requested, or for which requests are currently "in flight", so queries can be automatically de-duplicated and the minimal queries can be produced.</li>
 <li><strong>Subscriptions:</strong> All data flows into a single store, and all reads from the store are via the framework. This means the framework knows which components care about which data and which should be re-rendered when data changes; components never have to set up individual subscriptions.</li>
 <li><strong>Common patterns:</strong> We can make common patterns easy. Pagination is the example that <a href="https://twitter.com/jingc">Jing</a> gave at the conference: if you have 10 records initially, getting the next page just means declaring you want 15 records in total, and the framework automatically constructs the minimal query to grab the delta between what you have and what you need, requests it, and re-renders your view when the data become available.</li>
 <li><strong>Simplified server implementation:</strong> Rather than having a proliferation of end-points (per action, per route), a single GraphQL endpoint can serve as a facade for any number of underlying resources.</li>
@@ -52,7 +52,7 @@
     you provide some parameters that describe the change to be made (eg. attaching a comment to a record) and a query
     that specifies the data you'll need to update your view of the world after the mutation completes (eg. the comment
     count on the record), and the data flows through the system using the normal flow. We can do an immediate
-    “optimistic” update on the client (ie. update the view under the assumption that the write will succeed), and
+    "optimistic" update on the client (ie. update the view under the assumption that the write will succeed), and
     finally commit it, retry it or roll it back in the event of an error when the server payload comes back.</li>
 </ul>
 <h2 id="how-does-it-relate-to-flux">How does it relate to Flux?</h2>

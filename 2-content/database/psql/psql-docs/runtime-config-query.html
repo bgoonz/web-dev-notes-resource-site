@@ -437,7 +437,7 @@ SELECT * FROM parent WHERE key = 2400;
       </span></dt><dd><p>
         Sets the planner's estimate of the fraction of a cursor's rows that
         will be retrieved.  The default is 0.1.  Smaller values of this
-        setting bias the planner towards using <span class="quote">“<span class="quote">fast start</span>”</span> plans
+        setting bias the planner towards using <span class="quote">"<span class="quote">fast start</span>"</span> plans
         for cursors, which will retrieve the first few rows quickly while
         perhaps taking a long time to fetch all rows.  Larger values
         put more emphasis on the total estimated time.  At the maximum

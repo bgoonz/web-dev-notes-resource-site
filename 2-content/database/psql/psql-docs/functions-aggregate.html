@@ -306,16 +306,16 @@ SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
        <code class="type">double precision</code>
       </td><td>
        <code class="type">double precision</code>
-      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>X</code></em>^2) - sum(<em class="replaceable"><code>X</code></em>)^2/<em class="replaceable"><code>N</code></em></code> (<span class="quote">“<span class="quote">sum of
-      squares</span>”</span> of the independent variable)</td></tr><tr><td>
+      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>X</code></em>^2) - sum(<em class="replaceable"><code>X</code></em>)^2/<em class="replaceable"><code>N</code></em></code> (<span class="quote">"<span class="quote">sum of
+      squares</span>"</span> of the independent variable)</td></tr><tr><td>
        <a id="id-1.5.8.25.13.2.2.11.1.1" class="indexterm"></a>
        <code class="function">regr_sxy(<em class="replaceable"><code>Y</code></em>, <em class="replaceable"><code>X</code></em>)</code>
       </td><td>
        <code class="type">double precision</code>
       </td><td>
        <code class="type">double precision</code>
-      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>X</code></em>*<em class="replaceable"><code>Y</code></em>) - sum(<em class="replaceable"><code>X</code></em>) * sum(<em class="replaceable"><code>Y</code></em>)/<em class="replaceable"><code>N</code></em></code> (<span class="quote">“<span class="quote">sum of
-      products</span>”</span> of independent times dependent
+      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>X</code></em>*<em class="replaceable"><code>Y</code></em>) - sum(<em class="replaceable"><code>X</code></em>) * sum(<em class="replaceable"><code>Y</code></em>)/<em class="replaceable"><code>N</code></em></code> (<span class="quote">"<span class="quote">sum of
+      products</span>"</span> of independent times dependent
       variable)</td></tr><tr><td>
        <a id="id-1.5.8.25.13.2.2.12.1.1" class="indexterm"></a>
        <code class="function">regr_syy(<em class="replaceable"><code>Y</code></em>, <em class="replaceable"><code>X</code></em>)</code>
@@ -323,8 +323,8 @@ SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
        <code class="type">double precision</code>
       </td><td>
        <code class="type">double precision</code>
-      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>Y</code></em>^2) - sum(<em class="replaceable"><code>Y</code></em>)^2/<em class="replaceable"><code>N</code></em></code> (<span class="quote">“<span class="quote">sum of
-      squares</span>”</span> of the dependent variable)</td></tr><tr><td>
+      </td><td>Yes</td><td><code class="literal">sum(<em class="replaceable"><code>Y</code></em>^2) - sum(<em class="replaceable"><code>Y</code></em>)^2/<em class="replaceable"><code>N</code></em></code> (<span class="quote">"<span class="quote">sum of
+      squares</span>"</span> of the dependent variable)</td></tr><tr><td>
        <a id="id-1.5.8.25.13.2.2.13.1.1" class="indexterm"></a>
        <a id="id-1.5.8.25.13.2.2.13.1.2" class="indexterm"></a>
        <code class="function">stddev(<em class="replaceable"><code>expression</code></em>)</code>
@@ -392,8 +392,8 @@ SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
       </td><td>Yes</td><td>sample variance of the input values (square of the sample standard deviation)</td></tr></tbody></table></div></div><br class="table-break" /><p>
    <a class="xref" href="functions-aggregate.html#FUNCTIONS-ORDEREDSET-TABLE" title="Table 9.57. Ordered-Set Aggregate Functions">Table 9.57</a> shows some
    aggregate functions that use the <em class="firstterm">ordered-set aggregate</em>
-   syntax.  These functions are sometimes referred to as <span class="quote">“<span class="quote">inverse
-   distribution</span>”</span> functions.
+   syntax.  These functions are sometimes referred to as <span class="quote">"<span class="quote">inverse
+   distribution</span>"</span> functions.
   </p><a id="id-1.5.8.25.15" class="indexterm"></a><a id="id-1.5.8.25.16" class="indexterm"></a><div class="table" id="FUNCTIONS-ORDEREDSET-TABLE"><p class="title"><strong>Table 9.57. Ordered-Set Aggregate Functions</strong></p><div class="table-contents"><table class="table" summary="Ordered-Set Aggregate Functions" border="1"><colgroup><col /><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Function</th><th>Direct Argument Type(s)</th><th>Aggregated Argument Type(s)</th><th>Return Type</th><th>Partial Mode</th><th>Description</th></tr></thead><tbody><tr><td>
        <a id="id-1.5.8.25.17.2.2.1.1.1" class="indexterm"></a>
        <code class="function">mode() WITHIN GROUP (ORDER BY <em class="replaceable"><code>sort_expression</code></em>)</code>
@@ -466,7 +466,7 @@ SELECT xmlagg(x) FROM (SELECT x FROM test ORDER BY y DESC) AS tab;
    window function of the same name defined in
    <a class="xref" href="functions-window.html" title="9.21. Window Functions">Section 9.21</a>.  In each case, the aggregate result
    is the value that the associated window function would have
-   returned for the <span class="quote">“<span class="quote">hypothetical</span>”</span> row constructed from
+   returned for the <span class="quote">"<span class="quote">hypothetical</span>"</span> row constructed from
    <em class="replaceable"><code>args</code></em>, if such a row had been added to the sorted
    group of rows computed from the <em class="replaceable"><code>sorted_args</code></em>.
   </p><div class="table" id="FUNCTIONS-HYPOTHETICAL-TABLE"><p class="title"><strong>Table 9.58. Hypothetical-Set Aggregate Functions</strong></p><div class="table-contents"><table class="table" summary="Hypothetical-Set Aggregate Functions" border="1"><colgroup><col /><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Function</th><th>Direct Argument Type(s)</th><th>Aggregated Argument Type(s)</th><th>Return Type</th><th>Partial Mode</th><th>Description</th></tr></thead><tbody><tr><td>

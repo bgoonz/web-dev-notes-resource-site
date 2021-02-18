@@ -35,8 +35,8 @@
     <p>Some tips:</p>
     <ul>
         <li>Don’t use the same name as a core Node module.</li>
-        <li>Don’t put “js” or “node” in the name. It’s assumed that it’s js, since you’re writing a package.json file,
-            and you can specify the engine using the “engines” field. (See below.)</li>
+        <li>Don’t put "js" or "node" in the name. It’s assumed that it’s js, since you’re writing a package.json file,
+            and you can specify the engine using the "engines" field. (See below.)</li>
         <li>The name will probably be passed as an argument to require(), so it should be something short, but also
             reasonably descriptive.</li>
         <li>You may want to check the npm registry to see if there’s something by that name already, before you get too
@@ -75,7 +75,7 @@
 <a class="sourceLine" id="cb2-3" title="3"><span class="fu">}</span></a></code></pre>
     </div>
     <p>You can specify either one or both values. If you want to provide only a url, you can specify the value for
-        “bugs” as a simple string instead of an object.</p>
+        "bugs" as a simple string instead of an object.</p>
     <p>If a url is provided, it will be used by the <code>npm bugs</code> command.</p>
     <h3 id="license">license</h3>
     <p>You should specify a license for your package so that people know how they are permitted to use it, and any
@@ -102,7 +102,7 @@
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb5-1" title="1"><span class="fu">{</span> <span class="dt">&quot;license&quot;</span> <span class="fu">:</span> <span class="st">&quot;SEE LICENSE IN &lt;filename&gt;&quot;</span> <span class="fu">}</span></a></code></pre>
     </div>
     <p>Then include a file named <code>&lt;filename&gt;</code> at the top level of the package.</p>
-    <p>Some old packages used license objects or a “licenses” property containing an array of license objects:</p>
+    <p>Some old packages used license objects or a "licenses" property containing an array of license objects:</p>
     <div class="sourceCode" id="cb6">
         <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb6-1" title="1"><span class="er">//</span> <span class="er">Not</span> <span class="er">valid</span> <span class="er">metadata</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="fu">{</span> <span class="dt">&quot;license&quot;</span> <span class="fu">:</span></a>
@@ -138,8 +138,8 @@
     </div>
     <p>Consider also setting <code>"private": true</code> to prevent accidental publication.</p>
     <h3 id="people-fields-author-contributors">people fields: author, contributors</h3>
-    <p>The “author” is one person. “contributors” is an array of people. A “person” is an object with a “name” field and
-        optionally “url” and “email”, like this:</p>
+    <p>The "author" is one person. "contributors" is an array of people. A "person" is an object with a "name" field and
+        optionally "url" and "email", like this:</p>
     <div class="sourceCode" id="cb9">
         <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb9-1" title="1"><span class="fu">{</span> <span class="dt">&quot;name&quot;</span> <span class="fu">:</span> <span class="st">&quot;Barney Rubble&quot;</span></a>
 <a class="sourceLine" id="cb9-2" title="2"><span class="fu">,</span> <span class="dt">&quot;email&quot;</span> <span class="fu">:</span> <span class="st">&quot;b@rubble.com&quot;</span></a>
@@ -152,7 +152,7 @@
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb10-1" title="1"><span class="er">&quot;Barney</span> <span class="er">Rubble</span> <span class="er">&lt;b@rubble.com&gt;</span> <span class="er">(http://barnyrubble.tumblr.com/)&quot;</span></a></code></pre>
     </div>
     <p>Both email and url are optional either way.</p>
-    <p>npm also sets a top-level “maintainers” field with your npm user info.</p>
+    <p>npm also sets a top-level "maintainers" field with your npm user info.</p>
     <h3 id="funding">funding</h3>
     <p>You can specify an object containing an URL that provides up-to-date information about ways to help fund
         development of your package, or a string URL, or an array of these:</p>
@@ -194,11 +194,11 @@
         <code>files</code> array (see below).
     </p>
     <p>You can also provide a <code>.npmignore</code> file in the root of your package or in subdirectories, which will
-        keep files from being included. At the root of your package it will not override the “files” field, but in
+        keep files from being included. At the root of your package it will not override the "files" field, but in
         subdirectories it will. The <code>.npmignore</code> file works just like a <code>.gitignore</code>. If there is
         a <code>.gitignore</code> file, and <code>.npmignore</code> is missing, <code>.gitignore</code>’s contents will
         be used instead.</p>
-    <p>Files included with the “package.json#files” field <em>cannot</em> be excluded through <code>.npmignore</code> or
+    <p>Files included with the "package.json#files" field <em>cannot</em> be excluded through <code>.npmignore</code> or
         <code>.gitignore</code>.
     </p>
     <p>Certain files are always included, regardless of settings:</p>
@@ -208,7 +208,7 @@
         <li><code>CHANGES</code> / <code>CHANGELOG</code> / <code>HISTORY</code></li>
         <li><code>LICENSE</code> / <code>LICENCE</code></li>
         <li><code>NOTICE</code></li>
-        <li>The file in the “main” field</li>
+        <li>The file in the "main" field</li>
     </ul>
     <p><code>README</code>, <code>CHANGES</code>, <code>LICENSE</code> &amp; <code>NOTICE</code> can have any case and
         extension.</p>
@@ -243,7 +243,7 @@
         (e.g. <code>window</code>)</p>
     <h3 id="bin">bin</h3>
     <p>A lot of packages have one or more executable files that they’d like to install into the PATH. npm makes this
-        pretty easy (in fact, it uses this feature to install the “npm” executable.)</p>
+        pretty easy (in fact, it uses this feature to install the "npm" executable.)</p>
     <p>To use this, supply a <code>bin</code> field in your package.json which is a map of command name to local file
         name. On install, npm will symlink that file into <code>prefix/bin</code> for global installs, or
         <code>./node_modules/.bin/</code> for local installs.
@@ -325,7 +325,7 @@
         all the files in an existing <code>bin</code> directory, use <code>directories.bin</code>.
     </p>
     <h4 id="directories.man">directories.man</h4>
-    <p>A folder that is full of man pages. Sugar to generate a “man” array by walking the folder.</p>
+    <p>A folder that is full of man pages. Sugar to generate a "man" array by walking the folder.</p>
     <h4 id="directories.doc">directories.doc</h4>
     <p>Put markdown files in here. Eventually, these will be displayed nicely, maybe, someday.</p>
     <h4 id="directories.example">directories.example</h4>
@@ -375,18 +375,18 @@
 <a class="sourceLine" id="cb20-5" title="5"><span class="fu">}</span></a></code></pre>
     </div>
     <h3 id="scripts">scripts</h3>
-    <p>The “scripts” property is a dictionary containing script commands that are run at various times in the lifecycle
+    <p>The "scripts" property is a dictionary containing script commands that are run at various times in the lifecycle
         of your package. The key is the lifecycle event, and the value is the command to run at that point.</p>
     <p>See <a href="/using-npm/scripts"><code>scripts</code></a> to find out more about writing package scripts.</p>
     <h3 id="config">config</h3>
-    <p>A “config” object can be used to set configuration parameters used in package scripts that persist across
+    <p>A "config" object can be used to set configuration parameters used in package scripts that persist across
         upgrades. For instance, if a package had the following:</p>
     <div class="sourceCode" id="cb21">
         <pre
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb21-1" title="1"><span class="fu">{</span> <span class="dt">&quot;name&quot;</span> <span class="fu">:</span> <span class="st">&quot;foo&quot;</span></a>
 <a class="sourceLine" id="cb21-2" title="2"><span class="fu">,</span> <span class="dt">&quot;config&quot;</span> <span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;port&quot;</span> <span class="fu">:</span> <span class="st">&quot;8080&quot;</span> <span class="fu">}</span> <span class="fu">}</span></a></code></pre>
     </div>
-    <p>and then had a “start” command that then referenced the <code>npm_package_config_port</code> environment
+    <p>and then had a "start" command that then referenced the <code>npm_package_config_port</code> environment
         variable, then the user could override that by doing <code>npm config set foo:port 8001</code>.</p>
     <p>See <a href="/using-npm/config"><code>config</code></a> and <a href="/using-npm/scripts"><code>scripts</code></a>
         for more on package configs.</p>
@@ -404,8 +404,8 @@
         <li><code>&gt;=version</code> etc</li>
         <li><code>&lt;version</code></li>
         <li><code>&lt;=version</code></li>
-        <li><code>~version</code> “Approximately equivalent to version” See <a href="/using-npm/semver">semver</a></li>
-        <li><code>^version</code> “Compatible with version” See <a href="/using-npm/semver">semver</a></li>
+        <li><code>~version</code> "Approximately equivalent to version" See <a href="/using-npm/semver">semver</a></li>
+        <li><code>^version</code> "Compatible with version" See <a href="/using-npm/semver">semver</a></li>
         <li><code>1.2.x</code> 1.2.0, 1.2.1, etc., but not 1.3.0</li>
         <li><code>http://...</code> See ‘URLs as Dependencies’ below</li>
         <li><code>*</code> Matches any version</li>
@@ -463,7 +463,7 @@
 <a class="sourceLine" id="cb24-4" title="4"><span class="ex">git</span>://github.com/npm/cli.git#v1.0.27</a></code></pre>
     </div>
     <h4 id="github-urls">GitHub URLs</h4>
-    <p>As of version 1.1.65, you can refer to GitHub urls as just “foo”: “user/foo-project”. Just as with git URLs, a
+    <p>As of version 1.1.65, you can refer to GitHub urls as just "foo": "user/foo-project". Just as with git URLs, a
         <code>commit-ish</code> suffix can be included. For example:
     </p>
     <div class="sourceCode" id="cb25">
@@ -637,11 +637,11 @@
         <pre
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb34-1" title="1"><span class="fu">{</span> <span class="dt">&quot;engines&quot;</span> <span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;node&quot;</span> <span class="fu">:</span> <span class="st">&quot;&gt;=0.10.3 &lt;0.12&quot;</span> <span class="fu">}</span> <span class="fu">}</span></a></code></pre>
     </div>
-    <p>And, like with dependencies, if you don’t specify the version (or if you specify “*” as the version), then any
+    <p>And, like with dependencies, if you don’t specify the version (or if you specify "*" as the version), then any
         version of node will do.</p>
-    <p>If you specify an “engines” field, then npm will require that “node” be somewhere on that list. If “engines” is
+    <p>If you specify an "engines" field, then npm will require that "node" be somewhere on that list. If "engines" is
         omitted, then npm will just assume that it works on node.</p>
-    <p>You can also use the “engines” field to specify which versions of npm are capable of properly installing your
+    <p>You can also use the "engines" field to specify which versions of npm are capable of properly installing your
         program. For example:</p>
     <div class="sourceCode" id="cb35">
         <pre
@@ -692,9 +692,9 @@
     </p>
     <h3 id="publishconfig">publishConfig</h3>
     <p>This is a set of config values that will be used at publish-time. It’s especially handy if you want to set the
-        tag, registry or access, so that you can ensure that a given package is not tagged with “latest”, published to
+        tag, registry or access, so that you can ensure that a given package is not tagged with "latest", published to
         the global public registry or that a scoped module is private by default.</p>
-    <p>Any config values can be overridden, but only “tag”, “registry” and “access” probably matter for the purposes of
+    <p>Any config values can be overridden, but only "tag", "registry" and "access" probably matter for the purposes of
         publishing.</p>
     <p>See <a href="/using-npm/config"><code>config</code></a> to see the list of config options that can be overridden.
     </p>

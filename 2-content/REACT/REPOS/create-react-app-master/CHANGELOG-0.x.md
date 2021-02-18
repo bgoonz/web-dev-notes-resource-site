@@ -722,7 +722,7 @@ npm install -g create-react-app@1.0.1
 
   - [#1194](https://github.com/facebook/create-react-app/pull/1194) Only honor relative `NODE_PATH`. ([@gaearon](https://github.com/gaearon))
 
-    Historically we have allowed specifying `NODE_PATH` environment variable as a way to allow “absolute imports”. For example, running `NODE_PATH=src npm start` in Bash or `set NODE_PATH=src&&npm start` in Windows Cmd would let you import anything inside `src` without specifying a relative path. However, we found a few nasty edge cases when Node.js core modules end up being in `NODE_PATH` and erroneously become bundled. As a result the build would crash on some systems when some libraries are imported. To fix this, we now only honor relative paths from `NODE_PATH` in Create React App. This means the existing use case for absolute imports is still supported (`src` in the example above is relative), but absolute paths in `NODE_PATH` (such as paths to Node.js core modules) will be ignored.
+    Historically we have allowed specifying `NODE_PATH` environment variable as a way to allow "absolute imports". For example, running `NODE_PATH=src npm start` in Bash or `set NODE_PATH=src&&npm start` in Windows Cmd would let you import anything inside `src` without specifying a relative path. However, we found a few nasty edge cases when Node.js core modules end up being in `NODE_PATH` and erroneously become bundled. As a result the build would crash on some systems when some libraries are imported. To fix this, we now only honor relative paths from `NODE_PATH` in Create React App. This means the existing use case for absolute imports is still supported (`src` in the example above is relative), but absolute paths in `NODE_PATH` (such as paths to Node.js core modules) will be ignored.
 
   - [#1188](https://github.com/facebook/create-react-app/pull/1188) Update webpack to fix source map issues. ([@gaearon](https://github.com/gaearon))
 
@@ -1199,7 +1199,7 @@ npm install --save-dev --save-exact react-scripts@0.4.3
 - Unsupported Node versions now print a warning. ([@fson](https://github.com/fson) in [#575](https://github.com/facebook/create-react-app/pull/575))
 - Importing assets with special characters like `@` now works with tests. ([@fson](https://github.com/fson) in [#584](https://github.com/facebook/create-react-app/pull/584))
 - Undefined variable lint rule is promoted from a warning to an error. ([@gaearon](https://github.com/gaearon) in [#669](https://github.com/facebook/create-react-app/pull/669))
-- Variables starting with underscore no longer trigger the “unused variable” rule. ([@valscion](https://github.com/valscion) in [#640](https://github.com/facebook/create-react-app/pull/640))
+- Variables starting with underscore no longer trigger the "unused variable" rule. ([@valscion](https://github.com/valscion) in [#640](https://github.com/facebook/create-react-app/pull/640))
 - We now print a friendly error when required files are missing. ([@vnctaing](https://github.com/vnctaing) in [#653](https://github.com/facebook/create-react-app/pull/653))
 - The output after creating a project is better formatted. ([@btnwtn](https://github.com/btnwtn) in [#629](https://github.com/facebook/create-react-app/pull/629))
 - Development server logs are less noisy. ([@gaearon](https://github.com/gaearon) in [122068](https://github.com/facebook/create-react-app/commit/1220683276dd9eb2f2719aece7f40bf2ffb397b4))

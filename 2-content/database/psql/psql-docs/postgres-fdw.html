@@ -345,7 +345,7 @@
    safe to send to the remote server for execution, if they appear in a
    <code class="literal">WHERE</code> clause for a foreign table.  Thus, a built-in
    function that was added since the remote server's release might be sent
-   to it for execution, resulting in <span class="quote">“<span class="quote">function does not exist</span>”</span> or
+   to it for execution, resulting in <span class="quote">"<span class="quote">function does not exist</span>"</span> or
    a similar error.  This type of failure can be worked around by
    rewriting the query, for example by embedding the foreign table
    reference in a sub-<code class="literal">SELECT</code> with <code class="literal">OFFSET 0</code> as an

@@ -201,7 +201,7 @@ postgres=# select pg_start_backup('label_goes_here');
     location in the same format used by the above functions.  Similarly,
     <code class="function">pg_current_wal_insert_lsn</code> displays the current write-ahead log
     insertion location and <code class="function">pg_current_wal_flush_lsn</code> displays the
-    current write-ahead log flush location. The insertion location is the <span class="quote">“<span class="quote">logical</span>”</span>
+    current write-ahead log flush location. The insertion location is the <span class="quote">"<span class="quote">logical</span>"</span>
     end of the write-ahead log at any instant, while the write location is the end of
     what has actually been written out from the server's internal buffers and flush
     location is the location guaranteed to be written to durable storage. The write
@@ -766,7 +766,7 @@ postgres=# SELECT * FROM pg_walfile_name_offset(pg_stop_backup());
         Find the relation associated with a given tablespace and filenode
        </td></tr></tbody></table></div></div><br class="table-break" /><p>
     <code class="function">pg_relation_filenode</code> accepts the OID or name of a table,
-    index, sequence, or toast table, and returns the <span class="quote">“<span class="quote">filenode</span>”</span> number
+    index, sequence, or toast table, and returns the <span class="quote">"<span class="quote">filenode</span>"</span> number
     currently assigned to it.  The filenode is the base component of the file
     name(s) used for the relation (see <a class="xref" href="storage-file-layout.html" title="68.1. Database File Layout">Section 68.1</a>
     for more information).  For most tables the result is the same as
@@ -781,8 +781,8 @@ postgres=# SELECT * FROM pg_walfile_name_offset(pg_stop_backup());
     the relation.
    </p><p>
     <code class="function">pg_filenode_relation</code> is the reverse of
-    <code class="function">pg_relation_filenode</code>. Given a <span class="quote">“<span class="quote">tablespace</span>”</span> OID and
-    a <span class="quote">“<span class="quote">filenode</span>”</span>, it returns the associated relation's OID. For a table
+    <code class="function">pg_relation_filenode</code>. Given a <span class="quote">"<span class="quote">tablespace</span>"</span> OID and
+    a <span class="quote">"<span class="quote">filenode</span>"</span>, it returns the associated relation's OID. For a table
     in the database's default tablespace, the tablespace can be specified as 0.
    </p><p>
     <a class="xref" href="functions-admin.html#FUNCTIONS-ADMIN-COLLATION" title="Table 9.91. Collation Management Functions">Table 9.91</a> lists functions used to manage
@@ -954,7 +954,7 @@ postgres=# SELECT * FROM pg_walfile_name_offset(pg_stop_backup());
    </p><a id="id-1.5.8.31.11.6" class="indexterm"></a><p>
     <code class="function">pg_ls_dir</code> returns the names of all files (and directories
     and other special files) in the specified directory. The <em class="parameter"><code>
-    include_dot_dirs</code></em> indicates whether <span class="quote">“<span class="quote">.</span>”</span> and <span class="quote">“<span class="quote">..</span>”</span> are
+    include_dot_dirs</code></em> indicates whether <span class="quote">"<span class="quote">.</span>"</span> and <span class="quote">"<span class="quote">..</span>"</span> are
     included in the result set. The default is to exclude them
     (<code class="literal">false</code>), but including them can be useful when
     <em class="parameter"><code>missing_ok</code></em> is <code class="literal">true</code>, to distinguish an

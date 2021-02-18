@@ -84,7 +84,7 @@
 <h3 id="what-can-i-do-with-hooks-that-i-couldnt-with-classes">What can I do with Hooks that I couldn't with classes?
 </h3>
 <p>Hooks offer a powerful and expressive new way to reuse functionality between components. <a
-        href="/docs/hooks-custom.html">“Building Your Own Hooks”</a> provides a glimpse of what's possible. <a
+        href="/docs/hooks-custom.html">"Building Your Own Hooks"</a> provides a glimpse of what's possible. <a
         href="https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889">This article</a> by a React core
     team member dives deeper into the new capabilities unlocked by Hooks.</p>
 <h3 id="how-much-of-my-react-knowledge-stays-relevant">How much of my React knowledge stays relevant?</h3>
@@ -185,7 +185,7 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
 <h3 id="what-exactly-do-the-lint-rules-enforce">What exactly do the <a href="https://www.npmjs.com/package/eslint-plugin-react-hooks">lint rules</a> enforce?</h3>
 <p>We provide an <a href="https://www.npmjs.com/package/eslint-plugin-react-hooks">ESLint plugin</a> that enforces <a
         href="/docs/hooks-rules.html">rules of Hooks</a> to avoid bugs. It assumes that any function starting with
-    “<code>use</code>” and a capital letter right after it is a Hook. We recognize this heuristic isn't perfect and
+    "<code>use</code>" and a capital letter right after it is a Hook. We recognize this heuristic isn't perfect and
     there may be some false positives, but without an ecosystem-wide convention there is just no way to make Hooks work
     well – and longer names will discourage people from either adopting Hooks or following the convention.</p>
 <p>In particular, the rule enforces that:</p>
@@ -212,7 +212,7 @@ it(&#39;can render and update a counter&#39;, () =&gt; {
 <p>Here is a <a href="https://codesandbox.io/s/jvvkoo8pq3">small demo</a> to get you started. To learn more, check out <a href="https://www.robinwieruch.de/react-hooks-fetch-data/">this article</a> about data fetching with Hooks.</p>
 <h3 id="is-there-something-like-instance-variables">Is there something like instance variables?</h3>
 <p>Yes! The <a href="/docs/hooks-reference.html#useref"><code>useRef()</code></a> Hook isn't just for DOM refs. The
-    “ref” object is a generic container whose <code>current</code> property is mutable and can hold any value, similar
+    "ref" object is a generic container whose <code>current</code> property is mutable and can hold any value, similar
     to an instance property on a class.</p>
 <p>You can write to it from inside <code>useEffect</code>:</p>
 <pre class="js{2,8}"><code>function Timer() {
@@ -329,7 +329,7 @@ function usePrevious(value) {
     relatively common use case.</p>
 <p>See also <a href="#how-do-i-implement-getderivedstatefromprops">the recommended pattern for derived state</a>.</p>
 <h3 id="why-am-i-seeing-stale-props-or-state-inside-my-function">Why am I seeing stale props or state inside my function?</h3>
-<p>Any function inside a component, including event handlers and effects, “sees” the props and state from the render it was created in. For example, consider code like this:</p>
+<p>Any function inside a component, including event handlers and effects, "sees" the props and state from the render it was created in. For example, consider code like this:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">function</span> <span class="at">Example</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">const</span> [count<span class="op">,</span> setCount] <span class="op">=</span> <span class="at">useState</span>(<span class="dv">0</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-3" title="3"></a>
@@ -351,13 +351,13 @@ function usePrevious(value) {
 <a class="sourceLine" id="cb12-19" title="19">    &lt;/div<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb12-20" title="20">  )<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-21" title="21"><span class="op">}</span></a></code></pre></div>
-<p>If you first click “Show alert” and then increment the counter, the alert will show the <code>count</code> variable
-    <strong>at the time you clicked the “Show alert” button</strong>. This prevents bugs caused by the code assuming
+<p>If you first click "Show alert" and then increment the counter, the alert will show the <code>count</code> variable
+    <strong>at the time you clicked the "Show alert" button</strong>. This prevents bugs caused by the code assuming
     props and state don't change.</p>
 <p>If you intentionally want to read the <em>latest</em> state from some asynchronous callback, you could keep it in <a href="/docs/hooks-faq.html#is-there-something-like-instance-variables">a ref</a>, mutate it, and read from it.</p>
-<p>Finally, another possible reason you're seeing stale props or state is if you use the “dependency array” optimization
+<p>Finally, another possible reason you're seeing stale props or state is if you use the "dependency array" optimization
     but didn't correctly specify all the dependencies. For example, if an effect specifies <code>[]</code> as the second
-    argument but reads <code>someProp</code> inside, it will keep “seeing” the initial value of <code>someProp</code>.
+    argument but reads <code>someProp</code> inside, it will keep "seeing" the initial value of <code>someProp</code>.
     The solution is to either remove the dependency array, or to fix it. Here's <a
         href="#is-it-safe-to-omit-functions-from-the-list-of-dependencies">how you can deal with functions</a>, and
     here's <a href="#what-can-i-do-if-my-effect-dependencies-change-too-often">other common strategies</a> to run
@@ -640,7 +640,7 @@ function ProductDetails({ fetchProduct }) {
     children pure too, or even <a href="/docs/hooks-faq.html#how-to-memoize-calculations">optimize individual children
         with <code>useMemo</code></a>.</p>
 <h3 id="how-to-memoize-calculations">How to memoize calculations?</h3>
-<p>The <a href="/docs/hooks-reference.html#usememo"><code>useMemo</code></a> Hook lets you cache calculations between multiple renders by “remembering” the previous computation:</p>
+<p>The <a href="/docs/hooks-reference.html#usememo"><code>useMemo</code></a> Hook lets you cache calculations between multiple renders by "remembering" the previous computation:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">const</span> memoizedValue <span class="op">=</span> <span class="at">useMemo</span>(() <span class="kw">=&gt;</span> <span class="at">computeExpensiveValue</span>(a<span class="op">,</span> b)<span class="op">,</span> [a<span class="op">,</span> b])<span class="op">;</span></a></code></pre></div>
 <p>This code calls <code>computeExpensiveValue(a, b)</code>. But if the dependencies <code>[a, b]</code> haven't changed
     since the last value, <code>useMemo</code> skips calling it a second time and simply reuses the last value it
@@ -648,7 +648,7 @@ function ProductDetails({ fetchProduct }) {
 <p>Remember that the function passed to <code>useMemo</code> runs during rendering. Don't do anything there that you
     wouldn't normally do while rendering. For example, side effects belong in <code>useEffect</code>, not
     <code>useMemo</code>.</p>
-<p><strong>You may rely on <code>useMemo</code> as a performance optimization, not as a semantic guarantee.</strong> In the future, React may choose to “forget” some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components. Write your code so that it still works without <code>useMemo</code> — and then add it to optimize performance. (For rare cases when a value must <em>never</em> be recomputed, you can <a href="#how-to-create-expensive-objects-lazily">lazily initialize</a> a ref.)</p>
+<p><strong>You may rely on <code>useMemo</code> as a performance optimization, not as a semantic guarantee.</strong> In the future, React may choose to "forget" some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components. Write your code so that it still works without <code>useMemo</code> — and then add it to optimize performance. (For rare cases when a value must <em>never</em> be recomputed, you can <a href="#how-to-create-expensive-objects-lazily">lazily initialize</a> a ref.)</p>
 <p>Conveniently, <code>useMemo</code> also lets you skip an expensive re-render of a child:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">function</span> <span class="at">Parent</span>(<span class="op">{</span> a<span class="op">,</span> b <span class="op">}</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb29-2" title="2">  <span class="co">// Only re-rendered if `a` changes:</span></a>
@@ -728,7 +728,7 @@ const memoizedCallback = useCallback(() =&gt; {
 </ul>
 <h3 id="how-to-avoid-passing-callbacks-down">How to avoid passing callbacks down?</h3>
 <p>We've found that most people don't enjoy manually passing callbacks through every level of a component tree. Even
-    though it is more explicit, it can feel like a lot of “plumbing”.</p>
+    though it is more explicit, it can feel like a lot of "plumbing".</p>
 <p>In large component trees, an alternative we recommend is to pass down a <code>dispatch</code> function from <a href="/docs/hooks-reference.html#usereducer"><code>useReducer</code></a> via context:</p>
 <pre class="js{4,5}"><code>const TodosDispatch = React.createContext(null);
 
@@ -827,7 +827,7 @@ function useEventCallback(fn, dependencies) {
 <h2 id="under-the-hood">Under the Hood</h2>
 <h3 id="how-does-react-associate-hook-calls-with-components">How does React associate Hook calls with components?</h3>
 <p>React keeps track of the currently rendering component. Thanks to the <a href="/docs/hooks-rules.html">Rules of Hooks</a>, we know that Hooks are only called from React components (or custom Hooks – which are also only called from React components).</p>
-<p>There is an internal list of “memory cells” associated with each component. They're just JavaScript objects where we
+<p>There is an internal list of "memory cells" associated with each component. They're just JavaScript objects where we
     can put some data. When you call a Hook like <code>useState()</code>, it reads the current cell (or initializes it
     during the first render), and then moves the pointer to the next one. This is how multiple <code>useState()</code>
     calls each get independent local state.</p>

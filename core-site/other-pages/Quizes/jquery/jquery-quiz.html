@@ -95,7 +95,7 @@ Item 4
 <li>jQuery is a Chrome extension that allows users to create their own extensions with just a few lines of JavaScript.</li>
 </ul>
 <h4 id="q10.-we-want-to-create-a-new-jquery-plugin-called-linkupdater-that-can-be-chained-onto-other-jquery-selector-like-a-normal-plugin.-it-should-updates-all-the-links-in-the-referenced-collection-so-they-open-in-new-windows-or-tabs.-below-is-the-first-cut.-what-is-one-problem-with-this-plugin">Q10. We want to create a new jQuery plugin called linkUpdater that can be chained onto other jQuery selector like a normal plugin. It should updates all the links in the referenced collection so they open in new windows or tabs. Below is the first cut. What is one problem with this plugin?</h4>
-<p>“user strict”; $.linkUpdater = function() { this.find(‘a’).attr(‘target’, ‘_blank’); } ) )( jQuery );</p>
+<p>"user strict"; $.linkUpdater = function() { this.find(‘a’).attr(‘target’, ‘_blank’); } ) )( jQuery );</p>
 <ul>
 <li>this needs to be wrapped, like $(this), in order to be chained in a plugin.</li>
 <li>jQuery plugins can’t be safety authored in strict mode.</li>
@@ -374,10 +374,10 @@ $(&#39;#container&#39;).wrap(&#39;&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&
 </ul>
 <h4 id="q24.-effects-like-show-hide-fadin-and-fadeout-can-be-called-with-no-arguments-but-can-also-take-arguments-for-how-long-they-should-last.-which-is-not-a-duration-argument-supported-by-these-functions">Q24. Effects like show, hide, fadIn, and fadeOut can be called with no arguments, but can also take arguments for how long they should last. Which is NOT a duration argument supported by these functions?</h4>
 <ul>
-<li>[ ] “fast”</li>
-<li>[x] “extreme” &lt;– Correct</li>
+<li>[ ] "fast"</li>
+<li>[x] "extreme" &lt;– Correct</li>
 <li>[ ] 2000</li>
-<li>[ ] “slow”</li>
+<li>[ ] "slow"</li>
 </ul>
 <h4 id="q25.-though-jquery-offers-visual-effects-it-is-considered-a-best-practice-to-use-css-to-se-up-different-states-triggered-by-classes-where-it-makes-sense.-whats-the-easiest-way-to-enable-and-disable-a-class-bounce-on-an-element-with-the-id-dialog">Q25. Though jQuery offers visual effects, it is considered a best practice to use CSS to se up different states triggered by classes, where it makes sense. What’s the easiest way to enable and disable a class bounce on an element with the ID dialog?</h4>
 <ul>

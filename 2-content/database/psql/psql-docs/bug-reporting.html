@@ -93,7 +93,7 @@
             <p>
               A program terminates with a fatal signal or an operating system
               error message that would point to a problem in the program. (A
-              counterexample might be a <span class="quote">“<span class="quote">disk full</span>”</span> message,
+              counterexample might be a <span class="quote">"<span class="quote">disk full</span>"</span> message,
               since you have to fix that yourself.)
             </p>
           </li>
@@ -124,7 +124,7 @@
       </div>
       <p>
 
-        Here <span class="quote">“<span class="quote">program</span>”</span> refers to any executable, not only the
+        Here <span class="quote">"<span class="quote">program</span>"</span> refers to any executable, not only the
         backend process.
       </p>
       <p>
@@ -151,7 +151,7 @@
       <p>
         The most important thing to remember about bug reporting is to state all
         the facts and only facts. Do not speculate what you think went wrong, what
-        <span class="quote">“<span class="quote">it seemed to do</span>”</span>, or which part of the program has a
+        <span class="quote">"<span class="quote">it seemed to do</span>"</span>, or which part of the program has a
         fault.
         If you are not familiar with the implementation you would probably guess
         wrong and not help us a bit. And even if you are, educated explanations are
@@ -198,16 +198,16 @@
               please try to isolate the offending queries. We will probably not set up a
               web server to reproduce your problem. In any case remember to provide
               the exact input files; do not guess that the problem happens for
-              <span class="quote">“<span class="quote">large files</span>”</span> or <span class="quote">“<span
-                  class="quote">midsize databases</span>”</span>, etc. since this
+              <span class="quote">"<span class="quote">large files</span>"</span> or <span class="quote">"<span
+                  class="quote">midsize databases</span>"</span>, etc. since this
               information is too inexact to be of use.
             </p>
           </li>
           <li class="listitem">
             <p>
-              The output you got. Please do not say that it <span class="quote">“<span class="quote">didn't
-                  work</span>”</span> or
-              <span class="quote">“<span class="quote">crashed</span>”</span>. If there is an error message,
+              The output you got. Please do not say that it <span class="quote">"<span class="quote">didn't
+                  work</span>"</span> or
+              <span class="quote">"<span class="quote">crashed</span>"</span>. If there is an error message,
               show it, even if you do not understand it. If the program terminates with
               an operating system error, say which. If nothing at all happens, say so.
               Even if the result of your test case is a program crash or otherwise obvious
@@ -239,14 +239,14 @@
           <li class="listitem">
             <p>
               The output you expected is very important to state. If you just write
-              <span class="quote">“<span class="quote">This command gives me that output.</span>”</span> or <span
-                class="quote">“<span class="quote">This is not
-                  what I expected.</span>”</span>, we might run it ourselves, scan the output, and
+              <span class="quote">"<span class="quote">This command gives me that output.</span>"</span> or <span
+                class="quote">"<span class="quote">This is not
+                  what I expected.</span>"</span>, we might run it ourselves, scan the output, and
               think it looks OK and is exactly what we expected. We should not have to
               spend the time to decode the exact semantics behind your commands.
-              Especially refrain from merely saying that <span class="quote">“<span class="quote">This is not what SQL
+              Especially refrain from merely saying that <span class="quote">"<span class="quote">This is not what SQL
                   says/Oracle
-                  does.</span>”</span> Digging out the correct behavior from <acronym class="acronym">SQL</acronym>
+                  does.</span>"</span> Digging out the correct behavior from <acronym class="acronym">SQL</acronym>
               is not a fun undertaking, nor do we all know how all the other relational
               databases out there behave. (If your problem is a program crash, you can
               obviously omit this item.)
@@ -300,7 +300,7 @@
               Platform information. This includes the kernel name and version,
               C library, processor, memory information, and so on. In most
               cases it is sufficient to report the vendor and version, but do
-              not assume everyone knows what exactly <span class="quote">“<span class="quote">Debian</span>”</span>
+              not assume everyone knows what exactly <span class="quote">"<span class="quote">Debian</span>"</span>
               contains or that everyone runs on x86_64. If you have
               installation problems then information about the toolchain on
               your machine (compiler, <span class="application">make</span>, and so
@@ -327,16 +327,16 @@
       </p>
       <p>
         When writing a bug report, please avoid confusing terminology.
-        The software package in total is called <span class="quote">“<span class="quote">PostgreSQL</span>”</span>,
-        sometimes <span class="quote">“<span class="quote">Postgres</span>”</span> for short. If you
+        The software package in total is called <span class="quote">"<span class="quote">PostgreSQL</span>"</span>,
+        sometimes <span class="quote">"<span class="quote">Postgres</span>"</span> for short. If you
         are specifically talking about the backend process, mention that, do not
-        just say <span class="quote">“<span class="quote">PostgreSQL crashes</span>”</span>. A crash of a single
+        just say <span class="quote">"<span class="quote">PostgreSQL crashes</span>"</span>. A crash of a single
         backend process is quite different from crash of the parent
-        <span class="quote">“<span class="quote">postgres</span>”</span> process; please don't say <span
-          class="quote">“<span class="quote">the server
-            crashed</span>”</span> when you mean a single backend process went down, nor vice versa.
-        Also, client programs such as the interactive frontend <span class="quote">“<span class="quote"><span
-              class="application">psql</span></span>”</span>
+        <span class="quote">"<span class="quote">postgres</span>"</span> process; please don't say <span
+          class="quote">"<span class="quote">the server
+            crashed</span>"</span> when you mean a single backend process went down, nor vice versa.
+        Also, client programs such as the interactive frontend <span class="quote">"<span class="quote"><span
+              class="application">psql</span></span>"</span>
         are completely separate from the backend. Please try to be specific
         about whether the problem is on the client or server side.
       </p>

@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>;
-<p>The term <a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">“render prop”</a> refers to a technique for sharing code between React components using a prop whose value is a function.</p>
+<p>The term <a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">"render prop"</a> refers to a technique for sharing code between React components using a prop whose value is a function.</p>
 <p>A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.</p>
 <pre class="jsx"><code>&lt;DataProvider render={data =&gt; (
   &lt;h1&gt;Hello {data.target}&lt;/h1&gt;
@@ -212,15 +212,15 @@
 <a class="sourceLine" id="cb6-13" title="13"><span class="op">}</span></a></code></pre></div>
 <p>So using a render prop makes it possible to use either pattern.</p>
 <h2 id="using-props-other-than-render">Using Props Other Than <code>render</code></h2>
-<p>It's important to remember that just because the pattern is called “render props” you don't <em>have to use a prop
+<p>It's important to remember that just because the pattern is called "render props" you don't <em>have to use a prop
         named <code>render</code> to use this pattern</em>. In fact, <a
         href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce"><em>any</em> prop that is a function that a
-        component uses to know what to render is technically a “render prop”</a>.</p>
+        component uses to know what to render is technically a "render prop"</a>.</p>
 <p>Although the examples above use <code>render</code>, we could just as easily use the <code>children</code> prop!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="op">&lt;</span>Mouse children<span class="op">={</span>mouse <span class="kw">=&gt;</span> (</a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="op">&lt;</span>p<span class="op">&gt;</span>The mouse position is <span class="op">{</span><span class="va">mouse</span>.<span class="at">x</span><span class="op">},</span> <span class="op">{</span><span class="va">mouse</span>.<span class="at">y</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb7-3" title="3">)<span class="op">}</span>/&gt;</a></code></pre></div>
-<p>And remember, the <code>children</code> prop doesn't actually need to be named in the list of “attributes” in your
+<p>And remember, the <code>children</code> prop doesn't actually need to be named in the list of "attributes" in your
     JSX element. Instead, you can put it directly <em>inside</em> the element!</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&lt;</span>Mouse<span class="op">&gt;</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="op">{</span>mouse <span class="kw">=&gt;</span> (</a>

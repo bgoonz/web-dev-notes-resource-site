@@ -2982,7 +2982,7 @@ tag).
 
 Tags usually come in pairs, and the difference between an opening tag and a
 closing tag is that the first symbol inside the brackets of a closing tag is a
-slash “/“ symbol.
+slash "/" symbol.
 
 For example, here’s a pair of h1 tags (used to identify heading text), with some
 content in-between:
@@ -3092,7 +3092,7 @@ World Wide Web.)
 
 Attributes are used to define additional information about an element. They are
 located inside the opening tag, and usually come in name/value pairs (name=
-“value”).
+"value").
 
 All HTML elements can have attributes, but for most elements, we only use them
 when we need to. Attributes common to _all_ HTML elements are the _class_ and

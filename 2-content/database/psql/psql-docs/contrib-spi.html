@@ -43,7 +43,7 @@
   </p></div><div class="sect2" id="id-1.11.7.45.6"><div class="titlepage"><div><div><h3 class="title">F.36.2. autoinc — Functions for Autoincrementing Fields</h3></div></div></div><p>
    <code class="function">autoinc()</code> is a trigger that stores the next value of
    a sequence into an integer field.  This has some overlap with the
-   built-in <span class="quote">“<span class="quote">serial column</span>”</span> feature, but it is not the same:
+   built-in <span class="quote">"<span class="quote">serial column</span>"</span> feature, but it is not the same:
    <code class="function">autoinc()</code> will override attempts to substitute a
    different field value during inserts, and optionally it can be
    used to increment the field during updates, too.

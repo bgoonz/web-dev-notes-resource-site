@@ -118,7 +118,7 @@ CREATE [ OR REPLACE ] AGGREGATE <em class="replaceable"><code>name</code></em> (
    of a constant of the state value data type.  If it is not supplied
    then the state value starts out null.
   </p><p>
-   If the state transition function is declared <span class="quote">“<span class="quote">strict</span>”</span>,
+   If the state transition function is declared <span class="quote">"<span class="quote">strict</span>"</span>,
    then it cannot be called with null inputs.  With such a transition
    function, aggregate execution behaves as follows.  Rows with any null input
    values are ignored (the function is not called and the previous state value
@@ -139,7 +139,7 @@ CREATE [ OR REPLACE ] AGGREGATE <em class="replaceable"><code>name</code></em> (
    and null state values for itself.  This allows the aggregate
    author to have full control over the aggregate's handling of null values.
   </p><p>
-   If the final function is declared <span class="quote">“<span class="quote">strict</span>”</span>, then it will not
+   If the final function is declared <span class="quote">"<span class="quote">strict</span>"</span>, then it will not
    be called when the ending state value is null; instead a null result
    will be returned automatically.  (Of course this is just the normal
    behavior of strict functions.)  In any case the final function has
@@ -181,7 +181,7 @@ CREATE [ OR REPLACE ] AGGREGATE <em class="replaceable"><code>name</code></em> (
    aggregates in which some of the direct arguments are required to match,
    in number and data types, the aggregated argument columns.  This allows
    the values of those direct arguments to be added to the collection of
-   aggregate-input rows as an additional <span class="quote">“<span class="quote">hypothetical</span>”</span> row.
+   aggregate-input rows as an additional <span class="quote">"<span class="quote">hypothetical</span>"</span> row.
   </p><p>
    An aggregate can optionally support <em class="firstterm">partial aggregation</em>,
    as described in <a class="xref" href="xaggr.html#XAGGR-PARTIAL-AGGREGATES" title="37.12.4. Partial Aggregation">Section 37.12.4</a>.
@@ -210,8 +210,8 @@ SELECT col FROM tab ORDER BY col USING sortop LIMIT 1;
    Ordinarily, a data type's <code class="literal">&lt;</code> operator is the proper sort
    operator for <code class="function">MIN</code>, and <code class="literal">&gt;</code> is the proper sort
    operator for <code class="function">MAX</code>.  Note that the optimization will never
-   actually take effect unless the specified operator is the <span class="quote">“<span class="quote">less
-   than</span>”</span> or <span class="quote">“<span class="quote">greater than</span>”</span> strategy member of a B-tree
+   actually take effect unless the specified operator is the <span class="quote">"<span class="quote">less
+   than</span>"</span> or <span class="quote">"<span class="quote">greater than</span>"</span> strategy member of a B-tree
    index operator class.
   </p><p>
    To be able to create an aggregate function, you must
@@ -315,7 +315,7 @@ SELECT col FROM tab ORDER BY col USING sortop LIMIT 1;
       the <em class="replaceable"><code>state_data_type</code></em> and
       returning a value of
       the <em class="replaceable"><code>state_data_type</code></em>.
-      Optionally this function may be <span class="quote">“<span class="quote">strict</span>”</span>. In this case the
+      Optionally this function may be <span class="quote">"<span class="quote">strict</span>"</span>. In this case the
       function will not be called when either of the input states are null;
       the other state will be taken as the correct result.
      </p><p>

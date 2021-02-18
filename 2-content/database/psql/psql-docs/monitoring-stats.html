@@ -613,7 +613,7 @@ SELECT pid, wait_event_type, wait_event FROM pg_stat_activity WHERE wait_event i
    contain the same information,
    but filtered to only show user and system indexes respectively.
   </p><p>
-   Indexes can be used by simple index scans, <span class="quote">“<span class="quote">bitmap</span>”</span> index scans,
+   Indexes can be used by simple index scans, <span class="quote">"<span class="quote">bitmap</span>"</span> index scans,
    and the optimizer.  In a bitmap scan
    the output of several indexes can be combined via AND or OR rules,
    so it is difficult to associate individual heap row fetches

@@ -2875,7 +2875,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
-1. Given multiple plausible reasons, identify why functions are called “First
+1. Given multiple plausible reasons, identify why functions are called "First
    Class Objects” in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed
@@ -2891,7 +2891,7 @@ When you complete this lesson, you should be able to perform each of the
 following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
-1. Given multiple plausible reasons, identify why functions are called “First
+1. Given multiple plausible reasons, identify why functions are called "First
    Class Objects” in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed

@@ -20,7 +20,7 @@
 <p>Web Components often expose an imperative API. For instance, a <code>video</code> Web Component might expose <code>play()</code> and <code>pause()</code> functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.</p>
 <p>Events emitted by a Web Component may not properly propagate through a React render tree. You will need to manually attach event handlers to handle these events within your React components.</p>
 </blockquote>
-<p>One common confusion is that Web Components use “class” instead of “className”.</p>
+<p>One common confusion is that Web Components use "class" instead of "className".</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">function</span> <span class="at">BrickFlipbox</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="cf">return</span> (</a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="op">&lt;</span>brick<span class="op">-</span>flipbox <span class="kw">class</span><span class="op">=</span><span class="st">&quot;demo&quot;</span><span class="op">&gt;</span></a>

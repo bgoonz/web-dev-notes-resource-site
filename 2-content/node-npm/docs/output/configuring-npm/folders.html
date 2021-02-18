@@ -259,7 +259,7 @@
             <p>Starting at the $PWD, npm will walk up the folder tree checking for a
                 folder that contains either a <code>package.json</code> file, or a <code>node_modules</code>
                 folder. If such a thing is found, then that is treated as the effective
-                “current directory” for the purpose of running npm commands. (This
+                "current directory" for the purpose of running npm commands. (This
                 behavior is inspired by and similar to git’s .git-folder seeking
                 logic when running git commands in a working dir.)</p>
             <p>If no package root is found, then the current folder is used.</p>
@@ -272,7 +272,7 @@
                 be found by npm scripts when necessary.</p>
             <h4 id="global-installation">Global Installation</h4>
             <p>If the <code>global</code> configuration is set to true, then npm will
-                install packages “globally”.</p>
+                install packages "globally".</p>
             <p>For global installation, packages are installed roughly the same way,
                 but using the folders described above.</p>
             <h4 id="cycles-conflicts-and-folder-parsimony">Cycles, Conflicts, and Folder Parsimony</h4>
@@ -285,17 +285,17 @@
                 <code>foo -&gt; bar -&gt; baz -&gt; bar -&gt; baz ...</code>. However, since the folder
                 structure is: <code>foo/node_modules/bar/node_modules/baz</code>, there’s no need to
                 put another copy of bar into <code>.../baz/node_modules</code>, since when it calls
-                require(“bar”), it will get the copy that is installed in
+                require("bar"), it will get the copy that is installed in
                 <code>foo/node_modules/bar</code>.
             </p>
             <p>This shortcut is only used if the exact same
                 version would be installed in multiple nested <code>node_modules</code> folders. It
                 is still possible to have <code>a/node_modules/b/node_modules/a</code> if the two
-                “a” packages are different versions. However, without repeating the
+                "a" packages are different versions. However, without repeating the
                 exact same package multiple times, an infinite regress will always be
                 prevented.</p>
             <p>Another optimization can be made by installing dependencies at the
-                highest level possible, below the localized “target” folder.</p>
+                highest level possible, below the localized "target" folder.</p>
             <h4 id="example">Example</h4>
             <p>Consider this dependency graph:</p>
             <pre lang="bash"><code>foo

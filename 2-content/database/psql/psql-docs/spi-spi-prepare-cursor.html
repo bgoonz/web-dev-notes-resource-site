@@ -5,7 +5,7 @@ SPIPlanPtr SPI_prepare_cursor(const char * <em class="parameter"><code>command</
 </pre></div><div class="refsect1" id="id-1.8.12.8.8.5"><h2>Description</h2><p>
    <code class="function">SPI_prepare_cursor</code> is identical to
    <code class="function">SPI_prepare</code>, except that it also allows specification
-   of the planner's <span class="quote">“<span class="quote">cursor options</span>”</span> parameter.  This is a bit mask
+   of the planner's <span class="quote">"<span class="quote">cursor options</span>"</span> parameter.  This is a bit mask
    having the values shown in <code class="filename">nodes/parsenodes.h</code>
    for the <code class="structfield">options</code> field of <code class="structname">DeclareCursorStmt</code>.
    <code class="function">SPI_prepare</code> always takes the cursor options as zero.

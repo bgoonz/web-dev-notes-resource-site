@@ -19,7 +19,7 @@
      Refer to <a class="xref" href="datatype-enum.html" title="8.7. Enumerated Types">Section 8.7</a> for more information.
     </p></div><div class="sect2" id="id-1.8.3.5.10"><div class="titlepage"><div><div><h3 class="title">37.2.2. Container Types</h3></div></div></div><p>
      <span class="productname">PostgreSQL</span> has three kinds
-     of <span class="quote">“<span class="quote">container</span>”</span> types, which are types that contain multiple
+     of <span class="quote">"<span class="quote">container</span>"</span> types, which are types that contain multiple
      values of other types.  These are arrays, composites, and ranges.
     </p><p>
      Arrays can hold multiple values that are all of the same type.  An array
@@ -31,7 +31,7 @@
     </p><p>
      Composite types, or row types, are created whenever the user
      creates a table. It is also possible to use <a class="xref" href="sql-createtype.html" title="CREATE TYPE"><span class="refentrytitle">CREATE TYPE</span></a> to
-     define a <span class="quote">“<span class="quote">stand-alone</span>”</span> composite type with no associated
+     define a <span class="quote">"<span class="quote">stand-alone</span>"</span> composite type with no associated
      table.  A composite type is simply a list of types with
      associated field names.  A value of a composite type is a row or
      record of field values.  Refer to <a class="xref" href="rowtypes.html" title="8.16. Composite Types">Section 8.16</a>
@@ -49,7 +49,7 @@
      the <acronym class="acronym">SQL</acronym> command <a class="xref" href="sql-createdomain.html" title="CREATE DOMAIN"><span class="refentrytitle">CREATE DOMAIN</span></a>.
      Refer to <a class="xref" href="domains.html" title="8.18. Domain Types">Section 8.18</a> for more information.
     </p></div><div class="sect2" id="id-1.8.3.5.12"><div class="titlepage"><div><div><h3 class="title">37.2.4. Pseudo-Types</h3></div></div></div><p>
-     There are a few <span class="quote">“<span class="quote">pseudo-types</span>”</span> for special purposes.
+     There are a few <span class="quote">"<span class="quote">pseudo-types</span>"</span> for special purposes.
      Pseudo-types cannot appear as columns of tables or components of
      container types, but they can be used to declare the argument and
      result types of functions.  This provides a mechanism within the

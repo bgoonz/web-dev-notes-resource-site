@@ -13,8 +13,8 @@
 
 <body>;
     <h3 id="description">Description</h3>
-    <p>Conceptually, the “input” to <a href="/commands/npm-install"><code>npm install</code></a> is a <a
-            href="/configuring-npm/package-json">package.json</a>, while its “output” is a fully-formed
+    <p>Conceptually, the "input" to <a href="/commands/npm-install"><code>npm install</code></a> is a <a
+            href="/configuring-npm/package-json">package.json</a>, while its "output" is a fully-formed
         <code>node_modules</code> tree: a representation of the dependencies you declared. In an ideal world, npm would
         work like a pure function: the same <code>package.json</code> should produce the exact same
         <code>node_modules</code> tree, any time. In some cases, this is indeed true. But in many others, npm is unable
@@ -117,8 +117,8 @@
     <ol type="1">
         <li>
             <p>The module tree described by the package lock is reproduced. This means reproducing the structure
-                described in the file, using the specific files referenced in “resolved” if available, falling back to
-                normal package resolution using “version” if one isn’t.</p>
+                described in the file, using the specific files referenced in "resolved" if available, falling back to
+                normal package resolution using "version" if one isn’t.</p>
         </li>
         <li>
             <p>The tree is walked and any missing dependencies are installed in the usual fashion.</p>

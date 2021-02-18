@@ -117,7 +117,7 @@ EXEC SQL COMMIT;
     The statement is prepared using the
     command <code class="literal">PREPARE</code>.  For the values that are not
     known yet, use the
-    placeholder <span class="quote">“<span class="quote"><code class="literal">?</code></span>”</span>:
+    placeholder <span class="quote">"<span class="quote"><code class="literal">?</code></span>"</span>:
 </p><pre class="programlisting">
 EXEC SQL PREPARE stmt1 FROM "SELECT oid, datname FROM pg_database WHERE oid = ?";
 </pre><p>

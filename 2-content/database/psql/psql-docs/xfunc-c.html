@@ -4,14 +4,14 @@
     be made compatible with C, such as C++).  Such functions are
     compiled into dynamically loadable objects (also called shared
     libraries) and are loaded by the server on demand.  The dynamic
-    loading feature is what distinguishes <span class="quote">“<span class="quote">C language</span>”</span> functions
-    from <span class="quote">“<span class="quote">internal</span>”</span> functions — the actual coding conventions
+    loading feature is what distinguishes <span class="quote">"<span class="quote">C language</span>"</span> functions
+    from <span class="quote">"<span class="quote">internal</span>"</span> functions — the actual coding conventions
     are essentially the same for both.  (Hence, the standard internal
     function library is a rich source of coding examples for user-defined
     C functions.)
    </p><p>
     Currently only one calling convention is used for C functions
-    (<span class="quote">“<span class="quote">version 1</span>”</span>). Support for that calling convention is
+    (<span class="quote">"<span class="quote">version 1</span>"</span>). Support for that calling convention is
     indicated by writing a <code class="literal">PG_FUNCTION_INFO_V1()</code> macro
     call for the function, as illustrated below.
    </p><div class="sect2" id="XFUNC-C-DYNLOAD"><div class="titlepage"><div><div><h3 class="title">37.10.1. Dynamic Loading</h3></div></div></div><a id="id-1.8.3.13.5.2" class="indexterm"></a><p>
@@ -78,7 +78,7 @@
     </p></div><a id="id-1.8.3.13.5.9" class="indexterm"></a><p>
     To ensure that a dynamically loaded object file is not loaded into an
     incompatible server, <span class="productname">PostgreSQL</span> checks that the
-    file contains a <span class="quote">“<span class="quote">magic block</span>”</span> with the appropriate contents.
+    file contains a <span class="quote">"<span class="quote">magic block</span>"</span> with the appropriate contents.
     This allows the server to detect obvious incompatibilities, such as code
     compiled for a different major version of
     <span class="productname">PostgreSQL</span>. To include a magic block,
@@ -111,7 +111,7 @@ PG_MODULE_MAGIC;
      <span class="productname">PostgreSQL</span> internally represents base
      data types and how they can be passed to and from functions.
      Internally, <span class="productname">PostgreSQL</span> regards a base
-     type as a <span class="quote">“<span class="quote">blob of memory</span>”</span>.  The user-defined
+     type as a <span class="quote">"<span class="quote">blob of memory</span>"</span>.  The user-defined
      functions that you define over a type in turn define the way that
      <span class="productname">PostgreSQL</span> can operate on it.  That
      is, <span class="productname">PostgreSQL</span> will only store and
@@ -233,7 +233,7 @@ memcpy(destination-&gt;data, buffer, 40);
      <a class="xref" href="xfunc-c.html#XFUNC-C-TYPE-TABLE" title="Table 37.1. Equivalent C Types for Built-in SQL Types">Table 37.1</a> specifies which C type
      corresponds to which SQL type when writing a C-language function
      that uses a built-in type of <span class="productname">PostgreSQL</span>.
-     The <span class="quote">“<span class="quote">Defined In</span>”</span> column gives the header file that
+     The <span class="quote">"<span class="quote">Defined In</span>"</span> column gives the header file that
      needs to be included to get the type definition.  (The actual
      definition might be in a different file that is included by the
      listed file.  It is recommended that users stick to the defined
@@ -413,7 +413,7 @@ CREATE FUNCTION concat_text(text, text) RETURNS text
      case, we can omit the system-specific extension for a shared
      library, commonly <code class="literal">.so</code>.)
     </p><p>
-     Notice that we have specified the functions as <span class="quote">“<span class="quote">strict</span>”</span>,
+     Notice that we have specified the functions as <span class="quote">"<span class="quote">strict</span>"</span>,
      meaning that
      the system should automatically assume a null result if any input
      value is null.  By doing this, we avoid having to check for null inputs
@@ -422,7 +422,7 @@ CREATE FUNCTION concat_text(text, text) RETURNS text
     </p><p>
      The macro <code class="function">PG_ARGISNULL(<em class="replaceable"><code>n</code></em>)</code>
      allows a function to test whether each input is null.  (Of course, doing
-     this is only necessary in functions not declared <span class="quote">“<span class="quote">strict</span>”</span>.)
+     this is only necessary in functions not declared <span class="quote">"<span class="quote">strict</span>"</span>.)
      As with the
      <code class="function">PG_GETARG_<em class="replaceable"><code>xxx</code></em>()</code> macros,
      the input arguments are counted beginning at zero.  Note that one
@@ -436,7 +436,7 @@ CREATE FUNCTION concat_text(text, text) RETURNS text
      to be just pointless obscurantism, compared to using
      plain <code class="literal">C</code> calling conventions.  They do however allow
      us to deal with <code class="literal">NULL</code>able arguments/return values,
-     and <span class="quote">“<span class="quote">toasted</span>”</span> (compressed or out-of-line) values.
+     and <span class="quote">"<span class="quote">toasted</span>"</span> (compressed or out-of-line) values.
     </p><p>
      Other options provided by the version-1 interface are two
      variants of the
@@ -457,7 +457,7 @@ CREATE FUNCTION concat_text(text, text) RETURNS text
     zero, and a negative length requests that the remainder of the
     value be returned. These macros provide more efficient access to
     parts of large values in the case where they have storage type
-    <span class="quote">“<span class="quote">external</span>”</span>. (The storage type of a column can be specified using
+    <span class="quote">"<span class="quote">external</span>"</span>. (The storage type of a column can be specified using
     <code class="literal">ALTER TABLE <em class="replaceable"><code>tablename</code></em> ALTER
     COLUMN <em class="replaceable"><code>colname</code></em> SET STORAGE
     <em class="replaceable"><code>storagetype</code></em></code>. <em class="replaceable"><code>storagetype</code></em> is one of
@@ -498,7 +498,7 @@ CREATE FUNCTION concat_text(text, text) RETURNS text
         detailed explanation of how to do it for your particular
         operating system.
        </p></li><li class="listitem"><p>
-        Remember to define a <span class="quote">“<span class="quote">magic block</span>”</span> for your shared library,
+        Remember to define a <span class="quote">"<span class="quote">magic block</span>"</span> for your shared library,
         as described in <a class="xref" href="xfunc-c.html#XFUNC-C-DYNLOAD" title="37.10.1. Dynamic Loading">Section 37.10.1</a>.
        </p></li><li class="listitem"><p>
         When allocating memory, use the
@@ -776,7 +776,7 @@ CREATE FUNCTION c_overpaid(emp, integer) RETURNS boolean
 </pre><p>
     </p><p>
      There are two ways you can build a composite data value (henceforth
-     a <span class="quote">“<span class="quote">tuple</span>”</span>): you can build it from an array of Datum values,
+     a <span class="quote">"<span class="quote">tuple</span>"</span>): you can build it from an array of Datum values,
      or from an array of C strings that can be passed to the input
      conversion functions of the tuple's column data types.  In either
      case, you first need to obtain or construct a <code class="structname">TupleDesc</code>
@@ -806,8 +806,8 @@ TypeFuncClass get_call_result_type(FunctionCallInfo fcinfo,
      result is <code class="literal">TYPEFUNC_COMPOSITE</code>; if so,
      <code class="varname">resultTupleDesc</code> has been filled with the needed
      <code class="structname">TupleDesc</code>.  (If it is not, you can report an error along
-     the lines of <span class="quote">“<span class="quote">function returning record called in context that
-     cannot accept type record</span>”</span>.)
+     the lines of <span class="quote">"<span class="quote">function returning record called in context that
+     cannot accept type record</span>"</span>.)
     </p><div class="tip"><h3 class="title">Tip</h3><p>
       <code class="function">get_call_result_type</code> can resolve the actual type of a
       polymorphic function result; so it is useful in functions that return

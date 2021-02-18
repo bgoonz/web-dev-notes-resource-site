@@ -36,7 +36,7 @@
     </p><p>
      It's critical to provide commutator information for operators that
      will be used in indexes and join clauses, because this allows the
-     query optimizer to <span class="quote">“<span class="quote">flip around</span>”</span> such a clause to the forms
+     query optimizer to <span class="quote">"<span class="quote">flip around</span>"</span> such a clause to the forms
      needed for different plan types.  For example, consider a query with
      a WHERE clause like <code class="literal">tab1.x = tab2.y</code>, where <code class="literal">tab1.x</code>
      and <code class="literal">tab2.y</code> are of a user-defined type, and suppose that
@@ -179,7 +179,7 @@ table1.column1 OP table2.column2
      hashing for operators that take the same data type on both sides.
      However, sometimes it is possible to design compatible hash functions
      for two or more data types; that is, functions that will generate the
-     same hash codes for <span class="quote">“<span class="quote">equal</span>”</span> values, even though the values
+     same hash codes for <span class="quote">"<span class="quote">equal</span>"</span> values, even though the values
      have different representations.  For example, it's fairly simple
      to arrange this property when hashing integers of different widths.
     </p><p>
@@ -238,7 +238,7 @@ table1.column1 OP table2.column2
      into order and then scanning them in parallel.  So, both data types must
      be capable of being fully ordered, and the join operator must be one
      that can only succeed for pairs of values that fall at the
-     <span class="quote">“<span class="quote">same place</span>”</span>
+     <span class="quote">"<span class="quote">same place</span>"</span>
      in the sort order.  In practice this means that the join operator must
      behave like equality.  But it is possible to merge-join two
      distinct data types so long as they are logically compatible.  For

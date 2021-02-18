@@ -35,7 +35,7 @@ The first thing we can do is log the console object itself to see what your brow
 
     console.log(console);
 
-This command will output the various properties of the console object as the browser knows them. Most of them are functions and will be rather consistent regardless of browser. If there are differences in the properties of the console object from one browser to another, this way you can see the differences. One such difference I can point out between Firefox and Chrome is that Chrome provides a “memory” property that outputs some basic memory usage stats. Firefox doesn’t provide this property and yet has a “name” property that Chrome does not have.
+This command will output the various properties of the console object as the browser knows them. Most of them are functions and will be rather consistent regardless of browser. If there are differences in the properties of the console object from one browser to another, this way you can see the differences. One such difference I can point out between Firefox and Chrome is that Chrome provides a "memory" property that outputs some basic memory usage stats. Firefox doesn’t provide this property and yet has a "name" property that Chrome does not have.
 
 Thankfully, most of the differences between the browsers tend to be just as trivial. That way, you can be fairly confident that your code will output much the same regardless of the browser in use.
 
@@ -45,7 +45,7 @@ With heavy usage of the console comes a very crowded output of text. Sometimes y
 
     console.clear();
 
-This will clear the console and will helpfully inform you of that by outputting a message like “Console was cleared.”
+This will clear the console and will helpfully inform you of that by outputting a message like "Console was cleared."
 
 ![](https://i1.wp.com/css-tricks.com/wp-content/uploads/2020/02/image_preview.gif?resize=880%2C680&ssl=1)
 
@@ -75,7 +75,7 @@ Firefox console showing debug, error, info, log, and warn
 
 Here is the same list in Firefox and, while it looks similar, there are three minor differences. For example, `console.debug()` is not color-coded and `console.info()` has an additional icon next to it. In Chrome, both `console.error()` and `console.warn()` can be expanded to show additional information about the output while Firefox only does this with `console.error()`. This additional information provides a trace of the lines of code involved to get to where the particular command was called.
 
-One thing that is useful about these five commands is that the browsers provide filtering options to show or hide each type as you wish. Firefox has them right there at the top of the console above the output while Chrome hides them in a dropdown, labeled “All levels” which you can see in the earlier Chrome console screenshot. “All levels” is there because I have all five set to be shown. If you were to choose the “Default” option then the debug output (listed as “Verbose”) is hidden while the others are shown. Unchecking “Info”, “Warnings”, or “Errors” causes the dropdown to display a different title such as “Custom levels” or “Errors only” depending on what is selected.
+One thing that is useful about these five commands is that the browsers provide filtering options to show or hide each type as you wish. Firefox has them right there at the top of the console above the output while Chrome hides them in a dropdown, labeled "All levels" which you can see in the earlier Chrome console screenshot. "All levels" is there because I have all five set to be shown. If you were to choose the "Default" option then the debug output (listed as "Verbose") is hidden while the others are shown. Unchecking "Info", "Warnings", or "Errors" causes the dropdown to display a different title such as "Custom levels" or "Errors only" depending on what is selected.
 
 The intentions for usage of error and warn are easy to determine; how to use the other choices is up to you. If you do make extensive use of the different options then you might consider documenting the expectations of each as to not confuse things late in the project — especially if it is a team project.
 
@@ -245,7 +245,7 @@ For example, let’s say you wanted to test the value of a variable and make sur
 
 Chrome assert example
 
-We can see that assert has the same appearance as the error command, except that it also prepends “Assertion failed:” to the output text. Chrome can also expand this output to show a trace of where the assertion came from.
+We can see that assert has the same appearance as the error command, except that it also prepends "Assertion failed:" to the output text. Chrome can also expand this output to show a trace of where the assertion came from.
 
 The trace can be quite helpful with common patterns of functions within functions calling other functions and so on. Although, you can see in the example above that the line the assert came from doesn’t tell you how the code got to that line.
 
@@ -577,7 +577,7 @@ Technically, the `debugger` command isn’t a part of the console object in the 
 
 That’s a good look at most of the standard commands available to us in the console object. Each of these will work more-or-less the same across modern browsers. There may be some differences between browsers, as we saw in some of the examples. But there are a few more things I’d like to take a moment to point out, as they might prove useful in various ways.
 
-The following examples can be considered more like console “utilities.” They are not a part of the console object like most of the previous examples. Therefore they are not called with a leading console object reference. These utilities are supported directly by the browsers themselves. They cannot be called from JavaScript code but must be typed directly in the console to be used. In some cases the utility might be unique to a particular browser, in others the utility is supported much the same way in several browsers. Your mileage may vary based on your browser of choice.
+The following examples can be considered more like console "utilities." They are not a part of the console object like most of the previous examples. Therefore they are not called with a leading console object reference. These utilities are supported directly by the browsers themselves. They cannot be called from JavaScript code but must be typed directly in the console to be used. In some cases the utility might be unique to a particular browser, in others the utility is supported much the same way in several browsers. Your mileage may vary based on your browser of choice.
 
 #### $0, $1, $2, $3, $4
 
@@ -601,7 +601,7 @@ These are just basic examples that only scratch the surface of XPath.
 
 #### clear()
 
-This is another version of `console.clear()`, but without the “Console was cleared” message.
+This is another version of `console.clear()`, but without the "Console was cleared" message.
 
 #### getEventListeners(object)
 
@@ -617,7 +617,7 @@ Expanding each item in the array provides various information about that event l
 
 Firefox DOM Inspector events information.
 
-Clicking on the “event” badge next to the element provides a list of events registered to the element. Then each event can be expanded to show the code involved with the event.
+Clicking on the "event" badge next to the element provides a list of events registered to the element. Then each event can be expanded to show the code involved with the event.
 
 ### That’s it for now!
 

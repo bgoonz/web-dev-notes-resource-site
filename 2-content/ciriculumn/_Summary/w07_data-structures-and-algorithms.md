@@ -164,16 +164,16 @@ represent who you are as a developer.
   going to think? Though you’re not expected to have hundreds of followers on
   GitHub, you should follow your peers and encourage them to follow you to show
   industry engineers that there are people who would vouch for your skillset.
-* **Stars**: These are the “likes” on your GitHub profile. Similar to
-  encouraging others to follow you and following them, you should also “star”
+* **Stars**: These are the “likes" on your GitHub profile. Similar to
+  encouraging others to follow you and following them, you should also “star"
   their popular repositories. By the end of the curriculum, you should have
   several stars on each of your portfolio projects.
-* **Green Gardens**: This is birds-eye view of your “newsfeed” if your newsfeed
+* **Green Gardens**: This is birds-eye view of your “newsfeed" if your newsfeed
   reflected the number of commits that you were making. If you are very active
-  on GitHub, your activity squares, AKA “green gardens” will be verdant and
+  on GitHub, your activity squares, AKA “green gardens" will be verdant and
   green. This tells anyone who views your profile that you are actively coding
   and engaged with your identity as a software engineer. However, if your “green
-  gardens” are not green, this suggests that you are not actively coding and
+  gardens" are not green, this suggests that you are not actively coding and
   therefore perhaps not the best candidates for a development job.
 * **Photo and brief intro**: This is fairly straight-forward and should mirror
   the photo from you LinkedIn. Choose a professional photo and brief description
@@ -198,8 +198,8 @@ contains will live.
 Wikis are created at the beginning of any significant project and should be
 updated as your project evolves.
 
-To create or update your repository’s Wiki, click on the “Wiki” tab in your repo
-header and click “Edit” to update your home page and “New Page” to add a new
+To create or update your repository’s Wiki, click on the “Wiki" tab in your repo
+header and click “Edit" to update your home page and “New Page" to add a new
 section.
 
 ![Wiki tab on GitHub](images/github-repo-menu-bar-wiki.png)
@@ -216,8 +216,8 @@ facilitate a smooth development process. One of the most important aspects of
 your Wiki will be the outline of your project’s features and the **minimum
 viable product** (MVP).
 
-As you begin any project, you will consider what constitutes a “final product”
-and break down features into bite-sized “minimum viable products.” For example,
+As you begin any project, you will consider what constitutes a “final product"
+and break down features into bite-sized “minimum viable products." For example,
 if you intend to create an a/A version of Twitter, your list of MVPs may
 include:
 
@@ -244,10 +244,10 @@ production. READMEs should contain information about two impressive features
 that you implemented in your project, the technologies used, how to install the
 program, and anything else that makes you stand out as a software developer.
 
-Think of READMEs as the “first impression” that prospective employers,
+Think of READMEs as the “first impression" that prospective employers,
 colleagues, and peers will have of you as a developer. You want their first
 impression to be “wow, this person is thorough and this project sounds
-interesting,” not “oh no, typos, missing instructions, and snores-galore.”
+interesting," not “oh no, typos, missing instructions, and snores-galore."
 
 When it is time to create your README, you should allocate about three hours to
 guarantee you have enough time to make your project shine.

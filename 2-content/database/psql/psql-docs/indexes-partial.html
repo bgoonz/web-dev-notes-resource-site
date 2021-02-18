@@ -66,7 +66,7 @@ WHERE url = '/index.html' AND client_ip = inet '192.168.100.23';
    index that the
    typical query workload is not interested in; this is shown in <a class="xref" href="indexes-partial.html#INDEXES-PARTIAL-EX2" title="Example 11.2. Setting up a Partial Index to Exclude Uninteresting Values">Example 11.2</a>.  This results in the same
    advantages as listed above, but it prevents the
-   <span class="quote">“<span class="quote">uninteresting</span>”</span> values from being accessed via that
+   <span class="quote">"<span class="quote">uninteresting</span>"</span> values from being accessed via that
    index, even if an index scan might be profitable in that
    case.  Obviously, setting up partial indexes for this kind of
    scenario will require a lot of care and experimentation.
@@ -119,15 +119,15 @@ SELECT * FROM orders WHERE order_nr = 3501;
    only is such a general theorem prover extremely difficult to
    create, it would probably be too slow to be of any real use.)
    The system can recognize simple inequality implications, for example
-   <span class="quote">“<span class="quote">x &lt; 1</span>”</span> implies <span class="quote">“<span class="quote">x &lt; 2</span>”</span>; otherwise
+   <span class="quote">"<span class="quote">x &lt; 1</span>"</span> implies <span class="quote">"<span class="quote">x &lt; 2</span>"</span>; otherwise
    the predicate condition must exactly match part of the query's
    <code class="literal">WHERE</code> condition
    or the index will not be recognized as usable. Matching takes
    place at query planning time, not at run time. As a result,
    parameterized query clauses do not work with a partial index. For
    example a prepared query with a parameter might specify
-   <span class="quote">“<span class="quote">x &lt; ?</span>”</span> which will never imply
-   <span class="quote">“<span class="quote">x &lt; 2</span>”</span> for all possible values of the parameter.
+   <span class="quote">"<span class="quote">x &lt; ?</span>"</span> which will never imply
+   <span class="quote">"<span class="quote">x &lt; 2</span>"</span> for all possible values of the parameter.
   </p><p>
    A third possible use for partial indexes does not require the
    index to be used in queries at all.  The idea here is to create
@@ -136,9 +136,9 @@ SELECT * FROM orders WHERE order_nr = 3501;
    those that do not.
   </p><div class="example" id="INDEXES-PARTIAL-EX3"><p class="title"><strong>Example 11.3. Setting up a Partial Unique Index</strong></p><div class="example-contents"><p>
     Suppose that we have a table describing test outcomes.  We wish
-    to ensure that there is only one <span class="quote">“<span class="quote">successful</span>”</span> entry for
+    to ensure that there is only one <span class="quote">"<span class="quote">successful</span>"</span> entry for
     a given subject and target combination, but there might be any number of
-    <span class="quote">“<span class="quote">unsuccessful</span>”</span> entries.  Here is one way to do it:
+    <span class="quote">"<span class="quote">unsuccessful</span>"</span> entries.  Here is one way to do it:
 </p><pre class="programlisting">
 CREATE TABLE tests (
     subject text,

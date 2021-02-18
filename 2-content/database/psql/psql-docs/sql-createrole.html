@@ -24,7 +24,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
    <code class="command">CREATE ROLE</code> adds a new role to a
    <span class="productname">PostgreSQL</span> database cluster.  A role is
    an entity that can own database objects and have database privileges;
-   a role can be considered a <span class="quote">“<span class="quote">user</span>”</span>, a <span class="quote">“<span class="quote">group</span>”</span>, or both
+   a role can be considered a <span class="quote">"<span class="quote">user</span>"</span>, a <span class="quote">"<span class="quote">group</span>"</span>, or both
    depending on how it is used.  Refer to
    <a class="xref" href="user-manag.html" title="Chapter 21. Database Roles">Chapter 21</a> and <a class="xref" href="client-authentication.html" title="Chapter 20. Client Authentication">Chapter 20</a> for information about managing
    users and authentication.  You must have <code class="literal">CREATEROLE</code>
@@ -35,7 +35,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
   </p></div><div class="refsect1" id="id-1.9.3.78.6"><h2>Parameters</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>name</code></em></span></dt><dd><p>
         The name of the new role.
        </p></dd><dt><span class="term"><code class="literal">SUPERUSER</code><br /></span><span class="term"><code class="literal">NOSUPERUSER</code></span></dt><dd><p>
-        These clauses determine whether the new role is a <span class="quote">“<span class="quote">superuser</span>”</span>,
+        These clauses determine whether the new role is a <span class="quote">"<span class="quote">superuser</span>"</span>,
         who can override all access restrictions within the database.
         Superuser status is dangerous and should be used only when really
         needed.  You must yourself be a superuser to create a new superuser.
@@ -56,7 +56,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
         If not specified,
         <code class="literal">NOCREATEROLE</code> is the default.
        </p></dd><dt><span class="term"><code class="literal">INHERIT</code><br /></span><span class="term"><code class="literal">NOINHERIT</code></span></dt><dd><p>
-        These clauses determine whether a role <span class="quote">“<span class="quote">inherits</span>”</span> the
+        These clauses determine whether a role <span class="quote">"<span class="quote">inherits</span>"</span> the
         privileges of roles it is a member of.
         A role with the <code class="literal">INHERIT</code> attribute can automatically
         use whatever database privileges have been granted to all roles
@@ -149,7 +149,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
        </p></dd><dt><span class="term"><code class="literal">ROLE</code> <em class="replaceable"><code>role_name</code></em></span></dt><dd><p>
         The <code class="literal">ROLE</code> clause lists one or more existing
         roles which are automatically added as members of the new role.
-        (This in effect makes the new role a <span class="quote">“<span class="quote">group</span>”</span>.)
+        (This in effect makes the new role a <span class="quote">"<span class="quote">group</span>"</span>.)
        </p></dd><dt><span class="term"><code class="literal">ADMIN</code> <em class="replaceable"><code>role_name</code></em></span></dt><dd><p>
         The <code class="literal">ADMIN</code> clause is like <code class="literal">ROLE</code>,
         but the named roles are added to the new role <code class="literal">WITH ADMIN
@@ -199,7 +199,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
    means that even if a role does not have a certain privilege but is allowed
    to create other roles, it can easily create another role with different
    privileges than its own (except for creating roles with superuser
-   privileges). For example, if the role <span class="quote">“<span class="quote">user</span>”</span> has the
+   privileges). For example, if the role <span class="quote">"<span class="quote">user</span>"</span> has the
    <code class="literal">CREATEROLE</code> privilege but not the <code class="literal">CREATEDB</code> privilege,
    nonetheless it can create a new role with the <code class="literal">CREATEDB</code>
    privilege. Therefore, regard roles that have the <code class="literal">CREATEROLE</code>
@@ -211,7 +211,7 @@ CREATE ROLE <em class="replaceable"><code>name</code></em> [ [ WITH ] <em class=
   </p><p>
    The <code class="literal">CONNECTION LIMIT</code> option is only enforced approximately;
    if two new sessions start at about the same time when just one
-   connection <span class="quote">“<span class="quote">slot</span>”</span> remains for the role, it is possible that
+   connection <span class="quote">"<span class="quote">slot</span>"</span> remains for the role, it is possible that
    both will fail.  Also, the limit is never enforced for superusers.
   </p><p>
    Caution must be exercised when specifying an unencrypted password

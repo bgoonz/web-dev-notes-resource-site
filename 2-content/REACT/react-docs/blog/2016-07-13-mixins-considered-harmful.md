@@ -3,7 +3,7 @@ title: "Mixins Considered Harmful"
 author: [gaearon]
 ---
 
-“How do I share the code between several components?” is one of the first questions that people ask when they learn React. Our answer has always been to use component composition for code reuse. You can define a component and use it in several other components.
+"How do I share the code between several components?" is one of the first questions that people ask when they learn React. Our answer has always been to use component composition for code reuse. You can define a component and use it in several other components.
 
 It is not always obvious how a certain pattern can be solved with composition. React is influenced by functional programming but it came into the field that was dominated by object-oriented libraries. It was hard for engineers both inside and outside of Facebook to give up on the patterns they were used to.
 
@@ -51,7 +51,7 @@ A few months later, somebody wants to make the tooltip direction configurable. I
 
 This is fine while there are no new requirements. However this solution doesn't scale well. What if you want to support displaying multiple tooltips in a single component? You can't define the same mixin twice in a component. What if the tooltips need to be displayed automatically in a guided tour instead of on hover? Good luck decoupling `TooltipMixin` from `HoverMixin`. What if you need to support the case where the hover area and the tooltip anchor are located in different components? You can't easily hoist the state used by mixin up into the parent component. Unlike components, mixins don't lend themselves naturally to such changes.
 
-Every new requirement makes the mixins harder to understand. Components using the same mixin become increasingly coupled with time. Any new capability gets added to all of the components using that mixin. There is no way to split a “simpler” part of the mixin without either duplicating the code or introducing more dependencies and indirection between mixins. Gradually, the encapsulation boundaries erode, and since it's hard to change or remove the existing mixins, they keep getting more abstract until nobody understands how they work.
+Every new requirement makes the mixins harder to understand. Components using the same mixin become increasingly coupled with time. Any new capability gets added to all of the components using that mixin. There is no way to split a "simpler" part of the mixin without either duplicating the code or introducing more dependencies and indirection between mixins. Gradually, the encapsulation boundaries erode, and since it's hard to change or remove the existing mixins, they keep getting more abstract until nobody understands how they work.
 
 These are the same problems we faced building apps before React. We found that they are solved by declarative rendering, top-down data flow, and encapsulated components. At Facebook, we have been migrating our code to use alternative patterns to mixins, and we are generally happy with the results. You can read about those patterns below.
 
@@ -149,7 +149,7 @@ module.exports = CommentList;
 
 If there is just one component subscribed to this data source, it is fine to embed the subscription logic right into the component. Avoid premature abstractions.
 
-If several components used this mixin to subscribe to a data source, a nice way to avoid repetition is to use a pattern called [“higher-order components”](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750). It can sound intimidating so we will take a closer look at how this pattern naturally emerges from the component model.
+If several components used this mixin to subscribe to a data source, a nice way to avoid repetition is to use a pattern called ["higher-order components"](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750). It can sound intimidating so we will take a closer look at how this pattern naturally emerges from the component model.
 
 #### Higher-Order Components Explained {#higher-order-components-explained}
 
@@ -275,7 +275,7 @@ We will write a new function called `withSubscription(WrappedComponent)`. Its ar
 
 This function would return another component. The returned component would manage the subscription and render `<WrappedComponent />` with the current data.
 
-We call this pattern a “higher-order component”.
+We call this pattern a "higher-order component".
 
 The composition happens at React rendering level rather than with a direct function call. This is why it doesn't matter whether the wrapped component is defined with `createClass()`, as an ES6 class or a function. If `WrappedComponent` is a React component, the component created by `withSubscription()` can render it.
 

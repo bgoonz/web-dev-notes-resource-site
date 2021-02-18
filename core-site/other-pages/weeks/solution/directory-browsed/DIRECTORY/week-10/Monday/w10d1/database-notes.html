@@ -61,7 +61,7 @@
   PRIMARY KEY(id)
 );</code></pre>
 <h1 id="unique-values">Unique values</h1>
-<p>You can put a constraint on a column by putting UNIQUE in the column's definition. For example, here's a sample “people” table with a unique constraint on the email column.</p>
+<p>You can put a constraint on a column by putting UNIQUE in the column's definition. For example, here's a sample "people" table with a unique constraint on the email column.</p>
 <pre><code>CREATE TABLE people (
   id SERIAL,
   first_name VARCHAR(50) NOT NULL,
@@ -70,7 +70,7 @@
   PRIMARY KEY (id)
 );</code></pre>
 <h1 id="refactor-for-data-integrity---normalization">Refactor for data integrity - normalization</h1>
-<p>corgi, CORGI, Corgi can make database messy. Instead of having just one table, you could have two tables. One that contains the puppy information and another that contains the breed information. Then, using the magic of relational databases, you can create a relation between the two tables so that the “puppies” table will reference entries in the “breeds” table.</p>
+<p>corgi, CORGI, Corgi can make database messy. Instead of having just one table, you could have two tables. One that contains the puppy information and another that contains the breed information. Then, using the magic of relational databases, you can create a relation between the two tables so that the "puppies" table will reference entries in the "breeds" table.</p>
 <h1 id="foreign-key">Foreign key</h1>
 <p>That means that the value in the column _must exist as the value of a primary key in the table that it references. This referential integrity is the backbone of relational databases. It prevents bad data from getting put into those foreign key columns.</p>
 <pre><code>FOREIGN KEY («column name in this table»)

@@ -27,7 +27,7 @@
        particularly to <span class="application">pg_dump</span>
       </td></tr><tr><td><code class="structfield">datfrozenxid</code></td><td><code class="type">xid</code></td><td> </td><td>
        All transaction IDs before this one have been replaced with a permanent
-       (<span class="quote">“<span class="quote">frozen</span>”</span>) transaction ID in this database.  This is used to
+       (<span class="quote">"<span class="quote">frozen</span>"</span>) transaction ID in this database.  This is used to
        track whether the database needs to be vacuumed in order to prevent
        transaction ID wraparound or to allow <code class="literal">pg_xact</code> to be shrunk.
        It is the minimum of the per-table

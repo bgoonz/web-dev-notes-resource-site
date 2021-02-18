@@ -101,10 +101,10 @@ tar -cf backup.tar /usr/local/pgsql/data
     </p>
     <p>
       An alternative file-system backup approach is to make a
-      <span class="quote">“<span class="quote">consistent snapshot</span>”</span> of the data directory, if the
+      <span class="quote">"<span class="quote">consistent snapshot</span>"</span> of the data directory, if the
       file system supports that functionality (and you are willing to
       trust that it is implemented correctly). The typical procedure is
-      to make a <span class="quote">“<span class="quote">frozen snapshot</span>”</span> of the volume containing the
+      to make a <span class="quote">"<span class="quote">frozen snapshot</span>"</span> of the volume containing the
       database, then copy the whole data directory (not just parts, see
       above) from the snapshot to a backup device, then release the frozen
       snapshot. This will work even while the database server is running.

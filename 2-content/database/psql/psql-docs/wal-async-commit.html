@@ -63,8 +63,8 @@
    <acronym class="acronym">WAL</acronym> records,
    then changes made during that transaction <span class="emphasis"><em>will</em></span> be lost.
    The duration of the
-   risk window is limited because a background process (the <span class="quote">“<span class="quote">WAL
-   writer</span>”</span>) flushes unwritten <acronym class="acronym">WAL</acronym> records to disk
+   risk window is limited because a background process (the <span class="quote">"<span class="quote">WAL
+   writer</span>"</span>) flushes unwritten <acronym class="acronym">WAL</acronym> records to disk
    every <a class="xref" href="runtime-config-wal.html#GUC-WAL-WRITER-DELAY">wal_writer_delay</a> milliseconds.
    The actual maximum duration of the risk window is three times
    <code class="varname">wal_writer_delay</code> because the WAL writer is

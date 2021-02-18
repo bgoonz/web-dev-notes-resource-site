@@ -254,7 +254,7 @@ See the <a href="https://github.com/expressjs/express/pull/2237">pull request</a
 <h4 id="res.send.body">res.send(body, status)</h4>
 <p>Express 5 no longer supports the signature <code>res.send(obj, status)</code>. Instead, set the status and then chain it to the <code>res.send()</code> method like this: <code>res.status(status).send(obj)</code>.</p>
 <h4 id="res.send.status">res.send(status)</h4>
-<p>Express 5 no longer supports the signature <code>res.send(<em>status</em>)</code>, where <em><code>status</code></em> is a number. Instead, use the <code>res.sendStatus(statusCode)</code> function, which sets the HTTP response header status code and sends the text version of the code: “Not Found”, “Internal Server Error”, and so on.
+<p>Express 5 no longer supports the signature <code>res.send(<em>status</em>)</code>, where <em><code>status</code></em> is a number. Instead, use the <code>res.sendStatus(statusCode)</code> function, which sets the HTTP response header status code and sends the text version of the code: "Not Found", "Internal Server Error", and so on.
 If you need to send a number by using the <code>res.send()</code> function, quote the number to convert it to a string, so that Express does not interpret it as an attempt to use the unsupported old signature.</p>
 <h4 id="res.sendfile">res.sendfile()</h4>
 <p>The <code>res.sendfile()</code> function has been replaced by a camel-cased version <code>res.sendFile()</code> in Express 5.</p>
