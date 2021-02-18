@@ -273,7 +273,7 @@ for updating the state of the application appropriately whenever it receives an
 action. It does so by registering with the dispatcher a callback function that
 receives an action. This callback function uses the action’s type to invoke the
 proper function to change the application’s state. After the store has changed
-state, it “emits a change,” i.e. the store passes the new state to any views
+state, it “emits a change," i.e. the store passes the new state to any views
 (explanation incoming) that have registered listeners (callbacks) to it.
 
 ### View
@@ -306,12 +306,12 @@ principles:
 
 1. **Single Source of Truth**: The entire state of the application is stored in
    a single JavaScript object in a single store. This object is commonly
-   referred to as a “state tree” because its values often contain or are objects
+   referred to as a “state tree" because its values often contain or are objects
    themselves.
 2. **State is Read-Only**: The only way to change the state is to dispatch an
    action. This principle ensures that our Redux loop is never short-circuited
    and change of state remains single-threaded.
-3. **Only Pure Functions Change State**: Pure functions known as “reducers”
+3. **Only Pure Functions Change State**: Pure functions known as “reducers"
    receive the previous state and an action and return the next state. They
    return new state objects instead of mutating previous state. Read
    [more][pure-functions] about what makes a function pure.
@@ -381,7 +381,7 @@ for updating the state of the application appropriately whenever it receives an
 action. It does so by registering with the dispatcher a callback function that
 receives an action. This callback function uses the action’s type to invoke the
 proper function to change the application’s state. After the store has changed
-state, it “emits a change,” i.e. the store passes the new state to any views
+state, it “emits a change," i.e. the store passes the new state to any views
 (explanation incoming) that have registered listeners (callbacks) to it.
 
 ### View
@@ -414,12 +414,12 @@ principles:
 
 1. **Single Source of Truth**: The entire state of the application is stored in
    a single JavaScript object in a single store. This object is commonly
-   referred to as a “state tree” because its values often contain or are objects
+   referred to as a “state tree" because its values often contain or are objects
    themselves.
 2. **State is Read-Only**: The only way to change the state is to dispatch an
    action. This principle ensures that our Redux loop is never short-circuited
    and change of state remains single-threaded.
-3. **Only Pure Functions Change State**: Pure functions known as “reducers”
+3. **Only Pure Functions Change State**: Pure functions known as “reducers"
    receive the previous state and an action and return the next state. They
    return new state objects instead of mutating previous state. Read
    [more][pure-functions] about what makes a function pure.

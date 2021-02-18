@@ -130,7 +130,7 @@ function callback() {
 ### 4. Explain when a recursive solution is appropriate to solving a problem over an iterative solution:
 > Answer:
 
-### 5. Explain why functions are “First Class Objects” in JavaScript:
+### 5. Explain why functions are "First Class Objects" in JavaScript:
 > Answer:
 
 ### 6. Define what IIFEs are and explain their use case:

@@ -2,13 +2,13 @@
 <h2 id="command-line-interface-basics-lesson-learning-objectives">Command Line Interface Basics Lesson Learning Objectives</h2>
 <p>Below is a complete list of the terminal learning objectives for this lesson. When you complete this lesson, you should be able to perform each of the following objectives. These objectives capture how you may be evaluated on the assessment for this lesson.</p>
 <ol type="1">
-<li>Given a folder structure diagram, a list of ‘cd (path)' commands and target files, match the paths to the target files.</li>
+<li>Given a folder structure diagram, a list of 'cd (path)' commands and target files, match the paths to the target files.</li>
 <li>Create, rename, and move folders using unix command line tools.</li>
 <li>Use grep and | to count matches of a pattern in a sample text file and save result to another file.</li>
 <li>Find what -c, -r, and -b flags do in grep by reading the manual.</li>
 <li>Identify the difference in two different files using diff.</li>
 <li>Open and close nano with and without saving a file.</li>
-<li>Use ‘curl' to download a file.</li>
+<li>Use 'curl' to download a file.</li>
 <li>Read the variables of $PATH.</li>
 <li>Explain the difference between .bash_profile and .bashrc.</li>
 <li>Create a new alias by editing the .bash_profile.</li>
@@ -38,7 +38,7 @@
 <p>The <em>nodes</em> in the UNIX file system are <strong>files</strong>, which are themselves an ordered sequence of zero or more bytes (binary files) or characters (text files). One special type of (binary) <em>file</em> is the <strong>directory</strong>, which is a file that holds a list of other files. The <strong><em>path</em></strong> for any file is the sequence of directories from some starting point to the file itself; <strong>absolute</strong> paths start with the root directory (<code>/etc/hosts</code>); while <strong>relative</strong> paths start anywhere else. (<em>this</em> file is currently <code>Documents/Curricula/2020-may/shell.md</code>, starting from my home directory)</p>
 <h2 id="shell-commands-from-the-lectures">Shell Commands from the Lectures</h2>
 <ul>
-<li><strong><code>&lt; | &gt; &gt;&gt;</code></strong> - (file redirection) - <code>&lt; &lt;file&gt;</code> redirects the standard input stream to read from a file; <code>&gt; &lt;file&gt;</code> redirects the standard output stream into a new file; <code>&gt;&gt; &lt;file&gt;</code> redirects the standard output stream into a file, appending if the file already exists. NOTE: a common redirection pattern is <code>2&gt;&amp;1</code>, which means ‘direct the stderr stream (<code>2</code>) to the same stream as stdout (<code>1</code>). Another one is <code>2&gt;/dev/null</code>, which means 'discard any error messages'.</li>
+<li><strong><code>&lt; | &gt; &gt;&gt;</code></strong> - (file redirection) - <code>&lt; &lt;file&gt;</code> redirects the standard input stream to read from a file; <code>&gt; &lt;file&gt;</code> redirects the standard output stream into a new file; <code>&gt;&gt; &lt;file&gt;</code> redirects the standard output stream into a file, appending if the file already exists. NOTE: a common redirection pattern is <code>2&gt;&amp;1</code>, which means 'direct the stderr stream (<code>2</code>) to the same stream as stdout (<code>1</code>). Another one is <code>2&gt;/dev/null</code>, which means 'discard any error messages'.</li>
 <li><strong><code>. .. ~</code></strong> - (special directories) Dot (<code>.</code>) and dot-dot (<code>..</code>) are "this directory" and "the parent of this directory", respectively. Tilde (<code>~</code>) is the user's home directory.</li>
 <li><strong><code>alias</code></strong> - define or display aliases</li>
 <li><strong><code>cd</code></strong> - change directory</li>
@@ -74,11 +74,11 @@
 <li>$USER</li>
 </ul>
 <h2 id="special-places-in-the-unix-file-system">Special places in the UNIX File System</h2>
-<p><code>/</code> - the root folder - <strong>everything</strong> is located ‘under' this folder.<br />
+<p><code>/</code> - the root folder - <strong>everything</strong> is located 'under' this folder.<br />
 <code>/home/&lt;user&gt;</code> - default location for user files<br />
 <code>/etc/</code> - system configuration information<br />
 <code>/dev/</code> - system devices - normally you won't care about these unless you are mounting a device.<br />
-<code>/dev/null</code> - a write-only device, aka the ‘bit-bucket' - output to be suppressed is routed here. <code>/usr/</code> - shells, programing languages, and other standard parts of the OS go here.<br />
+<code>/dev/null</code> - a write-only device, aka the 'bit-bucket' - output to be suppressed is routed here. <code>/usr/</code> - shells, programing languages, and other standard parts of the OS go here.<br />
 <code>/opt/</code> - custom-installed (global) programs will go here. (non-global programs will be installed under <code>/home/&lt;user&gt;</code>)</p>
 <p><em>(There are more - this is just to get you started!)</em></p>
 <h2 id="wednesday-lecture-notes">Wednesday Lecture Notes</h2>
@@ -118,10 +118,10 @@
 <p><strong>The GNU Bash Reference Manual</strong>: https://www.gnu.org/software/bash/manual/bash.pdf</p>
 <p><strong>The Zsh Manual</strong>: http://zsh.sourceforge.net/Doc/</p>
 <p><strong>KornShell (ksh) Documentation</strong>: http://kornshell.com/doc/</p>
-<p><em>*opinions often differ regarding what ‘good' documentation is, of course!</em></p>
+<p><em>*opinions often differ regarding what 'good' documentation is, of course!</em></p>
 <h2 id="expanded-list-of-shell-commands">Expanded List of Shell Commands</h2>
 <ul>
-<li><code>&lt; | &gt; &gt;&gt;</code> - (file redirection) - <code>&lt; &lt;file&gt;</code> redirects the standard input stream to read from a file; <code>&gt; &lt;file&gt;</code> redirects the standard output stream into a new file; <code>&gt;&gt; &lt;file&gt;</code> redirects the standard output stream into a file, appending if the file already exists. NOTE: a common redirection pattern is <code>2&gt;&amp;1</code>, which means ‘direct the stderr stream (<code>2</code>) to the same stream as stdout (<code>1</code>). Another one is <code>2&gt;/dev/null</code>, which means 'discard any error messages'.</li>
+<li><code>&lt; | &gt; &gt;&gt;</code> - (file redirection) - <code>&lt; &lt;file&gt;</code> redirects the standard input stream to read from a file; <code>&gt; &lt;file&gt;</code> redirects the standard output stream into a new file; <code>&gt;&gt; &lt;file&gt;</code> redirects the standard output stream into a file, appending if the file already exists. NOTE: a common redirection pattern is <code>2&gt;&amp;1</code>, which means 'direct the stderr stream (<code>2</code>) to the same stream as stdout (<code>1</code>). Another one is <code>2&gt;/dev/null</code>, which means 'discard any error messages'.</li>
 <li><code>. .. ~</code> - (special directories) Dot (<code>.</code>) and dot-dot (<code>..</code>) are "this directory" and "the parent of this directory", respectively. Tilde (<code>~</code>) is the user's home directory.</li>
 <li><code>", ', &lt;backtick&gt;</code> - (string delimiters) double-quotes delimit interpolated strings; single-quotes delimit literal strings; backticks delimit commands that are run, returning the output as a string (this backtick thing is an older syntax - the modern form is <code>$(&lt;command&gt;)</code>)</li>
 <li><code>${&lt;variable&gt;}</code> - (variable expansion)</li>

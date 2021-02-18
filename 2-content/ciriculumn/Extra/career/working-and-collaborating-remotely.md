@@ -95,7 +95,7 @@ The quote references a job posting by a tech company that produces software for 
   - Others include: [Subversion (SVN)](https://subversion.apache.org/), [Mercurial](https://www.mercurial-scm.org/)
 
 #### Communication
-* **Communicating online** - Obviously, if you are working remotely, you won’t only be communicating by email. It is imperative that you become familiar with the etiquette or “netiquette” when working online and to remain professional during web conferencing.
+* **Communicating online** - Obviously, if you are working remotely, you won’t only be communicating by email. It is imperative that you become familiar with the etiquette or “netiquette" when working online and to remain professional during web conferencing.
   - Every message, email, or call to `@here` on Slack can disturb people’s work, so it’s important to plan your communication
   - Do people email after hours?  Until you find out, try to send anything outside of normal working hours through scheduled send
   - In a remote environment, messages that are text only won’t have the social context that one would have if speaking with someone where they can see them, so use care in crafting your email and messages
@@ -117,7 +117,7 @@ The quote references a job posting by a tech company that produces software for 
   - Build relationships with your team - see the section below for more info
 
 #### Professionalism and Growth
-* **Being visible for professional growth** - The old adage, “out of sight, out of mind” can easily apply to remote working situations, and it can be hard to make an impression when you are not in the same proximity as your co-workers.  Making an effort to bridge the distance will not only make it easier to work with your team, it will help you make connections you will utilize throughout your career.
+* **Being visible for professional growth** - The old adage, “out of sight, out of mind" can easily apply to remote working situations, and it can be hard to make an impression when you are not in the same proximity as your co-workers.  Making an effort to bridge the distance will not only make it easier to work with your team, it will help you make connections you will utilize throughout your career.
   - Let people know what you are working on - you don’t need to give everyone a long list, but be "vocal" online about your projects and share any roadblocks you might have. Sharing an occasional screenshot or screencap of a feature completed or problem solved is another good way to show progress. With that said, be self-sufficient and try to solve hiccups on your own before consulting the team, and, make sure to help others resolve their blockers too
   - Let people know your availability - Keep your calendar up-to-date and be sure it is shared with the team.  Put your lunch break on it too, especially if you aren’t taking your lunch exactly at noon.  If your team can’t get in contact with you when they need you, they might think you aren’t actually working.  Also be sure to set up away messages and notifications on communication apps when you will be unavailable for a large portion of the day.  And that goes double for your days off and vacations!
   - Set up "one-on-ones" with people you need to know before remote or collaborative work begins. This helps to get to know your teammates, their roles, and their expectations, and vice versa
@@ -125,7 +125,7 @@ The quote references a job posting by a tech company that produces software for 
 * **Fitting into the culture and building relationships** - While it can take a while to understand all of the cultural nuances of a new workplace, here are some things you can do to get up to speed quickly:
   - Read the mission statement, company values, founding principles, or similar, on the company website.  Can’t find it?  The employment section of the company website often covers at least part of these topics.
   - Your team might have its own culture in addition to that of the company.  In your introductory one-on-ones, ask people about the culture.  It’s especially important to know about things such as taboos and rituals. It would be awkward to show up to video standup in your halloween costume and find out that your new workplace doesn’t do holidays!
-* **Confidentiality** - There’s a pretty good chance that something you are working on shouldn’t be shared with those outside your company.  Working remotely can sometimes be a risk for inadvertently exposing “company secrets” to others.
+* **Confidentiality** - There’s a pretty good chance that something you are working on shouldn’t be shared with those outside your company.  Working remotely can sometimes be a risk for inadvertently exposing “company secrets" to others.
   - If you are in proximity to others, always use headphones for short video and phone calls. This will ensure that the words of others aren’t overheard.  If you do plan to discuss something confidential, you might need to book a telephone booth at your office rental or ask your roommate to check out your new Spotify playlist, etc.
   - It’s important to be transparent with your team if others are around. Most people understand that it’s impossible to always be in isolation, but being upfront about it can prevent awkwardness or accidental secret spilling.
   - Do not work on confidential projects in public places such as coffee shops, airports, or public libraries.  Especially don’t work on confidential projects while connected to open wifi networks
@@ -164,7 +164,7 @@ In this challenge, you will use a professional online video conferencing platfor
 See how many challenges you can get through, and save the sheet in case you have time in the future to solve more challenges. Seeing the list grow will build your confidence!
 
 ### Check for Understanding
-Go onto Youtube or search for blog posts about the “pros and cons” of remote work, the etiquette of communicating online, or professional growth for remote workers. Write a short summary of what you found to be a surprise or misconception, or on the other hand, solidified your beliefs about the subject.
+Go onto Youtube or search for blog posts about the “pros and cons" of remote work, the etiquette of communicating online, or professional growth for remote workers. Write a short summary of what you found to be a surprise or misconception, or on the other hand, solidified your beliefs about the subject.
 
 ### Supplemental Materials
 - [How to set discipline at home](https://www.youtube.com/watch?v=WqZiBugq4ts) - 3:10 video

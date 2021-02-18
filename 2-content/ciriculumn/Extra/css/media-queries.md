@@ -115,8 +115,8 @@ Everyone. Some companies with very responsive sites are [Etsy](https://www.etsy.
 
    #### min v max width
 
-1. OK, we got to try “max-width”, now let’s experiment with min-width.
-   Since we have everything 1080px width and less specified, we’ll add something crazy for “min-width: 1081px”, that is, everything 1081px and wider.
+1. OK, we got to try “max-width", now let’s experiment with min-width.
+   Since we have everything 1080px width and less specified, we’ll add something crazy for “min-width: 1081px", that is, everything 1081px and wider.
    `css @media (max-width: 1080px) { img { width: 100%; } } @media (min-width: 1081px) { body { background-color: red; } }`
 1. Save and change your html page window width again to see your red background at 1081px and wider.
 

@@ -72,7 +72,7 @@
 <li>The <code>color</code> css property changes the color of the <em>text</em>.</li>
 <li>The <code>background-color</code> css property does just what it says</li>
 <li><code>rgb()</code> - takes in 3 integer values denoting levels of <code>red, green and blue</code></li>
-<li><code>rgba()</code> - Same as above but with additional argument (the ‘a') called <strong>alpha</strong> which represents how <strong>transparent</strong> the color will be and is on a scale from 0 to 1 where 0 is transparent and 1 is opaque.</li>
+<li><code>rgba()</code> - Same as above but with additional argument (the 'a') called <strong>alpha</strong> which represents how <strong>transparent</strong> the color will be and is on a scale from 0 to 1 where 0 is transparent and 1 is opaque.</li>
 </ul></li>
 <li>Everything about borders, Shadows, &amp; Opacity
 <ul>
@@ -289,15 +289,15 @@
 <li>Fully use the fetch API to make dynamic Web pages without refreshing the page
 <ul>
 <li>Look over the AJAX project from Friday. Be comfortable with creating many different request types, such as <code>GET</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code>.</li>
-<li>Be comfortable with using both the <code>.then</code> promise chains that we used in the project as well as how we could convert them into an async/await format: ```javascript // Using Promise chains for .then and .catch document.querySelector(‘#downvote').addEventListener(‘click', () =&gt; { fetch(‘http://localhost:3000/kitten/downvote', { method: ‘PATCH' }) .then(handleResponse) // handleResponse defined below for reference .then(updateImageScore) // updateImageScore defined below for reference .catch(handleError); // handleError defined below for reference });</li>
+<li>Be comfortable with using both the <code>.then</code> promise chains that we used in the project as well as how we could convert them into an async/await format: ```javascript // Using Promise chains for .then and .catch document.querySelector('#downvote').addEventListener('click', () =&gt; { fetch('http://localhost:3000/kitten/downvote', { method: 'PATCH' }) .then(handleResponse) // handleResponse defined below for reference .then(updateImageScore) // updateImageScore defined below for reference .catch(handleError); // handleError defined below for reference });</li>
 </ul></li>
 </ol>
-<p>// Using async/await document.querySelector(‘#downvote').addEventListener(‘click', async () =&gt; { // Notice the async keyword on the callback definition! // We create a standard try/catch block try { // We await each asynchronous function call const resJSON = await fetch(‘http://localhost:3000/kitten/downvote', { method: ‘PATCH' }); const resObj = await handleResponse(resJSON); // updateImageScore is synchronous, so we do not have to await its response updateImageScore(resObj); } catch (e) { handleError(e) } });</p>
+<p>// Using async/await document.querySelector('#downvote').addEventListener('click', async () =&gt; { // Notice the async keyword on the callback definition! // We create a standard try/catch block try { // We await each asynchronous function call const resJSON = await fetch('http://localhost:3000/kitten/downvote', { method: 'PATCH' }); const resObj = await handleResponse(resJSON); // updateImageScore is synchronous, so we do not have to await its response updateImageScore(resObj); } catch (e) { handleError(e) } });</p>
 <p>// Functions used above, for reference const handleResponse = (response) =&gt; { stopLoader(); clearError();</p>
 <pre><code>if (!response.ok) {
     throw response;
 }
 return response.json();</code></pre>
 <p>};</p>
-<p>const handleError = (error) =&gt; { if (error.json) { error.json().then((errorJSON) =&gt; { document.querySelector(‘.error').innerHTML = <code>Error occured: ${errorJSON.message}</code>; }); } else { console.error(error); alert(‘Something went wrong. Please try again!'); } };</p>
-<p>const updateImageScore = (data) =&gt; { const { score } = data; document.querySelector(‘.score').innerHTML = score; }; ```</p>
+<p>const handleError = (error) =&gt; { if (error.json) { error.json().then((errorJSON) =&gt; { document.querySelector('.error').innerHTML = <code>Error occured: ${errorJSON.message}</code>; }); } else { console.error(error); alert('Something went wrong. Please try again!'); } };</p>
+<p>const updateImageScore = (data) =&gt; { const { score } = data; document.querySelector('.score').innerHTML = score; }; ```</p>

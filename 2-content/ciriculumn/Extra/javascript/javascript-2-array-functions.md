@@ -96,7 +96,7 @@ Find a partner and answer these questions:
 - How would you access the first and last item in an array?
 - What does arrayName.length do?
 - How would you index into the following array to get Cookie?
-  `let dessertArray = [ ["Pie", 4], ["Cupcake”, 5], ["Cookie", 12] ];`
+  `let dessertArray = [ ["Pie", 4], ["Cupcake", 5], ["Cookie", 12] ];`
 - What's the difference and similarities between var, let and const?
 - What's the difference between parameters and arguments? Show an example.
 - What is the difference between local scope and global scope?

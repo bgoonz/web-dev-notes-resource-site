@@ -5,8 +5,8 @@
 <li><p><strong><code>Query</code></strong> : A question we're asking a database, aiming to get a response back.</p></li>
 <li><code>psql -U postgres</code>
 <ul>
-<li>Let's us access the postgres server as the user ‘postgres'</li>
-<li><code>-U</code> stands for ‘user'.</li>
+<li>Let's us access the postgres server as the user 'postgres'</li>
+<li><code>-U</code> stands for 'user'.</li>
 <li><code>\q</code> is used to quit postgres at any time.</li>
 </ul></li>
 </ul>
@@ -70,7 +70,7 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">SELECT</span> name, breed <span class="kw">FROM</span> puppies</a>
 <a class="sourceLine" id="cb4-2" title="2">  <span class="kw">WHERE</span> breed <span class="kw">IN</span> (<span class="st">&#39;Corgi&#39;</span>, <span class="st">&#39;Beagle&#39;</span>, <span class="st">&#39;Yorkshire Terrier&#39;</span>);</a></code></pre></div>
 <ul>
-<li>Use the structure WHERE [col] IN (‘val', ‘val2'…)</li>
+<li>Use the structure WHERE [col] IN ('val', 'val2'…)</li>
 </ul>
 <p><strong>WHERE clause for a range of values</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">SELECT</span> name, breed, age_yrs <span class="kw">FROM</span> puppies</a>

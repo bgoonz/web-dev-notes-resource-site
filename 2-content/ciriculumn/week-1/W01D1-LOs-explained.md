@@ -1,7 +1,7 @@
 ## Expressions and Functions (W1D1) - Learning Objectives
 
 ### Expressions
-1. Given a working REPL interface, write and execute a statement that will print "hello world” using console.log
+1. Given a working REPL interface, write and execute a statement that will print "hello world" using console.log
 - We can use the `console.log` function to print out statements during code execution. While we are learning introductory material, this may be our end goal. Moving forward, `console.log` will become very valuable not as an end result, but as a tool to aid us in debugging larger and more complex pieces of code.
 ```js
 console.log("hello world");

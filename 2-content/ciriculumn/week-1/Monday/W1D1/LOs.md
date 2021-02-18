@@ -1,7 +1,7 @@
 # W1D1 Learning Objectives
 
 ## [Expressions Learning Objectives](#expressions)
-  1. [Given a working REPL interface, write and execute a statement that will print "hello world” using console.log](#expressions-objective-1)
+  1. [Given a working REPL interface, write and execute a statement that will print "hello world" using console.log](#expressions-objective-1)
   2. [Identify that strings are a list of characters defined by using double or single quotes](#expressions-objective-2)
   3. [Given an arithmetic expression using +, -, *, /, %, compute its value](#expressions-objective-3)
   4. [Given an expression, predict if its value is NaN](#expressions-objective-4)
@@ -24,7 +24,7 @@
 ## Expressions
 
 ### Expressions Objective 1
-Given a working REPL interface, write and execute a statement that will print "hello world” using console.log
+Given a working REPL interface, write and execute a statement that will print "hello world" using console.log
 ```js
 console.log("hello world");
 ```

@@ -80,9 +80,9 @@ We tend to enter a collaborative environment assuming that everyone else knows E
 
 Sometimes, it's hard to quell the self doubt and low confidence. In those cases, it's important to remember: SOS, or Stop, Observe, and Shift! Stop and take a moment to break the cycle of self doubt. Observe your own thoughts, how they make you feel. And then Shift your mental, emotional, and behavioral responses to be positive.
 
-In all situations, whether it's feelings of inadequacy or worrying about performance, ask yourself “What is the opportunity to grow? How can I make this an occasion to celebrate my achievements?”
+In all situations, whether it's feelings of inadequacy or worrying about performance, ask yourself “What is the opportunity to grow? How can I make this an occasion to celebrate my achievements?"
 
-Building your competencies gives you the ability execute. With increased execution comes increased confidence. In partnership with affirmations, goal setting, and positive thinking, how will you not achieve your goals?! “Just confidence in yourself, without the competence, is also useless — talking the talk is not a sustainable strategy. You need the talk and bravado, but you also need to develop the skills to backup your talk.”
+Building your competencies gives you the ability execute. With increased execution comes increased confidence. In partnership with affirmations, goal setting, and positive thinking, how will you not achieve your goals?! “Just confidence in yourself, without the competence, is also useless — talking the talk is not a sustainable strategy. You need the talk and bravado, but you also need to develop the skills to backup your talk."
 
 Bernice Moore's theory are steps, and really a cycle, of improving both a competency and your self confidence. By practicing these steps, both 1) the skill and 2) feeling confident about your skill can grow!
 

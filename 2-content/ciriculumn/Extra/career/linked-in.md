@@ -43,7 +43,7 @@ LinkedIn is your online professional identity and a great place to maintain & bu
   - List relevant work experience (use updates resume)
   - List relevant technical projects including the purpose of the project, your contributions, and tools/technologies used
 - Formatting:
-  - Get a customized URL (How to get one? On the Edit Profile screen, at the bottom of the gray window that shows your basic information, you’ll see a Public Profile URL. Click “Edit” next to the URL, and specify what you’d like your address to be. When you’re finished, click Set Custom URL.)
+  - Get a customized URL (How to get one? On the Edit Profile screen, at the bottom of the gray window that shows your basic information, you’ll see a Public Profile URL. Click “Edit" next to the URL, and specify what you’d like your address to be. When you’re finished, click Set Custom URL.)
   - Use bullet points (easier to read)
 
 ### Materials

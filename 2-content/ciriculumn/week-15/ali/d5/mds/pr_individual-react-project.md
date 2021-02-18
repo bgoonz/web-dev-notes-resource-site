@@ -293,7 +293,7 @@ requirements. Feel free to do one of them, if you think you have time.
   - Transaction History
   - Comments
   - **Bonus**: Groups
-  - **Bonus**: Fake “checkout”
+  - **Bonus**: Fake “checkout"
 - [Stack Overflow](http://www.stackoverflow.com)
   - Ask Questions
   - Answer Questions

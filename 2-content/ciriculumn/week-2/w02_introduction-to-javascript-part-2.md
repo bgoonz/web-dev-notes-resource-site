@@ -2876,7 +2876,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given multiple plausible reasons, identify why functions are called "First
-   Class Objects” in JavaScript.
+   Class Objects" in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed
 3. Write a function that takes in a value and two callbacks. The function should
@@ -2892,7 +2892,7 @@ following objectives. These objectives capture how you may be evaluated on the
 assessment for this lesson.
 
 1. Given multiple plausible reasons, identify why functions are called "First
-   Class Objects” in JavaScript.
+   Class Objects" in JavaScript.
 2. Given a code snippet containing an anonymous callback, a named callback, and
    multiple `console.log`s, predict what will be printed
 3. Write a function that takes in a value and two callbacks. The function should

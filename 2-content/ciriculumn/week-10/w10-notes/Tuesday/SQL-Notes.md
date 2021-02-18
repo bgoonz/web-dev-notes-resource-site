@@ -201,13 +201,13 @@ INSERT INTO pies VALUES('Raspberry', 20.99);
 INSERT INTO pies VALUES('Mixed Berry', 21.45);
 ```
 
-**Populating a database via < (“left caret”)**
+**Populating a database via < (“left caret")**
 
 - Syntax :
   `psql -d [database] < [path_to_file/file.sql]`
   `psql -d bakery < path_to_my_file/seed-data.sql`
 
-**Populating the database via | (“pipe”)**
+**Populating the database via | (“pipe")**
 
 - Syntax :
   `cat [path_to_file/file.sql] | psql -d [database]`

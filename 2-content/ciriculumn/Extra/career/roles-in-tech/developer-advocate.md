@@ -59,7 +59,7 @@ Why would you want to become a developer evangelist (or developer advocate)?
 There are perks to being someone in this role. Mostly that it is a natural progression for a developer who wants to move from a delivery role to one where they can influence more what the company does.
 
 - It bridges the communication gap — developers have a bad reputation when it comes to communication. Showing that someone technical can help understanding each other is a good move for our market.
-- It helps avoiding frustration — a lot of engineering is not needed, but based on false assumptions or misguided “I want to use this”. Good evangelism helps building what is needed, not what is cool.
+- It helps avoiding frustration — a lot of engineering is not needed, but based on false assumptions or misguided “I want to use this". Good evangelism helps building what is needed, not what is cool.
 - It bridges age and culture gaps — if you’re not interested in a cutthroat competition in engineering, you have a chance to use your talent otherwise.
   Before you jump on the opportunity, there are some very important points to remember:
 - Developer relations is not a starting position — most developer evangelists graduated from being developers in the same company. You need to know the pain to help prevent it.
@@ -95,7 +95,7 @@ As a translator, you have both outbound (company to people) and inbound (people 
 - Participate in other publications
 - Create video tutorials
 - Participate and help with events
-- Act as a “firewall” for internal teams
+- Act as a “firewall" for internal teams
 - Help dealing with influencers
   ##### Explanation
 - Be a social media presence:
@@ -111,16 +111,16 @@ As a translator, you have both outbound (company to people) and inbound (people 
 - Participate in other publications:
   Taking part in other publications than your own and the ones of your company solidifies your status as a thought leader and influencer. Write for magazines, take part in podcasts and interview series. Help others to get their developer oriented products off the ground — even when they are your competition.
 - Create video tutorials:
-  Creating short, informative and exciting videos is a great opportunity to reach new followers. Make sure you keep those personal — if there is a video about a product, help the product team build one instead. Show why you care about a feature. Keep these quick and easy, don’t over-produce them. These are meant as a “hi, look at this!”.
+  Creating short, informative and exciting videos is a great opportunity to reach new followers. Make sure you keep those personal — if there is a video about a product, help the product team build one instead. Show why you care about a feature. Keep these quick and easy, don’t over-produce them. These are meant as a “hi, look at this!".
 - Participate and help with events:
   Present and give workshops at events. Introduce event organizers and colleagues or other presenters you enjoyed. Help promote events. Help marketing and colleagues at events to make your presence useful and yielding results.
-- Act as a “firewall” for internal teams:
+- Act as a “firewall" for internal teams:
   People working on products should spend their time doing that — not arguing with people online
   Your job is to take negative feedback and redirect it to productive results
   This means in many cases asking for more detailed reporting before working with the team to fix it.
   It also means managing expectations. Just because a competitor has a cool new thing doesn’t mean your company needs to follow. Explain why.
 - Help dealing with influencers:
-  If you do your job right and talk to others a lot, what other people call ”influencers” are what you call friends and contacts. Show them how much you care by getting them preview information of things to come. Make sure that communication from your company to them goes through you as it makes outreach much less awkward. Find new upcoming influencers and talk to your company about them.
+  If you do your job right and talk to others a lot, what other people call "influencers" are what you call friends and contacts. Show them how much you care by getting them preview information of things to come. Make sure that communication from your company to them goes through you as it makes outreach much less awkward. Find new upcoming influencers and talk to your company about them.
 
   #### Inbound tasks
 

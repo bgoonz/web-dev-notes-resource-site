@@ -45,7 +45,7 @@ As a functional programming language, Scala allows engineers to elevate the qual
 
 One of the core languages favored by Google, Go is the little language that could. As a low-level language, Go is ideal for engineers who want to enter the field of systems programming. It encompasses much of the same functionality of C and C++ without the difficult syntax and steep learning curve. It’s the perfect language for building web servers, data pipelines, and even machine-learning packages.
 
-As a compiled language, Go runs “close to the metal,” allowing for a blazing-fast runtime. It’s an open-source language, and ambitious developers can see their personal contributions adopted and enjoyed by programmers worldwide.
+As a compiled language, Go runs “close to the metal," allowing for a blazing-fast runtime. It’s an open-source language, and ambitious developers can see their personal contributions adopted and enjoyed by programmers worldwide.
 
 **5\. Python**
 --------------
@@ -72,7 +72,7 @@ Furthermore, the Elm web architecture was the intellectual inspiration for Redux
 
 Ruby is another scripting language that’s commonly used for web development. In particular, it’s used as the basis for the popular Ruby on Rails web application framework.
 
-Beginners often gravitate toward Ruby because it has a reputation for having one of the friendliest and most helpful user communities. The Ruby community even has an unofficial saying, “Matz is nice and so we are nice,” encouraging members to model their kind and considerate behavior on Ruby’s chief inventor Yukihiro Matsumoto.
+Beginners often gravitate toward Ruby because it has a reputation for having one of the friendliest and most helpful user communities. The Ruby community even has an unofficial saying, “Matz is nice and so we are nice," encouraging members to model their kind and considerate behavior on Ruby’s chief inventor Yukihiro Matsumoto.
 
 In addition to the active community and its straightforward syntax, Ruby is also a good language to pick up thanks to its association with great tech businesses. Twitter, Airbnb, Bloomberg, Shopify, and countless other startups have all built their websites using Ruby on Rails at some point.
 
@@ -92,7 +92,7 @@ Additionally, anyone who is interested in VR development should consider learnin
 
 Rust is a bit of an upstart among the other languages on this list, but that doesn’t mean it’s not a valuable language to learn. Stack Overflow’s [2020 Developer Survey](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages) found that Rust was the most loved programming language among developers for the fifth year in a row, with 86.1 percent of Rust developers saying that they want to continue working with it.
 
-Developed by the Mozilla Corporation, Rust, like C and C++, is intended primarily for low-level systems programming. What Rust adds to the mix, however, is an emphasis on speed and security. Rust emphasizes writing “safe code” by preventing programs from accessing parts of memory that they shouldn’t, which can cause unexpected behavior and system crashes.
+Developed by the Mozilla Corporation, Rust, like C and C++, is intended primarily for low-level systems programming. What Rust adds to the mix, however, is an emphasis on speed and security. Rust emphasizes writing “safe code" by preventing programs from accessing parts of memory that they shouldn’t, which can cause unexpected behavior and system crashes.
 
 The advantages of Rust mean that other big tech companies, such as Dropbox and Coursera, are already starting to use it internally. While it may be a bit more difficult to master than other beginner languages, Rust programming skills are likely to pay off handsomely, as the language's popularity will only continue to rise in the near future.
 

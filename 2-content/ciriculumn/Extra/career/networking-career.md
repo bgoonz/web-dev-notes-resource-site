@@ -99,9 +99,9 @@ One great goal (even if you aren't sure of your career goals yet) is to meet 3 n
 
 **If you get stuck in a conversation at a networking event:**
 
-- Stick out your hand and shake the person’s hand or touch their arm while saying, “It was great meeting you.”
-- Say, “Let’s mingle some more,” and walk away.
-- Say, “I see someone I need to talk to.”
+- Stick out your hand and shake the person’s hand or touch their arm while saying, “It was great meeting you."
+- Say, “Let’s mingle some more," and walk away.
+- Say, “I see someone I need to talk to."
 
 ### Common Mistakes / Misconceptions
 

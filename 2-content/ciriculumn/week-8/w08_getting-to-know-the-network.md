@@ -3233,12 +3233,12 @@ appear in real time. Wireshark captures each packet sent to or from your system.
 If you have promiscuous mode enabled—it’s enabled by default—you’ll also see all
 the other packets on the network instead of only packets addressed to your
 network adapter. To check if promiscuous mode is enabled, click Capture >
-Options and verify the “Enable promiscuous mode on all interfaces" checkbox is
+Options and verify the "Enable promiscuous mode on all interfaces" checkbox is
 activated at the bottom of this window.
 
 ![capturing 2](images/wireshark-02.png)
 
-Click the red “Stop" button near the top left corner of the window when you want
+Click the red "Stop" button near the top left corner of the window when you want
 to stop capturing traffic.
 
 ![capturing 3](images/wireshark-03.png)
@@ -3305,7 +3305,7 @@ amount of packets to sift through. That’s where Wireshark’s filters come in.
 
 The most basic way to apply a filter is by typing it into the filter box at the
 top of the window and clicking Apply (or pressing Enter). For example, type
-“dns" and you’ll see only DNS packets. When you start typing, Wireshark will
+"dns" and you’ll see only DNS packets. When you start typing, Wireshark will
 help you autocomplete your filter.
 
 ![capturing 4](images/wireshark-04.png)

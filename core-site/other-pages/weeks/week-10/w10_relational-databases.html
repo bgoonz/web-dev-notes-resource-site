@@ -229,7 +229,7 @@
     <li>Colors in Palette</li>
     <li>Contrast ratio of the main text and it's background (<a href="https://webaim.org/resources/contrastchecker/">Use
             the contrast checker</a>)</li>
-    <li>The size of padding/margins compared to a lowercase ‘a'</li>
+    <li>The size of padding/margins compared to a lowercase 'a'</li>
     <li>The maximum number of lines in a row center-justified anywhere on the site</li>
     <li>Load Time</li>
     <li>Theme or style based on (Bootstrap, Material, etc.)</li>
@@ -603,7 +603,7 @@ postbird</code></pre>
     for Postbird. This is valuable knowledge about how to run open-source software on macOS that isn't signed by the
     developers. However, it is a good security practice to only run applications from developers that you trust. The
     Postbird application is used by tens of thousands of software developers and is something that you can trust.</p>
-<p>In fact, the developer of Postbird has an <a href="https://github.com/Paxa/postbird/issues/16">‘issue' on github</a>
+<p>In fact, the developer of Postbird has an <a href="https://github.com/Paxa/postbird/issues/16">'issue' on github</a>
     about this very thing. So hopefully they will get the signing of the app fixed in a future version.</p>
 <p>When Postbird starts, type "postgres" into the database field. Then, click the "Connect" button. It should open a new
     tab and show you basically a blank page. That means everything worked! Exit Postbird by pressing Command+Q or
@@ -1964,8 +1964,8 @@ HINT:  Use DROP ... CASCADE to drop the dependent objects too.</code></pre>
 <p>As we covered in the first reading, psql allows us to access the PostgreSQL server and make queries via the terminal.
     Open up the terminal on your machine, and connect to the PostgreSQL server by using the following psql command:</p>
 <pre class="shell"><code>psql -U postgres</code></pre>
-<p>The above command lets you access the PostgreSQL server as the user ‘postgres' (<code>-U</code> stands for user).
-    After you enter this command, you'll be prompted for the password that you set for the ‘postgres' user during
+<p>The above command lets you access the PostgreSQL server as the user 'postgres' (<code>-U</code> stands for user).
+    After you enter this command, you'll be prompted for the password that you set for the 'postgres' user during
     installation. Type it in, and hit Enter. Once you've successfully logged in, you should see the following in the
     terminal:</p>
 <pre class="shell"><code>Password for user postgres:
@@ -2037,24 +2037,24 @@ postgres=#</code></pre>
             <td>false</td>
         </tr>
         <tr class="even">
-            <td>‘t'</td>
-            <td>‘f'</td>
+            <td>'t'</td>
+            <td>'f'</td>
         </tr>
         <tr class="odd">
-            <td>‘true'</td>
-            <td>‘false'</td>
+            <td>'true'</td>
+            <td>'false'</td>
         </tr>
         <tr class="even">
-            <td>‘yes'</td>
-            <td>‘no'</td>
+            <td>'yes'</td>
+            <td>'no'</td>
         </tr>
         <tr class="odd">
-            <td>‘y'</td>
-            <td>‘n'</td>
+            <td>'y'</td>
+            <td>'n'</td>
         </tr>
         <tr class="even">
-            <td>‘1'</td>
-            <td>‘0'</td>
+            <td>'1'</td>
+            <td>'0'</td>
         </tr>
     </tbody>
 </table>
@@ -2404,7 +2404,7 @@ postgres=#</code></pre>
 </table>
 <h3 id="where-clause-for-a-single-value">WHERE clause for a single value</h3>
 <p>The simplest WHERE clause finds a row by a single column value. See the example below, which finds the rows where the
-    breed equals ‘Corgi':</p>
+    breed equals 'Corgi':</p>
 <pre class="shell"><code>SELECT name, breed FROM puppies
   WHERE breed = &#39;Corgi&#39;;</code></pre>
 <p><code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> are capitalized. Notice that the string must use
@@ -2413,7 +2413,7 @@ postgres=#</code></pre>
     <code>foo</code>, and <code>create table "Bar"()</code> will create a table called <code>Bar</code>. If you use
     double quotation marks in the query above, you'll get an error that says <code>column "Corgi" does not exist</code>
     because it thinks you're searching for the capitalized column name <code>Corgi</code>.</p>
-<p>Use the command <code>psql -U postgres</code> in the terminal, and type in your ‘postgres' user password to connect
+<p>Use the command <code>psql -U postgres</code> in the terminal, and type in your 'postgres' user password to connect
     to the PostgreSQL server. You should have a puppies table in your postgres database from the last reading. Once
     you're in psql, enter the query above into the terminal and press Enter. You should get back one result for Callie
     the Corgi.</p>
@@ -2601,7 +2601,7 @@ postgres=#</code></pre>
     two Shepherds. We started with ten puppies in the table, so we're left with four table rows. There are two puppies
     who are Shepherd breeds: an Australian Shepherd and a German Shepherd. We used the <code>LIKE</code> operator to
     filter these. In <code>'%Shepherd</code>, the <code>%</code> matches any substring value before the substring
-    ‘Shepherd'.</p>
+    'Shepherd'.</p>
 <h3 id="arithmetic-operators">Arithmetic operators</h3>
 <table>
     <thead>
@@ -3004,7 +3004,7 @@ List of relations
  public | puppies      | table | appacademy</code></pre>
 <h2 id="populating-the-database-via-pipe">Populating the database via | ("pipe")</h2>
 <p>You could also use the "pipe" (<code>|</code>) to populate the database with your seed file.</p>
-<p>The syntax is <code>cat [path_to_file/file.sql] | psql -d [database]</code>. ‘cat' is a standard Unix utility that
+<p>The syntax is <code>cat [path_to_file/file.sql] | psql -d [database]</code>. 'cat' is a standard Unix utility that
     reads files sequentially, writing them to standard output. The "pipe" (<code>|</code>) takes the standard output of
     the command on the left and pipes it as standard input to the command on the right.</p>
 <p>Try out this method in your terminal. If you have an existing "pies" table, you'll need to drop this table before you

@@ -36,11 +36,11 @@ At this point, you might be rather unimpressed. But keep reading to see how powe
 
 ### Custom Scripts
 
-The script we just saw is one of the “special” NPM scripts. You can execute it by simply typing `npm start`. These are scripts with names that NPM recognizes and attaches special meaning to. For example, you can write a script called `prepublish`. NPM will execute the script before your package is packed and published, and also when you run `npm install` locally without any arguments. More on such scripts [here](https://docs.npmjs.com/misc/scripts).
+The script we just saw is one of the “special" NPM scripts. You can execute it by simply typing `npm start`. These are scripts with names that NPM recognizes and attaches special meaning to. For example, you can write a script called `prepublish`. NPM will execute the script before your package is packed and published, and also when you run `npm install` locally without any arguments. More on such scripts [here](https://docs.npmjs.com/misc/scripts).
 
 But NPM also let’s you define your own custom scripts. This is where the power of NPM scripts starts to show itself.
 
-Let’s look at a super basic custom NPM script that outputs “hello world” to the console. Add this to the scripts object of your package.json file:
+Let’s look at a super basic custom NPM script that outputs “hello world" to the console. Add this to the scripts object of your package.json file:
 
     "say-hello": "echo 'Hello World'"
 
@@ -48,7 +48,7 @@ The scripts object in your package.json file should look like this:
 
     ..."scripts": {    "start": "node index.js",    "say-hello": "echo 'Hello World!'"}
 
-Now try running `npm say-hello`. Doesn’t work? This is because custom NPM scripts must be preceded by either `run-script` or `run` for them to be executed correctly. Try running `npm run-script say-hello` or `npm run say-hello`. The console says, “Hello World!”! We’ve written our first NPM script!
+Now try running `npm say-hello`. Doesn’t work? This is because custom NPM scripts must be preceded by either `run-script` or `run` for them to be executed correctly. Try running `npm run-script say-hello` or `npm run say-hello`. The console says, “Hello World!"! We’ve written our first NPM script!
 
 Here’s a quick tip — in order to prevent the default NPM logs from outputting to the console when you execute a script, add the `--silent` flag. This is what your command would look like:
 
@@ -64,9 +64,9 @@ Since NPM scripts execute in the shell, calling `npm run say-hello` within anoth
 
 > For those of you who are not very comfortable with terminal commands, the `_&&_`in the script is used to delimit two commands. Thus, the second command executes after the successful execution of the first command.
 
-Now when you run `npm run awesome-npm`, the say-hello script executes first, outputting “Hello World” to the console, followed by the part of the script after the `&&`, which outputs “NPM is awesome!”
+Now when you run `npm run awesome-npm`, the say-hello script executes first, outputting “Hello World" to the console, followed by the part of the script after the `&&`, which outputs “NPM is awesome!"
 
-Here’s a use case where this might be useful. Suppose you’re automating the build process of your application. Let’s say you’re using Webpack as a bundler and your distribution code goes into a directory called “dist”.
+Here’s a use case where this might be useful. Suppose you’re automating the build process of your application. Let’s say you’re using Webpack as a bundler and your distribution code goes into a directory called “dist".
 
 You might start with cleaning the directory. This can be done by either deleting its contents or deleting the directory itself and then making it again. Let’s go with the latter approach. Your command might look something like this:
 
@@ -134,13 +134,13 @@ Remember how we talked about a special npm script called `prepublish` that runs 
 
 However, this makes our scripts a little dirty. This is because the core functionality of the script is reflected only in the second part of the command (after the `&&` ). One way to write clean scripts is to use pre and post hooks.
 
-Pre and post hooks are exactly what they sound like — they let you execute scripts before and after you call a particular script. All you have to do is define new scripts with the same name as your main script. Yet these are prefixed with “pre” or “post” depending on whether the script is executed before the main script or after it.
+Pre and post hooks are exactly what they sound like — they let you execute scripts before and after you call a particular script. All you have to do is define new scripts with the same name as your main script. Yet these are prefixed with “pre" or “post" depending on whether the script is executed before the main script or after it.
 
 Let’s look at our `say-hello` script again. Say we want to execute the command `echo 'I run before say-hello'` before `say-hello` and `echo 'I run after say-hello'` after say-hello. This is what your scripts object would look like:
 
     "scripts": {    "say-hello": "echo 'Hello World'",     "presay-hello": "echo 'I run before say-hello'",    "postsay-hello": "echo 'I run after say-hello'" }
 
-The “pre” and “post” before the script names tell npm to execute these before and after the script called `say-hello` respectively.
+The “pre" and “post" before the script names tell npm to execute these before and after the script called `say-hello` respectively.
 
 Now, when you run `npm run say-hello`, the output of all three scripts shows up in order! How cool is that?
 
@@ -158,7 +158,7 @@ Let’s apply this knowledge to our build script example. Modify your `package.j
 
     "scripts": {    ...    "clean": "rm -r dist && mkdir dist",     "prebuild": "npm run clean"    "build": "webpack"}
 
-Now our scripts look much cleaner. When you run `npm run build`, `prebuild`is called because of the “pre” hook, which calls `clean`, which cleans up our dist directory for us. Sweet!
+Now our scripts look much cleaner. When you run `npm run build`, `prebuild`is called because of the “pre" hook, which calls `clean`, which cleans up our dist directory for us. Sweet!
 
 ### Making Our Scripts Cross-Platform
 

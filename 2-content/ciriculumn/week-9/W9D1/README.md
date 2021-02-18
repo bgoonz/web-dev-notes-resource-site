@@ -65,7 +65,7 @@ div {
 }
 ```
 
-- **Class selectors** -- matches elements by class name (e.g. `<button class=“active">`)
+- **Class selectors** -- matches elements by class name (e.g. `<button class="active">`)
 ```css
 .active {
   background-color: red;

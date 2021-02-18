@@ -3226,7 +3226,7 @@ List of relations
 You could also use the "pipe" (`|`) to populate the database with your seed
 file.
 
-The syntax is `cat [path_to_file/file.sql] | psql -d [database]`. ‘cat' is a
+The syntax is `cat [path_to_file/file.sql] | psql -d [database]`. 'cat' is a
 standard Unix utility that reads files sequentially, writing them to standard
 output. The "pipe" (`|`) takes the standard output of the command on the left
 and pipes it as standard input to the command on the right.

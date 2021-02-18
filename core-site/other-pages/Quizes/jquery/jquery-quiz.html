@@ -4,7 +4,7 @@
 <ul>
 <li>Only the second one will work; jQuery does not have a function called .on.</li>
 <li>The second snippet will not function.</li>
-<li>Nothing - .click(function) is shorter way to write .on(‘click’, function) &lt;&lt;&lt;&lt;—Correct</li>
+<li>Nothing - .click(function) is shorter way to write .on('click’, function) &lt;&lt;&lt;&lt;—Correct</li>
 <li>The first snippet will execute for every button on the page, the second will only apply to the first button</li>
 </ul>
 <h4 id="q2.-what-does-the-following-line-of-code-do">Q2. What does the following line of code do?</h4>
@@ -18,10 +18,10 @@
 <h4 id="q3.-give-the-following-html-how-could-we-use-one-line-to-hide-or-show-the-button">Q3. Give the following HTML, how could we use one line to hide or show the button?</h4>
 <p><code>&lt;button class="btn btn-primary" type="submit"&gt;Continue to checkout&lt;/button&gt;</code></p>
 <ul>
-<li>$(‘.btn-primary’).toggle(); &lt;&lt;&lt;&lt;—Correct</li>
-<li>$(‘.btn-primary’).showHide();</li>
-<li>$(‘.btn-primary’).not(‘:visible’).show();</li>
-<li>$(‘.btn-primary’).css({ display: ‘block’});</li>
+<li>$('.btn-primary’).toggle(); &lt;&lt;&lt;&lt;—Correct</li>
+<li>$('.btn-primary’).showHide();</li>
+<li>$('.btn-primary’).not(':visible’).show();</li>
+<li>$('.btn-primary’).css({ display: 'block’});</li>
 </ul>
 <h4 id="q4.-working-with-ajax-we-may-run-into-situations-where-a-piece-of-code-should-not-be-run-until-after-multiple-ajax-calls-have-completed-successfully.-say-we-need-to-call-two-external-services-for-json-data-a-list-of-students-and-a-list-of-classes.-and-only-after-retrieving-those-data-will-we-perform-some-manipulations-on-a-page.-what-is-the-preferred-way-for-dealing-with-this-scenario">Q4. Working with AJAX, we may run into situations where a piece of code should not be run until after multiple AJAX, calls have completed successfully. Say we need to call two external services for JSON data (a list of students, and a list of classes). And only after retrieving those data will we perform some manipulations on a page. What is the preferred way for dealing with this scenario?</h4>
 <p><a href="https://example.com/json-api/students%20https://example.com/json-api/classes">https://example.com/json-api/students https://example.com/json-api/classes</a></p>
@@ -47,7 +47,7 @@ Item 4
 </li>
 </ul>
 <p>===================</p>
-<p>$(‘ul’).find(‘li’).get(2); $(‘ul’).find(‘li’).eq(2);</p>
+<p>$('ul’).find('li’).get(2); $('ul’).find('li’).eq(2);</p>
 <ul>
 <li>.get() retrieves a DOM element, and can’t be chained, eq() retrieves a jQuery object, and can be chained.</li>
 <li>.get() retrieves a jQuery object, and can’t be chained, eq() retrieves a DOM element, and can be chained. &lt;– Correct</li>
@@ -55,7 +55,7 @@ Item 4
 <li>.get() retrieves a DOM element, and is zero-indexed, eq() retrieves a jQuery object, and is 1-indexed.</li>
 </ul>
 <h4 id="q6.-suppose-we-want-to-have-an-ball-created-from-an-html-element-idball-move-down-and-to-the-right-from-its-original-location-when-clicked-and-move-back-into-its-original-place-when-finished.-given-a-starting-point-of-this-which-of-these-snippets-would-accomplish-that-goal">Q6. Suppose we want to have an ball created from an HTML element (id=ball) move down and to the right from its original location when clicked, and move back into its original place when finished. Given a starting point of this, which of these snippets would accomplish that goal?</h4>
-<p>$(‘#ball’).click(function() { // Our code goes here });</p>
+<p>$('#ball’).click(function() { // Our code goes here });</p>
 <ul>
 <li><p><code>$(this).animate({ top: '+=100', left: '+=100', }, { duration: 600, complete: function() { $(this).animate({ top: '-=100', left: '-=100', }, 600) } });</code> &lt;– Correct</p></li>
 <li><code>$(this).animate({ top: '-=100', left: '-=100', }, 600, function() { $(this).animate({ top: '+=100', left: '+=100', }, 600) } });</code></li>
@@ -80,7 +80,7 @@ Item 4
     &lt;li&gt;Existing message 2&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 </div>
-<p>$.get(‘//example.com/api/v1/message’) .done(function(data) { var tonsOfItems = data.messages; // add all these messages to a large page });</p>
+<p>$.get('//example.com/api/v1/message’) .done(function(data) { var tonsOfItems = data.messages; // add all these messages to a large page });</p>
 <ul>
 <li><p><code>tonsOfItems.map(function(item) { $('.message-area--list').append('&lt;li&gt;'+item+'&lt;/li&gt;'); });</code> &lt;&lt;&lt;&lt;—Correct</p></li>
 <li><p><code>var tonsOfListItems = tonsOfItems.map(function(itme)) { return '&lt;li&gt;'+item+'&lt;/li&gt;'; }); $('.message-area--list').append(tonsOfListItems.join(''));</code></p></li>
@@ -95,7 +95,7 @@ Item 4
 <li>jQuery is a Chrome extension that allows users to create their own extensions with just a few lines of JavaScript.</li>
 </ul>
 <h4 id="q10.-we-want-to-create-a-new-jquery-plugin-called-linkupdater-that-can-be-chained-onto-other-jquery-selector-like-a-normal-plugin.-it-should-updates-all-the-links-in-the-referenced-collection-so-they-open-in-new-windows-or-tabs.-below-is-the-first-cut.-what-is-one-problem-with-this-plugin">Q10. We want to create a new jQuery plugin called linkUpdater that can be chained onto other jQuery selector like a normal plugin. It should updates all the links in the referenced collection so they open in new windows or tabs. Below is the first cut. What is one problem with this plugin?</h4>
-<p>"user strict"; $.linkUpdater = function() { this.find(‘a’).attr(‘target’, ‘_blank’); } ) )( jQuery );</p>
+<p>"user strict"; $.linkUpdater = function() { this.find('a’).attr('target’, '_blank’); } ) )( jQuery );</p>
 <ul>
 <li>this needs to be wrapped, like $(this), in order to be chained in a plugin.</li>
 <li>jQuery plugins can’t be safety authored in strict mode.</li>
@@ -112,17 +112,17 @@ Item 4
 <h4 id="q12.-given-the-following-html-how-could-we-make-this-button-disappear-from-the-page-using-jquery">Q12. Given the following HTML, How could we make this button disappear from the page using jQuery?</h4>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;button&gt;</span>class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Continue to checkout<span class="kw">&lt;/button&gt;</span></a></code></pre></div>
 <ul>
-<li>$(‘.btn-primary’).hide(); &lt;&lt;&lt;—CORRECT</li>
-<li>$(‘.btn-primary:visible’).not();</li>
-<li>$(‘.btn-primary’).visibility(false);</li>
-<li>$(‘.btn-primary’).show(false);</li>
+<li>$('.btn-primary’).hide(); &lt;&lt;&lt;—CORRECT</li>
+<li>$('.btn-primary:visible’).not();</li>
+<li>$('.btn-primary’).visibility(false);</li>
+<li>$('.btn-primary’).show(false);</li>
 </ul>
-<h4 id="q13.-what-is-the-difference-between-header.html-and-header.text">Q13. What is the difference between $(‘header’).html() and $(‘header’).text()?</h4>
+<h4 id="q13.-what-is-the-difference-between-header.html-and-header.text">Q13. What is the difference between $('header’).html() and $('header’).text()?</h4>
 <ul>
-<li>$(‘header’).html() returns the inner HTML of the header. $(‘header’).text() returns only the text &lt;&lt;&lt;&lt;–CORRECT</li>
-<li>$(‘header’).html() returns only the HTML tags used, without the text. $(‘header’).text() returns only the text</li>
-<li>$(‘header’).html() strips all HTML from the header. $(‘header’).text() always returns an empty string.</li>
-<li>$(‘header’).html() returns all headers in an HTML document. $(‘header’).text() the first line of a text file.</li>
+<li>$('header’).html() returns the inner HTML of the header. $('header’).text() returns only the text &lt;&lt;&lt;&lt;–CORRECT</li>
+<li>$('header’).html() returns only the HTML tags used, without the text. $('header’).text() returns only the text</li>
+<li>$('header’).html() strips all HTML from the header. $('header’).text() always returns an empty string.</li>
+<li>$('header’).html() returns all headers in an HTML document. $('header’).text() the first line of a text file.</li>
 </ul>
 <h4 id="q14.-when-writing-jquery-plugins-we-often-provide-default-options-that-may-be-overridden-by-the-end-user.-what-jquery-function-is-most-useful-for-this-purpose">Q14. When writing jQuery plugins, we often provide default options that may be overridden by the end user. What jQuery function is most useful for this purpose?</h4>
 <ul>
@@ -368,7 +368,7 @@ $(&#39;#container&#39;).wrap(&#39;&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&
 &lt;/div&gt;</code></pre>
 <ul>
 <li><code>$('.feedback').hasClass('.success');</code></li>
-<li><code>$('.feedback').addClass('.success');</code> &lt;– most correct however it should be (‘success’)</li>
+<li><code>$('.feedback').addClass('.success');</code> &lt;– most correct however it should be ('success’)</li>
 <li><code>$.css('.feedback', '.success');</code></li>
 <li><code>$('.feedback').css('.success');</code></li>
 </ul>

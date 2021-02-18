@@ -1,12 +1,12 @@
 # **Objectives**
 
-**1. Given HTML that includes `<div id=”catch-me-if-you-can”>HI!</div>`, write a JavaScript statement that stores a reference to the HTMLDivElement with the id “catch-me-if-you-can” in a variable named “divOfInterest”.**
+**1. Given HTML that includes `<div id="catch-me-if-you-can">HI!</div>`, write a JavaScript statement that stores a reference to the HTMLDivElement with the id "catch-me-if-you-can" in a variable named "divOfInterest".**
 
 ```js
 const divOfInterest = document.getElementByID("catch-me-if-you-can");
 ```
 
-**2. Given HTML that includes seven SPAN elements each with the class “cloudy”, write a JavaScript statement that stores a reference to a NodeList filled with references to the seven HTMLSpanElements in a variable named “cloudySpans”.**
+**2. Given HTML that includes seven SPAN elements each with the class "cloudy", write a JavaScript statement that stores a reference to a NodeList filled with references to the seven HTMLSpanElements in a variable named "cloudySpans".**
 
 ```js
 const cloudySpans = document.querySelectorAll("span.cloudy");

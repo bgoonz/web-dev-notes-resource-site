@@ -45,14 +45,14 @@
 <p>//rest parameters // combines parameters into array</p>
 <p>…parameterName</p>
 <p>splice is an example of where we've seen this before</p>
-<p>let arr = ‘my dog has fleas'.split(' ‘); arr.splice(3, 1, 'trees')</p>
+<p>let arr = 'my dog has fleas'.split(' '); arr.splice(3, 1, 'trees')</p>
 <p>//spread operator // take an arrray and spread them into arguments</p>
 <p>…argContainer</p>
 <p>OR</p>
 <p>// take an object or array and spread their elements/attributes into another object or array</p>
 <p>function multiply(multiplier, …theArgs) { return theArgs.map(function(element) { return multiplier * element }) }</p>
 <p>let arr = multiply(2, 1, 2, 3) console.log(arr)</p>
-<p>let me = { name: "Ian", instruments: [‘bass', ‘synth', ‘guitar'], siblings: { brothers: [‘Alistair'], sisters: [‘Meghan'] } }</p>
-<p>let countryArr = [‘USA', ‘Canada', ‘UK']; //me[countries] = countryArr;</p>
-<p>let myCountries = { ‘countries': countryArr };</p>
+<p>let me = { name: "Ian", instruments: ['bass', 'synth', 'guitar'], siblings: { brothers: ['Alistair'], sisters: ['Meghan'] } }</p>
+<p>let countryArr = ['USA', 'Canada', 'UK']; //me[countries] = countryArr;</p>
+<p>let myCountries = { 'countries': countryArr };</p>
 <p>let newMe = {…me, …countries}</p>

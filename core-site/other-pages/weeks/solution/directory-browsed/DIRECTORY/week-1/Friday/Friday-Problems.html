@@ -368,7 +368,7 @@
 <a class="sourceLine" id="cb30-7" title="7"><span class="op">}</span></a></code></pre></div>
 <hr />
 <h2 id="silly-strings"><strong>Silly Strings</strong></h2>
-<p>Write a function <code>sillyString</code> that accepts a word as an argument. The functions should return a new word where every vowel of the original word is followed by ‘b' and that same vowel. For example, ‘siren' would turn into ‘sibireben'.</p>
+<p>Write a function <code>sillyString</code> that accepts a word as an argument. The functions should return a new word where every vowel of the original word is followed by 'b' and that same vowel. For example, 'siren' would turn into 'sibireben'.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">function</span> <span class="at">sillyString</span>(word) <span class="op">{</span></a>
 <a class="sourceLine" id="cb31-2" title="2">  <span class="kw">let</span> str <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb31-3" title="3">  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">word</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
@@ -615,8 +615,8 @@
 <li>words that are shorter than 3 characters are unchanged</li>
 <li>words that are 3 characters or longer are translated according to the following rules:
 <ul>
-<li>if the word ends with a vowel, simply repeat the word twice (example: ‘like'-&gt;‘likelike')</li>
-<li>if the word ends with a non-vowel, repeat all letters that come after the word's last vowel, including the last vowel itself (example: ‘trash'-&gt;‘trashash')</li>
+<li>if the word ends with a vowel, simply repeat the word twice (example: 'like'-&gt;'likelike')</li>
+<li>if the word ends with a non-vowel, repeat all letters that come after the word's last vowel, including the last vowel itself (example: 'trash'-&gt;'trashash')</li>
 </ul></li>
 </ul>
 <p>Note that if words are capitalized in the original sentence, they should remain capitalized in the translated sentence. Vowels are the letters a, e, i, o, u.</p>

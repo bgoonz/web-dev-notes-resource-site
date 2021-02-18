@@ -24,7 +24,7 @@ For example, if I wanted to use the flag `i` and wanted to also search for the 
 
 `/iii/i`
 
-The singular `i` at the end of that regex means "insensitive" and it refers to the case of the text matching the pattern. The `iii` is the actual pattern searched in the text, and because we use the "case insensitive" flag, it's going to match all variations of triple `i`‘s: `iii`, `iiI`, `iII` , `III`, `IiI`, `Iii`, and so on.
+The singular `i` at the end of that regex means "insensitive" and it refers to the case of the text matching the pattern. The `iii` is the actual pattern searched in the text, and because we use the "case insensitive" flag, it's going to match all variations of triple `i`'s: `iii`, `iiI`, `iII` , `III`, `IiI`, `Iii`, and so on.
 
 Note
 ----
@@ -302,7 +302,7 @@ For example, in PHP:
 
 Would result in:
 
-$result = \[‘Super', ‘man'\]
+$result = \['Super', 'man'\]
 
 The first value in the array is always the entire matched string, then the grouped elements in the order they appear in the regex pattern.
 

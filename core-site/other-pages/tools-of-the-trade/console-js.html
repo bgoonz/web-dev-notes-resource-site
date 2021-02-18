@@ -28,7 +28,7 @@
 <p>I’m pretty sure most of us developers have used <code>console.log()</code> to print values in our browser console. <code>log</code> is just one method of the <code>console</code> object. There are several other methods that are very useful.</p>
 <p>This method is mainly used to print the value passed to it to the console. Any type can be used inside the log(), be it a string, array, object, boolean etc.</p>
 <h2 id="example"><strong>Example</strong></h2>
-<p>console.log(‘JavaScript’);<br />
+<p>console.log('JavaScript’);<br />
 console.log(7);<br />
 console.log(true);<br />
 console.log(null);<br />
@@ -44,7 +44,7 @@ console.log({a: 1, b: 2, c: 3});</p>
 <p>Output</p>
 <p>This method is useful while testing code. It is used to log errors to the browser console. By default, the error message will be highlighted with red color.</p>
 <h2 id="example-1">Example</h2>
-<p>console.error(‘Error found’);</p>
+<p>console.error('Error found’);</p>
 <figure>
 <img src="https://miro.medium.com/max/60/1*bLNgJWF1wGx1NRd53mTYPw.png?q=20" alt="Image for post" /><figcaption>Image for post</figcaption>
 </figure>
@@ -54,7 +54,7 @@ console.log({a: 1, b: 2, c: 3});</p>
 <p>Output</p>
 <p>This method is also used to test code. Usually, it helps in throwing warnings to the console. By default, the warning message will be highlighted with yellow color.</p>
 <h2 id="example-2">Example</h2>
-<p>console.warn(‘Warning!’);</p>
+<p>console.warn('Warning!’);</p>
 <figure>
 <img src="https://miro.medium.com/max/60/1*z61it_h7bxHF84T_DCATcA.png?q=20" alt="Image for post" /><figcaption>Image for post</figcaption>
 </figure>
@@ -74,12 +74,12 @@ console.log({a: 1, b: 2, c: 3});</p>
 <p>Output</p>
 <p>Both these methods are used in conjunction with each other. Whenever we want to know the amount of time spent by a block or a function, we can make use of the <code>time()</code> and <code>timeEnd()</code> methods. Both these functions take a string as a parameter. Make sure you use the same string for both these functions to measure the time.</p>
 <h2 id="example-4">Example</h2>
-<p>console.time(‘timer’); const hello = function(){<br />
-console.log(‘Hello Console!’);<br />
+<p>console.time('timer’); const hello = function(){<br />
+console.log('Hello Console!’);<br />
 }const bye = function(){<br />
-console.log(‘Bye Console!’);<br />
+console.log('Bye Console!’);<br />
 }hello(); // calling hello();<br />
-bye(); // calling bye();console.timeEnd(‘timer’);</p>
+bye(); // calling bye();console.timeEnd('timer’);</p>
 <figure>
 <img src="https://miro.medium.com/max/60/1*S63BR8aOlGfYfAhgaR9TJw.png?q=20" alt="Image for post" /><figcaption>Image for post</figcaption>
 </figure>
@@ -111,12 +111,12 @@ console.count(i);<br />
 <p>Output</p>
 <p>These methods <code>group()</code> and <code>groupEnd()</code> allows us to group contents in a separate block, which will be indented. Just like the <code>time()</code> and the <code>timeEnd()</code> they also accept a label, of the same value. You can expand and collapse the group.</p>
 <h2 id="example-7">Example</h2>
-<p>console.group(‘group1’);<br />
-console.warn(‘warning’);<br />
-console.error(‘error’);<br />
-console.log(‘I belong to a group’);<br />
-console.groupEnd(‘group1’);<br />
-console.log(‘I dont belong to any group’);</p>
+<p>console.group('group1’);<br />
+console.warn('warning’);<br />
+console.error('error’);<br />
+console.log('I belong to a group’);<br />
+console.groupEnd('group1’);<br />
+console.log('I dont belong to any group’);</p>
 <figure>
 <img src="https://miro.medium.com/max/60/1*Q_Ok_EnFSioEiNES7vpq3A.png?q=20" alt="Image for post" /><figcaption>Image for post</figcaption>
 </figure>
@@ -126,9 +126,9 @@ console.log(‘I dont belong to any group’);</p>
 <p>Output</p>
 <p>You can also add Styling to the console logs in order to make logs look fancy. It is very simple. You just need to add CSS styling as a second parameter to the <code>log()</code> function, while starting the first parameter with <strong>%c</strong>. The styles will replace the %c in the logs.</p>
 <h2 id="example-8">Example</h2>
-<p>const spacing = ‘10px’;<br />
+<p>const spacing = '10px’;<br />
 const styles = `padding: ${spacing}; background-color: white; color: red; font-style: italic; border: 1px solid black; font-size: 2em;`;<br />
-console.log(‘%cI am a styled log’, styles);</p>
+console.log('%cI am a styled log’, styles);</p>
 <figure>
 <img src="https://miro.medium.com/max/60/1*GgIhLJQK-_yV2FdLvV-u6A.png?q=20" alt="Image for post" /><figcaption>Image for post</figcaption>
 </figure>

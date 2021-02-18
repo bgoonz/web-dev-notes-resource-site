@@ -43,7 +43,7 @@ In General you will need following to be a Technical Program Manager:
 
 **What is a TPM?**
 
-_TPM stands for **“technical program manager”** a team that manages the coordination of business decisions and leads design through the implementation of the infrastructure._
+_TPM stands for **“technical program manager"** a team that manages the coordination of business decisions and leads design through the implementation of the infrastructure._
 
 **Career Path**
 

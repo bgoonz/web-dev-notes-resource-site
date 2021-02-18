@@ -125,7 +125,7 @@ As you share the facts, re-frame your story in your mind without emotion so you�
 Challenge your assumptions.
 
 It's easy for being upset to impact how you react or communicate. But we shouldn't let emotions cause us to unfairly blame others.We control how we react and respond.
-As we become emotional, our mind forgets the facts and we start asking ourselves, “What is the worst and most hurtful way I can take this?” This negative spin escalates our emotions and causes us to do the worst when it matters the most.
+As we become emotional, our mind forgets the facts and we start asking ourselves, “What is the worst and most hurtful way I can take this?" This negative spin escalates our emotions and causes us to do the worst when it matters the most.
 
 We must challenge the assumptions we are making and evaluate the facts; to tell the full, objective story. And in order to get all the facts we need to tell the entire story. We have to dialogue with the other people involved in our story and add them to the POOL.
 
@@ -151,7 +151,7 @@ When others go to silence or violence:
 
 As we see others moving to silence or violence–sharing mostly stories or very little at all–it helps us stay in dialogue if we can encourage them to share their entire Path to Action, or the explanation of how emotions, thoughts, and experiences lead to our actions. We have to find a way to move others back to their facts.
 
-It also helps curb our own defensive response. We should ask, “Why would a reasonable, rational, and decent person think or feel this way?”. Stay curious! It’s hard to feel defensive and curious at the same time.
+It also helps curb our own defensive response. We should ask, “Why would a reasonable, rational, and decent person think or feel this way?". Stay curious! It’s hard to feel defensive and curious at the same time.
 
 Finally, it takes us to the only place where the feelings can be resolved: The source (the facts and story behind the emotions).
 
@@ -208,7 +208,7 @@ Sample correct responses from the group may include:
 
 Try reading "I can't wait to go to work today"
 ...out loud like you are excited. Now try nervous. And mad. Isn’t it interesting how the same sentence can take on different meanings just based on the emotions you are using when talking?
-Now, say the sentence out loud emphasizing the word “I”. Next try emphasizing “work”. And “today”. See how the sentence means different things when you emphasize different words?
+Now, say the sentence out loud emphasizing the word “I". Next try emphasizing “work". And “today". See how the sentence means different things when you emphasize different words?
 
 ### Independent Practice
 

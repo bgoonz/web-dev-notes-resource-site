@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 ```
 
-**4. Given an HTML page with that includes `<input type=”text” id=”fancypants”>`, write JavaScript that changes the background color of the textbox to #E8F5E9 when the caret is in the textbox and turns it back to its normal color when focus is elsewhere.**
+**4. Given an HTML page with that includes `<input type="text" id="fancypants">`, write JavaScript that changes the background color of the textbox to #E8F5E9 when the caret is in the textbox and turns it back to its normal color when focus is elsewhere.**
 
 ```js
 const bgColor = () => {

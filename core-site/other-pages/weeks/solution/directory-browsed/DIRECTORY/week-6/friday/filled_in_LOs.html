@@ -56,7 +56,7 @@
 <li>any other headers we would like (optional), such as <code>Accept: application/json</code></li>
 <li>body of the request (optional), such as <code>myKey=myValue</code></li>
 </ul></li>
-<li>Write a very simple HTTP server using ‘http' in node with paths that will result in the common HTTP status codes.</li>
+<li>Write a very simple HTTP server using 'http' in node with paths that will result in the common HTTP status codes.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> http <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;http&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
@@ -379,7 +379,7 @@ element must be empty)</li>
 <li>defines a cell header</li>
 <li>in a row in the body, this may be the label for that row</li>
 <li>in a row in the head, there may be many of these elements in order to label each column</li>
-<li><code>scope</code> attribute tells us whether this is a header for a ‘row' or a ‘column'</li>
+<li><code>scope</code> attribute tells us whether this is a header for a 'row' or a 'column'</li>
 </ul></li>
 <li><td>
 </td>
@@ -429,10 +429,10 @@ element must be empty)</li>
 <ul>
 <li>We learned about four hooks
 <ul>
-<li>before(‘description', callback): Callback is invoked before the block of test code is run</li>
-<li>beforeEach(‘description', callback): Callback is invoked before each <code>it</code> statement in the block of test code</li>
-<li>after(‘description', callback): Callback is invoked after the block of test code is run</li>
-<li>afterEach(‘description', callback): Callback is invoked after each <code>it</code> statement in the block of test code</li>
+<li>before('description', callback): Callback is invoked before the block of test code is run</li>
+<li>beforeEach('description', callback): Callback is invoked before each <code>it</code> statement in the block of test code</li>
+<li>after('description', callback): Callback is invoked after the block of test code is run</li>
+<li>afterEach('description', callback): Callback is invoked after each <code>it</code> statement in the block of test code</li>
 </ul></li>
 <li>before and beforeEach allows us to set up our test, pulling out common Arrange or Act portions of our tests</li>
 <li>after and afterEach are going to be less common for us, but allow us to do any kind of cleanup that may be necessary after a test has run

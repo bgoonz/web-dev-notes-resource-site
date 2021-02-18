@@ -46,7 +46,7 @@
     - any other headers we would like (optional), such as `Accept: application/json`
     - body of the request (optional), such as `myKey=myValue`
 
-5. Write a very simple HTTP server using ‘http' in node with paths that will result in the common HTTP status codes.
+5. Write a very simple HTTP server using 'http' in node with paths that will result in the common HTTP status codes.
 ```javascript
 const http = require('http');
 

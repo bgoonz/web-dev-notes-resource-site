@@ -579,7 +579,7 @@ if (time &gt; 17)
 <li>no URL - form will be sent to the same page(url) the form is present on</li>
 </ul></li>
 </ul></li>
-<li>The <code>method</code> attribute defines the HTTP verb that will be used with the request (‘GET' or ‘POST')
+<li>The <code>method</code> attribute defines the HTTP verb that will be used with the request ('GET' or 'POST')
 <ul>
 <li>If the <code>POST</code> method is used, form data is appended to the body of the HTTP request.</li>
 <li>Only the <code>GET</code> and <code>POST</code> methods may be specified on the form. In order to do <code>PUT</code>, <code>DELETE</code>, or other methods, we must use <code>AJAX</code> requests using the <code>fetch</code> API, for example.</li>
@@ -627,7 +627,7 @@ if (time &gt; 17)
 <li>Use express to handle a form's POST request</li>
 </ol>
 <ul>
-<li>In the ‘POST' route, we can check that our user's input passes all of our data validation checks, then, if successful, create a new record for that user within our database. (In the project for today we just added an object into an array to simulate this process.)</li>
+<li>In the 'POST' route, we can check that our user's input passes all of our data validation checks, then, if successful, create a new record for that user within our database. (In the project for today we just added an object into an array to simulate this process.)</li>
 <li>After we create our new record, we can redirect the user to another page. In this example, we are redirecting to our root page, but we could have redirected to a user page, an index, a welcome page, etc.</li>
 </ul>
 <div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" title="1"><span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;/create&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -819,7 +819,7 @@ if (time &gt; 17)
 <li>Creating the middleware function is not enough to implement csrf protection. Anywhere that requires us to create or submit forms we need to utilize the middleware within the route. We do this by passing it as an argument to our <code>app.get</code> or <code>app.post</code> function calls.</li>
 <li>When creating our forms, we want to be able to provide a <code>_csrf</code> input field, hidden from the user.</li>
 <li>The value that we supply to this field is obtained from invoking our <code>req.csrfToken()</code> function that was created for us from the middleware.</li>
-<li>The middleware is also supplied to the ‘POST' routes that respond to these submissions in order to check that the token was actually created by our application.</li>
+<li>The middleware is also supplied to the 'POST' routes that respond to these submissions in order to check that the token was actually created by our application.</li>
 </ul>
 <div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">const</span> express <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;express&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb46-2" title="2"><span class="kw">const</span> cookieParser <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;cookie-parser&#39;</span>)<span class="op">;</span></a>

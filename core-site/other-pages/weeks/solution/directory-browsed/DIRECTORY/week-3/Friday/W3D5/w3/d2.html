@@ -5,7 +5,7 @@
 </ol>
 <p>JavaScript (like most programming languages) has mutltiple runtimes, each of which is a full implementation of the language and supporting libraries. With JavaScript, the two implementations (runtimes) that we care about are V8 (used in Chrome, and also the Node.js runtime) and Spidermonkey (used in Firefox).</p>
 <ol start="2" type="1">
-<li>Write a program that reads in a dictionary file using node's FS API and reads a line of text from the terminal input. The program should ‘spell check' by putting asterisks around every word that is NOT found in the dictionary.</li>
+<li>Write a program that reads in a dictionary file using node's FS API and reads a line of text from the terminal input. The program should 'spell check' by putting asterisks around every word that is NOT found in the dictionary.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> readline <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;readline&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">const</span> fs <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;fs&#39;</span>)<span class="op">;</span></a>
@@ -57,7 +57,7 @@
 <p><em>Git</em> is a distributed version control system that allows us to build up patch sets and changes.</p>
 <p><em>GitHub</em> is a company that provides <em>git</em> repository hosting as well as project management features like code review, issues, wiki, etc.</p>
 <ol start="3" type="1">
-<li>Given ‘adding to staging', ‘committing', and ‘pushing to remote', match attributes that apply to each.</li>
+<li>Given 'adding to staging', 'committing', and 'pushing to remote', match attributes that apply to each.</li>
 </ol>
 <p>Adding to Staging:</p>
 <ul>
@@ -113,7 +113,7 @@
 <p>Soft (<code>git reset --soft &lt;ref&gt;</code>):</p>
 <ul>
 <li>resets non-destructively. Resets your head back to ref.</li>
-<li>Does not change your code changes or ‘staged' code at all</li>
+<li>Does not change your code changes or 'staged' code at all</li>
 </ul>
 <p>Mixed (<code>git reset &lt;ref&gt;</code>):</p>
 <ul>
@@ -129,7 +129,7 @@
 </ol>
 <p><code>git rebase</code> allows us to rewrite the history of the current branch my changing commit contents, or adding commits to our history and replaying all the commits since that moment on top of them. Rebase allows us to clean up mistakes in our history, or to avoid adding "merge commits" by adding the commits from another branch into our branches' history.</p>
 <ol start="11" type="1">
-<li>Use git diff to compare a local ‘staging' branch and ‘master' branch.</li>
+<li>Use git diff to compare a local 'staging' branch and 'master' branch.</li>
 </ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" title="1">$ <span class="fu">git</span> checkout staging</a>
 <a class="sourceLine" id="cb9-2" title="2">$ <span class="fu">git</span> diff master</a></code></pre></div>

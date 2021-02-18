@@ -46,7 +46,7 @@ function Story(props) {
   <MyComponent message={'<3'} />
   ```
 
-- **`Props Default to “True”`**
+- **`Props Default to “True"`**
 
   ```js
   <MyTextBox autocomplete />
