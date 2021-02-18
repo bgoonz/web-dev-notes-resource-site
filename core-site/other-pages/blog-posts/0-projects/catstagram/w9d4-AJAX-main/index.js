@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-const port = 3000;
+const port = 3001;
 
 // Controls the probability of an error being thrown. If ERROR_RATE is 0, then
 // an error will never be thrown. If ERROR_RATE is 100, then an error will

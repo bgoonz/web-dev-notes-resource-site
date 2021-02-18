@@ -2,18 +2,7 @@
 
 ### An Built with confetti-js, Math.random(), the Web Audio API, AJAX, and Node.js
 
-### How to use:
 
-- `git clone` the **repository** to your **desktop** with the ***following*** `command` if using `SSH`:
-
-```shell
-git clone git@github.com:interglobalmedia/web-audio-api-ajax.git
-```
-If using `HTTPS`:
-
-```shell
-git clone https://github.com/interglobalmedia/web-audio-api-ajax.git
-```
 
 ### User Story:
 
@@ -46,4 +35,3 @@ git clone https://github.com/interglobalmedia/web-audio-api-ajax.git
 `npm run build`: ***creates*** a **new** `dist` **build**.
 
 `npm run deploy`: ***deploys*** the **contents** of the `dist` **folder** to `gh-pages`.
-
