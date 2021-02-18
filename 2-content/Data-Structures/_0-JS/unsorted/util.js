@@ -1,9 +1,9 @@
-const catchStackOverflow = (fn, ...args) => {
+const catchStackOverflow = ( fn, ...args ) => {
     try {
-        return fn(...args);
-    } catch (err) {
-        if (err instanceof RangeError) {
-            throw new Error('Stack Overflow');
+        return fn( ...args );
+    } catch ( err ) {
+        if ( err instanceof RangeError ) {
+            throw new Error( 'Stack Overflow' );
         }
     }
 };

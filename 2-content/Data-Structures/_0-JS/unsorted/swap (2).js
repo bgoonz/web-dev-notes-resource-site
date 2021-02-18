@@ -8,8 +8,8 @@
  - parameter:  {Number} y
  -        The index of the second item.
  */
-function swap(ary, x, y) {
-  let temp = ary[x];
-  ary[x] = ary[y];
-  ary[y] = temp;
+function swap ( ary, x, y ) {
+    let temp = ary[ x ];
+    ary[ x ] = ary[ y ];
+    ary[ y ] = temp;
 }

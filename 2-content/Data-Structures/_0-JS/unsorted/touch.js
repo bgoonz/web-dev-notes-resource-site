@@ -9,32 +9,32 @@
  * If everything succeeds, don't print anything.
  */
 
-const fs = require('fs');
+const fs = require( 'fs' );
 
-if (process.argv.length !== 3) {
-  console.log("USAGE: ./touch.js path");
-  process.exit();
+if ( process.argv.length !== 3 ) {
+    console.log( "USAGE: ./touch.js path" );
+    process.exit();
 }
 
-const target = process.argv[2];
+const target = process.argv[ 2 ];
 
-fs.stat(target, (err, stats) => {
-  if (err && err.code === 'ENOENT') {
-    return fs.writeFile(target, '', err => {
-      if (err) throw err;
-    });
-  }
+fs.stat( target, ( err, stats ) => {
+    if ( err && err.code === 'ENOENT' ) {
+        return fs.writeFile( target, '', err => {
+            if ( err ) throw err;
+        } );
+    }
 
-  if (err) throw err;
+    if ( err ) throw err;
 
-  if (stats.isDirectory()) {
-    console.error(`Cannot touch directories: ${target}`);
-    process.exit(2);
-  }
+    if ( stats.isDirectory() ) {
+        console.error( `Cannot touch directories: ${ target }` );
+        process.exit( 2 );
+    }
 
-  if (stats.isFile()) {
-    return fs.utimes(target, stats.atime, new Date(), err => {
-      if (err) throw err;
-    });
-  }
-});
+    if ( stats.isFile() ) {
+        return fs.utimes( target, stats.atime, new Date(), err => {
+            if ( err ) throw err;
+        } );
+    }
+} );

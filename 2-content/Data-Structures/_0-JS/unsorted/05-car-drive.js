@@ -19,13 +19,13 @@ console.log(car) // -> {speed: 100, drive: ƒ}
 ***********************************************************************/
 
 const car = {
-  speed: 0,
-  // here we have to use an anonymous function to ensure the context
-  // is set correctly when this method is invoked
-  drive: function (newSpeed) {
-    this.speed = newSpeed;
-    return this.speed;
-  }
+    speed: 0,
+    // here we have to use an anonymous function to ensure the context
+    // is set correctly when this method is invoked
+    drive: function ( newSpeed ) {
+        this.speed = newSpeed;
+        return this.speed;
+    }
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

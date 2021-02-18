@@ -32,8 +32,8 @@ console.log(bowSandy()); // prints "You bowed to Sandy"
 console.log(bowSandy("Joe", "Nico")); // prints "You bowed to Sandy and Joe and Nico"
 
 ***********************************************************************/
-function allTheArgs(func, ...args) {
-  return func.bind(null, ...args);
+function allTheArgs ( func, ...args ) {
+    return func.bind( null, ...args );
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

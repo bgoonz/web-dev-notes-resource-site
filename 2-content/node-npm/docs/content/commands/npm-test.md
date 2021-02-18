@@ -6,7 +6,7 @@ description: Test a package
 
 ### Synopsis
 
-```bash
+``` bash
 npm test [-- <args>]
 
 aliases: t, tst

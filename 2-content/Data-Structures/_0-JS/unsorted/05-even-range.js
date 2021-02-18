@@ -9,16 +9,16 @@ evenRange(4, 11) => [ 4, 6, 8, 10 ]
 evenRange(8, 5) => []
 *******************************************************************************/
 
-function evenRange(start, end) {
-  var array = [];
+function evenRange ( start, end ) {
+    var array = [];
 
-  for (var i = start; i <= end; i += 1) {
-    if (i % 2 === 0) {
-      array.push(i);
+    for ( var i = start; i <= end; i += 1 ) {
+        if ( i % 2 === 0 ) {
+            array.push( i );
+        }
     }
-  }
 
-  return array;
+    return array;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

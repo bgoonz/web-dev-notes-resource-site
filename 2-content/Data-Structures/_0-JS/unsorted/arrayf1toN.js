@@ -1,4 +1,4 @@
-function arrFrom12N( n ) {
+function arrFrom12N ( n ) {
     return Array.from( Array( n ).keys() );
 }
 let numArrN = arrFrom12N( 100 );

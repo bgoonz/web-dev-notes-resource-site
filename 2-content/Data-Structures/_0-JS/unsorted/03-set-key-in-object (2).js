@@ -13,10 +13,10 @@ let obj1 = {str: "hello"}
 setKeyInObject(obj1, "num", 3); // => {str: "hello", num: 3}
 ***********************************************************************/
 
-function setKeyInObject(obj, string, value) {
-  let key = string;
-  obj[key] = value;
-  return obj;
+function setKeyInObject ( obj, string, value ) {
+    let key = string;
+    obj[ key ] = value;
+    return obj;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

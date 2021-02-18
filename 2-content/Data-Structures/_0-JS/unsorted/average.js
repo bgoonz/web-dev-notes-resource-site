@@ -2,7 +2,7 @@
 //initialized with a value of `0`, divide by the `length` of the array.
 
 
-function average( ...nums ) {
+function average ( ...nums ) {
     return nums.reduce( ( acc, val ) => {
         return acc + val;
     }, 0 ) / nums.length;

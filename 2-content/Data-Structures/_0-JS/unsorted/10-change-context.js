@@ -22,9 +22,9 @@ console.log(changeContext(getSecret, map)); // prints "I don't know where I'm go
 
 ***********************************************************************/
 
-function changeContext(func, obj) {
-  let secretFunc = func.bind(obj);
-  return secretFunc();
+function changeContext ( func, obj ) {
+    let secretFunc = func.bind( obj );
+    return secretFunc();
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -8,17 +8,17 @@ reverseString("Go-to-the-store") => "store-the-to-Go"
 reverseString("Jump,-jump-for-joy") => "joy-for-jump-Jump,"
 *******************************************************************************/
 
-function reverseString(string) {
-  let words = string.split("-");
-  let reversed = [];
+function reverseString ( string ) {
+    let words = string.split( "-" );
+    let reversed = [];
 
-  for (let i = words.length - 1; i >= 0; i--) {
-    let word = words[i];
-    reversed.push(word);
-  }
+    for ( let i = words.length - 1; i >= 0; i-- ) {
+        let word = words[ i ];
+        reversed.push( word );
+    }
 
-  let reversedStr = reversed.join("-");
-  return reversedStr;
+    let reversedStr = reversed.join( "-" );
+    return reversedStr;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

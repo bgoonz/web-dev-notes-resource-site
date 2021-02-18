@@ -10,17 +10,17 @@ intersect(['a', 'b', 'c', 'd'], ['b', 'd', 'e']) => [ 'b', 'd' ]
 intersect(['a', 'b', 'c'], ['x', 'y', 'z']) => []
 *******************************************************************************/
 
-function intersect(arr1, arr2) {
-  let commonEles = [];
+function intersect ( arr1, arr2 ) {
+    let commonEles = [];
 
-  for (let i = 0; i < arr1.length; i++) {
-    let ele = arr1[i];
-    if (arr2.indexOf(ele) > -1) {
-      commonEles.push(ele);
+    for ( let i = 0; i < arr1.length; i++ ) {
+        let ele = arr1[ i ];
+        if ( arr2.indexOf( ele ) > -1 ) {
+            commonEles.push( ele );
+        }
     }
-  }
 
-  return commonEles;
+    return commonEles;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

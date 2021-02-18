@@ -12,27 +12,27 @@
  * If everything succeeds, don't print anything.
  */
 
-const fs = require('fs');
+const fs = require( 'fs' );
 
-const [_, __, from, to] = process.argv;
+const [ _, __, from, to ] = process.argv;
 
-if (!from || !to) {
-  console.log("USAGE: ./cp.js «from» «to»");
-  process.exit();
+if ( !from || !to ) {
+    console.log( "USAGE: ./cp.js «from» «to»" );
+    process.exit();
 }
 
-fs.stat(from, (err, stats) => {
-  if (err && err.code === 'ENOENT') {
-    console.error(`The path ${from} does not exist.`);
-    process.exit(9);
-  }
+fs.stat( from, ( err, stats ) => {
+    if ( err && err.code === 'ENOENT' ) {
+        console.error( `The path ${ from } does not exist.` );
+        process.exit( 9 );
+    }
 
-  if (stats.isDirectory()) {
-    console.error(`The path ${from} is a directory.`);
-    process.exit(10);
-  }
+    if ( stats.isDirectory() ) {
+        console.error( `The path ${ from } is a directory.` );
+        process.exit( 10 );
+    }
 
-  fs.copyFile(from, to, err => {
-    if (err) throw err;
-  });
-});
+    fs.copyFile( from, to, err => {
+        if ( err ) throw err;
+    } );
+} );

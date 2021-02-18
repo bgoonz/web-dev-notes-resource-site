@@ -23,20 +23,20 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
-function recVolume(height) {
-  let dimensions = [height];
-  const _measure = (num) => {
-    if (dimensions.length < 3) {
-      dimensions.push(num);
-    }
-    if (dimensions.length === 3) {
-      let sum = dimensions.reduce((acc, el) => (acc *= el));
-      return sum;
-    } else {
-      return _measure;
-    }
-  };
-  return _measure;
+function recVolume ( height ) {
+    let dimensions = [ height ];
+    const _measure = ( num ) => {
+        if ( dimensions.length < 3 ) {
+            dimensions.push( num );
+        }
+        if ( dimensions.length === 3 ) {
+            let sum = dimensions.reduce( ( acc, el ) => ( acc *= el ) );
+            return sum;
+        } else {
+            return _measure;
+        }
+    };
+    return _measure;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

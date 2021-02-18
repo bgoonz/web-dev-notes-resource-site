@@ -26,63 +26,63 @@
 // Let's code!
 // -----------
 class Node {
-  constructor(val) {
-    this.value = val;
-    this.next = null;
-  }
+    constructor ( val ) {
+        this.value = val;
+        this.next = null;
+    }
 }
 
 class Stack {
-  constructor() {
-    this.top = null;
-    this.bottom = null;
-    this.length = 0;
-  }
-
-  push(val) {
-    const newNode = new Node(val);
-    if (!this.length) {
-      this.top = newNode;
-      this.bottom = newNode;
-    } else {
-      newNode.next = this.top;
-      this.top = newNode;
+    constructor () {
+        this.top = null;
+        this.bottom = null;
+        this.length = 0;
     }
-    return ++this.length;
-  }
 
-  pop() {
-    if (!this.length) return null;
-    const removedNode = this.top;
-    if (this.length === 1) {
-      this.top = null;
-      this.bottom = null;
-    } else {
-      this.top = removedNode.next;
+    push ( val ) {
+        const newNode = new Node( val );
+        if ( !this.length ) {
+            this.top = newNode;
+            this.bottom = newNode;
+        } else {
+            newNode.next = this.top;
+            this.top = newNode;
+        }
+        return ++this.length;
     }
-    this.length--;
-    return removedNode.value;
-  }
+
+    pop () {
+        if ( !this.length ) return null;
+        const removedNode = this.top;
+        if ( this.length === 1 ) {
+            this.top = null;
+            this.bottom = null;
+        } else {
+            this.top = removedNode.next;
+        }
+        this.length--;
+        return removedNode.value;
+    }
 }
 
-function iterateAcrossLinkedListBackwards(linkedList) {
-  // TODO: Implement the iterateAcrossLinkedListBackwards function here
-  const stack = new Stack();
-  let node = linkedList.head;
-  let result = '';
-  while (node !== null) {
-    stack.push(node);
-    node = node.next;
-  }
-
-  while (stack.length > 0) {
-    if (stack.length > 1) {
-      result += `${stack.pop().value} -> `;
-    } else {
-      result += stack.pop().value;
+function iterateAcrossLinkedListBackwards ( linkedList ) {
+    // TODO: Implement the iterateAcrossLinkedListBackwards function here
+    const stack = new Stack();
+    let node = linkedList.head;
+    let result = '';
+    while ( node !== null ) {
+        stack.push( node );
+        node = node.next;
     }
-  }
-  return result;
+
+    while ( stack.length > 0 ) {
+        if ( stack.length > 1 ) {
+            result += `${ stack.pop().value } -> `;
+        } else {
+            result += stack.pop().value;
+        }
+    }
+    return result;
 }
 
 exports.iterateAcrossLinkedListBackwards = iterateAcrossLinkedListBackwards;

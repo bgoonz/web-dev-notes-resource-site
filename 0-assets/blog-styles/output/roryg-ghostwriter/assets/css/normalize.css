@@ -1,5 +1,4 @@
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
-
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -7,13 +6,10 @@
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-
 article,
-aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 main,
@@ -33,19 +29,13 @@ video {
     display: inline-block;
 }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
-audio:not([controls]) {
+/ * Prevent modern browsers from displaying `audio` without controls. * Remove excess height in iOS 5 devices. */ audio:not([controls]) {
     display: none;
     height: 0;
 }
 
 /**
- * Address styling not present in IE 8/9.
- */
+ * Address styli */
 
 [hidden] {
     display: none;
@@ -62,29 +52,31 @@ audio:not([controls]) {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
 }
 
 /**
  * Remove default margin.
  */
-
 body {
     margin: 0;
 }
 
-/* ==========================================================================
-   Links
-   ========================================================================== */
-
+/* ========= =================================================================
+           
+    Links   
+ 
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
 
-a:focus {
-    outline: thin dotted;
+a outline: thin dotted;
+
 }
 
 /**
@@ -92,8 +84,7 @@ a:focus {
  */
 
 a:active,
-a:hover {
-    outline: 0;
+a:hov outline: 0;
 }
 
 /* ==========================================================================
@@ -145,11 +136,8 @@ hr {
     height: 0;
 }
 
-/**
- * Address styling not present in IE 8/9.
- */
 
-mark {
+ddress styling not present in IE 8/9. mark {
     background: #ff0;
     color: #000;
 }
@@ -167,7 +155,7 @@ samp {
 }
 
 /**
- * Improve readability of pre-formatted text in all browsers.
+ * Impr readability of pre-formatted text in all browsers.
  */
 
 pre {
@@ -179,7 +167,7 @@ pre {
  */
 
 q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+    quotes: "\201C""\201D""\2018""\2019";
 }
 
 /**
@@ -262,8 +250,10 @@ fieldset {
  */
 
 legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
+    border: 0;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
 
 /**
@@ -276,9 +266,12 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 2 */
+    margin: 0;
+    /* 3 */
 }
 
 /**
@@ -312,11 +305,14 @@ select {
  */
 
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
+/* 1 */
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
+    -webkit-appearance: button;
+    /* 2 */
+    cursor: pointer;
+    /* 3 */
 }
 
 /**
@@ -335,8 +331,10 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
 
 /**
@@ -346,9 +344,11 @@ input[type="radio"] {
  */
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
+    -webkit-appearance: textfield;
+    /* 1 */
     -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
+    -webkit-box-sizing: content-box;
+    /* 2 */
     box-sizing: content-box;
 }
 
@@ -378,8 +378,10 @@ input::-moz-focus-inner {
  */
 
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+    overflow: auto;
+    /* 1 */
+    vertical-align: top;
+    /* 2 */
 }
 
 /* ==========================================================================

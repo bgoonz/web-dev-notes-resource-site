@@ -3,8 +3,8 @@ let numericStringArray = [ '80', '9', '700' ];
 let numberArray = [ 40, 1, 5, 200 ];
 let mixedNumericArray = [ '80', '9', '700', 40, 1, 5, 200 ];
 
-function compareNumbers( a, b ) {
-  return a - b;
+function compareNumbers ( a, b ) {
+    return a - b;
 }
 
 console.log( 'stringArray:', stringArray.join() );
