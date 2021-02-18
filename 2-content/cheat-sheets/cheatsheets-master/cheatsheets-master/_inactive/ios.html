@@ -1,0 +1,10 @@
+<p>Multiple Exchange accounts:</p>
+<pre><code>scp root@iphone.local:/private/var/mobile/Library/Preferences/com.apple.accountsettings.plist .</code></pre>
+<p>Paths:</p>
+<pre><code>/Library/Themes           # Winterboard themes
+/User/Media/DCIM/100APPLE # Photos
+/User/Media/Recordings    # Voice recordings</code></pre>
+<p>Copy photos:</p>
+<pre><code>rsync -v -r root@iphone.local:/User/Media/DCIM/100APPLE ./photos</code></pre>
+<p>Ringtone conversion using ffmpeg:</p>
+<pre><code>ffmpeg -i foo.mp3 -ac 1 -ab 128000 -f mp4 -acodec libfaac -y target.m4r</code></pre>

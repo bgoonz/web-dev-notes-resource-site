@@ -1,0 +1,61 @@
+<h3 id="parsing">Parsing</h3>
+<h4 id="as-local-time">As local time</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">const</span> date <span class="op">=</span> <span class="kw">new</span> <span class="at">Date</span>(<span class="dv">2012</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)</a></code></pre></div>
+<h4 id="as-utc-time">As UTC time</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> date <span class="op">=</span> <span class="kw">new</span> <span class="at">Date</span>(<span class="va">Date</span>.<span class="at">UTC</span>(<span class="dv">2012</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>))</a></code></pre></div>
+<h4 id="from-iso-strings">From ISO strings</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> date <span class="op">=</span> <span class="kw">new</span> <span class="at">Date</span>(<span class="st">&#39;2018-04-20T12:00:00Z&#39;</span>)</a></code></pre></div>
+<p>Note that JavaScript doesn’t “store” timezones in a date object. All these date objects, when expressed via <code>.toString()</code> or similar, will show the local timezone of the browser, regardless if you parsed UTC dates.</p>
+<h3 id="formatting-dates">Formatting dates</h3>
+<h4 id="default-formatting">Default formatting</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="va">Intl</span>.<span class="at">DateTimeFormat</span>().<span class="at">format</span>(date))</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">// → &#39;12/19/2012&#39; (assuming America/Los_Angeles)</span></a></code></pre></div>
+<h4 id="custom-locale">Custom locale</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="va">Intl</span>.<span class="at">DateTimeFormat</span>(<span class="st">&#39;en-GB&#39;</span>).<span class="at">format</span>(date))</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">// → &#39;19/12/2012&#39; (date-first)</span></a></code></pre></div>
+<h4 id="custom-timezone">Custom timezone</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="va">Intl</span>.<span class="at">DateTimeFormat</span>(<span class="st">&#39;en-AU&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="dt">timeZone</span><span class="op">:</span> <span class="st">&#39;Australia/Sydney&#39;</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="op">}</span>).<span class="at">format</span>(date))</a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="co">// → &#39;19/12/2012&#39;</span></a></code></pre></div>
+<h3 id="custom-formats">Custom formats</h3>
+<h4 id="time">Time</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="va">Intl</span>.<span class="at">DateTimeFormat</span>(<span class="st">&#39;default&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="dt">hour</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb7-3" title="3">  <span class="dt">minute</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="dt">second</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="op">}</span>).<span class="at">format</span>(date))</a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="co">// → &#39;2:00:00 pm&#39;</span></a></code></pre></div>
+<h4 id="date">Date</h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="kw">new</span> <span class="va">Intl</span>.<span class="at">DateTimeFormat</span>(<span class="st">&#39;en-US&#39;</span><span class="op">,</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="dt">year</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="dt">month</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="dt">day</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="op">}</span>).<span class="at">format</span>(date))</a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="co">// → &#39;12/19/2012&#39;</span></a></code></pre></div>
+<p>To specify options without a locale, use <code>'default'</code> as a locale.</p>
+<h3 id="all-options">All options</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="op">{</span></a>
+<a class="sourceLine" id="cb9-2" title="2">  <span class="dt">weekday</span><span class="op">:</span> <span class="st">&#39;narrow&#39;</span> <span class="op">|</span> <span class="st">&#39;short&#39;</span> <span class="op">|</span> <span class="st">&#39;long&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-3" title="3">  <span class="dt">era</span><span class="op">:</span> <span class="st">&#39;narrow&#39;</span> <span class="op">|</span> <span class="st">&#39;short&#39;</span> <span class="op">|</span> <span class="st">&#39;long&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-4" title="4">  <span class="dt">year</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-5" title="5">  <span class="dt">month</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span> <span class="op">|</span> <span class="st">&#39;narrow&#39;</span> <span class="op">|</span> <span class="st">&#39;short&#39;</span> <span class="op">|</span> <span class="st">&#39;long&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-6" title="6">  <span class="dt">day</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-7" title="7">  <span class="dt">hour</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-8" title="8">  <span class="dt">minute</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-9" title="9">  <span class="dt">second</span><span class="op">:</span> <span class="st">&#39;numeric&#39;</span> <span class="op">|</span> <span class="st">&#39;2-digit&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-10" title="10">  <span class="dt">timeZoneName</span><span class="op">:</span> <span class="st">&#39;short&#39;</span> <span class="op">|</span> <span class="st">&#39;long&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-11" title="11"></a>
+<a class="sourceLine" id="cb9-12" title="12">  <span class="co">// Time zone to express it in</span></a>
+<a class="sourceLine" id="cb9-13" title="13">  <span class="dt">timeZone</span><span class="op">:</span> <span class="st">&#39;Asia/Shanghai&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-14" title="14">  <span class="co">// Force 12-hour or 24-hour</span></a>
+<a class="sourceLine" id="cb9-15" title="15">  <span class="dt">hour12</span><span class="op">:</span> <span class="kw">true</span> <span class="op">|</span> <span class="kw">false</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-16" title="16"></a>
+<a class="sourceLine" id="cb9-17" title="17">  <span class="co">// Rarely-used options</span></a>
+<a class="sourceLine" id="cb9-18" title="18">  <span class="dt">hourCycle</span><span class="op">:</span> <span class="st">&#39;h11&#39;</span> <span class="op">|</span> <span class="st">&#39;h12&#39;</span> <span class="op">|</span> <span class="st">&#39;h23&#39;</span> <span class="op">|</span> <span class="st">&#39;h24&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb9-19" title="19">  <span class="dt">formatMatcher</span><span class="op">:</span> <span class="st">&#39;basic&#39;</span> <span class="op">|</span> <span class="st">&#39;best fit&#39;</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="op">}</span></a></code></pre></div>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat" class="uri">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></li>
+</ul>

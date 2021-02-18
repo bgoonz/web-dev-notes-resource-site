@@ -1,0 +1,199 @@
+<h2 id="include.title">{{ include.title }}</h2>
+<p>{: .-three-column}</p>
+<h3 id="presets">Presets</h3>
+<h4 id="date">Date</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>%m/%d/%Y</code></td>
+<td><code>06/05/2013</code></td>
+</tr>
+<tr class="even">
+<td><code>%A, %B %e, %Y</code></td>
+<td><code>Sunday, June 5, 2013</code></td>
+</tr>
+<tr class="odd">
+<td><code>%b %e %a</code></td>
+<td><code>Jun 5 Sun</code></td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>
+<h4 id="time">Time</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>%H:%M</code></td>
+<td><code>23:05</code></td>
+</tr>
+<tr class="even">
+<td><code>%I:%M %p</code></td>
+<td><code>11:05 PM</code></td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>
+<p>Used by Ruby, UNIX <code>date</code>, and many more.</p>
+<h3 id="date-1">Date</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Example</th>
+<th>Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>%a</code></td>
+<td><code>Sun</code></td>
+<td><strong>Weekday</strong></td>
+</tr>
+<tr class="even">
+<td><code>%A</code></td>
+<td><code>Sunday</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>%w</code></td>
+<td><code>0</code>..<code>6</code> <em>(Sunday is 0)</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>%y</code></td>
+<td><code>13</code></td>
+<td><strong>Year</strong></td>
+</tr>
+<tr class="even">
+<td><code>%Y</code></td>
+<td><code>2013</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>%b</code></td>
+<td><code>Jan</code></td>
+<td><strong>Month</strong></td>
+</tr>
+<tr class="odd">
+<td><code>%B</code></td>
+<td><code>January</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>%m</code></td>
+<td><code>01</code>..<code>12</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>%d</code></td>
+<td><code>01</code>..<code>31</code></td>
+<td><strong>Day</strong></td>
+</tr>
+<tr class="odd">
+<td><code>%e</code></td>
+<td><code>1</code>..<code>31</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>
+<h3 id="time-1">Time</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Example</th>
+<th>Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>%l</code></td>
+<td><code>1</code></td>
+<td>Hour</td>
+</tr>
+<tr class="even">
+<td><code>%H</code></td>
+<td><code>00</code>..<code>23</code></td>
+<td>24h Hour</td>
+</tr>
+<tr class="odd">
+<td><code>%I</code></td>
+<td><code>01</code>..<code>12</code></td>
+<td>12h Hour</td>
+</tr>
+<tr class="even">
+<td>–</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>%M</code></td>
+<td><code>00</code>..<code>59</code></td>
+<td>Minute</td>
+</tr>
+<tr class="even">
+<td><code>%S</code></td>
+<td><code>00</code>..<code>60</code></td>
+<td>Second</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>%p</code></td>
+<td><code>AM</code></td>
+<td>AM or PM</td>
+</tr>
+<tr class="odd">
+<td><code>%Z</code></td>
+<td><code>+08</code></td>
+<td>Time zone</td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>%j</code></td>
+<td><code>001</code>..<code>366</code></td>
+<td>Day of the year</td>
+</tr>
+<tr class="even">
+<td><code>%%</code></td>
+<td><code>%</code></td>
+<td>Literal % character</td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>

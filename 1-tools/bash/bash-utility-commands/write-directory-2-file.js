@@ -1,21 +1,38 @@
-(fsReaddir, stat, join) => (path) => {
-  const entries = { files: [], dirs: [] };
-  const addEntry = p =>
-    stat(p).then((stats) => {
-      if (stats.isDirectory()) {
-        entries.dirs.push(p);
-      } else if (stats.isFile()) {
-        entries.files.push(p);
-      }
-    });
 
-  return new Promise((resolve, reject) => {
-    fsReaddir(path, (error, content) => {
-      if (error) {
-        reject(error);
-      } else {
-        const listing = content.map(c => addEntry(join(path, c)));
-        Promise.all(listing).then(() => resolve(entries));
-      }
-    });
-  });
+const file = require( 'file-system' );
+const fs = require( 'fs' );
+
+
+/*
+.recurse(dirpath, filter, callback)
+Recurse into a directory, executing callback for each file and folder. if the filename is undefiend, the callback is for folder, otherwise for file.
+
+{string} dirpath required
+{string|array|function} filter
+If the filter is function, executing callback for all files and folder
+{function} callback(filepath, filename, relative)
+*/
+
+/*
+fs.recurse('path', function(filepath, relative, filename) { });
+ 
+fs.recurse('path', [
+  '*.css',
+  '**\/*.js', 
+'path/*.html',
+    '!**\/path/*.js'
+], function( filepath, relative, filename ) {
+    if ( filename ) {
+        // it's file
+    } else {
+        // it's folder
+    }
+});
+
+//  Only using files
+fs.recurse( 'path', function ( filepath, relative, filename ) {
+    if ( !filename ) return;
+} );
+
+*/
+

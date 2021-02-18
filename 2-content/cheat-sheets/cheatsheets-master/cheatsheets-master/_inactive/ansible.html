@@ -1,0 +1,52 @@
+<h2 id="looping">Looping</h2>
+<h3 id="array-with_items">Array (with_items)</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">vars:</span></a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="fu">security_groups:</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&#39;hello&#39;</span></a>
+<a class="sourceLine" id="cb1-4" title="4">      <span class="fu">desc:</span><span class="at"> </span><span class="st">&#39;world&#39;</span></a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&#39;hola&#39;</span></a>
+<a class="sourceLine" id="cb1-7" title="7">      <span class="fu">desc:</span><span class="at"> </span><span class="st">&#39;mundo&#39;</span></a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="fu">tasks:</span></a>
+<a class="sourceLine" id="cb1-10" title="10">  <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Create required security groups</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="fu">ec2_group:</span></a>
+<a class="sourceLine" id="cb1-12" title="12">      <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;{{ item.name }}&quot;</span></a>
+<a class="sourceLine" id="cb1-13" title="13">      <span class="fu">description:</span><span class="at"> </span><span class="st">&quot;{{ item.desc }}&quot;</span></a>
+<a class="sourceLine" id="cb1-14" title="14">    <span class="fu">with_items:</span><span class="at"> </span><span class="st">&quot;{{ security_groups }}&quot;</span></a></code></pre></div>
+<h3 id="object-with_dict">Object (with_dict)</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">tasks:</span></a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Print phone records</span></a>
+<a class="sourceLine" id="cb2-3" title="3">    <span class="fu">debug:</span><span class="at"> msg=&quot;User {{ item.key }} is {{ item.value.name }} ({{ item.value.telephone }})&quot;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">    <span class="fu">with_dict:</span><span class="at"> </span><span class="st">&quot;{{ users }}&quot;</span></a></code></pre></div>
+<h2 id="with_file">with_file</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Send key&quot;</span></a>
+<a class="sourceLine" id="cb3-2" title="2">  <span class="fu">ec2_key:</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    <span class="fu">key_material:</span><span class="at"> </span><span class="st">&quot;{{ item }}&quot;</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  <span class="fu">with_file:</span><span class="at"> ./keys/sshkey.pub</span></a>
+<a class="sourceLine" id="cb3-5" title="5"></a>
+<a class="sourceLine" id="cb3-6" title="6">  <span class="co"># or</span></a>
+<a class="sourceLine" id="cb3-7" title="7">  <span class="fu">with_fileglob:</span><span class="at"> ./keys/*.pub</span></a></code></pre></div>
+<h3 id="conditionals">Conditionals</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">-</span> <span class="fu">include:</span><span class="at"> setup-debian.yml</span></a>
+<a class="sourceLine" id="cb4-2" title="2">  <span class="fu">when:</span><span class="at"> ansible_os_family == &#39;Debian&#39;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4">  <span class="fu">when:</span><span class="at"> (ansible_distribution == &quot;CentOS&quot; and ansible_distribution_major_version == &quot;6&quot;) or</span></a>
+<a class="sourceLine" id="cb4-5" title="5">        (ansible_distribution == <span class="st">&quot;Debian&quot;</span> and ansible_distribution_major_version == <span class="st">&quot;7&quot;</span>)</a>
+<a class="sourceLine" id="cb4-6" title="6"></a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8">  <span class="co"># Just like &quot;and&quot;</span></a>
+<a class="sourceLine" id="cb4-9" title="9">  <span class="fu">when:</span></a>
+<a class="sourceLine" id="cb4-10" title="10">    <span class="kw">-</span> ansible_distribution == <span class="st">&quot;CentOS&quot;</span></a>
+<a class="sourceLine" id="cb4-11" title="11">    <span class="kw">-</span> ansible_distribution_major_version == <span class="st">&quot;6&quot;</span></a></code></pre></div>
+<h2 id="expressions">Expressions</h2>
+<pre><code>{{ item }}
+{{ item.name }}
+{{ item[0].name }}
+
+{{ item | default(&#39;latest&#39;) }}</code></pre>
+<h2 id="includes">Includes</h2>
+<pre><code>tasks:
+  - include: wordpress.yml
+    vars:
+      wp_user: timmy</code></pre>

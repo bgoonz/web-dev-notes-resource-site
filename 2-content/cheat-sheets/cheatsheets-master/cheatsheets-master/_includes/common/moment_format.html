@@ -1,0 +1,383 @@
+<h2 id="include.title">{{ include.title }}</h2>
+<p>{: .-three-column}</p>
+<h3 id="examples">Examples</h3>
+<h4 id="date">Date</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>YYYY-MM-DD</code></td>
+<td>2014-01-01</td>
+</tr>
+<tr class="even">
+<td><code>dddd, MMMM Do YYYY</code></td>
+<td>Friday, May 16th 2014</td>
+</tr>
+<tr class="odd">
+<td><code>dddd [the] Do [of] MMMM</code></td>
+<td>Friday the 16th of May</td>
+</tr>
+</tbody>
+</table>
+<h4 id="time">Time</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hh:mm a</code></td>
+<td>12:30 pm</td>
+</tr>
+</tbody>
+</table>
+<p>Used by <a href="http://momentjs.com/docs/#/displaying/">Moment.js</a> and <a href="https://date-fns.org/v1.28.5/docs/format">date-fns/format</a>. Similar to Java <a href="https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.</p>
+<h3 id="date-1">Date</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Example</th>
+<th>Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>d</code></td>
+<td><code>0</code>..<code>6</code></td>
+<td><strong>Weekday</strong></td>
+</tr>
+<tr class="even">
+<td><code>dd</code></td>
+<td><code>Su</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>ddd</code></td>
+<td><code>Sun</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>dddd</code></td>
+<td><code>Sunday</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>YY</code></td>
+<td><code>13</code></td>
+<td><strong>Year</strong></td>
+</tr>
+<tr class="odd">
+<td><code>YYYY</code></td>
+<td><code>2013</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>M</code></td>
+<td><code>1</code>..<code>12</code> <em>(Jan is 1)</em></td>
+<td><strong>Month</strong></td>
+</tr>
+<tr class="even">
+<td><code>Mo</code></td>
+<td><code>1st</code>..<code>12th</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>MM</code></td>
+<td><code>01</code>..<code>12</code> <em>(Jan is 1)</em></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>MMM</code></td>
+<td><code>Jan</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>MMMM</code></td>
+<td><code>January</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>Q</code></td>
+<td><code>1</code>..<code>4</code></td>
+<td><strong>Quarter</strong></td>
+</tr>
+<tr class="even">
+<td><code>Qo</code></td>
+<td><code>1st</code>..<code>4th</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>D</code></td>
+<td><code>1</code>..<code>31</code></td>
+<td><strong>Day</strong></td>
+</tr>
+<tr class="odd">
+<td><code>Do</code></td>
+<td><code>1st</code>..<code>31st</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>DD</code></td>
+<td><code>01</code>..<code>31</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>DDD</code></td>
+<td><code>1</code>..<code>365</code></td>
+<td><strong>Day of year</strong></td>
+</tr>
+<tr class="odd">
+<td><code>DDDo</code></td>
+<td><code>1st</code>..<code>365th</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>DDDD</code></td>
+<td><code>001</code>..<code>365</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>w</code></td>
+<td><code>1</code>..<code>53</code></td>
+<td><strong>Week of year</strong></td>
+</tr>
+<tr class="odd">
+<td><code>wo</code></td>
+<td><code>1st</code>..<code>53rd</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>ww</code></td>
+<td><code>01</code>..<code>53</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>
+<h3 id="time-1">Time</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Example</th>
+<th>Area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>H</code></td>
+<td><code>0</code>..<code>23</code></td>
+<td><strong>24h hour</strong></td>
+</tr>
+<tr class="even">
+<td><code>HH</code></td>
+<td><code>00</code>..<code>23</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>h</code></td>
+<td><code>1</code>..<code>12</code></td>
+<td><strong>12h hour</strong></td>
+</tr>
+<tr class="odd">
+<td><code>hh</code></td>
+<td><code>01</code>..<code>12</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>m</code></td>
+<td><code>0</code>..<code>59</code></td>
+<td><strong>Minutes</strong></td>
+</tr>
+<tr class="even">
+<td><code>mm</code></td>
+<td><code>00</code>..<code>59</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>s</code></td>
+<td><code>0</code>..<code>59</code></td>
+<td><strong>Seconds</strong></td>
+</tr>
+<tr class="odd">
+<td><code>ss</code></td>
+<td><code>00</code>..<code>59</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>a</code></td>
+<td><code>am</code></td>
+<td><strong>AM/PM</strong></td>
+</tr>
+<tr class="even">
+<td><code>A</code></td>
+<td><code>AM</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>Z</code></td>
+<td><code>+07:00</code></td>
+<td><strong>Timezone offset</strong></td>
+</tr>
+<tr class="odd">
+<td><code>ZZ</code></td>
+<td><code>+0730</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>S</code></td>
+<td><code>0</code>..<code>9</code></td>
+<td>Deciseconds</td>
+</tr>
+<tr class="even">
+<td><code>SS</code></td>
+<td><code>00</code>..<code>99</code></td>
+<td>Centiseconds</td>
+</tr>
+<tr class="odd">
+<td><code>SSS</code></td>
+<td><code>000</code>..<code>999</code></td>
+<td>Milliseconds</td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>X</code></td>
+<td></td>
+<td>Unix timestamp</td>
+</tr>
+<tr class="even">
+<td><code>x</code></td>
+<td></td>
+<td>Millisecond Unix timestamp</td>
+</tr>
+</tbody>
+</table>
+<p>{: .-shortcuts}</p>
+<h3 id="presets">Presets</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>LT</code></td>
+<td>8:30 PM</td>
+</tr>
+<tr class="even">
+<td><code>LTS</code></td>
+<td>8:30:25 PM</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>LL</code></td>
+<td>August 2 1985</td>
+</tr>
+<tr class="odd">
+<td><code>ll</code></td>
+<td>Aug 2 1985</td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td><code>LLL</code></td>
+<td>August 2 1985 08:30 PM</td>
+</tr>
+<tr class="even">
+<td><code>lll</code></td>
+<td>Aug 2 1985 08:30 PM</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>LLLL</code></td>
+<td>Thursday, August 2 1985 08:30 PM</td>
+</tr>
+<tr class="odd">
+<td><code>llll</code></td>
+<td>Thu, Aug 2 1985 08:30 PM</td>
+</tr>
+</tbody>
+</table>

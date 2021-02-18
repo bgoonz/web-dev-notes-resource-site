@@ -1,0 +1,18 @@
+<h3 id="encrypt-decrypt">Encrypt decrypt</h3>
+<pre><code>gpg --encrypt --recepient &#39;James Receiverson&#39; foo.txt
+gpg --decrypt foo.txt.gpg</code></pre>
+<h3 id="making-keys">Making keys</h3>
+<pre><code>gpg --gen-key</code></pre>
+<h3 id="share-your-public-key">Share your public key</h3>
+<pre><code># via file
+gpg --armor --output pub.txt --export &quot;Rico Sta. Cruz&quot;
+
+# via server
+gpg --send-keys &quot;Rico Sta. Cruz&quot; --keyserver http://...</code></pre>
+<h3 id="key-management">Key management</h3>
+<pre><code>gpg --list-keys
+gpg --delete-key &#39;email@addie&#39;</code></pre>
+<h3 id="see">See</h3>
+<ul>
+<li>https://www.madboa.com/geek/gpg-quickstart/</li>
+</ul>
