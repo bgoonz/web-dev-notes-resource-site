@@ -20,26 +20,28 @@
 <p>Am I done? No! I need to run my code to test it.</p>
 <p>So I run:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">console</span>.<span class="at">log</span>(<span class="at">isPositiveNegativeZero</span>(<span class="dv">3</span>))<span class="op">;</span></a></code></pre></div>
-<p>It prints “positive”. Yay, that’s right! I tested my code and it worked. Am I done now?</p>
+<p>It prints “positive". Yay, that’s right! I tested my code and it worked. Am I done now?</p>
 <p>Nope!</p>
 <p>I know my code works when the input is the number 3, but how do I know if it will work for all numbers?</p>
 <p>Let’s think about the different situations that the code addresses. The code needs to do something different for positive numbers, negative numbers, and zero. So let’s test at least one input for each case.</p>
 <ul>
 <li>For positive – we already tested 3.</li>
-<li>For negative, let’s test -5. (You could pick any negative number you want though). I run <code>console.log(isPositiveNegativeZero(-5))</code>. It prints “negative”. Woohoo!</li>
-<li>For zero, we’ll test 0! I run <code>console.log(isPositiveNegativeZero(0))</code>. It prints “negative”. Hmm, that’s not what we wanted!</li>
+<li>For negative, let’s test -5. (You could pick any negative number you want though). I run
+    <code>console.log(isPositiveNegativeZero(-5))</code>. It prints “negative". Woohoo!</li>
+<li>For zero, we’ll test 0! I run <code>console.log(isPositiveNegativeZero(0))</code>. It prints “negative". Hmm, that’s
+    not what we wanted!</li>
 </ul>
-<p>Now I can go to my code and look for the bug. I look at my code and realize I wrote <code>number &lt;= 0</code> instead of <code>number &lt; 0</code>. When I make that change, I run <code>console.log(isPositiveNegativeZero(0))</code>. It prints “zero” this time. Nice!</p>
+<p>Now I can go to my code and look for the bug. I look at my code and realize I wrote <code>number &lt;= 0</code> instead of <code>number &lt; 0</code>. When I make that change, I run <code>console.log(isPositiveNegativeZero(0))</code>. It prints “zero" this time. Nice!</p>
 <p>Now, we’ve tested inputs that cover all different possible cases that could occur in the code, and they all work. Now I feel pretty confident that my code works!</p>
 <h4 id="edge-cases">Edge cases</h4>
-<p>When we talk about testing, we often talk about “edge cases” as part of it. People use the phrases “edge case” or “corner case” to mean a special case, an unusual case, or case that occurs at the boundary between conditions.</p>
-<p>Some edge cases are specific to the domain of a problem. For example, let’s say I want to write a function that returns whether a number is &gt;= 4. I should make sure to test the number 4 itself. Since it’s at the “boundary” between returning true and returning false, it’s an input that’s important to test.</p>
+<p>When we talk about testing, we often talk about “edge cases" as part of it. People use the phrases “edge case" or “corner case" to mean a special case, an unusual case, or case that occurs at the boundary between conditions.</p>
+<p>Some edge cases are specific to the domain of a problem. For example, let’s say I want to write a function that returns whether a number is &gt;= 4. I should make sure to test the number 4 itself. Since it’s at the “boundary" between returning true and returning false, it’s an input that’s important to test.</p>
 <p>Some edge cases are common across many problems. For example, for a function that takes array as input, the empty array is often an edge case to consider. For a function that takes a string, the empty string "" may be one to consider. For functions that take in numbers: 0, negative numbers, and decimal numbers can be edge cases.</p>
 <p>These are not the only edge cases that exist for any given problem, and they are often not the most important ones, but it’s useful to think about what your code will do if it encounters these common cases.</p>
 <h4 id="how-to-write-and-run-tests">How to write and run tests</h4>
 <p>Later in the course you’ll learn about more specific technologies for writing tests, but for now we’ll keep it simple. Here are the important things to do:</p>
 <ul>
-<li>Keep your tests along with your code – don’t just run them once and consider it done. This way, as you change your code, you can keep running your tests and make sure you didn’t break anything that used to work. (Side note: In coding, breaking something that used to work is called a “regression”). You can also demonstrate to anyone reading the code that you’ve tested your code.</li>
+<li>Keep your tests along with your code – don’t just run them once and consider it done. This way, as you change your code, you can keep running your tests and make sure you didn’t break anything that used to work. (Side note: In coding, breaking something that used to work is called a “regression"). You can also demonstrate to anyone reading the code that you’ve tested your code.</li>
 <li>Know what you expect from each test. If you just run your code without knowing what you expect, you won’t know if you have a bug. A very simple way to do this is to write a comment with the expected output and manually check if the actual outputs are the same.</li>
 </ul>
 <p>So, when I’m done, my code file might look like:</p>
@@ -91,5 +93,5 @@
 <li><p>A function that takes in two numbers and returns <code>true</code> if the first number is larger than the second number. Otherwise, it should return <code>false</code>.</p></li>
 <li><p>A function that takes in an array of numbers, and returns the third number in the array.</p></li>
 <li><p>A function that takes 3 numbers as parameters. The 3 parameters are called <code>min</code>, <code>max</code>, and <code>target</code>. Return whether target number is between the min and the max (inclusive).</p></li>
-<li><p>A function that takes in a number, and prints the word “Hello” that many times.</p></li>
+<li><p>A function that takes in a number, and prints the word “Hello" that many times.</p></li>
 </ol>

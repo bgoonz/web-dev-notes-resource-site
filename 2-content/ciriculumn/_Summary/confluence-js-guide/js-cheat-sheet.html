@@ -525,7 +525,7 @@
   </table>
   <p>Note that expression&nbsp;<code>x++</code>&nbsp;is not always the same as&nbsp;<code>x = x + 1</code>.The
     <code>++</code> operator never performs string concatenation: it always converts its operand to a number and
-    increments it. If x is the string “1", <code>++x</code> is the number 2, but<code> x + 1</code> is the string “11".
+    increments it. If x is the string "1", <code>++x</code> is the number 2, but<code> x + 1</code> is the string "11".
   </p>
   <p>JavaScript objects are compared by reference, not by value. An object is equal to itself, but not to any other
     object. If two distinct objects have the same number of properties, with the same names and values, they are still
@@ -545,7 +545,7 @@
       </tr>
     </tbody>
   </table>
-  <p>Because of&nbsp;security issues, some web servers use the HTTP “Content-Security-Policy" header to
+  <p>Because of&nbsp;security issues, some web servers use the HTTP "Content-Security-Policy" header to
     disable<code>&nbsp;eval()</code>&nbsp;for an entire website.</p>
   <h2>First-Defined (??)</h2>
   <p>The first-defined operator <code>??</code> evaluates to its first defined operand: if its left operand is
@@ -573,7 +573,7 @@
     </tbody>
   </table>
   <h2>delete Operator</h2>
-  <p>Deleting an array element leaves a “hole" in the array and does not change the array’s length. The resulting array
+  <p>Deleting an array element leaves a "hole" in the array and does not change the array’s length. The resulting array
     is sparse.</p>
   <h2>void Operator</h2>
   <p>Using the&nbsp;<code>void</code>&nbsp;operator makes sense only if the operand has side effects.</p>
@@ -856,7 +856,7 @@ for(let [key, value] of m) {
     </li>
     <li>
       <p>In strict mode, the Arguments object&nbsp; in a function holds a static copy of the values passed to the
-        function. In non-strict mode, the Arguments object has “magical" behavior in which elements of the array and
+        function. In non-strict mode, the Arguments object has "magical" behavior in which elements of the array and
         named function parameters both refer to the same value.</p>
     </li>
     <li>
@@ -1550,7 +1550,7 @@ o[extension].x = 0;</pre>
     but want to be sure that your properties will not conflict with any properties that may already exist on the object,
     you can safely use Symbols as your property names.</p>
   <h3>Spread Operator</h3>
-  <p>You can copy the properties of an existing object into a new object using the “spread operator" ... inside an
+  <p>You can copy the properties of an existing object into a new object using the "spread operator" ... inside an
     object&nbsp;literal:</p>
   <table data-layout="default" class="confluenceTable">
     <tbody>
@@ -1910,7 +1910,7 @@ let weirdMethods = {
     </tbody>
   </table>
   <p>The fact that array indexes are simply a special type of object property name means that JavaScript arrays have no
-    notion of an “out of bounds" error. When you try to query a nonexistent property of any object, you don’t get an
+    notion of an "out of bounds" error. When you try to query a nonexistent property of any object, you don’t get an
     error; you simply get&nbsp;<code>undefined</code>.</p>
   <h3>Sparse Arrays</h3>
   <p>Sparse arrays can be created with the&nbsp;<code>Array()</code>&nbsp;constructor or simply by assigning to an array
@@ -2909,7 +2909,7 @@ for(let j = 0; j &lt; a.length; j++) {
       </tr>
     </tbody>
   </table>
-  <p>Function declaration statements are “hoisted" to the top of the enclosing script, function, or block so that
+  <p>Function declaration statements are "hoisted" to the top of the enclosing script, function, or block so that
     functions defined in this way may be invoked from code that appears before the definition.</p>
   <h2>Function Expressions</h2>
   <table data-layout="default" class="confluenceTable">
@@ -3735,7 +3735,7 @@ function divide(x,y) { return x / y; }</pre>
     </tbody>
   </table>
   <h2>Defining Your Own Function Properties</h2>
-  <p>When a function needs a “static" variable whose value persists across invocations, it is often convenient to use a
+  <p>When a function needs a "static" variable whose value persists across invocations, it is often convenient to use a
     property of the function itself.</p>
   <p>For example, suppose you want to write a function that returns a unique integer whenever it is invoked. The
     function must never return the same value twice. In order to manage this, the function needs to keep track of the
@@ -7059,7 +7059,7 @@ let p = new Map(Object.entries(o));</pre>
           <p><code>/ab|cd|ef/</code></p>
         </td>
         <td class="confluenceTd">
-          <p>“ab" or the string “cd" or the string “ef".</p>
+          <p>"ab" or the string "cd" or the string "ef".</p>
         </td>
       </tr>
       <tr>
@@ -7086,7 +7086,7 @@ let p = new Map(Object.entries(o));</pre>
           <p><code>/java(script)?/</code></p>
         </td>
         <td class="confluenceTd">
-          <p>matches “java" followed by the optional “script"</p>
+          <p>matches "java" followed by the optional "script"</p>
         </td>
       </tr>
       <tr>
@@ -7094,12 +7094,12 @@ let p = new Map(Object.entries(o));</pre>
           <p><code>/(ab|cd)+|ef/</code></p>
         </td>
         <td class="confluenceTd">
-          <p>matches “java" followed by the optional “script"</p>
+          <p>matches "java" followed by the optional "script"</p>
         </td>
       </tr>
     </tbody>
   </table>
-  <p>If the left alternative matches, the right alternative is ignored, even if it would have produced a “better" match
+  <p>If the left alternative matches, the right alternative is ignored, even if it would have produced a "better" match
   </p>
   <p>Another purpose of parentheses in regular expressions is to define subpatterns within the complete pattern. When a
     regular expression is successfully matched against a target string, it is possible to extract the portions of the
@@ -7223,7 +7223,7 @@ let p = new Map(Object.entries(o));</pre>
       </tr>
       <tr>
         <td class="confluenceTd">
-          <p>match the word “JavaScript" on a line by itself</p>
+          <p>match the word "JavaScript" on a line by itself</p>
         </td>
         <td class="confluenceTd">
           <p><code>/^JavaScript$/</code></p>
@@ -7231,14 +7231,14 @@ let p = new Map(Object.entries(o));</pre>
       </tr>
     </tbody>
   </table>
-  <p>To&nbsp;search for “Java" as a word by itself you can try the pattern&nbsp;<code>/\sJava\s/</code>, which requires
-    a space before and after the word. But there are two problems with this solution. First, it does not match “Java" at
+  <p>To&nbsp;search for "Java" as a word by itself you can try the pattern&nbsp;<code>/\sJava\s/</code>, which requires
+    a space before and after the word. But there are two problems with this solution. First, it does not match "Java" at
     the beginning or the end of a string, but only if it appears with space on either side. Second, when this pattern
     does find a match, the matched string it returns has leading and trailing spaces, which is not quite what’s needed.
     So instead of matching actual space characters with \s, match (or anchor to) word boundaries with \b. The resulting
     expression is&nbsp;<code>/\bJava\b/</code>.</p>
   <p>The element&nbsp;<code>\B</code>&nbsp;anchors the match to a location that is not a word boundary. Thus, the
-    pattern&nbsp;<code>/\B[Ss]cript/</code>&nbsp;matches “JavaScript" and “postscript", but not “script" or “Scripting".
+    pattern&nbsp;<code>/\B[Ss]cript/</code>&nbsp;matches "JavaScript" and "postscript", but not "script" or "Scripting".
   </p>
   <p>You can also use arbitrary regular expressions as anchor conditions.</p>
   <p>If you include an expression within&nbsp;<code>(?= and )</code>&nbsp;characters, it is a lookahead assertion, and
@@ -7264,8 +7264,8 @@ let p = new Map(Object.entries(o));</pre>
           <p><code>/[Jj]ava([Ss]cript)?(?=\:)/</code></p>
         </td>
         <td class="confluenceTd">
-          <p>matches the word “JavaScript" in “JavaScript: The DefinitiveGuide"</p>
-          <p>does not match “Java” in “Java in a Nutshell”</p>
+          <p>matches the word "JavaScript" in "JavaScript: The DefinitiveGuide"</p>
+          <p>does not match "Java" in "Java in a Nutshell"</p>
         </td>
       </tr>
     </tbody>
@@ -7293,7 +7293,7 @@ let p = new Map(Object.entries(o));</pre>
           <p>g</p>
         </td>
         <td class="confluenceTd">
-          <p>“global”—that is,that we intend to use it to find all matches within a string rather than just finding the
+          <p>"global"—that is,that we intend to use it to find all matches within a string rather than just finding the
             first <a href="http://match.it/">match.it</a> does alter the behavior of the String <code>match()</code>
             method and the <code>RegExp exec()</code> method in important ways.</p>
         </td>
@@ -7311,7 +7311,7 @@ let p = new Map(Object.entries(o));</pre>
           <p>m</p>
         </td>
         <td class="confluenceTd">
-          <p>“multiline” mode</p>
+          <p>"multiline" mode</p>
         </td>
       </tr>
       <tr>
@@ -7319,8 +7319,8 @@ let p = new Map(Object.entries(o));</pre>
           <p>s</p>
         </td>
         <td class="confluenceTd">
-          <p>useful when working with text that includes newlines.Normally, a “.” in a regular expression matches any
-            character except a line terminator. When the s flag is used, however, “.” will match any character,
+          <p>useful when working with text that includes newlines.Normally, a "." in a regular expression matches any
+            character except a line terminator. When the s flag is used, however, "." will match any character,
             including line terminators.</p>
         </td>
       </tr>
@@ -7339,7 +7339,7 @@ let p = new Map(Object.entries(o));</pre>
           <p>y</p>
         </td>
         <td class="confluenceTd">
-          <p>“sticky”. should match at the beginning of a string or at the first character following the previous match
+          <p>"sticky". should match at the beginning of a string or at the first character following the previous match
           </p>
         </td>
       </tr>
@@ -7827,9 +7827,9 @@ for(let word of dictionary) {
   </table>
   <p>Because we set the g flag on the RegExp, the&nbsp;<code>lastIndex</code>&nbsp;property is changed after successful
     matches, and the&nbsp;<code>test()</code>&nbsp;method (which is based on&nbsp;<code>exec()</code>) starts searching
-    for a match at the position specified by&nbsp;<code>lastIndex</code>. After matching the “pp” in
-    “apple”,&nbsp;<code>lastIndex</code>&nbsp;is 3, and so we start searching the word “book” at position 3 and do not
-    see the “oo” that it contains.</p>
+    for a match at the position specified by&nbsp;<code>lastIndex</code>. After matching the "pp" in
+    "apple",&nbsp;<code>lastIndex</code>&nbsp;is 3, and so we start searching the word "book" at position 3 and do not
+    see the "oo" that it contains.</p>
   <h2>Dates and Times</h2>
   <table data-layout="default" class="confluenceTable">
     <colgroup>
@@ -8340,7 +8340,7 @@ console.log(`Spline reticulation took ${endTime -startTime}ms.`);</pre>
     and then stringifies the return value in place of the original value. Date objects
     implement&nbsp;<code>toJSON()</code>: it returns the same string that&nbsp;<code>toISOString()</code>&nbsp;method
     does.</p>
-  <p>If you need to re-create Date objects (or modify the parsed object inany other way), you can pass a “reviver”
+  <p>If you need to re-create Date objects (or modify the parsed object inany other way), you can pass a "reviver"
     function as the second argument to&nbsp;<code>JSON.parse()</code>.</p>
   <table data-layout="wide" class="confluenceTable">
     <tbody>
@@ -8983,7 +8983,7 @@ for(let result = iterator.next(); !result.done; result =iterator.next()) {
       </tr>
     </tbody>
   </table>
-  <p>When you want to iterate though a “partially used” iterator:</p>
+  <p>When you want to iterate though a "partially used" iterator:</p>
   <table data-layout="default" class="confluenceTable">
     <colgroup>
       <col style="width: 302.0px;">
@@ -9984,12 +9984,12 @@ for(let prime of oneDigitPrimes()) sum += prime;</pre>
   </table>
   <h3>Resolving Promises</h3>
   <p>There is actually a fourth Promise object involved as which brings up the point&nbsp;of what it means for a Promise
-    to be “resolved.”&nbsp;</p>
+    to be "resolved."&nbsp;</p>
   <p>fetch() returns a Promise object which, when fulfilled, passes a Response object to the callback function we
     register. This Response object has&nbsp;<code>.text(), .json(),</code>&nbsp;and other methods to request the body of
     the HTTP response in various forms. But since the body may not yet have arrived, these methods must return Promise
     objects.</p>
-  <p>“task 2” calls the&nbsp;<code>.json()</code>&nbsp;method and returns its value. This is the fourth Promise object,
+  <p>"task 2" calls the&nbsp;<code>.json()</code>&nbsp;method and returns its value. This is the fourth Promise object,
     and it is the return value of the&nbsp;<code>callback1()</code>&nbsp;function.</p>
   <p>Let's consider:</p>
   <table data-layout="default" class="confluenceTable">
@@ -10170,10 +10170,10 @@ for(let prime of oneDigitPrimes()) sum += prime;</pre>
   <p>So if c returns a non-Promise, that return value becomes the value of p, p is fulfilled and we are done. But if the
     return value v is itself a Promise, then p is resolved but not yet fulfilled.</p>
   <p>At this stage, p cannot settle until the Promise v settles. If v is fulfilled, then p will be fulfilled to the same
-    value. If v is rejected, then p will be rejected for the same reason. This is what the “resolved” state of a Promise
+    value. If v is rejected, then p will be rejected for the same reason. This is what the "resolved" state of a Promise
     means</p>
-  <p>the Promise has become associated with, or “locked onto,” another Promise. We don’t know yet whether p will be
-    fulfilled or rejected, but our callback c no longer has any control over that. p is “resolved” in the sense that its
+  <p>the Promise has become associated with, or "locked onto," another Promise. We don’t know yet whether p will be
+    fulfilled or rejected, but our callback c no longer has any control over that. p is "resolved" in the sense that its
     fate now depends entirely on what happens to Promise v.</p>
   <p>Let’s bring this back to our URL-fetching example. When c1 returns p4, p2 is resolved. But being resolved is not
     the same as being fulfilled, so task 3 does not begin yet. When the full body of the HTTP response becomes
@@ -10357,9 +10357,9 @@ Promise.all(promises)
     <code>Promise.allSettled()</code> takes an array of input<br>Promises and returns a Promise, just like Promise.all()
     does. But <code>Promise.allSettled()</code> never rejects the returned Promise, and it does not fulfill that Promise
     until all of the input Promises have settled. The Promise resolves to an array of objects, with one object for each
-    input Promise. Each of these returned objects has a status property set to “fulfilled” or “rejected.” If the status
-    is “fulfilled”, then the object will also have a value property that gives the fulfillment value. And if the status
-    is “rejected”, then the object will also have a reason property that gives the error or rejection value of the
+    input Promise. Each of these returned objects has a status property set to "fulfilled" or "rejected." If the status
+    is "fulfilled", then the object will also have a value property that gives the fulfillment value. And if the status
+    is "rejected", then the object will also have a reason property that gives the error or rejection value of the
     corresponding Promise.</p>
   <table data-layout="default" class="confluenceTable">
     <tbody>

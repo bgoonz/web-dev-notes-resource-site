@@ -65,7 +65,9 @@
 <p>First, in our <code>App.js</code> let’s set up our <code>BrowserRouter</code>. Import the <code>BrowserRouter</code>, <code>Switch</code>, and <code>Route</code> named imports from <code>react-router-dom</code>. Wrap your JSX with a <code>BrowserRouter</code> component.</p>
 <p>Create a new compnent called <code>GalleryNavigation</code>, import it into your <code>App.js</code>, and render it, passing through your <code>galleries</code> state as a prop.</p>
 <p>Next, inside your <code>GalleryNavigation</code> component, map over the galleries, and for each one render a <code>NavLink</code> with the <code>to</code> property specified to <code>/gallery/&lt;gallery-identifier&gt;</code>. Note, you’ll have to use JavaScript string interpolation to set the gallery identifier on the link.</p>
-<p>Add a <code>style={{padding: "5px"}}</code> property to add some space between the links. In your <code>index.css</code>, add a rule matching the <code>active</code> class, and setting the text color to “red” to highlight the currently selected gallery in the Navigation.</p>
+<p>Add a <code>style={{padding: "5px"}}</code> property to add some space between the links. In your
+    <code>index.css</code>, add a rule matching the <code>active</code> class, and setting the text color to "red" to
+    highlight the currently selected gallery in the Navigation.</p>
 <h1 id="phase-4-routing">Phase 4: Routing</h1>
 <p>Now that we have our navigation taken care of, we will add two <code>Route</code>’s in order to facilitate conditionally rendering the appropriate gallery.</p>
 <p>First, let’s create a component which will be used to render a specific gallery - call this component <code>GalleryView</code>. For the moment, add a dummy return value of <code>&lt;h2&gt;Gallery View&lt;/h2&gt;</code>.</p>

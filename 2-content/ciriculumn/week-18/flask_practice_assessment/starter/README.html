@@ -13,8 +13,8 @@
 <h2 id="getting-started">Getting started</h2>
 <p>Your application should use a database.</p>
 <ul>
-<li>Create a database user named “pyweb_practice_user” with password “pyweb”</li>
-<li>Create a database named “pyweb_practice_db” with owner “pyweb_practice_user”</li>
+<li>Create a database user named "pyweb_practice_user" with password "pyweb"</li>
+<li>Create a database named "pyweb_practice_db" with owner "pyweb_practice_user"</li>
 <li>Determine your <a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/#connection-uri-format">PostgreSQL database connection URI</a></li>
 </ul>
 <p>Use Pipenv to install the following dependencies.</p>
@@ -47,10 +47,11 @@
 <h3 id="app-location">App location</h3>
 <p>In the <code>app/__init__.py</code> file, create your Flask application. You must name the variable that holds the Flask application <code>app</code>.</p>
 <p>You can define the routes wherever you’d like: in their own Blueprints or in the <code>app/__init__.py</code> file. Think of what file you need to import the <code>app</code> from the <code>app</code> directory.</p>
-<h3 id="get">GET “/”</h3>
-<p>The response from this HTTP request must be of type “text/html” (Flask sets this for you when you render a template) and contain the following HTML:</p>
+<h3 id="get">GET "/"</h3>
+<p>The response from this HTTP request must be of type "text/html" (Flask sets this for you when you render a template)
+    and contain the following HTML:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">&lt;h1&gt;</span>Practice Assessment<span class="kw">&lt;/h1&gt;</span></a></code></pre></div>
-<h3 id="get-simple-form">GET “/simple-form”</h3>
+<h3 id="get-simple-form">GET "/simple-form"</h3>
 <p>You must create a form class using Flask-WTF and WTForms. You must define this in the <code>app.forms</code> module. The form class must be named <code>SimpleForm</code>. It must define a form with the following specifications.</p>
 <table>
 <thead>
@@ -64,25 +65,25 @@
 <tbody>
 <tr class="odd">
 <td>name</td>
-<td>“Name”</td>
+<td>"Name"</td>
 <td>string</td>
 <td>data required</td>
 </tr>
 <tr class="even">
 <td>age</td>
-<td>“Age”</td>
+<td>"Age"</td>
 <td>integer</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>bio</td>
-<td>“Biography”</td>
+<td>"Biography"</td>
 <td>multiline, long string</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>submit</td>
-<td>“Submit”</td>
+<td>"Submit"</td>
 <td>n/a</td>
 <td></td>
 </tr>
@@ -90,18 +91,18 @@
 </table>
 <p><strong>NOTE:</strong> The bio field is a TEXTAREA!!!</p>
 <p>Create a route to handle <code>GET /simple-form</code>. In it use the form class you just defined and render a template containing the form HTML.</p>
-<p>The response from this HTTP request must be of type “text/html” (Flask sets this for you when you render a template) and contain the form fields described above. The method of the form should be “post” and “/simple-form”. It should look exactly like this.</p>
+<p>The response from this HTTP request must be of type "text/html" (Flask sets this for you when you render a template) and contain the form fields described above. The method of the form should be "post" and "/simple-form". It should look exactly like this.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;form</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="ot"> action=</span><span class="st">&quot;/simple-form&quot;</span><span class="kw">&gt;</span></a></code></pre></div>
 <p><strong>NOTE:</strong> If you are going to view this in the browser, then you need to do things:</p>
 <ul>
 <li>Don’t forget to put the <code>{{ form.csrf_token }}</code> value in your form. (The <code>form</code> variable, there, is whatever you name the form parameter for the template.)</li>
 <li>Go ahead and create a class named <code>Configuration</code> in <code>app.config</code>. Add a <code>SECRET_KEY</code> value to it. Get that configuration into your application by following the instructions in the next section.</li>
 </ul>
-<h3 id="post-simple-form">POST “/simple-form”</h3>
+<h3 id="post-simple-form">POST "/simple-form"</h3>
 <p>In the <code>app.config</code> module, create a class named <code>Configuration</code>. In there, create an attribute named <code>SQLALCHEMY_DATABASE_URI</code> and set it to the value of the proper PostgreSQL URL from the database information in the <em>Getting started</em> section. Add <code>SQLALCHEMY_DATABASE_URI</code> and <code>SECRET_KEY</code> to your .env file. Import your environment variables into app.config.py (We trust that you know how to use <code>os.environ.get</code>)</p>
 <p>Notes: - If you are going to view this in the browser, add a <code>SECRET_KEY</code> attribute to the <code>Configuration</code> object, as well, and set it to anything. - SQLAlchemy will issue a warnings about <code>SQLALCHEMY_TRACK_MODIFICATIONS</code>. These will not effect your tests passing, and can be ignored. Alternatively you may set it’s value to False in your configuration object to address the warnings.</p>
 <p>Import the <code>Configuration</code> class into the <code>app/__init__.py</code> file and use it to configure your Flask application.</p>
-<p>Create a mapping class (model) in the <code>app.models</code> module named <code>SimplePerson</code>. It must use the table name “simple_people”. It must have the following mappings on it.</p>
+<p>Create a mapping class (model) in the <code>app.models</code> module named <code>SimplePerson</code>. It must use the table name "simple_people". It must have the following mappings on it.</p>
 <p>Remember that you will need to construct a <code>db</code> object by calling the <code>SQLAlchemy</code> constructor. In order to avoid circular dependencies (caused by importing from <code>app</code>) import <code>db</code> into your <code>app/__init__.py</code> and call <code>init_app</code> on it.</p>
 <table>
 <thead>
@@ -142,20 +143,20 @@
 <li>If the form validates, it should
 <ul>
 <li>use the <code>SimplePerson</code> to insert it into the database using the <code>SimplePerson</code></li>
-<li>redirect to “/”.</li>
+<li>redirect to "/".</li>
 </ul></li>
-<li>If the form does not validate, it should show a message that reads “Bad Data” (the content type can be anything, including plain text).</li>
+<li>If the form does not validate, it should show a message that reads "Bad Data" (the content type can be anything, including plain text).</li>
 </ul>
-<h3 id="get-simple-form-data">GET “/simple-form-data”</h3>
-<p>Create a route to handle <code>GET /simple-form-data</code>. In that route, have it query all of the records from using the <code>SimplePerson</code> for where the name begins with “M”. Loop over those records in your view and render them using the following template.</p>
+<h3 id="get-simple-form-data">GET "/simple-form-data"</h3>
+<p>Create a route to handle <code>GET /simple-form-data</code>. In that route, have it query all of the records from using the <code>SimplePerson</code> for where the name begins with "M". Loop over those records in your view and render them using the following template.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" title="1"><span class="er">&lt;</span>-- Your for loop, here --&gt;</a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">&lt;div&gt;</span>{{ person.name }}<span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="kw">&lt;div&gt;</span>{{ person.age }}<span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="kw">&lt;div&gt;</span>{{ person.bio }}<span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb3-5" title="5">{% endfor %}</a></code></pre></div>
 <h2 id="the-tests">The tests</h2>
-<p>The tests are grouped into two categories: simple and data-driven. The “simple” tests do not require a database. The “data-driven” tests require you to store data in a database by creating proper models. The model classes will be inspected.</p>
-<h3 id="the-simple-tests">The “simple” tests</h3>
+<p>The tests are grouped into two categories: simple and data-driven. The "simple" tests do not require a database. The "data-driven" tests require you to store data in a database by creating proper models. The model classes will be inspected.</p>
+<h3 id="the-simple-tests">The "simple" tests</h3>
 <p>These tests will check that the responses have values in the HTML and in your <code>SimpleForm</code> class.</p>
-<h3 id="the-database-tests">The “database” tests</h3>
+<h3 id="the-database-tests">The "database" tests</h3>
 <p>These tests will check your <code>Configuration</code> class, that those values are put into your Flask application’s <code>config</code> object, the model exist in your <code>app.models</code> module, and that your routes handle and show data created in your application.</p>

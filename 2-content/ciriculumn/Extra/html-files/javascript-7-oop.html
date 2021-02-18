@@ -16,9 +16,16 @@
 </ul>
 <h3 id="motivation">Motivation</h3>
 <ul>
-<li>Principles of object-oriented programming (aka “OOP”) help developers to organize their code. It’s really a way of thinking, about how code and data can interact, and how to write code to make it more reusable. It allows developers to organize code to put similar objects under the same category (called “classes”), in order to share code and logic. It also allows other parts of the code to know how to utilize objects, by knowing what’s available from that class.</li>
+<li>Principles of object-oriented programming (aka “OOP") help developers to organize their code. It’s really a way of
+    thinking, about how code and data can interact, and how to write code to make it more reusable. It allows developers
+    to organize code to put similar objects under the same category (called “classes"), in order to share code and
+    logic. It also allows other parts of the code to know how to utilize objects, by knowing what’s available from that
+    class.</li>
 </ul>
-<p>Virtually all companies will use object-oriented programming in their code. For example, when you do a Yelp search for “burgers”, each area on the screen that describes each recommended restaurant is an instance of a class. The information is probably abstracted into a class of “Restaurant”, of which “Marlowe” and “Super Duper Burgers” are instances of that class.</p>
+<p>Virtually all companies will use object-oriented programming in their code. For example, when you do a Yelp search
+    for “burgers", each area on the screen that describes each recommended restaurant is an instance of a class. The
+    information is probably abstracted into a class of “Restaurant", of which “Marlowe" and “Super Duper Burgers" are
+    instances of that class.</p>
 <h3 id="benefits-of-oop-in-js">Benefits of OOP in JS</h3>
 <ul>
 <li><p>JavaScript is mostly used as a functional programming language more than an object oriented language like C++ or Java. Functional programming in JS can be elegantly used to organize code. Learn more about the advantages of <a href="https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b">Functional Programming in JS</a>.</p></li>
@@ -75,7 +82,7 @@
 <a class="sourceLine" id="cb2-5" title="5">  <span class="dt">lastName</span><span class="op">:</span> <span class="st">&#39;Tec&#39;</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb2-6" title="6">  <span class="dt">phoneNumber</span><span class="op">:</span> <span class="st">&#39;(415) 123-1234&#39;</span></a>
 <a class="sourceLine" id="cb2-7" title="7"><span class="op">};</span></a></code></pre></div>
-<p>Properties on an object are sometimes also referred to as “key-value pairs.” Every property has a name (aka the key), “firstName”, and a value, “Jane”.</p>
+<p>Properties on an object are sometimes also referred to as “key-value pairs." Every property has a name (aka the key), “firstName", and a value, “Jane".</p>
 <h4 id="what-is-a-class">What is a Class?</h4>
 <p>You can think of a class as a blueprint, or template, for creating an object. In the example above, the <code>book</code> object could be created from this class:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">class</span> Book <span class="op">{</span></a>
@@ -108,11 +115,11 @@
 <a class="sourceLine" id="cb4-9" title="9"><span class="op">}</span></a></code></pre></div>
 <p>A class is the set of properties that describe an item, properties that make sense belonging all together in a single object. In the example above, all the information about a book is contained in the <code>book</code> object and all the information about a borrower is contained in the <code>borrower</code> object. Properties about a book are not stored inside a <code>borrower</code> object, and vice versa.</p>
 <p>Methods (aka functions) can be part of objects too, you can think of them as functions that are attached (or bound) to the object. For example, a method called <code>summary()</code> can return a one-line summary about a book. Or, a method called <code>checkOut()</code> would make sense on a <code>borrower</code> object. It would not be relevant for a <code>borrower</code> object to have a method <code>summary()</code>, because the <code>borrower</code> object does not contain any text that needs to be summarized.</p>
-<p>This process of deciding what properties and methods belong to a particular class is sometimes called “abstraction” and is all part of the object-oriented programming experience. It is very similar to the thought process by which we decide the columns that go into a database table. A table called <code>books</code> would probably have very similar columns as the properties found in the <code>Book</code> class.</p>
+<p>This process of deciding what properties and methods belong to a particular class is sometimes called “abstraction" and is all part of the object-oriented programming experience. It is very similar to the thought process by which we decide the columns that go into a database table. A table called <code>books</code> would probably have very similar columns as the properties found in the <code>Book</code> class.</p>
 <h4 id="creating-objects-from-a-class">Creating objects from a class</h4>
-<p>When you <em>instantiate</em> an object from a class, using the “new” keyword, that means you are creating a new object, using the class as a template, like this:</p>
+<p>When you <em>instantiate</em> an object from a class, using the “new" keyword, that means you are creating a new object, using the class as a template, like this:</p>
 <p><code>let myBook = new Book(55234, "Principles of OO Design", "Barbara", "Liskov");</code></p>
-<p>Notice the function named “constructor” in the class definition, above? That is the function which is called when you use the “new” keyword with a class name. The values that you pass in parentheses become available as the named parameters list in the constructor function (id, title, authorFirstName, authorLastName).</p>
+<p>Notice the function named “constructor" in the class definition, above? That is the function which is called when you use the “new" keyword with a class name. The values that you pass in parentheses become available as the named parameters list in the constructor function (id, title, authorFirstName, authorLastName).</p>
 <p>After instantiating the Book as myBook, you can inspect it from the console-</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&gt;</span> <span class="va">console</span>.<span class="at">log</span>(<span class="va">myBook</span>.<span class="at">authorLastName</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb5-2" title="2"><span class="st">&#39;Liskov&#39;</span></a></code></pre></div>
@@ -129,11 +136,11 @@
 <a class="sourceLine" id="cb7-3" title="3"><span class="op">&gt;</span> <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">3</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></a>
 <a class="sourceLine" id="cb7-4" title="4">...   <span class="va">console</span>.<span class="at">log</span>(books[i].<span class="at">summary</span>())<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-5" title="5">... <span class="op">}</span></a></code></pre></div>
-<p>Because the <code>books</code> array contains three <code>Book</code> definitions, and we asked to refer to just one (<code>books[0]</code>), inside the <code>.summary()</code> method the <code>this</code> keyword “knows” to point to the correct instance of the <code>Book</code> class.</p>
+<p>Because the <code>books</code> array contains three <code>Book</code> definitions, and we asked to refer to just one (<code>books[0]</code>), inside the <code>.summary()</code> method the <code>this</code> keyword “knows" to point to the correct instance of the <code>Book</code> class.</p>
 <h4 id="concepts-of-object-oriented-programming">Concepts of Object-Oriented Programming</h4>
 <h5 id="encapsulation">Encapsulation</h5>
 <p><em>Encapsulation</em> is the practice of keeping all of the things necessary to interact with a class in a single place. For instance, by providing a set of methods on an object, you are exposing the actions that somebody might take on it. This will make it easier for others to use your code and give you the ability to prevent others from misuse.</p>
-<p>Encapsulation means that all the actions that we might take out on an object exist in one place. For instance, if a <code>Borrower</code> wanted to check out a book, we could use a <code>checkOut</code> method on that object to perform the action. In this example, each Borrower has an array of books they have checked out, and the <code>checkOut</code> function adds a new book to that list. As a user of this class, all we need to know is that this method takes a book and then the method will perform the necessary actions to check out our book. The actual implementation details are “encapsulated” within the Borrower class.</p>
+<p>Encapsulation means that all the actions that we might take out on an object exist in one place. For instance, if a <code>Borrower</code> wanted to check out a book, we could use a <code>checkOut</code> method on that object to perform the action. In this example, each Borrower has an array of books they have checked out, and the <code>checkOut</code> function adds a new book to that list. As a user of this class, all we need to know is that this method takes a book and then the method will perform the necessary actions to check out our book. The actual implementation details are “encapsulated" within the Borrower class.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">class</span> Borrower <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-2" title="2">  <span class="at">constructor</span>(id<span class="op">,</span> firstName<span class="op">,</span> middleInitial<span class="op">,</span> lastName<span class="op">,</span> phoneNumber) <span class="op">{</span></a>
 <a class="sourceLine" id="cb8-3" title="3">    <span class="kw">this</span>.<span class="at">id</span> <span class="op">=</span> id<span class="op">;</span></a>

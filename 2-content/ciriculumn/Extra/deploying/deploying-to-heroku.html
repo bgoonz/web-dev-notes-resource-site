@@ -39,7 +39,10 @@
 </ul>
 <h4 id="deploying">Deploying</h4>
 <p>Now we’ll work on deploying your app to Heroku.</p>
-<p>We’ll be combining your frontend (create-react-app) with your backend (express) and deploying it to Heroku. Your frontend contains “static” JavaScript files – when you deploy to Heroku, Heroku turns your whole React app into a couple of static files that it will serve to the browser. No matter what data you have in the database, these files will always be the same.</p>
+<p>We’ll be combining your frontend (create-react-app) with your backend (express) and deploying it to Heroku. Your
+    frontend contains “static" JavaScript files – when you deploy to Heroku, Heroku turns your whole React app into a
+    couple of static files that it will serve to the browser. No matter what data you have in the database, these files
+    will always be the same.</p>
 <p>Your backend, on the other hand, is dynamic – when you make an API request, the backend runs javascript code to do things like reading and writing to a database. Unlike the React app, which always serves the same files to the browser, the backend will serve different information to the browser depending on what’s in the database. We’re going to combine your dynamic code (express) with your static code (create-react-app).</p>
 <ol type="1">
 <li><p>cd into the React app you created and move <em>everything</em> into a new directory named <code>client</code>.</p>
@@ -83,7 +86,12 @@ node server/&lt;filename.js</code></pre></li>
 <li><p>Configure the top-level <code>package.json</code> to work with Heroku. Add the following two lines to the <code>scripts</code> section of the JSON file:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb7-1" title="1">    <span class="er">&quot;start&quot;:</span> <span class="er">&quot;node</span> <span class="er">server/&lt;filename.js&gt;&quot;,</span></a>
 <a class="sourceLine" id="cb7-2" title="2">    <span class="er">&quot;heroku-postbuild&quot;:</span> <span class="er">&quot;cd</span> <span class="er">client</span> <span class="er">&amp;&amp;</span> <span class="er">npm</span> <span class="er">install</span> <span class="er">&amp;&amp;</span> <span class="er">npm</span> <span class="er">install</span> <span class="er">--only=dev</span> <span class="er">--no-shrinkwrap</span> <span class="er">&amp;&amp;</span> <span class="er">npm</span> <span class="er">run</span> <span class="er">build&quot;</span></a></code></pre></div></li>
-<li><p>Create a free Heroku account. https://signup.heroku.com/dc. Through the Heroku web UI, create a new Application. Once you create the app, add the Postgres add-on by going to the Resources tab and searching in the “Add-ons” search box for Postgres. Click the “Heroku Postgres” option. Finally, select the free version and click “Provision.”</p></li>
+<li>
+    <p>Create a free Heroku account. https://signup.heroku.com/dc. Through the Heroku web UI, create a new Application.
+        Once you create the app, add the Postgres add-on by going to the Resources tab and searching in the “Add-ons"
+        search box for Postgres. Click the “Heroku Postgres" option. Finally, select the free version and click
+        “Provision."</p>
+</li>
 <li><p>Install the Heroku CLI from the command line. <code>brew tap heroku/brew &amp;&amp; brew install heroku</code> then use <code>heroku login</code></p></li>
 <li><p>Attach your Heroku app to your code. Run <code>heroku git:remote -a YOUR-APP-NAME</code> inside the terminal at the root of your project directory.</p>
 <p>If the command is successful, you will see the output <code>set git remote heroku to https://git.heroku.com/YOUR-APP-NAME.git</code> in the terminal. A <a href="https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">git remote</a> is a version of your repository existing on another server. The output confirms that you now have a <a href="https://devcenter.heroku.com/articles/git#creating-a-heroku-remote">git remote hosted on Heroku</a> — you will be pushing your code to <em>this</em> repository to deploy your app to Heroku.</p></li>

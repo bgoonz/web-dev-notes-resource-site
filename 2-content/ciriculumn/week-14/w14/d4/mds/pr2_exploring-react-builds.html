@@ -12,7 +12,7 @@
 <p>Update the <code>App</code> component:</p>
 <ul>
 <li>Wrap the <code>&lt;h1&gt;</code> element with a <code>&lt;div&gt;</code> element; and</li>
-<li>Change the <code>&lt;h1&gt;</code> element content to something like “Exploring React Builds”.</li>
+<li>Change the <code>&lt;h1&gt;</code> element content to something like "Exploring React Builds".</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// ./src/App.js</span></a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
@@ -102,7 +102,9 @@
 <a class="sourceLine" id="cb8-13" title="13"><span class="op">}</span></a>
 <a class="sourceLine" id="cb8-14" title="14"></a>
 <a class="sourceLine" id="cb8-15" title="15"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Then run your application (<code>npm start</code>) to see “Heading A” and “Heading B” displayed respectively in green and red. If you use the browser’s developer tools to inspect “Heading A”, you’ll see that the <code>.heading</code> class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
+<p>Then run your application (<code>npm start</code>) to see "Heading A" and "Heading B" displayed respectively in green
+    and red. If you use the browser’s developer tools to inspect "Heading A", you’ll see that the <code>.heading</code>
+    class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
 <figure>
 <img src="images/react-builds-css-modules.png" alt="react builds css modules" /><figcaption>react builds css modules</figcaption>
 </figure>
@@ -152,7 +154,7 @@
 <a class="sourceLine" id="cb10-17" title="17"><span class="op">}</span></a>
 <a class="sourceLine" id="cb10-18" title="18"></a>
 <a class="sourceLine" id="cb10-19" title="19"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the “Sources” for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
+<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the "Sources" for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
 <figure>
 <img src="images/react-builds-dev-tools-image.png" alt="react builds dev tools image" /><figcaption>react builds dev tools image</figcaption>
 </figure>
@@ -239,7 +241,7 @@
 <a class="sourceLine" id="cb15-19" title="19"><span class="op">}</span></a>
 <a class="sourceLine" id="cb15-20" title="20"></a>
 <a class="sourceLine" id="cb15-21" title="21"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for “Class Component”. Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
+<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for "Class Component". Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">class</span> ClassComponent <span class="kw">extends</span> <span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb16-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb16-3" title="3">    <span class="cf">return</span> <span class="co">/*#__PURE__*/</span><span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">createElement</span>(<span class="st">&quot;h1&quot;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -256,7 +258,7 @@
 <p>Have you wondered yet why you need to use the developer tools to view the bundles generated by Create React App? Remember that when you run <code>npm start</code>, Create React App builds your application using <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a>. To keep things as performant as possible, the bundles generated by <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a> are stored in memory instead of writing them to the file system.</p>
 </blockquote>
 <p>The JSX in the component’s <code>render</code> method has been converted to JavaScript but the <code>ClassComponent</code> ES2015 class is left alone. This makes sense though as JSX isn’t natively supported by any browser while ES2015 classes have been natively supported by browsers for awhile now.</p>
-<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">“Can I use…”</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
+<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">"Can I use…"</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
 <p>Change the <code>browserslist.development</code> property in the <code>package.json</code> file to this:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb17-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb17-2" title="2">  <span class="dt">&quot;browserslist&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -353,7 +355,7 @@
 <a class="sourceLine" id="cb22-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;root&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb22-9" title="9">  <span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb22-10" title="10"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
-<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
+<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
 <figure>
 <img src="images/react-builds-index-html.png" alt="react builds index html" /><figcaption>react builds index html</figcaption>
 </figure>
@@ -491,7 +493,7 @@
 </ul>
 <p>Now add a folder named <code>public</code> to the root of your Express project. Copy the files from the <code>build</code> folder in your Create React App project to the <code>public</code> folder in the Express application project. Then run your application using the command <code>node app.js</code>.</p>
 <p>Open a browser and browse to the URL <code>http://localhost:9000/</code>. You should see your React application served from your Express application! Be sure to click the navigation links to verify that all of your configured routes work as expected.</p>
-<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can “deep link” to any of your React application’s routes:</p>
+<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can "deep link" to any of your React application’s routes:</p>
 <ul>
 <li><a href="http://localhost:9000/image">http://localhost:9000/image</a></li>
 <li><a href="http://localhost:9000/class-component">http://localhost:9000/class-component</a></li>

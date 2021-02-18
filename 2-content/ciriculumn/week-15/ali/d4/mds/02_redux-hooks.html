@@ -57,7 +57,7 @@
 </blockquote>
 <p>You can access any available property this way and even call <code>useSelector()</code> multiple times within a single function component. You can even use props or route parameters to determine what to extract from the store.</p>
 <p>Here is an example using props. Assume you have a store with a <code>users</code> object in its state. Furthermore, you want to get just <code>user</code> based on the <code>id</code> provided in a prop to a function component.</p>
-<p>Here is the component’s code. See if you can spot where the “magic” happens.</p>
+<p>Here is the component’s code. See if you can spot where the “magic" happens.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> React <span class="im">from</span> <span class="st">&quot;react&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="im">import</span> <span class="op">{</span> useSelector <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;react-redux&quot;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb4-3" title="3"></a>
@@ -147,7 +147,8 @@
 <h2 id="additional-resources">Additional resources</h2>
 <p>For future reference, there are a few additional (advanced and rarely used) features in the <a href="https://react-redux.js.org/next/api/hooks">official documentation on hooks in React Redux</a>.</p>
 <h2 id="starting-point-for-ip-address-project">Starting point for IP address project</h2>
-<p>As promised, here is an example of setting up the framework with Redux for the “Get My IP” application discussed throughout this reading. This version includes <strong>Redux Thunk</strong>.</p>
+<p>As promised, here is an example of setting up the framework with Redux for the “Get My IP" application discussed
+    throughout this reading. This version includes <strong>Redux Thunk</strong>.</p>
 <p>You may access the starter project, the solution project with Redux Thunk, and the solution project without Redux Thunk by cloning the <a href="https://github.com/appacademy-starters/intro-to-redux-hooks">intro-to-redux-hooks</a> repository.</p>
 <p>Start with <code>create-react-app</code> and install <code>react-redux</code>, <code>redux-thunk</code> and their dependencies (e.g. <code>redux</code>) as you’ve done previously.</p>
 <p>Wrap your application in the <strong>Redux Provider</strong> …</p>

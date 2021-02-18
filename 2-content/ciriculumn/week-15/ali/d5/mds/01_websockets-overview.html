@@ -6,11 +6,20 @@
 <figure>
 <img src="images/image-http-exchange.svg" alt="HTTP Exchange" /><figcaption>HTTP Exchange</figcaption>
 </figure>
-<p>The <em>Client</em> makes an HTTP request, like <strong>GET /home HTTP/1.1</strong>. The <em>Server</em> receives that request, translates it, and returns an HTTP response, like <strong>HTTP/1.1 200 OK</strong>. One request, one response. That is great for getting data and asking the server to create new resources, but it does not support the demands of Web applications that need “real-time communication” or to receive messages from the server <em>without</em> an HTTP request. The <a href="https://tools.ietf.org/html/rfc6455">WebSockets</a> standard fills that hole. (That’s a link to the RFC. It’s … dense.)</p>
+<p>The <em>Client</em> makes an HTTP request, like <strong>GET /home HTTP/1.1</strong>. The <em>Server</em> receives
+    that request, translates it, and returns an HTTP response, like <strong>HTTP/1.1 200 OK</strong>. One request, one
+    response. That is great for getting data and asking the server to create new resources, but it does not support the
+    demands of Web applications that need "real-time communication" or to receive messages from the server
+    <em>without</em> an HTTP request. The <a href="https://tools.ietf.org/html/rfc6455">WebSockets</a> standard fills
+    that hole. (That’s a link to the RFC. It’s … dense.)</p>
 <p>Check out this <a href="https://caniuse.com/#search=WebSockets">link to caniuse.com</a> that tracks the support of WebSockets (and a whole bunch of other things) in browsers for the desktop and mobile. You can see that <em>everything</em> supports WebSockets (except Opera Mini which fails to support pretty much anything, stupid Opera Mini).</p>
 <p>Since the technology is now well-supported, it makes sense to learn it so that you can do <em>amazing</em> things in your Web application.</p>
 <p>In this article, you will learn about how WebSockets work from the perspectives of the communication between the client and the server.</p>
-<p><strong>Just one thing</strong>: there are <em>lots</em> of libraries out there for you to use that make this WebSocket thing “easy”. In the same way that this curriculum challenges you to use <code>fetch</code> rather than some other AJAX library like <code>axios</code>, learning WebSockets teaches you about the <em>technology</em> and how it works. Once you know that, then you can use <em>any</em> library (like socket.io) to ease your development. But, giving you the deeper knowledge is what this is providing for you.</p>
+<p><strong>Just one thing</strong>: there are <em>lots</em> of libraries out there for you to use that make this
+    WebSocket thing "easy". In the same way that this curriculum challenges you to use <code>fetch</code> rather than
+    some other AJAX library like <code>axios</code>, learning WebSockets teaches you about the <em>technology</em> and
+    how it works. Once you know that, then you can use <em>any</em> library (like socket.io) to ease your development.
+    But, giving you the deeper knowledge is what this is providing for you.</p>
 <h2 id="key-points-about-web-sockets">Key points about Web sockets</h2>
 <h3 id="persistent-connections">Persistent Connections</h3>
 <p>In the traditional model of request/response, the client makes a connection to the server, makes the request, the server responds on the same connection, then the connection can be closed. The next time your browser wants to make a request to the Web server, it may need to establish that connection, again.</p>
@@ -27,11 +36,11 @@ Host: WebSocket.example.com
 Upgrade: WebSocket</code></pre>
 <p>So, checkout two things about this:</p>
 <ol type="1">
-<li>The protocol is “ws” which, you can probably guess, means “WebSocket”. (There’s also a “wss” which is like “HTTPS” but for WebSockets Secure.)</li>
-<li>The “Connection” header tells the server that the browser is requesting an upgrade for the normal HTTP 1.1 connection</li>
-<li>The “Upgrade” header tells the server that the browser specifically wants a WebSocket</li>
+<li>The protocol is "ws" which, you can probably guess, means "WebSocket". (There’s also a "wss" which is like "HTTPS" but for WebSockets Secure.)</li>
+<li>The "Connection" header tells the server that the browser is requesting an upgrade for the normal HTTP 1.1 connection</li>
+<li>The "Upgrade" header tells the server that the browser specifically wants a WebSocket</li>
 </ol>
-<p>If the server supports WebSockets, it says “COOL!” and returns something like the following headers in the response.</p>
+<p>If the server supports WebSockets, it says "COOL!" and returns something like the following headers in the response.</p>
 <pre><code>HTTP/1.1 101 WebSocket Protocol Handshake
 Date: Thu, 7 May 2020 17:07:34 GMT
 Connection: Upgrade
@@ -50,7 +59,7 @@ Upgrade: WebSocket</code></pre>
 <p>Instead of a <code>Promise</code>, you add event listeners to the <code>WebSocket</code> object in the same way that you add event listeners to <code>input</code> or <code>button</code> elements to capture specific kinds of events. For the WebSocket, the events are</p>
 <ul>
 <li><strong>message</strong> fired when a message fully arrived over the WebSocket from the server</li>
-<li><strong>close</strong> fired when the WebSocket closes for some reason, the status code being in the “code” property of the event and the reason in the “reason” property of the event object</li>
+<li><strong>close</strong> fired when the WebSocket closes for some reason, the status code being in the “code" property of the event and the reason in the “reason" property of the event object</li>
 <li><strong>error</strong> fired when the WebSocket can’t even connect</li>
 <li><strong>open</strong> fired when the WebSocket opens</li>
 </ul>
@@ -85,7 +94,7 @@ Upgrade: WebSocket</code></pre>
 <a class="sourceLine" id="cb5-4" title="4">  <span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;disconnect&quot;</span><span class="kw">&gt;</span>Disconnect<span class="kw">&lt;/button&gt;</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="kw">&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb5-6" title="6"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;messages&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a></code></pre></div>
-<p>Now, create a <code>script</code> element <em>after</em> the content you just added (so you don’t have to wait for “DOMContentLoaded”). This is just regular-old DOM code with the socket message stuff in there, too. Have a look and try it out! Change the code so that you can see how changes affect it!</p>
+<p>Now, create a <code>script</code> element <em>after</em> the content you just added (so you don’t have to wait for “DOMContentLoaded"). This is just regular-old DOM code with the socket message stuff in there, too. Have a look and try it out! Change the code so that you can see how changes affect it!</p>
 <p>This code uses a <em>real</em> WebSocket server, wss://echo.websocket.org!</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> connect <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;connect&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">const</span> disconnect <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;disconnect&#39;</span>)<span class="op">;</span></a>
@@ -133,9 +142,9 @@ Upgrade: WebSocket</code></pre>
 <a class="sourceLine" id="cb6-44" title="44">  <span class="va">messages</span>.<span class="at">innerHTML</span> <span class="op">+=</span> <span class="vs">`&lt;p&gt;Sending &quot;WebSockets are cool!&quot;&lt;/p&gt;`</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb6-45" title="45">  <span class="va">socket</span>.<span class="at">send</span>(<span class="st">&#39;WebSockets are cool!&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb6-46" title="46"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Here’s an interesting thing. After you play around with the code, refresh the page and connect to the server. Then, just wait. Likely, eventually, the socket will close due to disuse. Many libraries (like socket.io) keep the connection “warm” by sending little <em>ping</em> methods to the server to let the server know that it really does want to keep that connection open. If it doesn’t close, then you have a <em>really</em> good and stable Internet connection!</p>
+<p>Here’s an interesting thing. After you play around with the code, refresh the page and connect to the server. Then, just wait. Likely, eventually, the socket will close due to disuse. Many libraries (like socket.io) keep the connection “warm" by sending little <em>ping</em> methods to the server to let the server know that it really does want to keep that connection open. If it doesn’t close, then you have a <em>really</em> good and stable Internet connection!</p>
 <h2 id="server-side-code">Server-side code</h2>
-<p>If that’s the client-side code above, the question that might be bothering you is “How hard is the server-side code?” Well, luckily, it’s just about the same level of ease with the <a href="https://github.com/websockets/ws">ws</a> package for Node.js.</p>
+<p>If that’s the client-side code above, the question that might be bothering you is “How hard is the server-side code?" Well, luckily, it’s just about the same level of ease with the <a href="https://github.com/websockets/ws">ws</a> package for Node.js.</p>
 <p>Because WebSockets are a browser-based technology, the implementations that you will find on the server can vary widely. Luckily, the <strong>ws</strong> API is an event-driven API, too. It provides these events for you to use to build a WebSocket server using the <code>Server</code> object.</p>
 <ul>
 <li>The <strong>connection</strong> event occurs when the HTTP handshake completes but the connection has <em>not</em> upgraded. It’s callback receives a <code>WebSocket</code> that allows you to communicate with the client.</li>
@@ -144,7 +153,7 @@ Upgrade: WebSocket</code></pre>
 </ul>
 <p>Then, the server has a <code>close</code> method which lets it shut down. It’s got some other methods, too, about handling upgrades and stuff, which are outside the scope of this article. You are encouraged to go check out the API docs in a later article.</p>
 <p>Those last two are some pretty low-level events that you won’t necessarily have to pay attention to unless you’re doing some <em>really</em> advanced stuff. However, you <em>will</em> want to pay attention to the <strong>connection</strong> property because that is how you know a client is connected. Then, when the connection gets upgraded, the callback gets a <code>WebSocket</code> object so that your server can send messages to the browser.</p>
-<p>Here’s the code to write an “echo” server like you just used in the client-side stuff above. Put this in a file, install “ws” using <code>npm install ws</code>, and run it with <code>node «filename»</code>. Then, change the URL in the HTML file that you created from wss://echo.websocket.org/ to ws://localhost:8080. Everything still works!</p>
+<p>Here’s the code to write an “echo" server like you just used in the client-side stuff above. Put this in a file, install “ws" using <code>npm install ws</code>, and run it with <code>node «filename»</code>. Then, change the URL in the HTML file that you created from wss://echo.websocket.org/ to ws://localhost:8080. Everything still works!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">const</span> WebSocket <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;ws&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-2" title="2"></a>
 <a class="sourceLine" id="cb7-3" title="3"><span class="kw">const</span> server <span class="op">=</span> <span class="kw">new</span> <span class="va">WebSocket</span>.<span class="at">Server</span>(<span class="op">{</span> <span class="dt">port</span><span class="op">:</span> <span class="dv">8080</span> <span class="op">}</span>)<span class="op">;</span></a>
@@ -165,7 +174,7 @@ Upgrade: WebSocket</code></pre>
 <a class="sourceLine" id="cb7-18" title="18">    <span class="at">clearInterval</span>(interval)</a>
 <a class="sourceLine" id="cb7-19" title="19">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb7-20" title="20"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>You can see that a server gets created using port 8080. That server then waits for connections with <code>server.on('connection', ...)</code>. When the connection occurs, the callback gets called and <code>webSocket</code> gets set to the actual <code>WebSocket</code> instance that you can use to send (and receive) messages to (and from) the client. Then, it creates an interval that sends a “Hello?” message to the client every second or so.</p>
+<p>You can see that a server gets created using port 8080. That server then waits for connections with <code>server.on('connection', ...)</code>. When the connection occurs, the callback gets called and <code>webSocket</code> gets set to the actual <code>WebSocket</code> instance that you can use to send (and receive) messages to (and from) the client. Then, it creates an interval that sends a “Hello?" message to the client every second or so.</p>
 <p>You subscribe to messages using <code>webSocket.on('message', ...)</code>. When a message arrives from the browser, the callback gets called with the content of the data in the <code>message</code> variable. Normally, that’ll be a JSON-formatted string that you can use to do things with your code.</p>
 <p>Finally, when the <code>WebSocket</code> object closes, it prints a message to the console and clears that interval.</p>
 <p>That’s how nice <strong>ws</strong> makes it to write WebSocket-enabled. Thank you, <strong>ws</strong>!</p>
@@ -174,7 +183,7 @@ Upgrade: WebSocket</code></pre>
 <ol type="1">
 <li>WebSockets are a persistent connection between the browser and server</li>
 <li>It’s a two-way connection, messages can flow in both directions</li>
-<li>The “Connection” header is used to request an upgrade. The “Upgrade” header specifically requests a WebSocket.</li>
+<li>The “Connection" header is used to request an upgrade. The “Upgrade" header specifically requests a WebSocket.</li>
 <li>Client-side code is an event-driven model with <strong>open</strong>, <strong>close</strong>, <strong>message</strong>, and <strong>error</strong> events</li>
 <li>Server-side code is an event-driven model that waits for <strong>connection</strong> events on a <code>Server</code> object which, then, provides a <code>WebSocket</code> object nearly identical to the <code>WebSocket</code> used on the client side.</li>
 </ol>

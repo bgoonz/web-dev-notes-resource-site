@@ -13,7 +13,9 @@
 <h3 id="motivation">Motivation</h3>
 <p>Up to now we’ve been talking about <em>unit testing</em>. Unit testing is about making sure a function behaves as expected independent of other parts of the software system.</p>
 <p>In most code bases functions are called not just by other functions within the code base. They are also called by <em>user interfaces</em> and sometimes even other programs!</p>
-<p>When one program calls a function from within another program, that’s an <em>API</em>! APIs, or “Application Programming Interfaces” are everywhere! Most APIs are distributed either as a library, that you add to your package.json and start using right away, or are exposed over the web via HTTP.</p>
+<p>When one program calls a function from within another program, that’s an <em>API</em>! APIs, or “Application
+    Programming Interfaces" are everywhere! Most APIs are distributed either as a library, that you add to your
+    package.json and start using right away, or are exposed over the web via HTTP.</p>
 <p>Unit testing is a powerful core skill for building maintainble software, and the skills you’re learning with jasmine or mocha or other testing frameworks can be built upon to do <em>integration testing!</em></p>
 <p>Integration testing differes from unit testing in that it’s about checking how our code works when it’s calling or being called by other programs.</p>
 <p>Integration testing is <em>hard</em>, but <em>worth it</em>. As you develop your skills at integration testing, you’ll learn how to overcome the challenges posed by writing testable code that talks to other systems.</p>
@@ -29,7 +31,7 @@
 </ul>
 <h3 id="specific-things-to-learn">Specific Things to Learn</h3>
 <p><strong>Note</strong>: We’ve included links to guides on each of these when available for easy reference later. These are also included when applicable during the lesson.</p>
-<p>We do not expect you to do the tutorials linked in this “Specific Things to Learn” section today.</p>
+<p>We do not expect you to do the tutorials linked in this “Specific Things to Learn" section today.</p>
 <ul>
 <li>General testing tools
 <ul>
@@ -59,7 +61,7 @@
 <h2 id="lesson">Lesson</h2>
 <h3 id="introduction-to-testing-and-backend">1. Introduction to testing and backend</h3>
 <h4 id="establishing-some-terminology">1.1 Establishing some terminology</h4>
-<p>Before we get started let’s set some ground rules about how we use terminology. This module is called “backend testing”; but without establishing what <code>backend</code> means, that can easily get confusing.</p>
+<p>Before we get started let’s set some ground rules about how we use terminology. This module is called “backend testing"; but without establishing what <code>backend</code> means, that can easily get confusing.</p>
 <p>Within the context of this lesson a <code>backend</code> is an API that supports some collection of features. It often, but not always, exposes its interface through HTTP requests and returns JSON objects as a response.</p>
 <p>A <code>backend</code> can be the service you’re writing but it can also be something that you depend on:</p>
 <ul>
@@ -71,15 +73,15 @@
 <p>With that in mind…</p>
 <p>This lesson discusses backend testing in all of these frames: we will test your service’s interaction with its backend (database &amp; external APIs) while also writing tests to ensure your service, when used as a backend, performs as expected. In the course of this write-up we’ll use the following terms to mean specific things:</p>
 <ul>
-<li>“your project”— this is your code; it’s written for node.js</li>
-<li>“API” / “API testing”— this is also your code; the node.js project exposes its features to the world through an HTTP API, this term captures the testing needed to ensure how you handle those requests is correct</li>
-<li>“backend” / “service”— this is an API that you call via HTTP; it’s called from your project</li>
-<li>“database”— this is a specific backend that your project uses to save data</li>
+<li>“your project"— this is your code; it’s written for node.js</li>
+<li>“API" / “API testing"— this is also your code; the node.js project exposes its features to the world through an HTTP API, this term captures the testing needed to ensure how you handle those requests is correct</li>
+<li>“backend" / “service"— this is an API that you call via HTTP; it’s called from your project</li>
+<li>“database"— this is a specific backend that your project uses to save data</li>
 </ul>
 <h4 id="getting-started-is-api-and-backenddatabase-testing-special">1.2 Getting Started: Is API and backend/database testing special?</h4>
 <p>We’ve already talked about testing and how it’s important to verify code quality over time / as you make changes. Why then is it worth discussing API / backend testing, isn’t that just more of the same?</p>
 <p>Well, kind of; but not really…</p>
-<p>These tests are important for the same reason: We need to ensure that our code works as expected and to protect correct behavior. So framed as “is testing important,” yes it can be pretty much thought of as just more of the same. However when you actually sit down to write these tests the interactions with external requests (to your project) and APIs introduce interesting new difficulties.</p>
+<p>These tests are important for the same reason: We need to ensure that our code works as expected and to protect correct behavior. So framed as “is testing important," yes it can be pretty much thought of as just more of the same. However when you actually sit down to write these tests the interactions with external requests (to your project) and APIs introduce interesting new difficulties.</p>
 <h4 id="facing-new-challenges">1.3 Facing new challenges</h4>
 <p>So what are some of these new challenges and how to we address them?</p>
 <ol type="1">
@@ -118,9 +120,9 @@
 <li>Once you’re in your brand-new folder, use <code>npm init</code> to initialize a new node project.
 <ol type="1">
 <li>In your terminal, type <code>npm init</code> and press enter. This will start a new tiny command line program that helps you set up your new node project. (It will save your answers in package.json and set up some other config files for you.)</li>
-<li>The first thing it asks you is “what do you want the name to be?” (It asks for the package name because it’s assuming you’re making an npm package.) Notice that after the prompt, there is a <em>default value</em> in parentheses. Whenever you see a default value in parentheses, go ahead and press “enter” to simply use the default value.</li>
+<li>The first thing it asks you is “what do you want the name to be?" (It asks for the package name because it’s assuming you’re making an npm package.) Notice that after the prompt, there is a <em>default value</em> in parentheses. Whenever you see a default value in parentheses, go ahead and press “enter" to simply use the default value.</li>
 <li>Next it asks for a version, and supplies the default value (1.0.0). Go ahead and just press enter again.</li>
-<li>Continue until you get to “description” which doesn’t have a default value. Write whatever short description you want, like <code>todo app with tests</code>. You can edit this later.</li>
+<li>Continue until you get to “description" which doesn’t have a default value. Write whatever short description you want, like <code>todo app with tests</code>. You can edit this later.</li>
 <li>Keep using the default value for prompts (like accept that the entry point will be <code>index.js</code>) until the tiny <code>npm init</code> program ends and you get back to your normal command line prompt.</li>
 </ol></li>
 <li>Back on your normal command line prompt, install your project’s dependencies: <code>npm install --save body-parser express pg</code></li>
@@ -128,7 +130,7 @@
 <li>Set up your database and <code>todo_items</code> table by following these steps:
 <ol type="1">
 <li>Create a new free database on <a href="https://elephantsql.com/">ElephantSQL</a>; they have <a href="https://www.elephantsql.com/docs/index.html">a guide</a> for this process.</li>
-<li>Use <a href="https://www.elephantsql.com/docs/pgadmin.html">pgAdmin</a> or their “Browser” view to run the <code>CREATE TABLE</code> command (above) on your database</li>
+<li>Use <a href="https://www.elephantsql.com/docs/pgadmin.html">pgAdmin</a> or their “Browser" view to run the <code>CREATE TABLE</code> command (above) on your database</li>
 </ol></li>
 </ol>
 <h5 id="gp-0-set-up-your-project-a-quick-summary-of-accessing-a-db">GP 0: Set up your project / A quick summary of accessing a DB</h5>
@@ -146,7 +148,7 @@
 </ol>
 <p>This should be enough to get you running but if you want to read more about connecting to a database I suggest the <a href="https://node-postgres.com/features/connecting">connecting</a> and <a href="https://node-postgres.com/features/pooling">polling</a> docs.</p>
 <h4 id="gp-1-first-steps">GP 1: First steps</h4>
-<p>(GP 1 stands for “Guided Practice Step One” here.)</p>
+<p>(GP 1 stands for “Guided Practice Step One" here.)</p>
 <p>You know how to build Express apps and much of the code for implementing the necessary paths (<code>GET /</code>, <code>GET /items</code>, and <code>POST /</code>) is available above in the <em>Abstraction</em> section. We also just talked about how to connect to a database.</p>
 <p>If you put those three things together it’s enough to get a simple project running that connects to your database and gets you started managing and viewing TODO items. Don’t worry about tests just yet, we’ll make some changes that make it easier.</p>
 <h5 id="gp-1-first-steps-challenge">GP 1: First steps / Challenge</h5>

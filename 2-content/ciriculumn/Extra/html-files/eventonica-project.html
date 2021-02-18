@@ -18,7 +18,7 @@
 <h3 id="overview">Overview</h3>
 <p>In this project you will create a Command-Line-Interface (CLI) app.</p>
 <p>Phase 1 of the project involves making sure the proper tools are installed.</p>
-<p>Phase 2 of the project involves making a basic CLI app that has a “complete-the-sentence” function in Inquirer.</p>
+<p>Phase 2 of the project involves making a basic CLI app that has a “complete-the-sentence" function in Inquirer.</p>
 <p>Phase 3 of the project involves adding an additional feature: the CLI app can now create additional users and store that information in PostgreSQL.</p>
 <p>Phase 4 of the project involves adding an additional feature: using <a href="https://www.npmjs.com/package/eventful-node">eventful-node</a> to perform AJAX requests in order to pull data from the <a href="http://api.eventful.com/">Eventful API</a>, and giving the user the option to save to your own PostgreSQL database.</p>
 <p>Phase 5 of the project involves adding the final 3 features: matching a user with an event, reading all the users of a particular event, and reading all the events of a particular user. You’ll work with an inner join (many-to-many relationship junction) table.</p>
@@ -40,7 +40,11 @@
 <ol type="1">
 <li>Fork the starter code to your own GitHub account, then clone your fork to your local machine. Don’t forget to <code>cd</code> into your new folder =)</li>
 <li>Create a blank <code>keys.js</code> file in your project root.</li>
-<li><p>Go to <a href="http://api.eventful.com/">Eventful’s API page</a>, create an account, and apply for your own API key. The application process for an API key is instant. The API Key registration asks for a mailing address and phone number. These cannot be left blank, but typing “N/A” in the fields works.</p></li>
+<li>
+    <p>Go to <a href="http://api.eventful.com/">Eventful’s API page</a>, create an account, and apply for your own API
+        key. The application process for an API key is instant. The API Key registration asks for a mailing address and
+        phone number. These cannot be left blank, but typing “N/A" in the fields works.</p>
+</li>
 <li><p>Tell your app about your new Eventful API key as well as your PostgreSQL database by adding the following to your <code>keys.js</code> file:</p></li>
 </ol>
 <p><code>json module.exports = { "eventful": '&lt;YOUR_OWN_EVENTFUL_API_KEY_HERE&gt;', "dbPassword": '&lt;YOUR_EVENTONICA_POSTGRES_PASSWORD_HERE&gt;' }</code></p>
@@ -52,30 +56,30 @@
 </blockquote>
 <h4 id="part-2---basic-cli-app">Part 2 - Basic CLI App</h4>
 <p>Try running <code>index.js</code> with Node/Nodemon to see how Inquirer works. Play with it; once you feel comfortable, start looking at the starter code and also skim through this <a href="https://www.donsblog.pro/2018/02/node-inquirerjs-tutorial-interactive.html">Inquirer.js tutorial</a>. If you want to check out something a little more comprehensive, the project itself has <a href="https://github.com/SBoudrias/Inquirer.js/tree/master/packages/inquirer/examples">many examples</a> which demonstrate specific input methods that the library supports.</p>
-<p>When you’re composing your questions think about what information the user of the app will have, and how do you make it as easy as possible to “get the answers right”.</p>
+<p>When you’re composing your questions think about what information the user of the app will have, and how do you make it as easy as possible to “get the answers right".</p>
 <ul>
 <li>Make the questions (requests for data) unambiguous</li>
 <li>Where possible, give the user choices to make, rather than having to enter free-form text</li>
 <li>Validate as much as is reasonable at input time - the sooner you ask people to fix their input data, the less frustration they’ll have with using your app.</li>
 </ul>
 <p>Command Line Interfaces (CLIs) are a great place to use your regex skills to get the data right.</p>
-<p>Now implement the first option: “Complete a sentence.” Use inquirer to ask users for 2 string inputs to console log a complete sentence.</p>
+<p>Now implement the first option: “Complete a sentence." Use inquirer to ask users for 2 string inputs to console log a complete sentence.</p>
 <p>Examples of a sentence to be completed (feel free to make up one on yourself):</p>
 <ul>
 <li>My favorite color is [COLOR], so my dream is to buy a [COLOR][item].</li>
 <li>I play [SPORT] professionally, and my position on the team is [POSITION].</li>
 </ul>
-<p>So if you choose the first example, and the user enters “red” and “house”, you should see “My favorite color is red, so my dream is to buy a red house.”</p>
+<p>So if you choose the first example, and the user enters “red" and “house", you should see “My favorite color is red, so my dream is to buy a red house."</p>
 <h4 id="part-3---adding-user">Part 3 - Adding User</h4>
 <p>Learn about pools and clients by reading the documentation for <a href="https://node-postgres.com/api/pool">node-postgres</a>.</p>
-<p>Now implement the ability to create new users. First create a database in Postgres (in your graphical client app or terminal) called “eventonica”, and then create a Users and an Events table.</p>
+<p>Now implement the ability to create new users. First create a database in Postgres (in your graphical client app or terminal) called “eventonica", and then create a Users and an Events table.</p>
 <p>Switching back to JavaScript in VSCode, using Inquirer, implement code in <code>app.createNewUser</code> to ask for a new fictitious users name and age, or some other attribute. Then, display this information and save it to your Postgres database.</p>
 <p>Finally, using your database client, run a <code>SELECT</code> query against your Users table to verify that your users are successfully created.</p>
 <h4 id="part-4---eventful-api-ajax">Part 4 - Eventful API AJAX</h4>
 <p>Run the starter code in eventfulAPI.js and read about <a href="https://www.npmjs.com/package/eventful-node">eventful-node</a> and <a href="http://api.eventful.com/docs/events/search">Eventful API</a> Once you feel comfortable about understanding what the code is doing, commenting out the example search code and implement your custom search code in <code>app.searchEventful</code>.</p>
 <p>Use Inquier to:</p>
 <ol type="1">
-<li>Ask app user to input a keyword to search on Eventful, example: “dancing”, “fashion”, etc.</li>
+<li>Ask app user to input a keyword to search on Eventful, example: “dancing", “fashion", etc.</li>
 <li>Display the first result that comes back from Eventful, and ask app user if they would like to save this to the Postgres database.</li>
 <li>If app user chooses yes, then make that save.</li>
 <li>If app user chooses no, then go back to step 1 of part 4</li>

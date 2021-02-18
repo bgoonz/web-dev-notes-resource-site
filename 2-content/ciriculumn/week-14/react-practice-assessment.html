@@ -67,12 +67,13 @@
 <li>Constructed response (<code>cr</code>) with mulitle lines means a text area</li>
 <li>You can choose to ignore <code>size</code>, <code>charlimit</code> and <code>pagebreak</code>, as these are considered bonus features</li>
 </ul></li>
-<li>A simple “Thank you” message shows when submitted (no redirection)</li>
+<li>A simple "Thank you" message shows when submitted (no redirection)</li>
 <li>Validation should be used to prevent the form from submitting if any of the non-optional (a.k.a. required) fields don’t have an answer</li>
 <li>Questions and survey information included in the <em>sample.json</em> asset file</li>
 <li><em>Bonus</em>
 <ul>
-<li>Include one more question in the sample survey for “Employee Number”, and obscure the entered text so no one can see the characters that are being typed. &gt; Hint: Think about password fields.</li>
+<li>Include one more question in the sample survey for "Employee Number", and obscure the entered text so no one can see
+    the characters that are being typed. &gt; Hint: Think about password fields.</li>
 </ul></li>
 </ul></li>
 <li>A Sensory Preferences Survey
@@ -103,7 +104,7 @@
 <li><em>sample.json</em> - JSON file exported from their current system with the first survey on their list</li>
 <li><em>spi.json</em> - JSON file from their current system with the inventory questions</li>
 <li>_bonus.json - Another JSON file in case you want to do more (see below)</li>
-<li><em>Home Page WF.png</em> - General concept client is looking for. Use “Lorem Ipsum” for the text (search online if you don’t remember what that is)</li>
+<li><em>Home Page WF.png</em> - General concept client is looking for. Use "Lorem Ipsum" for the text (search online if you don’t remember what that is)</li>
 <li><em>SPI Report WF.png</em> - General concept they are looking for</li>
 </ol>
 <p>You can choose to use to use the JSON files as mock data, if you’d like. However, the client is fine with copy and paste as well.</p>
@@ -124,4 +125,4 @@
 <h2 id="option-blue---go-deep">Option Blue - Go Deep</h2>
 <p>Create one component. Import it into the <em>App.js</em>. Build out all its features, e.g. survey questions, then validation, then submit. Replace the component in <em>App.js</em> with another one and repeat the process. At the end (or in the middle, if you prefer), bring in <code>react-router-dom</code> and configure it for navigation.</p>
 <h2 id="bonus-survey">Bonus Survey</h2>
-<p>If you want to go above and beyond, then research the “Likert scale” online and add another page for the survey questions found in <em>bonus.json</em>. Include a simple thank-you message on submit, if you’d like.</p>
+<p>If you want to go above and beyond, then research the "Likert scale" online and add another page for the survey questions found in <em>bonus.json</em>. Include a simple thank-you message on submit, if you’d like.</p>

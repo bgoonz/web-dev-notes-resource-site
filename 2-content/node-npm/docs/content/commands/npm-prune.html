@@ -17,7 +17,7 @@
             class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">npm</span> prune [[<span class="op">&lt;</span>@scope<span class="op">&gt;</span>/]<span class="op">&lt;</span>pkg<span class="op">&gt;</span>...] [--production] [--dry-run] [--json]</a></code></pre>
         </div>
         <h3 id="description">Description</h3>
-        <p>This command removes “extraneous” packages. If a package name is provided, then only packages matching one of
+        <p>This command removes "extraneous" packages. If a package name is provided, then only packages matching one of
             the
             supplied names are removed.</p>
         <p>Extraneous packages are those present in the <code>node_modules</code> folder that are not listed as any
@@ -32,7 +32,7 @@
             <code>--dry-run</code>) are printed as a JSON object.
         </p>
         <p>In normal operation, extraneous modules are pruned automatically, so you’ll only need this command with the
-            <code>--production</code> flag. However, in the real world, operation is not always “normal”. When crashes
+            <code>--production</code> flag. However, in the real world, operation is not always "normal". When crashes
             or
             mistakes happen, this command can help clean up any resulting garbage.
         </p>

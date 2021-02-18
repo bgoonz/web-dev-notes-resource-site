@@ -20,7 +20,9 @@
 <!-- /code_chunk_output -->
 <hr />
 <p>Today you’ll be building a to-do list application with React and local storage. Instead of threading props from a parent to its children and grandchildren, you’ll use Context to share information with any of your application’s components!</p>
-<p>As a reminder, Context gives you a convenient way to pass data through the component tree without having to manually thread props. This project will also give you a better understanding of how to share and update “global” data across a React application.</p>
+<p>As a reminder, Context gives you a convenient way to pass data through the component tree without having to manually
+    thread props. This project will also give you a better understanding of how to share and update "global" data across
+    a React application.</p>
 <p>In this project, you will:</p>
 <ul>
 <li>Create and use a <code>TodoContext</code> to share global information</li>
@@ -128,7 +130,8 @@
 <a class="sourceLine" id="cb5-38" title="38">)<span class="op">;</span></a>
 <a class="sourceLine" id="cb5-39" title="39"></a>
 <a class="sourceLine" id="cb5-40" title="40"><span class="im">export</span> <span class="im">default</span> TodoFormWithContext<span class="op">;</span></a></code></pre></div>
-<p>Now you’ll update your <code>App</code> component to render the <code>TodoForm</code> and <code>TodoList</code> components, along with a “To-do List” header.</p>
+<p>Now you’ll update your <code>App</code> component to render the <code>TodoForm</code> and <code>TodoList</code>
+    components, along with a "To-do List" header.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// ./src/App.js</span></a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -227,7 +230,7 @@
 <a class="sourceLine" id="cb12-12" title="12">    <span class="dt">comments </span><span class="op">:</span> [<span class="st">&quot;comment3&quot;</span><span class="op">,</span> <span class="st">&quot;comment4&quot;</span><span class="op">,</span> <span class="st">&quot;comment5&quot;</span>]</a>
 <a class="sourceLine" id="cb12-13" title="13">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb12-14" title="14"><span class="op">},</span></a></code></pre></div>
-<p>In the future, you’ll be working with Redux and will manage much more data. Feel free to view the <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/#normalizing-state-shape">nested state shape with an array</a> and read more about how using normalized state shape is an improvement. The documentation explains how “compared to the original nested format, this is an improvement in several ways.”</p>
+<p>In the future, you’ll be working with Redux and will manage much more data. Feel free to view the <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/#normalizing-state-shape">nested state shape with an array</a> and read more about how using normalized state shape is an improvement. The documentation explains how "compared to the original nested format, this is an improvement in several ways."</p>
 <p>After generating a <code>newTask</code> object, you’ll want to update the <code>tasks</code> state with the new object and then update the tasks stored in local storage. First, let’s take a closer look at the <code>updateLocalStorageTasks</code> method. You’ll see that it takes care of logging the tasks to your DevTools console, converting the JavaScript <code>tasks</code> object into a JSON string, and then storing the tasks in local storage, under the name <code>tasks</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb13-1" title="1">updateLocalStorageTasks <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb13-2" title="2">  <span class="va">console</span>.<span class="at">log</span>(<span class="kw">this</span>.<span class="va">state</span>.<span class="at">tasks</span>)<span class="op">;</span></a>
@@ -280,5 +283,5 @@
 </figure>
 <p>Access the <code>tasks</code> and <code>deleteTask</code> method stored within the context value. Map over each of the <code>tasks</code> and render a <code>Task</code> component for each task. Since your tasks are currently formatted as an object, you’ll need to convert the object to an iterable array before mapping over them. You can use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values">Object.values</a> method to access an array containing the object’s property values.</p>
 <p>You’ll want to set a task ID <code>key</code> for each of the tasks, as well as pass the task as a prop for each <code>Task</code> component rendered. In order to keep the <code>Task</code> component as a function component, you’ll pass the <code>deleteTask</code> method from context as a prop into each rendered <code>Task</code> as well. As a reminder, the <code>static contextType</code> property can only be used in class components.</p>
-<p>Now have the <code>Task</code> component take in the props. Then update the click handler to invoke the <code>deleteTask</code> prop with the task’s ID. You’ll also want to replace the “Hi, I’m a task in your to-do list!” message with the task’s message.</p>
+<p>Now have the <code>Task</code> component take in the props. Then update the click handler to invoke the <code>deleteTask</code> prop with the task’s ID. You’ll also want to replace the "Hi, I’m a task in your to-do list!" message with the task’s message.</p>
 <p>Congratulations! You have just built a to-do list application with React Context! You used a context provider to set a global context value, used a context consumer to pass render props into a consuming component, and used the <code>static contextType</code> property to give a class component access to the context value. In the next Context project, you’ll work on using Context to store a user’s login session information.</p>

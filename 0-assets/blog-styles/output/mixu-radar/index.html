@@ -45,7 +45,12 @@
 time</a>.</p>
 <ul class="list">
 <li><a href="http://en.wikipedia.org/wiki/DAG">Kosaraju&#39;s algorithm</a> uses two passes of <a href="http://en.wikipedia.org/wiki/DAG">depth first search</a>. The first, in the original graph, is used to choose the order in which the outer loop of the second depth first search tests vertices for having been visited already and recursively explores them if not. The second depth first search is on the <a href="http://en.wikipedia.org/wiki/DAG">transpose graph</a> of the original graph, and each recursive exploration finds a single new strongly connected component. It is named after <a href="http://en.wikipedia.org/wiki/DAG">S. Rao Kosaraju</a>, who described it (but did not publish his results) in 1978; <a href="http://en.wikipedia.org/wiki/DAG">Micha Sharir</a> later published it in 1981.</li>
-<li><a href="http://en.wikipedia.org/wiki/DAG">Tarjan&#39;s strongly connected components algorithm</a>, published by <a href="http://en.wikipedia.org/wiki/DAG">Robert Tarjan</a> in 1972, performs a single pass of depth first search. It maintains a <a href="http://en.wikipedia.org/wiki/DAG">stack</a> of vertices that have been explored by the search but not yet assigned to a component, and calculates "low numbers” of each vertex (an index number of the highest ancestor reachable in one step from a descendant of the vertex) which it uses to determine when a set of vertices should be popped off the stack into a new component.</li>
+<li><a href="http://en.wikipedia.org/wiki/DAG">Tarjan&#39;s strongly connected components algorithm</a>, published by <a
+        href="http://en.wikipedia.org/wiki/DAG">Robert Tarjan</a> in 1972, performs a single pass of depth first search.
+    It maintains a <a href="http://en.wikipedia.org/wiki/DAG">stack</a> of vertices that have been explored by the
+    search but not yet assigned to a component, and calculates "low numbers" of each vertex (an index number of the
+    highest ancestor reachable in one step from a descendant of the vertex) which it uses to determine when a set of
+    vertices should be popped off the stack into a new component.</li>
 <li>The <a href="http://en.wikipedia.org/wiki/DAG">path-based strong component algorithm</a> uses a depth first search, like Tarjan&#39;s algorithm, but with two stacks. One of the stacks is used to keep track of the vertices not yet assigned to components, while the other keeps track of the current path in the depth first search tree. The first linear time version of this algorithm was published by <a href="http://en.wikipedia.org/wiki/DAG">Edsger W. Dijkstra</a> in 1976.</li>
 </ul>
 <p>Although Kosaraju&#39;s algorithm is conceptually simple, Tarjan&#39;s and the

@@ -123,7 +123,7 @@ pre data-role="codeBlock" data-info="js" class="language-javascript"><code>if (!
     href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>Function.prototype.apply()</code></a>,
   built-in methods to have their original values.
 </li>
-<li>The partial implementation creates functions that do not have immutable "poison pill” <a class="btn"
+<li>The partial implementation creates functions that do not have immutable "poison pill" <a class="btn"
     href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller"><code>caller</code></a>
   and <code>arguments</code> properties that throw a <a class="btn"
     href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a>
@@ -144,7 +144,7 @@ pre data-role="codeBlock" data-info="js" class="language-javascript"><code>if (!
 <li>The partial implementation creates bound functions whose <a class="btn"
     href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name"><code>name</code></a>
   property is not derived from the original function name. According to ECMA-262, name of the returned bound function
-  should be "bound” + name of target function (note the space character).</li>
+  should be "bound" + name of target function (note the space character).</li>
 </ul>
 <p>If you choose to use this partial implementation, <strong>you must not rely on those cases where behavior deviates from ECMA-262, 5th edition!</strong> Thankfully, these deviations from the specification rarely (if ever) come up in most coding situations. If you do not understand any of the deviations from the specification above, then it is safe in this particular case to not worry about these noncompliant deviation details.</p>
 <p><strong>If it’s absolutely necessary and performance is not a concern</strong>, a far slower (but more

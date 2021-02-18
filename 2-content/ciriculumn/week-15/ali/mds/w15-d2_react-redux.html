@@ -448,7 +448,9 @@
 <a class="sourceLine" id="cb14-19" title="19"><span class="op">};</span></a></code></pre></div>
 <p>Notice that the <code>state</code> parameter is duplicated to the <code>nextState</code> variable using the <code>Object.assign</code> method:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">let</span> nextState <span class="op">=</span> <span class="va">Object</span>.<span class="at">assign</span>(<span class="op">{},</span> state)<span class="op">;</span></a></code></pre></div>
-<p>While this code correctly creates a duplicate of the <code>state</code> object, <code>nextState</code> is only a shallow duplicate as only the top-level object is duplicated. Each “farmer” object that the <code>state</code> object refers to are still the <em>same</em> objects.</p>
+<p>While this code correctly creates a duplicate of the <code>state</code> object, <code>nextState</code> is only a
+    shallow duplicate as only the top-level object is duplicated. Each "farmer" object that the <code>state</code>
+    object refers to are still the <em>same</em> objects.</p>
 <p>In the <code>PAY_FARMER</code> case clause, the farmer object is mutated by setting the <code>paid</code> property to a new value:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb16-1" title="1"><span class="cf">case</span> PAY_FARMER<span class="op">:</span></a>
 <a class="sourceLine" id="cb16-2" title="2">  <span class="kw">const</span> farmerToPay <span class="op">=</span> nextState[<span class="va">action</span>.<span class="at">id</span>]<span class="op">;</span></a>
@@ -547,7 +549,10 @@
 </blockquote>
 <h2 id="determining-where-to-create-containers">Determining where to create containers</h2>
 <p>Not every component needs to be connected to the store. Generally, you’ll only want to create containers for the ‘big’ components in your app that represent sections of a page and contain smaller purely functional presentational components. These larger container components are responsible for interacting with the store and passing state and dispatch props down to all their presentational children.</p>
-<p>For the Fruit Stand application, a good starting point would be to create two container components, <code>FruitManagerContainer</code> and <code>FarmerManagerContainer</code>, to respectively render the presentational components for the “Fruit” and “Farmers” sections of the page. Here’s a visual representation of that component hierarchy:</p>
+<p>For the Fruit Stand application, a good starting point would be to create two container components,
+    <code>FruitManagerContainer</code> and <code>FarmerManagerContainer</code>, to respectively render the
+    presentational components for the "Fruit" and "Farmers" sections of the page. Here’s a visual representation of that
+    component hierarchy:</p>
 <pre><code>App
 ├── FruitManagerContainer
 │   └── FruitManager
@@ -560,7 +565,7 @@
         ├── FarmerList
         │   └── Farmer
         └── FarmerHire</code></pre>
-<p>Notice that the container component names are a combination of the name of the presentational component that they wrap and the suffix “Container”.</p>
+<p>Notice that the container component names are a combination of the name of the presentational component that they wrap and the suffix "Container".</p>
 <p>In general, aim to have fewer containers rather than more. Most of the components you’ll write will be presentational, but you’ll need to generate a few containers to connect presentational components to the Redux store.</p>
 <h2 id="writing-a-container-component">Writing a container component</h2>
 <p>While you can write a container component from scratch, you can also refactor an existing React component that interacts with a Redux store into separate container and presentational components.</p>
@@ -599,7 +604,7 @@
 <a class="sourceLine" id="cb24-31" title="31"><span class="op">}</span></a>
 <a class="sourceLine" id="cb24-32" title="32"></a>
 <a class="sourceLine" id="cb24-33" title="33"><span class="im">export</span> <span class="im">default</span> FruitList<span class="op">;</span></a></code></pre></div>
-<p>The <code>FruitManager</code> component is responsible for rendering each of the fruit-related components (i.e. <code>FruitList</code>, <code>FruitSeller</code>, <code>FruitQuickAdd</code>, and <code>FruitBulkAdd</code>), so create a container component named <code>FruitManagerContainer</code> to handle all of the store interaction for the “Fruit” section of the page.</p>
+<p>The <code>FruitManager</code> component is responsible for rendering each of the fruit-related components (i.e. <code>FruitList</code>, <code>FruitSeller</code>, <code>FruitQuickAdd</code>, and <code>FruitBulkAdd</code>), so create a container component named <code>FruitManagerContainer</code> to handle all of the store interaction for the "Fruit" section of the page.</p>
 <p>To review, here’s what the component hierarchy will look like:</p>
 <pre><code>FruitManagerContainer
 └── FruitManager
@@ -1037,7 +1042,7 @@
 <hr />
 <h1 id="react-and-redux-to-do-list-project">React and Redux To-Do List Project</h1>
 <p>Today you’ll be building a to-do list application with React and local storage. Instead of using Context to manage and update your application’s state, you’ll set up a Redux store and interact with it using the store’s <code>getState</code>, <code>dispatch</code>, and <code>subscribe</code> methods.</p>
-<p>This project will also give you a better understanding of how to share and update “global” data across a React application by using Redux. You’ll use Redux to dispatch action POJOs through a reducer function, and have your component access an updated version of the Redux store’s state.</p>
+<p>This project will also give you a better understanding of how to share and update "global" data across a React application by using Redux. You’ll use Redux to dispatch action POJOs through a reducer function, and have your component access an updated version of the Redux store’s state.</p>
 <p>In this project, you will:</p>
 <ul>
 <li>Generate a Redux store to manage your application’s global information</li>
@@ -1090,7 +1095,7 @@
 <div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">delete</span> stateWithDeletion[<span class="va">action</span>.<span class="at">taskId</span>]<span class="op">;</span></a></code></pre></div>
 <p>The last thing left in your <code>DELETE_TASK</code> statement is to return the updated <code>stateWithDeletion</code>! If you compare your initial definition of the <code>nextState</code> and <code>stateWithDeletion</code> variables, you’ll see that they are both copies of the <code>state</code> made with spread syntax. Move the <code>nextState</code> variable outside of the <code>switch</code> statement so that both <code>case</code> statements can reference and update the <code>nextState</code>, instead of the <code>DELETE_TASK</code> case statement creating a new copy of the state and updating it.</p>
 <h2 id="phase-3-dispatch-actions-from-the-devtools-console">Phase 3: Dispatch actions from the DevTools console</h2>
-<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. As a reminder, dispatching the action will “send” it through the reducer to determine what operation to perform based on the action’s <code>type</code> property. Take a moment to go into your <code>index.js</code> file and import your application’s Redux <code>store</code> and action creator functions:</p>
+<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. As a reminder, dispatching the action will "send" it through the reducer to determine what operation to perform based on the action’s <code>type</code> property. Take a moment to go into your <code>index.js</code> file and import your application’s Redux <code>store</code> and action creator functions:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" title="1"><span class="im">import</span> <span class="op">{</span> store <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./store&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb46-2" title="2"><span class="im">import</span> <span class="op">{</span> createTask<span class="op">,</span> deleteTask <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./actions/taskActions&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>Now that you’ve had the store and actions imported into the file, you can set them as properties to the <code>window</code> object, so that you can access the <code>store</code> and actions from the developer tools console.</p>

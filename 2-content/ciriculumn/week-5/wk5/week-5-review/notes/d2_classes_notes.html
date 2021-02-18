@@ -1,20 +1,43 @@
 <h1 id="intro-to-oop-thinking">INTRO TO OOP THINKING</h1>
 <p>OOP overview - approach for breaking down large, complex products into simple solutions - smaller parts can be implemented and tested separately - results in higher confidence in overall solution - makes it easier to pinpoint issues with code</p>
 <p>The Big Picture - group data and related actions / behaviors together - treat as single entity within a larger system</p>
-<p>Terminology - <code>object</code>: item containing data and behaviors - example: vehicle - <code>properties</code>: pieces of relevant data (kind of like “adjectives”) - example: vehicle model, status of engine (on or off), vehicle color - also called fields or attributes - <code>methods</code>: relevant actions (kind of like “verbs”) - accessor: presents data (properties) - mutator: modifies data - example: start engine</p>
-<p>Classes and Constructors - <code>class</code>: definition of an object with properties and methods - “blueprint” for object - framework for properties and methods (data and actions) - similar to how function definition is framework for function - doesnt do anything until it is instantiated (called) - <code>instance</code> : specific object made from a class - object created from “blueprint” defined in class definition - may have certain methods/properties set right away - example: if vehicle class has “color” property, instance of vehicle may have “red” assigned to this property - <code>constructor</code>: special method that handles initial setup of instance - assigns relevant properties - assigns value “red” to “color” property</p>
+<p>Terminology - <code>object</code>: item containing data and behaviors - example: vehicle - <code>properties</code>:
+    pieces of relevant data (kind of like "adjectives") - example: vehicle model, status of engine (on or off), vehicle
+    color - also called fields or attributes - <code>methods</code>: relevant actions (kind of like "verbs") - accessor:
+    presents data (properties) - mutator: modifies data - example: start engine</p>
+<p>Classes and Constructors - <code>class</code>: definition of an object with properties and methods - "blueprint" for
+    object - framework for properties and methods (data and actions) - similar to how function definition is framework
+    for function - doesnt do anything until it is instantiated (called) - <code>instance</code> : specific object made
+    from a class - object created from "blueprint" defined in class definition - may have certain methods/properties set
+    right away - example: if vehicle class has "color" property, instance of vehicle may have "red" assigned to this
+    property - <code>constructor</code>: special method that handles initial setup of instance - assigns relevant
+    properties - assigns value "red" to "color" property</p>
 <p>DRY (don’t repeat yourself) - classes allow us to keep our code dry - may have many instances of our vehicle class in our program - no need to write the same methods over and over again * there should only ever be ONE copy of any important piece of code - if you have more than one copy, may be indication to refactor</p>
 <p>OOP Design - balance of resuse, sharing, duplication - more on this to come</p>
-<p>Pillars of OOP 1. Encapsulation - the division of responsibility - object is most useful when it hides complex functionality from other parts of code - easier to test and build complex systems when each part of system has its own purpose - example: - an ear doesnt need to know how an eye works - break up roles into separate objects: - ear: listens for sounds - eye: looks for visual signals - face: place eye and ear where they are useful - brain: make sense of sensory signals - objects interact with each other through props/methods w/o needing to know how those actions are handled 2. Abstraction - consideration of how objects are similar - hide implementation details within classes - example: pens and pencils are similar, may be able to group certain properties into parent class 3. Inheritance - classes can pass along properties &amp; methods to other classes - sometimes objects may have many similar properties - indicate that a parent class could be beneficial - example: cats and dogs - cats and dogs share many properties - both have a name, breed, color, owner, etc - both may be able to perform certain tricks - have different properties (dogs bark, cats meow) - makes sense to create an Animal parent class that Dog and Cat can inherit from 4. Polymorphism - one method can have different implementations because the result is equivalent - accomplishing same result in another fashion - example: pens and pencil classes may have “erase” method - for pens, that would require the use of white out - for pencisl, that would require the usee of an erasor - the result is the same</p>
+<p>Pillars of OOP 1. Encapsulation - the division of responsibility - object is most useful when it hides complex
+    functionality from other parts of code - easier to test and build complex systems when each part of system has its
+    own purpose - example: - an ear doesnt need to know how an eye works - break up roles into separate objects: - ear:
+    listens for sounds - eye: looks for visual signals - face: place eye and ear where they are useful - brain: make
+    sense of sensory signals - objects interact with each other through props/methods w/o needing to know how those
+    actions are handled 2. Abstraction - consideration of how objects are similar - hide implementation details within
+    classes - example: pens and pencils are similar, may be able to group certain properties into parent class 3.
+    Inheritance - classes can pass along properties &amp; methods to other classes - sometimes objects may have many
+    similar properties - indicate that a parent class could be beneficial - example: cats and dogs - cats and dogs share
+    many properties - both have a name, breed, color, owner, etc - both may be able to perform certain tricks - have
+    different properties (dogs bark, cats meow) - makes sense to create an Animal parent class that Dog and Cat can
+    inherit from 4. Polymorphism - one method can have different implementations because the result is equivalent -
+    accomplishing same result in another fashion - example: pens and pencil classes may have "erase" method - for pens,
+    that would require the use of white out - for pencisl, that would require the usee of an erasor - the result is the
+    same</p>
 <h1 id="more-oop-explained">MORE OOP EXPLAINED</h1>
 <p>Object Oriented Programming - computer programming model - organizes software design around data (or objects) rather than functions</p>
 <p>What is an Object? - data field that has unique attributes and behaviors - self contained pieces of code</p>
 <p>Classes vs Objects - <code>object class</code>: definition of an object - similar to how function definition defines a function - blueprint for how function behaves - dooesnt do anything until that function is invoked - <code>object instannce</code>: the use of that object</p>
 <p>Principles of OOP 1. encapsulation 2. inheritance 3. polymorphism 4. abstraction</p>
-<p>Encapsulation - “enclose something in a capsule” - the bundling of data and the methods that act on that data so that access to that data is restricted from outside the bundle - an object stores its state privately and only the object’s methods have access to change it - you dont change the encapsulated state directly - you call a method on the object which may update its state - code that uses thee methods dont have to worry about details</p>
+<p>Encapsulation - "enclose something in a capsule" - the bundling of data and the methods that act on that data so that access to that data is restricted from outside the bundle - an object stores its state privately and only the object’s methods have access to change it - you dont change the encapsulated state directly - you call a method on the object which may update its state - code that uses thee methods dont have to worry about details</p>
 <p>Inheritance - data and methods defined on parent class are avaailable on objects created from classes that inherit from those parent classes - prevents duplication of code<br />
 - typically applied to classes</p>
-<p>Polymorphism - ability to create a property, func, or object that has more than one realization - ability to substitute classes that havee common functionality in sense of methods and data - “if you can drive a car, you can drive any car”</p>
+<p>Polymorphism - ability to create a property, func, or object that has more than one realization - ability to substitute classes that havee common functionality in sense of methods and data - "if you can drive a car, you can drive any car"</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co">// polymorphism example </span></a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
@@ -57,12 +80,12 @@
 <a class="sourceLine" id="cb1-40" title="40"><span class="op">}</span></a></code></pre></div>
 <p>Abstraction - display only essential information - hide the details</p>
 <h1 id="basics-of-oop-design">BASICS OF OOP DESIGN</h1>
-<p>The problem - design system to track students and teachers accessing an online school - consider how users will get through virtual door (“login”)</p>
+<p>The problem - design system to track students and teachers accessing an online school - consider how users will get through virtual door ("login")</p>
 <p>Step 1 - Identify Potential classes - think about how we can <code>encapsulate</code> our program - how can we break down our problem into smaller pieces - authentication: how can we check they have the correct username/password - communication: how can we recover lost password - attendance: how can we keep track of students - teacher schedule: how can we keep track of teachers</p>
 <p>Step 2 - Specify Properties and methods for each class - <code>Class Account</code>: what properties/methods do accounts need? - possible properties: username, password - possible methods: login, logout, resetPassword - <code>Class Person</code>: what properties/methods do people need? - possible properties: email, mailingAddress, phoneNumber - possible methods: forgotPassword, changeEmail - <code>Class Student</code>: what properties/methods do students need? - possible properties: schedule, attendanceRecord - possible methods: enroll, attend, dropout - <code>Class Teacher</code>: what properties/methods to teachers need? - possible properties: schedule - possible methods: teach</p>
 <p>Step 3 - Define relationships - decidee how classes relate to eachother - inheritance: can one class extend another by sharing/adding onto features? - <code>Student</code> and <code>Teacher</code> can likely inherit from <code>Person</code> class - composition: can one class store another class as a property? - each <code>Person</code> will likely have an <code>Account</code> with the school - MANY different possibilities when it comes to OOP design</p>
 <h1 id="constructor-functions">CONSTRUCTOR FUNCTIONS</h1>
-<p>creating objects using literal notation - all we’ve done up until this point - attributes of “Cat” object representeed by obj literal’s keys</p>
+<p>creating objects using literal notation - all we’ve done up until this point - attributes of "Cat" object representeed by obj literal’s keys</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co">// object literal notation</span></a>
 <a class="sourceLine" id="cb2-3" title="3"></a>
@@ -72,15 +95,15 @@
 <a class="sourceLine" id="cb2-7" title="7">        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;bark bark&#39;</span>)</a>
 <a class="sourceLine" id="cb2-8" title="8">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb2-9" title="9"><span class="op">}</span></a></code></pre></div>
-<p>creating objects using constructor function - “factory” for creating objects of a specific type - calling a constructor function returns new object - props initialized to provided argument values</p>
+<p>creating objects using constructor function - "factory" for creating objects of a specific type - calling a constructor function returns new object - props initialized to provided argument values</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">function</span> <span class="at">Dog</span> (name<span class="op">,</span> age) <span class="op">{</span></a>
 <a class="sourceLine" id="cb3-2" title="2">    <span class="kw">this</span>.<span class="at">name</span> <span class="op">=</span> name<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-3" title="3">    <span class="kw">this</span>.<span class="at">age</span> <span class="op">=</span> age<span class="op">;</span></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="op">}</span></a>
 <a class="sourceLine" id="cb3-5" title="5"></a>
 <a class="sourceLine" id="cb3-6" title="6"><span class="kw">let</span> dog <span class="op">=</span> <span class="kw">new</span> <span class="at">Dog</span>(<span class="st">&#39;bodhi&#39;</span><span class="op">,</span> <span class="dv">5</span>)</a></code></pre></div>
-<p>Notice anything weird about this function? 1. name is capitalized to help distinguish func as a constructor 2. function doesn’t explicitely return a value 3. “this” references newly created object inside constructor func</p>
-<p>invoking a constructor function with “new” 1. new empty obj is created ({}) 2. new obj prototype is set to obj referenced by constructor funcs prototype prop 3. constructor func is called and “this” is bound to new object 4. new object is returned</p>
+<p>Notice anything weird about this function? 1. name is capitalized to help distinguish func as a constructor 2. function doesn’t explicitely return a value 3. "this" references newly created object inside constructor func</p>
+<p>invoking a constructor function with "new" 1. new empty obj is created ({}) 2. new obj prototype is set to obj referenced by constructor funcs prototype prop 3. constructor func is called and "this" is bound to new object 4. new object is returned</p>
 <p>invoking a constructor without the <code>new</code> keyword - in strict mode: <code>this</code> will be undefined -&gt; error - in non-strict mode: <code>this</code> will be global object</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">function</span> <span class="at">Dog</span> (name<span class="op">,</span> age) <span class="op">{</span></a>
 <a class="sourceLine" id="cb4-2" title="2">    <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">this</span> <span class="kw">instanceof</span> Dog)) <span class="op">{</span></a>
@@ -123,7 +146,7 @@
 <p>every constructor function has a <code>prototype</code> property - represents object that’ll be used as prototype for instances created by invoking the constructor function with the <code>new</code> keyword - can confirm by comparing prototype for an instance to constructor functions prototype property</p>
 <p>summary - every instance created from constructor func has its prototype set to the object referenced by the constructor function’s prototype property - any method we define on constructor functions prototype will be shared across all instances of that object type</p>
 <p>when speak() is called: 1. <code>bodhi</code> object is checked to see if method is defined on that object 2. when method isn’t found, method call is delegated to instance’s prototype 3. instance’s prototype is set to <code>Dog</code> constructor funcs <code>prototype</code> property 4. this time, speak() method is found and called - note: can use <code>this</code> to access properties on the instance we’re calling method on (this refers to the instance of dog, fluffy)</p>
-<p>problems with arrow functions - don’t have their own “this” binding - they use “this” binding from lexical scope</p>
+<p>problems with arrow functions - don’t have their own "this" binding - they use "this" binding from lexical scope</p>
 <p>instanceof operator uses prototypes to determine if obj is an instance of a specific constructor function - checks if prototype of obj on left side of operator is set to prototype property of constructor function on the right side</p>
 <h1 id="javascript-classes">JAVASCRIPT CLASSES</h1>
 <p>javascript classes - constructor funcs and prototypes mimic class behavior - support for classes added to language in ES2015</p>

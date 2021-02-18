@@ -164,7 +164,11 @@
 <pre class="jsx"><code>&lt;Route path=&quot;/users/:userId&quot;
        render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;} /&gt;</code></pre>
 <p>The router would break down the full <code>/users/:userId/photos</code> path to two parts: <code>/users</code>, <code>:userId</code>.</p>
-<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into the component if you want it to know about the “match” parameters.</p>
+<p>The <code>Profile</code> component’s props would have access to the <code>:userId</code> part of the
+    <code>http://localhost:3000/users/:userId/photos</code> URL through the <code>props</code> with router parameter
+    information. You would access the the <code>match</code> prop’s parameters (<code>props.match.params</code>). If you
+    are using the <code>render</code> prop of the <code>Route</code> component, make sure to spread the props back into
+    the component if you want it to know about the "match" parameters.</p>
 <pre class="jsx"><code>// Route&#39;s `render` prop allows you to pass the `users`
 // prop and spread the router `props`.
 render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
@@ -245,7 +249,8 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <p>Now that you know how to create front-end routes with React Router, you’ll need to implement a way for your users to navigate the routes! This is what using React Router’s <code>Link</code>, <code>NavLink</code>, <code>Redirect</code>, and <code>history</code> prop can help you do.</p>
 <p>In this article, you’ll be working off of the demo project you built in the React Router Intro reading. When you finish this article, you should be able to use the following components from the <code>react-router-dom</code> library:</p>
 <ul>
-<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your application (like “/users/1”); and,</li>
+<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your
+    application (like "/users/1"); and,</li>
 <li><code>&lt;Redirect&gt;</code> to redirect a user to another path (i.e. a login page when the user is not logged in); and</li>
 <li>React Router’s <code>history</code> prop to update a browser’s URL programmatically.</li>
 </ul>
@@ -271,7 +276,7 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <p>The <code>&lt;NavLink&gt;</code> works just like a <code>&lt;Link&gt;</code>, but with a little extra functionality. It has the ability to add extra styling when the path it links to matches the current path. This makes it an ideal choice for a navigation bar, hence the name. This styling can be controlled by three extra props: <code>activeClassName</code>, <code>activeStyle</code>, and <code>exact</code>. To begin using <code>NavLink</code>, update your imports from the <code>react-router-dom</code> package:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb23-1" title="1"><span class="im">import</span> <span class="op">{</span> BrowserRouter<span class="op">,</span> Route<span class="op">,</span> NavLink <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-dom&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>The <code>activeClassName</code> prop of the <code>NavLink</code> component allows you to set a CSS class name for styling the <code>NavLink</code> when its route is active. By default, the <code>activeClassName</code> is already set to <code>active</code>. This means that you simply need to add an <code>.active</code> class to your CSS file to add active styling to your link. A <code>NavLink</code> will be active if its <code>to</code> prop path matches the current URL.</p>
-<p>Let’s change your “Users”, “Hello”, and “Andrew’s Profile” links to be different colors and have a larger font size when active.</p>
+<p>Let’s change your "Users", "Hello", and "Andrew’s Profile" links to be different colors and have a larger font size when active.</p>
 <pre class="jsx"><code>&lt;NavLink to=&quot;/&quot;&gt;App&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;red&quot; to=&quot;/users&quot;&gt;Users&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;blue&quot; to=&quot;/hello&quot;&gt;Hello&lt;/NavLink&gt;
@@ -460,7 +465,7 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 </ul>
 <hr />
 <h1 id="react-builds">React Builds</h1>
-<p>A “build” is the process of converting code into something that can actually execute or run on the target platform. A “front-end build” is a process of preparing a front-end or client-side application for the browser.</p>
+<p>A "build" is the process of converting code into something that can actually execute or run on the target platform. A "front-end build" is a process of preparing a front-end or client-side application for the browser.</p>
 <p>With React applications, that means (at a minimum) converting JSX to something that browsers can actually understand. When using Create React App, the build process is automatically configured to do that and a lot more.</p>
 <p>When you finish this article, you should be able to:</p>
 <ul>
@@ -506,11 +511,11 @@ render={(props) =&gt; &lt;Profile users={users} {...props} /&gt;}
 <li>A file watcher is started to watch your files, waiting for changes.</li>
 </ul>
 <h3 id="ejecting">Ejecting</h3>
-<p>Create React App provides a script that you can run to “eject” your application from the Create React App tooling. When you eject your application, all of the hidden stuff is exposed so that you can review and customize it.</p>
+<p>Create React App provides a script that you can run to "eject" your application from the Create React App tooling. When you eject your application, all of the hidden stuff is exposed so that you can review and customize it.</p>
 <blockquote>
 <p>The need to customize Create React App rarely happens. Also, don’t eject an actual project as it’s a one-way trip! Once a Create React App project has been ejected, there’s no going back (though you could always undo the ejection process by reverting to an earlier commit if you’re using source control).</p>
 </blockquote>
-<p>To eject your application from Create React App, run the command <code>npm run eject</code>. You’ll be prompted if you want to continue; type “y” to continue with the ejection process. Once the ejection process has completed, you can review the files that were previously hidden from you.</p>
+<p>To eject your application from Create React App, run the command <code>npm run eject</code>. You’ll be prompted if you want to continue; type "y" to continue with the ejection process. Once the ejection process has completed, you can review the files that were previously hidden from you.</p>
 <p>In the <code>package.json</code> file, you’ll see the following npm scripts:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb39-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb39-2" title="2">  <span class="dt">&quot;scripts&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -597,7 +602,7 @@ REACT_APP_BAR: another value</code></pre>
 <h2 id="phase-0-setup">Phase 0: Setup</h2>
 <p>Begin by creating a new React project:</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" title="1"><span class="ex">npx</span> create-react-app rainbow-routes --template @appacademy/simple</a></code></pre></div>
-<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code> directory to build the application architecture from scratch! After you have deleted all your files within the directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the <code>html:5</code> emmet shortcut to generate an HTML template. Title your page “Rainbow Routes” and create a <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element. Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create your entry file!</p>
+<p>Now you’ll remove all the contents of your <code>src</code> and all the contents from your <code>public</code> directory to build the application architecture from scratch! After you have deleted all your files within the directories, create a new <code>index.html</code> file in your <code>public</code> folder. Use the <code>html:5</code> emmet shortcut to generate an HTML template. Title your page "Rainbow Routes" and create a <code>div</code> with an <code>id</code> of <code>root</code> in your DOM’s <code>&lt;body&gt;</code> element. Create an <code>index.css</code> file in your <code>src</code> directory with the following code. Now let’s create your entry file!</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode css"><code class="sourceCode css"><a class="sourceLine" id="cb45-1" title="1">h4 {</a>
 <a class="sourceLine" id="cb45-2" title="2">  <span class="kw">color</span>: <span class="cn">darkblue</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb45-3" title="3">  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></a>
@@ -739,7 +744,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb53-7" title="7">)<span class="op">;</span></a>
 <a class="sourceLine" id="cb53-8" title="8"></a>
 <a class="sourceLine" id="cb53-9" title="9"><span class="im">export</span> <span class="im">default</span> Color<span class="op">;</span></a></code></pre></div>
-<p>Now start your server and verify you can see the “Rainbow Router!” header from your <code>Rainbow</code> component. Currently there is no functionality. Let’s fix that!</p>
+<p>Now start your server and verify you can see the "Rainbow Router!" header from your <code>Rainbow</code> component. Currently there is no functionality. Let’s fix that!</p>
 <h2 id="phase-1-routes">Phase 1: Routes</h2>
 <p>As a reminder, wrapping the <code>Rainbow</code> component in <code>&lt;BrowserRouter&gt;</code> tags makes the router available to all descendent React Router components. Now open the <code>Rainbow.js</code> file. You’re going to render some of your color components from here. Ultimately you want your routes to look like this.</p>
 <table>
@@ -827,7 +832,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Update the <code>App</code> component:</p>
 <ul>
 <li>Wrap the <code>&lt;h1&gt;</code> element with a <code>&lt;div&gt;</code> element; and</li>
-<li>Change the <code>&lt;h1&gt;</code> element content to something like “Exploring React Builds”.</li>
+<li>Change the <code>&lt;h1&gt;</code> element content to something like "Exploring React Builds".</li>
 </ul>
 <div class="sourceCode" id="cb60"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb60-1" title="1"><span class="co">// ./src/App.js</span></a>
 <a class="sourceLine" id="cb60-2" title="2"></a>
@@ -917,7 +922,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb66-13" title="13"><span class="op">}</span></a>
 <a class="sourceLine" id="cb66-14" title="14"></a>
 <a class="sourceLine" id="cb66-15" title="15"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Then run your application (<code>npm start</code>) to see “Heading A” and “Heading B” displayed respectively in green and red. If you use the browser’s developer tools to inspect “Heading A”, you’ll see that the <code>.heading</code> class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
+<p>Then run your application (<code>npm start</code>) to see "Heading A" and "Heading B" displayed respectively in green and red. If you use the browser’s developer tools to inspect "Heading A", you’ll see that the <code>.heading</code> class name has been modified so that it’s unique to the <code>HeadingA</code> component:</p>
 <figure>
 <img src="images/react-builds-css-modules.png" alt="react builds css modules" /><figcaption>react builds css modules</figcaption>
 </figure>
@@ -967,7 +972,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb68-17" title="17"><span class="op">}</span></a>
 <a class="sourceLine" id="cb68-18" title="18"></a>
 <a class="sourceLine" id="cb68-19" title="19"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the “Sources” for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
+<p>If you run your application (<code>npm start</code>) you’ll see your image displayed on the page! You can also open your browser’s developer tools and view the "Sources" for the current page. If you can expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>media</code> node on the left, you can see the image file that webpack copied to your build.</p>
 <figure>
 <img src="images/react-builds-dev-tools-image.png" alt="react builds dev tools image" /><figcaption>react builds dev tools image</figcaption>
 </figure>
@@ -1054,7 +1059,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb73-19" title="19"><span class="op">}</span></a>
 <a class="sourceLine" id="cb73-20" title="20"></a>
 <a class="sourceLine" id="cb73-21" title="21"><span class="im">export</span> <span class="im">default</span> App<span class="op">;</span></a></code></pre></div>
-<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for “Class Component”. Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
+<p>Now run your application using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> &gt; <code>static</code> &gt; <code>js</code> node on the left and select the <code>main.chunk.js</code> file. Press <code>CMD+F</code> on macOS or <code>CTRL+F</code> on Windows to search the file for "Class Component". Here’s what the transpiled code looks like for the <code>ClassComponent</code> class:</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">class</span> ClassComponent <span class="kw">extends</span> <span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">Component</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb74-2" title="2">  <span class="at">render</span>() <span class="op">{</span></a>
 <a class="sourceLine" id="cb74-3" title="3">    <span class="cf">return</span> <span class="co">/*#__PURE__*/</span><span class="va">react__WEBPACK_IMPORTED_MODULE_0___default</span>.<span class="va">a</span>.<span class="at">createElement</span>(<span class="st">&quot;h1&quot;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -1071,7 +1076,7 @@ REACT_APP_BAR: another value</code></pre>
 <p>Have you wondered yet why you need to use the developer tools to view the bundles generated by Create React App? Remember that when you run <code>npm start</code>, Create React App builds your application using <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a>. To keep things as performant as possible, the bundles generated by <a href="https://webpack.js.org/configuration/dev-server/"><code>webpack-dev-server</code></a> are stored in memory instead of writing them to the file system.</p>
 </blockquote>
 <p>The JSX in the component’s <code>render</code> method has been converted to JavaScript but the <code>ClassComponent</code> ES2015 class is left alone. This makes sense though as JSX isn’t natively supported by any browser while ES2015 classes have been natively supported by browsers for awhile now.</p>
-<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">“Can I use…”</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
+<p>But what if you need to target a version of a browser that doesn’t support ES2015 classes? You can use the <a href="https://caniuse.com/#feat=es6-class">"Can I use…"</a> website to see when browsers started supporting ES2105 (or ES6) classes. Starting with version 49, Chrome natively supported classes. But imagine that you need to support Chrome going back to version 30, a version of Chrome that doesn’t support classes.</p>
 <p>Change the <code>browserslist.development</code> property in the <code>package.json</code> file to this:</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb75-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb75-2" title="2">  <span class="dt">&quot;browserslist&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -1168,7 +1173,7 @@ REACT_APP_BAR: another value</code></pre>
 <a class="sourceLine" id="cb80-8" title="8">    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;root&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></a>
 <a class="sourceLine" id="cb80-9" title="9">  <span class="kw">&lt;/body&gt;</span></a>
 <a class="sourceLine" id="cb80-10" title="10"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
-<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the “Sources” for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
+<p>Run your application again using <code>npm start</code>. Open your browser’s developer tools and view the "Sources" for the current page. Expand the <code>localhost:3000</code> node on the left and select <code>(index)</code>. Notice that the text <code>%REACT_APP_TITLE%</code> within the <code>&lt;title&gt;</code> element has been converted to the text literal <code>Exploring React Builds</code>:</p>
 <figure>
 <img src="images/react-builds-index-html.png" alt="react builds index html" /><figcaption>react builds index html</figcaption>
 </figure>
@@ -1306,7 +1311,7 @@ REACT_APP_BAR: another value</code></pre>
 </ul>
 <p>Now add a folder named <code>public</code> to the root of your Express project. Copy the files from the <code>build</code> folder in your Create React App project to the <code>public</code> folder in the Express application project. Then run your application using the command <code>node app.js</code>.</p>
 <p>Open a browser and browse to the URL <code>http://localhost:9000/</code>. You should see your React application served from your Express application! Be sure to click the navigation links to verify that all of your configured routes work as expected.</p>
-<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can “deep link” to any of your React application’s routes:</p>
+<p>Also, because you configured Express to serve the <code>./public/index.html</code> file for any request that doesn’t match a static file, you can "deep link" to any of your React application’s routes:</p>
 <ul>
 <li><a href="http://localhost:9000/image">http://localhost:9000/image</a></li>
 <li><a href="http://localhost:9000/class-component">http://localhost:9000/class-component</a></li>

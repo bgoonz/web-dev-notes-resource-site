@@ -50,7 +50,7 @@
         </li>
         <li>
             <ol start="6" type="a">
-                <li>a <code>&lt;name&gt;</code> that has a “latest” tag satisfying (e)</li>
+                <li>a <code>&lt;name&gt;</code> that has a "latest" tag satisfying (e)</li>
             </ol>
         </li>
         <li>
@@ -80,7 +80,7 @@
     <ul>
         <li>
             <p>name: This should be a string that identifies your project. Please do not use the name to specify that it
-                runs on node, or is in JavaScript. You can use the “engines” field to explicitly state the versions of
+                runs on node, or is in JavaScript. You can use the "engines" field to explicitly state the versions of
                 node (or whatever else) that your program requires, and it’s pretty well assumed that it’s JavaScript.
             </p>
             <p>It does not necessarily need to match your github repository name.</p>
@@ -100,16 +100,16 @@
         <li>
             <p>scripts: If you have a special compilation or installation script, then you should put it in the
                 <code>scripts</code> object. You should definitely have at least a basic smoke-test command as the
-                “scripts.test” field. See <a href="/using-npm/scripts">scripts</a>.
+                "scripts.test" field. See <a href="/using-npm/scripts">scripts</a>.
             </p>
         </li>
         <li>
-            <p>main: If you have a single module that serves as the entry point to your program (like what the “foo”
-                package gives you at require(“foo”)), then you need to specify that in the “main” field.</p>
+            <p>main: If you have a single module that serves as the entry point to your program (like what the "foo"
+                package gives you at require("foo")), then you need to specify that in the "main" field.</p>
         </li>
         <li>
-            <p>directories: This is an object mapping names to folders. The best ones to include are “lib” and “doc”,
-                but if you use “man” to specify a folder full of man pages, they’ll get installed just like these ones.
+            <p>directories: This is an object mapping names to folders. The best ones to include are "lib" and "doc",
+                but if you use "man" to specify a folder full of man pages, they’ll get installed just like these ones.
             </p>
         </li>
     </ul>
@@ -196,7 +196,7 @@
 <a class="sourceLine" id="cb4-2" title="2"><span class="ex">npm</span> install ../my-package</a></code></pre>
     </div>
     <p>to install it locally into the node_modules folder in that other place.</p>
-    <p>Then go into the node-repl, and try using require(“my-thing”) to bring in your module’s main module.</p>
+    <p>Then go into the node-repl, and try using require("my-thing") to bring in your module’s main module.</p>
     <h3 id="create-a-user-account">Create a User Account</h3>
     <p>Create a user with the adduser command. It works like this:</p>
     <div class="sourceCode" id="cb5">

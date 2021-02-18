@@ -16,7 +16,9 @@
 <li><a href="/command-line/env.md">.env</a></li>
 </ul>
 <h3 id="motivation">Motivation</h3>
-<p>Not all data can be or should be stored in a relational way. In those cases, it is more efficient to use a NoSQL database. MongoDB is one of the most popular NoSQL databases. MongoDB stores data in JSON-like “documents,” which is familiar to folks who use JavaScript.</p>
+<p>Not all data can be or should be stored in a relational way. In those cases, it is more efficient to use a NoSQL
+    database. MongoDB is one of the most popular NoSQL databases. MongoDB stores data in JSON-like “documents," which is
+    familiar to folks who use JavaScript.</p>
 <p><strong>Which companies use MongoDB?</strong></p>
 <ul>
 <li>Adobe: The <a href="https://www.mongodb.com/partners/adobe">link here</a> describes the use of MongoDB in Adobe.</li>
@@ -50,7 +52,9 @@
 </ul>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ul>
-<li><strong>“I already learned how to use relational databases. I’ll just stick with that. They both store data anyway.”</strong> The structure of relational databases is set up for relational data. Using a relational database for non-relational data results in reduced scalability and added cost.</li>
+<li><strong>“I already learned how to use relational databases. I’ll just stick with that. They both store data
+        anyway."</strong> The structure of relational databases is set up for relational data. Using a relational
+    database for non-relational data results in reduced scalability and added cost.</li>
 </ul>
 <h3 id="guided-practice">Guided Practice</h3>
 <p>Techtonica staff will assign pairs.</p>
@@ -67,13 +71,13 @@
 <p><strong>Activity 2: Working with Database</strong></p>
 <ul>
 <li><p>The command <code>use &lt;db&gt;</code> sets the current database you’ll be working with. In the shell, run <code>use techtonica</code>. Then run <code>show dbs</code>, which will list out the list of databases. What database is there? What is missing?</p></li>
-<li><p>The newly created database, “techtonica”, should be missing. This is because the <code>techtonica</code> database is empty. Let’s insert some data storing people’s name (as a string) and birth month (as an integer). Insert a document by running <code>db.classmates.insert({"name": "your_name", "month": your_birthmonth})</code>. Do it at least two more times with a friend’s name. Remember not to double-quote the birth month to keep it as a digit instead of a string.</p></li>
+<li><p>The newly created database, “techtonica", should be missing. This is because the <code>techtonica</code> database is empty. Let’s insert some data storing people’s name (as a string) and birth month (as an integer). Insert a document by running <code>db.classmates.insert({"name": "your_name", "month": your_birthmonth})</code>. Do it at least two more times with a friend’s name. Remember not to double-quote the birth month to keep it as a digit instead of a string.</p></li>
 <li><p>Type <code>show dbs</code> again and see that the <code>techtonica</code> database now shows up.</p></li>
 <li><p>MongoDB stores documents in collections. Run <code>show collections</code>. What is already there? Where did it come from?</p></li>
 <li><p>Run <code>db.createCollection("volunteers")</code>.</p></li>
 <li><p>View what’s in each collection by running <code>db.classmates.find()</code> and <code>db.volunteers.find()</code>. What’s the difference?</p></li>
 <li><p>Fix the empty volunteer collection by entering a document: <code>db.volunteers.insert({"volunteer": "Adrien"})</code> and <code>db.volunteers.insert({"volunteer": "Jamie"})</code>.</p></li>
-<li><p>Now we’ll try out the <code>remove</code> command. Select a number between your birth month and your pair’s birth month inside the classmates collection. Run <code>db.classmates.remove({"month": {$lt: the_number_your_selected}})</code>. The “$lt” means “less than.” What do you think happened to the collections?</p></li>
+<li><p>Now we’ll try out the <code>remove</code> command. Select a number between your birth month and your pair’s birth month inside the classmates collection. Run <code>db.classmates.remove({"month": {$lt: the_number_your_selected}})</code>. The “$lt" means “less than." What do you think happened to the collections?</p></li>
 <li><p>Run <code>db.classmates.find()</code>. Were you correct?</p></li>
 <li><p>Run <code>db.volunteers.remove({})</code>, then <code>db.volunteers.find()</code>. What happened?</p></li>
 <li><p>Make sure you are in the techtonica database by running <code>use techtonica</code>. Make sure the output is <code>switched to db techtonica</code>. Then, you will delete the techtonica database by running <code>db.dropDatabase()</code>. The output should be <code>{ "dropped" : "techtonica", "ok" : 1 }</code>.</p></li>
@@ -99,9 +103,9 @@
 <li><p>Optionally, you can reference <a href="https://youtu.be/4yqu8YF29cU">this video</a> which uses the same technologies to build an API.</p></li>
 </ul>
 <h3 id="challenge">Challenge</h3>
-<p>“<span class="math inline">$lt" was used earlier to filter out which documents you deleted. MongoDB's documentation has a page on [Operators](https://docs.mongodb.com/manual/reference/operator/query/). What type of operator is "$</span>lt”?</p>
-<p>Operators can be used to filter what you want to include and what you want to exclude. For example, <code>db.classmated.find({"month": {$lt: 6}})</code> will output anyone born before July (if you set your_birthmonth “July” as 6; because January is 0 in DateTime). You will be testing some of it next.</p>
-<p>Open up the MongoDB daemon and shell again, create a database named “filterData”. Create a collection named “zoo”. Create at least 3 documents in the following format: <code>{"type": "lion", "name": "Suzy", "age": 10}</code>. Look at MongoDB’s Operator page and find at least one operator other than Comparison Operator (which $lt was), and then test it out in the zoo collection.</p>
+<p>“<span class="math inline">$lt" was used earlier to filter out which documents you deleted. MongoDB's documentation has a page on [Operators](https://docs.mongodb.com/manual/reference/operator/query/). What type of operator is "$</span>lt"?</p>
+<p>Operators can be used to filter what you want to include and what you want to exclude. For example, <code>db.classmated.find({"month": {$lt: 6}})</code> will output anyone born before July (if you set your_birthmonth “July" as 6; because January is 0 in DateTime). You will be testing some of it next.</p>
+<p>Open up the MongoDB daemon and shell again, create a database named “filterData". Create a collection named “zoo". Create at least 3 documents in the following format: <code>{"type": "lion", "name": "Suzy", "age": 10}</code>. Look at MongoDB’s Operator page and find at least one operator other than Comparison Operator (which $lt was), and then test it out in the zoo collection.</p>
 <h3 id="check-for-understanding">Check for Understanding</h3>
 <p>List out the steps to store data in MongoDB. Find a classmate. One of you will try to explain the steps by comparing it to organizing books, and the other will compare it to organizing kitchen utensils.</p>
 <h3 id="a-note-about-mongoose">A Note About Mongoose</h3>

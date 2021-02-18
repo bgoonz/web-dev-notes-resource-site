@@ -61,10 +61,10 @@ source=Apple System</code></pre>
 <li>Please watch the video the first time without working along with the demonstration. Just absorb the concepts. Then, you can watch the demonstration a second time and code with the instructor if you like.</li>
 </ul>
 <p>Read through lesson slides: <a href="https://docs.google.com/presentation/d/1INKaWqRQy79seTNmRUT444e0jSDbog8NB0maeCQoGm4/edit?usp=sharing">Command Line Interface</a></p>
-<h3 id="accessing-the-command-line-terminal">Accessing the Command Line (“Terminal”)</h3>
+<h3 id="accessing-the-command-line-terminal">Accessing the Command Line (“Terminal")</h3>
 <ol type="1">
 <li>Hold down the <code>COMMAND</code> key and press the spacebar once. This opens the OSX launcher, Spotlight.</li>
-<li>When the search bar appears type “terminal” and press <code>ENTER</code> to launch the Terminal app.</li>
+<li>When the search bar appears type “terminal" and press <code>ENTER</code> to launch the Terminal app.</li>
 <li>The Terminal appears as a new window on the desktop and an icon in the dock.</li>
 </ol>
 <h3 id="list-of-basic-terminal-commands">List of basic Terminal commands</h3>
@@ -104,9 +104,9 @@ chown -  change ownership</code></pre>
 <p>Instructor demonstrates how to use many of the above commands in the video walkthrough of the lesson slides.</p>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ul>
-<li><p><strong>“I have always just downloaded everything I need with my mouse. I don’t need to use the CLI.”</strong> As you continue programming, you will learn new languages and tools. There are some important tools out there that can only be accessed via CLI. One example is NPM (node package manager), which we’ll use in a few weeks.</p></li>
-<li><p><strong>“I am afraid of getting into the wrong directory. Isn’t it easier to just click and type?”</strong> There are simple commands you can run in the CLI to check which directory you’re in. Once you get into the habit of using the CLI, you can quickly navigate through files and directories without leaving the keyboard, greatly increasing speed and efficiency.</p></li>
-<li><p><strong>“What if I accidentally delete important directories or files that affect my computer’s operations?”</strong> Most files and directories for computer operation are protected in some way. They could be hidden or have higher permission settings. Hidden files, for example, have a dot in front of their file name, and you can’t see them without certain commands or special settings. If you are editing such files and you don’t know why, please check with the instructor.</p></li>
+<li><p><strong>“I have always just downloaded everything I need with my mouse. I don’t need to use the CLI."</strong> As you continue programming, you will learn new languages and tools. There are some important tools out there that can only be accessed via CLI. One example is NPM (node package manager), which we’ll use in a few weeks.</p></li>
+<li><p><strong>“I am afraid of getting into the wrong directory. Isn’t it easier to just click and type?"</strong> There are simple commands you can run in the CLI to check which directory you’re in. Once you get into the habit of using the CLI, you can quickly navigate through files and directories without leaving the keyboard, greatly increasing speed and efficiency.</p></li>
+<li><p><strong>“What if I accidentally delete important directories or files that affect my computer’s operations?"</strong> Most files and directories for computer operation are protected in some way. They could be hidden or have higher permission settings. Hidden files, for example, have a dot in front of their file name, and you can’t see them without certain commands or special settings. If you are editing such files and you don’t know why, please check with the instructor.</p></li>
 </ul>
 <h3 id="a-note-about-naming-files-and-folders">A note about naming files and folders</h3>
 <pre><code>helloThisIsCamelCase becauseCamelsHaveHumps
@@ -115,13 +115,13 @@ this-is-kebab-case it-looks-like-the-words-are-stuck-on-kebabs</code></pre>
 <p>We use camelCase in JavaScript! We tend to use snake_case.html for filenames on Unix &amp; Linux systems. We tend to use kebab-case for directory (folder) names and git repository names.</p>
 <h3 id="independent-practice">Independent Practice</h3>
 <ol type="1">
-<li><p>Navigate to your Desktop. Create a directory named “foo”. Use <code>cd foo</code> to navigate into “foo” and create another directory named “bar”.</p></li>
+<li><p>Navigate to your Desktop. Create a directory named “foo". Use <code>cd foo</code> to navigate into “foo" and create another directory named “bar".</p></li>
 <li><p>Run <code>cd bar</code>. What directory are you in now? Check by running <code>pwd</code>.</p></li>
 <li><p>Run <code>cd ../</code>. What directory do you think you are in now? Check by running <code>pwd</code>.</p></li>
-<li><p>Navigate back to the “bar” directory and run <code>touch first.txt</code> and <code>touch ../second.txt</code>. You have not <code>cd</code>’d into the “foo” directory, but your second command contained <code>../</code>. Can you guess where <code>second.txt</code> is located?</p></li>
-<li><p>Check your answer by running <code>ls</code> inside both the “foo” and the “bar” directory. The <code>second.txt</code> file should be inside the “foo” directory.</p></li>
-<li><p>Navigate into the “bar” directory. Run <code>cp first.txt ../</code>. Use <code>ls</code> and make sure both directories have a <code>first.txt</code> file.</p></li>
-<li><p>Navigate back into the “foo” directory. Run <code>mv second.txt foofile.txt</code>, then run <code>ls</code>. What happened to “second.txt”?</p></li>
+<li><p>Navigate back to the “bar" directory and run <code>touch first.txt</code> and <code>touch ../second.txt</code>. You have not <code>cd</code>’d into the “foo" directory, but your second command contained <code>../</code>. Can you guess where <code>second.txt</code> is located?</p></li>
+<li><p>Check your answer by running <code>ls</code> inside both the “foo" and the “bar" directory. The <code>second.txt</code> file should be inside the “foo" directory.</p></li>
+<li><p>Navigate into the “bar" directory. Run <code>cp first.txt ../</code>. Use <code>ls</code> and make sure both directories have a <code>first.txt</code> file.</p></li>
+<li><p>Navigate back into the “foo" directory. Run <code>mv second.txt foofile.txt</code>, then run <code>ls</code>. What happened to “second.txt"?</p></li>
 <li><p>Use <code>TAB key</code> to autocomplete the names of directories and files while in the command line faster as it’ll autocomplete the string as far as it can before you have to disambiguate. Hit the tab twice to see the list of <strong>autocomplete possibilities</strong> (if multiple matches).</p></li>
 <li><p>The root directory is the directory that contains all other directories and files on the system and which is designated by a forward slash ( / ). Root is the very top directory of the directory tree diagram. The root directory of a GitHub project is the top most directory of your git project which contains all the files hosted on GitHub.</p></li>
 <li><p>You can immediately open whatever folder or directory you are working within into the Finder of MacOS and Mac OS X by simply typing <code>open .</code> and executing it<br />
@@ -131,7 +131,7 @@ this-is-kebab-case it-looks-like-the-words-are-stuck-on-kebabs</code></pre>
 </ol>
 <h3 id="cd-commands">cd commands</h3>
 <ol type="1">
-<li>To navigate to your home directory, use “cd” or <code>cd ~</code></li>
+<li>To navigate to your home directory, use “cd" or <code>cd ~</code></li>
 <li>To navigate up one directory level, use <code>cd ..</code></li>
 <li>To navigate to the previous directory (or back), use <code>cd -</code></li>
 <li>To navigate into the root directory, use <code>cd /</code></li>
@@ -152,8 +152,8 @@ this-is-kebab-case it-looks-like-the-words-are-stuck-on-kebabs</code></pre>
    $cd abc</code></pre></li>
 </ol>
 <h3 id="challenge">Challenge</h3>
-<p>Run the <code>ls -l</code> command in the “foo” directory and compare it to the outcome of just running the <code>ls</code> command. The output from <code>ls -l</code> is different – how?</p>
-<p>Next, run <code>man ls</code>. Scroll to the bolded title “The Long Format”. The first few paragraphs talk about what <code>-l</code> displays. Look for the one that starts with “The file mode…”. Read it and see if your guess is correct.</p>
+<p>Run the <code>ls -l</code> command in the “foo" directory and compare it to the outcome of just running the <code>ls</code> command. The output from <code>ls -l</code> is different – how?</p>
+<p>Next, run <code>man ls</code>. Scroll to the bolded title “The Long Format". The first few paragraphs talk about what <code>-l</code> displays. Look for the one that starts with “The file mode…". Read it and see if your guess is correct.</p>
 <p>Scroll through the manual and see if you can get an idea of what the format of a manual is typically like. Feel free to check out the manual for some of the command above. Whenever you are done, type <code>q</code> to exit.</p>
 <p><a href="./command-line-advanced.md">Click here to learn more advanced commands</a>.</p>
 <h4 id="configure-your-terminal-with-oh-my-zsh-optional">Configure your Terminal with Oh My ZSH (Optional)</h4>

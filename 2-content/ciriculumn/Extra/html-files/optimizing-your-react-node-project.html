@@ -41,7 +41,8 @@
 </ul>
 <h3 id="lesson">Lesson</h3>
 <p><em>Building (includes minification)</em></p>
-<p>You’ve already configured building for heroku deployment. Let’s run a build on our local machine, check out what gets generated, and then use our Node.js backend to serve up a “production” build locally.</p>
+<p>You’ve already configured building for heroku deployment. Let’s run a build on our local machine, check out what gets
+    generated, and then use our Node.js backend to serve up a “production" build locally.</p>
 <ol type="1">
 <li>Run the <code>npm run build</code> command from somewhere in your repository.</li>
 <li>Take a look at the contents of the newly created <code>build</code> directory in the repository root directory, specifically what’s inside the <code>static</code> and <code>static/js</code> directories. You can read more about these files in the linked page in the <a href="#materials">Materials</a> section.</li>
@@ -59,14 +60,19 @@
 <li>Once you’ve configured your express server to serve up your built assets, go ahead and open up your browser to <code>http://localhost:5000</code> (or whatever port your express app is using), and make sure that it works just like you expect.</li>
 </ol>
 <p><em>Adding Eventful Search Caching to Your App</em></p>
-<p>We’re going to be adding a component to your app, along with a separate server-side search API app that allows us to search the Eventful API. The code for both can be found in this <a href="https://gist.github.com/mhess/2a9213d209c4ea464ab305f7bec56300">gist</a>. Click the “Download ZIP” button on the gist page, unzip the contents, and then place the <strong>EventfulSearch.js</strong> next to all your other component files, and the <strong>eventful-api-server.js</strong> in your API repository folder. You should be able to run it with the following command:</p>
+<p>We’re going to be adding a component to your app, along with a separate server-side search API app that allows us to
+    search the Eventful API. The code for both can be found in this <a
+        href="https://gist.github.com/mhess/2a9213d209c4ea464ab305f7bec56300">gist</a>. Click the “Download ZIP" button
+    on the gist page, unzip the contents, and then place the <strong>EventfulSearch.js</strong> next to all your other
+    component files, and the <strong>eventful-api-server.js</strong> in your API repository folder. You should be able
+    to run it with the following command:</p>
 <pre class="shell"><code>$ EVENTFUL_API_KEY=&lt;YOUR_KEY_HERE&gt; node eventful-api-server.js</code></pre>
 <p>Import and place the <code>&lt;EventfulSearch /&gt;</code> somewhere in one of your app components that makes sense. You should now be able to see that component in your app. Don’t worry about styling for now. You can add that later :)</p>
 <p>Reload your Eventonica React app with the browser dev tools open. Notice the delay when searching for events, and use the network tab to see how long the AJAX requests are actually taking. Would be nice if we could cache results so that repeat searches are fast…</p>
 <p>Let’s optimize this for two different use cases:</p>
 <ol type="1">
 <li><p>We have very limited server-side resources, and so we don’t want to cache the search results there. Could we cache the results on the browser? If so, how could we make sure that this doesn’t consume too much of the browser user’s memory? In what ways is this better than caching on the backend server? In what ways is this worse?</p></li>
-<li><p>We have plenty of server-side resources, and we can cache results there. Let’s use a server-side cache implementation that looks very similar to part 1 and just store our cache in the node application’s memory. In the real world with an app that’s serving millions of users, this wouldn’t be a good strategy since we’ll probably have multiple node processes (“web dynos” in Heroku) serving our app, and it would be wasteful for each process to have a separate copy of the cache. Instead, we would use a separate memory store service (like <a href="https://www.memcached.org/">memcached</a> or <a href="https://redis.io/">redis</a>) that each of the processes would have access to.</p></li>
+<li><p>We have plenty of server-side resources, and we can cache results there. Let’s use a server-side cache implementation that looks very similar to part 1 and just store our cache in the node application’s memory. In the real world with an app that’s serving millions of users, this wouldn’t be a good strategy since we’ll probably have multiple node processes (“web dynos" in Heroku) serving our app, and it would be wasteful for each process to have a separate copy of the cache. Instead, we would use a separate memory store service (like <a href="https://www.memcached.org/">memcached</a> or <a href="https://redis.io/">redis</a>) that each of the processes would have access to.</p></li>
 </ol>
 <p><em>Optimizing React</em></p>
 <p>By default a React component will re-render whenever it receives new <strong>props</strong> or if <strong>setState</strong> method is called with any argument. This is usually what you want, but if your component always renders the same thing with the same <strong>props</strong> and <strong>state</strong> (and it probably should) then that means that whenever its parent component re-renders, then the child will re-render too, even if its <strong>props</strong> and <strong>state</strong> are the same.</p>
@@ -82,9 +88,9 @@
 <p>Now let’s put these React optimization techniques into practice!</p>
 <ol type="1">
 <li>Install <a href="https://github.com/facebook/react-devtools">React Dev Tools</a> in your browser.</li>
-<li>Reload your app with the tools installed, open the normal dev tools, and go to the “React” tab (all the way to the right).</li>
-<li>Once the “React” tab is open, select the a “Profiler” tab within that.</li>
+<li>Reload your app with the tools installed, open the normal dev tools, and go to the “React" tab (all the way to the right).</li>
+<li>Once the “React" tab is open, select the a “Profiler" tab within that.</li>
 <li>Click the gray circular record button on the left, and this will begin profiling the render actions in your app.</li>
-<li>Perform a single action like creating, editing or deleting one of your events, and then click the orange “stop” button in the dev tools. A flamegraph will appear with all the component renders and their associated time cost.</li>
+<li>Perform a single action like creating, editing or deleting one of your events, and then click the orange “stop" button in the dev tools. A flamegraph will appear with all the component renders and their associated time cost.</li>
 <li>With a delete, create, or update of an event, only one <code>&lt;Event /&gt;</code> element is really getting changed, the rest should stay the same. Compare that to how many (re-)renders are you seeing in your flame graph. Use the techniques we learned above to try and make it so that your app only renders the modified/deteled/created element.</li>
 </ol>

@@ -1,6 +1,8 @@
+
+
 <p>TRIM ALL(USE WITH CAUTION): find . -depth -exec rmdir {} ;<br />
 find . -empty -type f -print -delete find . -empty -type d -print -delete</p>
-<p>find . ( -name “.git” -o -name “.gitignore” -o -name “.gitmodules” -o -name “.gitattributes” ) -exec rm -rf – {} + find . ( -name “<em>SECURITY.txt" -o -name "</em>RELEASE.txt” -o -name “<em>CHANGELOG.txt" -o -name "</em>LICENSE.txt” -o -name “<em>CONTRIBUTING.txt" -name "</em>HISTORY.md” -o -name “<em>LICENSE" -o -name "</em>SECURITY.md” -o -name “<em>RELEASE.md" -o -name "</em>CHANGELOG.md” -o -name “<em>LICENSE.md" -o -name "</em>CODE_OF_CONDUCT.md” -o -name "*CONTRIBUTING.md" ) -exec rm -rf – {} + ———————————————————————————————————</p>
+<p>find . ( -name “.git" -o -name “.gitignore" -o -name “.gitmodules" -o -name “.gitattributes" ) -exec rm -rf – {} + find . ( -name “<em>SECURITY.txt" -o -name "</em>RELEASE.txt" -o -name “<em>CHANGELOG.txt" -o -name "</em>LICENSE.txt" -o -name “<em>CONTRIBUTING.txt" -name "</em>HISTORY.md" -o -name “<em>LICENSE" -o -name "</em>SECURITY.md" -o -name “<em>RELEASE.md" -o -name "</em>CHANGELOG.md" -o -name “<em>LICENSE.md" -o -name "</em>CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" ) -exec rm -rf – {} + ———————————————————————————————————</p>
 <p>find . -name "*.xml" -type f -print</p>
 <p>find . -name ‘node_modules’ -type d -prune -exec rm -rf ‘{}’ + find . -name ‘.vscode’ -type d -prune -exec rm -rf ‘{}’ + ——————————————————————————————————— youtube-dl https://www.youtube.com/user/Mihirishere/videos</p>
 <hr />
@@ -15,7 +17,7 @@ find . -empty -type f -print -delete find . -empty -type d -print -delete</p>
 <td style="text-align: left;">httrack –ext-depth=3 https://www.textfixer.com/html/convert-url-to-html-link.php</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">httrack http://jellydemos.com/html/muziq/muziq-hardrock/index-multipages.html -O “./temp” %e5</td>
+<td style="text-align: left;">httrack http://jellydemos.com/html/muziq/muziq-hardrock/index-multipages.html -O “./temp" %e5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">httrack –ext-depth=4 http://jellydemos.com/html/muziq/muziq-hardrock/index-multipages.html</td>
@@ -28,23 +30,23 @@ find . -empty -type f -print -delete find . -empty -type d -print -delete</p>
 <p>grab all links from website lynx -dump https://distrokid.com/hyperfollow/mihirbeg/getting-there | awk ‘/http/{print $2}’ &gt; links2.txt</p>
 <p>lynx -dump https://geeksforgeeks.org/top-10-useful-github-repos-that-every-developer-should-follow | awk ‘/http/{print $2}’ &gt; links.md</p>
 <p>lynx -dump https://html.com/blog/100-web-development-cheat-sheets | awk ‘/http/{print $2}’ &gt; links.md</p>
-<p>wget -qO- www.instagram.com/mihirbeg/ | grep -Eoi ‘&lt;a [^&gt;]+&gt;’ | grep -Eo ‘href=“[^\"]+”’ | grep -Eo ‘(http|https)://[^/"]+’&gt;output.md ———————————————————————————————————</p>
+<p>wget -qO- www.instagram.com/mihirbeg/ | grep -Eoi ‘&lt;a [^&gt;]+&gt;’ | grep -Eo ‘href=“[^\"]+"’ | grep -Eo ‘(http|https)://[^/"]+’&gt;output.md ———————————————————————————————————</p>
 <p>.<em>(?&lt;=&lt;script)(.</em>)(?=&lt;/script&gt;).<em> .</em>./.git.<em> .</em>node_modules.*</p>
-<p>find . -name “<em>.zip" -type f -print find . -name "</em>.zip” -type f -print -delete ——————————————————————————————————— REMOVE DUPLICATE LINES:</p>
+<p>find . -name “<em>.zip" -type f -print find . -name "</em>.zip" -type f -print -delete ——————————————————————————————————— REMOVE DUPLICATE LINES:</p>
 <h2 id="uniq--u-input.txt-output.txt">uniq -u input.txt output.txt</h2>
 <p>2.)find and delete all empty directories()===&gt;</p>
 <h2 id="find-.--empty--type-d--print--delete">find . -empty -type d -print -delete</h2>
 <p>3.)Find and delete all empty files()===&gt;</p>
 <h2 id="find-.--empty--type-f--print--delete">find . -empty -type f -print -delete</h2>
 <p>4.)Recursive-unzip:()===&gt;</p>
-<p>find . -name "*.zip" | while read filename; do unzip -o -d “<code>dirname "$filename"</code>” “$filename”; done;</p>
+<p>find . -name "*.zip" | while read filename; do unzip -o -d “<code>dirname "$filename"</code>" “$filename"; done;</p>
 <p>find . -name "*.ini" -type f -print -delete</p>
 <p>find . -name "*.zip" -type f -print -delete ———————————————————————————————————</p>
 <p>add extension to every file in folder</p>
-<p>for f in * ; do mv “<span class="math inline">$f" "$</span>f.html” done</p>
-<p>for f in * ; do mv “<span class="math inline">$f" "$</span>f.css” done ——————————————————————————————————— delete lines contaning specific string:</p>
+<p>for f in * ; do mv “<span class="math inline">$f" "$</span>f.html" done</p>
+<p>for f in * ; do mv “<span class="math inline">$f" "$</span>f.css" done ——————————————————————————————————— delete lines contaning specific string:</p>
 <p>sed -i ‘/.git/d’ ./index.html 2</p>
-<p>find . -type f -a ( -name “<em>.html" -o -name "</em>.js” -o -name “<em>.css" -o -name "</em>.md” ) -a -exec sed -i ‘/Copyright/d’ ‘{}’ + sed -i ‘/Copyright/d’ ./*.html ———————————————————————————————————</p>
+<p>find . -type f -a ( -name “<em>.html" -o -name "</em>.js" -o -name “<em>.css" -o -name "</em>.md" ) -a -exec sed -i ‘/Copyright/d’ ‘{}’ + sed -i ‘/Copyright/d’ ./*.html ———————————————————————————————————</p>
 <p>Remove lines of file contaning a string</p>
 <p>sudo sed -i ‘/.git/d’ ./index.html sudo sed -i ‘/assets/d’ ./index.html ——————————————————————————————————— To find a pattern and remove the line containing the pattern below command can be used</p>
 <table>
@@ -59,7 +61,7 @@ find . -empty -type f -print -delete find . -empty -type d -print -delete</p>
 </tr>
 </tbody>
 </table>
-<p>ls -R ‘./’ | awk ’ /:$/&amp;&amp;f{s=<span class="math inline">$0;f=0} /:$</span>/&amp;&amp;!f{sub(/:$/,"“);s=$0;f=1;next} NF&amp;&amp;f{ print s”/"$0 }’&gt;listing.md</p>
+<p>ls -R ‘./’ | awk ’ /:$/&amp;&amp;f{s=<span class="math inline">$0;f=0} /:$</span>/&amp;&amp;!f{sub(/:$/,"“);s=$0;f=1;next} NF&amp;&amp;f{ print s"/"$0 }’&gt;listing.md</p>
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -69,7 +71,7 @@ find . -empty -type f -print -delete find . -empty -type d -print -delete</p>
 <td style="text-align: left;">DO a command once for every file in folder rename ‘s/.coffee<span class="math inline">$/.html/' *.coffee for file in *. do rename 's/\.coffee$</span>/.html/’ *.coffee done</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">for file in *. do sed ‘/Mirrored from/d’ “<span class="math inline">$file" &gt; "$</span>file”.new_file.html done</td>
+<td style="text-align: left;">for file in *. do sed ‘/Mirrored from/d’ “<span class="math inline">$file" &gt; "$</span>file".new_file.html done</td>
 </tr>
 </tbody>
 </table>
@@ -348,7 +350,7 @@ echo "
 <p>"</p>
 awk ’{print "
 <li>
-<a href=\""$1"\">“,$1,” 
+<a href=\""$1"\">“,$1," 
 </li>
 <p>"}’ $listing</p>
 # awk ’{print "
@@ -388,4 +390,4 @@ done
 </code></pre>
 <hr />
 <p>print a dummy text file in each folder</p>
-<p>for x in “./”/*/; do (cd “<span class="math inline">$x"  files=(*)  printf '%s\n' "$</span>{files[@]}” &gt; deleteme.txt ) done</p>
+<p>for x in “./"/*/; do (cd “<span class="math inline">$x"  files=(*)  printf '%s\n' "$</span>{files[@]}" &gt; deleteme.txt ) done</p>

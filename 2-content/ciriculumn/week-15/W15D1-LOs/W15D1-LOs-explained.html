@@ -73,7 +73,9 @@
 <ul>
 <li>Dispatching an action means we are going to be sending an object to our reducer in order to impact our store in some way.</li>
 <li>The action that we dispatch should have a <code>type</code> key so that our reducer’s switch statement can determine if/how it needs to interact with the object.</li>
-<li>Our action can have optional additional key/value pairs, often referred to as the “payload”, so that our reducer can use this data to impact our store. We often include data that we are trying to add, objects that we are trying to modify, keys to items we are trying to remove, etc.</li>
+<li>Our action can have optional additional key/value pairs, often referred to as the "payload", so that our reducer can
+    use this data to impact our store. We often include data that we are trying to add, objects that we are trying to
+    modify, keys to items we are trying to remove, etc.</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="co">// The action that we&#39;ll dispatch:</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">const</span> addOrange <span class="op">=</span> <span class="op">{</span></a>
@@ -128,7 +130,9 @@
 <ul>
 <li>We can view the current structure and contents of the store by invoking the <code>store.getState()</code> function.</li>
 <li>The return value is a snapshot of the current store; its current contents.</li>
-<li>We’ve seen examples in the previous code block, where we invoke <code>getState</code> and then log the results. We did this in a “display” function that we subscribed to the store so that any action being dispatched results in us getting the current state of the store and logging it to the console.</li>
+<li>We’ve seen examples in the previous code block, where we invoke <code>getState</code> and then log the results. We
+    did this in a "display" function that we subscribed to the store so that any action being dispatched results in us
+    getting the current state of the store and logging it to the console.</li>
 </ul>
 <ol start="8" type="1">
 <li>Use a <code>switch</code> statement within a reducer function to handle multiple action types</li>
@@ -175,7 +179,7 @@
 <ul>
 <li>We can create functions that will return objects in a format that will be able to be dispatched to our store.</li>
 <li>The reason we would want to make a function for this is to make our code dry and more dynamic.</li>
-<li>If we want to be able to add “apple”, “banana”, or “orange” into our store, instead of having to make an action for each, we can make a function that takes in the fruit that we want to add and then returns the action POJO appropriate for that fruit:</li>
+<li>If we want to be able to add "apple", "banana", or "orange" into our store, instead of having to make an action for each, we can make a function that takes in the fruit that we want to add and then returns the action POJO appropriate for that fruit:</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">const</span> addFruit <span class="op">=</span> (fruit) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb6-2" title="2">  <span class="cf">return</span> <span class="op">{</span></a>

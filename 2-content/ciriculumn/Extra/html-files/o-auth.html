@@ -13,7 +13,12 @@
 <li><a href="/command-line/env.md">.env lesson</a></li>
 </ul>
 <h3 id="motivation">Motivation</h3>
-<p>Many app developers need a way to persist user information from session to session, but they also want to provide a smooth experience for those users. The OAuth protocol allows the user to “log in” to an app using their Google account (or other social media accounts). This removes friction for the user because they don’t need to create a new profile or remember a new password. OAuth can be used for other types of integration, like allowing users to give an app permission to access the user’s bank balances or Dropbox files. This is beyond the scope of this lesson but may be valuable to you in the future.</p>
+<p>Many app developers need a way to persist user information from session to session, but they also want to provide a
+    smooth experience for those users. The OAuth protocol allows the user to “log in" to an app using their Google
+    account (or other social media accounts). This removes friction for the user because they don’t need to create a new
+    profile or remember a new password. OAuth can be used for other types of integration, like allowing users to give an
+    app permission to access the user’s bank balances or Dropbox files. This is beyond the scope of this lesson but may
+    be valuable to you in the future.</p>
 <h3 id="learning-styles-represented">Learning styles represented</h3>
 <ul>
 <li>See (Slides and Demonstration)</li>
@@ -47,7 +52,11 @@
 </ul>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
 <ul>
-<li><p><strong>“It’s okay if I post my API keys to my private GitHub repo.”</strong> Never push API keys to GitHub, even if you are certain the repository is secure. You might end up changing the permissions or adding a collaborator in the future. Keeping your keys off GitHub protects them from being exposed, even accidentally.</p></li>
+<li>
+    <p><strong>“It’s okay if I post my API keys to my private GitHub repo."</strong> Never push API keys to GitHub, even
+        if you are certain the repository is secure. You might end up changing the permissions or adding a collaborator
+        in the future. Keeping your keys off GitHub protects them from being exposed, even accidentally.</p>
+</li>
 <li><p><strong>Logging in to an app with OAuth gives the developer access to my Google password</strong>. Passwords are never shared and never even pass through the primary app’s servers. Instead, providing your credentials to Google (or another social media platform) along with information from the primary app tells Google it’s okay to send a <em>different</em> piece of shared secret information–tokens–to the primary app. The tokens are now associated with specific users, and <em>this</em> is the currency used between the primary app and the third-party service.</p></li>
 </ul>
 <h3 id="guided-practice">Guided Practice</h3>
@@ -62,7 +71,7 @@
 <h5 id="common-questions">Common Questions</h5>
 <ul>
 <li>If you get an error about <strong>registerServiceWorker.js</strong> not being found, serviceWorker.js can be renamed to registerServiceWorker.js to match all the times it’s being required in other files.</li>
-<li>You may get an error saying that registerServiceWorker.js has <strong>no default export</strong>. In registerServiceWorker.js, register(config) should be the default export if it isn’t already: (line 23 or so) <code>export default function register(config) {</code> -Most of the auth0 secrets you need will be in the “applications” section of your auth0.com account, except for the <strong>audience</strong>. That can be found or created in the “APIs” section.</li>
+<li>You may get an error saying that registerServiceWorker.js has <strong>no default export</strong>. In registerServiceWorker.js, register(config) should be the default export if it isn’t already: (line 23 or so) <code>export default function register(config) {</code> -Most of the auth0 secrets you need will be in the “applications" section of your auth0.com account, except for the <strong>audience</strong>. That can be found or created in the “APIs" section.</li>
 </ul>
 <h3 id="independent-practice">Independent Practice</h3>
 <p>Techtonica staff will assign pairs. Work together on the Sample App you created during the demonstration to troubleshoot the ‘Log in with Google’ feature so that when users choose that option, they can successfully log in using their Google credentials.</p>
@@ -75,7 +84,7 @@
 <h3 id="challenges">Challenges</h3>
 <p>If time permits:</p>
 <ul>
-<li>Add a “passwordless” login option to your app.</li>
+<li>Add a “passwordless" login option to your app.</li>
 <li>Change the app to store tokens to local storage instead of isLoggedIn, and that your site looks at, verifies, and authenticates using this token (but only if it is unexpired!)</li>
 </ul>
 <h3 id="supplemental-materials">Supplemental Materials</h3>

@@ -129,7 +129,7 @@
         <li>Default: null</li>
         <li>Type: String</li>
     </ul>
-    <p>When “dev” or “development” and running local <code>npm shrinkwrap</code>, <code>npm outdated</code>, or
+    <p>When "dev" or "development" and running local <code>npm shrinkwrap</code>, <code>npm outdated</code>, or
         <code>npm update</code>, is an alias for <code>--dev</code>.
     </p>
     <h4 id="audit">audit</h4>
@@ -137,7 +137,7 @@
         <li>Default: true</li>
         <li>Type: Boolean</li>
     </ul>
-    <p>When “true” submit audit reports alongside <code>npm install</code> runs to the default registry and all
+    <p>When "true" submit audit reports alongside <code>npm install</code> runs to the default registry and all
         registries configured for scopes. See the documentation for <a href="/commands/npm-audit"><code>npm
                 audit</code></a> for details on what is submitted.</p>
     <h4 id="audit-level">audit-level</h4>
@@ -188,13 +188,13 @@
         <li>Type: String, Array or null</li>
     </ul>
     <p>The Certificate Authority signing certificate that is trusted for SSL connections to the registry. Values should
-        be in PEM format (Windows calls it “Base-64 encoded X.509 (.CER)”) with newlines replaced by the string “”. For
+        be in PEM format (Windows calls it "Base-64 encoded X.509 (.CER)") with newlines replaced by the string "". For
         example:</p>
     <div class="sourceCode" id="cb3">
         <pre
             class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="va">ca=</span><span class="st">&quot;-----BEGIN CERTIFICATE-----\nXXXX\nXXXX\n-----END CERTIFICATE-----&quot;</span></a></code></pre>
     </div>
-    <p>Set to <code>null</code> to only allow “known” registrars, or to a specific CA cert to trust only that specific
+    <p>Set to <code>null</code> to only allow "known" registrars, or to a specific CA cert to trust only that specific
         signing authority.</p>
     <p>Multiple CAs can be trusted by specifying an array of certificates:</p>
     <div class="sourceCode" id="cb4">
@@ -267,12 +267,12 @@
         <li>Type: String</li>
     </ul>
     <p>A client certificate to pass when accessing the registry. Values should be in PEM format (Windows calls it
-        “Base-64 encoded X.509 (.CER)”) with newlines replaced by the string “”. For example:</p>
+        "Base-64 encoded X.509 (.CER)") with newlines replaced by the string "". For example:</p>
     <div class="sourceCode" id="cb6">
         <pre
             class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" title="1"><span class="va">cert=</span><span class="st">&quot;-----BEGIN CERTIFICATE-----\nXXXX\nXXXX\n-----END CERTIFICATE-----&quot;</span></a></code></pre>
     </div>
-    <p>It is <em>not</em> the path to a certificate file (and there is no “certfile” option).</p>
+    <p>It is <em>not</em> the path to a certificate file (and there is no "certfile" option).</p>
     <h4 id="cidr">cidr</h4>
     <ul>
         <li>Default: <code>null</code></li>
@@ -374,32 +374,32 @@
         <li>Default: true</li>
         <li>Type: Boolean</li>
     </ul>
-    <p>When “true” displays the message at the end of each <code>npm install</code> acknowledging the number of
+    <p>When "true" displays the message at the end of each <code>npm install</code> acknowledging the number of
         dependencies looking for funding. See <a href="/commands/npm-fund"><code>npm fund</code></a> for details.</p>
     <h4 id="fetch-retries">fetch-retries</h4>
     <ul>
         <li>Default: 2</li>
         <li>Type: Number</li>
     </ul>
-    <p>The “retries” config for the <code>retry</code> module to use when fetching packages from the registry.</p>
+    <p>The "retries" config for the <code>retry</code> module to use when fetching packages from the registry.</p>
     <h4 id="fetch-retry-factor">fetch-retry-factor</h4>
     <ul>
         <li>Default: 10</li>
         <li>Type: Number</li>
     </ul>
-    <p>The “factor” config for the <code>retry</code> module to use when fetching packages.</p>
+    <p>The "factor" config for the <code>retry</code> module to use when fetching packages.</p>
     <h4 id="fetch-retry-mintimeout">fetch-retry-mintimeout</h4>
     <ul>
         <li>Default: 10000 (10 seconds)</li>
         <li>Type: Number</li>
     </ul>
-    <p>The “minTimeout” config for the <code>retry</code> module to use when fetching packages.</p>
+    <p>The "minTimeout" config for the <code>retry</code> module to use when fetching packages.</p>
     <h4 id="fetch-retry-maxtimeout">fetch-retry-maxtimeout</h4>
     <ul>
         <li>Default: 60000 (1 minute)</li>
         <li>Type: Number</li>
     </ul>
-    <p>The “maxTimeout” config for the <code>retry</code> module to use when fetching packages.</p>
+    <p>The "maxTimeout" config for the <code>retry</code> module to use when fetching packages.</p>
     <h4 id="fetch-timeout">fetch-timeout</h4>
     <ul>
         <li>Default: 300000 (5 minutes)</li>
@@ -424,7 +424,7 @@
         <li>Default: false</li>
         <li>Type: Boolean</li>
     </ul>
-    <p>Operates in “global” mode, so that packages are installed into the <code>prefix</code> folder instead of the
+    <p>Operates in "global" mode, so that packages are installed into the <code>prefix</code> folder instead of the
         current working directory. See <a href="/configuring-npm/folders">folders</a> for more on the differences in
         behavior.</p>
     <ul>
@@ -525,14 +525,14 @@
     <h4 id="init-license">init-license</h4>
     <ul>
         <li>Alias: <code>init.license</code></li>
-        <li>Default: “ISC”</li>
+        <li>Default: "ISC"</li>
         <li>Type: String</li>
     </ul>
     <p>The value <code>npm init</code> should use by default for the package license.</p>
     <h4 id="init-version">init-version</h4>
     <ul>
         <li>Alias: <code>init.version</code></li>
-        <li>Default: “1.0.0”</li>
+        <li>Default: "1.0.0"</li>
         <li>Type: semver</li>
     </ul>
     <p>The value that <code>npm init</code> should use by default for the package version number, if not already set in
@@ -552,12 +552,12 @@
         <li>Type: String</li>
     </ul>
     <p>A client key to pass when accessing the registry. Values should be in PEM format with newlines replaced by the
-        string “”. For example:</p>
+        string "". For example:</p>
     <div class="sourceCode" id="cb7">
         <pre
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb7-1" title="1"><span class="er">key=&quot;-----BEGIN</span> <span class="er">PRIVATE</span> <span class="er">KEY-----\nXXXX\nXXXX\n-----END</span> <span class="er">PRIVATE</span> <span class="er">KEY-----&quot;</span></a></code></pre>
     </div>
-    <p>It is <em>not</em> the path to a key file (and there is no “keyfile” option).</p>
+    <p>It is <em>not</em> the path to a key file (and there is no "keyfile" option).</p>
     <h4 id="legacy-bundling">legacy-bundling</h4>
     <ul>
         <li>Default: false</li>
@@ -602,13 +602,13 @@
         versions of Node prior to 0.12.</p>
     <h4 id="loglevel">loglevel</h4>
     <ul>
-        <li>Default: “notice”</li>
+        <li>Default: "notice"</li>
         <li>Type: String</li>
-        <li>Values: “silent”, “error”, “warn”, “notice”, “http”, “timing”, “info”, “verbose”, “silly”</li>
+        <li>Values: "silent", "error", "warn", "notice", "http", "timing", "info", "verbose", "silly"</li>
     </ul>
     <p>What level of logs to report. On failure, <em>all</em> logs are written to <code>npm-debug.log</code> in the
         current working directory.</p>
-    <p>Any logs of a higher level than the setting are shown. The default is “notice”.</p>
+    <p>Any logs of a higher level than the setting are shown. The default is "notice".</p>
     <h4 id="logs-max">logs-max</h4>
     <ul>
         <li>Default: 10</li>
@@ -631,11 +631,11 @@
     </p>
     <h4 id="message">message</h4>
     <ul>
-        <li>Default: “%s”</li>
+        <li>Default: "%s"</li>
         <li>Type: String</li>
     </ul>
     <p>Commit message which is used by <code>npm version</code> when creating version commit.</p>
-    <p>Any “%s” in the message will be replaced with the version number.</p>
+    <p>Any "%s" in the message will be replaced with the version number.</p>
     <h4 id="node-options">node-options</h4>
     <ul>
         <li>Default: null</li>
@@ -667,13 +667,13 @@
         <li>Default: null</li>
         <li>Type: String</li>
     </ul>
-    <p>When “dev” or “development” and running local <code>npm install</code> without any arguments, only
+    <p>When "dev" or "development" and running local <code>npm install</code> without any arguments, only
         devDependencies (and their dependencies) are installed.</p>
-    <p>When “dev” or “development” and running local <code>npm ls</code>, <code>npm outdated</code>, or <code>npm
+    <p>When "dev" or "development" and running local <code>npm ls</code>, <code>npm outdated</code>, or <code>npm
             update</code>, is an alias for <code>--dev</code>.</p>
-    <p>When “prod” or “production” and running local <code>npm install</code> without any arguments, only
+    <p>When "prod" or "production" and running local <code>npm install</code> without any arguments, only
         non-devDependencies (and their dependencies) are installed.</p>
-    <p>When “prod” or “production” and running local <code>npm ls</code>, <code>npm outdated</code>, or <code>npm
+    <p>When "prod" or "production" and running local <code>npm ls</code>, <code>npm outdated</code>, or <code>npm
             update</code>, is an alias for <code>--production</code>.</p>
     <h4 id="optional">optional</h4>
     <ul>
@@ -742,7 +742,7 @@
         <li>Default: ""</li>
         <li>Type: String</li>
     </ul>
-    <p>The “prerelease identifier” to use as a prefix for the “prerelease” part of a semver. Like the <code>rc</code> in
+    <p>The "prerelease identifier" to use as a prefix for the "prerelease" part of a semver. Like the <code>rc</code> in
         <code>1.2.0-rc.8</code>.
     </p>
     <h4 id="production">production</h4>
@@ -750,11 +750,11 @@
         <li>Default: false</li>
         <li>Type: Boolean</li>
     </ul>
-    <p>Set to true to run in “production” mode.</p>
+    <p>Set to true to run in "production" mode.</p>
     <ol type="1">
         <li>devDependencies are not installed at the topmost level when running local <code>npm install</code> without
             any arguments.</li>
-        <li>Set the NODE_ENV=“production” for lifecycle scripts.</li>
+        <li>Set the NODE_ENV="production" for lifecycle scripts.</li>
     </ol>
     <h4 id="progress">progress</h4>
     <ul>
@@ -878,7 +878,7 @@
     <p>The shell to use for scripts run with the <code>npm run</code> command.</p>
     <h4 id="scripts-prepend-node-path">scripts-prepend-node-path</h4>
     <ul>
-        <li>Default: “warn-only”</li>
+        <li>Default: "warn-only"</li>
         <li>Type: Boolean, <code>"auto"</code> or <code>"warn-only"</code></li>
     </ul>
     <p>If set to <code>true</code>, add the directory in which the current <code>node</code> executable resides to the
@@ -920,7 +920,7 @@
     <p>The age of the cache, in seconds, before another registry request is made if using legacy search endpoint.</p>
     <h4 id="shell">shell</h4>
     <ul>
-        <li>Default: SHELL environment variable, or “bash” on Posix, or “cmd” on Windows</li>
+        <li>Default: SHELL environment variable, or "bash" on Posix, or "cmd" on Windows</li>
         <li>Type: path</li>
     </ul>
     <p>The shell to run for the <code>npm explore</code> command.</p>
@@ -1017,7 +1017,7 @@
     </p>
     <h4 id="tmp">tmp</h4>
     <ul>
-        <li>Default: TMPDIR environment variable, or “/tmp”</li>
+        <li>Default: TMPDIR environment variable, or "/tmp"</li>
         <li>Type: path</li>
     </ul>
     <p>Where to store temporary files and folders. All temp files are deleted on success, but left behind on failure for
@@ -1053,7 +1053,7 @@
         <li>Default: 022</li>
         <li>Type: Octal numeric string in range 0000..0777 (0..511)</li>
     </ul>
-    <p>The “umask” value to use when setting the file creation mode on files and folders.</p>
+    <p>The "umask" value to use when setting the file creation mode on files and folders.</p>
     <p>Folders and executables are given a mode which is <code>0777</code> masked against this value. Other files are
         given a mode which is <code>0666</code> masked against this value. Thus, the defaults are <code>0755</code> and
         <code>0644</code> respectively.
@@ -1080,7 +1080,7 @@
     <p>Only relevant when specified explicitly on the command line.</p>
     <h4 id="viewer">viewer</h4>
     <ul>
-        <li>Default: “man” on Posix, “browser” on Windows</li>
+        <li>Default: "man" on Posix, "browser" on Windows</li>
         <li>Type: path</li>
     </ul>
     <p>The program to use to view help content.</p>

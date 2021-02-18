@@ -266,7 +266,8 @@ and
 <li><link>
 <ul>
 <li>allows us to link another file, we’ll often see it for our css</li>
-<li><code>rel</code> attribute specifies the relation of the link (“stylesheet”, less common may be “icon”, “author”, etc.)</li>
+<li><code>rel</code> attribute specifies the relation of the link ("stylesheet", less common may be "icon", "author",
+    etc.)</li>
 <li><code>href</code> attribute specifies the URL of the linked file (can be an absolute url or relative path to file in your project)</li>
 </ul></li>
 <li><script async></script>
@@ -411,7 +412,7 @@ element must be empty)</li>
 <h2 id="testing-in-javascript-w6d4---learning-objectives">Testing in JavaScript (W6D4) - Learning Objectives</h2>
 <h3 id="testing">Testing</h3>
 <ol type="1">
-<li>Explain the “red-green-refactor” loop of test-driven development.</li>
+<li>Explain the "red-green-refactor" loop of test-driven development.</li>
 </ol>
 <ul>
 <li>Red: Write tests and watch them fail (protect against false positives)</li>
@@ -521,7 +522,7 @@ test
 <li>The Chai testing library provides additional functionality compared to using the basic <code>assert</code> module that comes with Node.</li>
 <li>Since it is external, we need to add it to our project with <code>npm install chai</code></li>
 <li>After adding the library, we can require it just like the <code>assert</code> module with <code>const chai = require("chai");</code> at the top of our test files.</li>
-<li>Using <code>expect</code> from the <code>chai</code> library, we can chain “getters” together to construct tests that read like English. Since we use <code>expect</code> so much in our code, we generally separate it out at the top once instead of for each test: <code>const expect = chai.expect;</code></li>
+<li>Using <code>expect</code> from the <code>chai</code> library, we can chain "getters" together to construct tests that read like English. Since we use <code>expect</code> so much in our code, we generally separate it out at the top once instead of for each test: <code>const expect = chai.expect;</code></li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">const</span> chai <span class="op">=</span> <span class="at">require</span>(<span class="st">&quot;chai&quot;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb14-2" title="2"><span class="kw">const</span> expect <span class="op">=</span> <span class="va">chai</span>.<span class="at">expect</span><span class="op">;</span></a>

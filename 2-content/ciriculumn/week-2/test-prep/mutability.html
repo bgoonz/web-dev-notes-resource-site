@@ -40,7 +40,8 @@
 <a class="sourceLine" id="cb4-11" title="11"></a>
 <a class="sourceLine" id="cb4-12" title="12"><span class="va">console</span>.<span class="at">log</span>(sisters)<span class="op">;</span></a></code></pre></div>
 <p>function printInstruments({ instruments } ) { console.log(instruments); } printInstruments(me);</p>
-<p>function printSiblings({ siblings: {sisters, brothers}}) { console.log("Sisters”, sisters); console.log("Brothers”, brothers); }</p>
+<p>function printSiblings({ siblings: {sisters, brothers}}) { console.log("Sisters", sisters); console.log("Brothers",
+    brothers); }</p>
 <p>printSiblings(me);</p>
 <p>//rest parameters // combines parameters into array</p>
 <p>…parameterName</p>
@@ -52,7 +53,8 @@
 <p>// take an object or array and spread their elements/attributes into another object or array</p>
 <p>function multiply(multiplier, …theArgs) { return theArgs.map(function(element) { return multiplier * element }) }</p>
 <p>let arr = multiply(2, 1, 2, 3) console.log(arr)</p>
-<p>let me = { name: "Ian”, instruments: [‘bass’, ‘synth’, ‘guitar’], siblings: { brothers: [‘Alistair’], sisters: [‘Meghan’] } }</p>
+<p>let me = { name: "Ian", instruments: [‘bass’, ‘synth’, ‘guitar’], siblings: { brothers: [‘Alistair’], sisters:
+    [‘Meghan’] } }</p>
 <p>let countryArr = [‘USA’, ‘Canada’, ‘UK’]; //me[countries] = countryArr;</p>
 <p>let myCountries = { ‘countries’: countryArr };</p>
 <p>let newMe = {…me, …countries}</p>

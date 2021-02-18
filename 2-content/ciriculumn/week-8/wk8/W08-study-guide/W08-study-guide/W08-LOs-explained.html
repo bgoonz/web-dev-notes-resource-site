@@ -388,13 +388,14 @@
 <li>Distinguish an IPv4 packet from an IPv6.</li>
 </ol>
 <ul>
-<li>The easiest way to distinguish between an IPv4 and IPv6 packet is the “Version" field of the header.
+<li>The easiest way to distinguish between an IPv4 and IPv6 packet is the "Version" field of the header.
 <ul>
 <li>The first four bits of any packet’s header indicate which IP version is being used</li>
 <li>For IPv4, we use the binary <code>0100</code> and for IPv6 we use <code>0110</code> (4 and 6 respectively in decimal)</li>
 <li>(This is a great opportunity to review binary and hexadecimal notation!)</li>
 </ul></li>
-<li>In additional to the “Version" field itself, if we know where the header ends, we would also generally be able to tell based on the size.
+<li>In additional to the "Version" field itself, if we know where the header ends, we would also generally be able to
+    tell based on the size.
 <ul>
 <li>IPv6 headers have a fixed length of 320 bits, whereas an IPv4 header will generally be much smaller at 160 bits (plus any optional headers).</li>
 <li>This is obviously not the most reliable, so we should always just refer to those first four bits that indicate the version.</li>
@@ -445,7 +446,7 @@
 </ul></li>
 <li>UDP:
 <ul>
-<li>Unreliable transport protocol. There is no confirmation that anything that is sent out is received. “Yelling into the void"</li>
+<li>Unreliable transport protocol. There is no confirmation that anything that is sent out is received. "Yelling into the void"</li>
 <li>Prioritizes speed! We don’t have to confirm every packet that is sent. We may lose some pieces of data, but we are prioritizing that we are receiving that information in real-time.</li>
 <li>Use cases: real-time communication like live video and VoIP (if we had to confirm every packet of a zoom transmission, we would end up very out of sync, since we would wait on those dropped frames instead of skipping to the live ones coming in), DNS resolution (prioritizing speed here, getting the user to the appropriate URL quickly - they can always refresh if needed)</li>
 </ul></li>
@@ -550,7 +551,7 @@
  9  66.208.228.6 (66.208.228.6)  28.015 ms  26.484 ms  26.271 ms
 10  104.28.30.159 (104.28.30.159)  23.235 ms  21.448 ms  21.641 ms</code></pre>
 <ul>
-<li>The output shows the number of hops that I have taken, “friendly"/DNS name of the hop if applicable with the IP address in parentheses, and the amount of time it took to get a response from that leg of the route.</li>
+<li>The output shows the number of hops that I have taken, "friendly"/DNS name of the hop if applicable with the IP address in parentheses, and the amount of time it took to get a response from that leg of the route.</li>
 <li>There are three times listed because the <code>traceroute</code> utility attempts the connection three times in order to get some results to compare.</li>
 <li>If we don’t get a response for any of our attempts, an asterisk (<code>*</code>) is shown instead of a time.</li>
 <li>One thing to note with this utility is that Windows firewall will generally block the pings that <code>traceroute</code> attempts to make from a WSL implementation. If on WSL, try using the very similar <code>tracert</code> utility directly within the Windows cmd prompt. This utility is generally not blocked by the Windows firewall.

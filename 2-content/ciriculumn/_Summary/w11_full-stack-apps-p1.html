@@ -3741,9 +3741,12 @@ block content
  if stack
    h3 Stack Trace
    pre= stack</code></pre>
-<p>Notice that the error <code>message</code> and <code>stack</code> properties are only being passed to the view if the <code>NODE_ENV</code> environment variable isn’t set to “production". For security reasons, it’s important to avoid leaking potentially sensitive information about your application.</p>
+<p>Notice that the error <code>message</code> and <code>stack</code> properties are only being passed to the view if the
+    <code>NODE_ENV</code> environment variable isn’t set to "production". For security reasons, it’s important to avoid
+    leaking potentially sensitive information about your application.</p>
 <p>If you test your custom error handler again by browsing to <code>http://localhost:8080/throw-error</code> you’ll see that it sends an HTML response containing information about the error that was thrown.</p>
-<p>To test how the error handler will behave in the production environment, set the <code>NODE_ENV</code> environment variable to “production" before starting the example application:</p>
+<p>To test how the error handler will behave in the production environment, set the <code>NODE_ENV</code> environment
+    variable to "production" before starting the example application:</p>
 <div class="sourceCode" id="cb281"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb281-1" title="1"><span class="va">NODE_ENV=</span>production <span class="ex">node</span> app.js</a></code></pre></div>
 <h3 id="defining-multiple-custom-error-handlers">Defining multiple custom error handlers</h3>
 <p>Express allows you to define more than one custom error handler which is useful if you need to handle specific types of errors differently. It’s also useful for creating an error handler to perform a specific error handling task. Let’s look at an example of defining a second error handler that’s responsible for logging errors.</p>
@@ -3770,13 +3773,13 @@ block content
 <a class="sourceLine" id="cb282-20" title="20">    <span class="dt">stack</span><span class="op">:</span> isProduction <span class="op">?</span> <span class="kw">null</span> : <span class="va">err</span>.<span class="at">stack</span><span class="op">,</span></a>
 <a class="sourceLine" id="cb282-21" title="21">  <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb282-22" title="22"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>The new error handler simply uses the <code>console.error()</code> method to log errors to the console, provided that the <code>NODE_ENV</code> environment variable isn’t set to “production". In the production environment, there’s a TODO comment to log the error to the database. The <code>console.error()</code> method call in the existing error handler was removed; logging errors is now the responsibility of the new error handler.</p>
+<p>The new error handler simply uses the <code>console.error()</code> method to log errors to the console, provided that the <code>NODE_ENV</code> environment variable isn’t set to "production". In the production environment, there’s a TODO comment to log the error to the database. The <code>console.error()</code> method call in the existing error handler was removed; logging errors is now the responsibility of the new error handler.</p>
 <blockquote>
 <p><strong>Note:</strong> Logging errors to a database—or another type of data store—is a common practice in production environments. Doing this allows a developer or system administrator to periodically review a log of application errors to determine if there are any issues that might need to be looked at in more detail. There are many ways to handle error logging, ranging from npm logging packages (e.g. <a href="https://www.npmjs.com/package/winston"><code>winston</code></a>) to full-blown application monitoring cloud-based services.</p>
 </blockquote>
-<p>Also notice that the new error handler calls the <code>next()</code> method passing in the <code>err</code> parameter (the current error) which passes control to the next error handler. An error handler needs to call <code>next()</code> or return a response. Failing to do this will result in the request “hanging" and consuming resources on the server.</p>
-<h2 id="handling-page-not-found-errors">Handling “Page Not Found" errors</h2>
-<p>A common feature for applications to implement is to present a friendly “Page Not Found" message to end users when a request can’t be matched to one of the application’s defined routes. Let’s see how to implement this feature using a combination of a middleware function and an error handler function.</p>
+<p>Also notice that the new error handler calls the <code>next()</code> method passing in the <code>err</code> parameter (the current error) which passes control to the next error handler. An error handler needs to call <code>next()</code> or return a response. Failing to do this will result in the request "hanging" and consuming resources on the server.</p>
+<h2 id="handling-page-not-found-errors">Handling "Page Not Found" errors</h2>
+<p>A common feature for applications to implement is to present a friendly "Page Not Found" message to end users when a request can’t be matched to one of the application’s defined routes. Let’s see how to implement this feature using a combination of a middleware function and an error handler function.</p>
 <p>First, add a new middleware function after the last route in your application (but before any of your error handlers):</p>
 <div class="sourceCode" id="cb283"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb283-1" title="1"><span class="co">// Catch unhandled requests and forward to error handler.</span></a>
 <a class="sourceLine" id="cb283-2" title="2"><span class="va">app</span>.<span class="at">use</span>((req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -3785,11 +3788,11 @@ block content
 <a class="sourceLine" id="cb283-5" title="5"> <span class="at">next</span>(err)<span class="op">;</span></a>
 <a class="sourceLine" id="cb283-6" title="6"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Placing this middleware function after all of your routes means that this middleware function will only be invoked if a request fails to match any of your routes.</p>
-<p>Notice that the middleware function creates a new Error object and sets a <code>status</code> property on the object to the literal number <code>404</code>. <code>404</code> is the HTTP status code for “Not Found" responses indicating that the requested resource could not be found.</p>
+<p>Notice that the middleware function creates a new Error object and sets a <code>status</code> property on the object to the literal number <code>404</code>. <code>404</code> is the HTTP status code for "Not Found" responses indicating that the requested resource could not be found.</p>
 <p>After setting the <code>status</code> property, the <code>next()</code> method is called with the <code>err</code> variable passed as an argument. Remember that calling the <code>next()</code> method with an argument results in Express handling the current request as an error and skipping any remaining routing and middleware functions.</p>
-<p>At this point, you can test your “Page Not Found" middleware function by browsing to <code>http://localhost:8080/some-unknown-page</code> (or really any path that doesn’t match one of your application’s configured routes). You should see your “Server Error" page displaying the message “The requested page couldn’t be found."</p>
-<h3 id="creating-a-page-not-found-page">Creating a “Page Not Found" page</h3>
-<p>While the current solution works, a more elegant solution would be to present a specific “Page Not Found" page to the end user.</p>
+<p>At this point, you can test your "Page Not Found" middleware function by browsing to <code>http://localhost:8080/some-unknown-page</code> (or really any path that doesn’t match one of your application’s configured routes). You should see your "Server Error" page displaying the message "The requested page couldn’t be found."</p>
+<h3 id="creating-a-page-not-found-page">Creating a "Page Not Found" page</h3>
+<p>While the current solution works, a more elegant solution would be to present a specific "Page Not Found" page to the end user.</p>
 <p>To do this, define another error handler—in between the logging and generic error handlers—for handling 404 errors:</p>
 <div class="sourceCode" id="cb284"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb284-1" title="1"><span class="co">// Error handler for 404 errors.</span></a>
 <a class="sourceLine" id="cb284-2" title="2"><span class="va">app</span>.<span class="at">use</span>((err<span class="op">,</span> req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -3802,7 +3805,7 @@ block content
 <a class="sourceLine" id="cb284-9" title="9">    <span class="at">next</span>(err)<span class="op">;</span></a>
 <a class="sourceLine" id="cb284-10" title="10">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb284-11" title="11"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>This error handler starts by checking if the <code>err.status</code> property is set to <code>404</code>—which indicates that the current error is a “Not Found" error. If the current error is a “Not Found" error, then it sets the response HTTP status code to <code>404</code> and calls the <code>res.render()</code> method to render the <code>page-not-found</code> view (you’ll create that view in just a bit). Otherwise, the <code>next()</code> method is called with the <code>err</code> parameter passed as an argument, which passes control to the next error handler.</p>
+<p>This error handler starts by checking if the <code>err.status</code> property is set to <code>404</code>—which indicates that the current error is a "Not Found" error. If the current error is a "Not Found" error, then it sets the response HTTP status code to <code>404</code> and calls the <code>res.render()</code> method to render the <code>page-not-found</code> view (you’ll create that view in just a bit). Otherwise, the <code>next()</code> method is called with the <code>err</code> parameter passed as an argument, which passes control to the next error handler.</p>
 <p>Before testing your new error handler, don’t forget to add a new view named <code>page-not-found.pug</code> to the <code>views</code> folder with the following content:</p>
 <pre class="pug"><code>//- page-not-found.pug
 
@@ -3811,7 +3814,7 @@ extends layout.pug
 block content
  div
    p Sorry, we couldn&#39;t find the page that you requested.</code></pre>
-<p>Now if you test your application again by browsing to <code>http://localhost:8080/some-unknown-page</code> (or any path that doesn’t match one of your application’s configured routes) you should see your new “Page Not Found" page.</p>
+<p>Now if you test your application again by browsing to <code>http://localhost:8080/some-unknown-page</code> (or any path that doesn’t match one of your application’s configured routes) you should see your new "Page Not Found" page.</p>
 <p>For your reference, here’s the final version of the <code>app.js</code> file:</p>
 <div class="sourceCode" id="cb286"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb286-1" title="1"><span class="co">// app.js</span></a>
 <a class="sourceLine" id="cb286-2" title="2"></a>
@@ -3918,7 +3921,7 @@ block content
 <p>Then install Nodemon as a development dependency:</p>
 <div class="sourceCode" id="cb288"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb288-1" title="1"><span class="ex">npm</span> install nodemon@^2.0.0 --save-dev</a></code></pre></div>
 <h2 id="stubbing-out-the-application">Stubbing out the application</h2>
-<p>Now it’s time to stub out the application by writing the minimal amount of code to define the route for the default route (i.e. the “Home" page).</p>
+<p>Now it’s time to stub out the application by writing the minimal amount of code to define the route for the default route (i.e. the "Home" page).</p>
 <p>Start with adding a <code>routes</code> module by adding a file named <code>routes.js</code> to the root of your project containing the following code:</p>
 <div class="sourceCode" id="cb289"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb289-1" title="1"><span class="co">// ./routes.js</span></a>
 <a class="sourceLine" id="cb289-2" title="2"></a>
@@ -3976,7 +3979,7 @@ block content
 <div class="sourceCode" id="cb293"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb293-1" title="1"><span class="er">&quot;scripts&quot;:</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb293-2" title="2">  <span class="dt">&quot;start&quot;</span><span class="fu">:</span> <span class="st">&quot;nodemon app.js&quot;</span></a>
 <a class="sourceLine" id="cb293-3" title="3"><span class="fu">}</span></a></code></pre></div>
-<p>From the terminal, run the command <code>npm start</code> to start your application, then browse to <code>http://localhost:8080/</code>. You should see the “Home" page displaying the message “Hello from the Reading List app!"</p>
+<p>From the terminal, run the command <code>npm start</code> to start your application, then browse to <code>http://localhost:8080/</code>. You should see the "Home" page displaying the message "Hello from the Reading List app!"</p>
 <blockquote>
 <p><strong>Now is a good time to commit your changes (if you haven’t already)!</strong> In general, making smaller commits more often where each commit contains a related set of changes is better than waiting until the end of the day to make one giant commit that contains all of the changes for the entire day.</p>
 </blockquote>
@@ -4030,7 +4033,7 @@ block content
 <div class="sourceCode" id="cb299"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb299-1" title="1"><span class="er">&quot;scripts&quot;:</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb299-2" title="2">  <span class="dt">&quot;start&quot;</span><span class="fu">:</span> <span class="st">&quot;nodemon ./bin/www&quot;</span></a>
 <a class="sourceLine" id="cb299-3" title="3"><span class="fu">}</span></a></code></pre></div>
-<p>To test your application’s new entry point, run the command <code>npm start</code>, then browse to <code>http://localhost:8080/</code>. As before, you should see the “Home" page displaying the message “Hello from the Reading List app!"</p>
+<p>To test your application’s new entry point, run the command <code>npm start</code>, then browse to <code>http://localhost:8080/</code>. As before, you should see the "Home" page displaying the message "Hello from the Reading List app!"</p>
 <h3 id="taking-a-closer-look-at-the-.binwww-file">Taking a closer look at the <code>./bin/www</code> file</h3>
 <p>The <code>bin</code> folder is a common Unix convention for naming a folder that contains executable scripts. Even though it’s lacking the <code>.js</code> file extension, the <code>www</code> file is actually a JavaScript module that contains the code to start up the Express application.</p>
 <p>You might have noticed that the first line of the <code>www</code> file isn’t valid JavaScript:</p>
@@ -4038,14 +4041,14 @@ block content
 <p>This is an instance of a <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">Unix shebang</a>. The shebang has to be written on the first line of the <code>www</code> file. It tells the system what interpreter to pass the file to for execution. In this case, <code>node</code> is specified as the interpreter via the Unix <code>env</code> command.</p>
 <p>The intention of the <code>./bin/www</code> file is for it to be an executable script—meaning that you could start the application by simply entering the file name in the terminal as a command:</p>
 <div class="sourceCode" id="cb301"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb301-1" title="1"><span class="ex">bin/www</span></a></code></pre></div>
-<p>If you attempt to execute the script, you’ll receive a “permission denied" error. Text files by default do not have the necessary permissions. You can use the <code>chmod</code> command in the root of your project to add the missing permissions:</p>
+<p>If you attempt to execute the script, you’ll receive a "permission denied" error. Text files by default do not have the necessary permissions. You can use the <code>chmod</code> command in the root of your project to add the missing permissions:</p>
 <div class="sourceCode" id="cb302"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb302-1" title="1"><span class="fu">chmod</span> +x bin/www</a></code></pre></div>
 <p>With the proper permissions added, you can run the command <code>bin/www</code> to start your application.</p>
 <blockquote>
 <p><strong>Note:</strong> The ability to run your application via a <code>bin</code> script is primarily useful for Node projects that are intended to be used as command line tools or utilities. The Sequelize CLI is an example of a Node.js command line tool that’s executable via a <code>bin</code> folder script. For Express applications like the Reading List application, it’s far more common to use an npm <code>start</code> script to run the application.</p>
 </blockquote>
 <h2 id="logging-requests-using-morgan">Logging requests using Morgan</h2>
-<p>Currently, after the application starts up and displays the message “Listening on port 8080…", nothing else is written to the console to show activity. To assist with testing and debugging, you can install the <code>morgan</code> npm package, an HTTP request logger middleware for Node.js and Express:</p>
+<p>Currently, after the application starts up and displays the message "Listening on port 8080…", nothing else is written to the console to show activity. To assist with testing and debugging, you can install the <code>morgan</code> npm package, an HTTP request logger middleware for Node.js and Express:</p>
 <div class="sourceCode" id="cb303"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb303-1" title="1"><span class="ex">npm</span> install morgan</a></code></pre></div>
 <p>Aftering installing <code>morgan</code>, import it into the <code>app</code> module:</p>
 <div class="sourceCode" id="cb304"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb304-1" title="1"><span class="co">// ./app.js</span></a>
@@ -4059,7 +4062,7 @@ block content
 </blockquote>
 <p>Then call the <code>app.use()</code> method to add <code>morgan</code> to the application request pipeline:</p>
 <div class="sourceCode" id="cb305"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb305-1" title="1"><span class="va">app</span>.<span class="at">use</span>(<span class="at">morgan</span>(<span class="st">&#39;dev&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<p>The string literal “dev" is passed into <code>morgan</code> to configure the request logging format. The “dev" format is just one of the available predefined formats.</p>
+<p>The string literal "dev" is passed into <code>morgan</code> to configure the request logging format. The "dev" format is just one of the available predefined formats.</p>
 <p>Now if you start your application and browse to <code>http://localhost:8080/</code>, you’ll see the request logged to the console:</p>
 <div class="sourceCode" id="cb306"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb306-1" title="1"><span class="ex">GET</span> / 200 9.851 ms - 172</a></code></pre></div>
 <p>Here’s a breakdown of the above output:</p>
@@ -4071,7 +4074,7 @@ block content
 </ul>
 <h2 id="adding-custom-error-handlers">Adding custom error handlers</h2>
 <p>As you learned in a previous article, Express provides a default error handler, but for most applications you’ll want to create a custom error handler to precisely control how errors are handled.</p>
-<p>In the <code>app</code> module, start with adding a middleware function to catch unmatched requests and throw a “Page Not Found" error:</p>
+<p>In the <code>app</code> module, start with adding a middleware function to catch unmatched requests and throw a "Page Not Found" error:</p>
 <div class="sourceCode" id="cb307"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb307-1" title="1"><span class="co">// ./app.js</span></a>
 <a class="sourceLine" id="cb307-2" title="2"></a>
 <a class="sourceLine" id="cb307-3" title="3"><span class="co">// Code remove for brevity.</span></a>
@@ -4088,7 +4091,7 @@ block content
 <a class="sourceLine" id="cb307-14" title="14"><span class="co">// </span><span class="al">TODO</span><span class="co"> Add custom error handlers.</span></a>
 <a class="sourceLine" id="cb307-15" title="15"></a>
 <a class="sourceLine" id="cb307-16" title="16"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> app<span class="op">;</span></a></code></pre></div>
-<p>Next, add the following custom error handlers—an error handler to log errors, an error handler to handle “Page Not Found" errors, and a generic error handler:</p>
+<p>Next, add the following custom error handlers—an error handler to log errors, an error handler to handle "Page Not Found" errors, and a generic error handler:</p>
 <div class="sourceCode" id="cb308"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb308-1" title="1"><span class="co">// ./app.js</span></a>
 <a class="sourceLine" id="cb308-2" title="2"></a>
 <a class="sourceLine" id="cb308-3" title="3"><span class="co">// Code remove for brevity.</span></a>
@@ -4162,7 +4165,7 @@ block content
 <a class="sourceLine" id="cb311-2" title="2">  <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;This is a test error!&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb311-3" title="3">  <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;index&#39;</span><span class="op">,</span> <span class="op">{</span> <span class="dt">title</span><span class="op">:</span> <span class="st">&#39;Home&#39;</span> <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb311-4" title="4"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Start your application and browse to <code>http://localhost:8080/</code> and you should see the “Server Error" page. Next, browse to an unknown path like <code>http://localhost:8080/asdf</code> and you should see the “Page Not Found" page.</p>
+<p>Start your application and browse to <code>http://localhost:8080/</code> and you should see the "Server Error" page. Next, browse to an unknown path like <code>http://localhost:8080/asdf</code> and you should see the "Page Not Found" page.</p>
 <p>You should also see the errors logged to the terminal:</p>
 <div class="sourceCode" id="cb312"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb312-1" title="1"><span class="ex">Error</span>: This is a test error!</a>
 <a class="sourceLine" id="cb312-2" title="2">    <span class="ex">at</span> [path to the project folder]/routes.js:7:9</a>
@@ -4193,12 +4196,12 @@ block content
 <p>Also notice that thanks to the request logging provided by the <code>morgan</code> middleware, you can see the <code>500</code> (Internal Server Error) and <code>404</code> (Not Found) HTTP response status codes returned by the server.</p>
 <p>After confirming that your custom error handlers work as expected, be sure to remove the code that you temporarily added to your default route!</p>
 <blockquote>
-<p>For a refresher on the custom error handlers, see the “Catching and Handling Errors in Express" article.</p>
+<p>For a refresher on the custom error handlers, see the "Catching and Handling Errors in Express" article.</p>
 </blockquote>
 <h2 id="configuring-environment-variables">Configuring environment variables</h2>
 <p>Since the Reading List application will use a database for data persistence, your project needs to include a way to configure the database connection settings across environments. To do that, let’s use environment variables to configure the application.</p>
 <blockquote>
-<p>For a refresher on how to use environment variables within an Express application, see the “Acclimating to Environment Variables" article.</p>
+<p>For a refresher on how to use environment variables within an Express application, see the "Acclimating to Environment Variables" article.</p>
 </blockquote>
 <p>To start, install <code>per-env</code> as a project dependency the <code>dotenv</code> and <code>dotenv-cli</code> as development dependencies (i.e. dependencies that are only needed in development environments):</p>
 <div class="sourceCode" id="cb314"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb314-1" title="1"><span class="ex">npm</span> install per-env</a>
@@ -4346,7 +4349,7 @@ html
 <a class="sourceLine" id="cb325-3" title="3"><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">privileges</span> <span class="kw">on</span> <span class="kw">database</span> reading_list <span class="kw">to</span> reading_list_app;</a></code></pre></div>
 <p>Make note of the password that you use as you’ll need them for the next step in the configuration process!</p>
 <blockquote>
-<p>To review how to create a new PostgreSQL database and user, see the “Database Management Walk-Through" and “User Management Walk-Through" readings in the SQL lesson.</p>
+<p>To review how to create a new PostgreSQL database and user, see the "Database Management Walk-Through" and "User Management Walk-Through" readings in the SQL lesson.</p>
 </blockquote>
 <h3 id="adding-the-database-environment-variables">Adding the database environment variables</h3>
 <p>Now you’re ready to add the <code>DB_USERNAME</code>, <code>DB_PASSWORD</code>, <code>DB_DATABASE</code>, and <code>DB_HOST</code> environment variables to the <code>.env</code> and <code>.env.example</code> files:</p>
@@ -4550,7 +4553,7 @@ DB_HOST=localhost</code></pre>
 <a class="sourceLine" id="cb338-13" title="13"><span class="ex">Indexes</span>:</a>
 <a class="sourceLine" id="cb338-14" title="14">    <span class="st">&quot;Books_pkey&quot;</span> <span class="ex">PRIMARY</span> KEY, btree (id)</a></code></pre></div>
 <p>Notice that all of the <code>Book</code> <code>string</code> based properties (i.e. <code>title</code>, <code>author</code>, and <code>publisher</code>) resulted in columns with a data type of <code>character varying(255)</code>, which is a variable length text based column up to 255 characters in length. Allowing for 255 characters for the <code>title</code> column seems about right, but for the <code>author</code> and <code>publisher</code> columns, it seems excessive.</p>
-<p>Also notice that the <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> columns all allow <code>null</code> values (a value of <code>not null</code> in the “Nullable" column means that the column doesn’t allow <code>null</code> values, otherwise the column allows <code>null</code> values). Ideally, each book in the database would have values for all of those columns.</p>
+<p>Also notice that the <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> columns all allow <code>null</code> values (a value of <code>not null</code> in the "Nullable" column means that the column doesn’t allow <code>null</code> values, otherwise the column allows <code>null</code> values). Ideally, each book in the database would have values for all of those columns.</p>
 <p>We can address both of these issues by updating the <code>./db/models/book.js</code> file to the following code:</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb339-1" title="1"><span class="co">// ./db/models/book.js</span></a>
 <a class="sourceLine" id="cb339-2" title="2"></a>
@@ -4845,9 +4848,9 @@ block content
 <blockquote>
 <p>The term <strong>server-side rendered</strong> simply means that all of the work of generating the HTML for the web application’s pages is done on the server. Later on, you’ll learn how to use client-side technologies like React to move some of that work to the client (i.e. the browser).</p>
 </blockquote>
-<p>Notice that the “Add Book", “Edit Book", and “Delete Book" pages need to support both the <code>GET</code> and <code>POST</code> HTTP methods. The <code>GET</code> HTTP method will be used to initially retrieve each page’s HTML form while the <code>POST</code> HTTP method will be used to process each page’s HTML form submissions.</p>
-<p>Also notice that the route paths for the “Edit Book" and “Delete Book" pages define an <code>:id</code> route parameter. Without a book ID, those pages wouldn’t know what book record they were supposed to be editing or deleting. The “Add Book" page doesn’t need an <code>:id</code> route parameter because that page is adding a new book record, so a book ID isn’t needed (the ID for the new record will be created by the database when the record is inserted into the table).</p>
-<p>Now that you have a plan, let’s start building out the proposed pages—starting with the “Book List" page!</p>
+<p>Notice that the "Add Book", "Edit Book", and "Delete Book" pages need to support both the <code>GET</code> and <code>POST</code> HTTP methods. The <code>GET</code> HTTP method will be used to initially retrieve each page’s HTML form while the <code>POST</code> HTTP method will be used to process each page’s HTML form submissions.</p>
+<p>Also notice that the route paths for the "Edit Book" and "Delete Book" pages define an <code>:id</code> route parameter. Without a book ID, those pages wouldn’t know what book record they were supposed to be editing or deleting. The "Add Book" page doesn’t need an <code>:id</code> route parameter because that page is adding a new book record, so a book ID isn’t needed (the ID for the new record will be created by the database when the record is inserted into the table).</p>
+<p>Now that you have a plan, let’s start building out the proposed pages—starting with the "Book List" page!</p>
 <h2 id="creating-the-book-list-page">Creating the Book List page</h2>
 <p>As a reminder, here’s what the default route (<code>/</code>) in the <code>routes</code> module (i.e. the <code>routes.js</code> file) looks like at this point:</p>
 <div class="sourceCode" id="cb356"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb356-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> <span class="kw">async</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -4879,7 +4882,7 @@ block content
 <a class="sourceLine" id="cb358-6" title="6">    <span class="at">next</span>(err)<span class="op">;</span></a>
 <a class="sourceLine" id="cb358-7" title="7">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb358-8" title="8"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
-<p>Notice that the <code>title</code> property—on the object passed as the second argument to the <code>res.render()</code> method—was changed from “Home" to “Books".</p>
+<p>Notice that the <code>title</code> property—on the object passed as the second argument to the <code>res.render()</code> method—was changed from "Home" to "Books".</p>
 <h3 id="applying-bootstrap-styles-to-the-book-list-page">Applying Bootstrap styles to the Book List page</h3>
 <p>When you added Bootstrap to the project in the first article in this series, it was mentioned that the look of the application wouldn’t change much at that point. Let’s change that!</p>
 <p>Update the <code>./views/book-list.pug</code> view with the following code:</p>
@@ -4912,9 +4915,9 @@ block content
             a(class=&#39;btn btn-danger ml-2&#39; href=`/book/delete/${book.id}` role=&#39;button&#39;) Delete</code></pre>
 <p>Here’s an overview of the above Pug template code:</p>
 <ul>
-<li>A hyperlink (<code>&lt;a&gt;</code>) at the top of the page (<code>a(class='btn btn-success' href='/book/add' role='button') Add Book</code>) gives users a way to navigate to the “Add Book" page. The hyperlink is styled to look like a button using the <a href="https://getbootstrap.com/docs/4.4/components/buttons/">Bootstrap button CSS classes</a> (<code>btn btn-success</code>).</li>
+<li>A hyperlink (<code>&lt;a&gt;</code>) at the top of the page (<code>a(class='btn btn-success' href='/book/add' role='button') Add Book</code>) gives users a way to navigate to the "Add Book" page. The hyperlink is styled to look like a button using the <a href="https://getbootstrap.com/docs/4.4/components/buttons/">Bootstrap button CSS classes</a> (<code>btn btn-success</code>).</li>
 <li>An HTML table is used to render the list of books. The <a href="https://getbootstrap.com/docs/4.4/content/tables/">Bootstrap table CSS classes</a> (<code>table table-striped table-hover</code>) are used to style the table.</li>
-<li>Each row in the books HTML table contains two hyperlinks—one to navigate to the “Edit Book" page and another to navigate to the “Delete Book" page. Again, both hyperlinks are styled to look like buttons using the <a href="https://getbootstrap.com/docs/4.4/components/buttons/">Bootstrap button CSS classes</a>.</li>
+<li>Each row in the books HTML table contains two hyperlinks—one to navigate to the "Edit Book" page and another to navigate to the "Delete Book" page. Again, both hyperlinks are styled to look like buttons using the <a href="https://getbootstrap.com/docs/4.4/components/buttons/">Bootstrap button CSS classes</a>.</li>
 </ul>
 <blockquote>
 <p>For more information about the Bootstrap front-end component library, see <a href="https://getbootstrap.com/docs/4.4/">the official documentation</a>.</p>
@@ -4956,13 +4959,13 @@ block content
 <h3 id="testing-the-book-list-page">Testing the Book List page</h3>
 <p>Open a terminal and browse to your project folder. Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. You should see the list of books from the database rendered to the page—but instead of using an unordered list to format the list of books you should see a nicely Bootstrap formatted HTML table!</p>
 <h2 id="adding-the-add-book-page">Adding the Add Book page</h2>
-<p>The next page that you’ll add to the Reading List application is the “Add Book" page. As the name clearly suggests, this page will allow you to add a new book to the reading list.</p>
+<p>The next page that you’ll add to the Reading List application is the "Add Book" page. As the name clearly suggests, this page will allow you to add a new book to the reading list.</p>
 <h3 id="adding-protection-from-csrf-attacks">Adding protection from CSRF attacks</h3>
-<p>Before adding the route and view for the “Add Book" page, go ahead and prepare to add protection from CSRF attacks by installing and configuring the necessary dependencies and middleware.</p>
+<p>Before adding the route and view for the "Add Book" page, go ahead and prepare to add protection from CSRF attacks by installing and configuring the necessary dependencies and middleware.</p>
 <p>To review, Cross-Site Request Forgery (CSRF) is an attack that results in an end user executing unwanted actions within a web application. Imagine that the Reading List website requires users to login before they can view and make changes to their reading list (in a future article you’ll learn how to implement user login within an Express application!) If a user was currently logged into the Reading List website, a CSRF attack would trick the user into clicking a link that unexpectedly sends a POST request to the Reading List website—a request that might add or delete a book without the user’s consent!</p>
 <p>While this particular example is trivial in terms of its impact to the user, imagine that the affected web application is a banking application. The end user could end up unintentionally transferring money to the hacker’s bank account!</p>
 <blockquote>
-<p>For a detailed walkthrough of a CSRF attack and how to protect against CSRF attacks, see the “Protecting Forms from CSRF" article in the Express HTML Forms lesson.</p>
+<p>For a detailed walkthrough of a CSRF attack and how to protect against CSRF attacks, see the "Protecting Forms from CSRF" article in the Express HTML Forms lesson.</p>
 </blockquote>
 <p>From a terminal, install the following dependencies into your project:</p>
 <div class="sourceCode" id="cb363"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb363-1" title="1"><span class="ex">npm</span> install csurf@^1.0.0</a>
@@ -4988,7 +4991,7 @@ block content
 <a class="sourceLine" id="cb364-18" title="18"></a>
 <a class="sourceLine" id="cb364-19" title="19"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> app<span class="op">;</span></a></code></pre></div>
 <h3 id="defining-the-routes-for-the-add-book-page">Defining the routes for the Add Book page</h3>
-<p>Now you’re ready to define the routes for the “Add Book" page!</p>
+<p>Now you’re ready to define the routes for the "Add Book" page!</p>
 <p>At the top of the <code>routes</code> module (i.e. the <code>./routes.js</code> file), add a call to the <code>require()</code> function to import the <code>csurf</code> module:</p>
 <div class="sourceCode" id="cb365"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb365-1" title="1"><span class="co">// ./routes.js</span></a>
 <a class="sourceLine" id="cb365-2" title="2"></a>
@@ -5013,7 +5016,7 @@ block content
 <a class="sourceLine" id="cb366-12" title="12"><span class="kw">const</span> asyncHandler <span class="op">=</span> (handler) <span class="kw">=&gt;</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="at">handler</span>(req<span class="op">,</span> res<span class="op">,</span> next).<span class="at">catch</span>(next)<span class="op">;</span></a>
 <a class="sourceLine" id="cb366-13" title="13"></a>
 <a class="sourceLine" id="cb366-14" title="14"><span class="co">// Code removed for brevity.</span></a></code></pre></div>
-<p>Now you’re ready to add the routes for the “Add Book" page to the <code>routes</code> module just after the existing default route (<code>/</code>)—a <code>GET</code> route to initially retrieve the “Add Book" page’s HTML form and a <code>POST</code> route to process the page’s HTML form submissions:</p>
+<p>Now you’re ready to add the routes for the "Add Book" page to the <code>routes</code> module just after the existing default route (<code>/</code>)—a <code>GET</code> route to initially retrieve the "Add Book" page’s HTML form and a <code>POST</code> route to process the page’s HTML form submissions:</p>
 <div class="sourceCode" id="cb367"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb367-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/book/add&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb367-2" title="2">  <span class="kw">const</span> book <span class="op">=</span> <span class="va">db</span>.<span class="va">Book</span>.<span class="at">build</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb367-3" title="3">  <span class="va">res</span>.<span class="at">render</span>(<span class="st">&#39;book-add&#39;</span><span class="op">,</span> <span class="op">{</span></a>
@@ -5054,7 +5057,7 @@ block content
 <a class="sourceLine" id="cb367-38" title="38"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <p>Here’s an overview of the above routes:</p>
 <ul>
-<li>Two routes are defined for the “Add Book" page—a <code>/book/add</code> <code>GET</code> route and a <code>/book/add</code> <code>POST</code> route. As mentioned earlier, the <code>GET</code> route is used to initially retrieve the page’s HTML form while the <code>POST</code> route is used to process submissions from the page’s HTML form.</li>
+<li>Two routes are defined for the "Add Book" page—a <code>/book/add</code> <code>GET</code> route and a <code>/book/add</code> <code>POST</code> route. As mentioned earlier, the <code>GET</code> route is used to initially retrieve the page’s HTML form while the <code>POST</code> route is used to process submissions from the page’s HTML form.</li>
 <li>Both routes use the <code>csrfProtection</code> middleware to protect against CSRF attacks.</li>
 <li>Within the <code>GET</code> route handler, the Sequelize <code>db.Book.build()</code> method is used to create a new instance of the <code>Book</code> model which is then passed to the <code>book-add</code> view.</li>
 <li>Within the <code>POST</code> route handler, destructuring is used to declare and initialize the <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> variables from the <code>req.body</code> property. The <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> variables are then used to create a new instance of the <code>Book</code> model with a call to the <code>db.Book.build()</code> method. The <code>book.save()</code> method is called on the instance to persist the model to the database and if that operation succeeds the user is redirected to the default route (<code>/</code>). If an error occurs, the <code>book-add</code> view is rendered and sent to the client (so the error can be displayed to the end user).</li>
@@ -5095,14 +5098,14 @@ block content
 <li>A conditional statement checks to see if the <code>error</code> variable is truthy (i.e. has a reference to an error) and if there’s an error, the <code>JSON.stringify()</code> method is used to render the error to the page as JSON. Later in this article, you’ll refactor this part of the view to improve the display of errors to the end user.</li>
 <li>A hidden <code>&lt;input&gt;</code> element is used to render the CSRF token value to the page (i.e. <code>input(type='hidden' name='_csrf' value=csrfToken)</code>).</li>
 <li>A series of <code>&lt;label&gt;</code> and text <code>&lt;input&gt;</code> elements are rendered to create the form fields for the <code>Book</code> model <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> properties. The <a href="https://getbootstrap.com/docs/4.4/components/forms/">Bootstrap form CSS classes</a> (<code>form-group</code>, <code>form-control</code>) are used to style the form.</li>
-<li>At the bottom of the form, a submit <code>&lt;button&gt;</code> element is rendered along with a “Cancel" hyperlink that allows the end user to navigate back to the “Book List" page.</li>
+<li>At the bottom of the form, a submit <code>&lt;button&gt;</code> element is rendered along with a "Cancel" hyperlink that allows the end user to navigate back to the "Book List" page.</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> HTML <code>&lt;input&gt;</code> element types aren’t used to their fullest extent in the above code. Feel free to experiment with using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#%3Cinput%3E_types">the available <code>&lt;input&gt;</code> element types</a> to add client-side validation but remember that client-side validation is intended only to improve the end user experience. Because client-side validation can easily be thwarted, validating data on the server is absolutely essential to do. You’ll implement server-side validation in just a bit.</p>
 </blockquote>
 <h3 id="testing-the-add-book-page">Testing the Add Book page</h3>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the “Add Book" button at the top of the “Book List" page to browse to the “Add Book" page. Provide a value for each of the form fields and click the “Add Book" button to submit the form to the server. Be sure that you provide a valid date value (i.e. “2000-01-31"). You should now see your new book in the list of books on the “Book List" page!</p>
-<p>If you click the “Add Book" button again and submit the “Add Book" page form without providing any values, an error occurs when attempting to persist an instance of the <code>Book</code> model to the database. The lengthy error message displayed just above the form will look like this:</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the "Add Book" button at the top of the "Book List" page to browse to the "Add Book" page. Provide a value for each of the form fields and click the "Add Book" button to submit the form to the server. Be sure that you provide a valid date value (i.e. "2000-01-31"). You should now see your new book in the list of books on the "Book List" page!</p>
+<p>If you click the "Add Book" button again and submit the "Add Book" page form without providing any values, an error occurs when attempting to persist an instance of the <code>Book</code> model to the database. The lengthy error message displayed just above the form will look like this:</p>
 <div class="sourceCode" id="cb369"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb369-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb369-2" title="2">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;SequelizeDatabaseError&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb369-3" title="3">  <span class="dt">&quot;parent&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -5168,7 +5171,7 @@ block content
       value=book.releaseDate 
       class=&#39;form-control&#39; 
       placeholder=&#39;ex: 2000-01-31&#39;)</code></pre>
-<p>Time to implement server-side validations! You’ll see how to implement validations using two different approaches—within the <code>Book</code> database model using Sequelize’s built-in model validation and within the “Add Book" page <code>POST</code> route using the <code>express-validator</code> validation library.</p>
+<p>Time to implement server-side validations! You’ll see how to implement validations using two different approaches—within the <code>Book</code> database model using Sequelize’s built-in model validation and within the "Add Book" page <code>POST</code> route using the <code>express-validator</code> validation library.</p>
 <h2 id="implementing-server-side-validation-using-sequelize">Implementing server-side validation using Sequelize</h2>
 <p>Before updating the <code>Book</code> model (the <code>./db/models/book.js</code> file), make a copy of the existing code by copying the entire file with a file extension of <code>.bak</code> (i.e. <code>book.js.bak</code>) or simply copying and pasting the code within the existing file and commenting it out. When implementing validation at the route level using a validation library, you’ll want a convenient way to remove or disable the validations in the <code>Book</code> model.</p>
 <h3 id="adding-validations-to-the-book-model">Adding validations to the <code>Book</code> model</h3>
@@ -5258,7 +5261,7 @@ block content
 <a class="sourceLine" id="cb371-83" title="83"><span class="op">};</span></a></code></pre></div>
 <p>Here’s an overview of the above code:</p>
 <ul>
-<li>Sequelize validation rules or validators are applied to model properties—referred to by Sequelize as “attributes"—using the <code>validate</code> property. The <code>validate</code> property is set to an object whose properties represent each validation rule to apply to the model attribute.</li>
+<li>Sequelize validation rules or validators are applied to model properties—referred to by Sequelize as "attributes"—using the <code>validate</code> property. The <code>validate</code> property is set to an object whose properties represent each validation rule to apply to the model attribute.</li>
 <li>For the <code>string</code> based model attributes (i.e. text based database table columns) that don’t allow <code>null</code> values—the <code>title</code>, <code>author</code>, <code>publisher</code> properties—the <code>notNull</code> and <code>notEmpty</code> validators are applied to disallow <code>null</code> values <strong>and</strong> empty string values.</li>
 <li>Notice the nuance between the <code>allowNull</code> model attribute property and the <code>notNull</code> validation rule. The <code>allowNull</code> model attribute property is set to <code>false</code> to configure the underlying database table column to disallow <code>null</code> values and the <code>notNull</code> validation rule is applied to validate that a model instance attribute value is not <code>null</code>.</li>
 <li>The <code>len</code> validation is also applied to the <code>string</code> based model attributes to give feedback to the end user when a model instance attribute value exceeds the configured maximum length for the underlying database table column.</li>
@@ -5268,10 +5271,10 @@ block content
 <p>Sequelize provides a variety of validators that you can apply to model attributes. For a list of the available validators, see <a href="https://sequelize.org/v5/manual/models-definition.html#validations">the official Sequelize documentation</a>.</p>
 </blockquote>
 <blockquote>
-<p>For more information about Sequelize model validations see the “Model Validations With Sequelize" article in the SQL ORM lesson.</p>
+<p>For more information about Sequelize model validations see the "Model Validations With Sequelize" article in the SQL ORM lesson.</p>
 </blockquote>
 <h3 id="updating-the-add-book-page-post-route">Updating the Add Book page <code>POST</code> route</h3>
-<p>With the model validations in place, now you need to update the “Add Book" page <code>POST</code> route in the <code>routes</code> module (the <code>./routes.js</code> file) to process Sequelize validation errors.</p>
+<p>With the model validations in place, now you need to update the "Add Book" page <code>POST</code> route in the <code>routes</code> module (the <code>./routes.js</code> file) to process Sequelize validation errors.</p>
 <p>To start, add the <code>next</code> parameter to the route handler function’s parameter list:</p>
 <div class="sourceCode" id="cb372"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb372-1" title="1"><span class="va">router</span>.<span class="at">post</span>(<span class="st">&#39;/book/add&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb372-2" title="2">  <span class="co">// Code removed for brevity.</span></a>
@@ -5297,7 +5300,7 @@ block content
 <p>If it’s a validation error, the <code>Array#map()</code> method is called on the <code>err.errors</code> array to create an array of error messages. Currently, <code>err</code> is an object with an <code>errors</code> property.</p>
 <p>The <code>err.errors</code> property is an array of <em>error objects</em> that provide detailed information about each validation error. Each element in <code>err.errors</code> has a <code>message</code> property. The <code>Array#map()</code> method plucks the <code>message</code> property from each <em>error object</em> to create an array of validation messages. This array of validation messages will be rendered on the form, instead of the array of <em>error objects</em>.</p>
 <p>If the error isn’t a <code>SequelizeValidationError</code> error, then the error is passed as an argument to the <code>next()</code> method call which results in Express handing the request off to the application’s defined error handlers for processing.</p>
-<p>For your reference, the updated “Add Book" page <code>POST</code> route should now look like this:</p>
+<p>For your reference, the updated "Add Book" page <code>POST</code> route should now look like this:</p>
 <div class="sourceCode" id="cb374"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb374-1" title="1"><span class="va">router</span>.<span class="at">post</span>(<span class="st">&#39;/book/add&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res<span class="op">,</span> next) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb374-2" title="2">  <span class="kw">const</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb374-3" title="3">    title<span class="op">,</span></a>
@@ -5333,7 +5336,7 @@ block content
 <a class="sourceLine" id="cb374-33" title="33">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb374-34" title="34"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <h3 id="updating-the-add-book-page-view">Updating the Add Book page view</h3>
-<p>The final part of implementing validations is to update the “Add Book" page view (the <code>./views/book-add.pug</code> file) to render the array of validation messages. Replace the existing <code>if error</code> conditional statement with the following code:</p>
+<p>The final part of implementing validations is to update the "Add Book" page view (the <code>./views/book-add.pug</code> file) to render the array of validation messages. Replace the existing <code>if error</code> conditional statement with the following code:</p>
 <pre class="pug"><code>//- ./views/book-add.pug
 
 extends layout.pug
@@ -5348,7 +5351,7 @@ block content
 
 //- Code removed for brevity.</code></pre>
 <p>The Bootstrap <code>alert alert-danger</code> CSS classes are used to style the unordered list of validation messages.</p>
-<p>For your reference, the updated “Add Book" page view should now look like this:</p>
+<p>For your reference, the updated "Add Book" page view should now look like this:</p>
 <pre class="pug"><code>//- ./views/book-add.pug
 
 extends layout.pug
@@ -5381,8 +5384,8 @@ block content
       button(type=&#39;submit&#39; class=&#39;btn btn-primary&#39;) Add Book
       a(href=&#39;/&#39; class=&#39;btn btn-warning ml-2&#39;) Cancel</code></pre>
 <h3 id="testing-the-server-side-validations">Testing the server-side validations</h3>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the “Add Book" button at the top of the “Book List" page to browse to the “Add Book" page. Click the “Add Book" button to submit the “Add Book" page form without providing any values. You should now see a list of validation messages displayed just above the form.</p>
-<p>Provide a value for each of the form fields and click the “Add Book" button to submit the form to the server. You should now see your new book in the list of books on the “Book List" page!</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the "Add Book" button at the top of the "Book List" page to browse to the "Add Book" page. Click the "Add Book" button to submit the "Add Book" page form without providing any values. You should now see a list of validation messages displayed just above the form.</p>
+<p>Provide a value for each of the form fields and click the "Add Book" button to submit the form to the server. You should now see your new book in the list of books on the "Book List" page!</p>
 <h2 id="implementing-server-side-validation-using-a-validation-library">Implementing server-side validation using a validation library</h2>
 <p>Keeping your application’s validation logic out of your database models makes your code more modular. Improved modularity allows you to more easily update one part of your application without worrying as much about how that change will impact another part of your application.</p>
 <p>In this section, you’ll replace the Sequelize model validations with route level validations using the <code>express-validator</code> validation library.</p>
@@ -5435,7 +5438,7 @@ block content
 <a class="sourceLine" id="cb379-9" title="9"><span class="co">// Code remove for brevity.</span></a></code></pre></div>
 <p>The <code>check</code> variable references a function (defined by the <code>express-validator</code> validation library) that returns a middleware function for validating a request. When you call the <code>check()</code> method, you pass in the name of the field—in this case a request body form field name—that you want to validate:</p>
 <div class="sourceCode" id="cb380"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb380-1" title="1"><span class="kw">const</span> titleValidator <span class="op">=</span> <span class="at">check</span>(<span class="st">&#39;title&#39;</span>)<span class="op">;</span></a></code></pre></div>
-<p>The value returned by the <code>check()</code> method is a validation chain object. The object is referred to as a validation “chain" because you can add one or more validators by making a series of method calls.</p>
+<p>The value returned by the <code>check()</code> method is a validation chain object. The object is referred to as a validation "chain" because you can add one or more validators by making a series of method calls.</p>
 <p>One of the validators that you can add to the validation chain is the <code>exists()</code> validator:</p>
 <div class="sourceCode" id="cb381"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb381-1" title="1"><span class="kw">const</span> titleValidator <span class="op">=</span> <span class="at">check</span>(<span class="st">&#39;title&#39;</span>)</a>
 <a class="sourceLine" id="cb381-2" title="2">  .<span class="at">exists</span>(<span class="op">{</span> <span class="dt">checkFalsy</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
@@ -5444,7 +5447,7 @@ block content
 <div class="sourceCode" id="cb382"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb382-1" title="1"><span class="kw">const</span> titleValidator <span class="op">=</span> <span class="at">check</span>(<span class="st">&#39;title&#39;</span>)</a>
 <a class="sourceLine" id="cb382-2" title="2">  .<span class="at">exists</span>(<span class="op">{</span> <span class="dt">checkFalsy</span><span class="op">:</span> <span class="kw">true</span> <span class="op">}</span>)</a>
 <a class="sourceLine" id="cb382-3" title="3">  .<span class="at">withMessage</span>(<span class="st">&#39;Please provide a value for Title&#39;</span>)<span class="op">;</span></a></code></pre></div>
-<p>Now if the <code>exists()</code> validator for the field <code>title</code> fails, a validation error will be added to the request with the message “Please provide a value for Title".</p>
+<p>Now if the <code>exists()</code> validator for the field <code>title</code> fails, a validation error will be added to the request with the message "Please provide a value for Title".</p>
 <p>The <code>express-validator</code> validation library is built on top of the validator.js library. This means that all of the <a href="https://github.com/validatorjs/validator.js#validators">available validators within the validator.js library</a> are available for you to use in your validation logic.</p>
 <p>One of the available validators is the <code>isLength()</code> validator, which can be used to check the length of a string based field:</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb383-1" title="1"><span class="kw">const</span> titleValidator <span class="op">=</span> <span class="at">check</span>(<span class="st">&#39;title&#39;</span>)</a>
@@ -5452,7 +5455,7 @@ block content
 <a class="sourceLine" id="cb383-3" title="3">  .<span class="at">withMessage</span>(<span class="st">&#39;Please provide a value for Title&#39;</span>)</a>
 <a class="sourceLine" id="cb383-4" title="4">  .<span class="at">isLength</span>(<span class="op">{</span> <span class="dt">max</span><span class="op">:</span> <span class="dv">255</span> <span class="op">}</span>)</a>
 <a class="sourceLine" id="cb383-5" title="5">  .<span class="at">withMessage</span>(<span class="st">&#39;Title must not be more than 255 characters long&#39;</span>)<span class="op">;</span></a></code></pre></div>
-<p>Notice how the <code>isLength()</code> method is called directly on the return value of the <code>withMessage()</code> method? This is the validation chain in action—each method call in the validation chain returns the validation chain so you can keep adding validators. This is also known as “method chaining".</p>
+<p>Notice how the <code>isLength()</code> method is called directly on the return value of the <code>withMessage()</code> method? This is the validation chain in action—each method call in the validation chain returns the validation chain so you can keep adding validators. This is also known as "method chaining".</p>
 <blockquote>
 <p>APIs that make use of method chaining are often referred to as <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent APIs</a>.</p>
 </blockquote>
@@ -5524,7 +5527,7 @@ block content
 <a class="sourceLine" id="cb386-31" title="31">      <span class="op">}</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb386-32" title="32">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb386-33" title="33">  <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
-<p>The <code>validatorErrors</code> object provides an <code>isEmpty()</code> method to check if there are any validation errors. If there aren’t any validation errors, then the <code>book.save()</code> method is called to persist the book to the database and the user is redirected to the default route (i.e. the “Book List" page).</p>
+<p>The <code>validatorErrors</code> object provides an <code>isEmpty()</code> method to check if there are any validation errors. If there aren’t any validation errors, then the <code>book.save()</code> method is called to persist the book to the database and the user is redirected to the default route (i.e. the "Book List" page).</p>
 <p>If there are validation errors, the <code>array()</code> method is called on the <code>validatorErrors</code> object to get an array of validation error objects. Each error object has a <code>msg</code> property containing the validation error message. The <code>Array#map()</code> method plucks the <code>msg</code> property from each error object into a new array of validation messages named <code>errors</code>.</p>
 <blockquote>
 <p>For more information about the <code>express-validator</code> library, see <a href="https://express-validator.github.io/docs/">the official documentation</a>.</p>
@@ -5622,12 +5625,12 @@ block content
 <a class="sourceLine" id="cb387-90" title="90"></a>
 <a class="sourceLine" id="cb387-91" title="91"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></a></code></pre></div>
 <h3 id="testing-the-updated-server-side-validations">Testing the updated server-side validations</h3>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the “Add Book" button at the top of the “Book List" page to browse to the “Add Book" page. Click the “Add Book" button to submit the “Add Book" page form without providing any values. You should now see a list of validation messages displayed just above the form.</p>
-<p>Provide a value for each of the form fields and click the “Add Book" button to submit the form to the server. You should now see your new book in the list of books on the “Book List" page!</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the "Add Book" button at the top of the "Book List" page to browse to the "Add Book" page. Click the "Add Book" button to submit the "Add Book" page form without providing any values. You should now see a list of validation messages displayed just above the form.</p>
+<p>Provide a value for each of the form fields and click the "Add Book" button to submit the form to the server. You should now see your new book in the list of books on the "Book List" page!</p>
 <h2 id="adding-the-edit-book-page">Adding the Edit Book page</h2>
-<p>The next page that you’ll add to the Reading List application is the “Edit Book" page. As the name clearly suggests, this page will allow you to edit the details of a book from the reading list.</p>
+<p>The next page that you’ll add to the Reading List application is the "Edit Book" page. As the name clearly suggests, this page will allow you to edit the details of a book from the reading list.</p>
 <h3 id="defining-the-routes-for-the-edit-book-page">Defining the routes for the Edit Book page</h3>
-<p>Add the routes for the “Edit Book" page to the <code>routes</code> module (i.e. the <code>./routes.js file) just after the routes for the "Add Book" page—a</code>GET<code>route to initially retrieve the "Edit Book" page's HTML form and a</code>POST` route to process the page’s HTML form submissions:</p>
+<p>Add the routes for the "Edit Book" page to the <code>routes</code> module (i.e. the <code>./routes.js file) just after the routes for the "Add Book" page—a</code>GET<code>route to initially retrieve the "Edit Book" page's HTML form and a</code>POST` route to process the page’s HTML form submissions:</p>
 <div class="sourceCode" id="cb388"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb388-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/book/edit/:id(</span><span class="sc">\\</span><span class="st">d+)&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span></a>
 <a class="sourceLine" id="cb388-2" title="2">  <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb388-3" title="3">    <span class="kw">const</span> bookId <span class="op">=</span> <span class="at">parseInt</span>(<span class="va">req</span>.<span class="va">params</span>.<span class="at">id</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></a>
@@ -5677,7 +5680,7 @@ block content
 <a class="sourceLine" id="cb388-47" title="47">  <span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <p>Here’s an overview of the above routes:</p>
 <ul>
-<li>Just like you did for the “Add Book" page, two routes are defined for the “Edit Book" page—a <code>GET</code> route and a <code>POST</code> route, both with a path of <code>/book/edit/:id(\\d+)</code>. The <code>:id(\\d+)</code> path segment defines the <code>id</code> property in your <code>req.params</code>, the route parameter to capture the book ID to edit. The <code>\\d+</code> segment uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regexp</a> to ensure that only numbers (or <strong>d</strong>igits) will match this segment.</li>
+<li>Just like you did for the "Add Book" page, two routes are defined for the "Edit Book" page—a <code>GET</code> route and a <code>POST</code> route, both with a path of <code>/book/edit/:id(\\d+)</code>. The <code>:id(\\d+)</code> path segment defines the <code>id</code> property in your <code>req.params</code>, the route parameter to capture the book ID to edit. The <code>\\d+</code> segment uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regexp</a> to ensure that only numbers (or <strong>d</strong>igits) will match this segment.</li>
 <li>Within both route handlers, the <code>parseInt()</code> function is used to convert the <code>req.params.id</code> property from a string into an integer.</li>
 <li>Within both route handlers, the Sequelize <code>db.Book.findByPk()</code> method uses the book ID to retrieve which book to edit from the database.</li>
 <li>Just like in the <code>/book/add</code> route, destructuring is used to declare and initialize the <code>title</code>, <code>author</code>, <code>releaseDate</code>, <code>pageCount</code>, and <code>publisher</code> variables from the <code>req.body</code> property. Those variables are then used to create a <code>book</code> object literal whose properties align with the <code>Book</code> model properties. If there aren’t any validation errors, the object literal is passed into the <code>book.update()</code> method to update the book in the database and the user is redirected to the default route <code>/</code>. If there are validation errors, the <code>book-edit</code> view is re-rendered with the validation errors.</li>
@@ -5729,14 +5732,14 @@ block content
     div(class=&#39;py-4&#39;)
       button(type=&#39;submit&#39; class=&#39;btn btn-primary&#39;) Update Book
       a(href=&#39;/&#39; class=&#39;btn btn-warning ml-2&#39;) Cancel</code></pre>
-<p>This view is almost the same as the view for the “Add Book" page. On the form element’s <code>action</code> attribute and the submit button content are different.</p>
+<p>This view is almost the same as the view for the "Add Book" page. On the form element’s <code>action</code> attribute and the submit button content are different.</p>
 <blockquote>
 <p>In just a bit, you’ll see how you can leverage features built into Pug to avoid unnecessary code duplication.</p>
 </blockquote>
 <h3 id="testing-the-edit-book-page">Testing the Edit Book page</h3>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the “Edit" button for one of the books listed in the table on the “Book List" page to edit that book. Change one or more form field values and click the “Update Book" button to submit the form to the server. You should now see the update book in the list of books on the “Book List" page!</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the "Edit" button for one of the books listed in the table on the "Book List" page to edit that book. Change one or more form field values and click the "Update Book" button to submit the form to the server. You should now see the update book in the list of books on the "Book List" page!</p>
 <h3 id="including-view-templates-for-dryer-code">Including view templates for DRYer code</h3>
-<p>Currently, the “Add Book" and “Edit Book" views contain very similar code. Pug allows you to <code>include</code> the contents of a template within another template. You can use this feature to eliminate the code duplication between the <code>./views/book-add.pug</code> and <code>./views/book-edit.pug</code> files.</p>
+<p>Currently, the "Add Book" and "Edit Book" views contain very similar code. Pug allows you to <code>include</code> the contents of a template within another template. You can use this feature to eliminate the code duplication between the <code>./views/book-add.pug</code> and <code>./views/book-edit.pug</code> files.</p>
 <p>Start by adding a new file named <code>book-form-fields.pug</code> to the <code>views</code> folder containing the following code:</p>
 <pre class="pug"><code>//- ./views/book-form-fields.pug
 
@@ -5856,12 +5859,12 @@ input(type=&#39;hidden&#39; name=&#39;_csrf&#39; value=csrfToken)
 +textField(&#39;Release Date&#39;, &#39;releaseDate&#39;, book.releaseDate, &#39;ex: 2000-01-31&#39;)
 +textField(&#39;Page Count&#39;, &#39;pageCount&#39;, book.pageCount)
 +textField(&#39;Publisher&#39;, &#39;publisher&#39;, book.publisher)</code></pre>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Use the “Add Book" page to add a new book and then use the “Edit Book" page to edit the book. Everything should work as it did before the refactoring of the view code.</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Use the "Add Book" page to add a new book and then use the "Edit Book" page to edit the book. Everything should work as it did before the refactoring of the view code.</p>
 <p>Congratulations on making your code DRYer!</p>
 <h2 id="add-the-delete-book-page">Add the Delete Book page</h2>
-<p>The next page that you’ll add to the Reading List application is the “Delete Book" page. This page is relatively simple as it only needs to prompt the user if the selected book is the book that they want to delete.</p>
+<p>The next page that you’ll add to the Reading List application is the "Delete Book" page. This page is relatively simple as it only needs to prompt the user if the selected book is the book that they want to delete.</p>
 <h3 id="defining-the-routes-for-the-delete-book-page">Defining the routes for the Delete Book page</h3>
-<p>Add the routes for the “Delete Book" page to the <code>routes</code> module (i.e. the <code>./routes.js file) just after the routes for the "Edit Book" page—a</code>GET<code>route to initially retrieve the "Delete Book" page's HTML form and a</code>POST` route to process the page’s HTML form submissions:</p>
+<p>Add the routes for the "Delete Book" page to the <code>routes</code> module (i.e. the <code>./routes.js file) just after the routes for the "Edit Book" page—a</code>GET<code>route to initially retrieve the "Delete Book" page's HTML form and a</code>POST` route to process the page’s HTML form submissions:</p>
 <div class="sourceCode" id="cb400"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb400-1" title="1"><span class="va">router</span>.<span class="at">get</span>(<span class="st">&#39;/book/delete/:id(</span><span class="sc">\\</span><span class="st">d+)&#39;</span><span class="op">,</span> csrfProtection<span class="op">,</span> <span class="at">asyncHandler</span>(<span class="kw">async</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb400-2" title="2">  <span class="kw">const</span> bookId <span class="op">=</span> <span class="at">parseInt</span>(<span class="va">req</span>.<span class="va">params</span>.<span class="at">id</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb400-3" title="3">  <span class="kw">const</span> book <span class="op">=</span> <span class="cf">await</span> <span class="va">db</span>.<span class="va">Book</span>.<span class="at">findByPk</span>(bookId)<span class="op">;</span></a>
@@ -5880,7 +5883,7 @@ input(type=&#39;hidden&#39; name=&#39;_csrf&#39; value=csrfToken)
 <a class="sourceLine" id="cb400-16" title="16"><span class="op">}</span>))<span class="op">;</span></a></code></pre></div>
 <p>Here’s an overview of the above routes:</p>
 <ul>
-<li>Just like you did for the “Add Book" and “Edit Book" pages, two routes are defined for the “Delete Book" page—a <code>/book/delete/:id(\\d+)</code> <code>GET</code> route and a <code>/book/delete/:id(\\d+)</code> <code>POST</code> route.</li>
+<li>Just like you did for the "Add Book" and "Edit Book" pages, two routes are defined for the "Delete Book" page—a <code>/book/delete/:id(\\d+)</code> <code>GET</code> route and a <code>/book/delete/:id(\\d+)</code> <code>POST</code> route.</li>
 <li>Within both route handlers, the <code>parseInt()</code> function is used to convert the <code>req.params.id</code> property string value into a <code>number</code>.</li>
 <li>Within both route handlers, the Sequelize <code>db.Book.findByPk()</code> method is used to retrieve the book to delete from the database.</li>
 <li>Within the <code>POST</code> route handler, the <code>book.destroy()</code> method is called to delete the book from the database and the user is redirected to the default route (<code>/</code>).</li>
@@ -5902,7 +5905,7 @@ block content
       a(class=&#39;btn btn-warning ml-2&#39; href=&#39;/&#39; role=&#39;button&#39;) Cancel</code></pre>
 <p>The purpose of this view is simple: display the title of the book that’s about to be deleted and render a simple form containing a hidden <code>&lt;input&gt;</code> element for the CSRF token and a <code>&lt;button&gt;</code> element to submit the form.</p>
 <h3 id="testing-the-delete-book-page">Testing the Delete Book page</h3>
-<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the “Delete" button for one of the books listed in the table on the “Book List" page to delete that book. On the “Delete Book" page, click the “Delete Book" button to delete the book. You should now see that the book has been removed from the list of books on the “Book List" page!</p>
+<p>Run the command <code>npm start</code> to start your application and browse to <code>http://localhost:8080/</code>. Click the "Delete" button for one of the books listed in the table on the "Book List" page to delete that book. On the "Delete Book" page, click the "Delete Book" button to delete the book. You should now see that the book has been removed from the list of books on the "Book List" page!</p>
 <h2 id="what-you-learned-12">What you learned</h2>
 <p>In this article, you learned how to:</p>
 <ul>

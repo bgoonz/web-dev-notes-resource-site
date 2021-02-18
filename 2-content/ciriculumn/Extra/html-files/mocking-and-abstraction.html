@@ -202,9 +202,14 @@
 <blockquote>
 <p>Note: There are two things worth calling out a about this example.</p>
 <p>First: A totally valid question is "why not have <code>mkSaveTodo</code> take in a <code>query</code> function instead of <code>dbPool</code>?</p>
-<p>The answer is one of mental framing: When deciding what to pull out I approached it as a problem of “How do I make the database a variable.” Within that context it made more sense for <code>dbPool</code> to be passed in. This also means if I need to do other things with the database in the future it doesn’t change. Even so if you wanted to just pass in a <code>query</code> function that is also totally fine.</p>
+<p>The answer is one of mental framing: When deciding what to pull out I approached it as a problem of “How do I make
+    the database a variable." Within that context it made more sense for <code>dbPool</code> to be passed in. This also
+    means if I need to do other things with the database in the future it doesn’t change. Even so if you wanted to just
+    pass in a <code>query</code> function that is also totally fine.</p>
 <p>Second: Once you dig into the reference project provided for part three you’ll notice the solution there is a bit different than the one above, why is that?</p>
-<p>Mostly it’s just that there are a lot of ways to solve programming problems and often the same person will come up with different solutions. There isn’t any deep reason. And ultimately the “best” solution is just a matter of preference anyway.</p>
+<p>Mostly it’s just that there are a lot of ways to solve programming problems and often the same person will come up
+    with different solutions. There isn’t any deep reason. And ultimately the “best" solution is just a matter of
+    preference anyway.</p>
 </blockquote>
 <p>Now that we’ve abstracted out how the database gets provided to <code>saveTodo</code> the same approach we utilized for testing our handlers early in this lesson can be used to test our code that makes calls into the database. It turns out that when we want to make complex verifications around how a mock is called doing that all manually is a lot of work… that somebody else has done for us.</p>
 <p>Now we introduce the last new library of this lession, <a href="https://www.npmjs.com/package/simple-mock">simple-mock</a>. At its most basic you can include the library and create new objects that act as a proxy for a function that you want to test your code’s interactions with. As an example:</p>

@@ -3,7 +3,9 @@
 <hr />
 <h1 id="react-and-redux-to-do-list-project">React and Redux To-Do List Project</h1>
 <p>Today you’ll be building a to-do list application with React and local storage. Instead of using Context to manage and update your application’s state, you’ll set up a Redux store and interact with it using the store’s <code>getState</code>, <code>dispatch</code>, and <code>subscribe</code> methods.</p>
-<p>This project will also give you a better understanding of how to share and update “global” data across a React application by using Redux. You’ll use Redux to dispatch action POJOs through a reducer function, and have your component access an updated version of the Redux store’s state.</p>
+<p>This project will also give you a better understanding of how to share and update “global" data across a React
+    application by using Redux. You’ll use Redux to dispatch action POJOs through a reducer function, and have your
+    component access an updated version of the Redux store’s state.</p>
 <p>In this project, you will:</p>
 <ul>
 <li>Generate a Redux store to manage your application’s global information</li>
@@ -56,7 +58,10 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">delete</span> stateWithDeletion[<span class="va">action</span>.<span class="at">taskId</span>]<span class="op">;</span></a></code></pre></div>
 <p>The last thing left in your <code>DELETE_TASK</code> statement is to return the updated <code>stateWithDeletion</code>! If you compare your initial definition of the <code>nextState</code> and <code>stateWithDeletion</code> variables, you’ll see that they are both copies of the <code>state</code> made with spread syntax. Move the <code>nextState</code> variable outside of the <code>switch</code> statement so that both <code>case</code> statements can reference and update the <code>nextState</code>, instead of the <code>DELETE_TASK</code> case statement creating a new copy of the state and updating it.</p>
 <h2 id="phase-3-dispatch-actions-from-the-devtools-console">Phase 3: Dispatch actions from the DevTools console</h2>
-<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. As a reminder, dispatching the action will “send” it through the reducer to determine what operation to perform based on the action’s <code>type</code> property. Take a moment to go into your <code>index.js</code> file and import your application’s Redux <code>store</code> and action creator functions:</p>
+<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch
+    the <code>CREATE_TASK</code> action. As a reminder, dispatching the action will “send" it through the reducer to
+    determine what operation to perform based on the action’s <code>type</code> property. Take a moment to go into your
+    <code>index.js</code> file and import your application’s Redux <code>store</code> and action creator functions:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span> store <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./store&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="im">import</span> <span class="op">{</span> createTask<span class="op">,</span> deleteTask <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./actions/taskActions&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>Now that you’ve had the store and actions imported into the file, you can set them as properties to the <code>window</code> object, so that you can access the <code>store</code> and actions from the developer tools console.</p>

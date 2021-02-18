@@ -2,14 +2,23 @@
 <hr />
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <hr />
-<p>For the next couple of walk through articles, you will be reproducing a page from Petrack. Please go to <a href="https://polar-beach-08187.herokuapp.com/">Petrack</a> and click around it so you can see how it works. Pay special attention to the detail page for the pets. This article will analyze it so that it can introduce you into how to “think in React”.</p>
+<p>For the next couple of walk through articles, you will be reproducing a page from Petrack. Please go to <a
+        href="https://polar-beach-08187.herokuapp.com/">Petrack</a> and click around it so you can see how it works. Pay
+    special attention to the detail page for the pets. This article will analyze it so that it can introduce you into
+    how to "think in React".</p>
 <figure>
 <img src="https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/intro-to-react/assets/pettrack-pet-detail.png" alt="Petrack pet detail page" /><figcaption>Petrack pet detail page</figcaption>
 </figure>
-<p>When you “think in React”, you are supposed to “think in components”. A component in React is usually a JavaScript function or a class that returns a special React object called an “element”. There is a <em>very</em> vocal community that believes that function-based components are far superior than class-based components because they’re easier to understand. You will have the opportunity to use both in this class and make up your mind which you like better.</p>
-<p>In this article, you will gain insight into how to break a UI down into portions of functionality that React calls “components”. The way this article presents the components is only one way to do it. Other developers may choose to do it differently. There is usually no wrong way to do it.</p>
+<p>When you "think in React", you are supposed to "think in components". A component in React is usually a JavaScript
+    function or a class that returns a special React object called an "element". There is a <em>very</em> vocal
+    community that believes that function-based components are far superior than class-based components because they’re
+    easier to understand. You will have the opportunity to use both in this class and make up your mind which you like
+    better.</p>
+<p>In this article, you will gain insight into how to break a UI down into portions of functionality that React calls
+    "components". The way this article presents the components is only one way to do it. Other developers may choose to
+    do it differently. There is usually no wrong way to do it.</p>
 <h2 id="components">Components</h2>
-<p>In React-speak, a “component” is a chunk of the user interface that can (or should) be treated as a unit because it may (or likely will) be used more than once or used to structure a page. That’s not a very satisfying definition. This article will walk you through breaking down the page using the practical example of the Petrack pet detail page.</p>
+<p>In React-speak, a "component" is a chunk of the user interface that can (or should) be treated as a unit because it may (or likely will) be used more than once or used to structure a page. That’s not a very satisfying definition. This article will walk you through breaking down the page using the practical example of the Petrack pet detail page.</p>
 <p>When you think of components, it’s good to think in terms of the Single Responsibility Principle. Remember that? It’s good to have a component do one thing and one thing well. In this analysis, it will identify how it fits (or doesn’t fit) in with the Single Responsibility Principle.</p>
 <p>If you think in terms of Pug, then a component is kind of like an <code>include</code>, a big or small amount of code that you could use over and over in your UI. The main difference is that React is <em>in the browser</em> and handles user events and HTML generation for you so that you’re not creating template strings and adding them via the <code>innerHTML</code> property or <code>appendChild</code> method. Pug is just on the server generating HTML.</p>
 <h2 id="the-navigation-component">The navigation component</h2>
@@ -19,7 +28,7 @@
 </figure>
 <p>If you were working in Pug, that would be in your <strong>layout.pug</strong> because you would want it to appear in every page. In React, you will create a reusable component, maybe call it <code>Navigation</code>, and use it on all of your React-enabled pages.</p>
 <p>This does one thing and one thing well: it shows the static content of the navigation. There’s nothing else it needs to do. Good job, <code>Navigation</code> component!</p>
-<p>What this means is that the code that will create the heading “Petrack”, the links “Pets” and “Owners”, and the “Back” link will all be in their own component, which is just a JavaScript function or class. It could look something like this, but with real code where it reads “some cool React code here”. This is the skeleton of the code.</p>
+<p>What this means is that the code that will create the heading "Petrack", the links "Pets" and "Owners", and the "Back" link will all be in their own component, which is just a JavaScript function or class. It could look something like this, but with real code where it reads "some cool React code here". This is the skeleton of the code.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="co">// Navigation.js</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
@@ -36,7 +45,7 @@
 <figure>
 <img src="images/pettrack-pet-detail-component.png" alt="Petrack detail" /><figcaption>Petrack detail</figcaption>
 </figure>
-<p>This could be another component. It would create the “Details” headline, show the individual details of the pet, create the “Owners” headline, and then create the links to the owners. It could look something like this.</p>
+<p>This could be another component. It would create the "Details" headline, show the individual details of the pet, create the "Owners" headline, and then create the links to the owners. It could look something like this.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// PetDetail.js</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3"></a>
@@ -105,7 +114,7 @@ block content
 <figure>
 <img src="images/pettrack-pet-detail-owners-list-component.png" alt="Petrack owners list" /><figcaption>Petrack owners list</figcaption>
 </figure>
-<p>It’s single responsibility is to manage creating the “Owners” header and the unordered list. It will use the <code>OwnerLink</code> component to do that! Again, this is called <em>component composition</em>.</p>
+<p>It’s single responsibility is to manage creating the "Owners" header and the unordered list. It will use the <code>OwnerLink</code> component to do that! Again, this is called <em>component composition</em>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// OwnersList.js</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="im">import</span> OwnerLink <span class="im">from</span> <span class="st">&#39;./OwnerLink&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="im">import</span> React <span class="im">from</span> <span class="st">&#39;react&#39;</span><span class="op">;</span></a>
@@ -137,7 +146,7 @@ block content
 <a class="sourceLine" id="cb7-14" title="14"></a>
 <a class="sourceLine" id="cb7-15" title="15"><span class="im">export</span> <span class="im">default</span> PetDetail<span class="op">;</span></a></code></pre></div>
 <h2 id="putting-it-all-together">Putting it all together</h2>
-<p>Once you have all of those components, you would create one more component, the top-level “page” component, that would render the <code>Navigation</code> and <code>PetDetail</code> components.</p>
+<p>Once you have all of those components, you would create one more component, the top-level "page" component, that would render the <code>Navigation</code> and <code>PetDetail</code> components.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// PetDetailPage.js</span></a>
 <a class="sourceLine" id="cb8-2" title="2"><span class="im">import</span> Navigation <span class="im">from</span> <span class="st">&#39;./Navigation&#39;</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="im">import</span> PetDetail <span class="im">from</span> <span class="st">&#39;./PetDetail&#39;</span><span class="op">;</span></a>
@@ -153,17 +162,17 @@ block content
 <a class="sourceLine" id="cb8-13" title="13"><span class="op">}</span></a>
 <a class="sourceLine" id="cb8-14" title="14"></a>
 <a class="sourceLine" id="cb8-15" title="15"><span class="im">export</span> <span class="im">default</span> PetDetailPage<span class="op">;</span></a></code></pre></div>
-<p>The final analysis in this breakdown of “components” to “think in React” looks like this.</p>
+<p>The final analysis in this breakdown of "components" to "think in React" looks like this.</p>
 <figure>
 <img src="images/pettrack-pet-detail-all-components.png" alt="Petrack final analysis" /><figcaption>Petrack final analysis</figcaption>
 </figure>
 <p>You can see each of the components that were described in this article. You can also see how the <code>PetInformationItem</code> and <code>OwnerLink</code> components get used multiple times on the page.</p>
 <h2 id="there-is-probably-more">There is probably more</h2>
-<p>Take a look at this, again, and think about if there is any “missing” component before continuing.</p>
+<p>Take a look at this, again, and think about if there is any "missing" component before continuing.</p>
 <figure>
 <img src="images/pettrack-pet-detail-all-components.png" alt="Petrack final analysis" /><figcaption>Petrack final analysis</figcaption>
 </figure>
-<p>You could also create a <code>PetDetailList</code> component, if you want, that would manage the “Details” header and the definition list. That would reflect the same structure that the <code>OwnersList</code> has, a component responsible for generating a header and a list. In the following walk through articles, the <code>PetDetailList</code> component will also be included in the development.</p>
+<p>You could also create a <code>PetDetailList</code> component, if you want, that would manage the "Details" header and the definition list. That would reflect the same structure that the <code>OwnersList</code> has, a component responsible for generating a header and a list. In the following walk through articles, the <code>PetDetailList</code> component will also be included in the development.</p>
 <h2 id="what-youve-seen">What you’ve seen</h2>
 <p>This is thinking in React. Looking at a Web page and deciding what parts of it belong in sections, what parts are repeated, and how to group them all together. The React documentation calls this <a href="https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy">breaking the UI into a component hierarchy</a>. That link is to a section in the React documentation entitled <em>Thinking in React</em>. That section performs the same exercise that this article performed, but with a lot fewer words and pictures.</p>
 <p>In the upcoming exercises, you will create these components in a couple of ways. The first way is the hard way, but shows you how React works under the covers. The second way uses the fancy JSX language to make it easier for you.</p>

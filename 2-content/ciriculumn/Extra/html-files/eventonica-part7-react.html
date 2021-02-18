@@ -38,7 +38,8 @@
 <li>Use <code>create-react-app</code> to create a new React App, with <code>npx create-react-app eventonica-react</code>. If you haven’t used create-react-app before, you can read more about what it sets up here: https://www.codecademy.com/articles/how-to-create-a-react-app</li>
 <li>Now we’ll set up your React app so it can talk to your existing Express app. Add a top-level config value to <code>package.json</code> that says <code>"proxy": "http://localhost:3000"</code>
 <ul>
-<li>Proxy will requests that set an “Accept” header of “application/json” to the server that is running at port 3000, which in our case is our Express API server</li>
+<li>Proxy will requests that set an “Accept" header of “application/json" to the server that is running at port 3000,
+    which in our case is our Express API server</li>
 <li>Other requests from the browser for assets like CSS will continue to be served by your port 3001 React app</li>
 </ul></li>
 <li>In package.json, update the line that says <code>"start": "react-scripts start",</code> to instead say <code>"start": "PORT=3001 react-scripts start",</code>.
@@ -73,7 +74,8 @@
   ],
   &quot;proxy&quot;: &quot;http://localhost:3000&quot;
 }</code></pre>
-<p><strong>Note: the “proxy” key is <em>OUTSIDE</em> “browerslist” as a top-level config. If you put it inside “browserslist” it will neither work nor complain that your config is wrong</strong></p>
+<p><strong>Note: the “proxy" key is <em>OUTSIDE</em> “browerslist" as a top-level config. If you put it inside
+        “browserslist" it will neither work nor complain that your config is wrong</strong></p>
 <ul>
 <li>In your React app directory, run <code>npm install</code>.</li>
 <li>Make sure your React app works by running <code>npm start</code>. You should be able to go to <code>http://localhost:3001/</code> and see it running.</li>

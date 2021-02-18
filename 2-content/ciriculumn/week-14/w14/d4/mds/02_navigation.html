@@ -5,7 +5,8 @@
 <p>Now that you know how to create front-end routes with React Router, you’ll need to implement a way for your users to navigate the routes! This is what using React Router’s <code>Link</code>, <code>NavLink</code>, <code>Redirect</code>, and <code>history</code> prop can help you do.</p>
 <p>In this article, you’ll be working off of the demo project you built in the React Router Intro reading. When you finish this article, you should be able to use the following components from the <code>react-router-dom</code> library:</p>
 <ul>
-<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your application (like “/users/1”); and,</li>
+<li><code>&lt;Link&gt;</code> or <code>&lt;NavLink&gt;</code> to create links with absolute paths to routes in your
+    application (like "/users/1"); and,</li>
 <li><code>&lt;Redirect&gt;</code> to redirect a user to another path (i.e. a login page when the user is not logged in); and</li>
 <li>React Router’s <code>history</code> prop to update a browser’s URL programmatically.</li>
 </ul>
@@ -31,7 +32,8 @@
 <p>The <code>&lt;NavLink&gt;</code> works just like a <code>&lt;Link&gt;</code>, but with a little extra functionality. It has the ability to add extra styling when the path it links to matches the current path. This makes it an ideal choice for a navigation bar, hence the name. This styling can be controlled by three extra props: <code>activeClassName</code>, <code>activeStyle</code>, and <code>exact</code>. To begin using <code>NavLink</code>, update your imports from the <code>react-router-dom</code> package:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="im">import</span> <span class="op">{</span> BrowserRouter<span class="op">,</span> Route<span class="op">,</span> NavLink <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-router-dom&#39;</span><span class="op">;</span></a></code></pre></div>
 <p>The <code>activeClassName</code> prop of the <code>NavLink</code> component allows you to set a CSS class name for styling the <code>NavLink</code> when its route is active. By default, the <code>activeClassName</code> is already set to <code>active</code>. This means that you simply need to add an <code>.active</code> class to your CSS file to add active styling to your link. A <code>NavLink</code> will be active if its <code>to</code> prop path matches the current URL.</p>
-<p>Let’s change your “Users”, “Hello”, and “Andrew’s Profile” links to be different colors and have a larger font size when active.</p>
+<p>Let’s change your "Users", "Hello", and "Andrew’s Profile" links to be different colors and have a larger font size
+    when active.</p>
 <pre class="jsx"><code>&lt;NavLink to=&quot;/&quot;&gt;App&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;red&quot; to=&quot;/users&quot;&gt;Users&lt;/NavLink&gt;
 &lt;NavLink activeClassName=&quot;blue&quot; to=&quot;/hello&quot;&gt;Hello&lt;/NavLink&gt;

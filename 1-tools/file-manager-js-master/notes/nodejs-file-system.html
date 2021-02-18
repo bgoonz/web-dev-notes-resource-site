@@ -493,7 +493,7 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
   </ul>
   <p>When called, requests that the Node.js event loop <em>not</em> exit so long as the <code>FSWatcher</code> is
     active. Calling <code>watcher.ref()</code> multiple times will have no effect.</p>
-  <p>By default, all <code>FSWatcher</code> objects are "ref’ed”, making it normally unnecessary to call
+  <p>By default, all <code>FSWatcher</code> objects are "ref’ed", making it normally unnecessary to call
     <code>watcher.ref()</code> unless <code>watcher.unref()</code> had been called previously.
   </p>
   <h3 id="watcher.unref"><code>watcher.unref()</code><a href="#fs_watcher_unref">#</a></h3>
@@ -523,7 +523,7 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
   </ul>
   <p>When called, requests that the Node.js event loop <em>not</em> exit so long as the <code>StatWatcher</code> is
     active. Calling <code>watcher.ref()</code> multiple times will have no effect.</p>
-  <p>By default, all <code>StatWatcher</code> objects are "ref’ed”, making it normally unnecessary to call
+  <p>By default, all <code>StatWatcher</code> objects are "ref’ed", making it normally unnecessary to call
     <code>watcher.ref()</code> unless <code>watcher.unref()</code> had been called previously.
   </p>
   <h3 id="watcher.unref-1"><code>watcher.unref()</code><a href="#fs_watcher_unref_1">#</a></h3>
@@ -726,7 +726,7 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
         <bigint>
       </a></li>
   </ul>
-  <p>The file system specific "Inode” number for the file.</p>
+  <p>The file system specific "Inode" number for the file.</p>
   <h3 id="stats.mode"><code>stats.mode</code><a href="#fs_stats_mode">#</a></h3>
   <ul>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type">
@@ -926,15 +926,15 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
     alternate representation.</p>
   <p>The times in the stat object have the following semantics:</p>
   <ul>
-    <li><code>atime</code> "Access Time”: Time when file data last accessed. Changed by the <a
+    <li><code>atime</code> "Access Time": Time when file data last accessed. Changed by the <a
         href="http://man7.org/linux/man-pages/man2/mknod.2.html"><code>mknod(2)</code></a>, <a
         href="http://man7.org/linux/man-pages/man2/utimes.2.html"><code>utimes(2)</code></a>, and <a
         href="http://man7.org/linux/man-pages/man2/read.2.html"><code>read(2)</code></a> system calls.</li>
-    <li><code>mtime</code> "Modified Time”: Time when file data last modified. Changed by the <a
+    <li><code>mtime</code> "Modified Time": Time when file data last modified. Changed by the <a
         href="http://man7.org/linux/man-pages/man2/mknod.2.html"><code>mknod(2)</code></a>, <a
         href="http://man7.org/linux/man-pages/man2/utimes.2.html"><code>utimes(2)</code></a>, and <a
         href="http://man7.org/linux/man-pages/man2/write.2.html"><code>write(2)</code></a> system calls.</li>
-    <li><code>ctime</code> "Change Time”: Time when file status was last changed (inode data modification). Changed by
+    <li><code>ctime</code> "Change Time": Time when file status was last changed (inode data modification). Changed by
       the <a href="http://man7.org/linux/man-pages/man2/chmod.2.html"><code>chmod(2)</code></a>, <a
         href="http://man7.org/linux/man-pages/man2/chown.2.html"><code>chown(2)</code></a>, <a
         href="http://man7.org/linux/man-pages/man2/link.2.html"><code>link(2)</code></a>, <a
@@ -944,7 +944,7 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
         href="http://man7.org/linux/man-pages/man2/utimes.2.html"><code>utimes(2)</code></a>, <a
         href="http://man7.org/linux/man-pages/man2/read.2.html"><code>read(2)</code></a>, and <a
         href="http://man7.org/linux/man-pages/man2/write.2.html"><code>write(2)</code></a> system calls.</li>
-    <li><code>birthtime</code> "Birth Time”: Time of file creation. Set once when the file is created. On filesystems
+    <li><code>birthtime</code> "Birth Time": Time of file creation. Set once when the file is created. On filesystems
       where birthtime is not available, this field may instead hold either the <code>ctime</code> or
       <code>1970-01-01T00:00Z</code> (ie, Unix epoch timestamp <code>0</code>). This value may be greater than
       <code>atime</code> or <code>mtime</code> in this case. On Darwin and other FreeBSD variants, also set if the
@@ -953,7 +953,7 @@ print(&#39;./&#39;).catch(console.error);</code></pre>
     </li>
   </ul>
   <p>Prior to Node.js 0.12, the <code>ctime</code> held the <code>birthtime</code> on Windows systems. As of 0.12,
-    <code>ctime</code> is not "creation time”, and on Unix systems, it never was.
+    <code>ctime</code> is not "creation time", and on Unix systems, it never was.
   </p>
   <h2 id="class-fs.writestream">Class: <code>fs.WriteStream</code><a href="#fs_class_fs_writestream">#</a></h2>
   <p>Added in: v0.1.93</p>
@@ -1118,7 +1118,7 @@ fs.access(file, fs.constants.F_OK | fs.constants.W_OK, (err) =&gt; {
 
   readMyData(fd);
 });</code></pre>
-  <p>The "not recommended” examples above check for accessibility and then use the file; the "recommended” examples are
+  <p>The "not recommended" examples above check for accessibility and then use the file; the "recommended" examples are
     better because they use the file directly and handle the error, if any.</p>
   <p>In general, check for the accessibility of a file only if the file will not be used directly, for example when its
     accessibility is a signal from another process.</p>
@@ -1930,7 +1930,7 @@ setTimeout(() =&gt; {
 
   readMyData(fd);
 });</code></pre>
-  <p>The "not recommended” examples above check for existence and then use the file; the "recommended” examples are
+  <p>The "not recommended" examples above check for existence and then use the file; the "recommended" examples are
     better because they use the file directly and handle the error, if any.</p>
   <p>In general, check for the existence of a file only if the file won’t be used directly, for example when its
     existence is a signal from another process.</p>
@@ -4832,7 +4832,7 @@ fs.writeFile(&#39;message.txt&#39;, data, (err) =&gt; {
   <p>It is possible to use an <a
       href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/globals.html#globals_class_abortsignal">
       <AbortSignal>
-    </a> to cancel an <code>fs.writeFile()</code>. Cancelation is "best effort”, and some amount of data is likely still
+    </a> to cancel an <code>fs.writeFile()</code>. Cancelation is "best effort", and some amount of data is likely still
     to be written.</p>
   <pre><code>const controller = new AbortController();
 const { signal } = controller;
@@ -6528,7 +6528,7 @@ controller.abort();</code></pre>
   <p>It is possible to use an <a
       href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/globals.html#globals_class_abortsignal">
       <AbortSignal>
-    </a> to cancel an <code>fsPromises.writeFile()</code>. Cancelation is "best effort”, and some amount of data is
+    </a> to cancel an <code>fsPromises.writeFile()</code>. Cancelation is "best effort", and some amount of data is
     likely still to be written.</p>
   <pre><code>const controller = new AbortController();
 const { signal } = controller;

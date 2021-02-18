@@ -69,7 +69,7 @@
     <p>All packages in the tree are submitted to the Quick Audit endpoint. Omitted dependency types are skipped when
         generating the report.</p>
     <h4 id="scrubbing">Scrubbing</h4>
-    <p>Out of an abundance of caution, npm versions 5 and 6 would “scrub” any packages from the submitted report if
+    <p>Out of an abundance of caution, npm versions 5 and 6 would "scrub" any packages from the submitted report if
         their name contained a <code>/</code> character, so as to avoid leaking the names of potentially private
         packages or git URLs.</p>
     <p>However, in practice, this resulted in audits often failing to properly detect meta-vulnerabilities, because the
@@ -78,12 +78,12 @@
     <p>This scrubbing has been removed from npm as of version 7.</p>
     <h4 id="calculating-meta-vulnerabilities-and-remediations">Calculating Meta-Vulnerabilities and Remediations</h4>
     <p>npm uses the <a href="http://npm.im/@npmcli/metavuln-calculator"><code>@npmcli/metavuln-calculator</code></a>
-        module to turn a set of security advisories into a set of “vulnerability” objects. A “meta-vulnerability” is a
+        module to turn a set of security advisories into a set of "vulnerability" objects. A "meta-vulnerability" is a
         dependency that is vulnerable by virtue of dependence on vulnerable versions of a vulnerable package.</p>
     <p>For example, if the package <code>foo</code> is vulnerable in the range <code>&gt;=1.0.2 &lt;2.0.0</code>, and
         the package <code>bar</code> depends on <code>foo@^1.1.0</code>, then that version of <code>bar</code> can only
         be installed by installing a vulnerable version of <code>foo</code>. In this case, <code>bar</code> is a
-        “metavulnerability”.</p>
+        "metavulnerability".</p>
     <p>Once metavulnerabilities for a given package are calculated, they are cached in the <code>~/.npm</code> folder
         and only re-evaluated if the advisory range changes, or a new version of the package is published (in which
         case, the new version is checked for metavulnerable status as well).</p>

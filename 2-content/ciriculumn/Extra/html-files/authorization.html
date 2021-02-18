@@ -15,7 +15,12 @@
 <li><a href="/express-js/express.md">Express.js</a></li>
 </ul>
 <h3 id="motivation">Motivation</h3>
-<p>Many app developers need a way to persist user information from session to session, but they also want to provide a smooth experience for those users. The OAuth protocol allows user to “log in” to an app using their Google account (or other social media accounts). This removes friction for the user because they don’t need to create a new profile or remember a new password. OAuth can be used for other types of integration, like allowing users to give an app permission to access the user’s bank balances or Dropbox files. This is beyond the scope of this lesson but may be valuable to you in the future.</p>
+<p>Many app developers need a way to persist user information from session to session, but they also want to provide a
+    smooth experience for those users. The OAuth protocol allows user to “log in" to an app using their Google account
+    (or other social media accounts). This removes friction for the user because they don’t need to create a new profile
+    or remember a new password. OAuth can be used for other types of integration, like allowing users to give an app
+    permission to access the user’s bank balances or Dropbox files. This is beyond the scope of this lesson but may be
+    valuable to you in the future.</p>
 <h3 id="objectives">Objectives</h3>
 <p><strong>Participants will be able to:</strong></p>
 <ul>
@@ -39,7 +44,9 @@
 <li><a href="">Follow this video describing how to add Auth0 to an app</a>.</li>
 </ol>
 <h3 id="common-mistakes-misconceptions">Common Mistakes / Misconceptions</h3>
-<p>-<strong>“It’s okay if I post my API keys to my private GitHub repo.”</strong> Never push API keys to GitHub, even if you are certain the repository is secure. You might end up changing the permissions or adding a collaborator in the future. Keeping your keys off GitHub protects them from being exposed, even accidentally.</p>
+<p>-<strong>“It’s okay if I post my API keys to my private GitHub repo."</strong> Never push API keys to GitHub, even if
+    you are certain the repository is secure. You might end up changing the permissions or adding a collaborator in the
+    future. Keeping your keys off GitHub protects them from being exposed, even accidentally.</p>
 <p>-<strong>Logging in to an app with OAuth gives the developer access to my Google password</strong>. Passwords are never shared and never even pass through the primary app’s servers. Instead, providing your credentials to Google (or another social media platform) along with information from the primary app tells Google it’s okay to send a <em>different</em> piece of shared secret information–tokens–to the primary app. The tokens are now associated with specific users, and <em>this</em> is the currency used between the primary app and the third-party service.</p>
 <h3 id="guided-practice">Guided Practice</h3>
 <h4 id="step-1---configure-node.js-to-use-auth0">Step 1 - Configure Node.js to use Auth0</h4>

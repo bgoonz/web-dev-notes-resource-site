@@ -47,29 +47,29 @@
 <h2 id="vocabulary">Vocabulary</h2>
 <p>Learning how to use Redux requires you to understand a fair amount of terminology. For now, don’t worry about memorizing all of the following terms; it’s good enough to just have a general awareness. You’ll revisit each of these terms as you work your way through this lesson.</p>
 <h3 id="state">State</h3>
-<p>Ex: “<em>Redux is a state manager.</em>”</p>
+<p>Ex: "<em>Redux is a state manager.</em>"</p>
 <p>The <em>state</em> of a program means all the information stored by that program at a particular point in time. It is generally used to refer to the data stored by the program at a particular instance in time, as opposed to the logic of the program, which doesn’t change over time. The job of Redux is to store the state of your app and make it available to entire app.</p>
 <h3 id="store">Store</h3>
-<p>Ex: “<em>Redux stores state in a single store.</em>”</p>
+<p>Ex: "<em>Redux stores state in a single store.</em>"</p>
 <p>The Redux store is a single JavaScript object with a few methods, including <code>getState</code>, <code>dispatch(action)</code>, and <code>subscribe(listener)</code>. Any state you want Redux to handle is held in the store.</p>
 <h3 id="actions">Actions</h3>
-<p>Ex: “<em>The Redux store is updated by dispatching actions.</em>”</p>
+<p>Ex: "<em>The Redux store is updated by dispatching actions.</em>"</p>
 <p>An action is a POJO (plain old JavaScript object) with a <code>type</code> property. Actions contain information that can be used to update the store. They can be <em>dispatched</em>, i.e. sent to the store, in response to user actions or AJAX requests. Typically Redux apps use functions called <em>action creators</em> that return actions. Action creators can take arguments which allow them to customize the data contained in the actions they generate.</p>
 <h3 id="pure-functions">Pure functions</h3>
-<p>Ex: “<em>Redux reducers are pure functions.</em>”</p>
+<p>Ex: "<em>Redux reducers are pure functions.</em>"</p>
 <p>A function is pure if its behavior depends only its arguments and it has no side effects. This means the function can’t depend on the value of any variables that aren’t passed to it as arguments, and it can’t alter the state of the program or any variable existing outside itself. It simply takes in arguments and returns a value.</p>
 <h3 id="reducer">Reducer</h3>
-<p>Ex: “<em>Redux handles actions using reducers.</em>”</p>
+<p>Ex: "<em>Redux handles actions using reducers.</em>"</p>
 <p>A reducer is a function that is called each time an action is dispatched. The reducer receives an action and the current state as arguments and returns an updated state.</p>
 <p>Redux reducers are required to be pure functions of the dispatched action and the current state. This makes their behavior very predictable and allows their effects to potentially be reversed.</p>
 <h3 id="middleware">Middleware</h3>
-<p>Ex: “<em>You can customize your response to dispatched actions using middleware.</em>”</p>
+<p>Ex: "<em>You can customize your response to dispatched actions using middleware.</em>"</p>
 <p>Middleware is an optional component of Redux that allows custom responses to dispatched actions. When an action is dispatched, it passes through each middleware that has been added to the state. The middleware can take some action in response and chose whether or not to pass the action on down the chain. Behind the scenes, the middleware actually replaces the dispatch method of the store with a customized version. There is a large ecosystem of existing middleware ready to be plugged into any Redux projects. One example is a logger that records each action before passing it on to the reducer. Perhaps the most common use for middleware is to dispatch asynchronous requests to a server.</p>
 <h3 id="time-traveling-dev-tools">Time traveling dev tools</h3>
-<p>Ex: “<em>Redux has time traveling dev tools.</em>”</p>
+<p>Ex: "<em>Redux has time traveling dev tools.</em>"</p>
 <p>Redux reducers are pure functions of the dispatched action and the current state. This means that if one were to store a list of the previous states over time and the actions that had been dispatched, one could retroactively cancel an action and recalculate the state as if that action had never been dispatched. This is precisely the functionality that the Redux DevTools provide. The dev tools can be added as middleware to any Redux project. They allow you to look back through the history of the state and toggle past actions on and off to see a live recalculation of the state. This ability to revert to a previous state is what is meant by time travel.</p>
 <h3 id="thunks">Thunks</h3>
-<p>Ex: “<em>Thunks are a convenient format for taking asynchronous actions in Redux.</em>”</p>
+<p>Ex: "<em>Thunks are a convenient format for taking asynchronous actions in Redux.</em>"</p>
 <p>The traditional approach to middleware closely parallels the format of reducers. The actions being dispatched are POJOs with types and various middleware files are waiting to receive them. These files check the type of the action using a case statement just like reducers.</p>
 <p>Thunks are an alternative approach. A thunk is a general concept in computer science referring to a function whose primary purpose is simply to call another function. In Redux a thunk action creator returns a function rather than an object. When they are dispatched, thunk actions are intercepted by a piece of middleware that simply checks if each action is a function. If it is, that function is called with the state and dispatch as arguments, otherwise it is passed on down the chain. Thunks are most commonly used to make asynchronous API requests.</p>
 <h2 id="what-you-learned">What you learned</h2>
@@ -91,11 +91,11 @@
 <img src="images/redux-flux.png" alt="flux" /><figcaption>flux</figcaption>
 </figure>
 <h3 id="actions-1">Actions</h3>
-<p>An action begins the flow of data in Flux. An action is a simple object that at a minimum contains a <code>type</code>. An action’s <code>type</code> indicates the type of change to be performed on the application’s state. An action may contain additional data (the “payload”) that’s necessary for changing the application’s former state to its next one.</p>
+<p>An action begins the flow of data in Flux. An action is a simple object that at a minimum contains a <code>type</code>. An action’s <code>type</code> indicates the type of change to be performed on the application’s state. An action may contain additional data (the "payload") that’s necessary for changing the application’s former state to its next one.</p>
 <h3 id="dispatcher">Dispatcher</h3>
-<p>The dispatcher is a mechanism for distributing (or “dispatching”) actions to a Flux application’s store. The dispatcher is little more than a registry of callback functions into the store. Redux (the implementation of Flux we’ll use at App Academy) consolidates the dispatcher into a single <code>dispatch()</code> function.</p>
+<p>The dispatcher is a mechanism for distributing (or "dispatching") actions to a Flux application’s store. The dispatcher is little more than a registry of callback functions into the store. Redux (the implementation of Flux we’ll use at App Academy) consolidates the dispatcher into a single <code>dispatch()</code> function.</p>
 <h3 id="store-1">Store</h3>
-<p>The store represents the entire state of the application. It’s also responsible for updating the state of the application appropriately whenever it receives an action. It does so by registering with the dispatcher a callback function that receives an action. This callback function uses the action’s type to invoke the proper function to change the application’s state. After the store has changed state, it “emits a change,” i.e. the store passes the new state to any views (explanation incoming) that have registered listeners (callbacks) to it.</p>
+<p>The store represents the entire state of the application. It’s also responsible for updating the state of the application appropriately whenever it receives an action. It does so by registering with the dispatcher a callback function that receives an action. This callback function uses the action’s type to invoke the proper function to change the application’s state. After the store has changed state, it "emits a change," i.e. the store passes the new state to any views (explanation incoming) that have registered listeners (callbacks) to it.</p>
 <h3 id="view">View</h3>
 <p>A view is a unit of code that’s responsible for rendering the user interface. To complete the Flux pattern, a view listens to change events emitted by the store. When a change to the application’s data layer occurs, a view can respond appropriately, such as by updating its internal state and triggering a re-render.</p>
 <p>A view can create actions itself, e.g. in user-triggered events. If a user marks a todo as complete, a view might call a function that would dispatch an action to toggle the todo’s state. Creating an action from the view turns our Flux pattern into a unidirectional loop.</p>
@@ -106,9 +106,9 @@
 <h2 id="redux">Redux</h2>
 <p>Redux is a library (distributed as an npm package) that facilitates a particular implementation of Flux. A Redux loop behaves slightly differently than a vanilla Flux loop, but the general concepts remain the same. Redux abides by three principles:</p>
 <ol type="1">
-<li><strong>Single Source of Truth</strong>: The entire state of the application is stored in a single JavaScript object in a single store. This object is commonly referred to as a “state tree” because its values often contain or are objects themselves.</li>
+<li><strong>Single Source of Truth</strong>: The entire state of the application is stored in a single JavaScript object in a single store. This object is commonly referred to as a "state tree" because its values often contain or are objects themselves.</li>
 <li><strong>State is Read-Only</strong>: The only way to change the state is to dispatch an action. This principle ensures that our Redux loop is never short-circuited and change of state remains single-threaded.</li>
-<li><strong>Only Pure Functions Change State</strong>: Pure functions known as “reducers” receive the previous state and an action and return the next state. They return new state objects instead of mutating previous state. Read <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.lfv7bgqco">more</a> about what makes a function pure.</li>
+<li><strong>Only Pure Functions Change State</strong>: Pure functions known as "reducers" receive the previous state and an action and return the next state. They return new state objects instead of mutating previous state. Read <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.lfv7bgqco">more</a> about what makes a function pure.</li>
 </ol>
 <figure>
 <img src="https://assets.aaonline.io/fullstack/react/assets/redux.gif" alt="redux-loop" /><figcaption>redux-loop</figcaption>
@@ -136,11 +136,11 @@
 <img src="images/redux-flux.png" alt="flux" /><figcaption>flux</figcaption>
 </figure>
 <h3 id="actions-2">Actions</h3>
-<p>An action begins the flow of data in Flux. An action is a simple object that at a minimum contains a <code>type</code>. An action’s <code>type</code> indicates the type of change to be performed on the application’s state. An action may contain additional data (the “payload”) that’s necessary for changing the application’s former state to its next one.</p>
+<p>An action begins the flow of data in Flux. An action is a simple object that at a minimum contains a <code>type</code>. An action’s <code>type</code> indicates the type of change to be performed on the application’s state. An action may contain additional data (the "payload") that’s necessary for changing the application’s former state to its next one.</p>
 <h3 id="dispatcher-1">Dispatcher</h3>
-<p>The dispatcher is a mechanism for distributing (or “dispatching”) actions to a Flux application’s store. The dispatcher is little more than a registry of callback functions into the store. Redux (the implementation of Flux we’ll use at App Academy) consolidates the dispatcher into a single <code>dispatch()</code> function.</p>
+<p>The dispatcher is a mechanism for distributing (or "dispatching") actions to a Flux application’s store. The dispatcher is little more than a registry of callback functions into the store. Redux (the implementation of Flux we’ll use at App Academy) consolidates the dispatcher into a single <code>dispatch()</code> function.</p>
 <h3 id="store-2">Store</h3>
-<p>The store represents the entire state of the application. It’s also responsible for updating the state of the application appropriately whenever it receives an action. It does so by registering with the dispatcher a callback function that receives an action. This callback function uses the action’s type to invoke the proper function to change the application’s state. After the store has changed state, it “emits a change,” i.e. the store passes the new state to any views (explanation incoming) that have registered listeners (callbacks) to it.</p>
+<p>The store represents the entire state of the application. It’s also responsible for updating the state of the application appropriately whenever it receives an action. It does so by registering with the dispatcher a callback function that receives an action. This callback function uses the action’s type to invoke the proper function to change the application’s state. After the store has changed state, it "emits a change," i.e. the store passes the new state to any views (explanation incoming) that have registered listeners (callbacks) to it.</p>
 <h3 id="view-1">View</h3>
 <p>A view is a unit of code that’s responsible for rendering the user interface. To complete the Flux pattern, a view listens to change events emitted by the store. When a change to the application’s data layer occurs, a view can respond appropriately, such as by updating its internal state and triggering a re-render.</p>
 <p>A view can create actions itself, e.g. in user-triggered events. If a user marks a todo as complete, a view might call a function that would dispatch an action to toggle the todo’s state. Creating an action from the view turns our Flux pattern into a unidirectional loop.</p>
@@ -151,9 +151,9 @@
 <h2 id="redux-1">Redux</h2>
 <p>Redux is a library (distributed as an npm package) that facilitates a particular implementation of Flux. A Redux loop behaves slightly differently than a vanilla Flux loop, but the general concepts remain the same. Redux abides by three principles:</p>
 <ol type="1">
-<li><strong>Single Source of Truth</strong>: The entire state of the application is stored in a single JavaScript object in a single store. This object is commonly referred to as a “state tree” because its values often contain or are objects themselves.</li>
+<li><strong>Single Source of Truth</strong>: The entire state of the application is stored in a single JavaScript object in a single store. This object is commonly referred to as a "state tree" because its values often contain or are objects themselves.</li>
 <li><strong>State is Read-Only</strong>: The only way to change the state is to dispatch an action. This principle ensures that our Redux loop is never short-circuited and change of state remains single-threaded.</li>
-<li><strong>Only Pure Functions Change State</strong>: Pure functions known as “reducers” receive the previous state and an action and return the next state. They return new state objects instead of mutating previous state. Read <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.lfv7bgqco">more</a> about what makes a function pure.</li>
+<li><strong>Only Pure Functions Change State</strong>: Pure functions known as "reducers" receive the previous state and an action and return the next state. They return new state objects instead of mutating previous state. Read <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.lfv7bgqco">more</a> about what makes a function pure.</li>
 </ol>
 <figure>
 <img src="https://assets.aaonline.io/fullstack/react/assets/redux.gif" alt="redux-loop" /><figcaption>redux-loop</figcaption>
@@ -556,7 +556,7 @@
 <div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">const</span> <span class="op">{</span> createStore <span class="op">}</span> <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;redux&#39;</span>)<span class="op">;</span></a></code></pre></div>
 <h3 id="store-4">Store</h3>
 <p>You’ll use the <code>createStore</code> method to generate your Redux store by invoking it with a reducer. As a reminder, each application should only have one Redux store where all of an application’s state is managed. This is unlike using React Context, where a single React application can utilize multiple contexts.</p>
-<p>Conceptually speaking, you can think of the reducer as a function that helps manage the Redux store by routing actions based on their <code>type</code> attribute. Based on the official Redux documentation on the <a href="https://redux.js.org/api/createstore/">createStore</a> method and its parameters, a reducer is a “reducing function that returns the next state tree, given the current state tree and an action to handle.”</p>
+<p>Conceptually speaking, you can think of the reducer as a function that helps manage the Redux store by routing actions based on their <code>type</code> attribute. Based on the official Redux documentation on the <a href="https://redux.js.org/api/createstore/">createStore</a> method and its parameters, a reducer is a "reducing function that returns the next state tree, given the current state tree and an action to handle."</p>
 <p>Now that we’ve gone over a conceptual overview of reducers, let’s create a <code>tasksReducer</code> to manage the to-do list tasks in your Redux store!</p>
 <p>Define the <code>tasksReducer</code> function and have it take in the Redux store’s <code>state</code> and an <code>action</code> as parameters. You’ll want the <code>state</code> to default to an empty (<code>[]</code>) if the <code>tasksReducer</code> is invoked without a state. Since you invoke the <code>createStore</code> method with the <code>tasksReducer</code>, you’ll need to define the <code>tasksReducer</code> before invoking the <code>createStore</code> method to generate the Redux store.</p>
 <blockquote>
@@ -695,7 +695,7 @@
 <p>Notice how you are currently using <code>console.log</code> statements to test and debug your code. Later in the project, you’ll get a chance to investigate your code with the VS Code debugger to gain more context and insight about your code and its variable values.</p>
 </blockquote>
 <h3 id="dispatch-the-create_task-action">Dispatch the <code>CREATE_TASK</code> action</h3>
-<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. Invoke the <code>createTask</code> action creator function with a task message, and then dispatch the invoked action. As a reminder, dispatching the action will “send” it through the reducer (in this case, the <code>tasksReducer</code>) and determine what operation to perform based on the action’s <code>type</code> property.</p>
+<p>Now you can test whether you can actually create a task by using the <code>store.dispatch</code> method to dispatch the <code>CREATE_TASK</code> action. Invoke the <code>createTask</code> action creator function with a task message, and then dispatch the invoked action. As a reminder, dispatching the action will "send" it through the reducer (in this case, the <code>tasksReducer</code>) and determine what operation to perform based on the action’s <code>type</code> property.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb47-1" title="1"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;walk dog&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb47-2" title="2"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;feed cat&#39;</span>))<span class="op">;</span></a>
 <a class="sourceLine" id="cb47-3" title="3"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">createTask</span>(<span class="st">&#39;talk to bird&#39;</span>))<span class="op">;</span></a>
@@ -774,7 +774,7 @@
 <a class="sourceLine" id="cb53-24" title="24"></a>
 <a class="sourceLine" id="cb53-25" title="25"><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Task reset action&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb53-26" title="26"><span class="va">store</span>.<span class="at">dispatch</span>(<span class="at">resetTaskList</span>())<span class="op">;</span></a></code></pre></div>
-<p>Run your application with <code>node appWithSubscription.js</code> and you should see the following output. Notice how the state was logged four times under “Task creation actions” because of how four actions were dispatched, and the state was logged twice after “Task deletion actions” because of how two actions were dispatched.</p>
+<p>Run your application with <code>node appWithSubscription.js</code> and you should see the following output. Notice how the state was logged four times under "Task creation actions" because of how four actions were dispatched, and the state was logged twice after "Task deletion actions" because of how two actions were dispatched.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb54-1" title="1"><span class="ex">Default</span> Redux Store (empty task list)<span class="bu">:</span></a>
 <a class="sourceLine" id="cb54-2" title="2">[]</a>
 <a class="sourceLine" id="cb54-3" title="3"><span class="ex">Task</span> creation actions:</a>
@@ -857,7 +857,7 @@
 <p>Here is a quick breakdown of what happens with the <code>CREATE_TASK</code> action is dispatched, to guide the navigation of using VS Code debugger to investigate the Redux cycle:</p>
 <ol type="1">
 <li>The <code>createTask</code> action creator function is invoked with the string <code>'walk dog'</code>.</li>
-<li>The <code>createTask</code> function returns a POJO (known as an “action”) with a <code>type</code> attribute and <code>taskMessage</code> properties. The POJO is structured like this:</li>
+<li>The <code>createTask</code> function returns a POJO (known as an "action") with a <code>type</code> attribute and <code>taskMessage</code> properties. The POJO is structured like this:</li>
 </ol>
 <div class="sourceCode" id="cb60"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb60-1" title="1"><span class="op">{</span></a>
 <a class="sourceLine" id="cb60-2" title="2">  <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;CREATE_TASK&#39;</span><span class="op">,</span></a>

@@ -165,7 +165,12 @@ nonexistentFunc();</code></pre>
 <li><code>reason</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error"><Error></a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types"><any></a> The object with which the promise was rejected (typically an <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/errors.html#errors_class_error"><code>Error</code></a> object).</li>
 <li><code>promise</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><Promise></a> The rejected promise.</li>
 </ul>
-<p>The <code>'unhandledRejection'</code> event is emitted whenever a <code>Promise</code> is rejected and no error handler is attached to the promise within a turn of the event loop. When programming with Promises, exceptions are encapsulated as “rejected promises”. Rejections can be caught and handled using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch"><code>promise.catch()</code></a> and are propagated through a <code>Promise</code> chain. The <code>'unhandledRejection'</code> event is useful for detecting and keeping track of promises that were rejected whose rejections have not yet been handled.</p>
+<p>The <code>'unhandledRejection'</code> event is emitted whenever a <code>Promise</code> is rejected and no error
+    handler is attached to the promise within a turn of the event loop. When programming with Promises, exceptions are
+    encapsulated as "rejected promises". Rejections can be caught and handled using <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch"><code>promise.catch()</code></a>
+    and are propagated through a <code>Promise</code> chain. The <code>'unhandledRejection'</code> event is useful for
+    detecting and keeping track of promises that were rejected whose rejections have not yet been handled.</p>
 <pre><code>process.on(&#39;unhandledRejection&#39;, (reason, promise) =&gt; {
   console.log(&#39;Unhandled Rejection at:&#39;, promise, &#39;reason:&#39;, reason);
   
@@ -782,7 +787,11 @@ process.kill(process.pid, &#39;SIGHUP&#39;);</code></pre>
 <li><code>callback</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><Function></a></li>
 <li><code>...args</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_types"><any></a> Additional arguments to pass when invoking the <code>callback</code></li>
 </ul>
-<p><code>process.nextTick()</code> adds <code>callback</code> to the “next tick queue”. This queue is fully drained after the current operation on the JavaScript stack runs to completion and before the event loop is allowed to continue. It’s possible to create an infinite loop if one were to recursively call <code>process.nextTick()</code>. See the <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick">Event Loop</a> guide for more background.</p>
+<p><code>process.nextTick()</code> adds <code>callback</code> to the "next tick queue". This queue is fully drained
+    after the current operation on the JavaScript stack runs to completion and before the event loop is allowed to
+    continue. It’s possible to create an infinite loop if one were to recursively call <code>process.nextTick()</code>.
+    See the <a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick">Event Loop</a>
+    guide for more background.</p>
 <pre><code>console.log(&#39;start&#39;);
 process.nextTick(() =&gt; {
   console.log(&#39;nextTick callback&#39;);
@@ -1099,8 +1108,8 @@ console.log(process.resourceUsage());</li>
 </ul>
 <p>The <code>process.stdin</code> property returns a stream connected to <code>stdin</code> (fd <code>0</code>). It is a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/net.html#net_class_net_socket"><code>net.Socket</code></a> (which is a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_duplex_and_transform_streams">Duplex</a> stream) unless fd <code>0</code> refers to a file, in which case it is a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_readable_streams">Readable</a> stream.</p>
 <p>For details of how to read from <code>stdin</code> see <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_readable_read_size"><code>readable.read()</code></a>.</p>
-<p>As a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_duplex_and_transform_streams">Duplex</a> stream, <code>process.stdin</code> can also be used in “old” mode that is compatible with scripts written for Node.js prior to v0.10. For more information see <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_compatibility_with_older_node_js_versions">Stream compatibility</a>.</p>
-<p>In “old” streams mode the <code>stdin</code> stream is paused by default, so one must call <code>process.stdin.resume()</code> to read from it. Note also that calling <code>process.stdin.resume()</code> itself would switch stream to “old” mode.</p>
+<p>As a <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_duplex_and_transform_streams">Duplex</a> stream, <code>process.stdin</code> can also be used in "old" mode that is compatible with scripts written for Node.js prior to v0.10. For more information see <a href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/stream.html#stream_compatibility_with_older_node_js_versions">Stream compatibility</a>.</p>
+<p>In "old" streams mode the <code>stdin</code> stream is paused by default, so one must call <code>process.stdin.resume()</code> to read from it. Note also that calling <code>process.stdin.resume()</code> itself would switch stream to "old" mode.</p>
 <h3 id="process.stdin.fd"><code>process.stdin.fd</code><a href="#process_process_stdin_fd">#</a></h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type"><number></a></li>

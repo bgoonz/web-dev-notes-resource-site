@@ -87,12 +87,21 @@ Open <code>app.js</code> and delete the function you wrote in the previous step.
 <a class="sourceLine" id="cb1-10" title="10"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>Before reading the line-by-line descriptions that follow, discuss with your pair partner what you think each line of code is doing in the above snippet. Then, read the descriptions below.</p>
 <blockquote>
-<p>So far, you are used to creating a variable with the <code>var</code> keyword. The keyword <code>const</code> (short for “constant”) is a way of creating a variable name that can never be reassigned to another value within your program. When you create a variable with <code>const</code>, the value that is associated with that variable name is <strong>constant</strong> throughout the entire program. If you used <code>var</code> instead when creating a server, you could mistakenly reassign <code>port</code> or <code>hostname</code> to other values and accidentally crash your server. <a href="https://stackoverflow.com/questions/21237105/const-in-javascript-when-to-use-it-and-is-it-necessary">This StackOverflow thread</a> has more details. <a href="https://stackoverflow.com/a/22939592/5166521">This response in particular</a> is sufficient for our purposes.</p>
+<p>So far, you are used to creating a variable with the <code>var</code> keyword. The keyword <code>const</code> (short
+    for “constant") is a way of creating a variable name that can never be reassigned to another value within your
+    program. When you create a variable with <code>const</code>, the value that is associated with that variable name is
+    <strong>constant</strong> throughout the entire program. If you used <code>var</code> instead when creating a
+    server, you could mistakenly reassign <code>port</code> or <code>hostname</code> to other values and accidentally
+    crash your server. <a
+        href="https://stackoverflow.com/questions/21237105/const-in-javascript-when-to-use-it-and-is-it-necessary">This
+        StackOverflow thread</a> has more details. <a href="https://stackoverflow.com/a/22939592/5166521">This response
+        in particular</a> is sufficient for our purposes.</p>
 </blockquote>
 <p>What follows is a description of what each line of code is doing. Try to explain the code yourself before reading on.</p>
 <p><code>const http = require('http');</code> imports the HTTP module and binds it to a variable called <code>http</code>. The HTTP module comes with Node.js so we don’t have to download it separately; we can just import it directly.</p>
 <p><code>const hostname = '127.0.0.1';</code> binds a string containing the web address of our local server to a variable called <code>hostname</code>. Using the web address of our local server lets us serve our webpage to our local machine rather than to a URL. Remember, regardless of which computer you are on, <code>127.0.0.1</code> is always <code>localhost</code>.</p>
-<p><code>const port = 3000;</code> binds the port number we want to listen in on to a variable called <code>port</code>. When a server “listens” to a port it is listening for requests and responses sent to/from that port.</p>
+<p><code>const port = 3000;</code> binds the port number we want to listen in on to a variable called <code>port</code>.
+    When a server “listens" to a port it is listening for requests and responses sent to/from that port.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> server <span class="op">=</span> <span class="va">http</span>.<span class="at">createServer</span>((req<span class="op">,</span> res) <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="va">res</span>.<span class="at">statusCode</span> <span class="op">=</span> <span class="dv">200</span><span class="op">;</span></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="va">res</span>.<span class="at">setHeader</span> <span class="op">=</span> (<span class="st">&#39;Content-type&#39;</span><span class="op">,</span> <span class="st">&#39;text/plain&#39;</span>)<span class="op">;</span></a>
@@ -171,14 +180,14 @@ What we’ve done so far in this lab exercise has allowed you to take a huge lea
 <p><code>res.write(html);</code></p>
 <p>Finally, in the <code>res.setHeader()</code> method call, change <code>text/plain</code> to <code>text/html</code>.</p>
 <p>Save the file.</p>
-<p>Re-start the server in the Terminal by running <code>node app.js</code> from within the <code>getting-started-with-node</code> directory. You should see “Server running on port 3000…” printed to the Terminal.</p>
+<p>Re-start the server in the Terminal by running <code>node app.js</code> from within the <code>getting-started-with-node</code> directory. You should see “Server running on port 3000…" printed to the Terminal.</p>
 <p>Next, open a new tab in Chrome and navigate to http://localhost:3000. You should see the <code>index.html</code> in all its rendered glory! Also note that the text that appears in the tab’s title matches what you specified inside the <code>&lt;title&gt;</code> tags in <code>index.html</code>.</p>
 <hr />
 <h3 id="questions-to-consider">Questions to Consider</h3>
 <ul>
 <li>Discuss with your pair partner what you did in this lab exercise. What surprised you? What was challenging? What was fun about it?</li>
 <li>What concepts from the lesson slides appeared in this lab exercise?</li>
-<li>Based on what you were able to accomplish in the lab exercise, what else do you think will be possible to do with Node in terms of getting a website onto the “real” Internet?</li>
+<li>Based on what you were able to accomplish in the lab exercise, what else do you think will be possible to do with Node in terms of getting a website onto the “real" Internet?</li>
 </ul>
 <h3 id="extensions">Extensions</h3>
 <ul>

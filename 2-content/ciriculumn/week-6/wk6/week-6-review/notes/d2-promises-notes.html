@@ -3,10 +3,14 @@
 <p>asynchronous - can continue to execute another command even if current hasnt completed (non blocking) - may not be guarenteed order - ex: fetching from an api, querying database, settimeout, setinterval</p>
 <p>JS is single threaded - handles new events only after current command has completed - at any instance in program, only one command is executing</p>
 <p>Call Stack - structure used to track current function queues - tracks current task in progress - where JS code is pushed and executed one by one - if statement is async, code is forwarded to message queue</p>
-<p>Message Queue - structure used to track handling of events (messages) - “waiting line for events” - new items added to back of line (enqueue) - items removed from front of line (dequeue) - add message to queue when event occurs - ex: when setimeout invokes callback - begin processing events when call stack is empty - added one by one to callstack</p>
+<p>Message Queue - structure used to track handling of events (messages) - "waiting line for events" - new items added
+    to back of line (enqueue) - items removed from front of line (dequeue) - add message to queue when event occurs -
+    ex: when setimeout invokes callback - begin processing events when call stack is empty - added one by one to
+    callstack</p>
 <p>Event Loop - model of execution JS uses - consists of call stack and message queue - continuously adds messages from message queue to stack once stack is empty</p>
 <p>asynchronous non-blocking Input/Output model - JS uses callback mechanism to prevent blocking of main thread on I/O operations - async operations specify a callback - cb is func to be executed when result of async operation is ready - callback added to message queue - processed when stack is empty</p>
-<p>“JavaScript Callback Hell” - when result of cb makes another async call, we must nest callbacks - must also handle errors for each I/O opertaion - nested error handling and callbacks makes code hard to read</p>
+<p>"JavaScript Callback Hell" - when result of cb makes another async call, we must nest callbacks - must also handle
+    errors for each I/O opertaion - nested error handling and callbacks makes code hard to read</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">function</span> <span class="at">grindTheBeans</span>(nextTask) <span class="op">{</span></a>
 <a class="sourceLine" id="cb1-3" title="3">  <span class="at">setTimeout</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>

@@ -1,11 +1,12 @@
 <h2 id="musicbox-schema-instructions">MusicBox Schema Instructions</h2>
 <p>You are in charge of implementing the schema found in database-schema.png. You will implement the database using SQL. After it, you will drop the database and implement it again using Sequelize.</p>
-<p>Before you start, create a user called “musicbox_app” with a password and CREATEDB privileges.</p>
+<p>Before you start, create a user called “musicbox_app" with a password and CREATEDB privileges.</p>
 <ul>
 <li>SQL Practice
 <ol type="1">
-<li>Create a database called “musicbox” with owner “musicbox_app”</li>
-<li>Create the three tables in the schema “Genres”, “Albums” and “Artists”. Ensure that you capture the associations as foreign keys in your tables</li>
+<li>Create a database called “musicbox" with owner “musicbox_app"</li>
+<li>Create the three tables in the schema “Genres", “Albums" and “Artists". Ensure that you capture the associations as
+    foreign keys in your tables</li>
 <li>Create a sql file with seed data from <code>data-seed.txt</code>. Seed your database.</li>
 <li>Write the following queries in SQL</li>
 </ol>
@@ -16,10 +17,10 @@
 </ul></li>
 <li>Sequelize Practice
 <ol type="1">
-<li>Drop the database called “musicbox”</li>
+<li>Drop the database called “musicbox"</li>
 <li>Use sequelize to initialize a project</li>
-<li>Update config/config.json with your “musicbox_app” user and the “musicbox” database</li>
-<li>Utilize sequelize_cli model:generate to create the three Models that correspond to every table in the schema. Remember that <code>sequelize model:generate</code> takes the singular model names (“Genre”, “Album” and “Artist”) and will generate a migration file with the pluralized table names (“Genres”, “Albums”, and “Artists”).</li>
+<li>Update config/config.json with your “musicbox_app" user and the “musicbox" database</li>
+<li>Utilize sequelize_cli model:generate to create the three Models that correspond to every table in the schema. Remember that <code>sequelize model:generate</code> takes the singular model names (“Genre", “Album" and “Artist") and will generate a migration file with the pluralized table names (“Genres", “Albums", and “Artists").</li>
 <li>Update the migrations files with validations and references</li>
 <li>Update the models with the associations in the schema</li>
 <li>Utilize sequelize-cli seed:generate to create seed files for each Model, and migrate the data in <code>data-seed.txt</code> into these files.</li>
