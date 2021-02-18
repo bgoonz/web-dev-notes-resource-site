@@ -5,7 +5,8 @@ description: View packages marked as favorites
 ---
 
 ### Synopsis
-```bash
+
+``` bash
 npm stars [<user>]
 ```
 

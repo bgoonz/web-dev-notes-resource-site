@@ -97,7 +97,8 @@
                 <code>production</code>), npm will not install modules listed in <code>devDependencies</code>. To
                 install all modules listed in both <code>dependencies</code> and <code>devDependencies</code> when
                 <code>NODE_ENV</code> environment variable is set to <code>production</code>, you can use
-                <code>--production=false</code>.</p>
+                <code>--production=false</code>.
+                </p>
             <blockquote>
                 <p>NOTE: The <code>--production</code> flag has no particular meaning when adding a dependency to a
                     project.</p>
@@ -121,9 +122,11 @@
                     extension.</li>
                 <li>The package contents should reside in a subfolder inside the tarball (usually it is called
                     <code>package/</code>). npm strips one directory layer when installing the package (an equivalent of
-                    <code>tar x --strip-components=1</code> is run).</li>
+                    <code>tar x --strip-components=1</code> is run).
+                    </li>
                 <li>The package must contain a <code>package.json</code> file with <code>name</code> and
-                    <code>version</code> properties.</li>
+                    <code>version</code> properties.
+                    </li>
             </ul>
             <p>Example:</p>
             <div class="sourceCode" id="cb2">
@@ -145,7 +148,8 @@
             <p><code>npm install [&lt;@scope&gt;/]&lt;name&gt;</code>:</p>
             <p>Do a <code>&lt;name&gt;@&lt;tag&gt;</code> install, where <code>&lt;tag&gt;</code> is the “tag” config.
                 (See <a href="/using-npm/config"><code>config</code></a>. The config’s default value is
-                <code>latest</code>.)</p>
+                <code>latest</code>.)
+                </p>
             <p>In most cases, this will install the version of the modules tagged as <code>latest</code> on the npm
                 registry.</p>
             <p>Example:</p>
@@ -180,7 +184,8 @@
                 </li>
                 <li>
                     <p><code>-B, --save-bundle</code>: Saved dependencies will also be added to your
-                        <code>bundleDependencies</code> list.</p>
+                        <code>bundleDependencies</code> list.
+                        </p>
                 </li>
             </ul>
             <p>Further, if you have an <code>npm-shrinkwrap.json</code> or <code>package-lock.json</code> then it will
@@ -265,17 +270,20 @@
                     class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb10-1" title="1"><span class="op">&lt;</span><span class="ex">protocol</span><span class="op">&gt;</span>://[<span class="op">&lt;</span>user<span class="op">&gt;</span>[:<span class="op">&lt;</span>password<span class="op">&gt;</span>]@]<span class="op">&lt;</span>hostname<span class="op">&gt;</span>[:<span class="op">&lt;</span>port<span class="op">&gt;</span>][:][/]<span class="op">&lt;</span>path<span class="op">&gt;</span>[#<span class="op">&lt;</span>commit-ish<span class="op">&gt;</span> <span class="kw">|</span> <span class="co">#semver:&lt;semver&gt;]</span></a></code></pre>
             </div>
             <p><code>&lt;protocol&gt;</code> is one of <code>git</code>, <code>git+ssh</code>, <code>git+http</code>,
-                <code>git+https</code>, or <code>git+file</code>.</p>
+                <code>git+https</code>, or <code>git+file</code>.
+                </p>
             <p>If <code>#&lt;commit-ish&gt;</code> is provided, it will be used to clone exactly that commit. If the
                 commit-ish has the format <code>#semver:&lt;semver&gt;</code>, <code>&lt;semver&gt;</code> can be any
                 valid semver range or exact version, and npm will look for any tags or refs matching that range in the
                 remote repository, much as it would for a registry dependency. If neither
                 <code>#&lt;commit-ish&gt;</code> or <code>#semver:&lt;semver&gt;</code> is specified, then the default
-                branch of the repository is used.</p>
+                branch of the repository is used.
+                </p>
             <p>If the repository makes use of submodules, those submodules will be cloned as well.</p>
             <p>If the package being installed contains a <code>prepare</code> script, its <code>dependencies</code> and
                 <code>devDependencies</code> will be installed, and the prepare script will be run, before the package
-                is packaged and installed.</p>
+                is packaged and installed.
+                </p>
             <p>The following git environment variables are recognized by npm and will be added to the environment when
                 running git:</p>
             <ul>
@@ -309,7 +317,8 @@
                 valid semver range or exact version, and npm will look for any tags or refs matching that range in the
                 remote repository, much as it would for a registry dependency. If neither
                 <code>#&lt;commit-ish&gt;</code> or <code>#semver:&lt;semver&gt;</code> is specified, then
-                <code>master</code> is used.</p>
+                <code>master</code> is used.
+                </p>
             <p>As with regular git dependencies, <code>dependencies</code> and <code>devDependencies</code> will be
                 installed if the package has a <code>prepare</code> script before the package is done installing.</p>
             <p>Examples:</p>
@@ -324,7 +333,8 @@
                     gist:[&lt;githubname&gt;/]&lt;gistID&gt;[#&lt;commit-ish&gt;|#semver:&lt;semver&gt;]</code>:</p>
             <p>Install the package at <code>https://gist.github.com/gistID</code> by attempting to clone it using
                 <code>git</code>. The GitHub username associated with the gist is optional and will not be saved in
-                <code>package.json</code>.</p>
+                <code>package.json</code>.
+                </p>
             <p>As with regular git dependencies, <code>dependencies</code> and <code>devDependencies</code> will be
                 installed if the package has a <code>prepare</code> script before the package is done installing.</p>
             <p>Example:</p>
@@ -342,7 +352,8 @@
                 valid semver range or exact version, and npm will look for any tags or refs matching that range in the
                 remote repository, much as it would for a registry dependency. If neither
                 <code>#&lt;commit-ish&gt;</code> or <code>#semver:&lt;semver&gt;</code> is specified, then
-                <code>master</code> is used.</p>
+                <code>master</code> is used.
+                </p>
             <p>As with regular git dependencies, <code>dependencies</code> and <code>devDependencies</code> will be
                 installed if the package has a <code>prepare</code> script before the package is done installing.</p>
             <p>Example:</p>
@@ -360,7 +371,8 @@
                 valid semver range or exact version, and npm will look for any tags or refs matching that range in the
                 remote repository, much as it would for a registry dependency. If neither
                 <code>#&lt;commit-ish&gt;</code> or <code>#semver:&lt;semver&gt;</code> is specified, then
-                <code>master</code> is used.</p>
+                <code>master</code> is used.
+                </p>
             <p>As with regular git dependencies, <code>dependencies</code> and <code>devDependencies</code> will be
                 installed if the package has a <code>prepare</code> script before the package is done installing.</p>
             <p>Example:</p>
@@ -403,7 +415,8 @@
             <p><code>--global-style</code>: install the package into your local <code>node_modules</code> folder with
                 the same layout it uses with the global <code>node_modules</code> folder. Only your direct dependencies
                 will show in <code>node_modules</code> and everything they depend on will be flattened in their
-                <code>node_modules</code> folders. This obviously will eliminate some deduping.</p>
+                <code>node_modules</code> folders. This obviously will eliminate some deduping.
+                </p>
         </li>
         <li>
             <p><code>--legacy-bundling</code>: install the package in the style of versions of npm prior to 1.4, where
@@ -437,7 +450,8 @@
     <p>The dependency types that may be omitted or included are:</p>
     <ul>
         <li><code>peer</code>: any <code>peerDependencies</code>, including those with a
-            <code>peerDependenciesMeta</code> entry specifying <code>optional: true</code></li>
+            <code>peerDependenciesMeta</code> entry specifying <code>optional: true</code>
+            </li>
         <li><code>optional</code>: dependencies listed in <code>optionalDependencies</code></li>
         <li><code>dev</code>: dependencies listed in <code>devDependencies</code></li>
     </ul>
@@ -447,7 +461,8 @@
         <li>
             <p><code>--no-optional</code>: prevent optionalDependencies from being installed. Note that their presence
                 is still entered in the <code>package-lock.json</code> file, and the tree is designed such that they
-                <em>can</em> be installed in the future.</p>
+                <em>can</em> be installed in the future.
+                </p>
         </li>
         <li>
             <p><code>--prod</code>: prevent devDependencies from being installed.</p>
@@ -484,7 +499,8 @@
         </li>
         <li>
             <p><code>--no-save</code>: Do not save installed dependencies to <code>package.json</code> or
-                <code>package-lock.json</code>.</p>
+                <code>package-lock.json</code>.
+                </p>
         </li>
     </ul>
     <h3 id="algorithm">Algorithm</h3>

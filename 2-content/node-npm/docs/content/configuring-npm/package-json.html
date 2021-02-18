@@ -188,16 +188,19 @@
         your package is installed as a dependency. File patterns follow a similar syntax to <code>.gitignore</code>, but
         reversed: including a file, directory, or glob pattern (<code>*</code>, <code>**/*</code>, and such) will make
         it so that file is included in the tarball when it’s packed. Omitting the field will make it default to
-        <code>["*"]</code>, which means it will include all files.</p>
+        <code>["*"]</code>, which means it will include all files.
+    </p>
     <p>Some special files and directories are also included or excluded regardless of whether they exist in the
-        <code>files</code> array (see below).</p>
+        <code>files</code> array (see below).
+    </p>
     <p>You can also provide a <code>.npmignore</code> file in the root of your package or in subdirectories, which will
         keep files from being included. At the root of your package it will not override the “files” field, but in
         subdirectories it will. The <code>.npmignore</code> file works just like a <code>.gitignore</code>. If there is
         a <code>.gitignore</code> file, and <code>.npmignore</code> is missing, <code>.gitignore</code>’s contents will
         be used instead.</p>
     <p>Files included with the “package.json#files” field <em>cannot</em> be excluded through <code>.npmignore</code> or
-        <code>.gitignore</code>.</p>
+        <code>.gitignore</code>.
+    </p>
     <p>Certain files are always included, regardless of settings:</p>
     <ul>
         <li><code>package.json</code></li>
@@ -230,7 +233,8 @@
     <h3 id="main">main</h3>
     <p>The main field is a module ID that is the primary entry point to your program. That is, if your package is named
         <code>foo</code>, and a user installs it, and then does <code>require("foo")</code>, then your main module’s
-        exports object will be returned.</p>
+        exports object will be returned.
+    </p>
     <p>This should be a module ID relative to the root of your package folder.</p>
     <p>For most modules, it makes the most sense to have a main script and often not much else.</p>
     <h3 id="browser">browser</h3>
@@ -242,14 +246,16 @@
         pretty easy (in fact, it uses this feature to install the “npm” executable.)</p>
     <p>To use this, supply a <code>bin</code> field in your package.json which is a map of command name to local file
         name. On install, npm will symlink that file into <code>prefix/bin</code> for global installs, or
-        <code>./node_modules/.bin/</code> for local installs.</p>
+        <code>./node_modules/.bin/</code> for local installs.
+    </p>
     <p>For example, myapp could have this:</p>
     <div class="sourceCode" id="cb12">
         <pre
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb12-1" title="1"><span class="fu">{</span> <span class="dt">&quot;bin&quot;</span> <span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;myapp&quot;</span> <span class="fu">:</span> <span class="st">&quot;./cli.js&quot;</span> <span class="fu">}</span> <span class="fu">}</span></a></code></pre>
     </div>
     <p>So, when you install myapp, it’ll create a symlink from the <code>cli.js</code> script to
-        <code>/usr/local/bin/myapp</code>.</p>
+        <code>/usr/local/bin/myapp</code>.
+    </p>
     <p>If you have a single executable, and its name should be the name of the package, then you can just supply it as a
         string. For example:</p>
     <div class="sourceCode" id="cb13">
@@ -316,7 +322,8 @@
         added.</p>
     <p>Because of the way the <code>bin</code> directive works, specifying both a <code>bin</code> path and setting
         <code>directories.bin</code> is an error. If you want to specify individual files, use <code>bin</code>, and for
-        all the files in an existing <code>bin</code> directory, use <code>directories.bin</code>.</p>
+        all the files in an existing <code>bin</code> directory, use <code>directories.bin</code>.
+    </p>
     <h4 id="directories.man">directories.man</h4>
     <p>A folder that is full of man pages. Sugar to generate a “man” array by walking the folder.</p>
     <h4 id="directories.doc">directories.doc</h4>
@@ -344,7 +351,8 @@
         without any modification. It should not be a url to an html project page that you put in your browser. It’s for
         computers.</p>
     <p>For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same shortcut syntax you use for
-        <code>npm install</code>:</p>
+        <code>npm install</code>:
+    </p>
     <div class="sourceCode" id="cb19">
         <pre
             class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb19-1" title="1"><span class="er">&quot;repository&quot;:</span> <span class="er">&quot;npm/npm&quot;</span></a>
@@ -387,7 +395,8 @@
         string which has one or more space-separated descriptors. Dependencies can also be identified with a tarball or
         git URL.</p>
     <p><strong>Please do not put test harnesses or transpilers in your <code>dependencies</code> object.</strong> See
-        <code>devDependencies</code>, below.</p>
+        <code>devDependencies</code>, below.
+    </p>
     <p>See <a href="/using-npm/semver">semver</a> for more details about specifying version ranges.</p>
     <ul>
         <li><code>version</code> Must match <code>version</code> exactly</li>
@@ -437,12 +446,14 @@
             class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb23-1" title="1"><span class="op">&lt;</span><span class="ex">protocol</span><span class="op">&gt;</span>://[<span class="op">&lt;</span>user<span class="op">&gt;</span>[:<span class="op">&lt;</span>password<span class="op">&gt;</span>]@]<span class="op">&lt;</span>hostname<span class="op">&gt;</span>[:<span class="op">&lt;</span>port<span class="op">&gt;</span>][:][/]<span class="op">&lt;</span>path<span class="op">&gt;</span>[#<span class="op">&lt;</span>commit-ish<span class="op">&gt;</span> <span class="kw">|</span> <span class="co">#semver:&lt;semver&gt;]</span></a></code></pre>
     </div>
     <p><code>&lt;protocol&gt;</code> is one of <code>git</code>, <code>git+ssh</code>, <code>git+http</code>,
-        <code>git+https</code>, or <code>git+file</code>.</p>
+        <code>git+https</code>, or <code>git+file</code>.
+    </p>
     <p>If <code>#&lt;commit-ish&gt;</code> is provided, it will be used to clone exactly that commit. If the commit-ish
         has the format <code>#semver:&lt;semver&gt;</code>, <code>&lt;semver&gt;</code> can be any valid semver range or
         exact version, and npm will look for any tags or refs matching that range in the remote repository, much as it
         would for a registry dependency. If neither <code>#&lt;commit-ish&gt;</code> or
-        <code>#semver:&lt;semver&gt;</code> is specified, then <code>master</code> is used.</p>
+        <code>#semver:&lt;semver&gt;</code> is specified, then <code>master</code> is used.
+    </p>
     <p>Examples:</p>
     <div class="sourceCode" id="cb24">
         <pre
@@ -453,7 +464,8 @@
     </div>
     <h4 id="github-urls">GitHub URLs</h4>
     <p>As of version 1.1.65, you can refer to GitHub urls as just “foo”: “user/foo-project”. Just as with git URLs, a
-        <code>commit-ish</code> suffix can be included. For example:</p>
+        <code>commit-ish</code> suffix can be included. For example:
+    </p>
     <div class="sourceCode" id="cb25">
         <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb25-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb25-2" title="2">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;foo&quot;</span><span class="fu">,</span></a>
@@ -544,7 +556,8 @@
     <p>Assuming the host complies with <a href="https://semver.org/">semver</a>, only changes in the host package’s
         major version will break your plugin. Thus, if you’ve worked with every 1.x version of the host package, use
         <code>"^1.0"</code> or <code>"1.x"</code> to express this. If you depend on features introduced in 1.5.2, use
-        <code>"&gt;= 1.5.2 &lt; 2"</code>.</p>
+        <code>"&gt;= 1.5.2 &lt; 2"</code>.
+    </p>
     <h3 id="peerdependenciesmeta">peerDependenciesMeta</h3>
     <p>When a user installs your package, npm will emit warnings if packages specified in <code>peerDependencies</code>
         are not already installed. The <code>peerDependenciesMeta</code> field serves to provide npm more information on
@@ -573,7 +586,8 @@
     <p>This defines an array of package names that will be bundled when publishing the package.</p>
     <p>In cases where you need to preserve npm packages locally or have them available through a single file download,
         you can bundle the packages in a tarball file by specifying the package names in the
-        <code>bundledDependencies</code> array and executing <code>npm pack</code>.</p>
+        <code>bundledDependencies</code> array and executing <code>npm pack</code>.
+    </p>
     <p>For example:</p>
     <p>If we define a package.json like this:</p>
     <div class="sourceCode" id="cb32">
@@ -638,7 +652,8 @@
     <h3 id="enginestrict">engineStrict</h3>
     <p><strong>This feature was removed in npm 3.0.0</strong></p>
     <p>Prior to npm 3.0.0, this feature was used to treat this package as if the user had set
-        <code>engine-strict</code>. It is no longer used.</p>
+        <code>engine-strict</code>. It is no longer used.
+    </p>
     <h3 id="os">os</h3>
     <p>You can specify which operating systems your module will run on:</p>
     <div class="sourceCode" id="cb36">
@@ -673,7 +688,8 @@
     <p>This is a way to prevent accidental publication of private repositories. If you would like to ensure that a given
         package is only ever published to a specific registry (for example, an internal registry), then use the
         <code>publishConfig</code> dictionary described below to override the <code>registry</code> config param at
-        publish-time.</p>
+        publish-time.
+    </p>
     <h3 id="publishconfig">publishConfig</h3>
     <p>This is a set of config values that will be used at publish-time. It’s especially handy if you want to set the
         tag, registry or access, so that you can ensure that a given package is not tagged with “latest”, published to
@@ -705,19 +721,22 @@
         <li>
             <p><code>"scripts": {"start": "node server.js"}</code></p>
             <p>If there is a <code>server.js</code> file in the root of your package, then npm will default the
-                <code>start</code> command to <code>node server.js</code>.</p>
+                <code>start</code> command to <code>node server.js</code>.
+            </p>
         </li>
         <li>
             <p><code>"scripts":{"install": "node-gyp rebuild"}</code></p>
             <p>If there is a <code>binding.gyp</code> file in the root of your package and you have not defined an
                 <code>install</code> or <code>preinstall</code> script, npm will default the <code>install</code>
-                command to compile using node-gyp.</p>
+                command to compile using node-gyp.
+            </p>
         </li>
         <li>
             <p><code>"contributors": [...]</code></p>
             <p>If there is an <code>AUTHORS</code> file in the root of your package, npm will treat each line as a
                 <code>Name &lt;email&gt; (url)</code> format, where email and url are optional. Lines which start with a
-                <code>#</code> or are blank, will be ignored.</p>
+                <code>#</code> or are blank, will be ignored.
+            </p>
         </li>
     </ul>
     <h3 id="see-also">SEE ALSO</h3>

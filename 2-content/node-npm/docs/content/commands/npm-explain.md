@@ -6,7 +6,7 @@ description: Explain installed packages
 
 ### Synopsis
 
-```bash
+``` bash
 npm explain <folder | specifier>
 
 alias: why
@@ -17,13 +17,13 @@ alias: why
 This command will print the chain of dependencies causing a given package
 to be installed in the current project.
 
-Positional arguments can be either folders within `node_modules`, or
+Positional arguments can be either folders within `node_modules` , or
 `name@version-range` specifiers, which will select the dependency
 relationships to explain.
 
 For example, running `npm explain glob` within npm's source tree will show:
 
-```bash
+``` bash
 glob@7.1.6
 node_modules/glob
   glob@"^7.1.4" from the root project
@@ -42,7 +42,7 @@ argument to the command.  This can be useful when trying to figure out
 exactly why a given dependency is being duplicated to satisfy conflicting
 version requirements within the project.
 
-```bash
+``` bash
 $ npm explain node_modules/nyc/node_modules/find-up
 find-up@3.0.0 dev
 node_modules/nyc/node_modules/find-up

@@ -6,7 +6,7 @@ description: Manage registry hooks
 
 ### Synopsis
 
-```bash
+``` bash
 npm hook ls [pkg]
 npm hook add <entity> <url> <secret>
 npm hook update <id> <url> [secret]
@@ -16,7 +16,7 @@ npm hook rm <id>
 ### Description
 
 Allows you to manage [npm
-hooks](https://blog.npmjs.org/post/145260155635/introducing-hooks-get-notifications-of-npm),
+hooks](https://blog.npmjs.org/post/145260155635/introducing-hooks-get-notifications-of-npm), 
 including adding, removing, listing, and updating.
 
 Hooks allow you to configure URL endpoints that will be notified whenever a
@@ -25,13 +25,14 @@ of entities can be watched by hooks: packages, owners, and scopes.
 
 To create a package hook, simply reference the package name.
 
-To create an owner hook, prefix the owner name with `~` (as in,
-`~youruser`).
+To create an owner hook, prefix the owner name with `~` (as in, 
+`~youruser` ).
 
-To create a scope hook, prefix the scope name with `@` (as in,
-`@yourscope`).
+To create a scope hook, prefix the scope name with `@` (as in, 
+`@yourscope` ).
 
 The hook `id` used by `update` and `rm` are the IDs listed in `npm hook ls`
+
 for that particular hook.
 
 The shared secret will be sent along to the URL endpoint so you can verify
@@ -41,43 +42,43 @@ the request came from your own configured hook.
 
 Add a hook to watch a package for changes:
 
-```bash
+``` bash
 $ npm hook add lodash https://example.com/ my-shared-secret
 ```
 
-Add a hook to watch packages belonging to the user `substack`:
+Add a hook to watch packages belonging to the user `substack` :
 
-```bash
+``` bash
 $ npm hook add ~substack https://example.com/ my-shared-secret
 ```
 
 Add a hook to watch packages in the scope `@npm`
 
-```bash
+``` bash
 $ npm hook add @npm https://example.com/ my-shared-secret
 ```
 
 List all your active hooks:
 
-```bash
+``` bash
 $ npm hook ls
 ```
 
 List your active hooks for the `lodash` package:
 
-```bash
+``` bash
 $ npm hook ls lodash
 ```
 
 Update an existing hook's url:
 
-```bash
+``` bash
 $ npm hook update id-deadbeef https://my-new-website.here/
 ```
 
 Remove a hook:
 
-```bash
+``` bash
 $ npm hook rm id-deadbeef
 ```
 

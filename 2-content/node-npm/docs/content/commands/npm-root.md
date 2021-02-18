@@ -6,7 +6,7 @@ description: Display npm root
 
 ### Synopsis
 
-```bash
+``` bash
 npm root [-g]
 ```
 
@@ -17,7 +17,7 @@ Print the effective `node_modules` folder to standard out.
 Useful for using npm in shell scripts that do things with the
 `node_modules` folder.  For example:
 
-```bash
+``` bash
 #!/bin/bash
 global_node_modules="$(npm root --global)"
 echo "Global packages installed in: ${global_node_modules}"

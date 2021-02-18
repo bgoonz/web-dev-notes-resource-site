@@ -6,7 +6,7 @@ description: Restart a package
 
 ### Synopsis
 
-```bash
+``` bash
 npm restart [-- <args>]
 ```
 
@@ -16,7 +16,7 @@ This restarts a project.  It is equivalent to running `npm run-script
 restart`.
 
 If the current project has a `"restart"` script specified in
-`package.json`, then the following scripts will be run:
+`package.json` , then the following scripts will be run:
 
 1. prerestart
 2. restart

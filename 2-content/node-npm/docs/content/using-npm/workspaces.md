@@ -18,15 +18,15 @@ order to add references to packages that should be symlinked into the current
 
 We also refer to these packages being auto-symlinked during `npm install` as a
 single **workspace**, meaning it's a nested package within the current local
-file system that is explicitly defined in the [`package.json`](/configuring-npm/package-json#workspaces)
+file system that is explicitly defined in the [ `package.json` ](/configuring-npm/package-json#workspaces)
 `workspaces` configuration.
 
 ### Installing workspaces
 
 Workspaces are usually defined via the `workspaces` property of the
-[`package.json`](/configuring-npm/package-json#workspaces) file, e.g:
+[ `package.json` ](/configuring-npm/package-json#workspaces) file, e.g:
 
-```json
+``` json
 {
   "name": "my-workspaces-powered-project",
   "workspaces": [
@@ -39,7 +39,8 @@ Given the above `package.json` example living at a current working
 directory `.` that contains a folder named `workspace-a` that disposes
 of a `package.json` inside it, defining a nodejs package, e.g:
 
-```
+``` 
+
 .
 +-- package.json
 `-- workspace-a
@@ -53,7 +54,8 @@ directory `.` is that the folder `workspace-a` will get symlinked to the
 Below is a post `npm install` example, given that same previous example
 structure of files and folders:
 
-```
+``` 
+
 .
 +-- node_modules
 |  `-- workspace-a -> ../workspace-a
@@ -66,11 +68,13 @@ structure of files and folders:
 ### Using workspaces
 
 Given the [specifities of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace
-by it's declared `package.json` `name`. Continuing from the example defined
+by it's declared `package.json`  `name` . Continuing from the example defined
 above, let's also create a Node.js script that will require the `workspace-a`
+
 example module, e.g:
 
-```
+``` 
+
 // ./workspace-a/index.js
 module.exports = 'a'
 
@@ -81,7 +85,7 @@ console.log(moduleA) // -> a
 
 When running it with:
 
-`node lib/index.js`
+ `node lib/index.js`
 
 This demonstrates how the nature of `node_modules` resolution allows for
 **workspaces** to enable a portable workflow for requiring each **workspace**
@@ -92,4 +96,3 @@ nested workspaces to be consumed elsewhere.
 
 * [npm install](/commands/npm-install)
 * [npm publish](/commands/npm-publish)
-

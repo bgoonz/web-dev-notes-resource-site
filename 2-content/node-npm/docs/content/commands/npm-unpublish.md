@@ -13,6 +13,7 @@ npm unpublish [<@scope>/]<pkg>@<version>
 ```
 
 #### Unpu
+
 ``` bash
 npm unpublish [<@scope>/]<pkg> --force
 ```
@@ -22,6 +23,7 @@ npm unpublish [<@scope>/]<pkg> --force
 Consider using the `deprecate` command instead, if your intent is to encourage users to upgrade, or if you no longer want to maintain a package.
 
 ### Descr
+
 This removes a package version from the registry, deleting its
 entry and removing the tarball.
 

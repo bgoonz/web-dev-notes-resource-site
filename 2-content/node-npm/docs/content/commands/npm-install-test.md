@@ -6,7 +6,7 @@ description: Install package(s) and run tests
 
 ### Synopsis
 
-```bash
+``` bash
 npm install-test (with no args, in package dir)
 npm install-test [<@scope>/]<name>
 npm install-test [<@scope>/]<name>@<tag>
@@ -22,8 +22,8 @@ common options: [--save|--save-dev|--save-optional] [--save-exact] [--dry-run]
 
 ### Description
 
-This command runs an `npm install` followed immediately by an `npm test`. It
-takes exactly the same arguments as `npm install`.
+This command runs an `npm install` followed immediately by an `npm test` . It
+takes exactly the same arguments as `npm install` .
 
 ### See Also
 

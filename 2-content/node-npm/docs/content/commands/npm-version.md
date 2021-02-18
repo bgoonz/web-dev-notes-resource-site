@@ -70,7 +70,7 @@ The exact order of execution is as follows:
      A typical use would be running your full test suite before deploying.
      Any files you want added to the commit should be explicitly added using `git add` .
 
-  3. Bump `version` in `package.json` as requested (`patch`,  `minor`,  `major`, etc).
+  3. Bump `version` in `package.json` as requested (`patch`,     `minor`,     `major`, etc).
   4. Run the `version` script. These scripts have access to the new `version` in package.json
 
      (so they can incorporate it into file headers in generated files for example).

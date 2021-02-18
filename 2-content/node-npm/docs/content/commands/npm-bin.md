@@ -13,6 +13,7 @@ npm bin [-g|--global]
 ### Description
 
 Print the
+
 ### See Also
 
 * [npm prefix](/commands/npm-prefix)

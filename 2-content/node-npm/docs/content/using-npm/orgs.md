@@ -25,9 +25,9 @@ There are two main commands:
 
 ### Team Admins create teams
 
-* Check who you’ve added to your org:
+* Check who you've added to your org:
 
-```bash
+``` bash
 npm team ls <org>:developers
 ```
 
@@ -35,13 +35,13 @@ npm team ls <org>:developers
 
 * Create a new team:
 
-```bash
+``` bash
 npm team create <org:team>
 ```
 
 * Add members to that team:
 
-```bash
+``` bash
 npm team add <org:team> <user>
 ```
 
@@ -49,20 +49,21 @@ npm team add <org:team> <user>
 
 * In package directory, run
 
-```bash
+``` bash
 npm init --scope=<org>
 ```
+
 to scope it for your org & publish as usual
 
 * Grant access:  
 
-```bash
+``` bash
 npm access grant <read-only|read-write> <org:team> [<package>]
 ```
 
 * Revoke access:
 
-```bash
+``` bash
 npm access revoke <org:team> [<package>]
 ```
 
@@ -70,19 +71,19 @@ npm access revoke <org:team> [<package>]
 
 * See what org packages a team member can access:
 
-```bash
+``` bash
 npm access ls-packages <org> <user>
 ```
 
 * See packages available to a specific team:
 
-```bash
+``` bash
 npm access ls-packages <org:team>
 ```
 
 * Check which teams are collaborating on a package:
 
-```bash
+``` bash
 npm access ls-collaborators <pkg>
 ```
 

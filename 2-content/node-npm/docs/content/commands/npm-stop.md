@@ -6,7 +6,7 @@ description: Stop a package
 
 ### Synopsis
 
-```bash
+``` bash
 npm stop [-- <args>]
 ```
 

@@ -6,7 +6,7 @@ description: Change settings on your registry profile
 
 ### Synopsis
 
-```bash
+``` bash
 npm profile get [--json|--parseable] [<property>]
 npm profile set [--json|--parseable] <property> <value>
 npm profile set password
@@ -21,9 +21,10 @@ depends on the registry implementation, so third-party registries may not
 support this interface.
 
 * `npm profile get [<property>]`: Display all of the properties of your
+
   profile, or one or more specific properties.  It looks like:
 
-```bash
+``` bash
 +-----------------+---------------------------+
 | name            | example                   |
 +-----------------+---------------------------+
@@ -48,22 +49,30 @@ support this interface.
 ```
 
 * `npm profile set <property> <value>`: Set the value of a profile
-  property. You can set the following properties this way: email, fullname,
+
+  property. You can set the following properties this way: email, fullname, 
   homepage, freenode, twitter, github
 
-* `npm profile set password`: Change your password.  This is interactive,
+* `npm profile set password`: Change your password.  This is interactive, 
+
   you'll be prompted for your current password and a new password.  You'll
   also be prompted for an OTP if you have two-factor authentication
   enabled.
 
 * `npm profile enable-2fa [auth-and-writes|auth-only]`: Enables two-factor
+
   authentication. Defaults to `auth-and-writes` mode. Modes are:
-  * `auth-only`: Require an OTP when logging in or making changes to your
+
+  + `auth-only`: Require an OTP when logging in or making changes to your
+
     account's authentication.  The OTP will be required on both the website
     and the command line.
-  * `auth-and-writes`: Requires an OTP at all the times `auth-only` does,
+
+  + `auth-and-writes`: Requires an OTP at all the times `auth-only` does, 
+
     and also requires one when publishing a module, setting the `latest`
-    dist-tag, or changing access via `npm access` and `npm owner`.
+
+    dist-tag, or changing access via `npm access` and `npm owner` .
 
 * `npm profile disable-2fa`: Disables two-factor authentication.
 

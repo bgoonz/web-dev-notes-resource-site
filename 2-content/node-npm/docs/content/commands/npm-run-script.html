@@ -15,10 +15,11 @@
     <h3 id="synopsis">Synopsis</h3>
     <div class="sourceCode" id="cb1">
         <pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><sp
-   an class="ex">npm</span> run-script <span class="op">&lt;</span>command<span class="op">&gt;</span> [--if-present] [--silent] [-- <span class="op">&lt;</span>args<span class="op">&gt;</span>]</a>
+   an class="ex">npm</span> run-script <span class="op">&lt;</span>command<span class="op">&gt;</span> [--if-present]
+   [--silent] [-- <span class="op">&lt;</span>args<span class="op">&gt;</span>]</a>
 <a class="sourceLine" id="cb1-2" title="2"></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="ex">aliases</span>: run, rum, urn</a></code></pre>
-    </div>
+</div>
     <h3 id="description">Description</h3>
     <p>This runs an arbitrary command from a package’s <code>"scripts"</code> object. If no <code>"command"</code> is
         provided, it will list the available scripts.</p>
@@ -28,7 +29,8 @@
     <p>Any positional arguments are passed to the specified script. Use <code>--</code> to pass <code>-</code>-prefixed
         flags and options which would otherwise be parsed by npm.</p>
     <p>For example:</p>
-    <div class="sourceCode" id="cb2">        <pre
+    <div class="sourceCode" id="cb2">
+        <pre
             class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1"><span class="ex">npm</span> run test -- --grep=<span class="st">&quot;pattern&quot;</span></a></code></pre>
     </div>
     <p>The arguments will only be passed to the script specified after <code>npm run</code> and not to any pre or post
@@ -48,7 +50,7 @@
     <p>instead of</p>
     <div class="sourceCode" id="cb4">
         <pre
-  class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="st">&quot;scripts&quot;</span>: {<span class="st">&quot;test&quot;</span>: <span class="st">&quot;node_modules/.bin/tap test/*.js&quot;</span>}</a></code></pre>
+            class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="st">&quot;scripts&quot;</span>: {<span class="st">&quot;test&quot;</span>: <span class="st">&quot;node_modules/.bin/tap test/*.js&quot;</span>}</a></code></pre>
     </div>
     <p>The actual shell your script is run within is platform dependent. By default, on Unix-like systems it is the
         <code>/bin/sh</code> command, on Windows it is the <code>cmd.exe</code>. The actual shell referred to by

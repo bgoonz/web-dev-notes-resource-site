@@ -36,7 +36,8 @@
     <ul>
         <li>create / destroy: Create a new team, or destroy an existing one. Note: You cannot remove the
             <code>developers</code> team, <a href="https://docs.npmjs.com/about-developers-team" target="_blank">learn
-                more.</a></li>
+                more.</a>
+        </li>
         <li>
             <p>add / rm: Add a user to an existing team, or remove a user from a team they belong to.</p>
         </li>
@@ -51,12 +52,14 @@
     </ul>
     <h3 id="details">Details</h3>
     <p><code>npm team</code> always operates directly on the current registry, configurable from the command line using
-        <code>--registry=&lt;registry url&gt;</code>.</p>
+        <code>--registry=&lt;registry url&gt;</code>.
+    </p>
     <p>In order to create teams and manage team membership, you must be a <em>team admin</em> under the given
         organization. Listing teams and team memberships may be done by any member of the organizations.</p>
     <p>Organization creation and management of team admins and <em>organization</em> members is done through the
         website, not the npm CLI.</p>
-    <p>To use teams to manage permissions on packages belonging to your organization, use the <code>npm access</code>
+    <p>To use teams to manage permissions on packages belonging to your organization, use the <code>npm
+            access</code>
         command to grant or revoke the appropriate permissions.</p>
     <h3 id="see-also">See Also</h3>
     <ul>

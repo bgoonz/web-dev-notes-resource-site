@@ -26,7 +26,8 @@
     <p>First, <code>npm link</code> in a package folder will create a symlink in the global folder
         <code>{prefix}/lib/node_modules/&lt;package&gt;</code> that links to the package where the <code>npm link</code>
         command was executed. It will also link any bins in the package to <code>{prefix}/bin/{name}</code>. Note that
-        <code>npm link</code> uses the global prefix (see <code>npm prefix -g</code> for its value).</p>
+        <code>npm link</code> uses the global prefix (see <code>npm prefix -g</code> for its value).
+        </p>
     <p>Next, in some other location, <code>npm link package-name</code> will create a symbolic link from
         globally-installed <code>package-name</code> to <code>node_modules/</code> of the current folder.</p>
     <p>Note that <code>package-name</code> is taken from <code>package.json</code>, <em>not</em> from the directory
@@ -45,7 +46,8 @@
     </div>
     <p>Now, any changes to <code>~/projects/node-redis</code> will be reflected in
         <code>~/projects/node-bloggy/node_modules/node-redis/</code>. Note that the link should be to the package name,
-        not the directory name for that package.</p>
+        not the directory name for that package.
+        </p>
     <p>You may also shortcut the two steps in one. For example, to do the above use-case in a shorter way:</p>
     <div class="sourceCode" id="cb3">
         <pre
@@ -58,7 +60,8 @@
 <a class="sourceLine" id="cb4-2" title="2"><span class="ex">npm</span> link redis</a></code></pre>
     </div>
     <p>That is, it first creates a global link, and then links the global installation target into your project’s
-        <code>node_modules</code> folder.</p>
+        <code>node_modules</code> folder.
+        </p>
     <p>Note that in this case, you are referring to the directory name, <code>node-redis</code>, rather than the package
         name <code>redis</code>.</p>
     <p>If your linked package is scoped (see <a href="/using-npm/scope"><code>scope</code></a>) your link command must
@@ -75,9 +78,11 @@
         Additionally, other users or developers on your project would run into issues if they do not have their folders
         set up exactly the same as yours.</p>
     <p>If you are adding a <em>new</em> dependency as a link, you should add it to the relevant metadata by running
-        <code>npm install &lt;dep&gt; --package-lock-only</code>.</p>
+        <code>npm install &lt;dep&gt; --package-lock-only</code>.
+        </p>
     <p>If you <em>want</em> to save the <code>file:</code> reference in your <code>package.json</code> and
-        <code>package-lock.json</code> files, you can use <code>npm link &lt;dep&gt; --save</code> to do so.</p>
+        <code>package-lock.json</code> files, you can use <code>npm link &lt;dep&gt; --save</code> to do so.
+        </p>
     <h3 id="see-also">See Also</h3>
     <ul>
         <li><a href="/using-npm/developers">npm developers</a></li>

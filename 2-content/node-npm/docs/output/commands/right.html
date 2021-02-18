@@ -2,183 +2,296 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>commands</title>
-<style type="text/css">
-  @charset "UTF-8";
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-    HTML {
-    font-size: medium;
-    font-family: Garamond
-    }
-    BODY {
-    background: black
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.42em;
-    color:#A7A1AE;
-    background-color:#1F2739;
-    }
-    h1 {
-    font-size:3em;
-    font-weight: 300;
-    line-height:1em;
-    text-align: center;
-    color: #4DC3FA;
-    }
-    p {
-    color: grey;
-    }
-    A {
-    text-decoration: none color:black;
-    }
-    A:hover {
-    color: red;
-    background: whitesmoke;
-    border-radius: 8px;
-    padding-left: 3px;
-    padding-right: 3px;
-    }
-    TABLE.fancy {
-    background: #fffefe;
-    border-left: 1px solid;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-top: 1px solid;
-    border-bottom: 0px solid;
-    border-color: #FFF;
-    overflow-y:scroll;
-    width: 80%;
-    display: table;
-    padding: 0 0 8em 0;
-    }
-    TABLE.fancy TD {
-    border-right: 1px solid;
-    border-bottom: 1px solid;
-    border-color: #FFF;
-    text-align: center;
-    padding-right: 5px;
-    padding-bottom: 2%;
-    padding-top: 2%;
-    padding-left:2%;
-    }
-    TABLE.fancy tr:nth-child(odd) {
-    background-color: #323C50;
-    }
-    TABLE.fancy tr:nth-child(even) {
-    background-color: #2C3446;
-    }
-    TABLE.fancy th {
-    background-color: #1F2739;
-    }
-    TABLE.fancy td, TABLE.fancy th {
-    padding-bottom: 2%;
-    padding-top: 2%;
-    padding-left:2%;
-    }
-    TABLE.fancy tr:hover {
-    background-color: #464A52;
-    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-    -moz-box-shadow: 0 6px 6px -6px #0E1119;
-    box-shadow: 0 6px 6px -6px #0E1119;
-    }
-    TABLE.fancy td:hover {
-    background-color: #FFF842;
-    color: #403E10;
-    font-weight: bold;
-    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px
-    6px;
-    transform: translate3d(6px, -6px, 0);
-    transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: line;
-    }
-    @media (max-width: 800px) {
-    TABLE.fancy td:nth-child(4),
-    TABLE.fancy th:nth-child(4) { display: none; }
-    }
-    TABLE.fancy TD.no-right {
-    border-right: 0px
-    }
-    TABLE.fancy TD.right {
-    text-align: right
-    }
-    TABLE.fancy TD.left {
-    text-align: left
-    }
-    TABLE.fancy TD.center {
-    text-align: center
-    }
-    TABLE.fancy TH {
-    border-right: 1px solid;
-    border-bottom: 1px solid;
-    text-align: center;
-    background: black;
-    color: #FFF;
-    border-color: #FFF;
-    font-weight: bold;
-    padding: 12px 15px;
-    }
-    .anchor {
-    font-weight: bold;
-    border-top: 0px solid;
-    text-align: center;
-    border-bottom: 1px solid;
-    background: black;
-    color: #FFF
-    }
-    .dark-blue {
-    font-weight: bold;
-    border-top: 0px solid;
-    text-align: center;
-    border-bottom: 1px solid;
-    background: black;
-    color: #FFF
-    }
-    .no-top-border {
-    border-top: 0px
-    }
-    .centered {
-    margin: auto
-    }
-    .rZ {
-    text-align: right
-    }
-    .row2 {
-    background: #D3D3E1
-    }
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>commands</title>
+    <style type="text/css">
+        @charset "UTF-8";
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+        HTML {
+            font-size: medium;
+            font-family: Garamond
+        }
+
+        BODY {
+            background: black font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.42em;
+            color: #A7A1AE;
+            background-color: #1F2739;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 300;
+            line-height: 1em;
+            text-align: center;
+            color: #4DC3FA;
+        }
+
+        p {
+            color: grey;
+        }
+
+        A {
+            text-decoration: none color:black;
+        }
+
+        A:hover {
+            color: red;
+            background: whitesmoke;
+            border-radius: 8px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        TABLE.fancy {
+            background: #fffefe;
+            border-left: 1px solid;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-top: 1px solid;
+            border-bottom: 0px solid;
+            border-color: #FFF;
+            overflow-y: scroll;
+            width: 80%;
+            display: table;
+            padding: 0 0 8em 0;
+        }
+
+        TABLE.fancy TD {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            border-color: #FFF;
+            text-align: center;
+            padding-right: 5px;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+
+        TABLE.fancy tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+
+        TABLE.fancy tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+
+        TABLE.fancy th {
+            background-color: #1F2739;
+        }
+
+        TABLE.fancy td,
+        TABLE.fancy th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+
+        TABLE.fancy tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+
+        TABLE.fancy td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+
+        @media (max-width: 800px) {
+
+            TABLE.fancy td:nth-child(4),
+            TABLE.fancy th:nth-child(4) {
+                display: none;
+            }
+        }
+
+        TABLE.fancy TD.no-right {
+            border-right: 0px
+        }
+
+        TABLE.fancy TD.right {
+            text-align: right
+        }
+
+        TABLE.fancy TD.left {
+            text-align: left
+        }
+
+        TABLE.fancy TD.center {
+            text-align: center
+        }
+
+        TABLE.fancy TH {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            text-align: center;
+            background: black;
+            color: #FFF;
+            border-color: #FFF;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
+
+        .anchor {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: center;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+
+        .dark-blue {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: center;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+
+        .no-top-border {
+            border-top: 0px
+        }
+
+        .centered {
+            margin: auto
+        }
+
+        .rZ {
+            text-align: right
+        }
+
+        .row2 {
+            background: #D3D3E1
+        }
+    </style>
 </head>
 
 <body>
 
-<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="16" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
-</table>
-<br>
+    <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+        <tr>
+            <td colspan="16" class="dark-blue" style="text-align: center"><b>Folders</b></td>
+        </tr>
+        <tr>
+            <td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td>
+        </tr>
+    </table>
+    <br>
 
-<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="npm-access.html">npm-access.html</a>&nbsp;</td><td class="left"><a href="npm-config.html">npm-config.html</a>&nbsp;</td><td class="left"><a href="npm-explain.html">npm-explain.html</a>&nbsp;</td><td class="left"><a href="npm-install-test.html">npm-install-test.html</a>&nbsp;</td><td class="left"><a href="npm-pack.html">npm-pack.html</a>&nbsp;</td><td class="left"><a href="npm-restart.html">npm-restart.html</a>&nbsp;</td><td class="left"><a href="npm-start.html">npm-start.html</a>&nbsp;</td><td class="left"><a href="npm-update.html">npm-update.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="npm-adduser.html">npm-adduser.html</a>&nbsp;</td><td class="left"><a href="npm-dedupe.html">npm-dedupe.html</a>&nbsp;</td><td class="left"><a href="npm-explore.html">npm-explore.html</a>&nbsp;</td><td class="left"><a href="npm-install.html">npm-install.html</a>&nbsp;</td><td class="left"><a href="npm-ping.html">npm-ping.html</a>&nbsp;</td><td class="left"><a href="npm-root.html">npm-root.html</a>&nbsp;</td><td class="left"><a href="npm-stop.html">npm-stop.html</a>&nbsp;</td><td class="left"><a href="npm-version.html">npm-version.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="npm-audit.html">npm-audit.html</a>&nbsp;</td><td class="left"><a href="npm-deprecate.html">npm-deprecate.html</a>&nbsp;</td><td class="left"><a href="npm-fund.html">npm-fund.html</a>&nbsp;</td><td class="left"><a href="npm-link.html">npm-link.html</a>&nbsp;</td><td class="left"><a href="npm-prefix.html">npm-prefix.html</a>&nbsp;</td><td class="left"><a href="npm-run-script.html">npm-run-script.html</a>&nbsp;</td><td class="left"><a href="npm-team.html">npm-team.html</a>&nbsp;</td><td class="left"><a href="npm-view.html">npm-view.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="npm-bin.html">npm-bin.html</a>&nbsp;</td><td class="left"><a href="npm-dist-tag.html">npm-dist-tag.html</a>&nbsp;</td><td class="left"><a href="npm-help-search.html">npm-help-search.html</a>&nbsp;</td><td class="left"><a href="npm-logout.html">npm-logout.html</a>&nbsp;</td><td class="left"><a href="npm-profile.html">npm-profile.html</a>&nbsp;</td><td class="left"><a href="npm-search.html">npm-search.html</a>&nbsp;</td><td class="left"><a href="npm-test.html">npm-test.html</a>&nbsp;</td><td class="left"><a href="npm-whoami.html">npm-whoami.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="npm-bugs.html">npm-bugs.html</a>&nbsp;</td><td class="left"><a href="npm-docs.html">npm-docs.html</a>&nbsp;</td><td class="left"><a href="npm-help.html">npm-help.html</a>&nbsp;</td><td class="left"><a href="npm-ls.html">npm-ls.html</a>&nbsp;</td><td class="left"><a href="npm-prune.html">npm-prune.html</a>&nbsp;</td><td class="left"><a href="npm-set-script.html">npm-set-script.html</a>&nbsp;</td><td class="left"><a href="npm-token.html">npm-token.html</a>&nbsp;</td><td class="left"><a href="npm.html">npm.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="npm-cache.html">npm-cache.html</a>&nbsp;</td><td class="left"><a href="npm-doctor.html">npm-doctor.html</a>&nbsp;</td><td class="left"><a href="npm-hook.html">npm-hook.html</a>&nbsp;</td><td class="left"><a href="npm-org.html">npm-org.html</a>&nbsp;</td><td class="left"><a href="npm-publish.html">npm-publish.html</a>&nbsp;</td><td class="left"><a href="npm-shrinkwrap.html">npm-shrinkwrap.html</a>&nbsp;</td><td class="left"><a href="npm-uninstall.html">npm-uninstall.html</a>&nbsp;</td><td class="left"><a href="npx.html">npx.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="npm-ci.html">npm-ci.html</a>&nbsp;</td><td class="left"><a href="npm-edit.html">npm-edit.html</a>&nbsp;</td><td class="left"><a href="npm-init.html">npm-init.html</a>&nbsp;</td><td class="left"><a href="npm-outdated.html">npm-outdated.html</a>&nbsp;</td><td class="left"><a href="npm-rebuild.html">npm-rebuild.html</a>&nbsp;</td><td class="left"><a href="npm-star.html">npm-star.html</a>&nbsp;</td><td class="left"><a href="npm-unpublish.html">npm-unpublish.html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="npm-completion.html">npm-completion.html</a>&nbsp;</td><td class="left"><a href="npm-exec.html">npm-exec.html</a>&nbsp;</td><td class="left"><a href="npm-install-ci-test.html">npm-install-ci-test.html</a>&nbsp;</td><td class="left"><a href="npm-owner.html">npm-owner.html</a>&nbsp;</td><td class="left"><a href="npm-repo.html">npm-repo.html</a>&nbsp;</td><td class="left"><a href="npm-stars.html">npm-stars.html</a>&nbsp;</td><td class="left"><a href="npm-unstar.html">npm-unstar.html</a>&nbsp;</td><td class="left"></td></tr>
-</table>
+    <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+        <tr>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+            <th><b>File</b></th>
+        </tr>
+        <tr>
+            <td class="left"><a href="npm-access.html">npm-access.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-config.html">npm-config.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-explain.html">npm-explain.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-install-test.html">npm-install-test.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-pack.html">npm-pack.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-restart.html">npm-restart.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-start.html">npm-start.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-update.html">npm-update.html</a>&nbsp;</td>
+        </tr>
+        <tr class="row2">
+            <td class="left"><a href="npm-adduser.html">npm-adduser.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-dedupe.html">npm-dedupe.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-explore.html">npm-explore.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-install.html">npm-install.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-ping.html">npm-ping.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-root.html">npm-root.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-stop.html">npm-stop.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-version.html">npm-version.html</a>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left"><a href="npm-audit.html">npm-audit.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-deprecate.html">npm-deprecate.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-fund.html">npm-fund.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-link.html">npm-link.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-prefix.html">npm-prefix.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-run-script.html">npm-run-script.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-team.html">npm-team.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-view.html">npm-view.html</a>&nbsp;</td>
+        </tr>
+        <tr class="row2">
+            <td class="left"><a href="npm-bin.html">npm-bin.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-dist-tag.html">npm-dist-tag.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-help-search.html">npm-help-search.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-logout.html">npm-logout.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-profile.html">npm-profile.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-search.html">npm-search.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-test.html">npm-test.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-whoami.html">npm-whoami.html</a>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left"><a href="npm-bugs.html">npm-bugs.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-docs.html">npm-docs.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-help.html">npm-help.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-ls.html">npm-ls.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-prune.html">npm-prune.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-set-script.html">npm-set-script.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-token.html">npm-token.html</a>&nbsp;</td>
+            <td class="left"><a href="npm.html">npm.html</a>&nbsp;</td>
+        </tr>
+        <tr class="row2">
+            <td class="left"><a href="npm-cache.html">npm-cache.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-doctor.html">npm-doctor.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-hook.html">npm-hook.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-org.html">npm-org.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-publish.html">npm-publish.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-shrinkwrap.html">npm-shrinkwrap.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-uninstall.html">npm-uninstall.html</a>&nbsp;</td>
+            <td class="left"><a href="npx.html">npx.html</a>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="left"><a href="npm-ci.html">npm-ci.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-edit.html">npm-edit.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-init.html">npm-init.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-outdated.html">npm-outdated.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-rebuild.html">npm-rebuild.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-star.html">npm-star.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-unpublish.html">npm-unpublish.html</a>&nbsp;</td>
+            <td class="left"><a href="right.html">right.html</a>&nbsp;</td>
+        </tr>
+        <tr class="row2">
+            <td class="left"><a href="npm-completion.html">npm-completion.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-exec.html">npm-exec.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-install-ci-test.html">npm-install-ci-test.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-owner.html">npm-owner.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-repo.html">npm-repo.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-stars.html">npm-stars.html</a>&nbsp;</td>
+            <td class="left"><a href="npm-unstar.html">npm-unstar.html</a>&nbsp;</td>
+            <td class="left"></td>
+        </tr>
+    </table>
 
-<p style="font-weight: bold; margin-bottom: 0px">
-Folders:  1<br>
-Files: 63<br>
-Size of all files: 422725 K</p>
+    <p style="font-weight: bold; margin-bottom: 0px">
+        Folders: 1<br>
+        Files: 63<br>
+        Size of all files: 422725 K</p>
 
     <div class="gcse-search"></div>
     <script async src="https://cse.google.com/cse.js?cx=e3be713a8119a2886"></script>
@@ -195,5 +308,5 @@ Size of all files: 422725 K</p>
         allowtransparency="true" allowfullscreen="true"
         sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </body>
-      
+
 </html>

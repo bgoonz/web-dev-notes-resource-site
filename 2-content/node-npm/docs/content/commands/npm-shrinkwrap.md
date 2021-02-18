@@ -6,7 +6,7 @@ description: Lock down dependency versions for publication
 
 ### Synopsis
 
-```bash
+``` bash
 npm shrinkwrap
 ```
 

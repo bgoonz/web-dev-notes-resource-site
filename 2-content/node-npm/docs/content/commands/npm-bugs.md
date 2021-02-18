@@ -6,7 +6,7 @@ description: Report bugs for a package in a web browser
 
 ### Synopsis
 
-```bash
+``` bash
 npm bugs [<pkgname> [<pkgname> ...]]
 
 aliases: issues

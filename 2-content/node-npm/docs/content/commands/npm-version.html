@@ -23,17 +23,20 @@
     </div>
     <h3 id="description">Description</h3>
     <p>Run this in a package directory to bump the version and write the new data back to <code>package.json</code>,
-        <code>package-lock.json</code>, and, if present, <code>npm-shrinkwrap.json</code>.</p>
+        <code>package-lock.json</code>, and, if present, <code>npm-shrinkwrap.json</code>.
+    </p>
     <p>The <code>newversion</code> argument should be a valid semver string, a valid second argument to <a
             href="https://github.com/npm/node-semver#functions">semver.inc</a> (one of <code>patch</code>,
         <code>minor</code>, <code>major</code>, <code>prepatch</code>, <code>preminor</code>, <code>premajor</code>,
         <code>prerelease</code>), or <code>from-git</code>. In the second case, the existing version will be incremented
         by 1 in the specified field. <code>from-git</code> will try to read the latest git tag, and use that as the new
-        npm version.</p>
+        npm version.
+    </p>
     <p>If run in a git repo, it will also create a version commit and tag. This behavior is controlled by
         <code>git-tag-version</code> (see below), and can be disabled on the command line by running <code>npm
             --no-git-tag-version version</code>. It will fail if the working directory is not clean, unless the
-        <code>-f</code> or <code>--force</code> flag is set.</p>
+        <code>-f</code> or <code>--force</code> flag is set.
+    </p>
     <p>If supplied with <code>-m</code> or <code>--message</code> config option, npm will use it as a commit message
         when creating a version commit. If the <code>message</code> config contains <code>%s</code> then that will be
         replaced with the resulting version number. For example:</p>
@@ -66,7 +69,8 @@
         <code>version</code> in package.json (so they can incorporate it into file headers in generated files for
         example). Again, scripts should explicitly add generated files to the commit using <code>git add</code>. 5.
         Commit and tag. 6. Run the <code>postversion</code> script. Use it to clean up the file system or automatically
-        push the commit and/or tag.</p>
+        push the commit and/or tag.
+    </p>
     <p>Take the following example:</p>
     <div class="sourceCode" id="cb4">
         <pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb4-1" title="1">    <span class="er">&quot;scripts&quot;:</span> <span class="fu">{</span></a>

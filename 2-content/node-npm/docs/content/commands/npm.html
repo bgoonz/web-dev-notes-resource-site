@@ -53,7 +53,8 @@
             are installed in <code>prefix/bin</code>.</li>
         <li>local mode: npm installs packages into the current project directory, which defaults to the current working
             directory. Packages are installed to <code>./node_modules</code>, and bins are installed to
-            <code>./node_modules/.bin</code>.</li>
+            <code>./node_modules/.bin</code>.
+        </li>
     </ul>
     <p>Local mode is the default. Use <code>-g</code> or <code>--global</code> on any command to operate in global mode
         instead.</p>
@@ -76,9 +77,11 @@
             booleans (the config parser doesn’t know what the options are at the time of parsing). If no value is
             provided, then the option is set to boolean <code>true</code>.</li>
         <li>Environment Variables: Set any config by prefixing the name in an environment variable with
-            <code>npm_config_</code>. For example, <code>export npm_config_key=val</code>.</li>
+            <code>npm_config_</code>. For example, <code>export npm_config_key=val</code>.
+        </li>
         <li>User Configs: The file at $HOME/.npmrc is an ini-formatted list of configs. If present, it is parsed. If the
-            <code>userconfig</code> option is set in the cli or env, then that will be used instead.</li>
+            <code>userconfig</code> option is set in the cli or env, then that will be used instead.
+        </li>
         <li>Global Configs: The file found at ../etc/npmrc (from the node executable, by default this resolves to
             /usr/local/etc/npmrc) will be parsed if it is found. If the <code>globalconfig</code> option is set in the
             cli, env, or user config, then that file is parsed instead.</li>

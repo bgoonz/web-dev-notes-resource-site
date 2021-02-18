@@ -6,7 +6,7 @@ description: Retrieve funding information
 
 ### Synopsis
 
-```bash
+``` bash
 npm fund [<pkg>]
 ```
 
@@ -22,7 +22,7 @@ to pass the `--which` option to disambiguate.
 
 The list will avoid duplicated entries and will stack all packages that
 share the same url as a single entry. Thus, the list does not have the same
-shape of the output from `npm ls`.
+shape of the output from `npm ls` .
 
 ### Configuration
 

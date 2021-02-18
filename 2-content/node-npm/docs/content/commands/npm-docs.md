@@ -6,13 +6,13 @@ description: Open documentation for a package in a web browser
 
 ### Synopsis
 
-```bash
+``` bash
 npm docs [<pkgname> [<pkgname> ...]]
 
 aliases: home
 ```
 
-### Description
+### Descr
 
 This command tries to guess at the likely location of a package's
 documentation URL, and then tries to open it using the `--browser` config
@@ -22,7 +22,7 @@ the `name` property.
 
 ### Configuration
 
-#### browser
+#### brow
 
 * Default: OS X: `"open"`, Windows: `"start"`, Others: `"xdg-open"`
 * Type: String or Boolean
@@ -41,7 +41,7 @@ Set to `true` to use default system URL opener.
 
 The base URL of the npm package registry.
 
-### See Also
+### See A
 
 * [npm view](/commands/npm-view)
 * [npm publish](/commands/npm-publish)
