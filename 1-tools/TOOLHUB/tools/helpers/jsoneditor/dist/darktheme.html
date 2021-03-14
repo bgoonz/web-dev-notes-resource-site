@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Language" content="en" />
+    <title>URL decode</title>
+    <meta name="author" content="url-decode.com" />
+
+    <link rel="stylesheet" href="https://url-decode.com/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://url-decode.com/vendor/components/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet'
+        type='text/css'>
+    <link href="https://url-decode.com/css/style.css" rel="stylesheet" />
+
+    <script>
+        ( function ( w, d, s, l, i ) {
+            w[ l ] = w[ l ] || [];
+            w[ l ].push( {
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            } );
+            var f = d.getElementsByTagName( s )[ 0 ],
+                j = d.createElement( s ),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore( j, f );
+        } )( window, document, 'script', 'dataLayer', 'GTM-MS5GMD3' );
+    </script>
+
+    <style>
+        * {
+            font-family: 'PT Sans Caption', sans-serif, 'arial', 'Times New Roman';
+        }
+
+        /* Error Page */
+        .error .clip .shadow {
+            height: 180px;
+            /*Contrall*/
+        }
+
+        .error .clip:nth-of-type(2) .shadow {
+            width: 130px;
+            /*Contrall play with javascript*/
+        }
+
+        .error .clip:nth-of-type(1) .shadow,
+        .error .clip:nth-of-type(3) .shadow {
+            width: 250px;
+            /*Contrall*/
+        }
+
+        .error .digit {
+            width: 150px;
+            /*Contrall*/
+            height: 150px;
+            /*Contrall*/
+            line-height: 150px;
+            /*Contrall*/
+            font-size: 120px;
+            font-weight: bold;
+        }
+
+        .error h2
+
+        /*Contrall*/
+            {
+            font-size: 32px;
+        }
+
+        .error .msg
+
+        /*Contrall*/
+            {
+            top: -190px;
+            left: 30%;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 32px;
+        }
+
+        .error span.triangle
+
+        /*Contrall*/
+            {
+            top: 70%;
+            right: 0%;
+            border-left: 20px solid #535353;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+
+        .error .container-error-404 {
+            margin-top: 2%;
+            position: relative;
+            height: 250px;
+            padding-top: 40px;
+        }
+
+        .error .container-error-404 .clip {
+            display: inline-block;
+            transform: skew(-45deg);
+        }
+
+        .error .clip .shadow {
+
+            overflow: hidden;
+        }
+
+        .error .clip:nth-of-type(2) .shadow {
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 20px 0px 20px -15px rgba(150, 150, 150, 0.8), 20px 0px 20px -15px rgba(150, 150, 150, 0.8);
+        }
+
+        .error .clip:nth-of-type(3) .shadow:after,
+        .error .clip:nth-of-type(1) .shadow:after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            bottom: 0px;
+            z-index: 9999;
+            height: 100%;
+            width: 10px;
+            background: linear-gradient(90deg, transparent, rgba(173, 173, 173, 0.8), transparent);
+            border-radius: 50%;
+        }
+
+        .error .clip:nth-of-type(3) .shadow:after {
+            left: -8px;
+        }
+
+        .error .digit {
+            position: relative;
+            top: 8%;
+            color: white;
+            background: #343a40;
+            border-radius: 50%;
+            display: inline-block;
+            transform: skew(45deg);
+        }
+
+        .error .clip:nth-of-type(2) .digit {
+            left: -10%;
+        }
+
+        .error .clip:nth-of-type(1) .digit {
+            right: -20%;
+        }
+
+        .error .clip:nth-of-type(3) .digit {
+            left: -20%;
+        }
+
+        .error h2 {
+            color: #A2A2A2;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+
+        .error .msg {
+            position: relative;
+            z-index: 9999;
+            display: block;
+            background: #535353;
+            color: #A2A2A2;
+            border-radius: 50%;
+            font-style: italic;
+        }
+
+        .error .triangle {
+            position: absolute;
+            z-index: 999;
+            transform: rotate(45deg);
+            content: "";
+            width: 0;
+            height: 0;
+        }
+
+        /* Error Page */
+        @media(max-width: 767px) {
+
+            /* Error Page */
+            .error .clip .shadow {
+                height: 100px;
+                /*Contrall*/
+            }
+
+            .error .clip:nth-of-type(2) .shadow {
+                width: 80px;
+                /*Contrall play with javascript*/
+            }
+
+            .error .clip:nth-of-type(1) .shadow,
+            .error .clip:nth-of-type(3) .shadow {
+                width: 100px;
+                /*Contrall*/
+            }
+
+            .error .digit {
+                width: 80px;
+                /*Contrall*/
+                height: 80px;
+                /*Contrall*/
+                line-height: 80px;
+                /*Contrall*/
+                font-size: 52px;
+            }
+
+            .error h2
+
+            /*Contrall*/
+                {
+                font-size: 24px;
+            }
+
+            .error .msg
+
+            /*Contrall*/
+                {
+                top: -110px;
+                left: 15%;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+            }
+
+            .error span.triangle
+
+            /*Contrall*/
+                {
+                top: 70%;
+                right: -3%;
+                border-left: 10px solid #535353;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+            }
+
+            .error .container-error-404 {
+                height: 150px;
+            }
+
+            /* Error Page */
+        }
+
+        .ground-color {
+            background: white;
+        }
+
+        /*done*/
+        hr {
+            margin: 0px;
+            padding: 0px;
+            border-top: 1px dashed #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS5GMD3" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="overflow-hidden p-3 bg-light border-bottom-secondary">
+        <div class="row">
+            <div class="col-12">
+                <h1> <a class="h1-c" href="https://url-decode.com/tool/url-decode" title="URL decode"> URL Decode </a>
+                </h1>
+            </div>
+            <div class="col-12">
+                <div class="error">
+                    <div class="container-fluid">
+                        <div class="col-xs-12 text-center">
+                            <div class="container-error-404">
+                                <div class="clip">
+                                    <div class="shadow"><span class="digit thirdDigit"></span></div>
+                                </div>
+                                <div class="clip">
+                                    <div class="shadow"><span class="digit secondDigit"></span></div>
+                                </div>
+                                <div class="clip">
+                                    <div class="shadow"><span class="digit firstDigit"></span></div>
+                                </div>
+                                <div class="msg">OH!<span class="triangle"></span></div>
+                            </div>
+                            <h2 class="h1">Sorry! Page not found</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer class="p-3 mt-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-1 visible-lg clearfix"></div>
+                        <div class="col-sm-12 clearfix">
+                            <h5>Related Tools (<a class="lc" href="https://url-decode.com/cat/">See All Tools</a>)</h5>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/build-string'>Build string</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-rgb-color-converter'>HEX to
+                                        RGB</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/rgb-to-hex-color-converter'>RGB to
+                                        HEX</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/weight-converter'>Weight
+                                        converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/length-converter'>Length
+                                        converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/volume-converter'>Volume
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-encode'>HTML Encode</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/reverse-string'>Reverse String</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/random-word-generator'>Random Word
+                                        Generator</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/password-generator'>Password
+                                        Generator</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/word-counter'>Word Counter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/remove-lines-containing'>Remove
+                                        Lines
+                                        Containing</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-decode'>HTML Decode</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/remove-line-breaks'>Remove Line
+                                        Breaks</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/remove-extra-spaces'>Remove Extra
+                                        Spaces</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/remove-empty-lines'>Remove Empty
+                                        Lines</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/remove-duplicate-lines'>Remove
+                                        Duplicate Lines</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/url-encode'>URL Encode</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/url-decode'>Url Decode</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/binary-to-string'>Binary to
+                                        String</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/string-to-binary'>String to
+                                        Binary</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-string'>HEX to String</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/string-to-hex'>String to Hex</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/base64-decode'>Base64 decode</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/base64-encode'>Base64 Encode</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/jpg-to-png-converter'>JPG to PNG
+                                        Converter</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/js-validator'>JavaScript
+                                        validator</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/minifyhtml'>Minify HTML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/javascript-beautifier'>JavaScript
+                                        Beautifier</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-beautify'>HTML beautify</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/css-beautifier'>CSS Beautifier</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/css-minifier'>CSS Minifier</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-validator'>JSON Validator</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-to-php'>HTML to PHP</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/code-compare'>Code Compare</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/ip-to-hostname'>IP to Hostname</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hostname-to-ip'>Hostname To IP</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/nameserver-lookup'>Nameserver
+                                        Lookup</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/mx-lookup'>MX Lookup</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-diff'>JSON Diff</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-to-html-converter'>SQL to HTML
+                                        Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-beautifier'>SQL Beautifier</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/unix-time-converter'>Unix time
+                                        converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/add-nofollow-to-link'>Add Nofollow
+                                        To Link</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/date-calculator'>Date
+                                        calculator</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/time-converter'>Time converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/url-parser'>URL Parser</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/web-hosting-bandwidth-calculator'>Web hosting
+                                        bandwidth calculator</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/acceleration-converter'>Acceleration
+                                        Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/area-converter'>Area Converter</a>
+                                </li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/density-mass-capacity-converter'>Density &
+                                        Mass
+                                        Capacity Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/digital-storage-converter'>Digital
+                                        Storage
+                                        Converter</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/electricity-converter'>Electricity
+                                        Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/energy-converter'>Energy
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/force-converter'>Force
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/light-converter'>Light
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/mass-converter'>Mass Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/mass-flow-converter'>Mass Flow
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/power-converter'>Power
+                                        Converter</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/pressure-stress-converter'>Pressure & Stress
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/torque-converter'>Torque
+                                        Converter</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/velocity-and-speed-converte'>Velocity & Speed
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/viscosity-converter'>Viscosity
+                                        Converter</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/volume-and-capacity-converte'>Volume &
+                                        Capacity
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/temperature-converter'>Temperature
+                                        converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/force-length-converter'>Force /
+                                        length
+                                        converter</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/htaccess-secure-directory'>Htaccess Secure
+                                        Directory</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/create-array-js'>Create Array
+                                        JS</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/electric-current-converter'>Electric Current
+                                        Converter</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/astronomical-converter'>Astronomical
+                                        Conversion</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/angle-converter'>Angle
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/un-google-link'>Un-Google Link</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-escape-unescape'>JSON
+                                        Escape/Unescape</a>
+                                </li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/javascript-escape-unescape'>Javascript
+                                        Escape/Unescape</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csharp-escape-unescape'>C#
+                                        Escape/Unescape</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/java-escape-unescape'>Java
+                                        Escape/Unescape</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-escape-unescape'>CSV
+                                        Escape/Unescape</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-escape-unescape'>SQL
+                                        Escape/Unescape</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-escape-unescape'>XML
+                                        Escape/Unescape</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/excel-to-html-converter'>Excel to
+                                        HTML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-to-csv-converter'>HTML to CSV
+                                        Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/cmyk-to-hex'>CMYK to HEX</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/cmyk-to-rgb'>CMYK to RGB</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/cmyk-to-hsv'>CMYK to HSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hsv-to-hex'>HSV to HEX</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-hsv'>HEX to HSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hsv-to-rgb'>HSV to RGB</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hsv-to-cmyk'>HSV to CMYK</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-cmyk'>HEX to CMYK</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/rgb-to-hex'>RGB to HEX</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/rgb-to-hsv'>RGB to HSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/rgb-to-cmyk'>RGB to CMYK</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-pantone'>HEX to Pantone</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/rgb-to-pantone'>RGB to Pantone</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hsv-to-pantone'>HSV to Pantone</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/cmyk-to-pantone'>CMYK to
+                                        Pantone</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-multi-line'>CSV to Multi
+                                        Line</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-xml-json'>CSV to XML
+                                        JSON</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/convert-csv-to-json'>CSV to
+                                        JSON</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-tsv'>CSV to TSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-html'>CSV to HTML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-xml'>CSV to XML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-to-csv'>JSON to CSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-to-tsv'>JSON to TSV</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-to-csv'>XML to CSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-sql'>CSV to SQL</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-to-csv'>SQL to CSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csv-to-excel'>CSV to Excel</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/guid-generator'>Guid generator</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/random-letter-generator'>Random
+                                        Letter
+                                        Generator</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/shuffle-letter'>Shuffle Letter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/view-html-source-code'>View HTML
+                                        Source Code</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/upside-down-text'>Upside down
+                                        text</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/bubble-ball-text'>Bubble ball
+                                        text</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/zalgo-text'>Zalgo text</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/email-obfuscation'>Email
+                                        obfuscation</a></li>
+                                <li class='pb-2'><a
+                                        href='https://url-decode.com/tool/numbers-to-words-converter'>Numbers to words
+                                        converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/morse-code-translator'>Morse code
+                                        translator</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/broken-link-checker'>Broken Link
+                                        Checker</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/octal-to-decimal'>Octal to
+                                        Decimal</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/octal-to-binary'>Octal to
+                                        Binary</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/octal-to-hex'>Octal to Hex</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-entities-escape'>HTML
+                                        Entities Escape</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/actionscript'>Actionscript
+                                        Beautify & Minify</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/verify-email'>Verify Email</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/bytes-bits-converter'>Bytes/bits
+                                        Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/fuel-consumption'>Fuel
+                                        Consumption</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/frequency-converter'>Frequency
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/tableizer'>Tableizer</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/html-to-tsv-converter'>HTML to
+                                        TSV</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-2 clearfix footer_links">
+                            <ul class="m-0">
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-to-json-converter'>XML to
+                                        JSON</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-to-tsv'>XML to TSV</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-to-java-converter'>JSON to
+                                        JAVA</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-to-xml-converter'>JSON to
+                                        XML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/case-converter'>Case Converter</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/csslint'>CSS Lint</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-to-json'>SQL to JSON</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/decimal-to-binary'>Decimal to
+                                        Binary</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/decimal-to-hex'>Decimal to Hex</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/decimal-to-octal'>Decimal to
+                                        Octal</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/binary-to-decimal'>Binary to
+                                        Decimal</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/binary-to-hex'>Binary to Hex</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/binary-to-octal'>Binary to
+                                        Octal</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-decimal'>Hex to Decimal</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hex-to-binary'>Hex to Binary</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/hexadecimal-to-octal'>Hexadecimal
+                                        to Octal</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/number-system-converter'>Number
+                                        System
+                                        Converter</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-to-java'>XML to JAVA</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/json-to-yaml'>JSON to YAML</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-to-yaml'>SQL to YAML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/sql-to-xml'>SQL to XML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-to-html'>XML to HTML</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/image-resize'>Image resize</a>
+                                </li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/xml-viewer'>XML viewer</a></li>
+                                <li class='pb-2'><a href='https://url-decode.com/tool/disavow-file-generator'>Disavow
+                                        File Generator</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://url-decode.com/vendor/components/jquery/jquery.min.js"></script>
+    <script src="https://url-decode.com/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        function randomNum() {
+            "use strict";
+            return Math.floor( Math.random() * 9 ) + 1;
+        }
+        var loop1, loop2, loop3, time = 30,
+            i = 0,
+            number, selector3 = document.querySelector( '.thirdDigit' ),
+            selector2 = document.querySelector( '.secondDigit' ),
+            selector1 = document.querySelector( '.firstDigit' );
+        loop3 = setInterval( function () {
+            "use strict";
+            if ( i > 40 ) {
+                clearInterval( loop3 );
+                selector3.textContent = 4;
+            } else {
+                selector3.textContent = randomNum();
+                i++;
+            }
+        }, time );
+        loop2 = setInterval( function () {
+            "use strict";
+            if ( i > 80 ) {
+                clearInterval( loop2 );
+                selector2.textContent = 0;
+            } else {
+                selector2.textContent = randomNum();
+                i++;
+            }
+        }, time );
+        loop1 = setInterval( function () {
+            "use strict";
+            if ( i > 100 ) {
+                clearInterval( loop1 );
+                selector1.textContent = 4;
+            } else {
+                selector1.textContent = randomNum();
+                i++;
+            }
+        }, time );
+    </script>
+</body>
+
+</html>
