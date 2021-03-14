@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>automate_online-materials</title>
+    <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <title>Stable</title>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"
+        type="text/css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"
+        type="text/javascript"></script>-->
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* Basic */
+        @-ms-viewport {
+            width: device-width;
+        }
+        body {
+            -ms-overflow-style: scrollbar;
+		zoom:0.9;
+        }
+        @media screen and (max-width: 480px) {
+            html,
+            body {
+             
+            }
+        }
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        body {
+            background-color: whitesmoke;
+        }
+        body.is-preload *,
+        body.is-preload *:before,
+        body.is-preload *:after {
+            -moz-animation: none !important;
+            -webkit-animation: none !important;
+            -ms-animation: none !important;
+            animation: none !important;
+            -moz-transition: none !important;
+            -webkit-transition: none !important;
+            -ms-transition: none !important;
+            transition: none !important;
+        }
+        /* Type */
+        html {
+            font-size: 13pt;
+        }
+        @media screen and (max-width: 1680px) {
+            html {
+                font-size: 10pt;
+            }
+        }
+        @media screen and (max-width: 1280px) {
+            html {
+                font-size: 11pt;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            html {
+                font-size: 10pt;
+            }
+        }
+        body {
+            color: #212931;
+        }
+        body,
+        input,
+        select,
+        textarea {
+            font-family: "Merriweather", Georgia, serif;
+            font-weight: 300;
+            font-size: 1rem;
+          
+        }
+        a {
+            -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-bottom: dotted 1px;
+            text-decoration: none;
+        }
+        a:hover {
+            border-bottom-color: transparent;
+        }
+        @charset "UTF-8";
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+        HTML {
+            font-size: medium;
+            font-family: Garamond
+        }
+        BODY {
+            background: black font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+         
+            color: #A7A1AE;
+            background-color: #1F2739;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 300;
+         
+            text-align: left;
+            color: #4DC3FA;
+        }
+        p {
+            color: grey;
+        }
+        A {
+            text-decoration: none color:black;
+        }
+        A:hover {
+            color: red;
+            background: whitesmoke;
+            border-radius: 8px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        TABLE.fancy {
+            background: #fffefe;
+            border-left: 3px solid;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            min-width: 350px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-top: 1px solid;
+            border-bottom: 0px solid;
+            border-color: #FFF;
+            overflow-y: scroll;
+            width: 80%;
+            display: table;
+            padding: 0 0 8em 0;
+        }
+        TABLE.fancy TD {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            border-color: #FFF;
+            text-align: left;
+            padding-right: 2%px;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+            border: 4px solid gold !important;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 570;
+            line-height: 18px;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            background: #07122daf !important;
+            color: black !important;
+            cursor: pointer;
+            justify-content: center;
+            padding: 30px 50px;
+            height: 55px;
+            text-align: center;
+            white-space: normal;
+            border-radius: 10px;
+            min-width: 10em;
+            padding: .9em .9em 0;
+            box-shadow: 0 0 5px;
+            margin: 1em;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 20px;
+        }
+        TABLE.fancy tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+        TABLE.fancy tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+        TABLE.fancy th {
+            background-color: #1F2739;
+        }
+        TABLE.fancy td,
+        TABLE.fancy th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+        TABLE.fancy tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+        TABLE.fancy td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+        @media (max-width: 800px) {
+            TABLE.fancy td:nth-child(4),
+            TABLE.fancy th:nth-child(4) {
+                display: none;
+            }
+        }
+        TABLE.fancy TD.no-right {
+            border-right: 0px
+        }
+        TABLE.fancy TD.right {
+            text-align: left
+        }
+        TABLE.fancy TD.left {
+            text-align: center
+        }
+        TABLE.fancy a {
+            color: yellow;
+        }
+        TABLE.fancy TH {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            text-align: left;
+            background: black;
+            color: #FFF;
+            border-color: #FFF;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
+        .anchor {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: left;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+        .dark-blue {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: left;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+        .no-top-border {
+            border-top: 0px
+        }
+        .centered {
+            margin: auto
+        }
+        .rZ {
+            text-align: right
+        }
+        .row2 {
+            background: #D3D3E1
+        }
+@import url(//fonts.googleapis.com/css?family=PT+Sans);
+body {
+    margin: 0px;
+    font-family: 'PT Sans', Helvetica, 'Helvetica Neuve', Arial, Tahoma, sans-serif;
+    font-size: 17px;
+    color: #333;
+}
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    margin: 0 0 20px;
+}
+p,
+ul,
+ol,
+table,
+pre,
+dl {
+    margin: 0 0 20px;
+}
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    color: #393939;
+}
+h3,
+h4,
+h5,
+h6 {
+    color: #494949;
+}
+a {
+    color: #39c;
+    font-weight: 400;
+    text-decoration: none;
+}
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.6em;
+    display: block;
+}
+.wrapper {
+    width: 860px;
+    margin: 0 auto;
+}
+blockquote {
+    border-left: 1px solid #e5e5e5;
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-style: italic;
+}
+code,
+pre {
+    color: #333;
+    font-size: 12px;
+}
+pre {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th,
+td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+dt {
+    color: #444;
+    font-weight: 700;
+}
+th {
+    color: #444;
+}
+img {
+    max-width: 100%;
+}
+header {
+    width: 270px;
+    float: left;
+    position: fixed;
+}
+header ul {
+    list-style: none;
+    height: 40px;
+    padding: 0;
+    background: #eee;
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #dddddd));
+    background: -webkit-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -o-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -ms-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    box-shadow: inset #fff 0 1px 0,
+    inset rgba(0, 0, 0, 0.03) 0 -1px 0;
+    width: 270px;
+}
+header li {
+    width: 89px;
+    float: left;
+    border-right: 1px solid #d2d2d2;
+    height: 40px;
+}
+header ul a {
+    line-height: 1;
+    font-size: 11px;
+    color: #999;
+    display: block;
+    text-align: center;
+    padding-top: 6px;
+    height: 40px;
+}
+strong {
+    color: #222;
+    font-weight: 700;
+}
+header ul li+li {
+    width: 88px;
+    border-left: 1px solid #fff;
+}
+header ul li+li+li {
+    border-right: none;
+    width: 89px;
+}
+header ul a strong {
+    font-size: 14px;
+    display: block;
+    color: #222;
+}
+section {
+    width: 500px;
+    float: right;
+    padding-bottom: 50px;
+}
+small {
+    font-size: 11px;
+}
+hr {
+    border: 0;
+    background: #e5e5e5;
+    height: 1px;
+    margin: 0 0 20px;
+}
+footer {
+    width: 270px;
+    float: left;
+    position: fixed;
+    bottom: 50px;
+}
+@media print,
+screen and (max-width: 960px) {
+    div.wrapper {
+        width: auto;
+        margin: 0;
+    }
+    header,
+    section,
+    footer {
+        float: none;
+        position: static;
+        width: auto;
+    }
+    header {
+        padding-right: 320px;
+    }
+    section {
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
+        padding: 20px 0;
+        margin: 0 0 20px;
+    }
+    header a small {
+        display: inline;
+    }
+    header ul {
+        position: absolute;
+        right: 50px;
+        top: 52px;
+    }
+}
+@media print,
+screen and (max-width: 720px) {
+    body {
+        word-wrap: break-word;
+    }
+    header {
+        padding: 0;
+    }
+    header ul,
+    header p.view {
+        position: static;
+    }
+    pre,
+    code {
+        word-wrap: normal;
+    }
+}
+@media print,
+screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    header ul {
+        display: none;
+    }
+}
+@media print {
+    body {
+        padding: 0.4in;
+        font-size: 12pt;
+        color: #444;
+    }
+}
+#wrapper {
+    padding: 1em;
+}
+.ca-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+.nav-list {
+    height: 50%;
+    margin: auto 0;
+}
+div.clear {
+    clear: both;
+}
+        /*]]>*/
+    </style>
+</head>
+
+<body>
+
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="cats/right.html" target="rframe">cats</a></td></tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="example.csv">example.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4610.csv">NAICS_data_4610.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7833.csv">NAICS_data_7833.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-L.csv">spreadsheet-L.csv</a>&nbsp;</td><td class="left"><a href="calcProd.py">calcProd.py</a>&nbsp;</td><td class="left"><a href="readCensusExcel.py">readCensusExcel.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_1048.csv">NAICS_data_1048.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4618.csv">NAICS_data_4618.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7845.csv">NAICS_data_7845.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-M.csv">spreadsheet-M.csv</a>&nbsp;</td><td class="left"><a href="catnapping.py">catnapping.py</a>&nbsp;</td><td class="left"><a href="readDocx.py">readDocx.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_1218.csv">NAICS_data_1218.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4699.csv">NAICS_data_4699.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7913.csv">NAICS_data_7913.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-N.csv">spreadsheet-N.csv</a>&nbsp;</td><td class="left"><a href="census2010.py">census2010.py</a>&nbsp;</td><td class="left"><a href="removeCsvHeader.py">removeCsvHeader.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_1657.csv">NAICS_data_1657.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4896.csv">NAICS_data_4896.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8015.csv">NAICS_data_8015.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-O.csv">spreadsheet-O.csv</a>&nbsp;</td><td class="left"><a href="characterCount.py">characterCount.py</a>&nbsp;</td><td class="left"><a href="renameDates.py">renameDates.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_1751.csv">NAICS_data_1751.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4938.csv">NAICS_data_4938.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8085.csv">NAICS_data_8085.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-P.csv">spreadsheet-P.csv</a>&nbsp;</td><td class="left"><a href="coinFlip.py">coinFlip.py</a>&nbsp;</td><td class="left"><a href="resizeAndAddLogo.py">resizeAndAddLogo.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_1814.csv">NAICS_data_1814.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5060.csv">NAICS_data_5060.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8131.csv">NAICS_data_8131.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Q.csv">spreadsheet-Q.csv</a>&nbsp;</td><td class="left"><a href="combinePdfs.py">combinePdfs.py</a>&nbsp;</td><td class="left"><a href="sameName.py">sameName.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_1817.csv">NAICS_data_1817.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5092.csv">NAICS_data_5092.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8196.csv">NAICS_data_8196.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-R.csv">spreadsheet-R.csv</a>&nbsp;</td><td class="left"><a href="countdown.py">countdown.py</a>&nbsp;</td><td class="left"><a href="sameName2.py">sameName2.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_1889.csv">NAICS_data_1889.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5305.csv">NAICS_data_5305.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8397.csv">NAICS_data_8397.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-S.csv">spreadsheet-S.csv</a>&nbsp;</td><td class="left"><a href="downloadXkcd.py">downloadXkcd.py</a>&nbsp;</td><td class="left"><a href="sameName3.py">sameName3.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_1952.csv">NAICS_data_1952.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5341.csv">NAICS_data_5341.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8403.csv">NAICS_data_8403.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-T.csv">spreadsheet-T.csv</a>&nbsp;</td><td class="left"><a href="errorExample.py">errorExample.py</a>&nbsp;</td><td class="left"><a href="sameName4.py">sameName4.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_1973.csv">NAICS_data_1973.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5364.csv">NAICS_data_5364.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8499.csv">NAICS_data_8499.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-U.csv">spreadsheet-U.csv</a>&nbsp;</td><td class="left"><a href="exitExample.py">exitExample.py</a>&nbsp;</td><td class="left"><a href="sendDuesReminders.py">sendDuesReminders.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2066.csv">NAICS_data_2066.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5631.csv">NAICS_data_5631.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8522.csv">NAICS_data_8522.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-V.csv">spreadsheet-V.csv</a>&nbsp;</td><td class="left"><a href="factorialLog.py">factorialLog.py</a>&nbsp;</td><td class="left"><a href="stopwatch.py">stopwatch.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2092.csv">NAICS_data_2092.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5890.csv">NAICS_data_5890.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8545.csv">NAICS_data_8545.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-W.csv">spreadsheet-W.csv</a>&nbsp;</td><td class="left"><a href="fiveTimes.py">fiveTimes.py</a>&nbsp;</td><td class="left"><a href="swordfish.py">swordfish.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2183.csv">NAICS_data_2183.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5899.csv">NAICS_data_5899.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8700.csv">NAICS_data_8700.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-X.csv">spreadsheet-X.csv</a>&nbsp;</td><td class="left"><a href="formFiller.py">formFiller.py</a>&nbsp;</td><td class="left"><a href="textMyself.py">textMyself.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2346.csv">NAICS_data_2346.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5992.csv">NAICS_data_5992.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8749.csv">NAICS_data_8749.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Y.csv">spreadsheet-Y.csv</a>&nbsp;</td><td class="left"><a href="getDocxText.py">getDocxText.py</a>&nbsp;</td><td class="left"><a href="threadDemo.py">threadDemo.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2427.csv">NAICS_data_2427.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6161.csv">NAICS_data_6161.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8760.csv">NAICS_data_8760.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Z.csv">spreadsheet-Z.csv</a>&nbsp;</td><td class="left"><a href="guessTheNumber.py">guessTheNumber.py</a>&nbsp;</td><td class="left"><a href="ticTacToe.py">ticTacToe.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2648.csv">NAICS_data_2648.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6181.csv">NAICS_data_6181.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8832.csv">NAICS_data_8832.csv</a>&nbsp;</td><td class="left"><a href="demo.docx">demo.docx</a>&nbsp;</td><td class="left"><a href="hello.py">hello.py</a>&nbsp;</td><td class="left"><a href="torrentStarter.py">torrentStarter.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2799.csv">NAICS_data_2799.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6329.csv">NAICS_data_6329.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9012.csv">NAICS_data_9012.csv</a>&nbsp;</td><td class="left"><a href="headings.docx">headings.docx</a>&nbsp;</td><td class="left"><a href="helloFunc.py">helloFunc.py</a>&nbsp;</td><td class="left"><a href="updateProduce.py">updateProduce.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2828.csv">NAICS_data_2828.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6335.csv">NAICS_data_6335.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9066.csv">NAICS_data_9066.csv</a>&nbsp;</td><td class="left"><a href="helloworld.docx">helloworld.docx</a>&nbsp;</td><td class="left"><a href="helloFunc2.py">helloFunc2.py</a>&nbsp;</td><td class="left"><a href="validateInput.py">validateInput.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2959.csv">NAICS_data_2959.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6397.csv">NAICS_data_6397.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9103.csv">NAICS_data_9103.csv</a>&nbsp;</td><td class="left"><a href="multipleParagraphs.docx">multipleParagraphs.docx</a>&nbsp;</td><td class="left"><a href="inventory.py">inventory.py</a>&nbsp;</td><td class="left"><a href="vampire.py">vampire.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2988.csv">NAICS_data_2988.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6493.csv">NAICS_data_6493.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9139.csv">NAICS_data_9139.csv</a>&nbsp;</td><td class="left"><a href="restyled.docx">restyled.docx</a>&nbsp;</td><td class="left"><a href="isPhoneNumber.py">isPhoneNumber.py</a>&nbsp;</td><td class="left"><a href="vampire2.py">vampire2.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_2993.csv">NAICS_data_2993.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6637.csv">NAICS_data_6637.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9165.csv">NAICS_data_9165.csv</a>&nbsp;</td><td class="left"><a href="twoPage.docx">twoPage.docx</a>&nbsp;</td><td class="left"><a href="littleKid.py">littleKid.py</a>&nbsp;</td><td class="left"><a href="zeroDivide.py">zeroDivide.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_2994.csv">NAICS_data_2994.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6700.csv">NAICS_data_6700.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9250.csv">NAICS_data_9250.csv</a>&nbsp;</td><td class="left"><a href="example.html">example.html</a>&nbsp;</td><td class="left"><a href="lucky.py">lucky.py</a>&nbsp;</td><td class="left"><a href="mcb.pyw">mcb.pyw</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_3044.csv">NAICS_data_3044.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6842.csv">NAICS_data_6842.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9448.csv">NAICS_data_9448.csv</a>&nbsp;</td><td class="left"><a href="combinedminutes.pdf">combinedminutes.pdf</a>&nbsp;</td><td class="left"><a href="magic8Ball.py">magic8Ball.py</a>&nbsp;</td><td class="left"><a href="dictionary.txt">dictionary.txt</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_3073.csv">NAICS_data_3073.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6904.csv">NAICS_data_6904.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9825.csv">NAICS_data_9825.csv</a>&nbsp;</td><td class="left"><a href="encrypted.pdf">encrypted.pdf</a>&nbsp;</td><td class="left"><a href="magic8Ball2.py">magic8Ball2.py</a>&nbsp;</td><td class="left"><a href="guests.txt">guests.txt</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_3075.csv">NAICS_data_3075.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7028.csv">NAICS_data_7028.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9834.csv">NAICS_data_9834.csv</a>&nbsp;</td><td class="left"><a href="encryptedminutes.pdf">encryptedminutes.pdf</a>&nbsp;</td><td class="left"><a href="mapIt.py">mapIt.py</a>&nbsp;</td><td class="left"><a href="spam.txt">spam.txt</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_3144.csv">NAICS_data_3144.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7102.csv">NAICS_data_7102.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9986.csv">NAICS_data_9986.csv</a>&nbsp;</td><td class="left"><a href="meetingminutes.pdf">meetingminutes.pdf</a>&nbsp;</td><td class="left"><a href="mouseNow.py">mouseNow.py</a>&nbsp;</td><td class="left"><a href="alarm.wav">alarm.wav</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_3197.csv">NAICS_data_3197.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7138.csv">NAICS_data_7138.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-A.csv">spreadsheet-A.csv</a>&nbsp;</td><td class="left"><a href="meetingminutes2.pdf">meetingminutes2.pdf</a>&nbsp;</td><td class="left"><a href="mouseNow2.py">mouseNow2.py</a>&nbsp;</td><td class="left"><a href="censuspopdata.xlsx">censuspopdata.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_3237.csv">NAICS_data_3237.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7226.csv">NAICS_data_7226.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-B.csv">spreadsheet-B.csv</a>&nbsp;</td><td class="left"><a href="watermark.pdf">watermark.pdf</a>&nbsp;</td><td class="left"><a href="multidownloadXkcd.py">multidownloadXkcd.py</a>&nbsp;</td><td class="left"><a href="dimensions.xlsx">dimensions.xlsx</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_3494.csv">NAICS_data_3494.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7338.csv">NAICS_data_7338.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-C.csv">spreadsheet-C.csv</a>&nbsp;</td><td class="left"><a href="catlogo.png">catlogo.png</a>&nbsp;</td><td class="left"><a href="myPets.py">myPets.py</a>&nbsp;</td><td class="left"><a href="duesRecords.xlsx">duesRecords.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_3495.csv">NAICS_data_3495.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7383.csv">NAICS_data_7383.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-D.csv">spreadsheet-D.csv</a>&nbsp;</td><td class="left"><a href="zophie.png">zophie.png</a>&nbsp;</td><td class="left"><a href="passingReference.py">passingReference.py</a>&nbsp;</td><td class="left"><a href="example.xlsx">example.xlsx</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_3731.csv">NAICS_data_3731.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7388.csv">NAICS_data_7388.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-E.csv">spreadsheet-E.csv</a>&nbsp;</td><td class="left"><a href="allMyCats1.py">allMyCats1.py</a>&nbsp;</td><td class="left"><a href="phoneAndEmail.py">phoneAndEmail.py</a>&nbsp;</td><td class="left"><a href="freezeExample.xlsx">freezeExample.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_4031.csv">NAICS_data_4031.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7427.csv">NAICS_data_7427.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-F.csv">spreadsheet-F.csv</a>&nbsp;</td><td class="left"><a href="allMyCats2.py">allMyCats2.py</a>&nbsp;</td><td class="left"><a href="picnicTable.py">picnicTable.py</a>&nbsp;</td><td class="left"><a href="merged.xlsx">merged.xlsx</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_4125.csv">NAICS_data_4125.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7535.csv">NAICS_data_7535.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-G.csv">spreadsheet-G.csv</a>&nbsp;</td><td class="left"><a href="backupToZip.py">backupToZip.py</a>&nbsp;</td><td class="left"><a href="prettyCharacterCount.py">prettyCharacterCount.py</a>&nbsp;</td><td class="left"><a href="produceSales.xlsx">produceSales.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_4213.csv">NAICS_data_4213.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7642.csv">NAICS_data_7642.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-H.csv">spreadsheet-H.csv</a>&nbsp;</td><td class="left"><a href="birthdays.py">birthdays.py</a>&nbsp;</td><td class="left"><a href="printRandom.py">printRandom.py</a>&nbsp;</td><td class="left"><a href="sampleChart.xlsx">sampleChart.xlsx</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_4215.csv">NAICS_data_4215.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7677.csv">NAICS_data_7677.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-I.csv">spreadsheet-I.csv</a>&nbsp;</td><td class="left"><a href="boxPrint.py">boxPrint.py</a>&nbsp;</td><td class="left"><a href="pw.py">pw.py</a>&nbsp;</td><td class="left"><a href="styled.xlsx">styled.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_4329.csv">NAICS_data_4329.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7765.csv">NAICS_data_7765.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-J.csv">spreadsheet-J.csv</a>&nbsp;</td><td class="left"><a href="buggyAddingProgram.py">buggyAddingProgram.py</a>&nbsp;</td><td class="left"><a href="quickWeather.py">quickWeather.py</a>&nbsp;</td><td class="left"><a href="styles.xlsx">styles.xlsx</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="NAICS_data_4436.csv">NAICS_data_4436.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7830.csv">NAICS_data_7830.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-K.csv">spreadsheet-K.csv</a>&nbsp;</td><td class="left"><a href="bulletPointAdder.py">bulletPointAdder.py</a>&nbsp;</td><td class="left"><a href="randomQuizGenerator.py">randomQuizGenerator.py</a>&nbsp;</td><td class="left"><a href="updatedProduceSales.xlsx">updatedProduceSales.xlsx</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="NAICS_data_4525.csv">NAICS_data_4525.csv</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+</table>
+
+<p style="font-weight: bold; margin-bottom: 0px">
+Folders:  2<br>
+Files: 223<br>
+Size of all files: 11974963 K</p>
+
+</body>
+</html>
