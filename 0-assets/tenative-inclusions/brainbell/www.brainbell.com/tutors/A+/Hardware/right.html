@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="A.html">A.html</a>&nbsp;</td><td class="left"><a href="Expansion_Buses.html">Expansion_Buses.html</a>&nbsp;</td><td class="left"><a href="jellyfish.html">jellyfish.html</a>&nbsp;</td><td class="left"><a href="Primary_PC_Components.html">Primary_PC_Components.html</a>&nbsp;</td><td class="left"><a href="Supplying_Power_to_a_Computer.html">Supplying_Power_to_a_Computer.html</a>&nbsp;</td><td class="left"><a href="Understanding_Electronic_Communication.html">Understanding_Electronic_Communication.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="An_Overview_of_the_Computer.html">An_Overview_of_the_Computer.html</a>&nbsp;</td><td class="left"><a href="High_Capacity_Disk_Drives.html">High_Capacity_Disk_Drives.html</a>&nbsp;</td><td class="left"><a href="Maintaining_Computer_Hardware.html">Maintaining_Computer_Hardware.html</a>&nbsp;</td><td class="left"><a href="Printers_Modems_and_Cables.html">Printers_Modems_and_Cables.html</a>&nbsp;</td><td class="left"><a href="The_Basics_of_Electrical_Energy.html">The_Basics_of_Electrical_Energy.html</a>&nbsp;</td><td class="left"><a href="Upgrading_a_Computer.html">Upgrading_a_Computer.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Basic_Disk_Drives.html">Basic_Disk_Drives.html</a>&nbsp;</td><td class="left"><a href="index-2.html">index-2.html</a>&nbsp;</td><td class="left"><a href="Managing_and_Troubleshooting_Windows.html">Managing_and_Troubleshooting_Windows.html</a>&nbsp;</td><td class="left"><a href="Software_MS_DOS_and_Windows_3_x.html">Software_MS_DOS_and_Windows_3_x.html</a>&nbsp;</td><td class="left"><a href="The_Central_Processing_Unit.html">The_Central_Processing_Unit.html</a>&nbsp;</td><td class="left"><a href="Windows_95_and_Beyond.html">Windows_95_and_Beyond.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Connectivity_and_Portability.html">Connectivity_and_Portability.html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="Memory_a2.html">Memory_a2.html</a>&nbsp;</td><td class="left"><a href="Staying_on_Top_of_Your_Profession.html">Staying_on_Top_of_Your_Profession.html</a>&nbsp;</td><td class="left"><a href="The_Display_System_Monitors_and_Adapters.html">The_Display_System_Monitors_and_Adapters.html</a>&nbsp;</td><td class="left"><a href="audins.js">audins.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="edmonton.html">edmonton.html</a>&nbsp;</td><td class="left"><a href="Introduction_to_Computers.html">Introduction_to_Computers.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="audins.js">audins.js</a>&nbsp;</td><td class="left"><a href="Connectivity_and_Portability.html">Connecti....html</a>&nbsp;</td><td class="left"><a href="index-2.html">index-2.html</a>&nbsp;</td><td class="left"><a href="Maintaining_Computer_Hardware.html">Maintain....html</a>&nbsp;</td><td class="left"><a href="Primary_PC_Components.html">Primary_....html</a>&nbsp;</td><td class="left"><a href="Software_MS_DOS_and_Windows_3_x.html">Software....html</a>&nbsp;</td><td class="left"><a href="The_Basics_of_Electrical_Energy.html">The_Basi....html</a>&nbsp;</td><td class="left"><a href="Understanding_Electronic_Communication.html">Understa....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="A.html">A.html</a>&nbsp;</td><td class="left"><a href="edmonton.html">edmonton.html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="Managing_and_Troubleshooting_Windows.html">Managing....html</a>&nbsp;</td><td class="left"><a href="Printers_Modems_and_Cables.html">Printers....html</a>&nbsp;</td><td class="left"><a href="Staying_on_Top_of_Your_Profession.html">Staying_....html</a>&nbsp;</td><td class="left"><a href="The_Central_Processing_Unit.html">The_Cent....html</a>&nbsp;</td><td class="left"><a href="Upgrading_a_Computer.html">Upgradin....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="An_Overview_of_the_Computer.html">An_Overv....html</a>&nbsp;</td><td class="left"><a href="Expansion_Buses.html">Expansio....html</a>&nbsp;</td><td class="left"><a href="Introduction_to_Computers.html">Introduc....html</a>&nbsp;</td><td class="left"><a href="Memory_a2.html">Memory_a2.html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="Supplying_Power_to_a_Computer.html">Supplyin....html</a>&nbsp;</td><td class="left"><a href="The_Display_System_Monitors_and_Adapters.html">The_Disp....html</a>&nbsp;</td><td class="left"><a href="Windows_95_and_Beyond.html">Windows_....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Basic_Disk_Drives.html">Basic_Di....html</a>&nbsp;</td><td class="left"><a href="High_Capacity_Disk_Drives.html">High_Cap....html</a>&nbsp;</td><td class="left"><a href="jellyfish.html">jellyfish.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 26<br>
-Size of all files: 844982 K</p>
+Files: 27<br>
+Size of all files: 861345 KB</p>
 
 </body>
 </html>

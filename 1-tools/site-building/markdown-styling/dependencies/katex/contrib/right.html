@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="auto_render_js">auto_render_js</a>&nbsp;</td><td class="left"><a href="copy_tex_min_js">copy_tex_min_js</a>&nbsp;</td><td class="left"><a href="mhchem_min_js">mhchem_min_js</a>&nbsp;</td><td class="left"><a href="copy-tex.min.css">copy-tex.min.css</a>&nbsp;</td><td class="left"><a href="mathtex-script-type.min.js">mathtex-script-type.min.js</a>&nbsp;</td><td class="left"><a href="auto-render.mjs">auto-render.mjs</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="auto_render_min_js">auto_render_min_js</a>&nbsp;</td><td class="left"><a href="copy_tex_mjs">copy_tex_mjs</a>&nbsp;</td><td class="left"><a href="mhchem_mjs">mhchem_mjs</a>&nbsp;</td><td class="left"><a href="auto-render.js">auto-render.js</a>&nbsp;</td><td class="left"><a href="mhchem.js">mhchem.js</a>&nbsp;</td><td class="left"><a href="copy-tex.mjs">copy-tex.mjs</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="auto_render_mjs">auto_render_mjs</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_js">mathtex_script_type_js</a>&nbsp;</td><td class="left"><a href="render_a11y_string_js">render_a11y_string_js</a>&nbsp;</td><td class="left"><a href="auto-render.min.js">auto-render.min.js</a>&nbsp;</td><td class="left"><a href="mhchem.min.js">mhchem.min.js</a>&nbsp;</td><td class="left"><a href="mathtex-script-type.mjs">mathtex-script-type.mjs</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="copy_tex_css">copy_tex_css</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_min_js">mathtex_script_type_min_js</a>&nbsp;</td><td class="left"><a href="render_a11y_string_min_js">render_a11y_string_min_js</a>&nbsp;</td><td class="left"><a href="copy-tex.js">copy-tex.js</a>&nbsp;</td><td class="left"><a href="render-a11y-string.js">render-a11y-string.js</a>&nbsp;</td><td class="left"><a href="mhchem.mjs">mhchem.mjs</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="copy_tex_js">copy_tex_js</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_mjs">mathtex_script_type_mjs</a>&nbsp;</td><td class="left"><a href="render_a11y_string_mjs">render_a11y_string_mjs</a>&nbsp;</td><td class="left"><a href="copy-tex.min.js">copy-tex.min.js</a>&nbsp;</td><td class="left"><a href="render-a11y-string.min.js">render-a11y-string.min.js</a>&nbsp;</td><td class="left"><a href="render-a11y-string.mjs">render-a11y-string.mjs</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="copy_tex_min_css">copy_tex_min_css</a>&nbsp;</td><td class="left"><a href="mhchem_js">mhchem_js</a>&nbsp;</td><td class="left"><a href="copy-tex.css">copy-tex.css</a>&nbsp;</td><td class="left"><a href="mathtex-script-type.js">mathtex-script-type.js</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="auto-render.mjs">auto-render.mjs</a>&nbsp;</td><td class="left"><a href="auto-render.js">auto-render.js</a>&nbsp;</td><td class="left"><a href="mathtex-script-type.min.js">mathtex-...in.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="auto_render_min_js">auto_ren...in_js</a>&nbsp;</td><td class="left"><a href="copy_tex_min_css">copy_tex_min_css</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_min_js">mathtex_...in_js</a>&nbsp;</td><td class="left"><a href="mhchem_mjs">mhchem_mjs</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="copy-tex.mjs">copy-tex.mjs</a>&nbsp;</td><td class="left"><a href="auto-render.min.js">auto-ren...in.js</a>&nbsp;</td><td class="left"><a href="mhchem.js">mhchem.js</a>&nbsp;</td><td class="left"><a href="copy-tex.css">copy-tex.css</a>&nbsp;</td><td class="left"><a href="auto_render_mjs">auto_render_mjs</a>&nbsp;</td><td class="left"><a href="copy_tex_min_js">copy_tex_min_js</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_mjs">mathtex_...e_mjs</a>&nbsp;</td><td class="left"><a href="render_a11y_string_js">render_a...ng_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="mathtex-script-type.mjs">mathtex-...e.mjs</a>&nbsp;</td><td class="left"><a href="copy-tex.js">copy-tex.js</a>&nbsp;</td><td class="left"><a href="mhchem.min.js">mhchem.min.js</a>&nbsp;</td><td class="left"><a href="copy-tex.min.css">copy-tex.min.css</a>&nbsp;</td><td class="left"><a href="copy_tex_css">copy_tex_css</a>&nbsp;</td><td class="left"><a href="copy_tex_mjs">copy_tex_mjs</a>&nbsp;</td><td class="left"><a href="mhchem_js">mhchem_js</a>&nbsp;</td><td class="left"><a href="render_a11y_string_min_js">render_a...in_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="mhchem.mjs">mhchem.mjs</a>&nbsp;</td><td class="left"><a href="copy-tex.min.js">copy-tex.min.js</a>&nbsp;</td><td class="left"><a href="render-a11y-string.js">render-a...ng.js</a>&nbsp;</td><td class="left"><a href="auto_render_js">auto_render_js</a>&nbsp;</td><td class="left"><a href="copy_tex_js">copy_tex_js</a>&nbsp;</td><td class="left"><a href="mathtex_script_type_js">mathtex_...pe_js</a>&nbsp;</td><td class="left"><a href="mhchem_min_js">mhchem_min_js</a>&nbsp;</td><td class="left"><a href="render_a11y_string_mjs">render_a...g_mjs</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="render-a11y-string.mjs">render-a...g.mjs</a>&nbsp;</td><td class="left"><a href="mathtex-script-type.js">mathtex-...pe.js</a>&nbsp;</td><td class="left"><a href="render-a11y-string.min.js">render-a...in.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 34<br>
-Size of all files: 571540 K</p>
+Files: 35<br>
+Size of all files: 588229 KB</p>
 
 </body>
 </html>

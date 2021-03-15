@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="block-size.css">block-size.css</a>&nbsp;</td><td class="left"><a href="inset-inline-end.css">inset-inline-end.css</a>&nbsp;</td><td class="left"><a href="border-block-end-width.html">border-block-end-width.html</a>&nbsp;</td><td class="left"><a href="border-inline-end-width.html">border-inline-end-width.html</a>&nbsp;</td><td class="left"><a href="inset-block-start.html">inset-block-start.html</a>&nbsp;</td><td class="left"><a href="max-inline-size.html">max-inline-size.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="border-color.css">border-color.css</a>&nbsp;</td><td class="left"><a href="inset-inline-start.css">inset-inline-start.css</a>&nbsp;</td><td class="left"><a href="border-block-end.html">border-block-end.html</a>&nbsp;</td><td class="left"><a href="border-inline-end.html">border-inline-end.html</a>&nbsp;</td><td class="left"><a href="inset-inline-end.html">inset-inline-end.html</a>&nbsp;</td><td class="left"><a href="min-block-size.html">min-block-size.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="border-style.css">border-style.css</a>&nbsp;</td><td class="left"><a href="margin-block.css">margin-block.css</a>&nbsp;</td><td class="left"><a href="border-block-start-color.html">border-block-start-color.html</a>&nbsp;</td><td class="left"><a href="border-inline-start-color.html">border-inline-start-color.html</a>&nbsp;</td><td class="left"><a href="inset-inline-start.html">inset-inline-start.html</a>&nbsp;</td><td class="left"><a href="min-inline-size.html">min-inline-size.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="border-width.css">border-width.css</a>&nbsp;</td><td class="left"><a href="margin-inline.css">margin-inline.css</a>&nbsp;</td><td class="left"><a href="border-block-start-style.html">border-block-start-style.html</a>&nbsp;</td><td class="left"><a href="border-inline-start-style.html">border-inline-start-style.html</a>&nbsp;</td><td class="left"><a href="margin-block-end.html">margin-block-end.html</a>&nbsp;</td><td class="left"><a href="padding-block-end.html">padding-block-end.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="border.css">border.css</a>&nbsp;</td><td class="left"><a href="padding.css">padding.css</a>&nbsp;</td><td class="left"><a href="border-block-start-width.html">border-block-start-width.html</a>&nbsp;</td><td class="left"><a href="border-inline-start-width.html">border-inline-start-width.html</a>&nbsp;</td><td class="left"><a href="margin-block-start.html">margin-block-start.html</a>&nbsp;</td><td class="left"><a href="padding-block-start.html">padding-block-start.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="inline-size.css">inline-size.css</a>&nbsp;</td><td class="left"><a href="block-size.html">block-size.html</a>&nbsp;</td><td class="left"><a href="border-block-start.html">border-block-start.html</a>&nbsp;</td><td class="left"><a href="border-inline-start.html">border-inline-start.html</a>&nbsp;</td><td class="left"><a href="margin-inline-end.html">margin-inline-end.html</a>&nbsp;</td><td class="left"><a href="padding-inline-end.html">padding-inline-end.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="inset-block-end.css">inset-block-end.css</a>&nbsp;</td><td class="left"><a href="border-block-end-color.html">border-block-end-color.html</a>&nbsp;</td><td class="left"><a href="border-inline-end-color.html">border-inline-end-color.html</a>&nbsp;</td><td class="left"><a href="inline-size.html">inline-size.html</a>&nbsp;</td><td class="left"><a href="margin-inline-start.html">margin-inline-start.html</a>&nbsp;</td><td class="left"><a href="padding-inline-start.html">padding-inline-start.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="inset-block-start.css">inset-block-start.css</a>&nbsp;</td><td class="left"><a href="border-block-end-style.html">border-block-end-style.html</a>&nbsp;</td><td class="left"><a href="border-inline-end-style.html">border-inline-end-style.html</a>&nbsp;</td><td class="left"><a href="inset-block-end.html">inset-block-end.html</a>&nbsp;</td><td class="left"><a href="max-block-size.html">max-block-size.html</a>&nbsp;</td><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td><td class="left"><a href="border-block-start-color.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-end-width.html">border-i....html</a>&nbsp;</td><td class="left"><a href="inline-size.html">inline-size.html</a>&nbsp;</td><td class="left"><a href="margin-block-start.html">margin-b....html</a>&nbsp;</td><td class="left"><a href="min-inline-size.html">min-inli....html</a>&nbsp;</td><td class="left"><a href="border-color.css">border-color.css</a>&nbsp;</td><td class="left"><a href="inset-block-start.css">inset-bl...t.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="block-size.html">block-size.html</a>&nbsp;</td><td class="left"><a href="border-block-start-style.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-end.html">border-i....html</a>&nbsp;</td><td class="left"><a href="inset-block-end.html">inset-bl....html</a>&nbsp;</td><td class="left"><a href="margin-inline-end.html">margin-i....html</a>&nbsp;</td><td class="left"><a href="padding-block-end.html">padding-....html</a>&nbsp;</td><td class="left"><a href="border-style.css">border-style.css</a>&nbsp;</td><td class="left"><a href="inset-inline-end.css">inset-in...d.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="border-block-end-color.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-block-start-width.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-start-color.html">border-i....html</a>&nbsp;</td><td class="left"><a href="inset-block-start.html">inset-bl....html</a>&nbsp;</td><td class="left"><a href="margin-inline-start.html">margin-i....html</a>&nbsp;</td><td class="left"><a href="padding-block-start.html">padding-....html</a>&nbsp;</td><td class="left"><a href="border-width.css">border-width.css</a>&nbsp;</td><td class="left"><a href="inset-inline-start.css">inset-in...t.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="border-block-end-style.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-block-start.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-start-style.html">border-i....html</a>&nbsp;</td><td class="left"><a href="inset-inline-end.html">inset-in....html</a>&nbsp;</td><td class="left"><a href="max-block-size.html">max-bloc....html</a>&nbsp;</td><td class="left"><a href="padding-inline-end.html">padding-....html</a>&nbsp;</td><td class="left"><a href="border.css">border.css</a>&nbsp;</td><td class="left"><a href="margin-block.css">margin-block.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="border-block-end-width.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-end-color.html">border-i....html</a>&nbsp;</td><td class="left"><a href="border-inline-start-width.html">border-i....html</a>&nbsp;</td><td class="left"><a href="inset-inline-start.html">inset-in....html</a>&nbsp;</td><td class="left"><a href="max-inline-size.html">max-inli....html</a>&nbsp;</td><td class="left"><a href="padding-inline-start.html">padding-....html</a>&nbsp;</td><td class="left"><a href="inline-size.css">inline-size.css</a>&nbsp;</td><td class="left"><a href="margin-inline.css">margin-i...e.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="border-block-end.html">border-b....html</a>&nbsp;</td><td class="left"><a href="border-inline-end-style.html">border-i....html</a>&nbsp;</td><td class="left"><a href="border-inline-start.html">border-i....html</a>&nbsp;</td><td class="left"><a href="margin-block-end.html">margin-b....html</a>&nbsp;</td><td class="left"><a href="min-block-size.html">min-bloc....html</a>&nbsp;</td><td class="left"><a href="block-size.css">block-size.css</a>&nbsp;</td><td class="left"><a href="inset-block-end.css">inset-bl...d.css</a>&nbsp;</td><td class="left"><a href="padding.css">padding.css</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 48<br>
-Size of all files: 71127 K</p>
+Size of all files: 71127 KB</p>
 
 </body>
 </html>

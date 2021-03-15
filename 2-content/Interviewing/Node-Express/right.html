@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,32 +532,29 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="assets/right.html" target="rframe">assets</a></td><td class="left">&nbsp;<a href="Code/right.html" target="rframe">Code</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="assets/right.html" target="rframe">assets</a></td><td class="left">&nbsp;<a href="Code/right.html" target="rframe">Code</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="app.use-Middleware-1.html">app.use-Middleware-1.html</a>&nbsp;</td><td class="left"><a href="error-handling-in-node-Theory.html">error-handling-in-node-Theory.html</a>&nbsp;</td><td class="left"><a href="passport-express-session-Fundamentals-and-params.html">passport-express-session-Fundamentals-and-params.html</a>&nbsp;</td><td class="left"><a href="app.use-Middleware-2.md">app.use-Middleware-2.md</a>&nbsp;</td><td class="left"><a href="error-handling-in-node-Theory.md">error-handling-in-node-Theory.md</a>&nbsp;</td><td class="left"><a href="passport-authentication-middleware-BASIC-FLOW.md">passport-authentication-middleware-BASIC-FLOW.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="app.use-Middleware-2.html">app.use-Middleware-2.html</a>&nbsp;</td><td class="left"><a href="error-handling-in-node.html">error-handling-in-node.html</a>&nbsp;</td><td class="left"><a href="passport-express-session-how-it-works.html">passport-express-session-how-it-works.html</a>&nbsp;</td><td class="left"><a href="app.use-vs-app.get.md">app.use-vs-app.get.md</a>&nbsp;</td><td class="left"><a href="error-handling-in-node.md">error-handling-in-node.md</a>&nbsp;</td><td class="left"><a href="passport-express-session-Fundamentals-and-params.md">passport-express-session-Fundamentals-and-params.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="app.use-vs-app.get.html">app.use-vs-app.get.html</a>&nbsp;</td><td class="left"><a href="express-js-why-do-i-need-it.html">express-js-why-do-i-need-it.html</a>&nbsp;</td><td class="left"><a href="passport-workflow-with-passport-local-strategy.html">passport-workflow-with-passport-local-strategy.html</a>&nbsp;</td><td class="left"><a href="Authentication-vs-Authorization.md">Authentication-vs-Authorization.md</a>&nbsp;</td><td class="left"><a href="express-js-why-do-i-need-it.md">express-js-why-do-i-need-it.md</a>&nbsp;</td><td class="left"><a href="passport-express-session-how-it-works.md">passport-express-session-how-it-works.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Authentication-vs-Authorization.html">Authentication-vs-Authorization.html</a>&nbsp;</td><td class="left"><a href="general-quick-questions-node.html">general-quick-questions-node.html</a>&nbsp;</td><td class="left"><a href="pipe-in-node.html">pipe-in-node.html</a>&nbsp;</td><td class="left"><a href="bcrypt-How-it-works-de-hashing.md">bcrypt-How-it-works-de-hashing.md</a>&nbsp;</td><td class="left"><a href="general-quick-questions-node.md">general-quick-questions-node.md</a>&nbsp;</td><td class="left"><a href="passport-workflow-with-passport-local-strategy.md">passport-workflow-with-passport-local-strategy.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="bcrypt-How-it-works-de-hashing.html">bcrypt-How-it-works-de-hashing.html</a>&nbsp;</td><td class="left"><a href="gracefully-shut-down-node-app.html">gracefully-shut-down-node-app.html</a>&nbsp;</td><td class="left"><a href="REST-architectural-concepts.html">REST-architectural-concepts.html</a>&nbsp;</td><td class="left"><a href="bcrypt-manually-generate-a-salted-and-encrypted-password.md">bcrypt-manually-generate-a-salted-and-encrypted-password.md</a>&nbsp;</td><td class="left"><a href="gracefully-shut-down-node-app.md">gracefully-shut-down-node-app.md</a>&nbsp;</td><td class="left"><a href="pipe-in-node.md">pipe-in-node.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="bcrypt-manually-generate-a-salted-and-encrypted-password.html">bcrypt-manually-generate-a-salted-and-encrypted-password.html</a>&nbsp;</td><td class="left"><a href="How-nodejs-works.html">How-nodejs-works.html</a>&nbsp;</td><td class="left"><a href="session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.html">session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.html</a>&nbsp;</td><td class="left"><a href="bodyParser_what-does-it-do.md">bodyParser_what-does-it-do.md</a>&nbsp;</td><td class="left"><a href="How-nodejs-works.md">How-nodejs-works.md</a>&nbsp;</td><td class="left"><a href="REST-architectural-concepts.md">REST-architectural-concepts.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="bodyParser_what-does-it-do.html">bodyParser_what-does-it-do.html</a>&nbsp;</td><td class="left"><a href="jwt-how-it-works.html">jwt-how-it-works.html</a>&nbsp;</td><td class="left"><a href="sesstionStorage-vs-localStorage-vs-Cookie.html">sesstionStorage-vs-localStorage-vs-Cookie.html</a>&nbsp;</td><td class="left"><a href="buffer-class-what-is-it.md">buffer-class-what-is-it.md</a>&nbsp;</td><td class="left"><a href="jwt-how-it-works.md">jwt-how-it-works.md</a>&nbsp;</td><td class="left"><a href="session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.md">session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="buffer-class-what-is-it.html">buffer-class-what-is-it.html</a>&nbsp;</td><td class="left"><a href="jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.html">jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.html</a>&nbsp;</td><td class="left"><a href="significance-of-file-bin-www.html">significance-of-file-bin-www.html</a>&nbsp;</td><td class="left"><a href="busboy-why-I-use-stream-to-upload-file.md">busboy-why-I-use-stream-to-upload-file.md</a>&nbsp;</td><td class="left"><a href="jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.md">jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.md</a>&nbsp;</td><td class="left"><a href="sesstionStorage-vs-localStorage-vs-Cookie.md">sesstionStorage-vs-localStorage-vs-Cookie.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="busboy-why-I-use-stream-to-upload-file.html">busboy-why-I-use-stream-to-upload-file.html</a>&nbsp;</td><td class="left"><a href="localForage-what-does-it-do.html">localForage-what-does-it-do.html</a>&nbsp;</td><td class="left"><a href="Streams.html">Streams.html</a>&nbsp;</td><td class="left"><a href="busboy-why-its-needed.md">busboy-why-its-needed.md</a>&nbsp;</td><td class="left"><a href="localForage-what-does-it-do.md">localForage-what-does-it-do.md</a>&nbsp;</td><td class="left"><a href="significance-of-file-bin-www.md">significance-of-file-bin-www.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="busboy-why-its-needed.html">busboy-why-its-needed.html</a>&nbsp;</td><td class="left"><a href="node-debugging.html">node-debugging.html</a>&nbsp;</td><td class="left"><a href="What-is-an-error-first-callback.html">What-is-an-error-first-callback.html</a>&nbsp;</td><td class="left"><a href="cookie-parser-what-does-it-do.md">cookie-parser-what-does-it-do.md</a>&nbsp;</td><td class="left"><a href="node-debugging.md">node-debugging.md</a>&nbsp;</td><td class="left"><a href="Streams.md">Streams.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="cookie-parser-what-does-it-do.html">cookie-parser-what-does-it-do.html</a>&nbsp;</td><td class="left"><a href="nvm-regular-commands.html">nvm-regular-commands.html</a>&nbsp;</td><td class="left"><a href="why-nodejs-required-at-all-and-difference-vs-plain-js.html">why-nodejs-required-at-all-and-difference-vs-plain-js.html</a>&nbsp;</td><td class="left"><a href="cors_Why_its_needed.md">cors_Why_its_needed.md</a>&nbsp;</td><td class="left"><a href="nvm-regular-commands.md">nvm-regular-commands.md</a>&nbsp;</td><td class="left"><a href="What-is-an-error-first-callback.md">What-is-an-error-first-callback.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cors_Why_its_needed.html">cors_Why_its_needed.html</a>&nbsp;</td><td class="left"><a href="package.json-file.html">package.json-file.html</a>&nbsp;</td><td class="left"><a href="Streams-Node.jpeg">Streams-Node.jpeg</a>&nbsp;</td><td class="left"><a href="CRUD-basic-setup-to-add-a-new-model.md">CRUD-basic-setup-to-add-a-new-model.md</a>&nbsp;</td><td class="left"><a href="package.json-file.md">package.json-file.md</a>&nbsp;</td><td class="left"><a href="why-nodejs-required-at-all-and-difference-vs-plain-js.md">why-nodejs-required-at-all-and-difference-vs-plain-js.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="CRUD-basic-setup-to-add-a-new-model.html">CRUD-basic-setup-to-add-a-new-model.html</a>&nbsp;</td><td class="left"><a href="passport-authentication-middleware-BASIC-FLOW.html">passport-authentication-middleware-BASIC-FLOW.html</a>&nbsp;</td><td class="left"><a href="app.use-Middleware-1.md">app.use-Middleware-1.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="app.use-Middleware-1.md">app.use-...-1.md</a>&nbsp;</td><td class="left"><a href="cookie-parser-what-does-it-do.md">cookie-p...do.md</a>&nbsp;</td><td class="left"><a href="jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.md">jwt-wher...ie.md</a>&nbsp;</td><td class="left"><a href="REST-architectural-concepts.md">REST-arc...ts.md</a>&nbsp;</td><td class="left"><a href="app.use-Middleware-2.html">app.use-....html</a>&nbsp;</td><td class="left"><a href="cookie-parser-what-does-it-do.html">cookie-p....html</a>&nbsp;</td><td class="left"><a href="jwt-how-it-works.html">jwt-how-....html</a>&nbsp;</td><td class="left"><a href="passport-workflow-with-passport-local-strategy.html">passport....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="app.use-Middleware-2.md">app.use-...-2.md</a>&nbsp;</td><td class="left"><a href="cors_Why_its_needed.md">cors_Why...ed.md</a>&nbsp;</td><td class="left"><a href="localForage-what-does-it-do.md">localFor...do.md</a>&nbsp;</td><td class="left"><a href="session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.md">session-...te.md</a>&nbsp;</td><td class="left"><a href="app.use-vs-app.get.html">app.use-....html</a>&nbsp;</td><td class="left"><a href="cors_Why_its_needed.html">cors_Why....html</a>&nbsp;</td><td class="left"><a href="jwt-where-to-save-localStorage-vs-sessionStorage-vs-cookie.html">jwt-wher....html</a>&nbsp;</td><td class="left"><a href="pipe-in-node.html">pipe-in-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="app.use-vs-app.get.md">app.use-...et.md</a>&nbsp;</td><td class="left"><a href="CRUD-basic-setup-to-add-a-new-model.md">CRUD-bas...el.md</a>&nbsp;</td><td class="left"><a href="node-debugging.md">node-deb...ng.md</a>&nbsp;</td><td class="left"><a href="sesstionStorage-vs-localStorage-vs-Cookie.md">sesstion...ie.md</a>&nbsp;</td><td class="left"><a href="Authentication-vs-Authorization.html">Authenti....html</a>&nbsp;</td><td class="left"><a href="CRUD-basic-setup-to-add-a-new-model.html">CRUD-bas....html</a>&nbsp;</td><td class="left"><a href="localForage-what-does-it-do.html">localFor....html</a>&nbsp;</td><td class="left"><a href="REST-architectural-concepts.html">REST-arc....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Authentication-vs-Authorization.md">Authenti...on.md</a>&nbsp;</td><td class="left"><a href="error-handling-in-node-Theory.md">error-ha...ry.md</a>&nbsp;</td><td class="left"><a href="nvm-regular-commands.md">nvm-regu...ds.md</a>&nbsp;</td><td class="left"><a href="significance-of-file-bin-www.md">signific...ww.md</a>&nbsp;</td><td class="left"><a href="bcrypt-How-it-works-de-hashing.html">bcrypt-H....html</a>&nbsp;</td><td class="left"><a href="error-handling-in-node-Theory.html">error-ha....html</a>&nbsp;</td><td class="left"><a href="node-debugging.html">node-deb....html</a>&nbsp;</td><td class="left"><a href="session-cookies-vs-JWT-Tokens-2-ways-to-authenticate.html">session-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="bcrypt-How-it-works-de-hashing.md">bcrypt-H...ng.md</a>&nbsp;</td><td class="left"><a href="error-handling-in-node.md">error-ha...de.md</a>&nbsp;</td><td class="left"><a href="package.json-file.md">package....le.md</a>&nbsp;</td><td class="left"><a href="Streams.md">Streams.md</a>&nbsp;</td><td class="left"><a href="bcrypt-manually-generate-a-salted-and-encrypted-password.html">bcrypt-m....html</a>&nbsp;</td><td class="left"><a href="error-handling-in-node.html">error-ha....html</a>&nbsp;</td><td class="left"><a href="nvm-regular-commands.html">nvm-regu....html</a>&nbsp;</td><td class="left"><a href="sesstionStorage-vs-localStorage-vs-Cookie.html">sesstion....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="bcrypt-manually-generate-a-salted-and-encrypted-password.md">bcrypt-m...rd.md</a>&nbsp;</td><td class="left"><a href="express-js-why-do-i-need-it.md">express-...it.md</a>&nbsp;</td><td class="left"><a href="passport-authentication-middleware-BASIC-FLOW.md">passport...OW.md</a>&nbsp;</td><td class="left"><a href="What-is-an-error-first-callback.md">What-is-...ck.md</a>&nbsp;</td><td class="left"><a href="bodyParser_what-does-it-do.html">bodyPars....html</a>&nbsp;</td><td class="left"><a href="express-js-why-do-i-need-it.html">express-....html</a>&nbsp;</td><td class="left"><a href="package.json-file.html">package.....html</a>&nbsp;</td><td class="left"><a href="significance-of-file-bin-www.html">signific....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="bodyParser_what-does-it-do.md">bodyPars...do.md</a>&nbsp;</td><td class="left"><a href="general-quick-questions-node.md">general-...de.md</a>&nbsp;</td><td class="left"><a href="passport-express-session-Fundamentals-and-params.md">passport...ms.md</a>&nbsp;</td><td class="left"><a href="why-nodejs-required-at-all-and-difference-vs-plain-js.md">why-node...js.md</a>&nbsp;</td><td class="left"><a href="buffer-class-what-is-it.html">buffer-c....html</a>&nbsp;</td><td class="left"><a href="general-quick-questions-node.html">general-....html</a>&nbsp;</td><td class="left"><a href="passport-authentication-middleware-BASIC-FLOW.html">passport....html</a>&nbsp;</td><td class="left"><a href="Streams.html">Streams.html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="buffer-class-what-is-it.md">buffer-c...it.md</a>&nbsp;</td><td class="left"><a href="gracefully-shut-down-node-app.md">graceful...pp.md</a>&nbsp;</td><td class="left"><a href="passport-express-session-how-it-works.md">passport...ks.md</a>&nbsp;</td><td class="left"><a href="Streams-Node.jpeg">Streams-....jpeg</a>&nbsp;</td><td class="left"><a href="busboy-why-I-use-stream-to-upload-file.html">busboy-w....html</a>&nbsp;</td><td class="left"><a href="gracefully-shut-down-node-app.html">graceful....html</a>&nbsp;</td><td class="left"><a href="passport-express-session-Fundamentals-and-params.html">passport....html</a>&nbsp;</td><td class="left"><a href="What-is-an-error-first-callback.html">What-is-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="busboy-why-I-use-stream-to-upload-file.md">busboy-w...le.md</a>&nbsp;</td><td class="left"><a href="How-nodejs-works.md">How-node...ks.md</a>&nbsp;</td><td class="left"><a href="passport-workflow-with-passport-local-strategy.md">passport...gy.md</a>&nbsp;</td><td class="left"><a href="app.use-Middleware-1.html">app.use-....html</a>&nbsp;</td><td class="left"><a href="busboy-why-its-needed.html">busboy-w....html</a>&nbsp;</td><td class="left"><a href="How-nodejs-works.html">How-node....html</a>&nbsp;</td><td class="left"><a href="passport-express-session-how-it-works.html">passport....html</a>&nbsp;</td><td class="left"><a href="why-nodejs-required-at-all-and-difference-vs-plain-js.html">why-node....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="busboy-why-its-needed.md">busboy-w...ed.md</a>&nbsp;</td><td class="left"><a href="jwt-how-it-works.md">jwt-how-...ks.md</a>&nbsp;</td><td class="left"><a href="pipe-in-node.md">pipe-in-node.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  3<br>
 Files: 75<br>
-Size of all files: 543649 K</p>
+Size of all files: 543649 KB</p>
 
 </body>
 </html>

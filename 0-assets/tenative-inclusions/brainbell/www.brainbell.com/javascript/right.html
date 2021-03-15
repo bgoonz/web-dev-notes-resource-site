@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,26 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="async-file-walker-event-driven.html">async-file-walker-event-driven.html</a>&nbsp;</td><td class="left"><a href="duplicate-file-finder-gui.html">duplicate-file-finder-gui.html</a>&nbsp;</td><td class="left"><a href="electron-renderer.html">electron-renderer.html</a>&nbsp;</td><td class="left"><a href="fs-stats-structure.html">fs-stats-structure.html</a>&nbsp;</td><td class="left"><a href="making-resizable-table-js.html">making-resizable-table-js.html</a>&nbsp;</td><td class="left"><a href="show-save-dialog.html">show-save-dialog.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="async-files-dirs.html">async-files-dirs.html</a>&nbsp;</td><td class="left"><a href="dynamic-table-rows.html">dynamic-table-rows.html</a>&nbsp;</td><td class="left"><a href="electron.html">electron.html</a>&nbsp;</td><td class="left"><a href="hash-files-in-filewalker.html">hash-files-in-filewalker.html</a>&nbsp;</td><td class="left"><a href="node.html">node.html</a>&nbsp;</td><td class="left"><a href="syn-async-callback.html">syn-async-callback.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="child-process.html">child-process.html</a>&nbsp;</td><td class="left"><a href="edmonton.html">edmonton.html</a>&nbsp;</td><td class="left"><a href="event-loop.html">event-loop.html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="object-freeze-settings-module.html">object-freeze-settings-module.html</a>&nbsp;</td><td class="left"><a href="sync-files-dirs.html">sync-files-dirs.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="create-node-modules.html">create-node-modules.html</a>&nbsp;</td><td class="left"><a href="electron-gui.html">electron-gui.html</a>&nbsp;</td><td class="left"><a href="filewalker-child-process.html">filewalker-child-process.html</a>&nbsp;</td><td class="left"><a href="ipc-communication.html">ipc-communication.html</a>&nbsp;</td><td class="left"><a href="pause-resume-file-walker.html">pause-resume-file-walker.html</a>&nbsp;</td><td class="left"><a href="the-project-json-file.html">the-project-json-file.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="crypto-hash-file-string.html">crypto-hash-file-string.html</a>&nbsp;</td><td class="left"><a href="electron-processes.html">electron-processes.html</a>&nbsp;</td><td class="left"><a href="filewalker-data-structure.html">filewalker-data-structure.html</a>&nbsp;</td><td class="left"><a href="jellyfish.html">jellyfish.html</a>&nbsp;</td><td class="left"><a href="remote-module.html">remote-module.html</a>&nbsp;</td><td class="left"><a href="webview-grid.html">webview-grid.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="data-structure-storage.html">data-structure-storage.html</a>&nbsp;</td><td class="left"><a href="electron-renderer-js-file.html">electron-renderer-js-file.html</a>&nbsp;</td><td class="left"><a href="fs-open-read-write-file.html">fs-open-read-write-file.html</a>&nbsp;</td><td class="left"><a href="making-desktop-applications.html">making-desktop-applications.html</a>&nbsp;</td><td class="left"><a href="show-open-dialog.html">show-open-dialog.html</a>&nbsp;</td><td class="left"><a href="audins.js">audins.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="dialog-show-message-box.html">dialog-show-message-box.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="audins.js">audins.js</a>&nbsp;</td><td class="left"><a href="crypto-hash-file-string.html">crypto-h....html</a>&nbsp;</td><td class="left"><a href="edmonton.html">edmonton.html</a>&nbsp;</td><td class="left"><a href="electron.html">electron.html</a>&nbsp;</td><td class="left"><a href="fs-stats-structure.html">fs-stats....html</a>&nbsp;</td><td class="left"><a href="making-desktop-applications.html">making-d....html</a>&nbsp;</td><td class="left"><a href="remote-module.html">remote-m....html</a>&nbsp;</td><td class="left"><a href="syn-async-callback.html">syn-asyn....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="async-file-walker-event-driven.html">async-fi....html</a>&nbsp;</td><td class="left"><a href="data-structure-storage.html">data-str....html</a>&nbsp;</td><td class="left"><a href="electron-gui.html">electron....html</a>&nbsp;</td><td class="left"><a href="event-loop.html">event-loop.html</a>&nbsp;</td><td class="left"><a href="hash-files-in-filewalker.html">hash-fil....html</a>&nbsp;</td><td class="left"><a href="making-resizable-table-js.html">making-r....html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="sync-files-dirs.html">sync-fil....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="async-files-dirs.html">async-fi....html</a>&nbsp;</td><td class="left"><a href="dialog-show-message-box.html">dialog-s....html</a>&nbsp;</td><td class="left"><a href="electron-processes.html">electron....html</a>&nbsp;</td><td class="left"><a href="filewalker-child-process.html">filewalk....html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="node.html">node.html</a>&nbsp;</td><td class="left"><a href="show-open-dialog.html">show-ope....html</a>&nbsp;</td><td class="left"><a href="the-project-json-file.html">the-proj....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="child-process.html">child-pr....html</a>&nbsp;</td><td class="left"><a href="duplicate-file-finder-gui.html">duplicat....html</a>&nbsp;</td><td class="left"><a href="electron-renderer-js-file.html">electron....html</a>&nbsp;</td><td class="left"><a href="filewalker-data-structure.html">filewalk....html</a>&nbsp;</td><td class="left"><a href="ipc-communication.html">ipc-comm....html</a>&nbsp;</td><td class="left"><a href="object-freeze-settings-module.html">object-f....html</a>&nbsp;</td><td class="left"><a href="show-save-dialog.html">show-sav....html</a>&nbsp;</td><td class="left"><a href="webview-grid.html">webview-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="create-node-modules.html">create-n....html</a>&nbsp;</td><td class="left"><a href="dynamic-table-rows.html">dynamic-....html</a>&nbsp;</td><td class="left"><a href="electron-renderer.html">electron....html</a>&nbsp;</td><td class="left"><a href="fs-open-read-write-file.html">fs-open-....html</a>&nbsp;</td><td class="left"><a href="jellyfish.html">jellyfish.html</a>&nbsp;</td><td class="left"><a href="pause-resume-file-walker.html">pause-re....html</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 37<br>
-Size of all files: 1279641 K</p>
+Files: 38<br>
+Size of all files: 1296755 KB</p>
 
 </body>
 </html>

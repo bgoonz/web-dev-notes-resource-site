@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="best-practices-common-pattern/right.html" target="rframe">best-practices-common-pattern</a></td><td class="left">&nbsp;<a href="Explanations-on-Ben-Lesh-Talk-at-ng-conf-drag-to-refresh/right.html" target="rframe">Explanations-on-Ben-Lesh-Talk-at-ng-conf-drag-to-refresh</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="best-practices-common-pattern/right.html" target="rframe">best-pra...ttern</a></td><td class="left">&nbsp;<a href="Explanations-on-Ben-Lesh-Talk-at-ng-conf-drag-to-refresh/right.html" target="rframe">Explanat...fresh</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="angular-httpclient-unsubscribe.html">angular-httpclient-unsubscribe.html</a>&nbsp;</td><td class="left"><a href="pipe-basics-how-it-works-with-simple-good-example.html">pipe-basics-how-it-works-with-simple-good-example.html</a>&nbsp;</td><td class="left"><a href="retryWhen-basics-2.html">retryWhen-basics-2.html</a>&nbsp;</td><td class="left"><a href="angular-httpclient-unsubscribe.md">angular-httpclient-unsubscribe.md</a>&nbsp;</td><td class="left"><a href="pipe-basics-how-it-works-with-simple-good-example.md">pipe-basics-how-it-works-with-simple-good-example.md</a>&nbsp;</td><td class="left"><a href="retryWhen-basics-2.md">retryWhen-basics-2.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="combineLatest-basics.html">combineLatest-basics.html</a>&nbsp;</td><td class="left"><a href="pipe-function-1.html">pipe-function-1.html</a>&nbsp;</td><td class="left"><a href="switchMap-get-route-params.html">switchMap-get-route-params.html</a>&nbsp;</td><td class="left"><a href="combineLatest-basics.md">combineLatest-basics.md</a>&nbsp;</td><td class="left"><a href="pipe-function-1.md">pipe-function-1.md</a>&nbsp;</td><td class="left"><a href="switchMap-get-route-params.md">switchMap-get-route-params.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="debounceTime-special-implementation.html">debounceTime-special-implementation.html</a>&nbsp;</td><td class="left"><a href="pipe-function-2.html">pipe-function-2.html</a>&nbsp;</td><td class="left"><a href="switchMap-good-example-for-user-input.html">switchMap-good-example-for-user-input.html</a>&nbsp;</td><td class="left"><a href="debounceTime-special-implementation.md">debounceTime-special-implementation.md</a>&nbsp;</td><td class="left"><a href="pipe-function-2.md">pipe-function-2.md</a>&nbsp;</td><td class="left"><a href="switchMap-good-example-for-user-input.md">switchMap-good-example-for-user-input.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="debounceTime-usecase-input-validation.html">debounceTime-usecase-input-validation.html</a>&nbsp;</td><td class="left"><a href="pipe-function-3.html">pipe-function-3.html</a>&nbsp;</td><td class="left"><a href="take(1).html">take(1).html</a>&nbsp;</td><td class="left"><a href="debounceTime-usecase-input-validation.md">debounceTime-usecase-input-validation.md</a>&nbsp;</td><td class="left"><a href="pipe-function-3.md">pipe-function-3.md</a>&nbsp;</td><td class="left"><a href="take(1).md">take(1).md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="operator-in-rxjs-like-map-of-merge.html">operator-in-rxjs-like-map-of-merge.html</a>&nbsp;</td><td class="left"><a href="retryWhen-1.html">retryWhen-1.html</a>&nbsp;</td><td class="left"><a href="what-the-fcuk-is-rxjs.html">what-the-fcuk-is-rxjs.html</a>&nbsp;</td><td class="left"><a href="operator-in-rxjs-like-map-of-merge.md">operator-in-rxjs-like-map-of-merge.md</a>&nbsp;</td><td class="left"><a href="retryWhen-1.md">retryWhen-1.md</a>&nbsp;</td><td class="left"><a href="what-the-fcuk-is-rxjs.md">what-the-fcuk-is-rxjs.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="angular-httpclient-unsubscribe.md">angular-...be.md</a>&nbsp;</td><td class="left"><a href="operator-in-rxjs-like-map-of-merge.md">operator...ge.md</a>&nbsp;</td><td class="left"><a href="pipe-function-3.md">pipe-fun...-3.md</a>&nbsp;</td><td class="left"><a href="switchMap-good-example-for-user-input.md">switchMa...ut.md</a>&nbsp;</td><td class="left"><a href="combineLatest-basics.html">combineL....html</a>&nbsp;</td><td class="left"><a href="pipe-basics-how-it-works-with-simple-good-example.html">pipe-bas....html</a>&nbsp;</td><td class="left"><a href="retryWhen-1.html">retryWhen-1.html</a>&nbsp;</td><td class="left"><a href="switchMap-good-example-for-user-input.html">switchMa....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="combineLatest-basics.md">combineL...cs.md</a>&nbsp;</td><td class="left"><a href="pipe-basics-how-it-works-with-simple-good-example.md">pipe-bas...le.md</a>&nbsp;</td><td class="left"><a href="retryWhen-1.md">retryWhen-1.md</a>&nbsp;</td><td class="left"><a href="take(1).md">take(1).md</a>&nbsp;</td><td class="left"><a href="debounceTime-special-implementation.html">debounce....html</a>&nbsp;</td><td class="left"><a href="pipe-function-1.html">pipe-fun....html</a>&nbsp;</td><td class="left"><a href="retryWhen-basics-2.html">retryWhe....html</a>&nbsp;</td><td class="left"><a href="take(1).html">take(1).html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="debounceTime-special-implementation.md">debounce...on.md</a>&nbsp;</td><td class="left"><a href="pipe-function-1.md">pipe-fun...-1.md</a>&nbsp;</td><td class="left"><a href="retryWhen-basics-2.md">retryWhe...-2.md</a>&nbsp;</td><td class="left"><a href="what-the-fcuk-is-rxjs.md">what-the...js.md</a>&nbsp;</td><td class="left"><a href="debounceTime-usecase-input-validation.html">debounce....html</a>&nbsp;</td><td class="left"><a href="pipe-function-2.html">pipe-fun....html</a>&nbsp;</td><td class="left"><a href="switchMap-get-route-params.html">switchMa....html</a>&nbsp;</td><td class="left"><a href="what-the-fcuk-is-rxjs.html">what-the....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="debounceTime-usecase-input-validation.md">debounce...on.md</a>&nbsp;</td><td class="left"><a href="pipe-function-2.md">pipe-fun...-2.md</a>&nbsp;</td><td class="left"><a href="switchMap-get-route-params.md">switchMa...ms.md</a>&nbsp;</td><td class="left"><a href="angular-httpclient-unsubscribe.html">angular-....html</a>&nbsp;</td><td class="left"><a href="operator-in-rxjs-like-map-of-merge.html">operator....html</a>&nbsp;</td><td class="left"><a href="pipe-function-3.html">pipe-fun....html</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  3<br>
 Files: 30<br>
-Size of all files: 94640 K</p>
+Size of all files: 94640 KB</p>
 
 </body>
 </html>

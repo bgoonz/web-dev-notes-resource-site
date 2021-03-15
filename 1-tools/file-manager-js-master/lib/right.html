@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,23 +532,26 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="createFile/right.html" target="rframe">createFile</a></td><td class="left">&nbsp;<a href="dirSize.html/right.html" target="rframe">dirSize.html</a></td><td class="left">&nbsp;<a href="exists_html/right.html" target="rframe">exists_html</a></td><td class="left">&nbsp;<a href="list/right.html" target="rframe">list</a></td><td class="left">&nbsp;<a href="listDeep_html/right.html" target="rframe">listDeep_html</a></td><td class="left">&nbsp;<a href="readFile_html/right.html" target="rframe">readFile_html</a></td><td class="left">&nbsp;<a href="removeFile/right.html" target="rframe">removeFile</a></td><td class="left">&nbsp;<a href="rename/right.html" target="rframe">rename</a></td><td class="left">&nbsp;<a href="stat/right.html" target="rframe">stat</a></td></tr>
-<tr class="row2"><td class="left"><a href="createDir/right.html" target="rframe">createDir</a></td><td class="left">&nbsp;<a href="createFile.html/right.html" target="rframe">createFile.html</a></td><td class="left">&nbsp;<a href="dirSize_html/right.html" target="rframe">dirSize_html</a></td><td class="left">&nbsp;<a href="info/right.html" target="rframe">info</a></td><td class="left">&nbsp;<a href="list.html/right.html" target="rframe">list.html</a></td><td class="left">&nbsp;<a href="list_html/right.html" target="rframe">list_html</a></td><td class="left">&nbsp;<a href="removeDir/right.html" target="rframe">removeDir</a></td><td class="left">&nbsp;<a href="removeFile.html/right.html" target="rframe">removeFile.html</a></td><td class="left">&nbsp;<a href="rename.html/right.html" target="rframe">rename.html</a></td><td class="left">&nbsp;<a href="stat.html/right.html" target="rframe">stat.html</a></td></tr>
-<tr><td class="left"><a href="createDir.html/right.html" target="rframe">createDir.html</a></td><td class="left">&nbsp;<a href="createFile_html/right.html" target="rframe">createFile_html</a></td><td class="left">&nbsp;<a href="exists/right.html" target="rframe">exists</a></td><td class="left">&nbsp;<a href="info.html/right.html" target="rframe">info.html</a></td><td class="left">&nbsp;<a href="listDeep/right.html" target="rframe">listDeep</a></td><td class="left">&nbsp;<a href="readFile/right.html" target="rframe">readFile</a></td><td class="left">&nbsp;<a href="removeDir.html/right.html" target="rframe">removeDir.html</a></td><td class="left">&nbsp;<a href="removeFile_html/right.html" target="rframe">removeFile_html</a></td><td class="left">&nbsp;<a href="rename_html/right.html" target="rframe">rename_html</a></td><td class="left">&nbsp;<a href="stat_html/right.html" target="rframe">stat_html</a></td></tr>
-<tr class="row2"><td class="left"><a href="createDir_html/right.html" target="rframe">createDir_html</a></td><td class="left">&nbsp;<a href="dirSize/right.html" target="rframe">dirSize</a></td><td class="left">&nbsp;<a href="exists.html/right.html" target="rframe">exists.html</a></td><td class="left">&nbsp;<a href="info_html/right.html" target="rframe">info_html</a></td><td class="left">&nbsp;<a href="listDeep.html/right.html" target="rframe">listDeep.html</a></td><td class="left">&nbsp;<a href="readFile.html/right.html" target="rframe">readFile.html</a></td><td class="left">&nbsp;<a href="removeDir_html/right.html" target="rframe">removeDir_html</a></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="dirSize/right.html" target="rframe">dirSize</a></td><td class="left">&nbsp;<a href="info/right.html" target="rframe">info</a></td><td class="left">&nbsp;<a href="listDeep.html/right.html" target="rframe">listDeep.html</a></td><td class="left">&nbsp;<a href="removeDir/right.html" target="rframe">removeDir</a></td><td class="left">&nbsp;<a href="rename/right.html" target="rframe">rename</a></td></tr>
+<tr class="row2"><td class="left"><a href="createDir/right.html" target="rframe">createDir</a></td><td class="left">&nbsp;<a href="dirSize.html/right.html" target="rframe">dirSize.html</a></td><td class="left">&nbsp;<a href="info.html/right.html" target="rframe">info.html</a></td><td class="left">&nbsp;<a href="listDeep_html/right.html" target="rframe">listDeep_html</a></td><td class="left">&nbsp;<a href="removeDir.html/right.html" target="rframe">removeDir.html</a></td><td class="left">&nbsp;<a href="rename.html/right.html" target="rframe">rename.html</a></td></tr>
+<tr><td class="left"><a href="createDir.html/right.html" target="rframe">createDir.html</a></td><td class="left">&nbsp;<a href="dirSize_html/right.html" target="rframe">dirSize_html</a></td><td class="left">&nbsp;<a href="info_html/right.html" target="rframe">info_html</a></td><td class="left">&nbsp;<a href="list_html/right.html" target="rframe">list_html</a></td><td class="left">&nbsp;<a href="removeDir_html/right.html" target="rframe">removeDir_html</a></td><td class="left">&nbsp;<a href="rename_html/right.html" target="rframe">rename_html</a></td></tr>
+<tr class="row2"><td class="left"><a href="createDir_html/right.html" target="rframe">createDir_html</a></td><td class="left">&nbsp;<a href="exists/right.html" target="rframe">exists</a></td><td class="left">&nbsp;<a href="list/right.html" target="rframe">list</a></td><td class="left">&nbsp;<a href="readFile/right.html" target="rframe">readFile</a></td><td class="left">&nbsp;<a href="removeFile/right.html" target="rframe">removeFile</a></td><td class="left">&nbsp;<a href="stat/right.html" target="rframe">stat</a></td></tr>
+<tr><td class="left"><a href="createFile/right.html" target="rframe">createFile</a></td><td class="left">&nbsp;<a href="exists.html/right.html" target="rframe">exists.html</a></td><td class="left">&nbsp;<a href="list.html/right.html" target="rframe">list.html</a></td><td class="left">&nbsp;<a href="readFile.html/right.html" target="rframe">readFile.html</a></td><td class="left">&nbsp;<a href="removeFile.html/right.html" target="rframe">removeFile.html</a></td><td class="left">&nbsp;<a href="stat.html/right.html" target="rframe">stat.html</a></td></tr>
+<tr class="row2"><td class="left"><a href="createFile.html/right.html" target="rframe">createFile.html</a></td><td class="left">&nbsp;<a href="exists_html/right.html" target="rframe">exists_html</a></td><td class="left">&nbsp;<a href="listDeep/right.html" target="rframe">listDeep</a></td><td class="left">&nbsp;<a href="readFile_html/right.html" target="rframe">readFile_html</a></td><td class="left">&nbsp;<a href="removeFile_html/right.html" target="rframe">removeFile_html</a></td><td class="left">&nbsp;<a href="stat_html/right.html" target="rframe">stat_html</a></td></tr>
+<tr><td class="left"><a href="createFile_html/right.html" target="rframe">createFile_html</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="src_tree_md">src_tree_md</a>&nbsp;</td><td class="left"><a href="src-tree.md">src-tree.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="src-tree.md">src-tree.md</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="src_tree_md">src_tree_md</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  37<br>
-Files: 2<br>
-Size of all files: 1762 K</p>
+Files: 3<br>
+Size of all files: 19314 KB</p>
 
 </body>
 </html>

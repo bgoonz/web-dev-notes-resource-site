@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="photo_project_images/right.html" target="rframe">photo_project_images</a></td><td class="left">&nbsp;<a href="sideways_hero_full/right.html" target="rframe">sideways_hero_full</a></td><td class="left">&nbsp;<a href="sideways_hero_nb_example/right.html" target="rframe">sideways_hero_nb_example</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="photo_project_images/right.html" target="rframe">photo_pr...mages</a></td><td class="left">&nbsp;<a href="sideways_hero_full/right.html" target="rframe">sideways..._full</a></td><td class="left">&nbsp;<a href="sideways_hero_nb_example/right.html" target="rframe">sideways...ample</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="Assignments%20-%20Dictionaries%20etc.ipynb">Assignments - Dictionaries etc.ipynb</a>&nbsp;</td><td class="left"><a href="Functions.ipynb">Functions.ipynb</a>&nbsp;</td><td class="left"><a href="Making%20a%20Simple%20Game.ipynb">Making a Simple Game.ipynb</a>&nbsp;</td><td class="left"><a href="Playing%20with%20Sound.ipynb">Playing with Sound.ipynb</a>&nbsp;</td><td class="left"><a href="While%20Loops.ipynb">While Loops.ipynb</a>&nbsp;</td><td class="left"><a href="msg.mp3">msg.mp3</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Assignments%20-%20Hello%20World%20through%20Lists.ipynb">Assignments - Hello World through Lists.ipynb</a>&nbsp;</td><td class="left"><a href="Getting%20Help.ipynb">Getting Help.ipynb</a>&nbsp;</td><td class="left"><a href="Mini%20Projects.ipynb">Mini Projects.ipynb</a>&nbsp;</td><td class="left"><a href="Programming%20-%20Teaching%20Notebook%201.ipynb">Programming - Teaching Notebook 1.ipynb</a>&nbsp;</td><td class="left"><a href="modified_willie_crab.jpg">modified_willie_crab.jpg</a>&nbsp;</td><td class="left"><a href="bw_filter.py">bw_filter.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Assignments%20-%20If%20Statements.ipynb">Assignments - If Statements.ipynb</a>&nbsp;</td><td class="left"><a href="If%20Statements.ipynb">If Statements.ipynb</a>&nbsp;</td><td class="left"><a href="Numbers.ipynb">Numbers.ipynb</a>&nbsp;</td><td class="left"><a href="Project%20Notes.ipynb">Project Notes.ipynb</a>&nbsp;</td><td class="left"><a href="willie_crab.jpg">willie_crab.jpg</a>&nbsp;</td><td class="left"><a href="say_something.py">say_something.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Assignments%20-%20Real%20World%20Examples.ipynb">Assignments - Real World Examples.ipynb</a>&nbsp;</td><td class="left"><a href="Installing%20Libraries.ipynb">Installing Libraries.ipynb</a>&nbsp;</td><td class="left"><a href="Other%20Concepts.ipynb">Other Concepts.ipynb</a>&nbsp;</td><td class="left"><a href="User%20Input.ipynb">User Input.ipynb</a>&nbsp;</td><td class="left"><a href="README.md">README.md</a>&nbsp;</td><td class="left"><a href="spelling_practice.py">spelling_practice.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Classes.ipynb">Classes.ipynb</a>&nbsp;</td><td class="left"><a href="Lists.ipynb">Lists.ipynb</a>&nbsp;</td><td class="left"><a href="Playing%20with%20Photos.ipynb">Playing with Photos.ipynb</a>&nbsp;</td><td class="left"><a href="Variables.ipynb">Variables.ipynb</a>&nbsp;</td><td class="left"><a href="hello.mp3">hello.mp3</a>&nbsp;</td><td class="left"><a href="my_sound_file.wav">my_sound_file.wav</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Dictionaries.ipynb">Dictionaries.ipynb</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="my_sound_file.wav">my_sound...e.wav</a>&nbsp;</td><td class="left"><a href="hello.mp3">hello.mp3</a>&nbsp;</td><td class="left"><a href="willie_crab.jpg">willie_crab.jpg</a>&nbsp;</td><td class="left"><a href="Assignments%20-%20Real%20World%20Examples.ipynb">Assignme...ipynb</a>&nbsp;</td><td class="left"><a href="Getting%20Help.ipynb">Getting ...ipynb</a>&nbsp;</td><td class="left"><a href="Making%20a%20Simple%20Game.ipynb">Making a...ipynb</a>&nbsp;</td><td class="left"><a href="Playing%20with%20Photos.ipynb">Playing ...ipynb</a>&nbsp;</td><td class="left"><a href="User%20Input.ipynb">User Input.ipynb</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="bw_filter.py">bw_filter.py</a>&nbsp;</td><td class="left"><a href="msg.mp3">msg.mp3</a>&nbsp;</td><td class="left"><a href="Assignments%20-%20Dictionaries%20etc.ipynb">Assignme...ipynb</a>&nbsp;</td><td class="left"><a href="Classes.ipynb">Classes.ipynb</a>&nbsp;</td><td class="left"><a href="If%20Statements.ipynb">If State...ipynb</a>&nbsp;</td><td class="left"><a href="Mini%20Projects.ipynb">Mini Pro...ipynb</a>&nbsp;</td><td class="left"><a href="Playing%20with%20Sound.ipynb">Playing ...ipynb</a>&nbsp;</td><td class="left"><a href="Variables.ipynb">Variables.ipynb</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="say_something.py">say_something.py</a>&nbsp;</td><td class="left"><a href="README.md">README.md</a>&nbsp;</td><td class="left"><a href="Assignments%20-%20Hello%20World%20through%20Lists.ipynb">Assignme...ipynb</a>&nbsp;</td><td class="left"><a href="Dictionaries.ipynb">Dictiona...ipynb</a>&nbsp;</td><td class="left"><a href="Installing%20Libraries.ipynb">Installi...ipynb</a>&nbsp;</td><td class="left"><a href="Numbers.ipynb">Numbers.ipynb</a>&nbsp;</td><td class="left"><a href="Programming%20-%20Teaching%20Notebook%201.ipynb">Programm...ipynb</a>&nbsp;</td><td class="left"><a href="While%20Loops.ipynb">While Lo...ipynb</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="spelling_practice.py">spelling...ce.py</a>&nbsp;</td><td class="left"><a href="modified_willie_crab.jpg">modified...b.jpg</a>&nbsp;</td><td class="left"><a href="Assignments%20-%20If%20Statements.ipynb">Assignme...ipynb</a>&nbsp;</td><td class="left"><a href="Functions.ipynb">Functions.ipynb</a>&nbsp;</td><td class="left"><a href="Lists.ipynb">Lists.ipynb</a>&nbsp;</td><td class="left"><a href="Other%20Concepts.ipynb">Other Co...ipynb</a>&nbsp;</td><td class="left"><a href="Project%20Notes.ipynb">Project ...ipynb</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  4<br>
 Files: 31<br>
-Size of all files: 1539260 K</p>
+Size of all files: 1539260 KB</p>
 
 </body>
 </html>

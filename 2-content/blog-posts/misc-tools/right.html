@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.html">Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.html</a>&nbsp;</td><td class="left"><a href="Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.html">Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.html</a>&nbsp;</td><td class="left"><a href="CSSResources.md">CSSResources.md</a>&nbsp;</td><td class="left"><a href="JavaScript.md">JavaScript.md</a>&nbsp;</td><td class="left"><a href="Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.md">Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.md</a>&nbsp;</td><td class="left"><a href="Unix.md">Unix.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.html">How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.html</a>&nbsp;</td><td class="left"><a href="Asynchronously%20and%20recursively%20read,%20write%20files%20and%20dirs%20in%20Node.js.md">Asynchronously and recursively read, write files and dirs in Node.js.md</a>&nbsp;</td><td class="left"><a href="generalResources.md">generalResources.md</a>&nbsp;</td><td class="left"><a href="Pandoc-Demos.md">Pandoc-Demos.md</a>&nbsp;</td><td class="left"><a href="React.md">React.md</a>&nbsp;</td><td class="left"><a href="Using_Git_and_GitHub.md">Using_Git_and_GitHub.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.html">Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.html</a>&nbsp;</td><td class="left"><a href="Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.md">Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.md</a>&nbsp;</td><td class="left"><a href="HowtoInterviewforCodeJobs.md">HowtoInterviewforCodeJobs.md</a>&nbsp;</td><td class="left"><a href="PracticeResources.md">PracticeResources.md</a>&nbsp;</td><td class="left"><a href="Recursive%20bash%20script%20to%20collect%20information%20about%20each%20file%20in%20a%20directory%20structure.md">Recursive bash script to collect information about each file in a directory structure.md</a>&nbsp;</td><td class="left"><a href="WebDesignResources.md">WebDesignResources.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Pandoc-Demos.html">Pandoc-Demos.html</a>&nbsp;</td><td class="left"><a href="cheatSheets.md">cheatSheets.md</a>&nbsp;</td><td class="left"><a href="How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.md">How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.md</a>&nbsp;</td><td class="left"><a href="Programming_Books.md">Programming_Books.md</a>&nbsp;</td><td class="left"><a href="Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.md">Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.md</a>&nbsp;</td><td class="left"><a href="WebDevTools.md">WebDevTools.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.html">Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.html</a>&nbsp;</td><td class="left"><a href="Cloud.md">Cloud.md</a>&nbsp;</td><td class="left"><a href="Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.md">Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.md</a>&nbsp;</td><td class="left"><a href="Python.md">Python.md</a>&nbsp;</td><td class="left"><a href="The%20Best%20Google%20Search%20Cheat%20Sheet%20Tips,%20Operators,%20and%20Commands%20to%20Know.md">The Best Google Search Cheat Sheet Tips, Operators, and Commands to Know.md</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="Asynchronously%20and%20recursively%20read,%20write%20files%20and%20dirs%20in%20Node.js.md">Asynchro...js.md</a>&nbsp;</td><td class="left"><a href="CSSResources.md">CSSResources.md</a>&nbsp;</td><td class="left"><a href="Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.md">Intro_to...ng.md</a>&nbsp;</td><td class="left"><a href="Programming_Books.md">Programm...ks.md</a>&nbsp;</td><td class="left"><a href="Recursive%20bash%20script%20to%20collect%20information%20about%20each%20file%20in%20a%20directory%20structure.md">Recursiv...re.md</a>&nbsp;</td><td class="left"><a href="Using_Git_and_GitHub.md">Using_Gi...ub.md</a>&nbsp;</td><td class="left"><a href="Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.html">Asynchro....html</a>&nbsp;</td><td class="left"><a href="Pandoc-Demos.html">Pandoc-D....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Asynchronously_and_recursively_read,_write_files_and_dirs_in_Node.js.md">Asynchro...js.md</a>&nbsp;</td><td class="left"><a href="generalResources.md">generalR...es.md</a>&nbsp;</td><td class="left"><a href="JavaScript.md">JavaScript.md</a>&nbsp;</td><td class="left"><a href="Python.md">Python.md</a>&nbsp;</td><td class="left"><a href="Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.md">Recursiv...re.md</a>&nbsp;</td><td class="left"><a href="WebDesignResources.md">WebDesig...es.md</a>&nbsp;</td><td class="left"><a href="How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.html">How_to_U....html</a>&nbsp;</td><td class="left"><a href="Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.html">Python_V....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="cheatSheets.md">cheatSheets.md</a>&nbsp;</td><td class="left"><a href="HowtoInterviewforCodeJobs.md">HowtoInt...bs.md</a>&nbsp;</td><td class="left"><a href="Pandoc-Demos.md">Pandoc-Demos.md</a>&nbsp;</td><td class="left"><a href="Python_VS_JavaScript_–_What_are_the_Key_Differences_Between_The_Two_Popular_Programming_Languages.md">Python_V...es.md</a>&nbsp;</td><td class="left"><a href="The%20Best%20Google%20Search%20Cheat%20Sheet%20Tips,%20Operators,%20and%20Commands%20to%20Know.md">The Best...ow.md</a>&nbsp;</td><td class="left"><a href="WebDevTools.md">WebDevTools.md</a>&nbsp;</td><td class="left"><a href="Intro_to_Chrome_Browser_Developer_Tools_&amp;_JavaScript_Debugging.html">Intro_to....html</a>&nbsp;</td><td class="left"><a href="Recursive_bash_script_to_collect_information_about_each_file_in_a_directory_structure.html">Recursiv....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Cloud.md">Cloud.md</a>&nbsp;</td><td class="left"><a href="How_to_Use_CircleCI_and_Code_Climate_for_Better_Testing.md">How_to_U...ng.md</a>&nbsp;</td><td class="left"><a href="PracticeResources.md">Practice...es.md</a>&nbsp;</td><td class="left"><a href="React.md">React.md</a>&nbsp;</td><td class="left"><a href="Unix.md">Unix.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 29<br>
-Size of all files: 372749 K</p>
+Size of all files: 372749 KB</p>
 
 </body>
 </html>

@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,33 +532,30 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="sql-recipe-card.jpeg">sql-recipe-card.jpeg</a>&nbsp;</td><td class="left"><a href="create-react-app-pet-detail-page-without-single-root-error.png">create-react-app-pet-detail-page-without-single-root-error.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-repo-details.png">group-project-repo-setup-repo-details.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-all-components-with-details-list.png">pettrack-pet-detail-all-components-with-details-list.png</a>&nbsp;</td><td class="left"><a href="react-builds-dev-tools-image.png">react-builds-dev-tools-image.png</a>&nbsp;</td><td class="left"><a href="sql-recipe-box-data-model.png">sql-recipe-box-data-model.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="abstract_flow.png">abstract_flow.png</a>&nbsp;</td><td class="left"><a href="create-react-app-with-default-pet-detail-page.png">create-react-app-with-default-pet-detail-page.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-settings-tab.png">group-project-repo-setup-settings-tab.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-all-components.png">pettrack-pet-detail-all-components.png</a>&nbsp;</td><td class="left"><a href="react-builds-index-html.png">react-builds-index-html.png</a>&nbsp;</td><td class="left"><a href="tables-puppies-spreadsheet.png">tables-puppies-spreadsheet.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="api-tasks-reading-postbird-2.png">api-tasks-reading-postbird-2.png</a>&nbsp;</td><td class="left"><a href="create-react-app-with-property-error.png">create-react-app-with-property-error.png</a>&nbsp;</td><td class="left"><a href="hash2.png">hash2.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-component.png">pettrack-pet-detail-component.png</a>&nbsp;</td><td class="left"><a href="react-builds-sourcemaps.png">react-builds-sourcemaps.png</a>&nbsp;</td><td class="left"><a href="webpack.png">webpack.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="api-tasks-reading-postbird-5b.png">api-tasks-reading-postbird-5b.png</a>&nbsp;</td><td class="left"><a href="create-task-form.png">create-task-form.png</a>&nbsp;</td><td class="left"><a href="heroku-2.png">heroku-2.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-information-item-component.png">pettrack-pet-detail-information-item-component.png</a>&nbsp;</td><td class="left"><a href="react-mog-data-pull.png">react-mog-data-pull.png</a>&nbsp;</td><td class="left"><a href="windows-pgpass-configuration.png">windows-pgpass-configuration.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="api-tasks-reading-postman-1.png">api-tasks-reading-postman-1.png</a>&nbsp;</td><td class="left"><a href="download-postbird.png">download-postbird.png</a>&nbsp;</td><td class="left"><a href="heroku-3.png">heroku-3.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-owner-link-component.png">pettrack-pet-detail-owner-link-component.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-owners-list-with-key-error.png">react-pet-detail-owners-list-with-key-error.png</a>&nbsp;</td><td class="left"><a href="image-http-exchange.svg">image-http-exchange.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="api-tasks-reading-postman-3a.png">api-tasks-reading-postman-3a.png</a>&nbsp;</td><td class="left"><a href="download-postgresql.png">download-postgresql.png</a>&nbsp;</td><td class="left"><a href="heroku-4.png">heroku-4.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-owners-list-component.png">pettrack-pet-detail-owners-list-component.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-page-nav-complete.png">react-pet-detail-page-nav-complete.png</a>&nbsp;</td><td class="left"><a href="orders-erd-entities.svg">orders-erd-entities.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="api-tasks-reading-postman-3b.png">api-tasks-reading-postman-3b.png</a>&nbsp;</td><td class="left"><a href="event-handling-console-undefined.png">event-handling-console-undefined.png</a>&nbsp;</td><td class="left"><a href="heroku-5.png">heroku-5.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-static-content.png">pettrack-pet-detail-static-content.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-with-owners-headline.png">react-pet-detail-with-owners-headline.png</a>&nbsp;</td><td class="left"><a href="orders-erd-many-to-many.svg">orders-erd-many-to-many.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="api-tasks-reading-postman-4a.png">api-tasks-reading-postman-4a.png</a>&nbsp;</td><td class="left"><a href="express-default-error-handler-in-production.png">express-default-error-handler-in-production.png</a>&nbsp;</td><td class="left"><a href="heroku-6.png">heroku-6.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-open-confirmation.png">postbird-installation-open-confirmation.png</a>&nbsp;</td><td class="left"><a href="react-redux-logger.png">react-redux-logger.png</a>&nbsp;</td><td class="left"><a href="orders-erd-one-to-many.svg">orders-erd-one-to-many.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="api-tasks-reading-postman-5c.png">api-tasks-reading-postman-5c.png</a>&nbsp;</td><td class="left"><a href="finder-applications-shortcut.png">finder-applications-shortcut.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-form-contents-with-urlencoded-request-body.png">http-fullstack-native-form-contents-with-urlencoded-request-body.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-run-anyway.png">postbird-installation-run-anyway.png</a>&nbsp;</td><td class="left"><a href="redux-flux.png">redux-flux.png</a>&nbsp;</td><td class="left"><a href="orders-erd-primary-keys.svg">orders-erd-primary-keys.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="api-tasks-reading-postman-6.png">api-tasks-reading-postman-6.png</a>&nbsp;</td><td class="left"><a href="flux-architecture.png">flux-architecture.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-new-views-directory.png">http-fullstack-native-new-views-directory.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-unidentified-developer.png">postbird-installation-unidentified-developer.png</a>&nbsp;</td><td class="left"><a href="redux-load-pokemon-action-devtools.png">redux-load-pokemon-action-devtools.png</a>&nbsp;</td><td class="left"><a href="preflight-fail.svg">preflight-fail.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="api-tweets-project-migration-file-rename.png">api-tweets-project-migration-file-rename.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-invite-member-at-level.png">group-project-repo-setup-invite-member-at-level.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-serving-static-form.png">http-fullstack-native-serving-static-form.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-warning.png">postbird-installation-warning.png</a>&nbsp;</td><td class="left"><a href="regexone-screenshot.png">regexone-screenshot.png</a>&nbsp;</td><td class="left"><a href="products-erd-one-to-one.svg">products-erd-one-to-one.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="api-tweets-project-postman-jwt-token-2.png">api-tweets-project-postman-jwt-token-2.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-invite-teams-or-people.png">group-project-repo-setup-invite-teams-or-people.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-show-number-of-items.png">http-fullstack-native-show-number-of-items.png</a>&nbsp;</td><td class="left"><a href="postgresql-installation-uncheck-components.png">postgresql-installation-uncheck-components.png</a>&nbsp;</td><td class="left"><a href="spreadsheet-puppies-and-breeds-normalized.png">spreadsheet-puppies-and-breeds-normalized.png</a>&nbsp;</td><td class="left"><a href="react-example-conversion-real-dom.svg">react-example-conversion-real-dom.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="component-lifecycle-fetching-data.png">component-lifecycle-fetching-data.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-manage-access.png">group-project-repo-setup-manage-access.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-with-link-to-add-form.png">http-fullstack-native-with-link-to-add-form.png</a>&nbsp;</td><td class="left"><a href="react-builds-component-env-var.png">react-builds-component-env-var.png</a>&nbsp;</td><td class="left"><a href="spreadsheet-puppies-with-primary-key-sorted-by-name.png">spreadsheet-puppies-with-primary-key-sorted-by-name.png</a>&nbsp;</td><td class="left"><a href="react-example-virtual-dom-diff.svg">react-example-virtual-dom-diff.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="configuring-sessions-devtools-2.png">configuring-sessions-devtools-2.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-new-repo.png">group-project-repo-setup-new-repo.png</a>&nbsp;</td><td class="left"><a href="inner-join-venn-diagram.png">inner-join-venn-diagram.png</a>&nbsp;</td><td class="left"><a href="react-builds-css-modules.png">react-builds-css-modules.png</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="image-http-exchange.svg">image-ht...e.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postbird-5b.png">api-task...b.png</a>&nbsp;</td><td class="left"><a href="create-react-app-pet-detail-page-without-single-root-error.png">create-r...r.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-invite-member-at-level.png">group-pr...l.png</a>&nbsp;</td><td class="left"><a href="heroku-5.png">heroku-5.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-component.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="react-builds-component-env-var.png">react-bu...r.png</a>&nbsp;</td><td class="left"><a href="redux-flux.png">redux-flux.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="orders-erd-entities.svg">orders-e...s.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-1.png">api-task...1.png</a>&nbsp;</td><td class="left"><a href="create-react-app-with-default-pet-detail-page.png">create-r...e.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-invite-teams-or-people.png">group-pr...e.png</a>&nbsp;</td><td class="left"><a href="heroku-6.png">heroku-6.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-information-item-component.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="react-builds-css-modules.png">react-bu...s.png</a>&nbsp;</td><td class="left"><a href="redux-load-pokemon-action-devtools.png">redux-lo...s.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="orders-erd-many-to-many.svg">orders-e...y.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-3a.png">api-task...a.png</a>&nbsp;</td><td class="left"><a href="create-react-app-with-property-error.png">create-r...r.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-manage-access.png">group-pr...s.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-form-contents-with-urlencoded-request-body.png">http-ful...y.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-owner-link-component.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="react-builds-dev-tools-image.png">react-bu...e.png</a>&nbsp;</td><td class="left"><a href="regexone-screenshot.png">regexone...t.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="orders-erd-one-to-many.svg">orders-e...y.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-3b.png">api-task...b.png</a>&nbsp;</td><td class="left"><a href="create-task-form.png">create-t...m.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-new-repo.png">group-pr...o.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-new-views-directory.png">http-ful...y.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-owners-list-component.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="react-builds-index-html.png">react-bu...l.png</a>&nbsp;</td><td class="left"><a href="spreadsheet-puppies-and-breeds-normalized.png">spreadsh...d.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="orders-erd-primary-keys.svg">orders-e...s.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-4a.png">api-task...a.png</a>&nbsp;</td><td class="left"><a href="download-postbird.png">download...d.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-repo-details.png">group-pr...s.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-serving-static-form.png">http-ful...m.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-static-content.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="react-builds-sourcemaps.png">react-bu...s.png</a>&nbsp;</td><td class="left"><a href="spreadsheet-puppies-with-primary-key-sorted-by-name.png">spreadsh...e.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="preflight-fail.svg">prefligh...l.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-5c.png">api-task...c.png</a>&nbsp;</td><td class="left"><a href="download-postgresql.png">download...l.png</a>&nbsp;</td><td class="left"><a href="group-project-repo-setup-settings-tab.png">group-pr...b.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-show-number-of-items.png">http-ful...s.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-open-confirmation.png">postbird...n.png</a>&nbsp;</td><td class="left"><a href="react-mog-data-pull.png">react-mo...l.png</a>&nbsp;</td><td class="left"><a href="sql-recipe-box-data-model.png">sql-reci...l.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="products-erd-one-to-one.svg">products...e.svg</a>&nbsp;</td><td class="left"><a href="api-tasks-reading-postman-6.png">api-task...6.png</a>&nbsp;</td><td class="left"><a href="event-handling-console-undefined.png">event-ha...d.png</a>&nbsp;</td><td class="left"><a href="hash2.png">hash2.png</a>&nbsp;</td><td class="left"><a href="http-fullstack-native-with-link-to-add-form.png">http-ful...m.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-run-anyway.png">postbird...y.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-owners-list-with-key-error.png">react-pe...r.png</a>&nbsp;</td><td class="left"><a href="tables-puppies-spreadsheet.png">tables-p...t.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="react-example-conversion-real-dom.svg">react-ex...m.svg</a>&nbsp;</td><td class="left"><a href="api-tweets-project-migration-file-rename.png">api-twee...e.png</a>&nbsp;</td><td class="left"><a href="express-default-error-handler-in-production.png">express-...n.png</a>&nbsp;</td><td class="left"><a href="heroku-2.png">heroku-2.png</a>&nbsp;</td><td class="left"><a href="inner-join-venn-diagram.png">inner-jo...m.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-unidentified-developer.png">postbird...r.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-page-nav-complete.png">react-pe...e.png</a>&nbsp;</td><td class="left"><a href="webpack.png">webpack.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="react-example-virtual-dom-diff.svg">react-ex...f.svg</a>&nbsp;</td><td class="left"><a href="api-tweets-project-postman-jwt-token-2.png">api-twee...2.png</a>&nbsp;</td><td class="left"><a href="finder-applications-shortcut.png">finder-a...t.png</a>&nbsp;</td><td class="left"><a href="heroku-3.png">heroku-3.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-all-components-with-details-list.png">pettrack...t.png</a>&nbsp;</td><td class="left"><a href="postbird-installation-warning.png">postbird...g.png</a>&nbsp;</td><td class="left"><a href="react-pet-detail-with-owners-headline.png">react-pe...e.png</a>&nbsp;</td><td class="left"><a href="windows-pgpass-configuration.png">windows-...n.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="abstract_flow.png">abstract...w.png</a>&nbsp;</td><td class="left"><a href="component-lifecycle-fetching-data.png">componen...a.png</a>&nbsp;</td><td class="left"><a href="flux-architecture.png">flux-arc...e.png</a>&nbsp;</td><td class="left"><a href="heroku-4.png">heroku-4.png</a>&nbsp;</td><td class="left"><a href="pettrack-pet-detail-all-components.png">pettrack...s.png</a>&nbsp;</td><td class="left"><a href="postgresql-installation-uncheck-components.png">postgres...s.png</a>&nbsp;</td><td class="left"><a href="react-redux-logger.png">react-re...r.png</a>&nbsp;</td><td class="left"><a href="sql-recipe-card.jpeg">sql-reci....jpeg</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="api-tasks-reading-postbird-2.png">api-task...2.png</a>&nbsp;</td><td class="left"><a href="configuring-sessions-devtools-2.png">configur...2.png</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 82<br>
-Size of all files: 12811844 K</p>
+Size of all files: 12811844 KB</p>
 
 </body>
 </html>

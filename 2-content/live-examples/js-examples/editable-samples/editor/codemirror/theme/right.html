@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="3024-day.css">3024-day.css</a>&nbsp;</td><td class="left"><a href="blackboard.css">blackboard.css</a>&nbsp;</td><td class="left"><a href="erlang-dark.css">erlang-dark.css</a>&nbsp;</td><td class="left"><a href="mdn-like.css">mdn-like.css</a>&nbsp;</td><td class="left"><a href="paraiso-light.css">paraiso-light.css</a>&nbsp;</td><td class="left"><a href="tomorrow-night-eighties.css">tomorrow-night-eighties.css</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="3024-night.css">3024-night.css</a>&nbsp;</td><td class="left"><a href="cobalt.css">cobalt.css</a>&nbsp;</td><td class="left"><a href="hopscotch.css">hopscotch.css</a>&nbsp;</td><td class="left"><a href="midnight.css">midnight.css</a>&nbsp;</td><td class="left"><a href="pastel-on-dark.css">pastel-on-dark.css</a>&nbsp;</td><td class="left"><a href="ttcn.css">ttcn.css</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="abcdef.css">abcdef.css</a>&nbsp;</td><td class="left"><a href="colorforth.css">colorforth.css</a>&nbsp;</td><td class="left"><a href="icecoder.css">icecoder.css</a>&nbsp;</td><td class="left"><a href="monokai.css">monokai.css</a>&nbsp;</td><td class="left"><a href="railscasts.css">railscasts.css</a>&nbsp;</td><td class="left"><a href="twilight.css">twilight.css</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="ambiance-mobile.css">ambiance-mobile.css</a>&nbsp;</td><td class="left"><a href="dracula.css">dracula.css</a>&nbsp;</td><td class="left"><a href="isotope.css">isotope.css</a>&nbsp;</td><td class="left"><a href="neat.css">neat.css</a>&nbsp;</td><td class="left"><a href="rubyblue.css">rubyblue.css</a>&nbsp;</td><td class="left"><a href="vibrant-ink.css">vibrant-ink.css</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="ambiance.css">ambiance.css</a>&nbsp;</td><td class="left"><a href="duotone-dark.css">duotone-dark.css</a>&nbsp;</td><td class="left"><a href="lesser-dark.css">lesser-dark.css</a>&nbsp;</td><td class="left"><a href="neo.css">neo.css</a>&nbsp;</td><td class="left"><a href="seti.css">seti.css</a>&nbsp;</td><td class="left"><a href="xq-dark.css">xq-dark.css</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="base16-dark.css">base16-dark.css</a>&nbsp;</td><td class="left"><a href="duotone-light.css">duotone-light.css</a>&nbsp;</td><td class="left"><a href="liquibyte.css">liquibyte.css</a>&nbsp;</td><td class="left"><a href="night.css">night.css</a>&nbsp;</td><td class="left"><a href="solarized.css">solarized.css</a>&nbsp;</td><td class="left"><a href="xq-light.css">xq-light.css</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="base16-light.css">base16-light.css</a>&nbsp;</td><td class="left"><a href="eclipse.css">eclipse.css</a>&nbsp;</td><td class="left"><a href="material.css">material.css</a>&nbsp;</td><td class="left"><a href="panda-syntax.css">panda-syntax.css</a>&nbsp;</td><td class="left"><a href="the-matrix.css">the-matrix.css</a>&nbsp;</td><td class="left"><a href="yeti.css">yeti.css</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="bespin.css">bespin.css</a>&nbsp;</td><td class="left"><a href="elegant.css">elegant.css</a>&nbsp;</td><td class="left"><a href="mbo.css">mbo.css</a>&nbsp;</td><td class="left"><a href="paraiso-dark.css">paraiso-dark.css</a>&nbsp;</td><td class="left"><a href="tomorrow-night-bright.css">tomorrow-night-bright.css</a>&nbsp;</td><td class="left"><a href="zenburn.css">zenburn.css</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="3024-day.css">3024-day.css</a>&nbsp;</td><td class="left"><a href="base16-light.css">base16-light.css</a>&nbsp;</td><td class="left"><a href="duotone-dark.css">duotone-dark.css</a>&nbsp;</td><td class="left"><a href="icecoder.css">icecoder.css</a>&nbsp;</td><td class="left"><a href="mdn-like.css">mdn-like.css</a>&nbsp;</td><td class="left"><a href="panda-syntax.css">panda-syntax.css</a>&nbsp;</td><td class="left"><a href="seti.css">seti.css</a>&nbsp;</td><td class="left"><a href="twilight.css">twilight.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3024-night.css">3024-night.css</a>&nbsp;</td><td class="left"><a href="bespin.css">bespin.css</a>&nbsp;</td><td class="left"><a href="duotone-light.css">duotone-...t.css</a>&nbsp;</td><td class="left"><a href="isotope.css">isotope.css</a>&nbsp;</td><td class="left"><a href="midnight.css">midnight.css</a>&nbsp;</td><td class="left"><a href="paraiso-dark.css">paraiso-dark.css</a>&nbsp;</td><td class="left"><a href="solarized.css">solarized.css</a>&nbsp;</td><td class="left"><a href="vibrant-ink.css">vibrant-ink.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="abcdef.css">abcdef.css</a>&nbsp;</td><td class="left"><a href="blackboard.css">blackboard.css</a>&nbsp;</td><td class="left"><a href="eclipse.css">eclipse.css</a>&nbsp;</td><td class="left"><a href="lesser-dark.css">lesser-dark.css</a>&nbsp;</td><td class="left"><a href="monokai.css">monokai.css</a>&nbsp;</td><td class="left"><a href="paraiso-light.css">paraiso-...t.css</a>&nbsp;</td><td class="left"><a href="the-matrix.css">the-matrix.css</a>&nbsp;</td><td class="left"><a href="xq-dark.css">xq-dark.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="ambiance-mobile.css">ambiance...e.css</a>&nbsp;</td><td class="left"><a href="cobalt.css">cobalt.css</a>&nbsp;</td><td class="left"><a href="elegant.css">elegant.css</a>&nbsp;</td><td class="left"><a href="liquibyte.css">liquibyte.css</a>&nbsp;</td><td class="left"><a href="neat.css">neat.css</a>&nbsp;</td><td class="left"><a href="pastel-on-dark.css">pastel-o...k.css</a>&nbsp;</td><td class="left"><a href="tomorrow-night-bright.css">tomorrow...t.css</a>&nbsp;</td><td class="left"><a href="xq-light.css">xq-light.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="ambiance.css">ambiance.css</a>&nbsp;</td><td class="left"><a href="colorforth.css">colorforth.css</a>&nbsp;</td><td class="left"><a href="erlang-dark.css">erlang-dark.css</a>&nbsp;</td><td class="left"><a href="material.css">material.css</a>&nbsp;</td><td class="left"><a href="neo.css">neo.css</a>&nbsp;</td><td class="left"><a href="railscasts.css">railscasts.css</a>&nbsp;</td><td class="left"><a href="tomorrow-night-eighties.css">tomorrow...s.css</a>&nbsp;</td><td class="left"><a href="yeti.css">yeti.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="base16-dark.css">base16-dark.css</a>&nbsp;</td><td class="left"><a href="dracula.css">dracula.css</a>&nbsp;</td><td class="left"><a href="hopscotch.css">hopscotch.css</a>&nbsp;</td><td class="left"><a href="mbo.css">mbo.css</a>&nbsp;</td><td class="left"><a href="night.css">night.css</a>&nbsp;</td><td class="left"><a href="rubyblue.css">rubyblue.css</a>&nbsp;</td><td class="left"><a href="ttcn.css">ttcn.css</a>&nbsp;</td><td class="left"><a href="zenburn.css">zenburn.css</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 48<br>
-Size of all files: 126923 K</p>
+Size of all files: 126923 KB</p>
 
 </body>
 </html>

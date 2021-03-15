@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="Builder/right.html" target="rframe">Builder</a></td><td class="left">&nbsp;<a href="Composite/right.html" target="rframe">Composite</a></td><td class="left">&nbsp;<a href="Decorator/right.html" target="rframe">Decorator</a></td><td class="left">&nbsp;<a href="Flyweight/right.html" target="rframe">Flyweight</a></td><td class="left">&nbsp;<a href="Module/right.html" target="rframe">Module</a></td><td class="left">&nbsp;<a href="MVC/right.html" target="rframe">MVC</a></td><td class="left">&nbsp;<a href="Observer/right.html" target="rframe">Observer</a></td><td class="left">&nbsp;<a href="Singleton/right.html" target="rframe">Singleton</a></td><td class="left">&nbsp;<a href="Strategy/right.html" target="rframe">Strategy</a></td></tr>
-<tr class="row2"><td class="left"><a href="Adapter/right.html" target="rframe">Adapter</a></td><td class="left">&nbsp;<a href="Chaining/right.html" target="rframe">Chaining</a></td><td class="left">&nbsp;<a href="CompositeIterator/right.html" target="rframe">CompositeIterator</a></td><td class="left">&nbsp;<a href="Facade/right.html" target="rframe">Facade</a></td><td class="left">&nbsp;<a href="Iterator/right.html" target="rframe">Iterator</a></td><td class="left">&nbsp;<a href="Module%20Revealed/right.html" target="rframe">Module Revealed</a></td><td class="left">&nbsp;<a href="Namespace/right.html" target="rframe">Namespace</a></td><td class="left">&nbsp;<a href="Prototype/right.html" target="rframe">Prototype</a></td><td class="left">&nbsp;<a href="State/right.html" target="rframe">State</a></td><td class="left">&nbsp;<a href="Template/right.html" target="rframe">Template</a></td></tr>
-<tr><td class="left"><a href="Bridge/right.html" target="rframe">Bridge</a></td><td class="left">&nbsp;<a href="Command/right.html" target="rframe">Command</a></td><td class="left">&nbsp;<a href="Compound/right.html" target="rframe">Compound</a></td><td class="left">&nbsp;<a href="Factory/right.html" target="rframe">Factory</a></td><td class="left">&nbsp;<a href="Lazy/right.html" target="rframe">Lazy</a></td><td class="left">&nbsp;<a href="Multi-Inheritance-ES6/right.html" target="rframe">Multi-Inheritance-ES6</a></td><td class="left">&nbsp;<a href="Nullify/right.html" target="rframe">Nullify</a></td><td class="left">&nbsp;<a href="Proxy/right.html" target="rframe">Proxy</a></td><td class="left">&nbsp;<a href="statics/right.html" target="rframe">statics</a></td><td class="left">&nbsp;<a href="Try-Finally/right.html" target="rframe">Try-Finally</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="Command/right.html" target="rframe">Command</a></td><td class="left">&nbsp;<a href="Facade/right.html" target="rframe">Facade</a></td><td class="left">&nbsp;<a href="Module/right.html" target="rframe">Module</a></td><td class="left">&nbsp;<a href="Nullify/right.html" target="rframe">Nullify</a></td><td class="left">&nbsp;<a href="State/right.html" target="rframe">State</a></td></tr>
+<tr class="row2"><td class="left"><a href="Adapter/right.html" target="rframe">Adapter</a></td><td class="left">&nbsp;<a href="Composite/right.html" target="rframe">Composite</a></td><td class="left">&nbsp;<a href="Factory/right.html" target="rframe">Factory</a></td><td class="left">&nbsp;<a href="Module%20Revealed/right.html" target="rframe">Module Revealed</a></td><td class="left">&nbsp;<a href="Observer/right.html" target="rframe">Observer</a></td><td class="left">&nbsp;<a href="statics/right.html" target="rframe">statics</a></td></tr>
+<tr><td class="left"><a href="Bridge/right.html" target="rframe">Bridge</a></td><td class="left">&nbsp;<a href="CompositeIterator/right.html" target="rframe">Composit...rator</a></td><td class="left">&nbsp;<a href="Flyweight/right.html" target="rframe">Flyweight</a></td><td class="left">&nbsp;<a href="Multi-Inheritance-ES6/right.html" target="rframe">Multi-In...e-ES6</a></td><td class="left">&nbsp;<a href="Prototype/right.html" target="rframe">Prototype</a></td><td class="left">&nbsp;<a href="Strategy/right.html" target="rframe">Strategy</a></td></tr>
+<tr class="row2"><td class="left"><a href="Builder/right.html" target="rframe">Builder</a></td><td class="left">&nbsp;<a href="Compound/right.html" target="rframe">Compound</a></td><td class="left">&nbsp;<a href="Iterator/right.html" target="rframe">Iterator</a></td><td class="left">&nbsp;<a href="MVC/right.html" target="rframe">MVC</a></td><td class="left">&nbsp;<a href="Proxy/right.html" target="rframe">Proxy</a></td><td class="left">&nbsp;<a href="Template/right.html" target="rframe">Template</a></td></tr>
+<tr><td class="left"><a href="Chaining/right.html" target="rframe">Chaining</a></td><td class="left">&nbsp;<a href="Decorator/right.html" target="rframe">Decorator</a></td><td class="left">&nbsp;<a href="Lazy/right.html" target="rframe">Lazy</a></td><td class="left">&nbsp;<a href="Namespace/right.html" target="rframe">Namespace</a></td><td class="left">&nbsp;<a href="Singleton/right.html" target="rframe">Singleton</a></td><td class="left">&nbsp;<a href="Try-Finally/right.html" target="rframe">Try-Finally</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="README.html">README.html</a>&nbsp;</td><td class="left"><a href="gulpfile.babel.js">gulpfile.babel.js</a>&nbsp;</td><td class="left"><a href="package.json">package.json</a>&nbsp;</td><td class="left"><a href="README.md">README.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="README.md">README.md</a>&nbsp;</td><td class="left"><a href="package.json">package.json</a>&nbsp;</td><td class="left"><a href="gulpfile.babel.js">gulpfile...el.js</a>&nbsp;</td><td class="left"><a href="README.html">README.html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  30<br>
 Files: 4<br>
-Size of all files: 7469 K</p>
+Size of all files: 7469 KB</p>
 
 </body>
 </html>

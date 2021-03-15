@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,31 +532,28 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="expressions-addition-assignment.js">expressions-addition-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-conditionaloperators.js">expressions-conditionaloperators.js</a>&nbsp;</td><td class="left"><a href="expressions-greater-than.js">expressions-greater-than.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-and.js">expressions-logical-and.js</a>&nbsp;</td><td class="left"><a href="expressions-operatorprecedence.js">expressions-operatorprecedence.js</a>&nbsp;</td><td class="left"><a href="expressions-subtraction.js">expressions-subtraction.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-addition.js">expressions-addition.js</a>&nbsp;</td><td class="left"><a href="expressions-decrement.js">expressions-decrement.js</a>&nbsp;</td><td class="left"><a href="expressions-groupingoperator.js">expressions-groupingoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-not.js">expressions-logical-not.js</a>&nbsp;</td><td class="left"><a href="expressions-optionalchainingoperator.js">expressions-optionalchainingoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-this.js">expressions-this.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="expressions-assignment.js">expressions-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-deleteoperator.js">expressions-deleteoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-increment.js">expressions-increment.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-nullish-assignment.js">expressions-logical-nullish-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-propertyaccessors.js">expressions-propertyaccessors.js</a>&nbsp;</td><td class="left"><a href="expressions-typeof.js">expressions-typeof.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-bitwise-and-assignment.js">expressions-bitwise-and-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-destructuringassignment.js">expressions-destructuringassignment.js</a>&nbsp;</td><td class="left"><a href="expressions-inequality.js">expressions-inequality.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-or-assignment.js">expressions-logical-or-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-remainder-assignment.js">expressions-remainder-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-unary-negation.js">expressions-unary-negation.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="expressions-bitwise-and.js">expressions-bitwise-and.js</a>&nbsp;</td><td class="left"><a href="expressions-division-assignment.js">expressions-division-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-inoperator.js">expressions-inoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-or.js">expressions-logical-or.js</a>&nbsp;</td><td class="left"><a href="expressions-remainder.js">expressions-remainder.js</a>&nbsp;</td><td class="left"><a href="expressions-unary-plus.js">expressions-unary-plus.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-bitwise-not.js">expressions-bitwise-not.js</a>&nbsp;</td><td class="left"><a href="expressions-division.js">expressions-division.js</a>&nbsp;</td><td class="left"><a href="expressions-instanceof.js">expressions-instanceof.js</a>&nbsp;</td><td class="left"><a href="expressions-multiplication-assignment.js">expressions-multiplication-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-right-shift-assignment.js">expressions-right-shift-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-unsigned-right-shift-assignment.js">expressions-unsigned-right-shift-assignment.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="expressions-bitwise-or-assignment.js">expressions-bitwise-or-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-equality.js">expressions-equality.js</a>&nbsp;</td><td class="left"><a href="expressions-left-shift-assignment.js">expressions-left-shift-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-multiplication.js">expressions-multiplication.js</a>&nbsp;</td><td class="left"><a href="expressions-right-shift.js">expressions-right-shift.js</a>&nbsp;</td><td class="left"><a href="expressions-unsigned-right-shift.js">expressions-unsigned-right-shift.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-bitwise-or.js">expressions-bitwise-or.js</a>&nbsp;</td><td class="left"><a href="expressions-exponentiation-assignment.js">expressions-exponentiation-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-left-shift.js">expressions-left-shift.js</a>&nbsp;</td><td class="left"><a href="expressions-newoperator.js">expressions-newoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-spreadsyntax.js">expressions-spreadsyntax.js</a>&nbsp;</td><td class="left"><a href="expressions-voidoperator.js">expressions-voidoperator.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="expressions-bitwise-xor-assignment.js">expressions-bitwise-xor-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-exponentiation.js">expressions-exponentiation.js</a>&nbsp;</td><td class="left"><a href="expressions-less-than-or-equal.js">expressions-less-than-or-equal.js</a>&nbsp;</td><td class="left"><a href="expressions-newtarget.js">expressions-newtarget.js</a>&nbsp;</td><td class="left"><a href="expressions-strict-equality.js">expressions-strict-equality.js</a>&nbsp;</td><td class="left"><a href="expressions-yield.js">expressions-yield.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-bitwise-xor.js">expressions-bitwise-xor.js</a>&nbsp;</td><td class="left"><a href="expressions-functionasteriskexpression.js">expressions-functionasteriskexpression.js</a>&nbsp;</td><td class="left"><a href="expressions-less-than.js">expressions-less-than.js</a>&nbsp;</td><td class="left"><a href="expressions-nullishcoalescingoperator.js">expressions-nullishcoalescingoperator.js</a>&nbsp;</td><td class="left"><a href="expressions-strict-inequality.js">expressions-strict-inequality.js</a>&nbsp;</td><td class="left"><a href="expressions-yieldasterisk.js">expressions-yieldasterisk.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="expressions-classexpression.js">expressions-classexpression.js</a>&nbsp;</td><td class="left"><a href="expressions-functionexpression.js">expressions-functionexpression.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-and-assignment.js">expressions-logical-and-assignment.js</a>&nbsp;</td><td class="left"><a href="expressions-objectinitializer.js">expressions-objectinitializer.js</a>&nbsp;</td><td class="left"><a href="expressions-subtraction-assignment.js">expressions-subtraction-assignment.js</a>&nbsp;</td><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="expressions-commaoperators.js">expressions-commaoperators.js</a>&nbsp;</td><td class="left"><a href="expressions-greater-than-or-equal.js">expressions-greater-than-or-equal.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td><td class="left"><a href="expressions-bitwise-xor-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-division.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-increment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-and.js">expressi...nd.js</a>&nbsp;</td><td class="left"><a href="expressions-newtarget.js">expressi...et.js</a>&nbsp;</td><td class="left"><a href="expressions-right-shift-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-typeof.js">expressi...of.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="expressions-addition-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-bitwise-xor.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-equality.js">expressi...ty.js</a>&nbsp;</td><td class="left"><a href="expressions-inequality.js">expressi...ty.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-not.js">expressi...ot.js</a>&nbsp;</td><td class="left"><a href="expressions-nullishcoalescingoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-right-shift.js">expressi...ft.js</a>&nbsp;</td><td class="left"><a href="expressions-unary-negation.js">expressi...on.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="expressions-addition.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-classexpression.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-exponentiation-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-inoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-nullish-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-objectinitializer.js">expressi...er.js</a>&nbsp;</td><td class="left"><a href="expressions-spreadsyntax.js">expressi...ax.js</a>&nbsp;</td><td class="left"><a href="expressions-unary-plus.js">expressi...us.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="expressions-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-commaoperators.js">expressi...rs.js</a>&nbsp;</td><td class="left"><a href="expressions-exponentiation.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-instanceof.js">expressi...of.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-or-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-operatorprecedence.js">expressi...ce.js</a>&nbsp;</td><td class="left"><a href="expressions-strict-equality.js">expressi...ty.js</a>&nbsp;</td><td class="left"><a href="expressions-unsigned-right-shift-assignment.js">expressi...nt.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="expressions-bitwise-and-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-conditionaloperators.js">expressi...rs.js</a>&nbsp;</td><td class="left"><a href="expressions-functionasteriskexpression.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-left-shift-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-or.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-optionalchainingoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-strict-inequality.js">expressi...ty.js</a>&nbsp;</td><td class="left"><a href="expressions-unsigned-right-shift.js">expressi...ft.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="expressions-bitwise-and.js">expressi...nd.js</a>&nbsp;</td><td class="left"><a href="expressions-decrement.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-functionexpression.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-left-shift.js">expressi...ft.js</a>&nbsp;</td><td class="left"><a href="expressions-multiplication-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-propertyaccessors.js">expressi...rs.js</a>&nbsp;</td><td class="left"><a href="expressions-subtraction-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-voidoperator.js">expressi...or.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="expressions-bitwise-not.js">expressi...ot.js</a>&nbsp;</td><td class="left"><a href="expressions-deleteoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-greater-than-or-equal.js">expressi...al.js</a>&nbsp;</td><td class="left"><a href="expressions-less-than-or-equal.js">expressi...al.js</a>&nbsp;</td><td class="left"><a href="expressions-multiplication.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-remainder-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-subtraction.js">expressi...on.js</a>&nbsp;</td><td class="left"><a href="expressions-yield.js">expressi...ld.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="expressions-bitwise-or-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-destructuringassignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-greater-than.js">expressi...an.js</a>&nbsp;</td><td class="left"><a href="expressions-less-than.js">expressi...an.js</a>&nbsp;</td><td class="left"><a href="expressions-newoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-remainder.js">expressi...er.js</a>&nbsp;</td><td class="left"><a href="expressions-this.js">expressi...is.js</a>&nbsp;</td><td class="left"><a href="expressions-yieldasterisk.js">expressi...sk.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="expressions-bitwise-or.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-division-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"><a href="expressions-groupingoperator.js">expressi...or.js</a>&nbsp;</td><td class="left"><a href="expressions-logical-and-assignment.js">expressi...nt.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 68<br>
-Size of all files: 34925 K</p>
+Size of all files: 34925 KB</p>
 
 </body>
 </html>

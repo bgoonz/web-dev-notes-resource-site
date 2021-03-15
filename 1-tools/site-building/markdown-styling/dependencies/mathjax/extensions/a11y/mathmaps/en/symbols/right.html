@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,32 +532,29 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="greek_capital_js">greek_capital_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_bold_js">latin_mathfonts_bold_js</a>&nbsp;</td><td class="left"><a href="latin_upper_single_accent_js">latin_upper_single_accent_js</a>&nbsp;</td><td class="left"><a href="greek-mathfonts-bold.js">greek-mathfonts-bold.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold.js">latin-mathfonts-bold.js</a>&nbsp;</td><td class="left"><a href="latin-upper-single-accent.js">latin-upper-single-accent.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="greek_mathfonts_bold_js">greek_mathfonts_bold_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_bold_script_js">latin_mathfonts_bold_script_js</a>&nbsp;</td><td class="left"><a href="math_angles_js">math_angles_js</a>&nbsp;</td><td class="left"><a href="greek-mathfonts-italic.js">greek-mathfonts-italic.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-double-struck.js">latin-mathfonts-double-struck.js</a>&nbsp;</td><td class="left"><a href="math_angles.js">math_angles.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="greek_mathfonts_italic_js">greek_mathfonts_italic_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_double_struck_js">latin_mathfonts_double_struck_js</a>&nbsp;</td><td class="left"><a href="math_arrows_js">math_arrows_js</a>&nbsp;</td><td class="left"><a href="greek-mathfonts-sans-serif-bold.js">greek-mathfonts-sans-serif-bold.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-fraktur.js">latin-mathfonts-fraktur.js</a>&nbsp;</td><td class="left"><a href="math_arrows.js">math_arrows.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="greek_mathfonts_sans_serif_bold_js">greek_mathfonts_sans_serif_bold_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_fraktur_js">latin_mathfonts_fraktur_js</a>&nbsp;</td><td class="left"><a href="math_characters_js">math_characters_js</a>&nbsp;</td><td class="left"><a href="greek-scripts.js">greek-scripts.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-italic.js">latin-mathfonts-italic.js</a>&nbsp;</td><td class="left"><a href="math_characters.js">math_characters.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="greek_scripts_js">greek_scripts_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_italic_js">latin_mathfonts_italic_js</a>&nbsp;</td><td class="left"><a href="math_delimiters_js">math_delimiters_js</a>&nbsp;</td><td class="left"><a href="greek-small.js">greek-small.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-monospace.js">latin-mathfonts-monospace.js</a>&nbsp;</td><td class="left"><a href="math_delimiters.js">math_delimiters.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="greek_small_js">greek_small_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_monospace_js">latin_mathfonts_monospace_js</a>&nbsp;</td><td class="left"><a href="math_digits_js">math_digits_js</a>&nbsp;</td><td class="left"><a href="greek-symbols.js">greek-symbols.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif-bold.js">latin-mathfonts-sans-serif-bold.js</a>&nbsp;</td><td class="left"><a href="math_digits.js">math_digits.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="greek_symbols_js">greek_symbols_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_bold_js">latin_mathfonts_sans_serif_bold_js</a>&nbsp;</td><td class="left"><a href="math_geometry_js">math_geometry_js</a>&nbsp;</td><td class="left"><a href="hebrew_letters.js">hebrew_letters.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif-italic.js">latin-mathfonts-sans-serif-italic.js</a>&nbsp;</td><td class="left"><a href="math_geometry.js">math_geometry.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="hebrew_letters_js">hebrew_letters_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_italic_js">latin_mathfonts_sans_serif_italic_js</a>&nbsp;</td><td class="left"><a href="math_harpoons_js">math_harpoons_js</a>&nbsp;</td><td class="left"><a href="latin-lower-double-accent.js">latin-lower-double-accent.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif.js">latin-mathfonts-sans-serif.js</a>&nbsp;</td><td class="left"><a href="math_harpoons.js">math_harpoons.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="latin_lower_double_accent_js">latin_lower_double_accent_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_js">latin_mathfonts_sans_serif_js</a>&nbsp;</td><td class="left"><a href="math_non_characters_js">math_non_characters_js</a>&nbsp;</td><td class="left"><a href="latin-lower-normal.js">latin-lower-normal.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-script.js">latin-mathfonts-script.js</a>&nbsp;</td><td class="left"><a href="math_non_characters.js">math_non_characters.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="latin_lower_normal_js">latin_lower_normal_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_script_js">latin_mathfonts_script_js</a>&nbsp;</td><td class="left"><a href="math_symbols_js">math_symbols_js</a>&nbsp;</td><td class="left"><a href="latin-lower-phonetic.js">latin-lower-phonetic.js</a>&nbsp;</td><td class="left"><a href="latin-rest.js">latin-rest.js</a>&nbsp;</td><td class="left"><a href="math_symbols.js">math_symbols.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="latin_lower_phonetic_js">latin_lower_phonetic_js</a>&nbsp;</td><td class="left"><a href="latin_rest_js">latin_rest_js</a>&nbsp;</td><td class="left"><a href="math_whitespace_js">math_whitespace_js</a>&nbsp;</td><td class="left"><a href="latin-lower-single-accent.js">latin-lower-single-accent.js</a>&nbsp;</td><td class="left"><a href="latin-upper-double-accent.js">latin-upper-double-accent.js</a>&nbsp;</td><td class="left"><a href="math_whitespace.js">math_whitespace.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="latin_lower_single_accent_js">latin_lower_single_accent_js</a>&nbsp;</td><td class="left"><a href="latin_upper_double_accent_js">latin_upper_double_accent_js</a>&nbsp;</td><td class="left"><a href="other_stars_js">other_stars_js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold-fraktur.js">latin-mathfonts-bold-fraktur.js</a>&nbsp;</td><td class="left"><a href="latin-upper-normal.js">latin-upper-normal.js</a>&nbsp;</td><td class="left"><a href="other_stars.js">other_stars.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="latin_mathfonts_bold_fraktur_js">latin_mathfonts_bold_fraktur_js</a>&nbsp;</td><td class="left"><a href="latin_upper_normal_js">latin_upper_normal_js</a>&nbsp;</td><td class="left"><a href="greek-capital.js">greek-capital.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold-script.js">latin-mathfonts-bold-script.js</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="greek-capital.js">greek-capital.js</a>&nbsp;</td><td class="left"><a href="latin-lower-phonetic.js">latin-lo...ic.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif-italic.js">latin-ma...ic.js</a>&nbsp;</td><td class="left"><a href="math_delimiters.js">math_del...rs.js</a>&nbsp;</td><td class="left"><a href="greek_mathfonts_bold_js">greek_ma...ld_js</a>&nbsp;</td><td class="left"><a href="latin_lower_single_accent_js">latin_lo...nt_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_italic_js">latin_ma...ic_js</a>&nbsp;</td><td class="left"><a href="math_characters_js">math_cha...rs_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="greek-mathfonts-bold.js">greek-ma...ld.js</a>&nbsp;</td><td class="left"><a href="latin-lower-single-accent.js">latin-lo...nt.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif.js">latin-ma...if.js</a>&nbsp;</td><td class="left"><a href="math_digits.js">math_digits.js</a>&nbsp;</td><td class="left"><a href="greek_mathfonts_italic_js">greek_ma...ic_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_bold_fraktur_js">latin_ma...ur_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_js">latin_ma...if_js</a>&nbsp;</td><td class="left"><a href="math_delimiters_js">math_del...rs_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="greek-mathfonts-italic.js">greek-ma...ic.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold-fraktur.js">latin-ma...ur.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-script.js">latin-ma...pt.js</a>&nbsp;</td><td class="left"><a href="math_geometry.js">math_geometry.js</a>&nbsp;</td><td class="left"><a href="greek_mathfonts_sans_serif_bold_js">greek_ma...ld_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_bold_js">latin_ma...ld_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_script_js">latin_ma...pt_js</a>&nbsp;</td><td class="left"><a href="math_digits_js">math_digits_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="greek-mathfonts-sans-serif-bold.js">greek-ma...ld.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold-script.js">latin-ma...pt.js</a>&nbsp;</td><td class="left"><a href="latin-rest.js">latin-rest.js</a>&nbsp;</td><td class="left"><a href="math_harpoons.js">math_harpoons.js</a>&nbsp;</td><td class="left"><a href="greek_scripts_js">greek_scripts_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_bold_script_js">latin_ma...pt_js</a>&nbsp;</td><td class="left"><a href="latin_rest_js">latin_rest_js</a>&nbsp;</td><td class="left"><a href="math_geometry_js">math_geometry_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="greek-scripts.js">greek-scripts.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-bold.js">latin-ma...ld.js</a>&nbsp;</td><td class="left"><a href="latin-upper-double-accent.js">latin-up...nt.js</a>&nbsp;</td><td class="left"><a href="math_non_characters.js">math_non...rs.js</a>&nbsp;</td><td class="left"><a href="greek_small_js">greek_small_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_double_struck_js">latin_ma...ck_js</a>&nbsp;</td><td class="left"><a href="latin_upper_double_accent_js">latin_up...nt_js</a>&nbsp;</td><td class="left"><a href="math_harpoons_js">math_harpoons_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="greek-small.js">greek-small.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-double-struck.js">latin-ma...ck.js</a>&nbsp;</td><td class="left"><a href="latin-upper-normal.js">latin-up...al.js</a>&nbsp;</td><td class="left"><a href="math_symbols.js">math_symbols.js</a>&nbsp;</td><td class="left"><a href="greek_symbols_js">greek_symbols_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_fraktur_js">latin_ma...ur_js</a>&nbsp;</td><td class="left"><a href="latin_upper_normal_js">latin_up...al_js</a>&nbsp;</td><td class="left"><a href="math_non_characters_js">math_non...rs_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="greek-symbols.js">greek-symbols.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-fraktur.js">latin-ma...ur.js</a>&nbsp;</td><td class="left"><a href="latin-upper-single-accent.js">latin-up...nt.js</a>&nbsp;</td><td class="left"><a href="math_whitespace.js">math_whi...ce.js</a>&nbsp;</td><td class="left"><a href="hebrew_letters_js">hebrew_l...rs_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_italic_js">latin_ma...ic_js</a>&nbsp;</td><td class="left"><a href="latin_upper_single_accent_js">latin_up...nt_js</a>&nbsp;</td><td class="left"><a href="math_symbols_js">math_symbols_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="hebrew_letters.js">hebrew_l...rs.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-italic.js">latin-ma...ic.js</a>&nbsp;</td><td class="left"><a href="math_angles.js">math_angles.js</a>&nbsp;</td><td class="left"><a href="other_stars.js">other_stars.js</a>&nbsp;</td><td class="left"><a href="latin_lower_double_accent_js">latin_lo...nt_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_monospace_js">latin_ma...ce_js</a>&nbsp;</td><td class="left"><a href="math_angles_js">math_angles_js</a>&nbsp;</td><td class="left"><a href="math_whitespace_js">math_whi...ce_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="latin-lower-double-accent.js">latin-lo...nt.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-monospace.js">latin-ma...ce.js</a>&nbsp;</td><td class="left"><a href="math_arrows.js">math_arrows.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="latin_lower_normal_js">latin_lo...al_js</a>&nbsp;</td><td class="left"><a href="latin_mathfonts_sans_serif_bold_js">latin_ma...ld_js</a>&nbsp;</td><td class="left"><a href="math_arrows_js">math_arrows_js</a>&nbsp;</td><td class="left"><a href="other_stars_js">other_stars_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="latin-lower-normal.js">latin-lo...al.js</a>&nbsp;</td><td class="left"><a href="latin-mathfonts-sans-serif-bold.js">latin-ma...ld.js</a>&nbsp;</td><td class="left"><a href="math_characters.js">math_cha...rs.js</a>&nbsp;</td><td class="left"><a href="greek_capital_js">greek_capital_js</a>&nbsp;</td><td class="left"><a href="latin_lower_phonetic_js">latin_lo...ic_js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 76<br>
-Size of all files: 1325880 K</p>
+Files: 77<br>
+Size of all files: 1346266 KB</p>
 
 </body>
 </html>

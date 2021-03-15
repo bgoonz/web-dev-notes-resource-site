@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,16 +532,21 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="distortion/right.html" target="rframe">distortion</a></td><td class="left">&nbsp;<a href="envExp/right.html" target="rframe">envExp</a></td><td class="left">&nbsp;<a href="Filter_LowPass/right.html" target="rframe">Filter_LowPass</a></td><td class="left">&nbsp;<a href="loadSound_404ErrorHandling/right.html" target="rframe">loadSound_404ErrorHandling</a></td><td class="left">&nbsp;<a href="micLevel/right.html" target="rframe">micLevel</a></td><td class="left">&nbsp;<a href="oscillatorWaveform/right.html" target="rframe">oscillatorWaveform</a></td><td class="left">&nbsp;<a href="playbackRate/right.html" target="rframe">playbackRate</a></td><td class="left">&nbsp;<a href="Reverb_basic/right.html" target="rframe">Reverb_basic</a></td><td class="left">&nbsp;<a href="spatial_panning_listener/right.html" target="rframe">spatial_panning_listener</a></td></tr>
-<tr class="row2"><td class="left"><a href="amplitude_analysis/right.html" target="rframe">amplitude_analysis</a></td><td class="left">&nbsp;<a href="envAmpFreq/right.html" target="rframe">envAmpFreq</a></td><td class="left">&nbsp;<a href="FFT_freqRange/right.html" target="rframe">FFT_freqRange</a></td><td class="left">&nbsp;<a href="fractal_music/right.html" target="rframe">fractal_music</a></td><td class="left">&nbsp;<a href="loadSound_callback/right.html" target="rframe">loadSound_callback</a></td><td class="left">&nbsp;<a href="micLevel_on_off/right.html" target="rframe">micLevel_on_off</a></td><td class="left">&nbsp;<a href="oscillator_FMSynth/right.html" target="rframe">oscillator_FMSynth</a></td><td class="left">&nbsp;<a href="playbackRatePart/right.html" target="rframe">playbackRatePart</a></td><td class="left">&nbsp;<a href="Reverb_convolve/right.html" target="rframe">Reverb_convolve</a></td><td class="left">&nbsp;<a href="virtual_piano/right.html" target="rframe">virtual_piano</a></td></tr>
-<tr><td class="left"><a href="array_of_notes/right.html" target="rframe">array_of_notes</a></td><td class="left">&nbsp;<a href="envelope/right.html" target="rframe">envelope</a></td><td class="left">&nbsp;<a href="FFT_frequency_spectrum/right.html" target="rframe">FFT_frequency_spectrum</a></td><td class="left">&nbsp;<a href="genetic_music/right.html" target="rframe">genetic_music</a></td><td class="left">&nbsp;<a href="loadSound_preload/right.html" target="rframe">loadSound_preload</a></td><td class="left">&nbsp;<a href="mixingSounds/right.html" target="rframe">mixingSounds</a></td><td class="left">&nbsp;<a href="outOfPhase/right.html" target="rframe">outOfPhase</a></td><td class="left">&nbsp;<a href="play_soundfile/right.html" target="rframe">play_soundfile</a></td><td class="left">&nbsp;<a href="Reverb_convolve_FFT/right.html" target="rframe">Reverb_convolve_FFT</a></td><td class="left">&nbsp;<a href="visualize_pentatonic/right.html" target="rframe">visualize_pentatonic</a></td></tr>
-<tr class="row2"><td class="left"><a href="array_of_notes_soundloop/right.html" target="rframe">array_of_notes_soundloop</a></td><td class="left">&nbsp;<a href="envelopeMultipleSources/right.html" target="rframe">envelopeMultipleSources</a></td><td class="left">&nbsp;<a href="FFT_linAverages/right.html" target="rframe">FFT_linAverages</a></td><td class="left">&nbsp;<a href="granular_sampler/right.html" target="rframe">granular_sampler</a></td><td class="left">&nbsp;<a href="loadSound_with_Drag_and_Drop/right.html" target="rframe">loadSound_with_Drag_and_Drop</a></td><td class="left">&nbsp;<a href="noiseMod_AM/right.html" target="rframe">noiseMod_AM</a></td><td class="left">&nbsp;<a href="pan_soundfile/right.html" target="rframe">pan_soundfile</a></td><td class="left">&nbsp;<a href="polyphonicSynth-Keyboard/right.html" target="rframe">polyphonicSynth-Keyboard</a></td><td class="left">&nbsp;<a href="soundfileMod_AM/right.html" target="rframe">soundfileMod_AM</a></td><td class="left">&nbsp;<a href="waveform/right.html" target="rframe">waveform</a></td></tr>
-<tr><td class="left"><a href="audioIn_Multiple_Sources/right.html" target="rframe">audioIn_Multiple_Sources</a></td><td class="left">&nbsp;<a href="envelopeOnOff/right.html" target="rframe">envelopeOnOff</a></td><td class="left">&nbsp;<a href="FFT_logAverages/right.html" target="rframe">FFT_logAverages</a></td><td class="left">&nbsp;<a href="granular_sampler_psynth/right.html" target="rframe">granular_sampler_psynth</a></td><td class="left">&nbsp;<a href="looper_simple/right.html" target="rframe">looper_simple</a></td><td class="left">&nbsp;<a href="onended_callback/right.html" target="rframe">onended_callback</a></td><td class="left">&nbsp;<a href="pause_soundfile/right.html" target="rframe">pause_soundfile</a></td><td class="left">&nbsp;<a href="pulseWaveform/right.html" target="rframe">pulseWaveform</a></td><td class="left">&nbsp;<a href="soundfile_playMode/right.html" target="rframe">soundfile_playMode</a></td><td class="left">&nbsp;<a href="waveform_peaks_with_playhead/right.html" target="rframe">waveform_peaks_with_playhead</a></td></tr>
-<tr class="row2"><td class="left"><a href="autoCorrelation/right.html" target="rframe">autoCorrelation</a></td><td class="left">&nbsp;<a href="envelopeRamp/right.html" target="rframe">envelopeRamp</a></td><td class="left">&nbsp;<a href="FFT_scaleNeighbors/right.html" target="rframe">FFT_scaleNeighbors</a></td><td class="left">&nbsp;<a href="graphical_eq/right.html" target="rframe">graphical_eq</a></td><td class="left">&nbsp;<a href="loop_stepSequencer/right.html" target="rframe">loop_stepSequencer</a></td><td class="left">&nbsp;<a href="oscillatorMod_AM/right.html" target="rframe">oscillatorMod_AM</a></td><td class="left">&nbsp;<a href="peakDetect/right.html" target="rframe">peakDetect</a></td><td class="left">&nbsp;<a href="record/right.html" target="rframe">record</a></td><td class="left">&nbsp;<a href="soundfile_remove_cue/right.html" target="rframe">soundfile_remove_cue</a></td><td class="left">&nbsp;<a href="_monosynth_basic/right.html" target="rframe">_monosynth_basic</a></td></tr>
-<tr><td class="left"><a href="bells_envelope_test/right.html" target="rframe">bells_envelope_test</a></td><td class="left">&nbsp;<a href="envelope_designer/right.html" target="rframe">envelope_designer</a></td><td class="left">&nbsp;<a href="FFT_scaleOneThirdOctave/right.html" target="rframe">FFT_scaleOneThirdOctave</a></td><td class="left">&nbsp;<a href="grid_sequencer/right.html" target="rframe">grid_sequencer</a></td><td class="left">&nbsp;<a href="markov_music/right.html" target="rframe">markov_music</a></td><td class="left">&nbsp;<a href="oscillatorMod_FM/right.html" target="rframe">oscillatorMod_FM</a></td><td class="left">&nbsp;<a href="peakDetection_offline/right.html" target="rframe">peakDetection_offline</a></td><td class="left">&nbsp;<a href="recordLoops/right.html" target="rframe">recordLoops</a></td><td class="left">&nbsp;<a href="soundFormats/right.html" target="rframe">soundFormats</a></td><td class="left">&nbsp;<a href="_polyphonic_synth/right.html" target="rframe">_polyphonic_synth</a></td></tr>
-<tr class="row2"><td class="left"><a href="Compressor/right.html" target="rframe">Compressor</a></td><td class="left">&nbsp;<a href="envelope_exponential_play/right.html" target="rframe">envelope_exponential_play</a></td><td class="left">&nbsp;<a href="files/right.html" target="rframe">files</a></td><td class="left">&nbsp;<a href="learningProcessingExamples/right.html" target="rframe">learningProcessingExamples</a></td><td class="left">&nbsp;<a href="micFFT/right.html" target="rframe">micFFT</a></td><td class="left">&nbsp;<a href="oscillatorSecondsFromNow/right.html" target="rframe">oscillatorSecondsFromNow</a></td><td class="left">&nbsp;<a href="peakDetect_basic/right.html" target="rframe">peakDetect_basic</a></td><td class="left">&nbsp;<a href="removeSketch/right.html" target="rframe">removeSketch</a></td><td class="left">&nbsp;<a href="spatial_panning/right.html" target="rframe">spatial_panning</a></td><td class="left">&nbsp;<a href="_sound_loop/right.html" target="rframe">_sound_loop</a></td></tr>
-<tr><td class="left"><a href="DelayNoiseEnvelope/right.html" target="rframe">DelayNoiseEnvelope</a></td><td class="left">&nbsp;<a href="envelope_exponential_trig_rel/right.html" target="rframe">envelope_exponential_trig_rel</a></td><td class="left">&nbsp;<a href="Filter_BandPass/right.html" target="rframe">Filter_BandPass</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="envelopeRamp/right.html" target="rframe">envelopeRamp</a></td><td class="left">&nbsp;<a href="fractal_music/right.html" target="rframe">fractal_music</a></td><td class="left">&nbsp;<a href="micFFT/right.html" target="rframe">micFFT</a></td><td class="left">&nbsp;<a href="peakDetect/right.html" target="rframe">peakDetect</a></td><td class="left">&nbsp;<a href="soundfileMod_AM/right.html" target="rframe">soundfileMod_AM</a></td></tr>
+<tr class="row2"><td class="left"><a href="amplitude_analysis/right.html" target="rframe">amplitud...lysis</a></td><td class="left">&nbsp;<a href="envelope_designer/right.html" target="rframe">envelope...igner</a></td><td class="left">&nbsp;<a href="genetic_music/right.html" target="rframe">genetic_music</a></td><td class="left">&nbsp;<a href="micLevel/right.html" target="rframe">micLevel</a></td><td class="left">&nbsp;<a href="peakDetection_offline/right.html" target="rframe">peakDete...fline</a></td><td class="left">&nbsp;<a href="soundfile_playMode/right.html" target="rframe">soundfil...yMode</a></td></tr>
+<tr><td class="left"><a href="array_of_notes/right.html" target="rframe">array_of_notes</a></td><td class="left">&nbsp;<a href="envelope_exponential_play/right.html" target="rframe">envelope..._play</a></td><td class="left">&nbsp;<a href="granular_sampler/right.html" target="rframe">granular_sampler</a></td><td class="left">&nbsp;<a href="micLevel_on_off/right.html" target="rframe">micLevel_on_off</a></td><td class="left">&nbsp;<a href="peakDetect_basic/right.html" target="rframe">peakDetect_basic</a></td><td class="left">&nbsp;<a href="soundfile_remove_cue/right.html" target="rframe">soundfil...e_cue</a></td></tr>
+<tr class="row2"><td class="left"><a href="array_of_notes_soundloop/right.html" target="rframe">array_of...dloop</a></td><td class="left">&nbsp;<a href="envelope_exponential_trig_rel/right.html" target="rframe">envelope...g_rel</a></td><td class="left">&nbsp;<a href="granular_sampler_psynth/right.html" target="rframe">granular...synth</a></td><td class="left">&nbsp;<a href="mixingSounds/right.html" target="rframe">mixingSounds</a></td><td class="left">&nbsp;<a href="playbackRate/right.html" target="rframe">playbackRate</a></td><td class="left">&nbsp;<a href="soundFormats/right.html" target="rframe">soundFormats</a></td></tr>
+<tr><td class="left"><a href="audioIn_Multiple_Sources/right.html" target="rframe">audioIn_...urces</a></td><td class="left">&nbsp;<a href="envExp/right.html" target="rframe">envExp</a></td><td class="left">&nbsp;<a href="graphical_eq/right.html" target="rframe">graphical_eq</a></td><td class="left">&nbsp;<a href="noiseMod_AM/right.html" target="rframe">noiseMod_AM</a></td><td class="left">&nbsp;<a href="playbackRatePart/right.html" target="rframe">playbackRatePart</a></td><td class="left">&nbsp;<a href="spatial_panning/right.html" target="rframe">spatial_panning</a></td></tr>
+<tr class="row2"><td class="left"><a href="autoCorrelation/right.html" target="rframe">autoCorrelation</a></td><td class="left">&nbsp;<a href="FFT_freqRange/right.html" target="rframe">FFT_freqRange</a></td><td class="left">&nbsp;<a href="grid_sequencer/right.html" target="rframe">grid_sequencer</a></td><td class="left">&nbsp;<a href="onended_callback/right.html" target="rframe">onended_callback</a></td><td class="left">&nbsp;<a href="play_soundfile/right.html" target="rframe">play_soundfile</a></td><td class="left">&nbsp;<a href="spatial_panning_listener/right.html" target="rframe">spatial_...tener</a></td></tr>
+<tr><td class="left"><a href="bells_envelope_test/right.html" target="rframe">bells_en..._test</a></td><td class="left">&nbsp;<a href="FFT_frequency_spectrum/right.html" target="rframe">FFT_freq...ctrum</a></td><td class="left">&nbsp;<a href="learningProcessingExamples/right.html" target="rframe">learning...mples</a></td><td class="left">&nbsp;<a href="oscillatorMod_AM/right.html" target="rframe">oscillatorMod_AM</a></td><td class="left">&nbsp;<a href="polyphonicSynth-Keyboard/right.html" target="rframe">polyphon...board</a></td><td class="left">&nbsp;<a href="virtual_piano/right.html" target="rframe">virtual_piano</a></td></tr>
+<tr class="row2"><td class="left"><a href="Compressor/right.html" target="rframe">Compressor</a></td><td class="left">&nbsp;<a href="FFT_linAverages/right.html" target="rframe">FFT_linAverages</a></td><td class="left">&nbsp;<a href="loadSound_404ErrorHandling/right.html" target="rframe">loadSoun...dling</a></td><td class="left">&nbsp;<a href="oscillatorMod_FM/right.html" target="rframe">oscillatorMod_FM</a></td><td class="left">&nbsp;<a href="pulseWaveform/right.html" target="rframe">pulseWaveform</a></td><td class="left">&nbsp;<a href="visualize_pentatonic/right.html" target="rframe">visualiz...tonic</a></td></tr>
+<tr><td class="left"><a href="DelayNoiseEnvelope/right.html" target="rframe">DelayNoi...elope</a></td><td class="left">&nbsp;<a href="FFT_logAverages/right.html" target="rframe">FFT_logAverages</a></td><td class="left">&nbsp;<a href="loadSound_callback/right.html" target="rframe">loadSoun...lback</a></td><td class="left">&nbsp;<a href="oscillatorSecondsFromNow/right.html" target="rframe">oscillat...omNow</a></td><td class="left">&nbsp;<a href="record/right.html" target="rframe">record</a></td><td class="left">&nbsp;<a href="waveform/right.html" target="rframe">waveform</a></td></tr>
+<tr class="row2"><td class="left"><a href="distortion/right.html" target="rframe">distortion</a></td><td class="left">&nbsp;<a href="FFT_scaleNeighbors/right.html" target="rframe">FFT_scal...hbors</a></td><td class="left">&nbsp;<a href="loadSound_preload/right.html" target="rframe">loadSoun...eload</a></td><td class="left">&nbsp;<a href="oscillatorWaveform/right.html" target="rframe">oscillat...eform</a></td><td class="left">&nbsp;<a href="recordLoops/right.html" target="rframe">recordLoops</a></td><td class="left">&nbsp;<a href="waveform_peaks_with_playhead/right.html" target="rframe">waveform...yhead</a></td></tr>
+<tr><td class="left"><a href="envAmpFreq/right.html" target="rframe">envAmpFreq</a></td><td class="left">&nbsp;<a href="FFT_scaleOneThirdOctave/right.html" target="rframe">FFT_scal...ctave</a></td><td class="left">&nbsp;<a href="loadSound_with_Drag_and_Drop/right.html" target="rframe">loadSoun..._Drop</a></td><td class="left">&nbsp;<a href="oscillator_FMSynth/right.html" target="rframe">oscillat...Synth</a></td><td class="left">&nbsp;<a href="removeSketch/right.html" target="rframe">removeSketch</a></td><td class="left">&nbsp;<a href="_monosynth_basic/right.html" target="rframe">_monosynth_basic</a></td></tr>
+<tr class="row2"><td class="left"><a href="envelope/right.html" target="rframe">envelope</a></td><td class="left">&nbsp;<a href="files/right.html" target="rframe">files</a></td><td class="left">&nbsp;<a href="looper_simple/right.html" target="rframe">looper_simple</a></td><td class="left">&nbsp;<a href="outOfPhase/right.html" target="rframe">outOfPhase</a></td><td class="left">&nbsp;<a href="Reverb_basic/right.html" target="rframe">Reverb_basic</a></td><td class="left">&nbsp;<a href="_polyphonic_synth/right.html" target="rframe">_polypho...synth</a></td></tr>
+<tr><td class="left"><a href="envelopeMultipleSources/right.html" target="rframe">envelope...urces</a></td><td class="left">&nbsp;<a href="Filter_BandPass/right.html" target="rframe">Filter_BandPass</a></td><td class="left">&nbsp;<a href="loop_stepSequencer/right.html" target="rframe">loop_ste...encer</a></td><td class="left">&nbsp;<a href="pan_soundfile/right.html" target="rframe">pan_soundfile</a></td><td class="left">&nbsp;<a href="Reverb_convolve/right.html" target="rframe">Reverb_convolve</a></td><td class="left">&nbsp;<a href="_sound_loop/right.html" target="rframe">_sound_loop</a></td></tr>
+<tr class="row2"><td class="left"><a href="envelopeOnOff/right.html" target="rframe">envelopeOnOff</a></td><td class="left">&nbsp;<a href="Filter_LowPass/right.html" target="rframe">Filter_LowPass</a></td><td class="left">&nbsp;<a href="markov_music/right.html" target="rframe">markov_music</a></td><td class="left">&nbsp;<a href="pause_soundfile/right.html" target="rframe">pause_soundfile</a></td><td class="left">&nbsp;<a href="Reverb_convolve_FFT/right.html" target="rframe">Reverb_c...e_FFT</a></td><td class="left"></td></tr>
 </table>
 <br>
 

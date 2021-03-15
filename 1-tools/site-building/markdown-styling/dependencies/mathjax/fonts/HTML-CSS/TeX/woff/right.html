@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="MathJax_AMS_Regular_woff">MathJax_AMS_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_BoldItalic_woff">MathJax_Math_BoldItalic_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size2_Regular_woff">MathJax_Size2_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic-Bold.woff">MathJax_Caligraphic-Bold.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-BoldItalic.woff">MathJax_Math-BoldItalic.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size1-Regular.woff">MathJax_Size1-Regular.woff</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Caligraphic_Bold_woff">MathJax_Caligraphic_Bold_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Italic_woff">MathJax_Math_Italic_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size3_Regular_woff">MathJax_Size3_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic-Regular.woff">MathJax_Caligraphic-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Italic.woff">MathJax_Math-Italic.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size2-Regular.woff">MathJax_Size2-Regular.woff</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Caligraphic_Regular_woff">MathJax_Caligraphic_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Regular_woff">MathJax_Math_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size4_Regular_woff">MathJax_Size4_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur-Bold.woff">MathJax_Fraktur-Bold.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Regular.woff">MathJax_Math-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size3-Regular.woff">MathJax_Size3-Regular.woff</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Fraktur_Bold_woff">MathJax_Fraktur_Bold_woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Bold_woff">MathJax_SansSerif_Bold_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter_Regular_woff">MathJax_Typewriter_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur-Regular.woff">MathJax_Fraktur-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Bold.woff">MathJax_SansSerif-Bold.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size4-Regular.woff">MathJax_Size4-Regular.woff</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Fraktur_Regular_woff">MathJax_Fraktur_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Italic_woff">MathJax_SansSerif_Italic_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Bold_woff">MathJax_Vector_Bold_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Bold.woff">MathJax_Main-Bold.woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Italic.woff">MathJax_SansSerif-Italic.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter-Regular.woff">MathJax_Typewriter-Regular.woff</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Main_Bold_woff">MathJax_Main_Bold_woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Regular_woff">MathJax_SansSerif_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Regular_woff">MathJax_Vector_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Italic.woff">MathJax_Main-Italic.woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Regular.woff">MathJax_SansSerif-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Bold.woff">MathJax_Vector-Bold.woff</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Main_Italic_woff">MathJax_Main_Italic_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Script_Regular_woff">MathJax_Script_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_AMS-Regular.woff">MathJax_AMS-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Regular.woff">MathJax_Main-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Script-Regular.woff">MathJax_Script-Regular.woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Regular.woff">MathJax_Vector-Regular.woff</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Main_Regular_woff">MathJax_Main_Regular_woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size1_Regular_woff">MathJax_Size1_Regular_woff</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="MathJax_AMS-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Italic.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Italic.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size4-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic_Bold_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Italic_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size3_Regular_woff">MathJax_..._woff</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Caligraphic-Bold.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_BoldItalic_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size4_Regular_woff">MathJax_..._woff</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="MathJax_Caligraphic-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-BoldItalic.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Script-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Bold.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur_Bold_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Italic_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Script_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter_Regular_woff">MathJax_..._woff</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Fraktur-Bold.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Italic.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size1-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size1_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Bold_woff">MathJax_..._woff</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="MathJax_Fraktur-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size2-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Bold_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Bold_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size2_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Regular_woff">MathJax_..._woff</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Main-Bold.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Bold.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_Size3-Regular.woff">MathJax_....woff</a>&nbsp;</td><td class="left"><a href="MathJax_AMS_Regular_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Italic_woff">MathJax_..._woff</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 44<br>
-Size of all files: 693368 K</p>
+Files: 45<br>
+Size of all files: 711292 KB</p>
 
 </body>
 </html>

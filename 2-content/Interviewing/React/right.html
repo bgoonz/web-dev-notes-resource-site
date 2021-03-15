@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,34 +532,32 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="Component-Life-Cycle/right.html" target="rframe">Component-Life-Cycle</a></td><td class="left">&nbsp;<a href="Hooks/right.html" target="rframe">Hooks</a></td><td class="left">&nbsp;<a href="immutable-state-store-in-React-Redux/right.html" target="rframe">immutable-state-store-in-React-Redux</a></td><td class="left">&nbsp;<a href="React-Styled-Component/right.html" target="rframe">React-Styled-Component</a></td><td class="left">&nbsp;<a href="React-Testing-Jest/right.html" target="rframe">React-Testing-Jest</a></td><td class="left">&nbsp;<a href="refs-in-react/right.html" target="rframe">refs-in-react</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="Hooks/right.html" target="rframe">Hooks</a></td><td class="left">&nbsp;<a href="immutable-state-store-in-React-Redux/right.html" target="rframe">immutabl...Redux</a></td><td class="left">&nbsp;<a href="React-Styled-Component/right.html" target="rframe">React-St...onent</a></td><td class="left">&nbsp;<a href="React-Testing-Jest/right.html" target="rframe">React-Te...-Jest</a></td><td class="left">&nbsp;<a href="refs-in-react/right.html" target="rframe">refs-in-react</a></td></tr>
+<tr class="row2"><td class="left"><a href="Component-Life-Cycle/right.html" target="rframe">Componen...Cycle</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="context-api-basics.html">context-api-basics.html</a>&nbsp;</td><td class="left"><a href="HOC.html">HOC.html</a>&nbsp;</td><td class="left"><a href="pureComponent.html">pureComponent.html</a>&nbsp;</td><td class="left"><a href="Virtual-DOM.jpeg">Virtual-DOM.jpeg</a>&nbsp;</td><td class="left"><a href="HOC.md">HOC.md</a>&nbsp;</td><td class="left"><a href="pureComponent.md">pureComponent.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="controlled-unContolled-Component.html">controlled-unContolled-Component.html</a>&nbsp;</td><td class="left"><a href="how-react-decide-to-re-render-a-component.html">how-react-decide-to-re-render-a-component.html</a>&nbsp;</td><td class="left"><a href="react-class-declaration.html">react-class-declaration.html</a>&nbsp;</td><td class="left"><a href="context-api-basics.md">context-api-basics.md</a>&nbsp;</td><td class="left"><a href="how-react-decide-to-re-render-a-component.md">how-react-decide-to-re-render-a-component.md</a>&nbsp;</td><td class="left"><a href="react-class-declaration.md">react-class-declaration.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Create-Class-avoiding-binding-in-constructor.html">Create-Class-avoiding-binding-in-constructor.html</a>&nbsp;</td><td class="left"><a href="include-polyfills.html">include-polyfills.html</a>&nbsp;</td><td class="left"><a href="react-hot-loader.html">react-hot-loader.html</a>&nbsp;</td><td class="left"><a href="controlled-unContolled-Component.md">controlled-unContolled-Component.md</a>&nbsp;</td><td class="left"><a href="include-polyfills.md">include-polyfills.md</a>&nbsp;</td><td class="left"><a href="react-hot-loader.md">react-hot-loader.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="destructuring_basics-js.html">destructuring_basics-js.html</a>&nbsp;</td><td class="left"><a href="keys-for-li-elements-why-its-needed.html">keys-for-li-elements-why-its-needed.html</a>&nbsp;</td><td class="left"><a href="React.Fragment.html">React.Fragment.html</a>&nbsp;</td><td class="left"><a href="Create-Class-avoiding-binding-in-constructor.md">Create-Class-avoiding-binding-in-constructor.md</a>&nbsp;</td><td class="left"><a href="keys-for-li-elements-why-its-needed.md">keys-for-li-elements-why-its-needed.md</a>&nbsp;</td><td class="left"><a href="React.Fragment.md">React.Fragment.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="destructuring_example.html">destructuring_example.html</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component-2-An-Example.html">no-constructor-for-stateful-component-2-An-Example.html</a>&nbsp;</td><td class="left"><a href="Redirect-from-react-router-dom.html">Redirect-from-react-router-dom.html</a>&nbsp;</td><td class="left"><a href="destructuring_basics-js.md">destructuring_basics-js.md</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component-2-An-Example.md">no-constructor-for-stateful-component-2-An-Example.md</a>&nbsp;</td><td class="left"><a href="Redirect-from-react-router-dom.md">Redirect-from-react-router-dom.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Destructuring_General.html">Destructuring_General.html</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component.html">no-constructor-for-stateful-component.html</a>&nbsp;</td><td class="left"><a href="running-html-with-React-avoiding-cross-origin-issue-in-chrome.html">running-html-with-React-avoiding-cross-origin-issue-in-chrome.html</a>&nbsp;</td><td class="left"><a href="destructuring_example.md">destructuring_example.md</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component.md">no-constructor-for-stateful-component.md</a>&nbsp;</td><td class="left"><a href="running-html-with-React-avoiding-cross-origin-issue-in-chrome.md">running-html-with-React-avoiding-cross-origin-issue-in-chrome.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="destructuring_in_react-1.html">destructuring_in_react-1.html</a>&nbsp;</td><td class="left"><a href="onChange-updating-state-from-child.html">onChange-updating-state-from-child.html</a>&nbsp;</td><td class="left"><a href="server-side-rendering-react-app.html">server-side-rendering-react-app.html</a>&nbsp;</td><td class="left"><a href="Destructuring_General.md">Destructuring_General.md</a>&nbsp;</td><td class="left"><a href="onChange-updating-state-from-child.md">onChange-updating-state-from-child.md</a>&nbsp;</td><td class="left"><a href="server-side-rendering-react-app.md">server-side-rendering-react-app.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="destructuring_in_react-2.html">destructuring_in_react-2.html</a>&nbsp;</td><td class="left"><a href="pass-prop-to-component-rendered-by-React-Router.html">pass-prop-to-component-rendered-by-React-Router.html</a>&nbsp;</td><td class="left"><a href="setState-what-does-it-do.html">setState-what-does-it-do.html</a>&nbsp;</td><td class="left"><a href="destructuring_in_react-1.md">destructuring_in_react-1.md</a>&nbsp;</td><td class="left"><a href="pass-prop-to-component-rendered-by-React-Router.md">pass-prop-to-component-rendered-by-React-Router.md</a>&nbsp;</td><td class="left"><a href="setState-what-does-it-do.md">setState-what-does-it-do.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="diffing-algo-react.html">diffing-algo-react.html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication-2.html">pass-props-from-Child-to-parent-Component-communication-2.html</a>&nbsp;</td><td class="left"><a href="single-page-application-basics.html">single-page-application-basics.html</a>&nbsp;</td><td class="left"><a href="destructuring_in_react-2.md">destructuring_in_react-2.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication-2.md">pass-props-from-Child-to-parent-Component-communication-2.md</a>&nbsp;</td><td class="left"><a href="single-page-application-basics.md">single-page-application-basics.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="e.target.value.html">e.target.value.html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication.html">pass-props-from-Child-to-parent-Component-communication.html</a>&nbsp;</td><td class="left"><a href="state-Absolute-Basics.html">state-Absolute-Basics.html</a>&nbsp;</td><td class="left"><a href="e.target.value.md">e.target.value.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication.md">pass-props-from-Child-to-parent-Component-communication.md</a>&nbsp;</td><td class="left"><a href="state-Absolute-Basics.md">state-Absolute-Basics.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Element-vs-Component-in-React.html">Element-vs-Component-in-React.html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Parent-To-Child-Component-communication.html">pass-props-from-Parent-To-Child-Component-communication.html</a>&nbsp;</td><td class="left"><a href="super(props)-why-its-required.html">super(props)-why-its-required.html</a>&nbsp;</td><td class="left"><a href="Element-vs-Component-in-React.md">Element-vs-Component-in-React.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Parent-To-Child-Component-communication.md">pass-props-from-Parent-To-Child-Component-communication.md</a>&nbsp;</td><td class="left"><a href="super(props)-why-its-required.md">super(props)-why-its-required.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Explain-whats-wrong-with-this-React-code.html">Explain-whats-wrong-with-this-React-code.html</a>&nbsp;</td><td class="left"><a href="Possible-Small-Exercises-to-be-completed-on-site.html">Possible-Small-Exercises-to-be-completed-on-site.html</a>&nbsp;</td><td class="left"><a href="this.props.children.html">this.props.children.html</a>&nbsp;</td><td class="left"><a href="Explain-whats-wrong-with-this-React-code.md">Explain-whats-wrong-with-this-React-code.md</a>&nbsp;</td><td class="left"><a href="Possible-Small-Exercises-to-be-completed-on-site.md">Possible-Small-Exercises-to-be-completed-on-site.md</a>&nbsp;</td><td class="left"><a href="this.props.children.md">this.props.children.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="functional-component-declaration-syntax-1.html">functional-component-declaration-syntax-1.html</a>&nbsp;</td><td class="left"><a href="preventDefault-in-React.html">preventDefault-in-React.html</a>&nbsp;</td><td class="left"><a href="Virtual-DOM-and-Reconciliation-Algorithm.html">Virtual-DOM-and-Reconciliation-Algorithm.html</a>&nbsp;</td><td class="left"><a href="functional-component-declaration-syntax-1.md">functional-component-declaration-syntax-1.md</a>&nbsp;</td><td class="left"><a href="preventDefault-in-React.md">preventDefault-in-React.md</a>&nbsp;</td><td class="left"><a href="Virtual-DOM-and-Reconciliation-Algorithm.md">Virtual-DOM-and-Reconciliation-Algorithm.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="functional-component-declaration-syntax.html">functional-component-declaration-syntax.html</a>&nbsp;</td><td class="left"><a href="props-Absolute-Basics.html">props-Absolute-Basics.html</a>&nbsp;</td><td class="left"><a href="webpack-Hot-Module-Replacement.html">webpack-Hot-Module-Replacement.html</a>&nbsp;</td><td class="left"><a href="functional-component-declaration-syntax.md">functional-component-declaration-syntax.md</a>&nbsp;</td><td class="left"><a href="props-Absolute-Basics.md">props-Absolute-Basics.md</a>&nbsp;</td><td class="left"><a href="webpack-Hot-Module-Replacement.md">webpack-Hot-Module-Replacement.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="history.push.html">history.push.html</a>&nbsp;</td><td class="left"><a href="pureComponent-Performance-benefit.html">pureComponent-Performance-benefit.html</a>&nbsp;</td><td class="left"><a href="BST.jpeg">BST.jpeg</a>&nbsp;</td><td class="left"><a href="history.push.md">history.push.md</a>&nbsp;</td><td class="left"><a href="pureComponent-Performance-benefit.md">pureComponent-Performance-benefit.md</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="context-api-basics.md">context-...cs.md</a>&nbsp;</td><td class="left"><a href="functional-component-declaration-syntax.md">function...ax.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication.md">pass-pro...on.md</a>&nbsp;</td><td class="left"><a href="running-html-with-React-avoiding-cross-origin-issue-in-chrome.md">running-...me.md</a>&nbsp;</td><td class="left"><a href="context-api-basics.html">context-....html</a>&nbsp;</td><td class="left"><a href="Explain-whats-wrong-with-this-React-code.html">Explain-....html</a>&nbsp;</td><td class="left"><a href="pass-prop-to-component-rendered-by-React-Router.html">pass-pro....html</a>&nbsp;</td><td class="left"><a href="React.Fragment.html">React.Fr....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="controlled-unContolled-Component.md">controll...nt.md</a>&nbsp;</td><td class="left"><a href="history.push.md">history.push.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Parent-To-Child-Component-communication.md">pass-pro...on.md</a>&nbsp;</td><td class="left"><a href="server-side-rendering-react-app.md">server-s...pp.md</a>&nbsp;</td><td class="left"><a href="controlled-unContolled-Component.html">controll....html</a>&nbsp;</td><td class="left"><a href="functional-component-declaration-syntax-1.html">function....html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication-2.html">pass-pro....html</a>&nbsp;</td><td class="left"><a href="Redirect-from-react-router-dom.html">Redirect....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Create-Class-avoiding-binding-in-constructor.md">Create-C...or.md</a>&nbsp;</td><td class="left"><a href="HOC.md">HOC.md</a>&nbsp;</td><td class="left"><a href="Possible-Small-Exercises-to-be-completed-on-site.md">Possible...te.md</a>&nbsp;</td><td class="left"><a href="setState-what-does-it-do.md">setState...do.md</a>&nbsp;</td><td class="left"><a href="Create-Class-avoiding-binding-in-constructor.html">Create-C....html</a>&nbsp;</td><td class="left"><a href="functional-component-declaration-syntax.html">function....html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication.html">pass-pro....html</a>&nbsp;</td><td class="left"><a href="running-html-with-React-avoiding-cross-origin-issue-in-chrome.html">running-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="destructuring_basics-js.md">destruct...js.md</a>&nbsp;</td><td class="left"><a href="how-react-decide-to-re-render-a-component.md">how-reac...nt.md</a>&nbsp;</td><td class="left"><a href="preventDefault-in-React.md">preventD...ct.md</a>&nbsp;</td><td class="left"><a href="single-page-application-basics.md">single-p...cs.md</a>&nbsp;</td><td class="left"><a href="destructuring_basics-js.html">destruct....html</a>&nbsp;</td><td class="left"><a href="history.push.html">history.....html</a>&nbsp;</td><td class="left"><a href="pass-props-from-Parent-To-Child-Component-communication.html">pass-pro....html</a>&nbsp;</td><td class="left"><a href="server-side-rendering-react-app.html">server-s....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="destructuring_example.md">destruct...le.md</a>&nbsp;</td><td class="left"><a href="include-polyfills.md">include-...ls.md</a>&nbsp;</td><td class="left"><a href="props-Absolute-Basics.md">props-Ab...cs.md</a>&nbsp;</td><td class="left"><a href="state-Absolute-Basics.md">state-Ab...cs.md</a>&nbsp;</td><td class="left"><a href="destructuring_example.html">destruct....html</a>&nbsp;</td><td class="left"><a href="HOC.html">HOC.html</a>&nbsp;</td><td class="left"><a href="Possible-Small-Exercises-to-be-completed-on-site.html">Possible....html</a>&nbsp;</td><td class="left"><a href="setState-what-does-it-do.html">setState....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Destructuring_General.md">Destruct...al.md</a>&nbsp;</td><td class="left"><a href="keys-for-li-elements-why-its-needed.md">keys-for...ed.md</a>&nbsp;</td><td class="left"><a href="pureComponent-Performance-benefit.md">pureComp...it.md</a>&nbsp;</td><td class="left"><a href="super(props)-why-its-required.md">super(pr...ed.md</a>&nbsp;</td><td class="left"><a href="Destructuring_General.html">Destruct....html</a>&nbsp;</td><td class="left"><a href="how-react-decide-to-re-render-a-component.html">how-reac....html</a>&nbsp;</td><td class="left"><a href="preventDefault-in-React.html">preventD....html</a>&nbsp;</td><td class="left"><a href="single-page-application-basics.html">single-p....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="destructuring_in_react-1.md">destruct...-1.md</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component-2-An-Example.md">no-const...le.md</a>&nbsp;</td><td class="left"><a href="pureComponent.md">pureComponent.md</a>&nbsp;</td><td class="left"><a href="this.props.children.md">this.pro...en.md</a>&nbsp;</td><td class="left"><a href="destructuring_in_react-1.html">destruct....html</a>&nbsp;</td><td class="left"><a href="include-polyfills.html">include-....html</a>&nbsp;</td><td class="left"><a href="props-Absolute-Basics.html">props-Ab....html</a>&nbsp;</td><td class="left"><a href="state-Absolute-Basics.html">state-Ab....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="destructuring_in_react-2.md">destruct...-2.md</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component.md">no-const...nt.md</a>&nbsp;</td><td class="left"><a href="react-class-declaration.md">react-cl...on.md</a>&nbsp;</td><td class="left"><a href="Virtual-DOM-and-Reconciliation-Algorithm.md">Virtual-...hm.md</a>&nbsp;</td><td class="left"><a href="destructuring_in_react-2.html">destruct....html</a>&nbsp;</td><td class="left"><a href="keys-for-li-elements-why-its-needed.html">keys-for....html</a>&nbsp;</td><td class="left"><a href="pureComponent-Performance-benefit.html">pureComp....html</a>&nbsp;</td><td class="left"><a href="super(props)-why-its-required.html">super(pr....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="e.target.value.md">e.target...ue.md</a>&nbsp;</td><td class="left"><a href="onChange-updating-state-from-child.md">onChange...ld.md</a>&nbsp;</td><td class="left"><a href="react-hot-loader.md">react-ho...er.md</a>&nbsp;</td><td class="left"><a href="webpack-Hot-Module-Replacement.md">webpack-...nt.md</a>&nbsp;</td><td class="left"><a href="diffing-algo-react.html">diffing-....html</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component-2-An-Example.html">no-const....html</a>&nbsp;</td><td class="left"><a href="pureComponent.html">pureComp....html</a>&nbsp;</td><td class="left"><a href="this.props.children.html">this.pro....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Element-vs-Component-in-React.md">Element-...ct.md</a>&nbsp;</td><td class="left"><a href="pass-prop-to-component-rendered-by-React-Router.md">pass-pro...er.md</a>&nbsp;</td><td class="left"><a href="React.Fragment.md">React.Fr...nt.md</a>&nbsp;</td><td class="left"><a href="BST.jpeg">BST.jpeg</a>&nbsp;</td><td class="left"><a href="e.target.value.html">e.target....html</a>&nbsp;</td><td class="left"><a href="no-constructor-for-stateful-component.html">no-const....html</a>&nbsp;</td><td class="left"><a href="react-class-declaration.html">react-cl....html</a>&nbsp;</td><td class="left"><a href="Virtual-DOM-and-Reconciliation-Algorithm.html">Virtual-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Explain-whats-wrong-with-this-React-code.md">Explain-...de.md</a>&nbsp;</td><td class="left"><a href="pass-props-from-Child-to-parent-Component-communication-2.md">pass-pro...-2.md</a>&nbsp;</td><td class="left"><a href="Redirect-from-react-router-dom.md">Redirect...om.md</a>&nbsp;</td><td class="left"><a href="Virtual-DOM.jpeg">Virtual-DOM.jpeg</a>&nbsp;</td><td class="left"><a href="Element-vs-Component-in-React.html">Element-....html</a>&nbsp;</td><td class="left"><a href="onChange-updating-state-from-child.html">onChange....html</a>&nbsp;</td><td class="left"><a href="react-hot-loader.html">react-ho....html</a>&nbsp;</td><td class="left"><a href="webpack-Hot-Module-Replacement.html">webpack-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="functional-component-declaration-syntax-1.md">function...-1.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  7<br>
 Files: 89<br>
-Size of all files: 842629 K</p>
+Size of all files: 842629 KB</p>
 
 </body>
 </html>

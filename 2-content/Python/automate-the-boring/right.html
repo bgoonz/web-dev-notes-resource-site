@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,26 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="appendixc/right.html" target="rframe">appendixc</a></td><td class="left">&nbsp;<a href="Chapter%2004/right.html" target="rframe">Chapter 04</a></td><td class="left">&nbsp;<a href="Chapter%2008/right.html" target="rframe">Chapter 08</a></td><td class="left">&nbsp;<a href="chapter10/right.html" target="rframe">chapter10</a></td><td class="left">&nbsp;<a href="chapter14/right.html" target="rframe">chapter14</a></td><td class="left">&nbsp;<a href="chapter17/right.html" target="rframe">chapter17</a></td><td class="left">&nbsp;<a href="chapter3/right.html" target="rframe">chapter3</a></td><td class="left">&nbsp;<a href="chapter6/right.html" target="rframe">chapter6</a></td><td class="left">&nbsp;<a href="chapter9/right.html" target="rframe">chapter9</a></td></tr>
-<tr class="row2"><td class="left"><a href="2e/right.html" target="rframe">2e</a></td><td class="left">&nbsp;<a href="Automate_the_Boring_Stuff_onlinematerials%20(1)/right.html" target="rframe">Automate_the_Boring_Stuff_onlinematerials (1)</a></td><td class="left">&nbsp;<a href="Chapter%2005/right.html" target="rframe">Chapter 05</a></td><td class="left">&nbsp;<a href="Chapter%2009/right.html" target="rframe">Chapter 09</a></td><td class="left">&nbsp;<a href="chapter11/right.html" target="rframe">chapter11</a></td><td class="left">&nbsp;<a href="chapter15/right.html" target="rframe">chapter15</a></td><td class="left">&nbsp;<a href="chapter18/right.html" target="rframe">chapter18</a></td><td class="left">&nbsp;<a href="chapter4/right.html" target="rframe">chapter4</a></td><td class="left">&nbsp;<a href="chapter7/right.html" target="rframe">chapter7</a></td><td class="left">&nbsp;<a href="images/right.html" target="rframe">images</a></td></tr>
-<tr><td class="left"><a href="appendixa/right.html" target="rframe">appendixa</a></td><td class="left">&nbsp;<a href="Chapter%2002/right.html" target="rframe">Chapter 02</a></td><td class="left">&nbsp;<a href="Chapter%2006/right.html" target="rframe">Chapter 06</a></td><td class="left">&nbsp;<a href="chapter0/right.html" target="rframe">chapter0</a></td><td class="left">&nbsp;<a href="chapter12/right.html" target="rframe">chapter12</a></td><td class="left">&nbsp;<a href="chapter16/right.html" target="rframe">chapter16</a></td><td class="left">&nbsp;<a href="chapter2/right.html" target="rframe">chapter2</a></td><td class="left">&nbsp;<a href="chapter5/right.html" target="rframe">chapter5</a></td><td class="left">&nbsp;<a href="chapter8/right.html" target="rframe">chapter8</a></td><td class="left">&nbsp;<a href="OEBPS/right.html" target="rframe">OEBPS</a></td></tr>
-<tr class="row2"><td class="left"><a href="appendixb/right.html" target="rframe">appendixb</a></td><td class="left">&nbsp;<a href="Chapter%2003/right.html" target="rframe">Chapter 03</a></td><td class="left">&nbsp;<a href="Chapter%2007/right.html" target="rframe">Chapter 07</a></td><td class="left">&nbsp;<a href="chapter1/right.html" target="rframe">chapter1</a></td><td class="left">&nbsp;<a href="chapter13/right.html" target="rframe">chapter13</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="Chapter%2002/right.html" target="rframe">Chapter 02</a></td><td class="left">&nbsp;<a href="Chapter%2008/right.html" target="rframe">Chapter 08</a></td><td class="left">&nbsp;<a href="chapter12/right.html" target="rframe">chapter12</a></td><td class="left">&nbsp;<a href="chapter18/right.html" target="rframe">chapter18</a></td><td class="left">&nbsp;<a href="chapter7/right.html" target="rframe">chapter7</a></td></tr>
+<tr class="row2"><td class="left"><a href="2e/right.html" target="rframe">2e</a></td><td class="left">&nbsp;<a href="Chapter%2003/right.html" target="rframe">Chapter 03</a></td><td class="left">&nbsp;<a href="Chapter%2009/right.html" target="rframe">Chapter 09</a></td><td class="left">&nbsp;<a href="chapter13/right.html" target="rframe">chapter13</a></td><td class="left">&nbsp;<a href="chapter2/right.html" target="rframe">chapter2</a></td><td class="left">&nbsp;<a href="chapter8/right.html" target="rframe">chapter8</a></td></tr>
+<tr><td class="left"><a href="appendixa/right.html" target="rframe">appendixa</a></td><td class="left">&nbsp;<a href="Chapter%2004/right.html" target="rframe">Chapter 04</a></td><td class="left">&nbsp;<a href="chapter0/right.html" target="rframe">chapter0</a></td><td class="left">&nbsp;<a href="chapter14/right.html" target="rframe">chapter14</a></td><td class="left">&nbsp;<a href="chapter3/right.html" target="rframe">chapter3</a></td><td class="left">&nbsp;<a href="chapter9/right.html" target="rframe">chapter9</a></td></tr>
+<tr class="row2"><td class="left"><a href="appendixb/right.html" target="rframe">appendixb</a></td><td class="left">&nbsp;<a href="Chapter%2005/right.html" target="rframe">Chapter 05</a></td><td class="left">&nbsp;<a href="chapter1/right.html" target="rframe">chapter1</a></td><td class="left">&nbsp;<a href="chapter15/right.html" target="rframe">chapter15</a></td><td class="left">&nbsp;<a href="chapter4/right.html" target="rframe">chapter4</a></td><td class="left">&nbsp;<a href="images/right.html" target="rframe">images</a></td></tr>
+<tr><td class="left"><a href="appendixc/right.html" target="rframe">appendixc</a></td><td class="left">&nbsp;<a href="Chapter%2006/right.html" target="rframe">Chapter 06</a></td><td class="left">&nbsp;<a href="chapter10/right.html" target="rframe">chapter10</a></td><td class="left">&nbsp;<a href="chapter16/right.html" target="rframe">chapter16</a></td><td class="left">&nbsp;<a href="chapter5/right.html" target="rframe">chapter5</a></td><td class="left">&nbsp;<a href="OEBPS/right.html" target="rframe">OEBPS</a></td></tr>
+<tr class="row2"><td class="left"><a href="Automate_the_Boring_Stuff_onlinematerials%20(1)/right.html" target="rframe">Automate...s (1)</a></td><td class="left">&nbsp;<a href="Chapter%2007/right.html" target="rframe">Chapter 07</a></td><td class="left">&nbsp;<a href="chapter11/right.html" target="rframe">chapter11</a></td><td class="left">&nbsp;<a href="chapter17/right.html" target="rframe">chapter17</a></td><td class="left">&nbsp;<a href="chapter6/right.html" target="rframe">chapter6</a></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="automate2_website.css">automate2_website.css</a>&nbsp;</td><td class="left"><a href="how-to-do-pycon.html">how-to-do-pycon.html</a>&nbsp;</td><td class="left"><a href="list-of-css-selector-tutorials.html">list-of-css-selector-tutorials.html</a>&nbsp;</td><td class="left"><a href="list-of-programming-practice-sites.html">list-of-programming-practice-sites.html</a>&nbsp;</td><td class="left"><a href="schedulers.html">schedulers.html</a>&nbsp;</td><td class="left"><a href="lazysizes.min.js">lazysizes.min.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="automate_website.css">automate_website.css</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="list-of-json-apis.html">list-of-json-apis.html</a>&nbsp;</td><td class="left"><a href="list-of-web-comics.html">list-of-web-comics.html</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="lazysizes.min.js">lazysizes.min.js</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="list-of-json-apis.html">list-of-....html</a>&nbsp;</td><td class="left"><a href="list-of-programming-practice-sites.html">list-of-....html</a>&nbsp;</td><td class="left"><a href="list-of-web-comics.html">list-of-....html</a>&nbsp;</td><td class="left"><a href="schedulers.html">schedulers.html</a>&nbsp;</td><td class="left"><a href="automate2_website.css">automate...e.css</a>&nbsp;</td><td class="left"><a href="automate_website.css">automate...e.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="how-to-do-pycon.html">how-to-d....html</a>&nbsp;</td><td class="left"><a href="list-of-css-selector-tutorials.html">list-of-....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  35<br>
 Files: 10<br>
-Size of all files: 97497 K</p>
+Size of all files: 97497 KB</p>
 
 </body>
 </html>

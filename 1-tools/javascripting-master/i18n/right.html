@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="footer/right.html" target="rframe">footer</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="footer/right.html" target="rframe">footer</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="es_json">es_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_es_md">troubleshooting_es_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_ru_md">troubleshooting_ru_md</a>&nbsp;</td><td class="left"><a href="fr.json">fr.json</a>&nbsp;</td><td class="left"><a href="zh-cn.json">zh-cn.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ko.md">troubleshooting_ko.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="fr_json">fr_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_fr_md">troubleshooting_fr_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_uk_md">troubleshooting_uk_md</a>&nbsp;</td><td class="left"><a href="it.json">it.json</a>&nbsp;</td><td class="left"><a href="zh-tw.json">zh-tw.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_nb-no.md">troubleshooting_nb-no.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="it_json">it_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_it_md">troubleshooting_it_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh_cn_md">troubleshooting_zh_cn_md</a>&nbsp;</td><td class="left"><a href="ja.json">ja.json</a>&nbsp;</td><td class="left"><a href="troubleshooting.md">troubleshooting.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_pt-br.md">troubleshooting_pt-br.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="ja_json">ja_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ja_md">troubleshooting_ja_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh_tw_md">troubleshooting_zh_tw_md</a>&nbsp;</td><td class="left"><a href="ko.json">ko.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_es.md">troubleshooting_es.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_ru.md">troubleshooting_ru.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="ko_json">ko_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ko_md">troubleshooting_ko_md</a>&nbsp;</td><td class="left"><a href="uk_json">uk_json</a>&nbsp;</td><td class="left"><a href="nb-no.json">nb-no.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_fr.md">troubleshooting_fr.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_uk.md">troubleshooting_uk.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="nb_no_json">nb_no_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_md">troubleshooting_md</a>&nbsp;</td><td class="left"><a href="zh_cn_json">zh_cn_json</a>&nbsp;</td><td class="left"><a href="pt-br.json">pt-br.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_it.md">troubleshooting_it.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh-cn.md">troubleshooting_zh-cn.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="pt_br_json">pt_br_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_nb_no_md">troubleshooting_nb_no_md</a>&nbsp;</td><td class="left"><a href="zh_tw_json">zh_tw_json</a>&nbsp;</td><td class="left"><a href="ru.json">ru.json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ja.md">troubleshooting_ja.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh-tw.md">troubleshooting_zh-tw.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="ru_json">ru_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_pt_br_md">troubleshooting_pt_br_md</a>&nbsp;</td><td class="left"><a href="es.json">es.json</a>&nbsp;</td><td class="left"><a href="uk.json">uk.json</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="troubleshooting.md">troubles...ng.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_nb-no.md">troubles...no.md</a>&nbsp;</td><td class="left"><a href="es.json">es.json</a>&nbsp;</td><td class="left"><a href="pt-br.json">pt-br.json</a>&nbsp;</td><td class="left"><a href="es_json">es_json</a>&nbsp;</td><td class="left"><a href="pt_br_json">pt_br_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ko_md">troubles...ko_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh_cn_md">troubles...cn_md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="troubleshooting_es.md">troubles...es.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_pt-br.md">troubles...br.md</a>&nbsp;</td><td class="left"><a href="fr.json">fr.json</a>&nbsp;</td><td class="left"><a href="ru.json">ru.json</a>&nbsp;</td><td class="left"><a href="fr_json">fr_json</a>&nbsp;</td><td class="left"><a href="ru_json">ru_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_md">troubles...ng_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh_tw_md">troubles...tw_md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="troubleshooting_fr.md">troubles...fr.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_ru.md">troubles...ru.md</a>&nbsp;</td><td class="left"><a href="it.json">it.json</a>&nbsp;</td><td class="left"><a href="uk.json">uk.json</a>&nbsp;</td><td class="left"><a href="it_json">it_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_es_md">troubles...es_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_nb_no_md">troubles...no_md</a>&nbsp;</td><td class="left"><a href="uk_json">uk_json</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="troubleshooting_it.md">troubles...it.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_uk.md">troubles...uk.md</a>&nbsp;</td><td class="left"><a href="ja.json">ja.json</a>&nbsp;</td><td class="left"><a href="zh-cn.json">zh-cn.json</a>&nbsp;</td><td class="left"><a href="ja_json">ja_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_fr_md">troubles...fr_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_pt_br_md">troubles...br_md</a>&nbsp;</td><td class="left"><a href="zh_cn_json">zh_cn_json</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="troubleshooting_ja.md">troubles...ja.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh-cn.md">troubles...cn.md</a>&nbsp;</td><td class="left"><a href="ko.json">ko.json</a>&nbsp;</td><td class="left"><a href="zh-tw.json">zh-tw.json</a>&nbsp;</td><td class="left"><a href="ko_json">ko_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_it_md">troubles...it_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_ru_md">troubles...ru_md</a>&nbsp;</td><td class="left"><a href="zh_tw_json">zh_tw_json</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="troubleshooting_ko.md">troubles...ko.md</a>&nbsp;</td><td class="left"><a href="troubleshooting_zh-tw.md">troubles...tw.md</a>&nbsp;</td><td class="left"><a href="nb-no.json">nb-no.json</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="nb_no_json">nb_no_json</a>&nbsp;</td><td class="left"><a href="troubleshooting_ja_md">troubles...ja_md</a>&nbsp;</td><td class="left"><a href="troubleshooting_uk_md">troubles...uk_md</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
-Files: 46<br>
-Size of all files: 40854 K</p>
+Files: 47<br>
+Size of all files: 58289 KB</p>
 
 </body>
 </html>

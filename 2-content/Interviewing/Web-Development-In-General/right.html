@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="critical-render-path.html">critical-render-path.html</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes-Understanding-Express-res.status.html">HTTP-Status-Codes-Understanding-Express-res.status.html</a>&nbsp;</td><td class="left"><a href="websocket-basics.html">websocket-basics.html</a>&nbsp;</td><td class="left"><a href="How-to-Check-HTTP-Request-Response-on-Chrome.md">How-to-Check-HTTP-Request-Response-on-Chrome.md</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes.md">HTTP-Status-Codes.md</a>&nbsp;</td><td class="left"><a href="websocket-basics.md">websocket-basics.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="How-to-Check-HTTP-Request-Response-on-Chrome.html">How-to-Check-HTTP-Request-Response-on-Chrome.html</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes.html">HTTP-Status-Codes.html</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-an-URL.html">What-happens-when-you-navigate-to-an-URL.html</a>&nbsp;</td><td class="left"><a href="HTTP-and-TCP-Difference.md">HTTP-and-TCP-Difference.md</a>&nbsp;</td><td class="left"><a href="http-vs-https.md">http-vs-https.md</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-an-URL.md">What-happens-when-you-navigate-to-an-URL.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="HTTP-and-TCP-Difference.html">HTTP-and-TCP-Difference.html</a>&nbsp;</td><td class="left"><a href="http-vs-https.html">http-vs-https.html</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-google.html">What-happens-when-you-navigate-to-google.html</a>&nbsp;</td><td class="left"><a href="HTTP-methods-put-vs-post.md">HTTP-methods-put-vs-post.md</a>&nbsp;</td><td class="left"><a href="minimmize-page-load-time.md">minimmize-page-load-time.md</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-google.md">What-happens-when-you-navigate-to-google.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="HTTP-methods-put-vs-post.html">HTTP-methods-put-vs-post.html</a>&nbsp;</td><td class="left"><a href="minimmize-page-load-time.html">minimmize-page-load-time.html</a>&nbsp;</td><td class="left"><a href="what-is-AJAX.html">what-is-AJAX.html</a>&nbsp;</td><td class="left"><a href="HTTP-Protocol.md">HTTP-Protocol.md</a>&nbsp;</td><td class="left"><a href="Postman-checking-protected-routes-from-backend.md">Postman-checking-protected-routes-from-backend.md</a>&nbsp;</td><td class="left"><a href="what-is-AJAX.md">what-is-AJAX.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="HTTP-Protocol.html">HTTP-Protocol.html</a>&nbsp;</td><td class="left"><a href="Postman-checking-protected-routes-from-backend.html">Postman-checking-protected-routes-from-backend.html</a>&nbsp;</td><td class="left"><a href="critical-render-path.md">critical-render-path.md</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes-Understanding-Express-res.status.md">HTTP-Status-Codes-Understanding-Express-res.status.md</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="critical-render-path.md">critical...th.md</a>&nbsp;</td><td class="left"><a href="HTTP-Protocol.md">HTTP-Protocol.md</a>&nbsp;</td><td class="left"><a href="minimmize-page-load-time.md">minimmiz...me.md</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-google.md">What-hap...le.md</a>&nbsp;</td><td class="left"><a href="HTTP-and-TCP-Difference.html">HTTP-and....html</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes-Understanding-Express-res.status.html">HTTP-Sta....html</a>&nbsp;</td><td class="left"><a href="minimmize-page-load-time.html">minimmiz....html</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-an-URL.html">What-hap....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="How-to-Check-HTTP-Request-Response-on-Chrome.md">How-to-C...me.md</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes-Understanding-Express-res.status.md">HTTP-Sta...us.md</a>&nbsp;</td><td class="left"><a href="Postman-checking-protected-routes-from-backend.md">Postman-...nd.md</a>&nbsp;</td><td class="left"><a href="what-is-AJAX.md">what-is-AJAX.md</a>&nbsp;</td><td class="left"><a href="HTTP-methods-put-vs-post.html">HTTP-met....html</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes.html">HTTP-Sta....html</a>&nbsp;</td><td class="left"><a href="Postman-checking-protected-routes-from-backend.html">Postman-....html</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-google.html">What-hap....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="HTTP-and-TCP-Difference.md">HTTP-and...ce.md</a>&nbsp;</td><td class="left"><a href="HTTP-Status-Codes.md">HTTP-Sta...es.md</a>&nbsp;</td><td class="left"><a href="websocket-basics.md">websocke...cs.md</a>&nbsp;</td><td class="left"><a href="critical-render-path.html">critical....html</a>&nbsp;</td><td class="left"><a href="HTTP-Protocol.html">HTTP-Pro....html</a>&nbsp;</td><td class="left"><a href="http-vs-https.html">http-vs-....html</a>&nbsp;</td><td class="left"><a href="websocket-basics.html">websocke....html</a>&nbsp;</td><td class="left"><a href="what-is-AJAX.html">what-is-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="HTTP-methods-put-vs-post.md">HTTP-met...st.md</a>&nbsp;</td><td class="left"><a href="http-vs-https.md">http-vs-https.md</a>&nbsp;</td><td class="left"><a href="What-happens-when-you-navigate-to-an-URL.md">What-hap...RL.md</a>&nbsp;</td><td class="left"><a href="How-to-Check-HTTP-Request-Response-on-Chrome.html">How-to-C....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 28<br>
-Size of all files: 149250 K</p>
+Size of all files: 149250 KB</p>
 
 </body>
 </html>

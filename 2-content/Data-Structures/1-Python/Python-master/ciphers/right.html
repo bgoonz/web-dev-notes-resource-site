@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,26 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="a1z26.py">a1z26.py</a>&nbsp;</td><td class="left"><a href="beaufort_cipher.py">beaufort_cipher.py</a>&nbsp;</td><td class="left"><a href="diffie_hellman.py">diffie_hellman.py</a>&nbsp;</td><td class="left"><a href="onepad_cipher.py">onepad_cipher.py</a>&nbsp;</td><td class="left"><a href="rsa_cipher.py">rsa_cipher.py</a>&nbsp;</td><td class="left"><a href="trafid_cipher.py">trafid_cipher.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="affine_cipher.py">affine_cipher.py</a>&nbsp;</td><td class="left"><a href="brute_force_caesar_cipher.py">brute_force_caesar_cipher.py</a>&nbsp;</td><td class="left"><a href="elgamal_key_generator.py">elgamal_key_generator.py</a>&nbsp;</td><td class="left"><a href="playfair_cipher.py">playfair_cipher.py</a>&nbsp;</td><td class="left"><a href="rsa_factorization.py">rsa_factorization.py</a>&nbsp;</td><td class="left"><a href="transposition_cipher.py">transposition_cipher.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="atbash.py">atbash.py</a>&nbsp;</td><td class="left"><a href="caesar_cipher.py">caesar_cipher.py</a>&nbsp;</td><td class="left"><a href="enigma_machine2.py">enigma_machine2.py</a>&nbsp;</td><td class="left"><a href="porta_cipher.py">porta_cipher.py</a>&nbsp;</td><td class="left"><a href="rsa_key_generator.py">rsa_key_generator.py</a>&nbsp;</td><td class="left"><a href="transposition_cipher_encrypt_decrypt_file.py">transposition_cipher_encrypt_decrypt_file.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="base16.py">base16.py</a>&nbsp;</td><td class="left"><a href="cryptomath_module.py">cryptomath_module.py</a>&nbsp;</td><td class="left"><a href="hill_cipher.py">hill_cipher.py</a>&nbsp;</td><td class="left"><a href="rabin_miller.py">rabin_miller.py</a>&nbsp;</td><td class="left"><a href="shuffled_shift_cipher.py">shuffled_shift_cipher.py</a>&nbsp;</td><td class="left"><a href="vigenere_cipher.py">vigenere_cipher.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="base32.py">base32.py</a>&nbsp;</td><td class="left"><a href="decrypt_caesar_with_chi_squared.py">decrypt_caesar_with_chi_squared.py</a>&nbsp;</td><td class="left"><a href="mixed_keyword_cypher.py">mixed_keyword_cypher.py</a>&nbsp;</td><td class="left"><a href="rail_fence_cipher.py">rail_fence_cipher.py</a>&nbsp;</td><td class="left"><a href="simple_keyword_cypher.py">simple_keyword_cypher.py</a>&nbsp;</td><td class="left"><a href="xor_cipher.py">xor_cipher.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="base64_encoding.py">base64_encoding.py</a>&nbsp;</td><td class="left"><a href="deterministic_miller_rabin.py">deterministic_miller_rabin.py</a>&nbsp;</td><td class="left"><a href="mono_alphabetic_ciphers.py">mono_alphabetic_ciphers.py</a>&nbsp;</td><td class="left"><a href="rot13.py">rot13.py</a>&nbsp;</td><td class="left"><a href="simple_substitution_cipher.py">simple_substitution_cipher.py</a>&nbsp;</td><td class="left"><a href="prehistoric_men.txt">prehistoric_men.txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="base85.py">base85.py</a>&nbsp;</td><td class="left"><a href="diffie.py">diffie.py</a>&nbsp;</td><td class="left"><a href="morse_code_implementation.py">morse_code_implementation.py</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="prehistoric_men.txt">prehisto...n.txt</a>&nbsp;</td><td class="left"><a href="base32.py">base32.py</a>&nbsp;</td><td class="left"><a href="caesar_cipher.py">caesar_cipher.py</a>&nbsp;</td><td class="left"><a href="diffie_hellman.py">diffie_h...an.py</a>&nbsp;</td><td class="left"><a href="mono_alphabetic_ciphers.py">mono_alp...rs.py</a>&nbsp;</td><td class="left"><a href="rabin_miller.py">rabin_miller.py</a>&nbsp;</td><td class="left"><a href="rsa_key_generator.py">rsa_key_...or.py</a>&nbsp;</td><td class="left"><a href="transposition_cipher.py">transpos...er.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="a1z26.py">a1z26.py</a>&nbsp;</td><td class="left"><a href="base64_encoding.py">base64_e...ng.py</a>&nbsp;</td><td class="left"><a href="cryptomath_module.py">cryptoma...le.py</a>&nbsp;</td><td class="left"><a href="elgamal_key_generator.py">elgamal_...or.py</a>&nbsp;</td><td class="left"><a href="morse_code_implementation.py">morse_co...on.py</a>&nbsp;</td><td class="left"><a href="rail_fence_cipher.py">rail_fen...er.py</a>&nbsp;</td><td class="left"><a href="shuffled_shift_cipher.py">shuffled...er.py</a>&nbsp;</td><td class="left"><a href="transposition_cipher_encrypt_decrypt_file.py">transpos...le.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="affine_cipher.py">affine_cipher.py</a>&nbsp;</td><td class="left"><a href="base85.py">base85.py</a>&nbsp;</td><td class="left"><a href="decrypt_caesar_with_chi_squared.py">decrypt_...ed.py</a>&nbsp;</td><td class="left"><a href="enigma_machine2.py">enigma_m...e2.py</a>&nbsp;</td><td class="left"><a href="onepad_cipher.py">onepad_cipher.py</a>&nbsp;</td><td class="left"><a href="rot13.py">rot13.py</a>&nbsp;</td><td class="left"><a href="simple_keyword_cypher.py">simple_k...er.py</a>&nbsp;</td><td class="left"><a href="vigenere_cipher.py">vigenere...er.py</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="atbash.py">atbash.py</a>&nbsp;</td><td class="left"><a href="beaufort_cipher.py">beaufort...er.py</a>&nbsp;</td><td class="left"><a href="deterministic_miller_rabin.py">determin...in.py</a>&nbsp;</td><td class="left"><a href="hill_cipher.py">hill_cipher.py</a>&nbsp;</td><td class="left"><a href="playfair_cipher.py">playfair...er.py</a>&nbsp;</td><td class="left"><a href="rsa_cipher.py">rsa_cipher.py</a>&nbsp;</td><td class="left"><a href="simple_substitution_cipher.py">simple_s...er.py</a>&nbsp;</td><td class="left"><a href="xor_cipher.py">xor_cipher.py</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="base16.py">base16.py</a>&nbsp;</td><td class="left"><a href="brute_force_caesar_cipher.py">brute_fo...er.py</a>&nbsp;</td><td class="left"><a href="diffie.py">diffie.py</a>&nbsp;</td><td class="left"><a href="mixed_keyword_cypher.py">mixed_ke...er.py</a>&nbsp;</td><td class="left"><a href="porta_cipher.py">porta_cipher.py</a>&nbsp;</td><td class="left"><a href="rsa_factorization.py">rsa_fact...on.py</a>&nbsp;</td><td class="left"><a href="trafid_cipher.py">trafid_cipher.py</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 39<br>
-Size of all files: 458588 K</p>
+Size of all files: 458588 KB</p>
 
 </body>
 </html>

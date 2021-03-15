@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="10-make-army/right.html" target="rframe">10-make-army</a></td><td class="left">&nbsp;<a href="2-closure-variable-access/right.html" target="rframe">2-closure-variable-access</a></td><td class="left">&nbsp;<a href="3-counter-independent/right.html" target="rframe">3-counter-independent</a></td><td class="left">&nbsp;<a href="4-counter-object-independent/right.html" target="rframe">4-counter-object-independent</a></td><td class="left">&nbsp;<a href="5-function-in-if/right.html" target="rframe">5-function-in-if</a></td><td class="left">&nbsp;<a href="6-closure-sum/right.html" target="rframe">6-closure-sum</a></td><td class="left">&nbsp;<a href="7-let-scope/right.html" target="rframe">7-let-scope</a></td><td class="left">&nbsp;<a href="8-filter-through-function/right.html" target="rframe">8-filter-through-function</a></td><td class="left">&nbsp;<a href="9-sort-by-field/right.html" target="rframe">9-sort-by-field</a></td></tr>
-<tr class="row2"><td class="left"><a href="1-closure-latest-changes/right.html" target="rframe">1-closure-latest-changes</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="10-make-army/right.html" target="rframe">10-make-army</a></td><td class="left">&nbsp;<a href="3-counter-independent/right.html" target="rframe">3-counte...ndent</a></td><td class="left">&nbsp;<a href="5-function-in-if/right.html" target="rframe">5-function-in-if</a></td><td class="left">&nbsp;<a href="7-let-scope/right.html" target="rframe">7-let-scope</a></td><td class="left">&nbsp;<a href="9-sort-by-field/right.html" target="rframe">9-sort-by-field</a></td></tr>
+<tr class="row2"><td class="left"><a href="1-closure-latest-changes/right.html" target="rframe">1-closur...anges</a></td><td class="left">&nbsp;<a href="2-closure-variable-access/right.html" target="rframe">2-closur...ccess</a></td><td class="left">&nbsp;<a href="4-counter-object-independent/right.html" target="rframe">4-counte...ndent</a></td><td class="left">&nbsp;<a href="6-closure-sum/right.html" target="rframe">6-closure-sum</a></td><td class="left">&nbsp;<a href="8-filter-through-function/right.html" target="rframe">8-filter...ction</a></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="article.html">article.html</a>&nbsp;</td><td class="left"><a href="closure-makecounter-nested-call-2.svg">closure-makecounter-nested-call-2.svg</a>&nbsp;</td><td class="left"><a href="lexenv-if.svg">lexenv-if.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-4.svg">lexenv-nested-makecounter-4.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global-3.svg">lexical-environment-global-3.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-simple.svg">lexical-environment-simple.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="article.md">article.md</a>&nbsp;</td><td class="left"><a href="closure-makecounter-nested-call.svg">closure-makecounter-nested-call.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-1.svg">lexenv-nested-makecounter-1.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-5.svg">lexenv-nested-makecounter-5.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global.svg">lexical-environment-global.svg</a>&nbsp;</td><td class="left"><a href="lexical-search-order.svg">lexical-search-order.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="closure-function-declaration.svg">closure-function-declaration.svg</a>&nbsp;</td><td class="left"><a href="closure-makecounter.svg">closure-makecounter.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-2.svg">lexenv-nested-makecounter-2.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-6.svg">lexenv-nested-makecounter-6.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-simple-lookup.svg">lexical-environment-simple-lookup.svg</a>&nbsp;</td><td class="left"><a href="variable-scope-lookup.svg">variable-scope-lookup.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="closure-makecounter-environment.svg">closure-makecounter-environment.svg</a>&nbsp;</td><td class="left"><a href="closure-variable-phrase.svg">closure-variable-phrase.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-3.svg">lexenv-nested-makecounter-3.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global-2.svg">lexical-environment-global-2.svg</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="closure-function-declaration.svg">closure-...n.svg</a>&nbsp;</td><td class="left"><a href="closure-makecounter-nested-call.svg">closure-...l.svg</a>&nbsp;</td><td class="left"><a href="lexenv-if.svg">lexenv-if.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-3.svg">lexenv-n...3.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-6.svg">lexenv-n...6.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global.svg">lexical-...l.svg</a>&nbsp;</td><td class="left"><a href="lexical-search-order.svg">lexical-...r.svg</a>&nbsp;</td><td class="left"><a href="article.md">article.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="closure-makecounter-environment.svg">closure-...t.svg</a>&nbsp;</td><td class="left"><a href="closure-makecounter.svg">closure-...r.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-1.svg">lexenv-n...1.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-4.svg">lexenv-n...4.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global-2.svg">lexical-...2.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-simple-lookup.svg">lexical-...p.svg</a>&nbsp;</td><td class="left"><a href="variable-scope-lookup.svg">variable...p.svg</a>&nbsp;</td><td class="left"><a href="article.html">article.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="closure-makecounter-nested-call-2.svg">closure-...2.svg</a>&nbsp;</td><td class="left"><a href="closure-variable-phrase.svg">closure-...e.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-2.svg">lexenv-n...2.svg</a>&nbsp;</td><td class="left"><a href="lexenv-nested-makecounter-5.svg">lexenv-n...5.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-global-3.svg">lexical-...3.svg</a>&nbsp;</td><td class="left"><a href="lexical-environment-simple.svg">lexical-...e.svg</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  11<br>
 Files: 22<br>
-Size of all files: 935790 K</p>
+Size of all files: 935790 KB</p>
 
 </body>
 </html>

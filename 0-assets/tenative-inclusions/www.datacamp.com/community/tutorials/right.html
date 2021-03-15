@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,29 +532,27 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="boxplot-in-r.html">boxplot-in-r.html</a>&nbsp;</td><td class="left"><a href="installation-of-pyspark.html">installation-of-pyspark.html</a>&nbsp;</td><td class="left"><a href="pandas-drop-column.html">pandas-drop-column.html</a>&nbsp;</td><td class="left"><a href="python-excel-tutorial.html">python-excel-tutorial.html</a>&nbsp;</td><td class="left"><a href="python-string-split.html">python-string-split.html</a>&nbsp;</td><td class="left"><a href="sql-joins.html">sql-joins.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="building-a-chatbot-using-chatterbot.html">building-a-chatbot-using-chatterbot.html</a>&nbsp;</td><td class="left"><a href="installing-anaconda-mac-os-x.html">installing-anaconda-mac-os-x.html</a>&nbsp;</td><td class="left"><a href="pandas-drop-duplicates.html">pandas-drop-duplicates.html</a>&nbsp;</td><td class="left"><a href="python-install-pip.html">python-install-pip.html</a>&nbsp;</td><td class="left"><a href="python-while-loop.html">python-while-loop.html</a>&nbsp;</td><td class="left"><a href="streaming-platform-analysis.html">streaming-platform-analysis.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="case-conversion-python.html">case-conversion-python.html</a>&nbsp;</td><td class="left"><a href="installing-anaconda-windows.html">installing-anaconda-windows.html</a>&nbsp;</td><td class="left"><a href="pandas-sort-values.html">pandas-sort-values.html</a>&nbsp;</td><td class="left"><a href="python-lambda.html">python-lambda.html</a>&nbsp;</td><td class="left"><a href="r-or-python-for-data-analysis.html">r-or-python-for-data-analysis.html</a>&nbsp;</td><td class="left"><a href="subsets-in-r.html">subsets-in-r.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cnn-tensorflow-python.html">cnn-tensorflow-python.html</a>&nbsp;</td><td class="left"><a href="installing-jupyter-notebook.html">installing-jupyter-notebook.html</a>&nbsp;</td><td class="left"><a href="pandas-to-csv.html">pandas-to-csv.html</a>&nbsp;</td><td class="left"><a href="python-list-function.html">python-list-function.html</a>&nbsp;</td><td class="left"><a href="replicating-in-r-covid19.html">replicating-in-r-covid19.html</a>&nbsp;</td><td class="left"><a href="survival-analysis-R.html">survival-analysis-R.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="docstrings-python.html">docstrings-python.html</a>&nbsp;</td><td class="left"><a href="installing-R-windows-mac-ubuntu.html">installing-R-windows-mac-ubuntu.html</a>&nbsp;</td><td class="left"><a href="plot-character-in-r.html">plot-character-in-r.html</a>&nbsp;</td><td class="left"><a href="python-print-function.html">python-print-function.html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="top-ten-most-important-packages-in-r-for-data-science.html">top-ten-most-important-packages-in-r-for-data-science.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="elif-statements-python.html">elif-statements-python.html</a>&nbsp;</td><td class="left"><a href="lists-python.html">lists-python.html</a>&nbsp;</td><td class="left"><a href="python-arrays.html">python-arrays.html</a>&nbsp;</td><td class="left"><a href="python-rename-column.html">python-rename-column.html</a>&nbsp;</td><td class="left"><a href="scope-of-variables-python.html">scope-of-variables-python.html</a>&nbsp;</td><td class="left"><a href="tutorial-jupyter-notebook.html">tutorial-jupyter-notebook.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="for-loop-python.html">for-loop-python.html</a>&nbsp;</td><td class="left"><a href="markov-chains-python-tutorial.html">markov-chains-python-tutorial.html</a>&nbsp;</td><td class="left"><a href="python-classes.html">python-classes.html</a>&nbsp;</td><td class="left"><a href="python-select-columns.html">python-select-columns.html</a>&nbsp;</td><td class="left"><a href="sorting-in-python.html">sorting-in-python.html</a>&nbsp;</td><td class="left"><a href="understanding-logistic-regression-python.html">understanding-logistic-regression-python.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="generalized-linear-models.html">generalized-linear-models.html</a>&nbsp;</td><td class="left"><a href="numpy-random.html">numpy-random.html</a>&nbsp;</td><td class="left"><a href="python-concatenate-strings.html">python-concatenate-strings.html</a>&nbsp;</td><td class="left"><a href="python-string-contains.html">python-string-contains.html</a>&nbsp;</td><td class="left"><a href="sorting-in-r.html">sorting-in-r.html</a>&nbsp;</td><td class="left"><a href="variables-in-r.html">variables-in-r.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="graphics-with-ggplot2.html">graphics-with-ggplot2.html</a>&nbsp;</td><td class="left"><a href="pandas-add-column.html">pandas-add-column.html</a>&nbsp;</td><td class="left"><a href="python-datetime.html">python-datetime.html</a>&nbsp;</td><td class="left"><a href="python-string-format.html">python-string-format.html</a>&nbsp;</td><td class="left"><a href="sql-database.html">sql-database.html</a>&nbsp;</td><td class="left"><a href="what-is-sql.html">what-is-sql.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="insert-into-sql.html">insert-into-sql.html</a>&nbsp;</td><td class="left"><a href="pandas-apply.html">pandas-apply.html</a>&nbsp;</td><td class="left"><a href="python-dictionaries.html">python-dictionaries.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="boxplot-in-r.html">boxplot-....html</a>&nbsp;</td><td class="left"><a href="graphics-with-ggplot2.html">graphics....html</a>&nbsp;</td><td class="left"><a href="lists-python.html">lists-py....html</a>&nbsp;</td><td class="left"><a href="pandas-sort-values.html">pandas-s....html</a>&nbsp;</td><td class="left"><a href="python-dictionaries.html">python-d....html</a>&nbsp;</td><td class="left"><a href="python-select-columns.html">python-s....html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="subsets-in-r.html">subsets-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="building-a-chatbot-using-chatterbot.html">building....html</a>&nbsp;</td><td class="left"><a href="insert-into-sql.html">insert-i....html</a>&nbsp;</td><td class="left"><a href="markov-chains-python-tutorial.html">markov-c....html</a>&nbsp;</td><td class="left"><a href="pandas-to-csv.html">pandas-t....html</a>&nbsp;</td><td class="left"><a href="python-excel-tutorial.html">python-e....html</a>&nbsp;</td><td class="left"><a href="python-string-contains.html">python-s....html</a>&nbsp;</td><td class="left"><a href="scope-of-variables-python.html">scope-of....html</a>&nbsp;</td><td class="left"><a href="survival-analysis-R.html">survival....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="case-conversion-python.html">case-con....html</a>&nbsp;</td><td class="left"><a href="installation-of-pyspark.html">installa....html</a>&nbsp;</td><td class="left"><a href="numpy-random.html">numpy-ra....html</a>&nbsp;</td><td class="left"><a href="plot-character-in-r.html">plot-cha....html</a>&nbsp;</td><td class="left"><a href="python-install-pip.html">python-i....html</a>&nbsp;</td><td class="left"><a href="python-string-format.html">python-s....html</a>&nbsp;</td><td class="left"><a href="sorting-in-python.html">sorting-....html</a>&nbsp;</td><td class="left"><a href="top-ten-most-important-packages-in-r-for-data-science.html">top-ten-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="cnn-tensorflow-python.html">cnn-tens....html</a>&nbsp;</td><td class="left"><a href="installing-anaconda-mac-os-x.html">installi....html</a>&nbsp;</td><td class="left"><a href="pandas-add-column.html">pandas-a....html</a>&nbsp;</td><td class="left"><a href="python-arrays.html">python-a....html</a>&nbsp;</td><td class="left"><a href="python-lambda.html">python-l....html</a>&nbsp;</td><td class="left"><a href="python-string-split.html">python-s....html</a>&nbsp;</td><td class="left"><a href="sorting-in-r.html">sorting-....html</a>&nbsp;</td><td class="left"><a href="tutorial-jupyter-notebook.html">tutorial....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="docstrings-python.html">docstrin....html</a>&nbsp;</td><td class="left"><a href="installing-anaconda-windows.html">installi....html</a>&nbsp;</td><td class="left"><a href="pandas-apply.html">pandas-a....html</a>&nbsp;</td><td class="left"><a href="python-classes.html">python-c....html</a>&nbsp;</td><td class="left"><a href="python-list-function.html">python-l....html</a>&nbsp;</td><td class="left"><a href="python-while-loop.html">python-w....html</a>&nbsp;</td><td class="left"><a href="sql-database.html">sql-data....html</a>&nbsp;</td><td class="left"><a href="understanding-logistic-regression-python.html">understa....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="elif-statements-python.html">elif-sta....html</a>&nbsp;</td><td class="left"><a href="installing-jupyter-notebook.html">installi....html</a>&nbsp;</td><td class="left"><a href="pandas-drop-column.html">pandas-d....html</a>&nbsp;</td><td class="left"><a href="python-concatenate-strings.html">python-c....html</a>&nbsp;</td><td class="left"><a href="python-print-function.html">python-p....html</a>&nbsp;</td><td class="left"><a href="r-or-python-for-data-analysis.html">r-or-pyt....html</a>&nbsp;</td><td class="left"><a href="sql-joins.html">sql-joins.html</a>&nbsp;</td><td class="left"><a href="variables-in-r.html">variable....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="for-loop-python.html">for-loop....html</a>&nbsp;</td><td class="left"><a href="installing-R-windows-mac-ubuntu.html">installi....html</a>&nbsp;</td><td class="left"><a href="pandas-drop-duplicates.html">pandas-d....html</a>&nbsp;</td><td class="left"><a href="python-datetime.html">python-d....html</a>&nbsp;</td><td class="left"><a href="python-rename-column.html">python-r....html</a>&nbsp;</td><td class="left"><a href="replicating-in-r-covid19.html">replicat....html</a>&nbsp;</td><td class="left"><a href="streaming-platform-analysis.html">streamin....html</a>&nbsp;</td><td class="left"><a href="what-is-sql.html">what-is-sql.html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="generalized-linear-models.html">generali....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 57<br>
-Size of all files: 8429584 K</p>
+Size of all files: 8433269 KB</p>
 
 </body>
 </html>

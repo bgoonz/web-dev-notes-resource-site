@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="__snapshots__/right.html" target="rframe">__snapshots__</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="__snapshots__/right.html" target="rframe">__snapshots__</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="docblock-test.js">docblock-test.js</a>&nbsp;</td><td class="left"><a href="getMembers-test.js">getMembers-test.js</a>&nbsp;</td><td class="left"><a href="getPropType-test.js">getPropType-test.js</a>&nbsp;</td><td class="left"><a href="isReactComponentMethod-test.js">isReactComponentMethod-test.js</a>&nbsp;</td><td class="left"><a href="match-test.js">match-test.js</a>&nbsp;</td><td class="left"><a href="resolveObjectKeysToArray-test.js">resolveObjectKeysToArray-test.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="flowUtilityTypes-test.js">flowUtilityTypes-test.js</a>&nbsp;</td><td class="left"><a href="getMemberValuePath-test.js">getMemberValuePath-test.js</a>&nbsp;</td><td class="left"><a href="getTSType-test.js">getTSType-test.js</a>&nbsp;</td><td class="left"><a href="isReactCreateClassCall-test.js">isReactCreateClassCall-test.js</a>&nbsp;</td><td class="left"><a href="normalizeClassDefinition-test.js">normalizeClassDefinition-test.js</a>&nbsp;</td><td class="left"><a href="resolveObjectValuesToArray-test.js">resolveObjectValuesToArray-test.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="getClassMemberValuePath-test.js">getClassMemberValuePath-test.js</a>&nbsp;</td><td class="left"><a href="getMethodDocumentation-test.js">getMethodDocumentation-test.js</a>&nbsp;</td><td class="left"><a href="getTypeAnnotation-test.js">getTypeAnnotation-test.js</a>&nbsp;</td><td class="left"><a href="isReactCreateElementCall-test.js">isReactCreateElementCall-test.js</a>&nbsp;</td><td class="left"><a href="parseJsDoc-test.js">parseJsDoc-test.js</a>&nbsp;</td><td class="left"><a href="resolveToModule-test.js">resolveToModule-test.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="getFlowType-test.js">getFlowType-test.js</a>&nbsp;</td><td class="left"><a href="getParameterName-test.js">getParameterName-test.js</a>&nbsp;</td><td class="left"><a href="isExportsOrModuleAssignment-test.js">isExportsOrModuleAssignment-test.js</a>&nbsp;</td><td class="left"><a href="isReactForwardRefCall-test.js">isReactForwardRefCall-test.js</a>&nbsp;</td><td class="left"><a href="printValue-test.js">printValue-test.js</a>&nbsp;</td><td class="left"><a href="resolveToValue-test.js">resolveToValue-test.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="getMemberExpressionRoot-test.js">getMemberExpressionRoot-test.js</a>&nbsp;</td><td class="left"><a href="getPropertyName-test.js">getPropertyName-test.js</a>&nbsp;</td><td class="left"><a href="isReactCloneElementCall-test.js">isReactCloneElementCall-test.js</a>&nbsp;</td><td class="left"><a href="isRequiredPropType-test.js">isRequiredPropType-test.js</a>&nbsp;</td><td class="left"><a href="resolveExportDeclaration-test.js">resolveExportDeclaration-test.js</a>&nbsp;</td><td class="left"><a href="setPropDescription-test.js">setPropDescription-test.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="getMemberExpressionValuePath-test.js">getMemberExpressionValuePath-test.js</a>&nbsp;</td><td class="left"><a href="getPropertyValuePath-test.js">getPropertyValuePath-test.js</a>&nbsp;</td><td class="left"><a href="isReactComponentClass-test.js">isReactComponentClass-test.js</a>&nbsp;</td><td class="left"><a href="isStatelessComponent-test.js">isStatelessComponent-test.js</a>&nbsp;</td><td class="left"><a href="resolveHOC-test.js">resolveHOC-test.js</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="docblock-test.js">docblock-test.js</a>&nbsp;</td><td class="left"><a href="getMemberExpressionValuePath-test.js">getMembe...st.js</a>&nbsp;</td><td class="left"><a href="getPropertyName-test.js">getPrope...st.js</a>&nbsp;</td><td class="left"><a href="isExportsOrModuleAssignment-test.js">isExport...st.js</a>&nbsp;</td><td class="left"><a href="isReactCreateClassCall-test.js">isReactC...st.js</a>&nbsp;</td><td class="left"><a href="isStatelessComponent-test.js">isStatel...st.js</a>&nbsp;</td><td class="left"><a href="printValue-test.js">printVal...st.js</a>&nbsp;</td><td class="left"><a href="resolveObjectValuesToArray-test.js">resolveO...st.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="flowUtilityTypes-test.js">flowUtil...st.js</a>&nbsp;</td><td class="left"><a href="getMembers-test.js">getMembe...st.js</a>&nbsp;</td><td class="left"><a href="getPropertyValuePath-test.js">getPrope...st.js</a>&nbsp;</td><td class="left"><a href="isReactCloneElementCall-test.js">isReactC...st.js</a>&nbsp;</td><td class="left"><a href="isReactCreateElementCall-test.js">isReactC...st.js</a>&nbsp;</td><td class="left"><a href="match-test.js">match-test.js</a>&nbsp;</td><td class="left"><a href="resolveExportDeclaration-test.js">resolveE...st.js</a>&nbsp;</td><td class="left"><a href="resolveToModule-test.js">resolveT...st.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="getClassMemberValuePath-test.js">getClass...st.js</a>&nbsp;</td><td class="left"><a href="getMemberValuePath-test.js">getMembe...st.js</a>&nbsp;</td><td class="left"><a href="getPropType-test.js">getPropT...st.js</a>&nbsp;</td><td class="left"><a href="isReactComponentClass-test.js">isReactC...st.js</a>&nbsp;</td><td class="left"><a href="isReactForwardRefCall-test.js">isReactF...st.js</a>&nbsp;</td><td class="left"><a href="normalizeClassDefinition-test.js">normaliz...st.js</a>&nbsp;</td><td class="left"><a href="resolveHOC-test.js">resolveH...st.js</a>&nbsp;</td><td class="left"><a href="resolveToValue-test.js">resolveT...st.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="getFlowType-test.js">getFlowT...st.js</a>&nbsp;</td><td class="left"><a href="getMethodDocumentation-test.js">getMetho...st.js</a>&nbsp;</td><td class="left"><a href="getTSType-test.js">getTSTyp...st.js</a>&nbsp;</td><td class="left"><a href="isReactComponentMethod-test.js">isReactC...st.js</a>&nbsp;</td><td class="left"><a href="isRequiredPropType-test.js">isRequir...st.js</a>&nbsp;</td><td class="left"><a href="parseJsDoc-test.js">parseJsD...st.js</a>&nbsp;</td><td class="left"><a href="resolveObjectKeysToArray-test.js">resolveO...st.js</a>&nbsp;</td><td class="left"><a href="setPropDescription-test.js">setPropD...st.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="getMemberExpressionRoot-test.js">getMembe...st.js</a>&nbsp;</td><td class="left"><a href="getParameterName-test.js">getParam...st.js</a>&nbsp;</td><td class="left"><a href="getTypeAnnotation-test.js">getTypeA...st.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 35<br>
-Size of all files: 182404 K</p>
+Size of all files: 182404 KB</p>
 
 </body>
 </html>

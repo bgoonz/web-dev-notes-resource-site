@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="aggregation-in-mongodb.html">aggregation-in-mongodb.html</a>&nbsp;</td><td class="left"><a href="insert-data-into-mongodb-collection.html">insert-data-into-mongodb-collection.html</a>&nbsp;</td><td class="left"><a href="mongoose-exec-method.html">mongoose-exec-method.html</a>&nbsp;</td><td class="left"><a href="aggregation-in-mongodb.md">aggregation-in-mongodb.md</a>&nbsp;</td><td class="left"><a href="insert-data-into-mongodb-collection.md">insert-data-into-mongodb-collection.md</a>&nbsp;</td><td class="left"><a href="mongoose-exec-method.md">mongoose-exec-method.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="delete-single-document-from-collection.html">delete-single-document-from-collection.html</a>&nbsp;</td><td class="left"><a href="JSON-data-format-to-enter-date-in-mongoDB.html">JSON-data-format-to-enter-date-in-mongoDB.html</a>&nbsp;</td><td class="left"><a href="populate-method-mongoose-referencing-other-model.html">populate-method-mongoose-referencing-other-model.html</a>&nbsp;</td><td class="left"><a href="delete-single-document-from-collection.md">delete-single-document-from-collection.md</a>&nbsp;</td><td class="left"><a href="JSON-data-format-to-enter-date-in-mongoDB.md">JSON-data-format-to-enter-date-in-mongoDB.md</a>&nbsp;</td><td class="left"><a href="populate-method-mongoose-referencing-other-model.md">populate-method-mongoose-referencing-other-model.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="deleting-collection-and-whole-document.html">deleting-collection-and-whole-document.html</a>&nbsp;</td><td class="left"><a href="mLab-setup-bare-minimum-code.html">mLab-setup-bare-minimum-code.html</a>&nbsp;</td><td class="left"><a href="quick-mongodb-snippets.html">quick-mongodb-snippets.html</a>&nbsp;</td><td class="left"><a href="deleting-collection-and-whole-document.md">deleting-collection-and-whole-document.md</a>&nbsp;</td><td class="left"><a href="mLab-setup-bare-minimum-code.md">mLab-setup-bare-minimum-code.md</a>&nbsp;</td><td class="left"><a href="quick-mongodb-snippets.md">quick-mongodb-snippets.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="env-variable-basic-setup-in-any-project.html">env-variable-basic-setup-in-any-project.html</a>&nbsp;</td><td class="left"><a href="Mongo-Absolute-Basics.html">Mongo-Absolute-Basics.html</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-1.html">referencing-another-schema-in-Mongoose-1.html</a>&nbsp;</td><td class="left"><a href="env-variable-basic-setup-in-any-project.md">env-variable-basic-setup-in-any-project.md</a>&nbsp;</td><td class="left"><a href="Mongo-Absolute-Basics.md">Mongo-Absolute-Basics.md</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-1.md">referencing-another-schema-in-Mongoose-1.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="GridFS-storing-files-in-mongo.html">GridFS-storing-files-in-mongo.html</a>&nbsp;</td><td class="left"><a href="mongo-connect-npm-package-what-it-does.html">mongo-connect-npm-package-what-it-does.html</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-2.html">referencing-another-schema-in-Mongoose-2.html</a>&nbsp;</td><td class="left"><a href="GridFS-storing-files-in-mongo.md">GridFS-storing-files-in-mongo.md</a>&nbsp;</td><td class="left"><a href="mongo-connect-npm-package-what-it-does.md">mongo-connect-npm-package-what-it-does.md</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-2.md">referencing-another-schema-in-Mongoose-2.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="indexing-in-mongo.html">indexing-in-mongo.html</a>&nbsp;</td><td class="left"><a href="mongodb-quick-comands-cheat-sheet.html">mongodb-quick-comands-cheat-sheet.html</a>&nbsp;</td><td class="left"><a href="sharding-in-mongodb.html">sharding-in-mongodb.html</a>&nbsp;</td><td class="left"><a href="indexing-in-mongo.md">indexing-in-mongo.md</a>&nbsp;</td><td class="left"><a href="mongodb-quick-comands-cheat-sheet.md">mongodb-quick-comands-cheat-sheet.md</a>&nbsp;</td><td class="left"><a href="sharding-in-mongodb.md">sharding-in-mongodb.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="aggregation-in-mongodb.md">aggregat...db.md</a>&nbsp;</td><td class="left"><a href="indexing-in-mongo.md">indexing...go.md</a>&nbsp;</td><td class="left"><a href="mongo-connect-npm-package-what-it-does.md">mongo-co...es.md</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-1.md">referenc...-1.md</a>&nbsp;</td><td class="left"><a href="deleting-collection-and-whole-document.html">deleting....html</a>&nbsp;</td><td class="left"><a href="insert-data-into-mongodb-collection.html">insert-d....html</a>&nbsp;</td><td class="left"><a href="mongo-connect-npm-package-what-it-does.html">mongo-co....html</a>&nbsp;</td><td class="left"><a href="quick-mongodb-snippets.html">quick-mo....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="delete-single-document-from-collection.md">delete-s...on.md</a>&nbsp;</td><td class="left"><a href="insert-data-into-mongodb-collection.md">insert-d...on.md</a>&nbsp;</td><td class="left"><a href="mongodb-quick-comands-cheat-sheet.md">mongodb-...et.md</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-2.md">referenc...-2.md</a>&nbsp;</td><td class="left"><a href="env-variable-basic-setup-in-any-project.html">env-vari....html</a>&nbsp;</td><td class="left"><a href="JSON-data-format-to-enter-date-in-mongoDB.html">JSON-dat....html</a>&nbsp;</td><td class="left"><a href="mongodb-quick-comands-cheat-sheet.html">mongodb-....html</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-1.html">referenc....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="deleting-collection-and-whole-document.md">deleting...nt.md</a>&nbsp;</td><td class="left"><a href="JSON-data-format-to-enter-date-in-mongoDB.md">JSON-dat...DB.md</a>&nbsp;</td><td class="left"><a href="mongoose-exec-method.md">mongoose...od.md</a>&nbsp;</td><td class="left"><a href="sharding-in-mongodb.md">sharding...db.md</a>&nbsp;</td><td class="left"><a href="GridFS-storing-files-in-mongo.html">GridFS-s....html</a>&nbsp;</td><td class="left"><a href="mLab-setup-bare-minimum-code.html">mLab-set....html</a>&nbsp;</td><td class="left"><a href="mongoose-exec-method.html">mongoose....html</a>&nbsp;</td><td class="left"><a href="referencing-another-schema-in-Mongoose-2.html">referenc....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="env-variable-basic-setup-in-any-project.md">env-vari...ct.md</a>&nbsp;</td><td class="left"><a href="mLab-setup-bare-minimum-code.md">mLab-set...de.md</a>&nbsp;</td><td class="left"><a href="populate-method-mongoose-referencing-other-model.md">populate...el.md</a>&nbsp;</td><td class="left"><a href="aggregation-in-mongodb.html">aggregat....html</a>&nbsp;</td><td class="left"><a href="indexing-in-mongo.html">indexing....html</a>&nbsp;</td><td class="left"><a href="Mongo-Absolute-Basics.html">Mongo-Ab....html</a>&nbsp;</td><td class="left"><a href="populate-method-mongoose-referencing-other-model.html">populate....html</a>&nbsp;</td><td class="left"><a href="sharding-in-mongodb.html">sharding....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="GridFS-storing-files-in-mongo.md">GridFS-s...go.md</a>&nbsp;</td><td class="left"><a href="Mongo-Absolute-Basics.md">Mongo-Ab...cs.md</a>&nbsp;</td><td class="left"><a href="quick-mongodb-snippets.md">quick-mo...ts.md</a>&nbsp;</td><td class="left"><a href="delete-single-document-from-collection.html">delete-s....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 36<br>
-Size of all files: 161788 K</p>
+Size of all files: 161788 KB</p>
 
 </body>
 </html>

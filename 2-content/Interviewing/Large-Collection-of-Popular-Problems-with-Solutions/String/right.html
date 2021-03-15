@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,21 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="camel-to-Title.js">camel-to-Title.js</a>&nbsp;</td><td class="left"><a href="no-of-occurance-of-char-in-string.js">no-of-occurance-of-char-in-string.js</a>&nbsp;</td><td class="left"><a href="passage-Counter.js">passage-Counter.js</a>&nbsp;</td><td class="left"><a href="shift-each-letter-by-number.-of-position.js">shift-each-letter-by-number.-of-position.js</a>&nbsp;</td><td class="left"><a href="string-splice-method.js">string-splice-method.js</a>&nbsp;</td><td class="left"><a href="toLocalString-Application.js">toLocalString-Application.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="frequency-of-occurance-of-letters.js">frequency-of-occurance-of-letters.js</a>&nbsp;</td><td class="left"><a href="padded-Number.js">padded-Number.js</a>&nbsp;</td><td class="left"><a href="reverse-string-multiple-ways.js">reverse-string-multiple-ways.js</a>&nbsp;</td><td class="left"><a href="string-related-misc-problems.js">string-related-misc-problems.js</a>&nbsp;</td><td class="left"><a href="title-To-Camel.js">title-To-Camel.js</a>&nbsp;</td><td class="left"><a href="tweet-word-limits.js">tweet-word-limits.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="longest_Substring-of-two-strings.js">longest_Substring-of-two-strings.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="camel-to-Title.js">camel-to...le.js</a>&nbsp;</td><td class="left"><a href="longest_Substring-of-two-strings.js">longest_...gs.js</a>&nbsp;</td><td class="left"><a href="padded-Number.js">padded-Number.js</a>&nbsp;</td><td class="left"><a href="reverse-string-multiple-ways.js">reverse-...ys.js</a>&nbsp;</td><td class="left"><a href="string-related-misc-problems.js">string-r...ms.js</a>&nbsp;</td><td class="left"><a href="title-To-Camel.js">title-To...el.js</a>&nbsp;</td><td class="left"><a href="toLocalString-Application.js">toLocalS...on.js</a>&nbsp;</td><td class="left"><a href="tweet-word-limits.js">tweet-wo...ts.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="frequency-of-occurance-of-letters.js">frequenc...rs.js</a>&nbsp;</td><td class="left"><a href="no-of-occurance-of-char-in-string.js">no-of-oc...ng.js</a>&nbsp;</td><td class="left"><a href="passage-Counter.js">passage-...er.js</a>&nbsp;</td><td class="left"><a href="shift-each-letter-by-number.-of-position.js">shift-ea...on.js</a>&nbsp;</td><td class="left"><a href="string-splice-method.js">string-s...od.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 13<br>
-Size of all files: 22090 K</p>
+Size of all files: 22090 KB</p>
 
 </body>
 </html>

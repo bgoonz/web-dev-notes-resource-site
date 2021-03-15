@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="144">144</a>&nbsp;</td><td class="left"><a href="font-awesome.min.css">font-awesome.min.css</a>&nbsp;</td><td class="left"><a href="2019947.js.download">2019947.js.download</a>&nbsp;</td><td class="left"><a href="font_1023423_fy6g283ufu.js.download">font_1023423_fy6g283ufu.js.download</a>&nbsp;</td><td class="left"><a href="main.ec5a8521.chunk.js.download">main.ec5a8521.chunk.js.download</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="css">css</a>&nbsp;</td><td class="left"><a href="main.962edc17.chunk.css">main.962edc17.chunk.css</a>&nbsp;</td><td class="left"><a href="analytics.js.download">analytics.js.download</a>&nbsp;</td><td class="left"><a href="font_1023423_pcs217tp9l.js.download">font_1023423_pcs217tp9l.js.download</a>&nbsp;</td><td class="left"><a href="pdfkit.min.js.download">pdfkit.min.js.download</a>&nbsp;</td><td class="left"><a href="bryan.svg">bryan.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="js">js</a>&nbsp;</td><td class="left"><a href="1.efefb4b7.chunk.js.download">1.efefb4b7.chunk.js.download</a>&nbsp;</td><td class="left"><a href="blob-stream.min.js.download">blob-stream.min.js.download</a>&nbsp;</td><td class="left"><a href="gtm.js.download">gtm.js.download</a>&nbsp;</td><td class="left"><a href="profitwell.js.download">profitwell.js.download</a>&nbsp;</td><td class="left"><a href="logo-symbol.8da8deaa.svg">logo-symbol.8da8deaa.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="js(1)">js(1)</a>&nbsp;</td><td class="left"><a href="1s9mPOHO.js.download">1s9mPOHO.js.download</a>&nbsp;</td><td class="left"><a href="canvas2svg.min.js.download">canvas2svg.min.js.download</a>&nbsp;</td><td class="left"><a href="jquery.min.js.download">jquery.min.js.download</a>&nbsp;</td><td class="left"><a href="inner.html">inner.html</a>&nbsp;</td><td class="left"><a href="f(1).txt">f(1).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="saved_resource">saved_resource</a>&nbsp;</td><td class="left"><a href="2019947.js(1).download">2019947.js(1).download</a>&nbsp;</td><td class="left"><a href="d3plus-text.v0.9.full.min.js.download">d3plus-text.v0.9.full.min.js.download</a>&nbsp;</td><td class="left"><a href="m-outer-fd1acb5899b3f101a76f71bbed3d98dd.js.download">m-outer-fd1acb5899b3f101a76f71bbed3d98dd.js.download</a>&nbsp;</td><td class="left"><a href="m-outer-d6c2bdb836ab7d041671a72774049a01.html">m-outer-d6c2bdb836ab7d041671a72774049a01.html</a>&nbsp;</td><td class="left"><a href="f.txt">f.txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="1.8fd2a06f.chunk.css">1.8fd2a06f.chunk.css</a>&nbsp;</td><td class="left"><a href="2019947.js(2).download">2019947.js(2).download</a>&nbsp;</td><td class="left"><a href="fbevents.js.download">fbevents.js.download</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="f(1).txt">f(1).txt</a>&nbsp;</td><td class="left"><a href="m-outer-d6c2bdb836ab7d041671a72774049a01.html">m-outer-....html</a>&nbsp;</td><td class="left"><a href="2019947.js(1).download">2019947....nload</a>&nbsp;</td><td class="left"><a href="blob-stream.min.js.download">blob-str...nload</a>&nbsp;</td><td class="left"><a href="font_1023423_fy6g283ufu.js.download">font_102...nload</a>&nbsp;</td><td class="left"><a href="m-outer-fd1acb5899b3f101a76f71bbed3d98dd.js.download">m-outer-...nload</a>&nbsp;</td><td class="left"><a href="1.8fd2a06f.chunk.css">1.8fd2a0...k.css</a>&nbsp;</td><td class="left"><a href="css">css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f.txt">f.txt</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="2019947.js(2).download">2019947....nload</a>&nbsp;</td><td class="left"><a href="canvas2svg.min.js.download">canvas2s...nload</a>&nbsp;</td><td class="left"><a href="font_1023423_pcs217tp9l.js.download">font_102...nload</a>&nbsp;</td><td class="left"><a href="main.ec5a8521.chunk.js.download">main.ec5...nload</a>&nbsp;</td><td class="left"><a href="font-awesome.min.css">font-awe...n.css</a>&nbsp;</td><td class="left"><a href="js">js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="bryan.svg">bryan.svg</a>&nbsp;</td><td class="left"><a href="1.efefb4b7.chunk.js.download">1.efefb4...nload</a>&nbsp;</td><td class="left"><a href="2019947.js.download">2019947....nload</a>&nbsp;</td><td class="left"><a href="d3plus-text.v0.9.full.min.js.download">d3plus-t...nload</a>&nbsp;</td><td class="left"><a href="gtm.js.download">gtm.js.download</a>&nbsp;</td><td class="left"><a href="pdfkit.min.js.download">pdfkit.m...nload</a>&nbsp;</td><td class="left"><a href="main.962edc17.chunk.css">main.962...k.css</a>&nbsp;</td><td class="left"><a href="js(1)">js(1)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="logo-symbol.8da8deaa.svg">logo-sym...a.svg</a>&nbsp;</td><td class="left"><a href="1s9mPOHO.js.download">1s9mPOHO...nload</a>&nbsp;</td><td class="left"><a href="analytics.js.download">analytic...nload</a>&nbsp;</td><td class="left"><a href="fbevents.js.download">fbevents...nload</a>&nbsp;</td><td class="left"><a href="jquery.min.js.download">jquery.m...nload</a>&nbsp;</td><td class="left"><a href="profitwell.js.download">profitwe...nload</a>&nbsp;</td><td class="left"><a href="144">144</a>&nbsp;</td><td class="left"><a href="saved_resource">saved_resource</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="inner.html">inner.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 33<br>
-Size of all files: 7792344 K</p>
+Size of all files: 7796339 KB</p>
 
 </body>
 </html>

@@ -13,8 +13,7 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-
+<!-- ABO
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#about-the-project)
 

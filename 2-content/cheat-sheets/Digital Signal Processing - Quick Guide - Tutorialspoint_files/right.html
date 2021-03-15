@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,54 +532,45 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="3035943431970929678">3035943431970929678</a>&nbsp;</td><td class="left"><a href="default+en.css">default+en.css</a>&nbsp;</td><td class="left"><a href="TweenMax.min.js.download">TweenMax.min.js.download</a>&nbsp;</td><td class="left"><a href="pd.html">pd.html</a>&nbsp;</td><td class="left"><a href="continuous_time_signals.jpg">continuous_time_signals.jpg</a>&nbsp;</td><td class="left"><a href="time_invariant.jpg">time_invariant.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="adj">adj</a>&nbsp;</td><td class="left"><a href="default.css">default.css</a>&nbsp;</td><td class="left"><a href="UFYwWwmt.js.download">UFYwWwmt.js.download</a>&nbsp;</td><td class="left"><a href="pixel(1).html">pixel(1).html</a>&nbsp;</td><td class="left"><a href="convolution_example.jpg">convolution_example.jpg</a>&nbsp;</td><td class="left"><a href="time_reversal.jpg">time_reversal.jpg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="async_usersync">async_usersync</a>&nbsp;</td><td class="left"><a href="prettify.css">prettify.css</a>&nbsp;</td><td class="left"><a href="usync.js.download">usync.js.download</a>&nbsp;</td><td class="left"><a href="pixel(2).html">pixel(2).html</a>&nbsp;</td><td class="left"><a href="ct_even_signal1.jpg">ct_even_signal1.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_case1_example.jpg">time_shifting_case1_example.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cc">cc</a>&nbsp;</td><td class="left"><a href="style-min-v1.css">style-min-v1.css</a>&nbsp;</td><td class="left"><a href="htw-pixel.gif">htw-pixel.gif</a>&nbsp;</td><td class="left"><a href="pixel(3).html">pixel(3).html</a>&nbsp;</td><td class="left"><a href="ct_even_signal2.jpg">ct_even_signal2.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_case2_example.jpg">time_shifting_case2_example.jpg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="cm">cm</a>&nbsp;</td><td class="left"><a href="style.css">style.css</a>&nbsp;</td><td class="left"><a href="i(1).gif">i(1).gif</a>&nbsp;</td><td class="left"><a href="pixel(4).html">pixel(4).html</a>&nbsp;</td><td class="left"><a href="ct_odd_signal.jpg">ct_odd_signal.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_example.jpg">time_shifting_example.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cm(1)">cm(1)</a>&nbsp;</td><td class="left"><a href="adpushup.js.download">adpushup.js.download</a>&nbsp;</td><td class="left"><a href="i(2).gif">i(2).gif</a>&nbsp;</td><td class="left"><a href="pixel.html">pixel.html</a>&nbsp;</td><td class="left"><a href="ct_unit_step_signal.jpg">ct_unit_step_signal.jpg</a>&nbsp;</td><td class="left"><a href="time_variant.jpg">time_variant.jpg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="cm(2)">cm(2)</a>&nbsp;</td><td class="left"><a href="adRecover.js.download">adRecover.js.download</a>&nbsp;</td><td class="left"><a href="i.gif">i.gif</a>&nbsp;</td><td class="left"><a href="ps.html">ps.html</a>&nbsp;</td><td class="left"><a href="decimation_in_time_sequence.jpg">decimation_in_time_sequence.jpg</a>&nbsp;</td><td class="left"><a href="triangular_pulse_signal.jpg">triangular_pulse_signal.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cm(3)">cm(3)</a>&nbsp;</td><td class="left"><a href="analytics.js.download">analytics.js.download</a>&nbsp;</td><td class="left"><a href="loader.gif">loader.gif</a>&nbsp;</td><td class="left"><a href="s2s_sync.html">s2s_sync.html</a>&nbsp;</td><td class="left"><a href="differentiation_example.jpg">differentiation_example.jpg</a>&nbsp;</td><td class="left"><a href="unit_impulse.jpg">unit_impulse.jpg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="CookieIndex">CookieIndex</a>&nbsp;</td><td class="left"><a href="async-ads.js.download">async-ads.js.download</a>&nbsp;</td><td class="left"><a href="p-9fYuixa7g_Hm2.gif">p-9fYuixa7g_Hm2.gif</a>&nbsp;</td><td class="left"><a href="saved_resource(10).html">saved_resource(10).html</a>&nbsp;</td><td class="left"><a href="digital-signal-processing-mini-logo.jpg">digital-signal-processing-mini-logo.jpg</a>&nbsp;</td><td class="left"><a href="unit_impulse_sequence.jpg">unit_impulse_sequence.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cs">cs</a>&nbsp;</td><td class="left"><a href="bbplayer.js.download">bbplayer.js.download</a>&nbsp;</td><td class="left"><a href="p-Z8PuJEk6U7Hyq.gif">p-Z8PuJEk6U7Hyq.gif</a>&nbsp;</td><td class="left"><a href="saved_resource(11).html">saved_resource(11).html</a>&nbsp;</td><td class="left"><a href="discrete_sinusoidal_signal.jpg">discrete_sinusoidal_signal.jpg</a>&nbsp;</td><td class="left"><a href="unit_ramp_function.jpg">unit_ramp_function.jpg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="gen_204">gen_204</a>&nbsp;</td><td class="left"><a href="cse_element__en.js.download">cse_element__en.js.download</a>&nbsp;</td><td class="left"><a href="ping_match.gif">ping_match.gif</a>&nbsp;</td><td class="left"><a href="saved_resource(6).html">saved_resource(6).html</a>&nbsp;</td><td class="left"><a href="discrete_time_signals.jpg">discrete_time_signals.jpg</a>&nbsp;</td><td class="left"><a href="unit_step_signal.jpg">unit_step_signal.jpg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="gen_204(1)">gen_204(1)</a>&nbsp;</td><td class="left"><a href="CSSPlugin.min.js.download">CSSPlugin.min.js.download</a>&nbsp;</td><td class="left"><a href="r.gif">r.gif</a>&nbsp;</td><td class="left"><a href="saved_resource(7).html">saved_resource(7).html</a>&nbsp;</td><td class="left"><a href="dt_even_signal.jpg">dt_even_signal.jpg</a>&nbsp;</td><td class="left"><a href="tap.php">tap.php</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="gen_204(2)">gen_204(2)</a>&nbsp;</td><td class="left"><a href="dcmads.js.download">dcmads.js.download</a>&nbsp;</td><td class="left"><a href="13926.html">13926.html</a>&nbsp;</td><td class="left"><a href="saved_resource(8).html">saved_resource(8).html</a>&nbsp;</td><td class="left"><a href="dt_odd_signal.jpg">dt_odd_signal.jpg</a>&nbsp;</td><td class="left"><a href="76d261c7.png">76d261c7.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="gen_204(3)">gen_204(3)</a>&nbsp;</td><td class="left"><a href="gpt.js.download">gpt.js.download</a>&nbsp;</td><td class="left"><a href="2000970.html">2000970.html</a>&nbsp;</td><td class="left"><a href="saved_resource(9).html">saved_resource(9).html</a>&nbsp;</td><td class="left"><a href="eight_point_h_g1.jpg">eight_point_h_g1.jpg</a>&nbsp;</td><td class="left"><a href="adc.png">adc.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="gen_204(4)">gen_204(4)</a>&nbsp;</td><td class="left"><a href="html5API.js.download">html5API.js.download</a>&nbsp;</td><td class="left"><a href="AdDisplayTrackerServlet.html">AdDisplayTrackerServlet.html</a>&nbsp;</td><td class="left"><a href="saved_resource.html">saved_resource.html</a>&nbsp;</td><td class="left"><a href="eight_point_h_g2.jpg">eight_point_h_g2.jpg</a>&nbsp;</td><td class="left"><a href="dac6d47f.png">dac6d47f.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="getuid">getuid</a>&nbsp;</td><td class="left"><a href="impl_v68.js.download">impl_v68.js.download</a>&nbsp;</td><td class="left"><a href="async_usersync.html">async_usersync.html</a>&nbsp;</td><td class="left"><a href="showad(1).html">showad(1).html</a>&nbsp;</td><td class="left"><a href="energy_signals.jpg">energy_signals.jpg</a>&nbsp;</td><td class="left"><a href="hboMax_curtain_728x90.png">hboMax_curtain_728x90.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="js">js</a>&nbsp;</td><td class="left"><a href="j-5318794-3324917.js.download">j-5318794-3324917.js.download</a>&nbsp;</td><td class="left"><a href="B24708284.html">B24708284.html</a>&nbsp;</td><td class="left"><a href="showad.html">showad.html</a>&nbsp;</td><td class="left"><a href="fast_fourier_transform.jpg">fast_fourier_transform.jpg</a>&nbsp;</td><td class="left"><a href="hboMax_logo_728x90.png">hboMax_logo_728x90.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="match">match</a>&nbsp;</td><td class="left"><a href="jquery.min.js(1).download">jquery.min.js(1).download</a>&nbsp;</td><td class="left"><a href="cm.html">cm.html</a>&nbsp;</td><td class="left"><a href="sync.html">sync.html</a>&nbsp;</td><td class="left"><a href="fft_sequence.jpg">fft_sequence.jpg</a>&nbsp;</td><td class="left"><a href="logo-black.png">logo-black.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="match(1)">match(1)</a>&nbsp;</td><td class="left"><a href="jquery.min.js.download">jquery.min.js.download</a>&nbsp;</td><td class="left"><a href="container(1).html">container(1).html</a>&nbsp;</td><td class="left"><a href="syncframe.html">syncframe.html</a>&nbsp;</td><td class="left"><a href="half_wave_symmetric_signals.jpg">half_wave_symmetric_signals.jpg</a>&nbsp;</td><td class="left"><a href="logo.png">logo.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="occ">occ</a>&nbsp;</td><td class="left"><a href="MathJax.js.download">MathJax.js.download</a>&nbsp;</td><td class="left"><a href="container(2).html">container(2).html</a>&nbsp;</td><td class="left"><a href="uc.html">uc.html</a>&nbsp;</td><td class="left"><a href="HappyGilmore_728x90.jpg">HappyGilmore_728x90.jpg</a>&nbsp;</td><td class="left"><a href="Plus_Q4_Refresh_Hiring_limbo_300x250.png">Plus_Q4_Refresh_Hiring_limbo_300x250.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="pixel">pixel</a>&nbsp;</td><td class="left"><a href="moatad.js.download">moatad.js.download</a>&nbsp;</td><td class="left"><a href="container(3).html">container(3).html</a>&nbsp;</td><td class="left"><a href="um.html">um.html</a>&nbsp;</td><td class="left"><a href="integration_example.jpg">integration_example.jpg</a>&nbsp;</td><td class="left"><a href="_Plus_Q4_Refresh_Right_talent_300x250.png">_Plus_Q4_Refresh_Right_talent_300x250.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="rsp">rsp</a>&nbsp;</td><td class="left"><a href="n.js.download">n.js.download</a>&nbsp;</td><td class="left"><a href="container(4).html">container(4).html</a>&nbsp;</td><td class="left"><a href="user-sync(1).html">user-sync(1).html</a>&nbsp;</td><td class="left"><a href="linear_systems.jpg">linear_systems.jpg</a>&nbsp;</td><td class="left"><a href="f(1).txt">f(1).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="saved_resource">saved_resource</a>&nbsp;</td><td class="left"><a href="osd.js.download">osd.js.download</a>&nbsp;</td><td class="left"><a href="container.html">container.html</a>&nbsp;</td><td class="left"><a href="user-sync.html">user-sync.html</a>&nbsp;</td><td class="left"><a href="overlap_add_method.jpg">overlap_add_method.jpg</a>&nbsp;</td><td class="left"><a href="f(10).txt">f(10).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="saved_resource(1)">saved_resource(1)</a>&nbsp;</td><td class="left"><a href="pb.1615380341861.js.download">pb.1615380341861.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U(1).html">Enqz_20U(1).html</a>&nbsp;</td><td class="left"><a href="usermatch.html">usermatch.html</a>&nbsp;</td><td class="left"><a href="overlap_save_method.jpg">overlap_save_method.jpg</a>&nbsp;</td><td class="left"><a href="f(11).txt">f(11).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="saved_resource(2)">saved_resource(2)</a>&nbsp;</td><td class="left"><a href="pubads_impl_2021030401.js.download">pubads_impl_2021030401.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U(2).html">Enqz_20U(2).html</a>&nbsp;</td><td class="left"><a href="usync.html">usync.html</a>&nbsp;</td><td class="left"><a href="parabolic_function.jpg">parabolic_function.jpg</a>&nbsp;</td><td class="left"><a href="f(12).txt">f(12).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="saved_resource(3)">saved_resource(3)</a>&nbsp;</td><td class="left"><a href="publishertag.prebid.js.download">publishertag.prebid.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U(3).html">Enqz_20U(3).html</a>&nbsp;</td><td class="left"><a href="468x60_brand_sammy_buildmoderncloud_0121.jpg">468x60_brand_sammy_buildmoderncloud_0121.jpg</a>&nbsp;</td><td class="left"><a href="parabolic_signal.jpg">parabolic_signal.jpg</a>&nbsp;</td><td class="left"><a href="f(2).txt">f(2).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="saved_resource(4)">saved_resource(4)</a>&nbsp;</td><td class="left"><a href="rx_lidar.js.download">rx_lidar.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U(4).html">Enqz_20U(4).html</a>&nbsp;</td><td class="left"><a href="6b7fdc49.jpg">6b7fdc49.jpg</a>&nbsp;</td><td class="left"><a href="periodic_signals.jpg">periodic_signals.jpg</a>&nbsp;</td><td class="left"><a href="f(3).txt">f(3).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="saved_resource(5)">saved_resource(5)</a>&nbsp;</td><td class="left"><a href="sca.17.5.1.js.download">sca.17.5.1.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U(5).html">Enqz_20U(5).html</a>&nbsp;</td><td class="left"><a href="amplitude_attenuation.jpg">amplitude_attenuation.jpg</a>&nbsp;</td><td class="left"><a href="ramp_type_signal.jpg">ramp_type_signal.jpg</a>&nbsp;</td><td class="left"><a href="f(4).txt">f(4).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="tp=ANXS">tp=ANXS</a>&nbsp;</td><td class="left"><a href="script-min-v1.js.download">script-min-v1.js.download</a>&nbsp;</td><td class="left"><a href="Enqz_20U.html">Enqz_20U.html</a>&nbsp;</td><td class="left"><a href="amplitude_reversal.jpg">amplitude_reversal.jpg</a>&nbsp;</td><td class="left"><a href="rectangular_function.jpg">rectangular_function.jpg</a>&nbsp;</td><td class="left"><a href="f(5).txt">f(5).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="tum">tum</a>&nbsp;</td><td class="left"><a href="script.js.download">script.js.download</a>&nbsp;</td><td class="left"><a href="index(1).html">index(1).html</a>&nbsp;</td><td class="left"><a href="amplitude_scaling.jpg">amplitude_scaling.jpg</a>&nbsp;</td><td class="left"><a href="signum_function.jpg">signum_function.jpg</a>&nbsp;</td><td class="left"><a href="f(6).txt">f(6).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="usa">usa</a>&nbsp;</td><td class="left"><a href="snips.js.download">snips.js.download</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="amplitude_shifting_case1_example.jpg">amplitude_shifting_case1_example.jpg</a>&nbsp;</td><td class="left"><a href="sinusoidal_signal.jpg">sinusoidal_signal.jpg</a>&nbsp;</td><td class="left"><a href="f(7).txt">f(7).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="user-sync">user-sync</a>&nbsp;</td><td class="left"><a href="svg.js.download">svg.js.download</a>&nbsp;</td><td class="left"><a href="ixmatch.html">ixmatch.html</a>&nbsp;</td><td class="left"><a href="amplitude_shifting_case2_example.jpg">amplitude_shifting_case2_example.jpg</a>&nbsp;</td><td class="left"><a href="structures.jpg">structures.jpg</a>&nbsp;</td><td class="left"><a href="f(8).txt">f(8).txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="usermatchredir">usermatchredir</a>&nbsp;</td><td class="left"><a href="text_menu.js.download">text_menu.js.download</a>&nbsp;</td><td class="left"><a href="load-cookie.html">load-cookie.html</a>&nbsp;</td><td class="left"><a href="b83f380a.jpg">b83f380a.jpg</a>&nbsp;</td><td class="left"><a href="time_compression_example.jpg">time_compression_example.jpg</a>&nbsp;</td><td class="left"><a href="f(9).txt">f(9).txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="v2">v2</a>&nbsp;</td><td class="left"><a href="TimelineLite.min.js.download">TimelineLite.min.js.download</a>&nbsp;</td><td class="left"><a href="multi-sync.html">multi-sync.html</a>&nbsp;</td><td class="left"><a href="computer_aided_design.jpg">computer_aided_design.jpg</a>&nbsp;</td><td class="left"><a href="time_expansion_example.jpg">time_expansion_example.jpg</a>&nbsp;</td><td class="left"><a href="f.txt">f.txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="468x60.css">468x60.css</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="f(1).txt">f(1).txt</a>&nbsp;</td><td class="left"><a href="amplitude_reversal.jpg">amplitud...l.jpg</a>&nbsp;</td><td class="left"><a href="integration_example.jpg">integrat...e.jpg</a>&nbsp;</td><td class="left"><a href="2000970.html">2000970.html</a>&nbsp;</td><td class="left"><a href="pixel.html">pixel.html</a>&nbsp;</td><td class="left"><a href="p-Z8PuJEk6U7Hyq.gif">p-Z8PuJE...q.gif</a>&nbsp;</td><td class="left"><a href="sca.17.5.1.js.download">sca.17.5...nload</a>&nbsp;</td><td class="left"><a href="cs">cs</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(10).txt">f(10).txt</a>&nbsp;</td><td class="left"><a href="amplitude_scaling.jpg">amplitud...g.jpg</a>&nbsp;</td><td class="left"><a href="linear_systems.jpg">linear_s...s.jpg</a>&nbsp;</td><td class="left"><a href="AdDisplayTrackerServlet.html">AdDispla....html</a>&nbsp;</td><td class="left"><a href="ps.html">ps.html</a>&nbsp;</td><td class="left"><a href="ping_match.gif">ping_match.gif</a>&nbsp;</td><td class="left"><a href="script-min-v1.js.download">script-m...nload</a>&nbsp;</td><td class="left"><a href="gen_204">gen_204</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f(11).txt">f(11).txt</a>&nbsp;</td><td class="left"><a href="amplitude_shifting_case1_example.jpg">amplitud...e.jpg</a>&nbsp;</td><td class="left"><a href="overlap_add_method.jpg">overlap_...d.jpg</a>&nbsp;</td><td class="left"><a href="async_usersync.html">async_us....html</a>&nbsp;</td><td class="left"><a href="s2s_sync.html">s2s_sync.html</a>&nbsp;</td><td class="left"><a href="r.gif">r.gif</a>&nbsp;</td><td class="left"><a href="script.js.download">script.j...nload</a>&nbsp;</td><td class="left"><a href="gen_204(1)">gen_204(1)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(12).txt">f(12).txt</a>&nbsp;</td><td class="left"><a href="amplitude_shifting_case2_example.jpg">amplitud...e.jpg</a>&nbsp;</td><td class="left"><a href="overlap_save_method.jpg">overlap_...d.jpg</a>&nbsp;</td><td class="left"><a href="B24708284.html">B24708284.html</a>&nbsp;</td><td class="left"><a href="saved_resource(10).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="adpushup.js.download">adpushup...nload</a>&nbsp;</td><td class="left"><a href="snips.js.download">snips.js...nload</a>&nbsp;</td><td class="left"><a href="gen_204(2)">gen_204(2)</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f(2).txt">f(2).txt</a>&nbsp;</td><td class="left"><a href="b83f380a.jpg">b83f380a.jpg</a>&nbsp;</td><td class="left"><a href="parabolic_function.jpg">paraboli...n.jpg</a>&nbsp;</td><td class="left"><a href="cm.html">cm.html</a>&nbsp;</td><td class="left"><a href="saved_resource(11).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="adRecover.js.download">adRecove...nload</a>&nbsp;</td><td class="left"><a href="svg.js.download">svg.js.download</a>&nbsp;</td><td class="left"><a href="gen_204(3)">gen_204(3)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(3).txt">f(3).txt</a>&nbsp;</td><td class="left"><a href="computer_aided_design.jpg">computer...n.jpg</a>&nbsp;</td><td class="left"><a href="parabolic_signal.jpg">paraboli...l.jpg</a>&nbsp;</td><td class="left"><a href="container(1).html">containe....html</a>&nbsp;</td><td class="left"><a href="saved_resource(6).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="analytics.js.download">analytic...nload</a>&nbsp;</td><td class="left"><a href="text_menu.js.download">text_men...nload</a>&nbsp;</td><td class="left"><a href="gen_204(4)">gen_204(4)</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f(4).txt">f(4).txt</a>&nbsp;</td><td class="left"><a href="continuous_time_signals.jpg">continuo...s.jpg</a>&nbsp;</td><td class="left"><a href="periodic_signals.jpg">periodic...s.jpg</a>&nbsp;</td><td class="left"><a href="container(2).html">containe....html</a>&nbsp;</td><td class="left"><a href="saved_resource(7).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="async-ads.js.download">async-ad...nload</a>&nbsp;</td><td class="left"><a href="TimelineLite.min.js.download">Timeline...nload</a>&nbsp;</td><td class="left"><a href="getuid">getuid</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(5).txt">f(5).txt</a>&nbsp;</td><td class="left"><a href="convolution_example.jpg">convolut...e.jpg</a>&nbsp;</td><td class="left"><a href="ramp_type_signal.jpg">ramp_typ...l.jpg</a>&nbsp;</td><td class="left"><a href="container(3).html">containe....html</a>&nbsp;</td><td class="left"><a href="saved_resource(8).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="bbplayer.js.download">bbplayer...nload</a>&nbsp;</td><td class="left"><a href="TweenMax.min.js.download">TweenMax...nload</a>&nbsp;</td><td class="left"><a href="js">js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f(6).txt">f(6).txt</a>&nbsp;</td><td class="left"><a href="ct_even_signal1.jpg">ct_even_...1.jpg</a>&nbsp;</td><td class="left"><a href="rectangular_function.jpg">rectangu...n.jpg</a>&nbsp;</td><td class="left"><a href="container(4).html">containe....html</a>&nbsp;</td><td class="left"><a href="saved_resource(9).html">saved_re....html</a>&nbsp;</td><td class="left"><a href="cse_element__en.js.download">cse_elem...nload</a>&nbsp;</td><td class="left"><a href="UFYwWwmt.js.download">UFYwWwmt...nload</a>&nbsp;</td><td class="left"><a href="match">match</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(7).txt">f(7).txt</a>&nbsp;</td><td class="left"><a href="ct_even_signal2.jpg">ct_even_...2.jpg</a>&nbsp;</td><td class="left"><a href="signum_function.jpg">signum_f...n.jpg</a>&nbsp;</td><td class="left"><a href="container.html">container.html</a>&nbsp;</td><td class="left"><a href="saved_resource.html">saved_re....html</a>&nbsp;</td><td class="left"><a href="CSSPlugin.min.js.download">CSSPlugi...nload</a>&nbsp;</td><td class="left"><a href="usync.js.download">usync.js...nload</a>&nbsp;</td><td class="left"><a href="match(1)">match(1)</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f(8).txt">f(8).txt</a>&nbsp;</td><td class="left"><a href="ct_odd_signal.jpg">ct_odd_s...l.jpg</a>&nbsp;</td><td class="left"><a href="sinusoidal_signal.jpg">sinusoid...l.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U(1).html">Enqz_20U(1).html</a>&nbsp;</td><td class="left"><a href="showad(1).html">showad(1).html</a>&nbsp;</td><td class="left"><a href="dcmads.js.download">dcmads.j...nload</a>&nbsp;</td><td class="left"><a href="468x60.css">468x60.css</a>&nbsp;</td><td class="left"><a href="occ">occ</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f(9).txt">f(9).txt</a>&nbsp;</td><td class="left"><a href="ct_unit_step_signal.jpg">ct_unit_...l.jpg</a>&nbsp;</td><td class="left"><a href="structures.jpg">structures.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U(2).html">Enqz_20U(2).html</a>&nbsp;</td><td class="left"><a href="showad.html">showad.html</a>&nbsp;</td><td class="left"><a href="gpt.js.download">gpt.js.download</a>&nbsp;</td><td class="left"><a href="default+en.css">default+en.css</a>&nbsp;</td><td class="left"><a href="pixel">pixel</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="f.txt">f.txt</a>&nbsp;</td><td class="left"><a href="decimation_in_time_sequence.jpg">decimati...e.jpg</a>&nbsp;</td><td class="left"><a href="time_compression_example.jpg">time_com...e.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U(3).html">Enqz_20U(3).html</a>&nbsp;</td><td class="left"><a href="sync.html">sync.html</a>&nbsp;</td><td class="left"><a href="html5API.js.download">html5API...nload</a>&nbsp;</td><td class="left"><a href="default.css">default.css</a>&nbsp;</td><td class="left"><a href="rsp">rsp</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="76d261c7.png">76d261c7.png</a>&nbsp;</td><td class="left"><a href="differentiation_example.jpg">differen...e.jpg</a>&nbsp;</td><td class="left"><a href="time_expansion_example.jpg">time_exp...e.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U(4).html">Enqz_20U(4).html</a>&nbsp;</td><td class="left"><a href="syncframe.html">syncframe.html</a>&nbsp;</td><td class="left"><a href="impl_v68.js.download">impl_v68...nload</a>&nbsp;</td><td class="left"><a href="prettify.css">prettify.css</a>&nbsp;</td><td class="left"><a href="saved_resource">saved_resource</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="adc.png">adc.png</a>&nbsp;</td><td class="left"><a href="digital-signal-processing-mini-logo.jpg">digital-...o.jpg</a>&nbsp;</td><td class="left"><a href="time_invariant.jpg">time_inv...t.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U(5).html">Enqz_20U(5).html</a>&nbsp;</td><td class="left"><a href="uc.html">uc.html</a>&nbsp;</td><td class="left"><a href="j-5318794-3324917.js.download">j-531879...nload</a>&nbsp;</td><td class="left"><a href="style-min-v1.css">style-min-v1.css</a>&nbsp;</td><td class="left"><a href="saved_resource(1)">saved_re...ce(1)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="dac6d47f.png">dac6d47f.png</a>&nbsp;</td><td class="left"><a href="discrete_sinusoidal_signal.jpg">discrete...l.jpg</a>&nbsp;</td><td class="left"><a href="time_reversal.jpg">time_rev...l.jpg</a>&nbsp;</td><td class="left"><a href="Enqz_20U.html">Enqz_20U.html</a>&nbsp;</td><td class="left"><a href="um.html">um.html</a>&nbsp;</td><td class="left"><a href="jquery.min.js(1).download">jquery.m...nload</a>&nbsp;</td><td class="left"><a href="style.css">style.css</a>&nbsp;</td><td class="left"><a href="saved_resource(2)">saved_re...ce(2)</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="hboMax_curtain_728x90.png">hboMax_c...0.png</a>&nbsp;</td><td class="left"><a href="discrete_time_signals.jpg">discrete...s.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_case1_example.jpg">time_shi...e.jpg</a>&nbsp;</td><td class="left"><a href="index(1).html">index(1).html</a>&nbsp;</td><td class="left"><a href="user-sync(1).html">user-syn....html</a>&nbsp;</td><td class="left"><a href="jquery.min.js.download">jquery.m...nload</a>&nbsp;</td><td class="left"><a href="3035943431970929678">30359434...29678</a>&nbsp;</td><td class="left"><a href="saved_resource(3)">saved_re...ce(3)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="hboMax_logo_728x90.png">hboMax_l...0.png</a>&nbsp;</td><td class="left"><a href="dt_even_signal.jpg">dt_even_...l.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_case2_example.jpg">time_shi...e.jpg</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="user-sync.html">user-sync.html</a>&nbsp;</td><td class="left"><a href="MathJax.js.download">MathJax....nload</a>&nbsp;</td><td class="left"><a href="adj">adj</a>&nbsp;</td><td class="left"><a href="saved_resource(4)">saved_re...ce(4)</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="logo-black.png">logo-black.png</a>&nbsp;</td><td class="left"><a href="dt_odd_signal.jpg">dt_odd_s...l.jpg</a>&nbsp;</td><td class="left"><a href="time_shifting_example.jpg">time_shi...e.jpg</a>&nbsp;</td><td class="left"><a href="ixmatch.html">ixmatch.html</a>&nbsp;</td><td class="left"><a href="usermatch.html">usermatch.html</a>&nbsp;</td><td class="left"><a href="moatad.js.download">moatad.j...nload</a>&nbsp;</td><td class="left"><a href="async_usersync">async_usersync</a>&nbsp;</td><td class="left"><a href="saved_resource(5)">saved_re...ce(5)</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="logo.png">logo.png</a>&nbsp;</td><td class="left"><a href="eight_point_h_g1.jpg">eight_po...1.jpg</a>&nbsp;</td><td class="left"><a href="time_variant.jpg">time_variant.jpg</a>&nbsp;</td><td class="left"><a href="load-cookie.html">load-cookie.html</a>&nbsp;</td><td class="left"><a href="usync.html">usync.html</a>&nbsp;</td><td class="left"><a href="n.js.download">n.js.download</a>&nbsp;</td><td class="left"><a href="cc">cc</a>&nbsp;</td><td class="left"><a href="tp=ANXS">tp=ANXS</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Plus_Q4_Refresh_Hiring_limbo_300x250.png">Plus_Q4_...0.png</a>&nbsp;</td><td class="left"><a href="eight_point_h_g2.jpg">eight_po...2.jpg</a>&nbsp;</td><td class="left"><a href="triangular_pulse_signal.jpg">triangul...l.jpg</a>&nbsp;</td><td class="left"><a href="multi-sync.html">multi-sync.html</a>&nbsp;</td><td class="left"><a href="htw-pixel.gif">htw-pixel.gif</a>&nbsp;</td><td class="left"><a href="osd.js.download">osd.js.download</a>&nbsp;</td><td class="left"><a href="cm">cm</a>&nbsp;</td><td class="left"><a href="tum">tum</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="_Plus_Q4_Refresh_Right_talent_300x250.png">_Plus_Q4...0.png</a>&nbsp;</td><td class="left"><a href="energy_signals.jpg">energy_s...s.jpg</a>&nbsp;</td><td class="left"><a href="unit_impulse.jpg">unit_impulse.jpg</a>&nbsp;</td><td class="left"><a href="pd.html">pd.html</a>&nbsp;</td><td class="left"><a href="i(1).gif">i(1).gif</a>&nbsp;</td><td class="left"><a href="pb.1615380341861.js.download">pb.16153...nload</a>&nbsp;</td><td class="left"><a href="cm(1)">cm(1)</a>&nbsp;</td><td class="left"><a href="usa">usa</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="tap.php">tap.php</a>&nbsp;</td><td class="left"><a href="fast_fourier_transform.jpg">fast_fou...m.jpg</a>&nbsp;</td><td class="left"><a href="unit_impulse_sequence.jpg">unit_imp...e.jpg</a>&nbsp;</td><td class="left"><a href="pixel(1).html">pixel(1).html</a>&nbsp;</td><td class="left"><a href="i(2).gif">i(2).gif</a>&nbsp;</td><td class="left"><a href="pubads_impl_2021030401.js.download">pubads_i...nload</a>&nbsp;</td><td class="left"><a href="cm(2)">cm(2)</a>&nbsp;</td><td class="left"><a href="user-sync">user-sync</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="468x60_brand_sammy_buildmoderncloud_0121.jpg">468x60_b...1.jpg</a>&nbsp;</td><td class="left"><a href="fft_sequence.jpg">fft_sequence.jpg</a>&nbsp;</td><td class="left"><a href="unit_ramp_function.jpg">unit_ram...n.jpg</a>&nbsp;</td><td class="left"><a href="pixel(2).html">pixel(2).html</a>&nbsp;</td><td class="left"><a href="i.gif">i.gif</a>&nbsp;</td><td class="left"><a href="publishertag.prebid.js.download">publishe...nload</a>&nbsp;</td><td class="left"><a href="cm(3)">cm(3)</a>&nbsp;</td><td class="left"><a href="usermatchredir">usermatchredir</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="6b7fdc49.jpg">6b7fdc49.jpg</a>&nbsp;</td><td class="left"><a href="half_wave_symmetric_signals.jpg">half_wav...s.jpg</a>&nbsp;</td><td class="left"><a href="unit_step_signal.jpg">unit_ste...l.jpg</a>&nbsp;</td><td class="left"><a href="pixel(3).html">pixel(3).html</a>&nbsp;</td><td class="left"><a href="loader.gif">loader.gif</a>&nbsp;</td><td class="left"><a href="rx_lidar.js.download">rx_lidar...nload</a>&nbsp;</td><td class="left"><a href="CookieIndex">CookieIndex</a>&nbsp;</td><td class="left"><a href="v2">v2</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="amplitude_attenuation.jpg">amplitud...n.jpg</a>&nbsp;</td><td class="left"><a href="HappyGilmore_728x90.jpg">HappyGil...0.jpg</a>&nbsp;</td><td class="left"><a href="13926.html">13926.html</a>&nbsp;</td><td class="left"><a href="pixel(4).html">pixel(4).html</a>&nbsp;</td><td class="left"><a href="p-9fYuixa7g_Hm2.gif">p-9fYuix...2.gif</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 205<br>
-Size of all files: 5972269 K</p>
+Size of all files: 5972269 KB</p>
 
 </body>
 </html>

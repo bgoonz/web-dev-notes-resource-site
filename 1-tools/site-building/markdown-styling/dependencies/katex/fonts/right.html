@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,39 +532,35 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="KaTeX_AMS_Regular_ttf">KaTeX_AMS_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Bold_woff2">KaTeX_Main_Bold_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_woff">KaTeX_SansSerif_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS-Regular.ttf">KaTeX_AMS-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS-Regular.woff">KaTeX_AMS-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS-Regular.woff2">KaTeX_AMS-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_AMS_Regular_woff">KaTeX_AMS_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_ttf">KaTeX_Main_Italic_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_woff2">KaTeX_SansSerif_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Bold.ttf">KaTeX_Caligraphic-Bold.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Bold.woff">KaTeX_Caligraphic-Bold.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Bold.woff2">KaTeX_Caligraphic-Bold.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_AMS_Regular_woff2">KaTeX_AMS_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_woff">KaTeX_Main_Italic_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_ttf">KaTeX_Script_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Regular.ttf">KaTeX_Caligraphic-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Regular.woff">KaTeX_Caligraphic-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Regular.woff2">KaTeX_Caligraphic-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Caligraphic_Bold_ttf">KaTeX_Caligraphic_Bold_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_woff2">KaTeX_Main_Italic_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_woff">KaTeX_Script_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Bold.ttf">KaTeX_Fraktur-Bold.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Bold.woff">KaTeX_Fraktur-Bold.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Bold.woff2">KaTeX_Fraktur-Bold.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Caligraphic_Bold_woff">KaTeX_Caligraphic_Bold_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_ttf">KaTeX_Main_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_woff2">KaTeX_Script_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Regular.ttf">KaTeX_Fraktur-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Regular.woff">KaTeX_Fraktur-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Regular.woff2">KaTeX_Fraktur-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Caligraphic_Bold_woff2">KaTeX_Caligraphic_Bold_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_woff">KaTeX_Main_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_ttf">KaTeX_Size1_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Bold.ttf">KaTeX_Main-Bold.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Bold.woff">KaTeX_Main-Bold.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Bold.woff2">KaTeX_Main-Bold.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Caligraphic_Regular_ttf">KaTeX_Caligraphic_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_woff2">KaTeX_Main_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_woff">KaTeX_Size1_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-BoldItalic.ttf">KaTeX_Main-BoldItalic.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-BoldItalic.woff">KaTeX_Main-BoldItalic.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-BoldItalic.woff2">KaTeX_Main-BoldItalic.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Caligraphic_Regular_woff">KaTeX_Caligraphic_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_ttf">KaTeX_Math_BoldItalic_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_woff2">KaTeX_Size1_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Italic.ttf">KaTeX_Main-Italic.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Italic.woff">KaTeX_Main-Italic.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Italic.woff2">KaTeX_Main-Italic.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Caligraphic_Regular_woff2">KaTeX_Caligraphic_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_woff">KaTeX_Math_BoldItalic_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_ttf">KaTeX_Size2_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Regular.ttf">KaTeX_Main-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Regular.woff">KaTeX_Main-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Regular.woff2">KaTeX_Main-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Fraktur_Bold_ttf">KaTeX_Fraktur_Bold_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_woff2">KaTeX_Math_BoldItalic_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_woff">KaTeX_Size2_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-BoldItalic.ttf">KaTeX_Math-BoldItalic.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-BoldItalic.woff">KaTeX_Math-BoldItalic.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-BoldItalic.woff2">KaTeX_Math-BoldItalic.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Fraktur_Bold_woff">KaTeX_Fraktur_Bold_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_ttf">KaTeX_Math_Italic_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_woff2">KaTeX_Size2_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-Italic.ttf">KaTeX_Math-Italic.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-Italic.woff">KaTeX_Math-Italic.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-Italic.woff2">KaTeX_Math-Italic.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Fraktur_Bold_woff2">KaTeX_Fraktur_Bold_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_woff">KaTeX_Math_Italic_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_ttf">KaTeX_Size3_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Bold.ttf">KaTeX_SansSerif-Bold.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Bold.woff">KaTeX_SansSerif-Bold.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Bold.woff2">KaTeX_SansSerif-Bold.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Fraktur_Regular_ttf">KaTeX_Fraktur_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_woff2">KaTeX_Math_Italic_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_woff">KaTeX_Size3_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Italic.ttf">KaTeX_SansSerif-Italic.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Italic.woff">KaTeX_SansSerif-Italic.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Italic.woff2">KaTeX_SansSerif-Italic.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Fraktur_Regular_woff">KaTeX_Fraktur_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_ttf">KaTeX_SansSerif_Bold_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_woff2">KaTeX_Size3_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Regular.ttf">KaTeX_SansSerif-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Regular.woff">KaTeX_SansSerif-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Regular.woff2">KaTeX_SansSerif-Regular.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Fraktur_Regular_woff2">KaTeX_Fraktur_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_woff">KaTeX_SansSerif_Bold_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_ttf">KaTeX_Size4_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Script-Regular.ttf">KaTeX_Script-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Script-Regular.woff">KaTeX_Script-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Script-Regular.woff2">KaTeX_Script-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Main_BoldItalic_ttf">KaTeX_Main_BoldItalic_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_woff2">KaTeX_SansSerif_Bold_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_woff">KaTeX_Size4_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1-Regular.ttf">KaTeX_Size1-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1-Regular.woff">KaTeX_Size1-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1-Regular.woff2">KaTeX_Size1-Regular.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Main_BoldItalic_woff">KaTeX_Main_BoldItalic_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_ttf">KaTeX_SansSerif_Italic_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_woff2">KaTeX_Size4_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.ttf">KaTeX_Size2-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.woff">KaTeX_Size2-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.woff2">KaTeX_Size2-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Main_BoldItalic_woff2">KaTeX_Main_BoldItalic_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_woff">KaTeX_SansSerif_Italic_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_ttf">KaTeX_Typewriter_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.ttf">KaTeX_Size3-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.woff">KaTeX_Size3-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.woff2">KaTeX_Size3-Regular.woff2</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="KaTeX_Main_Bold_ttf">KaTeX_Main_Bold_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_woff2">KaTeX_SansSerif_Italic_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_woff">KaTeX_Typewriter_Regular_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.ttf">KaTeX_Size4-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.woff">KaTeX_Size4-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.woff2">KaTeX_Size4-Regular.woff2</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="KaTeX_Main_Bold_woff">KaTeX_Main_Bold_woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_ttf">KaTeX_SansSerif_Regular_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_woff2">KaTeX_Typewriter_Regular_woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.ttf">KaTeX_Typewriter-Regular.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.woff">KaTeX_Typewriter-Regular.woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.woff2">KaTeX_Typewriter-Regular.woff2</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="KaTeX_AMS-Regular.woff2">KaTeX_AM...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.woff2">KaTeX_Si...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Bold.woff">KaTeX_Sa....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-BoldItalic.ttf">KaTeX_Ma...c.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS_Regular_ttf">KaTeX_AM...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_BoldItalic_ttf">KaTeX_Ma...c_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_ttf">KaTeX_Ma...c_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_ttf">KaTeX_Si...r_ttf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Caligraphic-Bold.woff2">KaTeX_Ca...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.woff2">KaTeX_Si...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Italic.woff">KaTeX_Sa....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Italic.ttf">KaTeX_Ma...c.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS_Regular_woff">KaTeX_AM..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_BoldItalic_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_woff">KaTeX_Si..._woff</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Caligraphic-Regular.woff2">KaTeX_Ca...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.woff2">KaTeX_Si...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Regular.woff">KaTeX_Sa....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Regular.ttf">KaTeX_Ma...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS_Regular_woff2">KaTeX_AM...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_BoldItalic_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_Italic_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1_Regular_woff2">KaTeX_Si...woff2</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Fraktur-Bold.woff2">KaTeX_Fr...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.woff2">KaTeX_Ty...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Script-Regular.woff">KaTeX_Sc....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-BoldItalic.ttf">KaTeX_Ma...c.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Bold_ttf">KaTeX_Ca...d_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Bold_ttf">KaTeX_Ma...d_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_ttf">KaTeX_Sa...d_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_ttf">KaTeX_Si...r_ttf</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Fraktur-Regular.woff2">KaTeX_Fr...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS-Regular.woff">KaTeX_AM....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1-Regular.woff">KaTeX_Si....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-Italic.ttf">KaTeX_Ma...c.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Bold_woff">KaTeX_Ca..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Bold_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_woff">KaTeX_Sa..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_woff">KaTeX_Si..._woff</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Main-Bold.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Bold.woff">KaTeX_Ca....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.woff">KaTeX_Si....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Bold.ttf">KaTeX_Sa...d.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Bold_woff2">KaTeX_Ca...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Bold_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Bold_woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2_Regular_woff2">KaTeX_Si...woff2</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Main-BoldItalic.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Regular.woff">KaTeX_Ca....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.woff">KaTeX_Si....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Italic.ttf">KaTeX_Sa...c.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Regular_ttf">KaTeX_Ca...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_ttf">KaTeX_Ma...c_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_ttf">KaTeX_Sa...c_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_ttf">KaTeX_Si...r_ttf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Main-Italic.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Bold.woff">KaTeX_Fr....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.woff">KaTeX_Si....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif-Regular.ttf">KaTeX_Sa...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Regular_woff">KaTeX_Ca..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_woff">KaTeX_Sa..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_woff">KaTeX_Si..._woff</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Main-Regular.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Regular.woff">KaTeX_Fr....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.woff">KaTeX_Ty....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Script-Regular.ttf">KaTeX_Sc...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic_Regular_woff2">KaTeX_Ca...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Italic_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Italic_woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3_Regular_woff2">KaTeX_Si...woff2</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Math-BoldItalic.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Bold.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_AMS-Regular.ttf">KaTeX_AM...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size1-Regular.ttf">KaTeX_Si...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Bold_ttf">KaTeX_Fr...d_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_ttf">KaTeX_Ma...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_ttf">KaTeX_Sa...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_ttf">KaTeX_Si...r_ttf</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Math-Italic.woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-BoldItalic.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Bold.ttf">KaTeX_Ca...d.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size2-Regular.ttf">KaTeX_Si...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Bold_woff">KaTeX_Fr..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_woff">KaTeX_Sa..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_woff">KaTeX_Si..._woff</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_SansSerif-Bold.woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Italic.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Caligraphic-Regular.ttf">KaTeX_Ca...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size3-Regular.ttf">KaTeX_Si...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Bold_woff2">KaTeX_Fr...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main_Regular_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_SansSerif_Regular_woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4_Regular_woff2">KaTeX_Si...woff2</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_SansSerif-Italic.woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Regular.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Bold.ttf">KaTeX_Fr...d.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Size4-Regular.ttf">KaTeX_Si...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Regular_ttf">KaTeX_Fr...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_ttf">KaTeX_Ma...c_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_ttf">KaTeX_Sc...r_ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_ttf">KaTeX_Ty...r_ttf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_SansSerif-Regular.woff2">KaTeX_Sa...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-BoldItalic.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur-Regular.ttf">KaTeX_Fr...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter-Regular.ttf">KaTeX_Ty...r.ttf</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Regular_woff">KaTeX_Fr..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_woff">KaTeX_Ma..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_woff">KaTeX_Sc..._woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_woff">KaTeX_Ty..._woff</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="KaTeX_Script-Regular.woff2">KaTeX_Sc...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math-Italic.woff">KaTeX_Ma....woff</a>&nbsp;</td><td class="left"><a href="KaTeX_Main-Bold.ttf">KaTeX_Ma...d.ttf</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="KaTeX_Fraktur_Regular_woff2">KaTeX_Fr...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Math_BoldItalic_woff2">KaTeX_Ma...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Script_Regular_woff2">KaTeX_Sc...woff2</a>&nbsp;</td><td class="left"><a href="KaTeX_Typewriter_Regular_woff2">KaTeX_Ty...woff2</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="KaTeX_Size1-Regular.woff2">KaTeX_Si...woff2</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 120<br>
-Size of all files: 2644176 K</p>
+Files: 121<br>
+Size of all files: 2668462 KB</p>
 
 </body>
 </html>

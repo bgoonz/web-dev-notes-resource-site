@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="front-end-interview-practice.htm">front-end-interview-practice.htm</a>&nbsp;</td><td class="left"><a href="JS_TIPS_AND_TRICKS.html">JS_TIPS_AND_TRICKS.html</a>&nbsp;</td><td class="left"><a href="TheComprehensiveGuidetoJavaScriptDesignPatterns.html">TheComprehensiveGuidetoJavaScriptDesignPatterns.html</a>&nbsp;</td><td class="left"><a href="A_bash_script_with_Node.JS.md">A_bash_script_with_Node.JS.md</a>&nbsp;</td><td class="left"><a href="Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.md">Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.md</a>&nbsp;</td><td class="left"><a href="Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.md">Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="AlgorithmsJavaScript.html">AlgorithmsJavaScript.html</a>&nbsp;</td><td class="left"><a href="Promises_in_JavaScript_BigOmega.html">Promises_in_JavaScript_BigOmega.html</a>&nbsp;</td><td class="left"><a href="33concepts.md">33concepts.md</a>&nbsp;</td><td class="left"><a href="DataStructuresApplied-JavaScript_(1).md">DataStructuresApplied-JavaScript_(1).md</a>&nbsp;</td><td class="left"><a href="JS_TIPS_AND_TRICKS.md">JS_TIPS_AND_TRICKS.md</a>&nbsp;</td><td class="left"><a href="Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.md">Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Async_Await_in_JavaScript_BigOmega.html">Async_Await_in_JavaScript_BigOmega.html</a>&nbsp;</td><td class="left"><a href="Recursion_BigOmega.html">Recursion_BigOmega.html</a>&nbsp;</td><td class="left"><a href="5%20Must-know%20Javascript%20Tips%20&amp;%20Tricks.md">5 Must-know Javascript Tips &amp; Tricks.md</a>&nbsp;</td><td class="left"><a href="ds-methods.md">ds-methods.md</a>&nbsp;</td><td class="left"><a href="Promises_in_JavaScript_BigOmega.md">Promises_in_JavaScript_BigOmega.md</a>&nbsp;</td><td class="left"><a href="TheComprehensiveGuidetoJavaScriptDesignPatterns.md">TheComprehensiveGuidetoJavaScriptDesignPatterns.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="A_bash_script_with_Node.JS.html">A_bash_script_with_Node.JS.html</a>&nbsp;</td><td class="left"><a href="Responsive_Web_Design_and_JavaScript.html">Responsive_Web_Design_and_JavaScript.html</a>&nbsp;</td><td class="left"><a href="AlgorithmsJavaScript.md">AlgorithmsJavaScript.md</a>&nbsp;</td><td class="left"><a href="Form%20Validation%20Using%20JavaScript.md">Form Validation Using JavaScript.md</a>&nbsp;</td><td class="left"><a href="Recursion_BigOmega.md">Recursion_BigOmega.md</a>&nbsp;</td><td class="left"><a href="Using%20Async%20Functions.md">Using Async Functions.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="DataStructuresApplied-JavaScript_(1).html">DataStructuresApplied-JavaScript_(1).html</a>&nbsp;</td><td class="left"><a href="Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.html">Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.html</a>&nbsp;</td><td class="left"><a href="Async_Await_in_JavaScript_BigOmega.md">Async_Await_in_JavaScript_BigOmega.md</a>&nbsp;</td><td class="left"><a href="JavaScript%20ES2021%20Features%20You%20Need%20to%20Know.md">JavaScript ES2021 Features You Need to Know.md</a>&nbsp;</td><td class="left"><a href="Responsive_Web_Design_and_JavaScript.md">Responsive_Web_Design_and_JavaScript.md</a>&nbsp;</td><td class="left"><a href="⭐️🎀%20%20JavaScript%20Visualized%20Promises%20&amp;%20AsyncAwait.md">⭐️🎀  JavaScript Visualized Promises &amp; AsyncAwait.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.html">Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.html</a>&nbsp;</td><td class="left"><a href="Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.html">Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="33concepts.md">33concepts.md</a>&nbsp;</td><td class="left"><a href="A_bash_script_with_Node.JS.md">A_bash_s...JS.md</a>&nbsp;</td><td class="left"><a href="JavaScript%20ES2021%20Features%20You%20Need%20to%20Know.md">JavaScri...ow.md</a>&nbsp;</td><td class="left"><a href="Recursion_BigOmega.md">Recursio...ga.md</a>&nbsp;</td><td class="left"><a href="TheComprehensiveGuidetoJavaScriptDesignPatterns.md">TheCompr...ns.md</a>&nbsp;</td><td class="left"><a href="Async_Await_in_JavaScript_BigOmega.html">Async_Aw....html</a>&nbsp;</td><td class="left"><a href="JS_TIPS_AND_TRICKS.html">JS_TIPS_....html</a>&nbsp;</td><td class="left"><a href="Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.html">Simple_M....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="5%20Must-know%20Javascript%20Tips%20&amp;%20Tricks.md">5 Must-k...ks.md</a>&nbsp;</td><td class="left"><a href="DataStructuresApplied-JavaScript_(1).md">DataStru...1).md</a>&nbsp;</td><td class="left"><a href="Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.md">Javascri...em.md</a>&nbsp;</td><td class="left"><a href="Responsive_Web_Design_and_JavaScript.md">Responsi...pt.md</a>&nbsp;</td><td class="left"><a href="Using%20Async%20Functions.md">Using As...ns.md</a>&nbsp;</td><td class="left"><a href="A_bash_script_with_Node.JS.html">A_bash_s....html</a>&nbsp;</td><td class="left"><a href="Promises_in_JavaScript_BigOmega.html">Promises....html</a>&nbsp;</td><td class="left"><a href="Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.html">Storing_....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="AlgorithmsJavaScript.md">Algorith...pt.md</a>&nbsp;</td><td class="left"><a href="ds-methods.md">ds-methods.md</a>&nbsp;</td><td class="left"><a href="JS_TIPS_AND_TRICKS.md">JS_TIPS_...KS.md</a>&nbsp;</td><td class="left"><a href="Simple_Markdown_Parser_with_JavaScript_and_Regular_Expressions.md">Simple_M...ns.md</a>&nbsp;</td><td class="left"><a href="⭐️🎀%20%20JavaScript%20Visualized%20Promises%20&amp;%20AsyncAwait.md">⭐️🎀  Ja...it.md</a>&nbsp;</td><td class="left"><a href="DataStructuresApplied-JavaScript_(1).html">DataStru....html</a>&nbsp;</td><td class="left"><a href="Recursion_BigOmega.html">Recursio....html</a>&nbsp;</td><td class="left"><a href="TheComprehensiveGuidetoJavaScriptDesignPatterns.html">TheCompr....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Async_Await_in_JavaScript_BigOmega.md">Async_Aw...ga.md</a>&nbsp;</td><td class="left"><a href="Form%20Validation%20Using%20JavaScript.md">Form Val...pt.md</a>&nbsp;</td><td class="left"><a href="Promises_in_JavaScript_BigOmega.md">Promises...ga.md</a>&nbsp;</td><td class="left"><a href="Storing_passwords_the_right_way_on_a_database_with_an_example_on_Node.JS_backend.md">Storing_...nd.md</a>&nbsp;</td><td class="left"><a href="AlgorithmsJavaScript.html">Algorith....html</a>&nbsp;</td><td class="left"><a href="Javascript_Design_Patterns_What_They_Are_&amp;_How_To_Use_Them.html">Javascri....html</a>&nbsp;</td><td class="left"><a href="Responsive_Web_Design_and_JavaScript.html">Responsi....html</a>&nbsp;</td><td class="left"><a href="front-end-interview-practice.htm">front-en...e.htm</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 32<br>
-Size of all files: 575440 K</p>
+Size of all files: 575440 KB</p>
 
 </body>
 </html>

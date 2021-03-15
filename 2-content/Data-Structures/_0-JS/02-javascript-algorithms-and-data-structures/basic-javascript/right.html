@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,38 +532,33 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="access-array-data-with-indexes.html">access-array-data-with-indexes.html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-inequality-operator.html">comparison-with-the-inequality-operator.html</a>&nbsp;</td><td class="left"><a href="decrement-a-number-with-javascript.html">decrement-a-number-with-javascript.html</a>&nbsp;</td><td class="left"><a href="iterate-through-an-array-with-a-for-loop.html">iterate-through-an-array-with-a-for-loop.html</a>&nbsp;</td><td class="left"><a href="practice-comparing-different-values.html">practice-comparing-different-values.html</a>&nbsp;</td><td class="left"><a href="understanding-case-sensitivity-in-variables.html">understanding-case-sensitivity-in-variables.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="access-multi-dimensional-arrays-with-indexes.html">access-multi-dimensional-arrays-with-indexes.html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-less-than-operator.html">comparison-with-the-less-than-operator.html</a>&nbsp;</td><td class="left"><a href="delete-properties-from-a-javascript-object.html">delete-properties-from-a-javascript-object.html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-do...while-loops.html">iterate-with-javascript-do...while-loops.html</a>&nbsp;</td><td class="left"><a href="profile-lookup.html">profile-lookup.html</a>&nbsp;</td><td class="left"><a href="understanding-undefined-value-returned-from-a-function.html">understanding-undefined-value-returned-from-a-function.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="accessing-nested-arrays.html">accessing-nested-arrays.html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-less-than-or-equal-to-operator.html">comparison-with-the-less-than-or-equal-to-operator.html</a>&nbsp;</td><td class="left"><a href="divide-one-decimal-by-another-with-javascript.html">divide-one-decimal-by-another-with-javascript.html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-for-loops.html">iterate-with-javascript-for-loops.html</a>&nbsp;</td><td class="left"><a href="quoting-strings-with-single-quotes.html">quoting-strings-with-single-quotes.html</a>&nbsp;</td><td class="left"><a href="understanding-uninitialized-variables.html">understanding-uninitialized-variables.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="accessing-nested-objects.html">accessing-nested-objects.html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-strict-equality-operator.html">comparison-with-the-strict-equality-operator.html</a>&nbsp;</td><td class="left"><a href="divide-one-number-by-another-with-javascript.html">divide-one-number-by-another-with-javascript.html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-while-loops.html">iterate-with-javascript-while-loops.html</a>&nbsp;</td><td class="left"><a href="record-collection.html">record-collection.html</a>&nbsp;</td><td class="left"><a href="updating-object-properties.html">updating-object-properties.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="accessing-object-properties-with-bracket-notation.html">accessing-object-properties-with-bracket-notation.html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-strict-inequality-operator.html">comparison-with-the-strict-inequality-operator.html</a>&nbsp;</td><td class="left"><a href="escape-sequences-in-strings.html">escape-sequences-in-strings.html</a>&nbsp;</td><td class="left"><a href="local-scope-and-functions.html">local-scope-and-functions.html</a>&nbsp;</td><td class="left"><a href="replace-loops-using-recursion.html">replace-loops-using-recursion.html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-first-character-in-a-string.html">use-bracket-notation-to-find-the-first-character-in-a-string.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="accessing-object-properties-with-dot-notation.html">accessing-object-properties-with-dot-notation.html</a>&nbsp;</td><td class="left"><a href="comparisons-with-the-logical-and-operator.html">comparisons-with-the-logical-and-operator.html</a>&nbsp;</td><td class="left"><a href="escaping-literal-quotes-in-strings.html">escaping-literal-quotes-in-strings.html</a>&nbsp;</td><td class="left"><a href="logical-order-in-if-else-statements.html">logical-order-in-if-else-statements.html</a>&nbsp;</td><td class="left"><a href="replacing-if-else-chains-with-switch.html">replacing-if-else-chains-with-switch.html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-last-character-in-a-string.html">use-bracket-notation-to-find-the-last-character-in-a-string.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="accessing-object-properties-with-variables.html">accessing-object-properties-with-variables.html</a>&nbsp;</td><td class="left"><a href="comparisons-with-the-logical-or-operator.html">comparisons-with-the-logical-or-operator.html</a>&nbsp;</td><td class="left"><a href="find-the-length-of-a-string.html">find-the-length-of-a-string.html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-pop.html">manipulate-arrays-with-pop.html</a>&nbsp;</td><td class="left"><a href="return-a-value-from-a-function-with-return.html">return-a-value-from-a-function-with-return.html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-nth-character-in-a-string.html">use-bracket-notation-to-find-the-nth-character-in-a-string.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="add-new-properties-to-a-javascript-object.html">add-new-properties-to-a-javascript-object.html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-addition.html">compound-assignment-with-augmented-addition.html</a>&nbsp;</td><td class="left"><a href="finding-a-remainder-in-javascript.html">finding-a-remainder-in-javascript.html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-push.html">manipulate-arrays-with-push.html</a>&nbsp;</td><td class="left"><a href="return-early-pattern-for-functions.html">return-early-pattern-for-functions.html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-nth-to-last-character-in-a-string.html">use-bracket-notation-to-find-the-nth-to-last-character-in-a-string.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="add-two-numbers-with-javascript.html">add-two-numbers-with-javascript.html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-division.html">compound-assignment-with-augmented-division.html</a>&nbsp;</td><td class="left"><a href="generate-random-fractions-with-javascript.html">generate-random-fractions-with-javascript.html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-shift.html">manipulate-arrays-with-shift.html</a>&nbsp;</td><td class="left"><a href="returning-boolean-values-from-functions.html">returning-boolean-values-from-functions.html</a>&nbsp;</td><td class="left"><a href="use-conditional-logic-with-if-statements.html">use-conditional-logic-with-if-statements.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="adding-a-default-option-in-switch-statements.html">adding-a-default-option-in-switch-statements.html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-multiplication.html">compound-assignment-with-augmented-multiplication.html</a>&nbsp;</td><td class="left"><a href="generate-random-whole-numbers-with-javascript.html">generate-random-whole-numbers-with-javascript.html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-unshift.html">manipulate-arrays-with-unshift.html</a>&nbsp;</td><td class="left"><a href="selecting-from-many-options-with-switch-statements.html">selecting-from-many-options-with-switch-statements.html</a>&nbsp;</td><td class="left"><a href="use-multiple-conditional-ternary-operators.html">use-multiple-conditional-ternary-operators.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="appending-variables-to-strings.html">appending-variables-to-strings.html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-subtraction.html">compound-assignment-with-augmented-subtraction.html</a>&nbsp;</td><td class="left"><a href="generate-random-whole-numbers-within-a-range.html">generate-random-whole-numbers-within-a-range.html</a>&nbsp;</td><td class="left"><a href="manipulating-complex-objects.html">manipulating-complex-objects.html</a>&nbsp;</td><td class="left"><a href="shopping-list.html">shopping-list.html</a>&nbsp;</td><td class="left"><a href="use-recursion-to-create-a-countdown.html">use-recursion-to-create-a-countdown.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="assigning-the-value-of-one-variable-to-another.html">assigning-the-value-of-one-variable-to-another.html</a>&nbsp;</td><td class="left"><a href="concatenating-strings-with-plus-operator.html">concatenating-strings-with-plus-operator.html</a>&nbsp;</td><td class="left"><a href="global-scope-and-functions.html">global-scope-and-functions.html</a>&nbsp;</td><td class="left"><a href="modify-array-data-with-indexes.html">modify-array-data-with-indexes.html</a>&nbsp;</td><td class="left"><a href="stand-in-line.html">stand-in-line.html</a>&nbsp;</td><td class="left"><a href="use-recursion-to-create-a-range-of-numbers.html">use-recursion-to-create-a-range-of-numbers.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="assignment-with-a-returned-value.html">assignment-with-a-returned-value.html</a>&nbsp;</td><td class="left"><a href="concatenating-strings-with-the-plus-equals-operator.html">concatenating-strings-with-the-plus-equals-operator.html</a>&nbsp;</td><td class="left"><a href="global-vs.-local-scope-in-functions.html">global-vs.-local-scope-in-functions.html</a>&nbsp;</td><td class="left"><a href="multiple-identical-options-in-switch-statements.html">multiple-identical-options-in-switch-statements.html</a>&nbsp;</td><td class="left"><a href="store-multiple-values-in-one-variable-using-javascript-arrays.html">store-multiple-values-in-one-variable-using-javascript-arrays.html</a>&nbsp;</td><td class="left"><a href="use-the-conditional-ternary-operator.html">use-the-conditional-ternary-operator.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="build-javascript-objects.html">build-javascript-objects.html</a>&nbsp;</td><td class="left"><a href="constructing-strings-with-variables.html">constructing-strings-with-variables.html</a>&nbsp;</td><td class="left"><a href="golf-code.html">golf-code.html</a>&nbsp;</td><td class="left"><a href="multiply-two-decimals-with-javascript.html">multiply-two-decimals-with-javascript.html</a>&nbsp;</td><td class="left"><a href="storing-values-with-the-assignment-operator.html">storing-values-with-the-assignment-operator.html</a>&nbsp;</td><td class="left"><a href="use-the-parseint-function-with-a-radix.html">use-the-parseint-function-with-a-radix.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="chaining-if-else-statements.html">chaining-if-else-statements.html</a>&nbsp;</td><td class="left"><a href="count-backwards-with-a-for-loop.html">count-backwards-with-a-for-loop.html</a>&nbsp;</td><td class="left"><a href="increment-a-number-with-javascript.html">increment-a-number-with-javascript.html</a>&nbsp;</td><td class="left"><a href="multiply-two-numbers-with-javascript.html">multiply-two-numbers-with-javascript.html</a>&nbsp;</td><td class="left"><a href="subtract-one-number-from-another-with-javascript.html">subtract-one-number-from-another-with-javascript.html</a>&nbsp;</td><td class="left"><a href="use-the-parseint-function.html">use-the-parseint-function.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="comment-your-javascript-code.html">comment-your-javascript-code.html</a>&nbsp;</td><td class="left"><a href="counting-cards.html">counting-cards.html</a>&nbsp;</td><td class="left"><a href="initializing-variables-with-the-assignment-operator.html">initializing-variables-with-the-assignment-operator.html</a>&nbsp;</td><td class="left"><a href="nest-one-array-within-another-array.html">nest-one-array-within-another-array.html</a>&nbsp;</td><td class="left"><a href="testing-objects-for-properties.html">testing-objects-for-properties.html</a>&nbsp;</td><td class="left"><a href="using-objects-for-lookups.html">using-objects-for-lookups.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="comparison-with-the-equality-operator.html">comparison-with-the-equality-operator.html</a>&nbsp;</td><td class="left"><a href="create-decimal-numbers-with-javascript.html">create-decimal-numbers-with-javascript.html</a>&nbsp;</td><td class="left"><a href="introducing-else-if-statements.html">introducing-else-if-statements.html</a>&nbsp;</td><td class="left"><a href="nesting-for-loops.html">nesting-for-loops.html</a>&nbsp;</td><td class="left"><a href="understand-string-immutability.html">understand-string-immutability.html</a>&nbsp;</td><td class="left"><a href="word-blanks.html">word-blanks.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="comparison-with-the-greater-than-operator.html">comparison-with-the-greater-than-operator.html</a>&nbsp;</td><td class="left"><a href="declare-javascript-variables.html">declare-javascript-variables.html</a>&nbsp;</td><td class="left"><a href="introducing-else-statements.html">introducing-else-statements.html</a>&nbsp;</td><td class="left"><a href="passing-values-to-functions-with-arguments.html">passing-values-to-functions-with-arguments.html</a>&nbsp;</td><td class="left"><a href="understanding-boolean-values.html">understanding-boolean-values.html</a>&nbsp;</td><td class="left"><a href="write-reusable-javascript-with-functions.html">write-reusable-javascript-with-functions.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="comparison-with-the-greater-than-or-equal-to-operator.html">comparison-with-the-greater-than-or-equal-to-operator.html</a>&nbsp;</td><td class="left"><a href="declare-string-variables.html">declare-string-variables.html</a>&nbsp;</td><td class="left"><a href="iterate-odd-numbers-with-a-for-loop.html">iterate-odd-numbers-with-a-for-loop.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="access-array-data-with-indexes.html">access-a....html</a>&nbsp;</td><td class="left"><a href="chaining-if-else-statements.html">chaining....html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-multiplication.html">compound....html</a>&nbsp;</td><td class="left"><a href="escape-sequences-in-strings.html">escape-s....html</a>&nbsp;</td><td class="left"><a href="iterate-odd-numbers-with-a-for-loop.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="multiply-two-decimals-with-javascript.html">multiply....html</a>&nbsp;</td><td class="left"><a href="selecting-from-many-options-with-switch-statements.html">selectin....html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-last-character-in-a-string.html">use-brac....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="access-multi-dimensional-arrays-with-indexes.html">access-m....html</a>&nbsp;</td><td class="left"><a href="comment-your-javascript-code.html">comment-....html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-subtraction.html">compound....html</a>&nbsp;</td><td class="left"><a href="escaping-literal-quotes-in-strings.html">escaping....html</a>&nbsp;</td><td class="left"><a href="iterate-through-an-array-with-a-for-loop.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="multiply-two-numbers-with-javascript.html">multiply....html</a>&nbsp;</td><td class="left"><a href="shopping-list.html">shopping....html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-nth-character-in-a-string.html">use-brac....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="accessing-nested-arrays.html">accessin....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-equality-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="concatenating-strings-with-plus-operator.html">concaten....html</a>&nbsp;</td><td class="left"><a href="find-the-length-of-a-string.html">find-the....html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-do...while-loops.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="nest-one-array-within-another-array.html">nest-one....html</a>&nbsp;</td><td class="left"><a href="stand-in-line.html">stand-in....html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-nth-to-last-character-in-a-string.html">use-brac....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="accessing-nested-objects.html">accessin....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-greater-than-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="concatenating-strings-with-the-plus-equals-operator.html">concaten....html</a>&nbsp;</td><td class="left"><a href="finding-a-remainder-in-javascript.html">finding-....html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-for-loops.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="nesting-for-loops.html">nesting-....html</a>&nbsp;</td><td class="left"><a href="store-multiple-values-in-one-variable-using-javascript-arrays.html">store-mu....html</a>&nbsp;</td><td class="left"><a href="use-conditional-logic-with-if-statements.html">use-cond....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="accessing-object-properties-with-bracket-notation.html">accessin....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-greater-than-or-equal-to-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="constructing-strings-with-variables.html">construc....html</a>&nbsp;</td><td class="left"><a href="generate-random-fractions-with-javascript.html">generate....html</a>&nbsp;</td><td class="left"><a href="iterate-with-javascript-while-loops.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="passing-values-to-functions-with-arguments.html">passing-....html</a>&nbsp;</td><td class="left"><a href="storing-values-with-the-assignment-operator.html">storing-....html</a>&nbsp;</td><td class="left"><a href="use-multiple-conditional-ternary-operators.html">use-mult....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="accessing-object-properties-with-dot-notation.html">accessin....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-inequality-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="count-backwards-with-a-for-loop.html">count-ba....html</a>&nbsp;</td><td class="left"><a href="generate-random-whole-numbers-with-javascript.html">generate....html</a>&nbsp;</td><td class="left"><a href="local-scope-and-functions.html">local-sc....html</a>&nbsp;</td><td class="left"><a href="practice-comparing-different-values.html">practice....html</a>&nbsp;</td><td class="left"><a href="subtract-one-number-from-another-with-javascript.html">subtract....html</a>&nbsp;</td><td class="left"><a href="use-recursion-to-create-a-countdown.html">use-recu....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="accessing-object-properties-with-variables.html">accessin....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-less-than-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="counting-cards.html">counting....html</a>&nbsp;</td><td class="left"><a href="generate-random-whole-numbers-within-a-range.html">generate....html</a>&nbsp;</td><td class="left"><a href="logical-order-in-if-else-statements.html">logical-....html</a>&nbsp;</td><td class="left"><a href="profile-lookup.html">profile-....html</a>&nbsp;</td><td class="left"><a href="testing-objects-for-properties.html">testing-....html</a>&nbsp;</td><td class="left"><a href="use-recursion-to-create-a-range-of-numbers.html">use-recu....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="add-new-properties-to-a-javascript-object.html">add-new-....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-less-than-or-equal-to-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="create-decimal-numbers-with-javascript.html">create-d....html</a>&nbsp;</td><td class="left"><a href="global-scope-and-functions.html">global-s....html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-pop.html">manipula....html</a>&nbsp;</td><td class="left"><a href="quoting-strings-with-single-quotes.html">quoting-....html</a>&nbsp;</td><td class="left"><a href="understand-string-immutability.html">understa....html</a>&nbsp;</td><td class="left"><a href="use-the-conditional-ternary-operator.html">use-the-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="add-two-numbers-with-javascript.html">add-two-....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-strict-equality-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="declare-javascript-variables.html">declare-....html</a>&nbsp;</td><td class="left"><a href="global-vs.-local-scope-in-functions.html">global-v....html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-push.html">manipula....html</a>&nbsp;</td><td class="left"><a href="record-collection.html">record-c....html</a>&nbsp;</td><td class="left"><a href="understanding-boolean-values.html">understa....html</a>&nbsp;</td><td class="left"><a href="use-the-parseint-function-with-a-radix.html">use-the-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="adding-a-default-option-in-switch-statements.html">adding-a....html</a>&nbsp;</td><td class="left"><a href="comparison-with-the-strict-inequality-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="declare-string-variables.html">declare-....html</a>&nbsp;</td><td class="left"><a href="golf-code.html">golf-code.html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-shift.html">manipula....html</a>&nbsp;</td><td class="left"><a href="replace-loops-using-recursion.html">replace-....html</a>&nbsp;</td><td class="left"><a href="understanding-case-sensitivity-in-variables.html">understa....html</a>&nbsp;</td><td class="left"><a href="use-the-parseint-function.html">use-the-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="appending-variables-to-strings.html">appendin....html</a>&nbsp;</td><td class="left"><a href="comparisons-with-the-logical-and-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="decrement-a-number-with-javascript.html">decremen....html</a>&nbsp;</td><td class="left"><a href="increment-a-number-with-javascript.html">incremen....html</a>&nbsp;</td><td class="left"><a href="manipulate-arrays-with-unshift.html">manipula....html</a>&nbsp;</td><td class="left"><a href="replacing-if-else-chains-with-switch.html">replacin....html</a>&nbsp;</td><td class="left"><a href="understanding-undefined-value-returned-from-a-function.html">understa....html</a>&nbsp;</td><td class="left"><a href="using-objects-for-lookups.html">using-ob....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="assigning-the-value-of-one-variable-to-another.html">assignin....html</a>&nbsp;</td><td class="left"><a href="comparisons-with-the-logical-or-operator.html">comparis....html</a>&nbsp;</td><td class="left"><a href="delete-properties-from-a-javascript-object.html">delete-p....html</a>&nbsp;</td><td class="left"><a href="initializing-variables-with-the-assignment-operator.html">initiali....html</a>&nbsp;</td><td class="left"><a href="manipulating-complex-objects.html">manipula....html</a>&nbsp;</td><td class="left"><a href="return-a-value-from-a-function-with-return.html">return-a....html</a>&nbsp;</td><td class="left"><a href="understanding-uninitialized-variables.html">understa....html</a>&nbsp;</td><td class="left"><a href="word-blanks.html">word-blanks.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="assignment-with-a-returned-value.html">assignme....html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-addition.html">compound....html</a>&nbsp;</td><td class="left"><a href="divide-one-decimal-by-another-with-javascript.html">divide-o....html</a>&nbsp;</td><td class="left"><a href="introducing-else-if-statements.html">introduc....html</a>&nbsp;</td><td class="left"><a href="modify-array-data-with-indexes.html">modify-a....html</a>&nbsp;</td><td class="left"><a href="return-early-pattern-for-functions.html">return-e....html</a>&nbsp;</td><td class="left"><a href="updating-object-properties.html">updating....html</a>&nbsp;</td><td class="left"><a href="write-reusable-javascript-with-functions.html">write-re....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="build-javascript-objects.html">build-ja....html</a>&nbsp;</td><td class="left"><a href="compound-assignment-with-augmented-division.html">compound....html</a>&nbsp;</td><td class="left"><a href="divide-one-number-by-another-with-javascript.html">divide-o....html</a>&nbsp;</td><td class="left"><a href="introducing-else-statements.html">introduc....html</a>&nbsp;</td><td class="left"><a href="multiple-identical-options-in-switch-statements.html">multiple....html</a>&nbsp;</td><td class="left"><a href="returning-boolean-values-from-functions.html">returnin....html</a>&nbsp;</td><td class="left"><a href="use-bracket-notation-to-find-the-first-character-in-a-string.html">use-brac....html</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 111<br>
-Size of all files: 769625 K</p>
+Size of all files: 769625 KB</p>
 
 </body>
 </html>

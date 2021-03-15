@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,32 +532,29 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="code-editor/right.html" target="rframe">code-editor</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="code-editor/right.html" target="rframe">code-editor</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="application-create-ddbtable.png">application-create-ddbtable.png</a>&nbsp;</td><td class="left"><a href="console-apig-endpoint.png">console-apig-endpoint.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.unreserved.png">features-concurrency.unreserved.png</a>&nbsp;</td><td class="left"><a href="invocation-dlq-attributes.png">invocation-dlq-attributes.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-invocations-function-select.png">lambdainsights-invocations-function-select.png</a>&nbsp;</td><td class="left"><a href="push-s3-example-10.png">push-s3-example-10.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="application-create-deployment.png">application-create-deployment.png</a>&nbsp;</td><td class="left"><a href="console-designer.png">console-designer.png</a>&nbsp;</td><td class="left"><a href="features-destinations.png">features-destinations.png</a>&nbsp;</td><td class="left"><a href="invocation-sync.png">invocation-sync.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-memory-usage.png">lambdainsights-memory-usage.png</a>&nbsp;</td><td class="left"><a href="runtimes-custom-init.png">runtimes-custom-init.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="application-create-resources.png">application-create-resources.png</a>&nbsp;</td><td class="left"><a href="console-env.png">console-env.png</a>&nbsp;</td><td class="left"><a href="features-eventsourcemapping.png">features-eventsourcemapping.png</a>&nbsp;</td><td class="left"><a href="invocation-types-retries.png">invocation-types-retries.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-multifunction-view.png">lambdainsights-multifunction-view.png</a>&nbsp;</td><td class="left"><a href="sample-blank-stack.png">sample-blank-stack.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="application-create-result.png">application-create-result.png</a>&nbsp;</td><td class="left"><a href="console-monitoring-definition.png">console-monitoring-definition.png</a>&nbsp;</td><td class="left"><a href="features-initialization-trace.png">features-initialization-trace.png</a>&nbsp;</td><td class="left"><a href="invocation-types-throttle.png">invocation-types-throttle.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-query.png">lambdainsights-query.png</a>&nbsp;</td><td class="left"><a href="sample-blank.png">sample-blank.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="applications-monitoring-widget.png">applications-monitoring-widget.png</a>&nbsp;</td><td class="left"><a href="console-monitoring-insights.png">console-monitoring-insights.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned-auto.png">features-scaling-provisioned-auto.png</a>&nbsp;</td><td class="left"><a href="Invoke-Phase.png">Invoke-Phase.png</a>&nbsp;</td><td class="left"><a href="latest-config.png">latest-config.png</a>&nbsp;</td><td class="left"><a href="sample-errorprocessor-servicemap.png">sample-errorprocessor-servicemap.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="applications-page.png">applications-page.png</a>&nbsp;</td><td class="left"><a href="env-accessdenied.png">env-accessdenied.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.instances.png">features-scaling-provisioned.instances.png</a>&nbsp;</td><td class="left"><a href="kinesis-pull-10.png">kinesis-pull-10.png</a>&nbsp;</td><td class="left"><a href="logs-api-concept-diagram.png">logs-api-concept-diagram.png</a>&nbsp;</td><td class="left"><a href="sample-listmanager.png">sample-listmanager.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="blank-servicemap-basic.png">blank-servicemap-basic.png</a>&nbsp;</td><td class="left"><a href="features-async.png">features-async.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.open.png">features-scaling-provisioned.open.png</a>&nbsp;</td><td class="left"><a href="lambainsights-singlefunction-view.png">lambainsights-singlefunction-view.png</a>&nbsp;</td><td class="left"><a href="metrics-functions-list.png">metrics-functions-list.png</a>&nbsp;</td><td class="left"><a href="sample-rdsmysql.png">sample-rdsmysql.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="blank-servicemap.png">blank-servicemap.png</a>&nbsp;</td><td class="left"><a href="features-concurrency-provisioned.png">features-concurrency-provisioned.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.png">features-scaling-provisioned.png</a>&nbsp;</td><td class="left"><a href="lambda-android.png">lambda-android.png</a>&nbsp;</td><td class="left"><a href="nodejs-xray-timeline.png">nodejs-xray-timeline.png</a>&nbsp;</td><td class="left"><a href="Shutdown-Phase.png">Shutdown-Phase.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="blank-trace.png">blank-trace.png</a>&nbsp;</td><td class="left"><a href="features-concurrency-reserved.png">features-concurrency-reserved.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.provisioned.png">features-scaling-provisioned.provisioned.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-application-logs.png">lambdainsights-application-logs.png</a>&nbsp;</td><td class="left"><a href="Overview-Full-Sequence.png">Overview-Full-Sequence.png</a>&nbsp;</td><td class="left"><a href="tracemap-apig-404.png">tracemap-apig-404.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="cloudfront-events-that-trigger-lambda-functions.png">cloudfront-events-that-trigger-lambda-functions.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.concurrency.png">features-concurrency.concurrency.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.standard.png">features-scaling-provisioned.standard.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-choose-function.png">lambdainsights-choose-function.png</a>&nbsp;</td><td class="left"><a href="Overview-Invoke-with-Error.png">Overview-Invoke-with-Error.png</a>&nbsp;</td><td class="left"><a href="tracemap-apig-502.png">tracemap-apig-502.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="configuration-tags-add.png">configuration-tags-add.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.provisioned.png">features-concurrency.provisioned.png</a>&nbsp;</td><td class="left"><a href="features-scaling.png">features-scaling.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-function-summary.png">lambdainsights-function-summary.png</a>&nbsp;</td><td class="left"><a href="Overview-Successful-Invokes.png">Overview-Successful-Invokes.png</a>&nbsp;</td><td class="left"><a href="version-1-created.png">version-1-created.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="configuration-tags-key.png">configuration-tags-key.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.reserved.png">features-concurrency.reserved.png</a>&nbsp;</td><td class="left"><a href="features-scaling.throttling.png">features-scaling.throttling.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-graphed-metrics.png">lambdainsights-graphed-metrics.png</a>&nbsp;</td><td class="left"><a href="permissions-executionrole.png">permissions-executionrole.png</a>&nbsp;</td><td class="left"><a href="version-actions.png">version-actions.png</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="configuration-tags-value.png">configuration-tags-value.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.throttling.png">features-concurrency.throttling.png</a>&nbsp;</td><td class="left"><a href="Init-Phase.png">Init-Phase.png</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="application-create-ddbtable.png">applicat...e.png</a>&nbsp;</td><td class="left"><a href="configuration-tags-add.png">configur...d.png</a>&nbsp;</td><td class="left"><a href="features-concurrency-provisioned.png">features...d.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned-auto.png">features...o.png</a>&nbsp;</td><td class="left"><a href="invocation-dlq-attributes.png">invocati...s.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-choose-function.png">lambdain...n.png</a>&nbsp;</td><td class="left"><a href="metrics-functions-list.png">metrics-...t.png</a>&nbsp;</td><td class="left"><a href="sample-blank.png">sample-blank.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="application-create-deployment.png">applicat...t.png</a>&nbsp;</td><td class="left"><a href="configuration-tags-key.png">configur...y.png</a>&nbsp;</td><td class="left"><a href="features-concurrency-reserved.png">features...d.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.instances.png">features...s.png</a>&nbsp;</td><td class="left"><a href="invocation-sync.png">invocati...c.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-function-summary.png">lambdain...y.png</a>&nbsp;</td><td class="left"><a href="nodejs-xray-timeline.png">nodejs-x...e.png</a>&nbsp;</td><td class="left"><a href="sample-errorprocessor-servicemap.png">sample-e...p.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="application-create-resources.png">applicat...s.png</a>&nbsp;</td><td class="left"><a href="configuration-tags-value.png">configur...e.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.concurrency.png">features...y.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.open.png">features...n.png</a>&nbsp;</td><td class="left"><a href="invocation-types-retries.png">invocati...s.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-graphed-metrics.png">lambdain...s.png</a>&nbsp;</td><td class="left"><a href="Overview-Full-Sequence.png">Overview...e.png</a>&nbsp;</td><td class="left"><a href="sample-listmanager.png">sample-l...r.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="application-create-result.png">applicat...t.png</a>&nbsp;</td><td class="left"><a href="console-apig-endpoint.png">console-...t.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.provisioned.png">features...d.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.png">features...d.png</a>&nbsp;</td><td class="left"><a href="invocation-types-throttle.png">invocati...e.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-invocations-function-select.png">lambdain...t.png</a>&nbsp;</td><td class="left"><a href="Overview-Invoke-with-Error.png">Overview...r.png</a>&nbsp;</td><td class="left"><a href="sample-rdsmysql.png">sample-r...l.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="applications-monitoring-widget.png">applicat...t.png</a>&nbsp;</td><td class="left"><a href="console-designer.png">console-...r.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.reserved.png">features...d.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.provisioned.png">features...d.png</a>&nbsp;</td><td class="left"><a href="Invoke-Phase.png">Invoke-Phase.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-memory-usage.png">lambdain...e.png</a>&nbsp;</td><td class="left"><a href="Overview-Successful-Invokes.png">Overview...s.png</a>&nbsp;</td><td class="left"><a href="Shutdown-Phase.png">Shutdown...e.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="applications-page.png">applicat...e.png</a>&nbsp;</td><td class="left"><a href="console-env.png">console-env.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.throttling.png">features...g.png</a>&nbsp;</td><td class="left"><a href="features-scaling-provisioned.standard.png">features...d.png</a>&nbsp;</td><td class="left"><a href="kinesis-pull-10.png">kinesis-...0.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-multifunction-view.png">lambdain...w.png</a>&nbsp;</td><td class="left"><a href="permissions-executionrole.png">permissi...e.png</a>&nbsp;</td><td class="left"><a href="tracemap-apig-404.png">tracemap...4.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="blank-servicemap-basic.png">blank-se...c.png</a>&nbsp;</td><td class="left"><a href="console-monitoring-definition.png">console-...n.png</a>&nbsp;</td><td class="left"><a href="features-concurrency.unreserved.png">features...d.png</a>&nbsp;</td><td class="left"><a href="features-scaling.png">features...g.png</a>&nbsp;</td><td class="left"><a href="lambainsights-singlefunction-view.png">lambains...w.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-query.png">lambdain...y.png</a>&nbsp;</td><td class="left"><a href="push-s3-example-10.png">push-s3-...0.png</a>&nbsp;</td><td class="left"><a href="tracemap-apig-502.png">tracemap...2.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="blank-servicemap.png">blank-se...p.png</a>&nbsp;</td><td class="left"><a href="console-monitoring-insights.png">console-...s.png</a>&nbsp;</td><td class="left"><a href="features-destinations.png">features...s.png</a>&nbsp;</td><td class="left"><a href="features-scaling.throttling.png">features...g.png</a>&nbsp;</td><td class="left"><a href="lambda-android.png">lambda-a...d.png</a>&nbsp;</td><td class="left"><a href="latest-config.png">latest-c...g.png</a>&nbsp;</td><td class="left"><a href="runtimes-custom-init.png">runtimes...t.png</a>&nbsp;</td><td class="left"><a href="version-1-created.png">version-...d.png</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="blank-trace.png">blank-trace.png</a>&nbsp;</td><td class="left"><a href="env-accessdenied.png">env-acce...d.png</a>&nbsp;</td><td class="left"><a href="features-eventsourcemapping.png">features...g.png</a>&nbsp;</td><td class="left"><a href="Init-Phase.png">Init-Phase.png</a>&nbsp;</td><td class="left"><a href="lambdainsights-application-logs.png">lambdain...s.png</a>&nbsp;</td><td class="left"><a href="logs-api-concept-diagram.png">logs-api...m.png</a>&nbsp;</td><td class="left"><a href="sample-blank-stack.png">sample-b...k.png</a>&nbsp;</td><td class="left"><a href="version-actions.png">version-...s.png</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="cloudfront-events-that-trigger-lambda-functions.png">cloudfro...s.png</a>&nbsp;</td><td class="left"><a href="features-async.png">features...c.png</a>&nbsp;</td><td class="left"><a href="features-initialization-trace.png">features...e.png</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 75<br>
-Size of all files: 4384726 K</p>
+Size of all files: 4384726 KB</p>
 
 </body>
 </html>

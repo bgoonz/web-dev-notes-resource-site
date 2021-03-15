@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,22 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="pages/right.html" target="rframe">pages</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="pages/right.html" target="rframe">pages</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="2be4f65ee7ed57d2997af0c5d98f4e20ce81190a.60995d3d4c5150c13633.js">2be4f65ee7ed57d2997af0c5d98f4e20ce81190a.60995d3d4c5150c13633.js</a>&nbsp;</td><td class="left"><a href="78537f27.8279c7505c61cb8fea60.js">78537f27.8279c7505c61cb8fea60.js</a>&nbsp;</td><td class="left"><a href="adf1b103b565b7865a0f98ea967b51b3e3660c18.095266edfcdd9f646efd.js">adf1b103b565b7865a0f98ea967b51b3e3660c18.095266edfcdd9f646efd.js</a>&nbsp;</td><td class="left"><a href="e67ab39a67656ee462760ec899dd5cd83a3ab2cf.b8d80c74e1659013ff67.js">e67ab39a67656ee462760ec899dd5cd83a3ab2cf.b8d80c74e1659013ff67.js</a>&nbsp;</td><td class="left"><a href="polyfills-ce007b75707b1f3589a8.js">polyfills-ce007b75707b1f3589a8.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="0f6d78b899a1ada8a069577d0a0f2d60f5d91117.4019acfb783e806a75cb.js">0f6d78b899a1ada8a069577d0a0f2d60f5d91117.4019acfb783e806a75cb.js</a>&nbsp;</td><td class="left"><a href="68f504b0.bba56c4f391a1db0815a.js">68f504b0.bba56c4f391a1db0815a.js</a>&nbsp;</td><td class="left"><a href="8ffc5858bf71a15f52361e7319c3ad5ceec7c325.576033b2f3878dbe8c10.js">8ffc5858bf71a15f52361e7319c3ad5ceec7c325.576033b2f3878dbe8c10.js</a>&nbsp;</td><td class="left"><a href="commons.aeba1b501ee5096455a7.js">commons.aeba1b501ee5096455a7.js</a>&nbsp;</td><td class="left"><a href="framework.ad7002b3a551c278f5f0.js">framework.ad7002b3a551c278f5f0.js</a>&nbsp;</td><td class="left"><a href="webpack-8da9cabe58c6d2aa3bdd.js">webpack-8da9cabe58c6d2aa3bdd.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="1ea862844a52e07ea30f2afd84cc366b3979d6b4.e27afa73a93d521c36e1.js">1ea862844a52e07ea30f2afd84cc366b3979d6b4.e27afa73a93d521c36e1.js</a>&nbsp;</td><td class="left"><a href="6a7ba7c8ce868a578d290ff09eb1173658de74e3.33e16379c6dcd78283f7.js">6a7ba7c8ce868a578d290ff09eb1173658de74e3.33e16379c6dcd78283f7.js</a>&nbsp;</td><td class="left"><a href="ac46388c.70f445eb5557aa9dec72.js">ac46388c.70f445eb5557aa9dec72.js</a>&nbsp;</td><td class="left"><a href="de2bd6607f0d09174f6b5f6ccd214f4f3c8d6fb9.e2051ed48ad4791c2328.js">de2bd6607f0d09174f6b5f6ccd214f4f3c8d6fb9.e2051ed48ad4791c2328.js</a>&nbsp;</td><td class="left"><a href="main-f0b5624c3014889b3762.js">main-f0b5624c3014889b3762.js</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="0f6d78b899a1ada8a069577d0a0f2d60f5d91117.4019acfb783e806a75cb.js">0f6d78b8...cb.js</a>&nbsp;</td><td class="left"><a href="68f504b0.bba56c4f391a1db0815a.js">68f504b0...5a.js</a>&nbsp;</td><td class="left"><a href="78537f27.8279c7505c61cb8fea60.js">78537f27...60.js</a>&nbsp;</td><td class="left"><a href="ac46388c.70f445eb5557aa9dec72.js">ac46388c...72.js</a>&nbsp;</td><td class="left"><a href="commons.aeba1b501ee5096455a7.js">commons....a7.js</a>&nbsp;</td><td class="left"><a href="e67ab39a67656ee462760ec899dd5cd83a3ab2cf.b8d80c74e1659013ff67.js">e67ab39a...67.js</a>&nbsp;</td><td class="left"><a href="main-f0b5624c3014889b3762.js">main-f0b...62.js</a>&nbsp;</td><td class="left"><a href="webpack-8da9cabe58c6d2aa3bdd.js">webpack-...dd.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1ea862844a52e07ea30f2afd84cc366b3979d6b4.e27afa73a93d521c36e1.js">1ea86284...e1.js</a>&nbsp;</td><td class="left"><a href="6a7ba7c8ce868a578d290ff09eb1173658de74e3.33e16379c6dcd78283f7.js">6a7ba7c8...f7.js</a>&nbsp;</td><td class="left"><a href="8ffc5858bf71a15f52361e7319c3ad5ceec7c325.576033b2f3878dbe8c10.js">8ffc5858...10.js</a>&nbsp;</td><td class="left"><a href="adf1b103b565b7865a0f98ea967b51b3e3660c18.095266edfcdd9f646efd.js">adf1b103...fd.js</a>&nbsp;</td><td class="left"><a href="de2bd6607f0d09174f6b5f6ccd214f4f3c8d6fb9.e2051ed48ad4791c2328.js">de2bd660...28.js</a>&nbsp;</td><td class="left"><a href="framework.ad7002b3a551c278f5f0.js">framewor...f0.js</a>&nbsp;</td><td class="left"><a href="polyfills-ce007b75707b1f3589a8.js">polyfill...a8.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2be4f65ee7ed57d2997af0c5d98f4e20ce81190a.60995d3d4c5150c13633.js">2be4f65e...33.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 17<br>
-Size of all files: 2369926 K</p>
+Size of all files: 2373722 KB</p>
 
 </body>
 </html>

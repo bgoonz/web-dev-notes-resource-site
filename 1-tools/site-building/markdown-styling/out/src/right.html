@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,29 +532,27 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="custom-markdown-it-features/right.html" target="rframe">custom-markdown-it-features</a></td><td class="left">&nbsp;<a href="lib/right.html" target="rframe">lib</a></td><td class="left">&nbsp;<a href="render-enhancers/right.html" target="rframe">render-enhancers</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="custom-markdown-it-features/right.html" target="rframe">custom-m...tures</a></td><td class="left">&nbsp;<a href="lib/right.html" target="rframe">lib</a></td><td class="left">&nbsp;<a href="render-enhancers/right.html" target="rframe">render-enhancers</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="code-chunk-data.js">code-chunk-data.js</a>&nbsp;</td><td class="left"><a href="magick.js">magick.js</a>&nbsp;</td><td class="left"><a href="process-graphs.js">process-graphs.js</a>&nbsp;</td><td class="left"><a href="code-chunk-data.d.ts">code-chunk-data.d.ts</a>&nbsp;</td><td class="left"><a href="magick.d.ts">magick.d.ts</a>&nbsp;</td><td class="left"><a href="process-graphs.d.ts">process-graphs.d.ts</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="code-chunk.js">code-chunk.js</a>&nbsp;</td><td class="left"><a href="markdown-convert.js">markdown-convert.js</a>&nbsp;</td><td class="left"><a href="puml.js">puml.js</a>&nbsp;</td><td class="left"><a href="code-chunk.d.ts">code-chunk.d.ts</a>&nbsp;</td><td class="left"><a href="markdown-convert.d.ts">markdown-convert.d.ts</a>&nbsp;</td><td class="left"><a href="puml.d.ts">puml.d.ts</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="custom-subjects.js">custom-subjects.js</a>&nbsp;</td><td class="left"><a href="markdown-engine-config.js">markdown-engine-config.js</a>&nbsp;</td><td class="left"><a href="toc.js">toc.js</a>&nbsp;</td><td class="left"><a href="custom-subjects.d.ts">custom-subjects.d.ts</a>&nbsp;</td><td class="left"><a href="markdown-engine-config.d.ts">markdown-engine-config.d.ts</a>&nbsp;</td><td class="left"><a href="toc.d.ts">toc.d.ts</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="ditaa.js">ditaa.js</a>&nbsp;</td><td class="left"><a href="markdown-engine.js">markdown-engine.js</a>&nbsp;</td><td class="left"><a href="transformer.js">transformer.js</a>&nbsp;</td><td class="left"><a href="ditaa.d.ts">ditaa.d.ts</a>&nbsp;</td><td class="left"><a href="markdown-engine.d.ts">markdown-engine.d.ts</a>&nbsp;</td><td class="left"><a href="transformer.d.ts">transformer.d.ts</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="ebook-convert.js">ebook-convert.js</a>&nbsp;</td><td class="left"><a href="mermaid.js">mermaid.js</a>&nbsp;</td><td class="left"><a href="utility.js">utility.js</a>&nbsp;</td><td class="left"><a href="ebook-convert.d.ts">ebook-convert.d.ts</a>&nbsp;</td><td class="left"><a href="mermaid.d.ts">mermaid.d.ts</a>&nbsp;</td><td class="left"><a href="utility.d.ts">utility.d.ts</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="extension-helper.js">extension-helper.js</a>&nbsp;</td><td class="left"><a href="mume.js">mume.js</a>&nbsp;</td><td class="left"><a href="vega-lite.js">vega-lite.js</a>&nbsp;</td><td class="left"><a href="extension-helper.d.ts">extension-helper.d.ts</a>&nbsp;</td><td class="left"><a href="mume.d.ts">mume.d.ts</a>&nbsp;</td><td class="left"><a href="vega-lite.d.ts">vega-lite.d.ts</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="header-id-generator.js">header-id-generator.js</a>&nbsp;</td><td class="left"><a href="pandoc-convert.js">pandoc-convert.js</a>&nbsp;</td><td class="left"><a href="vega.js">vega.js</a>&nbsp;</td><td class="left"><a href="header-id-generator.d.ts">header-id-generator.d.ts</a>&nbsp;</td><td class="left"><a href="pandoc-convert.d.ts">pandoc-convert.d.ts</a>&nbsp;</td><td class="left"><a href="vega.d.ts">vega.d.ts</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="heading-id-generator.js">heading-id-generator.js</a>&nbsp;</td><td class="left"><a href="parse-math.js">parse-math.js</a>&nbsp;</td><td class="left"><a href="viz.js">viz.js</a>&nbsp;</td><td class="left"><a href="heading-id-generator.d.ts">heading-id-generator.d.ts</a>&nbsp;</td><td class="left"><a href="parse-math.d.ts">parse-math.d.ts</a>&nbsp;</td><td class="left"><a href="viz.d.ts">viz.d.ts</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="image-uploader.js">image-uploader.js</a>&nbsp;</td><td class="left"><a href="pdf.js">pdf.js</a>&nbsp;</td><td class="left"><a href="wavedrom.js">wavedrom.js</a>&nbsp;</td><td class="left"><a href="image-uploader.d.ts">image-uploader.d.ts</a>&nbsp;</td><td class="left"><a href="pdf.d.ts">pdf.d.ts</a>&nbsp;</td><td class="left"><a href="wavedrom.d.ts">wavedrom.d.ts</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="latex.js">latex.js</a>&nbsp;</td><td class="left"><a href="prince-convert.js">prince-convert.js</a>&nbsp;</td><td class="left"><a href="webview.js">webview.js</a>&nbsp;</td><td class="left"><a href="latex.d.ts">latex.d.ts</a>&nbsp;</td><td class="left"><a href="prince-convert.d.ts">prince-convert.d.ts</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="code-chunk-data.d.ts">code-chu....d.ts</a>&nbsp;</td><td class="left"><a href="image-uploader.d.ts">image-up....d.ts</a>&nbsp;</td><td class="left"><a href="pandoc-convert.d.ts">pandoc-c....d.ts</a>&nbsp;</td><td class="left"><a href="utility.d.ts">utility.d.ts</a>&nbsp;</td><td class="left"><a href="ditaa.js">ditaa.js</a>&nbsp;</td><td class="left"><a href="magick.js">magick.js</a>&nbsp;</td><td class="left"><a href="parse-math.js">parse-math.js</a>&nbsp;</td><td class="left"><a href="utility.js">utility.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="code-chunk.d.ts">code-chunk.d.ts</a>&nbsp;</td><td class="left"><a href="latex.d.ts">latex.d.ts</a>&nbsp;</td><td class="left"><a href="parse-math.d.ts">parse-math.d.ts</a>&nbsp;</td><td class="left"><a href="vega-lite.d.ts">vega-lite.d.ts</a>&nbsp;</td><td class="left"><a href="ebook-convert.js">ebook-convert.js</a>&nbsp;</td><td class="left"><a href="markdown-convert.js">markdown...rt.js</a>&nbsp;</td><td class="left"><a href="pdf.js">pdf.js</a>&nbsp;</td><td class="left"><a href="vega-lite.js">vega-lite.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="custom-subjects.d.ts">custom-s....d.ts</a>&nbsp;</td><td class="left"><a href="magick.d.ts">magick.d.ts</a>&nbsp;</td><td class="left"><a href="pdf.d.ts">pdf.d.ts</a>&nbsp;</td><td class="left"><a href="vega.d.ts">vega.d.ts</a>&nbsp;</td><td class="left"><a href="extension-helper.js">extensio...er.js</a>&nbsp;</td><td class="left"><a href="markdown-engine-config.js">markdown...ig.js</a>&nbsp;</td><td class="left"><a href="prince-convert.js">prince-c...rt.js</a>&nbsp;</td><td class="left"><a href="vega.js">vega.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="ditaa.d.ts">ditaa.d.ts</a>&nbsp;</td><td class="left"><a href="markdown-convert.d.ts">markdown....d.ts</a>&nbsp;</td><td class="left"><a href="prince-convert.d.ts">prince-c....d.ts</a>&nbsp;</td><td class="left"><a href="viz.d.ts">viz.d.ts</a>&nbsp;</td><td class="left"><a href="header-id-generator.js">header-i...or.js</a>&nbsp;</td><td class="left"><a href="markdown-engine.js">markdown...ne.js</a>&nbsp;</td><td class="left"><a href="process-graphs.js">process-...hs.js</a>&nbsp;</td><td class="left"><a href="viz.js">viz.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="ebook-convert.d.ts">ebook-co....d.ts</a>&nbsp;</td><td class="left"><a href="markdown-engine-config.d.ts">markdown....d.ts</a>&nbsp;</td><td class="left"><a href="process-graphs.d.ts">process-....d.ts</a>&nbsp;</td><td class="left"><a href="wavedrom.d.ts">wavedrom.d.ts</a>&nbsp;</td><td class="left"><a href="heading-id-generator.js">heading-...or.js</a>&nbsp;</td><td class="left"><a href="mermaid.js">mermaid.js</a>&nbsp;</td><td class="left"><a href="puml.js">puml.js</a>&nbsp;</td><td class="left"><a href="wavedrom.js">wavedrom.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="extension-helper.d.ts">extensio....d.ts</a>&nbsp;</td><td class="left"><a href="markdown-engine.d.ts">markdown....d.ts</a>&nbsp;</td><td class="left"><a href="puml.d.ts">puml.d.ts</a>&nbsp;</td><td class="left"><a href="code-chunk-data.js">code-chu...ta.js</a>&nbsp;</td><td class="left"><a href="image-uploader.js">image-up...er.js</a>&nbsp;</td><td class="left"><a href="mume.js">mume.js</a>&nbsp;</td><td class="left"><a href="toc.js">toc.js</a>&nbsp;</td><td class="left"><a href="webview.js">webview.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="header-id-generator.d.ts">header-i....d.ts</a>&nbsp;</td><td class="left"><a href="mermaid.d.ts">mermaid.d.ts</a>&nbsp;</td><td class="left"><a href="toc.d.ts">toc.d.ts</a>&nbsp;</td><td class="left"><a href="code-chunk.js">code-chunk.js</a>&nbsp;</td><td class="left"><a href="latex.js">latex.js</a>&nbsp;</td><td class="left"><a href="pandoc-convert.js">pandoc-c...rt.js</a>&nbsp;</td><td class="left"><a href="transformer.js">transformer.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="heading-id-generator.d.ts">heading-....d.ts</a>&nbsp;</td><td class="left"><a href="mume.d.ts">mume.d.ts</a>&nbsp;</td><td class="left"><a href="transformer.d.ts">transformer.d.ts</a>&nbsp;</td><td class="left"><a href="custom-subjects.js">custom-s...ts.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  4<br>
-Files: 59<br>
-Size of all files: 354744 K</p>
+Files: 60<br>
+Size of all files: 373392 KB</p>
 
 </body>
 </html>

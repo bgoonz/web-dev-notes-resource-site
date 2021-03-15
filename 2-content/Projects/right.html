@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="aws-s3-pern-demo-master/right.html" target="rframe">aws-s3-pern-demo-master</a></td><td class="left">&nbsp;<a href="explore-react-without-react-master/right.html" target="rframe">explore-react-without-react-master</a></td><td class="left">&nbsp;<a href="express-sessions-starter-master/right.html" target="rframe">express-sessions-starter-master</a></td><td class="left">&nbsp;<a href="guessing-game-project-master/right.html" target="rframe">guessing-game-project-master</a></td><td class="left">&nbsp;<a href="JSX/right.html" target="rframe">JSX</a></td><td class="left">&nbsp;<a href="public/right.html" target="rframe">public</a></td><td class="left">&nbsp;<a href="routing_project_solution/right.html" target="rframe">routing_project_solution</a></td><td class="left">&nbsp;<a href="triviaProject/right.html" target="rframe">triviaProject</a></td><td class="left">&nbsp;<a href="web-audio-api/right.html" target="rframe">web-audio-api</a></td></tr>
-<tr class="row2"><td class="left"><a href="amusement-park-tracker-solution/right.html" target="rframe">amusement-park-tracker-solution</a></td><td class="left">&nbsp;<a href="Chessjs/right.html" target="rframe">Chessjs</a></td><td class="left">&nbsp;<a href="express-local-library/right.html" target="rframe">express-local-library</a></td><td class="left">&nbsp;<a href="formative_forms_solution/right.html" target="rframe">formative_forms_solution</a></td><td class="left">&nbsp;<a href="Javascript-Drum-Kit-master/right.html" target="rframe">Javascript-Drum-Kit-master</a></td><td class="left">&nbsp;<a href="mini-projects/right.html" target="rframe">mini-projects</a></td><td class="left">&nbsp;<a href="Quiz%20App%20Master/right.html" target="rframe">Quiz App Master</a></td><td class="left">&nbsp;<a href="star-trek-solution/right.html" target="rframe">star-trek-solution</a></td><td class="left">&nbsp;<a href="twitterClone-Solution/right.html" target="rframe">twitterClone-Solution</a></td><td class="left">&nbsp;<a href="yahtzze/right.html" target="rframe">yahtzze</a></td></tr>
-<tr><td class="left"><a href="AUX-PROJECTS/right.html" target="rframe">AUX-PROJECTS</a></td><td class="left">&nbsp;<a href="data-driven%20app/right.html" target="rframe">data-driven app</a></td><td class="left">&nbsp;<a href="express-reading-list-solution/right.html" target="rframe">express-reading-list-solution</a></td><td class="left">&nbsp;<a href="grocery-store-solution/right.html" target="rframe">grocery-store-solution</a></td><td class="left">&nbsp;<a href="javascript-text-to-speech-master/right.html" target="rframe">javascript-text-to-speech-master</a></td><td class="left">&nbsp;<a href="project-archive/right.html" target="rframe">project-archive</a></td><td class="left">&nbsp;<a href="Realtime-Chat-App-With-Rooms-master/right.html" target="rframe">Realtime-Chat-App-With-Rooms-master</a></td><td class="left">&nbsp;<a href="ticTacToe/right.html" target="rframe">ticTacToe</a></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="Chessjs/right.html" target="rframe">Chessjs</a></td><td class="left">&nbsp;<a href="express-sessions-starter-master/right.html" target="rframe">express-...aster</a></td><td class="left">&nbsp;<a href="javascript-text-to-speech-master/right.html" target="rframe">javascri...aster</a></td><td class="left">&nbsp;<a href="public/right.html" target="rframe">public</a></td><td class="left">&nbsp;<a href="ticTacToe/right.html" target="rframe">ticTacToe</a></td></tr>
+<tr class="row2"><td class="left"><a href="amusement-park-tracker-solution/right.html" target="rframe">amusemen...ution</a></td><td class="left">&nbsp;<a href="data-driven%20app/right.html" target="rframe">data-driven app</a></td><td class="left">&nbsp;<a href="formative_forms_solution/right.html" target="rframe">formativ...ution</a></td><td class="left">&nbsp;<a href="jsanimate-master/right.html" target="rframe">jsanimate-master</a></td><td class="left">&nbsp;<a href="Quiz%20App%20Master/right.html" target="rframe">Quiz App Master</a></td><td class="left">&nbsp;<a href="triviaProject/right.html" target="rframe">triviaProject</a></td></tr>
+<tr><td class="left"><a href="AUX-PROJECTS/right.html" target="rframe">AUX-PROJECTS</a></td><td class="left">&nbsp;<a href="explore-react-without-react-master/right.html" target="rframe">explore-...aster</a></td><td class="left">&nbsp;<a href="grocery-store-solution/right.html" target="rframe">grocery-...ution</a></td><td class="left">&nbsp;<a href="JSX/right.html" target="rframe">JSX</a></td><td class="left">&nbsp;<a href="Realtime-Chat-App-With-Rooms-master/right.html" target="rframe">Realtime...aster</a></td><td class="left">&nbsp;<a href="twitterClone-Solution/right.html" target="rframe">twitterC...ution</a></td></tr>
+<tr class="row2"><td class="left"><a href="aws-s3-pern-demo-master/right.html" target="rframe">aws-s3-p...aster</a></td><td class="left">&nbsp;<a href="express-local-library/right.html" target="rframe">express-...brary</a></td><td class="left">&nbsp;<a href="guessing-game-project-master/right.html" target="rframe">guessing...aster</a></td><td class="left">&nbsp;<a href="mini-projects/right.html" target="rframe">mini-projects</a></td><td class="left">&nbsp;<a href="routing_project_solution/right.html" target="rframe">routing_...ution</a></td><td class="left">&nbsp;<a href="web-audio-api/right.html" target="rframe">web-audio-api</a></td></tr>
+<tr><td class="left"><a href="Band-Page-Mihir/right.html" target="rframe">Band-Page-Mihir</a></td><td class="left">&nbsp;<a href="express-reading-list-solution/right.html" target="rframe">express-...ution</a></td><td class="left">&nbsp;<a href="Javascript-Drum-Kit-master/right.html" target="rframe">Javascri...aster</a></td><td class="left">&nbsp;<a href="project-archive/right.html" target="rframe">project-archive</a></td><td class="left">&nbsp;<a href="star-trek-solution/right.html" target="rframe">star-tre...ution</a></td><td class="left">&nbsp;<a href="yahtzze/right.html" target="rframe">yahtzze</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
 <tr><td class="left"><a href="index.html">index.html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
-Folders:  28<br>
+Folders:  30<br>
 Files: 1<br>
-Size of all files: 16007 K</p>
+Size of all files: 13480 KB</p>
 
 </body>
 </html>

@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,28 +532,26 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="call-apply-bind/right.html" target="rframe">call-apply-bind</a></td><td class="left">&nbsp;<a href="ES6-Array-Helper-Methods/right.html" target="rframe">ES6-Array-Helper-Methods</a></td><td class="left">&nbsp;<a href="Functional-Programming_Pure-Function/right.html" target="rframe">Functional-Programming_Pure-Function</a></td><td class="left">&nbsp;<a href="js-basics/right.html" target="rframe">js-basics</a></td><td class="left">&nbsp;<a href="js-data-types/right.html" target="rframe">js-data-types</a></td><td class="left">&nbsp;<a href="OOP-Prototypal-Inheritence/right.html" target="rframe">OOP-Prototypal-Inheritence</a></td><td class="left">&nbsp;<a href="rest-spread-destructuring/right.html" target="rframe">rest-spread-destructuring</a></td><td class="left">&nbsp;<a href="this-keyword/right.html" target="rframe">this-keyword</a></td><td class="left">&nbsp;<a href="Tricky-JS-Problems/right.html" target="rframe">Tricky-JS-Problems</a></td></tr>
-<tr class="row2"><td class="left"><a href="arrow-function/right.html" target="rframe">arrow-function</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="call-apply-bind/right.html" target="rframe">call-apply-bind</a></td><td class="left">&nbsp;<a href="Functional-Programming_Pure-Function/right.html" target="rframe">Function...ction</a></td><td class="left">&nbsp;<a href="js-data-types/right.html" target="rframe">js-data-types</a></td><td class="left">&nbsp;<a href="rest-spread-destructuring/right.html" target="rframe">rest-spr...uring</a></td><td class="left">&nbsp;<a href="Tricky-JS-Problems/right.html" target="rframe">Tricky-J...blems</a></td></tr>
+<tr class="row2"><td class="left"><a href="arrow-function/right.html" target="rframe">arrow-function</a></td><td class="left">&nbsp;<a href="ES6-Array-Helper-Methods/right.html" target="rframe">ES6-Arra...thods</a></td><td class="left">&nbsp;<a href="js-basics/right.html" target="rframe">js-basics</a></td><td class="left">&nbsp;<a href="OOP-Prototypal-Inheritence/right.html" target="rframe">OOP-Prot...tence</a></td><td class="left">&nbsp;<a href="this-keyword/right.html" target="rframe">this-keyword</a></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="call-stack-good-example.html">call-stack-good-example.html</a>&nbsp;</td><td class="left"><a href="IIFE.html">IIFE.html</a>&nbsp;</td><td class="left"><a href="Truthy-isnt-Equal-to-true.html">Truthy-isnt-Equal-to-true.html</a>&nbsp;</td><td class="left"><a href="call-stack-good-example.md">call-stack-good-example.md</a>&nbsp;</td><td class="left"><a href="hoisting.md">hoisting.md</a>&nbsp;</td><td class="left"><a href="repaint-reflow.md">repaint-reflow.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="coercion.html">coercion.html</a>&nbsp;</td><td class="left"><a href="is-javascript-static-or-dynamically-typed.html">is-javascript-static-or-dynamically-typed.html</a>&nbsp;</td><td class="left"><a href="undefined-vs-not_defined.html">undefined-vs-not_defined.html</a>&nbsp;</td><td class="left"><a href="coercion.md">coercion.md</a>&nbsp;</td><td class="left"><a href="IIFE.md">IIFE.md</a>&nbsp;</td><td class="left"><a href="truthy-falsy-2.md">truthy-falsy-2.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="const-var-let.html">const-var-let.html</a>&nbsp;</td><td class="left"><a href="is-JS-block-scoped-or-function-scoped.html">is-JS-block-scoped-or-function-scoped.html</a>&nbsp;</td><td class="left"><a href="use-strict-describe.html">use-strict-describe.html</a>&nbsp;</td><td class="left"><a href="const-var-let.md">const-var-let.md</a>&nbsp;</td><td class="left"><a href="is-javascript-static-or-dynamically-typed.md">is-javascript-static-or-dynamically-typed.md</a>&nbsp;</td><td class="left"><a href="Truthy-isnt-Equal-to-true.md">Truthy-isnt-Equal-to-true.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="curried-function.html">curried-function.html</a>&nbsp;</td><td class="left"><a href="New-datatypes-Map-and-drawbacks-of-old-objects.html">New-datatypes-Map-and-drawbacks-of-old-objects.html</a>&nbsp;</td><td class="left"><a href="Why-eval-function-considered-dangerous.html">Why-eval-function-considered-dangerous.html</a>&nbsp;</td><td class="left"><a href="curried-function.md">curried-function.md</a>&nbsp;</td><td class="left"><a href="is-JS-block-scoped-or-function-scoped.md">is-JS-block-scoped-or-function-scoped.md</a>&nbsp;</td><td class="left"><a href="undefined-vs-not_defined.md">undefined-vs-not_defined.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="event-delegation-propagation-bubbling.html">event-delegation-propagation-bubbling.html</a>&nbsp;</td><td class="left"><a href="Null-Coalescing-operator.html">Null-Coalescing-operator.html</a>&nbsp;</td><td class="left"><a href="null-coalescing.jpeg">null-coalescing.jpeg</a>&nbsp;</td><td class="left"><a href="event-delegation-propagation-bubbling.md">event-delegation-propagation-bubbling.md</a>&nbsp;</td><td class="left"><a href="New-datatypes-Map-and-drawbacks-of-old-objects.md">New-datatypes-Map-and-drawbacks-of-old-objects.md</a>&nbsp;</td><td class="left"><a href="use-strict-describe.md">use-strict-describe.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="execution-context-call-stack.html">execution-context-call-stack.html</a>&nbsp;</td><td class="left"><a href="passing-by-value-and-by-reference.html">passing-by-value-and-by-reference.html</a>&nbsp;</td><td class="left"><a href="map-set-get.js">map-set-get.js</a>&nbsp;</td><td class="left"><a href="execution-context-call-stack.md">execution-context-call-stack.md</a>&nbsp;</td><td class="left"><a href="Null-Coalescing-operator.md">Null-Coalescing-operator.md</a>&nbsp;</td><td class="left"><a href="Why-eval-function-considered-dangerous.md">Why-eval-function-considered-dangerous.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="hashing-vs-encrypting.html">hashing-vs-encrypting.html</a>&nbsp;</td><td class="left"><a href="repaint-reflow.html">repaint-reflow.html</a>&nbsp;</td><td class="left"><a href="truthy-falsy-1.js">truthy-falsy-1.js</a>&nbsp;</td><td class="left"><a href="hashing-vs-encrypting.md">hashing-vs-encrypting.md</a>&nbsp;</td><td class="left"><a href="passing-by-value-and-by-reference.md">passing-by-value-and-by-reference.md</a>&nbsp;</td><td class="left"><a href="Execution-Context-1.png">Execution-Context-1.png</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="hoisting.html">hoisting.html</a>&nbsp;</td><td class="left"><a href="truthy-falsy-2.html">truthy-falsy-2.html</a>&nbsp;</td><td class="left"><a href="truthy-falsy-pass-by-value-vs-reference-strict-equality-use-case.js">truthy-falsy-pass-by-value-vs-reference-strict-equality-use-case.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="Execution-Context-1.png">Executio...1.png</a>&nbsp;</td><td class="left"><a href="execution-context-call-stack.md">executio...ck.md</a>&nbsp;</td><td class="left"><a href="New-datatypes-Map-and-drawbacks-of-old-objects.md">New-data...ts.md</a>&nbsp;</td><td class="left"><a href="undefined-vs-not_defined.md">undefine...ed.md</a>&nbsp;</td><td class="left"><a href="null-coalescing.jpeg">null-coa....jpeg</a>&nbsp;</td><td class="left"><a href="execution-context-call-stack.html">executio....html</a>&nbsp;</td><td class="left"><a href="is-JS-block-scoped-or-function-scoped.html">is-JS-bl....html</a>&nbsp;</td><td class="left"><a href="truthy-falsy-2.html">truthy-f....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="call-stack-good-example.md">call-sta...le.md</a>&nbsp;</td><td class="left"><a href="hashing-vs-encrypting.md">hashing-...ng.md</a>&nbsp;</td><td class="left"><a href="Null-Coalescing-operator.md">Null-Coa...or.md</a>&nbsp;</td><td class="left"><a href="use-strict-describe.md">use-stri...be.md</a>&nbsp;</td><td class="left"><a href="call-stack-good-example.html">call-sta....html</a>&nbsp;</td><td class="left"><a href="hashing-vs-encrypting.html">hashing-....html</a>&nbsp;</td><td class="left"><a href="New-datatypes-Map-and-drawbacks-of-old-objects.html">New-data....html</a>&nbsp;</td><td class="left"><a href="Truthy-isnt-Equal-to-true.html">Truthy-i....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="coercion.md">coercion.md</a>&nbsp;</td><td class="left"><a href="hoisting.md">hoisting.md</a>&nbsp;</td><td class="left"><a href="passing-by-value-and-by-reference.md">passing-...ce.md</a>&nbsp;</td><td class="left"><a href="Why-eval-function-considered-dangerous.md">Why-eval...us.md</a>&nbsp;</td><td class="left"><a href="coercion.html">coercion.html</a>&nbsp;</td><td class="left"><a href="hoisting.html">hoisting.html</a>&nbsp;</td><td class="left"><a href="Null-Coalescing-operator.html">Null-Coa....html</a>&nbsp;</td><td class="left"><a href="undefined-vs-not_defined.html">undefine....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="const-var-let.md">const-var-let.md</a>&nbsp;</td><td class="left"><a href="IIFE.md">IIFE.md</a>&nbsp;</td><td class="left"><a href="repaint-reflow.md">repaint-...ow.md</a>&nbsp;</td><td class="left"><a href="map-set-get.js">map-set-get.js</a>&nbsp;</td><td class="left"><a href="const-var-let.html">const-va....html</a>&nbsp;</td><td class="left"><a href="IIFE.html">IIFE.html</a>&nbsp;</td><td class="left"><a href="passing-by-value-and-by-reference.html">passing-....html</a>&nbsp;</td><td class="left"><a href="use-strict-describe.html">use-stri....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="curried-function.md">curried-...on.md</a>&nbsp;</td><td class="left"><a href="is-javascript-static-or-dynamically-typed.md">is-javas...ed.md</a>&nbsp;</td><td class="left"><a href="truthy-falsy-2.md">truthy-f...-2.md</a>&nbsp;</td><td class="left"><a href="truthy-falsy-1.js">truthy-f...-1.js</a>&nbsp;</td><td class="left"><a href="curried-function.html">curried-....html</a>&nbsp;</td><td class="left"><a href="is-javascript-static-or-dynamically-typed.html">is-javas....html</a>&nbsp;</td><td class="left"><a href="repaint-reflow.html">repaint-....html</a>&nbsp;</td><td class="left"><a href="Why-eval-function-considered-dangerous.html">Why-eval....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="event-delegation-propagation-bubbling.md">event-de...ng.md</a>&nbsp;</td><td class="left"><a href="is-JS-block-scoped-or-function-scoped.md">is-JS-bl...ed.md</a>&nbsp;</td><td class="left"><a href="Truthy-isnt-Equal-to-true.md">Truthy-i...ue.md</a>&nbsp;</td><td class="left"><a href="truthy-falsy-pass-by-value-vs-reference-strict-equality-use-case.js">truthy-f...se.js</a>&nbsp;</td><td class="left"><a href="event-delegation-propagation-bubbling.html">event-de....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  11<br>
 Files: 45<br>
-Size of all files: 235121 K</p>
+Size of all files: 235121 KB</p>
 
 </body>
 </html>

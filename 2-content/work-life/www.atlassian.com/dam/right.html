@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,10 +532,11 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="jcr689d8fe7-3859-41cc-b3b4-92004cd7b7af.html/right.html" target="rframe">jcr689d8fe7-3859-41cc-b3b4-92004cd7b7af.html</a></td><td class="left">&nbsp;<a href="jcr7219e67e-7ca2-4ba6-9563-8f06cc6e1028.html/right.html" target="rframe">jcr7219e67e-7ca2-4ba6-9563-8f06cc6e1028.html</a></td><td class="left">&nbsp;<a href="jcr84b0d543-d41e-40a7-8815-c39ddb9e50b3.html/right.html" target="rframe">jcr84b0d543-d41e-40a7-8815-c39ddb9e50b3.html</a></td><td class="left">&nbsp;<a href="jcr8e84294f-17da-4685-88e9-127a90061d38.html/right.html" target="rframe">jcr8e84294f-17da-4685-88e9-127a90061d38.html</a></td><td class="left">&nbsp;<a href="jcra6249ebe-16de-4faa-8405-1fb0af9e226d.html/right.html" target="rframe">jcra6249ebe-16de-4faa-8405-1fb0af9e226d.html</a></td><td class="left">&nbsp;<a href="jcrc185cc4f-0ee1-4ed0-bd7d-cd77fef8a8d8.html/right.html" target="rframe">jcrc185cc4f-0ee1-4ed0-bd7d-cd77fef8a8d8.html</a></td><td class="left">&nbsp;<a href="jcrcfd0db1c-481a-4057-be68-2dc239efabe4.html/right.html" target="rframe">jcrcfd0db1c-481a-4057-be68-2dc239efabe4.html</a></td><td class="left">&nbsp;<a href="jcre2114a67-58bd-4b5d-8cb2-0b99a572e61a.html/right.html" target="rframe">jcre2114a67-58bd-4b5d-8cb2-0b99a572e61a.html</a></td><td class="left">&nbsp;<a href="jcre3ac66dd-0bac-4aaa-afad-d7fd82da60bc.html/right.html" target="rframe">jcre3ac66dd-0bac-4aaa-afad-d7fd82da60bc.html</a></td></tr>
-<tr class="row2"><td class="left"><a href="jcr279bdfa5-41ac-43ad-820f-98ecf4eee354.html/right.html" target="rframe">jcr279bdfa5-41ac-43ad-820f-98ecf4eee354.html</a></td><td class="left">&nbsp;<a href="jcr70a32e4b-8f1a-414a-9953-6108503738ed.html/right.html" target="rframe">jcr70a32e4b-8f1a-414a-9953-6108503738ed.html</a></td><td class="left">&nbsp;<a href="jcr81033d41-ac67-43c5-99b8-9f39a3e926e0.html/right.html" target="rframe">jcr81033d41-ac67-43c5-99b8-9f39a3e926e0.html</a></td><td class="left">&nbsp;<a href="jcr8690fc45-7ac9-4be3-ad09-29f9fec39739.html/right.html" target="rframe">jcr8690fc45-7ac9-4be3-ad09-29f9fec39739.html</a></td><td class="left">&nbsp;<a href="jcra009f676-d5d1-4f8f-93d2-9c8e7c1f65df.html/right.html" target="rframe">jcra009f676-d5d1-4f8f-93d2-9c8e7c1f65df.html</a></td><td class="left">&nbsp;<a href="jcrba03a215-2f45-40f5-8540-b2015223c918.html/right.html" target="rframe">jcrba03a215-2f45-40f5-8540-b2015223c918.html</a></td><td class="left">&nbsp;<a href="jcrcad9eeea-ea43-431c-b6c6-5d4da8f5e289.html/right.html" target="rframe">jcrcad9eeea-ea43-431c-b6c6-5d4da8f5e289.html</a></td><td class="left">&nbsp;<a href="jcrdd48c188-8d39-4e98-937e-cb7607d9be39.html/right.html" target="rframe">jcrdd48c188-8d39-4e98-937e-cb7607d9be39.html</a></td><td class="left">&nbsp;<a href="jcre348b562-4152-4cdc-8a55-3d297e509cc8.html/right.html" target="rframe">jcre348b562-4152-4cdc-8a55-3d297e509cc8.html</a></td><td class="left">&nbsp;<a href="jcrea3784e9-09cc-414b-9b7d-b533c3f0dda7.html/right.html" target="rframe">jcrea3784e9-09cc-414b-9b7d-b533c3f0dda7.html</a></td></tr>
-<tr><td class="left"><a href="jcr2e007186-be8c-45fc-a2a6-8144e2838724.html/right.html" target="rframe">jcr2e007186-be8c-45fc-a2a6-8144e2838724.html</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="jcr70a32e4b-8f1a-414a-9953-6108503738ed.html/right.html" target="rframe">jcr70a3....html</a></td><td class="left">&nbsp;<a href="jcr8690fc45-7ac9-4be3-ad09-29f9fec39739.html/right.html" target="rframe">jcr8690....html</a></td><td class="left">&nbsp;<a href="jcrba03a215-2f45-40f5-8540-b2015223c918.html/right.html" target="rframe">jcrba03....html</a></td><td class="left">&nbsp;<a href="jcrcfd0db1c-481a-4057-be68-2dc239efabe4.html/right.html" target="rframe">jcrcfd0....html</a></td><td class="left">&nbsp;<a href="jcre348b562-4152-4cdc-8a55-3d297e509cc8.html/right.html" target="rframe">jcre348....html</a></td></tr>
+<tr class="row2"><td class="left"><a href="jcr279bdfa5-41ac-43ad-820f-98ecf4eee354.html/right.html" target="rframe">jcr279b....html</a></td><td class="left">&nbsp;<a href="jcr7219e67e-7ca2-4ba6-9563-8f06cc6e1028.html/right.html" target="rframe">jcr7219....html</a></td><td class="left">&nbsp;<a href="jcr8e84294f-17da-4685-88e9-127a90061d38.html/right.html" target="rframe">jcr8e84....html</a></td><td class="left">&nbsp;<a href="jcrc185cc4f-0ee1-4ed0-bd7d-cd77fef8a8d8.html/right.html" target="rframe">jcrc185....html</a></td><td class="left">&nbsp;<a href="jcrdd48c188-8d39-4e98-937e-cb7607d9be39.html/right.html" target="rframe">jcrdd48....html</a></td><td class="left">&nbsp;<a href="jcre3ac66dd-0bac-4aaa-afad-d7fd82da60bc.html/right.html" target="rframe">jcre3ac....html</a></td></tr>
+<tr><td class="left"><a href="jcr2e007186-be8c-45fc-a2a6-8144e2838724.html/right.html" target="rframe">jcr2e00....html</a></td><td class="left">&nbsp;<a href="jcr81033d41-ac67-43c5-99b8-9f39a3e926e0.html/right.html" target="rframe">jcr8103....html</a></td><td class="left">&nbsp;<a href="jcra009f676-d5d1-4f8f-93d2-9c8e7c1f65df.html/right.html" target="rframe">jcra009....html</a></td><td class="left">&nbsp;<a href="jcrcad9eeea-ea43-431c-b6c6-5d4da8f5e289.html/right.html" target="rframe">jcrcad9....html</a></td><td class="left">&nbsp;<a href="jcre2114a67-58bd-4b5d-8cb2-0b99a572e61a.html/right.html" target="rframe">jcre211....html</a></td><td class="left">&nbsp;<a href="jcrea3784e9-09cc-414b-9b7d-b533c3f0dda7.html/right.html" target="rframe">jcrea37....html</a></td></tr>
+<tr class="row2"><td class="left"><a href="jcr689d8fe7-3859-41cc-b3b4-92004cd7b7af.html/right.html" target="rframe">jcr689d....html</a></td><td class="left">&nbsp;<a href="jcr84b0d543-d41e-40a7-8815-c39ddb9e50b3.html/right.html" target="rframe">jcr84b0....html</a></td><td class="left">&nbsp;<a href="jcra6249ebe-16de-4faa-8405-1fb0af9e226d.html/right.html" target="rframe">jcra624....html</a></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 

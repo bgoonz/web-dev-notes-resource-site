@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,23 +532,22 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="add-elements-to-the-end-of-an-array-using-concat-instead-of-push.html">add-elements-to-the-end-of-an-array-using-concat-instead-of-push.html</a>&nbsp;</td><td class="left"><a href="combine-two-arrays-using-the-concat-method.html">combine-two-arrays-using-the-concat-method.html</a>&nbsp;</td><td class="left"><a href="learn-about-functional-programming.html">learn-about-functional-programming.html</a>&nbsp;</td><td class="left"><a href="return-a-sorted-array-without-changing-the-original-array.html">return-a-sorted-array-without-changing-the-original-array.html</a>&nbsp;</td><td class="left"><a href="understand-functional-programming-terminology.html">understand-functional-programming-terminology.html</a>&nbsp;</td><td class="left"><a href="use-the-filter-method-to-extract-data-from-an-array.html">use-the-filter-method-to-extract-data-from-an-array.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="apply-functional-programming-to-convert-strings-to-url-slugs.html">apply-functional-programming-to-convert-strings-to-url-slugs.html</a>&nbsp;</td><td class="left"><a href="implement-map-on-a-prototype.html">implement-map-on-a-prototype.html</a>&nbsp;</td><td class="left"><a href="pass-arguments-to-avoid-external-dependence-in-a-function.html">pass-arguments-to-avoid-external-dependence-in-a-function.html</a>&nbsp;</td><td class="left"><a href="return-part-of-an-array-using-the-slice-method.html">return-part-of-an-array-using-the-slice-method.html</a>&nbsp;</td><td class="left"><a href="understand-the-hazards-of-using-imperative-code.html">understand-the-hazards-of-using-imperative-code.html</a>&nbsp;</td><td class="left"><a href="use-the-map-method-to-extract-data-from-an-array.html">use-the-map-method-to-extract-data-from-an-array.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="avoid-mutations-and-side-effects-using-functional-programming.html">avoid-mutations-and-side-effects-using-functional-programming.html</a>&nbsp;</td><td class="left"><a href="implement-the-filter-method-on-a-prototype.html">implement-the-filter-method-on-a-prototype.html</a>&nbsp;</td><td class="left"><a href="refactor-global-variables-out-of-functions.html">refactor-global-variables-out-of-functions.html</a>&nbsp;</td><td class="left"><a href="sort-an-array-alphabetically-using-the-sort-method.html">sort-an-array-alphabetically-using-the-sort-method.html</a>&nbsp;</td><td class="left"><a href="use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem.html">use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem.html</a>&nbsp;</td><td class="left"><a href="use-the-reduce-method-to-analyze-data.html">use-the-reduce-method-to-analyze-data.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="combine-an-array-into-a-string-using-the-join-method.html">combine-an-array-into-a-string-using-the-join-method.html</a>&nbsp;</td><td class="left"><a href="introduction-to-currying-and-partial-application.html">introduction-to-currying-and-partial-application.html</a>&nbsp;</td><td class="left"><a href="remove-elements-from-an-array-using-slice-instead-of-splice.html">remove-elements-from-an-array-using-slice-instead-of-splice.html</a>&nbsp;</td><td class="left"><a href="split-a-string-into-an-array-using-the-split-method.html">split-a-string-into-an-array-using-the-split-method.html</a>&nbsp;</td><td class="left"><a href="use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria.html">use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria.html</a>&nbsp;</td><td class="left"><a href="use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria.html">use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria.html</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="add-elements-to-the-end-of-an-array-using-concat-instead-of-push.html">add-elem....html</a>&nbsp;</td><td class="left"><a href="combine-an-array-into-a-string-using-the-join-method.html">combine-....html</a>&nbsp;</td><td class="left"><a href="implement-the-filter-method-on-a-prototype.html">implemen....html</a>&nbsp;</td><td class="left"><a href="pass-arguments-to-avoid-external-dependence-in-a-function.html">pass-arg....html</a>&nbsp;</td><td class="left"><a href="return-a-sorted-array-without-changing-the-original-array.html">return-a....html</a>&nbsp;</td><td class="left"><a href="split-a-string-into-an-array-using-the-split-method.html">split-a-....html</a>&nbsp;</td><td class="left"><a href="use-higher-order-functions-map-filter-or-reduce-to-solve-a-complex-problem.html">use-high....html</a>&nbsp;</td><td class="left"><a href="use-the-map-method-to-extract-data-from-an-array.html">use-the-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="apply-functional-programming-to-convert-strings-to-url-slugs.html">apply-fu....html</a>&nbsp;</td><td class="left"><a href="combine-two-arrays-using-the-concat-method.html">combine-....html</a>&nbsp;</td><td class="left"><a href="introduction-to-currying-and-partial-application.html">introduc....html</a>&nbsp;</td><td class="left"><a href="refactor-global-variables-out-of-functions.html">refactor....html</a>&nbsp;</td><td class="left"><a href="return-part-of-an-array-using-the-slice-method.html">return-p....html</a>&nbsp;</td><td class="left"><a href="understand-functional-programming-terminology.html">understa....html</a>&nbsp;</td><td class="left"><a href="use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria.html">use-the-....html</a>&nbsp;</td><td class="left"><a href="use-the-reduce-method-to-analyze-data.html">use-the-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="avoid-mutations-and-side-effects-using-functional-programming.html">avoid-mu....html</a>&nbsp;</td><td class="left"><a href="implement-map-on-a-prototype.html">implemen....html</a>&nbsp;</td><td class="left"><a href="learn-about-functional-programming.html">learn-ab....html</a>&nbsp;</td><td class="left"><a href="remove-elements-from-an-array-using-slice-instead-of-splice.html">remove-e....html</a>&nbsp;</td><td class="left"><a href="sort-an-array-alphabetically-using-the-sort-method.html">sort-an-....html</a>&nbsp;</td><td class="left"><a href="understand-the-hazards-of-using-imperative-code.html">understa....html</a>&nbsp;</td><td class="left"><a href="use-the-filter-method-to-extract-data-from-an-array.html">use-the-....html</a>&nbsp;</td><td class="left"><a href="use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria.html">use-the-....html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 24<br>
-Size of all files: 337334 K</p>
+Size of all files: 337334 KB</p>
 
 </body>
 </html>

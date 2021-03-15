@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="audio-buffer/right.html" target="rframe">audio-buffer</a></td><td class="left">&nbsp;<a href="audiocontext-states/right.html" target="rframe">audiocontext-states</a></td><td class="left">&nbsp;<a href="create-media-stream-destination/right.html" target="rframe">create-media-stream-destination</a></td><td class="left">&nbsp;<a href="iirfilter-node/right.html" target="rframe">iirfilter-node</a></td><td class="left">&nbsp;<a href="multi-track/right.html" target="rframe">multi-track</a></td><td class="left">&nbsp;<a href="offline-audio-context-promise/right.html" target="rframe">offline-audio-context-promise</a></td><td class="left">&nbsp;<a href="panner-node/right.html" target="rframe">panner-node</a></td><td class="left">&nbsp;<a href="spacialization/right.html" target="rframe">spacialization</a></td><td class="left">&nbsp;<a href="stereo-panner-node/right.html" target="rframe">stereo-panner-node</a></td></tr>
-<tr class="row2"><td class="left"><a href="audio-analyser/right.html" target="rframe">audio-analyser</a></td><td class="left">&nbsp;<a href="audio-param/right.html" target="rframe">audio-param</a></td><td class="left">&nbsp;<a href="compressor-example/right.html" target="rframe">compressor-example</a></td><td class="left">&nbsp;<a href="decode-audio-data/right.html" target="rframe">decode-audio-data</a></td><td class="left">&nbsp;<a href="media-source-buffer/right.html" target="rframe">media-source-buffer</a></td><td class="left">&nbsp;<a href="offline-audio-context/right.html" target="rframe">offline-audio-context</a></td><td class="left">&nbsp;<a href="output-timestamp/right.html" target="rframe">output-timestamp</a></td><td class="left">&nbsp;<a href="script-processor-node/right.html" target="rframe">script-processor-node</a></td><td class="left">&nbsp;<a href="step-sequencer/right.html" target="rframe">step-sequencer</a></td><td class="left">&nbsp;<a href="stream-source-buffer/right.html" target="rframe">stream-source-buffer</a></td></tr>
-<tr><td class="left"><a href="audio-basics/right.html" target="rframe">audio-basics</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="audio-param/right.html" target="rframe">audio-param</a></td><td class="left">&nbsp;<a href="decode-audio-data/right.html" target="rframe">decode-a...-data</a></td><td class="left">&nbsp;<a href="offline-audio-context/right.html" target="rframe">offline-...ntext</a></td><td class="left">&nbsp;<a href="panner-node/right.html" target="rframe">panner-node</a></td><td class="left">&nbsp;<a href="step-sequencer/right.html" target="rframe">step-sequencer</a></td></tr>
+<tr class="row2"><td class="left"><a href="audio-analyser/right.html" target="rframe">audio-analyser</a></td><td class="left">&nbsp;<a href="audiocontext-states/right.html" target="rframe">audiocon...tates</a></td><td class="left">&nbsp;<a href="iirfilter-node/right.html" target="rframe">iirfilter-node</a></td><td class="left">&nbsp;<a href="offline-audio-context-promise/right.html" target="rframe">offline-...omise</a></td><td class="left">&nbsp;<a href="script-processor-node/right.html" target="rframe">script-p...-node</a></td><td class="left">&nbsp;<a href="stereo-panner-node/right.html" target="rframe">stereo-p...-node</a></td></tr>
+<tr><td class="left"><a href="audio-basics/right.html" target="rframe">audio-basics</a></td><td class="left">&nbsp;<a href="compressor-example/right.html" target="rframe">compress...ample</a></td><td class="left">&nbsp;<a href="media-source-buffer/right.html" target="rframe">media-so...uffer</a></td><td class="left">&nbsp;<a href="output-timestamp/right.html" target="rframe">output-timestamp</a></td><td class="left">&nbsp;<a href="spacialization/right.html" target="rframe">spacialization</a></td><td class="left">&nbsp;<a href="stream-source-buffer/right.html" target="rframe">stream-s...uffer</a></td></tr>
+<tr class="row2"><td class="left"><a href="audio-buffer/right.html" target="rframe">audio-buffer</a></td><td class="left">&nbsp;<a href="create-media-stream-destination/right.html" target="rframe">create-m...ation</a></td><td class="left">&nbsp;<a href="multi-track/right.html" target="rframe">multi-track</a></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="README.html">README.html</a>&nbsp;</td><td class="left"><a href="README.md">README.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="README.md">README.md</a>&nbsp;</td><td class="left"><a href="README.html">README.html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  21<br>
 Files: 2<br>
-Size of all files: 20469 K</p>
+Size of all files: 20469 KB</p>
 
 </body>
 </html>

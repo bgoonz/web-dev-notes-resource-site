@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,14 +532,19 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="binary-tree-solution/right.html" target="rframe">binary-tree-solution</a></td><td class="left">&nbsp;<a href="express-reading-list-solution/right.html" target="rframe">express-reading-list-solution</a></td><td class="left">&nbsp;<a href="grocery-store-solution/right.html" target="rframe">grocery-store-solution</a></td><td class="left">&nbsp;<a href="memoization_project_solution/right.html" target="rframe">memoization_project_solution</a></td><td class="left">&nbsp;<a href="project-hanoi-game-solution-js/right.html" target="rframe">project-hanoi-game-solution-js</a></td><td class="left">&nbsp;<a href="solution/right.html" target="rframe">solution</a></td><td class="left">&nbsp;<a href="tabulation-solution/right.html" target="rframe">tabulation-solution</a></td><td class="left">&nbsp;<a href="trivia-game-three-ways-project-solution/right.html" target="rframe">trivia-game-three-ways-project-solution</a></td><td class="left">&nbsp;<a href="W07-solutions/right.html" target="rframe">W07-solutions</a></td></tr>
-<tr class="row2"><td class="left"><a href="amusement-park-tracker-solution/right.html" target="rframe">amusement-park-tracker-solution</a></td><td class="left">&nbsp;<a href="building-your-own-file-utilities-solution/right.html" target="rframe">building-your-own-file-utilities-solution</a></td><td class="left">&nbsp;<a href="formative_forms_solution/right.html" target="rframe">formative_forms_solution</a></td><td class="left">&nbsp;<a href="guessing-game-project-solution/right.html" target="rframe">guessing-game-project-solution</a></td><td class="left">&nbsp;<a href="my-profile-solution/right.html" target="rframe">my-profile-solution</a></td><td class="left">&nbsp;<a href="promise-project-solution/right.html" target="rframe">promise-project-solution</a></td><td class="left">&nbsp;<a href="solution-context-hooks/right.html" target="rframe">solution-context-hooks</a></td><td class="left">&nbsp;<a href="tabulation_project_solution/right.html" target="rframe">tabulation_project_solution</a></td><td class="left">&nbsp;<a href="twitter-back-end-solution/right.html" target="rframe">twitter-back-end-solution</a></td><td class="left">&nbsp;<a href="W07D1-solutions/right.html" target="rframe">W07D1-solutions</a></td></tr>
-<tr><td class="left"><a href="amusement_park_solution/right.html" target="rframe">amusement_park_solution</a></td><td class="left">&nbsp;<a href="callbacks-solution/right.html" target="rframe">callbacks-solution</a></td><td class="left">&nbsp;<a href="front-end-solution/right.html" target="rframe">front-end-solution</a></td><td class="left">&nbsp;<a href="heaps_project_solution/right.html" target="rframe">heaps_project_solution</a></td><td class="left">&nbsp;<a href="oops-project-solution/right.html" target="rframe">oops-project-solution</a></td><td class="left">&nbsp;<a href="queue_project_solution/right.html" target="rframe">queue_project_solution</a></td><td class="left">&nbsp;<a href="solution-redux-hooks/right.html" target="rframe">solution-redux-hooks</a></td><td class="left">&nbsp;<a href="testing-an-existing-project-solution/right.html" target="rframe">testing-an-existing-project-solution</a></td><td class="left">&nbsp;<a href="twitter-front-end-solution/right.html" target="rframe">twitter-front-end-solution</a></td><td class="left">&nbsp;<a href="W07D2-solutions/right.html" target="rframe">W07D2-solutions</a></td></tr>
-<tr class="row2"><td class="left"><a href="art-museum-solution-master/right.html" target="rframe">art-museum-solution-master</a></td><td class="left">&nbsp;<a href="censor-project-bonus-solution/right.html" target="rframe">censor-project-bonus-solution</a></td><td class="left">&nbsp;<a href="global-replace-project-bonus-solution/right.html" target="rframe">global-replace-project-bonus-solution</a></td><td class="left">&nbsp;<a href="linked-list-solution/right.html" target="rframe">linked-list-solution</a></td><td class="left">&nbsp;<a href="pokedex-hooks-refactor_solution/right.html" target="rframe">pokedex-hooks-refactor_solution</a></td><td class="left">&nbsp;<a href="ReactSolutionPracticeAssessment/right.html" target="rframe">ReactSolutionPracticeAssessment</a></td><td class="left">&nbsp;<a href="spud-face-project-solution/right.html" target="rframe">spud-face-project-solution</a></td><td class="left">&nbsp;<a href="timeout-project-solution/right.html" target="rframe">timeout-project-solution</a></td><td class="left">&nbsp;<a href="twitterClone-Solution/right.html" target="rframe">twitterClone-Solution</a></td><td class="left">&nbsp;<a href="W07D4-solutions/right.html" target="rframe">W07D4-solutions</a></td></tr>
-<tr><td class="left"><a href="back-end-solution/right.html" target="rframe">back-end-solution</a></td><td class="left">&nbsp;<a href="censor-project-core-solution/right.html" target="rframe">censor-project-core-solution</a></td><td class="left">&nbsp;<a href="global-replace-project-core-solution/right.html" target="rframe">global-replace-project-core-solution</a></td><td class="left">&nbsp;<a href="linked_list_project_solution/right.html" target="rframe">linked_list_project_solution</a></td><td class="left">&nbsp;<a href="PracticeAssessment2Solution/right.html" target="rframe">PracticeAssessment2Solution</a></td><td class="left">&nbsp;<a href="recipe_box_solution/right.html" target="rframe">recipe_box_solution</a></td><td class="left">&nbsp;<a href="sql_menagerie_solution/right.html" target="rframe">sql_menagerie_solution</a></td><td class="left">&nbsp;<a href="ToDoListSolution/right.html" target="rframe">ToDoListSolution</a></td><td class="left">&nbsp;<a href="video-react-context-solution/right.html" target="rframe">video-react-context-solution</a></td><td class="left">&nbsp;<a href="W07D5-solutions/right.html" target="rframe">W07D5-solutions</a></td></tr>
-<tr class="row2"><td class="left"><a href="binary-search-tree-solution/right.html" target="rframe">binary-search-tree-solution</a></td><td class="left">&nbsp;<a href="censor-project-solution/right.html" target="rframe">censor-project-solution</a></td><td class="left">&nbsp;<a href="global-replace-project-solution/right.html" target="rframe">global-replace-project-solution</a></td><td class="left">&nbsp;<a href="local-storage-project-solution/right.html" target="rframe">local-storage-project-solution</a></td><td class="left">&nbsp;<a href="PracticeAssessmentSolution/right.html" target="rframe">PracticeAssessmentSolution</a></td><td class="left">&nbsp;<a href="routing_project_solution/right.html" target="rframe">routing_project_solution</a></td><td class="left">&nbsp;<a href="stack-project-solution/right.html" target="rframe">stack-project-solution</a></td><td class="left">&nbsp;<a href="tree_order_project_solution/right.html" target="rframe">tree_order_project_solution</a></td><td class="left">&nbsp;<a href="video-react-context-solution-refactor/right.html" target="rframe">video-react-context-solution-refactor</a></td><td class="left">&nbsp;<a href="W08D3Solutions/right.html" target="rframe">W08D3Solutions</a></td></tr>
-<tr><td class="left"><a href="binary-search-tree-solution-python/right.html" target="rframe">binary-search-tree-solution-python</a></td><td class="left">&nbsp;<a href="db-mgmt-solution/right.html" target="rframe">db-mgmt-solution</a></td><td class="left">&nbsp;<a href="graph-project-solution/right.html" target="rframe">graph-project-solution</a></td><td class="left">&nbsp;<a href="memoization-solution/right.html" target="rframe">memoization-solution</a></td><td class="left">&nbsp;<a href="proj2_debugging-recursive-solutions/right.html" target="rframe">proj2_debugging-recursive-solutions</a></td><td class="left">&nbsp;<a href="sequelize-recipe-box-solution/right.html" target="rframe">sequelize-recipe-box-solution</a></td><td class="left">&nbsp;<a href="star-trek-solution/right.html" target="rframe">star-trek-solution</a></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="censor-project-solution/right.html" target="rframe">censor-p...ution</a></td><td class="left">&nbsp;<a href="heaps_project_solution/right.html" target="rframe">heaps_pr...ution</a></td><td class="left">&nbsp;<a href="proj2_debugging-recursive-solutions/right.html" target="rframe">proj2_de...tions</a></td><td class="left">&nbsp;<a href="spud-face-project-solution/right.html" target="rframe">spud-fac...ution</a></td><td class="left">&nbsp;<a href="twitter-back-end-solution/right.html" target="rframe">twitter-...ution</a></td></tr>
+<tr class="row2"><td class="left"><a href="amusement-park-tracker-solution/right.html" target="rframe">amusemen...ution</a></td><td class="left">&nbsp;<a href="db-mgmt-solution/right.html" target="rframe">db-mgmt-solution</a></td><td class="left">&nbsp;<a href="linked-list-solution/right.html" target="rframe">linked-l...ution</a></td><td class="left">&nbsp;<a href="project-hanoi-game-solution-js/right.html" target="rframe">project-...on-js</a></td><td class="left">&nbsp;<a href="sql_menagerie_solution/right.html" target="rframe">sql_mena...ution</a></td><td class="left">&nbsp;<a href="twitter-front-end-solution/right.html" target="rframe">twitter-...ution</a></td></tr>
+<tr><td class="left"><a href="amusement_park_solution/right.html" target="rframe">amusemen...ution</a></td><td class="left">&nbsp;<a href="express-reading-list-solution/right.html" target="rframe">express-...ution</a></td><td class="left">&nbsp;<a href="linked_list_project_solution/right.html" target="rframe">linked_l...ution</a></td><td class="left">&nbsp;<a href="promise-project-solution/right.html" target="rframe">promise-...ution</a></td><td class="left">&nbsp;<a href="stack-project-solution/right.html" target="rframe">stack-pr...ution</a></td><td class="left">&nbsp;<a href="twitterClone-Solution/right.html" target="rframe">twitterC...ution</a></td></tr>
+<tr class="row2"><td class="left"><a href="art-museum-solution-master/right.html" target="rframe">art-muse...aster</a></td><td class="left">&nbsp;<a href="formative_forms_solution/right.html" target="rframe">formativ...ution</a></td><td class="left">&nbsp;<a href="local-storage-project-solution/right.html" target="rframe">local-st...ution</a></td><td class="left">&nbsp;<a href="queue_project_solution/right.html" target="rframe">queue_pr...ution</a></td><td class="left">&nbsp;<a href="star-trek-solution/right.html" target="rframe">star-tre...ution</a></td><td class="left">&nbsp;<a href="video-react-context-solution/right.html" target="rframe">video-re...ution</a></td></tr>
+<tr><td class="left"><a href="back-end-solution/right.html" target="rframe">back-end...ution</a></td><td class="left">&nbsp;<a href="front-end-solution/right.html" target="rframe">front-en...ution</a></td><td class="left">&nbsp;<a href="memoization-solution/right.html" target="rframe">memoizat...ution</a></td><td class="left">&nbsp;<a href="ReactSolutionPracticeAssessment/right.html" target="rframe">ReactSol...sment</a></td><td class="left">&nbsp;<a href="tabulation-solution/right.html" target="rframe">tabulati...ution</a></td><td class="left">&nbsp;<a href="video-react-context-solution-refactor/right.html" target="rframe">video-re...actor</a></td></tr>
+<tr class="row2"><td class="left"><a href="binary-search-tree-solution/right.html" target="rframe">binary-s...ution</a></td><td class="left">&nbsp;<a href="global-replace-project-bonus-solution/right.html" target="rframe">global-r...ution</a></td><td class="left">&nbsp;<a href="memoization_project_solution/right.html" target="rframe">memoizat...ution</a></td><td class="left">&nbsp;<a href="recipe_box_solution/right.html" target="rframe">recipe_b...ution</a></td><td class="left">&nbsp;<a href="tabulation_project_solution/right.html" target="rframe">tabulati...ution</a></td><td class="left">&nbsp;<a href="W07-solutions/right.html" target="rframe">W07-solutions</a></td></tr>
+<tr><td class="left"><a href="binary-search-tree-solution-python/right.html" target="rframe">binary-s...ython</a></td><td class="left">&nbsp;<a href="global-replace-project-core-solution/right.html" target="rframe">global-r...ution</a></td><td class="left">&nbsp;<a href="my-profile-solution/right.html" target="rframe">my-profi...ution</a></td><td class="left">&nbsp;<a href="routing_project_solution/right.html" target="rframe">routing_...ution</a></td><td class="left">&nbsp;<a href="testing-an-existing-project-solution/right.html" target="rframe">testing-...ution</a></td><td class="left">&nbsp;<a href="W07D1-solutions/right.html" target="rframe">W07D1-solutions</a></td></tr>
+<tr class="row2"><td class="left"><a href="binary-tree-solution/right.html" target="rframe">binary-t...ution</a></td><td class="left">&nbsp;<a href="global-replace-project-solution/right.html" target="rframe">global-r...ution</a></td><td class="left">&nbsp;<a href="oops-project-solution/right.html" target="rframe">oops-pro...ution</a></td><td class="left">&nbsp;<a href="sequelize-recipe-box-solution/right.html" target="rframe">sequeliz...ution</a></td><td class="left">&nbsp;<a href="timeout-project-solution/right.html" target="rframe">timeout-...ution</a></td><td class="left">&nbsp;<a href="W07D2-solutions/right.html" target="rframe">W07D2-solutions</a></td></tr>
+<tr><td class="left"><a href="building-your-own-file-utilities-solution/right.html" target="rframe">building...ution</a></td><td class="left">&nbsp;<a href="graph-project-solution/right.html" target="rframe">graph-pr...ution</a></td><td class="left">&nbsp;<a href="pokedex-hooks-refactor_solution/right.html" target="rframe">pokedex-...ution</a></td><td class="left">&nbsp;<a href="solution/right.html" target="rframe">solution</a></td><td class="left">&nbsp;<a href="ToDoListSolution/right.html" target="rframe">ToDoListSolution</a></td><td class="left">&nbsp;<a href="W07D4-solutions/right.html" target="rframe">W07D4-solutions</a></td></tr>
+<tr class="row2"><td class="left"><a href="callbacks-solution/right.html" target="rframe">callback...ution</a></td><td class="left">&nbsp;<a href="grocery-store-solution/right.html" target="rframe">grocery-...ution</a></td><td class="left">&nbsp;<a href="PracticeAssessment2Solution/right.html" target="rframe">Practice...ution</a></td><td class="left">&nbsp;<a href="solution-context-hooks/right.html" target="rframe">solution...hooks</a></td><td class="left">&nbsp;<a href="tree_order_project_solution/right.html" target="rframe">tree_ord...ution</a></td><td class="left">&nbsp;<a href="W07D5-solutions/right.html" target="rframe">W07D5-solutions</a></td></tr>
+<tr><td class="left"><a href="censor-project-bonus-solution/right.html" target="rframe">censor-p...ution</a></td><td class="left">&nbsp;<a href="guessing-game-project-solution/right.html" target="rframe">guessing...ution</a></td><td class="left">&nbsp;<a href="PracticeAssessmentSolution/right.html" target="rframe">Practice...ution</a></td><td class="left">&nbsp;<a href="solution-redux-hooks/right.html" target="rframe">solution...hooks</a></td><td class="left">&nbsp;<a href="trivia-game-three-ways-project-solution/right.html" target="rframe">trivia-g...ution</a></td><td class="left">&nbsp;<a href="W08D3Solutions/right.html" target="rframe">W08D3Solutions</a></td></tr>
+<tr class="row2"><td class="left"><a href="censor-project-core-solution/right.html" target="rframe">censor-p...ution</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 

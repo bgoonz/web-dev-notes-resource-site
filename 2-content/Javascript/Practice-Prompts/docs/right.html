@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,23 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="conditionals_functions/right.html" target="rframe">conditionals_functions</a></td><td class="left">&nbsp;<a href="even_odd/right.html" target="rframe">even_odd</a></td><td class="left">&nbsp;<a href="ghost_array/right.html" target="rframe">ghost_array</a></td><td class="left">&nbsp;<a href="input_search/right.html" target="rframe">input_search</a></td><td class="left">&nbsp;<a href="json/right.html" target="rframe">json</a></td><td class="left">&nbsp;<a href="now_you_see_me/right.html" target="rframe">now_you_see_me</a></td><td class="left">&nbsp;<a href="point/right.html" target="rframe">point</a></td><td class="left">&nbsp;<a href="spartacus/right.html" target="rframe">spartacus</a></td><td class="left">&nbsp;<a href="undefined_values_in_array/right.html" target="rframe">undefined_values_in_array</a></td></tr>
-<tr class="row2"><td class="left"><a href="array_map_parseint/right.html" target="rframe">array_map_parseint</a></td><td class="left">&nbsp;<a href="delete/right.html" target="rframe">delete</a></td><td class="left">&nbsp;<a href="fooling_around_boolean/right.html" target="rframe">fooling_around_boolean</a></td><td class="left">&nbsp;<a href="gitbook/right.html" target="rframe">gitbook</a></td><td class="left">&nbsp;<a href="intro/right.html" target="rframe">intro</a></td><td class="left">&nbsp;<a href="nested_loop/right.html" target="rframe">nested_loop</a></td><td class="left">&nbsp;<a href="objects1/right.html" target="rframe">objects1</a></td><td class="left">&nbsp;<a href="running_man/right.html" target="rframe">running_man</a></td><td class="left">&nbsp;<a href="terminator/right.html" target="rframe">terminator</a></td><td class="left">&nbsp;<a href="utf8/right.html" target="rframe">utf8</a></td></tr>
-<tr><td class="left"><a href="autoexecute/right.html" target="rframe">autoexecute</a></td><td class="left">&nbsp;<a href="detectIE/right.html" target="rframe">detectIE</a></td><td class="left">&nbsp;<a href="fooling_around_boolean_2/right.html" target="rframe">fooling_around_boolean_2</a></td><td class="left">&nbsp;<a href="hoisting1/right.html" target="rframe">hoisting1</a></td><td class="left">&nbsp;<a href="invaluable/right.html" target="rframe">invaluable</a></td><td class="left">&nbsp;<a href="nested_scopes/right.html" target="rframe">nested_scopes</a></td><td class="left">&nbsp;<a href="objects2/right.html" target="rframe">objects2</a></td><td class="left">&nbsp;<a href="scope/right.html" target="rframe">scope</a></td><td class="left">&nbsp;<a href="timers/right.html" target="rframe">timers</a></td><td class="left">&nbsp;<a href="variable_scope/right.html" target="rframe">variable_scope</a></td></tr>
-<tr class="row2"><td class="left"><a href="banking/right.html" target="rframe">banking</a></td><td class="left">&nbsp;<a href="encapsulate_collection/right.html" target="rframe">encapsulate_collection</a></td><td class="left">&nbsp;<a href="frozen/right.html" target="rframe">frozen</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="detectIE/right.html" target="rframe">detectIE</a></td><td class="left">&nbsp;<a href="ghost_array/right.html" target="rframe">ghost_array</a></td><td class="left">&nbsp;<a href="json/right.html" target="rframe">json</a></td><td class="left">&nbsp;<a href="objects2/right.html" target="rframe">objects2</a></td><td class="left">&nbsp;<a href="terminator/right.html" target="rframe">terminator</a></td></tr>
+<tr class="row2"><td class="left"><a href="array_map_parseint/right.html" target="rframe">array_ma...seint</a></td><td class="left">&nbsp;<a href="encapsulate_collection/right.html" target="rframe">encapsul...ction</a></td><td class="left">&nbsp;<a href="gitbook/right.html" target="rframe">gitbook</a></td><td class="left">&nbsp;<a href="nested_loop/right.html" target="rframe">nested_loop</a></td><td class="left">&nbsp;<a href="point/right.html" target="rframe">point</a></td><td class="left">&nbsp;<a href="timers/right.html" target="rframe">timers</a></td></tr>
+<tr><td class="left"><a href="autoexecute/right.html" target="rframe">autoexecute</a></td><td class="left">&nbsp;<a href="even_odd/right.html" target="rframe">even_odd</a></td><td class="left">&nbsp;<a href="hoisting1/right.html" target="rframe">hoisting1</a></td><td class="left">&nbsp;<a href="nested_scopes/right.html" target="rframe">nested_scopes</a></td><td class="left">&nbsp;<a href="running_man/right.html" target="rframe">running_man</a></td><td class="left">&nbsp;<a href="undefined_values_in_array/right.html" target="rframe">undefine...array</a></td></tr>
+<tr class="row2"><td class="left"><a href="banking/right.html" target="rframe">banking</a></td><td class="left">&nbsp;<a href="fooling_around_boolean/right.html" target="rframe">fooling_...olean</a></td><td class="left">&nbsp;<a href="input_search/right.html" target="rframe">input_search</a></td><td class="left">&nbsp;<a href="now_you_see_me/right.html" target="rframe">now_you_see_me</a></td><td class="left">&nbsp;<a href="scope/right.html" target="rframe">scope</a></td><td class="left">&nbsp;<a href="utf8/right.html" target="rframe">utf8</a></td></tr>
+<tr><td class="left"><a href="conditionals_functions/right.html" target="rframe">conditio...tions</a></td><td class="left">&nbsp;<a href="fooling_around_boolean_2/right.html" target="rframe">fooling_...ean_2</a></td><td class="left">&nbsp;<a href="intro/right.html" target="rframe">intro</a></td><td class="left">&nbsp;<a href="objects1/right.html" target="rframe">objects1</a></td><td class="left">&nbsp;<a href="spartacus/right.html" target="rframe">spartacus</a></td><td class="left">&nbsp;<a href="variable_scope/right.html" target="rframe">variable_scope</a></td></tr>
+<tr class="row2"><td class="left"><a href="delete/right.html" target="rframe">delete</a></td><td class="left">&nbsp;<a href="frozen/right.html" target="rframe">frozen</a></td><td class="left">&nbsp;<a href="invaluable/right.html" target="rframe">invaluable</a></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="GLOSSARY.html">GLOSSARY.html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="glossary_index.json">glossary_index.json</a>&nbsp;</td><td class="left"><a href="search_index.json">search_index.json</a>&nbsp;</td><td class="left"><a href="cover.png">cover.png</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="cover.png">cover.png</a>&nbsp;</td><td class="left"><a href="glossary_index.json">glossary....json</a>&nbsp;</td><td class="left"><a href="search_index.json">search_i....json</a>&nbsp;</td><td class="left"><a href="GLOSSARY.html">GLOSSARY.html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  33<br>
 Files: 5<br>
-Size of all files: 554337 K</p>
+Size of all files: 554337 KB</p>
 
 </body>
 </html>

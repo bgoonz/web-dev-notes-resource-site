@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="math-abs.js">math-abs.js</a>&nbsp;</td><td class="left"><a href="math-cbrt.js">math-cbrt.js</a>&nbsp;</td><td class="left"><a href="math-floor.js">math-floor.js</a>&nbsp;</td><td class="left"><a href="math-log10.js">math-log10.js</a>&nbsp;</td><td class="left"><a href="math-pi.js">math-pi.js</a>&nbsp;</td><td class="left"><a href="math-sqrt.js">math-sqrt.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="math-acos.js">math-acos.js</a>&nbsp;</td><td class="left"><a href="math-ceil.js">math-ceil.js</a>&nbsp;</td><td class="left"><a href="math-fround.js">math-fround.js</a>&nbsp;</td><td class="left"><a href="math-log10e.js">math-log10e.js</a>&nbsp;</td><td class="left"><a href="math-pow.js">math-pow.js</a>&nbsp;</td><td class="left"><a href="math-sqrt1_2.js">math-sqrt1_2.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="math-acosh.js">math-acosh.js</a>&nbsp;</td><td class="left"><a href="math-clz32.js">math-clz32.js</a>&nbsp;</td><td class="left"><a href="math-hypot.js">math-hypot.js</a>&nbsp;</td><td class="left"><a href="math-log1p.js">math-log1p.js</a>&nbsp;</td><td class="left"><a href="math-random.js">math-random.js</a>&nbsp;</td><td class="left"><a href="math-sqrt2.js">math-sqrt2.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="math-asin.js">math-asin.js</a>&nbsp;</td><td class="left"><a href="math-cos.js">math-cos.js</a>&nbsp;</td><td class="left"><a href="math-imul.js">math-imul.js</a>&nbsp;</td><td class="left"><a href="math-log2.js">math-log2.js</a>&nbsp;</td><td class="left"><a href="math-round.js">math-round.js</a>&nbsp;</td><td class="left"><a href="math-tan.js">math-tan.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="math-asinh.js">math-asinh.js</a>&nbsp;</td><td class="left"><a href="math-cosh.js">math-cosh.js</a>&nbsp;</td><td class="left"><a href="math-ln10.js">math-ln10.js</a>&nbsp;</td><td class="left"><a href="math-log2e.js">math-log2e.js</a>&nbsp;</td><td class="left"><a href="math-sign.js">math-sign.js</a>&nbsp;</td><td class="left"><a href="math-tanh.js">math-tanh.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="math-atan.js">math-atan.js</a>&nbsp;</td><td class="left"><a href="math-e.js">math-e.js</a>&nbsp;</td><td class="left"><a href="math-ln2.js">math-ln2.js</a>&nbsp;</td><td class="left"><a href="math-max.js">math-max.js</a>&nbsp;</td><td class="left"><a href="math-sin.js">math-sin.js</a>&nbsp;</td><td class="left"><a href="math-trunc.js">math-trunc.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="math-atan2.js">math-atan2.js</a>&nbsp;</td><td class="left"><a href="math-exp.js">math-exp.js</a>&nbsp;</td><td class="left"><a href="math-log.js">math-log.js</a>&nbsp;</td><td class="left"><a href="math-min.js">math-min.js</a>&nbsp;</td><td class="left"><a href="math-sinh.js">math-sinh.js</a>&nbsp;</td><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="math-atanh.js">math-atanh.js</a>&nbsp;</td><td class="left"><a href="math-expm1.js">math-expm1.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td><td class="left"><a href="math-atan.js">math-atan.js</a>&nbsp;</td><td class="left"><a href="math-cos.js">math-cos.js</a>&nbsp;</td><td class="left"><a href="math-fround.js">math-fround.js</a>&nbsp;</td><td class="left"><a href="math-log10.js">math-log10.js</a>&nbsp;</td><td class="left"><a href="math-max.js">math-max.js</a>&nbsp;</td><td class="left"><a href="math-round.js">math-round.js</a>&nbsp;</td><td class="left"><a href="math-sqrt1_2.js">math-sqrt1_2.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="math-abs.js">math-abs.js</a>&nbsp;</td><td class="left"><a href="math-atan2.js">math-atan2.js</a>&nbsp;</td><td class="left"><a href="math-cosh.js">math-cosh.js</a>&nbsp;</td><td class="left"><a href="math-hypot.js">math-hypot.js</a>&nbsp;</td><td class="left"><a href="math-log10e.js">math-log10e.js</a>&nbsp;</td><td class="left"><a href="math-min.js">math-min.js</a>&nbsp;</td><td class="left"><a href="math-sign.js">math-sign.js</a>&nbsp;</td><td class="left"><a href="math-sqrt2.js">math-sqrt2.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="math-acos.js">math-acos.js</a>&nbsp;</td><td class="left"><a href="math-atanh.js">math-atanh.js</a>&nbsp;</td><td class="left"><a href="math-e.js">math-e.js</a>&nbsp;</td><td class="left"><a href="math-imul.js">math-imul.js</a>&nbsp;</td><td class="left"><a href="math-log1p.js">math-log1p.js</a>&nbsp;</td><td class="left"><a href="math-pi.js">math-pi.js</a>&nbsp;</td><td class="left"><a href="math-sin.js">math-sin.js</a>&nbsp;</td><td class="left"><a href="math-tan.js">math-tan.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="math-acosh.js">math-acosh.js</a>&nbsp;</td><td class="left"><a href="math-cbrt.js">math-cbrt.js</a>&nbsp;</td><td class="left"><a href="math-exp.js">math-exp.js</a>&nbsp;</td><td class="left"><a href="math-ln10.js">math-ln10.js</a>&nbsp;</td><td class="left"><a href="math-log2.js">math-log2.js</a>&nbsp;</td><td class="left"><a href="math-pow.js">math-pow.js</a>&nbsp;</td><td class="left"><a href="math-sinh.js">math-sinh.js</a>&nbsp;</td><td class="left"><a href="math-tanh.js">math-tanh.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="math-asin.js">math-asin.js</a>&nbsp;</td><td class="left"><a href="math-ceil.js">math-ceil.js</a>&nbsp;</td><td class="left"><a href="math-expm1.js">math-expm1.js</a>&nbsp;</td><td class="left"><a href="math-ln2.js">math-ln2.js</a>&nbsp;</td><td class="left"><a href="math-log2e.js">math-log2e.js</a>&nbsp;</td><td class="left"><a href="math-random.js">math-random.js</a>&nbsp;</td><td class="left"><a href="math-sqrt.js">math-sqrt.js</a>&nbsp;</td><td class="left"><a href="math-trunc.js">math-trunc.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="math-asinh.js">math-asinh.js</a>&nbsp;</td><td class="left"><a href="math-clz32.js">math-clz32.js</a>&nbsp;</td><td class="left"><a href="math-floor.js">math-floor.js</a>&nbsp;</td><td class="left"><a href="math-log.js">math-log.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 44<br>
-Size of all files: 20470 K</p>
+Size of all files: 20470 KB</p>
 
 </body>
 </html>

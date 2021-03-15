@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,23 +532,22 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="adding-event-listeners-after.js">adding-event-listeners-after.js</a>&nbsp;</td><td class="left"><a href="definition-getsnapshotbeforeupdate.js">definition-getsnapshotbeforeupdate.js</a>&nbsp;</td><td class="left"><a href="initializing-state-before.js">initializing-state-before.js</a>&nbsp;</td><td class="left"><a href="react-dom-properties-before-update-after.js">react-dom-properties-before-update-after.js</a>&nbsp;</td><td class="left"><a href="side-effects-when-props-change-before.js">side-effects-when-props-change-before.js</a>&nbsp;</td><td class="left"><a href="updating-state-from-props-after.js">updating-state-from-props-after.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="adding-event-listeners-before.js">adding-event-listeners-before.js</a>&nbsp;</td><td class="left"><a href="fetching-external-data-after.js">fetching-external-data-after.js</a>&nbsp;</td><td class="left"><a href="invoking-external-callbacks-after.js">invoking-external-callbacks-after.js</a>&nbsp;</td><td class="left"><a href="react-dom-properties-before-update-before.js">react-dom-properties-before-update-before.js</a>&nbsp;</td><td class="left"><a href="updating-external-data-when-props-change-after.js">updating-external-data-when-props-change-after.js</a>&nbsp;</td><td class="left"><a href="updating-state-from-props-before.js">updating-state-from-props-before.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="adding-event-listeners-create-subscription.js">adding-event-listeners-create-subscription.js</a>&nbsp;</td><td class="left"><a href="fetching-external-data-before.js">fetching-external-data-before.js</a>&nbsp;</td><td class="left"><a href="invoking-external-callbacks-before.js">invoking-external-callbacks-before.js</a>&nbsp;</td><td class="left"><a href="side-effects-when-props-change-after.js">side-effects-when-props-change-after.js</a>&nbsp;</td><td class="left"><a href="updating-external-data-when-props-change-before.js">updating-external-data-when-props-change-before.js</a>&nbsp;</td><td class="left"><a href="using-react-lifecycles-compat.js">using-react-lifecycles-compat.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="definition-getderivedstatefromprops.js">definition-getderivedstatefromprops.js</a>&nbsp;</td><td class="left"><a href="initializing-state-after.js">initializing-state-after.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="adding-event-listeners-after.js">adding-e...er.js</a>&nbsp;</td><td class="left"><a href="definition-getderivedstatefromprops.js">definiti...ps.js</a>&nbsp;</td><td class="left"><a href="fetching-external-data-before.js">fetching...re.js</a>&nbsp;</td><td class="left"><a href="invoking-external-callbacks-after.js">invoking...er.js</a>&nbsp;</td><td class="left"><a href="react-dom-properties-before-update-before.js">react-do...re.js</a>&nbsp;</td><td class="left"><a href="side-effects-when-props-change-before.js">side-eff...re.js</a>&nbsp;</td><td class="left"><a href="updating-external-data-when-props-change-before.js">updating...re.js</a>&nbsp;</td><td class="left"><a href="updating-state-from-props-before.js">updating...re.js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="adding-event-listeners-before.js">adding-e...re.js</a>&nbsp;</td><td class="left"><a href="definition-getsnapshotbeforeupdate.js">definiti...te.js</a>&nbsp;</td><td class="left"><a href="initializing-state-after.js">initiali...er.js</a>&nbsp;</td><td class="left"><a href="invoking-external-callbacks-before.js">invoking...re.js</a>&nbsp;</td><td class="left"><a href="side-effects-when-props-change-after.js">side-eff...er.js</a>&nbsp;</td><td class="left"><a href="updating-external-data-when-props-change-after.js">updating...er.js</a>&nbsp;</td><td class="left"><a href="updating-state-from-props-after.js">updating...er.js</a>&nbsp;</td><td class="left"><a href="using-react-lifecycles-compat.js">using-re...at.js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="adding-event-listeners-create-subscription.js">adding-e...on.js</a>&nbsp;</td><td class="left"><a href="fetching-external-data-after.js">fetching...er.js</a>&nbsp;</td><td class="left"><a href="initializing-state-before.js">initiali...re.js</a>&nbsp;</td><td class="left"><a href="react-dom-properties-before-update-after.js">react-do...er.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 20<br>
-Size of all files: 10575 K</p>
+Size of all files: 10575 KB</p>
 
 </body>
 </html>

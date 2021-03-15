@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,29 +532,27 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="a_js">a_js</a>&nbsp;</td><td class="left"><a href="j_js">j_js</a>&nbsp;</td><td class="left"><a href="scr_js">scr_js</a>&nbsp;</td><td class="left"><a href="b.js">b.js</a>&nbsp;</td><td class="left"><a href="k.js">k.js</a>&nbsp;</td><td class="left"><a href="s.js">s.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="b_js">b_js</a>&nbsp;</td><td class="left"><a href="k_js">k_js</a>&nbsp;</td><td class="left"><a href="s_js">s_js</a>&nbsp;</td><td class="left"><a href="c.js">c.js</a>&nbsp;</td><td class="left"><a href="l.js">l.js</a>&nbsp;</td><td class="left"><a href="scr.js">scr.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="c_js">c_js</a>&nbsp;</td><td class="left"><a href="l_js">l_js</a>&nbsp;</td><td class="left"><a href="t_js">t_js</a>&nbsp;</td><td class="left"><a href="d.js">d.js</a>&nbsp;</td><td class="left"><a href="m.js">m.js</a>&nbsp;</td><td class="left"><a href="t.js">t.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="d_js">d_js</a>&nbsp;</td><td class="left"><a href="m_js">m_js</a>&nbsp;</td><td class="left"><a href="u_js">u_js</a>&nbsp;</td><td class="left"><a href="e.js">e.js</a>&nbsp;</td><td class="left"><a href="n.js">n.js</a>&nbsp;</td><td class="left"><a href="u.js">u.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="e_js">e_js</a>&nbsp;</td><td class="left"><a href="n_js">n_js</a>&nbsp;</td><td class="left"><a href="v_js">v_js</a>&nbsp;</td><td class="left"><a href="f.js">f.js</a>&nbsp;</td><td class="left"><a href="o.js">o.js</a>&nbsp;</td><td class="left"><a href="v.js">v.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="fr_js">fr_js</a>&nbsp;</td><td class="left"><a href="opf_js">opf_js</a>&nbsp;</td><td class="left"><a href="w_js">w_js</a>&nbsp;</td><td class="left"><a href="fr.js">fr.js</a>&nbsp;</td><td class="left"><a href="opf.js">opf.js</a>&nbsp;</td><td class="left"><a href="w.js">w.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="f_js">f_js</a>&nbsp;</td><td class="left"><a href="o_js">o_js</a>&nbsp;</td><td class="left"><a href="x_js">x_js</a>&nbsp;</td><td class="left"><a href="g.js">g.js</a>&nbsp;</td><td class="left"><a href="p.js">p.js</a>&nbsp;</td><td class="left"><a href="x.js">x.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="g_js">g_js</a>&nbsp;</td><td class="left"><a href="p_js">p_js</a>&nbsp;</td><td class="left"><a href="y_js">y_js</a>&nbsp;</td><td class="left"><a href="h.js">h.js</a>&nbsp;</td><td class="left"><a href="q.js">q.js</a>&nbsp;</td><td class="left"><a href="y.js">y.js</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="h_js">h_js</a>&nbsp;</td><td class="left"><a href="q_js">q_js</a>&nbsp;</td><td class="left"><a href="z_js">z_js</a>&nbsp;</td><td class="left"><a href="i.js">i.js</a>&nbsp;</td><td class="left"><a href="r.js">r.js</a>&nbsp;</td><td class="left"><a href="z.js">z.js</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="i_js">i_js</a>&nbsp;</td><td class="left"><a href="r_js">r_js</a>&nbsp;</td><td class="left"><a href="a.js">a.js</a>&nbsp;</td><td class="left"><a href="j.js">j.js</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="a.js">a.js</a>&nbsp;</td><td class="left"><a href="h.js">h.js</a>&nbsp;</td><td class="left"><a href="opf.js">opf.js</a>&nbsp;</td><td class="left"><a href="v.js">v.js</a>&nbsp;</td><td class="left"><a href="b_js">b_js</a>&nbsp;</td><td class="left"><a href="h_js">h_js</a>&nbsp;</td><td class="left"><a href="opf_js">opf_js</a>&nbsp;</td><td class="left"><a href="t_js">t_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="b.js">b.js</a>&nbsp;</td><td class="left"><a href="i.js">i.js</a>&nbsp;</td><td class="left"><a href="p.js">p.js</a>&nbsp;</td><td class="left"><a href="w.js">w.js</a>&nbsp;</td><td class="left"><a href="c_js">c_js</a>&nbsp;</td><td class="left"><a href="i_js">i_js</a>&nbsp;</td><td class="left"><a href="o_js">o_js</a>&nbsp;</td><td class="left"><a href="u_js">u_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="c.js">c.js</a>&nbsp;</td><td class="left"><a href="j.js">j.js</a>&nbsp;</td><td class="left"><a href="q.js">q.js</a>&nbsp;</td><td class="left"><a href="x.js">x.js</a>&nbsp;</td><td class="left"><a href="d_js">d_js</a>&nbsp;</td><td class="left"><a href="j_js">j_js</a>&nbsp;</td><td class="left"><a href="p_js">p_js</a>&nbsp;</td><td class="left"><a href="v_js">v_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="d.js">d.js</a>&nbsp;</td><td class="left"><a href="k.js">k.js</a>&nbsp;</td><td class="left"><a href="r.js">r.js</a>&nbsp;</td><td class="left"><a href="y.js">y.js</a>&nbsp;</td><td class="left"><a href="e_js">e_js</a>&nbsp;</td><td class="left"><a href="k_js">k_js</a>&nbsp;</td><td class="left"><a href="q_js">q_js</a>&nbsp;</td><td class="left"><a href="w_js">w_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="e.js">e.js</a>&nbsp;</td><td class="left"><a href="l.js">l.js</a>&nbsp;</td><td class="left"><a href="s.js">s.js</a>&nbsp;</td><td class="left"><a href="z.js">z.js</a>&nbsp;</td><td class="left"><a href="fr_js">fr_js</a>&nbsp;</td><td class="left"><a href="l_js">l_js</a>&nbsp;</td><td class="left"><a href="r_js">r_js</a>&nbsp;</td><td class="left"><a href="x_js">x_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="f.js">f.js</a>&nbsp;</td><td class="left"><a href="m.js">m.js</a>&nbsp;</td><td class="left"><a href="scr.js">scr.js</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="f_js">f_js</a>&nbsp;</td><td class="left"><a href="m_js">m_js</a>&nbsp;</td><td class="left"><a href="scr_js">scr_js</a>&nbsp;</td><td class="left"><a href="y_js">y_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="fr.js">fr.js</a>&nbsp;</td><td class="left"><a href="n.js">n.js</a>&nbsp;</td><td class="left"><a href="t.js">t.js</a>&nbsp;</td><td class="left"><a href="a_js">a_js</a>&nbsp;</td><td class="left"><a href="g_js">g_js</a>&nbsp;</td><td class="left"><a href="n_js">n_js</a>&nbsp;</td><td class="left"><a href="s_js">s_js</a>&nbsp;</td><td class="left"><a href="z_js">z_js</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="g.js">g.js</a>&nbsp;</td><td class="left"><a href="o.js">o.js</a>&nbsp;</td><td class="left"><a href="u.js">u.js</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 58<br>
-Size of all files: 105084 K</p>
+Files: 59<br>
+Size of all files: 122303 KB</p>
 
 </body>
 </html>

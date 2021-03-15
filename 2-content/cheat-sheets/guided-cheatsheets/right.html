@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,24 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="auto-generate-boilerplate/right.html" target="rframe">auto-generate-boilerplate</a></td><td class="left">&nbsp;<a href="test.html/right.html" target="rframe">test.html</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="auto-generate-boilerplate/right.html" target="rframe">auto-gen...plate</a></td><td class="left">&nbsp;<a href="test.html/right.html" target="rframe">test.html</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="Amazon_S3_A_cheat_sheet.html.html">Amazon_S3_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Containers_A_cheat_sheet_for_tech_pros.md.html">Containers_A_cheat_sheet_for_tech_pros.md.html</a>&nbsp;</td><td class="left"><a href="Kubernetes_A_cheat_sheet.html.html">Kubernetes_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Multicloud_A_cheat_sheet.md.html">Multicloud_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Serverless_computing_A_cheat_sheet.md.html">Serverless_computing_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Windows_10_A_cheat_sheet.md.html">Windows_10_A_cheat_sheet.md.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Amazon_S3_A_cheat_sheet.md.html">Amazon_S3_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="files.html">files.html</a>&nbsp;</td><td class="left"><a href="Kubernetes_A_cheat_sheet.md.html">Kubernetes_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Quantum_computing_A_cheat_sheet.html.html">Quantum_computing_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Ubuntu_Server_A_cheat_sheet.html.html">Ubuntu_Server_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Zoom_A_cheat_sheet_about_the_video_conferencing_solution.html.html">Zoom_A_cheat_sheet_about_the_video_conferencing_solution.html.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Amazon_Web_Services_(AWS)_A_cheat_sheet.html.html">Amazon_Web_Services_(AWS)_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Google_Cloud_Platform_A_cheat_sheet.html.html">Google_Cloud_Platform_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Machine_learning_A_cheat_sheet.html.html">Machine_learning_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Quantum_computing_A_cheat_sheet.md.html">Quantum_computing_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Ubuntu_Server_A_cheat_sheet.md.html">Ubuntu_Server_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Zoom_A_cheat_sheet_about_the_video_conferencing_solution.md.html">Zoom_A_cheat_sheet_about_the_video_conferencing_solution.md.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Amazon_Web_Services_(AWS)_A_cheat_sheet.md.html">Amazon_Web_Services_(AWS)_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Google_Cloud_Platform_A_cheat_sheet.md.html">Google_Cloud_Platform_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="Machine_learning_A_cheat_sheet.md.html">Machine_learning_A_cheat_sheet.md.html</a>&nbsp;</td><td class="left"><a href="rename.sh.html">rename.sh.html</a>&nbsp;</td><td class="left"><a href="Windows_10_A_cheat_sheet.html.html">Windows_10_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="rename.sh">rename.sh</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Containers_A_cheat_sheet_for_tech_pros.html.html">Containers_A_cheat_sheet_for_tech_pros.html.html</a>&nbsp;</td><td class="left"><a href="index.html.html">index.html.html</a>&nbsp;</td><td class="left"><a href="Multicloud_A_cheat_sheet.html.html">Multicloud_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"><a href="Serverless_computing_A_cheat_sheet.html.html">Serverless_computing_A_cheat_sheet.html.html</a>&nbsp;</td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="rename.sh">rename.sh</a>&nbsp;</td><td class="left"><a href="Amazon_Web_Services_(AWS)_A_cheat_sheet.md.html">Amazon_W....html</a>&nbsp;</td><td class="left"><a href="Google_Cloud_Platform_A_cheat_sheet.html.html">Google_C....html</a>&nbsp;</td><td class="left"><a href="Kubernetes_A_cheat_sheet.md.html">Kubernet....html</a>&nbsp;</td><td class="left"><a href="Multicloud_A_cheat_sheet.md.html">Multiclo....html</a>&nbsp;</td><td class="left"><a href="rename.sh.html">rename.sh.html</a>&nbsp;</td><td class="left"><a href="Ubuntu_Server_A_cheat_sheet.html.html">Ubuntu_S....html</a>&nbsp;</td><td class="left"><a href="Windows_10_A_cheat_sheet.md.html">Windows_....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Amazon_S3_A_cheat_sheet.html.html">Amazon_S....html</a>&nbsp;</td><td class="left"><a href="Containers_A_cheat_sheet_for_tech_pros.html.html">Containe....html</a>&nbsp;</td><td class="left"><a href="Google_Cloud_Platform_A_cheat_sheet.md.html">Google_C....html</a>&nbsp;</td><td class="left"><a href="Machine_learning_A_cheat_sheet.html.html">Machine_....html</a>&nbsp;</td><td class="left"><a href="Quantum_computing_A_cheat_sheet.html.html">Quantum_....html</a>&nbsp;</td><td class="left"><a href="Serverless_computing_A_cheat_sheet.html.html">Serverle....html</a>&nbsp;</td><td class="left"><a href="Ubuntu_Server_A_cheat_sheet.md.html">Ubuntu_S....html</a>&nbsp;</td><td class="left"><a href="Zoom_A_cheat_sheet_about_the_video_conferencing_solution.html.html">Zoom_A_c....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Amazon_S3_A_cheat_sheet.md.html">Amazon_S....html</a>&nbsp;</td><td class="left"><a href="Containers_A_cheat_sheet_for_tech_pros.md.html">Containe....html</a>&nbsp;</td><td class="left"><a href="index.html.html">index.html.html</a>&nbsp;</td><td class="left"><a href="Machine_learning_A_cheat_sheet.md.html">Machine_....html</a>&nbsp;</td><td class="left"><a href="Quantum_computing_A_cheat_sheet.md.html">Quantum_....html</a>&nbsp;</td><td class="left"><a href="Serverless_computing_A_cheat_sheet.md.html">Serverle....html</a>&nbsp;</td><td class="left"><a href="Windows_10_A_cheat_sheet.html.html">Windows_....html</a>&nbsp;</td><td class="left"><a href="Zoom_A_cheat_sheet_about_the_video_conferencing_solution.md.html">Zoom_A_c....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Amazon_Web_Services_(AWS)_A_cheat_sheet.html.html">Amazon_W....html</a>&nbsp;</td><td class="left"><a href="files.html">files.html</a>&nbsp;</td><td class="left"><a href="Kubernetes_A_cheat_sheet.html.html">Kubernet....html</a>&nbsp;</td><td class="left"><a href="Multicloud_A_cheat_sheet.html.html">Multiclo....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  3<br>
 Files: 28<br>
-Size of all files: 649334 K</p>
+Size of all files: 649334 KB</p>
 
 </body>
 </html>

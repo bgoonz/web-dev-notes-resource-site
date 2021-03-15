@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,23 +532,22 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="access-an-arrays-contents-using-bracket-notation.html">access-an-arrays-contents-using-bracket-notation.html</a>&nbsp;</td><td class="left"><a href="add-key-value-pairs-to-javascript-objects.html">add-key-value-pairs-to-javascript-objects.html</a>&nbsp;</td><td class="left"><a href="copy-an-array-with-the-spread-operator.html">copy-an-array-with-the-spread-operator.html</a>&nbsp;</td><td class="left"><a href="generate-an-array-of-all-object-keys-with-object.keys.html">generate-an-array-of-all-object-keys-with-object.keys.html</a>&nbsp;</td><td class="left"><a href="modify-an-array-stored-in-an-object.html">modify-an-array-stored-in-an-object.html</a>&nbsp;</td><td class="left"><a href="remove-items-using-splice.html">remove-items-using-splice.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="access-property-names-with-bracket-notation.html">access-property-names-with-bracket-notation.html</a>&nbsp;</td><td class="left"><a href="check-for-the-presence-of-an-element-with-indexof.html">check-for-the-presence-of-an-element-with-indexof.html</a>&nbsp;</td><td class="left"><a href="copy-array-items-using-slice.html">copy-array-items-using-slice.html</a>&nbsp;</td><td class="left"><a href="iterate-through-all-an-arrays-items-using-for-loops.html">iterate-through-all-an-arrays-items-using-for-loops.html</a>&nbsp;</td><td class="left"><a href="modify-an-object-nested-within-an-object.html">modify-an-object-nested-within-an-object.html</a>&nbsp;</td><td class="left"><a href="use-an-array-to-store-a-collection-of-data.html">use-an-array-to-store-a-collection-of-data.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="add-items-to-an-array-with-push-and-unshift.html">add-items-to-an-array-with-push-and-unshift.html</a>&nbsp;</td><td class="left"><a href="check-if-an-object-has-a-property.html">check-if-an-object-has-a-property.html</a>&nbsp;</td><td class="left"><a href="create-complex-multi-dimensional-arrays.html">create-complex-multi-dimensional-arrays.html</a>&nbsp;</td><td class="left"><a href="iterate-through-the-keys-of-an-object-with-a-for...in-statement.html">iterate-through-the-keys-of-an-object-with-a-for...in-statement.html</a>&nbsp;</td><td class="left"><a href="remove-items-from-an-array-with-pop-and-shift.html">remove-items-from-an-array-with-pop-and-shift.html</a>&nbsp;</td><td class="left"><a href="use-the-delete-keyword-to-remove-object-properties.html">use-the-delete-keyword-to-remove-object-properties.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="add-items-using-splice.html">add-items-using-splice.html</a>&nbsp;</td><td class="left"><a href="combine-arrays-with-the-spread-operator.html">combine-arrays-with-the-spread-operator.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="access-an-arrays-contents-using-bracket-notation.html">access-a....html</a>&nbsp;</td><td class="left"><a href="add-items-using-splice.html">add-item....html</a>&nbsp;</td><td class="left"><a href="check-if-an-object-has-a-property.html">check-if....html</a>&nbsp;</td><td class="left"><a href="copy-array-items-using-slice.html">copy-arr....html</a>&nbsp;</td><td class="left"><a href="iterate-through-all-an-arrays-items-using-for-loops.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="modify-an-array-stored-in-an-object.html">modify-a....html</a>&nbsp;</td><td class="left"><a href="remove-items-from-an-array-with-pop-and-shift.html">remove-i....html</a>&nbsp;</td><td class="left"><a href="use-an-array-to-store-a-collection-of-data.html">use-an-a....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="access-property-names-with-bracket-notation.html">access-p....html</a>&nbsp;</td><td class="left"><a href="add-key-value-pairs-to-javascript-objects.html">add-key-....html</a>&nbsp;</td><td class="left"><a href="combine-arrays-with-the-spread-operator.html">combine-....html</a>&nbsp;</td><td class="left"><a href="create-complex-multi-dimensional-arrays.html">create-c....html</a>&nbsp;</td><td class="left"><a href="iterate-through-the-keys-of-an-object-with-a-for...in-statement.html">iterate-....html</a>&nbsp;</td><td class="left"><a href="modify-an-object-nested-within-an-object.html">modify-a....html</a>&nbsp;</td><td class="left"><a href="remove-items-using-splice.html">remove-i....html</a>&nbsp;</td><td class="left"><a href="use-the-delete-keyword-to-remove-object-properties.html">use-the-....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="add-items-to-an-array-with-push-and-unshift.html">add-item....html</a>&nbsp;</td><td class="left"><a href="check-for-the-presence-of-an-element-with-indexof.html">check-fo....html</a>&nbsp;</td><td class="left"><a href="copy-an-array-with-the-spread-operator.html">copy-an-....html</a>&nbsp;</td><td class="left"><a href="generate-an-array-of-all-object-keys-with-object.keys.html">generate....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 20<br>
-Size of all files: 204450 K</p>
+Size of all files: 204450 KB</p>
 
 </body>
 </html>

@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,57 +532,47 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="cats/right.html" target="rframe">cats</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="cats/right.html" target="rframe">cats</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="example.csv">example.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4610.csv">NAICS_data_4610.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7833.csv">NAICS_data_7833.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-L.csv">spreadsheet-L.csv</a>&nbsp;</td><td class="left"><a href="calcProd.py">calcProd.py</a>&nbsp;</td><td class="left"><a href="readCensusExcel.py">readCensusExcel.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_1048.csv">NAICS_data_1048.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4618.csv">NAICS_data_4618.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7845.csv">NAICS_data_7845.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-M.csv">spreadsheet-M.csv</a>&nbsp;</td><td class="left"><a href="catnapping.py">catnapping.py</a>&nbsp;</td><td class="left"><a href="readDocx.py">readDocx.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_1218.csv">NAICS_data_1218.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4699.csv">NAICS_data_4699.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7913.csv">NAICS_data_7913.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-N.csv">spreadsheet-N.csv</a>&nbsp;</td><td class="left"><a href="census2010.py">census2010.py</a>&nbsp;</td><td class="left"><a href="removeCsvHeader.py">removeCsvHeader.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_1657.csv">NAICS_data_1657.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4896.csv">NAICS_data_4896.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8015.csv">NAICS_data_8015.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-O.csv">spreadsheet-O.csv</a>&nbsp;</td><td class="left"><a href="characterCount.py">characterCount.py</a>&nbsp;</td><td class="left"><a href="renameDates.py">renameDates.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_1751.csv">NAICS_data_1751.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4938.csv">NAICS_data_4938.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8085.csv">NAICS_data_8085.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-P.csv">spreadsheet-P.csv</a>&nbsp;</td><td class="left"><a href="coinFlip.py">coinFlip.py</a>&nbsp;</td><td class="left"><a href="resizeAndAddLogo.py">resizeAndAddLogo.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_1814.csv">NAICS_data_1814.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5060.csv">NAICS_data_5060.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8131.csv">NAICS_data_8131.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Q.csv">spreadsheet-Q.csv</a>&nbsp;</td><td class="left"><a href="combinePdfs.py">combinePdfs.py</a>&nbsp;</td><td class="left"><a href="sameName.py">sameName.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_1817.csv">NAICS_data_1817.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5092.csv">NAICS_data_5092.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8196.csv">NAICS_data_8196.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-R.csv">spreadsheet-R.csv</a>&nbsp;</td><td class="left"><a href="countdown.py">countdown.py</a>&nbsp;</td><td class="left"><a href="sameName2.py">sameName2.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_1889.csv">NAICS_data_1889.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5305.csv">NAICS_data_5305.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8397.csv">NAICS_data_8397.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-S.csv">spreadsheet-S.csv</a>&nbsp;</td><td class="left"><a href="downloadXkcd.py">downloadXkcd.py</a>&nbsp;</td><td class="left"><a href="sameName3.py">sameName3.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_1952.csv">NAICS_data_1952.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5341.csv">NAICS_data_5341.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8403.csv">NAICS_data_8403.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-T.csv">spreadsheet-T.csv</a>&nbsp;</td><td class="left"><a href="errorExample.py">errorExample.py</a>&nbsp;</td><td class="left"><a href="sameName4.py">sameName4.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_1973.csv">NAICS_data_1973.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5364.csv">NAICS_data_5364.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8499.csv">NAICS_data_8499.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-U.csv">spreadsheet-U.csv</a>&nbsp;</td><td class="left"><a href="exitExample.py">exitExample.py</a>&nbsp;</td><td class="left"><a href="sendDuesReminders.py">sendDuesReminders.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2066.csv">NAICS_data_2066.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5631.csv">NAICS_data_5631.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8522.csv">NAICS_data_8522.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-V.csv">spreadsheet-V.csv</a>&nbsp;</td><td class="left"><a href="factorialLog.py">factorialLog.py</a>&nbsp;</td><td class="left"><a href="stopwatch.py">stopwatch.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2092.csv">NAICS_data_2092.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5890.csv">NAICS_data_5890.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8545.csv">NAICS_data_8545.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-W.csv">spreadsheet-W.csv</a>&nbsp;</td><td class="left"><a href="fiveTimes.py">fiveTimes.py</a>&nbsp;</td><td class="left"><a href="swordfish.py">swordfish.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2183.csv">NAICS_data_2183.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5899.csv">NAICS_data_5899.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8700.csv">NAICS_data_8700.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-X.csv">spreadsheet-X.csv</a>&nbsp;</td><td class="left"><a href="formFiller.py">formFiller.py</a>&nbsp;</td><td class="left"><a href="textMyself.py">textMyself.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2346.csv">NAICS_data_2346.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5992.csv">NAICS_data_5992.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8749.csv">NAICS_data_8749.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Y.csv">spreadsheet-Y.csv</a>&nbsp;</td><td class="left"><a href="getDocxText.py">getDocxText.py</a>&nbsp;</td><td class="left"><a href="threadDemo.py">threadDemo.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2427.csv">NAICS_data_2427.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6161.csv">NAICS_data_6161.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8760.csv">NAICS_data_8760.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Z.csv">spreadsheet-Z.csv</a>&nbsp;</td><td class="left"><a href="guessTheNumber.py">guessTheNumber.py</a>&nbsp;</td><td class="left"><a href="ticTacToe.py">ticTacToe.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2648.csv">NAICS_data_2648.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6181.csv">NAICS_data_6181.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8832.csv">NAICS_data_8832.csv</a>&nbsp;</td><td class="left"><a href="demo.docx">demo.docx</a>&nbsp;</td><td class="left"><a href="hello.py">hello.py</a>&nbsp;</td><td class="left"><a href="torrentStarter.py">torrentStarter.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2799.csv">NAICS_data_2799.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6329.csv">NAICS_data_6329.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9012.csv">NAICS_data_9012.csv</a>&nbsp;</td><td class="left"><a href="headings.docx">headings.docx</a>&nbsp;</td><td class="left"><a href="helloFunc.py">helloFunc.py</a>&nbsp;</td><td class="left"><a href="updateProduce.py">updateProduce.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2828.csv">NAICS_data_2828.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6335.csv">NAICS_data_6335.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9066.csv">NAICS_data_9066.csv</a>&nbsp;</td><td class="left"><a href="helloworld.docx">helloworld.docx</a>&nbsp;</td><td class="left"><a href="helloFunc2.py">helloFunc2.py</a>&nbsp;</td><td class="left"><a href="validateInput.py">validateInput.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2959.csv">NAICS_data_2959.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6397.csv">NAICS_data_6397.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9103.csv">NAICS_data_9103.csv</a>&nbsp;</td><td class="left"><a href="multipleParagraphs.docx">multipleParagraphs.docx</a>&nbsp;</td><td class="left"><a href="inventory.py">inventory.py</a>&nbsp;</td><td class="left"><a href="vampire.py">vampire.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2988.csv">NAICS_data_2988.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6493.csv">NAICS_data_6493.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9139.csv">NAICS_data_9139.csv</a>&nbsp;</td><td class="left"><a href="restyled.docx">restyled.docx</a>&nbsp;</td><td class="left"><a href="isPhoneNumber.py">isPhoneNumber.py</a>&nbsp;</td><td class="left"><a href="vampire2.py">vampire2.py</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_2993.csv">NAICS_data_2993.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6637.csv">NAICS_data_6637.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9165.csv">NAICS_data_9165.csv</a>&nbsp;</td><td class="left"><a href="twoPage.docx">twoPage.docx</a>&nbsp;</td><td class="left"><a href="littleKid.py">littleKid.py</a>&nbsp;</td><td class="left"><a href="zeroDivide.py">zeroDivide.py</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_2994.csv">NAICS_data_2994.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6700.csv">NAICS_data_6700.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9250.csv">NAICS_data_9250.csv</a>&nbsp;</td><td class="left"><a href="example.html">example.html</a>&nbsp;</td><td class="left"><a href="lucky.py">lucky.py</a>&nbsp;</td><td class="left"><a href="mcb.pyw">mcb.pyw</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_3044.csv">NAICS_data_3044.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6842.csv">NAICS_data_6842.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9448.csv">NAICS_data_9448.csv</a>&nbsp;</td><td class="left"><a href="combinedminutes.pdf">combinedminutes.pdf</a>&nbsp;</td><td class="left"><a href="magic8Ball.py">magic8Ball.py</a>&nbsp;</td><td class="left"><a href="dictionary.txt">dictionary.txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_3073.csv">NAICS_data_3073.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6904.csv">NAICS_data_6904.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9825.csv">NAICS_data_9825.csv</a>&nbsp;</td><td class="left"><a href="encrypted.pdf">encrypted.pdf</a>&nbsp;</td><td class="left"><a href="magic8Ball2.py">magic8Ball2.py</a>&nbsp;</td><td class="left"><a href="guests.txt">guests.txt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_3075.csv">NAICS_data_3075.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7028.csv">NAICS_data_7028.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9834.csv">NAICS_data_9834.csv</a>&nbsp;</td><td class="left"><a href="encryptedminutes.pdf">encryptedminutes.pdf</a>&nbsp;</td><td class="left"><a href="mapIt.py">mapIt.py</a>&nbsp;</td><td class="left"><a href="spam.txt">spam.txt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_3144.csv">NAICS_data_3144.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7102.csv">NAICS_data_7102.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9986.csv">NAICS_data_9986.csv</a>&nbsp;</td><td class="left"><a href="meetingminutes.pdf">meetingminutes.pdf</a>&nbsp;</td><td class="left"><a href="mouseNow.py">mouseNow.py</a>&nbsp;</td><td class="left"><a href="alarm.wav">alarm.wav</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_3197.csv">NAICS_data_3197.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7138.csv">NAICS_data_7138.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-A.csv">spreadsheet-A.csv</a>&nbsp;</td><td class="left"><a href="meetingminutes2.pdf">meetingminutes2.pdf</a>&nbsp;</td><td class="left"><a href="mouseNow2.py">mouseNow2.py</a>&nbsp;</td><td class="left"><a href="censuspopdata.xlsx">censuspopdata.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_3237.csv">NAICS_data_3237.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7226.csv">NAICS_data_7226.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-B.csv">spreadsheet-B.csv</a>&nbsp;</td><td class="left"><a href="watermark.pdf">watermark.pdf</a>&nbsp;</td><td class="left"><a href="multidownloadXkcd.py">multidownloadXkcd.py</a>&nbsp;</td><td class="left"><a href="dimensions.xlsx">dimensions.xlsx</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_3494.csv">NAICS_data_3494.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7338.csv">NAICS_data_7338.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-C.csv">spreadsheet-C.csv</a>&nbsp;</td><td class="left"><a href="catlogo.png">catlogo.png</a>&nbsp;</td><td class="left"><a href="myPets.py">myPets.py</a>&nbsp;</td><td class="left"><a href="duesRecords.xlsx">duesRecords.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_3495.csv">NAICS_data_3495.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7383.csv">NAICS_data_7383.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-D.csv">spreadsheet-D.csv</a>&nbsp;</td><td class="left"><a href="zophie.png">zophie.png</a>&nbsp;</td><td class="left"><a href="passingReference.py">passingReference.py</a>&nbsp;</td><td class="left"><a href="example.xlsx">example.xlsx</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_3731.csv">NAICS_data_3731.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7388.csv">NAICS_data_7388.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-E.csv">spreadsheet-E.csv</a>&nbsp;</td><td class="left"><a href="allMyCats1.py">allMyCats1.py</a>&nbsp;</td><td class="left"><a href="phoneAndEmail.py">phoneAndEmail.py</a>&nbsp;</td><td class="left"><a href="freezeExample.xlsx">freezeExample.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_4031.csv">NAICS_data_4031.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7427.csv">NAICS_data_7427.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-F.csv">spreadsheet-F.csv</a>&nbsp;</td><td class="left"><a href="allMyCats2.py">allMyCats2.py</a>&nbsp;</td><td class="left"><a href="picnicTable.py">picnicTable.py</a>&nbsp;</td><td class="left"><a href="merged.xlsx">merged.xlsx</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_4125.csv">NAICS_data_4125.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7535.csv">NAICS_data_7535.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-G.csv">spreadsheet-G.csv</a>&nbsp;</td><td class="left"><a href="backupToZip.py">backupToZip.py</a>&nbsp;</td><td class="left"><a href="prettyCharacterCount.py">prettyCharacterCount.py</a>&nbsp;</td><td class="left"><a href="produceSales.xlsx">produceSales.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_4213.csv">NAICS_data_4213.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7642.csv">NAICS_data_7642.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-H.csv">spreadsheet-H.csv</a>&nbsp;</td><td class="left"><a href="birthdays.py">birthdays.py</a>&nbsp;</td><td class="left"><a href="printRandom.py">printRandom.py</a>&nbsp;</td><td class="left"><a href="sampleChart.xlsx">sampleChart.xlsx</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_4215.csv">NAICS_data_4215.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7677.csv">NAICS_data_7677.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-I.csv">spreadsheet-I.csv</a>&nbsp;</td><td class="left"><a href="boxPrint.py">boxPrint.py</a>&nbsp;</td><td class="left"><a href="pw.py">pw.py</a>&nbsp;</td><td class="left"><a href="styled.xlsx">styled.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_4329.csv">NAICS_data_4329.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7765.csv">NAICS_data_7765.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-J.csv">spreadsheet-J.csv</a>&nbsp;</td><td class="left"><a href="buggyAddingProgram.py">buggyAddingProgram.py</a>&nbsp;</td><td class="left"><a href="quickWeather.py">quickWeather.py</a>&nbsp;</td><td class="left"><a href="styles.xlsx">styles.xlsx</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="NAICS_data_4436.csv">NAICS_data_4436.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7830.csv">NAICS_data_7830.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-K.csv">spreadsheet-K.csv</a>&nbsp;</td><td class="left"><a href="bulletPointAdder.py">bulletPointAdder.py</a>&nbsp;</td><td class="left"><a href="randomQuizGenerator.py">randomQuizGenerator.py</a>&nbsp;</td><td class="left"><a href="updatedProduceSales.xlsx">updatedProduceSales.xlsx</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="NAICS_data_4525.csv">NAICS_data_4525.csv</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="censuspopdata.xlsx">censuspo....xlsx</a>&nbsp;</td><td class="left"><a href="combinePdfs.py">combinePdfs.py</a>&nbsp;</td><td class="left"><a href="printRandom.py">printRandom.py</a>&nbsp;</td><td class="left"><a href="encrypted.pdf">encrypted.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2799.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5092.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7677.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9986.csv">NAICS_da...6.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="dimensions.xlsx">dimensions.xlsx</a>&nbsp;</td><td class="left"><a href="countdown.py">countdown.py</a>&nbsp;</td><td class="left"><a href="pw.py">pw.py</a>&nbsp;</td><td class="left"><a href="encryptedminutes.pdf">encrypte...s.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2828.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5305.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7765.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-A.csv">spreadsh...A.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="duesRecords.xlsx">duesRecords.xlsx</a>&nbsp;</td><td class="left"><a href="downloadXkcd.py">downloadXkcd.py</a>&nbsp;</td><td class="left"><a href="quickWeather.py">quickWeather.py</a>&nbsp;</td><td class="left"><a href="meetingminutes.pdf">meetingm...s.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2959.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5341.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7830.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-B.csv">spreadsh...B.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="example.xlsx">example.xlsx</a>&nbsp;</td><td class="left"><a href="errorExample.py">errorExample.py</a>&nbsp;</td><td class="left"><a href="randomQuizGenerator.py">randomQu...or.py</a>&nbsp;</td><td class="left"><a href="meetingminutes2.pdf">meetingm...2.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2988.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5364.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7833.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-C.csv">spreadsh...C.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="freezeExample.xlsx">freezeEx....xlsx</a>&nbsp;</td><td class="left"><a href="exitExample.py">exitExample.py</a>&nbsp;</td><td class="left"><a href="readCensusExcel.py">readCens...el.py</a>&nbsp;</td><td class="left"><a href="watermark.pdf">watermark.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2993.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5631.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7845.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-D.csv">spreadsh...D.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="merged.xlsx">merged.xlsx</a>&nbsp;</td><td class="left"><a href="factorialLog.py">factorialLog.py</a>&nbsp;</td><td class="left"><a href="readDocx.py">readDocx.py</a>&nbsp;</td><td class="left"><a href="example.html">example.html</a>&nbsp;</td><td class="left"><a href="NAICS_data_2994.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5890.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7913.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-E.csv">spreadsh...E.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="produceSales.xlsx">produceS....xlsx</a>&nbsp;</td><td class="left"><a href="fiveTimes.py">fiveTimes.py</a>&nbsp;</td><td class="left"><a href="removeCsvHeader.py">removeCs...er.py</a>&nbsp;</td><td class="left"><a href="demo.docx">demo.docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3044.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5899.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8015.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-F.csv">spreadsh...F.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="sampleChart.xlsx">sampleChart.xlsx</a>&nbsp;</td><td class="left"><a href="formFiller.py">formFiller.py</a>&nbsp;</td><td class="left"><a href="renameDates.py">renameDates.py</a>&nbsp;</td><td class="left"><a href="headings.docx">headings.docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3073.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5992.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8085.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-G.csv">spreadsh...G.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="styled.xlsx">styled.xlsx</a>&nbsp;</td><td class="left"><a href="getDocxText.py">getDocxText.py</a>&nbsp;</td><td class="left"><a href="resizeAndAddLogo.py">resizeAn...go.py</a>&nbsp;</td><td class="left"><a href="helloworld.docx">helloworld.docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3075.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6161.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8131.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-H.csv">spreadsh...H.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="styles.xlsx">styles.xlsx</a>&nbsp;</td><td class="left"><a href="guessTheNumber.py">guessThe...er.py</a>&nbsp;</td><td class="left"><a href="sameName.py">sameName.py</a>&nbsp;</td><td class="left"><a href="multipleParagraphs.docx">multiple....docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3144.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6181.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8196.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-I.csv">spreadsh...I.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="updatedProduceSales.xlsx">updatedP....xlsx</a>&nbsp;</td><td class="left"><a href="hello.py">hello.py</a>&nbsp;</td><td class="left"><a href="sameName2.py">sameName2.py</a>&nbsp;</td><td class="left"><a href="restyled.docx">restyled.docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3197.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6329.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8397.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-J.csv">spreadsh...J.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="alarm.wav">alarm.wav</a>&nbsp;</td><td class="left"><a href="helloFunc.py">helloFunc.py</a>&nbsp;</td><td class="left"><a href="sameName3.py">sameName3.py</a>&nbsp;</td><td class="left"><a href="twoPage.docx">twoPage.docx</a>&nbsp;</td><td class="left"><a href="NAICS_data_3237.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6335.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8403.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-K.csv">spreadsh...K.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="dictionary.txt">dictionary.txt</a>&nbsp;</td><td class="left"><a href="helloFunc2.py">helloFunc2.py</a>&nbsp;</td><td class="left"><a href="sameName4.py">sameName4.py</a>&nbsp;</td><td class="left"><a href="example.csv">example.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_3494.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6397.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8499.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-L.csv">spreadsh...L.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="guests.txt">guests.txt</a>&nbsp;</td><td class="left"><a href="inventory.py">inventory.py</a>&nbsp;</td><td class="left"><a href="sendDuesReminders.py">sendDues...rs.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1048.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_3495.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6493.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8522.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-M.csv">spreadsh...M.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="spam.txt">spam.txt</a>&nbsp;</td><td class="left"><a href="isPhoneNumber.py">isPhoneNumber.py</a>&nbsp;</td><td class="left"><a href="stopwatch.py">stopwatch.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1218.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_3731.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6637.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8545.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-N.csv">spreadsh...N.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="mcb.pyw">mcb.pyw</a>&nbsp;</td><td class="left"><a href="littleKid.py">littleKid.py</a>&nbsp;</td><td class="left"><a href="swordfish.py">swordfish.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1657.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4031.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6700.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8700.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-O.csv">spreadsh...O.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="allMyCats1.py">allMyCats1.py</a>&nbsp;</td><td class="left"><a href="lucky.py">lucky.py</a>&nbsp;</td><td class="left"><a href="textMyself.py">textMyself.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1751.csv">NAICS_da...1.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4125.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6842.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8749.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-P.csv">spreadsh...P.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="allMyCats2.py">allMyCats2.py</a>&nbsp;</td><td class="left"><a href="magic8Ball.py">magic8Ball.py</a>&nbsp;</td><td class="left"><a href="threadDemo.py">threadDemo.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1814.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4213.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_6904.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8760.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Q.csv">spreadsh...Q.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="backupToZip.py">backupToZip.py</a>&nbsp;</td><td class="left"><a href="magic8Ball2.py">magic8Ball2.py</a>&nbsp;</td><td class="left"><a href="ticTacToe.py">ticTacToe.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1817.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4215.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7028.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_8832.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-R.csv">spreadsh...R.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="birthdays.py">birthdays.py</a>&nbsp;</td><td class="left"><a href="mapIt.py">mapIt.py</a>&nbsp;</td><td class="left"><a href="torrentStarter.py">torrentS...er.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1889.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4329.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7102.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9012.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-S.csv">spreadsh...S.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="boxPrint.py">boxPrint.py</a>&nbsp;</td><td class="left"><a href="mouseNow.py">mouseNow.py</a>&nbsp;</td><td class="left"><a href="updateProduce.py">updateProduce.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1952.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4436.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7138.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9066.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-T.csv">spreadsh...T.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="buggyAddingProgram.py">buggyAdd...am.py</a>&nbsp;</td><td class="left"><a href="mouseNow2.py">mouseNow2.py</a>&nbsp;</td><td class="left"><a href="validateInput.py">validateInput.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_1973.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4525.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7226.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9103.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-U.csv">spreadsh...U.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="bulletPointAdder.py">bulletPo...er.py</a>&nbsp;</td><td class="left"><a href="multidownloadXkcd.py">multidow...cd.py</a>&nbsp;</td><td class="left"><a href="vampire.py">vampire.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_2066.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4610.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7338.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9139.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-V.csv">spreadsh...V.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="calcProd.py">calcProd.py</a>&nbsp;</td><td class="left"><a href="myPets.py">myPets.py</a>&nbsp;</td><td class="left"><a href="vampire2.py">vampire2.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_2092.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4618.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7383.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9165.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-W.csv">spreadsh...W.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="catnapping.py">catnapping.py</a>&nbsp;</td><td class="left"><a href="passingReference.py">passingR...ce.py</a>&nbsp;</td><td class="left"><a href="zeroDivide.py">zeroDivide.py</a>&nbsp;</td><td class="left"><a href="NAICS_data_2183.csv">NAICS_da...3.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4699.csv">NAICS_da...9.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7388.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9250.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-X.csv">spreadsh...X.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="census2010.py">census2010.py</a>&nbsp;</td><td class="left"><a href="phoneAndEmail.py">phoneAndEmail.py</a>&nbsp;</td><td class="left"><a href="catlogo.png">catlogo.png</a>&nbsp;</td><td class="left"><a href="NAICS_data_2346.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4896.csv">NAICS_da...6.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7427.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9448.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Y.csv">spreadsh...Y.csv</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="characterCount.py">characte...nt.py</a>&nbsp;</td><td class="left"><a href="picnicTable.py">picnicTable.py</a>&nbsp;</td><td class="left"><a href="zophie.png">zophie.png</a>&nbsp;</td><td class="left"><a href="NAICS_data_2427.csv">NAICS_da...7.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_4938.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7535.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9825.csv">NAICS_da...5.csv</a>&nbsp;</td><td class="left"><a href="spreadsheet-Z.csv">spreadsh...Z.csv</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="coinFlip.py">coinFlip.py</a>&nbsp;</td><td class="left"><a href="prettyCharacterCount.py">prettyCh...nt.py</a>&nbsp;</td><td class="left"><a href="combinedminutes.pdf">combined...s.pdf</a>&nbsp;</td><td class="left"><a href="NAICS_data_2648.csv">NAICS_da...8.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_5060.csv">NAICS_da...0.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_7642.csv">NAICS_da...2.csv</a>&nbsp;</td><td class="left"><a href="NAICS_data_9834.csv">NAICS_da...4.csv</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 223<br>
-Size of all files: 11974963 K</p>
+Size of all files: 11974963 KB</p>
 
 </body>
 </html>

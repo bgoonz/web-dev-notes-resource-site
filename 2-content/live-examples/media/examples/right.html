@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,26 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="link-element-example.css">link-element-example.css</a>&nbsp;</td><td class="left"><a href="moon.jpg">moon.jpg</a>&nbsp;</td><td class="left"><a href="british-flag.png">british-flag.png</a>&nbsp;</td><td class="left"><a href="round-balloon-threshold.png">round-balloon-threshold.png</a>&nbsp;</td><td class="left"><a href="dino.svg">dino.svg</a>&nbsp;</td><td class="left"><a href="shadow.svg">shadow.svg</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="balloon-small.jpg">balloon-small.jpg</a>&nbsp;</td><td class="left"><a href="plumeria.jpg">plumeria.jpg</a>&nbsp;</td><td class="left"><a href="fish.png">fish.png</a>&nbsp;</td><td class="left"><a href="round-balloon.png">round-balloon.png</a>&nbsp;</td><td class="left"><a href="external-link-alt-solid.svg">external-link-alt-solid.svg</a>&nbsp;</td><td class="left"><a href="star.svg">star.svg</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="balloon.jpg">balloon.jpg</a>&nbsp;</td><td class="left"><a href="puppy-header-logo.jpg">puppy-header-logo.jpg</a>&nbsp;</td><td class="left"><a href="french-flag.png">french-flag.png</a>&nbsp;</td><td class="left"><a href="star.png">star.png</a>&nbsp;</td><td class="left"><a href="firefox-logo.svg">firefox-logo.svg</a>&nbsp;</td><td class="left"><a href="friday.vtt">friday.vtt</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="dino.jpg">dino.jpg</a>&nbsp;</td><td class="left"><a href="stream-of-water.mp4">stream-of-water.mp4</a>&nbsp;</td><td class="left"><a href="lizard.png">lizard.png</a>&nbsp;</td><td class="left"><a href="star2.png">star2.png</a>&nbsp;</td><td class="left"><a href="mdn.svg">mdn.svg</a>&nbsp;</td><td class="left"><a href="stream-of-water.vtt">stream-of-water.vtt</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="hand.jpg">hand.jpg</a>&nbsp;</td><td class="left"><a href="In-CC0.pdf">In-CC0.pdf</a>&nbsp;</td><td class="left"><a href="login-button.png">login-button.png</a>&nbsp;</td><td class="left"><a href="border-florid.svg">border-florid.svg</a>&nbsp;</td><td class="left"><a href="rain.svg">rain.svg</a>&nbsp;</td><td class="left"><a href="stream-of-water-audioless.webm">stream-of-water-audioless.webm</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="ice-cream.jpg">ice-cream.jpg</a>&nbsp;</td><td class="left"><a href="border-diamonds.png">border-diamonds.png</a>&nbsp;</td><td class="left"><a href="mdn-info.png">mdn-info.png</a>&nbsp;</td><td class="left"><a href="crosshair.svg">crosshair.svg</a>&nbsp;</td><td class="left"><a href="rocket.svg">rocket.svg</a>&nbsp;</td><td class="left"><a href="stream-of-water.webm">stream-of-water.webm</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="leopard.jpg">leopard.jpg</a>&nbsp;</td><td class="left"><a href="border-stars.png">border-stars.png</a>&nbsp;</td><td class="left"><a href="mdn-info2.png">mdn-info2.png</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="stream-of-water-audioless.webm">stream-o....webm</a>&nbsp;</td><td class="left"><a href="crosshair.svg">crosshair.svg</a>&nbsp;</td><td class="left"><a href="rain.svg">rain.svg</a>&nbsp;</td><td class="left"><a href="border-stars.png">border-stars.png</a>&nbsp;</td><td class="left"><a href="login-button.png">login-button.png</a>&nbsp;</td><td class="left"><a href="star.png">star.png</a>&nbsp;</td><td class="left"><a href="balloon.jpg">balloon.jpg</a>&nbsp;</td><td class="left"><a href="moon.jpg">moon.jpg</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="stream-of-water.webm">stream-o....webm</a>&nbsp;</td><td class="left"><a href="dino.svg">dino.svg</a>&nbsp;</td><td class="left"><a href="rocket.svg">rocket.svg</a>&nbsp;</td><td class="left"><a href="british-flag.png">british-flag.png</a>&nbsp;</td><td class="left"><a href="mdn-info.png">mdn-info.png</a>&nbsp;</td><td class="left"><a href="star2.png">star2.png</a>&nbsp;</td><td class="left"><a href="dino.jpg">dino.jpg</a>&nbsp;</td><td class="left"><a href="plumeria.jpg">plumeria.jpg</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="friday.vtt">friday.vtt</a>&nbsp;</td><td class="left"><a href="external-link-alt-solid.svg">external...d.svg</a>&nbsp;</td><td class="left"><a href="shadow.svg">shadow.svg</a>&nbsp;</td><td class="left"><a href="fish.png">fish.png</a>&nbsp;</td><td class="left"><a href="mdn-info2.png">mdn-info2.png</a>&nbsp;</td><td class="left"><a href="In-CC0.pdf">In-CC0.pdf</a>&nbsp;</td><td class="left"><a href="hand.jpg">hand.jpg</a>&nbsp;</td><td class="left"><a href="puppy-header-logo.jpg">puppy-he...o.jpg</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="stream-of-water.vtt">stream-o...r.vtt</a>&nbsp;</td><td class="left"><a href="firefox-logo.svg">firefox-logo.svg</a>&nbsp;</td><td class="left"><a href="star.svg">star.svg</a>&nbsp;</td><td class="left"><a href="french-flag.png">french-flag.png</a>&nbsp;</td><td class="left"><a href="round-balloon-threshold.png">round-ba...d.png</a>&nbsp;</td><td class="left"><a href="stream-of-water.mp4">stream-o...r.mp4</a>&nbsp;</td><td class="left"><a href="ice-cream.jpg">ice-cream.jpg</a>&nbsp;</td><td class="left"><a href="link-element-example.css">link-ele...e.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="border-florid.svg">border-f...d.svg</a>&nbsp;</td><td class="left"><a href="mdn.svg">mdn.svg</a>&nbsp;</td><td class="left"><a href="border-diamonds.png">border-d...s.png</a>&nbsp;</td><td class="left"><a href="lizard.png">lizard.png</a>&nbsp;</td><td class="left"><a href="round-balloon.png">round-ba...n.png</a>&nbsp;</td><td class="left"><a href="balloon-small.jpg">balloon-...l.jpg</a>&nbsp;</td><td class="left"><a href="leopard.jpg">leopard.jpg</a>&nbsp;</td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 39<br>
-Size of all files: 2318734 K</p>
+Size of all files: 2318734 KB</p>
 
 </body>
 </html>

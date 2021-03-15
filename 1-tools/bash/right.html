@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,22 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="bash-utility-commands/right.html" target="rframe">bash-utility-commands</a></td><td class="left">&nbsp;<a href="bulk_download_videos/right.html" target="rframe">bulk_download_videos</a></td><td class="left">&nbsp;<a href="Convert%20Cygwin%20Path%20toWinPath/right.html" target="rframe">Convert Cygwin Path toWinPath</a></td><td class="left">&nbsp;<a href="Download-web-content/right.html" target="rframe">Download-web-content</a></td><td class="left">&nbsp;<a href="extract_files/right.html" target="rframe">extract_files</a></td><td class="left">&nbsp;<a href="generate-html-directory/right.html" target="rframe">generate-html-directory</a></td><td class="left">&nbsp;<a href="grep--4-text-in-folder/right.html" target="rframe">grep--4-text-in-folder</a></td><td class="left">&nbsp;<a href="kill-docker/right.html" target="rframe">kill-docker</a></td><td class="left">&nbsp;<a href="super-user/right.html" target="rframe">super-user</a></td></tr>
-<tr class="row2"><td class="left"><a href="15-minute-timer/right.html" target="rframe">15-minute-timer</a></td><td class="left">&nbsp;<a href="bash_utility_commands/right.html" target="rframe">bash_utility_commands</a></td><td class="left">&nbsp;<a href="clear-duplicate-lines/right.html" target="rframe">clear-duplicate-lines</a></td><td class="left">&nbsp;<a href="Convert_Cygwin_Path_toWinPath/right.html" target="rframe">Convert_Cygwin_Path_toWinPath</a></td><td class="left">&nbsp;<a href="Download_web_content/right.html" target="rframe">Download_web_content</a></td><td class="left">&nbsp;<a href="find-n-delete-empty-files-n-folders/right.html" target="rframe">find-n-delete-empty-files-n-folders</a></td><td class="left">&nbsp;<a href="generate_html_directory/right.html" target="rframe">generate_html_directory</a></td><td class="left">&nbsp;<a href="grep_4_text_in_folder/right.html" target="rframe">grep_4_text_in_folder</a></td><td class="left">&nbsp;<a href="kill_docker/right.html" target="rframe">kill_docker</a></td><td class="left">&nbsp;<a href="super_user/right.html" target="rframe">super_user</a></td></tr>
-<tr><td class="left"><a href="15_minute_timer/right.html" target="rframe">15_minute_timer</a></td><td class="left">&nbsp;<a href="bulk-download-videos/right.html" target="rframe">bulk-download-videos</a></td><td class="left">&nbsp;<a href="clear_duplicate_lines/right.html" target="rframe">clear_duplicate_lines</a></td><td class="left">&nbsp;<a href="Cygwin%20rm%20Move%20to%20RecycleBin/right.html" target="rframe">Cygwin rm Move to RecycleBin</a></td><td class="left">&nbsp;<a href="extract-files/right.html" target="rframe">extract-files</a></td><td class="left">&nbsp;<a href="find_n_delete_empty_files_n_folders/right.html" target="rframe">find_n_delete_empty_files_n_folders</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="bulk-download-videos/right.html" target="rframe">bulk-dow...ideos</a></td><td class="left">&nbsp;<a href="Convert_Cygwin_Path_toWinPath/right.html" target="rframe">Convert_...nPath</a></td><td class="left">&nbsp;<a href="extract-files/right.html" target="rframe">extract-files</a></td><td class="left">&nbsp;<a href="generate-html-directory/right.html" target="rframe">generate...ctory</a></td><td class="left">&nbsp;<a href="kill-docker/right.html" target="rframe">kill-docker</a></td></tr>
+<tr class="row2"><td class="left"><a href="15-minute-timer/right.html" target="rframe">15-minute-timer</a></td><td class="left">&nbsp;<a href="bulk_download_videos/right.html" target="rframe">bulk_dow...ideos</a></td><td class="left">&nbsp;<a href="Cygwin%20rm%20Move%20to%20RecycleBin/right.html" target="rframe">Cygwin r...leBin</a></td><td class="left">&nbsp;<a href="extract_files/right.html" target="rframe">extract_files</a></td><td class="left">&nbsp;<a href="generate_html_directory/right.html" target="rframe">generate...ctory</a></td><td class="left">&nbsp;<a href="kill_docker/right.html" target="rframe">kill_docker</a></td></tr>
+<tr><td class="left"><a href="15_minute_timer/right.html" target="rframe">15_minute_timer</a></td><td class="left">&nbsp;<a href="clear-duplicate-lines/right.html" target="rframe">clear-du...lines</a></td><td class="left">&nbsp;<a href="Download-web-content/right.html" target="rframe">Download...ntent</a></td><td class="left">&nbsp;<a href="find-n-delete-empty-files-n-folders/right.html" target="rframe">find-n-d...lders</a></td><td class="left">&nbsp;<a href="grep--4-text-in-folder/right.html" target="rframe">grep--4-...older</a></td><td class="left">&nbsp;<a href="super-user/right.html" target="rframe">super-user</a></td></tr>
+<tr class="row2"><td class="left"><a href="bash-utility-commands/right.html" target="rframe">bash-uti...mands</a></td><td class="left">&nbsp;<a href="clear_duplicate_lines/right.html" target="rframe">clear_du...lines</a></td><td class="left">&nbsp;<a href="Download_web_content/right.html" target="rframe">Download...ntent</a></td><td class="left">&nbsp;<a href="find_n_delete_empty_files_n_folders/right.html" target="rframe">find_n_d...lders</a></td><td class="left">&nbsp;<a href="grep_4_text_in_folder/right.html" target="rframe">grep_4_t...older</a></td><td class="left">&nbsp;<a href="super_user/right.html" target="rframe">super_user</a></td></tr>
+<tr><td class="left"><a href="bash_utility_commands/right.html" target="rframe">bash_uti...mands</a></td><td class="left">&nbsp;<a href="Convert%20Cygwin%20Path%20toWinPath/right.html" target="rframe">Convert ...nPath</a></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="general_useful_commands_disorganized_md">general_useful_commands_disorganized_md</a>&nbsp;</td><td class="left"><a href="general-useful-commands-disorganized.html">general-useful-commands-disorganized.html</a>&nbsp;</td><td class="left"><a href="general-useful-commands-disorganized.md">general-useful-commands-disorganized.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="general-useful-commands-disorganized.md">general-...ed.md</a>&nbsp;</td><td class="left"><a href="general-useful-commands-disorganized.html">general-....html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="general_useful_commands_disorganized_md">general_...ed_md</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  26<br>
-Files: 3<br>
-Size of all files: 45772 K</p>
+Files: 4<br>
+Size of all files: 62818 KB</p>
 
 </body>
 </html>

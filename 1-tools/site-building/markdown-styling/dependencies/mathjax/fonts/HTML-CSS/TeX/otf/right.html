@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,26 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="MathJax_AMS_Regular_otf">MathJax_AMS_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_BoldItalic_otf">MathJax_Math_BoldItalic_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size2_Regular_otf">MathJax_Size2_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_AMS-Regular.otf">MathJax_AMS-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-BoldItalic.otf">MathJax_Math-BoldItalic.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size2-Regular.otf">MathJax_Size2-Regular.otf</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Caligraphic_Bold_otf">MathJax_Caligraphic_Bold_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Italic_otf">MathJax_Math_Italic_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size3_Regular_otf">MathJax_Size3_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic-Bold.otf">MathJax_Caligraphic-Bold.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Italic.otf">MathJax_Math-Italic.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size3-Regular.otf">MathJax_Size3-Regular.otf</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Caligraphic_Regular_otf">MathJax_Caligraphic_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Regular_otf">MathJax_Math_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size4_Regular_otf">MathJax_Size4_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic-Regular.otf">MathJax_Caligraphic-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Regular.otf">MathJax_Math-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size4-Regular.otf">MathJax_Size4-Regular.otf</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Fraktur_Bold_otf">MathJax_Fraktur_Bold_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Bold_otf">MathJax_SansSerif_Bold_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter_Regular_otf">MathJax_Typewriter_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur-Bold.otf">MathJax_Fraktur-Bold.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Bold.otf">MathJax_SansSerif-Bold.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter-Regular.otf">MathJax_Typewriter-Regular.otf</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Fraktur_Regular_otf">MathJax_Fraktur_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Italic_otf">MathJax_SansSerif_Italic_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Bold_otf">MathJax_Vector_Bold_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur-Regular.otf">MathJax_Fraktur-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Italic.otf">MathJax_SansSerif-Italic.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Bold.otf">MathJax_Vector-Bold.otf</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Main_Bold_otf">MathJax_Main_Bold_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Regular_otf">MathJax_SansSerif_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Regular_otf">MathJax_Vector_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Bold.otf">MathJax_Main-Bold.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Regular.otf">MathJax_SansSerif-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Regular.otf">MathJax_Vector-Regular.otf</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="MathJax_Main_Italic_otf">MathJax_Main_Italic_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Script_Regular_otf">MathJax_Script_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinChrome_Regular_otf">MathJax_WinChrome_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Italic.otf">MathJax_Main-Italic.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Script-Regular.otf">MathJax_Script-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinChrome-Regular.otf">MathJax_WinChrome-Regular.otf</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="MathJax_Main_Regular_otf">MathJax_Main_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size1_Regular_otf">MathJax_Size1_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinIE6_Regular_otf">MathJax_WinIE6_Regular_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Regular.otf">MathJax_Main-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size1-Regular.otf">MathJax_Size1-Regular.otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinIE6-Regular.otf">MathJax_WinIE6-Regular.otf</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="MathJax_AMS-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_AMS_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Italic_otf">MathJax_...c_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Italic_otf">MathJax_...c_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size4_Regular_otf">MathJax_...r_otf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Caligraphic-Bold.otf">MathJax_...d.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-BoldItalic.otf">MathJax_...c.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Script-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Bold.otf">MathJax_...d.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic_Bold_otf">MathJax_...d_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Typewriter_Regular_otf">MathJax_...r_otf</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="MathJax_Caligraphic-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Italic.otf">MathJax_...c.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size1-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Caligraphic_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_BoldItalic_otf">MathJax_...c_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Script_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Bold_otf">MathJax_...d_otf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Fraktur-Bold.otf">MathJax_...d.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size2-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinChrome-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur_Bold_otf">MathJax_...d_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Italic_otf">MathJax_...c_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size1_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Vector_Regular_otf">MathJax_...r_otf</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="MathJax_Fraktur-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Bold.otf">MathJax_...d.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size3-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinIE6-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Fraktur_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Math_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size2_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinChrome_Regular_otf">MathJax_...r_otf</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="MathJax_Main-Bold.otf">MathJax_...d.otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif-Italic.otf">MathJax_...c.otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size4-Regular.otf">MathJax_...r.otf</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="MathJax_Main_Bold_otf">MathJax_...d_otf</a>&nbsp;</td><td class="left"><a href="MathJax_SansSerif_Bold_otf">MathJax_...d_otf</a>&nbsp;</td><td class="left"><a href="MathJax_Size3_Regular_otf">MathJax_...r_otf</a>&nbsp;</td><td class="left"><a href="MathJax_WinIE6_Regular_otf">MathJax_...r_otf</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="MathJax_Main-Italic.otf">MathJax_...c.otf</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 48<br>
-Size of all files: 994568 K</p>
+Files: 49<br>
+Size of all files: 1012705 KB</p>
 
 </body>
 </html>

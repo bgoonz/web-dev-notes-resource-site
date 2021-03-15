@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,23 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="00_redux-part-3.html">00_redux-part-3.html</a>&nbsp;</td><td class="left"><a href="05_middleware.html">05_middleware.html</a>&nbsp;</td><td class="left"><a href="pr2c_pokemon-walkthrough.html">pr2c_pokemon-walkthrough.html</a>&nbsp;</td><td class="left"><a href="01_higher-order-components.md">01_higher-order-components.md</a>&nbsp;</td><td class="left"><a href="05_middleware.md">05_middleware.md</a>&nbsp;</td><td class="left"><a href="pr2b_pokemon-walkthrough.md">pr2b_pokemon-walkthrough.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="01_higher-order-components.html">01_higher-order-components.html</a>&nbsp;</td><td class="left"><a href="06_thunks-middleware.html">06_thunks-middleware.html</a>&nbsp;</td><td class="left"><a href="pr2d_pokemon-walkthrough.html">pr2d_pokemon-walkthrough.html</a>&nbsp;</td><td class="left"><a href="02_react-redux-provider.md">02_react-redux-provider.md</a>&nbsp;</td><td class="left"><a href="06_thunks-middleware.md">06_thunks-middleware.md</a>&nbsp;</td><td class="left"><a href="pr2c_pokemon-walkthrough.md">pr2c_pokemon-walkthrough.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="02_react-redux-provider.html">02_react-redux-provider.html</a>&nbsp;</td><td class="left"><a href="07_advanced-containers.html">07_advanced-containers.html</a>&nbsp;</td><td class="left"><a href="pr_giphy-redux.html">pr_giphy-redux.html</a>&nbsp;</td><td class="left"><a href="03_react-redux-connect.md">03_react-redux-connect.md</a>&nbsp;</td><td class="left"><a href="07_advanced-containers.md">07_advanced-containers.md</a>&nbsp;</td><td class="left"><a href="pr2d_pokemon-walkthrough.md">pr2d_pokemon-walkthrough.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="03_react-redux-connect.html">03_react-redux-connect.html</a>&nbsp;</td><td class="left"><a href="08_redux-developer-tools.html">08_redux-developer-tools.html</a>&nbsp;</td><td class="left"><a href="w15-d3_react-redux.html">w15-d3_react-redux.html</a>&nbsp;</td><td class="left"><a href="03_react-redux-connext.md">03_react-redux-connext.md</a>&nbsp;</td><td class="left"><a href="08_redux-developer-tools.md">08_redux-developer-tools.md</a>&nbsp;</td><td class="left"><a href="pr_giphy-redux.md">pr_giphy-redux.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="03_react-redux-connext.html">03_react-redux-connext.html</a>&nbsp;</td><td class="left"><a href="pr2a_pokemon-walkthrough.html">pr2a_pokemon-walkthrough.html</a>&nbsp;</td><td class="left"><a href="00_redux-part-3.md">00_redux-part-3.md</a>&nbsp;</td><td class="left"><a href="04_selectors.md">04_selectors.md</a>&nbsp;</td><td class="left"><a href="pr2a_pokemon-walkthrough.md">pr2a_pokemon-walkthrough.md</a>&nbsp;</td><td class="left"><a href="w15-d3_react-redux.md">w15-d3_react-redux.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="04_selectors.html">04_selectors.html</a>&nbsp;</td><td class="left"><a href="pr2b_pokemon-walkthrough.html">pr2b_pokemon-walkthrough.html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="00_redux-part-3.md">00_redux...-3.md</a>&nbsp;</td><td class="left"><a href="03_react-redux-connext.md">03_react...xt.md</a>&nbsp;</td><td class="left"><a href="07_advanced-containers.md">07_advan...rs.md</a>&nbsp;</td><td class="left"><a href="pr2c_pokemon-walkthrough.md">pr2c_pok...gh.md</a>&nbsp;</td><td class="left"><a href="00_redux-part-3.html">00_redux....html</a>&nbsp;</td><td class="left"><a href="03_react-redux-connext.html">03_react....html</a>&nbsp;</td><td class="left"><a href="07_advanced-containers.html">07_advan....html</a>&nbsp;</td><td class="left"><a href="pr2c_pokemon-walkthrough.html">pr2c_pok....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="01_higher-order-components.md">01_highe...ts.md</a>&nbsp;</td><td class="left"><a href="04_selectors.md">04_selectors.md</a>&nbsp;</td><td class="left"><a href="08_redux-developer-tools.md">08_redux...ls.md</a>&nbsp;</td><td class="left"><a href="pr2d_pokemon-walkthrough.md">pr2d_pok...gh.md</a>&nbsp;</td><td class="left"><a href="01_higher-order-components.html">01_highe....html</a>&nbsp;</td><td class="left"><a href="04_selectors.html">04_selec....html</a>&nbsp;</td><td class="left"><a href="08_redux-developer-tools.html">08_redux....html</a>&nbsp;</td><td class="left"><a href="pr2d_pokemon-walkthrough.html">pr2d_pok....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="02_react-redux-provider.md">02_react...er.md</a>&nbsp;</td><td class="left"><a href="05_middleware.md">05_middleware.md</a>&nbsp;</td><td class="left"><a href="pr2a_pokemon-walkthrough.md">pr2a_pok...gh.md</a>&nbsp;</td><td class="left"><a href="pr_giphy-redux.md">pr_giphy...ux.md</a>&nbsp;</td><td class="left"><a href="02_react-redux-provider.html">02_react....html</a>&nbsp;</td><td class="left"><a href="05_middleware.html">05_middl....html</a>&nbsp;</td><td class="left"><a href="pr2a_pokemon-walkthrough.html">pr2a_pok....html</a>&nbsp;</td><td class="left"><a href="pr_giphy-redux.html">pr_giphy....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="03_react-redux-connect.md">03_react...ct.md</a>&nbsp;</td><td class="left"><a href="06_thunks-middleware.md">06_thunk...re.md</a>&nbsp;</td><td class="left"><a href="pr2b_pokemon-walkthrough.md">pr2b_pok...gh.md</a>&nbsp;</td><td class="left"><a href="w15-d3_react-redux.md">w15-d3_r...ux.md</a>&nbsp;</td><td class="left"><a href="03_react-redux-connect.html">03_react....html</a>&nbsp;</td><td class="left"><a href="06_thunks-middleware.html">06_thunk....html</a>&nbsp;</td><td class="left"><a href="pr2b_pokemon-walkthrough.html">pr2b_pok....html</a>&nbsp;</td><td class="left"><a href="w15-d3_react-redux.html">w15-d3_r....html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 32<br>
-Size of all files: 883093 K</p>
+Size of all files: 883093 KB</p>
 
 </body>
 </html>

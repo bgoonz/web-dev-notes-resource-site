@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="Addtexttothefirstlineofeveryfileofacertainextensioninagivenfolder_sh">Addtexttothefirstlineofeveryfileofacertainextensioninagivenfolder_sh</a>&nbsp;</td><td class="left"><a href="clone_folder_structure_without_files_sh">clone_folder_structure_without_files_sh</a>&nbsp;</td><td class="left"><a href="Download_all_weblinks_of_certain_file_type_sh">Download_all_weblinks_of_certain_file_type_sh</a>&nbsp;</td><td class="left"><a href="package_lock_json">package_lock_json</a>&nbsp;</td><td class="left"><a href="recursivley_create_numbered_folders_sh">recursivley_create_numbered_folders_sh</a>&nbsp;</td><td class="left"><a href="remove_string_from_file_names_sh">remove_string_from_file_names_sh</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="add_extension_to_files_in_folder_sh">add_extension_to_files_in_folder_sh</a>&nbsp;</td><td class="left"><a href="combined_md">combined_md</a>&nbsp;</td><td class="left"><a href="Download_website_sh">Download_website_sh</a>&nbsp;</td><td class="left"><a href="print_file_paths_recursive_sh">print_file_paths_recursive_sh</a>&nbsp;</td><td class="left"><a href="Recusrive_npm_install_sh">Recusrive_npm_install_sh</a>&nbsp;</td><td class="left"><a href="remove_trailing_whitespace_from_file_names_sh">remove_trailing_whitespace_from_file_names_sh</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="add_text_2_end_of_file_sh">add_text_2_end_of_file_sh</a>&nbsp;</td><td class="left"><a href="create_dummy_text_file_4_every_subfolder_sh">create_dummy_text_file_4_every_subfolder_sh</a>&nbsp;</td><td class="left"><a href="get_links_from_webpage_sh">get_links_from_webpage_sh</a>&nbsp;</td><td class="left"><a href="Recursively_remove_files_byname_sh">Recursively_remove_files_byname_sh</a>&nbsp;</td><td class="left"><a href="remember_git_credentials_sh">remember_git_credentials_sh</a>&nbsp;</td><td class="left"><a href="remove_unnecessary_files_folders_sh">remove_unnecessary_files_folders_sh</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="batch_download_videos_sh">batch_download_videos_sh</a>&nbsp;</td><td class="left"><a href="delete_files_bigger_than_sh">delete_files_bigger_than_sh</a>&nbsp;</td><td class="left"><a href="git_filter_branch_sh">git_filter_branch_sh</a>&nbsp;</td><td class="left"><a href="Recursively_remove_folders_byname_sh">Recursively_remove_folders_byname_sh</a>&nbsp;</td><td class="left"><a href="remove_duplicate_lines_sh">remove_duplicate_lines_sh</a>&nbsp;</td><td class="left"><a href="Resursivleydeletenodemodules_sh">Resursivleydeletenodemodules_sh</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="change_file_extensions_sh">change_file_extensions_sh</a>&nbsp;</td><td class="left"><a href="delete_git_files_sh">delete_git_files_sh</a>&nbsp;</td><td class="left"><a href="output_md">output_md</a>&nbsp;</td><td class="left"><a href="recursive_remove_lines_contaning_string_sh">recursive_remove_lines_contaning_string_sh</a>&nbsp;</td><td class="left"><a href="remove_invalid_characters_from_file_names_sh">remove_invalid_characters_from_file_names_sh</a>&nbsp;</td><td class="left"><a href="Sanatize_directory_sh">Sanatize_directory_sh</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="clone_folder_structure_populate_with_specific_file_type_sh">clone_folder_structure_populate_with_specific_file_type_sh</a>&nbsp;</td><td class="left"><a href="delete_zip_sh">delete_zip_sh</a>&nbsp;</td><td class="left"><a href="package_json">package_json</a>&nbsp;</td><td class="left"><a href="recursive_unzip_sh">recursive_unzip_sh</a>&nbsp;</td><td class="left"><a href="remove_lines_contaning_string_sh">remove_lines_contaning_string_sh</a>&nbsp;</td><td class="left"><a href="write_directory_2_file_js">write_directory_2_file_js</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="right.html">right.html</a>&nbsp;</td><td class="left"><a href="change_file_extensions_sh">change_f...ns_sh</a>&nbsp;</td><td class="left"><a href="delete_files_bigger_than_sh">delete_f...an_sh</a>&nbsp;</td><td class="left"><a href="get_links_from_webpage_sh">get_link...ge_sh</a>&nbsp;</td><td class="left"><a href="print_file_paths_recursive_sh">print_fi...ve_sh</a>&nbsp;</td><td class="left"><a href="recursivley_create_numbered_folders_sh">recursiv...rs_sh</a>&nbsp;</td><td class="left"><a href="remove_invalid_characters_from_file_names_sh">remove_i...es_sh</a>&nbsp;</td><td class="left"><a href="remove_unnecessary_files_folders_sh">remove_u...rs_sh</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Addtexttothefirstlineofeveryfileofacertainextensioninagivenfolder_sh">Addtextt...er_sh</a>&nbsp;</td><td class="left"><a href="clone_folder_structure_populate_with_specific_file_type_sh">clone_fo...pe_sh</a>&nbsp;</td><td class="left"><a href="delete_git_files_sh">delete_g...es_sh</a>&nbsp;</td><td class="left"><a href="git_filter_branch_sh">git_filt...ch_sh</a>&nbsp;</td><td class="left"><a href="Recursively_remove_files_byname_sh">Recursiv...me_sh</a>&nbsp;</td><td class="left"><a href="Recusrive_npm_install_sh">Recusriv...ll_sh</a>&nbsp;</td><td class="left"><a href="remove_lines_contaning_string_sh">remove_l...ng_sh</a>&nbsp;</td><td class="left"><a href="Resursivleydeletenodemodules_sh">Resursiv...es_sh</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="add_extension_to_files_in_folder_sh">add_exte...er_sh</a>&nbsp;</td><td class="left"><a href="clone_folder_structure_without_files_sh">clone_fo...es_sh</a>&nbsp;</td><td class="left"><a href="delete_zip_sh">delete_zip_sh</a>&nbsp;</td><td class="left"><a href="output_md">output_md</a>&nbsp;</td><td class="left"><a href="Recursively_remove_folders_byname_sh">Recursiv...me_sh</a>&nbsp;</td><td class="left"><a href="remember_git_credentials_sh">remember...ls_sh</a>&nbsp;</td><td class="left"><a href="remove_string_from_file_names_sh">remove_s...es_sh</a>&nbsp;</td><td class="left"><a href="Sanatize_directory_sh">Sanatize...ry_sh</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="add_text_2_end_of_file_sh">add_text...le_sh</a>&nbsp;</td><td class="left"><a href="combined_md">combined_md</a>&nbsp;</td><td class="left"><a href="Download_all_weblinks_of_certain_file_type_sh">Download...pe_sh</a>&nbsp;</td><td class="left"><a href="package_json">package_json</a>&nbsp;</td><td class="left"><a href="recursive_remove_lines_contaning_string_sh">recursiv...ng_sh</a>&nbsp;</td><td class="left"><a href="remove_duplicate_lines_sh">remove_d...es_sh</a>&nbsp;</td><td class="left"><a href="remove_trailing_whitespace_from_file_names_sh">remove_t...es_sh</a>&nbsp;</td><td class="left"><a href="write_directory_2_file_js">write_di...le_js</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="batch_download_videos_sh">batch_do...os_sh</a>&nbsp;</td><td class="left"><a href="create_dummy_text_file_4_every_subfolder_sh">create_d...er_sh</a>&nbsp;</td><td class="left"><a href="Download_website_sh">Download...te_sh</a>&nbsp;</td><td class="left"><a href="package_lock_json">package_..._json</a>&nbsp;</td><td class="left"><a href="recursive_unzip_sh">recursiv...ip_sh</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
-Files: 36<br>
-Size of all files: 104177 K</p>
+Files: 37<br>
+Size of all files: 121505 KB</p>
 
 </body>
 </html>

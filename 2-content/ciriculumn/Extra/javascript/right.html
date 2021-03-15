@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,26 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="restaurant%20recommender/right.html" target="rframe">restaurant recommender</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="restaurant%20recommender/right.html" target="rframe">restaura...ender</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="advanced-javascript-resources.html">advanced-javascript-resources.html</a>&nbsp;</td><td class="left"><a href="javascript-2-array-functions.html">javascript-2-array-functions.html</a>&nbsp;</td><td class="left"><a href="javascript-9-async.html">javascript-9-async.html</a>&nbsp;</td><td class="left"><a href="advanced-javascript-resources.md">advanced-javascript-resources.md</a>&nbsp;</td><td class="left"><a href="javascript-2-array-functions.md">javascript-2-array-functions.md</a>&nbsp;</td><td class="left"><a href="javascript-9-async.md">javascript-9-async.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="basic-js-practice.html">basic-js-practice.html</a>&nbsp;</td><td class="left"><a href="javascript-3-conditionals.html">javascript-3-conditionals.html</a>&nbsp;</td><td class="left"><a href="javascript-maps.html">javascript-maps.html</a>&nbsp;</td><td class="left"><a href="basic-js-practice.md">basic-js-practice.md</a>&nbsp;</td><td class="left"><a href="javascript-3-conditionals.md">javascript-3-conditionals.md</a>&nbsp;</td><td class="left"><a href="javascript-maps.md">javascript-maps.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="common-functions-cheatsheet.html">common-functions-cheatsheet.html</a>&nbsp;</td><td class="left"><a href="javascript-4-loops.html">javascript-4-loops.html</a>&nbsp;</td><td class="left"><a href="JavaScript-React-Modularity.html">JavaScript-React-Modularity.html</a>&nbsp;</td><td class="left"><a href="common-functions-cheatsheet.md">common-functions-cheatsheet.md</a>&nbsp;</td><td class="left"><a href="javascript-4-loops.md">javascript-4-loops.md</a>&nbsp;</td><td class="left"><a href="JavaScript-React-Modularity.md">JavaScript-React-Modularity.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="destructuring.html">destructuring.html</a>&nbsp;</td><td class="left"><a href="javascript-5-switch.html">javascript-5-switch.html</a>&nbsp;</td><td class="left"><a href="React_JavaScript.html">React_JavaScript.html</a>&nbsp;</td><td class="left"><a href="destructuring.md">destructuring.md</a>&nbsp;</td><td class="left"><a href="javascript-5-switch.md">javascript-5-switch.md</a>&nbsp;</td><td class="left"><a href="React_JavaScript.md">React_JavaScript.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="eslint.html">eslint.html</a>&nbsp;</td><td class="left"><a href="javascript-6-object-literals.html">javascript-6-object-literals.html</a>&nbsp;</td><td class="left"><a href="require-and-import-mini-lesson.html">require-and-import-mini-lesson.html</a>&nbsp;</td><td class="left"><a href="eslint.md">eslint.md</a>&nbsp;</td><td class="left"><a href="javascript-6-object-literals.md">javascript-6-object-literals.md</a>&nbsp;</td><td class="left"><a href="require-and-import-mini-lesson.md">require-and-import-mini-lesson.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="first-js-oop-project.html">first-js-oop-project.html</a>&nbsp;</td><td class="left"><a href="javascript-7-oop.html">javascript-7-oop.html</a>&nbsp;</td><td class="left"><a href="spread-operator.html">spread-operator.html</a>&nbsp;</td><td class="left"><a href="first-js-oop-project.md">first-js-oop-project.md</a>&nbsp;</td><td class="left"><a href="javascript-7-oop.md">javascript-7-oop.md</a>&nbsp;</td><td class="left"><a href="spread-operator.md">spread-operator.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="javascript-1-variables.html">javascript-1-variables.html</a>&nbsp;</td><td class="left"><a href="javascript-8-regex.html">javascript-8-regex.html</a>&nbsp;</td><td class="left"><a href="week-4-JS-assessment.html">week-4-JS-assessment.html</a>&nbsp;</td><td class="left"><a href="javascript-1-variables.md">javascript-1-variables.md</a>&nbsp;</td><td class="left"><a href="javascript-8-regex.md">javascript-8-regex.md</a>&nbsp;</td><td class="left"><a href="week-4-JS-assessment.md">week-4-JS-assessment.md</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="advanced-javascript-resources.md">advanced...es.md</a>&nbsp;</td><td class="left"><a href="javascript-1-variables.md">javascri...es.md</a>&nbsp;</td><td class="left"><a href="javascript-7-oop.md">javascri...op.md</a>&nbsp;</td><td class="left"><a href="React_JavaScript.md">React_Ja...pt.md</a>&nbsp;</td><td class="left"><a href="basic-js-practice.html">basic-js....html</a>&nbsp;</td><td class="left"><a href="javascript-1-variables.html">javascri....html</a>&nbsp;</td><td class="left"><a href="javascript-6-object-literals.html">javascri....html</a>&nbsp;</td><td class="left"><a href="JavaScript-React-Modularity.html">JavaScri....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="basic-js-practice.md">basic-js...ce.md</a>&nbsp;</td><td class="left"><a href="javascript-2-array-functions.md">javascri...ns.md</a>&nbsp;</td><td class="left"><a href="javascript-8-regex.md">javascri...ex.md</a>&nbsp;</td><td class="left"><a href="require-and-import-mini-lesson.md">require-...on.md</a>&nbsp;</td><td class="left"><a href="common-functions-cheatsheet.html">common-f....html</a>&nbsp;</td><td class="left"><a href="javascript-2-array-functions.html">javascri....html</a>&nbsp;</td><td class="left"><a href="javascript-7-oop.html">javascri....html</a>&nbsp;</td><td class="left"><a href="React_JavaScript.html">React_Ja....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="common-functions-cheatsheet.md">common-f...et.md</a>&nbsp;</td><td class="left"><a href="javascript-3-conditionals.md">javascri...ls.md</a>&nbsp;</td><td class="left"><a href="javascript-9-async.md">javascri...nc.md</a>&nbsp;</td><td class="left"><a href="spread-operator.md">spread-o...or.md</a>&nbsp;</td><td class="left"><a href="destructuring.html">destruct....html</a>&nbsp;</td><td class="left"><a href="javascript-3-conditionals.html">javascri....html</a>&nbsp;</td><td class="left"><a href="javascript-8-regex.html">javascri....html</a>&nbsp;</td><td class="left"><a href="require-and-import-mini-lesson.html">require-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="destructuring.md">destructuring.md</a>&nbsp;</td><td class="left"><a href="javascript-4-loops.md">javascri...ps.md</a>&nbsp;</td><td class="left"><a href="javascript-maps.md">javascri...ps.md</a>&nbsp;</td><td class="left"><a href="week-4-JS-assessment.md">week-4-J...nt.md</a>&nbsp;</td><td class="left"><a href="eslint.html">eslint.html</a>&nbsp;</td><td class="left"><a href="javascript-4-loops.html">javascri....html</a>&nbsp;</td><td class="left"><a href="javascript-9-async.html">javascri....html</a>&nbsp;</td><td class="left"><a href="spread-operator.html">spread-o....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="eslint.md">eslint.md</a>&nbsp;</td><td class="left"><a href="javascript-5-switch.md">javascri...ch.md</a>&nbsp;</td><td class="left"><a href="JavaScript-React-Modularity.md">JavaScri...ty.md</a>&nbsp;</td><td class="left"><a href="advanced-javascript-resources.html">advanced....html</a>&nbsp;</td><td class="left"><a href="first-js-oop-project.html">first-js....html</a>&nbsp;</td><td class="left"><a href="javascript-5-switch.html">javascri....html</a>&nbsp;</td><td class="left"><a href="javascript-maps.html">javascri....html</a>&nbsp;</td><td class="left"><a href="week-4-JS-assessment.html">week-4-J....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="first-js-oop-project.md">first-js...ct.md</a>&nbsp;</td><td class="left"><a href="javascript-6-object-literals.md">javascri...ls.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 42<br>
-Size of all files: 370160 K</p>
+Size of all files: 370160 KB</p>
 
 </body>
 </html>

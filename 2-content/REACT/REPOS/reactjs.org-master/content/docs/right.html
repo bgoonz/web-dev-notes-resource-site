@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,35 +532,31 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="accessibility.md">accessibility.md</a>&nbsp;</td><td class="left"><a href="composition-vs-inheritance.md">composition-vs-inheritance.md</a>&nbsp;</td><td class="left"><a href="faq-internals.md">faq-internals.md</a>&nbsp;</td><td class="left"><a href="hooks-intro.md">hooks-intro.md</a>&nbsp;</td><td class="left"><a href="portals.md">portals.md</a>&nbsp;</td><td class="left"><a href="refs-and-the-dom.md">refs-and-the-dom.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="add-react-to-a-website.md">add-react-to-a-website.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-adoption.md">concurrent-mode-adoption.md</a>&nbsp;</td><td class="left"><a href="faq-state.md">faq-state.md</a>&nbsp;</td><td class="left"><a href="hooks-overview.md">hooks-overview.md</a>&nbsp;</td><td class="left"><a href="react-without-es6.md">react-without-es6.md</a>&nbsp;</td><td class="left"><a href="release-channels.md">release-channels.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="addons-animation.md">addons-animation.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-intro.md">concurrent-mode-intro.md</a>&nbsp;</td><td class="left"><a href="faq-structure.md">faq-structure.md</a>&nbsp;</td><td class="left"><a href="hooks-reference.md">hooks-reference.md</a>&nbsp;</td><td class="left"><a href="react-without-jsx.md">react-without-jsx.md</a>&nbsp;</td><td class="left"><a href="render-props.md">render-props.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="addons-create-fragment.md">addons-create-fragment.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-patterns.md">concurrent-mode-patterns.md</a>&nbsp;</td><td class="left"><a href="faq-styling.md">faq-styling.md</a>&nbsp;</td><td class="left"><a href="hooks-rules.md">hooks-rules.md</a>&nbsp;</td><td class="left"><a href="reconciliation.md">reconciliation.md</a>&nbsp;</td><td class="left"><a href="rendering-elements.md">rendering-elements.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="addons-perf.md">addons-perf.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-reference.md">concurrent-mode-reference.md</a>&nbsp;</td><td class="left"><a href="faq-versioning.md">faq-versioning.md</a>&nbsp;</td><td class="left"><a href="hooks-state.md">hooks-state.md</a>&nbsp;</td><td class="left"><a href="reference-dom-elements.md">reference-dom-elements.md</a>&nbsp;</td><td class="left"><a href="state-and-lifecycle.md">state-and-lifecycle.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="addons-pure-render-mixin.md">addons-pure-render-mixin.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-suspense.md">concurrent-mode-suspense.md</a>&nbsp;</td><td class="left"><a href="forms.md">forms.md</a>&nbsp;</td><td class="left"><a href="how-to-contribute.md">how-to-contribute.md</a>&nbsp;</td><td class="left"><a href="reference-events.md">reference-events.md</a>&nbsp;</td><td class="left"><a href="static-type-checking.md">static-type-checking.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="addons-shallow-compare.md">addons-shallow-compare.md</a>&nbsp;</td><td class="left"><a href="conditional-rendering.md">conditional-rendering.md</a>&nbsp;</td><td class="left"><a href="forwarding-refs.md">forwarding-refs.md</a>&nbsp;</td><td class="left"><a href="implementation-notes.md">implementation-notes.md</a>&nbsp;</td><td class="left"><a href="reference-glossary.md">reference-glossary.md</a>&nbsp;</td><td class="left"><a href="strict-mode.md">strict-mode.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="addons-shallow-renderer.md">addons-shallow-renderer.md</a>&nbsp;</td><td class="left"><a href="context.md">context.md</a>&nbsp;</td><td class="left"><a href="fragments.md">fragments.md</a>&nbsp;</td><td class="left"><a href="integrating-with-other-libraries.md">integrating-with-other-libraries.md</a>&nbsp;</td><td class="left"><a href="reference-javascript-environment-requirements.md">reference-javascript-environment-requirements.md</a>&nbsp;</td><td class="left"><a href="testing-environments.md">testing-environments.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="addons-test-utils.md">addons-test-utils.md</a>&nbsp;</td><td class="left"><a href="create-a-new-react-app.md">create-a-new-react-app.md</a>&nbsp;</td><td class="left"><a href="getting-started.md">getting-started.md</a>&nbsp;</td><td class="left"><a href="introducing-jsx.md">introducing-jsx.md</a>&nbsp;</td><td class="left"><a href="reference-profiler.md">reference-profiler.md</a>&nbsp;</td><td class="left"><a href="testing-recipes.md">testing-recipes.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="addons-two-way-binding-helpers.md">addons-two-way-binding-helpers.md</a>&nbsp;</td><td class="left"><a href="cross-origin-errors.md">cross-origin-errors.md</a>&nbsp;</td><td class="left"><a href="handling-events.md">handling-events.md</a>&nbsp;</td><td class="left"><a href="jsx-in-depth.md">jsx-in-depth.md</a>&nbsp;</td><td class="left"><a href="reference-pure-render-mixin.md">reference-pure-render-mixin.md</a>&nbsp;</td><td class="left"><a href="testing.md">testing.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="addons-update.md">addons-update.md</a>&nbsp;</td><td class="left"><a href="design-principles.md">design-principles.md</a>&nbsp;</td><td class="left"><a href="hello-world.md">hello-world.md</a>&nbsp;</td><td class="left"><a href="legacy-context.md">legacy-context.md</a>&nbsp;</td><td class="left"><a href="reference-react-component.md">reference-react-component.md</a>&nbsp;</td><td class="left"><a href="thinking-in-react.md">thinking-in-react.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="addons.md">addons.md</a>&nbsp;</td><td class="left"><a href="error-boundaries.md">error-boundaries.md</a>&nbsp;</td><td class="left"><a href="higher-order-components.md">higher-order-components.md</a>&nbsp;</td><td class="left"><a href="legacy-event-pooling.md">legacy-event-pooling.md</a>&nbsp;</td><td class="left"><a href="reference-react-dom-server.md">reference-react-dom-server.md</a>&nbsp;</td><td class="left"><a href="typechecking-with-proptypes.md">typechecking-with-proptypes.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="cdn-links.md">cdn-links.md</a>&nbsp;</td><td class="left"><a href="error-decoder.md">error-decoder.md</a>&nbsp;</td><td class="left"><a href="hooks-custom.md">hooks-custom.md</a>&nbsp;</td><td class="left"><a href="lifting-state-up.md">lifting-state-up.md</a>&nbsp;</td><td class="left"><a href="reference-react-dom.md">reference-react-dom.md</a>&nbsp;</td><td class="left"><a href="uncontrolled-components.md">uncontrolled-components.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="code-splitting.md">code-splitting.md</a>&nbsp;</td><td class="left"><a href="faq-ajax.md">faq-ajax.md</a>&nbsp;</td><td class="left"><a href="hooks-effect.md">hooks-effect.md</a>&nbsp;</td><td class="left"><a href="lists-and-keys.md">lists-and-keys.md</a>&nbsp;</td><td class="left"><a href="reference-react.md">reference-react.md</a>&nbsp;</td><td class="left"><a href="web-components.md">web-components.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="codebase-overview.md">codebase-overview.md</a>&nbsp;</td><td class="left"><a href="faq-build.md">faq-build.md</a>&nbsp;</td><td class="left"><a href="hooks-faq.md">hooks-faq.md</a>&nbsp;</td><td class="left"><a href="optimizing-performance.md">optimizing-performance.md</a>&nbsp;</td><td class="left"><a href="reference-test-renderer.md">reference-test-renderer.md</a>&nbsp;</td><td class="left"><a href="nav.yml">nav.yml</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="components-and-props.md">components-and-props.md</a>&nbsp;</td><td class="left"><a href="faq-functions.md">faq-functions.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="nav.yml">nav.yml</a>&nbsp;</td><td class="left"><a href="addons.md">addons.md</a>&nbsp;</td><td class="left"><a href="context.md">context.md</a>&nbsp;</td><td class="left"><a href="faq-styling.md">faq-styling.md</a>&nbsp;</td><td class="left"><a href="hooks-intro.md">hooks-intro.md</a>&nbsp;</td><td class="left"><a href="legacy-event-pooling.md">legacy-e...ng.md</a>&nbsp;</td><td class="left"><a href="reference-javascript-environment-requirements.md">referenc...ts.md</a>&nbsp;</td><td class="left"><a href="rendering-elements.md">renderin...ts.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="accessibility.md">accessibility.md</a>&nbsp;</td><td class="left"><a href="cdn-links.md">cdn-links.md</a>&nbsp;</td><td class="left"><a href="create-a-new-react-app.md">create-a...pp.md</a>&nbsp;</td><td class="left"><a href="faq-versioning.md">faq-vers...ng.md</a>&nbsp;</td><td class="left"><a href="hooks-overview.md">hooks-ov...ew.md</a>&nbsp;</td><td class="left"><a href="lifting-state-up.md">lifting-...up.md</a>&nbsp;</td><td class="left"><a href="reference-profiler.md">referenc...er.md</a>&nbsp;</td><td class="left"><a href="state-and-lifecycle.md">state-an...le.md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="add-react-to-a-website.md">add-reac...te.md</a>&nbsp;</td><td class="left"><a href="code-splitting.md">code-spl...ng.md</a>&nbsp;</td><td class="left"><a href="cross-origin-errors.md">cross-or...rs.md</a>&nbsp;</td><td class="left"><a href="forms.md">forms.md</a>&nbsp;</td><td class="left"><a href="hooks-reference.md">hooks-re...ce.md</a>&nbsp;</td><td class="left"><a href="lists-and-keys.md">lists-an...ys.md</a>&nbsp;</td><td class="left"><a href="reference-pure-render-mixin.md">referenc...in.md</a>&nbsp;</td><td class="left"><a href="static-type-checking.md">static-t...ng.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="addons-animation.md">addons-a...on.md</a>&nbsp;</td><td class="left"><a href="codebase-overview.md">codebase...ew.md</a>&nbsp;</td><td class="left"><a href="design-principles.md">design-p...es.md</a>&nbsp;</td><td class="left"><a href="forwarding-refs.md">forwardi...fs.md</a>&nbsp;</td><td class="left"><a href="hooks-rules.md">hooks-rules.md</a>&nbsp;</td><td class="left"><a href="optimizing-performance.md">optimizi...ce.md</a>&nbsp;</td><td class="left"><a href="reference-react-component.md">referenc...nt.md</a>&nbsp;</td><td class="left"><a href="strict-mode.md">strict-mode.md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="addons-create-fragment.md">addons-c...nt.md</a>&nbsp;</td><td class="left"><a href="components-and-props.md">componen...ps.md</a>&nbsp;</td><td class="left"><a href="error-boundaries.md">error-bo...es.md</a>&nbsp;</td><td class="left"><a href="fragments.md">fragments.md</a>&nbsp;</td><td class="left"><a href="hooks-state.md">hooks-state.md</a>&nbsp;</td><td class="left"><a href="portals.md">portals.md</a>&nbsp;</td><td class="left"><a href="reference-react-dom-server.md">referenc...er.md</a>&nbsp;</td><td class="left"><a href="testing-environments.md">testing-...ts.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="addons-perf.md">addons-perf.md</a>&nbsp;</td><td class="left"><a href="composition-vs-inheritance.md">composit...ce.md</a>&nbsp;</td><td class="left"><a href="error-decoder.md">error-decoder.md</a>&nbsp;</td><td class="left"><a href="getting-started.md">getting-...ed.md</a>&nbsp;</td><td class="left"><a href="how-to-contribute.md">how-to-c...te.md</a>&nbsp;</td><td class="left"><a href="react-without-es6.md">react-wi...s6.md</a>&nbsp;</td><td class="left"><a href="reference-react-dom.md">referenc...om.md</a>&nbsp;</td><td class="left"><a href="testing-recipes.md">testing-...es.md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="addons-pure-render-mixin.md">addons-p...in.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-adoption.md">concurre...on.md</a>&nbsp;</td><td class="left"><a href="faq-ajax.md">faq-ajax.md</a>&nbsp;</td><td class="left"><a href="handling-events.md">handling...ts.md</a>&nbsp;</td><td class="left"><a href="implementation-notes.md">implemen...es.md</a>&nbsp;</td><td class="left"><a href="react-without-jsx.md">react-wi...sx.md</a>&nbsp;</td><td class="left"><a href="reference-react.md">referenc...ct.md</a>&nbsp;</td><td class="left"><a href="testing.md">testing.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="addons-shallow-compare.md">addons-s...re.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-intro.md">concurre...ro.md</a>&nbsp;</td><td class="left"><a href="faq-build.md">faq-build.md</a>&nbsp;</td><td class="left"><a href="hello-world.md">hello-world.md</a>&nbsp;</td><td class="left"><a href="integrating-with-other-libraries.md">integrat...es.md</a>&nbsp;</td><td class="left"><a href="reconciliation.md">reconcil...on.md</a>&nbsp;</td><td class="left"><a href="reference-test-renderer.md">referenc...er.md</a>&nbsp;</td><td class="left"><a href="thinking-in-react.md">thinking...ct.md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="addons-shallow-renderer.md">addons-s...er.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-patterns.md">concurre...ns.md</a>&nbsp;</td><td class="left"><a href="faq-functions.md">faq-functions.md</a>&nbsp;</td><td class="left"><a href="higher-order-components.md">higher-o...ts.md</a>&nbsp;</td><td class="left"><a href="introducing-jsx.md">introduc...sx.md</a>&nbsp;</td><td class="left"><a href="reference-dom-elements.md">referenc...ts.md</a>&nbsp;</td><td class="left"><a href="refs-and-the-dom.md">refs-and...om.md</a>&nbsp;</td><td class="left"><a href="typechecking-with-proptypes.md">typechec...es.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="addons-test-utils.md">addons-t...ls.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-reference.md">concurre...ce.md</a>&nbsp;</td><td class="left"><a href="faq-internals.md">faq-internals.md</a>&nbsp;</td><td class="left"><a href="hooks-custom.md">hooks-custom.md</a>&nbsp;</td><td class="left"><a href="jsx-in-depth.md">jsx-in-depth.md</a>&nbsp;</td><td class="left"><a href="reference-events.md">referenc...ts.md</a>&nbsp;</td><td class="left"><a href="release-channels.md">release-...ls.md</a>&nbsp;</td><td class="left"><a href="uncontrolled-components.md">uncontro...ts.md</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="addons-two-way-binding-helpers.md">addons-t...rs.md</a>&nbsp;</td><td class="left"><a href="concurrent-mode-suspense.md">concurre...se.md</a>&nbsp;</td><td class="left"><a href="faq-state.md">faq-state.md</a>&nbsp;</td><td class="left"><a href="hooks-effect.md">hooks-effect.md</a>&nbsp;</td><td class="left"><a href="legacy-context.md">legacy-c...xt.md</a>&nbsp;</td><td class="left"><a href="reference-glossary.md">referenc...ry.md</a>&nbsp;</td><td class="left"><a href="render-props.md">render-props.md</a>&nbsp;</td><td class="left"><a href="web-components.md">web-comp...ts.md</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="addons-update.md">addons-update.md</a>&nbsp;</td><td class="left"><a href="conditional-rendering.md">conditio...ng.md</a>&nbsp;</td><td class="left"><a href="faq-structure.md">faq-structure.md</a>&nbsp;</td><td class="left"><a href="hooks-faq.md">hooks-faq.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 92<br>
-Size of all files: 906032 K</p>
+Size of all files: 906032 KB</p>
 
 </body>
 </html>

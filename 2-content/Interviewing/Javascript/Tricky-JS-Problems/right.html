@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,26 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td><td class="left">&nbsp;<a href="assets/right.html" target="rframe">assets</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td><td class="left">&nbsp;<a href="assets/right.html" target="rframe">assets</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="Closures-Inside-Loops.html">Closures-Inside-Loops.html</a>&nbsp;</td><td class="left"><a href="pitfall-of-using-typeof.html">pitfall-of-using-typeof.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-4.html">what-below-code-will-output-4.html</a>&nbsp;</td><td class="left"><a href="value-of-null.js">value-of-null.js</a>&nbsp;</td><td class="left"><a href="Object-Copy-Tricky-Questions.md">Object-Copy-Tricky-Questions.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-3.md">what-below-code-will-output-3.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Collection-of-Tricky-JS-Questlions.html">Collection-of-Tricky-JS-Questlions.html</a>&nbsp;</td><td class="left"><a href="Tricky-Question-1.html">Tricky-Question-1.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-5.html">what-below-code-will-output-5.html</a>&nbsp;</td><td class="left"><a href="Closures-Inside-Loops.md">Closures-Inside-Loops.md</a>&nbsp;</td><td class="left"><a href="pitfall-of-using-typeof.md">pitfall-of-using-typeof.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-4.md">what-below-code-will-output-4.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="hoisting-tricky-question.html">hoisting-tricky-question.html</a>&nbsp;</td><td class="left"><a href="typeof-NaN.html">typeof-NaN.html</a>&nbsp;</td><td class="left"><a href="What-is-the-value-of-Math.max([2,3,4,5]).html">What-is-the-value-of-Math.max([2,3,4,5]).html</a>&nbsp;</td><td class="left"><a href="Collection-of-Tricky-JS-Questlions.md">Collection-of-Tricky-JS-Questlions.md</a>&nbsp;</td><td class="left"><a href="Tricky-Question-1.md">Tricky-Question-1.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-5.md">what-below-code-will-output-5.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="IIFE-Why-following-does-not-work.html">IIFE-Why-following-does-not-work.html</a>&nbsp;</td><td class="left"><a href="typeof-null-why-its-object.html">typeof-null-why-its-object.html</a>&nbsp;</td><td class="left"><a href="why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.html">why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.html</a>&nbsp;</td><td class="left"><a href="hoisting-tricky-question.md">hoisting-tricky-question.md</a>&nbsp;</td><td class="left"><a href="typeof-NaN.md">typeof-NaN.md</a>&nbsp;</td><td class="left"><a href="What-is-the-value-of-Math.max([2,3,4,5]).md">What-is-the-value-of-Math.max([2,3,4,5]).md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="not-not-operator-in-javascript.html">not-not-operator-in-javascript.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-1.html">what-below-code-will-output-1.html</a>&nbsp;</td><td class="left"><a href="why-does-return-the-string-10.html">why-does-return-the-string-10.html</a>&nbsp;</td><td class="left"><a href="IIFE-Why-following-does-not-work.md">IIFE-Why-following-does-not-work.md</a>&nbsp;</td><td class="left"><a href="typeof-null-why-its-object.md">typeof-null-why-its-object.md</a>&nbsp;</td><td class="left"><a href="why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.md">why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="null-vs-undefined.html">null-vs-undefined.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-2.html">what-below-code-will-output-2.html</a>&nbsp;</td><td class="left"><a href="logical-and-operator.js">logical-and-operator.js</a>&nbsp;</td><td class="left"><a href="not-not-operator-in-javascript.md">not-not-operator-in-javascript.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-1.md">what-below-code-will-output-1.md</a>&nbsp;</td><td class="left"><a href="why-does-return-the-string-10.md">why-does-return-the-string-10.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="Object-Copy-Tricky-Questions.html">Object-Copy-Tricky-Questions.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-3.html">what-below-code-will-output-3.html</a>&nbsp;</td><td class="left"><a href="plain-class-functions.js">plain-class-functions.js</a>&nbsp;</td><td class="left"><a href="null-vs-undefined.md">null-vs-undefined.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-2.md">what-below-code-will-output-2.md</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="Closures-Inside-Loops.md">Closures...ps.md</a>&nbsp;</td><td class="left"><a href="Object-Copy-Tricky-Questions.md">Object-C...ns.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-1.md">what-bel...-1.md</a>&nbsp;</td><td class="left"><a href="What-is-the-value-of-Math.max([2,3,4,5]).md">What-is-...]).md</a>&nbsp;</td><td class="left"><a href="value-of-null.js">value-of-null.js</a>&nbsp;</td><td class="left"><a href="not-not-operator-in-javascript.html">not-not-....html</a>&nbsp;</td><td class="left"><a href="typeof-NaN.html">typeof-NaN.html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-4.html">what-bel....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Collection-of-Tricky-JS-Questlions.md">Collecti...ns.md</a>&nbsp;</td><td class="left"><a href="pitfall-of-using-typeof.md">pitfall-...of.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-2.md">what-bel...-2.md</a>&nbsp;</td><td class="left"><a href="why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.md">why-does...lt.md</a>&nbsp;</td><td class="left"><a href="Closures-Inside-Loops.html">Closures....html</a>&nbsp;</td><td class="left"><a href="null-vs-undefined.html">null-vs-....html</a>&nbsp;</td><td class="left"><a href="typeof-null-why-its-object.html">typeof-n....html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-5.html">what-bel....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="hoisting-tricky-question.md">hoisting...on.md</a>&nbsp;</td><td class="left"><a href="Tricky-Question-1.md">Tricky-Q...-1.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-3.md">what-bel...-3.md</a>&nbsp;</td><td class="left"><a href="why-does-return-the-string-10.md">why-does...10.md</a>&nbsp;</td><td class="left"><a href="Collection-of-Tricky-JS-Questlions.html">Collecti....html</a>&nbsp;</td><td class="left"><a href="Object-Copy-Tricky-Questions.html">Object-C....html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-1.html">what-bel....html</a>&nbsp;</td><td class="left"><a href="What-is-the-value-of-Math.max([2,3,4,5]).html">What-is-....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="IIFE-Why-following-does-not-work.md">IIFE-Why...rk.md</a>&nbsp;</td><td class="left"><a href="typeof-NaN.md">typeof-NaN.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-4.md">what-bel...-4.md</a>&nbsp;</td><td class="left"><a href="logical-and-operator.js">logical-...or.js</a>&nbsp;</td><td class="left"><a href="hoisting-tricky-question.html">hoisting....html</a>&nbsp;</td><td class="left"><a href="pitfall-of-using-typeof.html">pitfall-....html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-2.html">what-bel....html</a>&nbsp;</td><td class="left"><a href="why-does-adding-two-decimals-in-javascript-produce-a-wrong-result.html">why-does....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="not-not-operator-in-javascript.md">not-not-...pt.md</a>&nbsp;</td><td class="left"><a href="typeof-null-why-its-object.md">typeof-n...ct.md</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-5.md">what-bel...-5.md</a>&nbsp;</td><td class="left"><a href="plain-class-functions.js">plain-cl...ns.js</a>&nbsp;</td><td class="left"><a href="IIFE-Why-following-does-not-work.html">IIFE-Why....html</a>&nbsp;</td><td class="left"><a href="Tricky-Question-1.html">Tricky-Q....html</a>&nbsp;</td><td class="left"><a href="what-below-code-will-output-3.html">what-bel....html</a>&nbsp;</td><td class="left"><a href="why-does-return-the-string-10.html">why-does....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="null-vs-undefined.md">null-vs-...ed.md</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  2<br>
 Files: 41<br>
-Size of all files: 164980 K</p>
+Size of all files: 164980 KB</p>
 
 </body>
 </html>

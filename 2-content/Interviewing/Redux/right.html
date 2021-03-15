@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,27 +532,25 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="actions-why-enclosed-in-curly-braces.html">actions-why-enclosed-in-curly-braces.html</a>&nbsp;</td><td class="left"><a href="container-component.html">container-component.html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-how-exactly-it-gets-the-state-from-reducers.html">mapStateToProps-how-exactly-it-gets-the-state-from-reducers.html</a>&nbsp;</td><td class="left"><a href="test-code.js">test-code.js</a>&nbsp;</td><td class="left"><a href="Connect.md">Connect.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-2.md">mapStateToProps-basic-understanding-2.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Actions.html">Actions.html</a>&nbsp;</td><td class="left"><a href="createStore.html">createStore.html</a>&nbsp;</td><td class="left"><a href="Provider.html">Provider.html</a>&nbsp;</td><td class="left"><a href="actions-why-enclosed-in-curly-braces.md">actions-why-enclosed-in-curly-braces.md</a>&nbsp;</td><td class="left"><a href="container-component.md">container-component.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-how-exactly-it-gets-the-state-from-reducers.md">mapStateToProps-how-exactly-it-gets-the-state-from-reducers.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="actions.payload.html">actions.payload.html</a>&nbsp;</td><td class="left"><a href="currying.html">currying.html</a>&nbsp;</td><td class="left"><a href="Reducers.html">Reducers.html</a>&nbsp;</td><td class="left"><a href="Actions.md">Actions.md</a>&nbsp;</td><td class="left"><a href="createStore.md">createStore.md</a>&nbsp;</td><td class="left"><a href="Provider.md">Provider.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="applyMiddleware.html">applyMiddleware.html</a>&nbsp;</td><td class="left"><a href="dispatch.html">dispatch.html</a>&nbsp;</td><td class="left"><a href="redux-thunk-basics.html">redux-thunk-basics.html</a>&nbsp;</td><td class="left"><a href="actions.payload.md">actions.payload.md</a>&nbsp;</td><td class="left"><a href="currying.md">currying.md</a>&nbsp;</td><td class="left"><a href="Reducers.md">Reducers.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="bindActionCreators.html">bindActionCreators.html</a>&nbsp;</td><td class="left"><a href="flux-vs-redux.html">flux-vs-redux.html</a>&nbsp;</td><td class="left"><a href="redux-thunk-what-is-thunk-in-programming.html">redux-thunk-what-is-thunk-in-programming.html</a>&nbsp;</td><td class="left"><a href="applyMiddleware.md">applyMiddleware.md</a>&nbsp;</td><td class="left"><a href="dispatch.md">dispatch.md</a>&nbsp;</td><td class="left"><a href="redux-thunk-basics.md">redux-thunk-basics.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="combine-Recucer.html">combine-Recucer.html</a>&nbsp;</td><td class="left"><a href="mapDispatchToProps.html">mapDispatchToProps.html</a>&nbsp;</td><td class="left"><a href="Store.html">Store.html</a>&nbsp;</td><td class="left"><a href="bindActionCreators.md">bindActionCreators.md</a>&nbsp;</td><td class="left"><a href="flux-vs-redux.md">flux-vs-redux.md</a>&nbsp;</td><td class="left"><a href="redux-thunk-what-is-thunk-in-programming.md">redux-thunk-what-is-thunk-in-programming.md</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="compose-function.html">compose-function.html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-1.html">mapStateToProps-basic-understanding-1.html</a>&nbsp;</td><td class="left"><a href="flux-diagram-white-background.jpeg">flux-diagram-white-background.jpeg</a>&nbsp;</td><td class="left"><a href="combine-Recucer.md">combine-Recucer.md</a>&nbsp;</td><td class="left"><a href="mapDispatchToProps.md">mapDispatchToProps.md</a>&nbsp;</td><td class="left"><a href="Store.md">Store.md</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="Connect.html">Connect.html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-2.html">mapStateToProps-basic-understanding-2.html</a>&nbsp;</td><td class="left"><a href="Redux-Thunk.jpeg">Redux-Thunk.jpeg</a>&nbsp;</td><td class="left"><a href="compose-function.md">compose-function.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-1.md">mapStateToProps-basic-understanding-1.md</a>&nbsp;</td><td class="left"><a href="reducers.svg">reducers.svg</a>&nbsp;</td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="reducers.svg">reducers.svg</a>&nbsp;</td><td class="left"><a href="combine-Recucer.md">combine-...er.md</a>&nbsp;</td><td class="left"><a href="dispatch.md">dispatch.md</a>&nbsp;</td><td class="left"><a href="Provider.md">Provider.md</a>&nbsp;</td><td class="left"><a href="flux-diagram-white-background.jpeg">flux-dia....jpeg</a>&nbsp;</td><td class="left"><a href="bindActionCreators.html">bindActi....html</a>&nbsp;</td><td class="left"><a href="currying.html">currying.html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-how-exactly-it-gets-the-state-from-reducers.html">mapState....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="actions-why-enclosed-in-curly-braces.md">actions-...es.md</a>&nbsp;</td><td class="left"><a href="compose-function.md">compose-...on.md</a>&nbsp;</td><td class="left"><a href="flux-vs-redux.md">flux-vs-redux.md</a>&nbsp;</td><td class="left"><a href="Reducers.md">Reducers.md</a>&nbsp;</td><td class="left"><a href="Redux-Thunk.jpeg">Redux-Thunk.jpeg</a>&nbsp;</td><td class="left"><a href="combine-Recucer.html">combine-....html</a>&nbsp;</td><td class="left"><a href="dispatch.html">dispatch.html</a>&nbsp;</td><td class="left"><a href="Provider.html">Provider.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Actions.md">Actions.md</a>&nbsp;</td><td class="left"><a href="Connect.md">Connect.md</a>&nbsp;</td><td class="left"><a href="mapDispatchToProps.md">mapDispa...ps.md</a>&nbsp;</td><td class="left"><a href="redux-thunk-basics.md">redux-th...cs.md</a>&nbsp;</td><td class="left"><a href="actions-why-enclosed-in-curly-braces.html">actions-....html</a>&nbsp;</td><td class="left"><a href="compose-function.html">compose-....html</a>&nbsp;</td><td class="left"><a href="flux-vs-redux.html">flux-vs-....html</a>&nbsp;</td><td class="left"><a href="Reducers.html">Reducers.html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="actions.payload.md">actions....ad.md</a>&nbsp;</td><td class="left"><a href="container-component.md">containe...nt.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-1.md">mapState...-1.md</a>&nbsp;</td><td class="left"><a href="redux-thunk-what-is-thunk-in-programming.md">redux-th...ng.md</a>&nbsp;</td><td class="left"><a href="Actions.html">Actions.html</a>&nbsp;</td><td class="left"><a href="Connect.html">Connect.html</a>&nbsp;</td><td class="left"><a href="mapDispatchToProps.html">mapDispa....html</a>&nbsp;</td><td class="left"><a href="redux-thunk-basics.html">redux-th....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="applyMiddleware.md">applyMid...re.md</a>&nbsp;</td><td class="left"><a href="createStore.md">createStore.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-2.md">mapState...-2.md</a>&nbsp;</td><td class="left"><a href="Store.md">Store.md</a>&nbsp;</td><td class="left"><a href="actions.payload.html">actions.....html</a>&nbsp;</td><td class="left"><a href="container-component.html">containe....html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-1.html">mapState....html</a>&nbsp;</td><td class="left"><a href="redux-thunk-what-is-thunk-in-programming.html">redux-th....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="bindActionCreators.md">bindActi...rs.md</a>&nbsp;</td><td class="left"><a href="currying.md">currying.md</a>&nbsp;</td><td class="left"><a href="mapStateToProps-how-exactly-it-gets-the-state-from-reducers.md">mapState...rs.md</a>&nbsp;</td><td class="left"><a href="test-code.js">test-code.js</a>&nbsp;</td><td class="left"><a href="applyMiddleware.html">applyMid....html</a>&nbsp;</td><td class="left"><a href="createStore.html">createStore.html</a>&nbsp;</td><td class="left"><a href="mapStateToProps-basic-understanding-2.html">mapState....html</a>&nbsp;</td><td class="left"><a href="Store.html">Store.html</a>&nbsp;</td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 48<br>
-Size of all files: 553212 K</p>
+Size of all files: 553212 KB</p>
 
 </body>
 </html>

@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,25 +532,24 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="font-family.css">font-family.css</a>&nbsp;</td><td class="left"><a href="font-size.css">font-size.css</a>&nbsp;</td><td class="left"><a href="font-variant.css">font-variant.css</a>&nbsp;</td><td class="left"><a href="font-family.html">font-family.html</a>&nbsp;</td><td class="left"><a href="font-size.html">font-size.html</a>&nbsp;</td><td class="left"><a href="font-variant.html">font-variant.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="font-feature-settings.css">font-feature-settings.css</a>&nbsp;</td><td class="left"><a href="font-style.css">font-style.css</a>&nbsp;</td><td class="left"><a href="font-variation-settings.css">font-variation-settings.css</a>&nbsp;</td><td class="left"><a href="font-feature-settings.html">font-feature-settings.html</a>&nbsp;</td><td class="left"><a href="font-style.html">font-style.html</a>&nbsp;</td><td class="left"><a href="font-variation-settings.html">font-variation-settings.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="font-kerning.css">font-kerning.css</a>&nbsp;</td><td class="left"><a href="font-synthesis.css">font-synthesis.css</a>&nbsp;</td><td class="left"><a href="font-weight.css">font-weight.css</a>&nbsp;</td><td class="left"><a href="font-kerning.html">font-kerning.html</a>&nbsp;</td><td class="left"><a href="font-synthesis.html">font-synthesis.html</a>&nbsp;</td><td class="left"><a href="font-weight.html">font-weight.html</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="font-language-override.css">font-language-override.css</a>&nbsp;</td><td class="left"><a href="font-variant-caps.css">font-variant-caps.css</a>&nbsp;</td><td class="left"><a href="font.css">font.css</a>&nbsp;</td><td class="left"><a href="font-language-override.html">font-language-override.html</a>&nbsp;</td><td class="left"><a href="font-variant-caps.html">font-variant-caps.html</a>&nbsp;</td><td class="left"><a href="font.html">font.html</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="font-optical-sizing.css">font-optical-sizing.css</a>&nbsp;</td><td class="left"><a href="font-variant-ligatures.css">font-variant-ligatures.css</a>&nbsp;</td><td class="left"><a href="fonts-base.css">fonts-base.css</a>&nbsp;</td><td class="left"><a href="font-optical-sizing.html">font-optical-sizing.html</a>&nbsp;</td><td class="left"><a href="font-variant-ligatures.html">font-variant-ligatures.html</a>&nbsp;</td><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="font-size-adjust.css">font-size-adjust.css</a>&nbsp;</td><td class="left"><a href="font-variant-numeric.css">font-variant-numeric.css</a>&nbsp;</td><td class="left"><a href="fonts.css">fonts.css</a>&nbsp;</td><td class="left"><a href="font-size-adjust.html">font-size-adjust.html</a>&nbsp;</td><td class="left"><a href="font-variant-numeric.html">font-variant-numeric.html</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="meta.json">meta.json</a>&nbsp;</td><td class="left"><a href="font-optical-sizing.html">font-opt....html</a>&nbsp;</td><td class="left"><a href="font-variant-caps.html">font-var....html</a>&nbsp;</td><td class="left"><a href="font-weight.html">font-weight.html</a>&nbsp;</td><td class="left"><a href="font-kerning.css">font-kerning.css</a>&nbsp;</td><td class="left"><a href="font-size.css">font-size.css</a>&nbsp;</td><td class="left"><a href="font-variant-ligatures.css">font-var...s.css</a>&nbsp;</td><td class="left"><a href="font-weight.css">font-weight.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="font-family.html">font-family.html</a>&nbsp;</td><td class="left"><a href="font-size-adjust.html">font-siz....html</a>&nbsp;</td><td class="left"><a href="font-variant-ligatures.html">font-var....html</a>&nbsp;</td><td class="left"><a href="font.html">font.html</a>&nbsp;</td><td class="left"><a href="font-language-override.css">font-lan...e.css</a>&nbsp;</td><td class="left"><a href="font-style.css">font-style.css</a>&nbsp;</td><td class="left"><a href="font-variant-numeric.css">font-var...c.css</a>&nbsp;</td><td class="left"><a href="font.css">font.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="font-feature-settings.html">font-fea....html</a>&nbsp;</td><td class="left"><a href="font-size.html">font-size.html</a>&nbsp;</td><td class="left"><a href="font-variant-numeric.html">font-var....html</a>&nbsp;</td><td class="left"><a href="font-family.css">font-family.css</a>&nbsp;</td><td class="left"><a href="font-optical-sizing.css">font-opt...g.css</a>&nbsp;</td><td class="left"><a href="font-synthesis.css">font-syn...s.css</a>&nbsp;</td><td class="left"><a href="font-variant.css">font-variant.css</a>&nbsp;</td><td class="left"><a href="fonts-base.css">fonts-base.css</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="font-kerning.html">font-ker....html</a>&nbsp;</td><td class="left"><a href="font-style.html">font-style.html</a>&nbsp;</td><td class="left"><a href="font-variant.html">font-var....html</a>&nbsp;</td><td class="left"><a href="font-feature-settings.css">font-fea...s.css</a>&nbsp;</td><td class="left"><a href="font-size-adjust.css">font-siz...t.css</a>&nbsp;</td><td class="left"><a href="font-variant-caps.css">font-var...s.css</a>&nbsp;</td><td class="left"><a href="font-variation-settings.css">font-var...s.css</a>&nbsp;</td><td class="left"><a href="fonts.css">fonts.css</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="font-language-override.html">font-lan....html</a>&nbsp;</td><td class="left"><a href="font-synthesis.html">font-syn....html</a>&nbsp;</td><td class="left"><a href="font-variation-settings.html">font-var....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 35<br>
-Size of all files: 37408 K</p>
+Size of all files: 37408 KB</p>
 
 </body>
 </html>

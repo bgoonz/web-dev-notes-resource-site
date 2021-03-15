@@ -22,15 +22,35 @@
             width: device-width;
         }
         body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
             -ms-overflow-style: scrollbar;
-		zoom:0.9;
+		zoom:0.73;
         }
-        @media screen and (max-width: 480px) {
-            html,
-            body {
-             
-            }
-        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         html {
             box-sizing: border-box;
         }
@@ -56,33 +76,19 @@
         }
         /* Type */
         html {
-            font-size: 13pt;
+            font-size: 11pt;
         }
-        @media screen and (max-width: 1680px) {
-            html {
-                font-size: 10pt;
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            html {
-                font-size: 11pt;
-            }
-        }
-        @media screen and (max-width: 360px) {
-            html {
-                font-size: 10pt;
-            }
-        }
+       
         body {
-            color: #212931;
+            color: whitesmoke;
         }
         body,
         input,
         select,
         textarea {
             font-family: "Merriweather", Georgia, serif;
-            font-weight: 300;
-            font-size: 1rem;
+            font-weight: 200;
+            font-size: 0.8rem;
           
         }
         a {
@@ -104,13 +110,13 @@
         }
         BODY {
             background: black font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 150;
          
             color: #A7A1AE;
             background-color: #1F2739;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 300;
          
             text-align: left;
@@ -121,6 +127,7 @@
         }
         A {
             text-decoration: none color:black;
+            overflow-wrap: break-word;
         }
         A:hover {
             color: red;
@@ -133,10 +140,10 @@
             background: #fffefe;
             border-left: 3px solid;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 15px 0;
             font-size: 0.8em;
             font-family: sans-serif;
-            min-width: 350px;
+            min-width: 250px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             border-top: 1px solid;
             border-bottom: 0px solid;
@@ -145,6 +152,7 @@
             width: 80%;
             display: table;
             padding: 0 0 8em 0;
+overflow-wrap: break-word;
         }
         TABLE.fancy TD {
             border-right: 1px solid;
@@ -179,6 +187,7 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 20px;
+overflow-wrap: break-word;
         }
         TABLE.fancy tr:nth-child(odd) {
             background-color: #323C50;
@@ -523,34 +532,31 @@ div.clear {
 <body>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><td colspan="10" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
-<tr><td class="left"><a href="../right.html" target="rframe">&lt;parent&gt;</a></td></tr>
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
 </table>
 <br>
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
-<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
-<tr><td class="left"><a href="AbortController.jsdoc">AbortController.jsdoc</a>&nbsp;</td><td class="left"><a href="eventlistener.jsdoc">eventlistener.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformelement.jsdoc">htmlformelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionelement.jsdoc">htmloptionelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlulistelement.jsdoc">htmlulistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="processinginstruction.jsdoc">processinginstruction.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="AbortSignal.jsdoc">AbortSignal.jsdoc</a>&nbsp;</td><td class="left"><a href="eventtarget.jsdoc">eventtarget.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadelement.jsdoc">htmlheadelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionscollection.jsdoc">htmloptionscollection.jsdoc</a>&nbsp;</td><td class="left"><a href="image.jsdoc">image.jsdoc</a>&nbsp;</td><td class="left"><a href="progressevent.jsdoc">progressevent.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="attr.jsdoc">attr.jsdoc</a>&nbsp;</td><td class="left"><a href="focusevent.jsdoc">focusevent.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadingelement.jsdoc">htmlheadingelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlparagraphelement.jsdoc">htmlparagraphelement.jsdoc</a>&nbsp;</td><td class="left"><a href="InputEvent.jsdoc">InputEvent.jsdoc</a>&nbsp;</td><td class="left"><a href="range.jsdoc">range.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="characterdata.jsdoc">characterdata.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlanchorelement.jsdoc">htmlanchorelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhrelement.jsdoc">htmlhrelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlpreelement.jsdoc">htmlpreelement.jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserver.jsdoc">intersectionobserver.jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserver.jsdoc">ResizeObserver.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="comment.jsdoc">comment.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbaseelement.jsdoc">htmlbaseelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhtmlelement.jsdoc">htmlhtmlelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlquoteelement.jsdoc">htmlquoteelement.jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserverentry.jsdoc">intersectionobserverentry.jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserverEntry.jsdoc">ResizeObserverEntry.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="compositionevent.jsdoc">compositionevent.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbodyelement.jsdoc">htmlbodyelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmliframeelement.jsdoc">htmliframeelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlscriptelement.jsdoc">htmlscriptelement.jsdoc</a>&nbsp;</td><td class="left"><a href="keyboardevent.jsdoc">keyboardevent.jsdoc</a>&nbsp;</td><td class="left"><a href="text.jsdoc">text.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="document.jsdoc">document.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbrelement.jsdoc">htmlbrelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlimageelement.jsdoc">htmlimageelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlselectelement.jsdoc">htmlselectelement.jsdoc</a>&nbsp;</td><td class="left"><a href="mouseevent.jsdoc">mouseevent.jsdoc</a>&nbsp;</td><td class="left"><a href="touch.jsdoc">touch.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="documentfragment.jsdoc">documentfragment.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbuttonelement.jsdoc">htmlbuttonelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlinputelement.jsdoc">htmlinputelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlslotelement.jsdoc">htmlslotelement.jsdoc</a>&nbsp;</td><td class="left"><a href="MutationObserver.jsdoc">MutationObserver.jsdoc</a>&nbsp;</td><td class="left"><a href="touchevent.jsdoc">touchevent.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="documenttype.jsdoc">documenttype.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcanvaselement.jsdoc">htmlcanvaselement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmllielement.jsdoc">htmllielement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlspanelement.jsdoc">htmlspanelement.jsdoc</a>&nbsp;</td><td class="left"><a href="MutationRecord.jsdoc">MutationRecord.jsdoc</a>&nbsp;</td><td class="left"><a href="touchlist.jsdoc">touchlist.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="domimplementation.jsdoc">domimplementation.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcollection.jsdoc">htmlcollection.jsdoc</a>&nbsp;</td><td class="left"><a href="htmllinkelement.jsdoc">htmllinkelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlstyleelement.jsdoc">htmlstyleelement.jsdoc</a>&nbsp;</td><td class="left"><a href="node.jsdoc">node.jsdoc</a>&nbsp;</td><td class="left"><a href="treewalker.jsdoc">treewalker.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="domparser.jsdoc">domparser.jsdoc</a>&nbsp;</td><td class="left"><a href="htmldivelement.jsdoc">htmldivelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmenuelement.jsdoc">htmlmenuelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablecellelement.jsdoc">htmltablecellelement.jsdoc</a>&nbsp;</td><td class="left"><a href="nodefilter.jsdoc">nodefilter.jsdoc</a>&nbsp;</td><td class="left"><a href="uievent.jsdoc">uievent.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="domstringmap.jsdoc">domstringmap.jsdoc</a>&nbsp;</td><td class="left"><a href="htmldlistelement.jsdoc">htmldlistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmetaelement.jsdoc">htmlmetaelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltableelement.jsdoc">htmltableelement.jsdoc</a>&nbsp;</td><td class="left"><a href="nodeiterator.jsdoc">nodeiterator.jsdoc</a>&nbsp;</td><td class="left"><a href="validitystate.jsdoc">validitystate.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="domtokenlist.jsdoc">domtokenlist.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlelement.jsdoc">htmlelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmodelement.jsdoc">htmlmodelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablerowelement.jsdoc">htmltablerowelement.jsdoc</a>&nbsp;</td><td class="left"><a href="nodelist.jsdoc">nodelist.jsdoc</a>&nbsp;</td><td class="left"><a href="xmldocument.jsdoc">xmldocument.jsdoc</a>&nbsp;</td></tr>
-<tr class="row2"><td class="left"><a href="element.jsdoc">element.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlembedelement.jsdoc">htmlembedelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlolistelement.jsdoc">htmlolistelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltimeelement.jsdoc">htmltimeelement.jsdoc</a>&nbsp;</td><td class="left"><a href="option.jsdoc">option.jsdoc</a>&nbsp;</td><td class="left"><a href="xmlserializer.jsdoc">xmlserializer.jsdoc</a>&nbsp;</td></tr>
-<tr><td class="left"><a href="event.jsdoc">event.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformcontrolscollection.jsdoc">htmlformcontrolscollection.jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptgroupelement.jsdoc">htmloptgroupelement.jsdoc</a>&nbsp;</td><td class="left"><a href="htmltitleelement.jsdoc">htmltitleelement.jsdoc</a>&nbsp;</td><td class="left"><a href="pointerevent.jsdoc">pointerevent.jsdoc</a>&nbsp;</td><td class="left"></td></tr>
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="AbortController.jsdoc">AbortCon...jsdoc</a>&nbsp;</td><td class="left"><a href="domtokenlist.jsdoc">domtoken...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcanvaselement.jsdoc">htmlcanv...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhtmlelement.jsdoc">htmlhtml...jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionelement.jsdoc">htmlopti...jsdoc</a>&nbsp;</td><td class="left"><a href="htmltableelement.jsdoc">htmltabl...jsdoc</a>&nbsp;</td><td class="left"><a href="MutationObserver.jsdoc">Mutation...jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserver.jsdoc">ResizeOb...jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="AbortSignal.jsdoc">AbortSig...jsdoc</a>&nbsp;</td><td class="left"><a href="element.jsdoc">element.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlcollection.jsdoc">htmlcoll...jsdoc</a>&nbsp;</td><td class="left"><a href="htmliframeelement.jsdoc">htmlifra...jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptionscollection.jsdoc">htmlopti...jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablerowelement.jsdoc">htmltabl...jsdoc</a>&nbsp;</td><td class="left"><a href="MutationRecord.jsdoc">Mutation...jsdoc</a>&nbsp;</td><td class="left"><a href="ResizeObserverEntry.jsdoc">ResizeOb...jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="attr.jsdoc">attr.jsdoc</a>&nbsp;</td><td class="left"><a href="event.jsdoc">event.jsdoc</a>&nbsp;</td><td class="left"><a href="htmldivelement.jsdoc">htmldive...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlimageelement.jsdoc">htmlimag...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlparagraphelement.jsdoc">htmlpara...jsdoc</a>&nbsp;</td><td class="left"><a href="htmltimeelement.jsdoc">htmltime...jsdoc</a>&nbsp;</td><td class="left"><a href="node.jsdoc">node.jsdoc</a>&nbsp;</td><td class="left"><a href="text.jsdoc">text.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="characterdata.jsdoc">characte...jsdoc</a>&nbsp;</td><td class="left"><a href="eventlistener.jsdoc">eventlis...jsdoc</a>&nbsp;</td><td class="left"><a href="htmldlistelement.jsdoc">htmldlis...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlinputelement.jsdoc">htmlinpu...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlpreelement.jsdoc">htmlpree...jsdoc</a>&nbsp;</td><td class="left"><a href="htmltitleelement.jsdoc">htmltitl...jsdoc</a>&nbsp;</td><td class="left"><a href="nodefilter.jsdoc">nodefilter.jsdoc</a>&nbsp;</td><td class="left"><a href="touch.jsdoc">touch.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="comment.jsdoc">comment.jsdoc</a>&nbsp;</td><td class="left"><a href="eventtarget.jsdoc">eventtar...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlelement.jsdoc">htmlelem...jsdoc</a>&nbsp;</td><td class="left"><a href="htmllielement.jsdoc">htmlliel...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlquoteelement.jsdoc">htmlquot...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlulistelement.jsdoc">htmlulis...jsdoc</a>&nbsp;</td><td class="left"><a href="nodeiterator.jsdoc">nodeiter...jsdoc</a>&nbsp;</td><td class="left"><a href="touchevent.jsdoc">touchevent.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="compositionevent.jsdoc">composit...jsdoc</a>&nbsp;</td><td class="left"><a href="focusevent.jsdoc">focusevent.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlembedelement.jsdoc">htmlembe...jsdoc</a>&nbsp;</td><td class="left"><a href="htmllinkelement.jsdoc">htmllink...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlscriptelement.jsdoc">htmlscri...jsdoc</a>&nbsp;</td><td class="left"><a href="image.jsdoc">image.jsdoc</a>&nbsp;</td><td class="left"><a href="nodelist.jsdoc">nodelist.jsdoc</a>&nbsp;</td><td class="left"><a href="touchlist.jsdoc">touchlist.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="document.jsdoc">document.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlanchorelement.jsdoc">htmlanch...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformcontrolscollection.jsdoc">htmlform...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmenuelement.jsdoc">htmlmenu...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlselectelement.jsdoc">htmlsele...jsdoc</a>&nbsp;</td><td class="left"><a href="InputEvent.jsdoc">InputEvent.jsdoc</a>&nbsp;</td><td class="left"><a href="option.jsdoc">option.jsdoc</a>&nbsp;</td><td class="left"><a href="treewalker.jsdoc">treewalker.jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="documentfragment.jsdoc">document...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbaseelement.jsdoc">htmlbase...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlformelement.jsdoc">htmlform...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmetaelement.jsdoc">htmlmeta...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlslotelement.jsdoc">htmlslot...jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserver.jsdoc">intersec...jsdoc</a>&nbsp;</td><td class="left"><a href="pointerevent.jsdoc">pointere...jsdoc</a>&nbsp;</td><td class="left"><a href="uievent.jsdoc">uievent.jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="documenttype.jsdoc">document...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbodyelement.jsdoc">htmlbody...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadelement.jsdoc">htmlhead...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlmodelement.jsdoc">htmlmode...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlspanelement.jsdoc">htmlspan...jsdoc</a>&nbsp;</td><td class="left"><a href="intersectionobserverentry.jsdoc">intersec...jsdoc</a>&nbsp;</td><td class="left"><a href="processinginstruction.jsdoc">processi...jsdoc</a>&nbsp;</td><td class="left"><a href="validitystate.jsdoc">validity...jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="domimplementation.jsdoc">domimple...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbrelement.jsdoc">htmlbrel...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlheadingelement.jsdoc">htmlhead...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlolistelement.jsdoc">htmlolis...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlstyleelement.jsdoc">htmlstyl...jsdoc</a>&nbsp;</td><td class="left"><a href="keyboardevent.jsdoc">keyboard...jsdoc</a>&nbsp;</td><td class="left"><a href="progressevent.jsdoc">progress...jsdoc</a>&nbsp;</td><td class="left"><a href="xmldocument.jsdoc">xmldocum...jsdoc</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="domparser.jsdoc">domparser.jsdoc</a>&nbsp;</td><td class="left"><a href="htmlbuttonelement.jsdoc">htmlbutt...jsdoc</a>&nbsp;</td><td class="left"><a href="htmlhrelement.jsdoc">htmlhrel...jsdoc</a>&nbsp;</td><td class="left"><a href="htmloptgroupelement.jsdoc">htmloptg...jsdoc</a>&nbsp;</td><td class="left"><a href="htmltablecellelement.jsdoc">htmltabl...jsdoc</a>&nbsp;</td><td class="left"><a href="mouseevent.jsdoc">mouseevent.jsdoc</a>&nbsp;</td><td class="left"><a href="range.jsdoc">range.jsdoc</a>&nbsp;</td><td class="left"><a href="xmlserializer.jsdoc">xmlseria...jsdoc</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="domstringmap.jsdoc">domstrin...jsdoc</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </table>
 
 <p style="font-weight: bold; margin-bottom: 0px">
 Folders:  1<br>
 Files: 89<br>
-Size of all files: 180916 K</p>
+Size of all files: 180916 KB</p>
 
 </body>
 </html>
