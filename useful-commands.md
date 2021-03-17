@@ -68,10 +68,10 @@ find ./ -mindepth 2 -type f -exec mv -t ./ --backup=t '{}' +
 
 
 ------------------------
-find . -type f -exec sed -i '/appacademy/d' ./*.html {} \; 
+find . -type f -exec sed -i '/academy/d' ./*.html {} \; 
 
 
-find . -type f -exec sed -i '/appacademy/d' ./*.md {} \; 
+find . -type f -exec sed -i '/academy/d' ./*.md {} \; 
 
 
 find . -type f -exec sed -i '/image004/d' ./*.html {} \;
@@ -1593,7 +1593,7 @@ Recursivley remove folders by name.
 
 
 
-find . -type f -exec sed -i '/appacademy/d' ./* {} \;
+find . -type f -exec sed -i '/academy/d' ./* {} \;
 
 find . -type f -exec sed -i '/Exported from /d' ./* {} \;
 
