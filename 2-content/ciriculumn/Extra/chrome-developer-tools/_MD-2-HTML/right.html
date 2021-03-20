@@ -1,0 +1,624 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>_MD-2-HTML</title>
+    <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <title>Stable</title>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"
+        type="text/css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"
+        type="text/javascript"></script>-->
+    <style type="text/css">
+        /*<![CDATA[*/
+        /* Basic */
+        @-ms-viewport {
+            width: device-width;
+        }
+        body {
+  background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
+            -ms-overflow-style: scrollbar;
+		zoom:0.73;
+        }
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        body {
+            background-color: whitesmoke;
+        }
+        body.is-preload *,
+        body.is-preload *:before,
+        body.is-preload *:after {
+            -moz-animation: none !important;
+            -webkit-animation: none !important;
+            -ms-animation: none !important;
+            animation: none !important;
+            -moz-transition: none !important;
+            -webkit-transition: none !important;
+            -ms-transition: none !important;
+            transition: none !important;
+        }
+        /* Type */
+        html {
+            font-size: 11pt;
+        }
+       
+        body {
+            color: whitesmoke;
+        }
+        body,
+        input,
+        select,
+        textarea {
+            font-family: "Merriweather", Georgia, serif;
+            font-weight: 200;
+            font-size: 0.8rem;
+          
+        }
+        a {
+            -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-bottom: dotted 1px;
+            text-decoration: none;
+        }
+        a:hover {
+            border-bottom-color: transparent;
+        }
+        @charset "UTF-8";
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+        HTML {
+            font-size: medium;
+            font-family: Garamond
+        }
+        BODY {
+            background: black font-family: 'Open Sans', sans-serif;
+            font-weight: 150;
+         
+            color: #A7A1AE;
+            background-color: #1F2739;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: 300;
+         
+            text-align: left;
+            color: #4DC3FA;
+        }
+        p {
+            color: grey;
+        }
+        A {
+            text-decoration: none color:black;
+            overflow-wrap: break-word;
+        }
+        A:hover {
+            color: red;
+            background: whitesmoke;
+            border-radius: 8px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        TABLE.fancy {
+            background: #fffefe;
+            border-left: 3px solid;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            min-width: 250px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-top: 1px solid;
+            border-bottom: 0px solid;
+            border-color: #FFF;
+            overflow-y: scroll;
+            width: 80%;
+            display: table;
+            padding: 0 0 8em 0;
+overflow-wrap: break-word;
+        }
+        TABLE.fancy TD {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            border-color: #FFF;
+            text-align: left;
+            padding-right: 2%px;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+            border: 4px solid gold !important;
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 570;
+            line-height: 18px;
+            text-decoration: none !important;
+            text-transform: uppercase;
+             background: linear-gradient(-45deg, #da0000, #0008ffe5, #23d5a2d8, #2f2fbce5);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
+            color: black !important;
+            cursor: pointer;
+            justify-content: center;
+            padding: 30px 50px;
+            height: 55px;
+            text-align: center;
+            white-space: normal;
+            border-radius: 10px;
+            min-width: 10em;
+            padding: .9em .9em 0;
+            box-shadow: 0 0 5px;
+            margin: 1em;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 20px;
+overflow-wrap: break-word;
+        }
+        TABLE.fancy tr:nth-child(odd) {
+            background-color: #323C50;
+        }
+        TABLE.fancy tr:nth-child(even) {
+            background-color: #2C3446;
+        }
+        TABLE.fancy th {
+            background-color: #1F2739;
+        }
+        TABLE.fancy td,
+        TABLE.fancy th {
+            padding-bottom: 2%;
+            padding-top: 2%;
+            padding-left: 2%;
+        }
+        TABLE.fancy tr:hover {
+            background-color: #464A52;
+            -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+            -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+        }
+        TABLE.fancy td:hover {
+            background-color: #FFF842;
+            color: #403E10;
+            font-weight: bold;
+            box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+            transform: translate3d(6px, -6px, 0);
+            transition-delay: 0s;
+            transition-duration: 0.4s;
+            transition-property: all;
+            transition-timing-function: line;
+        }
+        @media (max-width: 800px) {
+            TABLE.fancy td:nth-child(4),
+            TABLE.fancy th:nth-child(4) {
+                display: none;
+            }
+        }
+        TABLE.fancy TD.no-right {
+            border-right: 0px
+        }
+        TABLE.fancy TD.right {
+            text-align: left
+        }
+        TABLE.fancy TD.left {
+            text-align: center
+        }
+        TABLE.fancy a {
+            color: yellow;
+        }
+        TABLE.fancy TH {
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            text-align: left;
+            background: black;
+            color: #FFF;
+            border-color: #FFF;
+            font-weight: bold;
+            padding: 12px 15px;
+        }
+        .anchor {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: left;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+        .dark-blue {
+            font-weight: bold;
+            border-top: 0px solid;
+            text-align: left;
+            border-bottom: 1px solid;
+            background: black;
+            color: #FFF
+        }
+        .no-top-border {
+            border-top: 0px
+        }
+        .centered {
+            margin: auto
+        }
+        .rZ {
+            text-align: right
+        }
+        .row2 {
+            background: #D3D3E1
+        }
+@import url(//fonts.googleapis.com/css?family=PT+Sans);
+body {
+    margin: 0px;
+    font-family: 'PT Sans', Helvetica, 'Helvetica Neuve', Arial, Tahoma, sans-serif;
+    font-size: 17px;
+    color: #333;
+}
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    margin: 0 0 20px;
+}
+p,
+ul,
+ol,
+table,
+pre,
+dl {
+    margin: 0 0 20px;
+}
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    color: #393939;
+}
+h3,
+h4,
+h5,
+h6 {
+    color: #494949;
+}
+a {
+    color: #39c;
+    font-weight: 400;
+    text-decoration: none;
+}
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.6em;
+    display: block;
+}
+.wrapper {
+    width: 860px;
+    margin: 0 auto;
+}
+blockquote {
+    border-left: 1px solid #e5e5e5;
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-style: italic;
+}
+code,
+pre {
+    color: #333;
+    font-size: 12px;
+}
+pre {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th,
+td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+dt {
+    color: #444;
+    font-weight: 700;
+}
+th {
+    color: #444;
+}
+img {
+    max-width: 100%;
+}
+header {
+    width: 270px;
+    float: left;
+    position: fixed;
+}
+header ul {
+    list-style: none;
+    height: 40px;
+    padding: 0;
+    background: #eee;
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #dddddd));
+    background: -webkit-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -o-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -ms-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    box-shadow: inset #fff 0 1px 0,
+    inset rgba(0, 0, 0, 0.03) 0 -1px 0;
+    width: 270px;
+}
+header li {
+    width: 89px;
+    float: left;
+    border-right: 1px solid #d2d2d2;
+    height: 40px;
+}
+header ul a {
+    line-height: 1;
+    font-size: 11px;
+    color: #999;
+    display: block;
+    text-align: center;
+    padding-top: 6px;
+    height: 40px;
+}
+strong {
+    color: #222;
+    font-weight: 700;
+}
+header ul li+li {
+    width: 88px;
+    border-left: 1px solid #fff;
+}
+header ul li+li+li {
+    border-right: none;
+    width: 89px;
+}
+header ul a strong {
+    font-size: 14px;
+    display: block;
+    color: #222;
+}
+section {
+    width: 500px;
+    float: right;
+    padding-bottom: 50px;
+}
+small {
+    font-size: 11px;
+}
+hr {
+    border: 0;
+    background: #e5e5e5;
+    height: 1px;
+    margin: 0 0 20px;
+}
+footer {
+    width: 270px;
+    float: left;
+    position: fixed;
+    bottom: 50px;
+}
+@media print,
+screen and (max-width: 960px) {
+    div.wrapper {
+        width: auto;
+        margin: 0;
+    }
+    header,
+    section,
+    footer {
+        float: none;
+        position: static;
+        width: auto;
+    }
+    header {
+        padding-right: 320px;
+    }
+    section {
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
+        padding: 20px 0;
+        margin: 0 0 20px;
+    }
+    header a small {
+        display: inline;
+    }
+    header ul {
+        position: absolute;
+        right: 50px;
+        top: 52px;
+    }
+}
+@media print,
+screen and (max-width: 720px) {
+    body {
+        word-wrap: break-word;
+    }
+    header {
+        padding: 0;
+    }
+    header ul,
+    header p.view {
+        position: static;
+    }
+    pre,
+    code {
+        word-wrap: normal;
+    }
+}
+@media print,
+screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    header ul {
+        display: none;
+    }
+}
+@media print {
+    body {
+        padding: 0.4in;
+        font-size: 12pt;
+        color: #444;
+    }
+}
+#wrapper {
+    padding: 1em;
+}
+.ca-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+.nav-list {
+    height: 50%;
+    margin: auto 0;
+}
+div.clear {
+    clear: both;
+}
+        /*]]>*/
+    </style>
+</head>
+
+<body>
+
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><td colspan="6" class="dark-blue" style="text-align: center"><b>Folders</b></td></tr>
+<tr><td class="left"><a href="../right.html" target="rframe">&lt;Go Back&gt;</a></td></tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="3" summary="file table" class="fancy centered">
+<tr><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th><th><b>File</b></th></tr>
+<tr><td class="left"><a href="files">files</a>&nbsp;</td><td class="left"><a href="Day2.md.md.md.html.html">Day2.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(19).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(50).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~108~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~13~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~39~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~70~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1-class-components.md.md.md.html.html">1-class-....html</a>&nbsp;</td><td class="left"><a href="Day2.md.md.md.md.html">Day2.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(19).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(50).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~109~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~140~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~3~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~71~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1-class-components.md.md.md.md.html">1-class-....html</a>&nbsp;</td><td class="left"><a href="Day3.md.md.md.html.html">Day3.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(2).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(51).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~109~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~140~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~3~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~71~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1-testing-react.md.md.md.html.html">1-testin....html</a>&nbsp;</td><td class="left"><a href="Day3.md.md.md.md.html">Day3.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(2).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(51).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~10~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~141~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~40~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~72~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1-testing-react.md.md.md.md.html">1-testin....html</a>&nbsp;</td><td class="left"><a href="DAY_TWO_README.md.html.html">DAY_TWO_....html</a>&nbsp;</td><td class="left"><a href="readme.md%20(20).html.html">readme.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(52).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~10~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~141~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~40~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~72~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1-the-reducer-pattern.md.md.md.html.html">1-the-re....html</a>&nbsp;</td><td class="left"><a href="DAY_TWO_README.md.md.html">DAY_TWO_....html</a>&nbsp;</td><td class="left"><a href="README.md%20(20).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(52).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~110~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~142~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~41~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~73~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1-the-reducer-pattern.md.md.md.md.html">1-the-re....html</a>&nbsp;</td><td class="left"><a href="DAY_TWO_README.md.md.md.html.html">DAY_TWO_....html</a>&nbsp;</td><td class="left"><a href="README.md%20(21).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(53).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~110~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~142~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~41~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~73~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1.%20Introduction%20to%20Authentication.md.md.md.html.html">1. Intro....html</a>&nbsp;</td><td class="left"><a href="DAY_TWO_README.md.md.md.md.html">DAY_TWO_....html</a>&nbsp;</td><td class="left"><a href="README.md%20(21).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(53).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~111~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~143~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~42~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~74~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1.%20Introduction%20to%20Authentication.md.md.md.md.html">1. Intro....html</a>&nbsp;</td><td class="left"><a href="extra-resources.md.md.md.html.html">extra-re....html</a>&nbsp;</td><td class="left"><a href="README.md%20(22).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(54).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~111~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~143~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~42~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~74~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1.%20Introduction%20to%20Relational%20Databases%20&amp;%20SQL.md.md.md.html.html">1. Intro....html</a>&nbsp;</td><td class="left"><a href="extra-resources.md.md.md.md.html">extra-re....html</a>&nbsp;</td><td class="left"><a href="README.md%20(22).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(54).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~112~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~144~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~43~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~75~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1.%20Introduction%20to%20Relational%20Databases%20&amp;%20SQL.md.md.md.md.html">1. Intro....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(2).html.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(23).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(55).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~112~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~144~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~43~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~75~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1.%20Testing%20I.md.md.md.html.html">1. Testi....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(2).md.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="readme.md%20(23).md.html">readme.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(55).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~113~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~145~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~44~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~76~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1.%20Testing%20I.md.md.md.md.html">1. Testi....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(3).html.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(24).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(56).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~113~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~145~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~44~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~76~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="1_linked_lists.md.md.md.html.html">1_linked....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(3).md.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(24).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(56).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~114~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~146~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~45~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~77~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="1_linked_lists.md.md.md.md.html">1_linked....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(4).html.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(25).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(57).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~114~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~146~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~45~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~77~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2-client-side-authentication.md.md.md.html.html">2-client....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(4).md.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(25).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(57).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~115~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~14~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~46~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~78~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2-client-side-authentication.md.md.md.md.html">2-client....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(5).html.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(26).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(58).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~115~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~14~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~46~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~78~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2-redux.md.md.md.html.html">2-redux.....html</a>&nbsp;</td><td class="left"><a href="FAQ.md%20(5).md.html">FAQ.md (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(26).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(58).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~116~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~15~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~47~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~79~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2-redux.md.md.md.md.html">2-redux.....html</a>&nbsp;</td><td class="left"><a href="FAQ.md.html.html">FAQ.md.html.html</a>&nbsp;</td><td class="left"><a href="README.md%20(27).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(59).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~116~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~15~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~47~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~79~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2-the-react-lifecycle.md.md.md.html.html">2-the-re....html</a>&nbsp;</td><td class="left"><a href="FAQ.md.md.html">FAQ.md.md.html</a>&nbsp;</td><td class="left"><a href="README.md%20(27).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(59).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~117~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~16~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~48~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~7~.md.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2-the-react-lifecycle.md.md.md.md.html">2-the-re....html</a>&nbsp;</td><td class="left"><a href="FAQs.md.html.html">FAQs.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(28).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(6).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~117~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~16~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~48~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~7~.md.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2.%20Inserting%20&amp;%20Modifying%20Data.md.md.md.html.html">2. Inser....html</a>&nbsp;</td><td class="left"><a href="FAQs.md.md.html">FAQs.md.md.html</a>&nbsp;</td><td class="left"><a href="README.md%20(28).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(6).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~118~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~17~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~49~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~80~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2.%20Inserting%20&amp;%20Modifying%20Data.md.md.md.md.html">2. Inser....html</a>&nbsp;</td><td class="left"><a href="git-advanced.md.md.md.html.html">git-adva....html</a>&nbsp;</td><td class="left"><a href="README.md%20(29).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(60).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~118~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~17~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~49~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~80~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2.%20Sessions%20&amp;%20Cookies.md.md.md.html.html">2. Sessi....html</a>&nbsp;</td><td class="left"><a href="git-advanced.md.md.md.md.html">git-adva....html</a>&nbsp;</td><td class="left"><a href="README.md%20(29).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(60).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~119~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~18~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~4~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~81~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2.%20Sessions%20&amp;%20Cookies.md.md.md.md.html">2. Sessi....html</a>&nbsp;</td><td class="left"><a href="git-workflow.md.md.md.html.html">git-work....html</a>&nbsp;</td><td class="left"><a href="README.md%20(3).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(61).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~119~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~18~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~4~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~81~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2.%20Testing%20II.md.md.md.html.html">2. Testi....html</a>&nbsp;</td><td class="left"><a href="git-workflow.md.md.md.md.html">git-work....html</a>&nbsp;</td><td class="left"><a href="README.md%20(3).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(61).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~11~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~19~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~50~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~82~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2.%20Testing%20II.md.md.md.md.html">2. Testi....html</a>&nbsp;</td><td class="left"><a href="Heaps_and_Interview.md.md.md.html.html">Heaps_an....html</a>&nbsp;</td><td class="left"><a href="README.md%20(30).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(62).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~11~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~19~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~50~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~82~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="2_doubly_linked_list.md.md.md.html.html">2_doubly....html</a>&nbsp;</td><td class="left"><a href="Heaps_and_Interview.md.md.md.md.html">Heaps_an....html</a>&nbsp;</td><td class="left"><a href="README.md%20(30).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(62).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~120~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~1~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~51~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~83~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="2_doubly_linked_list.md.md.md.md.html">2_doubly....html</a>&nbsp;</td><td class="left"><a href="HELP.md.html.html">HELP.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(31).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(63).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~120~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~1~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~51~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~83~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3-async-redux.md.md.md.html.html">3-async-....html</a>&nbsp;</td><td class="left"><a href="HELP.md.md.html">HELP.md.md.html</a>&nbsp;</td><td class="left"><a href="README.md%20(31).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(63).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~121~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~20~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~52~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~84~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3-async-redux.md.md.md.md.html">3-async-....html</a>&nbsp;</td><td class="left"><a href="index.html">index.html</a>&nbsp;</td><td class="left"><a href="README.md%20(32).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(64).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~121~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~20~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~52~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~84~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3-composing-and-sharing-non-visual-behavior.md.md.md.html.html">3-compos....html</a>&nbsp;</td><td class="left"><a href="LS8-cheatsheet.md.html.html">LS8-chea....html</a>&nbsp;</td><td class="left"><a href="README.md%20(32).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(64).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~122~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~21~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~53~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~85~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3-composing-and-sharing-non-visual-behavior.md.md.md.md.html">3-compos....html</a>&nbsp;</td><td class="left"><a href="LS8-cheatsheet.md.md.html">LS8-chea....html</a>&nbsp;</td><td class="left"><a href="README.md%20(33).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(65).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~122~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~21~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~53~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~85~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3-http-ajax-deux.md.md.md.html.html">3-http-a....html</a>&nbsp;</td><td class="left"><a href="LS8-spec.md.html.html">LS8-spec....html</a>&nbsp;</td><td class="left"><a href="README.md%20(33).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(65).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~123~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~22~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~54~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~86~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3-http-ajax-deux.md.md.md.md.html">3-http-a....html</a>&nbsp;</td><td class="left"><a href="LS8-spec.md.md.html">LS8-spec....html</a>&nbsp;</td><td class="left"><a href="README.md%20(34).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(66).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~123~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~22~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~54~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~86~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3.%20JSON%20Web%20Tokens.md.md.md.html.html">3. JSON ....html</a>&nbsp;</td><td class="left"><a href="notes.md%20(2).html.html">notes.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(34).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(66).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~124~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~23~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~55~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~87~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3.%20JSON%20Web%20Tokens.md.md.md.md.html">3. JSON ....html</a>&nbsp;</td><td class="left"><a href="notes.md%20(2).md.html">notes.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(35).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(67).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~124~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~23~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~55~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~87~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3.%20Querying%20Data,%20Migrations%20&amp;%20Seeding.md.md.md.html.html">3. Query....html</a>&nbsp;</td><td class="left"><a href="NOTES.md.html.html">NOTES.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(35).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(67).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~125~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~24~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~56~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~88~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3.%20Querying%20Data,%20Migrations%20&amp;%20Seeding.md.md.md.md.html">3. Query....html</a>&nbsp;</td><td class="left"><a href="NOTES.md.md.html">NOTES.md.md.html</a>&nbsp;</td><td class="left"><a href="README.md%20(36).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(68).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~125~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~24~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~56~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~88~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="3.%20Testing%20III.md.md.md.html.html">3. Testi....html</a>&nbsp;</td><td class="left"><a href="NOTES.md.md.~1~.html">NOTES.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(36).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(68).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~126~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~25~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~57~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~89~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="3.%20Testing%20III.md.md.md.md.html">3. Testi....html</a>&nbsp;</td><td class="left"><a href="notes.md.~1~.html.html">notes.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(37).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(7).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~126~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~25~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~57~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~89~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4-context-api.md.md.md.html.html">4-contex....html</a>&nbsp;</td><td class="left"><a href="notes.md.~1~.md.html">notes.md....html</a>&nbsp;</td><td class="left"><a href="README.md%20(37).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(7).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~127~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~26~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~58~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~8~.md.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4-context-api.md.md.md.md.html">4-contex....html</a>&nbsp;</td><td class="left"><a href="object_reference_hints.md.html.html">object_r....html</a>&nbsp;</td><td class="left"><a href="README.md%20(38).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(8).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~127~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~26~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~58~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~8~.md.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4-deploying-web-apps.md.md.md.html.html">4-deploy....html</a>&nbsp;</td><td class="left"><a href="object_reference_hints.md.md.html">object_r....html</a>&nbsp;</td><td class="left"><a href="README.md%20(38).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(8).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~128~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~27~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~59~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~90~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4-deploying-web-apps.md.md.md.md.html">4-deploy....html</a>&nbsp;</td><td class="left"><a href="PULL_REQUEST_TEMPLATE.md.md.md.html.html">PULL_REQ....html</a>&nbsp;</td><td class="left"><a href="README.md%20(39).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(9).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~128~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~27~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~59~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~90~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4-testing-web-applications.md.md.md.html.html">4-testin....html</a>&nbsp;</td><td class="left"><a href="PULL_REQUEST_TEMPLATE.md.md.md.md.html">PULL_REQ....html</a>&nbsp;</td><td class="left"><a href="README.md%20(39).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(9).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~129~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~28~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~5~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~91~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4-testing-web-applications.md.md.md.md.html">4-testin....html</a>&nbsp;</td><td class="left"><a href="queries.md.md.md.html.html">queries.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(4).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~129~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~28~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~5~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~91~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4.%20Client%20Side%20Authentication.md.md.md.html.html">4. Clien....html</a>&nbsp;</td><td class="left"><a href="queries.md.md.md.md.html">queries.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(4).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~12~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~29~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~60~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~92~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4.%20Client%20Side%20Authentication.md.md.md.md.html">4. Clien....html</a>&nbsp;</td><td class="left"><a href="queries.md.~1~.md.md.html.html">queries.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(40).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~12~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~29~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~60~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~92~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4.%20Introduction%20to%20Data%20Modelling.md.md.md.html.html">4. Intro....html</a>&nbsp;</td><td class="left"><a href="queries.md.~1~.md.md.md.html">queries.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(40).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~130~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~2~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~61~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~93~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4.%20Introduction%20to%20Data%20Modelling.md.md.md.md.html">4. Intro....html</a>&nbsp;</td><td class="left"><a href="README%20(2).md.md.html.html">README (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(41).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.~1~.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~130~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~2~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~61~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~93~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="4.%20Testing%20IV.md.md.md.html.html">4. Testi....html</a>&nbsp;</td><td class="left"><a href="README%20(2).md.md.md.html">README (....html</a>&nbsp;</td><td class="left"><a href="README.md%20(41).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.~2~.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~131~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~30~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~62~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~94~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="4.%20Testing%20IV.md.md.md.md.html">4. Testi....html</a>&nbsp;</td><td class="left"><a href="README.md%20(10).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(42).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.md.~3~.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~131~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~30~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~62~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~94~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Algorithms_Answers.md.html.html">Algorith....html</a>&nbsp;</td><td class="left"><a href="README.md%20(10).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(42).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~100~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~132~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~31~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~63~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~95~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Algorithms_Answers.md.md.html">Algorith....html</a>&nbsp;</td><td class="left"><a href="README.md%20(11).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(43).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~100~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~132~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~31~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~63~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~95~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Algorithms_Questions.md.html.html">Algorith....html</a>&nbsp;</td><td class="left"><a href="README.md%20(11).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(43).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~101~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~133~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~32~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~64~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~96~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Algorithms_Questions.md.md.html">Algorith....html</a>&nbsp;</td><td class="left"><a href="README.md%20(12).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(44).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~101~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~133~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~32~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~64~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~96~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Answers.md.html.html">Answers.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(12).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(44).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~102~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~134~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~33~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~65~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~97~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Answers.md.md.html">Answers.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(13).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(45).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~102~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~134~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~33~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~65~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~97~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="ANSWERS.md.md.md.html.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(13).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(45).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~103~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~135~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~34~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~66~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~98~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="ANSWERS.md.md.md.md.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(14).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(46).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~103~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~135~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~34~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~66~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~98~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="ANSWERS.md.~1~.html.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(14).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(46).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~104~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~136~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~35~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~67~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~99~.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="ANSWERS.md.~1~.md.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(15).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(47).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~104~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~136~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~35~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~67~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~99~.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="ANSWERS.md.~1~.md.md.html.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(15).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(47).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~105~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~137~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~36~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~68~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~9~.md.md.html.html">README.m....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="ANSWERS.md.~1~.md.md.md.html">ANSWERS.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(16).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(48).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~105~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~137~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~36~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~68~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~9~.md.md.md.html">README.m....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="bst_heaps.md.md.md.html.html">bst_heap....html</a>&nbsp;</td><td class="left"><a href="README.md%20(16).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(48).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~106~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~138~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~37~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~69~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="right.html">right.html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="bst_heaps.md.md.md.md.html">bst_heap....html</a>&nbsp;</td><td class="left"><a href="README.md%20(17).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(49).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~106~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~138~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~37~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~69~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="Section2.md.html.html">Section2....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Data_Structures_Questions.md.html.html">Data_Str....html</a>&nbsp;</td><td class="left"><a href="README.md%20(17).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(49).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~107~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~139~.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~38~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~6~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="Section2.md.md.html">Section2....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Data_Structures_Questions.md.md.html">Data_Str....html</a>&nbsp;</td><td class="left"><a href="README.md%20(18).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(5).html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~107~.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~139~.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~38~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~6~.md.md.md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="Section3.md.html.html">Section3....html</a>&nbsp;</td></tr>
+<tr class="row2"><td class="left"><a href="Day1.md.md.md.html.html">Day1.md.....html</a>&nbsp;</td><td class="left"><a href="README.md%20(18).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md%20(5).md.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~108~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~13~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~39~.md.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="README.md.~70~.md.html.html">README.m....html</a>&nbsp;</td><td class="left"><a href="Section3.md.md.html">Section3....html</a>&nbsp;</td></tr>
+<tr><td class="left"><a href="Day1.md.md.md.md.html">Day1.md.....html</a>&nbsp;</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+</table>
+
+<p style="font-weight: bold; margin-bottom: 0px">
+Folders:  1<br>
+Files: 561<br>
+Size of all files: 4453983 KB</p>
+
+</body>
+</html>
