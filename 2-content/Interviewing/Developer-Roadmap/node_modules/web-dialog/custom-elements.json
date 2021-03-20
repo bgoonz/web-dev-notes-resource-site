@@ -1,0 +1,136 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "web-dialog",
+      "path": "./../src/lib/web-dialog.ts",
+      "description": "A dialog web component that can be used to display highly interruptive messages.",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Whether the dialog is opened.",
+          "type": "boolean"
+        },
+        {
+          "name": "center",
+          "description": "Whether the dialog is centered on the page.",
+          "type": "boolean"
+        }
+      ],
+      "properties": [
+        {
+          "name": "result",
+          "type": "R | undefined"
+        },
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Whether the dialog is opened.",
+          "type": "boolean"
+        },
+        {
+          "name": "center",
+          "attribute": "center",
+          "description": "Whether the dialog is centered on the page.",
+          "type": "boolean"
+        },
+        {
+          "name": "onBackdropClick"
+        },
+        {
+          "name": "onKeyDown"
+        }
+      ],
+      "events": [
+        {
+          "name": "open",
+          "description": "This event is fired when the dialog opens."
+        },
+        {
+          "name": "close",
+          "description": "This event is fired when the dialog closes."
+        },
+        {
+          "name": "closing",
+          "description": "This event is fired before the dialog is closed by clicking escape or on the backdrop. The event is cancellable which means `event.preventDefault()` can cancel the closing of the dialog."
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--dialog-container-padding",
+          "description": "Padding of the host container of the dialog."
+        },
+        {
+          "name": "--dialog-z-index",
+          "description": "Z-index of the dialog."
+        },
+        {
+          "name": "--dialog-overflow-x",
+          "description": "Overflow of the x-axis."
+        },
+        {
+          "name": "--dialog-overflow-y",
+          "description": "Overflow of the y-axis."
+        },
+        {
+          "name": "--dialog-max-height",
+          "description": "Max height of the dialog."
+        },
+        {
+          "name": "--dialog-height",
+          "description": "Height of the dialog."
+        },
+        {
+          "name": "--dialog-backdrop-bg",
+          "description": "Background of the backdrop."
+        },
+        {
+          "name": "--dialog-animation-duration",
+          "description": "Duration of the dialog animation."
+        },
+        {
+          "name": "--dialog-animation-easing",
+          "description": "Easing of the dialog animation."
+        },
+        {
+          "name": "--dialog-border-radius",
+          "description": "Border radius of the dialog."
+        },
+        {
+          "name": "--dialog-box-shadow",
+          "description": "Box shadow of the dialog."
+        },
+        {
+          "name": "--dialog-max-width",
+          "description": "Max width of the dialog."
+        },
+        {
+          "name": "--dialog-width",
+          "description": "Width of the dialog."
+        },
+        {
+          "name": "--dialog-padding",
+          "description": "Padding of the dialog."
+        },
+        {
+          "name": "--dialog-color",
+          "description": "Color of the dialog."
+        },
+        {
+          "name": "--dialog-bg",
+          "description": "Background of the dialog."
+        }
+      ],
+      "cssParts": [
+        {
+          "name": "backdrop",
+          "description": "Backdrop part."
+        },
+        {
+          "name": "dialog",
+          "description": "Dialog part."
+        }
+      ]
+    }
+  ]
+}
