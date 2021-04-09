@@ -7,6 +7,9 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/bgoonz/web-dev-notes-resource-site)](https://github.com/bgoonz/web-dev-notes-resource-site/stargazers)
 
+<a href="https://dev.to/bgoonz">
+  <i class="fab fa-dev" title="bgoonz's DEV Community Profile"></i>
+</a>
 
 # This is the repo that contains my resource sharing and blog site ... centered mostly on web development and just a bit of audio production / generally nerdy things I find interesting. 
 
