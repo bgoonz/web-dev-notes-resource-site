@@ -657,6 +657,21 @@ am currently learning!</p> -->
                   </section>
     </div>
 
+<script>
+//modily according to your requirement
+$(document).ready(function(){  
+  document.body.innerText = 'checking';
+  if (localStorage.getItem('isLoaded') !== 'yes') {
+    localStorage.setItem('isLoaded', 'yes');
+    alert('reloading now');
+        document.body.innerText += ' - loaded once';
+    location.reload();
+  } else {
+    alert('not reloading');
+        document.body.innerText += ' - loaded twice';
+  }
+});
+</script>
   </body>
 
 </html>
