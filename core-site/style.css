@@ -151,7 +151,7 @@ h6 {
 
 .cop-logo img,
 a {
-    color: rgb(0, 136, 255);
+    color: rgba(0, 136, 255, 0);
     text-decoration: none !important;
     font-size: large;
     -webkit-transition: all ease 0.3s;
@@ -1820,6 +1820,7 @@ FOOTER
     -webkit-filter: grayscale(100%);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+    color:transparent;
 }
 
 .cop-logo img:hover {
@@ -1827,6 +1828,7 @@ FOOTER
     -webkit-filter: grayscale(0);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(0);
+    color:transparent;
 }
 
 .newsletter-widget .form-control {
