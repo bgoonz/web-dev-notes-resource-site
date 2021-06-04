@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/865c330e-e1e9-40b8-8420-bf603640b0fe/deploy-status)](https://app.netlify.com/sites/goofy-euclid-1cd736/deploys)
 
-
+# Depreciated
 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fbgoonz%2Fweb-dev-notes-resource-site/HEAD)
