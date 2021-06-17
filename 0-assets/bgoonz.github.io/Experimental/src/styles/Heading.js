@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import theme from './theme';
-import media from './media';
+import styled from "styled-components";
+import theme from "./theme";
+import media from "./media";
 const { colors, fontSizes, fonts } = theme;
 
 const Heading = styled.h3`
@@ -15,7 +15,7 @@ const Heading = styled.h3`
 
   &:before {
     counter-increment: section;
-    content: '0' counter(section) '.';
+    content: "0" counter(section) ".";
     margin-right: 10px;
     font-family: ${fonts.SFMono};
     font-weight: normal;
@@ -27,7 +27,7 @@ const Heading = styled.h3`
   }
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     height: 1px;
     width: 300px;

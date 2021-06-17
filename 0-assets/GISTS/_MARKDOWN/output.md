@@ -1,31 +1,32 @@
 #Useful Commands!
 
+---
 
-***
-------
-***
- ||
- ||
- V
+---
 
-## 1.  Download Links of a specific file extension from website
+---
+
+||
+||
+V
+
+## 1. Download Links of a specific file extension from website
 
 ```bash
 
- wget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off  
+ wget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off
 ```
 
-## 2.  Download Website for ofline use...
+## 2. Download Website for ofline use...
 
 ```bash
 sudo apt install httrack
 httrack --ext-depth=2 _**url**_
 ```
 
+---
 
-------
-------
-
+---
 
 ## 3. Recursivley remove files named cookies.txt
 
@@ -34,22 +35,21 @@ httrack --ext-depth=2 _**url**_
 find . -name cookies.txt -type f -exec rm -rf {} \;
 ```
 
-------
-------
+---
+
+---
 
 ## 4. Recursivley remove lines of text contaning the string badFolder from files in the working directory.
-
-
 
 ```bash
 find . -type f -exec sed -i '/badFolder/d' ./* {} \;
 ```
 
-------
-------
+---
+
+---
 
 ## 5. Recursivley Install node_modules
-
 
 ```bash
 
@@ -60,12 +60,11 @@ npm i -g recursive-install
 npm-recursive-install
 ```
 
+---
 
-------
-------
+---
 
-## 6.  Recursivley Exicute any sequence of commands
-
+## 6. Recursivley Exicute any sequence of commands
 
 ```bash
 function RecurseDirs ()
@@ -74,11 +73,11 @@ function RecurseDirs ()
     IFS=$'\n'
     for f in "$@"
     do
-  
+
   # YOUR CODE HERE!
    for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
-  
-  
+
+
         if [[ -d "${f}" ]]; then
             cd "${f}"
             RecurseDirs $(ls -1 ".")
@@ -92,19 +91,19 @@ RecurseDirs "./"
 
 ```
 
+---
 
--------
--------
+---
 
 ## 7. Copy any text between <**script**> tags in a file called _example.html_ to be inserted into a new file: _out.js_
-
 
 ```bash
 sed -n -e '/<script>/,/<\/script>/p' example.html >out.js
 ```
 
-------
-------
+---
+
+---
 
 ## 8. Recursivley Delete node_modules folders
 
@@ -112,11 +111,11 @@ sed -n -e '/<script>/,/<\/script>/p' example.html >out.js
 find . -name 'node_modules' -type d -print -prune -exec rm -rf '{}' +
 ```
 
-------
-------
+---
+
+---
 
 ## 9. Sanatize file and folder names to remove illegal characters and reserved words.
-
 
 ```bash
 sanitize() {
@@ -144,63 +143,59 @@ sanitize_dir '/path/to/somewhere'
 
 ```
 
+---
 
-------
-------
+---
 
-
-
-
-## 10.  Start postgresql in terminal
+## 10. Start postgresql in terminal
 
 ```bash
 
  sudo -u postgres psql
 ```
 
+---
 
-
-------
-------
+---
 
 ## 11. Add closing body and script tags to each html file in working directory.
 
-
-
 ```bash
-for f in * ; do 
+for f in * ; do
   mv "$f" "$f.html"
-doneecho "</body></html>" | tee -a *.html  
+doneecho "</body></html>" | tee -a *.html
 ```
 
-------
-------
+---
 
-## 12.  Batch Download Videos
+---
 
+## 12. Batch Download Videos
 
 ```bash
-#!/bin/bash 
+#!/bin/bash
 
- 
-link="#insert url here#" 
-#links were a set of strings with just the index of the video as the variable 
- 
-num=3  
-#first video was numbered 3 - weird.  
- 
-ext=".mp4" 
- 
-while [ $num -le 66 ] 
-do 
-      wget $link$num$ext -P ~/Downloads/ 
-      num=$(($num+1)) 
-done 
+
+link="#insert url here#"
+#links were a set of strings with just the index of the video as the variable
+
+num=3
+#first video was numbered 3 - weird.
+
+ext=".mp4"
+
+while [ $num -le 66 ]
+do
+      wget $link$num$ext -P ~/Downloads/
+      num=$(($num+1))
+done
 ```
 
-------
-------
-## 13.  Change File Extension from '.txt' to .doc for all files in working directory.
+---
+
+---
+
+## 13. Change File Extension from '.txt' to .doc for all files in working directory.
 
 ```bash
 
@@ -211,38 +206,36 @@ rename 's/\.txt$/.doc/' *.txt
 
 ```
 
-## 14.  Recursivley change any file with extension .js.download to .js
+## 14. Recursivley change any file with extension .js.download to .js
 
 ```bash
 find . -name "*.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +
 ```
 
+---
 
-------
-------
+---
 
-
-## 15.  Copy folder structure including only files of a specific extension into an ouput Folder
+## 15. Copy folder structure including only files of a specific extension into an ouput Folder
 
 ```bash
 find . -name '*.md' | cpio -pdm './../outputFolder'
 ```
 
-------
-------
+---
+
+---
+
 # **PANDOC!!!**
-------
-------
 
+---
 
-
-
-
+---
 
 > sudo apt install pandoc
-> 
-1```bash
-pandoc -s file.txt -o file.rtf---
+>
+> 1```bash
+> pandoc -s file.txt -o file.rtf---
 
 ```bash
 
@@ -251,26 +244,17 @@ pandoc *.md> -o _example.html
 
 ```
 
-------
-------
+---
 
+---
 
 ```bash
 find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;
 ```
 
+---
 
-------
-------
-
-
-
-
-
-
-
-
-
+---
 
 ```bash
 
@@ -292,9 +276,9 @@ for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 echo "</body></html>" | tee -a *.html
 ```
 
-------
-------
+---
 
+---
 
 ```bash
 for x in "./"/*/; do
@@ -306,26 +290,27 @@ done
 
 ```
 
-------
-------
+---
+
+---
 
 ```bash
 find . -size +75M -a -print -a -exec rm -f {} \;
 ```
 
-------
-------
+---
+
+---
 
 ```bash
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 ```
 
-------
-------
+---
 
+---
 
-
->check what you are about to delete before deleting:
+> check what you are about to delete before deleting:
 
 ```bash
 find . -name "*.zip" -type f -print
@@ -335,10 +320,9 @@ find . -name "*.zip" -type f -print
 find . -name "*.zip" -type f -print -delete#!/bin/sh
 ```
 
-------
-------
+---
 
-
+---
 
 ```bash
 find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.*$">files
@@ -436,10 +420,9 @@ echo '  </style>'
 cmd $listing --sort=extension >>$html
 ```
 
-------
-------
+---
 
-
+---
 
 ```bash
 sudo apt install uniq
@@ -449,17 +432,17 @@ sudo apt install uniq
 uniq -u input.txt output.txt
 ```
 
-------
-------
+---
 
+---
 
 ```git
 git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
 ```
 
-------
-------
+---
 
+---
 
 ```bash
 find ./ | grep -i "\.html*$"
@@ -469,25 +452,21 @@ ls -R './' | awk '
 NF&&f{ print s"/"$0 }'>listing.md
 ```
 
+---
 
-------
-------
+---
 
 # Recursivley remove from all html files any lines contaning the string "badText"
-
-
 
 ```bash
 find . -type f -exec sed -i '/badText/d' ./*.html {} \;
 ```
 
+---
 
-------
-------
+---
 
- 
 #install unzip:
-
 
 ```bash
 sudo apt install unzip
@@ -500,15 +479,13 @@ find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"
 
 # recursivley delete .zip files when done:
 
-
-
-
 ```bash
 find . -name "*.zip" -type f -print -delete
 ```
 
-------
-------
+---
+
+---
 
 ```bash
 n=1;
@@ -516,33 +493,29 @@ max=50;
 while [ "$n" -le "$max" ]; do
   mkdir "s$n"
   n=`expr "$n" + 1`;
-done 
+done
 ```
 
+---
 
-
-
-------
-------
+---
 
 ```git
   git config --global credential.helper store
-```  
-  
-  ------
-------
-
-
-  
-  
-  ```bash
- 
-  
-  sed -i '/target-string/d' ./js-in-one-page.html
 ```
 
+---
+
+---
+
+```bash
+
+
+sed -i '/target-string/d' ./js-in-one-page.html
+```
 
 # examples:
+
 ```bash
 sed -i '/\.git/d' ./index.html
 
@@ -553,17 +526,9 @@ find . -type f -a \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*
 
 ```
 
+---
 
-------
-------
-
-
-
-
-
-
-
-
+---
 
 ```bash
 # recursivley remove empty files
@@ -577,26 +542,21 @@ find . -empty -type d -print -delete
 
 ```
 
+---
 
-------
-------
+---
 
 # recursively remove .git folder, .gitignore file and .gitmodules file and .gitattributes file
-
-
 
 ```bash
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 ```
 
+---
 
-------
-------
+---
 
 # Recursivley remove security, release, changelog, License & contributing files
-
-
-
 
 ```bash
 
@@ -604,6 +564,6 @@ find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".g
 find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
 ```
 
+---
 
-------
-------
+---

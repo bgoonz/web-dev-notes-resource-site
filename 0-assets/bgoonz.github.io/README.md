@@ -23,6 +23,3 @@ tree -d -L 4
 11 directories
 
 ```
-
-
-

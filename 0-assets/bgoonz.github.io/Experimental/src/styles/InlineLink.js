@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import theme from './theme';
+import styled from "styled-components";
+import theme from "./theme";
 const { colors } = theme;
 
 const InlineLink = styled.a`
@@ -20,7 +20,7 @@ const InlineLink = styled.a`
     }
   }
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 1px;

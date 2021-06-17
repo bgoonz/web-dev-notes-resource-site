@@ -2,7 +2,7 @@
 
 ---
 
-### 1.)     VScode unable to save files inside my WSL2 home folder
+### 1.) VScode unable to save files inside my WSL2 home folder
 
 #### soln:
 
@@ -12,4 +12,4 @@ sudo chown -R bryan ./
 
 ---
 
-### 2.)     
+### 2.)

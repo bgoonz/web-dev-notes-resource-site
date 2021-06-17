@@ -1,6 +1,6 @@
 # Public APIs
-A collective list of free APIs for use in software and web development.
 
+A collective list of free APIs for use in software and web development.
 
 ## Index
 
@@ -53,6 +53,7 @@ A collective list of free APIs for use in software and web development.
     - [Weather](#weather)
 
 ### Animals
+
 | API                                                                                        | Description                                 | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------- | -------- | ----- | ------- |
 | [Cat Facts](https://alexwohlbruck.github.io/cat-facts/)                                    | Daily cat facts                             | No       | Yes   | No      |
@@ -69,7 +70,9 @@ A collective list of free APIs for use in software and web development.
 | [Shibe.Online](http://shibe.online/)                                                       | Random pictures of Shibu Inu, cats or birds | No       | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Anime
+
 | API                                                                       | Description                             | Auth    | HTTPS | CORS    |
 | ------------------------------------------------------------------------- | --------------------------------------- | ------- | ----- | ------- |
 | [AniList](https://github.com/AniList/ApiV2-GraphQL-Docs)                  | Anime discovery & tracking              | `OAuth` | Yes   | Unknown |
@@ -81,7 +84,9 @@ A collective list of free APIs for use in software and web development.
 | [What Anime](https://soruly.github.io/trace.moe/)                         | Scan anime image to get specific detail | No      | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Anti-Malware
+
 | API                                                                                            | Description                  | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ----- | ------- |
 | [AbuseIPDB](https://docs.abuseipdb.com/)                                                       | IP/domain/URL reputation     | `apiKey` | Yes   | Unknown |
@@ -93,7 +98,9 @@ A collective list of free APIs for use in software and web development.
 | [Web Of Trust (WOT)](https://support.mywot.com/hc/en-us/articles/360024398673-3-Using-the-API) | Website reputation           | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Art & Design
+
 | API                                                                  | Description               | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------- | ------------------------- | -------- | ----- | ------- |
 | [Behance](https://www.behance.net/dev)                               | Design                    | `apiKey` | Yes   | Unknown |
@@ -106,7 +113,9 @@ A collective list of free APIs for use in software and web development.
 | [Rijksmuseum](https://www.rijksmuseum.nl/en/api)                     | Art                       | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Books
+
 | API                                                                                 | Description                                                                              | Auth     | HTTPS | CORS    |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Bhagavad Gita](https://bhagavadgita.io/api)                                        | Bhagavad Gita text                                                                       | `OAuth`  | Yes   | Yes     |
@@ -120,7 +129,9 @@ A collective list of free APIs for use in software and web development.
 | [Vedic Society](https://aninditabasu.github.io/indica/html/vs.html)                 | Descriptions of all nouns (names, places, animals, things) from vedic literature         | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Business
+
 | API                                                                        | Description                                                               | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Charity Search](http://charityapi.orghunter.com/)                         | Non-profit charity data                                                   | `apiKey` | No    | Unknown |
@@ -136,7 +147,9 @@ A collective list of free APIs for use in software and web development.
 | [Trello](https://developers.trello.com/)                                   | Boards, lists and cards to help you organize and prioritize your projects | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Calendar
+
 | API                                                                    | Description                                                                | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Calendar Index](https://www.calendarindex.com/)                       | Worldwide Holidays and Working Days                                        | `apiKey` | Yes   | Yes     |
@@ -152,7 +165,9 @@ A collective list of free APIs for use in software and web development.
 | [Russian Calendar](https://github.com/egno/work-calendar)              | Check if a date is a Russian holiday or not                                | No       | Yes   | No      |
 
 **[⬆ Back to Index](#index)**
+
 ### Cloud Storage & File Sharing
+
 | API                                                  | Description              | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------- | ------------------------ | -------- | ----- | ------- |
 | [Box](https://developer.box.com/)                    | File Sharing and Storage | `OAuth`  | Yes   | Unknown |
@@ -162,7 +177,9 @@ A collective list of free APIs for use in software and web development.
 | [Pastebin](https://pastebin.com/api/)                | Plain Text Storage       | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Continuous Integration
+
 | API                                                     | Description                                                                                    | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [CircleCI](https://circleci.com/docs/api/v1-reference/) | Automate the software development process using continuous integration and continuous delivery | `apiKey` | Yes   | Unknown |
@@ -170,7 +187,9 @@ A collective list of free APIs for use in software and web development.
 | [Travis CI](https://docs.travis-ci.com/api/)            | Sync your GitHub projects with Travis CI to test your code in minutes                          | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Cryptocurrency
+
 | API                                                                  | Description                                                              | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [Binance](https://github.com/binance/binance-spot-api-docs)          | Exchange for Trading Cryptocurrencies based in China                     | `apiKey` | Yes   | Unknown |
@@ -203,7 +222,9 @@ A collective list of free APIs for use in software and web development.
 | [WorldCoinIndex](https://www.worldcoinindex.com/apiservice)          | Cryptocurrencies Prices                                                  | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Currency Exchange
+
 | API                                                                                                          | Description                                           | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- | -------- | ----- | ------- |
 | [1Forge](https://1forge.com/forex-data-api/api-documentation)                                                | Forex currency market data                            | `apiKey` | Yes   | Unknown |
@@ -217,7 +238,9 @@ A collective list of free APIs for use in software and web development.
 | [VATComply.com](https://www.vatcomply.com/documentation)                                                     | Exchange rates, geolocation and VAT number validation | No       | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Data Validation
+
 | API                                                                         | Description                                                           | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Cloudmersive Validate](https://cloudmersive.com/validate-api)              | Validate email addresses, phone numbers, VAT numbers and domain names | `apiKey` | Yes   | Yes     |
@@ -233,7 +256,9 @@ A collective list of free APIs for use in software and web development.
 | [vatlayer](https://vatlayer.com)                                            | VAT number validation                                                 | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Development
+
 | API                                                                                              | Description                                                                                         | Auth            | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | --------------- | ----- | ------- |
 | [24 Pull Requests](https://24pullrequests.com/api)                                               | Project to promote open source collaboration during December                                        | No              | Yes   | Yes     |
@@ -277,7 +302,7 @@ A collective list of free APIs for use in software and web development.
 | [QR code](http://qrtag.net/api/)                                                                 | Create an easy to read QR code and URL shortener                                                    | No              | Yes   | Yes     |
 | [QR code](http://goqr.me/api/)                                                                   | Generate and decode / read QR code graphics                                                         | No              | Yes   | Unknown |
 | [QuickChart](https://quickchart.io/)                                                             | Generate chart and graph images                                                                     | No              | Yes   | Yes     |
-| [ReqRes](https://reqres.in/ )                                                                    | A hosted REST-API ready to respond to your AJAX requests                                            | No              | Yes   | Unknown |
+| [ReqRes](https://reqres.in/)                                                                     | A hosted REST-API ready to respond to your AJAX requests                                            | No              | Yes   | Unknown |
 | [Scraper.AI](https://docs.scraper.ai/#/)                                                         | Extract and monitor data from any website                                                           | `apiKey`        | Yes   | Unknown |
 | [ScraperApi](https://www.scraperapi.com)                                                         | Easily build scalable web scrapers                                                                  | `apiKey`        | Yes   | Unknown |
 | [ScreenshotAPI.net](https://screenshotapi.net/)                                                  | Create pixel-perfect website screenshots                                                            | `apiKey`        | Yes   | Yes     |
@@ -285,7 +310,9 @@ A collective list of free APIs for use in software and web development.
 | [StackExchange](https://api.stackexchange.com/)                                                  | Q&A forum for developers                                                                            | `OAuth`         | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Dictionaries
+
 | API                                                 | Description                                                     | Auth     | HTTPS | CORS    |
 | --------------------------------------------------- | --------------------------------------------------------------- | -------- | ----- | ------- |
 | [Lingua Robot](https://www.linguarobot.io)          | Word definitions, pronunciations, synonyms, antonyms and others | `apiKey` | Yes   | Yes     |
@@ -296,7 +323,9 @@ A collective list of free APIs for use in software and web development.
 | [Words](https://www.wordsapi.com/)                  | Definitions and synonyms for more than 150,000 words            | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Documents & Productivity
+
 | API                                                                               | Description                                                    | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------- | -------- | ----- | ------- |
 | [Cloudmersive Document and Data Conversion](https://cloudmersive.com/convert-api) | HTML/URL to PDF/PNG, Office documents to PDF, image conversion | `apiKey` | Yes   | Yes     |
@@ -311,7 +340,9 @@ A collective list of free APIs for use in software and web development.
 | [WakaTime](https://wakatime.com/developers)                                       | Automated time tracking leaderboards for programmers           | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Environment
+
 | API                                                                                                    | Description                                                                    | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [AirVisual](https://airvisual.com/api)                                                                 | Air quality and weather data                                                   | `apiKey` | Yes   | Unknown |
@@ -322,7 +353,9 @@ A collective list of free APIs for use in software and web development.
 | [UK Carbon Intensity](https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v1-0-0) | The Official Carbon Intensity API for Great Britain developed by National Grid | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Events
+
 | API                                                                                                                             | Description                           | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | -------- | ----- | ------- |
 | [Eventbrite](https://www.eventbrite.com/developer/v3/)                                                                          | Find events                           | `OAuth`  | Yes   | Unknown |
@@ -330,7 +363,9 @@ A collective list of free APIs for use in software and web development.
 | [Ticketmaster](http://developer.ticketmaster.com/products-and-docs/apis/getting-started/)                                       | Search events, attractions, or venues | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Finance
+
 | API                                           | Description                                                   | Auth     | HTTPS | CORS    |
 | --------------------------------------------- | ------------------------------------------------------------- | -------- | ----- | ------- |
 | [Alpha Vantage](https://www.alphavantage.co/) | Realtime and historical stock data                            | `apiKey` | Yes   | Unknown |
@@ -342,7 +377,9 @@ A collective list of free APIs for use in software and web development.
 | [YNAB](https://api.youneedabudget.com/)       | Budgeting & Planning                                          | `OAuth`  | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Food & Drink
+
 | API                                                                              | Description                                       | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------------------- | ------------------------------------------------- | -------- | ----- | ------- |
 | [Edamam nutrition](https://developer.edamam.com/edamam-docs-nutrition-api)       | Nutrition Analysis                                | `apiKey` | Yes   | Unknown |
@@ -361,7 +398,9 @@ A collective list of free APIs for use in software and web development.
 | [Zomato](https://developers.zomato.com/api)                                      | Discover restaurants                              | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Games & Comics
+
 | API                                                               | Description                                                                | Auth            | HTTPS | CORS    |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------- | ----- | ------- |
 | [Age of Empires II](https://age-of-empires-2-api.herokuapp.com)   | Get information about Age of Empires II resources                          | No              | Yes   | Unknown |
@@ -406,7 +445,9 @@ A collective list of free APIs for use in software and web development.
 | [xkcd](https://xkcd.com/json.html)                                | Retrieve xkcd comics as JSON                                               | No              | Yes   | No      |
 
 **[⬆ Back to Index](#index)**
+
 ### Geocoding
+
 | API                                                                                                                    | Description                                                                                         | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [adresse.data.gouv.fr](https://adresse.data.gouv.fr)                                                                   | Address database of France, geocoding and reverse                                                   | No       | Yes   | Unknown |
@@ -456,7 +497,9 @@ A collective list of free APIs for use in software and web development.
 | [Zippopotam](http://www.zippopotam.us)                                                                                 | Get information about place such as country, city, state, etc                                       | No       | No    | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Government
+
 | API                                                                                 | Description                                                                                        | Auth     | HTTPS | CORS    |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [BCLaws](http://www.bclaws.ca/civix/template/complete/api/index.html)               | Access to the laws of British Columbia                                                             | No       | No    | Unknown |
@@ -492,7 +535,9 @@ A collective list of free APIs for use in software and web development.
 | [USAspending.gov](https://api.usaspending.gov/)                                     | US federal spending data                                                                           | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Health
+
 | API                                                               | Description                                                                                      | Auth     | HTTPS | CORS    |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [BetterDoctor](https://developer.betterdoctor.com/)               | Detailed information about doctors in your area                                                  | `apiKey` | Yes   | Unknown |
@@ -511,7 +556,9 @@ A collective list of free APIs for use in software and web development.
 | [USDA Nutrients](https://fdc.nal.usda.gov/)                       | National Nutrient Database for Standard Reference                                                | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Jobs
+
 | API                                                                                      | Description                               | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------------------------- | ----------------------------------------- | -------- | ----- | ------- |
 | [Adzuna](https://developer.adzuna.com/overview)                                          | Job board aggregator                      | `apiKey` | Yes   | Unknown |
@@ -530,7 +577,9 @@ A collective list of free APIs for use in software and web development.
 | [ZipRecruiter](https://www.ziprecruiter.com/publishers)                                  | Job search app and website                | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Machine Learning
+
 | API                                                                               | Description                                             | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------------------- | ------------------------------------------------------- | -------- | ----- | ------- |
 | [Clarifai](https://docs.clarifai.com)                                             | Computer Vision                                         | `OAuth`  | Yes   | Unknown |
@@ -544,7 +593,9 @@ A collective list of free APIs for use in software and web development.
 | [Wit.ai](https://wit.ai/)                                                         | Natural Language Processing                             | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Music
+
 | API                                                                                                              | Description                                                                       | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [AI Mastering](https://aimastering.com/api_docs/)                                                                | Automated Music Mastering                                                         | `apiKey` | Yes   | Yes     |
@@ -571,7 +622,9 @@ A collective list of free APIs for use in software and web development.
 | [Vagalume](https://api.vagalume.com.br/docs/)                                                                    | Crowdsourced lyrics and music knowledge                                           | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### News
+
 | API                                                                 | Description                                                                                 | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Associated Press](https://developer.ap.org/)                       | Search for news and metadata from Associated Press                                          | `apiKey` | Yes   | Unknown |
@@ -581,12 +634,14 @@ A collective list of free APIs for use in software and web development.
 | [New York Times](https://developer.nytimes.com/)                    | Provides news                                                                               | `apiKey` | Yes   | Unknown |
 | [News](https://newsapi.org/)                                        | Headlines currently published on a range of news sources and blogs                          | `apiKey` | Yes   | Unknown |
 | [NPR One](http://dev.npr.org/api/)                                  | Personalized news listening experience from NPR                                             | `OAuth`  | Yes   | Unknown |
-| [Spaceflight News](https://spaceflightnewsapi.net)                  | Spaceflight related news 🚀                                                                  | No       | Yes   | Yes     |
+| [Spaceflight News](https://spaceflightnewsapi.net)                  | Spaceflight related news 🚀                                                                 | No       | Yes   | Yes     |
 | [The Guardian](http://open-platform.theguardian.com/)               | Access all the content the Guardian creates, categorised by tags and section                | `apiKey` | Yes   | Unknown |
 | [The Old Reader](https://github.com/theoldreader/api)               | RSS reader                                                                                  | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Open Data
+
 | API                                                                         | Description                                                                                        | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [18F](http://18f.github.io/API-All-the-X/)                                  | Unofficial US Federal Government API Development                                                   | No       | No    | Unknown |
@@ -612,7 +667,9 @@ A collective list of free APIs for use in software and web development.
 | [Yelp](https://www.yelp.com/developers/documentation/v3)                    | Find Local Business                                                                                | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Open Source Projects
+
 | API                                                                  | Description                                          | Auth    | HTTPS | CORS    |
 | -------------------------------------------------------------------- | ---------------------------------------------------- | ------- | ----- | ------- |
 | [Countly](https://api.count.ly/reference)                            | Countly web analytics                                | No      | No    | Unknown |
@@ -621,7 +678,9 @@ A collective list of free APIs for use in software and web development.
 | [Evil Insult Generator](https://evilinsult.com/api)                  | Evil Insults                                         | No      | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Patent
+
 | API                                                                           | Description                       | Auth     | HTTPS | CORS    |
 | ----------------------------------------------------------------------------- | --------------------------------- | -------- | ----- | ------- |
 | [EPO](https://developers.epo.org/)                                            | European patent search system api | `OAuth`  | Yes   | Unknown |
@@ -629,7 +688,9 @@ A collective list of free APIs for use in software and web development.
 | [USPTO](https://www.uspto.gov/learning-and-resources/open-data-and-mobility)  | USA patent api services           | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Personality
+
 | API                                                                       | Description                                                            | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Advice Slip](http://api.adviceslip.com/)                                 | Generate random advice slips                                           | No       | Yes   | Unknown |
@@ -649,7 +710,9 @@ A collective list of free APIs for use in software and web development.
 | [Traitify](https://app.traitify.com/developer)                            | Assess, collect and analyze Personality                                | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Photography
+
 | API                                                   | Description                                                | Auth     | HTTPS | CORS    |
 | ----------------------------------------------------- | ---------------------------------------------------------- | -------- | ----- | ------- |
 | [Flickr](https://www.flickr.com/services/api/)        | Flickr Services                                            | `OAuth`  | Yes   | Unknown |
@@ -668,7 +731,9 @@ A collective list of free APIs for use in software and web development.
 | [Wallhaven](https://wallhaven.cc/help/api)            | Wallpapers                                                 | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Science & Math
+
 | API                                                                            | Description                                                                          | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [arcsecond.io](https://api.arcsecond.io/)                                      | Multiple astronomy data sources                                                      | No       | Yes   | Unknown |
@@ -694,7 +759,9 @@ A collective list of free APIs for use in software and web development.
 | [World Bank](https://datahelpdesk.worldbank.org/knowledgebase/topics/125589)   | World Data                                                                           | No       | No    | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Security
+
 | API                                                                                           | Description                                                                            | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Censys.io](https://censys.io/api)                                                            | Search engine for Internet connected host and devices                                  | `apiKey` | Yes   | No      |
@@ -710,7 +777,9 @@ A collective list of free APIs for use in software and web development.
 | [UK Police](https://data.police.uk/docs/)                                                     | UK Police data                                                                         | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Shopping
+
 | API                                                                   | Description                                                                | Auth     | HTTPS | CORS    |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Best Buy](https://bestbuyapis.github.io/api-documentation/#overview) | Products, Buying Options, Categories, Recommendations, Stores and Commerce | `apiKey` | Yes   | Unknown |
@@ -720,7 +789,9 @@ A collective list of free APIs for use in software and web development.
 | [Wegmans](https://dev.wegmans.io)                                     | Wegmans Food Markets                                                       | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Social
+
 | API                                                                    | Description                                                                                       | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Buffer](https://buffer.com/developers/api)                            | Access to pending and sent updates in Buffer                                                      | `OAuth`  | Yes   | Unknown |
@@ -751,7 +822,9 @@ A collective list of free APIs for use in software and web development.
 | [vk](https://vk.com/dev/sites)                                         | Read and write vk data                                                                            | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Sports & Fitness
+
 | API                                                                   | Description                                                                                 | Auth            | HTTPS | CORS    |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------- | ----- | ------- |
 | [balldontlie](https://balldontlie.io)                                 | Balldontlie provides access to stats data from the NBA                                      | No              | Yes   | Yes     |
@@ -772,7 +845,9 @@ A collective list of free APIs for use in software and web development.
 | [Wger](https://wger.de/en/software/api)                               | Workout manager data as exercises, muscles or equipment                                     | `apiKey`        | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Test Data
+
 | API                                                              | Description                                                              | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [Bacon Ipsum](https://baconipsum.com/json-api/)                  | A Meatier Lorem Ipsum Generator                                          | No       | Yes   | Unknown |
@@ -787,7 +862,9 @@ A collective list of free APIs for use in software and web development.
 | [Yes No](https://yesno.wtf/api)                                  | Generate yes or no randomly                                              | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Text Analysis
+
 | API                                                                                                                                  | Description                                                                                | Auth     | HTTPS | CORS    |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [Aylien Text Analysis](https://docs.aylien.com/textapi/#getting-started)                                                             | A collection of information retrieval and natural language APIs                            | `apiKey` | Yes   | Unknown |
@@ -798,7 +875,9 @@ A collective list of free APIs for use in software and web development.
 | [Watson Natural Language Understanding](https://cloud.ibm.com/apidocs/natural-language-understanding/natural-language-understanding) | Natural language processing for advanced text analysis                                     | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Tracking
+
 | API                                              | Description                                                             | Auth     | HTTPS | CORS    |
 | ------------------------------------------------ | ----------------------------------------------------------------------- | -------- | ----- | ------- |
 | [Postmon](http://postmon.com.br)                 | An API to query Brazilian ZIP codes and orders easily, quickly and free | No       | No    | Unknown |
@@ -807,7 +886,9 @@ A collective list of free APIs for use in software and web development.
 | [WhatPulse](https://whatpulse.org/pages/webapi/) | Small application that measures your keyboard/mouse usage               | No       | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Transportation
+
 | API                                                                                                                                | Description                                                                                  | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------- | ----- | ------- |
 | [ADS-B Exchange](https://www.adsbexchange.com/data/)                                                                               | Access real-time and historical data of any and all airborne aircraft                        | No       | Yes   | Unknown |
@@ -835,7 +916,7 @@ A collective list of free APIs for use in software and web development.
 | [Transport for Chicago, US](http://www.transitchicago.com/developers/)                                                             | CTA                                                                                          | No       | No    | Unknown |
 | [Transport for Czech Republic](https://www.chaps.cz/eng/products/idos-internet)                                                    | Czech transport API                                                                          | No       | Yes   | Unknown |
 | [Transport for Denver, US](http://www.rtd-denver.com/gtfs-developer-guide.shtml)                                                   | RTD                                                                                          | No       | No    | Unknown |
-| [Transport for Finland](https://digitransit.fi/en/developers/ )                                                                    | Finnish transport API                                                                        | No       | Yes   | Unknown |
+| [Transport for Finland](https://digitransit.fi/en/developers/)                                                                     | Finnish transport API                                                                        | No       | Yes   | Unknown |
 | [Transport for Germany](http://data.deutschebahn.com/dataset/api-fahrplan)                                                         | Deutsche Bahn (DB) API                                                                       | `apiKey` | No    | Unknown |
 | [Transport for Grenoble, France](https://www.metromobilite.fr/pages/opendata/OpenDataApi.html)                                     | Grenoble public transport                                                                    | No       | No    | No      |
 | [Transport for Honolulu, US](http://hea.thebus.org/api_info.asp)                                                                   | Honolulu Transportation Information                                                          | `apiKey` | No    | Unknown |
@@ -859,7 +940,9 @@ A collective list of free APIs for use in software and web development.
 | [WhereIsMyTransport](https://developer.whereismytransport.com/)                                                                    | Platform for public transport data in emerging cities                                        | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### URL Shorteners
+
 | API                                                                        | Description                                        | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------------- | -------------------------------------------------- | -------- | ----- | ------- |
 | [Bitly](http://dev.bitly.com/get_started.html)                             | URL shortener and link management                  | `OAuth`  | Yes   | Unknown |
@@ -868,7 +951,9 @@ A collective list of free APIs for use in software and web development.
 | [Rebrandly](https://developers.rebrandly.com/v1/docs)                      | Custom URL shortener for sharing branded links     | `apiKey` | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Vehicle
+
 | API                                                                    | Description                                                                                      | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------- | ----- | ------- |
 | [Brazilian Vehicles and Prices](https://deividfortuna.github.io/fipe/) | Vehicles information from Fundação Instituto de Pesquisas Econômicas - Fipe                      | No       | Yes   | Unknown |
@@ -878,7 +963,9 @@ A collective list of free APIs for use in software and web development.
 | [Smartcar](https://smartcar.com/docs/)                                 | Lock and unlock vehicles and get data like odometer reading and location. Works on most new cars | `OAuth`  | Yes   | Yes     |
 
 **[⬆ Back to Index](#index)**
+
 ### Video
+
 | API                                                                                                | Description                                      | Auth     | HTTPS | CORS    |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------ | -------- | ----- | ------- |
 | [An API of Ice And Fire](https://anapioficeandfire.com/)                                           | Game Of Thrones API                              | No       | Yes   | Unknown |
@@ -901,7 +988,9 @@ A collective list of free APIs for use in software and web development.
 | [YouTube](https://developers.google.com/youtube/)                                                  | Add YouTube functionality to your sites and apps | `OAuth`  | Yes   | Unknown |
 
 **[⬆ Back to Index](#index)**
+
 ### Weather
+
 | API                                                                    | Description                                 | Auth     | HTTPS | CORS    |
 | ---------------------------------------------------------------------- | ------------------------------------------- | -------- | ----- | ------- |
 | [7Timer!](http://www.7timer.info/doc.php?lang=en)                      | Weather, especially for Astroweather        | No       | No    | Unknown |

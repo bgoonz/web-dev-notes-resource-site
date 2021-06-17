@@ -1,12 +1,12 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
-import kebabCase from 'lodash/kebabCase';
-import PropTypes from 'prop-types';
-import { Layout } from '@components';
-import { IconZap } from '@components/icons';
-import styled from 'styled-components';
-import { theme, mixins, media, Main } from '@styles';
+import React from "react";
+import { graphql, Link } from "gatsby";
+import { Helmet } from "react-helmet";
+import kebabCase from "lodash/kebabCase";
+import PropTypes from "prop-types";
+import { Layout } from "@components";
+import { IconZap } from "@components/icons";
+import styled from "styled-components";
+import { theme, mixins, media, Main } from "@styles";
 const { colors, fontSizes, fonts } = theme;
 
 const StyledMainContainer = styled(Main)`
@@ -134,7 +134,8 @@ const PensievePage = ({ location, data }) => {
             <a
               href="https://www.wizardingworld.com/writing-by-jk-rowling/pensieve"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               a collection of memories
             </a>
           </p>
@@ -159,7 +160,9 @@ const PensievePage = ({ location, data }) => {
                             </StyledFolder>
                           </StyledPostHeader>
                           <StyledPostName>{title}</StyledPostName>
-                          <StyledPostDescription>{description}</StyledPostDescription>
+                          <StyledPostDescription>
+                            {description}
+                          </StyledPostDescription>
                         </Link>
                       </header>
                       <footer>
@@ -167,7 +170,9 @@ const PensievePage = ({ location, data }) => {
                         <StyledTags>
                           {tags.map((tag, i) => (
                             <li key={i}>
-                              <Link to={`/pensieve/tags/${kebabCase(tag)}/`}>#{tag}</Link>
+                              <Link to={`/pensieve/tags/${kebabCase(tag)}/`}>
+                                #{tag}
+                              </Link>
                             </li>
                           ))}
                         </StyledTags>
@@ -193,7 +198,10 @@ export default PensievePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: { draft: { ne: true } } }
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }
+        frontmatter: { draft: { ne: true } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

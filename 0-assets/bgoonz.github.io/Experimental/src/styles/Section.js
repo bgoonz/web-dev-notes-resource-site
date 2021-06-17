@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import media from './media';
+import styled from "styled-components";
+import media from "./media";
 
 const Section = styled.section`
   margin: 0 auto;

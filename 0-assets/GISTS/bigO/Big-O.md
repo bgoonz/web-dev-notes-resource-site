@@ -1,4 +1,3 @@
-
 ---
 # **Notes**
 
@@ -180,21 +179,21 @@ function logAtMost5(n) {
 - **`O(f)`** : simplified math function.
 
 **`Simplifying a Product`**
-| Unsimplified        | Big-O Simplified      |
+| Unsimplified | Big-O Simplified |
 | ------------------- | --------------------- |
-| T(5 _ n^2)          | O(n^2) Quadratic      |
-| T(100000 _ n)       | O(n) Linear           |
-| T( n / 12)          | O (n) Linear          |
+| T(5 _ n^2) | O(n^2) Quadratic |
+| T(100000 _ n) | O(n) Linear |
+| T( n / 12) | O (n) Linear |
 | T( 42 _ n _ log(n)) | O(nlog(n)) Log Linear |
-| T(12)               | O(1) Constant         |
+| T(12) | O(1) Constant |
 
 **`Simplifying a Sum`**
-| Unsimplified     | Big-O Simplified   |
+| Unsimplified | Big-O Simplified |
 | ---------------- | ------------------ |
-| T( n3 + n2 + n ) | O(n^3)             |
+| T( n3 + n2 + n ) | O(n^3) |
 | T( log(n) + 2n ) | O(2^n) Exponential |
-| T( n + log(n) )  | O(n) Linear        |
-| T( n! + 10n )    | O(n!) Polynomial   |
+| T( n + log(n) ) | O(n) Linear |
+| T( n! + 10n ) | O(n!) Polynomial |
 
 **`Putting it all together`**
 
@@ -460,6 +459,7 @@ function fib(n) {
   - Your final answer is usually the last entry in the table.
 
 ---
+
 # **Memo and Tab Demo with Fibonacci**
 
 ```js
@@ -514,7 +514,6 @@ function tabFib(n) {
 > Tabulated Fibonacci
 
 ---
-
 
 # **Class Examples**
 
@@ -624,6 +623,7 @@ function bubbleSort(items) {
 
 - Worst Case & Best Case are always the same because it makes nested loops.
 - Double for loops are polynomial time complexity or more specifically in this case Quadratic big O O(n^2);
+
 # **Notes**
 
 ## **Sorting Algorithms**
@@ -696,6 +696,7 @@ let selectionSort = (arr) => {
 ```
 
 ---
+
 # **Sorting Algorithms**
 
 ## **Bubble Sort**
@@ -983,7 +984,6 @@ function binarySearch(array, target) {
 
 ---
 
-
 ## **Insertion Sort**
 
 ![insert](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/naive_sorting_algorithms/insertion_sort/images/InsertionSort.gif)
@@ -1111,6 +1111,7 @@ const binarySearch = (array, target) => {
   console.log("Target value not found in array");
 }
 ```
+
 # **Notes**
 
 ## **Linked Lists**

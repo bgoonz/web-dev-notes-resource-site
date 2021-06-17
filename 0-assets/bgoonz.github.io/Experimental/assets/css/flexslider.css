@@ -13,9 +13,12 @@
  * FONT-FACE
  * ====================================================================================================================*/
 @font-face {
-  font-family: 'flexslider-icon';
-  src: url('fonts/flexslider-icon.eot');
-  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-family: "flexslider-icon";
+  src: url("fonts/flexslider-icon.eot");
+  src: url("fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"),
+    url("fonts/flexslider-icon.woff") format("woff"),
+    url("fonts/flexslider-icon.ttf") format("truetype"),
+    url("fonts/flexslider-icon.svg#flexslider-icon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -125,12 +128,12 @@ html[xmlns] .flexslider .slides {
   font-family: "flexslider-icon";
   font-size: 40px;
   display: inline-block;
-  content: '\f001';
+  content: "\f001";
   color: rgba(0, 0, 0, 0.8);
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 .flex-direction-nav a.flex-next:before {
-  content: '\f002';
+  content: "\f002";
 }
 .flex-direction-nav .flex-prev {
   left: -50px;
@@ -154,7 +157,7 @@ html[xmlns] .flexslider .slides {
   opacity: 1;
 }
 .flex-direction-nav .flex-disabled {
-  opacity: 0!important;
+  opacity: 0 !important;
   filter: alpha(opacity=0);
   cursor: default;
 }
@@ -175,13 +178,13 @@ html[xmlns] .flexslider .slides {
   font-family: "flexslider-icon";
   font-size: 20px;
   display: inline-block;
-  content: '\f004';
+  content: "\f004";
 }
 .flex-pauseplay a:hover {
   opacity: 1;
 }
 .flex-pauseplay a.flex-play:before {
-  content: '\f003';
+  content: "\f003";
 }
 .flex-control-nav {
   width: 50%;
@@ -202,7 +205,7 @@ html[xmlns] .flexslider .slides {
   height: 11px;
   display: block;
   background: #fff;
-  background: rgba(255,255,255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   text-indent: -9999px;
   -webkit-border-radius: 20px;
@@ -211,11 +214,11 @@ html[xmlns] .flexslider .slides {
 }
 .flex-control-paging li a:hover {
   background: #fff;
-  background: rgba(255,255,255, 1);
+  background: rgba(255, 255, 255, 1);
 }
 .flex-control-paging li a.flex-active {
   background: #fff;
-  background: rgba(255,255,255, 1);
+  background: rgba(255, 255, 255, 1);
   cursor: default;
 }
 .flex-control-thumbs {
@@ -232,7 +235,7 @@ html[xmlns] .flexslider .slides {
   width: 100%;
   height: auto;
   display: block;
-  opacity: .7;
+  opacity: 0.7;
   cursor: pointer;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;

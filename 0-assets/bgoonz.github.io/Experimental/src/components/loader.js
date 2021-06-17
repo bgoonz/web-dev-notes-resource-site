@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import anime from 'animejs';
-import { IconLoader } from '@components/icons';
-import styled from 'styled-components';
-import { theme, mixins } from '@styles';
+import React, { useState, useEffect } from "react";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+import anime from "animejs";
+import { IconLoader } from "@components/icons";
+import styled from "styled-components";
+import { theme, mixins } from "@styles";
 const { colors } = theme;
 
 const StyledContainer = styled.div`
@@ -23,7 +23,7 @@ const StyledLogo = styled.div`
   width: max-content;
   max-width: 100px;
   transition: ${theme.transition};
-  opacity: ${props => (props.isMounted ? 1 : 0)};
+  opacity: ${(props) => (props.isMounted ? 1 : 0)};
   svg {
     width: 100%;
     height: 100%;
@@ -45,30 +45,30 @@ const Loader = ({ finishLoading }) => {
 
     loader
       .add({
-        targets: '#logo path',
+        targets: "#logo path",
         delay: 300,
         duration: 1500,
-        easing: 'easeInOutQuart',
+        easing: "easeInOutQuart",
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo #B',
+        targets: "#logo #B",
         duration: 700,
-        easing: 'easeInOutQuart',
+        easing: "easeInOutQuart",
         opacity: 1,
       })
       .add({
-        targets: '#logo',
+        targets: "#logo",
         delay: 500,
         duration: 300,
-        easing: 'easeInOutQuart',
+        easing: "easeInOutQuart",
         opacity: 0,
         scale: 0.1,
       })
       .add({
-        targets: '.loader',
+        targets: ".loader",
         duration: 200,
-        easing: 'easeInOutQuart',
+        easing: "easeInOutQuart",
         opacity: 0,
         zIndex: -1,
       });

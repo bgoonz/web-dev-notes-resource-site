@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { throttle } from '@utils';
-import { navLinks, navHeight } from '@config';
-import { Menu } from '@components';
-import { IconLogo } from '@components/icons';
-import styled from 'styled-components';
-import { theme, mixins, media } from '@styles';
+import React, { Component } from "react";
+import { Link } from "gatsby";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { throttle } from "@utils";
+import { navLinks, navHeight } from "@config";
+import { Menu } from "@components";
+import { IconLogo } from "@components/icons";
+import styled from "styled-components";
+import { theme, mixins, media } from "@styles";
 const { colors, fontSizes, fonts, loaderDelay } = theme;
 
 const StyledContainer = styled.header`
@@ -23,11 +23,15 @@ const StyledContainer = styled.header`
   pointer-events: auto !important;
   user-select: auto !important;
   width: 100%;
-  height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
-  box-shadow: ${props =>
-    props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'};
+  height: ${(props) =>
+    props.scrollDirection === "none" ? theme.navHeight : theme.navScrollHeight};
+  box-shadow: ${(props) =>
+    props.scrollDirection === "up"
+      ? `0 10px 30px -10px ${colors.shadowNavy}`
+      : "none"};
   transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
+    ${(props) =>
+      props.scrollDirection === "down" ? `-${theme.navScrollHeight}` : "0px"}
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
@@ -94,14 +98,15 @@ const StyledHamburgerInner = styled.div`
   right: 0;
   transition-duration: 0.22s;
   transition-property: transform;
-  transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
-  transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
+  transition-delay: ${(props) => (props.menuOpen ? `0.12s` : `0s`)};
+  transform: rotate(${(props) => (props.menuOpen ? `225deg` : `0deg`)});
   transition-timing-function: cubic-bezier(
-    ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
+    ${(props) =>
+      props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`}
   );
   &:before,
   &:after {
-    content: '';
+    content: "";
     display: block;
     background-color: ${colors.green};
     position: absolute;
@@ -115,16 +120,18 @@ const StyledHamburgerInner = styled.div`
     border-radius: 4px;
   }
   &:before {
-    width: ${props => (props.menuOpen ? `100%` : `120%`)};
-    top: ${props => (props.menuOpen ? `0` : `-10px`)};
-    opacity: ${props => (props.menuOpen ? 0 : 1)};
-    transition: ${props => (props.menuOpen ? theme.hamBeforeActive : theme.hamBefore)};
+    width: ${(props) => (props.menuOpen ? `100%` : `120%`)};
+    top: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+    opacity: ${(props) => (props.menuOpen ? 0 : 1)};
+    transition: ${(props) =>
+      props.menuOpen ? theme.hamBeforeActive : theme.hamBefore};
   }
   &:after {
-    width: ${props => (props.menuOpen ? `100%` : `80%`)};
-    bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
-    transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-    transition: ${props => (props.menuOpen ? theme.hamAfterActive : theme.hamAfter)};
+    width: ${(props) => (props.menuOpen ? `100%` : `80%`)};
+    bottom: ${(props) => (props.menuOpen ? `0` : `-10px`)};
+    transform: rotate(${(props) => (props.menuOpen ? `-90deg` : `0`)});
+    transition: ${(props) =>
+      props.menuOpen ? theme.hamAfterActive : theme.hamAfter};
   }
 `;
 const StyledLink = styled.div`
@@ -144,7 +151,7 @@ const StyledListItem = styled.li`
   font-size: ${fontSizes.smish};
   counter-increment: item 1;
   &:before {
-    content: '0' counter(item) '.';
+    content: "0" counter(item) ".";
     text-align: right;
     color: ${colors.green};
     font-size: ${fontSizes.xs};
@@ -165,7 +172,7 @@ class Nav extends Component {
   state = {
     isMounted: !this.props.isHome,
     menuOpen: false,
-    scrollDirection: 'none',
+    scrollDirection: "none",
     lastScrollTop: 0,
   };
 
@@ -173,18 +180,22 @@ class Nav extends Component {
     setTimeout(
       () =>
         this.setState({ isMounted: true }, () => {
-          window.addEventListener('scroll', () => throttle(this.handleScroll()));
-          window.addEventListener('resize', () => throttle(this.handleResize()));
-          window.addEventListener('keydown', e => this.handleKeydown(e));
+          window.addEventListener("scroll", () =>
+            throttle(this.handleScroll())
+          );
+          window.addEventListener("resize", () =>
+            throttle(this.handleResize())
+          );
+          window.addEventListener("keydown", (e) => this.handleKeydown(e));
         }),
-      100,
+      100
     );
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', () => this.handleScroll());
-    window.removeEventListener('resize', () => this.handleResize());
-    window.removeEventListener('keydown', e => this.handleKeydown(e));
+    window.removeEventListener("scroll", () => this.handleScroll());
+    window.removeEventListener("resize", () => this.handleResize());
+    window.removeEventListener("keydown", (e) => this.handleKeydown(e));
   }
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
@@ -199,14 +210,14 @@ class Nav extends Component {
     }
 
     if (fromTop < DELTA) {
-      this.setState({ scrollDirection: 'none' });
+      this.setState({ scrollDirection: "none" });
     } else if (fromTop > lastScrollTop && fromTop > navHeight) {
-      if (scrollDirection !== 'down') {
-        this.setState({ scrollDirection: 'down' });
+      if (scrollDirection !== "down") {
+        this.setState({ scrollDirection: "down" });
       }
     } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
-      if (scrollDirection !== 'up') {
-        this.setState({ scrollDirection: 'up' });
+      if (scrollDirection !== "up") {
+        this.setState({ scrollDirection: "up" });
       }
     }
 
@@ -219,12 +230,12 @@ class Nav extends Component {
     }
   };
 
-  handleKeydown = e => {
+  handleKeydown = (e) => {
     if (!this.state.menuOpen) {
       return;
     }
 
-    if (e.which === 27 || e.key === 'Escape') {
+    if (e.which === 27 || e.key === "Escape") {
       this.toggleMenu();
     }
   };
@@ -233,13 +244,13 @@ class Nav extends Component {
     const { isMounted, menuOpen, scrollDirection } = this.state;
     const { isHome } = this.props;
     const timeout = isHome ? loaderDelay : 0;
-    const fadeClass = isHome ? 'fade' : '';
-    const fadeDownClass = isHome ? 'fadedown' : '';
+    const fadeClass = isHome ? "fade" : "";
+    const fadeDownClass = isHome ? "fadedown" : "";
 
     return (
       <StyledContainer scrollDirection={scrollDirection}>
         <Helmet>
-          <body className={menuOpen ? 'blur' : ''} />
+          <body className={menuOpen ? "blur" : ""} />
         </Helmet>
         <StyledNav>
           <TransitionGroup component={null}>
@@ -278,10 +289,15 @@ class Nav extends Component {
                 {isMounted &&
                   navLinks &&
                   navLinks.map(({ url, name }, i) => (
-                    <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                    <CSSTransition
+                      key={i}
+                      classNames={fadeDownClass}
+                      timeout={timeout}
+                    >
                       <StyledListItem
                         key={i}
-                        style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                        style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
+                      >
                         <StyledListLink to={url}>{name}</StyledListLink>
                       </StyledListItem>
                     </CSSTransition>
@@ -292,11 +308,18 @@ class Nav extends Component {
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                  <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
+                  <div
+                    style={{
+                      transitionDelay: `${
+                        isHome ? navLinks.length * 100 : 0
+                      }ms`,
+                    }}
+                  >
                     <StyledResumeButton
                       href="/resume.pdf"
                       target="_blank"
-                      rel="nofollow noopener noreferrer">
+                      rel="nofollow noopener noreferrer"
+                    >
                       Resume
                     </StyledResumeButton>
                   </div>

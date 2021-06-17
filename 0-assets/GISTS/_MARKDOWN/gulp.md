@@ -1,5 +1,5 @@
-
 ## Gulp
+
 https://css-tricks.com/the-simplest-ways-to-handle-html-includes/
 
 Use Gulp
@@ -8,25 +8,27 @@ What's even faster than a server-side include? If the include is preprocessed be
 That would look like this:
 
 ...
+
 <body>
    @@include('./header.html')
 
-   Content
+Content
 
-   @@include('./footer.html')
+@@include('./footer.html')
+
 </body>
 ...
 And you'd process it like:
 
 var fileinclude = require('gulp-file-include'),
-  gulp = require('gulp');
+gulp = require('gulp');
 
 gulp.task('fileinclude', function() {
-  gulp.src(['index.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('./'));
+gulp.src(['index.html'])
+.pipe(fileinclude({
+prefix: '@@',
+basepath: '@file'
+}))
+.pipe(gulp.dest('./'));
 });
 Looks like this particular plugin has fancy features where you can pass in variables to the includes, making it possible to make little data-driven components.

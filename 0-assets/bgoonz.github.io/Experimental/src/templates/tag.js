@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
-import PropTypes from 'prop-types';
-import { Layout } from '@components';
-import styled from 'styled-components';
-import { theme, mixins, Main } from '@styles';
+import React from "react";
+import { Link, graphql } from "gatsby";
+import kebabCase from "lodash/kebabCase";
+import PropTypes from "prop-types";
+import { Layout } from "@components";
+import styled from "styled-components";
+import { theme, mixins, Main } from "@styles";
 const { colors, fontSizes } = theme;
 
 const StyledTagsContainer = styled(Main)`
@@ -75,17 +75,21 @@ const TagTemplate = ({ pageContext, data, location }) => {
                 </h2>
                 <p className="subtitle">
                   <time>
-                    {new Date(date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
+                    {new Date(date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
                     })}
                   </time>
                   <span>&nbsp;&mdash;&nbsp;</span>
                   {tags &&
                     tags.length > 0 &&
                     tags.map((tag, i) => (
-                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
+                      <Link
+                        key={i}
+                        to={`/pensieve/tags/${kebabCase(tag)}/`}
+                        className="tag"
+                      >
                         #{tag}
                       </Link>
                     ))}
@@ -115,7 +119,7 @@ TagTemplate.propTypes = {
               title: PropTypes.string.isRequired,
             }),
           }),
-        }).isRequired,
+        }).isRequired
       ),
     }),
   }),
@@ -123,7 +127,7 @@ TagTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($tag: String!) {
+  query ($tag: String!) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

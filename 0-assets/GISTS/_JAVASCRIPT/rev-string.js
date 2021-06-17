@@ -1,3 +1,3 @@
-function reverse( value ) {
-  return value.split( "" ).reverse().join( "" );
+function reverse(value) {
+  return value.split("").reverse().join("");
 }

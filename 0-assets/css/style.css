@@ -2,14 +2,11 @@ body {
   background-color: #f6f6f6;
   line-height: 1.6;
   font-size: 16px;
-
 }
-
 
 .btn:visited {
   background-color: lightgrey;
 }
-
 
 .btn {
   display: grid;
@@ -189,7 +186,7 @@ p {
   background-color: rgba(93, 107, 143, 0.112);
   border: 1px solid rgba(65, 56, 56, 0.851);
   border-radius: 7px;
-  padding: .5em .7em;
+  padding: 0.5em 0.7em;
   margin-top: 1em;
   margin-bottom: 1em;
   -webkit-border-radius: 7px;
@@ -267,7 +264,6 @@ th {
   position: relative;
   margin-bottom: 40px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
-
 }
 
 .question {
@@ -319,7 +315,6 @@ code {
 }
 
 #quiz {
-
   border-radius: 1pc;
   width: 90%;
   margin: auto;
@@ -362,19 +357,17 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"],
-:not(pre)>code[class*="language-"] {
+:not(pre) > code[class*="language-"] {
   background: hsl(0, 0%, 8%);
   /* #141414 */
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-
   /*#282A2B*/
   margin: 0.5em 0;
   overflow: auto;
   padding: 1em;
-
 }
 
 pre[class*="language-"]::-moz-selection {
@@ -409,8 +402,7 @@ code[class*="language-"] ::selection {
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
-
+:not(pre) > code[class*="language-"] {
   /* #545454 */
 
   padding: 0.15em 0.2em 0.05em;
@@ -512,9 +504,11 @@ pre[data-line] {
 .line-highlight {
   background: hsla(0, 0%, 33%, 0.25);
   /* #545454 */
-  background: linear-gradient(to right,
-      hsla(0, 0%, 33%, 0.1) 70%,
-      hsla(0, 0%, 33%, 0));
+  background: linear-gradient(
+    to right,
+    hsla(0, 0%, 33%, 0.1) 70%,
+    hsla(0, 0%, 33%, 0)
+  );
   /* #545454 */
   border-bottom: 1px dashed hsl(0, 0%, 33%);
   /* #545454 */
@@ -572,9 +566,11 @@ pre[data-line] {
   /* Same as .prism's padding-top */
 
   background: hsla(24, 20%, 50%, 0.08);
-  background: linear-gradient(to right,
-      hsla(24, 20%, 50%, 0.1) 70%,
-      hsla(24, 20%, 50%, 0));
+  background: linear-gradient(
+    to right,
+    hsla(24, 20%, 50%, 0.1) 70%,
+    hsla(24, 20%, 50%, 0)
+  );
 
   pointer-events: none;
 
@@ -619,7 +615,7 @@ pre[id].linkable-line-numbers span.line-numbers-rows {
   pointer-events: all;
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows>span:before {
+pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
   cursor: pointer;
 }
 
@@ -631,7 +627,7 @@ div.code-toolbar {
   position: relative;
 }
 
-div.code-toolbar>.toolbar {
+div.code-toolbar > .toolbar {
   position: absolute;
   top: 0.3em;
   right: 0.2em;
@@ -639,25 +635,25 @@ div.code-toolbar>.toolbar {
   opacity: 0;
 }
 
-div.code-toolbar:hover>.toolbar {
+div.code-toolbar:hover > .toolbar {
   opacity: 1;
 }
 
 /* Separate line b/c rules are thrown out if selector is invalid.
    IE11 and old Edge versions don't support :focus-within. */
-div.code-toolbar:focus-within>.toolbar {
+div.code-toolbar:focus-within > .toolbar {
   opacity: 1;
 }
 
-div.code-toolbar>.toolbar .toolbar-item {
+div.code-toolbar > .toolbar .toolbar-item {
   display: inline-block;
 }
 
-div.code-toolbar>.toolbar a {
+div.code-toolbar > .toolbar a {
   cursor: pointer;
 }
 
-div.code-toolbar>.toolbar button {
+div.code-toolbar > .toolbar button {
   background: none;
   border: 0;
   color: inherit;
@@ -671,10 +667,9 @@ div.code-toolbar>.toolbar button {
   -ms-user-select: none;
 }
 
-div.code-toolbar>.toolbar a,
-div.code-toolbar>.toolbar button,
-div.code-toolbar>.toolbar span {
-
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
   font-size: 0.8em;
   padding: 0 0.5em;
   background: #f5f2f0;
@@ -687,16 +682,15 @@ div.code-toolbar>.toolbar span {
   display: inline;
 }
 
-div.code-toolbar>.toolbar a:hover,
-div.code-toolbar>.toolbar a:focus,
-div.code-toolbar>.toolbar button:hover,
-div.code-toolbar>.toolbar button:focus,
-div.code-toolbar>.toolbar span:hover,
-div.code-toolbar>.toolbar span:focus {
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
   color: inherit;
   text-decoration: none;
 }
-
 
 #btn-div-wrapper {
   display: inline;
@@ -723,38 +717,42 @@ div.code-toolbar>.toolbar span:focus {
   justify-content: space-around;
 }
 
-
 @font-face {
-  font-family: 'Crimson Text';
+  font-family: "Crimson Text";
   font-style: italic;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlpogwHKFkZgtmSR3NB0oRJfajhRK_M.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlpogwHKFkZgtmSR3NB0oRJfajhRK_M.ttf)
+    format("truetype");
 }
 
 @font-face {
-  font-family: 'Crimson Text';
+  font-family: "Crimson Text";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlp2gwHKFkZgtmSR3NB0oRJfbwhW.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlp2gwHKFkZgtmSR3NB0oRJfbwhW.ttf)
+    format("truetype");
 }
 
 @font-face {
-  font-family: 'Crimson Text';
+  font-family: "Crimson Text";
   font-style: normal;
   font-weight: 600;
-  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlppgwHKFkZgtmSR3NB0oRJXsCxGDNNV.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/crimsontext/v11/wlppgwHKFkZgtmSR3NB0oRJXsCxGDNNV.ttf)
+    format("truetype");
 }
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf)
+    format("truetype");
 }
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf)
+    format("truetype");
 }

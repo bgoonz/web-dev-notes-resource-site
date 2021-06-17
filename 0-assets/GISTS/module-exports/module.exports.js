@@ -1,10 +1,10 @@
-cat.js
+cat.js;
 const someCat = {
   name: "Sennacy",
   color: "orange",
-  age: 3
+  age: 3,
 };
 module.exports = someCat;
 // animals.js
-const myCat = require( "./cat.js.js" );
-console.log( myCat.name + " is a great pet!" );
+const myCat = require("./cat.js.js");
+console.log(myCat.name + " is a great pet!");

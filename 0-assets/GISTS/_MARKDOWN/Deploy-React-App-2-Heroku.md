@@ -1,5 +1,3 @@
-
-
 Heroku is an web application that makes deploying applications easy for a beginner.
 
 Before you begin deploying, **make sure to remove any `console.log`'s or `debugger`'s in any production code**. You can search your entire project folder if you are using them anywhere.
@@ -8,8 +6,7 @@ You will set up Heroku to run on a production, not development, version of your 
 
 In the following phases, you will configure your application to work in production, not just in development, and configure the `package.json` scripts for `install`, `heroku-postbuild` and `start` scripts to install, build your React application, and start the Express production server.
 
-Phase 1: Heroku Connection
---------------------------
+## Phase 1: Heroku Connection
 
 If you haven't created a Heroku account yet, create one [here](https://signup.heroku.com/).
 
@@ -25,8 +22,7 @@ Add Heroku as a remote to your project's git repository in the following command
 
 Next, you will set up your Express + React application to be deployable to Heroku.
 
-Phase 2: Setting up your Express + React application
-----------------------------------------------------
+## Phase 2: Setting up your Express + React application
 
 Right now, your React application is on a different localhost port than your Express application. However, since your React application only consists of static files that don't need to bundled continuously with changes in production, your Express application can serve the React assets in production too. These static files live in the `frontend/build` folder after running `npm run build` in the `frontend` folder.
 
@@ -38,9 +34,9 @@ At the root route, serve the React application's static `index.html` file along 
     const express = require('express');
     const router = express.Router();
     const apiRouter = require('./api');
-    
+
     router.use('/api', apiRouter);
-    
+
     // Static routes
     // Serve React build files in production
     if (process.env.NODE_ENV === 'production') {
@@ -52,10 +48,10 @@ At the root route, serve the React application's static `index.html` file along 
           path.resolve(__dirname, '../../frontend', 'build', 'index.html')
         );
       });
-    
+
       // Serve the static assets in the frontend's build folder
       router.use(express.static(path.resolve("../frontend/build")));
-    
+
       // Serve the frontend's index.html file at all other routes NOT starting with /api
       router.get(/^(?!\/?api).*/, (req, res) => {
         res.cookie('XSRF-TOKEN', req.csrfToken());
@@ -64,7 +60,7 @@ At the root route, serve the React application's static `index.html` file along 
         );
       });
     }
-    
+
     // Add a XSRF-TOKEN cookie in development
     if (process.env.NODE_ENV !== 'production') {
       router.get('/api/csrf/restore', (req, res) => {
@@ -72,7 +68,7 @@ At the root route, serve the React application's static `index.html` file along 
         res.status(201).json({});
       });
     }
-    
+
     module.exports = router;
 
 Your Express backend's `package.json` should include scripts to run the `sequelize` CLI commands.
@@ -117,8 +113,7 @@ The `dev:backend` and `dev:frontend` scripts are optional and will not be used f
 
 Finally, commit your changes.
 
-Phase 3: Deploy to Heroku
--------------------------
+## Phase 3: Deploy to Heroku
 
 Once you're finished setting this up, navigate to your application's Heroku dashboard. Under "Settings" there is a section for "Config Vars". Click the `Reveal Config Vars` button to see all your production environment variables. You should have a `DATABASE_URL` environment variable already from the Heroku Postgres add-on.
 
@@ -171,4 +166,3 @@ The logs may clue you into why you are experiencing errors or different behavior
 ### Wrapping up
 
 You can also open your site in the browser with `heroku open`. If it works, congratulations, you've created a production-ready, dynamic, full-stack website that can be securely accessed anywhere in the world! Give yourself a pat on the back. You're a web developer!
-

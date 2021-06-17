@@ -1,6 +1,3 @@
-
-
-
 You will install three pieces of software so that you can start using PostgreSQL. You will install PostgreSQL itself on your Windows installation. Then, you will install `psql` in your Ubuntu installation. Then you will also install Postbird, a cross-platform graphical user interface that makes working with SQL and PostgreSQL better than just using the command line tool `psql`.
 
 When you read "installation", that means the actual OS that's running on your machine. So, you have a Windows installation, Windows 10, that's running when you boot your computer. Then, when you start the Ubuntu installation, it's as if there's a completely separate computer running inside your computer. It's like having two completely different laptops.
@@ -137,5 +134,3 @@ You can close it for now. It also installed an icon on your desktop. You can lau
 You installed and configured PosgreSQL 12, a relational database management system, and tools to use it! Well done!
 
 Did you find this lesson helpful?
-
-

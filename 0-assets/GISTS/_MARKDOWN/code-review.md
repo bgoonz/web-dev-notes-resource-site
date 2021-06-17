@@ -16,8 +16,8 @@
 ## Introduction
 
 Code reviews can inspire dread in both reviewer and reviewee. Having your
-code analyzed can feel as invasive and uncomfortable. Even worse, reviewing other 
-people's code can feel like a painful and ambiguous exercise, searching 
+code analyzed can feel as invasive and uncomfortable. Even worse, reviewing other
+people's code can feel like a painful and ambiguous exercise, searching
 for problems and not even knowing where to begin.
 
 This project aims to provide some solid tips for how to review the code that
@@ -91,7 +91,7 @@ ones.
 // This is both emailing clients and deciding which are active. Should be
 // 2 different functions.
 function emailClients(clients) {
-  clients.forEach(client => {
+  clients.forEach((client) => {
     const clientRecord = database.lookup(client);
     if (clientRecord.isActive()) {
       email(client);
@@ -116,7 +116,7 @@ be split apart.
 
 ```javascript
 // Line 1
-import _ from 'lodash';
+import _ from "lodash";
 function generateFakeNames() {
   // ..
 }
@@ -146,7 +146,7 @@ for a comment.
 
 ```javascript
 function leftPad(str, len, ch) {
-  str = str + '';
+  str = str + "";
   len = len - str.length;
 
   while (true) {
@@ -170,10 +170,10 @@ function leftPad(str, len, ch) {
 // Global variable is referenced by the following function.
 // If we had another function that used this name, now it'd be an array and it
 // could break it. Instead it's better to pass in a name parameter
-let name = 'Ryan McDermott';
+let name = "Ryan McDermott";
 
 function splitIntoFirstAndLastName() {
-  name = name.split(' ');
+  name = name.split(" ");
 }
 
 splitIntoFirstAndLastName();
@@ -185,13 +185,13 @@ Any function that does I/O should handle when something goes wrong
 
 ```javascript
 function getIngredientsFromFile() {
-  const onFulfilled = buffer => {
-    let lines = buffer.split('\n');
-    return lines.forEach(line => <Ingredient ingredient={line} />);
+  const onFulfilled = (buffer) => {
+    let lines = buffer.split("\n");
+    return lines.forEach((line) => <Ingredient ingredient={line} />);
   };
 
   // What about when this rejected because of an error? What do we return?
-  return readFile('./ingredients.txt').then(onFulfilled);
+  return readFile("./ingredients.txt").then(onFulfilled);
 }
 ```
 
@@ -221,7 +221,7 @@ class InventoryList {
           </tr>
           // We should show something for the null case here if there's // nothing
           in the data inventory
-          {Object.keys(this.data.inventory).map(itemId => (
+          {Object.keys(this.data.inventory).map((itemId) => (
             <tr key={i}>
               <td>{itemId}</td>
 
@@ -267,7 +267,7 @@ Users can potentially input an unlimited amount of data to send to you. It's
 important to set limits if a function takes any kind of user data in.
 
 ```javascript
-router.route('/message').post((req, res) => {
+router.route("/message").post((req, res) => {
   const message = req.body.content;
 
   // What happens if the message is many megabytes of data? Do we want to store
@@ -283,7 +283,7 @@ you will always get the right type of data or even any data in a request from a
 user. [And don't rely on client-side validation alone](https://twitter.com/ryconoclast/status/885523459748487169)
 
 ```javascript
-router.route('/transfer-money').post((req, res) => {
+router.route("/transfer-money").post((req, res) => {
   const amount = req.body.amount;
   const from = user.id;
   const to = req.body.to;
@@ -313,8 +313,8 @@ source code from remote pages.
 
 ```javascript
 function getBadges() {
-  let badge = document.getElementsByClassName('badge');
-  let nameQueryParam = getQueryParams('name');
+  let badge = document.getElementsByClassName("badge");
+  let nameQueryParam = getQueryParams("name");
 
   /**
    * What if nameQueryParam was `<script>sendCookie(document.cookie)</script>`?
@@ -334,7 +334,7 @@ data to employees that shouldn't have access, you greatly hurt your users and
 your business. Be careful with other people's lives!
 
 ```javascript
-router.route('/bank-user-info').get((req, res) => {
+router.route("/bank-user-info").get((req, res) => {
   const name = user.name;
   const id = user.id;
   const socialSecurityNumber = user.ssn;
@@ -345,7 +345,7 @@ router.route('/bank-user-info').get((req, res) => {
   res.addToQueryParams({
     name,
     id,
-    socialSecurityNumber
+    socialSecurityNumber,
   });
 });
 ```
@@ -364,7 +364,7 @@ will thank you for the faster speeds!
 // user key in the mentions hash
 function isUserMentionedInComments(mentions, user) {
   let mentioned = false;
-  mentions.forEach(mention => {
+  mentions.forEach((mention) => {
     if (mention.user === user) {
       mentioned = true;
     }
@@ -382,11 +382,11 @@ to keep track of for data analytics. And be sure that no personally identifiable
 information is exposed!
 
 ```javascript
-router.route('/request-ride').post((req, res) => {
+router.route("/request-ride").post((req, res) => {
   const currentLocation = req.body.currentLocation;
   const destination = req.body.destination;
 
-  requestRide(user, currentLocation, destination).then(result => {
+  requestRide(user, currentLocation, destination).then((result) => {
     // We should log before and after this block to get a metric for how long
     // this task took, and potentially even what locations were involved in ride
     // ...
@@ -408,11 +408,11 @@ system.
 
 ```javascript
 function payEmployeeSalary(employeeId, amount, callback) {
-  db.get('EMPLOYEES', employeeId)
-    .then(user => {
+  db.get("EMPLOYEES", employeeId)
+    .then((user) => {
       return sendMoney(user, amount);
     })
-    .then(res => {
+    .then((res) => {
       if (callback) {
         callback(res);
       }
@@ -421,8 +421,8 @@ function payEmployeeSalary(employeeId, amount, callback) {
     });
 }
 
-const callback = res => console.log('called', res);
-const employee = createFakeEmployee('john jacob jingleheimer schmidt');
+const callback = (res) => console.log("called", res);
+const employee = createFakeEmployee("john jacob jingleheimer schmidt");
 const result = payEmployeeSalary(employee.id, 1000, callback);
 assert(result.status === enums.SUCCESS);
 // What about the callback? That should be tested
@@ -435,10 +435,10 @@ function dateAddDays(dateTime, day) {
   // ...
 }
 
-let dateTime = '1/1/2017';
+let dateTime = "1/1/2017";
 let date1 = dateAddDays(dateTime, 5);
 
-assert(date1 === '1/6/2017');
+assert(date1 === "1/6/2017");
 
 // What happens if we add negative days?
 // What happens if we add fractional days: 1.2, 8.7, etc.

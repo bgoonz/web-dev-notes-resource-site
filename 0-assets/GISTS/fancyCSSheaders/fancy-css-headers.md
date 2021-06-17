@@ -206,5 +206,4 @@ SCSS:
 
 the edge is coming from the middle stroke of the "E"
 
-
 [Source](https://medium.com/front-end-weekly/9-fancy-title-design-in-css-you-need-to-learn-now-75dd24b48ca)

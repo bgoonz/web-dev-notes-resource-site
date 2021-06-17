@@ -1,5 +1,3 @@
-
-
 Being a developer isn't just hacking away into the wee hours of the morning or debugging a new feature. In order to become a well-rounded developer we should also understand what tools we need and a minimum understanding of how they work. This includes setting up our computers for development.
 
 Here at App Academy we work with a Ruby on Rails, JavaScript, React, Redux, and PostgresSQL stack. A [stack](https://en.wikipedia.org/wiki/Solution_stack) is simply a collection of software and hardware used in development of an application. For our specific purposes we are using Ruby on Rails on the backend/server, PostgresSQL to house our database, and JavaScript + React + Redux for frontend rendering and logic.
@@ -225,4 +223,3 @@ Again, we want to use a version manager with Node to help us manage potential co
     which node # => /Users/username/.nvm/versions/node/v10.13.0/bin/node
 
 Node, like Ruby, comes with a package manager called [NPM](https://docs.npmjs.com/), which provides access to a whole ecosystem of libraries and tools we can use. NPM comes pre-bundled with Node, so there is no additional work for us to do. By default we don't need any additional packages installed and will be installing them on a per-project basis.
-

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { email } from '@config';
-import { Side } from '@components';
-import styled from 'styled-components';
-import { theme } from '@styles';
+import React from "react";
+import PropTypes from "prop-types";
+import { email } from "@config";
+import { Side } from "@components";
+import styled from "styled-components";
+import { theme } from "@styles";
 const { colors, fontSizes, fonts } = theme;
 
 const StyledLinkWrapper = styled.div`
@@ -12,7 +12,7 @@ const StyledLinkWrapper = styled.div`
   align-items: center;
   position: relative;
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 1px;
     height: 90px;

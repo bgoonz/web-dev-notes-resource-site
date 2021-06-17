@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
-import styled from 'styled-components';
-import { GlobalStyle, theme } from '@styles';
+import React, { useState, useEffect } from "react";
+import { StaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import { Head, Loader, Nav, Social, Email, Footer } from "@components";
+import styled from "styled-components";
+import { GlobalStyle, theme } from "@styles";
 const { colors, fontSizes, fonts } = theme;
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
-  require('smooth-scroll')('a[href*="#"]');
+  require("smooth-scroll")('a[href*="#"]');
 }
 
 const SkipToContent = styled.a`
@@ -48,7 +48,7 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children, location }) => {
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
   const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {

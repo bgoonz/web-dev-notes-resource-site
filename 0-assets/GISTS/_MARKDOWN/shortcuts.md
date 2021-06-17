@@ -1,10 +1,9 @@
 **Shellscripts**
 
-1. **newbranch $1** >> creates new  git branch
+1. **newbranch $1** >> creates new git branch
 2. **cm $1** >> # add, commit with message, push to repo and clr terminal
-4. **ghmov $1**>> removes and adds orgin
-4. **dwnDir*** >> opens the file explorer
-
+3. **ghmov $1**>> removes and adds orgin
+4. **dwnDir\*** >> opens the file explorer
 
 **Shell Aliases**
 
@@ -17,6 +16,7 @@
 7. **delZone** >> deletes zone identifiers
 
 **VS Code**
+
 1. **Shift + ,** >> focus terminal
 2. **Control + alt + f** >> format
 3. **Control + enter** >>> split editor
@@ -30,20 +30,24 @@ Home / End >>> Go to beginning/end of line
 Ctrl+Home >>> Go to beginning of file
 
 ## Cursor and Selection
+
 Alt+Click >>> Insert cursor
 
-## Display 
+## Display
+
 Ctrl+Shift+V >>> Open Markdown preview
 Ctrl+K , V >>> Open Markdown preview to the side
 
 #Windows Terminal
 Alt + direction >> resizes pane
-Ctrl + direction >> changes focus 
+Ctrl + direction >> changes focus
 
 # Capture2Text
+
 win + q >> perform ocr capture
 
 To kill specific ports
+
 ```console
   lsof -i :<port>
   echo "list of PID"

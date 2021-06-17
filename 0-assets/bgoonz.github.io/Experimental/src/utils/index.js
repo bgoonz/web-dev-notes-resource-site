@@ -1,6 +1,6 @@
 export const throttle = (func, wait = 100) => {
   let timer = null;
-  return function(...args) {
+  return function (...args) {
     if (timer === null) {
       timer = setTimeout(() => {
         func.apply(this, args);
@@ -11,6 +11,6 @@ export const throttle = (func, wait = 100) => {
 };
 
 export const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
   return `rgba(${r},${g},${b},${alpha})`;
 };
