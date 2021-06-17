@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -17,7 +20,10 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   // Use AnonymousCredential when url already includes a SAS signature
   // const anonymousCredential = new AnonymousCredential();
@@ -75,7 +81,9 @@ async function main() {
   // In browsers, get downloaded data by accessing downloadFileResponse.contentAsBlob
   const downloadFileResponse = await fileClient.download(0);
   console.log(
-    `Downloaded file content: ${await streamToString(downloadFileResponse.readableStreamBody)}`
+    `Downloaded file content: ${await streamToString(
+      downloadFileResponse.readableStreamBody
+    )}`
   );
 
   // Delete share

@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and SAS in main()
 */
 
-const { ShareServiceClient, AnonymousCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  AnonymousCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();

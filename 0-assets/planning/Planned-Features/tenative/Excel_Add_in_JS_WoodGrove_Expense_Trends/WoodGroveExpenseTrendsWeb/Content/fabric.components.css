@@ -36,7 +36,9 @@
   display: inline-block;
 }
 
-.ms-Breadcrumb-list .ms-Breadcrumb-listItem:last-of-type .ms-Breadcrumb-chevron {
+.ms-Breadcrumb-list
+  .ms-Breadcrumb-listItem:last-of-type
+  .ms-Breadcrumb-chevron {
   display: none;
 }
 
@@ -75,12 +77,12 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   top: -6px;
   left: 6px;
-  content: ' ';
+  content: " ";
   width: 16px;
   height: 16px;
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
   background-color: white;
 }
 
@@ -120,7 +122,8 @@
 
 .ms-Breadcrumb-itemLink {
   color: #333333;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 21px;
   font-weight: normal;
   display: inline-block;
@@ -169,7 +172,8 @@
 
 .ms-Button {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -239,7 +243,8 @@
 
 .ms-Button-label {
   color: #333333;
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -311,7 +316,8 @@
 
 .ms-Button.ms-Button--hero .ms-Button-label {
   color: #0078d7;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 21px;
   position: relative;
   top: -5px;
@@ -355,7 +361,8 @@
 
 .ms-Button.ms-Button--compound .ms-Button-label {
   display: block;
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   position: relative;
   text-align: left;
   margin-top: -5px;
@@ -364,7 +371,8 @@
 .ms-Button.ms-Button--compound .ms-Button-description {
   color: #666666;
   display: block;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   position: relative;
   text-align: left;
@@ -442,7 +450,8 @@
 }
 
 .ms-Button.ms-Button--command .ms-Button-label {
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
 }
 
 .ms-Button.ms-Button--command:hover .ms-Button-icon,
@@ -489,11 +498,11 @@
 .ms-Callout.ms-Callout--arrowBottom:after,
 .ms-Callout.ms-Callout--arrowTop:before,
 .ms-Callout.ms-Callout--arrowTop:after {
-  content: '';
+  content: "";
   position: absolute;
   -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   height: 0;
   width: 0;
 }
@@ -605,13 +614,15 @@
 
 .ms-Callout-title {
   margin: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 21px;
 }
 
 .ms-Callout-subText {
   margin: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   color: #333333;
   font-size: 12px;
 }
@@ -668,7 +679,8 @@
 }
 
 .ms-Callout.ms-Callout--OOBE .ms-Callout-title {
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 28px;
   color: #ffffff;
 }
@@ -698,7 +710,7 @@
 .ms-Callout.ms-Callout--peek.ms-Callout--arrowRight:after,
 .ms-Callout.ms-Callout--peek.ms-Callout--arrowLeft:before,
 .ms-Callout.ms-Callout--peek.ms-Callout--arrowLeft:after {
-  top: calc('50% - 10px');
+  top: calc("50% - 10px");
 }
 
 .ms-Callout.ms-Callout--peek .ms-Callout-header {
@@ -730,7 +742,8 @@
 
 .ms-ChoiceField {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -782,7 +795,7 @@
 }
 
 .ms-ChoiceField-field:after {
-  content: '';
+  content: "";
   display: inline-block;
   border: 1px #c8c8c8 solid;
   width: 19px;
@@ -809,7 +822,7 @@
   border-color: #666666;
   color: #666666;
   border-radius: 50%;
-  content: '\00a0';
+  content: "\00a0";
   display: inline-block;
   position: absolute;
   top: 4px;
@@ -826,20 +839,20 @@
   color: #212121;
 }
 
-.ms-ChoiceField-input[type='checkbox'] + .ms-ChoiceField-field:after {
+.ms-ChoiceField-input[type="checkbox"] + .ms-ChoiceField-field:after {
   border-radius: 0;
 }
 
-.ms-ChoiceField-input[type='checkbox']:checked + .ms-ChoiceField-field:before {
+.ms-ChoiceField-input[type="checkbox"]:checked + .ms-ChoiceField-field:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e041';
+  content: "\e041";
   background-color: transparent;
   border-radius: 0;
   font-size: 13px;
@@ -979,8 +992,10 @@
   display: none;
 }
 
-.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-commandText,
-.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-chevronDown {
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly
+  .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly
+  .ms-CommandBarItem-chevronDown {
   display: inline;
 }
 
@@ -1021,7 +1036,7 @@
   top: 2px;
   bottom: 2px;
   border: 1px solid #a6a6a6;
-  content: '';
+  content: "";
 }
 
 .ms-CommandBarItem-icon {
@@ -1211,7 +1226,8 @@
   border-left-width: 8px;
 }
 
-.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack
+  .ms-CommandBarSearch-input {
   border-left-width: 40px;
 }
 
@@ -1219,7 +1235,8 @@
   display: none;
 }
 
-.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack
+  .ms-CommandBarSearch-iconArrowWrapper {
   display: block;
 }
 
@@ -1248,7 +1265,8 @@
 
 .ms-ContextualMenu {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -1322,7 +1340,8 @@
 .ms-ContextualMenu-link.is-selected {
   background-color: #c7e0f4;
   color: #000000;
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
 }
 
 .ms-ContextualMenu-link.is-selected:hover {
@@ -1359,7 +1378,8 @@
   pointer-events: none;
 }
 
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+.ms-ContextualMenu.ms-ContextualMenu--multiselect
+  .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
   padding: 0 30px;
 }
 
@@ -1367,21 +1387,23 @@
   padding: 0 30px;
 }
 
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected {
+.ms-ContextualMenu.ms-ContextualMenu--multiselect
+  .ms-ContextualMenu-link.is-selected {
   background-color: #ffffff;
 }
 
-.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:after {
+.ms-ContextualMenu.ms-ContextualMenu--multiselect
+  .ms-ContextualMenu-link.is-selected:after {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
   color: #333333;
-  content: '\e041';
+  content: "\e041";
   font-size: 12px;
   height: 39px;
   line-height: 40px;
@@ -1432,15 +1454,15 @@
 
 .ms-DatePicker-picker.ms-DatePicker-picker--opened .ms-DatePicker-holder {
   -webkit-animation-name: fadeIn, slideDownIn10;
-          animation-name: fadeIn, slideDownIn10;
+  animation-name: fadeIn, slideDownIn10;
   -webkit-animation-duration: 0.167s;
-     -moz-animation-duration: 0.167s;
-      -ms-animation-duration: 0.167s;
-       -o-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
   -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   box-sizing: border-box;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #eaeaea;
@@ -1474,7 +1496,8 @@
 .ms-DatePicker-month,
 .ms-DatePicker-year {
   display: inline-block;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 21px;
   color: #0078d7;
   margin-top: -1px;
@@ -1517,7 +1540,8 @@
   height: 40px;
   padding: 0;
   line-height: 40px;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 15px;
   font-weight: normal;
   color: #333333;
@@ -1534,7 +1558,8 @@
 
 .ms-DatePicker-day--outfocus {
   color: #a6a6a6;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
 }
 
 .ms-DatePicker-day--infocus:hover,
@@ -1619,7 +1644,8 @@
 .ms-DatePicker-currentDecade {
   display: block;
   font-weight: normal;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 21px;
   height: 40px;
   line-height: 42px;
@@ -1652,7 +1678,8 @@
   float: left;
   margin: 0 10px 10px 0;
   font-weight: normal;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 13px;
   color: #333333;
   text-align: center;
@@ -1674,7 +1701,8 @@
   bottom: 9px;
   color: #0078d7;
   cursor: pointer;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 13px;
   height: 30px;
   line-height: 30px;
@@ -1707,7 +1735,8 @@
 
   .ms-DatePicker-month,
   .ms-DatePicker-year {
-    font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+      "Segoe UI", Tahoma, Arial, sans-serif;
   }
 
   .ms-DatePicker-header {
@@ -1768,7 +1797,8 @@
     width: 30px;
     height: 30px;
     line-height: 30px;
-    font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold",
+      "Segoe UI", Tahoma, Arial, sans-serif;
     font-size: 12px;
   }
 
@@ -1863,16 +1893,16 @@
   text-align: center;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -ms-flex-align: center;
   -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
 }
 
 .ms-Dialog::before {
   vertical-align: middle;
   display: inline-block;
-  content: '';
+  content: "";
   height: 100%;
   width: 0;
 }
@@ -1933,7 +1963,8 @@
 
 .ms-Dialog-title {
   margin: 0;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 21px;
 }
 
@@ -1949,7 +1980,8 @@
 .ms-Dialog-subText {
   margin: 0 0 20px 0;
   padding-top: 8px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   color: #333333;
   font-size: 12px;
 }
@@ -1984,7 +2016,8 @@
   margin-right: 20px;
 }
 
-.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) .ms-Dialog-button.ms-Dialog-button--close {
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader)
+  .ms-Dialog-button.ms-Dialog-button--close {
   display: block;
 }
 
@@ -2004,7 +2037,8 @@
 
 .ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-title {
   font-size: 28px;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   color: #ffffff;
 }
 
@@ -2022,7 +2056,8 @@
 
 .ms-Dropdown {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2119,7 +2154,7 @@
 }
 
 .ms-Dropdown-items:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: 0;
@@ -2194,7 +2229,8 @@
 
 .ms-Label {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2207,7 +2243,7 @@
 }
 
 .ms-Label.is-required:after {
-  content: ' *';
+  content: " *";
   color: #a80000;
 }
 
@@ -2231,13 +2267,15 @@
 }
 
 .ms-Link.ms-Link--hero {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   padding: 2px 8px 4px;
 }
 
 .ms-List {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2260,7 +2298,8 @@
 
 .ms-ListItem {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2276,7 +2315,7 @@
 .ms-ListItem:before,
 .ms-ListItem:after {
   display: table;
-  content: '';
+  content: "";
   line-height: 0;
 }
 
@@ -2296,7 +2335,8 @@
 
 .ms-ListItem-primaryText {
   color: #212121;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 21px;
   padding-right: 80px;
   position: relative;
@@ -2305,7 +2345,8 @@
 
 .ms-ListItem-secondaryText {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   line-height: 25px;
   position: relative;
@@ -2315,7 +2356,8 @@
 
 .ms-ListItem-tertiaryText {
   color: #767676;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 14px;
   line-height: 15px;
   position: relative;
@@ -2325,7 +2367,8 @@
 
 .ms-ListItem-metaText {
   color: #333333;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 11px;
   position: absolute;
   right: 30px;
@@ -2381,7 +2424,8 @@
 .ms-ListItem.is-unread .ms-ListItem-secondaryText,
 .ms-ListItem.is-unread .ms-ListItem-metaText {
   color: #0078d7;
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
 }
 
 .ms-ListItem.is-unseen:after {
@@ -2415,7 +2459,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -2437,12 +2481,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e041';
+  content: "\e041";
   font-size: 15px;
   color: #767676;
   position: absolute;
@@ -2489,14 +2533,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #666666;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 11px;
   padding-top: 6px;
 }
 
 .ms-MessageBanner {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   position: relative;
@@ -2508,15 +2554,15 @@
   text-align: center;
   overflow: hidden;
   -webkit-animation-name: fadeIn, slideDownIn20;
-          animation-name: fadeIn, slideDownIn20;
+  animation-name: fadeIn, slideDownIn20;
   -webkit-animation-duration: 0.367s;
-     -moz-animation-duration: 0.367s;
-      -ms-animation-duration: 0.367s;
-       -o-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
   -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .ms-MessageBanner .ms-Icon {
@@ -2525,15 +2571,15 @@
 
 .ms-MessageBanner.hide {
   -webkit-animation-name: fadeOut, slideUpOut20;
-          animation-name: fadeOut, slideUpOut20;
+  animation-name: fadeOut, slideUpOut20;
   -webkit-animation-duration: 0.167s;
-     -moz-animation-duration: 0.167s;
-      -ms-animation-duration: 0.167s;
-       -o-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
   -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .ms-MessageBanner.is-hidden {
@@ -2639,7 +2685,8 @@
 
 .ms-NavBar {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2681,7 +2728,8 @@
   display: block;
   height: 40px;
   line-height: 40px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 17px;
   padding-left: 20px;
   position: relative;
@@ -2702,7 +2750,8 @@
 }
 
 .ms-NavBar-item.is-selected {
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
 }
 
 .ms-NavBar-item.is-disabled {
@@ -2748,13 +2797,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
   color: #666666;
-  content: '\e039';
+  content: "\e039";
   font-size: 21px;
   line-height: 40px;
   position: absolute;
@@ -2806,13 +2855,14 @@
   .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected {
     height: inherit;
     background-color: transparent;
-    font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+      "Segoe UI", Tahoma, Arial, sans-serif;
   }
 
   .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected .ms-NavBar-chevronDown {
     -webkit-transform: scaleY(-1);
-        -ms-transform: scaleY(-1);
-            transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    transform: scaleY(-1);
   }
 
   .ms-NavBar-item .ms-ContextualMenu {
@@ -2823,7 +2873,8 @@
   }
 
   .ms-NavBar-item .ms-ContextualMenu .ms-ContextualMenu-link {
-    font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+      "Segoe UI", Tahoma, Arial, sans-serif;
     font-size: 17px;
   }
 
@@ -2867,7 +2918,8 @@
   }
 
   .ms-NavBar-item.is-selected {
-    font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold",
+      "Segoe UI", Tahoma, Arial, sans-serif;
     border-bottom: 2px solid #0078d7;
   }
 
@@ -2886,7 +2938,8 @@
 
 .ms-OrgChart {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -2978,9 +3031,9 @@
 
 .ms-Panel-main .ms-CommandBar .ms-CommandBarItem {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .ms-Panel-main .ms-CommandBar .ms-CommandBarItem:hover {
@@ -2991,11 +3044,17 @@
   background-color: #b5d8f4;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:active .ms-CommandBarItem-icon {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:active
+  .ms-CommandBarItem-icon {
   color: #07288b;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:active .ms-CommandBarItem-commandText {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:active
+  .ms-CommandBarItem-commandText {
   color: #000000;
 }
 
@@ -3004,15 +3063,24 @@
   box-shadow: inset 0 1px 0 0 #2488d8;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-icon {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:first-child
+  .ms-CommandBarItem-icon {
   color: #ffffff;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-commandText {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:first-child
+  .ms-CommandBarItem-commandText {
   color: #ffffff;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-linkWrapper {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:first-child
+  .ms-CommandBarItem-linkWrapper {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3022,11 +3090,17 @@
   box-shadow: none;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child:hover .ms-CommandBarItem-icon {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:first-child:hover
+  .ms-CommandBarItem-icon {
   color: #ffffff;
 }
 
-.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child:hover .ms-CommandBarItem-commandText {
+.ms-Panel-main
+  .ms-CommandBar
+  .ms-CommandBarItem:first-child:hover
+  .ms-CommandBarItem-commandText {
   color: #ffffff;
 }
 
@@ -3063,7 +3137,8 @@
 }
 
 .ms-Panel-headerText {
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   font-size: 21px;
   color: #333333;
   line-height: 82px;
@@ -3076,17 +3151,17 @@
 
 .ms-Panel.is-open .ms-CommandBar {
   -webkit-animation-name: fadeIn, slideDownIn20;
-          animation-name: fadeIn, slideDownIn20;
+  animation-name: fadeIn, slideDownIn20;
   -webkit-animation-duration: 0.367s;
-     -moz-animation-duration: 0.367s;
-      -ms-animation-duration: 0.367s;
-       -o-animation-duration: 0.367s;
+  -moz-animation-duration: 0.367s;
+  -ms-animation-duration: 0.367s;
+  -o-animation-duration: 0.367s;
   -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+  animation-delay: 250ms;
 }
 
 .ms-Panel.is-open .ms-Panel-main {
@@ -3105,13 +3180,13 @@
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
   -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
+  animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
+  animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-duration: 0.1s;
-          animation-duration: 0.1s;
+  animation-duration: 0.1s;
 }
 
 .ms-Panel.is-open.ms-Panel-animateOut .ms-Overlay {
@@ -3131,15 +3206,15 @@
 @media (min-width: 480px) {
   .ms-Panel.is-open.ms-Panel-animateIn .ms-Panel-main {
     -webkit-animation-name: fadeIn, slideLeftIn40;
-            animation-name: fadeIn, slideLeftIn40;
+    animation-name: fadeIn, slideLeftIn40;
     -webkit-animation-duration: 0.367s;
-       -moz-animation-duration: 0.367s;
-        -ms-animation-duration: 0.367s;
-         -o-animation-duration: 0.367s;
+    -moz-animation-duration: 0.367s;
+    -ms-animation-duration: 0.367s;
+    -o-animation-duration: 0.367s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel-animateIn .ms-Overlay {
@@ -3147,26 +3222,26 @@
     -webkit-animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
     -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
+    animation-duration: 0.367s;
     -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
+    animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
     -webkit-animation-duration: 0.267s;
-            animation-duration: 0.267s;
+    animation-duration: 0.267s;
   }
 
   .ms-Panel.is-open.ms-Panel-animateOut .ms-Panel-main {
     -webkit-animation-name: fadeOut, slideRightOut40;
-            animation-name: fadeOut, slideRightOut40;
+    animation-name: fadeOut, slideRightOut40;
     -webkit-animation-duration: 0.167s;
-       -moz-animation-duration: 0.167s;
-        -ms-animation-duration: 0.167s;
-         -o-animation-duration: 0.167s;
+    -moz-animation-duration: 0.167s;
+    -ms-animation-duration: 0.167s;
+    -o-animation-duration: 0.167s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel-animateOut .ms-Overlay {
@@ -3174,26 +3249,26 @@
     -webkit-animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
     -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
+    animation-duration: 0.367s;
     -webkit-animation-name: fadeOut;
-            animation-name: fadeOut;
+    animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
     -webkit-animation-duration: 0.167s;
-            animation-duration: 0.167s;
+    animation-duration: 0.167s;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Panel-main {
     -webkit-animation-name: fadeIn, slideRightIn40;
-            animation-name: fadeIn, slideRightIn40;
+    animation-name: fadeIn, slideRightIn40;
     -webkit-animation-duration: 0.367s;
-       -moz-animation-duration: 0.367s;
-        -ms-animation-duration: 0.367s;
-         -o-animation-duration: 0.367s;
+    -moz-animation-duration: 0.367s;
+    -ms-animation-duration: 0.367s;
+    -o-animation-duration: 0.367s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
@@ -3201,26 +3276,26 @@
     -webkit-animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
     -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
+    animation-duration: 0.367s;
     -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
+    animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
     -webkit-animation-duration: 0.267s;
-            animation-duration: 0.267s;
+    animation-duration: 0.267s;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Panel-main {
     -webkit-animation-name: fadeOut, slideLeftOut40;
-            animation-name: fadeOut, slideLeftOut40;
+    animation-name: fadeOut, slideLeftOut40;
     -webkit-animation-duration: 0.167s;
-       -moz-animation-duration: 0.167s;
-        -ms-animation-duration: 0.167s;
-         -o-animation-duration: 0.167s;
+    -moz-animation-duration: 0.167s;
+    -ms-animation-duration: 0.167s;
+    -o-animation-duration: 0.167s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Overlay {
@@ -3228,18 +3303,18 @@
     -webkit-animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
     -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
+    animation-duration: 0.367s;
     -webkit-animation-name: fadeOut;
-            animation-name: fadeOut;
+    animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-fill-mode: both;
     -webkit-animation-duration: 0.167s;
-            animation-duration: 0.167s;
+    animation-duration: 0.167s;
   }
 
   .ms-Panel.is-open .ms-CommandBar {
     -webkit-animation-delay: 500ms;
-            animation-delay: 500ms;
+    animation-delay: 500ms;
   }
 
   .ms-Panel-main {
@@ -3314,7 +3389,8 @@
 
 .ms-PeoplePicker {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -3336,7 +3412,7 @@
 .ms-PeoplePicker-searchBox:before,
 .ms-PeoplePicker-searchBox:after {
   display: table;
-  content: '';
+  content: "";
   line-height: 0;
 }
 
@@ -3437,7 +3513,8 @@
 
 .ms-PeoplePicker-resultGroupTitle {
   color: #0078d7;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 12px;
   padding: 17px 0 0 12px;
   text-transform: uppercase;
@@ -3562,8 +3639,8 @@
 
 .ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAction .ms-Icon {
   -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAdditionalContent {
@@ -3594,7 +3671,9 @@
   display: block;
 }
 
-.ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+.ms-PeoplePicker-searchMore.is-searching
+  .ms-PeoplePicker-searchMoreIcon
+  .ms-Icon {
   display: none;
 }
 
@@ -3654,11 +3733,13 @@
 
 .ms-PeoplePicker-searchMorePrimary {
   padding-top: 2px;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
 }
 
 .ms-PeoplePicker-searchMoreSecondary {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 11px;
   color: #666666;
 }
@@ -3668,13 +3749,17 @@
   cursor: default;
 }
 
-.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected
+  .ms-PeoplePicker-searchMoreIcon
+  .ms-Icon {
   color: #666666;
 }
 
-.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected .ms-PeoplePicker-searchMorePrimary {
+.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected
+  .ms-PeoplePicker-searchMorePrimary {
   color: #666666;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 11px;
   line-height: 20px;
   position: relative;
@@ -3689,7 +3774,9 @@
   height: 32px;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-resultAction .ms-Icon {
+.ms-PeoplePicker.ms-PeoplePicker--compact
+  .ms-PeoplePicker-resultAction
+  .ms-Icon {
   margin-top: -8px;
 }
 
@@ -3697,14 +3784,18 @@
   height: 49px;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMore .ms-Spinner {
+.ms-PeoplePicker.ms-PeoplePicker--compact
+  .ms-PeoplePicker-searchMore
+  .ms-Spinner {
   width: 28px;
   height: 28px;
   top: 12px;
   left: 12px;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon {
+.ms-PeoplePicker.ms-PeoplePicker--compact
+  .ms-PeoplePicker-searchMore.is-searching
+  .ms-PeoplePicker-searchMoreIcon {
   background-size: 16px;
 }
 
@@ -3713,7 +3804,9 @@
   width: 50px;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+.ms-PeoplePicker.ms-PeoplePicker--compact
+  .ms-PeoplePicker-searchMoreIcon
+  .ms-Icon {
   font-size: 17px;
   top: 0;
   margin-top: 0;
@@ -3754,12 +3847,14 @@
   display: block;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--Facepile.is-searching .ms-PeoplePicker-results {
+.ms-PeoplePicker.ms-PeoplePicker--Facepile.is-searching
+  .ms-PeoplePicker-results {
   border-bottom: 0;
   padding: 20px 0 0;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--Facepile.is-searching .ms-PeoplePicker-peopleListHeader {
+.ms-PeoplePicker.ms-PeoplePicker--Facepile.is-searching
+  .ms-PeoplePicker-peopleListHeader {
   display: none;
 }
 
@@ -3775,51 +3870,89 @@
 }
 
 @media (max-width: 479px) {
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-imageArea,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-image,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-imageArea,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-image {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-imageArea,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-image,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-imageArea,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-image {
     width: 32px;
     height: 32px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-placeholder,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-placeholder {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-placeholder,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-placeholder {
     font-size: 28px;
     top: 6px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-initials,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-initials {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-initials,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-initials {
     font-size: 12px;
     line-height: 32px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-presence,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-presence {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-presence,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-presence {
     left: 19px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-details,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-details {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-details,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-details {
     padding-left: 8px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-primaryText,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-primaryText {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-primaryText,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-primaryText {
     font-size: 14px;
     padding-top: 3px;
   }
 
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona-secondaryText,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona-secondaryText {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona-secondaryText,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona-secondaryText {
     display: none;
   }
 }
 
 @media (min-width: 480px) {
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-results .ms-Persona .ms-Persona-secondaryText,
-  .ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-selectedPeople .ms-Persona .ms-Persona-secondaryText {
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-results
+    .ms-Persona
+    .ms-Persona-secondaryText,
+  .ms-PeoplePicker.ms-PeoplePicker--Facepile
+    .ms-PeoplePicker-selectedPeople
+    .ms-Persona
+    .ms-Persona-secondaryText {
     display: block;
   }
 }
@@ -3845,7 +3978,8 @@
   display: none;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-searchMore.is-active {
+.ms-PeoplePicker.ms-PeoplePicker--Facepile
+  .ms-PeoplePicker-searchMore.is-active {
   display: block;
 }
 
@@ -3868,7 +4002,9 @@
   line-height: 48px;
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--Facepile .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+.ms-PeoplePicker.ms-PeoplePicker--Facepile
+  .ms-PeoplePicker-searchMoreIcon
+  .ms-Icon {
   top: 0;
   line-height: 48px;
 }
@@ -3894,7 +4030,8 @@
 .ms-PeoplePicker-peopleListHeader {
   color: #0078d7;
   font-size: 12px;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   height: 50px;
   line-height: 50px;
 }
@@ -3920,7 +4057,8 @@
 
 .ms-Persona {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -3954,7 +4092,8 @@
 .ms-Persona-initials {
   color: #ffffff;
   font-size: 17px;
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Light WestEuropean", "Segoe UI Light", "Segoe UI",
+    Tahoma, Arial, sans-serif;
   line-height: 48px;
 }
 
@@ -4028,7 +4167,7 @@
   height: 48px;
 }
 
-.ms-Persona-image[src=''] {
+.ms-Persona-image[src=""] {
   display: none;
 }
 
@@ -4066,7 +4205,8 @@
 
 .ms-Persona-primaryText {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 17px;
   margin-top: -3px;
   line-height: 1.4;
@@ -4076,7 +4216,8 @@
 .ms-Persona-tertiaryText,
 .ms-Persona-optionalText {
   color: #666666;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   white-space: nowrap;
   line-height: 1.3;
@@ -4145,8 +4286,9 @@
   background-color: transparent;
 }
 
-.ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText:after {
-  content: ';';
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly
+  .ms-Persona-primaryText:after {
+  content: ";";
 }
 
 .ms-Persona.ms-Persona--square.ms-Persona--tiny .ms-Persona-presence {
@@ -4299,7 +4441,8 @@
 
 .ms-Persona.ms-Persona--xl .ms-Persona-primaryText {
   font-size: 21px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   margin-top: 0;
 }
 
@@ -4354,22 +4497,50 @@
 
 .ms-Persona.ms-Persona--blocked .ms-Persona-presence {
   background-color: #dedede;
-  background-image: linear-gradient(to bottom, #dedede 0%, #dedede 48%, #c72d25 40%, #c72d25 58%, #dedede 52%, #dedede 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #dedede 0%,
+    #dedede 48%,
+    #c72d25 40%,
+    #c72d25 58%,
+    #dedede 52%,
+    #dedede 100%
+  );
 }
 
 .ms-Persona.ms-Persona--busy .ms-Persona-presence {
   background-color: #d93b3b;
-  background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 1px, #d00e0d 0px, #d00e0d 2px);
+  background: repeating-linear-gradient(
+    -45deg,
+    #e57a79,
+    #e57a79 1px,
+    #d00e0d 0px,
+    #d00e0d 2px
+  );
 }
 
 .ms-Persona.ms-Persona--busy.ms-Persona--square .ms-Persona-presence {
   background-color: #d93b3b;
-  background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 3px, #d00e0d 3px, #d00e0d 6px);
+  background: repeating-linear-gradient(
+    -45deg,
+    #e57a79,
+    #e57a79 3px,
+    #d00e0d 3px,
+    #d00e0d 6px
+  );
 }
 
 .ms-Persona.ms-Persona--dnd .ms-Persona-presence {
   background-color: #c72d25;
-  background-image: linear-gradient(to bottom, #c72d25 0%, #c72d25 48%, #ffffff 48%, #ffffff 52%, #c72d25 52%, #c72d25 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #c72d25 0%,
+    #c72d25 48%,
+    #ffffff 48%,
+    #ffffff 52%,
+    #c72d25 52%,
+    #c72d25 100%
+  );
 }
 
 .ms-Persona.ms-Persona--offline .ms-Persona-presence {
@@ -4378,19 +4549,20 @@
 
 .ms-PersonaCard {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   -webkit-animation-name: fadeIn, slideUpIn10;
-          animation-name: fadeIn, slideUpIn10;
+  animation-name: fadeIn, slideUpIn10;
   -webkit-animation-duration: 0.167s;
-     -moz-animation-duration: 0.167s;
-      -ms-animation-duration: 0.167s;
-       -o-animation-duration: 0.167s;
+  -moz-animation-duration: 0.167s;
+  -ms-animation-duration: 0.167s;
+  -o-animation-duration: 0.167s;
   -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -4477,9 +4649,9 @@
 .is-active.ms-PersonaCard-overflow:after {
   box-sizing: border-box;
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  content: '';
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: "";
   width: 10px;
   height: 10px;
   border: 1px solid #c8c8c8;
@@ -4531,8 +4703,9 @@
   overflow: hidden;
 }
 
-.ms-PersonaCard-actionDetails.is-collapsed .ms-PersonaCard-detailExpander:after {
-  content: '\e088';
+.ms-PersonaCard-actionDetails.is-collapsed
+  .ms-PersonaCard-detailExpander:after {
+  content: "\e088";
 }
 
 .ms-PersonaCard-detailChat,
@@ -4623,12 +4796,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e087';
+  content: "\e087";
 }
 
 .ms-PersonaCard-detailLine {
@@ -4645,14 +4818,20 @@
   display: none;
 }
 
-.ms-PersonaCard.ms-PersonaCard--square .ms-PersonaCard-persona .ms-Persona-imageArea,
-.ms-PersonaCard.ms-PersonaCard--square .ms-PersonaCard-persona .ms-Persona-image {
+.ms-PersonaCard.ms-PersonaCard--square
+  .ms-PersonaCard-persona
+  .ms-Persona-imageArea,
+.ms-PersonaCard.ms-PersonaCard--square
+  .ms-PersonaCard-persona
+  .ms-Persona-image {
   width: 100px;
   height: 100px;
   margin: 0;
 }
 
-.ms-PersonaCard.ms-PersonaCard--square .ms-PersonaCard-persona .ms-Persona-presence {
+.ms-PersonaCard.ms-PersonaCard--square
+  .ms-PersonaCard-persona
+  .ms-Persona-presence {
   left: 0;
 }
 
@@ -4666,7 +4845,8 @@
 
 .ms-Pivot {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -4682,7 +4862,8 @@
 .ms-Pivot-link {
   color: #333333;
   display: inline-block;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 15px;
   line-height: 27px;
   margin-right: 15px;
@@ -4700,7 +4881,8 @@
 
 .ms-Pivot-link.is-selected {
   color: #0078d7;
-  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold", "Segoe UI",
+    Tahoma, Arial, sans-serif;
 }
 
 .ms-Pivot-link.ms-Pivot-link--overflow {
@@ -4731,7 +4913,8 @@
 }
 
 .ms-Pivot.ms-Pivot--large .ms-Pivot-link.is-selected {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
 .ms-Pivot.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow:after {
@@ -4750,8 +4933,10 @@
   padding: 0 10px;
 }
 
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+.ms-Pivot.ms-Pivot--tabs
+  .ms-Pivot-link:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
+.ms-Pivot.ms-Pivot--tabs
+  .ms-Pivot-link:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
   color: #000000;
 }
 
@@ -4763,11 +4948,14 @@
 .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected {
   background-color: #0078d7;
   color: #ffffff;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow:hover:not(.is-selected),
-.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow:focus:not(.is-selected) {
+.ms-Pivot.ms-Pivot--tabs
+  .ms-Pivot-link.ms-Pivot-link--overflow:hover:not(.is-selected),
+.ms-Pivot.ms-Pivot--tabs
+  .ms-Pivot-link.ms-Pivot-link--overflow:focus:not(.is-selected) {
   background-color: #ffffff;
 }
 
@@ -4787,13 +4975,15 @@
 
 @media screen and (-ms-high-contrast: active) {
   .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected {
-    font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-family: "Segoe UI Semibold WestEuropean", "Segoe UI Semibold",
+      "Segoe UI", Tahoma, Arial, sans-serif;
   }
 }
 
 .ms-ProgressIndicator-itemName {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   text-overflow: ellipsis;
@@ -4805,7 +4995,8 @@
 
 .ms-ProgressIndicator-itemDescription {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   color: #767676;
@@ -4835,7 +5026,8 @@
 
 .ms-SearchBox {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -4876,7 +5068,8 @@
   border: 1px solid #71afe5;
   outline: transparent 1px solid;
   border-radius: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 14px;
   color: #000000;
   height: 32px;
@@ -4964,7 +5157,8 @@
 .ms-Spinner-label {
   position: relative;
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   color: #0078d7;
@@ -4981,7 +5175,8 @@
   display: table-row;
   height: 30px;
   line-height: 30px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 12px;
   color: #333333;
 }
@@ -5008,12 +5203,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e041';
+  content: "\e041";
   color: #ffffff;
   font-size: 12px;
   position: absolute;
@@ -5027,7 +5222,8 @@
 }
 
 .ms-Table-row:first-child {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 11px;
   color: #666666;
 }
@@ -5041,12 +5237,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: "Office365Icons";
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e041';
+  content: "\e041";
   color: #a6a6a6;
   font-size: 12px;
   position: absolute;
@@ -5062,7 +5258,7 @@
 
 .ms-Table-rowCheck:before {
   border: 1px solid #a6a6a6;
-  content: '';
+  content: "";
   display: block;
   height: 14px;
   left: 2px;
@@ -5083,7 +5279,8 @@
 
 .ms-Label {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   box-sizing: border-box;
@@ -5096,7 +5293,7 @@
 }
 
 .ms-Label.is-required:after {
-  content: ' *';
+  content: " *";
   color: #a80000;
 }
 
@@ -5106,7 +5303,8 @@
 
 .ms-TextField {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -5131,7 +5329,7 @@
 }
 
 .ms-TextField.is-required .ms-Label:after {
-  content: ' *';
+  content: " *";
   color: #a80000;
 }
 
@@ -5139,7 +5337,7 @@
 .ms-TextField.is-required::-moz-placeholder:after,
 .ms-TextField.is-required:-moz-placeholder:after,
 .ms-TextField.is-required:-ms-input-placeholder:after {
-  content: ' *';
+  content: " *";
   color: #a80000;
 }
 
@@ -5154,7 +5352,8 @@
   box-shadow: none;
   border: 1px solid #c8c8c8;
   border-radius: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 12px;
   color: #333333;
   height: 32px;
@@ -5195,7 +5394,8 @@
 
 .ms-TextField.ms-TextField--placeholder .ms-Label {
   position: absolute;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Semilight WestEuropean", "Segoe UI Semilight",
+    "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 12px;
   color: #666666;
   padding: 7px 0 7px 10px;
@@ -5266,7 +5466,8 @@
 
 .ms-TextField.ms-TextField--multiline .ms-TextField-field {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 17px;
@@ -5278,7 +5479,8 @@
 
 .ms-Label {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   box-sizing: border-box;
@@ -5291,7 +5493,7 @@
 }
 
 .ms-Label.is-required:after {
-  content: ' *';
+  content: " *";
   color: #a80000;
 }
 
@@ -5301,7 +5503,8 @@
 
 .ms-Toggle {
   color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial,
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   box-sizing: border-box;
@@ -5374,7 +5577,7 @@
   position: absolute;
   display: block;
   box-sizing: content-box;
-  content: '';
+  content: "";
   top: -2.5px;
   left: -2.5px;
   width: 12px;
@@ -5408,7 +5611,7 @@
   position: absolute;
   display: block;
   box-sizing: content-box;
-  content: '';
+  content: "";
   top: -2.5px;
   right: -2.5px;
   width: 12px;

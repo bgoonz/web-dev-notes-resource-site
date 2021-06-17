@@ -14,22 +14,22 @@ WoodGrove Bank Expense Trends アドインには、Microsoft Excel 2016 用の�
 
 ## <a name="table-of-contents"></a>目次
 
-* [前提条件](#prerequisites)
-* [プロジェクトを実行する](#run-the-project)
-* [その他のリソース](#additional-resources)
+- [前提条件](#prerequisites)
+- [プロジェクトを実行する](#run-the-project)
+- [その他のリソース](#additional-resources)
 
 ## <a name="prerequisites"></a>前提条件
 
 以下のものが必要です。
 
-* [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* Excel 2016 バージョン 6769.2011 以降
+- [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+- [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
+- Excel 2016 バージョン 6769.2011 以降
 
 ## <a name="run-the-project"></a>プロジェクトを実行する
 
-1. プロジェクトをローカル フォルダーにコピーします。ファイル パスが長すぎないか確認します。ファイル パスが長すぎる場合、プロジェクトに必要な NuGet パッケージをインストールしようとすると、Visual Studio でエラーが発生します。 
-2. Visual Studio で `WoodGrove Expense Trends.sln` を開きます。 
+1. プロジェクトをローカル フォルダーにコピーします。ファイル パスが長すぎないか確認します。ファイル パスが長すぎる場合、プロジェクトに必要な NuGet パッケージをインストールしようとすると、Visual Studio でエラーが発生します。
+2. Visual Studio で `WoodGrove Expense Trends.sln` を開きます。
 3. F5 キーを押して、サンプル アドインをビルドおよび展開します。Excel が起動し、Excel 2016 のバージョンに応じて、以下の 2 つの図に示すように、アドインはリボンに WoodGrove というカスタム タブをロードするか、アドインがワークシートの右側に作業ウィンドウ内に開きます。
 
 ![WoodGrove Bank Expense Trends アドイン - 初期作業ウィンドウ] (../images/woodgrove_taskpane_ribbon.PNG)
@@ -38,11 +38,10 @@ WoodGrove Bank Expense Trends アドインには、Microsoft Excel 2016 用の�
 
 ## <a name="additional-resources"></a>その他のリソース
 
-* [Office デベロッパー センター](http://dev.office.com/)
+- [Office デベロッパー センター](http://dev.office.com/)
 
 ## <a name="copyright"></a>著作権
+
 Copyright (c) 2016 Microsoft.All rights reserved.
-
-
 
 このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。

@@ -14,22 +14,22 @@ O suplemento de Tendências de Despesas do Banco WoodGrove demonstra como você 
 
 ## <a name="table-of-contents"></a>Sumário
 
-* [Pré-requisitos](#prerequisites)
-* [Executar o projeto](#run-the-project)
-* [Recursos adicionais](#additional-resources)
+- [Pré-requisitos](#prerequisites)
+- [Executar o projeto](#run-the-project)
+- [Recursos adicionais](#additional-resources)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Você precisará do seguinte:
 
-* [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Office Developer Tools para Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* Excel 2016, versão 6769.2011 ou posterior
+- [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+- [Office Developer Tools para Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
+- Excel 2016, versão 6769.2011 ou posterior
 
 ## <a name="run-the-project"></a>Executar o projeto
 
-1. Copie o projeto para uma pasta local. Certifique-se de que o caminho do arquivo não seja muito longo, caso contrário, você pode encontrar um erro no Visual Studio ao tentar instalar os pacotes do NuGet necessários para o projeto. 
-2. Em seguida, abra o `WoodGrove Expense Trends.sln` no Visual Studio. 
+1. Copie o projeto para uma pasta local. Certifique-se de que o caminho do arquivo não seja muito longo, caso contrário, você pode encontrar um erro no Visual Studio ao tentar instalar os pacotes do NuGet necessários para o projeto.
+2. Em seguida, abra o `WoodGrove Expense Trends.sln` no Visual Studio.
 3. Pressione F5 para criar e implantar o suplemento de exemplo. O Excel é iniciado e, dependendo da versão do Excel 2016 que você tiver, o suplemento carregará uma guia personalizada chamada WoodGrove na faixa de opções ou abrirá um painel de tarefas à direita da planilha, conforme mostrado nas figuras a seguir.
 
 ![Suplemento Tendências de Despesas do Banco WoodGrove – Painel de tarefas inicial] (../images/woodgrove_taskpane_ribbon.PNG)
@@ -38,11 +38,10 @@ Você precisará do seguinte:
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Centro de Desenvolvimento do Office](http://dev.office.com/)
+- [Centro de Desenvolvimento do Office](http://dev.office.com/)
 
 ## <a name="copyright"></a>Copyright
+
 Copyright © 2016 Microsoft. Todos os direitos reservados.
-
-
 
 Este projeto adotou o [Código de Conduta de Software Livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Para saber mais, confira as [Perguntas frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contate [opencode@microsoft.com](mailto:opencode@microsoft.com) se tiver outras dúvidas ou comentários.

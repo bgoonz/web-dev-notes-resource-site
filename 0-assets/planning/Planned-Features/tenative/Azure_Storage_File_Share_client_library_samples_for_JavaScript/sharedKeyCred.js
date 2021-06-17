@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -17,7 +20,10 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   // List shares
   const serviceClient = new ShareServiceClient(

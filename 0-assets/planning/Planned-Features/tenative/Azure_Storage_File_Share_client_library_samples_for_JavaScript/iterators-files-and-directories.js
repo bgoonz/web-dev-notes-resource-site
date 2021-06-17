@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -17,7 +20,10 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   const serviceClient = new ShareServiceClient(
     // When using AnonymousCredential, following url should include a valid SAS
@@ -42,9 +48,13 @@ async function main() {
 
   // Creates 3 files and 3 directories in the above directory
   for (let i = 0; i < 3; i++) {
-    const directoryClient2 = directoryClient.getDirectoryClient(directoryName + "-sub-" + i);
+    const directoryClient2 = directoryClient.getDirectoryClient(
+      directoryName + "-sub-" + i
+    );
     await directoryClient2.create();
-    console.log(`Create sub directory ${directoryName + "-sub-" + i} successfully`);
+    console.log(
+      `Create sub directory ${directoryName + "-sub-" + i} successfully`
+    );
 
     const fileClient = directoryClient.getFileClient(fileName + "-sub-" + i);
     await fileClient.create(Buffer.byteLength(content));
@@ -93,7 +103,9 @@ async function main() {
 
   // 4. list files and directories by page
   i = 1;
-  for await (const response of directoryClient.listFilesAndDirectories().byPage()) {
+  for await (const response of directoryClient
+    .listFilesAndDirectories()
+    .byPage()) {
     for (const fileItem of response.segment.fileItems) {
       console.log(`${i++} - file\t: ${fileItem.name}`);
     }
@@ -117,7 +129,9 @@ async function main() {
 
   // 6. Generator syntax .next()
   i = 1;
-  let iterator = directoryClient.listFilesAndDirectories().byPage({ maxPageSize: 2 });
+  let iterator = directoryClient
+    .listFilesAndDirectories()
+    .byPage({ maxPageSize: 2 });
   let response = await iterator.next();
   while (!response.done) {
     const segment = response.value.segment;
@@ -132,7 +146,9 @@ async function main() {
 
   // 7. Passing marker as an argument (similar to the previous example)
   i = 1;
-  iterator = directoryClient.listFilesAndDirectories().byPage({ maxPageSize: 3 });
+  iterator = directoryClient
+    .listFilesAndDirectories()
+    .byPage({ maxPageSize: 3 });
   response = await iterator.next();
   // Prints 3 file and directory names
   let segment = response.value.segment;

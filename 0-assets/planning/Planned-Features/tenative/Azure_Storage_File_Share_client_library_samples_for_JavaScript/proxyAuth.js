@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -17,11 +20,16 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   // To use the manual proxyOptions below, remove this block
   if (!process.env.HTTP_PROXY || !process.env.HTTPS_PROXY) {
-    console.warn("Proxy information not provided, but it is required to run this sample. Exiting.");
+    console.warn(
+      "Proxy information not provided, but it is required to run this sample. Exiting."
+    );
     return;
   }
 

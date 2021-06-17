@@ -11,7 +11,7 @@ const { AbortController } = require("@azure/abort-controller");
 const {
   AnonymousCredential,
   ShareServiceClient,
-  newPipeline
+  newPipeline,
 } = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
@@ -36,8 +36,8 @@ async function main() {
     userAgentOptions: { userAgentPrefix: "AdvancedSample V1.0.0" }, // Customized telemetry string
     keepAliveOptions: {
       // Keep alive is enabled by default, disable keep alive by setting false
-      enable: false
-    }
+      enable: false,
+    },
   });
 
   const serviceClient = new ShareServiceClient(
@@ -67,16 +67,22 @@ async function main() {
   await fileClient.uploadFile(localFilePath, {
     rangeSize: 4 * 1024 * 1024, // 4MB range size
     parallelism: 20, // 20 concurrency
-    onProgress: (ev) => console.log(ev)
+    onProgress: (ev) => console.log(ev),
   });
   console.log("uploadFile success");
 
   // Parallel uploading a Readable stream with ShareFileClient.uploadStream() in Node.js runtime
   // ShareFileClient.uploadStream() is only available in Node.js
-  await fileClient.uploadStream(fs.createReadStream(localFilePath), fileSize, 4 * 1024 * 1024, 20, {
-    abortSignal: AbortController.timeout(30 * 60 * 1000), // Abort uploading with timeout in 30mins
-    onProgress: (ev) => console.log(ev)
-  });
+  await fileClient.uploadStream(
+    fs.createReadStream(localFilePath),
+    fileSize,
+    4 * 1024 * 1024,
+    20,
+    {
+      abortSignal: AbortController.timeout(30 * 60 * 1000), // Abort uploading with timeout in 30mins
+      onProgress: (ev) => console.log(ev),
+    }
+  );
   console.log("uploadStream success");
 
   // Parallel uploading a browser File/Blob/ArrayBuffer in browsers with ShareFileClient.uploadBrowserData()
@@ -97,7 +103,7 @@ async function main() {
     abortSignal: AbortController.timeout(30 * 60 * 1000),
     rangeSize: 4 * 1024 * 1024, // 4MB range size
     parallelism: 20, // 20 concurrency
-    onProgress: (ev) => console.log(ev)
+    onProgress: (ev) => console.log(ev),
   });
   console.log("downloadToBuffer success");
 

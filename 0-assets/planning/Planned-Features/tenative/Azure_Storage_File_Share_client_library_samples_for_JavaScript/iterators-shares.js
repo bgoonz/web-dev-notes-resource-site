@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -17,7 +20,10 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   const serviceClient = new ShareServiceClient(
     `https://${account}.file.core.windows.net`,
@@ -64,7 +70,9 @@ async function main() {
 
   // 5. Same as the previous example - passing maxPageSize in the page settings
   i = 1;
-  for await (const response of serviceClient.listShares().byPage({ maxPageSize: 20 })) {
+  for await (const response of serviceClient
+    .listShares()
+    .byPage({ maxPageSize: 20 })) {
     if (response.shareItems) {
       for (const share of response.shareItems) {
         console.log(`Share ${i++}: ${share.name}`);
@@ -98,7 +106,9 @@ async function main() {
   // Gets next marker
   let marker = response.value.continuationToken;
   // Passing next marker as continuationToken
-  iterator = serviceClient.listShares().byPage({ continuationToken: marker, maxPageSize: 10 });
+  iterator = serviceClient
+    .listShares()
+    .byPage({ continuationToken: marker, maxPageSize: 10 });
   response = await iterator.next();
   // Prints 10 share names
   if (response.value.shareItems) {

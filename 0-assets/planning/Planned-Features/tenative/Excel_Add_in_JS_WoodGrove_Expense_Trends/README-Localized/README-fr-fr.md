@@ -14,22 +14,22 @@ Le complément de tendances de dépenses bancaires WoodGrove montre comment vous
 
 ## <a name="table-of-contents"></a>Sommaire
 
-* [Conditions préalables](#prerequisites)
-* [Exécution du projet](#run-the-project)
-* [Ressources supplémentaires](#additional-resources)
+- [Conditions préalables](#prerequisites)
+- [Exécution du projet](#run-the-project)
+- [Ressources supplémentaires](#additional-resources)
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 Vous devez disposer des éléments suivants :
 
-* [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Outils de développement Office pour Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* Excel 2016, version 6769.2011 ou ultérieure
+- [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+- [Outils de développement Office pour Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
+- Excel 2016, version 6769.2011 ou ultérieure
 
 ## <a name="run-the-project"></a>Exécuter le projet
 
-1. Copiez le projet dans un dossier local. Vérifiez que le chemin d’accès de fichier n’est pas trop long. Si c’est le cas, il est possible que vous rencontriez une erreur dans Visual Studio lorsque ce dernier tente d’installer les packages NuGet nécessaires pour le projet. 
-2. Ouvrez le fichier `WoodGrove Expense Trends.sln` dans Visual Studio. 
+1. Copiez le projet dans un dossier local. Vérifiez que le chemin d’accès de fichier n’est pas trop long. Si c’est le cas, il est possible que vous rencontriez une erreur dans Visual Studio lorsque ce dernier tente d’installer les packages NuGet nécessaires pour le projet.
+2. Ouvrez le fichier `WoodGrove Expense Trends.sln` dans Visual Studio.
 3. Appuyez sur F5 pour créer et déployer l’exemple de complément. Excel démarre et, selon la version d’Excel 2016 dont vous disposez, le complément charge un onglet personnalisé intitulé WoodGrove dans le ruban ou s’ouvre dans un volet Office à droite de la feuille de calcul, comme illustré dans les figures suivantes.
 
 ![Complément de tendances de dépenses bancaires WoodGrove - Volet Office initial] (../images/woodgrove_taskpane_ribbon.PNG)
@@ -38,11 +38,10 @@ Vous devez disposer des éléments suivants :
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Centre de développement Office](http://dev.office.com/)
+- [Centre de développement Office](http://dev.office.com/)
 
 ## <a name="copyright"></a>Copyright
+
 Copyright (c) 2016 Microsoft. Tous droits réservés.
-
-
 
 Ce projet a adopté le [code de conduite Open Source de Microsoft](https://opensource.microsoft.com/codeofconduct/). Pour plus d’informations, reportez-vous à la [FAQ relative au code de conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou tout commentaire.

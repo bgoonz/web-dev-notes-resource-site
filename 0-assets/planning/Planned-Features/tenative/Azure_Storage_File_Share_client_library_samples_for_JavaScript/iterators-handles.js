@@ -5,7 +5,10 @@
  Setup: Enter your storage account name and shared key in main()
 */
 
-const { ShareServiceClient, StorageSharedKeyCredential } = require("@azure/storage-file-share");
+const {
+  ShareServiceClient,
+  StorageSharedKeyCredential,
+} = require("@azure/storage-file-share");
 
 // Load the .env file if it exists
 require("dotenv").config();
@@ -30,7 +33,10 @@ async function main() {
 
   // Use StorageSharedKeyCredential with storage account and account key
   // StorageSharedKeyCredential is only available in Node.js runtime, not in browsers
-  const sharedKeyCredential = new StorageSharedKeyCredential(account, accountKey);
+  const sharedKeyCredential = new StorageSharedKeyCredential(
+    account,
+    accountKey
+  );
 
   const serviceClient = new ShareServiceClient(
     `https://${account}.file.core.windows.net`,
@@ -47,7 +53,9 @@ async function main() {
   let iter = dirClient.listHandles();
   for await (const handle of iter) {
     console.log(
-      `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${handle.clientIp}`
+      `Handle ${i++}: ${handle.path}, opened time ${
+        handle.openTime
+      }, clientIp ${handle.clientIp}`
     );
   }
 
@@ -57,7 +65,9 @@ async function main() {
   i = 1;
   for await (const handle of dirClient.listHandles()) {
     console.log(
-      `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${handle.clientIp}`
+      `Handle ${i++}: ${handle.path}, opened time ${
+        handle.openTime
+      }, clientIp ${handle.clientIp}`
     );
   }
 
@@ -88,9 +98,9 @@ async function main() {
     if (response.handleList) {
       for (const handle of response.handleList) {
         console.log(
-          `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${
-            handle.clientIp
-          }`
+          `Handle ${i++}: ${handle.path}, opened time ${
+            handle.openTime
+          }, clientIp ${handle.clientIp}`
         );
       }
     }
@@ -106,9 +116,9 @@ async function main() {
     if (response.handleList) {
       for (const handle of response.handleList) {
         console.log(
-          `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${
-            handle.clientIp
-          }`
+          `Handle ${i++}: ${handle.path}, opened time ${
+            handle.openTime
+          }, clientIp ${handle.clientIp}`
         );
       }
     }
@@ -124,9 +134,9 @@ async function main() {
     if (response.value.handleList) {
       for (const handle of response.value.handleList) {
         console.log(
-          `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${
-            handle.clientIp
-          }`
+          `Handle ${i++}: ${handle.path}, opened time ${
+            handle.openTime
+          }, clientIp ${handle.clientIp}`
         );
       }
     }
@@ -143,7 +153,9 @@ async function main() {
   if (response.value.handleList) {
     for (const handle of response.value.handleList) {
       console.log(
-        `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${handle.clientIp}`
+        `Handle ${i++}: ${handle.path}, opened time ${
+          handle.openTime
+        }, clientIp ${handle.clientIp}`
       );
     }
   }
@@ -151,13 +163,17 @@ async function main() {
   let marker = response.value.continuationToken;
   // Passing next marker as continuationToken
   console.log(`    continuation`);
-  iterator = dirClient.listHandles().byPage({ continuationToken: marker, maxPageSize: 2 });
+  iterator = dirClient
+    .listHandles()
+    .byPage({ continuationToken: marker, maxPageSize: 2 });
   response = await iterator.next();
   // Prints 2 more handles assuming you have more than four handles
   if (!response.done && response.value.handleList) {
     for (const handle of response.value.handleList) {
       console.log(
-        `Handle ${i++}: ${handle.path}, opened time ${handle.openTime}, clientIp ${handle.clientIp}`
+        `Handle ${i++}: ${handle.path}, opened time ${
+          handle.openTime
+        }, clientIp ${handle.clientIp}`
       );
     }
   }

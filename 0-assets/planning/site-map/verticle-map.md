@@ -1,11 +1,10 @@
 You need to enable JavaScript to run this app.
 
 [About](/sitemap) [Features](/sitemap/features)
-[Solutions**](/sitemap/workflows/individuals)[Resource**](/sitemap/resource/explore)[Pricing](/sitemap/pricing)
-[Support**](/sitemap/support/help)
+[Solutions\*\*](/sitemap/workflows/individuals)[Resource\*\*](/sitemap/resource/explore)[Pricing](/sitemap/pricing)
+[Support\*\*](/sitemap/support/help)
 
-Octopus.do, a lightning-fast visual sitemap builder {.Welcome-heading}
-===================================================
+# Octopus.do, a lightning-fast visual sitemap builder {.Welcome-heading}
 
 Create your website or application structure, add notes, specify page
 content, and use color schemes to improve your site map design or
@@ -24,28 +23,24 @@ Explore sitemaps
 
 play
 
-Create Visual Sitemap using Super Fast Prototyping Tool {.Welcome-list__label}
--------------------------------------------------------
+## Create Visual Sitemap using Super Fast Prototyping Tool {.Welcome-list\_\_label}
 
 Site mapping has never been easy and fun. Within minutes you can start
 website planning, create colorful visual sitemaps that are pleasant to
 look at and share them with your team and clients.
 
-Visualize website structure with [low fidelity wireframe](/sitemap/resource/low-fidelity-wireframes) kit {.Welcome-list__label}
---------------------------------------------------------------------------------------------------------
+## Visualize website structure with [low fidelity wireframe](/sitemap/resource/low-fidelity-wireframes) kit {.Welcome-list\_\_label}
 
 Using low fidelity wireframes can help you visualize the contents of
 every sitemap block, so that it's easy to understand the page layout and
 create content for your future website project.
 
-Export site map to hi-quality vector PDF and PRINT {.Welcome-list__label}
---------------------------------------------------
+## Export site map to hi-quality vector PDF and PRINT {.Welcome-list\_\_label}
 
 Have your sitemaps exported as PDF or PNG. Prepare your material for
 printing, publishing, or offline meetings.
 
-Use free visual [sitemap generator](/sitemap/resource/generator) for any XML sitemap {.Welcome-list__label}
-------------------------------------------------------------------------------------
+## Use free visual [sitemap generator](/sitemap/resource/generator) for any XML sitemap {.Welcome-list\_\_label}
 
 Generate beautiful and clean website diagrams fast and easy by\
 importing the xml sitemap from any website. Use it to rework hierarchy

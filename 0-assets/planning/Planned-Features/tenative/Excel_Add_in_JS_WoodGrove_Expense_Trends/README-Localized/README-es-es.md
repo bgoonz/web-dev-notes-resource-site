@@ -14,22 +14,22 @@ El complemento de tendencias de gastos de WoodGrove Bank muestra cómo puede usa
 
 ## <a name="table-of-contents"></a>Tabla de contenido
 
-* [Requisitos previos](#prerequisites)
-* [Ejecutar el proyecto](#run-the-project)
-* [Recursos adicionales](#additional-resources)
+- [Requisitos previos](#prerequisites)
+- [Ejecutar el proyecto](#run-the-project)
+- [Recursos adicionales](#additional-resources)
 
 ## <a name="prerequisites"></a>Requisitos previos
 
 Se necesita lo siguiente:
 
-* [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Office Developer Tools para Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* Excel 2016, versión 6769.2011 o posterior
+- [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+- [Office Developer Tools para Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
+- Excel 2016, versión 6769.2011 o posterior
 
 ## <a name="run-the-project"></a>Ejecutar el proyecto
 
-1. Copie el proyecto en una carpeta local. Asegúrese de que la ruta del archivo no sea demasiado larga, de lo contrario, puede producirse un error en Visual Studio cuando intente instalar los paquetes de NuGet necesarios para el proyecto. 
-2. Abra `WoodGrove Expense Trends.sln` en Visual Studio. 
+1. Copie el proyecto en una carpeta local. Asegúrese de que la ruta del archivo no sea demasiado larga, de lo contrario, puede producirse un error en Visual Studio cuando intente instalar los paquetes de NuGet necesarios para el proyecto.
+2. Abra `WoodGrove Expense Trends.sln` en Visual Studio.
 3. Pulse F5 para crear e implementar el complemento de ejemplo. Inicie Excel y, según la versión de Excel 2016 que tenga, el complemento carga una pestaña personalizada denominada WoodGrove en la cinta de opciones o se abre en un panel de tareas a la derecha de la hoja de cálculo, tal y como se muestra en las siguientes ilustraciones.
 
 ![Complemento de tendencias de gastos de WoodGrove Bank: panel de tareas inicial] (../images/woodgrove_taskpane_ribbon.PNG)
@@ -38,11 +38,10 @@ Se necesita lo siguiente:
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-* [Centro de desarrollo de Office](http://dev.office.com/)
+- [Centro de desarrollo de Office](http://dev.office.com/)
 
 ## <a name="copyright"></a>Copyright
+
 Copyright (c) 2016 Microsoft. Todos los derechos reservados.
-
-
 
 Este proyecto ha adoptado el [Código de conducta de código abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/). Para obtener más información, consulte las [preguntas más frecuentes sobre el Código de conducta](https://opensource.microsoft.com/codeofconduct/faq/) o póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) si tiene otras preguntas o comentarios.
