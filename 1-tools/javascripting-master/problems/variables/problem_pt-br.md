@@ -11,12 +11,12 @@ A variável acima foi **declarada**, mas ainda não foi definida (ou seja, ainda
 Aqui está um exemplo de como definir uma variável, fazendo ela referenciar um valor específico:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 # OBSERVAÇÃO
 
-Um variável é **declarada** quando usamos `var`, e o `=` é usado para **definir** o valor pelo qual a variável vai fazer referência. 
+Um variável é **declarada** quando usamos `var`, e o `=` é usado para **definir** o valor pelo qual a variável vai fazer referência.
 
 Coloquialmente dizemos que "criamos uma variável com um valor".
 

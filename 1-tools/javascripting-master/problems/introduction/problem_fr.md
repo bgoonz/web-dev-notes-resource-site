@@ -19,15 +19,17 @@ touch introduction.js
 ```
 
 ou si vous êtes sur Windows :
+
 ```bash
 type NUL > introduction.js
 ```
+
 ( `type` fait partie de la commande ! )
 
 Ouvrez le fichier dans votre éditeur favori, et ajoutez ce texte :
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
 
 Sauvegardez le fichier, puis vérifiez si votre programme s'exécute correctement avec cette commande :
@@ -41,4 +43,3 @@ Au passage, tout au long de ce tutoriel, vous pouvez donner nommer les fichiers 
 ```bash
 javascripting verify lesChatsSontGeniaux.js
 ```
-

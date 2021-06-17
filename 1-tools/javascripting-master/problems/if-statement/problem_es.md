@@ -3,16 +3,16 @@ Los bloques condicionales son utilizados, partiendo de una condición booleana e
 Un bloque condicional se parece a lo siguiente:
 
 ```js
-if(n > 1) {
-  console.log('la variable n es mayor a 1.');
+if (n > 1) {
+  console.log("la variable n es mayor a 1.");
 } else {
-  console.log('la variable n es menor o igual a 1.');
+  console.log("la variable n es menor o igual a 1.");
 }
 ```
 
 Dentro de los paréntesis debes ingresar una sentencia lógica, significa que deberá ser verdadera (true) o falsa (false).
 
-El *else* block es opcional y contiene el código que será ejecutado si la sentencia lógica dentro de los paréntesis es falsa.
+El _else_ block es opcional y contiene el código que será ejecutado si la sentencia lógica dentro de los paréntesis es falsa.
 
 ## El ejercicio
 

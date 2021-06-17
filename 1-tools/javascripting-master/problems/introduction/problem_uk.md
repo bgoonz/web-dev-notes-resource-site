@@ -17,18 +17,21 @@ cd javascripting
 ```bash
 touch introduction.js
 ```
- або якщо ви на Windows, 
+
+або якщо ви на Windows,
 
 ```bash
 type NUL > introduction.js
 ```
- (`type` це частина команди!)
+
+(`type` це частина команди!)
 
 Відкрийте файл у вашому улюбленому текстовому редакторі та додайте цей текст:
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
+
 Збережіть файл, а потім перевірте вашу програму запустивши команду:
 
 ```bash

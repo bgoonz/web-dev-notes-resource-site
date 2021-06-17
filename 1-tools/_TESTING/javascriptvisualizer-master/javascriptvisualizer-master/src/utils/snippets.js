@@ -1,4 +1,4 @@
-function simpleClosure () {
+function simpleClosure() {
   return `var count = 0;
 
 function makeAdder(x) {
@@ -8,10 +8,10 @@ function makeAdder(x) {
 }
 
 var add5 = makeAdder(5);
-count += add5(2);`
+count += add5(2);`;
 }
 
-function bubbleSort () {
+function bubbleSort() {
   return `function bubbleSort (arr) {
   var length = arr.length;
   var swapped;
@@ -33,10 +33,10 @@ function bubbleSort () {
   return arr;
 }
 
-bubbleSort([5,19,1]);`
+bubbleSort([5,19,1]);`;
 }
 
-function scopeChain () {
+function scopeChain() {
   return `var topLevelVar = "Since this variable was declared outside of a function, it'll go on the global scope.";
 
 function topLevelFn () {
@@ -58,10 +58,10 @@ var fnExpression = function () {
 };
 
 fnExpression();
-topLevelFn();`
+topLevelFn();`;
 }
 
-function moreClosures () {
+function moreClosures() {
   return `var e = 10;
 function sum(a){
   return function(b){
@@ -73,10 +73,10 @@ function sum(a){
   }
 }
 
-sum(1)(2)(3)(4); // log 20`
+sum(1)(2)(3)(4); // log 20`;
 }
 
-function pseudoclassical () {
+function pseudoclassical() {
   return `function Person (name, age) {
   this.name = name;
   this.age = age;
@@ -88,10 +88,10 @@ Person.prototype.sayName = function () {
 
 var me = new Person('Tyler', 28);
 
-me.sayName();`
+me.sayName();`;
 }
 
-function complexClosures () {
+function complexClosures() {
   return `var counter = (function() {
   var privateCounter = 0;
   function changeBy(val) {
@@ -115,10 +115,10 @@ counter.increment();
 counter.increment();
 counter.value();
 counter.decrement();
-counter.value();`
+counter.value();`;
 }
 
-function thisKeyword () {
+function thisKeyword() {
   return `var user = {
   name: 'Tyler',
   age: 28,
@@ -128,7 +128,7 @@ function thisKeyword () {
   }
 };
 
-user.greet();`
+user.greet();`;
 }
 
 const snippets = {
@@ -138,7 +138,7 @@ const snippets = {
   scopeChain: scopeChain(),
   moreClosures: moreClosures(),
   pseudoclassical: pseudoclassical(),
-  thisKeyword: thisKeyword()
-}
+  thisKeyword: thisKeyword(),
+};
 
-export default snippets
+export default snippets;

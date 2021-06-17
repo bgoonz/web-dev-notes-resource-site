@@ -7,12 +7,13 @@ For det kan vi bruke `.filter()` metoden.
 Her er et eksempel:
 
 ```js
-var dyr = ['katt', 'hund', 'elefant'];
+var dyr = ["katt", "hund", "elefant"];
 
 var filtrert = dyr.filter(function (ettDyr) {
-  return (ettDyr !== 'elefant');
+  return ettDyr !== "elefant";
 });
 ```
+
 `filtrert` variablen vil nå kun inneholde `katt` og `hund`.
 
 ## Oppgaven:
@@ -30,7 +31,7 @@ Som i eksemplet over, definer en variabel med navnet `filtered` som refererer re
 Funksjonen du gir til `.filter()` metoden skal se slik ut:
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

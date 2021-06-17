@@ -1,7 +1,6 @@
 <img src="https://tylermcginnis.com/tylermcginnis_glasses-300.png" width="300" align="right">
 
-[JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer)
-========
+# [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer)
 
 #### A tool for visualizing Execution Context, Hoisting, Closures, and Scopes in JavaScript.
 

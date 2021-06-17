@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-module.exports = require('vorpal-grep');
+module.exports = require("vorpal-grep");

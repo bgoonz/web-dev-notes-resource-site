@@ -1,33 +1,32 @@
 // Copyright Bob Remeika 2011-forever
 
 // This file consists of some host environment bootstrapping and discovery.
-foounit = typeof foounit === 'undefined' ?  {} : foounit;
+foounit = typeof foounit === "undefined" ? {} : foounit;
 
 // Appends .hostenv and .mixin to foounit
-(function (foounit){
-
+(function (foounit) {
   /**
    * Throws a bootstrapping error
    */
-  var _throwError = function (message){
-    throw new Error('foounit: bootstrap: ' + message);
-  }
+  var _throwError = function (message) {
+    throw new Error("foounit: bootstrap: " + message);
+  };
 
   /**
    * Requisite host environment params
    */
-  foounit.hostenv = (function (){
-    var _type = 'unknown';
+  foounit.hostenv = (function () {
+    var _type = "unknown";
 
     // Host environment is browser-like
-    if (typeof window !== 'undefined'){
-      _type = 'browser';
+    if (typeof window !== "undefined") {
+      _type = "browser";
       _global = window;
-    } else if (typeof global !== 'undefined'){
-      _type = 'node';
+    } else if (typeof global !== "undefined") {
+      _type = "node";
       _global = global;
     } else {
-      _throwError('Unrecognized environment');
+      _throwError("Unrecognized environment");
     }
 
     return { type: _type, global: _global };
@@ -36,9 +35,9 @@ foounit = typeof foounit === 'undefined' ?  {} : foounit;
   /**
    * Does a shallow copy
    */
-  foounit.mixin = function (target, source){
-    for (var prop in source){
-      if (source.hasOwnProperty(prop)){
+  foounit.mixin = function (target, source) {
+    for (var prop in source) {
+      if (source.hasOwnProperty(prop)) {
         target[prop] = source[prop];
       }
     }
@@ -50,7 +49,7 @@ foounit = typeof foounit === 'undefined' ?  {} : foounit;
    */
   foounit.defaults = {
     // Default timeout setting for waitFor keyword
-    waitForTimeout: 5000
+    waitForTimeout: 5000,
   };
 
   // TODO: Make settings configurable
@@ -60,120 +59,123 @@ foounit = typeof foounit === 'undefined' ?  {} : foounit;
   /**
    * Ressettable wrappers for your pleasure
    */
-  foounit.setInterval   = function (func, interval) {
+  foounit.setInterval = function (func, interval) {
     return foounit.hostenv.global.setInterval(func, interval);
   };
   foounit.clearInterval = function (handle) {
     return foounit.hostenv.global.clearInterval(handle);
   };
-  foounit.setTimeout    = function (func, timeout) {
-    return foounit.hostenv.global.setTimeout(func, timeout)
+  foounit.setTimeout = function (func, timeout) {
+    return foounit.hostenv.global.setTimeout(func, timeout);
   };
-  foounit.clearTimeout  = function (handle) {
+  foounit.clearTimeout = function (handle) {
     return foounit.hostenv.global.clearTimeout(handle);
   };
-  foounit.getTime       = function (){ return new Date().getTime(); };
+  foounit.getTime = function () {
+    return new Date().getTime();
+  };
 
   /**
    * Returns a function bound to a scope
    */
-  foounit.bind = function (scope, func){
-    return function (){
+  foounit.bind = function (scope, func) {
+    return function () {
       return func.apply(scope, arguments);
-    }
-  }
+    };
+  };
 
   /**
    * Gets the test foounit.Suite object.  If the suite has
    * not been set then it creates a new test suite
    */
   var _suite;
-  foounit.getSuite = function (){
+  foounit.getSuite = function () {
     _suite = _suite || new foounit.Suite();
     return _suite;
-  }
+  };
 
   /**
    * Function used while building up the tests
    */
   var _buildContext;
-  foounit.setBuildContext = function (context){
+  foounit.setBuildContext = function (context) {
     _buildContext = context;
-  }
+  };
 
-  foounit.getBuildContext = function (){
+  foounit.getBuildContext = function () {
     _buildContext = _buildContext || new foounit.BuildContext();
     return _buildContext;
-  }
+  };
 
   /**
    * Set the loader strategy
    */
-  foounit.setLoaderStrategy = function (strategy){
-  }
+  foounit.setLoaderStrategy = function (strategy) {};
 
   /**
    * Mounts a special path for use in foounit.require and foounit.load
    */
   var _mounts = {};
-  foounit.mount = function (key, path){
+  foounit.mount = function (key, path) {
     _mounts[key] = path;
-  }
+  };
 
   /**
    * Unmounts a special path to be used by foounit.require and foounit.load
    */
-  foounit.unmount = function (key, path){
+  foounit.unmount = function (key, path) {
     delete _mounts[key];
-  }
+  };
 
   /**
    * Returns the mount structure
    */
-  foounit.getMounts = function (){
+  foounit.getMounts = function () {
     return _mounts;
-  }
+  };
 
   /**
    * Translates mounted paths into a physical path
    */
-  foounit.translatePath = (function (){
+  foounit.translatePath = (function () {
     var regex = /:(\w+)/g;
 
-    return function (path){
-      var file = path.replace(regex, function (match, mount){
+    return function (path) {
+      var file = path.replace(regex, function (match, mount) {
         return _mounts[mount] ? _mounts[mount] : match;
       });
       return file;
-    }
+    };
   })();
 
   /**
    * Adds groups / tests to the root level ExampleGroup
    */
-  foounit.add = function (func){
+  foounit.add = function (func) {
     var context = foounit.getBuildContext();
     context.setCurrentGroup(context.getRoot());
     func.call(context, foounit.keywords);
-  }
+  };
 
   /**
    * Builds an array of tests to be run
    */
-  foounit.build = function (){
-    var befores = [], afters = [], descriptions = [];
+  foounit.build = function () {
+    var befores = [],
+      afters = [],
+      descriptions = [];
 
-    var addExamples = function (group){
+    var addExamples = function (group) {
       var examples = group.getExamples();
-      for (var i = 0, ii = examples.length; i < ii; ++i){
+      for (var i = 0, ii = examples.length; i < ii; ++i) {
         examples[i].setBefores(befores.concat());
         examples[i].setAfters(afters.concat());
         examples[i].setDescriptions(descriptions.concat());
         runners.push(examples[i]);
       }
-    }
+    };
 
-    var recurseGroup = function (group){
+    var recurseGroup = function (group) {
       befores.push(group.getBefore());
       afters.push(group.getAfter());
       descriptions.push(group.getDescription());
@@ -181,82 +183,83 @@ foounit = typeof foounit === 'undefined' ?  {} : foounit;
       addExamples(group);
 
       var groups = group.getGroups();
-      for (var i = 0, ii = groups.length; i < ii; ++i){
+      for (var i = 0, ii = groups.length; i < ii; ++i) {
         recurseGroup(groups[i]);
       }
 
       befores.pop();
       afters.pop();
       descriptions.pop();
-    }
+    };
 
     var runners = [];
 
     var tic = new Date().getTime();
     recurseGroup(foounit.getBuildContext().getRoot());
-    console.log('>> foounit build time: ', new Date().getTime() - tic);
+    console.log(">> foounit build time: ", new Date().getTime() - tic);
 
     return runners;
-  }
+  };
 
   /**
    * Report the results of a single example.  This is called
    * after an example has finished running and before the next
    * example begins.
    */
-  foounit.reportExample = function (example){
-    throw new Error('foounit.reportExample is abstract');
-  }
+  foounit.reportExample = function (example) {
+    throw new Error("foounit.reportExample is abstract");
+  };
 
   /**
    * Report the results of the entire test suite.
    */
-  foounit.report = function (info){
-    throw new Error('foounit.report is abstract');
-  }
+  foounit.report = function (info) {
+    throw new Error("foounit.report is abstract");
+  };
 
   /**
    * Executes an array of tests
    */
-  foounit.execute = function (examples){
-    var pending = []
-      , passCount = 0, failCount = 0 
-      , queue = new foounit.WorkQueue(examples);
+  foounit.execute = function (examples) {
+    var pending = [],
+      passCount = 0,
+      failCount = 0,
+      queue = new foounit.WorkQueue(examples);
 
     var tic = new Date().getTime();
 
-    queue.onTaskComplete = function (example){
+    queue.onTaskComplete = function (example) {
       try {
-        if (example.isSuccess()){
+        if (example.isSuccess()) {
           ++passCount;
-        } else if (example.isFailure()){
+        } else if (example.isFailure()) {
           ++failCount;
-        } else if (example.isPending()){
+        } else if (example.isPending()) {
           pending.push(example.getFullDescription());
         }
 
         foounit.reportExample(example);
       } catch (e) {
-        console.log('Error in onTaskComplete: ', e.message);
+        console.log("Error in onTaskComplete: ", e.message);
       }
     };
 
-    queue.onComplete = function (queue){
+    queue.onComplete = function (queue) {
       try {
         foounit.report({
-          passCount:  passCount
-        , failCount:  failCount
-        , totalCount: passCount + failCount + pending.length
-        , pending:    pending
-        , runMillis:  new Date().getTime() - tic
+          passCount: passCount,
+          failCount: failCount,
+          totalCount: passCount + failCount + pending.length,
+          pending: pending,
+          runMillis: new Date().getTime() - tic,
         });
-      } catch (e){
-        console.log('Error in onComplete: ', e);
+      } catch (e) {
+        console.log("Error in onComplete: ", e);
       }
     };
 
     queue.run();
-  }
+  };
 
   /**
    * Private scope variable for hosting the foounit keywords
@@ -271,271 +274,273 @@ foounit = typeof foounit === 'undefined' ?  {} : foounit;
   /**
    * Adds a keyword and some definition of functionality
    */
-  foounit.addKeyword = function (keyword, definition){
+  foounit.addKeyword = function (keyword, definition) {
     foounit.keywords[keyword] = definition;
-    if (_kwScope){ _kwScope[keyword] = definition; }
-  }
+    if (_kwScope) {
+      _kwScope[keyword] = definition;
+    }
+  };
 
   /**
    * Removes a keyword from the foounit.keywords object
    * and from the kwScope
    */
-  foounit.removeKeyword = function (keyword){
+  foounit.removeKeyword = function (keyword) {
     delete foounit.keywords[keyword];
-    if (_kwScope){ delete _kwScope[keyword]; }
+    if (_kwScope) {
+      delete _kwScope[keyword];
+    }
   };
 
-  (function (){
-
+  (function () {
     // Return a matcher keyword suffix
     // keyword = haveBeenCalled returns HaveBeenCalled
     var sfix = function (keyword) {
-      return keyword.substr(0, 1).toUpperCase() + keyword.substr(1)
+      return keyword.substr(0, 1).toUpperCase() + keyword.substr(1);
     };
 
     /**
      * Adds a matcher
      */
-    foounit.addMatcher = function (matcherKeyword, definition){
-      foounit.addKeyword(matcherKeyword, definition);   // Add the keyword to the kw scope
+    foounit.addMatcher = function (matcherKeyword, definition) {
+      foounit.addKeyword(matcherKeyword, definition); // Add the keyword to the kw scope
 
-      var suffix = sfix(matcherKeyword)
-        , instance = new definition()
-        , proto = foounit.Expectation.prototype;
-      
-      proto['to'    + suffix] = instance.match;
-      proto['toNot' + suffix] = instance.notMatch;
-    }
+      var suffix = sfix(matcherKeyword),
+        instance = new definition(),
+        proto = foounit.Expectation.prototype;
+
+      proto["to" + suffix] = instance.match;
+      proto["toNot" + suffix] = instance.notMatch;
+    };
 
     /**
-      * Removes a matcher
-      */
-    foounit.removeMatcher = function (matcherKeyword){
-      foounit.removeKeyword(matcherKeyword);            // Remove the keyword from the kw scope
+     * Removes a matcher
+     */
+    foounit.removeMatcher = function (matcherKeyword) {
+      foounit.removeKeyword(matcherKeyword); // Remove the keyword from the kw scope
 
-      var suffix = sfix(matcherKeyword)
-        , proto = foounit.Expectation.prototype;
-      
-      delete proto['to'    + suffix];
-      delete proto['toNot' + suffix];
-    }
+      var suffix = sfix(matcherKeyword),
+        proto = foounit.Expectation.prototype;
 
+      delete proto["to" + suffix];
+      delete proto["toNot" + suffix];
+    };
   })();
 
   /**
    * Puts all of the foounit keywords in the global scope
    */
-  foounit.globalize = function (){
+  foounit.globalize = function () {
     return this.scope(this.hostenv.global);
-  }
+  };
 
   /**
    * Mixes in all of the foounit keywords into scope object that was passed
    */
-  foounit.scope = function (obj){
+  foounit.scope = function (obj) {
     _kwScope = obj ? foounit.mixin(obj, foounit.keywords) : obj;
     return this;
-  }
+  };
 
   /**
    * Retrieve the object that was set for the keyword scope
    */
-  foounit.getScope = function (){
+  foounit.getScope = function () {
     return _kwScope;
   };
-
-
 })(foounit);
 
 // If this is node then we need to mixin and include
 // the node adapter immediately.
-if (foounit.hostenv.type == 'node'){
+if (foounit.hostenv.type == "node") {
   module.exports = foounit;
 }
-foounit.Suite = function (){
+foounit.Suite = function () {
   this._files = [];
-}
+};
 
 foounit.mixin(foounit.Suite.prototype, {
-  addPattern: function (){}
+  addPattern: function () {},
 
-  , addFile: function (file){
+  addFile: function (file) {
     this._files.push(file);
-  } 
+  },
 
-  , run: function (){
+  run: function () {
     var self = this;
 
     var files = self._files;
-    for (var i = 0; i < files.length; ++i){
-      var file = files[i].replace(/\.js$/, '');
+    for (var i = 0; i < files.length; ++i) {
+      var file = files[i].replace(/\.js$/, "");
       foounit.require(file);
     }
-    console.log('>> foounit building...');
+    console.log(">> foounit building...");
     foounit.execute(foounit.build());
-  }
+  },
 
-  , getFiles: function (){
+  getFiles: function () {
     return this._files;
-  }
+  },
 });
-foounit.BuildContext = function (){
-  this,_currentGroup = undefined;
+foounit.BuildContext = function () {
+  this, (_currentGroup = undefined);
   this._currentExample = undefined;
   this._root = undefined;
 };
 
 foounit.mixin(foounit.BuildContext.prototype, {
-  getRoot: function (){
-    this._root = this._root || new foounit.ExampleGroup('root', function (){});
+  getRoot: function () {
+    this._root = this._root || new foounit.ExampleGroup("root", function () {});
     return this._root;
-  }
+  },
 
-  , setCurrentGroup: function (group){
+  setCurrentGroup: function (group) {
     this._currentGroup = group;
-  }
+  },
 
-  , getCurrentGroup: function (){
-    if (!this._currentGroup){
+  getCurrentGroup: function () {
+    if (!this._currentGroup) {
       this.setCurrentGroup(this.getRoot());
     }
     return this._currentGroup;
-  }
+  },
 
-  , setCurrentExample: function (example){
+  setCurrentExample: function (example) {
     this._currentExample = example;
-  }
+  },
 
-  , getCurrentExample: function (){
+  getCurrentExample: function () {
     return this._currentExample;
-  }
+  },
 });
-foounit.WorkQueue = function (tasks){
+foounit.WorkQueue = function (tasks) {
   this._tasks = tasks ? tasks.concat() : [];
-}
+};
 
 foounit.mixin(foounit.WorkQueue.prototype, {
-  run: function (){
+  run: function () {
     this._runNext();
-  }
+  },
 
-  , enqueue: function (task){
+  enqueue: function (task) {
     this._tasks.push(task);
-  }
+  },
 
-  , enqueueAll: function (tasks){
+  enqueueAll: function (tasks) {
     this._tasks = this._tasks.concat(tasks);
-  }
+  },
 
-  , dequeue: function (){
+  dequeue: function () {
     return this._tasks.shift();
-  }
+  },
 
-  , size: function (){
+  size: function () {
     return this._tasks.length;
-  }
+  },
 
-  , peekNext: function (){
+  peekNext: function () {
     return this._tasks[0];
-  }
+  },
 
-  , runTask: function (task){
+  runTask: function (task) {
     task.onComplete = foounit.bind(this, this._onTaskComplete);
     task.onFailure = foounit.bind(this, this._onTaskFailure);
-    foounit.setTimeout(function (){
+    foounit.setTimeout(function () {
       task.run();
     }, 0);
-  }
+  },
 
-  , stop: function (){
+  stop: function () {
     this._tasks = [];
-  }
+  },
 
   // Replace function to receive event
-  , onTaskComplete: function (task){}
+  onTaskComplete: function (task) {},
 
   // Replace function to receive event
-  , onTaskFailure: function (task){}
+  onTaskFailure: function (task) {},
 
   // Replace function to receive event
-  , onComplete: function (queue){}
+  onComplete: function (queue) {},
 
-  , _onTaskFailure: function (task){
+  _onTaskFailure: function (task) {
     this.onTaskFailure(task);
-  }
+  },
 
-  , _onTaskComplete: function (task){
+  _onTaskComplete: function (task) {
     this.onTaskComplete(task);
     this._runNext();
-  }
+  },
 
-  , _runNext: function (){
+  _runNext: function () {
     var task = this.dequeue();
-    if (task){
+    if (task) {
       this.runTask(task);
     } else {
       this.onComplete(this);
     }
-  }
+  },
 });
 /**
  *  A queue designed to run blocks but also to look like a task in a queue
  */
 
-foounit.BlockQueue = function (example){
+foounit.BlockQueue = function (example) {
   this._example = example;
   this._tasks = [];
   this._exception = undefined;
-}
+};
 
 foounit.mixin(foounit.BlockQueue.prototype, foounit.WorkQueue.prototype);
 
 foounit.mixin(foounit.BlockQueue.prototype, {
-  onFailure: function (blockQueue){}
-  , onComplete: function (blockQueue){}
+  onFailure: function (blockQueue) {},
+  onComplete: function (blockQueue) {},
 
-  , getException: function (){
+  getException: function () {
     return this._exception;
-  }
+  },
 
-  , _onTaskFailure: function (task){
+  _onTaskFailure: function (task) {
     this._exception = task.getException();
     this.stop();
     this.onFailure(this);
-  }
+  },
 });
 
 // FIXME: This is a little hacky
-(function (foounit){
+(function (foounit) {
   var origRunTask = foounit.BlockQueue.prototype.runTask;
-  foounit.BlockQueue.prototype.runTask = function (task){
-    this._example.setCurrentBlockQueue(this); 
+  foounit.BlockQueue.prototype.runTask = function (task) {
+    this._example.setCurrentBlockQueue(this);
     origRunTask.apply(this, arguments);
   };
 })(foounit);
-foounit.Block = function (func){
+foounit.Block = function (func) {
   this._func = func;
   this._exception = undefined;
-}
+};
 
 foounit.mixin(foounit.Block.prototype, {
-  onComplete: function (block){}
-  , onFailure: function (block){}
-  , getException: function (){ return this._exception; }
+  onComplete: function (block) {},
+  onFailure: function (block) {},
+  getException: function () {
+    return this._exception;
+  },
 
-  , run: function (){
+  run: function () {
     var runContext = {};
 
     try {
       this._func.apply(runContext, []);
       this.onComplete(this);
-    } catch (e){
+    } catch (e) {
       this._exception = e;
       this.onFailure(this);
     }
-  }
+  },
 });
-foounit.PollingBlock = function (func, timeout){
+foounit.PollingBlock = function (func, timeout) {
   this._func = func;
   this._tasks = [];
   this._timeout = timeout;
@@ -545,31 +550,33 @@ foounit.PollingBlock = function (func, timeout){
 
 foounit.mixin(foounit.PollingBlock.prototype, foounit.BlockQueue.prototype);
 foounit.mixin(foounit.PollingBlock.prototype, {
-  getTimeout: function (){ return this._timeout; }
+  getTimeout: function () {
+    return this._timeout;
+  },
 
-  , run: function (){
-    var self = this
-      , start = foounit.getTime()
-      , interval;
+  run: function () {
+    var self = this,
+      start = foounit.getTime(),
+      interval;
 
-    interval = foounit.setInterval(function (){
+    interval = foounit.setInterval(function () {
       try {
         self._func.apply({}, []);
         foounit.clearInterval(interval);
         self.onComplete(self);
-      } catch (e){
-        if (foounit.getTime() - start >= self._timeout){
+      } catch (e) {
+        if (foounit.getTime() - start >= self._timeout) {
           foounit.clearInterval(interval);
-          e.message = 'waitFor timeout: ' + e.message;
+          e.message = "waitFor timeout: " + e.message;
           self._exception = e;
           self.onFailure(self);
         }
       }
     }, this._pollInterval);
-  }
+  },
 });
 
-foounit.TimeoutBlock = function (func, timeout){
+foounit.TimeoutBlock = function (func, timeout) {
   this._func = func;
   this._tasks = [];
   this._timeout = timeout;
@@ -579,34 +586,36 @@ foounit.TimeoutBlock = function (func, timeout){
 
 foounit.mixin(foounit.TimeoutBlock.prototype, foounit.BlockQueue.prototype);
 foounit.mixin(foounit.TimeoutBlock.prototype, {
-  getTimeout: function (){ return this._timeout; }
+  getTimeout: function () {
+    return this._timeout;
+  },
 
-  , run: function (){
-    var self = this
-      , start = foounit.getTime()
-      , passed = true
-      , interval;
+  run: function () {
+    var self = this,
+      start = foounit.getTime(),
+      passed = true,
+      interval;
 
-    interval = foounit.setInterval(function (){
+    interval = foounit.setInterval(function () {
       try {
         self._func.apply({}, []);
         foounit.clearInterval(interval);
-        self._exception = new Error('timeout was not reached');
+        self._exception = new Error("timeout was not reached");
         self.onFailure(self);
-      } catch (e){
-        if (foounit.getTime() - start > self._timeout){
+      } catch (e) {
+        if (foounit.getTime() - start > self._timeout) {
           foounit.clearInterval(interval);
           self.onComplete(self);
         }
       }
     }, this._pollInterval);
-  }
+  },
 });
 
-foounit.Example = function (description, test, pending){
+foounit.Example = function (description, test, pending) {
   this._befores = [];
   this._test = test;
-  this._afters  = [];
+  this._afters = [];
   this._description = description;
   this._descriptions = [];
   this._currentBlockQueue = undefined;
@@ -617,94 +626,93 @@ foounit.Example = function (description, test, pending){
   if (pending === true) {
     this._status = this.PENDING;
   }
-}
+};
 
 foounit.mixin(foounit.Example.prototype, {
-  SUCCESS:    1
-  , FAILURE:  2
-  , PENDING:  3
+  SUCCESS: 1,
+  FAILURE: 2,
+  PENDING: 3,
 
-  , onComplete: function (example){}
+  onComplete: function (example) {},
 
   // Key events in the run lifecycle
-  , onBeforesComplete: function (){}
-  , onBeforesFailure: function (failedAt){}
-  , onTestComplete: function (){}
-  , onAftersComplete: function (){}
+  onBeforesComplete: function () {},
+  onBeforesFailure: function (failedAt) {},
+  onTestComplete: function () {},
+  onAftersComplete: function () {},
 
-  , setCurrentBlockQueue: function (blockQueue){
+  setCurrentBlockQueue: function (blockQueue) {
     this._currentBlockQueue = blockQueue;
-  }
+  },
 
-  , getCurrentBlockQueue: function (){
+  getCurrentBlockQueue: function () {
     return this._currentBlockQueue;
-  }
+  },
 
-  , run: function (){
+  run: function () {
     foounit.getBuildContext().setCurrentExample(this);
 
-    if (this.isPending()){
+    if (this.isPending()) {
       this.onComplete(this);
       return;
     }
     this._status = this.SUCCESS;
 
-
     var self = this;
 
-    this.onBeforesComplete = function (failedAt){
+    this.onBeforesComplete = function (failedAt) {
       self._runTest();
     };
 
-    this.onBeforesFailure = function (failedAt){
+    this.onBeforesFailure = function (failedAt) {
       this._runAfters(failedAt);
     };
 
-    this.onTestComplete = function (){
+    this.onTestComplete = function () {
       self._runAfters();
     };
 
-    this.onAftersComplete = foounit.bind(this, function (){
+    this.onAftersComplete = foounit.bind(this, function () {
       foounit.getBuildContext().setCurrentExample(undefined);
       foounit.resetMocks();
       self.onComplete(self);
     });
 
     this._runBefores();
-  }
+  },
 
-  , enqueue: function (block){
+  enqueue: function (block) {
     this._currentBlockQueue.enqueue(block);
-  }
+  },
 
   // TODO: Refactor, before, after and it should all return BlockQueues
-  , _enqueueBlocks: function (funcs){
-    for (var i = 0; i < funcs.length; ++i){
-      var func = funcs[i] || function (){}
-        , blockQueue = new foounit.BlockQueue(this)
-        , block = new foounit.Block(func);
+  _enqueueBlocks: function (funcs) {
+    for (var i = 0; i < funcs.length; ++i) {
+      var func = funcs[i] || function () {},
+        blockQueue = new foounit.BlockQueue(this),
+        block = new foounit.Block(func);
 
       blockQueue.enqueue(block);
       this._queue.enqueue(blockQueue);
     }
-  }
+  },
 
-  , _runBefores: function (){
-    var self = this
-      , index = 0;
+  _runBefores: function () {
+    var self = this,
+      index = 0;
 
     this._queue = new foounit.WorkQueue();
 
-    this._queue.onComplete = function (){
+    this._queue.onComplete = function () {
       self.onBeforesComplete();
     };
 
     // This index stuff is a little janky
-    this._queue.onTaskComplete = function (blockQueue){
+    this._queue.onTaskComplete = function (blockQueue) {
       ++index;
-    }
+    };
 
-    this._queue.onTaskFailure = function (blockQueue){
+    this._queue.onTaskFailure = function (blockQueue) {
       self._status = self.FAILURE;
       self._exception = blockQueue.getException();
       self._queue.stop();
@@ -713,11 +721,11 @@ foounit.mixin(foounit.Example.prototype, {
 
     this._enqueueBlocks(this._befores);
     this._queue.run();
-  }
+  },
 
-  , _runAfters: function (fromIndex){
-    var self = this
-      , afters = this._afters;
+  _runAfters: function (fromIndex) {
+    var self = this,
+      afters = this._afters;
 
     fromIndex = fromIndex || afters.length;
     afters.reverse();
@@ -725,106 +733,108 @@ foounit.mixin(foounit.Example.prototype, {
 
     this._queue = new foounit.WorkQueue();
 
-    this._queue.onComplete = function (){
+    this._queue.onComplete = function () {
       self.onAftersComplete();
     };
 
-    this._queue.onTaskFailure = function (task){
-      if (self._status !== self.FAILURE){
+    this._queue.onTaskFailure = function (task) {
+      if (self._status !== self.FAILURE) {
         self._status = self.FAILURE;
         self._exception = task.getException();
       }
       task.onComplete(task);
-    }
+    };
 
     this._enqueueBlocks(afters);
     this._queue.run();
-  }
+  },
 
-  , _runTest: function (){
+  _runTest: function () {
     var self = this;
 
     this._queue = new foounit.WorkQueue();
 
-    this._queue.onTaskFailure = function (blockQueue){
+    this._queue.onTaskFailure = function (blockQueue) {
       self._status = self.FAILURE;
       self._exception = blockQueue.getException();
       self.onTestComplete();
     };
 
-    this._queue.onComplete = function (){
+    this._queue.onComplete = function () {
       self.onTestComplete();
     };
 
     this._enqueueBlocks([this._test]);
     this._queue.run();
-  }
+  },
 
-  , getStack: function (){
+  getStack: function () {
     var e = this.getException();
 
-    // TODO: We need to do a lot better than this 
-    return e.stack || e.stacktrace || e.sourceURL + ':' + e.line;
-  }
+    // TODO: We need to do a lot better than this
+    return e.stack || e.stacktrace || e.sourceURL + ":" + e.line;
+  },
 
-  , isSuccess: function (){
+  isSuccess: function () {
     return this._status === this.SUCCESS;
-  }
+  },
 
-  , isFailure: function (){
+  isFailure: function () {
     return this._status === this.FAILURE;
-  }
+  },
 
-  , isPending: function (){
+  isPending: function () {
     return this._status === this.PENDING;
-  }
+  },
 
-  , getException: function (){
+  getException: function () {
     return this._exception;
-  }
+  },
 
-  , setBefores: function (befores){
+  setBefores: function (befores) {
     this._befores = befores;
-  }
+  },
 
-  , getDescription: function (){
+  getDescription: function () {
     return this._description;
-  }
+  },
 
-  , getFullDescription: function (){
+  getFullDescription: function () {
     var descriptions = this._descriptions.concat();
     descriptions.shift();
     descriptions.push(this.getDescription());
-    return descriptions.join(' ');
-  }
+    return descriptions.join(" ");
+  },
 
-  , getDescriptions: function (){
+  getDescriptions: function () {
     return this._descriptions;
-  }
+  },
 
-  , setDescriptions: function (descriptions){
+  setDescriptions: function (descriptions) {
     this._descriptions = descriptions;
-  }
+  },
 
-  , getBefores: function (){ return this._befores; }
+  getBefores: function () {
+    return this._befores;
+  },
 
-  , setAfters: function (afters){
+  setAfters: function (afters) {
     this._afters = afters;
-  }
+  },
 
-  , getAfters: function (){
+  getAfters: function () {
     return this._afters;
-  }
+  },
 
-  , getTest: function (){
+  getTest: function () {
     return this._test;
-  }
+  },
 
-  , setStatus: function (code){
+  setStatus: function (code) {
     this._status = code;
-  }
+  },
 });
-foounit.ExampleGroup = function (description, builder, pending){
+foounit.ExampleGroup = function (description, builder, pending) {
   this._description = description;
   this._builder = builder;
   this._pending = pending;
@@ -832,109 +842,103 @@ foounit.ExampleGroup = function (description, builder, pending){
   this._after = null;
   this._examples = [];
   this._groups = [];
-}
+};
 
 foounit.mixin(foounit.ExampleGroup.prototype, {
-  build: function (){
+  build: function () {
     this._builder();
-  }
+  },
 
-  , getExamples: function (){
+  getExamples: function () {
     return this._examples;
-  }
+  },
 
-  , addExample: function (example){
-    if (this.isPending()){
+  addExample: function (example) {
+    if (this.isPending()) {
       example.setStatus(foounit.Example.prototype.PENDING);
     }
     this._examples.push(example);
-  }
+  },
 
-  , addGroup: function (group){
-    if (this.isPending()){
+  addGroup: function (group) {
+    if (this.isPending()) {
       group.setPending(true);
     }
     this._groups.push(group);
-  }
+  },
 
-  , setAfter: function (func){
+  setAfter: function (func) {
     this._after = func;
-  }
+  },
 
-  , getAfter: function (){
+  getAfter: function () {
     return this._after;
-  }
+  },
 
-  , setBefore: function (func){
+  setBefore: function (func) {
     this._before = func;
-  }
+  },
 
-  , getBefore: function (){
+  getBefore: function () {
     return this._before;
-  }
+  },
 
-  , getGroups: function (){
+  getGroups: function () {
     return this._groups;
-  }
+  },
 
-  , getDescription: function (){
+  getDescription: function () {
     return this._description;
-  }
+  },
 
-  , isPending: function (){
+  isPending: function () {
     return this._pending;
-  }
+  },
 
-  , setPending: function (bool){
+  setPending: function (bool) {
     this._pending = bool;
-  }
+  },
 });
-foounit.Expectation = function (actual){
+foounit.Expectation = function (actual) {
   this._actual = actual;
-}
+};
 
 foounit.mixin(foounit.Expectation.prototype, {
-  to: function (matcherClass, expected){
+  to: function (matcherClass, expected) {
     var matcher = new matcherClass();
     matcher.match(this._actual, expected);
-  }
+  },
 
-  , toNot: function (matcherClass, expected){
+  toNot: function (matcherClass, expected) {
     var matcher = new matcherClass();
     matcher.notMatch(this._actual, expected);
-  }
+  },
 });
 /**
  * Creates an example to be added to the current group in the BuildContext
  */
-foounit.addKeyword('it', function (description, test){
+foounit.addKeyword("it", function (description, test) {
   var example = new foounit.Example(description, test);
-  foounit
-    .getBuildContext()
-    .getCurrentGroup()
-    .addExample(example);
+  foounit.getBuildContext().getCurrentGroup().addExample(example);
   return example;
 });
 
 /**
  * Creates a pending example
  */
-foounit.addKeyword('xit', function (description, test){
+foounit.addKeyword("xit", function (description, test) {
   var example = new foounit.Example(description, test, true);
-  foounit
-    .getBuildContext()
-    .getCurrentGroup()
-    .addExample(example);
+  foounit.getBuildContext().getCurrentGroup().addExample(example);
   return example;
 });
 
 /** Alias for xit **/
-foounit.addKeyword('fuckit', foounit.keywords.xit);
+foounit.addKeyword("fuckit", foounit.keywords.xit);
 
 /**
  * Defines a before function in the context of the current group
  */
-foounit.addKeyword('before', function (func){
+foounit.addKeyword("before", function (func) {
   var group = foounit.getBuildContext().getCurrentGroup();
   group.setBefore(func);
 });
@@ -942,7 +946,7 @@ foounit.addKeyword('before', function (func){
 /**
  * Defines an after function in the context of the current group
  */
-foounit.addKeyword('after', function (func){
+foounit.addKeyword("after", function (func) {
   var group = foounit.getBuildContext().getCurrentGroup();
   group.setAfter(func);
 });
@@ -950,10 +954,10 @@ foounit.addKeyword('after', function (func){
 /**
  * Defines a group in the BuildContext
  */
-foounit.addKeyword('describe', function (description, builder){
-  var context = foounit.getBuildContext()
-    , parentGroup = context.getCurrentGroup()
-    , group = new foounit.ExampleGroup(description, builder);
+foounit.addKeyword("describe", function (description, builder) {
+  var context = foounit.getBuildContext(),
+    parentGroup = context.getCurrentGroup(),
+    group = new foounit.ExampleGroup(description, builder);
 
   parentGroup.addGroup(group);
 
@@ -967,10 +971,10 @@ foounit.addKeyword('describe', function (description, builder){
  * All examples and nested groups within this group will
  * be marked as pending.
  */
-foounit.addKeyword('xdescribe', function (description, builder){
-  var context = foounit.getBuildContext()
-    , parentGroup = context.getCurrentGroup()
-    , group = new foounit.ExampleGroup(description, builder, true);
+foounit.addKeyword("xdescribe", function (description, builder) {
+  var context = foounit.getBuildContext(),
+    parentGroup = context.getCurrentGroup(),
+    group = new foounit.ExampleGroup(description, builder, true);
 
   parentGroup.addGroup(group);
 
@@ -983,17 +987,20 @@ foounit.addKeyword('xdescribe', function (description, builder){
 /**
  * Creates a foounit.Expectation
  */
-foounit.addKeyword('expect', function (actual){
+foounit.addKeyword("expect", function (actual) {
   return new foounit.Expectation(actual);
 });
 
 /**
  * Adds a polling block to the current block queue
  */
-foounit.addKeyword('waitFor', function (func, timeout){
-  var example = foounit.getBuildContext().getCurrentExample()
-    , block = new foounit.PollingBlock(func, timeout || foounit.settings.waitForTimeout);
-  
+foounit.addKeyword("waitFor", function (func, timeout) {
+  var example = foounit.getBuildContext().getCurrentExample(),
+    block = new foounit.PollingBlock(
+      func,
+      timeout || foounit.settings.waitForTimeout
+    );
+
   example.enqueue(block);
   return block;
 });
@@ -1001,382 +1008,427 @@ foounit.addKeyword('waitFor', function (func, timeout){
 /**
  * Adds a TimeoutBlock to the current block queue
  */
-foounit.addKeyword('waitForTimeout', function (func, timeout){
-  var example = foounit.getBuildContext().getCurrentExample()
-    , block = new foounit.TimeoutBlock(func, timeout || foounit.settings.waitForTimeout);
+foounit.addKeyword("waitForTimeout", function (func, timeout) {
+  var example = foounit.getBuildContext().getCurrentExample(),
+    block = new foounit.TimeoutBlock(
+      func,
+      timeout || foounit.settings.waitForTimeout
+    );
 
   example.enqueue(block);
   return block;
 });
-
 
 /**
  * Adds a RunBlock to the current block queue that fails the test if it throws
  */
-foounit.addKeyword('run', function (func){
-  var example = foounit.getBuildContext().getCurrentExample()
-    , block = new foounit.Block(func);
+foounit.addKeyword("run", function (func) {
+  var example = foounit.getBuildContext().getCurrentExample(),
+    block = new foounit.Block(func);
 
   example.enqueue(block);
   return block;
 });
-if (foounit.hostenv.type == 'node'){
-  var assert = require('assert');
+if (foounit.hostenv.type == "node") {
+  var assert = require("assert");
 }
 
 /**
  * Asserts that a function throws an error
  */
-foounit.addMatcher('throwError', function (){
-  this.match = function (actual, expected){
+foounit.addMatcher("throwError", function () {
+  this.match = function (actual, expected) {
     // actual == block
     // expected == error
     assert.throws(actual, expected);
-  }
+  };
 
-  this.notMatch = function (actual, expected){
+  this.notMatch = function (actual, expected) {
     // actual == block
     // expected == error
     assert.doesNotThrow(actual, expected);
-  }
+  };
 });
 
 /**
  * Asserts type and object
  */
-foounit.addMatcher('be', function (){
-  this.match = function (actual, expected){
+foounit.addMatcher("be", function () {
+  this.match = function (actual, expected) {
     assert.strictEqual(actual, expected);
-  }
+  };
 
-  this.notMatch = function (actual, expected){
+  this.notMatch = function (actual, expected) {
     assert.notStrictEqual(actual, expected);
-  }
+  };
 });
 
 /**
  * Asserts that actual === null
  */
-foounit.addMatcher('beNull', function (){
-  this.match = function (actual){
+foounit.addMatcher("beNull", function () {
+  this.match = function (actual) {
     assert.strictEqual(actual, null);
-  }
+  };
 
-  this.notMatch = function (actual, expected){
+  this.notMatch = function (actual, expected) {
     assert.notStrictEqual(actual, null);
-  }
+  };
 });
 
 /**
  * Asserts that actual === undefined
  */
-foounit.addMatcher('beUndefined', function (){
-  this.match = function (actual){
+foounit.addMatcher("beUndefined", function () {
+  this.match = function (actual) {
     assert.strictEqual(actual, undefined);
-  }
+  };
 
-  this.notMatch = function (actual, expected){
+  this.notMatch = function (actual, expected) {
     assert.notStrictEqual(actual, undefined);
-  }
+  };
 });
 
 /**
  * Assert that actual is greater than expected
  */
-foounit.addMatcher('beGt', function (){
-  this.match = function (actual, expected){
-    if (actual > expected){ return; }
-    assert.fail(actual, expected, null, '>');
-  }
+foounit.addMatcher("beGt", function () {
+  this.match = function (actual, expected) {
+    if (actual > expected) {
+      return;
+    }
+    assert.fail(actual, expected, null, ">");
+  };
 
-  this.notMatch = function (actual, expected){
-    if (actual <= expected){ return; }
-    assert.fail(actual, expected, null, '<=');
-  }
+  this.notMatch = function (actual, expected) {
+    if (actual <= expected) {
+      return;
+    }
+    assert.fail(actual, expected, null, "<=");
+  };
 });
 
 /**
  * Assert that actual is less than expected
  */
-foounit.addMatcher('beLt', function (){
-  this.match = function (actual, expected){
-    if (actual < expected){ return; }
-    assert.fail(actual, expected, null, '<');
-  }
+foounit.addMatcher("beLt", function () {
+  this.match = function (actual, expected) {
+    if (actual < expected) {
+      return;
+    }
+    assert.fail(actual, expected, null, "<");
+  };
 
-  this.notMatch = function (actual, expected){
-    if (actual >= expected){ return };
-    assert.fail(actual, expected, null, '>=');
-  }
+  this.notMatch = function (actual, expected) {
+    if (actual >= expected) {
+      return;
+    }
+    assert.fail(actual, expected, null, ">=");
+  };
 });
 
 /**
  * Asserts true === actual
  */
-foounit.addMatcher('beTrue', function (){
+foounit.addMatcher("beTrue", function () {
   // expected is unused
-  this.notMatch = function (actual){
+  this.notMatch = function (actual) {
     assert.notStrictEqual(actual, true);
-  }
+  };
 
   // expected is unused
-  this.match = function (actual){
+  this.match = function (actual) {
     assert.strictEqual(actual, true);
-  }
+  };
 });
 
 /**
  * Asserts that actual is truthy
  */
-foounit.addMatcher('beTruthy', function (){
-  this.notMatch = function (actual){
-    if (!actual){ return };
+foounit.addMatcher("beTruthy", function () {
+  this.notMatch = function (actual) {
+    if (!actual) {
+      return;
+    }
     assert.fail('Expected "' + actual + '" to NOT be truthy');
-  }
+  };
 
-  this.match = function (actual){
-    if (actual){ return; }
+  this.match = function (actual) {
+    if (actual) {
+      return;
+    }
     assert.fail('Expected "' + actual + '" to be truthy');
-  }
+  };
 });
 
 /**
  * Asserts true === actual
  */
-foounit.addMatcher('beFalse', function (){
+foounit.addMatcher("beFalse", function () {
   // expected is unused
-  this.notMatch = function (actual){
+  this.notMatch = function (actual) {
     assert.notStrictEqual(actual, false);
-  }
+  };
 
   // expected is unused
-  this.match = function (actual){
+  this.match = function (actual) {
     assert.strictEqual(actual, false);
-  }
+  };
 });
 
 /**
  * Asserts that actual is falsy
  */
-foounit.addMatcher('beFalsy', function (){
-  this.notMatch = function (actual){
-    if (actual){ return; }
+foounit.addMatcher("beFalsy", function () {
+  this.notMatch = function (actual) {
+    if (actual) {
+      return;
+    }
     assert.fail('Expected "' + actual + '" to NOT be falsy');
-  }
+  };
 
-  this.match = function (actual){
-    if (!actual){ return; }
+  this.match = function (actual) {
+    if (!actual) {
+      return;
+    }
     assert.fail('Expected "' + actual + '" to be falsy');
-  }
+  };
 });
 
 /**
  * Asserts deep equality
  */
-foounit.addMatcher('equal', function (){
+foounit.addMatcher("equal", function () {
   var pSlice = Array.prototype.slice;
 
-  var isArguments = function (value){
+  var isArguments = function (value) {
     return value && !!value.callee;
-  }
+  };
 
-  var exec = function (actual, expected, not){
-    if (isArguments(actual)){
+  var exec = function (actual, expected, not) {
+    if (isArguments(actual)) {
       actual = pSlice.call(actual);
     }
 
-    if (isArguments(expected)){
+    if (isArguments(expected)) {
       expected = pSlice.call(expected);
     }
 
-    var deepEqualFunc = not ? 'notDeepEqual' : 'deepEqual';
+    var deepEqualFunc = not ? "notDeepEqual" : "deepEqual";
     assert[deepEqualFunc](expected, actual);
-  }
+  };
 
-  this.match = function (actual, expected){
+  this.match = function (actual, expected) {
     exec(actual, expected, false);
-  }
+  };
 
-  this.notMatch = function (actual, expected){
+  this.notMatch = function (actual, expected) {
     exec(actual, expected, true);
-  }
+  };
 });
 
 /**
  * Asserts that actual has an element that === expected
  */
-foounit.addMatcher('include', function (){
-  var find = function (actual, expected){
-    if (!expected || (expected.constructor != Array && !expected.callee)){
+foounit.addMatcher("include", function () {
+  var find = function (actual, expected) {
+    if (!expected || (expected.constructor != Array && !expected.callee)) {
       expected = [expected];
     }
 
-    for (var i = 0; i < expected.length; ++i){
+    for (var i = 0; i < expected.length; ++i) {
       var found = false;
-      for (var j = 0; j < actual.length; ++j){
-        if (expected[i] === actual[j]){
+      for (var j = 0; j < actual.length; ++j) {
+        if (expected[i] === actual[j]) {
           found = true;
           break;
         }
       }
-      if (!found){ return false; }
+      if (!found) {
+        return false;
+      }
     }
 
     return true;
-  }
+  };
 
-  this.notMatch = function (actual, expected){
-    if (!find(actual, expected)){ return; }
-    assert.fail(actual, expected, null, 'is included in');
-  }
+  this.notMatch = function (actual, expected) {
+    if (!find(actual, expected)) {
+      return;
+    }
+    assert.fail(actual, expected, null, "is included in");
+  };
 
-  this.match = function (actual, expected){
-    if (find(actual, expected)){ return; }
-    assert.fail(actual, expected, null, 'is not included in');
-  }
+  this.match = function (actual, expected) {
+    if (find(actual, expected)) {
+      return;
+    }
+    assert.fail(actual, expected, null, "is not included in");
+  };
 });
 
-foounit.addMatcher('match', function (){
-  this.notMatch = function (actual, expected){
-    if (!expected.exec(actual)){ return; }
-    assert.fail(actual, expected, null, expected + ' matches');
-  }
+foounit.addMatcher("match", function () {
+  this.notMatch = function (actual, expected) {
+    if (!expected.exec(actual)) {
+      return;
+    }
+    assert.fail(actual, expected, null, expected + " matches");
+  };
 
-  this.match = function (actual, expected){
-    if (expected.exec(actual)){ return; }
-    assert.fail(actual, expected, null, expected + ' does not match');
-  }
+  this.match = function (actual, expected) {
+    if (expected.exec(actual)) {
+      return;
+    }
+    assert.fail(actual, expected, null, expected + " does not match");
+  };
 });
 
-if (foounit.hostenv.type == 'node'){
-  var assert = require('assert');
+if (foounit.hostenv.type == "node") {
+  var assert = require("assert");
 }
 
-(function (foounit){
+(function (foounit) {
   var pSlice = Array.prototype.slice;
 
-  var MockRepository = function (){
+  var MockRepository = function () {
     this._mocks = [];
 
-    this.add = function (obj, funcStr){
-      this._mocks.push([ obj, funcStr, obj[funcStr] ]);
+    this.add = function (obj, funcStr) {
+      this._mocks.push([obj, funcStr, obj[funcStr]]);
     };
 
-    this.reset = function (){
+    this.reset = function () {
       var mocks = this._mocks;
-      for (var i = mocks.length - 1; i >= 0; --i){
+      for (var i = mocks.length - 1; i >= 0; --i) {
         var mock = mocks[i];
         // reset to original function
         mock[0][mock[1]] = mock[2];
       }
     };
-  }
+  };
 
   var repo = new MockRepository();
-  
-  foounit.addKeyword('mock', function (obj, funcStr, stubFunc){
-    if (arguments.length == 1 && typeof obj == 'function'){
+
+  foounit.addKeyword("mock", function (obj, funcStr, stubFunc) {
+    if (arguments.length == 1 && typeof obj == "function") {
       obj = { callback: obj };
-      funcStr = 'callback';
+      funcStr = "callback";
       stubFunc = obj.callback;
     }
 
-    if (!obj[funcStr]){
+    if (!obj[funcStr]) {
       throw new Error('"' + funcStr + '" is not a function that can be mocked');
     }
 
     repo.add(obj, funcStr);
 
-    obj[funcStr] = function (){
+    obj[funcStr] = function () {
       var f = obj[funcStr];
       f.totalCalls = f.totalCalls !== undefined ? ++f.totalCalls : 1;
-      f.callArgs   = f.callArgs || [];
+      f.callArgs = f.callArgs || [];
 
       var args = pSlice.call(arguments, 0);
       f.callArgs.push(args.concat());
       f.mostRecentArgs = args.concat();
 
-      if (stubFunc){
+      if (stubFunc) {
         return stubFunc.apply(this, arguments);
       }
-    }
+    };
 
     obj[funcStr].isMocked = true;
 
     return obj[funcStr];
   });
 
-  foounit.addKeyword('haveBeenCalled', function (){
+  foounit.addKeyword("haveBeenCalled", function () {
     var equalMatcher = new foounit.keywords.equal();
 
-    function format(actualCount, expectedCount, not){
-      var notStr = not ? ' not' : '';
+    function format(actualCount, expectedCount, not) {
+      var notStr = not ? " not" : "";
       actualCount = actualCount || 0;
-      return 'mock was called ' + actualCount +
-        ' times, but was' + notStr + ' expected ' + expectedCount + ' times';
-    };
-
-    function assertMocked(func){
-      if (func.isMocked){ return; }
-      throw new Error('Function has not been mocked');
+      return (
+        "mock was called " +
+        actualCount +
+        " times, but was" +
+        notStr +
+        " expected " +
+        expectedCount +
+        " times"
+      );
     }
 
-    function wasCalledWithArgs(callArgs, expectedArgs){
-      if (!callArgs){ return; }
+    function assertMocked(func) {
+      if (func.isMocked) {
+        return;
+      }
+      throw new Error("Function has not been mocked");
+    }
 
-      for (var i = 0; i < callArgs.length; ++i){
+    function wasCalledWithArgs(callArgs, expectedArgs) {
+      if (!callArgs) {
+        return;
+      }
+
+      for (var i = 0; i < callArgs.length; ++i) {
         try {
           equalMatcher.match(callArgs[i], expectedArgs);
           return true;
-        } catch (e){}
+        } catch (e) {}
       }
       return false;
-    };
+    }
 
-    this.match = function (mockedFunc, countOrArgs){
+    this.match = function (mockedFunc, countOrArgs) {
       assertMocked(mockedFunc);
 
       countOrArgs = countOrArgs || 1;
 
-      if (countOrArgs.length !== undefined){
-        if (wasCalledWithArgs(mockedFunc.callArgs, countOrArgs)){ return; }
-        throw new Error('Function was not called with arguments: ' + countOrArgs);
+      if (countOrArgs.length !== undefined) {
+        if (wasCalledWithArgs(mockedFunc.callArgs, countOrArgs)) {
+          return;
+        }
+        throw new Error(
+          "Function was not called with arguments: " + countOrArgs
+        );
       } else {
         assert.strictEqual(
-         mockedFunc.totalCalls 
-          , countOrArgs
-          , format(mockedFunc.totalCalls, countOrArgs)
+          mockedFunc.totalCalls,
+          countOrArgs,
+          format(mockedFunc.totalCalls, countOrArgs)
         );
       }
-    }
+    };
 
-    this.notMatch = function (mockedFunc, countOrArgs){
+    this.notMatch = function (mockedFunc, countOrArgs) {
       assertMocked(mockedFunc);
 
       countOrArgs = countOrArgs || 1;
 
-      if (countOrArgs.length !== undefined){
-        if (!wasCalledWithArgs(mockedFunc.callArgs, countOrArgs)){ return; }
-        throw new Error('Function was called with arguments: ' + countOrArgs);
+      if (countOrArgs.length !== undefined) {
+        if (!wasCalledWithArgs(mockedFunc.callArgs, countOrArgs)) {
+          return;
+        }
+        throw new Error("Function was called with arguments: " + countOrArgs);
       } else {
         assert.notStrictEqual(
-         mockedFunc.totalCalls 
-          , countOrArgs
-          , format(mockedFunc.totalCalls, countOrArgs, true)
+          mockedFunc.totalCalls,
+          countOrArgs,
+          format(mockedFunc.totalCalls, countOrArgs, true)
         );
       }
-    }
+    };
   });
 
-  foounit.addKeyword('withArgs', function (){
+  foounit.addKeyword("withArgs", function () {
     return Array.prototype.slice.call(arguments, 0);
   });
 
-  foounit.addKeyword('once',   1);
-  foounit.addKeyword('twice',  2); 
-  foounit.addKeyword('thrice', 3);
+  foounit.addKeyword("once", 1);
+  foounit.addKeyword("twice", 2);
+  foounit.addKeyword("thrice", 3);
 
-  foounit.resetMocks = function (){
+  foounit.resetMocks = function () {
     repo.reset();
   };
 })(foounit);

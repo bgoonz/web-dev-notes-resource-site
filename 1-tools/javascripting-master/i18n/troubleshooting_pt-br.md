@@ -5,22 +5,20 @@
 
 ## Verifique a solução:
 
-`Solução
-===================`
+`Solução ===================`
 
 %solution%
 
-`Sua tentativa
-===================`
+`Sua tentativa ===================`
 
 %attempt%
 
-`Diferença
-===================`
+`Diferença ===================`
 
 %diff%
 
 ## Solução de problemas adicionais:
- * Você digitou o nome do arquivo corretamente? Certifique-se de que o nome do arquivo é `%filename%`.
- * Verifique se você não se esqueceu dos parênteses, já que de outra maneira o compilador não iria conseguir ler o arquivo.
- * Certifique-se de não ter cometido erros ortográficos.
+
+- Você digitou o nome do arquivo corretamente? Certifique-se de que o nome do arquivo é `%filename%`.
+- Verifique se você não se esqueceu dos parênteses, já que de outra maneira o compilador não iria conseguir ler o arquivo.
+- Certifique-se de não ter cometido erros ortográficos.

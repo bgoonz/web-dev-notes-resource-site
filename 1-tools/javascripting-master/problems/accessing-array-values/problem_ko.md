@@ -4,9 +4,8 @@
 
 여기 예제가 있습니다.
 
-
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -24,6 +23,7 @@ console.log(pets[0]);
 ```
 
 유효하지 않은 표기법
+
 ```
 console.log(pets.1);
 ```
@@ -33,10 +33,10 @@ console.log(pets.1);
 `accessing-array-values.js`라는 이름의 파일을 만듭니다.
 
 그 파일에서, `food`라는 배열을 정의합니다.
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 `console.log()`를 사용해 배열의 `두 번째` 값을 터미널에 출력합니다.
 

@@ -1,10 +1,9 @@
 En funksjon er en samling kode som tar imot data, prosesserer den dataen og lager et resultat.
 
-
 Her er et eksempel:
 
 ```js
-function eksempel (x) {
+function eksempel(x) {
   return x * 2;
 }
 ```
@@ -12,7 +11,7 @@ function eksempel (x) {
 Vi kan **kalle** denne funksjonen slik som dette for å få nummeret 10:
 
 ```js
-eksempel(5)
+eksempel(5);
 ```
 
 Eksemplet over antar at `eksempel` funksjonen tar et nummer som et argument og returner et tall som multipliseres med 2.
@@ -26,7 +25,7 @@ Definer en funksjon med navnet `eat` i den filen som tar i mot argumentet med na
 På innsiden av den funksjonen skal du returnere `food` argumentet slik som dette:
 
 ```js
-return food + ' tasted really good.';
+return food + " tasted really good.";
 ```
 
 Inni parantesene til `console.log()`, kall `eat()` funksjonen med stringen `bananas` som argument.

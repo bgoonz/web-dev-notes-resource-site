@@ -4,9 +4,8 @@ O valor do índice inicia com 0 e vai até o valor que representa o tamanho do a
 
 Aqui está um exemplo:
 
-
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -24,6 +23,7 @@ console.log(pets[0]);
 ```
 
 Uso invalido:
+
 ```
 console.log(pets.1);
 ```
@@ -33,10 +33,10 @@ console.log(pets.1);
 Crie um arquivo chamado `accessing-array-values.js`.
 
 Neste arquivo, defina o array `food` :
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 Use o `console.log()` para imprimir o segundo valor do array no terminal.
 

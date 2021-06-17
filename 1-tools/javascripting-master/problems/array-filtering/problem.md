@@ -7,10 +7,10 @@ For this we can use the `.filter()` method.
 Here is an example:
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-  return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -31,7 +31,7 @@ Like above, define a variable named `filtered` that references the result of `nu
 The function that you pass to the `.filter()` method will look something like this:
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

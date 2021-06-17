@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var strip = require('./stripAnsi');
+var strip = require("./stripAnsi");
 
 /**
  * Pads a value with with space or
@@ -16,7 +16,7 @@ var strip = require('./stripAnsi');
 
 module.exports = function (str, width, delimiter) {
   width = Math.floor(width);
-  delimiter = delimiter || ' ';
+  delimiter = delimiter || " ";
   var len = Math.max(0, width - strip(str).length);
   return str + Array(len + 1).join(delimiter);
 };

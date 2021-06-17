@@ -1,7 +1,7 @@
 Un array es una lista ordenada de elementos. Por ejemplo:
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 ```
 
 ### El ejercicio:
@@ -17,4 +17,3 @@ Comprueba si tu programa es correcto ejecutando el siguiente commando:
 ```bash
 javascripting verify arrays.js
 ```
-

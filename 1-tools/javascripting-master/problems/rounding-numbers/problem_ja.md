@@ -6,8 +6,7 @@
 
 ## やってみよう
 
-
-rounding-numbers.jsファイルを作りましょう。
+rounding-numbers.js ファイルを作りましょう。
 
 ファイルの中で、小数 `1.5` を表す、変数 `roundUp` を定義しましょう。
 

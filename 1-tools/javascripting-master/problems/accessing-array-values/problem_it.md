@@ -4,9 +4,8 @@ L'indice numerico comincia da zero e arriva al valore della proprietà `length` 
 
 Ecco un esempio:
 
-
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -24,6 +23,7 @@ console.log(pets[0]);
 ```
 
 Notazione non valida:
+
 ```
 console.log(pets.1);
 ```
@@ -33,10 +33,10 @@ console.log(pets.1);
 Crea un file dal nome `accessing-array-values.js`.
 
 In questo file, definisci l'array `food` :
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 Usa `console.log()` per stampare il `secondo` valore dell'array sul terminale.
 

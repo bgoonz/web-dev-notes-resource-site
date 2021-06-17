@@ -3,7 +3,7 @@ For løkker ser slik ut:
 ```js
 for (var i = 0; i < 10; i++) {
   // skriv ut nummerne fra 0 til 9
-  console.log(i)
+  console.log(i);
 }
 ```
 

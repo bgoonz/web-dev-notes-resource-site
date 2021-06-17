@@ -3,7 +3,7 @@ Uma função basicamente recebe uma entrada, processa a entrada, e então produz
 Aqui está um exemplo:
 
 ```js
-function example (x) {
+function example(x) {
   return x * 2;
 }
 ```
@@ -11,7 +11,7 @@ function example (x) {
 Podemos **chamar** a função `example` dessa forma para conseguir o número 10:
 
 ```js
-example(5)
+example(5);
 ```
 
 O exemplo acima assume que a função `example` irá receber um número como um argumento/parâmetro –– ou seja, como entrada –– e irá retornar este número multiplicado por 2.
@@ -26,7 +26,7 @@ que deverá ser uma string.
 De dentro da função retorne o argumento `food` dessa maneira:
 
 ```js
-return food + ' tasted really good.';
+return food + " tasted really good.";
 ```
 
 Dentro do parênteses do `console.log()`, chame a função `eat()` com a string `bananas` como argumento.

@@ -12,13 +12,14 @@ body {
 }
 
 .stack {
-  background-color: #FFFFD1;
+  background-color: #ffffd1;
   margin-top: 5px;
   border-radius: 5px;
   padding: 5px;
 }
 
-.failure, .success {
+.failure,
+.success {
   padding: 10px;
   border-radius: 5px;
 }
@@ -34,15 +35,14 @@ body {
 }
 
 .example.pending {
-  background-color: #E6E600;
+  background-color: #e6e600;
   padding: 2px 2px 2px 10px;
   border-radius: 5px;
 }
 
 .progress-bar {
-  
   padding: 10px;
-  margin:  10px 0;
+  margin: 10px 0;
   word-wrap: break-word;
 }
 
@@ -57,10 +57,25 @@ body {
   padding: 0;
 }
 
-.progress-bar .success { color: #339933; }
-.progress-bar .failure { color: #ff0000; }
-.progress-bar .pending { font-weight: bold; color: #E8E819; }
+.progress-bar .success {
+  color: #339933;
+}
+.progress-bar .failure {
+  color: #ff0000;
+}
+.progress-bar .pending {
+  font-weight: bold;
+  color: #e8e819;
+}
 
-.topnav, .topnav:visited { color: #0000ff; text-decoration: none; }
-.example .topnav { visibility: hidden; }
-.example:hover .topnav { visibility: visible; }
+.topnav,
+.topnav:visited {
+  color: #0000ff;
+  text-decoration: none;
+}
+.example .topnav {
+  visibility: hidden;
+}
+.example:hover .topnav {
+  visibility: visible;
+}

@@ -1,15 +1,21 @@
-html, body, iframe, div { margin:0; padding:0; }
+html,
+body,
+iframe,
+div {
+  margin: 0;
+  padding: 0;
+}
 
 #epiceditor-utilbar {
-  position:fixed;
-  bottom:10px;
-  right:10px;
-  padding:5px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
 }
 
 #epiceditor-utilbar img {
-  display:block;
-  float:left;
+  display: block;
+  float: left;
   width: 30px;
   height: 30px;
 }
@@ -19,7 +25,7 @@ html, body, iframe, div { margin:0; padding:0; }
 }
 
 #epiceditor-utilbar img:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .epiceditor-edit-mode #epiceditor-utilbar img.epiceditor-toggle-edit-btn {

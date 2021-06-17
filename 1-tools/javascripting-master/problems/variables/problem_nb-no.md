@@ -11,7 +11,7 @@ Variabelen over er **deklarert**, men den er ikke definert (den peker ikke til e
 Her er et eksempel som definerer en variabel, ved å peke til en spesifikk verdi:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 # OBS

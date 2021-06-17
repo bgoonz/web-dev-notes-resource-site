@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var interfacer = require('./../util/interfacer');
-var preparser = require('./../preparser');
+var interfacer = require("./../util/interfacer");
+var preparser = require("./../preparser");
 
 var echo = {
   exec: function exec(arg, options) {
@@ -9,29 +9,29 @@ var echo = {
     options = options || {};
 
     try {
-      var text = arg || '';
+      var text = arg || "";
       text = !Array.isArray(text) ? [text] : text;
-      var result = text.join(' ');
-      var out = '';
+      var result = text.join(" ");
+      var out = "";
       if (options.e && !options.E) {
         for (var i = 0; i < result.length; ++i) {
-          var nxt = result[i] + (result[i + 1] || '');
-          if (nxt === '\\b') {
+          var nxt = result[i] + (result[i + 1] || "");
+          if (nxt === "\\b") {
             out = out.slice(0, out.length - 1);
             i++;
-          } else if (nxt === '\\c') {
+          } else if (nxt === "\\c") {
             break;
-          } else if (nxt === '\\n') {
-            out += '\n';
+          } else if (nxt === "\\n") {
+            out += "\n";
             i++;
-          } else if (nxt === '\\r') {
-            out += '\r';
+          } else if (nxt === "\\r") {
+            out += "\r";
             i++;
-          } else if (nxt === '\\t') {
-            out += '     ';
+          } else if (nxt === "\\t") {
+            out += "     ";
             i++;
-          } else if (nxt === '\\\\') {
-            out += '\\';
+          } else if (nxt === "\\\\") {
+            out += "\\";
             i += 2;
           } else {
             out += result[i];
@@ -43,7 +43,7 @@ var echo = {
       // Bug: If nothing is passed, ensure we keep
       // a blank line. Vorpal is designed to just
       // eat blank lines, so we have a problem.
-      result = result === '' ? '' : result;
+      result = result === "" ? "" : result;
 
       this.log(result);
       return 0;
@@ -57,7 +57,7 @@ var echo = {
     this.log(e.stack);
     /* istanbul ignore next */
     return 2;
-  }
+  },
 };
 
 module.exports = function (vorpal) {
@@ -65,13 +65,18 @@ module.exports = function (vorpal) {
     return echo;
   }
   vorpal.api.echo = echo;
-  vorpal.command('echo [arg...]').parse(preparser).option('-e', 'enable interpretation of the following backslash escapes').option('-E', 'explicitly suppress interpretation of backslash escapes').action(function (args, callback) {
-    args.options = args.options || {};
-    return interfacer.call(this, {
-      command: echo,
-      args: args.arg,
-      options: args.options,
-      callback: callback
+  vorpal
+    .command("echo [arg...]")
+    .parse(preparser)
+    .option("-e", "enable interpretation of the following backslash escapes")
+    .option("-E", "explicitly suppress interpretation of backslash escapes")
+    .action(function (args, callback) {
+      args.options = args.options || {};
+      return interfacer.call(this, {
+        command: echo,
+        args: args.arg,
+        options: args.options,
+        callback: callback,
+      });
     });
-  });
 };

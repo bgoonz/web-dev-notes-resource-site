@@ -3,8 +3,8 @@ Muy seguido necesitarás saber cuantos caracteres hay en una string.
 Para esto, usarás la propiedad `.length`. Por ejemplo:
 
 ```js
-var example = 'example string';
-example.length
+var example = "example string";
+example.length;
 ```
 
 ## NOTA
@@ -12,7 +12,6 @@ example.length
 Asegúrate de que hay un punto entre `example` y `length`
 
 El código de arriba devuelve el **numero** del total de caracteres en el string.
-
 
 ## El ejercicio
 

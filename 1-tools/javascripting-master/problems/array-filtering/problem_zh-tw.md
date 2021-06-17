@@ -7,10 +7,10 @@
 下面是一個例子：
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-  return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -31,7 +31,7 @@ var filtered = pets.filter(function (pet) {
 傳遞給 `.filter()` 方法的函式應該像下面這樣：
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

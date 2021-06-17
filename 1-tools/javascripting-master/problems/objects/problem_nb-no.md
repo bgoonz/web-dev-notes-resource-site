@@ -4,9 +4,9 @@ Her er et eksempel:
 
 ```js
 var favorittMat = {
-  pizza: 'nam',
-  salat: 'fysjameg'
-}
+  pizza: "nam",
+  salat: "fysjameg",
+};
 ```
 
 ## Oppgaven:
@@ -17,10 +17,10 @@ Definer en variabel `pizza` i den filen:
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
-}
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
+};
 ```
 
 Bruk `console.log()` for å skrive ut `pizza` objektet til skjermen.

@@ -1,7 +1,7 @@
 배열은 값의 목록입니다. 예를 들면 다음과 같습니다.
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 ```
 
 ### 도전 과제
@@ -17,4 +17,3 @@ var pets = ['cat', 'dog', 'rat'];
 ```bash
 javascripting verify arrays.js
 ```
-

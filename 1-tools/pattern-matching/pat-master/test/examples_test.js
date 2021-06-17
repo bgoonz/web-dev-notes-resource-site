@@ -4,8 +4,8 @@
 var examples = require("../examples/examples");
 var expect = require("expect.js");
 
-describe("examples", function(){
-  it("pow", function() {
+describe("examples", function () {
+  it("pow", function () {
     function test(fn) {
       expect(fn(2, -2)).to.be(0.25);
       expect(fn(2, -1)).to.be(0.5);
@@ -20,7 +20,9 @@ describe("examples", function(){
       expect(fn(2, 8)).to.be(256);
       expect(fn(2, 9)).to.be(512);
       expect(fn(2, 10)).to.be(1024);
-      expect(function() { fn("foo", "bar"); }).to.throwError();
+      expect(function () {
+        fn("foo", "bar");
+      }).to.throwError();
     }
 
     test(examples.pow1);
@@ -30,8 +32,8 @@ describe("examples", function(){
   });
 });
 
-describe("sum", function(){
-  it("sum", function() {
+describe("sum", function () {
+  it("sum", function () {
     function test(fn) {
       expect(fn(0, 1, 2, 3, 4, 5)).to.be(15);
       expect(fn("0", "1", "2", "3", "4", "5")).to.be(15);

@@ -2,12 +2,12 @@
 
 # 完成！
 
-任何於 `console.log()` 括號中的東西都將會被輸出到你的終端機（Terminal，於Windows下即命令提示字元）上。
+任何於 `console.log()` 括號中的東西都將會被輸出到你的終端機（Terminal，於 Windows 下即命令提示字元）上。
 
 所以：
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
 
 會印出 `hello` 到你的終端機。

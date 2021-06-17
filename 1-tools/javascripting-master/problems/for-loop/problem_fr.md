@@ -3,7 +3,7 @@ Les boucles `for` vous permettent de répéter l'exécution d'un bloc de code un
 ```js
 for (var i = 0; i < 10; i++) {
   // affiche les nombres de 0 a 9
-  console.log(i)
+  console.log(i);
 }
 ```
 

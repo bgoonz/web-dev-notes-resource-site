@@ -1,13 +1,13 @@
-Puedes acceder y manipular propiedades de objetos –– las **llaves** y **valores** que un objeto contiene –– utilizando una forma muy similar que con arrays. 
+Puedes acceder y manipular propiedades de objetos –– las **llaves** y **valores** que un objeto contiene –– utilizando una forma muy similar que con arrays.
 
 Un ejemplo usando **corchetes**:
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 El código anterior imprimirá la string `yummy` al a terminal.
@@ -17,7 +17,7 @@ Alternativamente, puedes usar la **notación de punto** para obtener resultados 
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 La dos líneas de código anteriores retornaran `yummy`.
@@ -30,7 +30,7 @@ En ese archivo, define una variable llamada `food` de la siguiente forma:
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

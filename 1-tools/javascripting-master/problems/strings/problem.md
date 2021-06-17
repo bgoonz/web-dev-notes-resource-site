@@ -1,13 +1,13 @@
-A **string** is a sequence of characters. A ***character*** is, roughly
+A **string** is a sequence of characters. A **_character_** is, roughly
 speaking, a written symbol. Examples of characters are letters, numbers,
 punctuation marks, and spaces.
 
 String values are surrounded by either single or double quotation marks.
 
 ```js
-'this is a string'
+"this is a string";
 
-"this is also a string"
+"this is also a string";
 ```
 
 ## NOTE
@@ -21,7 +21,7 @@ For this challenge, create a file named `strings.js`.
 In that file create a variable named `someString` like this:
 
 ```js
-var someString = 'this is a string';
+var someString = "this is a string";
 ```
 
 Use `console.log` to print the variable **someString** to the terminal.

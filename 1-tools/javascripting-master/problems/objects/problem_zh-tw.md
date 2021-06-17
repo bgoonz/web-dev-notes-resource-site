@@ -4,9 +4,9 @@
 
 ```js
 var foodPreferences = {
-  pizza: 'yum',
-  salad: 'gross'
-}
+  pizza: "yum",
+  salad: "gross",
+};
 ```
 
 ## 挑戰：
@@ -17,10 +17,10 @@ var foodPreferences = {
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
-}
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
+};
 ```
 
 使用 `console.log()` 印出 `pizza` 物件到終端機上。

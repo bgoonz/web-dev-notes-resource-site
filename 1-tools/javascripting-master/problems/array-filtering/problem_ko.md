@@ -7,10 +7,10 @@
 여기에 예제가 있습니다.
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-  return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -31,7 +31,7 @@ var filtered = pets.filter(function (pet) {
 `.filter()` 메소드에 이렇게 생긴 함수를 넘깁니다.
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

@@ -6,16 +6,16 @@ Consider the number system we are all accustomed to using in our everyday lives,
 
 Binary, or base-2, is much the same, except the only digits we have to work with are 0 and 1. Then how do we count? It's actually the same as in base-10, but after 0, then 1, we get to 10. Why? Because we have moved through all the digits we have to work with in the 'ones column', so we put a 1 in the next column to the left. However, in binary, that column is not the 'tens column', but rather the 'twos column'. In the same way that in the decimal number 20 we are basically saying that we have 'two tens and zero ones', in the binary number 10 we are saying that we have 'one twos and zero ones'. Next comes 11 (one twos and one ones) then 100 (one fours, zero twos, and zero ones).
 
-   0
-   1
-  10
-  11
- 100
- 101
+0
+1
+10
+11
+100
+101
 
-If it seems confusing that the columns, from right to left are 'ones', 'two', 'fours', rather than 'ones', 'tens', 'hundreds' consider that in base-10 we only need a tens column once we've exhausted all of the digits we can put in the ones column (0-9) once we reach the number 9, and the next whole number after 9 is 10, but in base-2 we only have 0 and 1, so after 0, then 1, we have exhausted all the digits for the ones column, and the next number we want to represent is the number that (in base-10) we would call 'two'. By calling it the 'twos column' we're still using the base-10 name for that number. It's valuable to understand that each number can be represented in both base-2 and base-10, or any other base for that matter, and the only difference is how we write them in digits (or however else we are recording them, such as in the two positions of a switch). As we continue on to larger and larger numbers we have the columns ones, twos, fours, eights, 16s, 32s, 64s and so on. You might recognise these as the powers of 2. 
+If it seems confusing that the columns, from right to left are 'ones', 'two', 'fours', rather than 'ones', 'tens', 'hundreds' consider that in base-10 we only need a tens column once we've exhausted all of the digits we can put in the ones column (0-9) once we reach the number 9, and the next whole number after 9 is 10, but in base-2 we only have 0 and 1, so after 0, then 1, we have exhausted all the digits for the ones column, and the next number we want to represent is the number that (in base-10) we would call 'two'. By calling it the 'twos column' we're still using the base-10 name for that number. It's valuable to understand that each number can be represented in both base-2 and base-10, or any other base for that matter, and the only difference is how we write them in digits (or however else we are recording them, such as in the two positions of a switch). As we continue on to larger and larger numbers we have the columns ones, twos, fours, eights, 16s, 32s, 64s and so on. You might recognise these as the powers of 2.
 
-Hexadecimal (base-16) is much like binary and decimal, except that there are 16 digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, and f. After 9 we start using letters of the alphabet to fill out the remaining digits to bring us to a total of 16. This means that as we are counting, after 9 we don't go to 10, but instead a, then b, c, e, and finally f, before getting to 10. Instead of the column to the left of the ones column being the tens column, in hexadecimal it is the '16s column'. Once we have moved through 0 to f in that column (moving through 0 to f in the ones column for each digit in the 16s column), the next column is the 
+Hexadecimal (base-16) is much like binary and decimal, except that there are 16 digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, and f. After 9 we start using letters of the alphabet to fill out the remaining digits to bring us to a total of 16. This means that as we are counting, after 9 we don't go to 10, but instead a, then b, c, e, and finally f, before getting to 10. Instead of the column to the left of the ones column being the tens column, in hexadecimal it is the '16s column'. Once we have moved through 0 to f in that column (moving through 0 to f in the ones column for each digit in the 16s column), the next column is the
 256s, 4096s, 65536s, and so on, moving up in the powers of 16. As the columns in binary (base-2) go up in powers of 2 as we move to the left, and the columns in decimal (base-10) in powers of 10, it makes sense that the columns in hexadecimal go up in powers of 16.
 
      hex        binary    decimal
@@ -33,7 +33,7 @@ Hexadecimal (base-16) is much like binary and decimal, except that there are 16 
        b          1011         11
        c          1100         12
        d          1101         13
-       e          1110         14 
+       e          1110         14
        f          1111         15
       10        1 0000         16
       11        1 0001         17

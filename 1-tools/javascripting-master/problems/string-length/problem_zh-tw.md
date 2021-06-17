@@ -3,8 +3,8 @@
 你可以使用 `.length` 來得到它。下面是一個例子：
 
 ```js
-var example = 'example string';
-example.length
+var example = "example string";
+example.length;
 ```
 
 ## 注
@@ -12,7 +12,6 @@ example.length
 不要忘記 `example` 和 `length` 之間的點（英文句號）。
 
 上面這段程式碼將返回一個 **number**，也就是**數字**，指明字串中的字元個數。
-
 
 ## 挑戰：
 

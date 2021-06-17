@@ -7,10 +7,10 @@ Pour cela nous pouvons utiliser la méthode `.filter()`.
 Voici un exemple :
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-  return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -31,7 +31,7 @@ Comme ci-dessus, définissez une variable nommée `filtered` qui contient le ré
 La fonction que vous passerez à la méthode `.filter()` va ressembler à ça :
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

@@ -1,14 +1,16 @@
-'use strict';
+"use strict";
 
 //var lib = require('require-dir-all')(
-var lib = require( './require.js' )( // as this demo is the part of package itself, require index file of the package
-  'lib', {
+var lib = require("./require.js")(
+  // as this demo is the part of package itself, require index file of the package
+  "lib",
+  {
     recursive: true,
-    excludeDirs: /^excluded.*$/
+    excludeDirs: /^excluded.*$/,
   }
 );
 
-console.log( 'lib:', JSON.stringify( lib, null, 2 ) );
+console.log("lib:", JSON.stringify(lib, null, 2));
 
 /*
 
@@ -32,16 +34,16 @@ lib: {
 
 // Iterate through all the lib
 
-var iterate = function ( lib ) {
-  for ( var m in lib ) {
-    if ( lib.hasOwnProperty( m ) ) {
-      if ( typeof lib[ m ] === 'string' ) {
-        console.log( 'module:', m, '; exports:', lib[ m ] );
+var iterate = function (lib) {
+  for (var m in lib) {
+    if (lib.hasOwnProperty(m)) {
+      if (typeof lib[m] === "string") {
+        console.log("module:", m, "; exports:", lib[m]);
       } else {
-        console.log( 'subdir:', m );
-        iterate( lib[ m ] );
+        console.log("subdir:", m);
+        iterate(lib[m]);
       }
     }
   }
 };
-iterate( lib );
+iterate(lib);

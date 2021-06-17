@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var interfacer = require('./../util/interfacer');
-var preparser = require('./../preparser');
+var interfacer = require("./../util/interfacer");
+var preparser = require("./../preparser");
 
 /**
  * This is a boilerplate for implementing a new command.
@@ -14,7 +14,6 @@ var preparser = require('./../preparser');
  */
 
 var cmdName = {
-
   /**
    * The cmdName.exec method is exposed by Cash
    * as the only public interfacer to your command.
@@ -63,7 +62,7 @@ var cmdName = {
      *
      *    return 0;
      */
-  }
+  },
 };
 
 module.exports = function (vorpal) {
@@ -82,18 +81,22 @@ module.exports = function (vorpal) {
    * descriptions should exactly emulate
    * existing commands.
    */
-  vorpal.command('cmdName [files...]').parse(preparser).option('-o, --option', 'option description').action(function (args, callback) {
-    args.options = args.options || {};
-    /**
-     * The interfacer method does a
-     * lot of heavy lifting on interfacing with
-     * the command properly.
-     */
-    return interfacer.call(this, {
-      command: cmdName,
-      args: args.files, // only pass in what you need from Vorpal
-      options: args.options, // split the options into their own arg
-      callback: callback
+  vorpal
+    .command("cmdName [files...]")
+    .parse(preparser)
+    .option("-o, --option", "option description")
+    .action(function (args, callback) {
+      args.options = args.options || {};
+      /**
+       * The interfacer method does a
+       * lot of heavy lifting on interfacing with
+       * the command properly.
+       */
+      return interfacer.call(this, {
+        command: cmdName,
+        args: args.files, // only pass in what you need from Vorpal
+        options: args.options, // split the options into their own arg
+        callback: callback,
+      });
     });
-  });
 };

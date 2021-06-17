@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Intercepts stdout, passes thru callback
@@ -13,27 +13,28 @@
 module.exports = function (callback) {
   var oldStdoutWrite = process.stdout.write;
   var oldConsoleError = console.error;
-  process.stdout.write = function (write) {
+  process.stdout.write = (function (write) {
     return function (string) {
       var args = Array.from(arguments);
       args[0] = interceptor(string);
       write.apply(process.stdout, args);
     };
-  }(process.stdout.write);
+  })(process.stdout.write);
 
-  console.error = function () {
+  console.error = (function () {
     return function () {
       var args = Array.from(arguments);
-      args.unshift('\x1b[31m[ERROR]\x1b[0m');
+      args.unshift("\x1b[31m[ERROR]\x1b[0m");
       console.log.apply(console.log, args);
     };
-  }(console.error);
+  })(console.error);
 
   function interceptor(string) {
     // only intercept the string
     var result = callback(string);
-    if (typeof result === 'string') {
-      string = result.replace(/\n$/, '') + (result && /\n$/.test(string) ? '\n' : '');
+    if (typeof result === "string") {
+      string =
+        result.replace(/\n$/, "") + (result && /\n$/.test(string) ? "\n" : "");
     }
     return string;
   }

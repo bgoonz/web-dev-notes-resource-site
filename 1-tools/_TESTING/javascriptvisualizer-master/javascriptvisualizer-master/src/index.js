@@ -1,14 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './components/App'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { JSHINT } from 'jshint'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./components/App";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { JSHINT } from "jshint";
 
-window.JSHINT = JSHINT
+window.JSHINT = JSHINT;
 
-ReactDOM.render((
+ReactDOM.render(
   <Router>
-    <Route path='/' component={App} />
-  </Router>
-), document.getElementById('root'))
+    <Route path="/" component={App} />
+  </Router>,
+  document.getElementById("root")
+);

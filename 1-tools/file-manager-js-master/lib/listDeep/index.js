@@ -1,4 +1,4 @@
-const list = require('../list');
-const fn = require('./fn');
+const list = require("../list");
+const fn = require("./fn");
 
 module.exports = fn(list);

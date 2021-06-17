@@ -4,9 +4,9 @@ Aqui está um exemplo:
 
 ```js
 var foodPreferences = {
-  pizza: 'yum',
-  salad: 'gross'
-}
+  pizza: "yum",
+  salad: "gross",
+};
 ```
 
 ## Desafio:
@@ -17,10 +17,10 @@ Neste arquivo, defina uma variável chamada `pizza` desta forma:
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
-}
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
+};
 ```
 
 Use o `console.log()` para imprimir o objeto `pizza` no terminal.

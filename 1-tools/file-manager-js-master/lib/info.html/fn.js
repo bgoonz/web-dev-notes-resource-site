@@ -8,10 +8,10 @@ module.exports = (stat, dirSize) => (path) => {
     .then((stats) => {
       info = Object.assign({}, stats);
       if (stats.isFile()) {
-        info.type = 'file';
+        info.type = "file";
         return stats.size;
       }
-      info.type = 'directory';
+      info.type = "directory";
       return dirSize(path);
     })
     .then((sz) => {

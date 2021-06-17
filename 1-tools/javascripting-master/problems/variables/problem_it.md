@@ -11,7 +11,7 @@ La variabile precedente è stata **dichiarata**, ma non è stata definita (non f
 Ecco un esempio di definizione di una variabile, che le fa assumere un valore specifico:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 # NOTA

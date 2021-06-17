@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled, { keyframes } from 'styled-components'
+import React, { Component } from "react";
+import styled, { keyframes } from "styled-components";
 
 const slideUpDown = keyframes`
   0%, 100% {
@@ -8,7 +8,7 @@ const slideUpDown = keyframes`
   10%, 90% {
     bottom: 25px;
   }
-`
+`;
 
 const Container = styled.div`
   background: #fff;
@@ -18,29 +18,27 @@ const Container = styled.div`
   left: 10px;
   bottom: -50px;
   z-index: 99;
-  animation: ${slideUpDown} ${props => props.animationDuration || '2s'} ease;
-`
+  animation: ${slideUpDown} ${(props) => props.animationDuration || "2s"} ease;
+`;
 
 export default class Notification extends Component {
-  componentDidMount () {
-    const { onDismiss, messageDuration } = this.props
+  componentDidMount() {
+    const { onDismiss, messageDuration } = this.props;
 
     this.timeoutId = window.setTimeout(() => {
-      onDismiss()
-    }, messageDuration)
+      onDismiss();
+    }, messageDuration);
   }
 
-  componentWillUnmount () {
-    window.clearTimeout(this.timeoutId)
+  componentWillUnmount() {
+    window.clearTimeout(this.timeoutId);
   }
 
-  render () {
-    const { message, animationDuration } = this.props
+  render() {
+    const { message, animationDuration } = this.props;
 
     return (
-      <Container animationDuration={animationDuration}>
-        {message}
-      </Container>
-    )
+      <Container animationDuration={animationDuration}>{message}</Container>
+    );
   }
 }

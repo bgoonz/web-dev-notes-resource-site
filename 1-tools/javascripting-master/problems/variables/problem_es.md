@@ -1,6 +1,7 @@
 Una variable es una referencia a un valor. Define una variable usando la palabra reservada `var`.
 
 Por ejemplo:
+
 ```js
 var example;
 ```
@@ -10,7 +11,7 @@ La variable anterior es **declarada**, pero no definida.
 A continuación damos un ejemplo de cómo definir una variable, haciendo que referencie a un valor específico:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 Nota que empieza con la palabra reserva `var` y usa el signo de igualdad entre en nombre de la variable y el valor que referencia.

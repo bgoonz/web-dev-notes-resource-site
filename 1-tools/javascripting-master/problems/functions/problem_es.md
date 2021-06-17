@@ -2,10 +2,10 @@ Una función es un bloque de código que puede recibir un input y devolver un ou
 
 Vamos a utilizar la palabra reservada `return` para especificar lo que devuelve una función.
 
-
 Por ejemplo:
+
 ```js
-function example (x) {
+function example(x) {
   return x * 2;
 }
 ```
@@ -13,7 +13,7 @@ function example (x) {
 Podemos **llamar** a la función de esta forma para obtener el número 10:
 
 ```js
-console.log(example(5))
+console.log(example(5));
 ```
 
 El ejemplo anterior asume que la función `example` recibirá un número cómo argumento –– input –– y retornará el número multiplicado por 2.
@@ -27,7 +27,7 @@ En ese archivo, define una función llamada `eat` que reciba un argumento llamad
 Dentro de la función, retorna el argumento `food` de la siguiente manera:
 
 ```js
-return food + ' tasted really good.';
+return food + " tasted really good.";
 ```
 
 Dentro de los paréntesis de `console.log()`, llama a la función `eat()` con la string `bananas` cómo argumento.

@@ -6,6 +6,7 @@
 \___/____ \\__/____/_/ \__ / /_/____/_//_/_/_/_/_/  \/\__\_\___/
          \/          /____/                      version 2.22.0
 ```
+
 https://terminal.jcubic.pl
 
 [![npm](https://img.shields.io/badge/npm-2.22.0-blue.svg)](https://www.npmjs.com/package/jquery.terminal)
@@ -30,53 +31,50 @@ You can use this JavaScript library to create a web based terminal on any websit
 
 ### Features:
 
-* You can create an interpreter for your JSON-RPC service with one line
+- You can create an interpreter for your JSON-RPC service with one line
   of code (just use url as first argument).
 
-* Support for authentication (you can provide functions when users enter
+- Support for authentication (you can provide functions when users enter
   login and password or if you use JSON-RPC it can automatically call
   login function on the server and pass token to all functions).
 
-* Stack of interpreters - you can create commands that trigger additional
+- Stack of interpreters - you can create commands that trigger additional
   interpreters (eg. you can use couple of JSON-RPC service and run them
   when user type command)
 
-* Command Tree - you can use nested objects. Each command will invoke a
+- Command Tree - you can use nested objects. Each command will invoke a
   function, if the value is an object it will create a new interpreter and
   use the function from that object as commands. You can use as many nested
   object/commands as you like. If the value is a string it will create
   JSON-RPC service.
 
-* Support for command line history, it uses Local Storage if possible.
+- Support for command line history, it uses Local Storage if possible.
 
-* Support for tab completion.
+- Support for tab completion.
 
-* Includes keyboard shortcut from bash like CTRL+A, CTRL+D, CTRL+E etc.
+- Includes keyboard shortcut from bash like CTRL+A, CTRL+D, CTRL+E etc.
 
-* Multiple terminals on one page (every terminal can have different
+- Multiple terminals on one page (every terminal can have different
   commands, its own authentication function and its own command history).
 
-* It catches all exceptions and displays error messages in the terminal
+- It catches all exceptions and displays error messages in the terminal
   (you can see errors in your javascript and php code in terminal if they
   are in the interpreter function).
 
-* Using extended commands you can change working of the terminal without
+- Using extended commands you can change working of the terminal without
   touching the front-end code (using echo method and terminal formatting
   like syntax). Read more in
   [docs](https://terminal.jcubic.pl/api_reference.php#extended_commands)
 
-* Full mobile support
+- Full mobile support
 
 ### Installation
 
 Include jQuery library, you can use cdn from https://jquery.com/download/
 
-
 ```html
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 ```
-
 
 Then include js/jquery.terminal-2.22.0.min.js and css/jquery.terminal-2.22.0.min.css
 
@@ -84,23 +82,31 @@ You can grab the files from CDN:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.22.0/js/jquery.terminal.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.22.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.22.0/css/jquery.terminal.min.css"
+  rel="stylesheet"
+/>
 ```
 
 or
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.22.0/js/jquery.terminal.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.22.0/css/jquery.terminal.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.22.0/css/jquery.terminal.min.css"
+/>
 ```
 
 If you always want latest version, you can get it from [unpkg](https://unpkg.com/) without specifying version,
 it will redirect to the latest ones:
 
-
 ```html
 <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-<link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link
+  href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"
+  rel="stylesheet"
+/>
 ```
 
 #### Bleeding Edge Version
@@ -109,7 +115,10 @@ If you want to test bleeding edge, development version of jQuery Terminal. You c
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/jcubic/jquery.terminal@devel/js/jquery.terminal.min.js"></script>
-<link href="https://cdn.jsdelivr.net/gh/jcubic/jquery.terminal@devel/css/jquery.terminal.min.css" rel="stylesheet"/>
+<link
+  href="https://cdn.jsdelivr.net/gh/jcubic/jquery.terminal@devel/css/jquery.terminal.min.css"
+  rel="stylesheet"
+/>
 ```
 
 but it's not refreshed as fast as rawgit was, because it's CDN and need to be propagated to different servers.
@@ -124,7 +133,6 @@ but it's not refreshed as fast as rawgit was, because it's CDN and need to be pr
 
 #### Command Line
 
-
 You can also install jQuery Terminal using command line, from [bower repository](https://bower.io/):
 
 ```
@@ -137,28 +145,30 @@ or [npm registry](https://www.npmjs.com/):
 npm install jquery.terminal
 ```
 
-
 ### Example of usage
 
 This is code that uses low level function, that gives you full control of the commands,
 just pass anything that the user types into a function.
 
 ```javascript
-jQuery(function($, undefined) {
-    $('#term_demo').terminal(function(command) {
-        if (command !== '') {
-            var result = window.eval(command);
-            if (result != undefined) {
-                this.echo(String(result));
-            }
+jQuery(function ($, undefined) {
+  $("#term_demo").terminal(
+    function (command) {
+      if (command !== "") {
+        var result = window.eval(command);
+        if (result != undefined) {
+          this.echo(String(result));
         }
-    }, {
-        greetings: 'Javascript Interpreter',
-        name: 'js_demo',
-        height: 200,
-        width: 450,
-        prompt: 'js> '
-    });
+      }
+    },
+    {
+      greetings: "Javascript Interpreter",
+      name: "js_demo",
+      height: 200,
+      width: 450,
+      prompt: "js> ",
+    }
+  );
 });
 ```
 
@@ -167,27 +177,30 @@ parse commands that a user types and replace number like strings with real numbe
 regex with regexes and process escape characters in double quoted strings.
 
 ```javascript
-jQuery(function($, undefined) {
-    $('#term_demo').terminal({
-        add: function(a, b) {
-            this.echo(a + b);
-        },
-        re: function(re, str) {
-           if (re instanceof RegExp && re.test(str)) {
-              this.echo(str + ' [[;green;]match]');
-           }
-        },
-        foo: 'foo.php',
-        bar: {
-            sub: function(a, b) {
-                this.echo(a - b);
-            }
+jQuery(function ($, undefined) {
+  $("#term_demo").terminal(
+    {
+      add: function (a, b) {
+        this.echo(a + b);
+      },
+      re: function (re, str) {
+        if (re instanceof RegExp && re.test(str)) {
+          this.echo(str + " [[;green;]match]");
         }
-    }, {
-        height: 200,
-        width: 450,
-        prompt: 'demo> '
-    });
+      },
+      foo: "foo.php",
+      bar: {
+        sub: function (a, b) {
+          this.echo(a - b);
+        },
+      },
+    },
+    {
+      height: 200,
+      width: 450,
+      prompt: "demo> ",
+    }
+  );
 });
 ```
 
@@ -204,14 +217,17 @@ command `re /^foo/ foo-bar` will echo: "foo-bar match" where "match" will be gre
 By default arguments are required but you can disable the check like this:
 
 ```javascript
-jQuery(function($, undefined) {
-    $('#term_demo').terminal({
-        add: function(...args) {
-            this.echo(args.reduce((a,b) => a + b));
-        }
-    }, {
-       checkArity: false
-    });
+jQuery(function ($, undefined) {
+  $("#term_demo").terminal(
+    {
+      add: function (...args) {
+        this.echo(args.reduce((a, b) => a + b));
+      },
+    },
+    {
+      checkArity: false,
+    }
+  );
 });
 ```
 
@@ -220,7 +236,7 @@ And add command will accept any number of argments and it will sum them up (if t
 You can create JSON-RPC interpreter with authentication in just one line:
 
 ```javascript
-$('#term_demo').terminal('service.php', {login: true});
+$("#term_demo").terminal("service.php", { login: true });
 ```
 
 The rest of the code can be on the server, so you can write fully working application,
@@ -243,7 +259,6 @@ jQuery(function($, undefined) {
     });
 });
 ```
-
 
 More examples [here](http://terminal.jcubic.pl/examples.php). You can also check
 [Full Documentation](http://terminal.jcubic.pl/api_reference.php) or
@@ -278,32 +293,35 @@ from users and execute terminal methods from server (this feature is mostly done
 If you want to contribute read [CONTRIBUTING.md](CONTRIBUTING.md) first. Here are project contributors:
 
 <!-- CONTRIBUTORS-START -->
-| [<img src="https://avatars1.githubusercontent.com/u/280241?v=4" width="100px;"/><br /><sub>Jakub T. Jankiewicz</sub>](https://jcubic.pl/me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jcubic) | [<img src="https://avatars1.githubusercontent.com/u/1208327?v=4" width="100px;"/><br /><sub>Zuo Qiyang</sub>](http://zuoqy.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=kid1412z) | [<img src="https://avatars1.githubusercontent.com/u/4943440?v=4" width="100px;"/><br /><sub>Marcel Link</sub>](https://github.com/ml1nk)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ml1nk) | [<img src="https://avatars1.githubusercontent.com/u/6674275?v=4" width="100px;"/><br /><sub>Sébastien Warin</sub>](http://sebastien.warin.fr)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=sebastienwarin) | [<img src="https://avatars2.githubusercontent.com/u/8646106?v=4" width="100px;"/><br /><sub>Christopher John Ryan</sub>](https://github.com/ChrisJohnRyan)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ChrisJohnRyan) | [<img src="https://avatars3.githubusercontent.com/u/715580?v=4" width="100px;"/><br /><sub>Johan</sub>](https://github.com/johanjordaan)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=johanjordaan) | [<img src="https://avatars0.githubusercontent.com/u/273194?v=4" width="100px;"/><br /><sub>Florian Schäfer</sub>](https://github.com/fschaefer)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=fschaefer) |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---:  |
-| [<img src="https://avatars2.githubusercontent.com/u/4673812?v=4" width="100px;"/><br /><sub>David Refoua</sub>](http://www.Refoua.me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=DRSDavidSoft) | [<img src="https://avatars0.githubusercontent.com/u/1751242?v=4" width="100px;"/><br /><sub>Ishan Ratnapala</sub>](https://github.com/IshanRatnapala)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=IshanRatnapala) | [<img src="https://avatars2.githubusercontent.com/u/375027?v=4" width="100px;"/><br /><sub>Tomasz Ducin</sub>](http://ducin.it)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ducin) | [<img src="https://avatars2.githubusercontent.com/u/32747235?v=4" width="100px;"/><br /><sub>7twin</sub>](https://7twin.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=7twin) | [<img src="https://avatars0.githubusercontent.com/u/406705?v=4" width="100px;"/><br /><sub>Abdelrahman Omran</sub>](https://omranic.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=Omranic) | [<img src="https://avatars1.githubusercontent.com/u/569896?v=4" width="100px;"/><br /><sub>Anton Vasil'ev</sub>](https://github.com/avdes)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=avdes) | [<img src="https://avatars3.githubusercontent.com/u/336727?v=4" width="100px;"/><br /><sub>finlob</sub>](https://github.com/finlob)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=finlob) |
-| [<img src="https://avatars2.githubusercontent.com/u/9531780?v=4" width="100px;"/><br /><sub>Hasan</sub>](https://github.com/JuanPotato)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=JuanPotato) | [<img src="https://avatars1.githubusercontent.com/u/137852?v=4" width="100px;"/><br /><sub>Hraban Luyat</sub>](https://luyat.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=hraban) | [<img src="https://avatars1.githubusercontent.com/u/15666417?v=4" width="100px;"/><br /><sub>Jarry Shaw</sub>](jarryshaw.me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=JarryShaw) | [<img src="https://avatars0.githubusercontent.com/u/3868754?v=4" width="100px;"/><br /><sub>Jon Steinich</sub>](https://github.com/jsteinich)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jsteinich) | [<img src="https://avatars0.githubusercontent.com/u/74179?v=4" width="100px;"/><br /><sub>Martin v. Löwis</sub>](https://github.com/loewis)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=loewis) | [<img src="https://avatars2.githubusercontent.com/u/27475?v=4" width="100px;"/><br /><sub>Mateusz Paprocki</sub>](https://github.com/mattpap)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=mattpap) | [<img src="https://avatars2.githubusercontent.com/u/7055377?v=4" width="100px;"/><br /><sub>exit1</sub>](https://github.com/exit1)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=exit1) |
-| [<img src="https://avatars3.githubusercontent.com/u/1263192?v=4" width="100px;"/><br /><sub>Robert Wikman</sub>](https://github.com/rbw)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=rbw) | [<img src="https://avatars1.githubusercontent.com/u/139603?v=4" width="100px;"/><br /><sub>Steve Phillips</sub>](https://tryingtobeawesome.com/)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=elimisteve) | [<img src="https://avatars0.githubusercontent.com/u/1833930?v=4" width="100px;"/><br /><sub>Yutong Luo</sub>](https://yutongluo.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=yutongluo) | [<img src="https://avatars3.githubusercontent.com/u/1573141?v=4" width="100px;"/><br /><sub>coderaiser</sub>](http://coderaiser.github.io)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=coderaiser) | [<img src="https://avatars2.githubusercontent.com/u/282724?v=4" width="100px;"/><br /><sub>mrkaiser</sub>](https://github.com/mrkaiser)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=mrkaiser) | [<img src="https://avatars2.githubusercontent.com/u/179534?v=4" width="100px;"/><br /><sub>stereobooster</sub>](https://stereobooster.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=stereobooster) | [<img src="https://avatars2.githubusercontent.com/u/5696096?v=4" width="100px;"/><br /><sub>Steve Kirkegard</sub>](https://www.linkedin.com/in/steve-kirkegard)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=stevekirks) |
+
+| [<img src="https://avatars1.githubusercontent.com/u/280241?v=4" width="100px;"/><br /><sub>Jakub T. Jankiewicz</sub>](https://jcubic.pl/me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jcubic)  |               [<img src="https://avatars1.githubusercontent.com/u/1208327?v=4" width="100px;"/><br /><sub>Zuo Qiyang</sub>](http://zuoqy.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=kid1412z)               | [<img src="https://avatars1.githubusercontent.com/u/4943440?v=4" width="100px;"/><br /><sub>Marcel Link</sub>](https://github.com/ml1nk)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ml1nk) | [<img src="https://avatars1.githubusercontent.com/u/6674275?v=4" width="100px;"/><br /><sub>Sébastien Warin</sub>](http://sebastien.warin.fr)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=sebastienwarin) | [<img src="https://avatars2.githubusercontent.com/u/8646106?v=4" width="100px;"/><br /><sub>Christopher John Ryan</sub>](https://github.com/ChrisJohnRyan)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ChrisJohnRyan) |  [<img src="https://avatars3.githubusercontent.com/u/715580?v=4" width="100px;"/><br /><sub>Johan</sub>](https://github.com/johanjordaan)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=johanjordaan)   |         [<img src="https://avatars0.githubusercontent.com/u/273194?v=4" width="100px;"/><br /><sub>Florian Schäfer</sub>](https://github.com/fschaefer)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=fschaefer)          |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars2.githubusercontent.com/u/4673812?v=4" width="100px;"/><br /><sub>David Refoua</sub>](http://www.Refoua.me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=DRSDavidSoft)  | [<img src="https://avatars0.githubusercontent.com/u/1751242?v=4" width="100px;"/><br /><sub>Ishan Ratnapala</sub>](https://github.com/IshanRatnapala)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=IshanRatnapala) |     [<img src="https://avatars2.githubusercontent.com/u/375027?v=4" width="100px;"/><br /><sub>Tomasz Ducin</sub>](http://ducin.it)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=ducin)      |              [<img src="https://avatars2.githubusercontent.com/u/32747235?v=4" width="100px;"/><br /><sub>7twin</sub>](https://7twin.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=7twin)              |             [<img src="https://avatars0.githubusercontent.com/u/406705?v=4" width="100px;"/><br /><sub>Abdelrahman Omran</sub>](https://omranic.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=Omranic)             |     [<img src="https://avatars1.githubusercontent.com/u/569896?v=4" width="100px;"/><br /><sub>Anton Vasil'ev</sub>](https://github.com/avdes)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=avdes)     |                 [<img src="https://avatars3.githubusercontent.com/u/336727?v=4" width="100px;"/><br /><sub>finlob</sub>](https://github.com/finlob)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=finlob)                 |
+| [<img src="https://avatars2.githubusercontent.com/u/9531780?v=4" width="100px;"/><br /><sub>Hasan</sub>](https://github.com/JuanPotato)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=JuanPotato)  |               [<img src="https://avatars1.githubusercontent.com/u/137852?v=4" width="100px;"/><br /><sub>Hraban Luyat</sub>](https://luyat.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=hraban)               |     [<img src="https://avatars1.githubusercontent.com/u/15666417?v=4" width="100px;"/><br /><sub>Jarry Shaw</sub>](jarryshaw.me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=JarryShaw)     |   [<img src="https://avatars0.githubusercontent.com/u/3868754?v=4" width="100px;"/><br /><sub>Jon Steinich</sub>](https://github.com/jsteinich)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jsteinich)    |            [<img src="https://avatars0.githubusercontent.com/u/74179?v=4" width="100px;"/><br /><sub>Martin v. Löwis</sub>](https://github.com/loewis)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=loewis)            |  [<img src="https://avatars2.githubusercontent.com/u/27475?v=4" width="100px;"/><br /><sub>Mateusz Paprocki</sub>](https://github.com/mattpap)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=mattpap)   |                  [<img src="https://avatars2.githubusercontent.com/u/7055377?v=4" width="100px;"/><br /><sub>exit1</sub>](https://github.com/exit1)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=exit1)                  |
+|    [<img src="https://avatars3.githubusercontent.com/u/1263192?v=4" width="100px;"/><br /><sub>Robert Wikman</sub>](https://github.com/rbw)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=rbw)     |     [<img src="https://avatars1.githubusercontent.com/u/139603?v=4" width="100px;"/><br /><sub>Steve Phillips</sub>](https://tryingtobeawesome.com/)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=elimisteve)      | [<img src="https://avatars0.githubusercontent.com/u/1833930?v=4" width="100px;"/><br /><sub>Yutong Luo</sub>](https://yutongluo.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=yutongluo) |    [<img src="https://avatars3.githubusercontent.com/u/1573141?v=4" width="100px;"/><br /><sub>coderaiser</sub>](http://coderaiser.github.io)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=coderaiser)     |             [<img src="https://avatars2.githubusercontent.com/u/282724?v=4" width="100px;"/><br /><sub>mrkaiser</sub>](https://github.com/mrkaiser)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=mrkaiser)             | [<img src="https://avatars2.githubusercontent.com/u/179534?v=4" width="100px;"/><br /><sub>stereobooster</sub>](https://stereobooster.com)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=stereobooster) | [<img src="https://avatars2.githubusercontent.com/u/5696096?v=4" width="100px;"/><br /><sub>Steve Kirkegard</sub>](https://www.linkedin.com/in/steve-kirkegard)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=stevekirks) |
 | [<img src="https://avatars1.githubusercontent.com/u/588573?v=4" width="100px;"/><br /><sub>Juraj Vitko</sub>](https://github.com/youurayy)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=youurayy) |
+
 <!-- CONTRIBUTORS-END -->
 
 [jQuery Terminal Website](https://github.com/jcubic/jquery.terminal-www) contributors:
 
 <!-- CONTRIBUTORS-WWW-START -->
-| [<img src="https://avatars1.githubusercontent.com/u/280241?v=4" width="100px;"/><br /><sub>Jakub T. Jankiewicz</sub>](https://jcubic.pl/me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jcubic) | [<img src="https://avatars1.githubusercontent.com/u/1004261?v=4" width="100px;"/><br /><sub>Marc Laporte</sub>](https://wikisuite.org)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=marclaporte) | [<img src="https://avatars0.githubusercontent.com/u/31372?v=4" width="100px;"/><br /><sub>Rich Morin</sub>](http://www.cfcl.com/rdm)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=RichMorin) | [<img src="https://avatars0.githubusercontent.com/u/26324569?v=4" width="100px;"/><br /><sub>DInesh51297</sub>](https://github.com/DInesh51297)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=DInesh51297) | [<img src="https://avatars1.githubusercontent.com/u/512317?v=4" width="100px;"/><br /><sub>Logan Rosen</sub>](https://www.loganrosen.com/)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=loganrosen) |
-| :---: | :---: | :---: | :---: | :---:  |
-<!-- CONTRIBUTORS-WWW-END -->
 
+| [<img src="https://avatars1.githubusercontent.com/u/280241?v=4" width="100px;"/><br /><sub>Jakub T. Jankiewicz</sub>](https://jcubic.pl/me)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=jcubic) | [<img src="https://avatars1.githubusercontent.com/u/1004261?v=4" width="100px;"/><br /><sub>Marc Laporte</sub>](https://wikisuite.org)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=marclaporte) | [<img src="https://avatars0.githubusercontent.com/u/31372?v=4" width="100px;"/><br /><sub>Rich Morin</sub>](http://www.cfcl.com/rdm)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=RichMorin) | [<img src="https://avatars0.githubusercontent.com/u/26324569?v=4" width="100px;"/><br /><sub>DInesh51297</sub>](https://github.com/DInesh51297)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=DInesh51297) | [<img src="https://avatars1.githubusercontent.com/u/512317?v=4" width="100px;"/><br /><sub>Logan Rosen</sub>](https://www.loganrosen.com/)<br>[commits](https://github.com/jcubic/jquery.terminal/commits?author=loganrosen) |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+<!-- CONTRIBUTORS-WWW-END -->
 
 ### Credits
 
 Projects used:
 
-* [Storage plugin](https://sites.google.com/site/daveschindler/jquery-html5-storage-plugin) by Dave Schindler (MIT)
-* [jQuery Timers](http://jquery.offput.ca/every/) (WTFPL)
-* [Cross-Browser Split](http://blog.stevenlevithan.com/archives/cross-browser-split) by [Steven Levithan](http://stevenlevithan.com/) (MIT)
-* [jQuery Caret](https://github.com/accursoft/caret) by Gideon Sireling (3-BSD)
-* [sprintf.js](https://github.com/alexei/sprintf.js) by [Alexandru Mărășteanu](http://alexei.ro/) (3-BSD)
-* [node-ansiparser](https://github.com/netzkolchose/node-ansiparser) by Joerg Breitbart (MIT)
+- [Storage plugin](https://sites.google.com/site/daveschindler/jquery-html5-storage-plugin) by Dave Schindler (MIT)
+- [jQuery Timers](http://jquery.offput.ca/every/) (WTFPL)
+- [Cross-Browser Split](http://blog.stevenlevithan.com/archives/cross-browser-split) by [Steven Levithan](http://stevenlevithan.com/) (MIT)
+- [jQuery Caret](https://github.com/accursoft/caret) by Gideon Sireling (3-BSD)
+- [sprintf.js](https://github.com/alexei/sprintf.js) by [Alexandru Mărășteanu](http://alexei.ro/) (3-BSD)
+- [node-ansiparser](https://github.com/netzkolchose/node-ansiparser) by Joerg Breitbart (MIT)
 
 ### Paid Support
 

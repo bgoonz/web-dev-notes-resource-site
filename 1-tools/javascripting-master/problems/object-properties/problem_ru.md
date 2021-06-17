@@ -4,10 +4,10 @@
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 Код приведенный выше выведет в терминал строку `'yummy'`.
@@ -17,7 +17,7 @@ console.log(example['pizza']);
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 Обе строки кода, приведенные выше, вернут одинаковое значение `yummy`.
@@ -30,7 +30,7 @@ example['pizza'];
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

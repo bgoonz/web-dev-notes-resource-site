@@ -4,9 +4,8 @@ Index number starts from zero to array's property length minus one.
 
 Here is an example:
 
-
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -24,6 +23,7 @@ console.log(pets[0]);
 ```
 
 Invalid notation:
+
 ```
 console.log(pets.1);
 ```
@@ -33,10 +33,10 @@ console.log(pets.1);
 Create a file named `accessing-array-values.js`.
 
 In that file, define array `food` :
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 Use `console.log()` to print the `second` value of array to the terminal.
 

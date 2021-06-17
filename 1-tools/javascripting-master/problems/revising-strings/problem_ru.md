@@ -5,8 +5,8 @@
 Рассмотрим пример использования метода `.replace()`:
 
 ```js
-var example = 'this example exists';
-example = example.replace('exists', 'is awesome');
+var example = "this example exists";
+example = example.replace("exists", "is awesome");
 console.log(example);
 ```
 

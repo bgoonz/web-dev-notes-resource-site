@@ -11,100 +11,105 @@
  *
  */
 /* global define */
-(function(factory, undefined) {
-    var root = typeof window !== 'undefined' ? window : global;
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        // istanbul ignore next
-        define(['jquery', 'jquery.terminal'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // Node/CommonJS
-        module.exports = function(root, jQuery) {
-            if (jQuery === undefined) {
-                // require('jQuery') returns a factory that requires window to
-                // build a jQuery instance, we normalize how we use modules
-                // that require this pattern but the window provided is a noop
-                // if it's defined (how jquery works)
-                if (window !== undefined) {
-                    jQuery = require('jquery');
-                } else {
-                    jQuery = require('jquery')(root);
-                }
-            }
-            if (!jQuery.fn.terminal) {
-                if (window !== undefined) {
-                    require('jquery.terminal');
-                } else {
-                    require('jquery.terminal')(jQuery);
-                }
-            }
-            factory(jQuery);
-            return jQuery;
-        };
-    } else {
-        // Browser
-        // istanbul ignore next
-        factory(root.jQuery);
-    }
-})(function($) {
-    $.extend_if_has = function(desc, source, array) {
-        for (var i = array.length; i--;) {
-            if (typeof source[array[i]] !== 'undefined') {
-                desc[array[i]] = source[array[i]];
-            }
-        }
-        return desc;
-    };
-    var defaults = Object.keys($.terminal.defaults).concat(['greetings']);
-    $.fn.dterm = function(interpreter, options) {
-        var op = $.extend_if_has({}, options, defaults);
-        op.enabled = false;
-        this.addClass('dterm');
-        var terminal = $('<div/>').appendTo(this).terminal(interpreter, op);
-        if (!options.title) {
-            options.title = 'JQuery Terminal Emulator';
-        }
-        var close = options.close || $.noop;
-        if (options.logoutOnClose) {
-            options.close = function() {
-                terminal.logout();
-                terminal.clear();
-                close();
-            };
+(function (factory, undefined) {
+  var root = typeof window !== "undefined" ? window : global;
+  if (typeof define === "function" && define.amd) {
+    // AMD. Register as an anonymous module.
+    // istanbul ignore next
+    define(["jquery", "jquery.terminal"], factory);
+  } else if (typeof module === "object" && module.exports) {
+    // Node/CommonJS
+    module.exports = function (root, jQuery) {
+      if (jQuery === undefined) {
+        // require('jQuery') returns a factory that requires window to
+        // build a jQuery instance, we normalize how we use modules
+        // that require this pattern but the window provided is a noop
+        // if it's defined (how jquery works)
+        if (window !== undefined) {
+          jQuery = require("jquery");
         } else {
-            options.close = function() {
-                terminal.disable();
-                close();
-            };
+          jQuery = require("jquery")(root);
         }
-        var self = this;
-        if (window.IntersectionObserver) {
-            var visibility_observer = new IntersectionObserver(function() {
-                if (self.is(':visible')) {
-                    terminal.focus().resize();
-                } else {
-                    terminal.disable();
-                }
-            }, {
-                root: null
-            });
-            visibility_observer.observe(terminal[0]);
+      }
+      if (!jQuery.fn.terminal) {
+        if (window !== undefined) {
+          require("jquery.terminal");
+        } else {
+          require("jquery.terminal")(jQuery);
         }
-        this.dialog($.extend({}, options, {
-            open: function(event, ui) {
-                if (!window.IntersectionObserver) {
-                    setTimeout(function() {
-                        terminal.enable().resize();
-                    }, 100);
-                }
-                if (typeof options.open === 'function') {
-                    options.open(event, ui);
-                }
-            },
-            show: 'fade',
-            closeOnEscape: false
-        }));
-        self.terminal = terminal;
-        return self;
+      }
+      factory(jQuery);
+      return jQuery;
     };
+  } else {
+    // Browser
+    // istanbul ignore next
+    factory(root.jQuery);
+  }
+})(function ($) {
+  $.extend_if_has = function (desc, source, array) {
+    for (var i = array.length; i--; ) {
+      if (typeof source[array[i]] !== "undefined") {
+        desc[array[i]] = source[array[i]];
+      }
+    }
+    return desc;
+  };
+  var defaults = Object.keys($.terminal.defaults).concat(["greetings"]);
+  $.fn.dterm = function (interpreter, options) {
+    var op = $.extend_if_has({}, options, defaults);
+    op.enabled = false;
+    this.addClass("dterm");
+    var terminal = $("<div/>").appendTo(this).terminal(interpreter, op);
+    if (!options.title) {
+      options.title = "JQuery Terminal Emulator";
+    }
+    var close = options.close || $.noop;
+    if (options.logoutOnClose) {
+      options.close = function () {
+        terminal.logout();
+        terminal.clear();
+        close();
+      };
+    } else {
+      options.close = function () {
+        terminal.disable();
+        close();
+      };
+    }
+    var self = this;
+    if (window.IntersectionObserver) {
+      var visibility_observer = new IntersectionObserver(
+        function () {
+          if (self.is(":visible")) {
+            terminal.focus().resize();
+          } else {
+            terminal.disable();
+          }
+        },
+        {
+          root: null,
+        }
+      );
+      visibility_observer.observe(terminal[0]);
+    }
+    this.dialog(
+      $.extend({}, options, {
+        open: function (event, ui) {
+          if (!window.IntersectionObserver) {
+            setTimeout(function () {
+              terminal.enable().resize();
+            }, 100);
+          }
+          if (typeof options.open === "function") {
+            options.open(event, ui);
+          }
+        },
+        show: "fade",
+        closeOnEscape: false,
+      })
+    );
+    self.terminal = terminal;
+    return self;
+  };
 });

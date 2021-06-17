@@ -4,7 +4,7 @@
 // lists first-level files and directories inside a directory
 module.exports = (fsReaddir, stat, join) => (path) => {
   const entries = { files: [], dirs: [] };
-  const addEntry = p =>
+  const addEntry = (p) =>
     stat(p).then((stats) => {
       if (stats.isDirectory()) {
         entries.dirs.push(p);
@@ -18,7 +18,7 @@ module.exports = (fsReaddir, stat, join) => (path) => {
       if (error) {
         reject(error);
       } else {
-        const listing = content.map(c => addEntry(join(path, c)));
+        const listing = content.map((c) => addEntry(join(path, c)));
         Promise.all(listing).then(() => resolve(entries));
       }
     });

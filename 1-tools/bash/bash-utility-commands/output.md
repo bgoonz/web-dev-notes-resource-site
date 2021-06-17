@@ -1,91 +1,76 @@
-for f in *.txt; do printf '%s\n' 0a 'TEXT YOU WISH TO APPEND TO BEGINNING OF EVERY FILE' . x | ex "$f"; donewget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off <url>
-
-
+for f in \*.txt; do printf '%s\n' 0a 'TEXT YOU WISH TO APPEND TO BEGINNING OF EVERY FILE' . x | ex "$f"; donewget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off <url>
 
 ## OR--------------------------------------------------------------------------------
 
 sudo apt install httrack
 httrack --ext-depth=2 <url>
 
-
-find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./* {} \;npm i -g recursive-install
-
-
+find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./\* {} \;npm i -g recursive-install
 
 npm-recursive-installsed -n -e '/<script>/,/<\/script>/p' example.html >out.jsfind . -name 'node_modules' -type d -prune -exec rm -rf '{}' +sanitize() {
-  shopt -s extglob;
+shopt -s extglob;
 
-  filename=$(basename "$1")
+filename=$(basename "$1")
   directory=$(dirname "$1")
 
-  filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
+filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
 
-  if (test "$filename" != "$filename_clean")
-  then
-    mv -v "$1" "$directory/$filename_clean"
-  fi
+if (test "$filename" != "$filename_clean")
+then
+mv -v "$1" "$directory/$filename_clean"
+fi
 }
 
 export -f sanitize
 
 sanitize_dir() {
-  find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
+find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
 }
 
-sanitize_dir '/path/to/somewhere'for f in * ; do 
-  mv "$f" "$f.html"
-doneecho "</body></html>" | tee -a *.html  #!/bin/bash 
+sanitize_dir '/path/to/somewhere'for f in _ ; do
+mv "$f" "$f.html"
+doneecho "</body></html>" | tee -a _.html #!/bin/bash
 
- 
-link="#insert url here#" 
-#links were a set of strings with just the index of the video as the variable 
- 
+link="#insert url here#"
+#links were a set of strings with just the index of the video as the variable
+
 num=3  
-#first video was numbered 3 - weird.  
- 
-ext=".mp4" 
- 
-while [ $num -le 66 ] 
-do 
-      wget $link$num$ext -P ~/Downloads/ 
-      num=$(($num+1)) 
-done 
-  sudo apt install rename
+#first video was numbered 3 - weird.
 
+ext=".mp4"
 
-rename 's/\.txt$/.doc/' *.txt
+while [ $num -le 66 ]
+do
+wget $link$num$ext -P ~/Downloads/ 
+      num=$(($num+1))
+done
+sudo apt install rename
 
-
+rename 's/\.txt$/.doc/' \*.txt
 
 # Recursive:
 
-find . -name "*.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '*.md' | cpio -pdm './../Markdown'sudo apt install rsync
+find . -name "_.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '_.md' | cpio -pdm './../Markdown'sudo apt install rsync
 
-
-
-rsync -a -f"+ */" -f"- *" source/ destination/#install unzip:
+rsync -a -f"+ _/" -f"- _" source/ destination/#install unzip:
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deletecat *.html > example.htmlsudo apt install pandoc
 
+find . -name "_.zip" -type f -print -deletecat _.html > example.htmlsudo apt install pandoc
 
-pandoc *.md> -o _example.htmlsudo apt install pandoc 
+pandoc \*.md> -o \_example.htmlsudo apt install pandoc
 
+find ./ -iname "\*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
 
+find ./ -iname "\*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
 
-find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
+for f in \*.html; do printf '%s\n' 0a '<!DOCTYPE html>
 
-
-
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
-
-
-for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -105,14 +90,15 @@ echo "</body></html>" | tee -a *.htmlfor x in "./"/*/; do
 donefind . -size +75M -a -print -a -exec rm -f {} \;find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 # check what you are about to delete before deleting:
 
-find . -name "*.zip" -type f -print
+find . -name "\*.zip" -type f -print
 
 #Delete:
 
-find . -name "*.zip" -type f -print -delete#!/bin/sh
+find . -name "\*.zip" -type f -print -delete#!/bin/sh
 
-# find ./ | grep -i "\.*$" >files
-find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.*$">files
+# find ./ | grep -i "\.\*$" >files
+
+find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.\*$">files
 listing="files"
 
 out=""
@@ -122,83 +108,82 @@ out="basename $out.html"
 html="index.html"
 cmd() {
 
-  echo '  <!DOCTYPE html>'
-  echo '<html>'
-  echo '<head>'
+echo ' <!DOCTYPE html>'
+echo '<html>'
+echo '<head>'
 
-  echo '  <meta http-equiv="Content-Type" content="text/html">'
+echo ' <meta http-equiv="Content-Type" content="text/html">'
 
-  echo '  <meta name="Author" content="Bryan Guner">'
-  echo '<link rel="stylesheet" href="./assets/prism.css">'
-  echo ' <link rel="stylesheet" href="./assets/style.css">'
-  echo ' <script async defer src="./assets/prism.js"></script>'
+echo ' <meta name="Author" content="Bryan Guner">'
+echo '<link rel="stylesheet" href="./assets/prism.css">'
+echo ' <link rel="stylesheet" href="./assets/style.css">'
+echo ' <script async defer src="./assets/prism.js"></script>'
 
-  echo "  <title> directory </title>"
+echo " <title> directory </title>"
 
-  echo ""
-  echo '<style>'
+echo ""
+echo '<style>'
 
-
-echo '    a {'
-echo '      color: black;'
-echo '    }'
+echo ' a {'
+echo ' color: black;'
+echo ' }'
 echo ''
-echo '    li {'
-echo '      border: 1px solid black !important;'
-echo '      font-size: 20px;'
-echo '      letter-spacing: 0px;'
-echo '      font-weight: 700;'
-echo '      line-height: 16px;'
-echo '      text-decoration: none !important;'
-echo '      text-transform: uppercase;'
-echo '      background: #194ccdaf !important;'
-echo '      color: black !important;'
-echo '      border: none;'
-echo '      cursor: pointer;'
-echo '      justify-content: center;'
-echo '      padding: 30px 60px;'
-echo '      height: 48px;'
-echo '      text-align: center;'
-echo '      white-space: normal;'
-echo '      border-radius: 10px;'
-echo '      min-width: 45em;'
-echo '      padding: 1.2em 1em 0;'
-echo '      box-shadow: 0 0 5px;'
-echo '      margin: 1em;'
-echo '      display: grid;'
-echo '      -webkit-border-radius: 10px;'
-echo '      -moz-border-radius: 10px;'
-echo '      -ms-border-radius: 10px;'
-echo '      -o-border-radius: 10px;'
-echo '    }'
-echo '  </style>'
-  echo '</head>'
+echo ' li {'
+echo ' border: 1px solid black !important;'
+echo ' font-size: 20px;'
+echo ' letter-spacing: 0px;'
+echo ' font-weight: 700;'
+echo ' line-height: 16px;'
+echo ' text-decoration: none !important;'
+echo ' text-transform: uppercase;'
+echo ' background: #194ccdaf !important;'
+echo ' color: black !important;'
+echo ' border: none;'
+echo ' cursor: pointer;'
+echo ' justify-content: center;'
+echo ' padding: 30px 60px;'
+echo ' height: 48px;'
+echo ' text-align: center;'
+echo ' white-space: normal;'
+echo ' border-radius: 10px;'
+echo ' min-width: 45em;'
+echo ' padding: 1.2em 1em 0;'
+echo ' box-shadow: 0 0 5px;'
+echo ' margin: 1em;'
+echo ' display: grid;'
+echo ' -webkit-border-radius: 10px;'
+echo ' -moz-border-radius: 10px;'
+echo ' -ms-border-radius: 10px;'
+echo ' -o-border-radius: 10px;'
+echo ' }'
+echo ' </style>'
+echo '</head>'
 
-  echo '<body>'
+echo '<body>'
 
-  echo ""
+echo ""
 
-  #################### continue with the HTML stuff:
+#################### continue with the HTML stuff:
 
-  echo ""
+echo ""
 
-  echo ""
+echo ""
 
-  echo "<ul>"
+echo "<ul>"
 
-  awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
+awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
 
-  # awk '{print "<li>"};
+# awk '{print "<li>"};
 
-  # 	{print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
+# {print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
 
-  echo ""
+echo ""
 
-  echo "</ul>"
+echo "</ul>"
 
-  echo "</body>"
+echo "</body>"
 
-  echo "</html>"
+echo "</html>"
 
 }
 
@@ -206,101 +191,85 @@ cmd $listing --sort=extension >>$html
 
 lynx -dump https://distrokid.com/hyperfollow/mihirbeg/getting-there | awk '/http/{print $2}' > links2.txt
 
-
-
 ## OR--------------------------------------------------------------------------------
+
 wget -qO- www.instagram.com/mihirbeg/ |
-grep -Eoi '<a [^>]+>' | 
-grep -Eo 'href="[^\"]+"' | 
-grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
+grep -Eoi '<a [^>]+>' |
+grep -Eo 'href="[^\"]+"' |
+grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/\_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
 find ./ | grep -i "\.html*$"for f in *.txt; do printf '%s\n' 0a 'TEXT YOU WISH TO APPEND TO BEGINNING OF EVERY FILE' . x | ex "$f"; donewget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off <url>
 
-
-
 ## OR--------------------------------------------------------------------------------
 
 sudo apt install httrack
 httrack --ext-depth=2 <url>
 
-
-find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./* {} \;npm i -g recursive-install
-
-
+find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./\* {} \;npm i -g recursive-install
 
 npm-recursive-installsed -n -e '/<script>/,/<\/script>/p' example.html >out.jsfind . -name 'node_modules' -type d -prune -exec rm -rf '{}' +sanitize() {
-  shopt -s extglob;
+shopt -s extglob;
 
-  filename=$(basename "$1")
+filename=$(basename "$1")
   directory=$(dirname "$1")
 
-  filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
+filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
 
-  if (test "$filename" != "$filename_clean")
-  then
-    mv -v "$1" "$directory/$filename_clean"
-  fi
+if (test "$filename" != "$filename_clean")
+then
+mv -v "$1" "$directory/$filename_clean"
+fi
 }
 
 export -f sanitize
 
 sanitize_dir() {
-  find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
+find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
 }
 
-sanitize_dir '/path/to/somewhere'for f in * ; do 
-  mv "$f" "$f.html"
-doneecho "</body></html>" | tee -a *.html  #!/bin/bash 
+sanitize_dir '/path/to/somewhere'for f in _ ; do
+mv "$f" "$f.html"
+doneecho "</body></html>" | tee -a _.html #!/bin/bash
 
- 
-link="#insert url here#" 
-#links were a set of strings with just the index of the video as the variable 
- 
+link="#insert url here#"
+#links were a set of strings with just the index of the video as the variable
+
 num=3  
-#first video was numbered 3 - weird.  
- 
-ext=".mp4" 
- 
-while [ $num -le 66 ] 
-do 
-      wget $link$num$ext -P ~/Downloads/ 
-      num=$(($num+1)) 
-done 
-  sudo apt install rename
+#first video was numbered 3 - weird.
 
+ext=".mp4"
 
-rename 's/\.txt$/.doc/' *.txt
+while [ $num -le 66 ]
+do
+wget $link$num$ext -P ~/Downloads/ 
+      num=$(($num+1))
+done
+sudo apt install rename
 
-
+rename 's/\.txt$/.doc/' \*.txt
 
 # Recursive:
 
-find . -name "*.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '*.md' | cpio -pdm './../Markdown'sudo apt install rsync
+find . -name "_.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '_.md' | cpio -pdm './../Markdown'sudo apt install rsync
 
-
-
-rsync -a -f"+ */" -f"- *" source/ destination/#install unzip:
+rsync -a -f"+ _/" -f"- _" source/ destination/#install unzip:
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deletecat *.html > example.htmlsudo apt install pandoc
 
+find . -name "_.zip" -type f -print -deletecat _.html > example.htmlsudo apt install pandoc
 
-pandoc *.md> -o _example.htmlsudo apt install pandoc 
+pandoc \*.md> -o \_example.htmlsudo apt install pandoc
 
+find ./ -iname "\*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
 
+find ./ -iname "\*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
 
-find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
+for f in \*.html; do printf '%s\n' 0a '<!DOCTYPE html>
 
-
-
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
-
-
-for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -320,14 +289,15 @@ echo "</body></html>" | tee -a *.htmlfor x in "./"/*/; do
 donefind . -size +75M -a -print -a -exec rm -f {} \;find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 # check what you are about to delete before deleting:
 
-find . -name "*.zip" -type f -print
+find . -name "\*.zip" -type f -print
 
 #Delete:
 
-find . -name "*.zip" -type f -print -delete#!/bin/sh
+find . -name "\*.zip" -type f -print -delete#!/bin/sh
 
-# find ./ | grep -i "\.*$" >files
-find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.*$">files
+# find ./ | grep -i "\.\*$" >files
+
+find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.\*$">files
 listing="files"
 
 out=""
@@ -337,83 +307,82 @@ out="basename $out.html"
 html="index.html"
 cmd() {
 
-  echo '  <!DOCTYPE html>'
-  echo '<html>'
-  echo '<head>'
+echo ' <!DOCTYPE html>'
+echo '<html>'
+echo '<head>'
 
-  echo '  <meta http-equiv="Content-Type" content="text/html">'
+echo ' <meta http-equiv="Content-Type" content="text/html">'
 
-  echo '  <meta name="Author" content="Bryan Guner">'
-  echo '<link rel="stylesheet" href="./assets/prism.css">'
-  echo ' <link rel="stylesheet" href="./assets/style.css">'
-  echo ' <script async defer src="./assets/prism.js"></script>'
+echo ' <meta name="Author" content="Bryan Guner">'
+echo '<link rel="stylesheet" href="./assets/prism.css">'
+echo ' <link rel="stylesheet" href="./assets/style.css">'
+echo ' <script async defer src="./assets/prism.js"></script>'
 
-  echo "  <title> directory </title>"
+echo " <title> directory </title>"
 
-  echo ""
-  echo '<style>'
+echo ""
+echo '<style>'
 
-
-echo '    a {'
-echo '      color: black;'
-echo '    }'
+echo ' a {'
+echo ' color: black;'
+echo ' }'
 echo ''
-echo '    li {'
-echo '      border: 1px solid black !important;'
-echo '      font-size: 20px;'
-echo '      letter-spacing: 0px;'
-echo '      font-weight: 700;'
-echo '      line-height: 16px;'
-echo '      text-decoration: none !important;'
-echo '      text-transform: uppercase;'
-echo '      background: #194ccdaf !important;'
-echo '      color: black !important;'
-echo '      border: none;'
-echo '      cursor: pointer;'
-echo '      justify-content: center;'
-echo '      padding: 30px 60px;'
-echo '      height: 48px;'
-echo '      text-align: center;'
-echo '      white-space: normal;'
-echo '      border-radius: 10px;'
-echo '      min-width: 45em;'
-echo '      padding: 1.2em 1em 0;'
-echo '      box-shadow: 0 0 5px;'
-echo '      margin: 1em;'
-echo '      display: grid;'
-echo '      -webkit-border-radius: 10px;'
-echo '      -moz-border-radius: 10px;'
-echo '      -ms-border-radius: 10px;'
-echo '      -o-border-radius: 10px;'
-echo '    }'
-echo '  </style>'
-  echo '</head>'
+echo ' li {'
+echo ' border: 1px solid black !important;'
+echo ' font-size: 20px;'
+echo ' letter-spacing: 0px;'
+echo ' font-weight: 700;'
+echo ' line-height: 16px;'
+echo ' text-decoration: none !important;'
+echo ' text-transform: uppercase;'
+echo ' background: #194ccdaf !important;'
+echo ' color: black !important;'
+echo ' border: none;'
+echo ' cursor: pointer;'
+echo ' justify-content: center;'
+echo ' padding: 30px 60px;'
+echo ' height: 48px;'
+echo ' text-align: center;'
+echo ' white-space: normal;'
+echo ' border-radius: 10px;'
+echo ' min-width: 45em;'
+echo ' padding: 1.2em 1em 0;'
+echo ' box-shadow: 0 0 5px;'
+echo ' margin: 1em;'
+echo ' display: grid;'
+echo ' -webkit-border-radius: 10px;'
+echo ' -moz-border-radius: 10px;'
+echo ' -ms-border-radius: 10px;'
+echo ' -o-border-radius: 10px;'
+echo ' }'
+echo ' </style>'
+echo '</head>'
 
-  echo '<body>'
+echo '<body>'
 
-  echo ""
+echo ""
 
-  #################### continue with the HTML stuff:
+#################### continue with the HTML stuff:
 
-  echo ""
+echo ""
 
-  echo ""
+echo ""
 
-  echo "<ul>"
+echo "<ul>"
 
-  awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
+awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
 
-  # awk '{print "<li>"};
+# awk '{print "<li>"};
 
-  # 	{print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
+# {print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
 
-  echo ""
+echo ""
 
-  echo "</ul>"
+echo "</ul>"
 
-  echo "</body>"
+echo "</body>"
 
-  echo "</html>"
+echo "</html>"
 
 }
 
@@ -421,101 +390,85 @@ cmd $listing --sort=extension >>$html
 
 lynx -dump https://distrokid.com/hyperfollow/mihirbeg/getting-there | awk '/http/{print $2}' > links2.txt
 
-
-
 ## OR--------------------------------------------------------------------------------
+
 wget -qO- www.instagram.com/mihirbeg/ |
-grep -Eoi '<a [^>]+>' | 
-grep -Eo 'href="[^\"]+"' | 
-grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
+grep -Eoi '<a [^>]+>' |
+grep -Eo 'href="[^\"]+"' |
+grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/\_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
 find ./ | grep -i "\.html*$"for f in *.txt; do printf '%s\n' 0a 'TEXT YOU WISH TO APPEND TO BEGINNING OF EVERY FILE' . x | ex "$f"; donewget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off <url>
 
-
-
 ## OR--------------------------------------------------------------------------------
 
 sudo apt install httrack
 httrack --ext-depth=2 <url>
 
-
-find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./* {} \;npm i -g recursive-install
-
-
+find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./\* {} \;npm i -g recursive-install
 
 npm-recursive-installsed -n -e '/<script>/,/<\/script>/p' example.html >out.jsfind . -name 'node_modules' -type d -prune -exec rm -rf '{}' +sanitize() {
-  shopt -s extglob;
+shopt -s extglob;
 
-  filename=$(basename "$1")
+filename=$(basename "$1")
   directory=$(dirname "$1")
 
-  filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
+filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
 
-  if (test "$filename" != "$filename_clean")
-  then
-    mv -v "$1" "$directory/$filename_clean"
-  fi
+if (test "$filename" != "$filename_clean")
+then
+mv -v "$1" "$directory/$filename_clean"
+fi
 }
 
 export -f sanitize
 
 sanitize_dir() {
-  find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
+find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
 }
 
-sanitize_dir '/path/to/somewhere'for f in * ; do 
-  mv "$f" "$f.html"
-doneecho "</body></html>" | tee -a *.html  #!/bin/bash 
+sanitize_dir '/path/to/somewhere'for f in _ ; do
+mv "$f" "$f.html"
+doneecho "</body></html>" | tee -a _.html #!/bin/bash
 
- 
-link="#insert url here#" 
-#links were a set of strings with just the index of the video as the variable 
- 
+link="#insert url here#"
+#links were a set of strings with just the index of the video as the variable
+
 num=3  
-#first video was numbered 3 - weird.  
- 
-ext=".mp4" 
- 
-while [ $num -le 66 ] 
-do 
-      wget $link$num$ext -P ~/Downloads/ 
-      num=$(($num+1)) 
-done 
-  sudo apt install rename
+#first video was numbered 3 - weird.
 
+ext=".mp4"
 
-rename 's/\.txt$/.doc/' *.txt
+while [ $num -le 66 ]
+do
+wget $link$num$ext -P ~/Downloads/ 
+      num=$(($num+1))
+done
+sudo apt install rename
 
-
+rename 's/\.txt$/.doc/' \*.txt
 
 # Recursive:
 
-find . -name "*.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '*.md' | cpio -pdm './../Markdown'sudo apt install rsync
+find . -name "_.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '_.md' | cpio -pdm './../Markdown'sudo apt install rsync
 
-
-
-rsync -a -f"+ */" -f"- *" source/ destination/#install unzip:
+rsync -a -f"+ _/" -f"- _" source/ destination/#install unzip:
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deletecat *.html > example.htmlsudo apt install pandoc
 
+find . -name "_.zip" -type f -print -deletecat _.html > example.htmlsudo apt install pandoc
 
-pandoc *.md> -o _example.htmlsudo apt install pandoc 
+pandoc \*.md> -o \_example.htmlsudo apt install pandoc
 
+find ./ -iname "\*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
 
+find ./ -iname "\*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
 
-find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
+for f in \*.html; do printf '%s\n' 0a '<!DOCTYPE html>
 
-
-
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
-
-
-for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -535,14 +488,15 @@ echo "</body></html>" | tee -a *.htmlfor x in "./"/*/; do
 donefind . -size +75M -a -print -a -exec rm -f {} \;find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 # check what you are about to delete before deleting:
 
-find . -name "*.zip" -type f -print
+find . -name "\*.zip" -type f -print
 
 #Delete:
 
-find . -name "*.zip" -type f -print -delete#!/bin/sh
+find . -name "\*.zip" -type f -print -delete#!/bin/sh
 
-# find ./ | grep -i "\.*$" >files
-find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.*$">files
+# find ./ | grep -i "\.\*$" >files
+
+find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.\*$">files
 listing="files"
 
 out=""
@@ -552,83 +506,82 @@ out="basename $out.html"
 html="index.html"
 cmd() {
 
-  echo '  <!DOCTYPE html>'
-  echo '<html>'
-  echo '<head>'
+echo ' <!DOCTYPE html>'
+echo '<html>'
+echo '<head>'
 
-  echo '  <meta http-equiv="Content-Type" content="text/html">'
+echo ' <meta http-equiv="Content-Type" content="text/html">'
 
-  echo '  <meta name="Author" content="Bryan Guner">'
-  echo '<link rel="stylesheet" href="./assets/prism.css">'
-  echo ' <link rel="stylesheet" href="./assets/style.css">'
-  echo ' <script async defer src="./assets/prism.js"></script>'
+echo ' <meta name="Author" content="Bryan Guner">'
+echo '<link rel="stylesheet" href="./assets/prism.css">'
+echo ' <link rel="stylesheet" href="./assets/style.css">'
+echo ' <script async defer src="./assets/prism.js"></script>'
 
-  echo "  <title> directory </title>"
+echo " <title> directory </title>"
 
-  echo ""
-  echo '<style>'
+echo ""
+echo '<style>'
 
-
-echo '    a {'
-echo '      color: black;'
-echo '    }'
+echo ' a {'
+echo ' color: black;'
+echo ' }'
 echo ''
-echo '    li {'
-echo '      border: 1px solid black !important;'
-echo '      font-size: 20px;'
-echo '      letter-spacing: 0px;'
-echo '      font-weight: 700;'
-echo '      line-height: 16px;'
-echo '      text-decoration: none !important;'
-echo '      text-transform: uppercase;'
-echo '      background: #194ccdaf !important;'
-echo '      color: black !important;'
-echo '      border: none;'
-echo '      cursor: pointer;'
-echo '      justify-content: center;'
-echo '      padding: 30px 60px;'
-echo '      height: 48px;'
-echo '      text-align: center;'
-echo '      white-space: normal;'
-echo '      border-radius: 10px;'
-echo '      min-width: 45em;'
-echo '      padding: 1.2em 1em 0;'
-echo '      box-shadow: 0 0 5px;'
-echo '      margin: 1em;'
-echo '      display: grid;'
-echo '      -webkit-border-radius: 10px;'
-echo '      -moz-border-radius: 10px;'
-echo '      -ms-border-radius: 10px;'
-echo '      -o-border-radius: 10px;'
-echo '    }'
-echo '  </style>'
-  echo '</head>'
+echo ' li {'
+echo ' border: 1px solid black !important;'
+echo ' font-size: 20px;'
+echo ' letter-spacing: 0px;'
+echo ' font-weight: 700;'
+echo ' line-height: 16px;'
+echo ' text-decoration: none !important;'
+echo ' text-transform: uppercase;'
+echo ' background: #194ccdaf !important;'
+echo ' color: black !important;'
+echo ' border: none;'
+echo ' cursor: pointer;'
+echo ' justify-content: center;'
+echo ' padding: 30px 60px;'
+echo ' height: 48px;'
+echo ' text-align: center;'
+echo ' white-space: normal;'
+echo ' border-radius: 10px;'
+echo ' min-width: 45em;'
+echo ' padding: 1.2em 1em 0;'
+echo ' box-shadow: 0 0 5px;'
+echo ' margin: 1em;'
+echo ' display: grid;'
+echo ' -webkit-border-radius: 10px;'
+echo ' -moz-border-radius: 10px;'
+echo ' -ms-border-radius: 10px;'
+echo ' -o-border-radius: 10px;'
+echo ' }'
+echo ' </style>'
+echo '</head>'
 
-  echo '<body>'
+echo '<body>'
 
-  echo ""
+echo ""
 
-  #################### continue with the HTML stuff:
+#################### continue with the HTML stuff:
 
-  echo ""
+echo ""
 
-  echo ""
+echo ""
 
-  echo "<ul>"
+echo "<ul>"
 
-  awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
+awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
 
-  # awk '{print "<li>"};
+# awk '{print "<li>"};
 
-  # 	{print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
+# {print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
 
-  echo ""
+echo ""
 
-  echo "</ul>"
+echo "</ul>"
 
-  echo "</body>"
+echo "</body>"
 
-  echo "</html>"
+echo "</html>"
 
 }
 
@@ -636,101 +589,85 @@ cmd $listing --sort=extension >>$html
 
 lynx -dump https://distrokid.com/hyperfollow/mihirbeg/getting-there | awk '/http/{print $2}' > links2.txt
 
-
-
 ## OR--------------------------------------------------------------------------------
+
 wget -qO- www.instagram.com/mihirbeg/ |
-grep -Eoi '<a [^>]+>' | 
-grep -Eo 'href="[^\"]+"' | 
-grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
+grep -Eoi '<a [^>]+>' |
+grep -Eo 'href="[^\"]+"' |
+grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/\_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
 find ./ | grep -i "\.html*$"for f in *.txt; do printf '%s\n' 0a 'TEXT YOU WISH TO APPEND TO BEGINNING OF EVERY FILE' . x | ex "$f"; donewget -r -A.pdf https://overapi.com/gitwget --wait=2 --level=inf --limit-rate=20K --recursive --page-requisites --user-agent=Mozilla --no-parent --convert-links --adjust-extension --no-clobber -e robots=off <url>
 
-
-
 ## OR--------------------------------------------------------------------------------
 
 sudo apt install httrack
 httrack --ext-depth=2 <url>
 
-
-find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./* {} \;npm i -g recursive-install
-
-
+find . -name cookies.txt -type f -exec rm -rf {} \;find . -type f -exec sed -i '/badFolder/d' ./\* {} \;npm i -g recursive-install
 
 npm-recursive-installsed -n -e '/<script>/,/<\/script>/p' example.html >out.jsfind . -name 'node_modules' -type d -prune -exec rm -rf '{}' +sanitize() {
-  shopt -s extglob;
+shopt -s extglob;
 
-  filename=$(basename "$1")
+filename=$(basename "$1")
   directory=$(dirname "$1")
 
-  filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
+filename_clean=$(echo "$filename" | sed -e 's/[\\/:\*\?"<>\|\x01-\x1F\x7F]//g' -e 's/^\(nul\|prn\|con\|lpt[0-9]\|com[0-9]\|aux\)\(\.\|$\)//i' -e 's/^\.*$//' -e 's/^$/NONAME/')
 
-  if (test "$filename" != "$filename_clean")
-  then
-    mv -v "$1" "$directory/$filename_clean"
-  fi
+if (test "$filename" != "$filename_clean")
+then
+mv -v "$1" "$directory/$filename_clean"
+fi
 }
 
 export -f sanitize
 
 sanitize_dir() {
-  find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
+find "$1" -depth -exec bash -c 'sanitize "$0"' {} \;
 }
 
-sanitize_dir '/path/to/somewhere'for f in * ; do 
-  mv "$f" "$f.html"
-doneecho "</body></html>" | tee -a *.html  #!/bin/bash 
+sanitize_dir '/path/to/somewhere'for f in _ ; do
+mv "$f" "$f.html"
+doneecho "</body></html>" | tee -a _.html #!/bin/bash
 
- 
-link="#insert url here#" 
-#links were a set of strings with just the index of the video as the variable 
- 
+link="#insert url here#"
+#links were a set of strings with just the index of the video as the variable
+
 num=3  
-#first video was numbered 3 - weird.  
- 
-ext=".mp4" 
- 
-while [ $num -le 66 ] 
-do 
-      wget $link$num$ext -P ~/Downloads/ 
-      num=$(($num+1)) 
-done 
-  sudo apt install rename
+#first video was numbered 3 - weird.
 
+ext=".mp4"
 
-rename 's/\.txt$/.doc/' *.txt
+while [ $num -le 66 ]
+do
+wget $link$num$ext -P ~/Downloads/ 
+      num=$(($num+1))
+done
+sudo apt install rename
 
-
+rename 's/\.txt$/.doc/' \*.txt
 
 # Recursive:
 
-find . -name "*.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '*.md' | cpio -pdm './../Markdown'sudo apt install rsync
+find . -name "_.\.js\.download" -exec rename 's/\.js\.download$/.js/' '{}' +find . -name '_.md' | cpio -pdm './../Markdown'sudo apt install rsync
 
-
-
-rsync -a -f"+ */" -f"- *" source/ destination/#install unzip:
+rsync -a -f"+ _/" -f"- _" source/ destination/#install unzip:
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deletecat *.html > example.htmlsudo apt install pandoc
 
+find . -name "_.zip" -type f -print -deletecat _.html > example.htmlsudo apt install pandoc
 
-pandoc *.md> -o _example.htmlsudo apt install pandoc 
+pandoc \*.md> -o \_example.htmlsudo apt install pandoc
 
+find ./ -iname "\*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
 
+find ./ -iname "\*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
 
-find ./ -iname "*.html" -type f -exec sh -c 'pandoc "${0}" -o "${0%.html}.md"' {} \;sudo apt install pandoc
+for f in \*.html; do printf '%s\n' 0a '<!DOCTYPE html>
 
-
-
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {} \;
-
-
-for f in *.html; do printf '%s\n' 0a '<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -750,14 +687,15 @@ echo "</body></html>" | tee -a *.htmlfor x in "./"/*/; do
 donefind . -size +75M -a -print -a -exec rm -f {} \;find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 # check what you are about to delete before deleting:
 
-find . -name "*.zip" -type f -print
+find . -name "\*.zip" -type f -print
 
 #Delete:
 
-find . -name "*.zip" -type f -print -delete#!/bin/sh
+find . -name "\*.zip" -type f -print -delete#!/bin/sh
 
-# find ./ | grep -i "\.*$" >files
-find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.*$">files
+# find ./ | grep -i "\.\*$" >files
+
+find ./ | sed -E -e 's/([^ ]+[ ]+){8}//' | grep -i "\.\*$">files
 listing="files"
 
 out=""
@@ -767,83 +705,82 @@ out="basename $out.html"
 html="index.html"
 cmd() {
 
-  echo '  <!DOCTYPE html>'
-  echo '<html>'
-  echo '<head>'
+echo ' <!DOCTYPE html>'
+echo '<html>'
+echo '<head>'
 
-  echo '  <meta http-equiv="Content-Type" content="text/html">'
+echo ' <meta http-equiv="Content-Type" content="text/html">'
 
-  echo '  <meta name="Author" content="Bryan Guner">'
-  echo '<link rel="stylesheet" href="./assets/prism.css">'
-  echo ' <link rel="stylesheet" href="./assets/style.css">'
-  echo ' <script async defer src="./assets/prism.js"></script>'
+echo ' <meta name="Author" content="Bryan Guner">'
+echo '<link rel="stylesheet" href="./assets/prism.css">'
+echo ' <link rel="stylesheet" href="./assets/style.css">'
+echo ' <script async defer src="./assets/prism.js"></script>'
 
-  echo "  <title> directory </title>"
+echo " <title> directory </title>"
 
-  echo ""
-  echo '<style>'
+echo ""
+echo '<style>'
 
-
-echo '    a {'
-echo '      color: black;'
-echo '    }'
+echo ' a {'
+echo ' color: black;'
+echo ' }'
 echo ''
-echo '    li {'
-echo '      border: 1px solid black !important;'
-echo '      font-size: 20px;'
-echo '      letter-spacing: 0px;'
-echo '      font-weight: 700;'
-echo '      line-height: 16px;'
-echo '      text-decoration: none !important;'
-echo '      text-transform: uppercase;'
-echo '      background: #194ccdaf !important;'
-echo '      color: black !important;'
-echo '      border: none;'
-echo '      cursor: pointer;'
-echo '      justify-content: center;'
-echo '      padding: 30px 60px;'
-echo '      height: 48px;'
-echo '      text-align: center;'
-echo '      white-space: normal;'
-echo '      border-radius: 10px;'
-echo '      min-width: 45em;'
-echo '      padding: 1.2em 1em 0;'
-echo '      box-shadow: 0 0 5px;'
-echo '      margin: 1em;'
-echo '      display: grid;'
-echo '      -webkit-border-radius: 10px;'
-echo '      -moz-border-radius: 10px;'
-echo '      -ms-border-radius: 10px;'
-echo '      -o-border-radius: 10px;'
-echo '    }'
-echo '  </style>'
-  echo '</head>'
+echo ' li {'
+echo ' border: 1px solid black !important;'
+echo ' font-size: 20px;'
+echo ' letter-spacing: 0px;'
+echo ' font-weight: 700;'
+echo ' line-height: 16px;'
+echo ' text-decoration: none !important;'
+echo ' text-transform: uppercase;'
+echo ' background: #194ccdaf !important;'
+echo ' color: black !important;'
+echo ' border: none;'
+echo ' cursor: pointer;'
+echo ' justify-content: center;'
+echo ' padding: 30px 60px;'
+echo ' height: 48px;'
+echo ' text-align: center;'
+echo ' white-space: normal;'
+echo ' border-radius: 10px;'
+echo ' min-width: 45em;'
+echo ' padding: 1.2em 1em 0;'
+echo ' box-shadow: 0 0 5px;'
+echo ' margin: 1em;'
+echo ' display: grid;'
+echo ' -webkit-border-radius: 10px;'
+echo ' -moz-border-radius: 10px;'
+echo ' -ms-border-radius: 10px;'
+echo ' -o-border-radius: 10px;'
+echo ' }'
+echo ' </style>'
+echo '</head>'
 
-  echo '<body>'
+echo '<body>'
 
-  echo ""
+echo ""
 
-  #################### continue with the HTML stuff:
+#################### continue with the HTML stuff:
 
-  echo ""
+echo ""
 
-  echo ""
+echo ""
 
-  echo "<ul>"
+echo "<ul>"
 
-  awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
+awk '{print "<li><a href=\""$1"\">",$1,"&nbsp;</a></li>"}' $listing
 
-  # awk '{print "<li>"};
+# awk '{print "<li>"};
 
-  # 	{print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
+# {print " <a href=\""$1"\">",$1,"</a></li>&nbsp;"}' \ $listing
 
-  echo ""
+echo ""
 
-  echo "</ul>"
+echo "</ul>"
 
-  echo "</body>"
+echo "</body>"
 
-  echo "</html>"
+echo "</html>"
 
 }
 
@@ -851,114 +788,111 @@ cmd $listing --sort=extension >>$html
 
 lynx -dump https://distrokid.com/hyperfollow/mihirbeg/getting-there | awk '/http/{print $2}' > links2.txt
 
-
-
 ## OR--------------------------------------------------------------------------------
+
 wget -qO- www.instagram.com/mihirbeg/ |
-grep -Eoi '<a [^>]+>' | 
-grep -Eo 'href="[^\"]+"' | 
-grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
-find ./ | grep -i "\.html*$"{
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "lockfileVersion": 1,
-  "requires": true,
-  "dependencies": {
-    "bluebird": {
-      "version": "3.7.2",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
-      "integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
-    },
-    "file-match": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
-      "integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
-      "requires": {
-        "utils-extend": "^1.0.6"
-      }
-    },
-    "file-system": {
-      "version": "2.2.2",
-      "resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
-      "integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
-      "requires": {
-        "file-match": "^1.0.1",
-        "utils-extend": "^1.0.4"
-      }
-    },
-    "utils-extend": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
-      "integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
-    }
-  }
+grep -Eoi '<a [^>]+>' |
+grep -Eo 'href="[^\"]+"' |
+grep -Eo '(http|https)://[^/"]+'>output.mdgit filter-branch --index-filter 'git rm -r --cached --ignore-unmatch assets/\_website-components/0-DOJO/widgets-master/output/info/stats.json' HEAD
+find ./ | grep -i "\.html\*$"{
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"lockfileVersion": 1,
+"requires": true,
+"dependencies": {
+"bluebird": {
+"version": "3.7.2",
+"resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
+"integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
+},
+"file-match": {
+"version": "1.0.2",
+"resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
+"integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
+"requires": {
+"utils-extend": "^1.0.6"
+}
+},
+"file-system": {
+"version": "2.2.2",
+"resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
+"integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
+"requires": {
+"file-match": "^1.0.1",
+"utils-extend": "^1.0.4"
+}
+},
+"utils-extend": {
+"version": "1.0.8",
+"resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
+"integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
+}
+}
 }
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "description": "write-all-commands-to-file",
-  "main": "write-directory-2-file.js",
-  "scripts": {
-    "test": "npm start"
-  },
-  "author": "Bryan Guner",
-  "license": "MIT",
-  "dependencies": {
-    "bluebird": "^3.7.2",
-    "file-system": "^2.2.2"
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"description": "write-all-commands-to-file",
+"main": "write-directory-2-file.js",
+"scripts": {
+"test": "npm start"
+},
+"author": "Bryan Guner",
+"license": "MIT",
+"dependencies": {
+"bluebird": "^3.7.2",
+"file-system": "^2.2.2"
+}
 }
 
 ls -R './' | awk '
 /:$/&&f{s=$0;f=0}
 /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./*.html {} \; 
+NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./\*.html {} \;
+
 # Recursivley remove from all html files any lines contaning the string "badText"#install unzip:
+
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deleten=1;
+
+find . -name "\*.zip" -type f -print -deleten=1;
 max=50;
 while [ "$n" -le "$max" ]; do
-  mkdir "s$n"
+mkdir "s$n"
   n=`expr "$n" + 1`;
-done   git config --global credential.helper storesudo apt install uniq
-
-
+done git config --global credential.helper storesudo apt install uniq
 
 uniq -u input.txt output.txt
-for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
-
-
+for f in _/; do nf=$(echo "$f" |sed -e 's/[^a-za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\._$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
 
 # examples:
+
 sed -i '/\.git/d' ./index.html
 
 # Recursive
 
+find . -type f -a \( -name "_.html" -o -name "_.js" -o -name "_.css" -o -name "_.md" \) -a -exec sed -i '/BADSTRING/d' '{}' +
 
-find . -type f -a \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.md" \) -a -exec sed -i  '/BADSTRING/d' '{}' +
-
-find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename  's/ *$//' *# recursivley remove empty files
+find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename 's/ *$//' \*# recursivley remove empty files
 find . -empty -type f -print -delete
 
-
-
 # recursivley remove empty folders
+
 find . -empty -type d -print -delete
 
-
 # recursively remove .git folder, .gitignore file and .gitmodules file and .gitattributes file
+
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 
-
-
 # Recursivley remove security, release, changelog, License & contributing files
-find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
+find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "\*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -1275,110 +1209,108 @@ const fs=require('fs');
 let cat= require( 'child_process' ).execSync( 'cat *' ).toString( 'UTF-8' )
 fs.writeFile( 'output.md', cat, ( err ) => {
 
-  // In case of a error throw err. 
-  if ( err ) throw err;
+// In case of a error throw err.
+if ( err ) throw err;
 } );
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "lockfileVersion": 1,
-  "requires": true,
-  "dependencies": {
-    "bluebird": {
-      "version": "3.7.2",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
-      "integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
-    },
-    "file-match": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
-      "integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
-      "requires": {
-        "utils-extend": "^1.0.6"
-      }
-    },
-    "file-system": {
-      "version": "2.2.2",
-      "resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
-      "integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
-      "requires": {
-        "file-match": "^1.0.1",
-        "utils-extend": "^1.0.4"
-      }
-    },
-    "utils-extend": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
-      "integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
-    }
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"lockfileVersion": 1,
+"requires": true,
+"dependencies": {
+"bluebird": {
+"version": "3.7.2",
+"resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
+"integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
+},
+"file-match": {
+"version": "1.0.2",
+"resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
+"integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
+"requires": {
+"utils-extend": "^1.0.6"
+}
+},
+"file-system": {
+"version": "2.2.2",
+"resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
+"integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
+"requires": {
+"file-match": "^1.0.1",
+"utils-extend": "^1.0.4"
+}
+},
+"utils-extend": {
+"version": "1.0.8",
+"resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
+"integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
+}
+}
 }
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "description": "write-all-commands-to-file",
-  "main": "write-directory-2-file.js",
-  "scripts": {
-    "test": "npm start"
-  },
-  "author": "Bryan Guner",
-  "license": "MIT",
-  "dependencies": {
-    "bluebird": "^3.7.2",
-    "file-system": "^2.2.2"
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"description": "write-all-commands-to-file",
+"main": "write-directory-2-file.js",
+"scripts": {
+"test": "npm start"
+},
+"author": "Bryan Guner",
+"license": "MIT",
+"dependencies": {
+"bluebird": "^3.7.2",
+"file-system": "^2.2.2"
+}
 }
 
 ls -R './' | awk '
 /:$/&&f{s=$0;f=0}
 /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./*.html {} \; 
+NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./\*.html {} \;
+
 # Recursivley remove from all html files any lines contaning the string "badText"#install unzip:
+
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deleten=1;
+
+find . -name "\*.zip" -type f -print -deleten=1;
 max=50;
 while [ "$n" -le "$max" ]; do
-  mkdir "s$n"
+mkdir "s$n"
   n=`expr "$n" + 1`;
-done   git config --global credential.helper storesudo apt install uniq
-
-
+done git config --global credential.helper storesudo apt install uniq
 
 uniq -u input.txt output.txt
-for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
-
-
+for f in _/; do nf=$(echo "$f" |sed -e 's/[^a-za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\._$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
 
 # examples:
+
 sed -i '/\.git/d' ./index.html
 
 # Recursive
 
+find . -type f -a \( -name "_.html" -o -name "_.js" -o -name "_.css" -o -name "_.md" \) -a -exec sed -i '/BADSTRING/d' '{}' +
 
-find . -type f -a \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.md" \) -a -exec sed -i  '/BADSTRING/d' '{}' +
-
-find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename  's/ *$//' *# recursivley remove empty files
+find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename 's/ *$//' \*# recursivley remove empty files
 find . -empty -type f -print -delete
 
-
-
 # recursivley remove empty folders
+
 find . -empty -type d -print -delete
 
-
 # recursively remove .git folder, .gitignore file and .gitmodules file and .gitattributes file
+
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 
-
-
 # Recursivley remove security, release, changelog, License & contributing files
-find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
+find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "\*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -1688,113 +1620,107 @@ Size of all files: 24008 K</p>
 //   if ( err ) throw err;
 // } );
 
-
-
-
-
-const fs=require('fs');let cat=require('child_process').execSync('cat *').toString('UTF-8');
+const fs=require('fs');let cat=require('child_process').execSync('cat \*').toString('UTF-8');
 fs.writeFile('output.md',cat,(err)=>{if(err)throw err;});
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "lockfileVersion": 1,
-  "requires": true,
-  "dependencies": {
-    "bluebird": {
-      "version": "3.7.2",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
-      "integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
-    },
-    "file-match": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
-      "integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
-      "requires": {
-        "utils-extend": "^1.0.6"
-      }
-    },
-    "file-system": {
-      "version": "2.2.2",
-      "resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
-      "integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
-      "requires": {
-        "file-match": "^1.0.1",
-        "utils-extend": "^1.0.4"
-      }
-    },
-    "utils-extend": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
-      "integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
-    }
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"lockfileVersion": 1,
+"requires": true,
+"dependencies": {
+"bluebird": {
+"version": "3.7.2",
+"resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
+"integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
+},
+"file-match": {
+"version": "1.0.2",
+"resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
+"integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
+"requires": {
+"utils-extend": "^1.0.6"
+}
+},
+"file-system": {
+"version": "2.2.2",
+"resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
+"integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
+"requires": {
+"file-match": "^1.0.1",
+"utils-extend": "^1.0.4"
+}
+},
+"utils-extend": {
+"version": "1.0.8",
+"resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
+"integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
+}
+}
 }
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "description": "write-all-commands-to-file",
-  "main": "write-directory-2-file.js",
-  "scripts": {
-    "test": "npm start"
-  },
-  "author": "Bryan Guner",
-  "license": "MIT",
-  "dependencies": {
-    "bluebird": "^3.7.2",
-    "file-system": "^2.2.2"
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"description": "write-all-commands-to-file",
+"main": "write-directory-2-file.js",
+"scripts": {
+"test": "npm start"
+},
+"author": "Bryan Guner",
+"license": "MIT",
+"dependencies": {
+"bluebird": "^3.7.2",
+"file-system": "^2.2.2"
+}
 }
 
 ls -R './' | awk '
 /:$/&&f{s=$0;f=0}
 /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./*.html {} \; 
+NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./\*.html {} \;
+
 # Recursivley remove from all html files any lines contaning the string "badText"#install unzip:
+
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deleten=1;
+
+find . -name "\*.zip" -type f -print -deleten=1;
 max=50;
 while [ "$n" -le "$max" ]; do
-  mkdir "s$n"
+mkdir "s$n"
   n=`expr "$n" + 1`;
-done   git config --global credential.helper storesudo apt install uniq
-
-
+done git config --global credential.helper storesudo apt install uniq
 
 uniq -u input.txt output.txt
-for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
-
-
+for f in _/; do nf=$(echo "$f" |sed -e 's/[^a-za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\._$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
 
 # examples:
+
 sed -i '/\.git/d' ./index.html
 
 # Recursive
 
+find . -type f -a \( -name "_.html" -o -name "_.js" -o -name "_.css" -o -name "_.md" \) -a -exec sed -i '/BADSTRING/d' '{}' +
 
-find . -type f -a \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.md" \) -a -exec sed -i  '/BADSTRING/d' '{}' +
-
-find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename  's/ *$//' *# recursivley remove empty files
+find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename 's/ *$//' \*# recursivley remove empty files
 find . -empty -type f -print -delete
 
-
-
 # recursivley remove empty folders
+
 find . -empty -type d -print -delete
 
-
 # recursively remove .git folder, .gitignore file and .gitmodules file and .gitattributes file
+
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 
-
-
 # Recursivley remove security, release, changelog, License & contributing files
-find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
+find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "\*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -2104,113 +2030,107 @@ Size of all files: 24008 K</p>
 //   if ( err ) throw err;
 // } );
 
-
-
-
-
-const fs=require('fs');let cat=require('child_process').execSync('cat *').toString('UTF-8');
+const fs=require('fs');let cat=require('child_process').execSync('cat \*').toString('UTF-8');
 fs.writeFile('output.md',cat,(err)=>{if(err)throw err;});
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "lockfileVersion": 1,
-  "requires": true,
-  "dependencies": {
-    "bluebird": {
-      "version": "3.7.2",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
-      "integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
-    },
-    "file-match": {
-      "version": "1.0.2",
-      "resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
-      "integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
-      "requires": {
-        "utils-extend": "^1.0.6"
-      }
-    },
-    "file-system": {
-      "version": "2.2.2",
-      "resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
-      "integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
-      "requires": {
-        "file-match": "^1.0.1",
-        "utils-extend": "^1.0.4"
-      }
-    },
-    "utils-extend": {
-      "version": "1.0.8",
-      "resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
-      "integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
-    }
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"lockfileVersion": 1,
+"requires": true,
+"dependencies": {
+"bluebird": {
+"version": "3.7.2",
+"resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.7.2.tgz",
+"integrity": "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
+},
+"file-match": {
+"version": "1.0.2",
+"resolved": "https://registry.npmjs.org/file-match/-/file-match-1.0.2.tgz",
+"integrity": "sha1-ycrSZdLIrfOoFHWw30dYWQafrvc=",
+"requires": {
+"utils-extend": "^1.0.6"
+}
+},
+"file-system": {
+"version": "2.2.2",
+"resolved": "https://registry.npmjs.org/file-system/-/file-system-2.2.2.tgz",
+"integrity": "sha1-fWWDPjojR9zZVqgTxncVPtPt2Yc=",
+"requires": {
+"file-match": "^1.0.1",
+"utils-extend": "^1.0.4"
+}
+},
+"utils-extend": {
+"version": "1.0.8",
+"resolved": "https://registry.npmjs.org/utils-extend/-/utils-extend-1.0.8.tgz",
+"integrity": "sha1-zP17ZFQPjpDuIe7Fd2nQZRyril8="
+}
+}
 }
 {
-  "name": "bash-utility-commands",
-  "version": "1.0.0",
-  "description": "write-all-commands-to-file",
-  "main": "write-directory-2-file.js",
-  "scripts": {
-    "test": "npm start"
-  },
-  "author": "Bryan Guner",
-  "license": "MIT",
-  "dependencies": {
-    "bluebird": "^3.7.2",
-    "file-system": "^2.2.2"
-  }
+"name": "bash-utility-commands",
+"version": "1.0.0",
+"description": "write-all-commands-to-file",
+"main": "write-directory-2-file.js",
+"scripts": {
+"test": "npm start"
+},
+"author": "Bryan Guner",
+"license": "MIT",
+"dependencies": {
+"bluebird": "^3.7.2",
+"file-system": "^2.2.2"
+}
 }
 
 ls -R './' | awk '
 /:$/&&f{s=$0;f=0}
 /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
-NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./*.html {} \; 
+NF&&f{ print s"/"$0 }'>listing.mdfind . -type f -exec sed -i '/badText/d' ./\*.html {} \;
+
 # Recursivley remove from all html files any lines contaning the string "badText"#install unzip:
+
 sudo apt install unzip
 
 # recursivley unzip all zip files into a folder by the same name:
-find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
+find . -name "\*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
 
 # recursivley delete .zip files when done:
-find . -name "*.zip" -type f -print -deleten=1;
+
+find . -name "\*.zip" -type f -print -deleten=1;
 max=50;
 while [ "$n" -le "$max" ]; do
-  mkdir "s$n"
+mkdir "s$n"
   n=`expr "$n" + 1`;
-done   git config --global credential.helper storesudo apt install uniq
-
-
+done git config --global credential.helper storesudo apt install uniq
 
 uniq -u input.txt output.txt
-for f in */; do nf=$(echo "$f" |sed -e 's/[^A-Za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\.*$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
-
-
+for f in _/; do nf=$(echo "$f" |sed -e 's/[^a-za-z0-9.]/./g' -e 's/\.\.\././g' -e 's/\.\././g' -e 's/\._$//'); test "$f" != "$nf" && mv "$f" "$nf" && echo "$nf"; donesed -i '/target-string/d' ./js-in-one-page.html
 
 # examples:
+
 sed -i '/\.git/d' ./index.html
 
 # Recursive
 
+find . -type f -a \( -name "_.html" -o -name "_.js" -o -name "_.css" -o -name "_.md" \) -a -exec sed -i '/BADSTRING/d' '{}' +
 
-find . -type f -a \( -name "*.html" -o -name "*.js" -o -name "*.css" -o -name "*.md" \) -a -exec sed -i  '/BADSTRING/d' '{}' +
-
-find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename  's/ *$//' *# recursivley remove empty files
+find . -name "*" -type f | xargs sed -i -e '/Mirrored from/d'for filename in *badString*; do mv "$filename" "${filename//badstring/replaceString}"; donerename 's/ *$//' \*# recursivley remove empty files
 find . -empty -type f -print -delete
 
-
-
 # recursivley remove empty folders
+
 find . -empty -type d -print -delete
 
-
 # recursively remove .git folder, .gitignore file and .gitmodules file and .gitattributes file
+
 find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 
-
-
 # Recursivley remove security, release, changelog, License & contributing files
-find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o  -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o  -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
+find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "\*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -2520,9 +2440,5 @@ Size of all files: 24008 K</p>
 //   if ( err ) throw err;
 // } );
 
-
-
-
-
-const fs=require('fs');let cat=require('child_process').execSync('cat *').toString('UTF-8');
+const fs=require('fs');let cat=require('child_process').execSync('cat \*').toString('UTF-8');
 fs.writeFile('output.md',cat,(err)=>{if(err)throw err;});

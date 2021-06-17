@@ -3,7 +3,7 @@
 Для этого мы будем использовать свойство `.length`. Например:
 
 ```js
-var example = 'example string';
+var example = "example string";
 example.length;
 ```
 
@@ -12,7 +12,6 @@ example.length;
 Удостовертесь, что между `example` и `length` присутствует _точка_.
 
 Код выше должен вернуть **число** символов в заданной строке.
-
 
 ## Условие задачи:
 

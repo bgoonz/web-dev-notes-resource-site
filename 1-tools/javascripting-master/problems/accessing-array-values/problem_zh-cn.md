@@ -5,7 +5,7 @@
 下面是一个例子：
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -23,6 +23,7 @@ console.log(pets[0]);
 ```
 
 下面的用法是错误的：
+
 ```
 console.log(pets.1);
 ```
@@ -32,8 +33,9 @@ console.log(pets.1);
 创建一个名为 `accessing-array-values.js` 的文件。
 
 在文件中定义一个数组 `food`：
+
 ```js
-var food = ['apple', 'pizza', 'pear'];
+var food = ["apple", "pizza", "pear"];
 ```
 
 使用 `console.log()` 打印数组的第二个值到终端。

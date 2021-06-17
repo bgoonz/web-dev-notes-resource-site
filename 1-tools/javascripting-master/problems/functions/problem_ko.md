@@ -3,7 +3,7 @@
 여기에 예제가 있습니다.
 
 ```js
-function example (x) {
+function example(x) {
   return x * 2;
 }
 ```
@@ -11,7 +11,7 @@ function example (x) {
 이렇게 함수를 **호출**하면 숫자 10을 얻을 수 있습니다.
 
 ```js
-example(5)
+example(5);
 ```
 
 위의 예제는 `example` 함수가 숫자를 인자(입력)로 받아 그 숫자에 2를 곱한 값을 반환합니다.
@@ -25,7 +25,7 @@ example(5)
 함수 안에서 `food` 인자를 이렇게 반환합니다.
 
 ```js
-return food + ' tasted really good.';
+return food + " tasted really good.";
 ```
 
 `console.log()`의 괄호 안에서 문자열 `bananas`를 인자로 하는 `eat()` 함수를 호출합니다.

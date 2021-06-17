@@ -2,28 +2,31 @@
 
 [![build:?](https://travis-ci.org/js-shelf/file-manager-js.svg?branch=master)](https://travis-ci.org/js-shelf/file-manager-js) [![npm](https://img.shields.io/npm/v/file-manager-js.svg)](https://www.npmjs.com/package/file-manager-js) [![npm](https://img.shields.io/npm/dm/file-manager-js.svg)](https://www.npmjs.com/package/file-manager-js) [![npm](https://img.shields.io/badge/node-%3E=%206.0-blue.svg)](https://www.npmjs.com/package/file-manager-js)
 
-## Description 
+## Description
+
 It uses node filesystem to manage files and directories on the local storage through an enhanced promise interface. It can list/create/remove files and directories recursively with promises.
 
 ## Install
+
 ```
 npm install file-manager-js
 ```
 
-## Usage 
+## Usage
 
 ```javascript
 // require all functions
-const fileManager = require('file-manager-js');
+const fileManager = require("file-manager-js");
 
 // OR specific functions
-const { list, removeFile, rename } = require('file-manager-js');
+const { list, removeFile, rename } = require("file-manager-js");
 ```
 
 **.stat(path)**
 
 promisified fs.stat. retrieves the stats of a file or directory.
 https://nodejs.org/api/fs.html#fs_class_fs_stats
+
 ```javascript
 fileManager.stat('./test.txt')
   .then((stats) => // stats)
@@ -33,6 +36,7 @@ fileManager.stat('./test.txt')
 **.info(path)**
 
 returns an extended stats object that includes size (**bytes**) and type of the path
+
 ```javascript
 // file info
 fileManager.info('./test.txt').then((info) => {
@@ -61,14 +65,16 @@ fileManager.info('./test')
 
 **.join(path1, path2)**
 
-join two paths. a delegate to require('path').join 
+join two paths. a delegate to require('path').join
+
 ```javascript
-let p = fileManager.join('a/b/c', 'd/e/f'); // a/b/c/d/e/f
+let p = fileManager.join("a/b/c", "d/e/f"); // a/b/c/d/e/f
 ```
 
 **.list(path)**
 
-list first-level files and directories inside a directory 
+list first-level files and directories inside a directory
+
 ```javascript
 // path can be an absolute path using __dirname
 fileManager.list('./project')
@@ -86,6 +92,7 @@ fileManager.list('./project')
 **.listDeep(path)**
 
 list in-depth files and directories inside a directory
+
 ```javascript
 fileManager.listDeep('./content')
   .then((entries) => {
@@ -102,6 +109,7 @@ fileManager.listDeep('./content')
 **.exists(path)**
 
 checks if a path (file or directory) exists and resolve with true or false
+
 ```javascript
 fileManager.exists('./content')
   .then((exists) => // true)
@@ -115,6 +123,7 @@ fileManager.exists('./newContent')
 **.createDir(path)**
 
 creates a single directory or a directory tree
+
 ```javascript
 // create a directory tree
 fileManager.createDir('./a/b/c/d')
@@ -125,6 +134,7 @@ fileManager.createDir('./a/b/c/d')
 **.createFile(path)**
 
 creates a file and creates the directory tree in the path if not exists
+
 ```javascript
 // creates a directory structure then the file
 fileManager.createFile('./x/y/z/test.txt')
@@ -135,6 +145,7 @@ fileManager.createFile('./x/y/z/test.txt')
 **.readFile(path)**
 
 reads entire file content
+
 ```javascript
 fileManager.readFile('./x/y/z/test.txt')
   .then((content) => // content is instance of Buffer)
@@ -144,6 +155,7 @@ fileManager.readFile('./x/y/z/test.txt')
 **.removeDir(path)**
 
 removes a directory or directory tree with all its content
+
 ```javascript
 // remvove a/b/c/d + a/b/c +  a/b/test.txt + a/b + a
 fileManager.removeDir('./a')
@@ -154,6 +166,7 @@ fileManager.removeDir('./a')
 **.removeFile(path)**
 
 removes a file
+
 ```javascript
 // removed ./test.txt
 fileManager.removeFile('./test.txt')
@@ -164,6 +177,7 @@ fileManager.removeFile('./test.txt')
 **.rename(oldPath, newPath)**
 
 rename a file or directory
+
 ```javascript
 // rename file ./test.txt to ./ttt.txt
 fileManager.rename('./test.txt', './ttt.txt')
@@ -172,9 +186,11 @@ fileManager.rename('./test.txt', './ttt.txt')
 ```
 
 ## Build
+
 ```
 grunt build
 ```
 
 ## License
+
 The MIT License. Full License is [here](https://github.com/js-shelf/file-manager-js/blob/master/LICENSE)

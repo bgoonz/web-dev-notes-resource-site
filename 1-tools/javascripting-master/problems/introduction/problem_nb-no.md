@@ -17,17 +17,19 @@ Lag en fil som heter `introduction.js`:
 ```bash
 touch introduction.js
 ```
- eller hvis du bruker Windows, 
+
+eller hvis du bruker Windows,
 
 ```bash
 type NUL > introduction.js
 ```
+
 (`type` er en del av kommandoen!)
 
 Åpne filen i din favoritt editor og legg til følgende tekst:
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
 
 Lagre filen, deretter sjekker du om programmet er korrekt ved å kjøre følgende kommando:

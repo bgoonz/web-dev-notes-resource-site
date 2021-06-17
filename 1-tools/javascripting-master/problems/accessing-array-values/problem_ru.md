@@ -4,11 +4,10 @@
 
 Например:
 
-
 ```js
-	var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
-	console.log(pets[0]);
+console.log(pets[0]);
 ```
 
 Приведённый выше код должен вывести первый элемент массива `pets` -- строку `cat`.
@@ -20,10 +19,11 @@
 Правильная запись:
 
 ```js
-	console.log(pets[0]);
+console.log(pets[0]);
 ```
 
 Неправильная запись:
+
 ```
 	console.log(pets.1);
 ```
@@ -33,10 +33,10 @@
 Создайте файл с названием `accessing-array-values.js`.
 
 В этом файле объявите массив `food` :
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 Воспользуйтесь командой `console.log()`, чтобы вывести значение `второго` элемента массива в консоль.
 

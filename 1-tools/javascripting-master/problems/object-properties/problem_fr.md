@@ -4,10 +4,10 @@ Voici un example utilisant des **crochets** :
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 Le code ci-dessus va afficher la chaine de caractères `yummy` dans le terminal.
@@ -17,7 +17,7 @@ Une alternative consiste à utiliser la **notation en point** pour avoir le mêm
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 Les deux lignes de code ci-dessus renverront `yummy`.
@@ -30,7 +30,7 @@ Dans ce fichier, définissez une variable nommée `food` comme ceci :
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

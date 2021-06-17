@@ -3,9 +3,9 @@
 Для этого можно использовать как одинарные, так и двойные кавычки:
 
 ```js
-'this is a string'
+"this is a string";
 
-"this is also a string"
+"this is also a string";
 ```
 
 ## НА ЗАМЕТКУ
@@ -19,7 +19,7 @@
 В этом файле объявите переменную `someString` таким образом:
 
 ```js
-var someString = 'this is a string';
+var someString = "this is a string";
 ```
 
 Воспользуйтесь командой `console.log()`, чтобы вывести значение переменной **someString** в консоль.

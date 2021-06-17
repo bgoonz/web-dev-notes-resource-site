@@ -4,10 +4,10 @@
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 上面的例子将打印出 `'yummy'` 到终端。
@@ -17,7 +17,7 @@ console.log(example['pizza']);
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 上面的两行代码都会返回 `yummy`。
@@ -30,7 +30,7 @@ example['pizza'];
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

@@ -5,8 +5,8 @@ Le stringhe possiedono funzionalità integrata che ti permette di ispezionarne e
 Ecco un esempio che usa il metodo `.replace()`:
 
 ```js
-var example = 'this example exists';
-example = example.replace('exists', 'is awesome');
+var example = "this example exists";
+example = example.replace("exists", "is awesome");
 console.log(example);
 ```
 

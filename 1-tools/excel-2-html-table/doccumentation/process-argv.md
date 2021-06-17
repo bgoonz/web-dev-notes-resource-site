@@ -16,56 +16,52 @@ Below examples illustrate the use of **process.argv property** in Node.js:
 
 **Example 1:**
 
-  
-  
-
-`const process = require(``'process'``);`
+` const process = require(``'process'``); `
 
 `console.log(process.argv);`
 
 **Command to run the code:**
 
-node index.js extra\_argument1 extra\_argument2 3
+node index.js extra_argument1 extra_argument2 3
 
 **Output:**
 
 \[ 'C:\\\\Program Files\\\\nodejs\\\\node.exe',
-  'C:\\\\nodejs\\\\g\\\\process\\\\argv\_1.js',
-  'extra\_argument1',
-  'extra\_argument2',
-  '3' 
+'C:\\\\nodejs\\\\g\\\\process\\\\argv_1.js',
+'extra_argument1',
+'extra_argument2',
+'3'
 \]
 
 **Example 2:**
 
-`const process = require(``'process'``);`
+` const process = require(``'process'``); `
 
 `var` `args = process.argv;`
 
-`console.log(``"number of arguments is "``+args.length);`
+` console.log(``"number of arguments is "``+args.length); `
 
 `args.forEach((val, index) => {`
 
- ``console.log(`${index}: ${val}`);``
+`` console.log(`${index}: ${val}`); ``
 
 `});`
 
 **Command to run the code:**
 
-node index.js extra\_argument1 extra\_argument2 3
+node index.js extra_argument1 extra_argument2 3
 
 **Output:**
 
 number of arguments is 5
 0: C:\\Program Files\\nodejs\\node.exe
-1: C:\\nodejs\\g\\process\\argv\_2.js
-2: extra\_argument1
-3: extra\_argument2
+1: C:\\nodejs\\g\\process\\argv_2.js
+2: extra_argument1
+3: extra_argument2
 4: 3
 
 **Note:** The above program will compile and run by using the `node filename.js` command followed by arguments.
 
-**Reference:** [https://nodejs.org/api/process.html#process\_process\_argv](https://nodejs.org/api/process.html#process_process_argv)
-
+**Reference:** [https://nodejs.org/api/process.html#process_process_argv](https://nodejs.org/api/process.html#process_process_argv)
 
 [Source](https://www.geeksforgeeks.org/node-js-process-argv-property/)

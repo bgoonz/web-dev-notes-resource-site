@@ -1,4 +1,4 @@
-To keep things organized, let's create a folder for this workshop. 
+To keep things organized, let's create a folder for this workshop.
 
 Run this command to make a directory called `javascripting` (or something else if you like):
 
@@ -18,16 +18,18 @@ Create a file named `introduction.js`:
 touch introduction.js
 ```
 
-Or if you're on Windows: 
+Or if you're on Windows:
+
 ```bash
 type NUL > introduction.js
 ```
+
 (`type` is part of the command!)
 
 Open the file in your favorite editor, and add this text:
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
 
 Save the file, then check to see if your program is correct by running this command:
@@ -41,4 +43,3 @@ By the way, throughout this tutorial, you can give the file you work with any na
 ```bash
 javascripting verify catsAreAwesome.js
 ```
-

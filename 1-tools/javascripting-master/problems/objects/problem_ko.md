@@ -4,8 +4,8 @@
 
 ```js
 var foodPreferences = {
-  pizza: 'yum',
-  salad: 'gross'
+  pizza: "yum",
+  salad: "gross",
 };
 ```
 
@@ -17,9 +17,9 @@ var foodPreferences = {
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
 };
 ```
 

@@ -5,7 +5,7 @@
 以下に例を示します...
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -33,10 +33,10 @@ console.log(pets.1);
 `accessing-array-values.js` ファイルを作りましょう。
 
 ファイルの中で、次の配列 `food` を定義します。
-```js
-var food = ['apple', 'pizza', 'pear'];
-```
 
+```js
+var food = ["apple", "pizza", "pear"];
+```
 
 `console.log()` を使って、配列の `2` 番目の値をターミナルに出力してください。
 

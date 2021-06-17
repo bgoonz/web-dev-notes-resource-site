@@ -7,10 +7,10 @@
 Приклад:
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -31,8 +31,8 @@ return (pet !== 'elephant');
 Функція, яку ви маєте передати у метод `.filter()` буде виглядати приблизно так:
 
 ```js
-function evenNumbers (number) {
-return number % 2 === 0;
+function evenNumbers(number) {
+  return number % 2 === 0;
 }
 ```
 

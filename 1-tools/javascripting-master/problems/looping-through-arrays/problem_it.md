@@ -7,7 +7,7 @@ Ciascun elemento di un array è identificato da un numero, a iniziare dallo `0`.
 Quindi in questo array `hi` è identificato dal numero `1`:
 
 ```js
-var greetings = ['hello', 'hi', 'good morning'];
+var greetings = ["hello", "hi", "good morning"];
 ```
 
 E può essere acceduto come segue:
@@ -25,7 +25,7 @@ Crea un file dal nome `looping-through-arrays.js`.
 In questo file, definisci una variabile chiamata `pets` che referenzia questo array:
 
 ```js
-['cat', 'dog', 'rat'];
+["cat", "dog", "rat"];
 ```
 
 Crea un ciclo for che cambia ciascuna stringa dell'array nel suo plurale.
@@ -33,7 +33,7 @@ Crea un ciclo for che cambia ciascuna stringa dell'array nel suo plurale.
 Utilizzerai un'istruzione come questa all'interno del ciclo for:
 
 ```js
-pets[i] = pets[i] + 's';
+pets[i] = pets[i] + "s";
 ```
 
 Al termine del ciclo for, usa `console.log()` per stampare l'array `pets` sul terminale.

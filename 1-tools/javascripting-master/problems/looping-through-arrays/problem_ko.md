@@ -7,7 +7,7 @@
 그래서 이 배열의 `hi`는 숫자 `1`로 확인할 수 있습니다.
 
 ```js
-var greetings = ['hello', 'hi', 'good morning'];
+var greetings = ["hello", "hi", "good morning"];
 ```
 
 이렇게 접근할 수 있습니다.
@@ -25,7 +25,7 @@ greetings[1];
 이 파일 안에서 다음 배열을 참조하는 `pets`라는 이름의 변수를 선언합니다.
 
 ```js
-['cat', 'dog', 'rat'];
+["cat", "dog", "rat"];
 ```
 
 for 반복문을 만들어 복수형이 되도록 각 문자열을 변경하세요.
@@ -33,7 +33,7 @@ for 반복문을 만들어 복수형이 되도록 각 문자열을 변경하세�
 루프 안에서 이런 구문을 사용하시면 됩니다.
 
 ```js
-pets[i] = pets[i] + 's';
+pets[i] = pets[i] + "s";
 ```
 
 루프 뒤에 `console.log()`로 `pets` 배열을 터미널에 출력하세요.

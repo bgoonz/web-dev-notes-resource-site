@@ -3,26 +3,24 @@ Una función puede ser declarada para recibir cualquier número de argumentos. L
 Un ejemplo:
 
 ```js
-function example (firstArg, secondArg) {
+function example(firstArg, secondArg) {
   console.log(firstArg, secondArg);
 }
 ```
 
 Podemos **llamar** a la función con dos argumentos de la siguiente forma:
 
-
 ```js
-example('hello', 'world');
+example("hello", "world");
 ```
 
 El ejemplo anterior imprimirá `hello world` a la terminal.
-
 
 ## El ejercicio:
 
 Crea un archivo llamando `function-arguments.js`.
 
-En ese archivo, define una función llamada `math` que recibe trés argumentos. Es importante que entiendas que los nombres de los argumentos son únicamente utilizados para referenciarlos. 
+En ese archivo, define una función llamada `math` que recibe trés argumentos. Es importante que entiendas que los nombres de los argumentos son únicamente utilizados para referenciarlos.
 
 Nombra cada parámetro cómo quieras.
 

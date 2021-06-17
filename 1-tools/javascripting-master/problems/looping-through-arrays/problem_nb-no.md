@@ -7,7 +7,7 @@ Hvert innslag i et array identifiseres med et nummer, fra og med `0`.
 Så i denne arrayet er `hei` identifisert ved nummeret `1`:
 
 ```js
-var hilsinger = ['hallo', 'hei', 'god morgen'];
+var hilsinger = ["hallo", "hei", "god morgen"];
 ```
 
 Verdien kan nås slik som dette:
@@ -25,7 +25,7 @@ Lag en fil som heter `looping-through-arrays.js`.
 Definer en variabel `pets` som refererer til denne arrayet:
 
 ```js
-['cat', 'dog', 'rat'];
+["cat", "dog", "rat"];
 ```
 
 Lag en for løkke som endrer hver eneste string i det arrayet til flertall.
@@ -33,7 +33,7 @@ Lag en for løkke som endrer hver eneste string i det arrayet til flertall.
 Du vil måtte bruke et uttrykk som dette på inni for løkken:
 
 ```js
-pets[i] = pets[i] + 's';
+pets[i] = pets[i] + "s";
 ```
 
 Etter den for løkken, bruk `console.log()` for å skrive ut `pets` arrayet til skjermen.

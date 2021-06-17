@@ -3,8 +3,8 @@ Du har ofte behov for å vite hvor mange tegn det er i en streng.
 For å finne ut det kan du bruke `.length` egenskapen. Slik som dette:
 
 ```js
-var example = 'eksempel streng';
-example.length
+var example = "eksempel streng";
+example.length;
 ```
 
 ## OBS
@@ -12,7 +12,6 @@ example.length
 Pass på at du har et punktum mellom `example` og `length`.
 
 Koden ovenfor vil returnere et **tall** som er totalt antall tegn for i denne strengen.
-
 
 ## Oppgaven:
 

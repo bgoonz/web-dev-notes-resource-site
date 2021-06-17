@@ -4,15 +4,15 @@
 
 ```js
 if (n > 1) {
-  console.log('the variable n is greater than 1.');
+  console.log("the variable n is greater than 1.");
 } else {
-  console.log('the variable n is less than or equal to 1.');
+  console.log("the variable n is less than or equal to 1.");
 }
 ```
 
-在括號中你必須輸入一個邏輯判斷語句，這個邏輯判斷語句的結果不是true（真）就是false（假）。
+在括號中你必須輸入一個邏輯判斷語句，這個邏輯判斷語句的結果不是 true（真）就是 false（假）。
 
-`else` 語句區塊是可選的，包含了一旦邏輯語句結果為false時需要被執行的程式碼。
+`else` 語句區塊是可選的，包含了一旦邏輯語句結果為 false 時需要被執行的程式碼。
 
 ## 挑戰：
 

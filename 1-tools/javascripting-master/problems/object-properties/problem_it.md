@@ -4,10 +4,10 @@ Ecco un esempio usando le **parentesi quadre**:
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 Il codice precedente stamperà la stringa `'yummy'` sul terminale.
@@ -17,7 +17,7 @@ In alternativa, puoi usare la **notazione puntata** per ottenere un risultato id
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 Le due righe di codice precedenti restituiranno entrambe `yummy`.
@@ -30,7 +30,7 @@ In questo file, definisci una variabile chiamata `food` come segue:
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

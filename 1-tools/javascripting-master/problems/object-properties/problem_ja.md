@@ -6,10 +6,10 @@
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 上のコードは、 `'yummy'` とターミナルに出力します。
@@ -19,22 +19,20 @@ console.log(example['pizza']);
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 上の二つの行は、両方とも `yummy` という値を返します。
 
 ## やってみよう
 
-
 `object-properties.js` ファイルを作りましょう。
-
 
 ファイルの中で、変数 `food` を次のように定義してください...
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

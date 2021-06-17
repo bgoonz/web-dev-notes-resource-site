@@ -7,7 +7,7 @@ Chaque élément du tableau est identifié par un nombre, commençant à `0`.
 Donc dans ce tableau, `hi` est identifié par le nombre `1` :
 
 ```js
-var greetings = ['hello', 'hi', 'good morning'];
+var greetings = ["hello", "hi", "good morning"];
 ```
 
 On peut y accéder comme ceci :
@@ -25,7 +25,7 @@ Créez un fichier nommé `iterer-dans-des-tableaux.js`.
 Dans ce fichier, définissez une variable nommée `pets` qui contient les valeurs suivantes :
 
 ```js
-['cat', 'dog', 'rat'];
+["cat", "dog", "rat"];
 ```
 
 Créez une boucle for qui modifie chaque chaîne de caractères dans le tableau pour les mettre au pluriel.
@@ -33,7 +33,7 @@ Créez une boucle for qui modifie chaque chaîne de caractères dans le tableau 
 Nous utiliserons une instruction similaire à celle-ci dans la boucle for :
 
 ```js
-pets[i] = pets[i] + 's';
+pets[i] = pets[i] + "s";
 ```
 
 Après la boucle for, utilisez `console.log()` pour afficher le tableau `pets` dans le terminal.

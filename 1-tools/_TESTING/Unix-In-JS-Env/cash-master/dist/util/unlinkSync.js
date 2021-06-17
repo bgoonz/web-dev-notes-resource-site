@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var fs = require('fs');
+var fs = require("fs");
 
 /**
  * Normalizes _unlinkSync() across
@@ -19,8 +19,8 @@ module.exports = function (file) {
   } catch (e) {
     // Try to override file permission
     /* istanbul ignore if */
-    if (e.code === 'EPERM') {
-      fs.chmodSync(file, '0666');
+    if (e.code === "EPERM") {
+      fs.chmodSync(file, "0666");
       fs.unlinkSync(file);
     } else {
       /* istanbul ignore next */

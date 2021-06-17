@@ -1,24 +1,24 @@
-'use strict';
+"use strict";
 
-var interfacer = require('./../util/interfacer');
-var preparser = require('./../preparser');
+var interfacer = require("./../util/interfacer");
+var preparser = require("./../preparser");
 
 var which = {
   exec: function exec(args, options) {
     options = options || {};
 
-    var command = (args instanceof Array ? args : [args]).join(' ');
+    var command = (args instanceof Array ? args : [args]).join(" ");
     if (command.length <= 0) {
       return 0;
     }
     try {
-      this.log(require('which').sync(command));
+      this.log(require("which").sync(command));
       return 0;
     } catch (error) {
       this.log(error);
       return 1;
     }
-  }
+  },
 };
 
 module.exports = function (vorpal) {
@@ -27,12 +27,15 @@ module.exports = function (vorpal) {
   }
   vorpal.api.which = which;
 
-  vorpal.command('which [command]').parse(preparser).action(function (args, callback) {
-    return interfacer.call(this, {
-      command: which,
-      args: args.command,
-      options: {},
-      callback: callback
+  vorpal
+    .command("which [command]")
+    .parse(preparser)
+    .action(function (args, callback) {
+      return interfacer.call(this, {
+        command: which,
+        args: args.command,
+        options: {},
+        callback: callback,
+      });
     });
-  });
 };

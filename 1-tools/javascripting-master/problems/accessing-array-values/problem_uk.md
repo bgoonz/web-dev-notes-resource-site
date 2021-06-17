@@ -5,7 +5,7 @@
 Приклад:
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -23,6 +23,7 @@ console.log(pets[0]);
 ```
 
 Неправильний запис:
+
 ```js
 console.log(pets.1);
 ```
@@ -32,8 +33,9 @@ console.log(pets.1);
 Створити файл `accessing-array-values.js`.
 
 У цьому файлі створити масив 'food' :
+
 ```js
-var food = ['apple', 'pizza', 'pear'];
+var food = ["apple", "pizza", "pear"];
 ```
 
 Використайте `console.log()`, щоб надрукувати 'другий' елемент масиву в терміналі.

@@ -7,10 +7,10 @@
 たとえば...
 
 ```js
-var pets = ['cat', 'dog', 'elephant'];
+var pets = ["cat", "dog", "elephant"];
 
 var filtered = pets.filter(function (pet) {
-  return (pet !== 'elephant');
+  return pet !== "elephant";
 });
 ```
 
@@ -19,7 +19,6 @@ var filtered = pets.filter(function (pet) {
 ## やってみよう
 
 `array-filtering.js` ファイルを作りましょう。
-
 
 ファイルの中で、 次の配列を表す、変数 `numbers` を定義しましょう。
 
@@ -32,7 +31,7 @@ var filtered = pets.filter(function (pet) {
 `.filter()` メソッドに渡す関数は、このような感じになるでしょう...
 
 ```js
-function evenNumbers (number) {
+function evenNumbers(number) {
   return number % 2 === 0;
 }
 ```

@@ -6,125 +6,144 @@
  * Copyright 2013-2016, Adnan Topal (adnan.co)
  * Licensed under the MIT license.
  */
-(function( root, factory ) {
-    if ( typeof define === 'function' && define.amd ) {
-        define( [], factory );
-    } else if ( typeof module === 'object' && module.exports ) {
-        module.exports = factory();
-    } else {
-        root.extractCSS = factory();
-    }
-}( this, function() {
-    "use strict";
+(function (root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define([], factory);
+  } else if (typeof module === "object" && module.exports) {
+    module.exports = factory();
+  } else {
+    root.extractCSS = factory();
+  }
+})(this, function () {
+  "use strict";
 
-    var outputArr = [],
-        outputStr = '';
+  var outputArr = [],
+    outputStr = "";
 
-    function getInlineStyle( element ) {
-        if ( element.hasAttribute( 'style' ) ) {
-            return element.getAttribute( 'style' );
-        }
-
-        return null;
+  function getInlineStyle(element) {
+    if (element.hasAttribute("style")) {
+      return element.getAttribute("style");
     }
 
-    function buildClassString( classes ) {
-        if ( classes === null ) {
-            return;
-        }
+    return null;
+  }
 
-        var classString = classes.trim().replace( /(\s{2,})/g, ' ' ).split( ' ' ).join( '.' );
-
-        return '.' + classString;
+  function buildClassString(classes) {
+    if (classes === null) {
+      return;
     }
 
-    function extractIds( input ) {
-        var elements = input.querySelectorAll( '*[id]' );
+    var classString = classes
+      .trim()
+      .replace(/(\s{2,})/g, " ")
+      .split(" ")
+      .join(".");
 
-        Array.prototype.forEach.call( elements, function( element ) {
-            var elementId = element.getAttribute( 'id' );
+    return "." + classString;
+  }
 
-            if ( elementId === null || elementId === '' ) {
-                return;
-            }
+  function extractIds(input) {
+    var elements = input.querySelectorAll("*[id]");
 
-            outputArr.push( {
-                selector: '#' + elementId,
-                style: getInlineStyle( element )
-            } );
-        } );
+    Array.prototype.forEach.call(elements, function (element) {
+      var elementId = element.getAttribute("id");
 
-        return outputArr;
-    }
+      if (elementId === null || elementId === "") {
+        return;
+      }
 
-    function extractClasses( input ) {
-        var elements = input.querySelectorAll( '*[class]' ),
-            tmpArr = [];
+      outputArr.push({
+        selector: "#" + elementId,
+        style: getInlineStyle(element),
+      });
+    });
 
-        Array.prototype.forEach.call( elements, function( element ) {
-            var elementClasses = element.getAttribute( 'class' ),
-                elementClassString = buildClassString( elementClasses );
+    return outputArr;
+  }
 
-            if ( element.getAttribute( 'id' ) || tmpArr.indexOf( elementClassString ) !== -1 || elementClasses === null ) {
-                return;
-            }
+  function extractClasses(input) {
+    var elements = input.querySelectorAll("*[class]"),
+      tmpArr = [];
 
-            tmpArr.push( elementClassString );
+    Array.prototype.forEach.call(elements, function (element) {
+      var elementClasses = element.getAttribute("class"),
+        elementClassString = buildClassString(elementClasses);
 
-            outputArr.push( {
-                selector: elementClassString,
-                style: getInlineStyle( element )
-            } );
-        } );
+      if (
+        element.getAttribute("id") ||
+        tmpArr.indexOf(elementClassString) !== -1 ||
+        elementClasses === null
+      ) {
+        return;
+      }
 
-        return outputArr;
-    }
+      tmpArr.push(elementClassString);
 
-    function extractStyles( input ) {
-        var elements = input.querySelectorAll( '*[style]:not([id]):not([class])' );
+      outputArr.push({
+        selector: elementClassString,
+        style: getInlineStyle(element),
+      });
+    });
 
-        Array.prototype.forEach.call( elements, function( element ) {
-            var parent = element.parentNode;
+    return outputArr;
+  }
 
-            if ( parent.hasAttribute( 'id' ) ) {
-                outputArr.push( {
-                    selector: '#' + parent.getAttribute( 'id' ) + ' > ' + element.tagName.toLowerCase(),
-                    style: getInlineStyle( element )
-                } );
-            } else if ( parent.hasAttribute( 'class' ) ) {
-                outputArr.push( {
-                    selector: buildClassString( parent.getAttribute( 'class' ) ) + ' > ' + element.tagName.toLowerCase(),
-                    style: getInlineStyle( element )
-                } );
-            }
-        } );
+  function extractStyles(input) {
+    var elements = input.querySelectorAll("*[style]:not([id]):not([class])");
 
-        return outputArr;
-    }
+    Array.prototype.forEach.call(elements, function (element) {
+      var parent = element.parentNode;
 
-    function outputCSS( extractStyle ) {
-        outputArr.forEach( function( elem ) {
-            outputStr += elem.selector + '{' + (elem.style && extractStyle ? elem.style : '') + '}';
-        } );
+      if (parent.hasAttribute("id")) {
+        outputArr.push({
+          selector:
+            "#" +
+            parent.getAttribute("id") +
+            " > " +
+            element.tagName.toLowerCase(),
+          style: getInlineStyle(element),
+        });
+      } else if (parent.hasAttribute("class")) {
+        outputArr.push({
+          selector:
+            buildClassString(parent.getAttribute("class")) +
+            " > " +
+            element.tagName.toLowerCase(),
+          style: getInlineStyle(element),
+        });
+      }
+    });
 
-        return outputStr;
-    }
+    return outputArr;
+  }
 
-    function extract( input, options ) {
-        var inputEl = document.createElement( 'div' );
-        inputEl.innerHTML = input;
+  function outputCSS(extractStyle) {
+    outputArr.forEach(function (elem) {
+      outputStr +=
+        elem.selector +
+        "{" +
+        (elem.style && extractStyle ? elem.style : "") +
+        "}";
+    });
 
-        options.extractAnonStyle && extractStyles( inputEl );
-        options.extractIds && extractIds( inputEl );
-        options.extractClasses && extractClasses( inputEl );
+    return outputStr;
+  }
 
-        return outputCSS( options.extractStyle );
-    }
+  function extract(input, options) {
+    var inputEl = document.createElement("div");
+    inputEl.innerHTML = input;
 
-    return {
-        extract: extract,
-        extractId: extractIds,
-        extractClass: extractClasses,
-        extractStyle: extractStyles
-    };
-} ));
+    options.extractAnonStyle && extractStyles(inputEl);
+    options.extractIds && extractIds(inputEl);
+    options.extractClasses && extractClasses(inputEl);
+
+    return outputCSS(options.extractStyle);
+  }
+
+  return {
+    extract: extract,
+    extractId: extractIds,
+    extractClass: extractClasses,
+    extractStyle: extractStyles,
+  };
+});

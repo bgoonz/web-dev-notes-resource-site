@@ -6,9 +6,9 @@ Por ejemplo:
 
 ```js
 var foodPreferences = {
-  pizza: 'yum',
-  salad: 'gross'
-}
+  pizza: "yum",
+  salad: "gross",
+};
 ```
 
 En el ejemplo anterior podemos ver que las **llaves** del objeto `foodPreferences` son **pizza** y **salad**. Sus valores son `yum` y `gross` respectivamente.
@@ -21,10 +21,10 @@ En ese archivo, define una variable llamada `pizza` de la siguiente forma:
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
-}
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
+};
 ```
 
 Utiliza `console.log()` para imprimir el objeto `pizza` a la terminal.

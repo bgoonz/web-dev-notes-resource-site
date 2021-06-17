@@ -3,7 +3,7 @@ A function can be declared to receive any number of arguments. Arguments can be 
 Here is an example:
 
 ```js
-function example (firstArg, secondArg) {
+function example(firstArg, secondArg) {
   console.log(firstArg, secondArg);
 }
 ```
@@ -11,7 +11,7 @@ function example (firstArg, secondArg) {
 We can **call** that function with two arguments like this:
 
 ```js
-example('hello', 'world');
+example("hello", "world");
 ```
 
 The above example will print to the terminal `hello world`.

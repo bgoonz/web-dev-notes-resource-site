@@ -4,13 +4,13 @@ Uma instrução condicional é mais ou menos assim:
 
 ```js
 if (n > 1) {
-  console.log('the variable n is greater than 1.');
+  console.log("the variable n is greater than 1.");
 } else {
-  console.log('the variable n is less than or equal to 1.');
+  console.log("the variable n is less than or equal to 1.");
 }
 ```
 
-Dentro dos parênteses você deve informar uma instrução de lógica, com a idéia de que o resultado seja `true` ou `false`. 
+Dentro dos parênteses você deve informar uma instrução de lógica, com a idéia de que o resultado seja `true` ou `false`.
 
 O bloco `else` é opcional e contém o código que será executado caso a instrução resulte em false.
 

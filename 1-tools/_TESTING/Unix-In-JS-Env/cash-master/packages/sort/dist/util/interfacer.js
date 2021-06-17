@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Simple binding interface between
@@ -15,21 +15,21 @@
 
 module.exports = function (opt) {
   var self = this;
-  var stdout = '';
+  var stdout = "";
   opt.options = opt.options || {};
   opt.callback = opt.callback || function () {};
   opt.command = opt.command || {
-    exec: function exec() {}
+    exec: function exec() {},
   };
 
   var logger = {
     log: function log(out) {
-      stdout += out + '\n';
+      stdout += out + "\n";
       if (opt.silent !== true) {
         // process.stdout.write(out) // to do - handle newline problem.
         self.log(out);
       }
-    }
+    },
   };
 
   function onResult(result) {

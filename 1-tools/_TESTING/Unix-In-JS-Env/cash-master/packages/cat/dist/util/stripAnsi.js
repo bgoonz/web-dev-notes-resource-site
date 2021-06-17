@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Removes all ansi characters.
@@ -9,6 +9,7 @@
  */
 
 module.exports = function (str) {
-  var ansiRegex = /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g;
-  return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+  var ansiRegex =
+    /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g;
+  return typeof str === "string" ? str.replace(ansiRegex, "") : str;
 };

@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import SocialBadges from './SocialBadges'
+import React from "react";
+import styled from "styled-components";
+import SocialBadges from "./SocialBadges";
 
 const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Info = styled.div`
   padding: 50px;
@@ -20,7 +20,7 @@ const Info = styled.div`
   @media (max-height: 800px) {
     padding: 8px;
   }
-`
+`;
 
 const Logo = styled.img`
   margin: 0 auto;
@@ -30,12 +30,12 @@ const Logo = styled.img`
     width: 80px;
     height: 80px;
   }
-`
+`;
 
 const Header = styled.h1`
   text-align: center;
   font-weight: 300;
-  font-size:calc(12px + 3.6vw);
+  font-size: calc(12px + 3.6vw);
   letter-spacing: 1.8px;
   margin-top: 40px;
   border: none;
@@ -43,44 +43,42 @@ const Header = styled.h1`
 
   @media (max-width: 700px) {
     margin-top: 10px;
-    font-size:calc(12px + 1.7vw);
+    font-size: calc(12px + 1.7vw);
   }
-`
+`;
 
 const Subheader = styled.h3`
   text-align: center;
   font-weight: 300;
   margin: 0 auto;
-  font-size:calc(8px + .91vw);
+  font-size: calc(8px + 0.91vw);
 
   > span {
     font-weight: 500;
   }
-`
+`;
 
 const Instructions = styled.ul`
   margin-top: 50px;
   display: block;
-  font-size:calc(6px + .7vw);
-  padding-left: 0
-
-  @media (max-width: 700px) {
+  font-size: calc(6px + 0.7vw);
+  padding-left: 0 @media (max-width: 700px) {
     margin-top: 10px;
   }
-`
+`;
 
 const InstructionItem = styled.li`
   list-style-type: none;
   padding: 5px;
   margin: 10px;
-  text-decoration: ${({ selectable }) => selectable ? 'underline' : 'none'};
-  cursor: ${({ selectable }) => selectable ? 'pointer' : 'default'};
+  text-decoration: ${({ selectable }) => (selectable ? "underline" : "none")};
+  cursor: ${({ selectable }) => (selectable ? "pointer" : "default")};
 
   @media (max-width: 700px) {
     margin: 3px;
     padding: 1px;
   }
-`
+`;
 
 const Disclosure = styled.div`
   background: #efefef;
@@ -107,66 +105,97 @@ const Disclosure = styled.div`
   @media (max-width: 700px) {
     font-size: 9px;
   }
-`
+`;
 
-export default function Welcome ({ selectCodeSnippet }) {
+export default function Welcome({ selectCodeSnippet }) {
   return (
     <Container>
       <Info>
-        <a href='https://tylermcginnis.com'>
-          <Logo src='https://tylermcginnis.com/images/logo-only.png' alt='TylerMcGinnis.com logo' />
+        <a href="https://tylermcginnis.com">
+          <Logo
+            src="https://tylermcginnis.com/images/logo-only.png"
+            alt="TylerMcGinnis.com logo"
+          />
         </a>
         <Header>JavaScript Visualizer</Header>
-        <Subheader>A tool for visualizing <span>Execution Context</span>, <span>Hoisting</span>, <span>Closures</span>, and <span>Scopes</span> in JavaScript</Subheader>
+        <Subheader>
+          A tool for visualizing <span>Execution Context</span>,{" "}
+          <span>Hoisting</span>, <span>Closures</span>, and <span>Scopes</span>{" "}
+          in JavaScript
+        </Subheader>
         <SocialBadges />
         <Instructions>
           Instructions:
-          <InstructionItem>1. Type <b>(ES5)</b> JavaScript in the editor</InstructionItem>
+          <InstructionItem>
+            1. Type <b>(ES5)</b> JavaScript in the editor
+          </InstructionItem>
           <InstructionItem>2. "Step" or "Run" through the code</InstructionItem>
-          <InstructionItem>3. Visualize how your code is interpreted</InstructionItem>
+          <InstructionItem>
+            3. Visualize how your code is interpreted
+          </InstructionItem>
         </Instructions>
         <Instructions>
           Here are some of our favorite code snippets to visualize
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('simpleClosure')}>
-              Simple Closure
+            onClick={() => selectCodeSnippet("simpleClosure")}
+          >
+            Simple Closure
           </InstructionItem>
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('complexClosures')}>
-              Complex Closures
+            onClick={() => selectCodeSnippet("complexClosures")}
+          >
+            Complex Closures
           </InstructionItem>
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('scopeChain')}>
-              Scope Chain
+            onClick={() => selectCodeSnippet("scopeChain")}
+          >
+            Scope Chain
           </InstructionItem>
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('bubbleSort')}>
-              Bubble Sort
+            onClick={() => selectCodeSnippet("bubbleSort")}
+          >
+            Bubble Sort
           </InstructionItem>
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('pseudoclassical')}>
-              Pseudoclassical Pattern
+            onClick={() => selectCodeSnippet("pseudoclassical")}
+          >
+            Pseudoclassical Pattern
           </InstructionItem>
           <InstructionItem
             selectable
-            onClick={() => selectCodeSnippet('thisKeyword')}>
-              The this Keyword
+            onClick={() => selectCodeSnippet("thisKeyword")}
+          >
+            The this Keyword
           </InstructionItem>
         </Instructions>
       </Info>
-      <div style={{width: '100%', background: '#efefef'}}>
+      <div style={{ width: "100%", background: "#efefef" }}>
         <Disclosure>
           <div>
-            <p><b>This was created for our <a href='https://tylermcginnis.com/courses/advanced-javascript/'>Advanced JavaScript course</a>.</b></p>
-            <p>It's Beta AF. I'm working on ES6 support and lots of <a href='https://github.com/tylermcginnis/noname/issues'>bug fixes</a>.</p>
+            <p>
+              <b>
+                This was created for our{" "}
+                <a href="https://tylermcginnis.com/courses/advanced-javascript/">
+                  Advanced JavaScript course
+                </a>
+                .
+              </b>
+            </p>
+            <p>
+              It's Beta AF. I'm working on ES6 support and lots of{" "}
+              <a href="https://github.com/tylermcginnis/noname/issues">
+                bug fixes
+              </a>
+              .
+            </p>
           </div>
         </Disclosure>
       </div>
     </Container>
-  )
+  );
 }

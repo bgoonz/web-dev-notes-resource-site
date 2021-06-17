@@ -3,8 +3,8 @@
 이는 `.length` 속성을 이용하면 알 수 있습니다. 다음 예제를 보세요.
 
 ```js
-var example = 'example string';
-example.length
+var example = "example string";
+example.length;
 ```
 
 ## 주의

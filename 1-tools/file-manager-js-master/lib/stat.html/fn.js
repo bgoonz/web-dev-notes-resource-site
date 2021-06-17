@@ -1,7 +1,7 @@
 /* /stat
  */
 
-module.exports = fsStat => path =>
+module.exports = (fsStat) => (path) =>
   new Promise((resolve, reject) => {
     fsStat(path, (error, stats) => {
       if (error) {

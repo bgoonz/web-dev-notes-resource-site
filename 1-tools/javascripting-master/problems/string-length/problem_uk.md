@@ -3,8 +3,8 @@
 Для цього ви можете використати властивість `.length`. Ось приклад:
 
 ```js
-var example = 'example string';
-example.length
+var example = "example string";
+example.length;
 ```
 
 ## ЗАУВАЖЕННЯ
@@ -12,7 +12,6 @@ example.length
 Впевніться, що між `example` та `length` стоїть крапка.
 
 Код вище поверне **число (Number)**, яке становитиме кількість символів у рядку.
-
 
 ## Завдання:
 

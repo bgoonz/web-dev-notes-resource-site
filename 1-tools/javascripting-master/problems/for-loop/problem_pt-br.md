@@ -1,9 +1,9 @@
-Loops com *for* são dessa forma:
+Loops com _for_ são dessa forma:
 
 ```js
 for (var i = 0; i < 10; i++) {
   // log the numbers 0 through 9
-  console.log(i)
+  console.log(i);
 }
 ```
 

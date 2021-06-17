@@ -5,8 +5,8 @@ Strings have built-in functionality that allow you to inspect and manipulate the
 Here is an example using the `.replace()` method:
 
 ```js
-var example = 'this example exists';
-example = example.replace('exists', 'is awesome');
+var example = "this example exists";
+example = example.replace("exists", "is awesome");
 console.log(example);
 ```
 

@@ -4,10 +4,10 @@
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 Код вище виведе рядок `'yummy'` до терміналу.
@@ -17,7 +17,7 @@ console.log(example['pizza']);
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 Обидва рядки коду повернуть `yummy`.
@@ -30,7 +30,7 @@ example['pizza'];
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

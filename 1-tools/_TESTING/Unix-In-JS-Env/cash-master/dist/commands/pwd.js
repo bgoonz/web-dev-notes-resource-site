@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-var path = require('path');
+var path = require("path");
 
-var interfacer = require('./../util/interfacer');
+var interfacer = require("./../util/interfacer");
 
 var pwd = {
   exec: function exec() {
-    this.log(path.resolve(process.cwd()).replace(/\\/g, '/'));
+    this.log(path.resolve(process.cwd()).replace(/\\/g, "/"));
     return 0;
-  }
+  },
 };
 
 module.exports = function (vorpal) {
@@ -16,13 +16,13 @@ module.exports = function (vorpal) {
     return pwd;
   }
   vorpal.api.pwd = pwd;
-  vorpal.command('pwd [files...]').action(function (args, callback) {
+  vorpal.command("pwd [files...]").action(function (args, callback) {
     args.options = args.options || {};
     return interfacer.call(this, {
       command: pwd,
       args: args.files,
       options: args.options,
-      callback: callback
+      callback: callback,
     });
   });
 };

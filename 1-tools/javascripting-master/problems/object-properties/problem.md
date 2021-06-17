@@ -4,10 +4,10 @@ Here's an example using **square brackets**:
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 The above code will print the string `'yummy'` to the terminal.
@@ -17,7 +17,7 @@ Alternately, you can use **dot notation** to get identical results:
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 The two lines of code above will both return `yummy`.
@@ -30,7 +30,7 @@ In that file, define a variable named `food` like this:
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

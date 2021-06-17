@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const c2arr = value => {
+const c2arr = (value) => {
   if (value === null || value === undefined) {
     return [];
   }

@@ -4,7 +4,7 @@
 ```js
 for (var i = 0; i < 10; i++) {
   // выводим в консоль числа от 0 до 9
-  console.log(i)
+  console.log(i);
 }
 ```
 

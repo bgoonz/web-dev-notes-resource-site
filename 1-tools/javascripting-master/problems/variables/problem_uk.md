@@ -11,7 +11,7 @@ var example;
 Ось приклад визначення змінних, посилання на певне значення:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 # ЗАУВАЖЕННЯ

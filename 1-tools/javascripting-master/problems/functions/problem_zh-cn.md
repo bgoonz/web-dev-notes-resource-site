@@ -3,7 +3,7 @@
 例子：
 
 ```js
-function example (x) {
+function example(x) {
   return x * 2;
 }
 ```
@@ -11,7 +11,7 @@ function example (x) {
 我们可以像下面这样**调用**这个函数，得到数字 10：
 
 ```js
-example(5)
+example(5);
 ```
 
 上面的这段代码里，`example` 函数将一个数字作为参数——也就是输入——然后返回那个数字乘以 2 的结果。
@@ -25,7 +25,7 @@ example(5)
 在函数中将 `food` 参数处理后像下面这样返回：
 
 ```js
-return food + ' tasted really good.';
+return food + " tasted really good.";
 ```
 
 在 `console.log()` 的括号中，调用 `eat()` 函数，并把字符串 `bananas` 当做参数传递给它。

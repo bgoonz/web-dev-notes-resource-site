@@ -19,15 +19,17 @@ touch introduction.js
 ```
 
 oppure, se ti trovi su Windows,
+
 ```bash
 type NUL > introduction.js
 ```
+
 (`type` è parte del comando!)
 
 Apri il file nel tuo editor preferito, e aggiungi questo testo:
 
 ```js
-console.log('hello');
+console.log("hello");
 ```
 
 Salva il file, quindi verifica che il tuo programma sia corretto eseguendo questo comando:

@@ -4,13 +4,13 @@ A conditional statement looks like this:
 
 ```js
 if (n > 1) {
-  console.log('the variable n is greater than 1.');
+  console.log("the variable n is greater than 1.");
 } else {
-  console.log('the variable n is less than or equal to 1.');
+  console.log("the variable n is less than or equal to 1.");
 }
 ```
 
-Inside parentheses you must enter a logic statement, meaning that the result of the statement is either true or false. 
+Inside parentheses you must enter a logic statement, meaning that the result of the statement is either true or false.
 
 The else block is optional and contains the code that will be executed if the statement is false.
 

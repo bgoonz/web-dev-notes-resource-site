@@ -1,5 +1,5 @@
-const reqAll = require( './../../app.js' );
-console.log('reqAll: ', reqAll);
+const reqAll = require("./../../app.js");
+console.log("reqAll: ", reqAll);
 /*
 "c:\MY-WEB-DEV\04-Personal-Projects\_source-repos\REPO\test\test-2-experimental\experimental.spec.js"
 lib: {

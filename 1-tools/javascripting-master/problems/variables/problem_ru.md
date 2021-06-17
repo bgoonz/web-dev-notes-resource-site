@@ -11,7 +11,7 @@ var example;
 Ниже дан пример объявления переменной с заданным значением:
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 ## НА ЗАМЕТКУ

@@ -3,7 +3,7 @@
 여기 예제가 있습니다.
 
 ```js
-function example (firstArg, secondArg) {
+function example(firstArg, secondArg) {
   console.log(firstArg, secondArg);
 }
 ```
@@ -11,7 +11,7 @@ function example (firstArg, secondArg) {
 우리는 두 개의 인자를 가지는 함수를 이렇게 **호출**할 수 있습니다.
 
 ```js
-example('hello', 'world');
+example("hello", "world");
 ```
 
 위 예제는 터미널에 `hello world`를 출력할 것입니다.

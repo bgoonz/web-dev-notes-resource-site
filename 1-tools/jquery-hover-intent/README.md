@@ -1,5 +1,4 @@
-hoverIntent jQuery Plug-in
-==========================
+# hoverIntent jQuery Plug-in
 
 hoverIntent is a plug-in that attempts to determine the user's intent... like a crystal ball, only with mouse movement! It is similar to [jQuery's hover method](http://api.jquery.com/hover/). However, instead of calling the handlerIn function immediately, hoverIntent waits until the user's mouse slows down enough before making the call.
 

@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-var fs = require('fs');
-var path = require('path');
+var fs = require("fs");
+var path = require("path");
 
-var expand = require('./expand');
+var expand = require("./expand");
 
 /**
  * Reads the contents of an array of
@@ -31,7 +31,7 @@ module.exports = function (files, stdin, options) {
       if (stat.isDirectory()) {
         files[i] = options.onDirectory(files[i]);
       } else {
-        files[i] = String(fs.readFileSync(path.normalize(files[i]), 'utf8'));
+        files[i] = String(fs.readFileSync(path.normalize(files[i]), "utf8"));
       }
     } catch (e) {
       files[i] = options.onInvalidFile(files[i]);

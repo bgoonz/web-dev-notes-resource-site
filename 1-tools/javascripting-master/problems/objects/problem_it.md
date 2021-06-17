@@ -4,8 +4,8 @@ Ecco un esempio
 
 ```js
 var foodPreferences = {
-  pizza: 'yum',
-  salad: 'gross'
+  pizza: "yum",
+  salad: "gross",
 };
 ```
 
@@ -17,9 +17,9 @@ In questo file, definisci una variabile chiamata `pizza` come segue:
 
 ```js
 var pizza = {
-  toppings: ['cheese', 'sauce', 'pepperoni'],
-  crust: 'deep dish',
-  serves: 2
+  toppings: ["cheese", "sauce", "pepperoni"],
+  crust: "deep dish",
+  serves: 2,
 };
 ```
 

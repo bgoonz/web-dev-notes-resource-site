@@ -10,12 +10,11 @@ var example;
 
 下面是一个定义变量的例子，这样变量将会有一个值：
 
-
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
-# 注 
+# 注
 
 变量通过 `var` 来**声明**，并通过等号来**定义**它的值。这也就是经常提到的“让一个变量等于一个值（变量赋值）”。
 

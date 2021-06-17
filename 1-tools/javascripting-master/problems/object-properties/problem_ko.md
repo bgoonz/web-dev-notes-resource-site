@@ -4,10 +4,10 @@
 
 ```js
 var example = {
-  pizza: 'yummy'
+  pizza: "yummy",
 };
 
-console.log(example['pizza']);
+console.log(example["pizza"]);
 ```
 
 위의 코드는 문자열 `'yummy'`를 터미널에 출력합니다.
@@ -17,7 +17,7 @@ console.log(example['pizza']);
 ```js
 example.pizza;
 
-example['pizza'];
+example["pizza"];
 ```
 
 위에 있는 두 줄의 코드는 양쪽 다 `yummy`를 반환합니다.
@@ -30,7 +30,7 @@ example['pizza'];
 
 ```js
 var food = {
-  types: 'only pizza'
+  types: "only pizza",
 };
 ```
 

@@ -3,10 +3,11 @@
 Це можуть бути або одинарні, або подвійні дужки:
 
 ```js
-'this is a string'
+"this is a string";
 
-"this is also a string"
+"this is also a string";
 ```
+
 # ЗАУВАЖЕННЯ
 
 Спробуйте залишаться послідовними. У цьому воркшопі ми будемо використовувати лише одинарні лапки.
@@ -18,7 +19,7 @@
 У цьому файлі створіть змінну `someString` ось так:
 
 ```js
-var someString = 'this is a string';
+var someString = "this is a string";
 ```
 
 Використайте `console.log`, щоб вивести змінну **someString** до терміналу.

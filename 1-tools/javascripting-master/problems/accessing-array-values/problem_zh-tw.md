@@ -5,7 +5,7 @@
 下面是一個例子：
 
 ```js
-var pets = ['cat', 'dog', 'rat'];
+var pets = ["cat", "dog", "rat"];
 
 console.log(pets[0]);
 ```
@@ -23,6 +23,7 @@ console.log(pets[0]);
 ```
 
 下面的用法是錯誤的：
+
 ```
 console.log(pets.1);
 ```
@@ -32,8 +33,9 @@ console.log(pets.1);
 建立一個名為 `accessing-array-values.js` 的檔案。
 
 在該檔案中定義一個陣列 `food`：
+
 ```js
-var food = ['apple', 'pizza', 'pear'];
+var food = ["apple", "pizza", "pear"];
 ```
 
 使用 `console.log()` 印出陣列中的 `第二個` 值。

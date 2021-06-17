@@ -1,1 +1,1 @@
-__Требуется помощь?__ Перечитайте README данного воркшопа: https://github.com/workshopper/javascripting
+**Требуется помощь?** Перечитайте README данного воркшопа: https://github.com/workshopper/javascripting

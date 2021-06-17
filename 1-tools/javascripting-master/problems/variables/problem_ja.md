@@ -11,7 +11,7 @@ var example;
 次の例は変数を定義します。定義した変数は特定の値を示します。
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 `var` を使って**宣言**します。つづいて、等号を使い、変数が示す値を**定義**します。

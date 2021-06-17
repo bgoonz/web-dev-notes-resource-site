@@ -11,7 +11,7 @@ var example;
 특정 값을 참조하게 만든, 변수를 정의하는 예제입니다.
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
 # 주의

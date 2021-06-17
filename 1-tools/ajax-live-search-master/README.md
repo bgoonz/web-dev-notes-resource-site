@@ -9,12 +9,11 @@ AJAX Live Search is a jQuery plugin / PHP search form that searches and displays
 
 ## Browser Support
 
-![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
---- | --- | --- | --- | --- |
-IE 8+ ✔ | Chrome ✔ | Firefox ✔ | Opera ✔ | Safari ✔ |
+| ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| IE 8+ ✔                                                                                                | Chrome ✔                                                                             | Firefox ✔                                                                               | Opera ✔                                                                           | Safari ✔                                                                             |
 
 Thanks to [BrowserStack](http://browserstack.com) and [JetBrains](https://www.jetbrains.com) for supporting this project.
-
 
 ## Getting started with Ajax Live Search
 
@@ -22,48 +21,50 @@ Getting the current example in `index.php` to work including creating a dummy da
 
 `<input type="text" class='mySearch' id="ls_query" placeholder="Type to start searching ...">`
 
-1. Copy the folders including `core`, `css`, `font`, `img`, `js` and `templates` to your project.
+1.  Copy the folders including `core`, `css`, `font`, `img`, `js` and `templates` to your project.
 
-2. Specify the required configurations specially database configurations in `core/Config.template.php` and rename the file to `Config.php`. This file contains all the back-end settings for the plugin that have been explained in PHP Configs table.
+2.  Specify the required configurations specially database configurations in `core/Config.template.php` and rename the file to `Config.php`. This file contains all the back-end settings for the plugin that have been explained in PHP Configs table.
 
-3. Include `js/ajaxlivesearch.min.js` or `js/ajaxlivesearch.js` and `css/ajaxlivesearch.min.css` or `css/ajaxlivesearch.css` in your page.
+3.  Include `js/ajaxlivesearch.min.js` or `js/ajaxlivesearch.js` and `css/ajaxlivesearch.min.css` or `css/ajaxlivesearch.css` in your page.
 
-4. Change the URL for `Access-Control-Allow-Origin header` in `core/AjaxProcessor.php` to your project URL. Currently it is `https://ajaxlivesearch.com`.
+4.  Change the URL for `Access-Control-Allow-Origin header` in `core/AjaxProcessor.php` to your project URL. Currently it is `https://ajaxlivesearch.com`.
 
-5. Make sure `core/Handler.php` and `core/Config.php` are included in your (PHP) page and you have these lines at the very top of the file (Check `index.php`):
+5.  Make sure `core/Handler.php` and `core/Config.php` are included in your (PHP) page and you have these lines at the very top of the file (Check `index.php`):
 
-	```
-	use AjaxLiveSearch\core\Config;
+    ```
+    use AjaxLiveSearch\core\Config;
     use AjaxLiveSearch\core\Handler;
-    
+
     if (session_id() == '') {
         session_start();
     }
-    
+
     $handler = new Handler();
     $handler->getJavascriptAntiBot();
-	```
-	
-6. Lastly, hook the plugin to the text field and pass the required options (loaded_at & token):
+    ```
 
-	```
-jQuery("#ls_query").ajaxlivesearch({
-        loaded_at: <?php echo time(); ?>,
-        token: <?php echo "'" . $handler->getToken() . "'"; ?>,
-        max_input: <?php echo Config::getConfig('maxInputLength'); ?>,
+6.  Lastly, hook the plugin to the text field and pass the required options (loaded_at & token):
+
+        ```
+
+    jQuery("#ls_query").ajaxlivesearch({
+    loaded_at: <?php echo time(); ?>,
+    token: <?php echo "'" . $handler->getToken() . "'"; ?>,
+    max_input: <?php echo Config::getConfig('maxInputLength'); ?>,
     });
-	```
+    ```
 
 You can also post additional parameters to the server if you need. To achieve this you should add `data` attributes to the search input:
 
     <input type="text" class='mySearch' id="ls_query" placeholder="Type to start searching ..." data-additionalData="hello world!">
 
 For example, in this case you can access the data attribute in PHP like this:
-    
+
     // key is transformed to lowercase
     $additionalData = $_POST['additionaldata'];
-    
+
 ## jQuery Options
+
 <table width='100%'>
 <thead>
 <tr>
@@ -258,6 +259,7 @@ For example, in this case you can access the data attribute in PHP like this:
 </table>
 
 ## Custom Event
+
 <table width='100%'>
 <thead>
 <tr>
@@ -303,7 +305,9 @@ jQuery(".mySearch").ajaxlivesearch({
     }
 });
 ```
+
 ## Custom Trigger
+
 <table width='100%'>
 <thead>
 <tr>
@@ -321,6 +325,7 @@ jQuery(".mySearch").ajaxlivesearch({
 </table>
 
 ## PHP Configurations
+
 <table width='100%'>
 <thead>
 <tr>
@@ -469,17 +474,19 @@ MySQL data source configs:
 </table>
 
 ## FAQ
+
 - What is the risk in disabling anti_bot and token?
 
-    `form_anti_bot` is a nice security feature to have but it should be fine to remove it. To achieve this you need to change `validateRequest()` in `core/AjaxProcessor.php` and remove `$_POST['ls_anti_bot']` as well as changing `verifySessionValue($sessionParameter, $sessionValue)` in `core/Handler.php`. In contrast, removing the `token` allows anyone to create a form and use your server as the data source and therefore it is not recommended. Currently, each time the page / search form is loaded a new token is generated by calling `getToken()` in the form page (`index.php` in the current example). Then the token and anti_bot are checked using `verifySessionValue($sessionParameter, $sessionValue)` upon searching / sending a new request to the server. If this looks an overkill to you, in `getToken()` return the same token for the existing session.
+  `form_anti_bot` is a nice security feature to have but it should be fine to remove it. To achieve this you need to change `validateRequest()` in `core/AjaxProcessor.php` and remove `$_POST['ls_anti_bot']` as well as changing `verifySessionValue($sessionParameter, $sessionValue)` in `core/Handler.php`. In contrast, removing the `token` allows anyone to create a form and use your server as the data source and therefore it is not recommended. Currently, each time the page / search form is loaded a new token is generated by calling `getToken()` in the form page (`index.php` in the current example). Then the token and anti_bot are checked using `verifySessionValue($sessionParameter, $sessionValue)` upon searching / sending a new request to the server. If this looks an overkill to you, in `getToken()` return the same token for the existing session.
 
 - How a column can be hidden in the result?
 
-    This can be achieved in your template. An example can be found in `templates/hiddenColumn.php`
+  This can be achieved in your template. An example can be found in `templates/hiddenColumn.php`
 
 ## License
 
 [MIT License](https://github.com/iranianpep/ajax-live-search/blob/master/LICENSE.txt)
 
 ## Buy me half of a coffee if you like!
+
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BXMKEZ23PX8K2)

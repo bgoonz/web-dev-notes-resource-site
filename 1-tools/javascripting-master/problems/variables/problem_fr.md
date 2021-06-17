@@ -11,10 +11,10 @@ La variable ci-dessus est **déclarée**, mais elle n'est pas définie ( elle 
 Voici un exemple de définition de variable, la faisant contenir une valeur spécifique :
 
 ```js
-var example = 'some string';
+var example = "some string";
 ```
 
-# NOTE 
+# NOTE
 
 Une variable est **déclarée** en utilisant `var` et utilise le signe égal pour **assigner** la valeur qu'elle référence. Nous utilisons communément l'expression "Assigner une valeur à une variable".
 

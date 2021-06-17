@@ -1,1 +1,1 @@
-__Precisa de ajuda?__ Leia o README deste workshop: https://github.com/workshopper/javascripting
+**Precisa de ajuda?** Leia o README deste workshop: https://github.com/workshopper/javascripting

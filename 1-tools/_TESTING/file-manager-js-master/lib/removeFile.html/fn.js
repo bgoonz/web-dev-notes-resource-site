@@ -1,7 +1,7 @@
 /* /removeFile
  */
 
-module.exports = fsUnlink => path =>
+module.exports = (fsUnlink) => (path) =>
   new Promise((resolve, reject) => {
     fsUnlink(path, (error) => {
       if (error) {

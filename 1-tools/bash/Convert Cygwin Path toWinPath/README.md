@@ -2,7 +2,7 @@
 
 ## Description
 
-Under *Cygwin*, paths such as `C:\Users` would appear as `/cygdrive/c/Users`, while paths that belong to *Unix* such as `/var/log` are actually `C:\cygwin64\var\log`.
+Under _Cygwin_, paths such as `C:\Users` would appear as `/cygdrive/c/Users`, while paths that belong to _Unix_ such as `/var/log` are actually `C:\cygwin64\var\log`.
 This script converts Cygwin paths to Windows-understandable paths.
 
 ## Installation
